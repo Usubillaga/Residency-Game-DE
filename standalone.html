@@ -392,7 +392,8 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{o
   .all-options{padding:8px 9px}
   .all-options li{padding:8px;gap:8px}
 }
-@media(max-width:420px){
+/* With five menu entries (Atlas included) the row needs wrapping up to 450 px. */
+@media(max-width:450px){
   .nav{flex-wrap:wrap;justify-content:flex-start;gap:2px 4px}
   .nav-btn{padding:5px 6px;font-size:.7rem}
 }
@@ -411,6 +412,15 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{o
 .schema [data-part].on{filter:drop-shadow(0 0 4px #ffcf5a) drop-shadow(0 0 8px #ffcf5a);opacity:1}
 .schema [data-part].right{filter:drop-shadow(0 0 5px #3f8e72) drop-shadow(0 0 9px #3f8e72);opacity:1}
 .schema [data-part].wrong{filter:drop-shadow(0 0 5px #d35468) drop-shadow(0 0 9px #d35468);opacity:1}
+/* A glowing (★) structure stops glowing while focused or selected, so the focus ring and the selection stay visible (also under reduced motion). */
+.schema [data-part].hl:focus-visible,.schema [data-part].hl.on{animation:none}
+.schema [data-part]:focus-visible,.schema [data-part].hl:focus-visible{filter:drop-shadow(0 0 1.5px #2a2442) drop-shadow(0 0 1.5px #2a2442) drop-shadow(0 0 7px #ffcf5a)}
+.schema [data-part].hl.on{filter:drop-shadow(0 0 4px #ffcf5a) drop-shadow(0 0 8px #ffcf5a)}
+/* In dialogs the drawing shrinks on short screens so the verdict and the next button fit below it. */
+.schema-modal .schema-svg svg{max-height:max(190px,min(440px,calc(100vh - 340px)))}
+/* Five menu entries plus the language switch: tighten the header between the phone and desktop layouts. */
+@media(min-width:761px) and (max-width:860px){.top-inner{flex-wrap:wrap;gap:8px;padding-top:13px;padding-bottom:8px}.nav{order:3;width:100%;justify-content:space-between}.nav-btn{padding:6px 8px;font-size:.76rem}}
+@media(min-width:861px) and (max-width:960px){.top-inner{gap:12px}.nav{gap:2px}.nav-btn{padding:8px 8px;font-size:.76rem}.brand small{display:none}}
 .schema-legend{display:flex;flex-wrap:wrap;gap:6px}
 .schema-chip{border:2px solid #9b89a6;background:#fff;color:#302944;border-radius:999px;padding:4px 10px;font-size:.72rem;font-weight:700}
 .schema-chip.hl{border-color:#ff9f1a;background:#fff0bb}
@@ -502,7 +512,7 @@ en:{
   duty_night:'Night shift',duty_board:'Tumour board',duty_clinic:'Clinic',duty_elective:'Elective OR list',duty_mixed:'Mixed rotation',
   dutyText_night:'Emergencies only: colic, retention, bleeding, trauma, infection, emergency surgery.',dutyText_board:'Oncology decisions: staging, choice of treatment, systemic therapy.',dutyText_clinic:'Outpatient work-up, counselling and follow-up, including cancer follow-up.',dutyText_elective:'Planned operations and endoscopy: technique, anatomy, perioperative routine.',
   dutyTime_night:'from 22:00',dutyTime_board:'Wed 15:30',dutyTime_clinic:'from 08:00',dutyTime_elective:'from 07:30',dutyTime_mixed:'from 22:00',
-  atlas:'Atlas',atlasTitle:'Anatomy atlas',atlasSub:'Schematic drawings behind the cases. Tap any structure, or play “Find the structure”.',atlasExplore:'Explore',atlasQuiz:'Find the structure',atlasUsed:'{n} cases',schemaHint:'Tap a structure to see its name and a key fact.',schemaHintCase:'★ marks the structures that matter in this case. Tap any structure.',schemaNotice:'Drawn for this game; not a clinical image.',
+  atlas:'Atlas',atlasTitle:'Anatomy atlas',atlasSub:'Schematic drawings behind the cases. Tap any structure, or play “Find the structure”.',atlasExplore:'Explore',atlasQuiz:'Find the structure',atlasUsed:'{n} cases',atlasUsedOne:'{n} case',schemaHint:'Tap a structure to see its name and a key fact.',schemaHintCase:'★ marks the structures that matter in this case. Tap any structure.',schemaNotice:'Drawn for this game; not a clinical image.',
   quizPrompt:'Tap: {part}',quizRound:'Round {n} of {total}',quizRight:'Right!',quizWrong:'Not quite: that was {part}.',quizDone:'Result: {score} of {total}',quizAgain:'Play again',imageSource:'Source',imageLicense:'Licence',
 },
 de:{
@@ -548,7 +558,7 @@ de:{
   duty_night:'Nachtdienst',duty_board:'Tumorboard',duty_clinic:'Sprechstunde',duty_elective:'OP-Programm',duty_mixed:'Gemischte Rotation',
   dutyText_night:'Nur Notfälle: Kolik, Harnverhalt, Blutung, Trauma, Infektion, Notfall-OP.',dutyText_board:'Onkologische Entscheidungen: Staging, Therapiewahl, Systemtherapie.',dutyText_clinic:'Ambulante Abklärung, Beratung und Nachsorge, auch onkologisch.',dutyText_elective:'Geplante Operationen und Endoskopie: Technik, Anatomie, perioperative Routine.',
   dutyTime_night:'ab 22:00',dutyTime_board:'Mi 15:30',dutyTime_clinic:'ab 08:00',dutyTime_elective:'ab 07:30',dutyTime_mixed:'ab 22:00',
-  atlas:'Atlas',atlasTitle:'Anatomie-Atlas',atlasSub:'Schematische Zeichnungen zu den Fällen. Tippe auf eine Struktur – oder spiel „Finde die Struktur“.',atlasExplore:'Erkunden',atlasQuiz:'Finde die Struktur',atlasUsed:'{n} Fälle',schemaHint:'Tippe auf eine Struktur: Name und Merksatz erscheinen.',schemaHintCase:'★ markiert die Strukturen, auf die es in diesem Fall ankommt. Tippe auf jede Struktur.',schemaNotice:'Eigene Lernzeichnung des Spiels, kein klinisches Bild.',
+  atlas:'Atlas',atlasTitle:'Anatomie-Atlas',atlasSub:'Schematische Zeichnungen zu den Fällen. Tippe auf eine Struktur – oder spiel „Finde die Struktur“.',atlasExplore:'Erkunden',atlasQuiz:'Finde die Struktur',atlasUsed:'{n} Fälle',atlasUsedOne:'{n} Fall',schemaHint:'Tippe auf eine Struktur: Name und Merksatz erscheinen.',schemaHintCase:'★ markiert die Strukturen, auf die es in diesem Fall ankommt. Tippe auf jede Struktur.',schemaNotice:'Eigene Lernzeichnung des Spiels, kein klinisches Bild.',
   quizPrompt:'Tippe auf: {part}',quizRound:'Runde {n} von {total}',quizRight:'Richtig!',quizWrong:'Daneben – das war {part}.',quizDone:'Ergebnis: {score} von {total}',quizAgain:'Nochmal',imageSource:'Quelle',imageLicense:'Lizenz',
 },
 es:{
@@ -594,7 +604,7 @@ es:{
   duty_night:'Guardia de noche',duty_board:'Comité de tumores',duty_clinic:'Consulta',duty_elective:'Programa quirúrgico',duty_mixed:'Rotación mixta',
   dutyText_night:'Solo urgencias: cólico, retención, sangrado, traumatismo, infección, cirugía urgente.',dutyText_board:'Decisiones oncológicas: estadificación, elección del tratamiento, terapia sistémica.',dutyText_clinic:'Estudio ambulatorio, asesoramiento y seguimiento, también oncológico.',dutyText_elective:'Cirugía y endoscopia programadas: técnica, anatomía, rutina perioperatoria.',
   dutyTime_night:'desde las 22:00',dutyTime_board:'mié 15:30',dutyTime_clinic:'desde las 08:00',dutyTime_elective:'desde las 07:30',dutyTime_mixed:'desde las 22:00',
-  atlas:'Atlas',atlasTitle:'Atlas anatómico',atlasSub:'Dibujos esquemáticos de los casos. Toca cualquier estructura o juega a «Encuentra la estructura».',atlasExplore:'Explorar',atlasQuiz:'Encuentra la estructura',atlasUsed:'{n} casos',schemaHint:'Toca una estructura para ver su nombre y un dato clave.',schemaHintCase:'★ marca las estructuras clave de este caso. Toca cualquier estructura.',schemaNotice:'Dibujo didáctico propio del juego, no es una imagen clínica.',
+  atlas:'Atlas',atlasTitle:'Atlas anatómico',atlasSub:'Dibujos esquemáticos de los casos. Toca cualquier estructura o juega a «Encuentra la estructura».',atlasExplore:'Explorar',atlasQuiz:'Encuentra la estructura',atlasUsed:'{n} casos',atlasUsedOne:'{n} caso',schemaHint:'Toca una estructura para ver su nombre y un dato clave.',schemaHintCase:'★ marca las estructuras clave de este caso. Toca cualquier estructura.',schemaNotice:'Dibujo didáctico propio del juego, no es una imagen clínica.',
   quizPrompt:'Toca: {part}',quizRound:'Ronda {n} de {total}',quizRight:'¡Correcto!',quizWrong:'Casi: eso era {part}.',quizDone:'Resultado: {score} de {total}',quizAgain:'Otra vez',imageSource:'Fuente',imageLicense:'Licencia',
 }
 };
@@ -2280,7 +2290,9 @@ window.NSA_CATALOG = {"version":2,"languages":["en","de","es"],"areas":[{"id":"e
     try{if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;}catch(_){return;}
     const r=target&&target.getBoundingClientRect?target.getBoundingClientRect():{left:window.innerWidth/2-60,top:window.innerHeight/2,width:120,height:40};
     const box=document.createElement('div');box.className='splash';box.setAttribute('aria-hidden','true');
-    box.style.left=Math.round(r.left+r.width*.8)+'px';box.style.top=Math.round(r.top+r.height/2)+'px';
+    // The punchline spans 60 px left to 180 px right of the anchor; keep it on screen on phones.
+    const x=Math.min(Math.max(r.left+r.width*.8,70),Math.max(70,window.innerWidth-190));
+    box.style.left=Math.round(x)+'px';box.style.top=Math.round(r.top+r.height/2)+'px';
     let drops='';
     for(let i=0;i<18;i++){
       const angle=(-170+i*(160/17)+(Math.random()*12-6))*Math.PI/180,dist=45+Math.random()*80;
@@ -2403,9 +2415,10 @@ window.NSA_CATALOG = {"version":2,"languages":["en","de","es"],"areas":[{"id":"e
     const label=part=>loc(s.parts.find(p=>p.id===part).label),hl=highlight.filter(part=>s.parts.some(p=>p.id===part));
     const svg=s.svg.replace(/data-part="([^"]+)"/g,(match,part)=>match+' tabindex="0" role="button" aria-label="'+esc(mode==='quiz'?t('atlasQuiz'):label(part))+'"'+(hl.includes(part)?' class="hl"':''));
     const order=[...hl,...s.parts.map(p=>p.id).filter(part=>!hl.includes(part))];
+    // The note sits right under the drawing so the fact a tap reveals stays in view; the legend follows.
     return '<figure class="schema" data-schema="'+esc(s.id)+'" data-mode="'+mode+'"><figcaption><b>'+esc(loc(s.title))+'</b><small>'+esc(loc(s.caption))+' '+esc(t('schemaNotice'))+'</small></figcaption><div class="schema-svg"><svg viewBox="'+esc(s.viewBox)+'" role="group" aria-label="'+esc(loc(s.title))+'" xmlns="http://www.w3.org/2000/svg">'+svg+'</svg></div>'+
-      (mode==='quiz'?'':'<div class="schema-legend">'+order.map(part=>'<button type="button" class="schema-chip'+(hl.includes(part)?' hl':'')+'" data-legend-part="'+esc(part)+'">'+(hl.includes(part)?'★ ':'')+esc(label(part))+'</button>').join('')+'</div>')+
-      '<p class="schema-note" aria-live="polite">'+(mode==='quiz'?'':esc(t(hl.length?'schemaHintCase':'schemaHint')))+'</p></figure>';
+      '<p class="schema-note" aria-live="polite">'+(mode==='quiz'?'':esc(t(hl.length?'schemaHintCase':'schemaHint')))+'</p>'+
+      (mode==='quiz'?'':'<div class="schema-legend">'+order.map(part=>'<button type="button" class="schema-chip'+(hl.includes(part)?' hl':'')+'" data-legend-part="'+esc(part)+'">'+(hl.includes(part)?'★ ':'')+esc(label(part))+'</button>').join('')+'</div>')+'</figure>';
   }
   function caseVisuals(c) {
     const schema=c.schema&&SCHEMAS.has(c.schema.id)?schemaFigure(c.schema.id,c.schema.parts||[]):'';
@@ -2416,11 +2429,12 @@ window.NSA_CATALOG = {"version":2,"languages":["en","de","es"],"areas":[{"id":"e
     const s=SCHEMAS.get(figure.dataset.schema),part=s&&s.parts.find(p=>p.id===id);if(!part)return;
     figure.classList.add('focus');
     figure.querySelectorAll('[data-part],[data-legend-part]').forEach(el=>el.classList.toggle('on',(el.dataset.part||el.dataset.legendPart)===id));
-    figure.querySelector('.schema-note').innerHTML='<b>'+esc(loc(part.label))+'</b> – '+esc(loc(part.note));
+    const note=figure.querySelector('.schema-note');note.innerHTML='<b>'+esc(loc(part.label))+'</b> – '+esc(loc(part.note));
+    note.scrollIntoView?.({block:'nearest'});
   }
   function atlas() {
     const used=id=>C.cases.filter(c=>c.schema&&c.schema.id===id).length;
-    return '<div class="page-head"><p class="eyebrow">'+esc(t('atlas'))+'</p><h1>'+esc(t('atlasTitle'))+'</h1><p>'+esc(t('atlasSub'))+'</p></div><div class="atlas-grid">'+[...SCHEMAS.values()].map(s=>'<article class="atlas-card"><div class="atlas-thumb" aria-hidden="true"><svg viewBox="'+esc(s.viewBox)+'" xmlns="http://www.w3.org/2000/svg">'+s.svg+'</svg></div><h3>'+esc(loc(s.title))+'</h3><p>'+esc(loc(s.caption))+'</p><small>'+esc(t('atlasUsed').replace('{n}',String(used(s.id))))+' · '+s.parts.length+' ⦿</small><div class="actions"><button class="btn small quiet" data-atlas-open="'+esc(s.id)+'">'+esc(t('atlasExplore'))+'</button><button class="btn small primary" data-atlas-quiz="'+esc(s.id)+'">🎯 '+esc(t('atlasQuiz'))+'</button></div></article>').join('')+'</div>';
+    return '<div class="page-head"><p class="eyebrow">'+esc(t('atlas'))+'</p><h1>'+esc(t('atlasTitle'))+'</h1><p>'+esc(t('atlasSub'))+'</p></div><div class="atlas-grid">'+[...SCHEMAS.values()].map(s=>'<article class="atlas-card"><div class="atlas-thumb" aria-hidden="true"><svg viewBox="'+esc(s.viewBox)+'" xmlns="http://www.w3.org/2000/svg">'+s.svg+'</svg></div><h3>'+esc(loc(s.title))+'</h3><p>'+esc(loc(s.caption))+'</p><small>'+esc(t(used(s.id)===1?'atlasUsedOne':'atlasUsed').replace('{n}',String(used(s.id))))+' · '+s.parts.length+' ⦿</small><div class="actions"><button class="btn small quiet" data-atlas-open="'+esc(s.id)+'">'+esc(t('atlasExplore'))+'</button><button class="btn small primary" data-atlas-quiz="'+esc(s.id)+'">🎯 '+esc(t('atlasQuiz'))+'</button></div></article>').join('')+'</div>';
   }
   let quiz=null;
   function openAtlas(id) {
@@ -2449,13 +2463,15 @@ window.NSA_CATALOG = {"version":2,"languages":["en","de","es"],"areas":[{"id":"e
   function answerQuiz(figure,id,element) {
     if(!quiz||quiz.answered!==null||quiz.index>=quiz.rounds.length)return;
     const s=SCHEMAS.get(quiz.id),target=quiz.rounds[quiz.index],right=id===target,part=s.parts.find(p=>p.id===target);
+    if(!s.parts.some(p=>p.id===id))return;
     quiz.answered=id;if(right)quiz.score++;
     figure.classList.add('focus');
     figure.querySelector('[data-part="'+target+'"]')?.classList.add('right','on');
     if(!right)figure.querySelector('[data-part="'+id+'"]')?.classList.add('wrong');
     figure.querySelector('.schema-note').innerHTML='<b>'+esc(right?t('quizRight'):t('quizWrong').replace('{part}',loc(s.parts.find(p=>p.id===id).label)))+'</b> '+esc(loc(part.label))+': '+esc(loc(part.note));
     document.querySelector('dialog[open] .quiz-actions')?.removeAttribute('hidden');
-    document.querySelector('dialog[open] [data-action="quiz-next"]')?.focus({preventScroll:true});
+    // Focusing the button scrolls the verdict and the way forward into view on short laptop screens.
+    document.querySelector('dialog[open] [data-action="quiz-next"]')?.focus();
     sound(right?'good':'splash');if(right)celebrate(false);else splash(element);
   }
   function sourceLinks(c) { return '<div class="case-refs"><span class="label">'+esc(t(c.source?'sourceRelated':'reviewSources'))+'</span><ul>'+c.references.map(id=>{const r=C.references.find(r=>r.id===id);return r?'<li><a href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">'+esc(r.title)+' ↗</a></li>':'';}).join('')+'</ul></div>'; }

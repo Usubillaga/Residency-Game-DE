@@ -1,5 +1,27 @@
 # Validation record
 
+## Integrity review after the schema release — 5 October 2026
+
+The schema work had been interrupted several times (sub-agents stopped by rate limits, a rebuild that briefly lost CRLF endings, parallel edits). The merged state was therefore checked again:
+
+- **Reproduction:** on a fresh clone of the merge commit, `validate`, all Python, engine and cartoon tests, `build` and `package` passed. A fresh build produced byte-identical `catalog.js` and `standalone.html` (apart from line endings). All 45 SHA256 entries matched, line endings were consistent, and no skip guards or debugging leftovers remained.
+- **Review:** four independent reviewers covered:
+  - app runtime in a real browser;
+  - build and data;
+  - artefacts of the interrupted edits in all 15 schemas, which were parsed, rendered and hit-tested part by part;
+  - tests, CSS and translations.
+
+  A separate skeptic tried to refute each finding. The artefact review found nothing. Eight findings were confirmed, all in code written for the release and none caused by the interruptions. All eight are fixed:
+  1. The SVG safety check matched text patterns and could be bypassed (an event handler after a `>` inside an attribute value, or an unterminated `<img>`). `manage.py` now parses each schema as XML and whitelists the parsed elements and attributes. It rejects angle brackets, `url()` and `javascript:` in values, as well as comments and declarations. The cartoon test applies an equivalent strict grammar. The shipped schemas were clean before and after.
+  2. A drawn structure written with single quotes escaped the "every structure has a label" check, and tapping it in the quiz froze the round. Structures are now read from the parsed tree, and the quiz ignores taps on anything that is not a listed structure.
+  3. Malformed entries in `schemas.json` or `case-schemas.json` crashed `validate` with a Python traceback. They now produce a normal validation error.
+  4. On laptop screens (1024×600 to 1366×657) the quiz verdict and its *Next* button were below the visible part of the dialog. The drawing now shrinks to fit, the fact a tap reveals sits directly under the drawing, and focus scrolls the button into view.
+  5. The added *Atlas* menu entry made the header overflow at 761–816 px and at 424–432 px. The header now wraps in those ranges. A scan from 300 to 1100 px in EN, DE and ES shows no overflow on the introduction, library and atlas. The only exception is a 4-pixel overflow of the German introduction at 300 px, which predates the release.
+  6. Keyboard focus was invisible on glowing (★) structures. Focus and selection now pause the glow and show a ring.
+  7. On phones the splash punchline ran off the right edge. It is now kept on screen.
+  8. The atlas said "1 Fälle". It now uses the singular.
+- **Tests:** each fix has a regression test that fails on the previous code and passes now: 10 bypass payloads plus malformed entries in Python, and the strict SVG grammar, the quiz with an unknown tap and the singular label in the cartoon suite. Browser re-check (Chromium): the quiz verdict and button were visible at 1366×657, 1280×720 and 1024×600; the splash stayed inside at 320, 375 and 414 px; a Tab-focused glowing structure showed a distinct ring; no console errors.
+
 ## Teaching schemas, anatomy atlas and urine splash — 5 October 2026
 
 - **Feedback:** confetti now appears only for correct answers, streak milestones and promotions. Previously a sticker earned after a missed case also fired confetti; stickers now show as a toast. A wrong answer in a case, in the chief's quiz or in the anatomy quiz triggers a cartoon urine splash: droplets, a puddle, a random word such as "Platsch!" and a short splash sound. Reduced-motion settings suppress both splash and confetti.

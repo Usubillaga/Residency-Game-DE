@@ -626,6 +626,29 @@ function fakeFigure() {
   return figure;
 }
 const partIdsInSvg = svg => [...svg.matchAll(/data-part="([^"]+)"/g)].map(match => match[1]);
+// The whole SVG must consist of tags made only of whitelisted elements and double-quoted, whitelisted attributes
+// whose values contain no angle brackets, so no attribute or tag can hide after a stray ">".
+const SVG_ELEMENTS = new Set(['g', 'path', 'rect', 'circle', 'ellipse', 'line', 'polyline', 'polygon']);
+const SVG_ATTRIBUTES = new Set(['d', 'x', 'y', 'width', 'height', 'rx', 'ry', 'cx', 'cy', 'r', 'x1', 'y1', 'x2', 'y2', 'points', 'fill', 'stroke',
+  'stroke-width', 'stroke-dasharray', 'stroke-linecap', 'stroke-linejoin', 'opacity', 'fill-opacity', 'stroke-opacity', 'transform', 'data-part']);
+function strictSvgProblems(svg) {
+  const tag = /<(\/?)([a-z]+)((?:\s+[a-z][a-z0-9-]*="[^"<>]*")*)\s*(\/?)>/y;
+  const problems = [];
+  let at = 0;
+  while (at < svg.length) {
+    if (/\s/.test(svg[at])) { at++; continue; }
+    tag.lastIndex = at;
+    const match = tag.exec(svg);
+    if (!match) { problems.push('unparsable markup at ' + at + ': ' + svg.slice(at, at + 40)); break; }
+    if (!SVG_ELEMENTS.has(match[2])) problems.push('element <' + match[2] + '>');
+    for (const attribute of match[3].matchAll(/([a-z][a-z0-9-]*)="([^"]*)"/g)) {
+      if (!SVG_ATTRIBUTES.has(attribute[1])) problems.push('attribute ' + attribute[1]);
+      if (/url\(|javascript:/i.test(attribute[2])) problems.push('unsafe value in ' + attribute[1]);
+    }
+    at = tag.lastIndex;
+  }
+  return problems;
+}
 
 test('teaching schemas are safe, every drawn structure is explained, and linked cases highlight real structures', () => {
   const schemas = catalog.schemas;
@@ -634,7 +657,7 @@ test('teaching schemas are safe, every drawn structure is explained, and linked 
   for (const s of schemas) {
     assert.equal(s.viewBox, '0 0 600 420', s.id + ' uses the shared canvas');
     shape({ title: s.title, caption: s.caption, parts: s.parts.map(p => ({ label: p.label, note: p.note })) }, s.id);
-    assert.doesNotMatch(s.svg, /<(?:text|script|style|image|foreignObject|use|a)\b|\son\w+=|url\(|href|javascript:/i, s.id + ' contains only plain shapes');
+    assert.deepEqual(strictSvgProblems(s.svg), [], s.id + ' contains only plain shapes');
     const ids = s.parts.map(p => p.id);
     assert.equal(new Set(ids).size, ids.length, s.id + ' part ids are unique');
     assert.deepEqual([...new Set(partIdsInSvg(s.svg))].sort(), [...ids].sort(), s.id + ' draws exactly the structures it explains');
@@ -671,6 +694,13 @@ test('a case schema glows on its key structures, and the quiz view never names t
   assert.ok(labels.every(label => label === data.NSA_TEXT.de.atlasQuiz), 'Screen-reader labels do not reveal the structure names in the quiz');
   for (const part of s.parts) assert.ok(!quiz.includes('>' + escape(part.label.de) + '<'), 'The quiz markup does not print ' + part.label.de);
   assert.ok(api.atlas().split('class="atlas-card"').length - 1 === catalog.schemas.length, 'The atlas shows every schema');
+  const single = catalog.schemas.find(s => catalog.cases.filter(c => c.schema && c.schema.id === s.id).length === 1);
+  if (single) {
+    const card = api.atlas().split('class="atlas-card"').find(html => html.includes('data-atlas-quiz="' + single.id + '"'));
+    assert.match(card, /<small>1 Fall ·/, 'One linked case reads "1 Fall", not "1 Fälle"');
+  }
+  assert.deepEqual(strictSvgProblems('<g data-part="a"><circle cx="1" cy="1" r="1" fill="#f00>"/onclick="x()"/></g>').length > 0, true, 'The strict check catches attributes hidden after a ">" in a value');
+  assert.ok(strictSvgProblems('<img/src="x"/onerror="x()"').length > 0, 'The strict check catches an unterminated foreign tag');
 });
 
 test('the find-the-structure quiz asks five different structures, scores each round once and rewards a perfect run', () => {
@@ -683,6 +713,8 @@ test('the find-the-structure quiz asks five different structures, scores each ro
   assert.ok(rounds.every(id => s.parts.some(p => p.id === id)));
   const wrong = s.parts.find(p => p.id !== rounds[0]).id;
   let figure = fakeFigure();
+  api.answerQuiz(figure, 'not-a-structure', null);
+  assert.equal(api.quiz().answered, null, 'A tap on something that is not a structure does not use up the round');
   api.answerQuiz(figure, wrong, null);
   api.answerQuiz(figure, rounds[0], null);
   assert.equal(api.quiz().score, 0, 'A second tap in the same round changes nothing');

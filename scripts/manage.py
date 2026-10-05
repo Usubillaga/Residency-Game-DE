@@ -13,6 +13,7 @@ import random
 import re
 import sys
 import zipfile
+import xml.etree.ElementTree as ElementTree
 from datetime import date
 from functools import partial
 from html import escape
@@ -307,6 +308,24 @@ MEDIA_TYPES = {".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg",
 MEDIA_MAX_BYTES = 400_000
 
 
+def svg_tree(svg: str, where: str):
+    """Parse the inner SVG strictly. The browser's HTML parser builds the same tree from well-formed markup
+    without comments, processing instructions or angle brackets inside attribute values."""
+    require("<!" not in svg and "<?" not in svg, f"{where}.svg: comments, CDATA and declarations are not allowed")
+    try:
+        root = ElementTree.fromstring("<svg>" + svg + "</svg>")
+    except ElementTree.ParseError as error:
+        raise ValidationError(f"{where}.svg: not well-formed ({error})") from None
+    for element in root.iter():
+        if element is not root:
+            require(element.tag in SCHEMA_ELEMENTS, f"{where}.svg: element <{element.tag}> is not allowed")
+        require(not (element.text or "").strip() and not (element.tail or "").strip(), f"{where}.svg: text is not allowed")
+        for name, value in element.attrib.items():
+            require(name in SCHEMA_ATTRIBUTES, f"{where}.svg: attribute {name} is not allowed")
+            require(not re.search(r"[<>]|url\(|javascript:", value, re.I), f"{where}.svg: attribute {name} has an unsafe value")
+    return root
+
+
 def validate_schema(schema, where: str) -> None:
     """Teaching schemas are inline SVG, so only inert drawing elements and attributes are accepted."""
     require(isinstance(schema, dict), f"{where}: expected an object")
@@ -317,20 +336,23 @@ def validate_schema(schema, where: str) -> None:
     svg = schema.get("svg")
     nonempty(svg, f"{where}.svg")
     require(len(svg) <= 40000, f"{where}.svg: too long")
-    require(not re.search(r"\son[a-z]+\s*=|url\(|javascript:|href", svg, re.I), f"{where}.svg: scripts, links and url() are not allowed")
-    for tag in re.finditer(r"<\s*(/?)\s*([A-Za-z][\w-]*)([^>]*)>", svg):
-        require(tag[2] in SCHEMA_ELEMENTS, f"{where}.svg: element <{tag[2]}> is not allowed")
-        for attribute in re.finditer(r"([A-Za-z_:][\w:.-]*)\s*=", tag[3]):
-            require(attribute[1] in SCHEMA_ATTRIBUTES, f"{where}.svg: attribute {attribute[1]} is not allowed")
+    tree = svg_tree(svg, where)
+    groups = [element for element in tree.iter() if "data-part" in element.attrib]
+    drawn = {element.get("data-part") for element in groups}
+    for group in groups:
+        require(group.tag == "g", f"{where}.svg: data-part belongs on a <g> group")
+        nested = [element for element in group.iter() if element is not group and "data-part" in element.attrib]
+        require(not nested, f"{where}.svg: data-part groups must not be nested")
     parts = schema.get("parts")
     require(isinstance(parts, list) and 4 <= len(parts) <= 16, f"{where}.parts: expected 4..16 parts")
-    drawn = set(re.findall(r'data-part="([^"]+)"', svg))
-    ids = [part.get("id") for part in parts]
-    require(len(set(ids)) == len(ids), f"{where}.parts: duplicate part ids")
     for index, part in enumerate(parts):
+        require(isinstance(part, dict), f"{where}.parts[{index}]: expected an object")
+        require(bool(re.fullmatch(r"[a-z0-9-]+", str(part.get("id", "")))), f"{where}.parts[{index}].id: expected a kebab-case id")
         localised(part.get("label"), f"{where}.parts[{index}].label")
         localised(part.get("note"), f"{where}.parts[{index}].note")
-        require(part.get("id") in drawn, f"{where}.parts[{index}]: {part.get('id')!r} is not drawn")
+        require(part["id"] in drawn, f"{where}.parts[{index}]: {part['id']!r} is not drawn")
+    ids = [part["id"] for part in parts]
+    require(len(set(ids)) == len(ids), f"{where}.parts: duplicate part ids")
     require(drawn <= set(ids), f"{where}.svg: drawn parts without a label: {sorted(drawn - set(ids))}")
     require(isinstance(schema.get("domains"), list), f"{where}.domains: expected a list")
 
@@ -351,9 +373,10 @@ def load_visuals(root: Path, cases: list) -> tuple[list, dict, dict]:
     for case_id, link in links.items():
         where = f"case-schemas.json[{case_id!r}]"
         require(case_id in by_id, f"{where}: unknown case")
-        require(isinstance(link, dict) and link.get("schema") in parts, f"{where}.schema: unknown schema")
+        require(isinstance(link, dict) and isinstance(link.get("schema"), str) and link["schema"] in parts, f"{where}.schema: unknown schema")
         highlight = link.get("parts", [])
-        require(isinstance(highlight, list) and len(highlight) <= 4, f"{where}.parts: expected up to 4 part ids")
+        require(isinstance(highlight, list) and len(highlight) <= 4 and all(isinstance(part, str) for part in highlight),
+                f"{where}.parts: expected up to 4 part ids")
         require(set(highlight) <= parts[link["schema"]], f"{where}.parts: unknown part of {link['schema']}")
     media_rows = read_json(root / "data" / "case-media.json") if (root / "data" / "case-media.json").exists() else []
     require(isinstance(media_rows, list), "case-media.json: expected an array")

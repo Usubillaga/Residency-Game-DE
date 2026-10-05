@@ -187,6 +187,40 @@ class AutomationTests(unittest.TestCase):
         with self.assertRaisesRegex(manage.ValidationError, "unknown part"):
             manage.load_visuals(self.root, manage.load_and_validate(self.root, check_assets=False)[0])
 
+    def test_schema_safety_check_parses_the_markup_instead_of_pattern_matching(self):
+        # Each payload slipped past the earlier pattern-based check and would have run script or broken the quiz.
+        bypasses = (
+            ('<g data-part="p9"><circle cx="1" cy="1" r="1" fill="#f00>"/onclick="alert(1)"/></g>', "unsafe value|not well-formed"),
+            ('<g data-part="p9"><circle cx="1" cy="1" r="1" fill="#f00>"onmouseover="alert(1)"/></g>', "not well-formed|unsafe value"),
+            ('<img/src="x"/onerror="alert(document.domain)"', "not well-formed"),
+            ('<g data-part="p0"><image href="x.png"/></g>', "element <image>"),
+            ("<g data-part='ghost'><circle cx='1' cy='1' r='1'/></g>", "without a label"),
+            ('<g data-part = "ghost"><circle cx="1" cy="1" r="1"/></g>', "without a label"),
+            ('<!-- --><circle cx="1" cy="1" r="1"/>', "comments"),
+            ('<circle cx="1" cy="1" r="1" fill="url(#x)"/>', "unsafe value"),
+            ('<g data-part="p0"><g data-part="p1"/></g>', "nested"),
+            ('<circle cx="1" cy="1" r="1" data-part="p9"/>', "<g> group"),
+        )
+        for extra, message in bypasses:
+            with self.subTest(extra=extra):
+                self.write_schema(extra)
+                with self.assertRaisesRegex(manage.ValidationError, message):
+                    manage.load_visuals(self.root, manage.load_and_validate(self.root, check_assets=False)[0])
+
+    def test_malformed_schema_and_link_entries_are_reported_not_crashed(self):
+        cases = manage.load_and_validate(self.root, check_assets=False)[0]
+        self.write_schema()
+        schema = manage.read_json(self.root / "data" / "schemas.json")
+        manage.write_json(self.root / "data" / "schemas.json", [dict(schema[0], parts=["a", "b", "c", "d"])])
+        with self.assertRaisesRegex(manage.ValidationError, r"parts\[0\]: expected an object"):
+            manage.load_visuals(self.root, cases)
+        self.write_schema()
+        for link, message in (({"schema": ["fixture-schema"]}, "unknown schema"), ({"schema": "fixture-schema", "parts": [{"id": "p1"}]}, "up to 4 part ids")):
+            with self.subTest(link=link):
+                manage.write_json(self.root / "data" / "case-schemas.json", {"emergency-fixture-1": link})
+                with self.assertRaisesRegex(manage.ValidationError, message):
+                    manage.load_visuals(self.root, cases)
+
     def test_schedule_rejects_noncanonical_date(self):
         with self.assertRaisesRegex(manage.ValidationError, "YYYY-MM-DD"):
             manage.schedule(self.root, "20261005", "seed", self.root / "outputs" / "shift.json")
