@@ -1,5 +1,18 @@
 # Validation record
 
+## Duties: night shift, tumour board, clinic and elective list — 5 October 2026
+
+Sessions previously drew two cases from each department. A night shift could therefore contain oncology follow-up or elective operative technique. Every case now has one `duty`, and a session draws only that duty.
+
+- **Rules:** classification follows the decision the question asks for. *Night* means acute situations that must be handled now. *Board* means oncological staging and treatment decisions. *Clinic* means outpatient work-up, counselling and follow-up, including oncology. *Elective* means planned surgery and endoscopy. Explicit tie-breaks cover oncology plus technique (elective), oncology plus follow-up (clinic), acute complications after elective surgery (night) and injuries found during another specialty's operation (night).
+- **Classification:** two independent classifiers, one question-first and one setting-first, assigned all 297 cases. They agreed on 288; a judge resolved the other nine.
+- **Review:** the night pool and all boundary groups were read in full: stones and infections outside the night shift, operative cases in the tumour board, and intraoperative complications. One change was made: `bank-uro-fun-00011`, autonomic dysreflexia during urodynamics, moved from night to clinic because it happens in the urodynamics laboratory.
+- **Result:** night 52, tumour board 90, clinic 100, elective 55. Every duty has enough cases for several ten-case sessions.
+- **Checks:** validation; 32 Python tests (duty validation and `schedule --duty` added); 41 engine tests (duty scheduling draws only its duty, is reproducible, rotates topics, rejects unknown duties, and every case has a duty); 26 cartoon tests (duty texts in EN/DE/ES, awake attending in daytime, conference room with every case as a folder and no doors).
+- **Browser:** Chromium, DE. Each duty started with its own clock (22:00, 15:30, 08:00, 07:30) and drew ten cases of that duty only. The library's tumour-board filter showed 90 cases. There was no horizontal overflow at 360 pixels and no console errors.
+
+The duty assignment is an educational sorting of the cases, not a clinical triage rule.
+
 ## Patient names for imported cases — 5 October 2026
 
 The 267 imported questions previously showed numbered teaching identifiers (`Uro-001` …). They now show fictional names from `data/patient-names.json`, which the importer applies.

@@ -33,6 +33,7 @@ AREAS = [
 ]
 AREA_IDS = tuple(area["id"] for area in AREAS)
 CASE_FILES = tuple(f"{area}.json" for area in AREA_IDS)
+DUTIES = ("night", "board", "clinic", "elective")
 AGE_BANDS = {"newborn", "infant", "child", "teen", "young", "adult", "senior", "elderly", "unknown"}
 IGNORED_DIRS = {".git", "__pycache__", ".pytest_cache", ".cache", "cache", ".venv", "venv", "node_modules", "work", "tmp", "temp"}
 
@@ -224,6 +225,8 @@ def load_and_validate(root: Path = ROOT, *, check_assets: bool = True):
             require(case.get("area") == area, f"{where}.area: expected {area!r}")
             require(type(case.get("level")) is int and case["level"] in (1, 2, 3), f"{where}.level: expected 1, 2 or 3")
             require(case.get("acuity") in ("routine", "urgent", "critical"), f"{where}.acuity: invalid acuity")
+            if "duty" in case:
+                require(case["duty"] in DUTIES, f"{where}.duty: expected one of {', '.join(DUTIES)}")
             patient = case.get("patient")
             require(isinstance(patient, dict), f"{where}.patient: expected an object")
             nonempty(patient.get("name"), f"{where}.patient.name")
@@ -342,7 +345,7 @@ def build(root: Path = ROOT) -> dict:
     return catalog
 
 
-def schedule(root: Path, chosen_date: str, seed: str, output: Path) -> dict:
+def schedule(root: Path, chosen_date: str, seed: str, output: Path, duty: str | None = None) -> dict:
     require(bool(re.fullmatch(r"\d{4}-\d{2}-\d{2}", chosen_date)), "--date must be YYYY-MM-DD")
     try:
         date.fromisoformat(chosen_date)
@@ -350,6 +353,8 @@ def schedule(root: Path, chosen_date: str, seed: str, output: Path) -> dict:
         raise ValidationError("--date must be YYYY-MM-DD") from exc
     cases, _ = load_and_validate(root, check_assets=False)
     generator = random.Random(f"night-shift-academy:v2:{chosen_date}:{seed}")
+    if duty is not None:
+        return duty_schedule(cases, generator, chosen_date, seed, duty, output)
     chosen = []
     for area in AREA_IDS:
         pool = sorted((case for case in cases if case["area"] == area), key=lambda case: case["id"])
@@ -362,6 +367,28 @@ def schedule(root: Path, chosen_date: str, seed: str, output: Path) -> dict:
         chosen.extend((first["id"], second["id"]))
     generator.shuffle(chosen)
     result = {"version": 2, "date": chosen_date, "seed": seed, "caseIds": chosen}
+    write_json(output, result)
+    return result
+
+
+def duty_schedule(cases, generator, chosen_date: str, seed: str, duty: str, output: Path) -> dict:
+    """Ten cases of one duty, rotating through topics so a shift does not repeat one subject."""
+    require(duty in DUTIES, f"--duty must be one of {', '.join(DUTIES)}")
+    groups: dict[str, list[str]] = {}
+    for case in sorted((case for case in cases if case.get("duty") == duty), key=lambda case: case["id"]):
+        key = case["source"]["domain"] if case.get("source") else "story-" + case["area"]
+        groups.setdefault(key, []).append(case["id"])
+    require(groups, f"No cases are assigned to the {duty} duty")
+    queues = list(groups.values())
+    for queue in queues:
+        generator.shuffle(queue)
+    generator.shuffle(queues)
+    chosen: list[str] = []
+    while len(chosen) < 10 and any(queues):
+        for queue in queues:
+            if queue and len(chosen) < 10:
+                chosen.append(queue.pop())
+    result = {"version": 2, "date": chosen_date, "seed": seed, "duty": duty, "caseIds": chosen}
     write_json(output, result)
     return result
 
@@ -461,6 +488,7 @@ def main(argv=None) -> int:
     shifting = subcommands.add_parser("schedule", help="Create a reproducible, balanced 10-case shift")
     shifting.add_argument("--date", default=date.today().isoformat())
     shifting.add_argument("--seed", default="academy")
+    shifting.add_argument("--duty", choices=DUTIES, help="Draw only this duty's cases (night, board, clinic or elective)")
     shifting.add_argument("--output", type=Path, default=ROOT / "outputs" / "daily-shift.json")
     packing = subcommands.add_parser("package", help="Build a reproducible ZIP with SHA256 manifest")
     packing.add_argument("--output", type=Path, default=ROOT.parent / "night-shift-academy.zip")
@@ -476,8 +504,8 @@ def main(argv=None) -> int:
             catalog = build()
             print(f"Built catalog.js and standalone.html with {len(catalog['cases'])} cases.")
         elif args.command == "schedule":
-            result = schedule(ROOT, args.date, args.seed, args.output)
-            print(f"Saved {len(result['caseIds'])} cases (2 per area) to {args.output}.")
+            result = schedule(ROOT, args.date, args.seed, args.output, args.duty)
+            print(f"Saved {len(result['caseIds'])} cases ({'duty ' + args.duty if args.duty else '2 per area'}) to {args.output}.")
         elif args.command == "package":
             manifest = package(ROOT, args.output)
             print(f"Packaged {len(manifest)} files plus SHA256.json in {args.output}.")

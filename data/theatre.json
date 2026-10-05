@@ -4,6 +4,7 @@
     "area": "theatre",
     "level": 1,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Laura Schmidt",
       "age": 60,
@@ -236,6 +237,7 @@
     "area": "theatre",
     "level": 2,
     "acuity": "urgent",
+    "duty": "elective",
     "patient": {
       "name": "Carlos Méndez",
       "age": 49,
@@ -468,6 +470,7 @@
     "area": "theatre",
     "level": 2,
     "acuity": "urgent",
+    "duty": "elective",
     "patient": {
       "name": "Jonas Richter",
       "age": 57,
@@ -702,6 +705,7 @@
     "area": "theatre",
     "level": 2,
     "acuity": "urgent",
+    "duty": "elective",
     "patient": {
       "name": "Isabel García",
       "age": 68,
@@ -935,6 +939,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "critical",
+    "duty": "night",
     "patient": {
       "name": "Marta Vogel",
       "age": 64,
@@ -1168,6 +1173,7 @@
     "area": "theatre",
     "level": 2,
     "acuity": "urgent",
+    "duty": "night",
     "patient": {
       "name": "Stefan Braun",
       "age": 71,
@@ -1401,6 +1407,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Martina Wolter",
       "age": 58,
@@ -1546,6 +1553,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Niklas Zander",
       "age": 34,
@@ -1693,6 +1701,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Luis Naumann",
       "age": 30,
@@ -1874,6 +1883,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Nikos Ioannou",
       "age": 28,
@@ -2021,6 +2031,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Dirk Ott",
       "age": null,
@@ -2166,6 +2177,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Christian Metz",
       "age": null,
@@ -2311,6 +2323,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Piotr Kowalczyk",
       "age": 33,
@@ -2456,6 +2469,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Florian Sachs",
       "age": null,
@@ -2607,6 +2621,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Lennart Thieme",
       "age": 28,
@@ -2775,6 +2790,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Samir Khalil",
       "age": 29,
@@ -2956,6 +2972,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Bilal Nasser",
       "age": 31,
@@ -3124,6 +3141,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Marco Fuchs",
       "age": 38,
@@ -3292,6 +3310,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Niklas Busch",
       "age": 32,
@@ -3460,6 +3479,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Eduard Dyck",
       "age": 26,
@@ -3641,6 +3661,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Moritz Bergmann",
       "age": null,
@@ -3822,6 +3843,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Giannis Georgiou",
       "age": 28,
@@ -3996,6 +4018,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Anton Mohr",
       "age": null,
@@ -4141,6 +4164,7 @@
     "area": "theatre",
     "level": 2,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Kim Mayer",
       "age": null,
@@ -4290,6 +4314,7 @@
     "area": "theatre",
     "level": 2,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Sascha Plath",
       "age": null,
@@ -4439,6 +4464,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Marion Nagel",
       "age": 57,
@@ -4586,6 +4612,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Joachim Huber",
       "age": 60,
@@ -4733,6 +4760,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Peter Schubert",
       "age": 66,
@@ -4880,6 +4908,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Andreas Horn",
       "age": 67,
@@ -5029,6 +5058,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Tobias Schreiber",
       "age": null,
@@ -5174,6 +5204,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Robin Ahrens",
       "age": null,
@@ -5319,6 +5350,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Kai Bender",
       "age": null,
@@ -5464,6 +5496,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Elias Knapp",
       "age": 29,
@@ -5609,6 +5642,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Jan Schlegel",
       "age": null,
@@ -5754,6 +5788,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Robin Kramer",
       "age": null,
@@ -5899,6 +5934,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Hannah Kuhn",
       "age": 34,
@@ -6044,6 +6080,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Kai Graf",
       "age": null,
@@ -6189,6 +6226,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "night",
     "patient": {
       "name": "Kim Göbel",
       "age": null,
@@ -6334,6 +6372,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Yusuf Koç",
       "age": null,
@@ -6479,6 +6518,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Toni Brinkmann",
       "age": null,
@@ -6624,6 +6664,7 @@
     "area": "theatre",
     "level": 2,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Oliver Claßen",
       "age": null,
@@ -6769,6 +6810,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Diego Martínez",
       "age": null,
@@ -6914,6 +6956,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Matthias Rademacher",
       "age": null,
@@ -7059,6 +7102,7 @@
     "area": "theatre",
     "level": 2,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Sven Baumann",
       "age": null,
@@ -7204,6 +7248,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Michael Winter",
       "age": 62,
@@ -7362,6 +7407,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Markus Krüger",
       "age": null,
@@ -7507,6 +7553,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Christian Zeller",
       "age": null,
@@ -7652,6 +7699,7 @@
     "area": "theatre",
     "level": 2,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Sebastian Riedel",
       "age": null,
@@ -7797,6 +7845,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Abteilungsbesprechung",
       "age": null,
@@ -7960,6 +8009,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Joachim Trautmann",
       "age": 68,
@@ -8134,6 +8184,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Rainer Schulze",
       "age": 66,
@@ -8308,6 +8359,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Uwe Brandt",
       "age": 74,
@@ -8482,6 +8534,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Mahmoud Farah",
       "age": 61,
@@ -8656,6 +8709,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Abdullah Mansour",
       "age": 70,
@@ -8830,6 +8884,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Fabian Rausch",
       "age": 29,
@@ -8998,6 +9053,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Khaled Aziz",
       "age": 58,
@@ -9143,6 +9199,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Marco Nowotny",
       "age": 54,
@@ -9288,6 +9345,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Norbert Schmitz",
       "age": 63,
@@ -9433,6 +9491,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Matthias Möller",
       "age": 38,
@@ -9584,6 +9643,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Reinhard Jäger",
       "age": 55,
@@ -9729,6 +9789,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Sandra Hanke",
       "age": 51,
@@ -9874,6 +9935,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Andrzej Kaczmarek",
       "age": 68,
@@ -10025,6 +10087,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Chiara Colombo",
       "age": 47,
@@ -10170,6 +10233,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Lisa Brendel",
       "age": 31,
@@ -10315,6 +10379,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Marvin Koch",
       "age": 26,
@@ -10460,6 +10525,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Alex Stahl",
       "age": null,
@@ -10605,6 +10671,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Thu Trang Pham",
       "age": 52,
@@ -10750,6 +10817,7 @@
     "area": "theatre",
     "level": 3,
     "acuity": "critical",
+    "duty": "night",
     "patient": {
       "name": "Eike Krämer",
       "age": null,
@@ -10895,6 +10963,7 @@
     "area": "theatre",
     "level": 2,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Uli Janssen",
       "age": null,

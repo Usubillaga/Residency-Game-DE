@@ -188,9 +188,9 @@ function portrait(o, expr = 'neutral', size = 96, opt = {}) {
     chief:{skin:'#f0caa8',hair:'sidepart',hairColor:'#d9dde6',browColor:'#c9ccd6',bushy:true,glasses:true,bowtie:true,outfit:'coatsuit',bg:'#9b3d3d'}
   };
   const WORDS = {
-    en:{areas:['Emergency','Ward','Clinic','Endoscopy','Theatre'],nurse:'Nurse',attending:'Attending',chief:'The chief',player:'You',coffee:'Coffee break',night:'UROLOGY · NIGHT SHIFT',stage:'Cartoon hospital: choose a department, a patient or the coffee machine',hero:'Your night team in a cartoon hospital, with a sleepy attending, a helpful nurse and a stern chief',welcome:'First night. Fresh scrubs. Very old coffee.',nurseLine:'Two hands. Five doors. We have got this.',chiefLine:'My question has three subquestions.',sleep:'ON CALL',paper:'PAPERWORK',waiting:'Not here yet',finished:'Case reviewed',available:'Open the chart',empty:'Quiet room. The pager disagrees.',routine:'Routine',urgent:'Urgent',critical:'Critical',station:'NURSING STATION',machine:'COFFEE'},
-    de:{areas:['Notaufnahme','Station','Ambulanz','Endoskopie','OP-Saal'],nurse:'Pflege',attending:'Oberarzt',chief:'Der Chef',player:'Du',coffee:'Kaffeepause',night:'UROLOGIE · NACHTDIENST',stage:'Cartoon-Krankenhaus: Bereich, Patient oder Kaffeemaschine auswählen',hero:'Dein Nachtteam im Cartoon-Krankenhaus mit schläfrigem Oberarzt, hilfsbereiter Pflege und strengem Chef',welcome:'Erste Nacht. Frische Kittel. Sehr alter Kaffee.',nurseLine:'Zwei Hände. Fünf Türen. Das schaffen wir.',chiefLine:'Meine Frage hat drei Unterfragen.',sleep:'BEREITSCHAFT',paper:'PAPIERKRAM',waiting:'Noch nicht da',finished:'Fall besprochen',available:'Akte öffnen',empty:'Ruhiger Raum. Der Pager sieht das anders.',routine:'Regulär',urgent:'Dringlich',critical:'Kritisch',station:'PFLEGESTÜTZPUNKT',machine:'KAFFEE'},
-    es:{areas:['Urgencias','Planta','Consulta','Endoscopia','Quirófano'],nurse:'Enfermería',attending:'Adjunto',chief:'El jefe',player:'Tú',coffee:'Pausa para café',night:'UROLOGÍA · GUARDIA',stage:'Hospital de dibujos: elige un área, un paciente o la cafetera',hero:'Tu equipo nocturno en un hospital de dibujos, con un adjunto somnoliento, enfermería colaboradora y un jefe serio',welcome:'Primera noche. Pijama nuevo. Café muy viejo.',nurseLine:'Dos manos. Cinco puertas. Podemos hacerlo.',chiefLine:'Mi pregunta tiene tres subpreguntas.',sleep:'DE GUARDIA',paper:'PAPELEO',waiting:'Aún no ha llegado',finished:'Caso revisado',available:'Abrir historia',empty:'Sala tranquila. El busca no está de acuerdo.',routine:'Habitual',urgent:'Urgente',critical:'Crítico',station:'CONTROL DE ENFERMERÍA',machine:'CAFÉ'}
+    en:{areas:['Emergency','Ward','Clinic','Endoscopy','Theatre'],nurse:'Nurse',attending:'Attending',chief:'The chief',player:'You',coffee:'Coffee break',night:'UROLOGY · NIGHT SHIFT',room:'Conference room',stage:'Cartoon hospital: choose a department, a patient or the coffee machine',hero:'Your night team in a cartoon hospital, with a sleepy attending, a helpful nurse and a stern chief',welcome:'First night. Fresh scrubs. Very old coffee.',nurseLine:'Two hands. Five doors. We have got this.',chiefLine:'My question has three subquestions.',sleep:'ON CALL',paper:'PAPERWORK',waiting:'Not here yet',finished:'Case reviewed',available:'Open the chart',empty:'Quiet room. The pager disagrees.',routine:'Routine',urgent:'Urgent',critical:'Critical',station:'NURSING STATION',machine:'COFFEE'},
+    de:{areas:['Notaufnahme','Station','Ambulanz','Endoskopie','OP-Saal'],nurse:'Pflege',attending:'Oberarzt',chief:'Der Chef',player:'Du',coffee:'Kaffeepause',night:'UROLOGIE · NACHTDIENST',stage:'Cartoon-Krankenhaus: Bereich, Patient oder Kaffeemaschine auswählen',hero:'Dein Nachtteam im Cartoon-Krankenhaus mit schläfrigem Oberarzt, hilfsbereiter Pflege und strengem Chef',welcome:'Erste Nacht. Frische Kittel. Sehr alter Kaffee.',nurseLine:'Zwei Hände. Fünf Türen. Das schaffen wir.',chiefLine:'Meine Frage hat drei Unterfragen.',sleep:'BEREITSCHAFT',room:'Konferenzraum',paper:'PAPIERKRAM',waiting:'Noch nicht da',finished:'Fall besprochen',available:'Akte öffnen',empty:'Ruhiger Raum. Der Pager sieht das anders.',routine:'Regulär',urgent:'Dringlich',critical:'Kritisch',station:'PFLEGESTÜTZPUNKT',machine:'KAFFEE'},
+    es:{areas:['Urgencias','Planta','Consulta','Endoscopia','Quirófano'],nurse:'Enfermería',attending:'Adjunto',chief:'El jefe',player:'Tú',coffee:'Pausa para café',night:'UROLOGÍA · GUARDIA',room:'Sala de sesiones',stage:'Hospital de dibujos: elige un área, un paciente o la cafetera',hero:'Tu equipo nocturno en un hospital de dibujos, con un adjunto somnoliento, enfermería colaboradora y un jefe serio',welcome:'Primera noche. Pijama nuevo. Café muy viejo.',nurseLine:'Dos manos. Cinco puertas. Podemos hacerlo.',chiefLine:'Mi pregunta tiene tres subpreguntas.',sleep:'DE GUARDIA',paper:'PAPELEO',waiting:'Aún no ha llegado',finished:'Caso revisado',available:'Abrir historia',empty:'Sala tranquila. El busca no está de acuerdo.',routine:'Habitual',urgent:'Urgente',critical:'Crítico',station:'CONTROL DE ENFERMERÍA',machine:'CAFÉ'}
   };
   const AREAS = ['emergency','ward','clinic','endoscopy','theatre'];
   const lang = language => WORDS[language] || WORDS.en;
@@ -248,6 +248,34 @@ function portrait(o, expr = 'neutral', size = 96, opt = {}) {
       '<circle cx="'+(width-37)+'" cy="32" r="17" fill="#fff2b6"/><circle cx="'+(width-28)+'" cy="25" r="15" fill="#14204a"/>'+
       [0,1,2,3,4,5].map(i=>'<circle cx="'+(15+(i*39)%(width-20))+'" cy="'+(14+(i*23)%(height-20))+'" r="2" fill="#f5eddb"/>').join('')+
       '<path d="M'+(width/2)+' 0V'+height+'M0 '+(height/2)+'H'+width+'" stroke="#edf2f8" stroke-width="5"/><rect width="'+width+'" height="'+height+'" rx="12" fill="none" '+st(4)+'/></g>';
+  }
+  function dayWindow(x,y,width,height) {
+    return '<g transform="translate('+x+' '+y+')"><rect width="'+width+'" height="'+height+'" rx="12" fill="#a8daf2" '+st(4)+'/>'+
+      '<circle cx="'+(width-36)+'" cy="33" r="17" fill="#ffd25e" '+st(2)+'/>'+
+      '<path d="M16 '+(height-30)+'q10-15 26-6q10-13 26-2q15-1 13 13H14q-7-1 2-5Z" fill="#fff" '+st(2)+'/>'+
+      '<path d="M'+(width/2)+' 0V'+height+'M0 '+(height/2)+'H'+width+'" stroke="#edf2f8" stroke-width="5"/><rect width="'+width+'" height="'+height+'" rx="12" fill="none" '+st(4)+'/></g>';
+  }
+  function boardScreen() {
+    // The tumour board's projector: a cartoon cross-section, never a real image.
+    return '<g transform="translate(560 30)"><rect width="560" height="170" rx="12" fill="#283249" '+st(4)+'/><rect x="14" y="12" width="532" height="136" rx="8" fill="#3f4e72"/>'+
+      '<ellipse cx="150" cy="80" rx="88" ry="56" fill="#9aa6bf" '+st(3)+'/><ellipse cx="112" cy="84" rx="22" ry="30" fill="#cfd6e4" '+st(2)+'/><ellipse cx="188" cy="84" rx="22" ry="30" fill="#cfd6e4" '+st(2)+'/>'+
+      '<circle cx="196" cy="72" r="9" fill="#e9a04f" '+st(2)+'/><path d="M196 72L262 34" stroke="#ffcf5a" stroke-width="4"/>'+
+      '<path d="M300 46H500M300 76H470M300 106H486" stroke="#9fb0cf" stroke-width="9" stroke-linecap="round"/><path d="M300 136H420" stroke="#ffcf5a" stroke-width="9" stroke-linecap="round"/>'+
+      '<path d="M120 0V-30M440 0V-30" '+st(4)+'/></g>';
+  }
+  function boardFolder(p,x,width,area,selectedId,language) {
+    const w=lang(language), look=patientLook(p.id,p), available=p.available!==false, selected=p.id===selectedId||p.selected;
+    const expr=p.finished?'neutral':p.feedback?expression(p.feedback):p.acuity==='critical'?'ill':p.acuity==='urgent'?'worried':'neutral';
+    const fill=p.acuity==='critical'?'#d35468':p.acuity==='urgent'?'#e9a04f':'#57b997';
+    const name=String(p.name||p.id),label=name+(p.age===null||p.age===undefined?'':' · '+p.age)+' · '+w[p.finished?'finished':available?'available':'waiting'];
+    return '<g class="scene-hit scene-patient '+(selected?'selected ':'')+(available?'':'future')+'" transform="translate('+x+' 0)" role="button" tabindex="'+(available?0:-1)+'" aria-disabled="'+(!available)+'" aria-label="'+escape(label)+'" aria-pressed="'+!!selected+'" data-scene-patient="'+escape(p.id)+'"><title>'+escape(label)+'</title>'+
+      '<rect x="4" y="195" width="'+(width-8)+'" height="226" rx="15" fill="#fff9e8" fill-opacity="'+(selected?'.60':'.22')+'" stroke="'+(selected?'#b58228':'#66748f')+'" stroke-width="'+(selected?'4':'2')+'"/>'+
+      '<rect x="16" y="199" width="'+(width-32)+'" height="25" rx="8" fill="'+fill+'" '+st(2)+'/>'+text(width/2,218,p.finished?'✓ '+w.finished:w[p.acuity]||w.routine,14,'#231e36','middle','font-weight="800"')+
+      '<rect x="18" y="244" width="'+Math.min(58,(width-36)/2)+'" height="16" rx="5" fill="'+look.gown+'" '+st(3)+'/><rect x="16" y="254" width="'+(width-32)+'" height="96" rx="8" fill="'+look.gown+'" '+st(3)+'/>'+
+      '<rect x="26" y="264" width="'+(width-52)+'" height="78" rx="6" fill="#fff9e8" '+st(2)+'/><path d="M'+(width-66)+' 282H'+(width-36)+'M'+(width-66)+' 296H'+(width-42)+'M'+(width-66)+' 310H'+(width-48)+'" stroke="#b2a181" stroke-width="3"/>'+
+      '<g transform="translate('+Math.round(width/2-18)+' 306) scale(.5)">'+head(look,expr)+'</g>'+
+      text(width/2,403,name.length>21?name.slice(0,20)+'…':name,16,OL,'middle','font-weight="800"')+
+      '<rect class="scene-focus" x="2" y="193" width="'+(width-4)+'" height="230" rx="17" fill="none" stroke="#ffcf5a" stroke-width="5" stroke-dasharray="9 6"/></g>';
   }
   function clockFace(x,y,value,radius=27) {
     const parts=String(value).split(':').map(Number);
@@ -355,34 +383,38 @@ function portrait(o, expr = 'neutral', size = 96, opt = {}) {
       '<rect class="scene-focus" x="2" y="193" width="'+(width-4)+'" height="230" rx="17" fill="none" stroke="#ffcf5a" stroke-width="5" stroke-dasharray="9 6"/></g>';
     return s;
   }
-  function scene(area,patients,selectedId,time='22:00',index=0,language='en') {
+  function scene(area,patients,selectedId,time='22:00',index=0,language='en',options) {
+    // Daytime duties get daylight and an awake attending; the tumour board meets in a conference room
+    // where every case of the session lies on the table as a folder.
+    const o=options||{},board=o.duty==='board',day=board||o.duty==='clinic'||o.duty==='elective';
     if(!AREAS.includes(area))area='emergency';
     const w=lang(language);
-    const list=(Array.isArray(patients)?patients:[]).filter(p=>patientArea(p)===area);
+    const list=(Array.isArray(patients)?patients:[]).filter(p=>board||patientArea(p)===area);
     let visible=list.slice(0,6);
     const selected=list.find(p=>p.id===selectedId);
     if(selected&&!visible.includes(selected))visible[visible.length-1]=selected;
-    const color={emergency:'#cde6de',ward:'#dbd5e7',clinic:'#eadfbd',endoscopy:'#ddcce6',theatre:'#bcded0'}[area];
+    const color=board?'#e6dcc6':{emergency:'#cde6de',ward:'#dbd5e7',clinic:'#eadfbd',endoscopy:'#ddcce6',theatre:'#bcded0'}[area];
     let svg='<svg class="cartoon-room" viewBox="0 0 1600 440" role="group" aria-label="'+escape(w.stage)+'" xmlns="http://www.w3.org/2000/svg"><title>'+escape(w.stage)+'</title>'+
       '<rect width="1600" height="440" fill="'+color+'"/><rect y="385" width="1600" height="55" fill="#8c9ab7"/><path d="M0 389H1600M0 425H1600" stroke="#b3bfd4" stroke-width="3"/>'+
       '<rect width="1600" height="19" fill="#eef2f8"/><path d="M0 19H1600" stroke="#8e91a8" stroke-width="3"/>';
     for(let x=35;x<1580;x+=120)svg+='<path d="M'+x+' 390l-24 50" stroke="#a9b5ce" stroke-width="2"/>';
-    svg+=nightWindow(18,37,133,129)+clockFace(200,74,time,31)+text(200,128,time,23,OL,'middle','font-family="monospace" font-weight="800"')+
-      '<rect x="259" y="33" width="216" height="53" rx="9" fill="#263456" '+st(3)+'/>'+text(367,66,w.areas[AREAS.indexOf(area)],22,'#fff4d6','middle','font-weight="800"')+
-      '<rect x="266" y="103" width="201" height="75" rx="7" fill="#fff4d6" '+st(3)+'/>'+text(367,126,w.sleep,13,OL,'middle')+
+    svg+=(day?dayWindow(18,37,133,129):nightWindow(18,37,133,129))+clockFace(200,74,time,31)+text(200,128,time,23,OL,'middle','font-family="monospace" font-weight="800"')+
+      '<rect x="259" y="33" width="216" height="53" rx="9" fill="#263456" '+st(3)+'/>'+text(367,66,board?w.room:w.areas[AREAS.indexOf(area)],22,'#fff4d6','middle','font-weight="800"')+
+      '<rect x="266" y="103" width="201" height="75" rx="7" fill="#fff4d6" '+st(3)+'/>'+text(367,126,o.label||w.sleep,13,OL,'middle')+
       '<path d="M282 140H452M282 153H439M282 166H412" stroke="#b2a181" stroke-width="3"/>'+
-      AREAS.map((id,i)=>roomDoor(id,505+i*214,id===area,language)).join('')+roomDecor(area,Math.max(visible.length,2))+
+      (board?boardScreen()+'<rect x="488" y="343" width="1094" height="30" rx="12" fill="#b0845a" '+st(3)+'/><path d="M540 373V412M1530 373V412" '+st(6)+'/>':
+        AREAS.map((id,i)=>roomDoor(id,505+i*214,id===area,language)).join('')+roomDecor(area,Math.max(visible.length,2)))+
       '<g transform="translate(177 410) scale(.90)" class="cartoon-breathe">'+figure(STAFF.nurse,visible.some(p=>p.feedback==='unsafe')?'stern':'smile')+'</g>'+
       '<g transform="translate(339 409) scale(.85)">'+figure(STAFF.chief,'stern')+'</g>'+
       '<g transform="translate(451 412) scale(.87)" class="cartoon-breathe">'+figure(AVATARS[avatarIndex(index)],visible.some(p=>p.feedback==='unsafe')?'scared':'neutral')+'</g>'+
-      '<g transform="translate(90 296) scale(.53)" class="cartoon-rest">'+figure(STAFF.attending,'sleepy')+'</g>'+
+      (day?'<g transform="translate(90 296) scale(.53)">'+figure(STAFF.attending,'smile')+'</g>':'<g transform="translate(90 296) scale(.53)" class="cartoon-rest">'+figure(STAFF.attending,'sleepy')+'</g>')+
       '<rect x="9" y="346" width="219" height="66" rx="7" fill="#d8c29d" '+st(3)+'/><rect x="5" y="334" width="227" height="17" rx="5" fill="#ecdcbd" '+st(3)+'/>'+text(118,379,w.station,14,OL,'middle','font-weight="800"')+
       '<rect x="88" y="296" width="61" height="36" rx="5" fill="#293249" '+st(3)+'/><rect x="95" y="302" width="47" height="24" rx="3" fill="#8cd6cc"/><path d="M119 332V337" '+st(3)+'/>'+
       coffeeMachine(239,302,language,true,.71)+pager(410,327)+
       text(337,434,w.chief,14,OL,'middle','font-weight="800"')+text(453,434,w.player,14,OL,'middle','font-weight="800"');
     if(visible.length){
       const width=Math.min(208,1055/Math.max(visible.length,4));
-      svg+=visible.map((p,i)=>bedside(p,510+i*width,width,area,selectedId,language)).join('');
+      svg+=visible.map((p,i)=>(board?boardFolder:bedside)(p,510+i*width,width,area,selectedId,language)).join('');
     }else svg+=bubble(669,263,570,w.empty,25);
     svg+='</svg>';
     return '<div class="cartoon-scene-wrap">'+svg+'</div>';

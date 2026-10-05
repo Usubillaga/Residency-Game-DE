@@ -4,6 +4,7 @@
     "area": "clinic",
     "level": 2,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Daniel Weber",
       "age": 58,
@@ -237,6 +238,7 @@
     "area": "clinic",
     "level": 1,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Miguel Santos",
       "age": 66,
@@ -469,6 +471,7 @@
     "area": "clinic",
     "level": 2,
     "acuity": "urgent",
+    "duty": "clinic",
     "patient": {
       "name": "Clara Hoffmann",
       "age": 61,
@@ -701,6 +704,7 @@
     "area": "clinic",
     "level": 2,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Lucía Navarro",
       "age": 37,
@@ -933,6 +937,7 @@
     "area": "clinic",
     "level": 2,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Amir Haddad",
       "age": 44,
@@ -1166,6 +1171,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Robert Klein",
       "age": 65,
@@ -1399,6 +1405,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Tarık Polat",
       "age": 48,
@@ -1544,6 +1551,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Ralf Gerber",
       "age": 56,
@@ -1689,6 +1697,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Lukas Sander",
       "age": 32,
@@ -1834,6 +1843,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Tobias Winkler",
       "age": 35,
@@ -1979,6 +1989,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Julian Barth",
       "age": 29,
@@ -2124,6 +2135,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Weiß & Scholl",
       "age": null,
@@ -2269,6 +2281,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Stavros Papadopoulos",
       "age": 52,
@@ -2414,6 +2427,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Raúl Gil",
       "age": 44,
@@ -2559,6 +2573,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Tim Lux",
       "age": 34,
@@ -2704,6 +2719,7 @@
     "area": "clinic",
     "level": 2,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Frank Dorn",
       "age": 74,
@@ -2851,6 +2867,7 @@
     "area": "clinic",
     "level": 2,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Wolfgang Ehrhardt",
       "age": 62,
@@ -2996,6 +3013,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Volker Brückner",
       "age": 71,
@@ -3141,6 +3159,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Jürgen Paulsen",
       "age": 66,
@@ -3286,6 +3305,7 @@
     "area": "clinic",
     "level": 2,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Katrin Günther",
       "age": 52,
@@ -3431,6 +3451,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Lieselotte Nolte",
       "age": 78,
@@ -3576,6 +3597,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Viktoria Reimer",
       "age": 41,
@@ -3721,6 +3743,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Stefano Gallo",
       "age": 32,
@@ -3882,6 +3905,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Jannik Maier",
       "age": 27,
@@ -4043,6 +4067,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Leon Schade",
       "age": 28,
@@ -4196,6 +4221,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Nico Schulte",
       "age": 30,
@@ -4343,6 +4369,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Markus Groß",
       "age": 35,
@@ -4496,6 +4523,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Reza Ahmadi",
       "age": 26,
@@ -4649,6 +4677,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Maximilian Fritsch",
       "age": 31,
@@ -4806,6 +4835,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Patrick Pieper",
       "age": 38,
@@ -4957,6 +4987,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Alessandro Romano",
       "age": 24,
@@ -5100,6 +5131,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Paul Kirsch",
       "age": 29,
@@ -5245,6 +5277,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Tom Funk",
       "age": 27,
@@ -5390,6 +5423,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Omar Rahman",
       "age": 36,
@@ -5535,6 +5569,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Jakob Beck",
       "age": 34,
@@ -5716,6 +5751,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Felix Petersen",
       "age": 30,
@@ -5884,6 +5920,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Kamil Król",
       "age": 46,
@@ -6065,6 +6102,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Hans-Peter Drescher",
       "age": 71,
@@ -6246,6 +6284,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Norbert Hofmann",
       "age": 68,
@@ -6420,6 +6459,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Holger Reich",
       "age": 35,
@@ -6588,6 +6628,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Philipp Jung",
       "age": 27,
@@ -6756,6 +6797,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Tomasz Mazur",
       "age": 24,
@@ -6924,6 +6966,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Kevin Wirth",
       "age": 31,
@@ -7092,6 +7135,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Karim Hamdan",
       "age": 36,
@@ -7273,6 +7317,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Philipp Wolf",
       "age": 27,
@@ -7441,6 +7486,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Jan Schenk",
       "age": null,
@@ -7609,6 +7655,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Benjamin Brauer",
       "age": 42,
@@ -7790,6 +7837,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Fabian Hauser",
       "age": 29,
@@ -7958,6 +8006,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Volkan Akın",
       "age": 23,
@@ -8126,6 +8175,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Sebastian Hübner",
       "age": null,
@@ -8294,6 +8344,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Andrej Penner",
       "age": 42,
@@ -8462,6 +8513,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Maxim Hildebrandt",
       "age": 33,
@@ -8630,6 +8682,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Kerem Korkmaz",
       "age": 45,
@@ -8798,6 +8851,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Timo Herrmann",
       "age": 38,
@@ -8966,6 +9020,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Paweł Zając",
       "age": 35,
@@ -9147,6 +9202,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Elias Wiegand",
       "age": 31,
@@ -9315,6 +9371,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Alexander Franke",
       "age": 40,
@@ -9496,6 +9553,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Serkan Arslan",
       "age": 36,
@@ -9677,6 +9735,7 @@
     "area": "clinic",
     "level": 2,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Efua Mensah",
       "age": 26,
@@ -9822,6 +9881,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Despina Nikolaidou",
       "age": 63,
@@ -9967,6 +10027,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Hess, Seidel, Henke & Blum",
       "age": null,
@@ -10112,6 +10173,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Henry Gottwald",
       "age": null,
@@ -10257,6 +10319,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Charlie Klose",
       "age": null,
@@ -10402,6 +10465,7 @@
     "area": "clinic",
     "level": 2,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Szymon Krawczyk",
       "age": null,
@@ -10553,6 +10617,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Ben Hecht",
       "age": null,
@@ -10698,6 +10763,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Juna Fiedler",
       "age": null,
@@ -10843,6 +10909,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Leni Zobel",
       "age": null,
@@ -10988,6 +11055,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Hartmut Fink",
       "age": 71,
@@ -11145,6 +11213,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Uwe Schott",
       "age": 64,
@@ -11309,6 +11378,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Peter Holz",
       "age": 62,
@@ -11485,6 +11555,7 @@
     "area": "clinic",
     "level": 2,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Toni Rupp",
       "age": null,
@@ -11634,6 +11705,7 @@
     "area": "clinic",
     "level": 2,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Kai Sievers",
       "age": null,
@@ -11783,6 +11855,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Sevgi Kaya",
       "age": 58,
@@ -11934,6 +12007,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Ali Aslan",
       "age": 62,
@@ -12095,6 +12169,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Holger Oertel",
       "age": 54,
@@ -12242,6 +12317,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Tim Hartmann",
       "age": 23,
@@ -12389,6 +12465,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Gerd Ritter",
       "age": 61,
@@ -12540,6 +12617,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Cornelia Thomsen",
       "age": 58,
@@ -12687,6 +12765,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Anastasia Janzen",
       "age": 49,
@@ -12849,6 +12928,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Dieter Rösler",
       "age": 82,
@@ -12996,6 +13076,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Jelena Wiebe",
       "age": 35,
@@ -13143,6 +13224,7 @@
     "area": "clinic",
     "level": 2,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Dennis Freitag",
       "age": null,
@@ -13292,6 +13374,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Nikolaos Dimitriou",
       "age": 71,
@@ -13466,6 +13549,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Bernd Kaiser",
       "age": 64,
@@ -13640,6 +13724,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Bernhard Wagner",
       "age": 62,
@@ -13814,6 +13899,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Frank Kopp",
       "age": 63,
@@ -13975,6 +14061,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Detlef Hahn",
       "age": 61,
@@ -14124,6 +14211,7 @@
     "area": "clinic",
     "level": 2,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Dirk Stolz",
       "age": null,
@@ -14271,6 +14359,7 @@
     "area": "clinic",
     "level": 2,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Sven Witt",
       "age": null,
@@ -14418,6 +14507,7 @@
     "area": "clinic",
     "level": 2,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Florian Dreyer",
       "age": null,
@@ -14565,6 +14655,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Tarek Abboud",
       "age": null,
@@ -14712,6 +14803,7 @@
     "area": "clinic",
     "level": 2,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Stefan Petrović",
       "age": null,
@@ -14859,6 +14951,7 @@
     "area": "clinic",
     "level": 2,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Murat Demir",
       "age": null,
@@ -15006,6 +15099,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Harald Heller",
       "age": 66,
@@ -15160,6 +15254,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Franco Moretti",
       "age": 74,
@@ -15314,6 +15409,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Wolfgang Kirchner",
       "age": 69,
@@ -15466,6 +15562,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Ahmet Özdemir",
       "age": null,
@@ -15617,6 +15714,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Dragan Babić",
       "age": 63,
@@ -15768,6 +15866,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Michael Kraft",
       "age": 66,
@@ -15915,6 +16014,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Mertens & Jansen",
       "age": null,
@@ -16062,6 +16162,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Haas & Güneş",
       "age": null,
@@ -16217,6 +16318,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Ralf Böttcher",
       "age": 58,
@@ -16368,6 +16470,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Bernd Grimm",
       "age": 64,
@@ -16525,6 +16628,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Brunner & Wendt",
       "age": null,
@@ -16676,6 +16780,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Hartmut Meyer",
       "age": 67,
@@ -16827,6 +16932,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Rainer Böhm",
       "age": 62,
@@ -16974,6 +17080,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Volker Lange",
       "age": 68,
@@ -17125,6 +17232,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Andreas Wulf",
       "age": 71,
@@ -17281,6 +17389,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Ahmad Saleh",
       "age": 70,
@@ -17432,6 +17541,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Jürgen Sommer",
       "age": null,
@@ -17583,6 +17693,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Nikolai Görzen",
       "age": 73,
@@ -17756,6 +17867,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Klaus Haag",
       "age": 76,
@@ -17907,6 +18019,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Engel & Decker",
       "age": null,
@@ -18060,6 +18173,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Mustafa Doğan",
       "age": 69,
@@ -18211,6 +18325,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Osman Çelik",
       "age": 61,
@@ -18358,6 +18473,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Chris Feldmann",
       "age": null,
@@ -18503,6 +18619,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Gerd Schütz",
       "age": 58,
@@ -18654,6 +18771,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Tanja Langer",
       "age": null,
@@ -18799,6 +18917,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Thorsten Unger",
       "age": null,
@@ -18944,6 +19063,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Stark & Pfeiffer",
       "age": null,
@@ -19089,6 +19209,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Gabriele Dittrich",
       "age": 64,
@@ -19234,6 +19355,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Ralf Kemper",
       "age": 61,
@@ -19379,6 +19501,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Barbara Pawlak",
       "age": 58,
@@ -19524,6 +19647,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Stjepan Jovanović",
       "age": 57,
@@ -19688,6 +19812,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Karagiannis & Hennig",
       "age": null,
@@ -19833,6 +19958,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Şahin & Strauß",
       "age": null,
@@ -19997,6 +20123,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Christodoulou & Kühn",
       "age": null,
@@ -20142,6 +20269,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Roberto Barbieri",
       "age": 38,
@@ -20295,6 +20423,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Jens Moser",
       "age": 52,
@@ -20466,6 +20595,7 @@
     "area": "clinic",
     "level": 2,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Jo Thiel",
       "age": null,
@@ -20613,6 +20743,7 @@
     "area": "clinic",
     "level": 2,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Eike Löffler",
       "age": null,
@@ -20760,6 +20891,7 @@
     "area": "clinic",
     "level": 2,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Robin Hilbert",
       "age": null,
@@ -20907,6 +21039,7 @@
     "area": "clinic",
     "level": 2,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Sascha Schuster",
       "age": null,
@@ -21054,6 +21187,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Monika Thiele",
       "age": 64,
@@ -21205,6 +21339,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Jo Ritz",
       "age": null,
@@ -21350,6 +21485,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Sascha Wolters",
       "age": null,
@@ -21495,6 +21631,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Mohammed Sabbagh",
       "age": 68,
@@ -21644,6 +21781,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Uwe Probst",
       "age": 62,
@@ -21806,6 +21944,7 @@
     "area": "clinic",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Christina Vlachou",
       "age": null,

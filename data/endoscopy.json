@@ -4,6 +4,7 @@
     "area": "endoscopy",
     "level": 2,
     "acuity": "urgent",
+    "duty": "clinic",
     "patient": {
       "name": "Elena Fischer",
       "age": 63,
@@ -236,6 +237,7 @@
     "area": "endoscopy",
     "level": 3,
     "acuity": "urgent",
+    "duty": "clinic",
     "patient": {
       "name": "Javier Romero",
       "age": 69,
@@ -468,6 +470,7 @@
     "area": "endoscopy",
     "level": 2,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Thomas Berger",
       "age": 52,
@@ -700,6 +703,7 @@
     "area": "endoscopy",
     "level": 1,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Sofia Martín",
       "age": 46,
@@ -934,6 +938,7 @@
     "area": "endoscopy",
     "level": 3,
     "acuity": "urgent",
+    "duty": "clinic",
     "patient": {
       "name": "Peter Neumann",
       "age": 72,
@@ -1167,6 +1172,7 @@
     "area": "endoscopy",
     "level": 3,
     "acuity": "critical",
+    "duty": "night",
     "patient": {
       "name": "Nadia Yılmaz",
       "age": 55,
@@ -1401,6 +1407,7 @@
     "area": "endoscopy",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Panagiota Konstantinidou",
       "age": 68,
@@ -1553,6 +1560,7 @@
     "area": "endoscopy",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Sergej Rempel",
       "age": 22,
@@ -1700,6 +1708,7 @@
     "area": "endoscopy",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Wille & Weller",
       "age": null,
@@ -1845,6 +1854,7 @@
     "area": "endoscopy",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Harald Bartels",
       "age": 69,
@@ -1990,6 +2000,7 @@
     "area": "endoscopy",
     "level": 2,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Alex Kern",
       "age": null,
@@ -2139,6 +2150,7 @@
     "area": "endoscopy",
     "level": 2,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Eike Menzel",
       "age": null,
@@ -2288,6 +2300,7 @@
     "area": "endoscopy",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Brigitte Frey",
       "age": 63,
@@ -2453,6 +2466,7 @@
     "area": "endoscopy",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Gerd Haase",
       "age": 59,
@@ -2610,6 +2624,7 @@
     "area": "endoscopy",
     "level": 2,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Alex Westphal",
       "age": null,
@@ -2759,6 +2774,7 @@
     "area": "endoscopy",
     "level": 2,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Jo Kessler",
       "age": null,
@@ -2908,6 +2924,7 @@
     "area": "endoscopy",
     "level": 2,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Toni Reuter",
       "age": null,
@@ -3057,6 +3074,7 @@
     "area": "endoscopy",
     "level": 2,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Uli Vetter",
       "age": null,
@@ -3206,6 +3224,7 @@
     "area": "endoscopy",
     "level": 2,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Kim Meißner",
       "age": null,
@@ -3355,6 +3374,7 @@
     "area": "endoscopy",
     "level": 2,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Olga Klassen",
       "age": 62,
@@ -3508,6 +3528,7 @@
     "area": "endoscopy",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Chris Wolff",
       "age": null,
@@ -3653,6 +3674,7 @@
     "area": "endoscopy",
     "level": 3,
     "acuity": "critical",
+    "duty": "elective",
     "patient": {
       "name": "Davide Ricci",
       "age": null,
@@ -3804,6 +3826,7 @@
     "area": "endoscopy",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Volker Seeger",
       "age": 66,
@@ -3949,6 +3972,7 @@
     "area": "endoscopy",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Anja Ebner",
       "age": null,
@@ -4094,6 +4118,7 @@
     "area": "endoscopy",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Rainer Wicke",
       "age": 68,
@@ -4239,6 +4264,7 @@
     "area": "endoscopy",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Uli Hesse",
       "age": 57,
@@ -4384,6 +4410,7 @@
     "area": "endoscopy",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Kai Lehmann",
       "age": null,
@@ -4529,6 +4556,7 @@
     "area": "endoscopy",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Wolfgang Rühl",
       "age": 70,

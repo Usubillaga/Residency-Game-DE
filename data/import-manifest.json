@@ -39,6 +39,6 @@
     "draft": 10
   },
   "flaggedSourceQuestions": 32,
-  "selectionSha256": "795840cc79879e662dfb0bd9a018a7e196a6a2959b23495d9942979140331dc3",
+  "selectionSha256": "01a465e2f50d6886558fff1b6ca5d23538bdd7e125228bbc53aa6830da7931d4",
   "contentPolicy": "All 267 original vignettes, questions, options, rationales and explanations are preserved once in DE/EN/ES. Drafts and evidence flags are retained. No archive scripts are executed. Missing or ambiguous ages and vital signs remain null. Fictional display names come from data/patient-names.json; sex, patient count and age band there are taken only from the case text, and vignettes comparing several patients list one surname per patient. Five minutes per answer are game time only."
 }

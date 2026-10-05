@@ -112,7 +112,7 @@ window.NSABanter = {
       "Dr. Brennan: Review the feedback and try again. Good judgement improves faster than hospital printers.",
       "Grace: Next shift, we'll make those priorities clearer. The clipboard has agreed to attend."
     ],
-    "chiefQuizIntro": "Prof. Whitfield: Five areas, a few questions and no escape into the stationery cupboard. Explain your decisions; I promise to keep my introduction shorter than the shift.",
+    "chiefQuizIntro": "Prof. Whitfield: A few questions about your shift and no escape into the stationery cupboard. Explain your decisions; I promise to keep my introduction shorter than the shift.",
     "soundOn": "Pager sound on",
     "soundOff": "Pager sound off",
     "coffeeLabel": "Coffee break",
@@ -131,6 +131,7 @@ window.NSABanter = {
     "meetTeam": "Meet your shift team",
     "castSub": "Three colleagues. Four opinions. One pager.",
     "sceneHint": "Click the doors, patients or coffee machine.",
+    "sceneHintBoard": "Click a case folder or the coffee machine.",
     "noPatientsYet": "No patient has arrived here yet. The coffee machine is still taking referrals.",
     "bossLocked": "Finish your patients first. The professor can wait. Probably.",
     "bossScore": "Morning-report score",
@@ -240,6 +241,76 @@ window.NSABanter = {
         "title": "A real night shift",
         "text": "Complete a case between midnight and 5 a.m. real time. Then go to bed!"
       }
+    },
+    "dutyOpening": {
+      "night": [
+        {
+          "speaker": "chief",
+          "text": "From 10 p.m. the urology department is yours. Call me only if it bleeds, runs a fever or stops draining."
+        },
+        {
+          "speaker": "nurse",
+          "text": "Tonight it's emergencies only: colic, retention, bleeding, trauma and anything with a fever. The tumour board sleeps until tomorrow."
+        },
+        {
+          "speaker": "attending",
+          "text": "I'm on call in the background. Emergency surgery we do together; questions about the Rocco stitch not at 3 a.m., please."
+        }
+      ],
+      "board": [
+        {
+          "speaker": "chief",
+          "text": "Welcome to the tumour board. Radiology, pathology, oncology, radiotherapy, and you. Please be brief: pathology still has forty cases."
+        },
+        {
+          "speaker": "attending",
+          "text": "Staging, histology, performance status, patient preference. In that order. Then the recommendation."
+        },
+        {
+          "speaker": "nurse",
+          "text": "I've made coffee for everyone. Radiotherapy takes it black, oncology with a guideline."
+        }
+      ],
+      "clinic": [
+        {
+          "speaker": "nurse",
+          "text": "Clinic day! The waiting room is full, the schedule is fiction and the printer is on holiday."
+        },
+        {
+          "speaker": "attending",
+          "text": "This is work-up, counselling and follow-up. Take time to talk: patients remember every word."
+        },
+        {
+          "speaker": "chief",
+          "text": "And mind the clinic letter. A result nobody reads is a very expensive secret."
+        }
+      ],
+      "elective": [
+        {
+          "speaker": "attending",
+          "text": "Elective list, theatre 2. Team time-out first, creativity second."
+        },
+        {
+          "speaker": "nurse",
+          "text": "The side is marked, the antibiotic is running and the anaesthetist chose the music. We're doomed."
+        },
+        {
+          "speaker": "chief",
+          "text": "Anatomy is not an opinion. Whoever knows the layers needs less luck."
+        }
+      ]
+    },
+    "dutyIntro": {
+      "night": "Grace: Night shift. Emergencies only; everything else may sleep until morning. The pager, sadly, may not.",
+      "board": "Prof. Whitfield: Tumour board. Five specialties, one projector, zero working remote controls.",
+      "clinic": "Grace: Clinic. On time according to the schedule. The schedule is very optimistic.",
+      "elective": "Dr. Brennan: Elective list. Theatre 2, first incision at eight. Theoretically."
+    },
+    "dutyBoard": {
+      "night": "ON CALL",
+      "board": "TUMOUR BOARD",
+      "clinic": "CLINIC",
+      "elective": "OR LIST · THEATRE 2"
     }
   },
   "de": {
@@ -354,7 +425,7 @@ window.NSABanter = {
       "Dr. Brenner: Rückmeldung prüfen und noch einmal versuchen. Urteilsvermögen entwickelt sich schneller als unsere Drucker.",
       "Jana: Im nächsten Dienst sortieren wir die Prioritäten besser. Das Klemmbrett hat bereits zugesagt."
     ],
-    "chiefQuizIntro": "Prof. Leuchtenberg: Fünf Bereiche, ein paar Rückfragen und kein Rückzug in den Materialraum. Begründen Sie Ihre Entscheidungen. Meine Einleitung bleibt diesmal kürzer als der Dienst.",
+    "chiefQuizIntro": "Prof. Leuchtenberg: Ein paar Rückfragen zu Ihrem Dienst und kein Rückzug in den Materialraum. Begründen Sie Ihre Entscheidungen. Meine Einleitung bleibt diesmal kürzer als der Dienst.",
     "soundOn": "Pieperton an",
     "soundOff": "Pieperton aus",
     "coffeeLabel": "Kaffeepause",
@@ -373,6 +444,7 @@ window.NSABanter = {
     "meetTeam": "Dein Team im Dienst",
     "castSub": "Drei Kollegen. Vier Meinungen. Ein Pieper.",
     "sceneHint": "Klicke auf Türen, Patienten oder den Kaffeeautomaten.",
+    "sceneHintBoard": "Klicke auf eine Akte oder den Kaffeeautomaten.",
     "noPatientsYet": "Hier ist noch niemand angekommen. Der Kaffeeautomat nimmt weiterhin Überweisungen an.",
     "bossLocked": "Erst deine Patienten abschließen. Der Professor kann warten. Vermutlich.",
     "bossScore": "Punkte in der Frühbesprechung",
@@ -482,6 +554,76 @@ window.NSABanter = {
         "title": "Echter Nachtdienst",
         "text": "Schließe einen Fall zwischen 0 und 5 Uhr echter Uhrzeit ab. Und dann ab ins Bett!"
       }
+    },
+    "dutyOpening": {
+      "night": [
+        {
+          "speaker": "chief",
+          "text": "Ab 22 Uhr gehört die Urologie Ihnen. Rufen Sie mich nur an, wenn es blutet, fiebert oder nicht mehr abfließt."
+        },
+        {
+          "speaker": "nurse",
+          "text": "Heute Nacht gibt's nur Notfälle: Koliken, Harnverhalte, Blutungen, Unfälle und alles, was fiebert. Das Tumorboard schläft bis morgen."
+        },
+        {
+          "speaker": "attending",
+          "text": "Ich bin im Hintergrund erreichbar. Notfall-OPs machen wir zusammen; Fragen zur Rocco-Naht bitte nicht um drei Uhr."
+        }
+      ],
+      "board": [
+        {
+          "speaker": "chief",
+          "text": "Willkommen im Tumorboard. Radiologie, Pathologie, Onkologie, Strahlentherapie – und Sie. Bitte knapp präsentieren: Die Pathologie hat noch vierzig Fälle."
+        },
+        {
+          "speaker": "attending",
+          "text": "Staging, Histologie, Allgemeinzustand, Patientenwunsch. In dieser Reihenfolge. Dann die Empfehlung."
+        },
+        {
+          "speaker": "nurse",
+          "text": "Ich hab Kaffee für alle gekocht. Die Strahlentherapie trinkt ihn schwarz, die Onkologie mit Leitlinie."
+        }
+      ],
+      "clinic": [
+        {
+          "speaker": "nurse",
+          "text": "Sprechstunde! Das Wartezimmer ist voll, der Terminplan ist ein Roman und der Drucker hat Urlaub."
+        },
+        {
+          "speaker": "attending",
+          "text": "Hier geht es um Abklärung, Beratung und Nachsorge. Nimm dir Zeit fürs Gespräch: Die Patienten merken sich jedes Wort."
+        },
+        {
+          "speaker": "chief",
+          "text": "Und denken Sie an den Arztbrief. Ein Befund, den niemand liest, ist ein sehr teures Geheimnis."
+        }
+      ],
+      "elective": [
+        {
+          "speaker": "attending",
+          "text": "OP-Programm, Saal 2. Erst Team-Time-out, dann Kreativität."
+        },
+        {
+          "speaker": "nurse",
+          "text": "Die Seite ist markiert, das Antibiotikum läuft, und die Musik hat die Anästhesie ausgesucht. Wir sind verloren."
+        },
+        {
+          "speaker": "chief",
+          "text": "Anatomie ist keine Meinung. Wer die Schichten kennt, braucht weniger Glück."
+        }
+      ]
+    },
+    "dutyIntro": {
+      "night": "Jana: Nachtdienst. Nur Notfälle – der Rest darf bis morgen schlafen. Der Pieper leider nicht.",
+      "board": "Prof. Leuchtenberg: Tumorboard. Fünf Disziplinen, ein Beamer, null funktionierende Fernbedienungen.",
+      "clinic": "Jana: Sprechstunde. Pünktlich laut Plan. Der Plan ist sehr optimistisch.",
+      "elective": "Dr. Brenner: OP-Programm. Saal 2, erster Schnitt um acht. Theoretisch."
+    },
+    "dutyBoard": {
+      "night": "BEREITSCHAFT",
+      "board": "TUMORBOARD",
+      "clinic": "SPRECHSTUNDE",
+      "elective": "OP-PLAN · SAAL 2"
     }
   },
   "es": {
@@ -596,7 +738,7 @@ window.NSABanter = {
       "Dr. Herrera: Revisa las explicaciones y vuelve a intentarlo. El criterio mejora más rápido que las impresoras del hospital.",
       "Lucía: En la próxima guardia ordenaremos mejor las prioridades. La carpeta ya ha confirmado su asistencia."
     ],
-    "chiefQuizIntro": "Prof. Valdés: Cinco áreas, unas preguntas y nada de refugiarse en el almacén. Explique sus decisiones. Prometo que esta vez mi introducción durará menos que la guardia.",
+    "chiefQuizIntro": "Prof. Valdés: Unas preguntas sobre su guardia y nada de refugiarse en el almacén. Explique sus decisiones. Prometo que esta vez mi introducción durará menos que la guardia.",
     "soundOn": "Sonido del busca activado",
     "soundOff": "Sonido del busca desactivado",
     "coffeeLabel": "Pausa para café",
@@ -615,6 +757,7 @@ window.NSABanter = {
     "meetTeam": "Conoce a tu equipo de guardia",
     "castSub": "Tres colegas. Cuatro opiniones. Un busca.",
     "sceneHint": "Pulsa las puertas, los pacientes o la máquina de café.",
+    "sceneHintBoard": "Pulsa una carpeta o la máquina de café.",
     "noPatientsYet": "Todavía no ha llegado ningún paciente aquí. La máquina de café sigue aceptando derivaciones.",
     "bossLocked": "Termina primero con tus pacientes. El profesor puede esperar. Probablemente.",
     "bossScore": "Puntos de la sesión de la mañana",
@@ -724,6 +867,76 @@ window.NSABanter = {
         "title": "Guardia de verdad",
         "text": "Completa un caso entre las 0 y las 5 de la mañana, hora real. ¡Y luego a dormir!"
       }
+    },
+    "dutyOpening": {
+      "night": [
+        {
+          "speaker": "chief",
+          "text": "Desde las diez de la noche, la urología es suya. Llámeme solo si sangra, tiene fiebre o deja de drenar."
+        },
+        {
+          "speaker": "nurse",
+          "text": "Esta noche solo urgencias: cólicos, retenciones, sangrados, traumatismos y todo lo que tenga fiebre. El comité de tumores duerme hasta mañana."
+        },
+        {
+          "speaker": "attending",
+          "text": "Estoy localizable de fondo. Las cirugías urgentes las hacemos juntos; dudas sobre la sutura de Rocco, a las tres de la mañana no, por favor."
+        }
+      ],
+      "board": [
+        {
+          "speaker": "chief",
+          "text": "Bienvenido al comité de tumores. Radiología, anatomía patológica, oncología, radioterapia… y usted. Sea breve: patología aún tiene cuarenta casos."
+        },
+        {
+          "speaker": "attending",
+          "text": "Estadificación, histología, estado general, preferencia del paciente. En ese orden. Después, la recomendación."
+        },
+        {
+          "speaker": "nurse",
+          "text": "He preparado café para todos. Radioterapia lo toma solo; oncología, con guía clínica."
+        }
+      ],
+      "clinic": [
+        {
+          "speaker": "nurse",
+          "text": "¡Día de consulta! La sala de espera está llena, la agenda es ficción y la impresora está de vacaciones."
+        },
+        {
+          "speaker": "attending",
+          "text": "Aquí toca estudio, asesoramiento y seguimiento. Tómate tiempo para hablar: los pacientes recuerdan cada palabra."
+        },
+        {
+          "speaker": "chief",
+          "text": "Y no olvide el informe. Un resultado que nadie lee es un secreto muy caro."
+        }
+      ],
+      "elective": [
+        {
+          "speaker": "attending",
+          "text": "Programa quirúrgico, quirófano 2. Primero la pausa de seguridad; después, la creatividad."
+        },
+        {
+          "speaker": "nurse",
+          "text": "El lado está marcado, el antibiótico pasa y la música la eligió anestesia. Estamos perdidos."
+        },
+        {
+          "speaker": "chief",
+          "text": "La anatomía no es una opinión. Quien conoce las capas necesita menos suerte."
+        }
+      ]
+    },
+    "dutyIntro": {
+      "night": "Lucía: Guardia de noche. Solo urgencias; lo demás puede dormir hasta mañana. El busca, por desgracia, no.",
+      "board": "Prof. Valdés: Comité de tumores. Cinco especialidades, un proyector y ningún mando a distancia que funcione.",
+      "clinic": "Lucía: Consulta. Puntual según la agenda. La agenda es muy optimista.",
+      "elective": "Dr. Herrera: Programa quirúrgico. Quirófano 2, primera incisión a las ocho. En teoría."
+    },
+    "dutyBoard": {
+      "night": "GUARDIA",
+      "board": "COMITÉ DE TUMORES",
+      "clinic": "CONSULTA",
+      "elective": "PROGRAMA QX · QUIRÓFANO 2"
     }
   }
 };

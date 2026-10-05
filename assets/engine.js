@@ -20,6 +20,22 @@
     const ids = catalog.areas.flatMap(a => shuffle(catalog.cases.filter(c => c.area === a.id), rng).slice(0, perArea).map(c => c.id));
     return shuffle(ids, rng);
   }
+  const DUTIES = ['night', 'board', 'clinic', 'elective'];
+  // One duty's cases only, interleaving topics so a shift does not repeat a single subject.
+  function scheduleDuty(catalog, seed, duty, size = 10) {
+    if (!DUTIES.includes(duty)) throw new Error('Unknown duty');
+    const rng = random(seed + ':' + duty), groups = new Map();
+    for (const c of shuffle(catalog.cases.filter(c => c.duty === duty), rng)) {
+      const key = c.source ? c.source.domain : 'story-' + c.area;
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(c.id);
+    }
+    const queues = shuffle([...groups.values()], rng), ids = [];
+    while (ids.length < size && queues.some(q => q.length)) {
+      for (const q of queues) if (q.length && ids.length < size) ids.push(q.shift());
+    }
+    return ids;
+  }
   function create(catalog, ids, mode, seed) {
     const unique = [...new Set(ids)];
     if (!unique.length || unique.length !== ids.length || unique.some(id => !catalog.cases.some(c => c.id === id))) throw new Error('Invalid case schedule');
@@ -84,5 +100,5 @@
       }) && s.finished === s.patients.every(p=>p.finished) && s.clock >= s.patients.reduce((n,p)=>n+p.elapsed,0);
     } catch (_) { return false; }
   }
-  return { random,shuffle,schedule,create,answer,next,wait,record,validSession };
+  return { random,shuffle,schedule,DUTIES,scheduleDuty,create,answer,next,wait,record,validSession };
 });
