@@ -1,5 +1,22 @@
 # Validation record
 
+## Patient names for imported cases — 5 October 2026
+
+The 267 imported questions previously showed numbered teaching identifiers (`Uro-001` …). They now show fictional names from `data/patient-names.json`, which the importer applies.
+
+- **Classification:** two independent classifiers read every vignette in DE, EN and ES, one German-first and one English-first. They recorded the number of patients, sex and age band using only explicit words or sex-specific anatomy, never disease statistics. They agreed on 265 of 267 cases; a judge resolved the remaining two.
+- **Review:** a review of the agreed results found two shared blind spots, and four cases were corrected:
+  - `uro-hod-00019` (residual-mass resection after BEP in the testicular-cancer bank) is male.
+  - `uro-op-00103` and `uro-op-00104` (steps of a radical prostatectomy) and `uro-rek-00014` (kidney transplantation) describe one patient on the table.
+- **Text-pattern cross-check:** a regular-expression check in all three languages found no case whose recorded sex contradicts the text. The cases it flagged were partners mentioned in the text, generic masculine nouns (*Patient*, *Raucher*, *Motorradfahrer*, *el niño*), "no pregnancy" or anatomy the patterns did not cover. None needed a change.
+- **Result:** 252 single patients (173 male, 37 female, 42 of unknown sex) and 14 vignettes with several patients (7 all male, 2 all female, 5 mixed or unstated). One question has no patient: a departmental meeting, shown with a translated label. Patients of unknown sex get gender-neutral German first names and German surnames.
+- **Names:** all 297 case names are unique. First names suit the stated age, and first name and surname come from the same naming culture. The names avoid the story patients' and the cast's surnames, famous people, medical puns and surnames that read like first names.
+- **Checks:** validation, 30 Python tests, 40 engine tests and 24 cartoon tests pass. The import test confirms the importer reproduces every imported case, names included. The new cartoon test checks name uniqueness, agreement with the mapping file, sex consistency with English sex words, and the absence of stubble on female and child portraits.
+
+The 30 story patients also record `sex` now, from the pronouns in their texts or, without pronouns, from the original author's name choice; *Alex Morgan* stays unspecified. Three of them (Clara Hoffmann, Elena Fischer, Sofia Martín) previously had portraits with stubble; that is fixed.
+
+The names are fictional display labels. They add no clinical information and were not reviewed clinically.
+
 ## Game-feel and learning update — 5 October 2026
 
 Software changes only; **no case text, answer key, score, explanation or reference was changed**. `data/*.json` and the generated catalogue content are identical to the 297-case expansion; `assets/catalog.js` differs only in line endings after a rebuild on Linux.

@@ -6,7 +6,8 @@
     "acuity": "routine",
     "patient": {
       "name": "Daniel Weber",
-      "age": 58
+      "age": 58,
+      "sex": "male"
     },
     "title": {
       "en": "A raised PSA and a worried patient",
@@ -238,7 +239,8 @@
     "acuity": "routine",
     "patient": {
       "name": "Miguel Santos",
-      "age": 66
+      "age": 66,
+      "sex": "male"
     },
     "title": {
       "en": "Nocturia is disrupting sleep",
@@ -469,7 +471,8 @@
     "acuity": "urgent",
     "patient": {
       "name": "Clara Hoffmann",
-      "age": 61
+      "age": 61,
+      "sex": "female"
     },
     "title": {
       "en": "The bleeding has stopped",
@@ -700,7 +703,8 @@
     "acuity": "routine",
     "patient": {
       "name": "Lucía Navarro",
-      "age": 37
+      "age": 37,
+      "sex": "female"
     },
     "title": {
       "en": "A third episode of cystitis",
@@ -931,7 +935,8 @@
     "acuity": "routine",
     "patient": {
       "name": "Amir Haddad",
-      "age": 44
+      "age": 44,
+      "sex": "male"
     },
     "title": {
       "en": "Preventing the next stone",
@@ -1163,7 +1168,8 @@
     "acuity": "routine",
     "patient": {
       "name": "Robert Klein",
-      "age": 65
+      "age": 65,
+      "sex": "male"
     },
     "title": {
       "en": "Active surveillance needs active follow-up",
@@ -1394,8 +1400,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-001",
-      "age": 48
+      "name": "Tarık Polat",
+      "age": 48,
+      "sex": "male",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "Andrologie & Reproduktion",
@@ -1537,8 +1545,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-002",
-      "age": 56
+      "name": "Ralf Gerber",
+      "age": 56,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Andrologie & Reproduktion",
@@ -1680,8 +1690,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-003",
-      "age": 32
+      "name": "Lukas Sander",
+      "age": 32,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Andrologie & Reproduktion",
@@ -1823,8 +1835,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-004",
-      "age": 35
+      "name": "Tobias Winkler",
+      "age": 35,
+      "sex": "male",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "Andrologie & Reproduktion",
@@ -1966,8 +1980,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-005",
-      "age": 29
+      "name": "Julian Barth",
+      "age": 29,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Andrologie & Reproduktion",
@@ -2109,8 +2125,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-006",
-      "age": null
+      "name": "Weiß & Scholl",
+      "age": null,
+      "sex": "male",
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Andrologie & Reproduktion",
@@ -2252,8 +2270,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-007",
-      "age": 52
+      "name": "Stavros Papadopoulos",
+      "age": 52,
+      "sex": "male",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "Andrologie & Reproduktion",
@@ -2395,8 +2415,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-009",
-      "age": 44
+      "name": "Raúl Gil",
+      "age": 44,
+      "sex": "male",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "Andrologie & Reproduktion",
@@ -2538,8 +2560,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-010",
-      "age": 34
+      "name": "Tim Lux",
+      "age": 34,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Andrologie & Reproduktion",
@@ -2681,8 +2705,10 @@
     "level": 2,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-013",
-      "age": 74
+      "name": "Frank Dorn",
+      "age": 74,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Funktionelle Urologie & Neurourologie",
@@ -2826,8 +2852,10 @@
     "level": 2,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-014",
-      "age": 62
+      "name": "Wolfgang Ehrhardt",
+      "age": 62,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Funktionelle Urologie & Neurourologie",
@@ -2969,8 +2997,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-015",
-      "age": 71
+      "name": "Volker Brückner",
+      "age": 71,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Funktionelle Urologie & Neurourologie",
@@ -3112,8 +3142,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-016",
-      "age": 66
+      "name": "Jürgen Paulsen",
+      "age": 66,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Funktionelle Urologie & Neurourologie",
@@ -3255,8 +3287,10 @@
     "level": 2,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-017",
-      "age": 52
+      "name": "Katrin Günther",
+      "age": 52,
+      "sex": "female",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "Funktionelle Urologie & Neurourologie",
@@ -3398,8 +3432,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-019",
-      "age": 78
+      "name": "Lieselotte Nolte",
+      "age": 78,
+      "sex": "female",
+      "ageBand": "elderly"
     },
     "topic": {
       "de": "Funktionelle Urologie & Neurourologie",
@@ -3541,8 +3577,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-023",
-      "age": 41
+      "name": "Viktoria Reimer",
+      "age": 41,
+      "sex": "female",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "Funktionelle Urologie & Neurourologie",
@@ -3684,8 +3722,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-024",
-      "age": 32
+      "name": "Stefano Gallo",
+      "age": 32,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Hodentumor",
@@ -3843,8 +3883,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-025",
-      "age": 27
+      "name": "Jannik Maier",
+      "age": 27,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Hodentumor",
@@ -4002,8 +4044,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-026",
-      "age": 28
+      "name": "Leon Schade",
+      "age": 28,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Hodentumor",
@@ -4153,8 +4197,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-027",
-      "age": 30
+      "name": "Nico Schulte",
+      "age": 30,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Hodentumor",
@@ -4298,8 +4344,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-029",
-      "age": 35
+      "name": "Markus Groß",
+      "age": 35,
+      "sex": "male",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "Hodentumor",
@@ -4449,8 +4497,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-031",
-      "age": 26
+      "name": "Reza Ahmadi",
+      "age": 26,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Hodentumor",
@@ -4600,8 +4650,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-032",
-      "age": 31
+      "name": "Maximilian Fritsch",
+      "age": 31,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Hodentumor",
@@ -4755,8 +4807,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-036",
-      "age": 38
+      "name": "Patrick Pieper",
+      "age": 38,
+      "sex": "male",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "Hodentumor",
@@ -4904,8 +4958,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-038",
-      "age": 24
+      "name": "Alessandro Romano",
+      "age": 24,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Hodentumor",
@@ -5045,8 +5101,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-039",
-      "age": 29
+      "name": "Paul Kirsch",
+      "age": 29,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Hodentumor",
@@ -5188,8 +5246,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-040",
-      "age": 27
+      "name": "Tom Funk",
+      "age": 27,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Hodentumor",
@@ -5331,8 +5391,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-043",
-      "age": 36
+      "name": "Omar Rahman",
+      "age": 36,
+      "sex": "male",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "Hodentumor",
@@ -5474,8 +5536,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-044",
-      "age": 34
+      "name": "Jakob Beck",
+      "age": 34,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Hodentumor",
@@ -5653,8 +5717,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-045",
-      "age": 30
+      "name": "Felix Petersen",
+      "age": 30,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Hodentumor",
@@ -5819,8 +5885,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-046",
-      "age": 46
+      "name": "Kamil Król",
+      "age": 46,
+      "sex": "male",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "Hodentumor",
@@ -5998,8 +6066,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-047",
-      "age": 71
+      "name": "Hans-Peter Drescher",
+      "age": 71,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Hodentumor",
@@ -6177,8 +6247,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-048",
-      "age": 68
+      "name": "Norbert Hofmann",
+      "age": 68,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Hodentumor",
@@ -6349,8 +6421,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-051",
-      "age": 35
+      "name": "Holger Reich",
+      "age": 35,
+      "sex": "male",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "Hodentumor",
@@ -6515,8 +6589,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-053",
-      "age": 27
+      "name": "Philipp Jung",
+      "age": 27,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Hodentumor",
@@ -6681,8 +6757,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-058",
-      "age": 24
+      "name": "Tomasz Mazur",
+      "age": 24,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Hodentumor",
@@ -6847,8 +6925,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-059",
-      "age": 31
+      "name": "Kevin Wirth",
+      "age": 31,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Hodentumor",
@@ -7013,8 +7093,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-060",
-      "age": 36
+      "name": "Karim Hamdan",
+      "age": 36,
+      "sex": "male",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "Hodentumor",
@@ -7192,8 +7274,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-061",
-      "age": 27
+      "name": "Philipp Wolf",
+      "age": 27,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Hodentumor",
@@ -7358,8 +7442,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-062",
-      "age": null
+      "name": "Jan Schenk",
+      "age": null,
+      "sex": "male",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "Hodentumor",
@@ -7524,8 +7610,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-063",
-      "age": 42
+      "name": "Benjamin Brauer",
+      "age": 42,
+      "sex": "male",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "Hodentumor",
@@ -7703,8 +7791,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-064",
-      "age": 29
+      "name": "Fabian Hauser",
+      "age": 29,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Hodentumor",
@@ -7869,8 +7959,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-065",
-      "age": 23
+      "name": "Volkan Akın",
+      "age": 23,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Hodentumor",
@@ -8035,8 +8127,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-067",
-      "age": null
+      "name": "Sebastian Hübner",
+      "age": null,
+      "sex": "male",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "Hodentumor",
@@ -8201,8 +8295,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-068",
-      "age": 42
+      "name": "Andrej Penner",
+      "age": 42,
+      "sex": "male",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "Hodentumor",
@@ -8367,8 +8463,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-069",
-      "age": 33
+      "name": "Maxim Hildebrandt",
+      "age": 33,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Hodentumor",
@@ -8533,8 +8631,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-070",
-      "age": 45
+      "name": "Kerem Korkmaz",
+      "age": 45,
+      "sex": "male",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "Hodentumor",
@@ -8699,8 +8799,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-071",
-      "age": 38
+      "name": "Timo Herrmann",
+      "age": 38,
+      "sex": "male",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "Hodentumor",
@@ -8865,8 +8967,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-073",
-      "age": 35
+      "name": "Paweł Zając",
+      "age": 35,
+      "sex": "male",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "Hodentumor",
@@ -9044,8 +9148,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-074",
-      "age": 31
+      "name": "Elias Wiegand",
+      "age": 31,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Hodentumor",
@@ -9210,8 +9316,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-075",
-      "age": 40
+      "name": "Alexander Franke",
+      "age": 40,
+      "sex": "male",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "Hodentumor",
@@ -9389,8 +9497,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-076",
-      "age": 36
+      "name": "Serkan Arslan",
+      "age": 36,
+      "sex": "male",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "Hodentumor",
@@ -9568,8 +9678,10 @@
     "level": 2,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-077",
-      "age": 26
+      "name": "Efua Mensah",
+      "age": 26,
+      "sex": "female",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Infektiologie",
@@ -9711,8 +9823,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-079",
-      "age": 63
+      "name": "Despina Nikolaidou",
+      "age": 63,
+      "sex": "female",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Infektiologie",
@@ -9854,8 +9968,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-080",
-      "age": null
+      "name": "Hess, Seidel, Henke & Blum",
+      "age": null,
+      "sex": null,
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Infektiologie",
@@ -9997,8 +10113,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-088",
-      "age": null
+      "name": "Henry Gottwald",
+      "age": null,
+      "sex": "male",
+      "ageBand": "infant"
     },
     "topic": {
       "de": "Kinderurologie",
@@ -10140,8 +10258,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-091",
-      "age": null
+      "name": "Charlie Klose",
+      "age": null,
+      "sex": null,
+      "ageBand": "infant"
     },
     "topic": {
       "de": "Kinderurologie",
@@ -10283,8 +10403,10 @@
     "level": 2,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-092",
-      "age": null
+      "name": "Szymon Krawczyk",
+      "age": null,
+      "sex": "male",
+      "ageBand": "child"
     },
     "topic": {
       "de": "Kinderurologie",
@@ -10432,8 +10554,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-093",
-      "age": null
+      "name": "Ben Hecht",
+      "age": null,
+      "sex": "male",
+      "ageBand": "newborn"
     },
     "topic": {
       "de": "Kinderurologie",
@@ -10575,8 +10699,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-095",
-      "age": null
+      "name": "Juna Fiedler",
+      "age": null,
+      "sex": "female",
+      "ageBand": "child"
     },
     "topic": {
       "de": "Kinderurologie",
@@ -10718,8 +10844,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-096",
-      "age": null
+      "name": "Leni Zobel",
+      "age": null,
+      "sex": "female",
+      "ageBand": "child"
     },
     "topic": {
       "de": "Kinderurologie",
@@ -10861,8 +10989,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-097",
-      "age": 71
+      "name": "Hartmut Fink",
+      "age": 71,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "MIBC",
@@ -11016,8 +11146,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-098",
-      "age": 64
+      "name": "Uwe Schott",
+      "age": 64,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "MIBC",
@@ -11178,8 +11310,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-100",
-      "age": 62
+      "name": "Peter Holz",
+      "age": 62,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "MIBC",
@@ -11352,8 +11486,10 @@
     "level": 2,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-102",
-      "age": null
+      "name": "Toni Rupp",
+      "age": null,
+      "sex": null,
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "MIBC",
@@ -11499,8 +11635,10 @@
     "level": 2,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-103",
-      "age": null
+      "name": "Kai Sievers",
+      "age": null,
+      "sex": null,
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "MIBC",
@@ -11646,8 +11784,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-107",
-      "age": 58
+      "name": "Sevgi Kaya",
+      "age": 58,
+      "sex": "female",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Nierenzellkarzinom",
@@ -11795,8 +11935,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-108",
-      "age": 62
+      "name": "Ali Aslan",
+      "age": 62,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Nierenzellkarzinom",
@@ -11954,8 +12096,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-109",
-      "age": 54
+      "name": "Holger Oertel",
+      "age": 54,
+      "sex": "male",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "Nierenzellkarzinom",
@@ -12099,8 +12243,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-110",
-      "age": 23
+      "name": "Tim Hartmann",
+      "age": 23,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Nierenzellkarzinom",
@@ -12244,8 +12390,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-111",
-      "age": 61
+      "name": "Gerd Ritter",
+      "age": 61,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Nierenzellkarzinom",
@@ -12393,8 +12541,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-112",
-      "age": 58
+      "name": "Cornelia Thomsen",
+      "age": 58,
+      "sex": "female",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Nierenzellkarzinom",
@@ -12538,8 +12688,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-113",
-      "age": 49
+      "name": "Anastasia Janzen",
+      "age": 49,
+      "sex": "female",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "Nierenzellkarzinom",
@@ -12698,8 +12850,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-114",
-      "age": 82
+      "name": "Dieter Rösler",
+      "age": 82,
+      "sex": "male",
+      "ageBand": "elderly"
     },
     "topic": {
       "de": "Nierenzellkarzinom",
@@ -12843,8 +12997,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-115",
-      "age": 35
+      "name": "Jelena Wiebe",
+      "age": 35,
+      "sex": "female",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "Nierenzellkarzinom",
@@ -12988,8 +13144,10 @@
     "level": 2,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-127",
-      "age": null
+      "name": "Dennis Freitag",
+      "age": null,
+      "sex": "male",
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "NMIBC",
@@ -13135,8 +13293,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-160",
-      "age": 71
+      "name": "Nikolaos Dimitriou",
+      "age": 71,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Operative Urologie",
@@ -13307,8 +13467,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-161",
-      "age": 64
+      "name": "Bernd Kaiser",
+      "age": 64,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Operative Urologie",
@@ -13479,8 +13641,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-163",
-      "age": 62
+      "name": "Bernhard Wagner",
+      "age": 62,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Operative Urologie",
@@ -13651,8 +13815,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-166",
-      "age": 63
+      "name": "Frank Kopp",
+      "age": 63,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Operative Urologie",
@@ -13810,8 +13976,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-171",
-      "age": 61
+      "name": "Detlef Hahn",
+      "age": 61,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Peniskarzinom",
@@ -13957,8 +14125,10 @@
     "level": 2,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-173",
-      "age": null
+      "name": "Dirk Stolz",
+      "age": null,
+      "sex": "male",
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Peniskarzinom",
@@ -14102,8 +14272,10 @@
     "level": 2,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-174",
-      "age": null
+      "name": "Sven Witt",
+      "age": null,
+      "sex": "male",
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Peniskarzinom",
@@ -14247,8 +14419,10 @@
     "level": 2,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-175",
-      "age": null
+      "name": "Florian Dreyer",
+      "age": null,
+      "sex": "male",
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Peniskarzinom",
@@ -14392,8 +14566,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-176",
-      "age": null
+      "name": "Tarek Abboud",
+      "age": null,
+      "sex": "male",
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Peniskarzinom",
@@ -14537,8 +14713,10 @@
     "level": 2,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-177",
-      "age": null
+      "name": "Stefan Petrović",
+      "age": null,
+      "sex": "male",
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Peniskarzinom",
@@ -14682,8 +14860,10 @@
     "level": 2,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-178",
-      "age": null
+      "name": "Murat Demir",
+      "age": null,
+      "sex": "male",
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Peniskarzinom",
@@ -14827,8 +15007,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-179",
-      "age": 66
+      "name": "Harald Heller",
+      "age": 66,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Prostatakarzinom",
@@ -14979,8 +15161,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-180",
-      "age": 74
+      "name": "Franco Moretti",
+      "age": 74,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Prostatakarzinom",
@@ -15131,8 +15315,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-181",
-      "age": 69
+      "name": "Wolfgang Kirchner",
+      "age": 69,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Prostatakarzinom",
@@ -15281,8 +15467,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-182",
-      "age": null
+      "name": "Ahmet Özdemir",
+      "age": null,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Prostatakarzinom",
@@ -15430,8 +15618,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-183",
-      "age": 63
+      "name": "Dragan Babić",
+      "age": 63,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Prostatakarzinom",
@@ -15579,8 +15769,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-184",
-      "age": 66
+      "name": "Michael Kraft",
+      "age": 66,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Prostatakarzinom",
@@ -15724,8 +15916,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-185",
-      "age": null
+      "name": "Mertens & Jansen",
+      "age": null,
+      "sex": "male",
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Prostatakarzinom",
@@ -15869,8 +16063,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-186",
-      "age": null
+      "name": "Haas & Güneş",
+      "age": null,
+      "sex": "male",
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Prostatakarzinom",
@@ -16022,8 +16218,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-187",
-      "age": 58
+      "name": "Ralf Böttcher",
+      "age": 58,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Prostatakarzinom",
@@ -16171,8 +16369,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-188",
-      "age": 64
+      "name": "Bernd Grimm",
+      "age": 64,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Prostatakarzinom",
@@ -16326,8 +16526,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-189",
-      "age": null
+      "name": "Brunner & Wendt",
+      "age": null,
+      "sex": "male",
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Prostatakarzinom",
@@ -16475,8 +16677,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-190",
-      "age": 67
+      "name": "Hartmut Meyer",
+      "age": 67,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Prostatakarzinom",
@@ -16624,8 +16828,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-191",
-      "age": 62
+      "name": "Rainer Böhm",
+      "age": 62,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Prostatakarzinom",
@@ -16769,8 +16975,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-192",
-      "age": 68
+      "name": "Volker Lange",
+      "age": 68,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Prostatakarzinom",
@@ -16918,8 +17126,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-193",
-      "age": 71
+      "name": "Andreas Wulf",
+      "age": 71,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Prostatakarzinom",
@@ -17072,8 +17282,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-194",
-      "age": 70
+      "name": "Ahmad Saleh",
+      "age": 70,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Prostatakarzinom",
@@ -17221,8 +17433,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-195",
-      "age": null
+      "name": "Jürgen Sommer",
+      "age": null,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Prostatakarzinom",
@@ -17370,8 +17584,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-196",
-      "age": 73
+      "name": "Nikolai Görzen",
+      "age": 73,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Prostatakarzinom",
@@ -17541,8 +17757,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-197",
-      "age": 76
+      "name": "Klaus Haag",
+      "age": 76,
+      "sex": "male",
+      "ageBand": "elderly"
     },
     "topic": {
       "de": "Prostatakarzinom",
@@ -17690,8 +17908,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-198",
-      "age": null
+      "name": "Engel & Decker",
+      "age": null,
+      "sex": "male",
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Prostatakarzinom",
@@ -17841,8 +18061,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-200",
-      "age": 69
+      "name": "Mustafa Doğan",
+      "age": 69,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Prostatakarzinom",
@@ -17990,8 +18212,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-201",
-      "age": 61
+      "name": "Osman Çelik",
+      "age": 61,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Prostatakarzinom",
@@ -18135,8 +18359,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-213",
-      "age": null
+      "name": "Chris Feldmann",
+      "age": null,
+      "sex": null,
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Rekonstruktion & Transplantation",
@@ -18278,8 +18504,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-214",
-      "age": 58
+      "name": "Gerd Schütz",
+      "age": 58,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Rekonstruktion & Transplantation",
@@ -18427,8 +18655,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-217",
-      "age": null
+      "name": "Tanja Langer",
+      "age": null,
+      "sex": "female",
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Rekonstruktion & Transplantation",
@@ -18570,8 +18800,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-220",
-      "age": null
+      "name": "Thorsten Unger",
+      "age": null,
+      "sex": "male",
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Rekonstruktion & Transplantation",
@@ -18713,8 +18945,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-237",
-      "age": null
+      "name": "Stark & Pfeiffer",
+      "age": null,
+      "sex": "male",
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Urethrakarzinom",
@@ -18856,8 +19090,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-238",
-      "age": 64
+      "name": "Gabriele Dittrich",
+      "age": 64,
+      "sex": "female",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Urethrakarzinom",
@@ -18999,8 +19235,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-239",
-      "age": 61
+      "name": "Ralf Kemper",
+      "age": 61,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Urethrakarzinom",
@@ -19142,8 +19380,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-240",
-      "age": 58
+      "name": "Barbara Pawlak",
+      "age": 58,
+      "sex": "female",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Urethrakarzinom",
@@ -19285,8 +19525,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-241",
-      "age": 57
+      "name": "Stjepan Jovanović",
+      "age": 57,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Urethrakarzinom",
@@ -19447,8 +19689,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-242",
-      "age": null
+      "name": "Karagiannis & Hennig",
+      "age": null,
+      "sex": "male",
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Urethrakarzinom",
@@ -19590,8 +19834,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-244",
-      "age": null
+      "name": "Şahin & Strauß",
+      "age": null,
+      "sex": null,
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Urethrakarzinom",
@@ -19752,8 +19998,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-245",
-      "age": null
+      "name": "Christodoulou & Kühn",
+      "age": null,
+      "sex": "female",
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Urethrakarzinom",
@@ -19895,8 +20143,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-248",
-      "age": 38
+      "name": "Roberto Barbieri",
+      "age": 38,
+      "sex": "male",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "Urolithiasis",
@@ -20046,8 +20296,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-249",
-      "age": 52
+      "name": "Jens Moser",
+      "age": 52,
+      "sex": "male",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "Urolithiasis",
@@ -20215,8 +20467,10 @@
     "level": 2,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-253",
-      "age": null
+      "name": "Jo Thiel",
+      "age": null,
+      "sex": null,
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Urolithiasis",
@@ -20360,8 +20614,10 @@
     "level": 2,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-254",
-      "age": null
+      "name": "Eike Löffler",
+      "age": null,
+      "sex": null,
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Urolithiasis",
@@ -20505,8 +20761,10 @@
     "level": 2,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-255",
-      "age": null
+      "name": "Robin Hilbert",
+      "age": null,
+      "sex": null,
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Urolithiasis",
@@ -20650,8 +20908,10 @@
     "level": 2,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-256",
-      "age": null
+      "name": "Sascha Schuster",
+      "age": null,
+      "sex": null,
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Urolithiasis",
@@ -20795,8 +21055,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-258",
-      "age": 64
+      "name": "Monika Thiele",
+      "age": 64,
+      "sex": "female",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "UTUC",
@@ -20944,8 +21206,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-261",
-      "age": null
+      "name": "Jo Ritz",
+      "age": null,
+      "sex": null,
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "UTUC",
@@ -21087,8 +21351,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-262",
-      "age": null
+      "name": "Sascha Wolters",
+      "age": null,
+      "sex": null,
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "UTUC",
@@ -21230,8 +21496,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-264",
-      "age": 68
+      "name": "Mohammed Sabbagh",
+      "age": 68,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "UTUC",
@@ -21377,8 +21645,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-265",
-      "age": 62
+      "name": "Uwe Probst",
+      "age": 62,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "UTUC",
@@ -21537,8 +21807,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-266",
-      "age": null
+      "name": "Christina Vlachou",
+      "age": null,
+      "sex": "female",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "UTUC",

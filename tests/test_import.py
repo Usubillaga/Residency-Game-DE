@@ -109,6 +109,24 @@ class ImportTests(unittest.TestCase):
         self.assertEqual(manifest["flaggedSourceQuestions"], sum(source["evidenceFlag"] for source in self.snapshots))
         self.assertEqual({reference["id"] for reference in references}, {"bank-guide-" + domain for domain in self.domain_labels})
 
+    def test_patient_names_come_from_the_curated_list_with_a_numbered_fallback(self):
+        self.write_fixture()
+        names = importer.patient_names(ROOT / "data" / "patient-names.json")
+        self.assertEqual(len(names), 267)
+        generated = importer.generate(self.archive_path, plan_path=self.plan_path, names_path=self.directory / "absent.json")[0]
+        cases = [case for area in importer.AREAS for case in generated[area]]
+        self.assertTrue(all(case["patient"]["name"].startswith("Uro-") for case in cases))
+        self.assertTrue(all(case["patient"]["sex"] is None and case["patient"]["ageBand"] == "unknown" for case in cases))
+        first, second = sorted(names)[:2]
+        duplicate = self.directory / "duplicate-names.json"
+        duplicate.write_text(json.dumps({"patients": {first: names[first], second: dict(names[second], name=names[first]["name"])}}), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "unique"):
+            importer.patient_names(duplicate)
+        invalid = self.directory / "invalid-sex.json"
+        invalid.write_text(json.dumps({"patients": {first: dict(names[first], sex="unknown")}}), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "sex"):
+            importer.patient_names(invalid)
+
     def test_normalized_duplicate_clinical_content_is_rejected(self):
         questions = self.questions()
         original, duplicate = questions[:2]

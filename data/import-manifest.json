@@ -40,5 +40,5 @@
   },
   "flaggedSourceQuestions": 32,
   "selectionSha256": "795840cc79879e662dfb0bd9a018a7e196a6a2959b23495d9942979140331dc3",
-  "contentPolicy": "All 267 original vignettes, questions, options, rationales and explanations are preserved once in DE/EN/ES. Drafts and evidence flags are retained. No archive scripts are executed. Missing or ambiguous ages and vital signs remain null. Uro identifiers represent teaching cases, including vignettes comparing multiple patients. Five minutes per answer are game time only."
+  "contentPolicy": "All 267 original vignettes, questions, options, rationales and explanations are preserved once in DE/EN/ES. Drafts and evidence flags are retained. No archive scripts are executed. Missing or ambiguous ages and vital signs remain null. Fictional display names come from data/patient-names.json; sex, patient count and age band there are taken only from the case text, and vignettes comparing several patients list one surname per patient. Five minutes per answer are game time only."
 }

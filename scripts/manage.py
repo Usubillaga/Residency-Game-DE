@@ -33,6 +33,7 @@ AREAS = [
 ]
 AREA_IDS = tuple(area["id"] for area in AREAS)
 CASE_FILES = tuple(f"{area}.json" for area in AREA_IDS)
+AGE_BANDS = {"newborn", "infant", "child", "teen", "young", "adult", "senior", "elderly", "unknown"}
 IGNORED_DIRS = {".git", "__pycache__", ".pytest_cache", ".cache", "cache", ".venv", "venv", "node_modules", "work", "tmp", "temp"}
 
 
@@ -230,6 +231,10 @@ def load_and_validate(root: Path = ROOT, *, check_assets: bool = True):
             if patient["age"] is not None:
                 integer(patient["age"], f"{where}.patient.age")
                 require(patient["age"] <= 120, f"{where}.patient.age: age must be <= 120")
+            require(patient.get("sex") in (None, "female", "male"), f"{where}.patient.sex: expected female, male or null")
+            require(patient.get("ageBand", "unknown") in AGE_BANDS, f"{where}.patient.ageBand: unsupported age band")
+            if "label" in patient:
+                localised(patient["label"], f"{where}.patient.label")
             for key in ("title", "presenting", "takeaway"):
                 localised(case.get(key), f"{where}.{key}")
             localised(case.get("objectives"), f"{where}.objectives", array=True)

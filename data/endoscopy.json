@@ -6,7 +6,8 @@
     "acuity": "urgent",
     "patient": {
       "name": "Elena Fischer",
-      "age": 63
+      "age": 63,
+      "sex": "female"
     },
     "title": {
       "en": "A papillary bladder finding",
@@ -237,7 +238,8 @@
     "acuity": "urgent",
     "patient": {
       "name": "Javier Romero",
-      "age": 69
+      "age": 69,
+      "sex": "male"
     },
     "title": {
       "en": "A red patch is not a final diagnosis",
@@ -468,7 +470,8 @@
     "acuity": "routine",
     "patient": {
       "name": "Thomas Berger",
-      "age": 52
+      "age": 52,
+      "sex": "male"
     },
     "title": {
       "en": "Resistance at a narrowed segment",
@@ -699,7 +702,8 @@
     "acuity": "routine",
     "patient": {
       "name": "Sofia Martín",
-      "age": 46
+      "age": 46,
+      "sex": "female"
     },
     "title": {
       "en": "Stent symptoms and a missing date",
@@ -932,7 +936,8 @@
     "acuity": "urgent",
     "patient": {
       "name": "Peter Neumann",
-      "age": 72
+      "age": 72,
+      "sex": "male"
     },
     "title": {
       "en": "A pathology report with a gap",
@@ -1164,7 +1169,8 @@
     "acuity": "critical",
     "patient": {
       "name": "Nadia Yılmaz",
-      "age": 55
+      "age": 55,
+      "sex": "female"
     },
     "title": {
       "en": "Pause definitive treatment",
@@ -1396,8 +1402,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-011",
-      "age": 68
+      "name": "Panagiota Konstantinidou",
+      "age": 68,
+      "sex": "female",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Funktionelle Urologie & Neurourologie",
@@ -1546,8 +1554,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-012",
-      "age": 22
+      "name": "Sergej Rempel",
+      "age": 22,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Funktionelle Urologie & Neurourologie",
@@ -1691,8 +1701,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-018",
-      "age": null
+      "name": "Wille & Weller",
+      "age": null,
+      "sex": "female",
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Funktionelle Urologie & Neurourologie",
@@ -1834,8 +1846,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-020",
-      "age": 69
+      "name": "Harald Bartels",
+      "age": 69,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Funktionelle Urologie & Neurourologie",
@@ -1977,8 +1991,10 @@
     "level": 2,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-101",
-      "age": null
+      "name": "Alex Kern",
+      "age": null,
+      "sex": null,
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "MIBC",
@@ -2124,8 +2140,10 @@
     "level": 2,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-106",
-      "age": null
+      "name": "Eike Menzel",
+      "age": null,
+      "sex": null,
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "MIBC",
@@ -2271,8 +2289,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-119",
-      "age": 63
+      "name": "Brigitte Frey",
+      "age": 63,
+      "sex": "female",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "NMIBC",
@@ -2434,8 +2454,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-120",
-      "age": 59
+      "name": "Gerd Haase",
+      "age": 59,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "NMIBC",
@@ -2589,8 +2611,10 @@
     "level": 2,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-121",
-      "age": null
+      "name": "Alex Westphal",
+      "age": null,
+      "sex": null,
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "NMIBC",
@@ -2736,8 +2760,10 @@
     "level": 2,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-122",
-      "age": null
+      "name": "Jo Kessler",
+      "age": null,
+      "sex": null,
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "NMIBC",
@@ -2883,8 +2909,10 @@
     "level": 2,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-123",
-      "age": null
+      "name": "Toni Reuter",
+      "age": null,
+      "sex": null,
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "NMIBC",
@@ -3030,8 +3058,10 @@
     "level": 2,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-125",
-      "age": null
+      "name": "Uli Vetter",
+      "age": null,
+      "sex": null,
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "NMIBC",
@@ -3177,8 +3207,10 @@
     "level": 2,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-126",
-      "age": null
+      "name": "Kim Meißner",
+      "age": null,
+      "sex": null,
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "NMIBC",
@@ -3324,8 +3356,10 @@
     "level": 2,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-128",
-      "age": 62
+      "name": "Olga Klassen",
+      "age": 62,
+      "sex": "female",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "NMIBC",
@@ -3475,8 +3509,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-130",
-      "age": null
+      "name": "Chris Wolff",
+      "age": null,
+      "sex": null,
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Operative Urologie",
@@ -3618,8 +3654,10 @@
     "level": 3,
     "acuity": "critical",
     "patient": {
-      "name": "Uro-146",
-      "age": null
+      "name": "Davide Ricci",
+      "age": null,
+      "sex": "male",
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Operative Urologie",
@@ -3767,8 +3805,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-243",
-      "age": 66
+      "name": "Volker Seeger",
+      "age": 66,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Urethrakarzinom",
@@ -3910,8 +3950,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-246",
-      "age": null
+      "name": "Anja Ebner",
+      "age": null,
+      "sex": "female",
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Urethrakarzinom",
@@ -4053,8 +4095,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-257",
-      "age": 68
+      "name": "Rainer Wicke",
+      "age": 68,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "UTUC",
@@ -4196,8 +4240,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-259",
-      "age": 57
+      "name": "Uli Hesse",
+      "age": 57,
+      "sex": null,
+      "ageBand": "senior"
     },
     "topic": {
       "de": "UTUC",
@@ -4339,8 +4385,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-260",
-      "age": null
+      "name": "Kai Lehmann",
+      "age": null,
+      "sex": null,
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "UTUC",
@@ -4482,8 +4530,10 @@
     "level": 3,
     "acuity": "routine",
     "patient": {
-      "name": "Uro-267",
-      "age": 70
+      "name": "Wolfgang Rühl",
+      "age": 70,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "UTUC",
