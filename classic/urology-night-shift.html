@@ -1,0 +1,2297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Urology Night Shift</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Baloo+2:wght@500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>
+/* Layout: Nachtdienst-Konsole – HUD oben, Flur-Szene als Bühne, ZNA-Board darunter, Patientenakte als Papier-Overlay.
+   Bewusst eine einzige Optik (Nachtschicht): dunkler Grund, MTS-Triagefarben als Semantik, Papier für die Akte. */
+:root{
+  color-scheme: dark;
+  --night:#0f1426; --night-2:#171f3d; --night-3:#212b55; --line:#34417c;
+  --text:#ecf1ff; --muted:#a3afd9;
+  --paper:#f6f8fc; --paper-2:#e9eff8; --grid:#dbe3ef; --ink:#1c2138; --ink-2:#4d5675;
+  --accent:#3cc7c1; --accent-ink:#0b6e6a; --gold:#ffcf5a;
+  --mts-rot:#e5484d; --mts-orange:#f28c28; --mts-gelb:#f2c230; --mts-gruen:#36b37e; --mts-blau:#3b82f6;
+  --f-display:"Baloo 2","Trebuchet MS",system-ui,sans-serif;
+  --f-body:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --r:14px;
+}
+*{box-sizing:border-box}
+html,body{background:var(--night);color:var(--text)}
+body{font-family:var(--f-body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+h1,h2,h3{text-wrap:balance}
+
+.app{max-width:1320px;margin:0 auto;padding-inline:16px;padding-block:14px 32px;display:flex;flex-direction:column;gap:12px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--f-display);font-weight:700;font-size:1rem;line-height:1.1;padding:10px 14px;border-radius:12px;border:2px solid var(--line);background:var(--night-3);color:var(--text);transition:background .15s,border-color .15s,transform .08s}
+.btn:hover{background:#2b376b}
+.btn:active{transform:translateY(1px)}
+.btn.primary{background:var(--accent);color:#052522;border-color:#8be6e1}
+.btn.primary:hover{background:#5bd8d2}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.cost{font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:2px 6px;border-radius:6px;background:rgba(255,255,255,.12);white-space:nowrap}
+
+/* HUD */
+.hud{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 18px;padding:10px 14px;background:var(--night-2);border:2px solid var(--line);border-radius:var(--r)}
+.brand{display:flex;flex-direction:column;line-height:1}
+.brand-name{font-family:var(--f-display);font-weight:800;font-size:1.75rem;color:var(--gold);letter-spacing:.01em}
+.brand-sub{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+.clock{display:flex;flex-direction:column;align-items:center;line-height:1.05}
+.clock-time{font-family:var(--f-mono);font-weight:600;font-size:2rem;font-variant-numeric:tabular-nums;color:#fff}
+.clock-sub{font-size:.72rem;color:var(--muted)}
+.team{display:flex;flex-wrap:wrap;gap:8px}
+.who{display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:999px;border:2px solid var(--line);background:var(--night-3);text-align:left}
+.who:hover{border-color:var(--accent)}
+.who svg{width:42px;height:42px;flex:none}
+.who-txt{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.who-txt b{font-family:var(--f-display);font-size:.95rem}
+.who-txt small{font-size:.7rem;color:var(--muted)}
+.meter{display:block;width:92px;height:6px;border-radius:4px;background:#0b1023;margin-top:4px;overflow:hidden}
+.meter i{display:block;height:100%;width:50%;background:var(--accent);transition:width .5s,background .5s}
+
+/* Bühne */
+.stage{position:relative;border-radius:var(--r);overflow:hidden;border:2px solid var(--line);background:#0b1020}
+#scene{display:block;width:100%;height:auto;user-select:none;-webkit-user-select:none}
+#player{pointer-events:none}
+.stage-hint{display:none;font-size:.74rem;color:var(--muted);margin:-4px 0 0}
+@media (max-width:700px){.stage{overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}#scene{width:900px;max-width:none}.stage-hint{display:block}.board-actions .btn{padding:8px 10px;font-size:.92rem}}
+#scene text{font-family:var(--f-display);font-weight:700}
+#scene .mono{font-family:var(--f-mono);font-weight:600}
+.hit{cursor:pointer;outline:none}
+.hit .hl{opacity:0;transition:opacity .15s}
+.hit:hover .hl,.hit:focus-visible .hl{opacity:1}
+.chip-pulse{transform-box:fill-box;transform-origin:center;animation:pulse 1.1s ease-in-out infinite}
+.walking .legL{transform-box:fill-box;transform-origin:50% 0;animation:legA .44s linear infinite}
+.walking .legR{transform-box:fill-box;transform-origin:50% 0;animation:legB .44s linear infinite}
+.walking .body{animation:bob .22s linear infinite}
+.breathe{animation:breathe 3.2s ease-in-out infinite}
+.flasher{opacity:0}
+.flasher.on{animation:blue .5s linear 6}
+.steam path{opacity:0}
+.steam.on path{animation:steam 1.6s ease-out 2}
+.zzz{font-family:var(--f-display);font-weight:800;font-size:16px;fill:#6c7bb3}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+@keyframes legA{0%,100%{transform:rotate(16deg)}50%{transform:rotate(-16deg)}}
+@keyframes legB{0%,100%{transform:rotate(-16deg)}50%{transform:rotate(16deg)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes breathe{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.5px)}}
+@keyframes blue{0%,100%{opacity:0}30%,70%{opacity:.95}50%{opacity:.25}}
+@keyframes steam{0%{opacity:0;transform:translateY(0)}30%{opacity:.85}100%{opacity:0;transform:translateY(-26px)}}
+
+/* ZNA-Board */
+.board-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
+.board-head h2{font-family:var(--f-display);font-size:1.3rem;margin:0;letter-spacing:.02em}
+.board-head .hint{display:block;font-size:.8rem;color:var(--muted);margin:2px 0 0}
+.board-actions{display:flex;flex-wrap:wrap;gap:8px}
+.board{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:10px}
+@media (max-width:1100px){.board{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:720px){.board{grid-template-columns:repeat(2,minmax(0,1fr))}.slot.empty{min-height:0}}
+@media (max-width:340px){.board{grid-template-columns:1fr}}
+.slot{position:relative;display:flex;flex-direction:column;gap:6px;min-width:0;min-height:138px;padding:10px 12px 12px 18px;border-radius:12px;background:var(--night-2);border:2px solid var(--line);text-align:left;color:var(--text)}
+button.slot:hover{border-color:var(--accent)}
+.slot::before{content:"";position:absolute;left:0;top:0;bottom:0;width:8px;border-radius:10px 0 0 10px;background:var(--tri,#3a4572)}
+.slot .k{font-family:var(--f-mono);font-size:.7rem;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+.slot .n{font-family:var(--f-display);font-weight:700;font-size:1.06rem;line-height:1.1}
+.slot .c{font-size:.84rem;color:#c9d2f2;line-height:1.3}
+.slot.empty{border-style:dashed;opacity:.6}
+.slot.done{background:#141a33}
+.tri-rot{--tri:var(--mts-rot)} .tri-orange{--tri:var(--mts-orange)} .tri-gelb{--tri:var(--mts-gelb)} .tri-gruen{--tri:var(--mts-gruen)} .tri-blau{--tri:var(--mts-blau)}
+.bar{display:block;height:8px;border-radius:5px;background:#0b1023;overflow:hidden;margin-top:auto}
+.bar i{display:block;height:100%;transition:width .5s}
+.bar-l{display:flex;justify-content:space-between;font-size:.68rem;color:var(--muted)}
+.badges{display:flex;flex-wrap:wrap;gap:4px}
+.badge{font-family:var(--f-mono);font-size:.66rem;font-weight:600;padding:2px 6px;border-radius:6px;background:#27326a;color:#dfe6ff;white-space:nowrap}
+.badge.alert{background:var(--mts-rot);color:#fff;animation:pulse 1.2s ease-in-out infinite}
+.badge.new{background:var(--gold);color:#3a2a00}
+.badge.oa{background:#5b47a8;color:#fff}
+.grade{align-self:flex-start;font-family:var(--f-mono);font-size:.7rem;font-weight:600;padding:3px 8px;border-radius:999px}
+.g-best{background:#1f6e4d;color:#dbffef} .g-ok{background:#7a5b0e;color:#fff3cf} .g-wrong{background:#8a3f12;color:#ffe7d6} .g-critical{background:#8f1d22;color:#ffe1e1}
+.legend{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;font-size:.78rem;color:var(--muted);margin:10px 0 0}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px}
+.foot{font-size:.78rem;color:var(--muted);max-width:75ch}
+
+/* Akte (Overlay) */
+.overlay{position:fixed;inset:0;z-index:40;background:rgba(5,8,20,.72);overflow-y:auto;overscroll-behavior:contain;padding:16px;display:flex;justify-content:center;align-items:flex-start}
+.akte{width:min(1000px,100%);background:var(--paper);color:var(--ink);border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.55);overflow:hidden;margin-block:auto}
+.akte-top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 10px 8px 16px;background:var(--ink);color:#fff}
+.akte-top .lbl{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase}
+.x{border:0;background:transparent;color:#fff;font-size:1.4rem;line-height:1;padding:4px 10px;border-radius:8px}
+.x:hover{background:rgba(255,255,255,.12)}
+.akte-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:center;padding:14px 16px;border-bottom:2px solid var(--grid);background-color:var(--paper);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:22px 22px}
+.akte-head svg{width:96px;height:96px}
+.akte-name{font-family:var(--f-display);font-size:1.6rem;font-weight:800;line-height:1.05;margin:0}
+.akte-meta{font-size:.9rem;color:var(--ink-2);margin-top:4px}
+.akte-cc{font-size:1rem;margin-top:6px;font-weight:700}
+.pill{display:inline-block;font-family:var(--f-mono);font-size:.7rem;font-weight:600;padding:3px 9px;border-radius:999px;color:#fff;vertical-align:middle}
+.pill.gelb{color:#3a2c00}
+.vitals{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;padding:12px 16px;border-bottom:2px solid var(--grid)}
+@media(max-width:680px){.vitals{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.vital{background:#fff;border:2px solid var(--grid);border-radius:10px;padding:6px 9px;min-width:0}
+.vital .l{display:block;font-size:.72rem;color:var(--ink-2);letter-spacing:.02em}
+.vital .v{display:block;font-family:var(--f-mono);font-weight:600;font-size:1.04rem;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vital.bad{border-color:#f2a5a5;background:#fff4f4}
+.vital.bad .v{color:#b3261e}
+.akte-body{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:18px;padding:14px 16px 16px}
+@media(max-width:780px){.akte-body{grid-template-columns:1fr}}
+.akte h3{font-family:var(--f-display);font-size:1.08rem;margin:0 0 8px}
+.groups{display:flex;flex-direction:column;gap:12px}
+.group-l{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px;font-weight:700}
+.acts{display:flex;flex-wrap:wrap;gap:6px}
+.aw{display:inline-flex;border-radius:10px}
+.act{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:.88rem;line-height:1.2;padding:8px 10px;border-radius:10px;border:2px solid #c6d1e4;background:#fff;color:var(--ink);text-align:left}
+.act:hover:not([disabled]){border-color:var(--accent-ink);background:#f1fbfa}
+.act .cost{background:#e8eef7;color:var(--ink-2)}
+.aw .act:first-child:not(:last-child){border-top-right-radius:0;border-bottom-right-radius:0}
+.act.del{border-left:0;border-top-left-radius:0;border-bottom-left-radius:0;background:#eef2ff;color:#2e3f8f;font-size:.8rem}
+.act.done{background:#e6f5ee;border-color:#a5d8bf;color:#1d5c40}
+.act.pending{background:#fff7df;border-color:#efd389;color:#6a4e00}
+.act[disabled]{cursor:default}
+.findings{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;max-height:430px;overflow-y:auto}
+@media(max-width:780px){.findings{max-height:none}}
+.finding{background:#fff;border:2px solid var(--grid);border-radius:10px;padding:8px 10px;font-size:.92rem;line-height:1.42}
+.finding .t{display:block;font-family:var(--f-mono);font-size:.7rem;color:var(--ink-2);margin-bottom:2px}
+.finding.fresh{border-color:var(--accent-ink);box-shadow:0 0 0 3px rgba(11,110,106,.15)}
+.akte-foot{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center;padding:12px 16px 16px;border-top:2px solid var(--grid);background:var(--paper-2)}
+.akte-foot .l,.akte-foot .r{display:flex;flex-wrap:wrap;gap:8px}
+.akte .btn{background:#fff;color:var(--ink);border-color:#c6d1e4}
+.akte .btn:hover{background:#f1f5fb}
+.akte .btn.primary{background:var(--accent-ink);color:#fff;border-color:var(--accent-ink)}
+.akte .btn.primary:hover{background:#0d827d}
+.akte .btn.oa{background:#efeafe;color:#3b2a7c;border-color:#bcaef0}
+.akte .btn .cost{background:rgba(0,0,0,.08)}
+.akte .btn.primary .cost{background:rgba(255,255,255,.2)}
+.disp-q{font-family:var(--f-display);font-size:1.2rem;margin:0 0 10px}
+.disp-list{display:flex;flex-direction:column;gap:8px}
+.disp{display:flex;gap:12px;align-items:flex-start;text-align:left;padding:12px 14px;border-radius:12px;border:2px solid #c6d1e4;background:#fff;color:var(--ink);font-size:1rem;line-height:1.35}
+.disp:hover:not([disabled]){border-color:var(--accent-ink)}
+.disp.sel{border-color:var(--accent-ink);background:#e5f6f5;box-shadow:0 0 0 3px rgba(11,110,106,.15)}
+.disp[disabled]{opacity:.5;cursor:not-allowed}
+.disp .key{flex:none;display:inline-grid;place-items:center;width:26px;height:26px;border-radius:8px;background:var(--paper-2);font-family:var(--f-mono);font-weight:600;font-size:.85rem}
+.disp .veto{display:block;font-size:.8rem;color:#8f1d22;margin-top:3px}
+.result-head{display:flex;gap:14px;align-items:center;padding:14px;border-radius:14px;border:2px solid}
+.result-head svg{width:64px;height:64px;flex:none}
+.rh-best{background:#e4f6ec;border-color:#93d5b3} .rh-ok{background:#fff6da;border-color:#ecd187} .rh-wrong{background:#ffeedd;border-color:#f3b789} .rh-critical{background:#ffe4e4;border-color:#ee9b9b}
+.result-title{font-family:var(--f-display);font-size:1.3rem;font-weight:800;margin:0;line-height:1.1}
+.result-grade{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.result p{margin:.6em 0}
+.why{margin:6px 0 0;padding-left:20px}
+.why li{margin-bottom:6px}
+.src{font-size:.8rem;color:var(--ink-2);margin-top:8px}
+.logline{display:inline-block;margin-top:6px;font-family:var(--f-mono);font-size:.78rem;background:#eef2ff;color:#2e3f8f;padding:4px 8px;border-radius:8px}
+.chosen{font-size:.9rem;color:var(--ink-2);margin-top:8px}
+.warn{color:#9a5b00;font-weight:700}
+
+/* Dialog im RPG-Stil */
+.scrim{position:fixed;inset:0;z-index:70;background:rgba(5,8,20,.28)}
+.dialog{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom,0px));width:min(940px,calc(100% - 32px));max-height:calc(100% - 32px - env(safe-area-inset-bottom,0px));overflow-y:auto;overscroll-behavior:contain;z-index:80;display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;padding:14px 16px;border-radius:16px;background:#121a36;border:3px solid #e9eefc;box-shadow:0 0 0 4px #121a36,0 18px 50px rgba(0,0,0,.6);color:var(--text)}
+.dlg-portrait svg{width:96px;height:96px;display:block}
+@media(max-width:520px){.dlg-portrait svg{width:60px;height:60px}.dialog{gap:10px;padding:12px}}
+.dlg-name{font-family:var(--f-display);font-weight:800;font-size:1.12rem;color:var(--gold);line-height:1.1}
+.dlg-name small{font-family:var(--f-body);font-weight:400;font-size:.76rem;color:var(--muted);margin-left:8px}
+.dlg-text{margin:6px 0 10px;font-size:1.04rem;min-height:3em}
+.dlg-choices{display:flex;flex-direction:column;gap:6px;margin-bottom:6px}
+.dlg-choice{text-align:left;font-size:.95rem;line-height:1.35;padding:10px 12px;border-radius:10px;border:2px solid var(--line);background:var(--night-3);color:var(--text)}
+.dlg-choice:hover{border-color:var(--accent)}
+.dlg-row{display:flex;justify-content:flex-end}
+
+/* Toasts */
+.toasts{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:16px;z-index:90;display:flex;flex-direction:column;gap:8px;width:min(360px,calc(100% - 32px));pointer-events:none}
+.toast{background:#121a36;color:var(--text);border:2px solid var(--line);border-left:6px solid var(--accent);padding:9px 12px;border-radius:10px;font-size:.9rem;box-shadow:0 8px 24px rgba(0,0,0,.45);animation:tin .25s ease}
+@keyframes tin{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
+/* Vollbild-Screens */
+html.locked,html.locked body{overflow:hidden}
+.screen{position:fixed;inset:0;z-index:50;overflow-y:auto;overscroll-behavior:contain;background:radial-gradient(120% 80% at 50% 0%,#27346e 0%,var(--night) 62%);padding:16px;display:flex;justify-content:center;align-items:flex-start}
+.screen-inner{width:min(1040px,100%);margin-block:auto;padding-block:12px 28px}
+.title-word{font-family:var(--f-display);font-weight:800;font-size:clamp(3.2rem,11vw,7rem);line-height:.88;letter-spacing:-.01em;color:var(--gold);margin:0;text-shadow:0 5px 0 #7a4a00,0 12px 30px rgba(0,0,0,.45)}
+.title-sub{font-family:var(--f-mono);font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:10px 0 0}
+.title-lede{font-size:1.08rem;max-width:62ch;margin:14px 0 0;color:#d7def7}
+.title-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:16px;margin-top:20px}
+@media(max-width:820px){.title-grid{grid-template-columns:1fr}}
+.card{background:var(--night-2);border:2px solid var(--line);border-radius:16px;padding:16px;min-width:0}
+.card h2{font-family:var(--f-display);font-size:1.15rem;margin:0 0 10px}
+.avatars{display:flex;gap:10px;flex-wrap:wrap}
+.av{border:3px solid var(--line);border-radius:50%;padding:0;background:transparent;line-height:0}
+.av svg{width:78px;height:78px}
+.av[aria-pressed="true"]{border-color:var(--gold);box-shadow:0 0 0 4px rgba(255,207,90,.25)}
+.field{display:flex;flex-direction:column;gap:6px;margin-top:14px}
+.field label{font-size:.82rem;color:var(--muted)}
+.namebox{display:flex;align-items:center;border:2px solid var(--line);border-radius:12px;background:#0d1330;overflow:hidden}
+.namebox span{padding:10px 0 10px 12px;font-family:var(--f-display);font-weight:700;color:var(--muted)}
+.namebox input{flex:1;min-width:0;border:0;background:transparent;color:var(--text);font:inherit;font-family:var(--f-display);font-weight:700;font-size:1.05rem;padding:10px 12px 10px 6px}
+.namebox input:focus{outline:none}
+.namebox span:has(select){padding:6px 0 6px 8px}
+.namebox select{appearance:none;-webkit-appearance:none;border:0;border-radius:8px;background:rgba(255,255,255,.07) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23a3afd9' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 7px center;color:var(--gold);font:inherit;font-family:var(--f-display);font-weight:700;font-size:1.05rem;padding:4px 22px 4px 8px;cursor:pointer}
+.namebox select:hover{background-color:rgba(255,255,255,.13)}
+.namebox select:focus-visible{outline:2px solid var(--gold);outline-offset:1px}
+.namebox select option{background:#0d1330;color:var(--text)}
+.namebox:focus-within{border-color:var(--gold)}
+.roles{display:flex;flex-direction:column;gap:10px}
+.role{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:center}
+.role svg{width:54px;height:54px}
+.role b{font-family:var(--f-display);font-size:1rem;display:block;line-height:1.15}
+.role span{font-size:.86rem;color:#c9d2f2}
+.chain{font-family:var(--f-mono);font-size:.74rem;color:var(--muted);margin:2px 0 10px}
+.howto{margin:0;padding-left:20px;color:#d7def7}
+.howto li{margin-bottom:6px}
+.start-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:18px}
+.best{font-family:var(--f-mono);font-size:.8rem;color:var(--muted)}
+.disclaimer{font-size:.76rem;color:var(--muted);margin-top:16px;max-width:80ch}
+
+/* Frühbesprechung (Bosskampf) */
+.boss-stage{border-radius:16px;overflow:hidden;border:2px solid var(--line);background:#141b38}
+.boss-stage svg{display:block;width:100%;height:auto}
+.hpbar{display:flex;align-items:center;gap:10px;margin:12px 0}
+.hpbar b{font-family:var(--f-display);font-size:1rem;white-space:nowrap}
+.hp{flex:1;height:14px;border-radius:8px;background:#0b1023;border:2px solid var(--line);overflow:hidden}
+.hp i{display:block;height:100%;background:linear-gradient(90deg,#e5484d,#f28c28);transition:width .6s}
+.hpbar span{font-family:var(--f-mono);font-size:.8rem;color:var(--muted);white-space:nowrap}
+.qcard{background:var(--paper);color:var(--ink);border-radius:16px;padding:16px;margin-top:12px}
+.qnum{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.qtext{font-family:var(--f-display);font-size:1.25rem;line-height:1.2;margin:4px 0 12px}
+.qopts{display:flex;flex-direction:column;gap:8px}
+.qopt{display:flex;gap:12px;align-items:flex-start;text-align:left;padding:11px 14px;border-radius:12px;border:2px solid #c6d1e4;background:#fff;color:var(--ink);font-size:1rem;line-height:1.35}
+.qopt:hover:not([disabled]){border-color:var(--accent-ink)}
+.qopt .key{flex:none;display:inline-grid;place-items:center;width:26px;height:26px;border-radius:8px;background:var(--paper-2);font-family:var(--f-mono);font-weight:600;font-size:.85rem}
+.qopt.right{border-color:#2f9a6a;background:#e4f6ec}
+.qopt.wrong{border-color:#d0574f;background:#ffe9e7}
+.qopt[disabled]{cursor:default}
+.qwhy{margin-top:12px;padding:12px;border-radius:12px;background:var(--paper-2);font-size:.95rem}
+.qwhy .src{margin-top:6px}
+
+/* Schichtbericht */
+.report{background:var(--paper);color:var(--ink);border-radius:18px;overflow:hidden}
+.rep-head{padding:18px;background:var(--ink);color:#fff;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+.rep-head h1{font-family:var(--f-display);font-size:1.9rem;margin:0;line-height:1}
+.rep-score{font-family:var(--f-mono);font-size:2.2rem;font-weight:600;color:var(--gold);font-variant-numeric:tabular-nums}
+.rep-score small{font-size:.9rem;color:#c9d2f2}
+.rank{font-family:var(--f-display);font-size:1.1rem;color:#fff}
+.rep-body{padding:16px;display:flex;flex-direction:column;gap:16px}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+@media(max-width:700px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.kpi{background:#fff;border:2px solid var(--grid);border-radius:12px;padding:10px 12px;min-width:0}
+.kpi .l{font-size:.7rem;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-2)}
+.kpi .v{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;font-variant-numeric:tabular-nums}
+.rows{display:flex;flex-direction:column;gap:8px}
+.row{background:#fff;border:2px solid var(--grid);border-radius:12px;overflow:hidden}
+.row summary{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px;align-items:center;padding:10px 12px;cursor:pointer;list-style:none}
+.row summary::-webkit-details-marker{display:none}
+.row summary b{font-family:var(--f-display);font-size:1rem}
+.row summary .sub{display:block;font-size:.82rem;color:var(--ink-2)}
+.row .pts{font-family:var(--f-mono);font-weight:600;font-variant-numeric:tabular-nums}
+.row .inner{padding:0 12px 12px;font-size:.92rem}
+.quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+@media(max-width:820px){.quotes{grid-template-columns:1fr}}
+.quote{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:start;background:#fff;border:2px solid var(--grid);border-radius:12px;padding:10px}
+.quote svg{width:48px;height:48px}
+.quote b{font-family:var(--f-display);display:block;font-size:.95rem}
+.quote span{font-size:.9rem}
+.logbook{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.logbook li{font-family:var(--f-mono);font-size:.78rem;background:#eef2ff;color:#2e3f8f;padding:5px 9px;border-radius:8px}
+.rep-foot{display:flex;flex-wrap:wrap;gap:10px;padding:0 16px 18px}
+.report .btn{background:#fff;color:var(--ink);border-color:#c6d1e4}
+.report .btn.primary{background:var(--accent-ink);color:#fff;border-color:var(--accent-ink)}
+.report h2{font-family:var(--f-display);font-size:1.15rem;margin:0 0 8px}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+
+@media (max-width:600px){
+  .hud{gap:8px 12px;padding:10px}
+  .brand-name{font-size:1.4rem}
+  .clock-time{font-size:1.6rem}
+  .team{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  .who{padding:3px 8px 3px 3px;gap:6px;min-width:0}
+  .who svg{width:32px;height:32px}
+  .who-txt b{font-size:.8rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .who-txt small{display:none}
+  .who-txt b .hon{display:none}
+  .meter{width:100%}
+  #who-chef .who-txt b{max-width:100%}
+}
+
+.plan{margin-top:16px}
+.plan-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+@media(max-width:820px){.plan-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.loc{display:flex;flex-direction:column;gap:4px;padding:10px 12px;border-radius:12px;border:2px dashed var(--line);background:#121937;min-width:0}
+.loc b{font-family:var(--f-display);font-size:1rem;line-height:1.1}
+.loc span{font-size:.8rem;color:#c3cbec;line-height:1.3}
+.loc i{font-style:normal;font-family:var(--f-mono);font-size:.68rem;color:var(--muted);margin-top:auto;text-transform:uppercase;letter-spacing:.06em}
+.loc.on{border-style:solid;border-color:var(--accent);background:#14304a}
+.loc.on i{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+  <header class="hud">
+    <div class="brand"><span class="brand-name">Night Shift</span><span class="brand-sub">ED · Urology</span></div>
+    <div class="clock" aria-live="off"><span class="clock-time" id="hud-time">22:00</span><span class="clock-sub" id="hud-sub">Morning report 07:30</span></div>
+    <div class="team" aria-label="Hierarchy and team">
+      <button class="who" id="who-chef" type="button"><span class="who-pt" data-pt="chef"></span><span class="who-txt"><b>Prof. Whitfield</b><small>Head of Department · expects you at 07:30</small></span></button>
+      <button class="who" id="who-oa" type="button"><span class="who-pt" data-pt="brenner"></span><span class="who-txt"><b>Dr. Brennan</b><small>Attending on call · trust</small><span class="meter"><i id="m-trust"></i></span></span></button>
+      <button class="who" id="who-jana" type="button"><span class="who-pt" data-pt="jana"></span><span class="who-txt"><b>Grace</b><small>Nursing · team spirit</small><span class="meter"><i id="m-team"></i></span></span></button>
+    </div>
+  </header>
+
+  <section class="stage" aria-label="Emergency department corridor">
+    <svg id="scene" viewBox="0 0 1600 560" role="group" aria-label="Emergency department with nurses’ station, five treatment bays and ambulance entrance"></svg>
+  </section>
+  <p class="stage-hint">Swipe the corridor sideways to see all bays.</p>
+
+  <section aria-labelledby="board-title">
+    <div class="board-head">
+      <div><h2 id="board-title">ED board</h2><p class="hint">Tap a bay to open the chart.</p></div>
+      <div class="board-actions">
+        <button class="btn" id="btn-ask" type="button">Ask Grace <span class="cost">1 min</span></button>
+        <button class="btn" id="btn-wait" type="button">Grab a coffee <span class="cost">time passes</span></button>
+      </div>
+    </div>
+    <div class="board" id="board"></div>
+    <p class="legend">Manchester Triage:
+      <span><i style="background:var(--mts-rot)"></i>red · immediate</span>
+      <span><i style="background:var(--mts-orange)"></i>orange · 10 min</span>
+      <span><i style="background:var(--mts-gelb)"></i>yellow · 30 min</span>
+      <span><i style="background:var(--mts-gruen)"></i>green · 90 min</span>
+      <span><i style="background:var(--mts-blau)"></i>blue · 120 min</span>
+    </p>
+  </section>
+
+  <p class="foot">Learning game for urology residents. All people and cases are fictional; the rationales cite their sources (guidelines current in 2026). Drug approvals and doses reflect the European (EMA) context and may differ for the FDA, MHRA or other agencies. The game does not replace clinical judgement.</p>
+</div>
+
+<div class="overlay" id="case" hidden>
+  <article class="akte" id="akte" role="dialog" aria-modal="true" aria-labelledby="akte-name"></article>
+</div>
+
+<div class="screen" id="title-screen">
+  <div class="screen-inner">
+    <h1 class="title-word">Night Shift</h1>
+    <p class="title-sub">Urology · Emergency Department · 22:00 to 07:30</p>
+    <p class="title-lede">Your first night on call as a urology resident. Five patients, one nurse, an attending on call from home – and at 07:30 a head of department who wants to hear every case.</p>
+    <div class="title-grid">
+      <div class="card">
+        <h2>Who are you?</h2>
+        <div class="avatars" id="avatars" role="group" aria-label="Choose an avatar"></div>
+        <div class="field">
+          <label for="player-name">Your surname</label>
+          <div class="namebox"><span>Dr.</span><input id="player-name" type="text" maxlength="18" autocomplete="off" value="Miller"></div>
+        </div>
+        <h2 style="margin-top:18px">How to play</h2>
+        <ul class="howto">
+          <li>Every action costs game time. While you are with one patient, the others keep evolving.</li>
+          <li>You can delegate bloods, IV fluids and urine dipsticks to Grace – but she only has two hands.</li>
+          <li>You call the attending from the chart. You need them for real emergencies, not for trivia.</li>
+          <li>At 07:30 the head of department quizzes you on your cases at morning report.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Who is who</h2>
+        <p class="chain">Medical hierarchy: head of department → attending → you · Nursing: its own profession, your team partner</p>
+        <div class="roles" id="roles"></div>
+      </div>
+    </div>
+    <div class="card plan">
+      <h2>Hospital map</h2>
+      <div class="plan-grid">
+        <div class="loc on"><b>Emergency</b><span>Triage, escalation, emergency indications</span><i>playable</i></div>
+        <div class="loc"><b>Ward</b><span>Ward round, postoperative complications</span><i>planned</i></div>
+        <div class="loc"><b>Outpatient clinic</b><span>PSA, microhaematuria, LUTS, follow-up</span><i>planned</i></div>
+        <div class="loc"><b>Endoscopy</b><span>Findings images; needs real image material</span><i>planned</i></div>
+        <div class="loc"><b>Operating room</b><span>Operative steps, intraoperative complications</span><i>planned</i></div>
+      </div>
+    </div>
+    <div class="start-row">
+      <button class="btn primary" id="btn-start" type="button">Start the shift</button>
+      <span class="best" id="best"></span>
+    </div>
+    <p class="disclaimer">Fictional cases for specialist-level training. Sources in the rationales: EAU Guidelines (2026 edition), NICE NG118, Surviving Sepsis Campaign 2021 and the studies cited. Drug approvals reflect the European (EMA) context and may differ for the FDA, MHRA or other agencies.</p>
+  </div>
+</div>
+
+<div class="screen" id="boss-screen" hidden>
+  <div class="screen-inner" id="boss-inner"></div>
+</div>
+
+<div class="screen" id="report-screen" hidden>
+  <div class="screen-inner" id="report-inner"></div>
+</div>
+
+<div class="scrim" id="scrim" hidden></div>
+<div class="dialog" id="dlg" role="dialog" aria-live="polite" hidden>
+  <div class="dlg-portrait" id="dlg-portrait"></div>
+  <div class="dlg-body">
+    <div class="dlg-name" id="dlg-name"></div>
+    <p class="dlg-text" id="dlg-text"></p>
+    <div class="dlg-choices" id="dlg-choices"></div>
+    <div class="dlg-row"><button class="btn primary" id="dlg-next" type="button">Next ▸</button></div>
+  </div>
+</div>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<script>
+(() => {
+'use strict';
+/* ============================================================
+   LANGUAGE PACK ENGLISH (international, EAU-based) – Urology Night Shift
+   British spelling; lab values in conventional and SI units.
+   ============================================================ */
+const L = {
+  code: 'en', htmlLang: 'en', title: 'Urology Night Shift', file: 'urology-night-shift.html',
+  decimal: '.', storeKey: 'urology-night-shift-v1', defaultName: 'Miller', namePrefix: 'Dr.',
+
+  markup: {
+    brand_name: 'Night Shift', brand_sub: 'ED · Urology', hud_sub: 'Morning report 07:30',
+    team_aria: 'Hierarchy and team',
+    who_chef_name: 'Prof. Whitfield', who_chef_role: 'Head of Department · expects you at 07:30',
+    who_oa_name: 'Dr. Brennan', who_oa_role: 'Attending on call · trust',
+    who_nurse_name: 'Grace', who_nurse_role: 'Nursing · team spirit',
+    stage_aria: 'Emergency department corridor', scene_aria: 'Emergency department with nurses’ station, five treatment bays and ambulance entrance',
+    stage_hint: 'Swipe the corridor sideways to see all bays.',
+    board_title: 'ED board', board_hint: 'Tap a bay to open the chart.',
+    btn_ask: 'Ask Grace', btn_wait: 'Grab a coffee', cost_wait: 'time passes',
+    legend: 'Manchester Triage:', leg_rot: 'red · immediate', leg_orange: 'orange · 10 min', leg_gelb: 'yellow · 30 min', leg_gruen: 'green · 90 min', leg_blau: 'blue · 120 min',
+    foot: 'Learning game for urology residents. All people and cases are fictional; the rationales cite their sources (guidelines current in 2026). Drug approvals and doses reflect the European (EMA) context and may differ for the FDA, MHRA or other agencies. The game does not replace clinical judgement.',
+    title_word: 'Night Shift', title_sub: 'Urology · Emergency Department · 22:00 to 07:30',
+    title_lede: 'Your first night on call as a urology resident. Five patients, one nurse, an attending on call from home – and at 07:30 a head of department who wants to hear every case.',
+    who_h: 'Who are you?', avatars_aria: 'Choose an avatar', name_label: 'Your surname',
+    howto_h: 'How to play',
+    howto_1: 'Every action costs game time. While you are with one patient, the others keep evolving.',
+    howto_2: 'You can delegate bloods, IV fluids and urine dipsticks to Grace – but she only has two hands.',
+    howto_3: 'You call the attending from the chart. You need them for real emergencies, not for trivia.',
+    howto_4: 'At 07:30 the head of department quizzes you on your cases at morning report.',
+    roles_h: 'Who is who', chain: 'Medical hierarchy: head of department → attending → you · Nursing: its own profession, your team partner',
+    plan_h: 'Hospital map', playable: 'playable', planned: 'planned',
+    plan_er: 'Emergency', plan_er_t: 'Triage, escalation, emergency indications',
+    plan_ward: 'Ward', plan_ward_t: 'Ward round, postoperative complications',
+    plan_opd: 'Outpatient clinic', plan_opd_t: 'PSA, microhaematuria, LUTS, follow-up',
+    plan_endo: 'Endoscopy', plan_endo_t: 'Findings images; needs real image material',
+    plan_or: 'Operating room', plan_or_t: 'Operative steps, intraoperative complications',
+    start: 'Start the shift',
+    disclaimer: 'Fictional cases for specialist-level training. Sources in the rationales: EAU Guidelines (2026 edition), NICE NG118, Surviving Sepsis Campaign 2021 and the studies cited. Drug approvals reflect the European (EMA) context and may differ for the FDA, MHRA or other agencies.',
+    next: 'Next ▸'
+  },
+
+  scene: { station: 'Nurses’ station', er: 'EMERGENCY', erSize: 21, erFit: 0, amb: 'AMBULANCE', coffeeAria: 'Grab a coffee (time passes)', newChip: 'new', hr: 'HR' },
+
+  people: {
+    jana: { name: 'Grace', role: 'Emergency nurse' },
+    brenner: { name: 'Dr. Brennan', role: 'Attending urologist · on call from home' },
+    chef: { name: 'Prof. Whitfield', role: 'Head of Department' },
+    mutter: { name: 'Mrs M.', role: 'Leo’s mother' },
+    anae: { name: 'Anaesthesia', role: 'On-call anaesthetist, on the phone' }
+  },
+  playerRole: 'Urology resident · year 2', narrator: 'Night shift',
+  tri: { rot: 'red', orange: 'orange', gelb: 'yellow', gruen: 'green', blau: 'blue' },
+  grade: { best: 'Guideline-concordant', ok: 'Acceptable', wrong: 'Wrong call', critical: 'Critical event' },
+  dest: { home: 'home', ward: 'ward', or: 'OR', orImc: 'OR → intermediate care', orIcu: 'OR → ICU', icu: 'ICU', transfer: 'transfer', early: 'day team' },
+  log: {
+    sonoKidney: 'Renal and urinary tract ultrasound', met: 'Conservative stone management (MET)', catheter: 'Urethral catheterisation', spc: 'Suprapubic catheter insertion',
+    sonoBladder: 'Bladder ultrasound / residual', sonoRenal: 'Renal ultrasound', stentInd: 'Indication: emergency ureteral stent',
+    duplexScrot: 'Scrotal colour Doppler', explInd: 'Indication: scrotal exploration', debrInd: 'Indication: emergency debridement'
+  },
+
+  ui: {
+    initFinding: (tri, cc) => `Nurse triage (Manchester ${tri}): ${cc}.`,
+    ignored: ref => `I told you about ${ref} 45 minutes ago. Just so you know.`,
+    stCirc: 'Circulation', stIsch: h => `Ischaemia ${h} h`, stPain: n => `Pain NRS ${n}`,
+    bay: 'Bay', free: 'free', bedReady: 'Bed is made. For now.', pts: 'pts', since: d => `${d} in ED`,
+    bayFree: n => `Bay ${n}: free`,
+    bayDone: (n, name, dest) => `Bay ${n}: ${name} – ${dest}. View result`,
+    bayHere: (n, name, age, cc) => `Bay ${n}: ${name}, ${age}, ${cc}. Open chart`,
+    hudShift: done => `${done} of 5 cases done · Morning report 07:30`, hudOther: 'Morning report 07:30',
+    badgeAlert: '! Nurse', badgeNew: 'new', badgeOA: 'Attending informed',
+    resultNurse: (s, ref, name) => `Grace: done – ${s} (${name}).`,
+    resultBy: (by, s, ref, name) => `${by}: result ready – ${s} (${name}).`,
+    by: { lab: 'Lab', rad: 'Radiology' },
+    stillFree: n => `Bay ${n} is still free.`,
+    thanks: 'Grace: “Thanks for coming straight away.”',
+    vit: ['BP mmHg', 'HR /min', 'Temp °C', 'SpO₂ %', 'RR /min', 'Pain NRS'],
+    readyAt: t => `ready ${t}`,
+    delegate: '→ Grace', delegateTitle: 'Delegate to Grace – costs you 1 min', nurseBusyBtn: t => `Grace until ${t}`, nurseBusyTitle: 'Grace is busy',
+    chartTop: (n, t) => `ED chart · Bay ${n} · ${t}`, closeChart: 'Close chart',
+    mts: tri => `Manchester ${tri}`, inEd: t => `in the ED since ${t}`, oaInformed: 'Attending informed',
+    groups: { hx: 'Assessment', dx: 'Investigations', tx: 'Treatment' },
+    actionsH: 'Actions', findingsH: 'Findings and course',
+    callOA: 'Call the attending', backHall: 'Back to the corridor', decideBtn: 'Decide disposition ▸',
+    dispQ: (name, ref) => `What is the plan for ${name}?`, vetoed: 'Turned down by the attending', backActions: '◂ Back to actions', confirm: 'Confirm',
+    yourDecision: 'Your decision:', noDecision: 'You did not set a plan.', why: 'Why?', sources: 'Sources:',
+    logPlus: n => `Logbook +${n}:`, casePts: x => `Points for this case: <b>${x}</b> of 100`,
+    short: { ab: 'Antibiotics', volumen: 'Fluids', analgesie: 'Analgesia', bk: 'Cultures', ct: 'CT', labor: 'Bloods', radio: 'Doppler', urin: 'Dipstick', insulin: 'Insulin' },
+    nurseBusySay: t => `I only have two hands. I’m busy until ${t}.`,
+    nurseOk: label => `Grace: “On it.” – ${label}`,
+    oaHello: '… Brennan. What’s up?', oaHelloAgain: 'Brennan. … You again?', howPresent: 'How do you present the case?',
+    oaAgainNeeded: 'We just spoke. I’m on my way.', oaAgainNot: 'We just went through that. I’m hanging up.',
+    oaApproved: 'Attending informed – emergency surgery approved.',
+    anaeLine: 'Emergency surgery at this hour? Who is the responsible attending? No attending, no anaesthetic.', anaeCall: 'Call the attending', anaeBack: 'Go back, I’ll reconsider',
+    coffeeOpen: (name, ref) => `Coffee? Now? ${name} is waiting!`, coffeeUrgent: (name, ref) => `Coffee? ${name} can’t wait.`, coffeeToast: m => `Coffee. ${m} minutes pass.`,
+    janaBusy: 'It’s all on the board. I’m busy.', janaNobody: 'Nobody here right now. That won’t last – go and grab a coffee.', janaAllDone: 'All done. Nice work.',
+    lastCase: 'Last case done. Close the chart to finish the shift.',
+    handoverTorsion: h => ({ title: 'Handed over without a plan', text: `At 06:00 the day team takes over. After ${h} h of ischaemia, the testis can no longer be saved.`, short: 'Testicular loss' }),
+    handover: { title: 'Handed over without a plan', text: 'At 06:00 the day team takes over – with no disposition decided.', short: 'Handed over, no plan' },
+    handoverSay: 'The day team is here. Whatever is still open, you hand over now.',
+    endGood: 'Breathe. I left a coffee for you at the station. Good shift so far.', endMeh: 'It’s calming down. Next time listen to me earlier, okay?',
+    narr1: t => `${t}: The ED goes quiet. Then come two calls from the ward, a blocked catheter at four and far too little sleep.`,
+    narr2: '07:30. Morning report. The head of department is waiting.',
+    bossAria: 'Morning report in the meeting room', bossHeader: 'Urology morning report · 07:30', bossTitle: 'Questions about the night', bossQ: (i, n) => `Question ${i} / ${n}`,
+    chefOpen: who => `${who}. Don’t sit down, this won’t take long.`,
+    chefAllBest: 'I have read your notes. Tidy. Unusually tidy. Still: five questions.',
+    chefDefault: 'I have read your notes. Let’s go through them. Five questions.',
+    skepsis: 'The chief’s scepticism', qOf: (i, n) => `Question ${i} of ${n}`, right: 'Correct.', wrong: 'Incorrect.', nextQ: 'Next question ▸', toReport: 'To the shift report ▸',
+    verdict: (r, who) => r === 5 ? 'Five out of five. I am … impressed. Don’t tell anyone.'
+      : r === 4 ? 'Solid. Read the guideline again tonight anyway. With the edition year.'
+      : r === 3 ? 'Mixed. Summarise the emergencies chapter for me by Friday.'
+      : `${who}, come to my office after this meeting.`,
+    ranks: ['Consultant material', 'A solid night', 'Steep learning curve', 'The chief wants a word'],
+    neverSeen: 'never seen', abAfter: d => `antibiotics after ${d}`, ischTime: h => `ischaemia time to surgery ${h} h`,
+    oaCalled: (n, bag) => `attending called ${n}×${bag ? ' (unnecessary)' : ''}`, waste: n => `${n} unnecessary action${n > 1 ? 's' : ''}`,
+    contactAfter: w => `seen after ${w}`, decision: 'Decision:',
+    janaQuote: v => v >= 70 ? 'Good shift. I’d happily do nights with you again.' : v >= 45 ? 'It was okay. Next time listen to me sooner.' : 'I told you. More than once.',
+    oaQuote: v => v >= 70 ? 'Clear handovers, the right calls. That way I can sleep – and get up when it matters.' : v >= 45 ? 'A call or two too many, or too late. You’ll get there.' : 'Call when it’s burning. Not before, not after.',
+    chefQuote: v => v >= 85 ? 'I’ll be keeping an eye on you. In a good way.' : v >= 70 ? 'Solid. From next week you do nights on your own.' : v >= 50 ? 'You are learning. Faster would be better.' : 'My office. After the ward round.',
+    reportTitle: 'Shift report', kpiCare: 'Patient care', kpiBoss: 'Morning report', kpiTrust: 'Attending’s trust', kpiTeam: 'Team spirit (nursing)',
+    yourCases: 'Your cases', othersSay: 'What the others say', logbookH: 'Training logbook', noLog: 'No entries this time.',
+    weighting: best => `Weighting: 60% patient care, 25% morning report, 15% team (attending and nursing). Best so far: ${best}.`,
+    again: 'New night shift',
+    roles: [
+      ['Prof. Whitfield · Head of Department', 'Reviews every case at 07:30. With the guideline and its edition year.'],
+      ['Dr. Brennan · Attending on call', 'Comes in for real emergencies and approves emergency surgery. Trivial calls cost trust.'],
+      ['You · Urology resident, year 2', 'First assessment, investigations, indications – and deciding when to escalate.'],
+      ['Grace · Emergency nurse', 'Takes on the tasks you delegate and warns you when someone deteriorates. Listen to her.']
+    ],
+    bestText: (best, runs) => `Best: ${best} of 100 · ${runs} shift${runs > 1 ? 's' : ''}`,
+    avatarAria: i => `Avatar ${i}`,
+    oaChip: 'You can call me from the chart. But only if it’s burning.'
+  },
+
+  intro: who => [
+    ['chef', `Good evening, ${who}. Your first night on call in my department.`, 'neutral'],
+    ['chef', 'Three rules. One: the patient comes first. Two: the attending gets woken when it is necessary – not when it is convenient.', 'stern'],
+    ['chef', 'Three: at 07:30 you present your cases to me at morning report. With the guideline. With the edition year.', 'smile'],
+    ['brenner', 'I’m on call from home tonight. Call me if it’s burning.', 'neutral', true],
+    ['brenner', 'And when you call: who, what, how stable, what you want. Short. I’m not chatty at night.', 'sleepy', true],
+    ['jana', 'I’m Grace. Bloods, IV fluids, dipsticks: prescribe them and hand them to me, and you save time. But I only have two hands.', 'smile'],
+    ['jana', 'If I tell you I don’t like the look of someone, you come. Deal?', 'neutral']
+  ],
+
+  cases: {
+    kaya: {
+      name: 'Mr Khan', ref: 'Mr Khan', complaint: 'Colicky left flank pain for 2 h',
+      arrival: 'Bay 1 is already waiting: Mr Khan, 34, left-sided colic for two hours. He can’t keep still. Triage orange.',
+      alerts: { schmerz: () => 'Mr Khan is pacing the corridor and has asked for pain relief three times now.' },
+      actions: {
+        anamnese: { label: 'History', find: 'Sudden, wave-like left flank pain radiating to the groin and testis. Nausea, vomited once. No fever, no rigors. Passed a stone spontaneously 3 years ago. No comorbidities, no regular medication, no allergies.' },
+        untersuchung: { label: 'Physical examination', find: 'Restless, cannot find a comfortable position. Left renal angle tenderness. Abdomen soft, no peritonism. Both testes normal.' },
+        urin: { label: 'Urine dipstick', find: 'Blood +++, leucocytes negative, nitrites negative.' },
+        labor: { label: 'Bloods (FBC, CRP, creatinine, electrolytes)', find: 'Creatinine 0.9 mg/dL (80 µmol/L) · CRP 4 mg/L · WBC 9.8 × 10⁹/L · electrolytes normal.' },
+        sono: { label: 'Renal and bladder ultrasound', find: 'Grade I hydronephrosis on the left, right kidney normal. No stone visible. Bladder nearly empty.' },
+        ct: { label: 'Low-dose non-contrast CT', find: '6 mm stone in the distal left ureter (prevesical), grade I hydronephrosis. No other stones.' },
+        analgesie: { label: 'Diclofenac 75 mg IV (NSAID)', find: 'Diclofenac 75 mg as a short infusion. After 20 min, pain NRS 3/10.' },
+        opioid: { label: 'Morphine IV', find: p => p.done.analgesie != null ? 'Additional morphine 5 mg IV. Pain NRS 1/10, patient drowsy.' : 'Morphine 5 mg IV. Pain NRS 4/10. Per the guideline, opioids are second line – NSAIDs first (paracetamol as an alternative).' }
+      },
+      sbar: {
+        good: '34-year-old man, uncomplicated left renal colic: 6 mm distal stone, afebrile, normal creatinine, pain controlled. I plan discharge with MET.',
+        incomplete: 'I’ve got a patient with a stone here. Should I stent him tonight?',
+        rambling: 'So, Mr Khan, 34, had a stone once before, now the pain is back, he’s very restless, his wife is here too, and …'
+      },
+      oa: {
+        bagatelle: (q, t) => q === 'good'
+          ? ['Uncomplicated colic, afebrile, normal creatinine – you don’t need me for that. Go ahead.', 'Good night.']
+          : [`It’s ${t}. I don’t stent uncomplicated colic in the middle of the night.`, 'Analgesia, imaging, MET, clear return advice. And now I’m going back to sleep.']
+      },
+      disps: {
+        heim: 'Discharge with analgesia, MET and clear return advice',
+        stat: 'Admit to the ward for pain control and observation overnight',
+        dj: 'Emergency ureteral stent insertion in the OR this very night',
+        urs: 'Ureteroscopy with stone extraction as soon as an OR is free'
+      },
+      outcomes: {
+        stat: () => ({ title: 'Acceptable, but unnecessary', text: 'The ward calls: “Really? For controlled colic?” Mr Khan sleeps well and goes home in the morning. No harm – but a bed blocked.', short: 'Admitted without need' }),
+        noAnalgesia: x => ({ title: 'Right plan, pain forgotten', text: `At ${x.back} Mr Khan is back at the door, NRS 9/10. Analgesia first, then home.`, short: 'Back with pain' }),
+        noCT: x => ({ title: 'Discharged, stone not confirmed', text: x.sono ? 'Grade I hydronephrosis on ultrasound, but stone size and position are unconfirmed. The MET indication and the prognosis depend on them.' : 'Discharged without imaging: diagnosis, stone size and hydronephrosis unconfirmed.', short: 'Discharged, stone unconfirmed' }),
+        best: () => ({ title: 'Cleanly handled', text: 'Mr Khan goes home with little pain – with tamsulosin (off-label, informed), a urine strainer and clear return advice. On day five he passes the stone.', short: 'Discharged, stone passed' })
+      },
+      veto: 'No. Afebrile, normal creatinine, pain under control – I’m not opening an OR at night for that. He goes home.',
+      hint: p => (p.done.analgesie != null || p.done.opioid != null) ? 'Mr Khan has little pain now. He can wait.' : 'Mr Khan mainly needs pain relief. Prescribe it and I’ll give it.',
+      rationale: [
+        'Uncomplicated colic: afebrile, normal renal function, pain controllable → conservative, outpatient management.',
+        'Analgesia: NSAIDs first (e.g. diclofenac, or metamizole where available), paracetamol as an alternative; opioids second line.',
+        'Imaging: after ultrasound, low-dose non-contrast CT to confirm stone size and position.',
+        'MET with an alpha-blocker for distal ureteral stones > 5 mm. ⚠ Evidence is mixed: SUSPEND (Lancet 2015) showed no overall benefit; meta-analyses favour MET mainly for distal stones > 5 mm. Tamsulosin is off-label for this in most countries → inform the patient.',
+        'Emergency decompression only for infection or sepsis, refractory pain, solitary kidney, bilateral obstruction or renal failure.'
+      ],
+      sources: 'EAU Guidelines on Urolithiasis (2026) · Pickard et al., SUSPEND, Lancet 2015',
+      mm: 'Mr Khan, uncomplicated colic. I don’t even want to know how that became complicated.'
+    },
+
+    brandt: {
+      name: 'Mr Walsh', ref: 'Mr Walsh', complaint: 'Unable to pass urine for 10 h, lower abdominal pain',
+      arrival: 'Bay 2: Mr Walsh, 78. Hasn’t passed urine for ten hours, bladder almost up to his belly button. Yellow.',
+      alerts: { klingel: () => 'Mr Walsh is pressing the call bell every minute. His bladder is up to his navel by now.' },
+      actions: {
+        anamnese: { label: 'History', find: 'Weak stream for years, nocturia 3–4×, never treated. For 2 days he has been taking a combination cold remedy with a sedating antihistamine at night. Only dribbling since midday, nothing at all for 10 h.' },
+        untersuchung: { label: 'Examination incl. DRE', find: 'Tense, tender bladder palpable two fingerbreadths below the umbilicus. DRE: prostate about 50 mL, smooth, firm-elastic, not suspicious.' },
+        sono: { label: 'Bladder and renal ultrasound', find: 'Bladder volume about 1100 mL. No hydronephrosis on either side.' },
+        labor: { label: 'Bloods (creatinine, electrolytes, FBC)', find: 'Creatinine 1.3 mg/dL (115 µmol/L) · potassium 4.6 mmol/L · CRP 6 mg/L.' },
+        dk: { label: 'Urethral catheter, drain completely', find: 'Uneventful insertion (14 Fr). 1150 mL of clear urine in one go. Mr Walsh: “You’re an angel.”' },
+        dkfrak: { label: 'Catheter, drain in steps (clamp every 200 mL)', find: 'Drained in portions over 50 min. Same result, only slower – and Grace is tied up for 40 min.', note: 'Clamp every 200 mL? Wasn’t there a randomised trial showing it makes no difference? I have four other patients.' },
+        spk: { label: 'Suprapubic catheter', find: 'Suprapubic catheter inserted uneventfully into the full bladder, 1100 mL. A urethral catheter would have worked just as well – and faster.' },
+        alpha: { label: 'Start tamsulosin 0.4 mg', find: 'Tamsulosin 0.4 mg once daily started.' },
+        absetzen: { label: 'Stop the cold remedy', find: 'Cold remedy stopped; Mr Walsh informed: no more sedating antihistamines.' }
+      },
+      sbar: {
+        good: '78-year-old man, acute urinary retention from BPO triggered by an antihistamine. 1100 mL, catheter in, creatinine 1.3. Plan: tamsulosin, trial without catheter in three days.',
+        incomplete: 'Mr Walsh can’t pass urine. Should I put a catheter in?',
+        rambling: 'Mr Walsh, 78, used to be a carpenter, has had trouble passing water for years, his wife says …'
+      },
+      oa: {
+        bagatelle: (q, t) => q === 'good'
+          ? ['Sounds like a good plan. You would have had it without me.', 'Good night.']
+          : [`It’s ${t}. For urinary retention?`, 'Catheter, alpha-blocker, stop the trigger, trial without catheter in a few days. And now let me sleep.']
+      },
+      disps: {
+        heim: 'Keep catheter, tamsulosin, stop trigger, TWOC in 2–3 days',
+        ex: 'Remove the catheter after complete drainage and discharge',
+        turp: 'Admit for TURP on the next available elective operating list'
+      },
+      outcomes: {
+        ex: () => ({ title: 'Predictable recurrence', text: 'At 06:40 Mr Walsh is back at the door: retention again. Without an alpha-blocker, with the trigger still in place and after overdistension of the bladder, that was to be expected.', short: 'Back in the morning' }),
+        turp: () => ({ title: 'Too much, too soon', text: 'No indication for TURP in the acute phase without a trial without catheter – the trigger was reversible. The attending cancels it in the morning: “Who booked this?”', short: 'TURP cancelled' }),
+        lateDK: x => ({ title: 'Right plan, late catheter', text: `The catheter only goes in at discharge – Mr Walsh waited ${x.wait} with a full bladder.`, short: 'Discharged, catheter late' }),
+        best: () => ({ title: 'A happy Mr Walsh', text: 'He goes home with a catheter, tamsulosin and without his cold remedy; diuresis was unremarkable in the first hours. Trial without catheter after three days: successful, residual 60 mL.', short: 'Discharged, TWOC successful' })
+      },
+      veto: 'No.',
+      hint: p => p.flags.dk ? 'Mr Walsh is happy. Set the plan and you’re done.' : 'Mr Walsh needs a catheter – then he’ll be happy.',
+      rationale: [
+        'Acute urinary retention from benign prostatic obstruction, triggered by an antihistamine with anticholinergic effect → the medication history is key.',
+        'Immediate complete drainage is safe. Gradual drainage offers no benefit (RCT, n = 294: haematuria 11.3% vs 10.5%, no circulatory collapse).',
+        'An alpha-blocker before the trial without catheter increases its success; stop the trigger; TWOC after 2–3 days.',
+        'With > 1 L and a raised creatinine, watch for post-obstructive diuresis. TURP is not an emergency procedure.'
+      ],
+      sources: 'Boettcher et al., Urol Int 2013 · Fisher et al., Cochrane Review 2014 (alpha-blockers before TWOC)',
+      mm: 'Mr Walsh. Urinary retention. The most rewarding night-time diagnosis in urology, {name}.'
+    },
+
+    albers: {
+      name: 'Mrs Morgan', ref: 'Mrs Morgan', complaint: 'Fever, rigors, right flank pain',
+      arrival: 'Bay 3 is coming in by ambulance: Mrs Morgan, 58. Temperature 39.4, rigors, right flank. BP 98/60, pulse 118. Orange – and I don’t like the look of her.',
+      alerts: {
+        warn: (p, v) => `Mrs Morgan: BP now ${v.rr}, pulse ${v.hf}, she’s getting slower. I really don’t like this.`,
+        crit: (p, v) => `Mrs Morgan is barely responsive, BP ${v.rr}. I need you in bay 3 NOW.`
+      },
+      actions: {
+        anamnese: { label: 'History', find: 'Right flank pain for 2 days, fever and rigors since today. Known nephrolithiasis. Type 2 diabetes on metformin. No allergies.' },
+        untersuchung: { label: 'Physical examination', find: 'Marked right renal angle tenderness. Skin warm, capillary refill 3 s. Abdomen soft, no neck stiffness.' },
+        urin: { label: 'Urine dipstick', find: 'Leucocytes +++, nitrites positive, blood ++.' },
+        bk: { label: 'Blood cultures + urine culture', find: 'Two sets of blood cultures and a urine culture taken.' },
+        labor: { label: 'Bloods incl. lactate, PCT', find: 'WBC 19.8 × 10⁹/L · CRP 214 mg/L · PCT 11 ng/mL · creatinine 1.7 mg/dL (150 µmol/L) · lactate 3.4 mmol/L.' },
+        sono: { label: 'Renal ultrasound', find: 'Grade II hydronephrosis on the right, normal parenchyma. Left kidney normal.' },
+        ct: { label: 'Low-dose non-contrast CT', find: '8 mm stone in the proximal right ureter, grade II hydronephrosis, perinephric fat stranding.' },
+        ab: { label: 'Piperacillin/tazobactam 4.5 g IV', find: p => 'Piperacillin/tazobactam 4.5 g IV running.' + (p.done.bk == null ? ' Cultures only taken afterwards – of limited value. Not delaying antibiotics was still the right call.' : '') },
+        volumen: { label: 'Crystalloid 30 mL/kg', find: 'Balanced crystalloid (Hartmann’s) 2000 mL (≈ 30 mL/kg) IV. Blood pressure rises.' },
+        metformin: { label: 'Withhold metformin', find: 'Metformin withheld (acute kidney injury, raised lactate).' }
+      },
+      sbar: {
+        good: '58-year-old woman, obstructive right pyelonephritis with sepsis: 39.4 °C, BP 98/60, HR 118, grade II hydronephrosis. Cultures and antibiotics running. I think she needs emergency decompression.',
+        incomplete: 'Mrs Morgan has right flank pain and hydronephrosis. I’d admit her and stent her tomorrow morning.',
+        rambling: 'So, Mrs Morgan is 58, diabetic, unwell for two days, her GP had already on Friday, and then the ambulance came, and …'
+      },
+      oa: {
+        good: ['Sepsis with hydronephrosis – that’s an emergency. Good that you called.', 'I’ll be in within 20 minutes and do the stent with the OR team. You stay in the ED.'],
+        incomplete: ['Hang on. Fever? Blood pressure? … 98 systolic and a pulse of 118?', 'That’s not a stent for tomorrow, that’s an infected, obstructed kidney. It gets decompressed tonight. I’m coming in.'],
+        rambling: ['Stop. One sentence: what does she have, how stable is she, what do you want?', '… Urosepsis with hydronephrosis. Right. I’m coming in, book the OR.'],
+        missing: { ab: 'And antibiotics are running already, I hope? If not: now, before anything else.', bk: 'Blood cultures first, if it doesn’t delay anything.' }
+      },
+      disps: {
+        entlastung: 'Urgent decompression (stent or nephrostomy) plus IV antibiotics',
+        urs: 'Ureteroscopy with stone extraction under the same anaesthetic',
+        morgen: 'IV antibiotics, admission, decompression tomorrow on the routine list',
+        met: 'IV antibiotics plus alpha-blocker, wait for spontaneous stone passage'
+      },
+      outcomes: {
+        ursFix: x => ({ title: 'Caught by the attending', text: `Brennan in the OR: “Ureteroscopy in urosepsis? No. We put in a stent. The stone comes out once she’s afebrile.” Stent in at ${x.at}, purulent urine drained. The patient stabilises – thanks to the attending.`, short: 'Attending switched to a stent' }),
+        shock: x => ({ title: 'Septic shock', text: `At ${x.at}: BP 70/40, lactate 6 mmol/L. Grace calls the attending: emergency nephrostomy, ICU on noradrenaline. Mrs Morgan survives – as an M&M case.${x.met ? ' Antibiotics alone do not clear an obstructed, infected collecting system.' : ''}`, short: 'Septic shock, ICU' }),
+        relief: x => ({
+          title: x.late ? 'Right, but late' : x.noAb ? 'Right, antibiotics late' : 'Source controlled',
+          text: (x.level === 'good' ? `Right ureteral stent at ${x.at}, purulent urine drained. Afebrile by morning, back to the ward after 48 h. Ureteroscopy in three weeks.`
+            : x.level === 'late' ? `Stent at ${x.at}. Perioperative noradrenaline, one day in intermediate care, then stable. The right call – but late.`
+            : `Stent at ${x.at} in septic shock. Three days in ICU on vasopressors. Survives.`) + (x.noAb ? ' Antibiotics only started in the OR – they belong in the first hour.' : ''),
+          short: x.late ? 'Decompressed, late' : 'Decompressed, stable'
+        })
+      },
+      takeover: { title: 'Nursing had to escalate', text: 'Mrs Morgan is in septic shock. Grace called the attending herself: emergency nephrostomy, ICU. The escalation came from nursing, not from you.', short: 'Nurse escalated, ICU', line: 'I’ve called Dr. Brennan. Mrs Morgan is in shock. He’s on his way.', oaLine: 'I’m taking over bay 3. We’ll talk tomorrow.' },
+      hint: p => p.flags.ab ? 'Mrs Morgan has antibiotics – but the obstructed kidney is the source. Without decompression this won’t get better.' : 'Bay 3: Mrs Morgan is septic and still has no antibiotics. That comes before everything else.',
+      rationale: [
+        'Infected, obstructed kidney = urological emergency. Antibiotics do not adequately reach the obstructed collecting system – decompression is source control.',
+        'Retrograde stent and percutaneous nephrostomy are equivalent (RCT, Pearle et al., J Urol 1998). With coagulopathy, prefer a stent.',
+        'Definitive stone treatment only after the infection has resolved; send urine culture from the decompressed system.',
+        'Sepsis bundle: cultures, antibiotics within the first hour, fluids, lactate. Withhold metformin with acute kidney injury and raised lactate.'
+      ],
+      sources: 'EAU Guidelines on Urolithiasis (2026) · NICE NG118 · Pearle et al., J Urol 1998 · Surviving Sepsis Campaign 2021',
+      mm: 'Mrs Morgan is in my ICU. Septic shock with an obstructed kidney. We will discuss this on Thursday at the M&M conference.'
+    },
+
+    jonas: {
+      name: 'Leo M.', ref: 'Leo', complaint: 'Sudden left testicular pain since 19:45',
+      arrival: 'Bay 4: Leo, 15, with his mother. Severe pain in the left testis since football training at 19:45, vomited twice. Orange.',
+      alerts: {
+        mutter: () => 'Leo’s mother is asking when someone is finally coming. He’s been sick again.',
+        uhr: () => 'Leo has been in pain for almost six hours now. Just saying.'
+      },
+      actions: {
+        anamnese: { label: 'History (with his mother)', find: 'Sudden onset during training at 19:45, nausea and two episodes of vomiting since. No trauma, no urinary symptoms, no fever. Similar brief episodes months ago that settled on their own. Came in late out of embarrassment.' },
+        untersuchung: { label: 'Scrotal examination', find: 'Left testis high-riding with a horizontal lie, swollen, hard, extremely tender. Left cremasteric reflex absent. Prehn’s sign negative. → TWIST score 7/7 (high risk).' },
+        urin: { label: 'Urine dipstick', find: 'Normal.' },
+        labor: { label: 'Bloods (FBC, CRP)', find: 'WBC 11.2 × 10⁹/L · CRP 8 mg/L.' },
+        doppler: { label: 'Bedside colour Doppler yourself', find: 'No flow in the left testis, whirlpool sign at the spermatic cord. Confirms the diagnosis – but with TWIST 7 it isn’t needed.' },
+        radio: { label: 'Colour Doppler by Radiology', find: 'Radiology: no flow on the left – after an hour’s wait.', note: 'Radiology has two CTs ahead of him. That’ll be an hour.' },
+        analgesie: { label: 'Morphine + paracetamol IV', find: 'Morphine 3 mg and paracetamol 1 g IV. Pain NRS 5/10.' },
+        detorsion: { label: 'Attempt manual detorsion', find: 'Detorsion outwards (“opening the book”): pain slightly better. It does not replace surgical exploration – residual twist or retorsion is possible.' }
+      },
+      sbar: {
+        good: '15-year-old boy, acute left scrotum since 19:45, TWIST 7, high-riding testis, absent cremasteric reflex. I want to book him for immediate exploration.',
+        incomplete: 'Teenager with left testicular pain, probably epididymitis. I’d give antibiotics and review him tomorrow.',
+        rambling: 'Leo was playing football … his mother is very worried, and I think he had something like this before, but not as bad …'
+      },
+      oa: {
+        good: ['Acute scrotum, TWIST 7 – no discussion. We don’t wait for an ultrasound.', 'I’ll be in within 20 minutes. Consent Leo and his mother, the OR is booked.'],
+        incomplete: ['Epididymitis in a 15-year-old with sudden onset and vomiting? High-riding? Cremasteric reflex?', 'That’s torsion until proven otherwise. We explore. Now.'],
+        rambling: ['Stop. Since when, and what does the testis look like?', '… Since 19:45? Then the clock is ticking. I’m coming in, book the OR.'],
+        missing: { untersuchung: 'And examine him before I get there, please. I want to hear the findings.' }
+      },
+      disps: {
+        op: 'Immediate exploration, detorsion and bilateral orchidopexy',
+        duplex: 'Wait for the colour Doppler from Radiology, then make a decision',
+        epid: 'Suspected epididymitis: antibiotics, scrotal elevation, morning review',
+        morgen: 'Explore him as first case on the routine list at 8 o’clock'
+      },
+      outcomes: {
+        morning: x => ({ title: 'Testicular loss', text: `Morning round: testis hard, no flow. Exploration at 08:00 after ${x.h} h of ischaemia: necrotic – left orchidectomy, right orchidopexy.${x.epid ? ' Sudden onset, vomiting and a high-riding testis do not fit epididymitis.' : ''}`, short: 'Orchidectomy' }),
+        saved: x => ({ title: x.duplex ? 'Saved – despite the detour' : 'Testis saved', text: `Exploration at ${x.or} after ${x.h} h of ischaemia: 720° torsion, pink after detorsion. Bilateral orchidopexy.${x.duplex ? ' The hour waiting for Radiology was not needed.' : ''}`, short: 'Testis preserved' }),
+        borderline: x => ({ title: 'Borderline', text: `Exploration at ${x.or} after ${x.h} h: perfusion only hesitant after detorsion and warm packs; testis preserved. High risk of atrophy.${x.duplex ? ' The hour waiting for Radiology was not needed.' : ''}`, short: 'Viability doubtful' }),
+        lost: x => ({ title: 'Testicular loss', text: `Exploration at ${x.or} after ${x.h} h: necrotic – left orchidectomy, right orchidopexy.${x.duplex ? ' The hour waiting for Radiology was not needed.' : ''}`, short: 'Orchidectomy' })
+      },
+      hint: (p, h) => `Bay 4. The boy has had testicular pain for ${h} hours. The clock is ticking.`,
+      rationale: [
+        'Testicular torsion is a clinical diagnosis. TWIST ≥ 5 = high risk → exploration without prior imaging (Barbosa et al., J Urol 2013).',
+        'Imaging must not delay surgery. Salvage rate < 6 h 90–100%, after 12 h ≈ 50%, > 24 h < 10%.',
+        'An absent cremasteric reflex and Prehn’s sign are unreliable. Manual detorsion does not replace exploration.',
+        'Contralateral orchidopexy, as the bell-clapper deformity is usually bilateral. At 15: consent from parents or guardians, with the patient’s assent.'
+      ],
+      sources: 'EAU Guidelines on Paediatric Urology (2026) · BAUS · Barbosa et al., J Urol 2013 (TWIST)',
+      mm: 'The young man from bay 4 has had one testis fewer since this morning. We will discuss this on Thursday at the M&M conference. In detail.'
+    },
+
+    petersen: {
+      name: 'Mr Peterson', ref: 'Mr Peterson', complaint: 'Painful scrotal swelling for 3 days, fever',
+      arrival: 'Bay 5: Mr Peterson, 64, diabetic. Scrotal pain and swelling for three days, temperature 38.9, pulse 122. It doesn’t smell good. Orange.',
+      alerts: {
+        warn: (p, v) => `Mr Peterson: pulse ${v.hf}, BP dropping, and the redness is spreading – I marked it with a pen an hour ago.`,
+        crit: (p, v) => `Mr Peterson is in shock, BP ${v.rr}. Bay 5, now!`
+      },
+      actions: {
+        anamnese: { label: 'History', find: '“A spot” on the perineum four days ago, increasing pain and swelling since. Type 2 diabetes (last HbA1c 9.8%), BMI 38, smoker. No allergies.' },
+        untersuchung: { label: 'Genital and perineal examination', find: 'Massively swollen scrotum, erythema up to the left groin, central violaceous-black necrosis, crepitus, foul-smelling discharge. Pain out of proportion to the local findings.' },
+        bk: { label: 'Blood cultures + wound swab', find: 'Two sets of blood cultures and a wound swab taken.' },
+        labor: { label: 'Bloods incl. lactate, glucose', find: 'WBC 24 × 10⁹/L · CRP 312 mg/L · sodium 131 mmol/L · glucose 412 mg/dL (22.9 mmol/L) · creatinine 1.6 mg/dL (141 µmol/L) · lactate 3.9 mmol/L (high LRINEC).' },
+        ct: { label: 'CT pelvis', find: 'Subcutaneous gas in the perineum and scrotum extending to the left groin, no intra-abdominal extension.' },
+        ab: { label: 'Pip/taz + clindamycin IV', find: 'Piperacillin/tazobactam 4.5 g and clindamycin 600 mg IV running.' },
+        volumen: { label: 'Crystalloid 30 mL/kg', find: 'Balanced crystalloid (Hartmann’s) 2000 mL IV. Blood pressure rises a little.' },
+        insulin: { label: 'Insulin infusion', find: 'Variable-rate insulin infusion started per protocol.' }
+      },
+      sbar: {
+        good: '64-year-old diabetic, septic with HR 122 and BP 104/62, scrotal necrosis and crepitus – suspected Fournier’s gangrene. Antibiotics running; I need you for emergency debridement.',
+        incomplete: 'Mr Peterson has a scrotal abscess. Can I drain it tomorrow under local anaesthetic?',
+        rambling: 'Mr Peterson, 64, diabetic, smoker, saw his GP who gave him a cream, and now it smells, and his wife …'
+      },
+      oa: {
+        good: ['Fournier’s. That’s the emergency of the night.', 'I’ll call the anaesthetist, you book the OR. Wide debridement, second look tomorrow.'],
+        incomplete: ['Abscess? Crepitus? Necrosis? Is he septic?', 'That’s Fournier’s gangrene until proven otherwise. It gets debrided tonight. I’m coming in.'],
+        rambling: ['Stop. Fever, circulation, skin?', '… Crepitus and necrosis. Fournier’s. I’m coming in, book the OR.'],
+        missing: { ab: 'Antibiotics now if not already running – broad-spectrum, with clindamycin.' }
+      },
+      disps: {
+        op: 'Emergency debridement tonight, second look, ICU',
+        morgen: 'IV antibiotics, admission, debridement on the day list',
+        lokal: 'Incision and drainage under local anaesthetic in the ED',
+        hbo: 'Transfer for hyperbaric oxygen therapy before any surgery'
+      },
+      outcomes: {
+        morgen: () => ({ title: 'Progressive necrosis', text: 'Overnight the necrosis spreads to the abdominal wall; septic shock at 04:10. Grace alerts the attending: emergency debridement, ICU with multi-organ failure. An M&M case.', short: 'Debridement delayed, ICU' }),
+        lokal: () => ({ title: 'Too little, too superficial', text: 'The incision under local anaesthetic does not reach the necrosis. Progression at 05:30, emergency debridement by the attending under general anaesthetic.', short: 'Debridement delayed' }),
+        hbo: () => ({ title: 'Delayed by a detour', text: 'No hyperbaric chamber available, and hyperbaric oxygen does not replace surgery. Debridement only at midday – multi-organ failure, long ICU stay.', short: 'Debridement at midday' }),
+        op: x => ({
+          title: x.tier === 'fast' ? 'Fast and radical' : x.tier === 'late' ? 'Right, but late' : 'Right, but very late',
+          text: (x.tier === 'fast' ? `Radical debridement at ${x.or}: necrosis excised up to the groin, testes preserved. ICU, second look after 24 h. Stable.`
+            : x.tier === 'late' ? `Debridement at ${x.or}. Perioperative septic shock on noradrenaline, three second looks. Survives after a long ICU stay.`
+            : `Debridement at ${x.or} in shock. Multi-organ failure, weeks in ICU.`) + (x.noAb ? ' Antibiotics only started in the OR – they belong at the start.' : ''),
+          short: x.best ? 'Debrided, stable' : 'Debrided, late'
+        })
+      },
+      takeover: { title: 'Nursing had to escalate', text: 'Mr Peterson is in septic shock. Grace called the attending herself: emergency debridement, ICU. The escalation came from nursing, not from you.', short: 'Nurse escalated, ICU', line: 'I’ve called Dr. Brennan. Mr Peterson is in shock. He’s on his way.', oaLine: 'I’m taking over bay 5. We’ll talk tomorrow.' },
+      hint: p => 'Bay 5. That smells like Fournier’s. I wouldn’t let him wait a minute.' + (p.flags.ab ? '' : ' Antibiotics first.'),
+      rationale: [
+        'Fournier’s gangrene = necrotising fasciitis of the perineum. The diagnosis is clinical: pain out of proportion, necrosis, crepitus, sepsis.',
+        'Immediate broad-spectrum antibiotics and emergency radical debridement with planned second looks.',
+        'Time to debridement is the strongest modifiable factor: > 12 h → mortality 27.7% vs 2.6%; every 3-hour delay increases risk (cohort, n = 125).',
+        'CT can show the extent but must not delay surgery. Hyperbaric oxygen: insufficient evidence, no substitute for surgery.'
+      ],
+      sources: 'EAU Guidelines on Urological Infections (2026) · Fournier cohort, BJS Open 2024',
+      mm: 'Mr Peterson: Fournier’s, debridement hours later. Do you know what that means for mortality? You are about to.'
+    }
+  },
+
+  boss: [
+    { q: 'Infected hydronephrosis from an 8 mm ureteral stone. Which statement about decompression is correct?',
+      o: ['Nephrostomy and JJ stent are equally effective.', 'With coagulopathy, nephrostomy is preferable.', 'Ideally, the stone is treated under the same anaesthetic.', 'With effective antibiotics, decompression can be omitted.'],
+      why: 'In the RCT by Pearle et al. (1998), stent and nephrostomy were equivalent for time to defervescence and length of stay. With coagulopathy, prefer a stent, as no puncture is needed. Definitive stone treatment only after the infection has resolved.', src: 'EAU Guidelines on Urolithiasis (2026) · Pearle et al., J Urol 1998' },
+    { q: '15-year-old, testicular pain for 3 h, TWIST score 7. Which is correct?',
+      o: ['A present cremasteric reflex rules out torsion.', 'Explore immediately; Doppler is dispensable.', 'Doppler is mandatory before surgery for documentation.', 'After successful manual detorsion, surgery is unnecessary.'],
+      why: 'TWIST ≥ 5 means high risk – exploration without imaging. The cremasteric reflex is unreliable. Even after manual detorsion, the testis is explored and fixed, and so is the contralateral side.', src: 'Barbosa et al., J Urol 2013 · EAU Guidelines on Paediatric Urology (2026)' },
+    { q: 'In Fournier’s gangrene, which factor is most strongly linked to mortality and also modifiable?',
+      o: ['The choice between a carbapenem and piperacillin/tazobactam', 'The time to the first surgical debridement', 'Early hyperbaric oxygen therapy', 'Creating a defunctioning colostomy'],
+      why: 'In a cohort of 125 patients, mortality rose with every 3-hour delay; > 12 h to debridement: 27.7% vs 2.6%. Hyperbaric oxygen lacks robust evidence; a stoma is only needed with extensive perianal involvement.', src: 'Fournier cohort, BJS Open 2024 · EAU Guidelines on Urological Infections (2026)' },
+    { q: 'Acute urinary retention with 1100 mL. Which statement is evidence-based?',
+      o: ['Gradual drainage lowers the risk of haematuria.', 'An alpha-blocker before TWOC improves success.', 'Above 1000 mL, a suprapubic catheter is mandatory.', 'The trial without catheter should wait at least four weeks.'],
+      why: 'In the RCT by Boettcher et al. (n = 294), gradual and complete drainage did not differ (haematuria 11.3% vs 10.5%). Alpha-blockers before a trial without catheter increase its success; TWOC usually after 2–3 days.', src: 'Boettcher et al., Urol Int 2013 · Fisher et al., Cochrane 2014' },
+    { q: '6 mm distal ureteral stone, afebrile, normal creatinine. Which is correct?',
+      o: ['Tamsulosin is licensed for medical expulsive therapy.', 'Without fever, emergency ureteroscopy is first choice.', 'MET with an alpha-blocker is guideline-supported.', 'Opioids are the first-line analgesics for renal colic.'],
+      why: 'The EAU recommends alpha-blockers as MET for distal ureteral stones > 5 mm. ⚠ The evidence is mixed (SUSPEND, Lancet 2015). Off-label in most countries, so inform the patient. Analgesia: NSAIDs before opioids.', src: 'EAU Guidelines on Urolithiasis (2026) · Pickard et al., Lancet 2015' }
+  ],
+  chefRight: ['Correct.', 'Hm. Right.', 'I couldn’t have put it better myself. Almost.', 'Good. Next.', 'Correct. You’ve done your reading.'],
+  chefWrong: ['Interesting. Wrong, but interesting.', 'Which textbook is that from? 1987?', 'No. And I think you know that.', 'Wrong. Write that down.', 'No. Guideline, emergencies chapter. Tonight.'],
+  chefSayings: [
+    'Guidelines are not laws. But if you depart from them, you need a very good reason – and very good documentation.',
+    'An attending woken at night is annoyed. An attending who hears about an emergency in the morning is dangerous.',
+    'Listen to the nurses. They see the patients more often than you do.',
+    'At 07:30 I want cases, not stories.'
+  ]
+};
+
+/* ============================================================
+   KERN – sprachunabhängige Spiellogik (Zeiten, Schwellen, Bewertung)
+   Texte kommen ausschließlich aus dem Sprachpaket L.
+   ============================================================ */
+const T0 = 22 * 60;             // Spielbeginn 22:00
+const SHIFT_LIMIT = 480;        // 06:00 – spätestens Übergabe an den Frühdienst
+const DISP_MIN = 8;             // Dokumentation + Übergabe pro Procedere
+const BAY_X0 = 320;
+const BAY_W = 216;
+
+const clamp = (v, a = 0, b = 100) => Math.max(a, Math.min(b, v));
+const clockStr = t => { const m = ((T0 + Math.round(t)) % 1440 + 1440) % 1440; return String(Math.floor(m / 60)).padStart(2, '0') + ':' + String(m % 60).padStart(2, '0'); };
+const dur = m => { m = Math.max(0, Math.round(m)); return m < 60 ? `${m} min` : `${Math.floor(m / 60)}:${String(m % 60).padStart(2, '0')} h`; };
+const fmt1 = x => x.toFixed(1).replace('.', L.decimal);
+const hrs = m => fmt1(m / 60);
+
+const AVATARS = [
+  { skin: '#f3cfae', hair: 'short', hairColor: '#6b4226', top: '#8ec5e8', outfit: 'coat', stetho: true, badge: '#3cc7c1', bg: '#2d6f8f' },
+  { skin: '#c98e66', hair: 'pony', hairColor: '#2b1d16', top: '#9fdcc8', outfit: 'coat', stetho: true, badge: '#3cc7c1', bg: '#2f7a64' },
+  { skin: '#7a4a2e', hair: 'curly', hairColor: '#1d1512', top: '#c4b5f0', outfit: 'coat', stetho: true, badge: '#3cc7c1', bg: '#5b4a9a' }
+];
+
+const LOOKS = {
+  jana: { skin: '#f4d2b5', hair: 'bun', hairColor: '#e0b453', top: '#2f4f9e', outfit: 'scrubs', pens: true, badge: '#e5484d', bg: '#3d5fb8' },
+  brenner: { skin: '#efc9a6', hair: 'messy', hairColor: '#5b4a3c', glasses: true, stubble: true, top: '#5f7f9e', outfit: 'coat', bg: '#6b5b95' },
+  chef: { skin: '#f0caa8', hair: 'sidepart', hairColor: '#d9dde6', browColor: '#c9ccd6', bushy: true, glasses: true, bowtie: true, outfit: 'coatsuit', bg: '#9b3d3d' },
+  mutter: { skin: '#f5d6bc', hair: 'bob', hairColor: '#4a3428', top: '#5aa469', outfit: 'cardigan', bg: '#3f7d55' },
+  anae: { skin: '#e9bf9c', hair: 'pony', hairColor: '#7a3b2a', top: '#3d8f7a', outfit: 'scrubs', bg: '#2f6f62' }
+};
+const PEOPLE = Object.fromEntries(Object.keys(LOOKS).map(k => [k, Object.assign({}, LOOKS[k], L.people[k])]));
+
+/* Rettungswahrscheinlichkeit des Hodens nach Ischämiezeit (min), nach BAUS/EAU: <6 h 90–100 %, 12 h ≈50 %, >24 h <10 % */
+function viability(isch) {
+  if (isch <= 360) return 95;
+  if (isch <= 720) return 95 - (isch - 360) / 360 * 45;
+  if (isch <= 1440) return 50 - (isch - 720) / 720 * 40;
+  return 5;
+}
+
+const CASES = [
+/* ---------------------------------------------------------- 1 KOLIK */
+{
+  id: 'kaya', bay: 0, arrive: 0, triage: 'orange', age: 34, kind: 'pain',
+  look: { skin: '#d6a27a', hair: 'short', hairColor: '#1d1714', beard: true, blanket: '#f2c879', gown: '#bcd6ef' },
+  stab0: 90, pain0: 9, needsOA: false,
+  vitals(p) { const hi = p.pain > 5; return { sys: hi ? 152 : 134, dia: hi ? 92 : 82, hf: hi ? 98 : 80, temp: 36.8, spo2: 99, af: hi ? 18 : 14, nrs: p.pain }; },
+  alerts: [
+    { id: 'schmerz', level: 'warn', when: p => p.done.analgesie == null && p.done.opioid == null && p.pending.analgesie == null && S.t - p.arrivedAt >= 30 }
+  ],
+  actions: [
+    { id: 'anamnese', g: 'hx', cost: 5, tag: 'key' },
+    { id: 'untersuchung', g: 'hx', cost: 5, tag: 'useful' },
+    { id: 'urin', g: 'dx', cost: 3, delegable: true, nurseMin: 5, tag: 'useful' },
+    { id: 'labor', g: 'dx', cost: 5, async: 40, by: 'lab', delegable: true, nurseMin: 6, tag: 'useful' },
+    { id: 'sono', g: 'dx', cost: 10, tag: 'key' },
+    { id: 'ct', g: 'dx', cost: 5, async: 40, by: 'rad', tag: 'key' },
+    { id: 'analgesie', g: 'tx', cost: 5, delegable: true, nurseMin: 5, tag: 'key', effect: p => { p.pain = Math.min(p.pain, 3); p.flags.iv = true; } },
+    { id: 'opioid', g: 'tx', cost: 5, tag: 'neutral', effect: p => { p.pain = Math.min(p.pain, p.done.analgesie != null ? 1 : 4); p.flags.iv = true; } }
+  ],
+  disps: [
+    { id: 'heim', grade: 'best', dest: 'home' },
+    { id: 'stat', grade: 'ok', dest: 'ward' },
+    { id: 'dj', grade: 'wrong', requiresOA: true, dest: 'or' },
+    { id: 'urs', grade: 'wrong', requiresOA: true, dest: 'or' }
+  ],
+  outcome(p, d) {
+    if (d.id === 'stat') return { grade: 'ok', v: 'stat' };
+    if (p.done.analgesie == null && p.done.opioid == null) return { grade: 'ok', v: 'noAnalgesia', x: { back: clockStr(S.t + 120) } };
+    if (p.done.ct == null) return { grade: 'ok', v: 'noCT', x: { sono: p.done.sono != null } };
+    return { grade: 'best', v: 'best' };
+  },
+  timing(p) { const t = p.done.analgesie ?? p.done.opioid; if (t == null) return 0; const w = t - p.arrivedAt; return w <= 30 ? 10 : w <= 60 ? 6 : 2; },
+  logbook(p, d) { const l = []; if (p.done.sono != null) l.push('sonoKidney'); if (d.id === 'heim') l.push('met'); return l; }
+},
+/* ---------------------------------------------------------- 2 HARNVERHALT */
+{
+  id: 'brandt', bay: 1, arrive: 15, triage: 'gelb', age: 78, kind: 'pain',
+  look: { skin: '#f1cdb2', hair: 'bald', hairColor: '#e8e8ee', browColor: '#c9c9d2', mustache: true, wrinkles: true, blanket: '#a6d49f', gown: '#cfe0f2' },
+  stab0: 90, pain0: 7, needsOA: false,
+  vitals(p) { return p.flags.dk ? { sys: 146, dia: 84, hf: 78, temp: 36.6, spo2: 96, af: 15, nrs: p.pain } : { sys: 168, dia: 96, hf: 94, temp: 36.6, spo2: 96, af: 17, nrs: p.pain }; },
+  alerts: [
+    { id: 'klingel', level: 'warn', when: p => !p.flags.dk && S.t - p.arrivedAt >= 40 }
+  ],
+  actions: [
+    { id: 'anamnese', g: 'hx', cost: 5, tag: 'key' },
+    { id: 'untersuchung', g: 'hx', cost: 5, tag: 'useful' },
+    { id: 'sono', g: 'dx', cost: 5, tag: 'key' },
+    { id: 'labor', g: 'dx', cost: 5, async: 40, by: 'lab', delegable: true, nurseMin: 6, tag: 'useful' },
+    { id: 'dk', g: 'tx', cost: 10, tag: 'key', excl: 'kath', effect: p => { p.pain = 1; p.flags.dk = true; } },
+    { id: 'dkfrak', g: 'tx', cost: 10, tag: 'waste', excl: 'kath', note: { who: 'jana', expr: 'stern' }, effect: p => { p.pain = 2; p.flags.dk = true; S.team = clamp(S.team - 4); S.nurseBusyUntil = Math.max(S.nurseBusyUntil, S.t + 40); } },
+    { id: 'spk', g: 'tx', cost: 20, tag: 'neutral', excl: 'kath', effect: p => { p.pain = 2; p.flags.dk = true; } },
+    { id: 'alpha', g: 'tx', cost: 2, tag: 'key' },
+    { id: 'absetzen', g: 'tx', cost: 2, tag: 'key', requires: 'anamnese' }
+  ],
+  disps: [
+    { id: 'heim', grade: 'best', dest: 'home' },
+    { id: 'ex', grade: 'wrong', dest: 'home' },
+    { id: 'turp', grade: 'wrong', dest: 'ward' }
+  ],
+  outcome(p, d) {
+    if (d.id === 'ex') return { grade: 'wrong', v: 'ex' };
+    if (d.id === 'turp') return { grade: 'wrong', v: 'turp' };
+    if (!p.flags.dk) return { grade: 'ok', v: 'lateDK', x: { wait: dur(S.t - p.arrivedAt) } };
+    return { grade: 'best', v: 'best' };
+  },
+  timing(p) { const t = ['dk', 'dkfrak', 'spk'].map(a => p.done[a]).find(v => v != null); if (t == null) return 0; const w = t - p.arrivedAt; return w <= 45 ? 10 : w <= 90 ? 6 : 2; },
+  logbook(p) { const l = []; if (p.done.dk != null || p.done.dkfrak != null) l.push('catheter'); if (p.done.spk != null) l.push('spc'); if (p.done.sono != null) l.push('sonoBladder'); return l; }
+},
+/* ---------------------------------------------------------- 3 UROSEPSIS */
+{
+  id: 'albers', bay: 2, arrive: 40, triage: 'orange', age: 58, kind: 'sepsis',
+  look: { skin: '#f2cfb5', hair: 'bob', hairColor: '#a4472c', blanket: '#f4a6a6', gown: '#d6e4f5' },
+  stab0: 62, pain0: 6, needsOA: true, takeover: true, oaMissing: ['ab', 'bk'],
+  vitals(p) {
+    const s = p.stab, cooling = p.flags.ab && S.t - p.done.ab > 90;
+    return { sys: Math.round(64 + s * 0.55), dia: Math.round(36 + s * 0.38), hf: Math.round(160 - s * 0.68), temp: cooling ? 38.4 : 39.4, spo2: Math.round(88 + s * 0.12), af: Math.round(34 - s * 0.16), nrs: p.pain };
+  },
+  tick(p) { let r = p.flags.ab ? -0.08 : -0.2; if (p.flags.fluids) r += 0.05; p.stab = clamp(p.stab + r); },
+  alerts: [
+    { id: 'warn', level: 'warn', when: p => p.stab < (S.team >= 60 ? 52 : 46) },
+    { id: 'crit', level: 'crit', when: p => p.stab < 30 }
+  ],
+  actions: [
+    { id: 'anamnese', g: 'hx', cost: 5, tag: 'useful' },
+    { id: 'untersuchung', g: 'hx', cost: 5, tag: 'useful' },
+    { id: 'urin', g: 'dx', cost: 3, delegable: true, nurseMin: 4, tag: 'useful' },
+    { id: 'bk', g: 'dx', cost: 5, delegable: true, nurseMin: 6, tag: 'key' },
+    { id: 'labor', g: 'dx', cost: 5, async: 40, by: 'lab', delegable: true, nurseMin: 6, tag: 'useful' },
+    { id: 'sono', g: 'dx', cost: 10, tag: 'key' },
+    { id: 'ct', g: 'dx', cost: 5, async: 40, by: 'rad', tag: 'useful' },
+    { id: 'ab', g: 'tx', cost: 5, delegable: true, nurseMin: 5, tag: 'key', effect: p => { p.flags.ab = true; p.flags.iv = true; } },
+    { id: 'volumen', g: 'tx', cost: 5, delegable: true, nurseMin: 5, tag: 'key', effect: p => { p.stab = clamp(p.stab + 8); p.flags.fluids = true; p.flags.iv = true; } },
+    { id: 'metformin', g: 'tx', cost: 1, requires: 'anamnese', tag: 'useful' }
+  ],
+  disps: [
+    { id: 'entlastung', grade: 'best', requiresOA: true, dest: 'orImc' },
+    { id: 'urs', grade: 'wrong', requiresOA: true, dest: 'orImc', oaFix: true },
+    { id: 'morgen', grade: 'critical', dest: 'icu' },
+    { id: 'met', grade: 'critical', dest: 'icu' }
+  ],
+  outcome(p, d) {
+    const at = clockStr(S.t + 30);
+    if (d.id === 'urs') return { grade: 'wrong', v: 'ursFix', x: { at } };
+    if (d.id === 'morgen' || d.id === 'met') return { grade: 'critical', v: 'shock', x: { at: clockStr(Math.max(S.t + 70, 330)), met: d.id === 'met' } };
+    const s = p.stab, late = s < 45, noAb = !p.flags.ab;
+    return { grade: late || noAb ? 'ok' : 'best', v: 'relief', x: { at, level: s >= 45 ? 'good' : s >= 30 ? 'late' : 'shock', late, noAb } };
+  },
+  timing(p) { if (p.done.ab == null) return 0; const w = p.done.ab - p.arrivedAt; return w <= 60 ? 10 : w <= 120 ? 5 : 0; },
+  logbook(p, d) { const l = []; if (p.done.sono != null) l.push('sonoRenal'); if (d.id === 'entlastung' || d.id === 'urs') l.push('stentInd'); return l; }
+},
+/* ---------------------------------------------------------- 4 HODENTORSION */
+{
+  id: 'jonas', bay: 3, arrive: 75, triage: 'orange', age: 15, kind: 'torsion', onset: -135,
+  look: { skin: '#f5d5bb', hair: 'messy', hairColor: '#e0b84f', freckles: true, blanket: '#9fc9ee', gown: '#d3e6f6' },
+  stab0: 80, pain0: 8, needsOA: true, mother: true, oaMissing: ['untersuchung'],
+  vitals(p) { return { sys: 132, dia: 80, hf: p.pain > 5 ? 104 : 88, temp: 37.1, spo2: 99, af: 18, nrs: p.pain }; },
+  alerts: [
+    { id: 'mutter', level: 'warn', when: p => p.seenAt == null && S.t - p.arrivedAt >= 25 },
+    { id: 'uhr', level: 'crit', when: () => S.t - CASE.jonas.onset >= 330 }
+  ],
+  actions: [
+    { id: 'anamnese', g: 'hx', cost: 5, tag: 'key' },
+    { id: 'untersuchung', g: 'hx', cost: 5, tag: 'key' },
+    { id: 'urin', g: 'dx', cost: 3, delegable: true, nurseMin: 4, tag: 'neutral' },
+    { id: 'labor', g: 'dx', cost: 5, async: 40, by: 'lab', delegable: true, nurseMin: 6, tag: 'neutral' },
+    { id: 'doppler', g: 'dx', cost: 10, tag: 'neutral' },
+    { id: 'radio', g: 'dx', cost: 5, async: 60, by: 'rad', tag: 'waste', note: { who: 'jana', expr: 'worried' } },
+    { id: 'analgesie', g: 'tx', cost: 5, delegable: true, nurseMin: 5, tag: 'useful', effect: p => { p.pain = Math.min(p.pain, 5); p.flags.iv = true; } },
+    { id: 'detorsion', g: 'tx', cost: 5, requires: 'untersuchung', tag: 'neutral', effect: p => { p.pain = Math.min(p.pain, 6); } }
+  ],
+  disps: [
+    { id: 'op', grade: 'best', requiresOA: true, dest: 'or' },
+    { id: 'duplex', grade: 'wrong', dest: 'or' },
+    { id: 'epid', grade: 'critical', dest: 'ward' },
+    { id: 'morgen', grade: 'critical', dest: 'ward' }
+  ],
+  outcome(p, d) {
+    const or = d.id === 'op' ? S.t + 30 : d.id === 'duplex' ? S.t + 95 : 600;
+    const isch = or - CASE.jonas.onset, v = viability(isch);
+    p.metrics.isch = isch;
+    const x = { or: clockStr(or), h: hrs(isch), duplex: d.id === 'duplex', epid: d.id === 'epid' };
+    if (d.id === 'epid' || d.id === 'morgen') return { grade: 'critical', v: 'morning', x };
+    if (v >= 85) return { grade: d.id === 'op' ? 'best' : 'wrong', v: 'saved', x };
+    if (v >= 50) return { grade: d.id === 'op' ? 'ok' : 'wrong', v: 'borderline', x };
+    return { grade: 'critical', v: 'lost', x };
+  },
+  timing(p) { const i = p.metrics.isch; if (i == null) return 0; const v = viability(i); return v >= 85 ? 10 : v >= 50 ? 4 : 0; },
+  logbook(p, d) { const l = []; if (p.done.doppler != null) l.push('duplexScrot'); if (d.id === 'op' || d.id === 'duplex') l.push('explInd'); return l; }
+},
+/* ---------------------------------------------------------- 5 FOURNIER */
+{
+  id: 'petersen', bay: 4, arrive: 130, triage: 'orange', age: 64, kind: 'sepsis',
+  look: { skin: '#eab49a', hair: 'crew', hairColor: '#9ba1aa', stubble: true, heavy: true, blanket: '#c9b6ec', gown: '#d1e2f4' },
+  stab0: 55, pain0: 8, needsOA: true, takeover: true, oaMissing: ['ab'],
+  vitals(p) { const s = p.stab; return { sys: Math.round(70 + s * 0.62), dia: Math.round(40 + s * 0.4), hf: Math.round(170 - s * 0.87), temp: 38.9, spo2: Math.round(88 + s * 0.13), af: Math.round(33 - s * 0.2), nrs: p.pain }; },
+  tick(p) { let r = p.flags.ab ? -0.08 : -0.18; if (p.flags.fluids) r += 0.04; p.stab = clamp(p.stab + r); },
+  alerts: [
+    { id: 'warn', level: 'warn', when: p => p.stab < (S.team >= 60 ? 48 : 42) },
+    { id: 'crit', level: 'crit', when: p => p.stab < 28 }
+  ],
+  actions: [
+    { id: 'anamnese', g: 'hx', cost: 5, tag: 'useful' },
+    { id: 'untersuchung', g: 'hx', cost: 5, tag: 'key' },
+    { id: 'bk', g: 'dx', cost: 5, delegable: true, nurseMin: 6, tag: 'key' },
+    { id: 'labor', g: 'dx', cost: 5, async: 40, by: 'lab', delegable: true, nurseMin: 6, tag: 'useful' },
+    { id: 'ct', g: 'dx', cost: 5, async: 45, by: 'rad', tag: 'neutral' },
+    { id: 'ab', g: 'tx', cost: 5, delegable: true, nurseMin: 5, tag: 'key', effect: p => { p.flags.ab = true; p.flags.iv = true; } },
+    { id: 'volumen', g: 'tx', cost: 5, delegable: true, nurseMin: 5, tag: 'key', effect: p => { p.stab = clamp(p.stab + 6); p.flags.fluids = true; p.flags.iv = true; } },
+    { id: 'insulin', g: 'tx', cost: 5, requires: 'anamnese', delegable: true, nurseMin: 5, tag: 'useful' }
+  ],
+  disps: [
+    { id: 'op', grade: 'best', requiresOA: true, dest: 'orIcu' },
+    { id: 'morgen', grade: 'critical', dest: 'ward' },
+    { id: 'lokal', grade: 'wrong', dest: 'ward' },
+    { id: 'hbo', grade: 'critical', dest: 'transfer' }
+  ],
+  outcome(p, d) {
+    if (d.id === 'morgen' || d.id === 'lokal' || d.id === 'hbo') return { grade: d.id === 'lokal' ? 'wrong' : 'critical', v: d.id };
+    const or = S.t + 30, delay = or - p.arrivedAt, s = p.stab, noAb = !p.flags.ab;
+    p.metrics.delay = delay;
+    let grade = 'best', tier = 'fast';
+    if (delay <= 180 && s >= 40) tier = 'fast';
+    else if (delay <= 360 && s >= 25) { grade = 'ok'; tier = 'late'; }
+    else { grade = 'ok'; tier = 'verylate'; }
+    if (noAb && grade === 'best') grade = 'ok';
+    return { grade, v: 'op', x: { or: clockStr(or), tier, noAb, best: grade === 'best' } };
+  },
+  timing(p) { let t = 0; if (p.done.ab != null && p.done.ab - p.arrivedAt <= 60) t += 5; const dl = p.metrics.delay; if (dl != null) t += dl <= 180 ? 5 : dl <= 360 ? 2 : 0; return t; },
+  logbook(p, d) { return d.id === 'op' ? ['debrInd'] : []; }
+}
+];
+const CASE = Object.fromEntries(CASES.map(c => [c.id, c]));
+
+/* Sprachpaket in die Fallobjekte einhängen (Labels, Befunde, Texte) */
+for (const c of CASES) {
+  const t = L.cases[c.id];
+  Object.assign(c, { name: t.name, ref: t.ref, complaint: t.complaint, arrivalLine: t.arrival, rationale: t.rationale, sources: t.sources, mm: t.mm, vetoLine: t.veto || '', hint: t.hint, oa: t.oa, tx: t });
+  c.sbar = ['good', 'incomplete', 'rambling'].map(q => ({ q, text: t.sbar[q] }));
+  for (const a of c.actions) {
+    const ta = t.actions[a.id];
+    a.label = ta.label; a.find = ta.find;
+    if (a.note) a.note = Object.assign({}, a.note, { text: ta.note });
+  }
+  for (const d of c.disps) d.text = t.disps[d.id];
+  for (const al of (c.alerts || [])) al.text = t.alerts[al.id];
+}
+
+/* Frühbesprechung: richtige Antwort je Frage (Index vor dem Mischen) */
+const BOSS_A = [0, 1, 1, 1, 2];
+const BOSS_QS = L.boss.map((b, i) => Object.assign({ a: BOSS_A[i] }, b));
+
+/* ============================================================
+   ART – per Code gezeichnete Cartoon-Figuren (SVG)
+   ============================================================ */
+const OL = '#2a2442';
+const st = (w = 3) => `stroke="${OL}" stroke-width="${w}" stroke-linejoin="round" stroke-linecap="round"`;
+
+function shade(hex, pct) {
+  const n = parseInt(hex.slice(1), 16);
+  const f = pct / 100;
+  const adj = c => Math.round(Math.max(0, Math.min(255, f < 0 ? c * (1 + f) : c + (255 - c) * f)));
+  return '#' + [n >> 16, (n >> 8) & 255, n & 255].map(adj).map(x => x.toString(16).padStart(2, '0')).join('');
+}
+
+function hairBack(o) {
+  const hc = o.hairColor;
+  switch (o.hair) {
+    case 'bob': return `<path d="M-46 30 Q-54 -54 0 -53 Q54 -54 46 30 Q41 38 31 33 L30 6 L-30 6 L-31 33 Q-41 38 -46 30Z" fill="${hc}" ${st()}/>`;
+    case 'pony': return `<g transform="rotate(-16 40 0)"><ellipse cx="47" cy="16" rx="11" ry="27" fill="${hc}" ${st()}/><rect x="39" y="-9" width="15" height="7" rx="3" fill="#e2566b" ${st(2)}/></g>`;
+    case 'bun': return `<circle cx="0" cy="-50" r="16" fill="${hc}" ${st()}/>`;
+    case 'curly': return `<ellipse cx="0" cy="-6" rx="49" ry="47" fill="${hc}" ${st()}/>`;
+    default: return '';
+  }
+}
+
+const HAIR_FRONT = {
+  short: 'M-40 0 Q-43 -47 0 -48 Q43 -47 40 0 Q37 -22 24 -28 Q12 -19 -2 -27 Q-16 -18 -29 -25 Q-37 -15 -40 0Z',
+  messy: 'M-40 2 Q-46 -36 -24 -47 L-20 -60 L-8 -49 L2 -63 L10 -49 L24 -58 L25 -45 Q46 -36 40 2 Q37 -20 24 -27 Q10 -17 -4 -26 Q-18 -16 -30 -24 Q-38 -12 -40 2Z',
+  bun: 'M-39 -2 Q-42 -46 0 -46 Q42 -46 39 -2 Q35 -29 0 -31 Q-35 -29 -39 -2Z',
+  pony: 'M-39 -2 Q-42 -46 0 -46 Q42 -46 39 -2 Q33 -26 4 -30 Q-12 -22 -22 -28 Q-34 -22 -39 -2Z',
+  bob: 'M-40 -2 Q-43 -48 0 -48 Q43 -48 40 -2 Q31 -25 4 -27 Q-6 -17 -18 -25 Q-31 -21 -40 -2Z',
+  sidepart: 'M-40 -2 Q-45 -45 -6 -49 Q41 -49 40 -4 Q36 -26 16 -31 Q-2 -31 -16 -24 Q-30 -19 -36 -10Z',
+  crew: 'M-39 -8 Q-40 -45 0 -46 Q40 -45 39 -8 Q36 -30 0 -31 Q-36 -30 -39 -8Z',
+  bald: 'M-40 4 Q-46 -16 -34 -26 Q-30 -12 -37 10Z M40 4 Q46 -16 34 -26 Q30 -12 37 10Z'
+};
+
+function hairFront(o) {
+  const hc = o.hairColor;
+  if (o.hair === 'curly') {
+    let s = `<ellipse cx="0" cy="-31" rx="33" ry="14" fill="${hc}"/>`;
+    for (let i = 0; i < 9; i++) {
+      const a = Math.PI * (1.08 + i * 0.105);
+      s += `<circle cx="${(40 * Math.cos(a)).toFixed(1)}" cy="${(-4 + 42 * Math.sin(a)).toFixed(1)}" r="12.5" fill="${hc}" ${st(2.5)}/>`;
+    }
+    return s;
+  }
+  let s = `<path d="${HAIR_FRONT[o.hair] || HAIR_FRONT.short}" fill="${hc}" ${st()}/>`;
+  if (o.hair === 'sidepart') s += `<path d="M-6 -48 Q-12 -36 -16 -25" stroke="${shade(hc, -30)}" stroke-width="2.5" fill="none"/>`;
+  if (o.hair === 'bald') s += `<ellipse cx="-12" cy="-30" rx="10" ry="5" fill="#fff" opacity=".45" transform="rotate(-20 -12 -30)"/>`;
+  return s;
+}
+
+function eyesSVG(expr) {
+  const e = x => `<ellipse cx="${x}" cy="1" rx="4.6" ry="6" fill="${OL}"/><circle cx="${x + 1.7}" cy="-1.4" r="1.7" fill="#fff"/>`;
+  switch (expr) {
+    case 'pain': return `<path d="M-21 -4 L-10 1 L-21 6 M21 -4 L10 1 L21 6" fill="none" ${st(3)}/>`;
+    case 'relieved': case 'happy': return `<path d="M-20 3 Q-14.5 -5 -9 3 M9 3 Q14.5 -5 20 3" fill="none" ${st(3)}/>`;
+    case 'sleepy': return `<path d="M-20 2 Q-14.5 6 -9 2 M9 2 Q14.5 6 20 2" fill="none" ${st(3)}/>`;
+    case 'scared': return `<ellipse cx="-14" cy="0" rx="7.5" ry="8.5" fill="#fff" ${st(2.5)}/><ellipse cx="14" cy="0" rx="7.5" ry="8.5" fill="#fff" ${st(2.5)}/><circle cx="-14" cy="1" r="2.6" fill="${OL}"/><circle cx="14" cy="1" r="2.6" fill="${OL}"/>`;
+    default: return e(-14) + e(14);
+  }
+}
+
+function browsSVG(expr, o) {
+  const c = o.browColor || (o.hair === 'bald' ? '#9a9098' : shade(o.hairColor || '#444444', -35));
+  const w = o.bushy ? 5.5 : 3.4;
+  const D = {
+    neutral: ['M-21 -15 Q-14 -19 -8 -16', 'M21 -15 Q14 -19 8 -16'],
+    worried: ['M-22 -13 Q-15 -16 -8 -21', 'M22 -13 Q15 -16 8 -21'],
+    stern: ['M-22 -20 Q-15 -17 -8 -13', 'M22 -20 Q15 -17 8 -13'],
+    flat: ['M-21 -15 L-8 -15', 'M21 -15 L8 -15']
+  };
+  const map = { pain: 'worried', scared: 'worried', ill: 'worried', worried: 'worried', stern: 'stern', sleepy: 'flat' };
+  const [L, R] = D[map[expr] || 'neutral'];
+  return `<path d="${L}" fill="none" stroke="${c}" stroke-width="${w}" stroke-linecap="round"/><path d="${R}" fill="none" stroke="${c}" stroke-width="${w}" stroke-linecap="round"/>`;
+}
+
+function mouthSVG(expr) {
+  const M = {
+    smile: `<path d="M-12 17 Q0 31 12 17 Q0 21 -12 17Z" fill="#8c3a46" ${st(2.5)}/>`,
+    relieved: `<path d="M-9 19 Q0 27 9 19" fill="none" ${st(3)}/>`,
+    pain: `<rect x="-12" y="15" width="24" height="11" rx="4" fill="#fff" ${st(2.5)}/><path d="M-12 20.5 H12" stroke="${OL}" stroke-width="1.6"/>`,
+    worried: `<path d="M-10 23 Q-5 19 0 23 Q5 27 10 23" fill="none" ${st(3)}/>`,
+    scared: `<ellipse cx="0" cy="22" rx="5" ry="6.5" fill="#8c3a46" ${st(2.5)}/>`,
+    sleepy: `<ellipse cx="3" cy="22" rx="4.5" ry="3.5" fill="#8c3a46" ${st(2.2)}/>`,
+    stern: `<path d="M-9 22 H9" ${st(3)}/>`,
+    neutral: `<path d="M-9 19 Q0 25 9 19" fill="none" ${st(3)}/>`
+  };
+  M.happy = M.smile; M.ill = M.worried;
+  return M[expr] || M.neutral;
+}
+
+function head(o, expr = 'neutral') {
+  const skin = o.skin;
+  const rx = o.heavy ? 41 : 38;
+  let s = hairBack(o);
+  s += `<ellipse cx="-${rx}" cy="4" rx="7.5" ry="10" fill="${skin}" ${st()}/><ellipse cx="${rx}" cy="4" rx="7.5" ry="10" fill="${skin}" ${st()}/>`;
+  s += `<ellipse cx="0" cy="0" rx="${rx}" ry="41" fill="${skin}" ${st()}/>`;
+  if (o.stubble) s += `<path d="M-34 12 Q-29 39 0 41 Q29 39 34 12 Q23 29 0 29 Q-23 29 -34 12Z" fill="${OL}" opacity=".14"/>`;
+  if (o.beard) s += `<path d="M-37 2 Q-37 46 0 47 Q37 46 37 2 Q30 21 18 25 Q8 19 0 20 Q-8 19 -18 25 Q-30 21 -37 2Z" fill="${o.hairColor}" ${st(2.5)}/>`;
+  if (o.wrinkles) s += `<path d="M-13 -27 Q0 -31 13 -27 M-9 -22 Q0 -25 9 -22" fill="none" stroke="${OL}" stroke-width="1.6" opacity=".4"/>`;
+  s += hairFront(o);
+  if (expr === 'ill') s += `<ellipse cx="-22" cy="12" rx="8" ry="5" fill="#ff4d4d" opacity=".42"/><ellipse cx="22" cy="12" rx="8" ry="5" fill="#ff4d4d" opacity=".42"/>`;
+  else if (['smile', 'happy', 'relieved', 'scared'].includes(expr) || o.blush) s += `<ellipse cx="-22" cy="13" rx="7" ry="4.2" fill="#ff7f8a" opacity=".35"/><ellipse cx="22" cy="13" rx="7" ry="4.2" fill="#ff7f8a" opacity=".35"/>`;
+  if (o.freckles) s += `<g fill="#b9734e" opacity=".55"><circle cx="-24" cy="9" r="1.3"/><circle cx="-19" cy="12" r="1.3"/><circle cx="-26" cy="14" r="1.3"/><circle cx="24" cy="9" r="1.3"/><circle cx="19" cy="12" r="1.3"/><circle cx="26" cy="14" r="1.3"/></g>`;
+  s += eyesSVG(expr);
+  if (expr === 'ill') s += `<path d="M-20 -6 h12 v5.5 h-12Z M8 -6 h12 v5.5 h-12Z" fill="${skin}"/><path d="M-20 -0.5 h12 M8 -0.5 h12" ${st(2.5)}/>`;
+  s += browsSVG(expr, o);
+  s += `<ellipse cx="0" cy="9" rx="4.2" ry="3.2" fill="${shade(skin, -16)}"/>`;
+  s += mouthSVG(expr);
+  if (o.mustache) s += `<path d="M-15 16 Q-8 9 0 14 Q8 9 15 16 Q8 20 0 17 Q-8 20 -15 16Z" fill="${o.hairColor}" ${st(2)}/>`;
+  if (expr === 'pain' || expr === 'ill') s += `<path d="M31 -24 q7 10 0 14 q-7 -4 0 -14Z" fill="#9edcff" ${st(1.8)}/>`;
+  if (expr === 'sleepy') s += `<text x="33" y="-30" class="zzz">z</text><text x="44" y="-44" class="zzz" style="font-size:12px">z</text>`;
+  if (o.glasses) s += `<g fill="rgba(255,255,255,.18)" ${st(2.6)}><circle cx="-14" cy="1" r="10.5"/><circle cx="14" cy="1" r="10.5"/></g><path d="M-3.5 0 Q0 -3 3.5 0 M-24.5 -1 L-${rx - 1} -4 M24.5 -1 L${rx - 1} -4" fill="none" ${st(2.6)}/>`;
+  return s;
+}
+
+function figure(o, expr = 'neutral') {
+  const top = o.top || '#8ec5e8';
+  const coat = o.outfit === 'coat' || o.outfit === 'coatsuit';
+  const pants = o.pants || (o.outfit === 'coatsuit' ? '#535866' : o.outfit === 'cardigan' ? '#3d4a6e' : shade(top, -8));
+  const shoe = o.shoe || (o.outfit === 'cardigan' || o.outfit === 'coatsuit' ? '#2f2c3a' : '#f4f6fb');
+  let s = `<ellipse cx="0" cy="0" rx="40" ry="8" fill="#000" opacity=".2"/><g class="body">`;
+  s += `<g class="legL"><rect x="-21" y="-64" width="17" height="60" rx="7" fill="${pants}" ${st()}/><ellipse cx="-14" cy="-5" rx="14" ry="7" fill="${shoe}" ${st()}/></g>`;
+  s += `<g class="legR"><rect x="4" y="-64" width="17" height="60" rx="7" fill="${pants}" ${st()}/><ellipse cx="14" cy="-5" rx="14" ry="7" fill="${shoe}" ${st()}/></g>`;
+  s += `<rect x="-9" y="-128" width="18" height="18" fill="${o.skin}" ${st()}/>`;
+  const torso = o.outfit === 'coatsuit' ? '#8b919e' : top;
+  s += `<path d="M-34 -116 Q-41 -112 -41 -100 L-37 -56 Q-37 -50 -31 -50 L31 -50 Q37 -50 37 -56 L41 -100 Q41 -112 34 -116 Q18 -120 0 -108 Q-18 -120 -34 -116Z" fill="${torso}" ${st()}/>`;
+  if (o.outfit === 'coatsuit') s += `<path d="M-10 -116 L0 -98 L10 -116Z" fill="#fff" ${st(2)}/>`;
+  if (o.outfit === 'cardigan') s += `<path d="M-34 -116 L-20 -50 M34 -116 L20 -50" stroke="${shade(top, -25)}" stroke-width="3"/>`;
+  if (coat) {
+    s += `<path d="M-37 -116 Q-47 -110 -46 -96 L-43 -32 Q-43 -26 -37 -26 L-7 -26 L-4 -100 L-12 -117Z" fill="#fbfcff" ${st()}/>`;
+    s += `<path d="M37 -116 Q47 -110 46 -96 L43 -32 Q43 -26 37 -26 L7 -26 L4 -100 L12 -117Z" fill="#fbfcff" ${st()}/>`;
+    s += `<path d="M-12 -117 L-4 -100 L-15 -95Z M12 -117 L4 -100 L15 -95Z" fill="#e4e9f4" ${st(2)}/>`;
+    s += `<path d="M-38 -62 h17 v12 h-17Z" fill="none" ${st(2)}/>`;
+  }
+  const sleeve = coat ? '#fbfcff' : top;
+  if (coat || o.outfit === 'cardigan') {
+    s += `<rect x="-56" y="-112" width="17" height="58" rx="8" fill="${sleeve}" ${st()}/><rect x="39" y="-112" width="17" height="58" rx="8" fill="${sleeve}" ${st()}/>`;
+  } else {
+    s += `<rect x="-55" y="-112" width="16" height="24" rx="7" fill="${sleeve}" ${st()}/><rect x="39" y="-112" width="16" height="24" rx="7" fill="${sleeve}" ${st()}/>`;
+    s += `<rect x="-53" y="-92" width="12" height="38" rx="6" fill="${o.skin}" ${st()}/><rect x="41" y="-92" width="12" height="38" rx="6" fill="${o.skin}" ${st()}/>`;
+  }
+  s += `<circle cx="-47.5" cy="-52" r="8.5" fill="${o.skin}" ${st()}/><circle cx="47.5" cy="-52" r="8.5" fill="${o.skin}" ${st()}/>`;
+  if (o.stetho) s += `<path d="M-13 -117 Q-24 -86 -9 -74 Q3 -68 8 -86" fill="none" stroke="#3a4157" stroke-width="3.5" stroke-linecap="round"/><circle cx="8" cy="-88" r="5.5" fill="#cfd6e6" ${st(2.5)}/>`;
+  if (o.badge) s += `<rect x="17" y="-101" width="16" height="11" rx="2" fill="#fff" ${st(2)}/><rect x="17" y="-101" width="16" height="3.5" fill="${o.badge}"/>`;
+  if (o.pens) s += `<rect x="13" y="-97" width="17" height="13" rx="2" fill="${shade(top, -14)}" ${st(2)}/><path d="M17 -97 v-7 M21.5 -97 v-8" stroke="#e5484d" stroke-width="3" stroke-linecap="round"/><path d="M26 -97 v-6" stroke="#3cc7c1" stroke-width="3" stroke-linecap="round"/>`;
+  if (o.bowtie) s += `<path d="M-12 -121 L-1 -115 L-12 -109Z M12 -121 L1 -115 L12 -109Z" fill="#c0392b" ${st(2)}/><circle cx="0" cy="-115" r="3" fill="#a52f23" ${st(1.8)}/>`;
+  s += `<g transform="translate(0 -163)">${head(o, expr)}</g></g>`;
+  return s;
+}
+
+let clipSeq = 0;
+function portrait(o, expr = 'neutral', size = 96, opt = {}) {
+  const id = 'pc' + (++clipSeq);
+  const coat = o.outfit === 'coat' || o.outfit === 'coatsuit';
+  const top = o.outfit === 'coatsuit' ? '#8b919e' : (o.top || '#8ec5e8');
+  let body;
+  if (o.gown) {
+    body = `<path d="M-60 70 Q-58 34 -30 28 L30 28 Q58 34 60 70Z" fill="${o.gown}" ${st()}/><g fill="${shade(o.gown, -22)}"><circle cx="-34" cy="46" r="2.4"/><circle cx="-18" cy="54" r="2.4"/><circle cx="20" cy="50" r="2.4"/><circle cx="36" cy="58" r="2.4"/><circle cx="2" cy="62" r="2.4"/></g><path d="M-14 28 Q0 38 14 28" fill="none" ${st(2.5)}/>`;
+  } else {
+    body = `<path d="M-60 70 Q-58 34 -30 28 L30 28 Q58 34 60 70Z" fill="${coat ? '#fbfcff' : top}" ${st()}/>`;
+    if (coat) body += `<path d="M-14 28 L0 60 L14 28Z" fill="${top}" ${st(2.5)}/>`;
+    if (o.outfit === 'coatsuit') body += `<path d="M-8 28 L0 44 L8 28Z" fill="#fff" ${st(2)}/>`;
+    if (!coat) body += `<path d="M-14 28 L0 42 L14 28" fill="none" ${st(2.5)}/>`;
+    if (o.bowtie) body += `<path d="M-12 26 L-1 32 L-12 38Z M12 26 L1 32 L12 38Z" fill="#c0392b" ${st(2)}/><circle cx="0" cy="32" r="3" fill="#a52f23"/>`;
+    if (o.stetho) body += `<path d="M-22 30 Q-26 52 -10 58 Q2 60 6 48" fill="none" stroke="#3a4157" stroke-width="3.5" stroke-linecap="round"/><circle cx="6" cy="46" r="5" fill="#cfd6e6" ${st(2.2)}/>`;
+    if (o.pens) body += `<rect x="18" y="40" width="16" height="13" rx="2" fill="${shade(top, -14)}" ${st(2)}/><path d="M22 40 v-6 M27 40 v-7" stroke="#e5484d" stroke-width="3" stroke-linecap="round"/>`;
+  }
+  const neck = `<rect x="-9" y="16" width="18" height="16" fill="${o.skin}" ${st()}/>`;
+  const phone = opt.phone ? `<g transform="translate(30 2) rotate(18)"><rect x="-7" y="-24" width="14" height="40" rx="6" fill="#2d3344" ${st(2.2)}/><circle cx="0" cy="18" r="9" fill="${o.skin}" ${st(2.5)}/></g>` : '';
+  return `<svg viewBox="-64 -66 128 128" width="${size}" height="${size}" aria-hidden="true" focusable="false"><defs><clipPath id="${id}"><circle cx="0" cy="-2" r="62"/></clipPath></defs><circle cx="0" cy="-2" r="62" fill="${o.bg || '#2a355f'}"/><g clip-path="url(#${id})">${neck}${body}<g transform="translate(0 -14) scale(.92)">${head(o, expr)}</g>${phone}</g><circle cx="0" cy="-2" r="62" fill="none" stroke="${OL}" stroke-width="3"/></svg>`;
+}
+
+function clockPortrait(t, size = 96) {
+  const m = ((T0 + Math.round(t)) % 1440 + 1440) % 1440;
+  const ha = ((m / 60) % 12) * 30, ma = (m % 60) * 6;
+  let ticks = '';
+  for (let i = 0; i < 12; i++) ticks += `<path d="M0 -44 V-37" transform="rotate(${i * 30})" ${st(3)}/>`;
+  return `<svg viewBox="-64 -64 128 128" width="${size}" height="${size}" aria-hidden="true"><circle r="62" fill="#2a355f"/><circle r="50" fill="#fff" ${st(4)}/>${ticks}<path d="M0 0 V-24" transform="rotate(${ha})" ${st(6)}/><path d="M0 0 V-36" transform="rotate(${ma})" ${st(4)}/><circle r="4" fill="${OL}"/></svg>`;
+}
+
+/* --- Betten, Monitore, Szene --- */
+function bedFrame() {
+  return `<path d="M46 362 V442 M178 362 V442" stroke="#7c879e" stroke-width="6" stroke-linecap="round"/>` +
+    `<rect x="28" y="352" width="168" height="13" rx="6" fill="#8e9ab2" ${st()}/>` +
+    `<circle cx="46" cy="449" r="8" fill="#3b4256" ${st()}/><circle cx="178" cy="449" r="8" fill="#3b4256" ${st()}/>` +
+    `<rect x="26" y="330" width="172" height="26" rx="10" fill="#fff" ${st()}/>` +
+    `<ellipse cx="60" cy="324" rx="31" ry="12" fill="#eef3fb" ${st()}/>`;
+}
+
+function ivPole() {
+  return `<path d="M32 196 V440" stroke="#8a93a8" stroke-width="5" stroke-linecap="round"/><path d="M22 199 h20" stroke="#8a93a8" stroke-width="4" stroke-linecap="round"/>` +
+    `<rect x="20" y="202" width="24" height="36" rx="7" fill="#eaf6ff" ${st(2.5)}/><rect x="23" y="215" width="18" height="20" rx="4" fill="#bfe3ff"/>` +
+    `<path d="M32 238 Q34 282 72 300 Q86 306 94 320" fill="none" stroke="#9fb3cc" stroke-width="2.5"/>`;
+}
+
+function urineBag() {
+  return `<path d="M168 340 Q173 356 166 368" fill="none" stroke="#c9b36a" stroke-width="3"/>` +
+    `<path d="M152 368 h28 v26 q0 10 -14 10 q-14 0 -14 -10Z" fill="#f2d36b" ${st(2.5)}/><path d="M152 381 h28" stroke="${OL}" stroke-width="1.5" opacity=".4"/>`;
+}
+
+function monitorSVG(level, hr) {
+  const col = { ok: '#5be37d', warn: '#ffd54a', crit: '#ff5d5d', off: '#2b3a46' }[level];
+  const line = level === 'off' ? `<path d="M130 176 H192" stroke="${col}" stroke-width="2"/>` :
+    `<text x="129" y="161" class="mono" style="font-size:11px" fill="${col}">${hr}</text><path d="M128 184 h12 l4 -5 l4 5 h6 l3 -16 l4 24 l3 -10 h6 l4 -3 l4 3 h14" fill="none" stroke="${col}" stroke-width="2.4" stroke-linejoin="round"/>`;
+  return `<rect x="122" y="146" width="76" height="48" rx="6" fill="#0f1a24" ${st(3)}/>${line}<path d="M160 194 V206" ${st(3)}/>`;
+}
+
+function sceneStatic() {
+  let s = `<defs>
+    <linearGradient id="g-night" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1538"/><stop offset="1" stop-color="#26376f"/></linearGradient>
+    <radialGradient id="g-blue" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#5aa8ff" stop-opacity=".95"/><stop offset="1" stop-color="#5aa8ff" stop-opacity="0"/></radialGradient>
+    <linearGradient id="g-wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9ede6"/><stop offset="1" stop-color="#c2dfd6"/></linearGradient>
+    <linearGradient id="g-floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9eabc6"/><stop offset="1" stop-color="#8495b6"/></linearGradient>
+    <linearGradient id="g-lamp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffbe6" stop-opacity=".6"/><stop offset="1" stop-color="#fffbe6" stop-opacity="0"/></linearGradient>
+  </defs>`;
+  s += `<rect x="0" y="0" width="1600" height="470" fill="url(#g-wall)"/>`;
+  s += `<rect x="0" y="0" width="1600" height="34" fill="#eef2f8"/><path d="M0 34 H1600" stroke="#b9c6d6" stroke-width="3"/>`;
+  for (let x = 140; x < 1420; x += 216) s += `<path d="M${x - 20} 35 L${x + 140} 35 L${x + 190} 260 L${x - 70} 260Z" fill="url(#g-lamp)" opacity=".5"/><rect x="${x}" y="25" width="100" height="10" rx="3" fill="#fffbe8" ${st(2)}/>`;
+  s += `<rect x="0" y="470" width="1600" height="90" fill="url(#g-floor)"/><rect x="0" y="462" width="1600" height="12" fill="#7d8aa8"/>`;
+  for (let x = 40; x < 1640; x += 110) s += `<path d="M${x} 474 L${x - 34} 560" stroke="#93a1bf" stroke-width="2"/>`;
+  s += `<path d="M0 506 H1430" stroke="#e5484d" stroke-width="6" opacity=".8"/><path d="M0 522 H1430" stroke="#3b82f6" stroke-width="6" opacity=".8"/>`;
+  /* Pflegestützpunkt */
+  s += `<g><rect x="22" y="60" width="128" height="118" rx="10" fill="url(#g-night)" ${st(4)}/>
+    <circle cx="114" cy="92" r="14" fill="#f8f1c8"/><circle cx="120" cy="88" r="12" fill="#13204d"/>
+    <g fill="#fff"><circle cx="44" cy="82" r="1.6"/><circle cx="66" cy="102" r="1.2"/><circle cx="52" cy="140" r="1.4"/><circle cx="128" cy="150" r="1.2"/><circle cx="96" cy="128" r="1"/></g>
+    <path d="M86 60 V178 M22 119 H150" stroke="#eef2f8" stroke-width="5"/><rect x="22" y="60" width="128" height="118" rx="10" fill="none" ${st(4)}/></g>`;
+  s += `<g><circle cx="216" cy="106" r="38" fill="#fff" ${st(4)}/>`;
+  for (let i = 0; i < 12; i++) s += `<path d="M216 74 V80" transform="rotate(${i * 30} 216 106)" ${st(2.5)}/>`;
+  s += `<g id="clock-h"><path d="M216 106 V86" ${st(5)}/></g><g id="clock-m"><path d="M216 106 V78" ${st(3.5)}/></g><circle cx="216" cy="106" r="3.5" fill="${OL}"/></g>`;
+  s += `<g id="wallboard"></g>`;
+  s += `<g id="nurse" transform="translate(112 468)"></g>`;
+  s += `<g><rect x="16" y="382" width="236" height="86" rx="6" fill="#d8c29d" ${st(3)}/><rect x="10" y="372" width="248" height="16" rx="5" fill="#ecdcbd" ${st(3)}/>
+    <text x="134" y="432" text-anchor="middle" style="font-size:15px" fill="#6d5634">${esc(L.scene.station)}</text>
+    <rect x="150" y="318" width="64" height="46" rx="5" fill="#2b3142" ${st(3)}/><rect x="156" y="324" width="52" height="34" rx="3" fill="#4fd1c5" opacity=".75"/><path d="M182 364 v8 M170 372 h24" ${st(3)}/>
+    <path d="M34 372 q0 -14 14 -14 h20 q14 0 14 14Z" fill="#c8402f" ${st(2.5)}/><rect x="226" y="349" width="16" height="23" rx="3" fill="#fff" ${st(2.5)}/><path d="M242 354 q8 0 8 7 q0 7 -8 7" fill="none" ${st(2.5)}/>
+    <rect x="96" y="360" width="40" height="12" rx="2" fill="#fff" ${st(2)} transform="rotate(-6 116 366)"/></g>`;
+  /* Kaffeemaschine */
+  s += `<g id="coffee" class="hit" role="button" tabindex="0" aria-label="${esc(L.scene.coffeeAria)}">
+    <rect x="252" y="320" width="52" height="150" rx="8" fill="transparent"/>
+    <rect x="256" y="392" width="44" height="76" rx="4" fill="#b9c3d6" ${st(3)}/>
+    <rect x="262" y="336" width="32" height="56" rx="5" fill="#3a3346" ${st(3)}/><rect x="267" y="343" width="22" height="9" rx="2" fill="#ffcf5a"/>
+    <rect x="270" y="372" width="16" height="16" rx="2" fill="#fff" ${st(2)}/>
+    <g class="steam" id="steam"><path d="M274 366 q-4 -8 0 -14 q4 -6 0 -12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/><path d="M282 366 q4 -8 0 -14 q-4 -6 0 -12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></g>
+    <rect class="hl" x="250" y="328" width="56" height="144" rx="10" fill="none" stroke="#ffcf5a" stroke-width="4" stroke-dasharray="8 6"/></g>`;
+  /* Kabinen */
+  for (let i = 0; i < 5; i++) {
+    const x0 = BAY_X0 + i * BAY_W;
+    s += `<g transform="translate(${x0} 0)">
+      <rect x="0" y="62" width="${BAY_W}" height="404" fill="#cde6de"/>
+      <rect x="22" y="78" width="44" height="30" rx="6" fill="#fff" ${st(3)}/><text x="44" y="100" text-anchor="middle" style="font-size:20px" fill="${OL}">${i + 1}</text>
+      <g id="bay-${i}"></g>
+      <g class="hit" id="hit-${i}" role="button" tabindex="0"><rect x="6" y="64" width="${BAY_W - 12}" height="400" fill="transparent"/><rect class="hl" x="8" y="66" width="${BAY_W - 16}" height="396" rx="10" fill="none" stroke="#ffcf5a" stroke-width="4" stroke-dasharray="10 7"/></g>
+    </g>`;
+  }
+  s += `<path d="M300 58 H1418" stroke="#8a96a8" stroke-width="5" stroke-linecap="round"/>`;
+  for (let i = 0; i <= 5; i++) {
+    const cx = BAY_X0 + i * BAY_W;
+    s += `<path d="M${cx - 16} 60 L${cx + 16} 60 Q${cx + 10} 140 ${cx + 18} 230 Q${cx + 12} 330 ${cx + 20} 444 L${cx - 18} 444 Q${cx - 12} 330 ${cx - 18} 230 Q${cx - 12} 140 ${cx - 16} 60Z" fill="#86bfdc" ${st(3)}/>
+      <path d="M${cx - 5} 64 Q${cx - 1} 200 ${cx - 6} 440 M${cx + 7} 64 Q${cx + 11} 200 ${cx + 6} 440" fill="none" stroke="#5f9fc1" stroke-width="2.5"/>`;
+  }
+  /* Liegendanfahrt */
+  s += `<g><rect x="1416" y="40" width="184" height="430" fill="#cfe5de"/>
+    <rect x="1424" y="58" width="172" height="44" rx="8" fill="#d93a3a" ${st(3)}/><text x="1510" y="87" text-anchor="middle" ${L.scene.erFit ? `textLength="${L.scene.erFit}" lengthAdjust="spacingAndGlyphs"` : ''} style="font-size:${L.scene.erSize}px" fill="#fff">${esc(L.scene.er)}</text>
+    <rect x="1436" y="140" width="148" height="326" fill="url(#g-night)" ${st(4)}/>
+    <g fill="#fff" opacity=".85"><circle cx="1460" cy="168" r="1.5"/><circle cx="1530" cy="186" r="1.2"/><circle cx="1566" cy="160" r="1.4"/><circle cx="1490" cy="220" r="1"/></g>
+    <g><rect x="1448" y="372" width="124" height="70" rx="9" fill="#f4f6fb" ${st(2.5)}/><rect x="1448" y="400" width="124" height="10" fill="#f28c28"/><rect x="1500" y="360" width="24" height="12" rx="3" fill="#3b82f6" ${st(2)}/><circle cx="1474" cy="446" r="11" fill="#222" ${st(2)}/><circle cx="1546" cy="446" r="11" fill="#222" ${st(2)}/><text x="1510" y="394" text-anchor="middle" style="font-size:13px" fill="#d93a3a">${esc(L.scene.amb)}</text></g>
+    <circle id="flasher" class="flasher" cx="1512" cy="366" r="80" fill="url(#g-blue)"/>
+    <g id="door-l" style="transition:transform .7s ease"><rect x="1438" y="142" width="72" height="322" fill="#a9d1ff" fill-opacity=".26" stroke="#d6e8ff" stroke-width="3"/><path d="M1448 176 L1486 154 M1448 208 L1500 176" stroke="#fff" stroke-width="3" opacity=".45"/></g>
+    <g id="door-r" style="transition:transform .7s ease"><rect x="1510" y="142" width="72" height="322" fill="#a9d1ff" fill-opacity=".26" stroke="#d6e8ff" stroke-width="3"/><path d="M1520 176 L1558 154" stroke="#fff" stroke-width="3" opacity=".45"/></g>
+    <rect x="1436" y="140" width="148" height="326" fill="none" ${st(4)}/>
+    <rect x="1440" y="474" width="140" height="10" rx="4" fill="#59627a"/></g>`;
+  s += `<g id="player" style="transform:translateX(290px)"><g transform="translate(0 470)"><g id="player-fig"></g></g></g>`;
+  return s;
+}
+
+/* ============================================================
+   ENGINE + UI (alle Texte aus dem Sprachpaket L)
+   ============================================================ */
+const $ = (s, r = document) => r.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch]));
+const RM = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+const pick = a => a[Math.floor(Math.random() * a.length)];
+const shuffle = a => { const b = a.slice(); for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [b[i], b[j]] = [b[j], b[i]]; } return b; };
+const TRI = { rot: '#e5484d', orange: '#f28c28', gelb: '#f2c230', gruen: '#36b37e', blau: '#3b82f6' };
+const U = L.ui;
+const fmtWarn = s => s.replace(/⚠/g, '<span class="warn">⚠</span>');
+const AUTO = { on: false, picks: [], log: [] };
+
+let S = null;            // Spielzustand (reine Daten)
+let cur = null;          // geöffnete Akte
+let mode = 'work';       // work | disp | result
+let selDisp = null;
+let busy = false;
+let playerX = 290;
+let freshKey = null;
+let lastJana = '';
+const animating = new Set();
+
+const P = id => S.patients.find(p => p.id === id);
+const who = () => `${S.title || L.namePrefix} ${S.name}`;
+const actionOf = (pid, aid) => CASE[pid].actions.find(a => a.id === aid);
+const caseOpen = () => !$('#case').hidden;
+
+function store(read, patch) {
+  try {
+    const cur0 = JSON.parse(localStorage.getItem(L.storeKey) || '{}');
+    if (read) return cur0;
+    localStorage.setItem(L.storeKey, JSON.stringify(Object.assign(cur0, patch)));
+  } catch (e) { return {}; }
+}
+
+function newState(name, avatar) {
+  return {
+    v: 1, phase: 'intro', t: 0, name, avatar, trust: 55, team: 60, nurseBusyUntil: 0,
+    patients: CASES.map(c => ({
+      id: c.id, status: c.arrive <= 0 ? 'here' : 'future', arrivedAt: c.arrive <= 0 ? 0 : null, seenAt: null,
+      stab: c.stab0, pain: c.pain0, flags: {}, done: {}, pending: {}, findings: c.arrive <= 0 ? [initFinding(c, 0)] : [],
+      alerts: {}, alert: null, oaCalls: 0, oaApproved: false, bagatelle: false, veto: {}, vetoes: 0,
+      disp: null, outcome: null, score: null, waste: 0, metrics: {}, order: null, sbarOrder: null, doneAt: null
+    })),
+    tasks: [], events: [], boss: null, coffee: 0
+  };
+}
+function initFinding(c, t) { return { t, text: U.initFinding(L.tri[c.triage], c.complaint) }; }
+
+/* Vitalwerte: Zahlen aus dem Kern, Formatierung nach Sprache */
+function fmtVitals(c, p) {
+  const v = c.vitals(p);
+  return { rr: `${v.sys}/${v.dia}`, hf: v.hf, temp: fmt1(v.temp), spo2: v.spo2, af: v.af, nrs: v.nrs, raw: v };
+}
+
+/* ---------- Zeit ---------- */
+function advance(min) { for (let k = 0; k < min; k++) { S.t++; tick(); } }
+
+function tick() {
+  for (const c of CASES) {
+    const p = P(c.id);
+    if (p.status === 'future' && S.t >= c.arrive) {
+      p.status = 'here'; p.arrivedAt = S.t; p.findings.push(initFinding(c, S.t));
+      S.events.push({ type: 'arrival', pid: c.id });
+    }
+  }
+  for (const task of S.tasks) {
+    if (task.done || task.readyAt > S.t) continue;
+    task.done = true;
+    const p = P(task.pid);
+    if (p.status !== 'here') continue;
+    complete(p, actionOf(task.pid, task.aid));
+    S.events.push({ type: 'result', pid: task.pid, aid: task.aid, by: task.by });
+  }
+  for (const c of CASES) {
+    const p = P(c.id);
+    if (p.status !== 'here') continue;
+    if (c.tick) c.tick(p);
+    for (const al of (c.alerts || [])) {
+      if (p.alerts[al.id] != null || !al.when(p)) continue;
+      p.alerts[al.id] = S.t;
+      const watching = cur === c.id && caseOpen();
+      p.alert = { id: al.id, level: al.level, at: S.t, acked: watching, penalized: false };
+      S.events.push({ type: 'alert', pid: c.id, level: al.level, text: al.text(p, fmtVitals(c, p)) });
+    }
+    if (p.alert && !p.alert.acked && !p.alert.penalized && S.t - p.alert.at >= 45) {
+      p.alert.penalized = true;
+      S.team = clamp(S.team - 6);
+      S.events.push({ type: 'ignored', pid: c.id, text: U.ignored(c.ref) });
+    }
+    if (c.takeover && p.stab <= 15) takeover(c, p);
+  }
+}
+
+function complete(p, a) {
+  p.done[a.id] = S.t;
+  delete p.pending[a.id];
+  const text = typeof a.find === 'function' ? a.find(p) : a.find;
+  p.findings.push({ t: S.t, text: `${a.label}: ${text}` });
+  if (a.effect) a.effect(p);
+  if (a.tag === 'waste') p.waste++;
+  freshKey = p.id + ':' + p.findings.length;
+}
+
+function takeover(c, p) {
+  const t = c.tx.takeover;
+  p.status = 'done'; p.disp = 'takeover'; p.doneAt = S.t;
+  p.outcome = { grade: 'critical', title: t.title, text: t.text, short: t.short, dest: L.dest.icu };
+  p.score = scorePatient(c, p, p.outcome);
+  S.trust = clamp(S.trust - 15); S.team = clamp(S.team - 8);
+  S.events.push({ type: 'takeover', pid: c.id });
+}
+
+function resolveOutcome(c, p, d) {
+  const r = c.outcome(p, d);
+  const t = c.tx.outcomes[r.v](r.x || {});
+  return { grade: r.grade, title: t.title, text: t.text, short: t.short, dest: L.dest[d.dest] };
+}
+
+function scorePatient(c, p, o) {
+  const base = { best: 70, ok: 45, wrong: 15, critical: 0 }[o.grade];
+  const keys = c.actions.filter(a => a.tag === 'key');
+  const isDone = a => p.done[a.id] != null || (a.excl && c.actions.some(x => x.excl === a.excl && p.done[x.id] != null));
+  const proc = Math.round(20 * keys.filter(isDone).length / keys.length);
+  const pen = Math.min(15, p.waste * 5) + p.vetoes * 10;
+  return clamp(base + proc + (c.timing ? c.timing(p, o) : 0) - pen);
+}
+
+/* ---------- Darstellung: Szene ---------- */
+function patientExpr(c, p) {
+  if (c.kind === 'sepsis') return p.stab < 42 ? 'ill' : p.flags.ab ? 'worried' : 'ill';
+  if (p.pain >= 7) return 'pain';
+  if (p.pain >= 4) return 'worried';
+  return 'relieved';
+}
+function statusOf(c, p) {
+  let pct, label;
+  if (c.kind === 'sepsis') { pct = p.stab; label = U.stCirc; }
+  else if (c.kind === 'torsion') { const i = S.t - c.onset; pct = clamp((360 - i) / 360 * 100); label = U.stIsch(hrs(i)); }
+  else { pct = clamp(100 - p.pain * 9, 8, 100); label = U.stPain(p.pain); }
+  const color = pct >= 70 ? TRI.gruen : pct >= 50 ? TRI.gelb : pct >= 30 ? TRI.orange : TRI.rot;
+  return { pct: Math.round(pct), label, color };
+}
+function monitorLevel(c, p) {
+  if (c.kind === 'sepsis') return p.stab >= 55 ? 'ok' : p.stab >= 35 ? 'warn' : 'crit';
+  if (c.kind === 'torsion') return 'warn';
+  return p.pain >= 6 ? 'warn' : 'ok';
+}
+function bayLabel(c, p) {
+  if (p.status === 'future') return U.bayFree(c.bay + 1);
+  if (p.status === 'done') return U.bayDone(c.bay + 1, c.name, p.outcome.dest);
+  return U.bayHere(c.bay + 1, c.name, c.age, c.complaint);
+}
+
+function renderBay(i) {
+  if (animating.has(i)) return;
+  const c = CASES[i], p = P(c.id);
+  let s = '';
+  if (p.status === 'here') {
+    const v = c.vitals(p);
+    s += monitorSVG(monitorLevel(c, p), L.scene.hr + ' ' + v.hf);
+    s += `<g id="bedgrp-${i}">`;
+    if (p.flags.iv) s += ivPole();
+    if (c.mother) s += `<g transform="translate(132 402) scale(.66)">${figure(PEOPLE.mutter, 'worried')}</g>`;
+    s += bedFrame();
+    s += `<g transform="translate(60 300) scale(.6)">${head(c.look, patientExpr(c, p))}</g>`;
+    s += `<path d="M74 344 C72 306 104 300 124 306 C144 312 152 304 170 302 C188 300 198 316 196 344Z" fill="${c.look.blanket}" ${st()}/><path d="M86 320 Q120 315 152 319" fill="none" stroke="${OL}" stroke-width="2" opacity=".3"/>`;
+    if (p.flags.dk) s += urineBag();
+    s += `</g>`;
+    if (p.alert && !p.alert.acked) s += `<g transform="translate(108 236)"><g class="chip-pulse"><circle r="17" fill="${p.alert.level === 'crit' ? TRI.rot : TRI.orange}" ${st(3)}/><text y="8" text-anchor="middle" style="font-size:24px" fill="#fff">!</text></g></g>`;
+    else if (p.seenAt == null) s += `<g transform="translate(108 236)"><g class="chip-pulse"><rect x="-28" y="-14" width="56" height="28" rx="14" fill="#ffcf5a" ${st(3)}/><text y="6" text-anchor="middle" style="font-size:15px" fill="#3a2a00">${esc(L.scene.newChip)}</text></g></g>`;
+  } else {
+    s += monitorSVG('off', '') + bedFrame() + `<rect x="128" y="318" width="56" height="13" rx="5" fill="#dbe3f1" ${st(2.5)}/>`;
+    if (p.status === 'done') {
+      const lbl = '→ ' + p.outcome.dest, fs = lbl.length > 18 ? 12.5 : 14, w = Math.min(204, Math.max(96, 22 + lbl.length * fs * 0.56));
+      s += `<g transform="translate(112 290)"><rect x="${-w / 2}" y="-17" width="${w}" height="30" rx="8" fill="#fff" ${st(2.5)}/><text y="4" text-anchor="middle" style="font-size:${fs}px" fill="${OL}">${esc(lbl)}</text></g>`;
+    }
+  }
+  $('#bay-' + i).innerHTML = s;
+  $('#hit-' + i).setAttribute('aria-label', bayLabel(c, p));
+}
+
+function renderScene() {
+  const m = ((T0 + S.t) % 1440 + 1440) % 1440;
+  $('#clock-h').setAttribute('transform', `rotate(${((m / 60) % 12) * 30} 216 106)`);
+  $('#clock-m').setAttribute('transform', `rotate(${(m % 60) * 6} 216 106)`);
+  CASES.forEach((c, i) => renderBay(i));
+  const alertOpen = S.patients.some(p => p.status === 'here' && p.alert && !p.alert.acked);
+  const je = alertOpen ? 'worried' : S.team >= 70 ? 'smile' : S.team < 40 ? 'stern' : 'neutral';
+  if (je !== lastJana) { $('#nurse').innerHTML = `<g class="breathe">${figure(PEOPLE.jana, je)}</g>`; lastJana = je; }
+  let w = `<rect x="22" y="190" width="128" height="58" rx="6" fill="#141b2e" ${st(3)}/>`;
+  CASES.forEach((c, i) => {
+    const p = P(c.id), y = 197 + i * 9.5;
+    const col = p.status === 'here' ? TRI[c.triage] : p.status === 'done' ? '#3d4a6b' : '#232b42';
+    w += `<rect x="30" y="${y}" width="${p.status === 'here' ? 92 : 58}" height="6" rx="2" fill="${col}"/>`;
+    if (p.status === 'here' && p.alert && !p.alert.acked) w += `<circle cx="136" cy="${y + 3}" r="3.6" fill="#ff5d5d"/>`;
+  });
+  $('#wallboard').innerHTML = w;
+}
+
+function setPlayerFigure() { $('#player-fig').innerHTML = figure(AVATARS[S.avatar], 'neutral'); }
+
+function walkTo(x) {
+  return new Promise(res => {
+    const el = $('#player');
+    const d = Math.abs(x - playerX);
+    if (d < 4 || RM || AUTO.on) { el.style.transition = 'none'; el.style.transform = `translateX(${x}px)`; playerX = x; return res(); }
+    const ms = Math.min(1250, 260 + d * 0.85);
+    followPlayer(x);
+    el.style.transition = `transform ${ms}ms linear`;
+    el.classList.add('walking');
+    requestAnimationFrame(() => { el.style.transform = `translateX(${x}px)`; });
+    setTimeout(() => { el.classList.remove('walking'); playerX = x; res(); }, ms + 40);
+  });
+}
+const bayX = pid => BAY_X0 + CASE[pid].bay * BAY_W + 200;
+function followPlayer(x) {
+  const stage = $('.stage');
+  if (!stage || stage.scrollWidth <= stage.clientWidth + 4) return;
+  const scale = stage.scrollWidth / 1600;
+  stage.scrollTo({ left: Math.max(0, x * scale - stage.clientWidth / 2), behavior: RM ? 'auto' : 'smooth' });
+}
+function lockPage(on) { document.documentElement.classList.toggle('locked', !!on); }
+
+function animateArrival(i) {
+  if (RM || AUTO.on) return;
+  const g = $('#bedgrp-' + i);
+  if (!g) return;
+  animating.add(i);
+  const dx = 1450 - (BAY_X0 + i * BAY_W + 40);
+  const dl = $('#door-l'), dr = $('#door-r'), fl = $('#flasher');
+  dl.style.transform = 'translateX(-60px)'; dr.style.transform = 'translateX(60px)';
+  fl.classList.remove('on'); void fl.getBBox(); fl.classList.add('on');
+  g.style.transition = 'none'; g.style.transform = `translateX(${dx}px)`;
+  requestAnimationFrame(() => requestAnimationFrame(() => { g.style.transition = 'transform 1.7s cubic-bezier(.3,.7,.3,1)'; g.style.transform = 'translateX(0px)'; }));
+  setTimeout(() => { dl.style.transform = ''; dr.style.transform = ''; animating.delete(i); }, 1900);
+  setTimeout(() => fl.classList.remove('on'), 3200);
+}
+
+/* ---------- Darstellung: HUD + Board ---------- */
+function meterColor(v) { return v >= 60 ? 'var(--accent)' : v >= 40 ? 'var(--gold)' : 'var(--mts-rot)'; }
+function renderHUD() {
+  $('#hud-time').textContent = clockStr(S.t);
+  const done = S.patients.filter(p => p.status === 'done').length;
+  $('#hud-sub').textContent = S.phase === 'shift' ? U.hudShift(done) : U.hudOther;
+  const mt = $('#m-trust'), mm = $('#m-team');
+  mt.style.width = S.trust + '%'; mt.style.background = meterColor(S.trust);
+  mm.style.width = S.team + '%'; mm.style.background = meterColor(S.team);
+}
+
+function renderBoard() {
+  $('#board').innerHTML = CASES.map((c, i) => {
+    const p = P(c.id);
+    if (p.status === 'future') return `<div class="slot empty"><span class="k">${U.bay} ${i + 1}</span><span class="n">${U.free}</span><span class="c">${U.bedReady}</span></div>`;
+    if (p.status === 'done') return `<button class="slot done tri-${c.triage}" type="button" data-pid="${c.id}"><span class="k">${U.bay} ${i + 1} · → ${esc(p.outcome.dest)}</span><span class="n">${esc(c.name)}, ${c.age}</span><span class="c">${esc(p.outcome.short)}</span><span class="grade g-${p.outcome.grade}">${L.grade[p.outcome.grade]} · ${p.score} ${U.pts}</span></button>`;
+    const sv = statusOf(c, p);
+    const b = [];
+    if (p.alert && !p.alert.acked) b.push(`<span class="badge alert">${U.badgeAlert}</span>`);
+    if (p.seenAt == null) b.push(`<span class="badge new">${U.badgeNew}</span>`);
+    for (const [aid, ready] of Object.entries(p.pending)) b.push(`<span class="badge">${esc(shortOf(c.id, aid))} ${clockStr(ready)}</span>`);
+    if (p.oaApproved) b.push(`<span class="badge oa">${U.badgeOA}</span>`);
+    return `<button class="slot tri-${c.triage}" type="button" data-pid="${c.id}"><span class="k">${U.bay} ${i + 1} · ${U.since(dur(S.t - p.arrivedAt))}</span><span class="n">${esc(c.name)}, ${c.age}</span><span class="c">${esc(c.complaint)}</span><span class="bar-l"><span>${sv.label}</span></span><span class="bar"><i style="width:${sv.pct}%;background:${sv.color}"></i></span>${b.length ? `<span class="badges">${b.join('')}</span>` : ''}</button>`;
+  }).join('');
+}
+
+function renderAll() {
+  if (!S) return;
+  renderHUD(); renderBoard(); renderScene();
+  if (cur && caseOpen()) renderCase();
+}
+
+/* ---------- Dialoge ---------- */
+let dlgChain = Promise.resolve();
+function speaker(key) {
+  if (key === 'player') return { name: who(), role: L.playerRole, look: AVATARS[S.avatar] };
+  if (key === 'narrator') return { name: L.narrator, role: '', look: null };
+  const p = PEOPLE[key];
+  return { name: p.name, role: p.role, look: p };
+}
+const say = (key, text, expr, opt = {}) => dialog(Object.assign({ key, text, expr, choices: null }, opt));
+const choose = (key, text, choices, expr, opt = {}) => dialog(Object.assign({ key, text, expr, choices }, opt));
+
+function dialog(d) {
+  const run = () => new Promise(resolve => {
+    if (AUTO.on) {
+      AUTO.log.push(`${d.key}: ${d.text}`);
+      if (d.choices) { const k = AUTO.picks.length ? AUTO.picks.shift() : 0; AUTO.log.push(`  → ${d.choices[Math.min(k, d.choices.length - 1)]}`); return resolve(Math.min(k, d.choices.length - 1)); }
+      return resolve();
+    }
+    const sp = speaker(d.key);
+    $('#dlg-portrait').innerHTML = d.key === 'narrator' ? clockPortrait(S ? S.t : 0) : portrait(sp.look, d.expr || 'neutral', 96, { phone: d.phone });
+    $('#dlg-name').innerHTML = `${esc(sp.name)}${sp.role ? `<small>${esc(sp.role)}</small>` : ''}`;
+    const tEl = $('#dlg-text'), cEl = $('#dlg-choices'), next = $('#dlg-next'), scrim = $('#scrim'), box = $('#dlg');
+    cEl.innerHTML = ''; tEl.textContent = '';
+    next.hidden = false; next.textContent = L.markup.next;
+    box.hidden = false; scrim.hidden = false;
+    let i = 0, typing = true, timer = null;
+    const full = d.text;
+    const close = () => { clearInterval(timer); box.hidden = true; scrim.hidden = true; next.onclick = null; scrim.onclick = null; };
+    const showChoices = () => {
+      next.hidden = true;
+      cEl.innerHTML = d.choices.map((ch, k) => `<button class="dlg-choice" type="button" data-k="${k}">${esc(ch)}</button>`).join('');
+      cEl.querySelectorAll('button').forEach(b => { b.onclick = () => { close(); resolve(+b.dataset.k); }; });
+      const f = cEl.querySelector('button'); if (f) f.focus();
+    };
+    const finish = () => { typing = false; clearInterval(timer); tEl.textContent = full; if (d.choices) showChoices(); };
+    const advanceDlg = () => { if (typing) return finish(); if (!d.choices) { close(); resolve(); } };
+    next.onclick = advanceDlg;
+    scrim.onclick = advanceDlg;
+    next.focus();
+    if (RM) finish();
+    else timer = setInterval(() => { i += 2; tEl.textContent = full.slice(0, i); if (i >= full.length) finish(); }, 16);
+  });
+  const pr = dlgChain.then(run);
+  dlgChain = pr.catch(() => {});
+  return pr;
+}
+
+function toast(text) {
+  if (AUTO.on) { AUTO.log.push('toast: ' + text); return; }
+  const el = document.createElement('div');
+  el.className = 'toast'; el.textContent = text;
+  $('#toasts').appendChild(el);
+  setTimeout(() => el.remove(), 4200);
+}
+
+async function flushEvents() {
+  while (S.events.length) {
+    const e = S.events.shift();
+    const c = CASE[e.pid], p = P(e.pid);
+    if (e.type === 'arrival') { renderAll(); animateArrival(c.bay); await say('jana', c.arrivalLine, 'neutral'); }
+    else if (e.type === 'alert') { if (p.status === 'here') { renderAll(); await say('jana', e.text, e.level === 'crit' ? 'stern' : 'worried'); } }
+    else if (e.type === 'ignored') { if (p.status === 'here') await say('jana', e.text, 'stern'); }
+    else if (e.type === 'result') toast(e.by === 'nurse' ? U.resultNurse(shortOf(e.pid, e.aid), c.ref, c.name) : U.resultBy(U.by[e.by], shortOf(e.pid, e.aid), c.ref, c.name));
+    else if (e.type === 'takeover') {
+      renderAll();
+      await say('jana', c.tx.takeover.line, 'stern');
+      await say('brenner', c.tx.takeover.oaLine, 'stern', { phone: true });
+      if (cur === e.pid && caseOpen()) { mode = 'result'; }
+    }
+  }
+  renderAll();
+  await checkEnd();
+}
+
+/* ---------- Akte ---------- */
+async function openCase(pid) {
+  if (!S || blocked() || S.phase !== 'shift') return;
+  const p = P(pid);
+  if (p.status === 'future') { toast(U.stillFree(CASE[pid].bay + 1)); return; }
+  busy = true;
+  try {
+    await walkTo(bayX(pid));
+    cur = pid; selDisp = null;
+    mode = p.status === 'done' ? 'result' : 'work';
+    if (p.status === 'here') {
+      if (p.seenAt == null) p.seenAt = S.t;
+      if (p.alert && !p.alert.acked) {
+        p.alert.acked = true;
+        if (S.t - p.alert.at <= 20) { S.team = clamp(S.team + 4); toast(U.thanks); }
+      }
+    }
+    $('#case').hidden = false;
+    $('#case').scrollTop = 0;
+    renderAll();
+    const f = $('#akte .act:not([disabled])') || $('#akte [data-close]');
+    if (f) f.focus({ preventScroll: true });
+  } finally { busy = false; }
+}
+function closeCase() {
+  $('#case').hidden = true;
+  const was = cur; cur = null; mode = 'work'; selDisp = null;
+  if (S) renderAll();
+  if (was && !AUTO.on) { const b = $(`#board [data-pid="${was}"]`); if (b) b.focus({ preventScroll: true }); }
+  if (S && S.endPending && S.phase === 'shift') { S.endPending = false; endShift(false); }
+}
+
+function vitalsHTML(fv) {
+  const v = fv.raw;
+  const it = [[U.vit[0], fv.rr, v.sys < 100], [U.vit[1], fv.hf, v.hf > 110], [U.vit[2], fv.temp, v.temp >= 38.5], [U.vit[3], fv.spo2, v.spo2 < 94], [U.vit[4], fv.af, v.af >= 22], [U.vit[5], fv.nrs, v.nrs >= 7]];
+  return `<div class="vitals">${it.map(([l, val, bad]) => `<div class="vital${bad ? ' bad' : ''}"><span class="l">${l}</span><span class="v">${val}</span></div>`).join('')}</div>`;
+}
+
+function findingsHTML(p) {
+  const n = p.findings.length;
+  return `<ul class="findings">${p.findings.slice().reverse().map((f, k) => `<li class="finding${freshKey === p.id + ':' + (n - k) && k === 0 ? ' fresh' : ''}"><span class="t">${clockStr(f.t)}</span>${fmtWarn(esc(f.text))}</li>`).join('')}</ul>`;
+}
+
+function actBtn(c, p, a) {
+  if (p.done[a.id] != null) return `<button class="act done" type="button" disabled>✓ ${esc(a.label)}</button>`;
+  if (p.pending[a.id] != null) return `<button class="act pending" type="button" disabled>${esc(a.label)} · ${U.readyAt(clockStr(p.pending[a.id]))}</button>`;
+  if (a.excl && c.actions.some(x => x.excl === a.excl && x.id !== a.id && (p.done[x.id] != null || p.pending[x.id] != null))) return '';
+  const cost = a.async ? `${a.cost} + ${a.async} min` : `${a.cost} min`;
+  const main = `<button class="act" type="button" data-a="${a.id}">${esc(a.label)} <span class="cost">${cost}</span></button>`;
+  if (!a.delegable) return `<span class="aw">${main}</span>`;
+  const free = S.nurseBusyUntil <= S.t;
+  const del = free
+    ? `<button class="act del" type="button" data-a="${a.id}" data-del="1" title="${esc(U.delegateTitle)}">${esc(U.delegate)}</button>`
+    : `<button class="act del" type="button" disabled title="${esc(U.nurseBusyTitle)}">${esc(U.nurseBusyBtn(clockStr(S.nurseBusyUntil)))}</button>`;
+  return `<span class="aw">${main}${del}</span>`;
+}
+
+function renderCase() {
+  const c = CASE[cur], p = P(cur);
+  const tri = TRI[c.triage];
+  const top = `<div class="akte-top"><span class="lbl">${esc(U.chartTop(c.bay + 1, clockStr(S.t)))}</span><button class="x" type="button" data-close aria-label="${esc(U.closeChart)}">×</button></div>`;
+  const expr = p.status === 'done' ? ({ best: 'relieved', ok: 'neutral', wrong: 'worried', critical: 'ill' }[p.outcome.grade]) : patientExpr(c, p);
+  const headH = `<div class="akte-head">${portrait(Object.assign({}, c.look, { bg: shade(tri, 45) }), expr, 96)}<div style="min-width:0"><h2 class="akte-name" id="akte-name">${esc(c.name)}, ${c.age}</h2>
+    <div class="akte-meta"><span class="pill ${c.triage}" style="background:${tri}">${esc(U.mts(L.tri[c.triage]))}</span> · ${esc(U.inEd(clockStr(p.arrivedAt)))}${p.status === 'here' ? ` (${dur(S.t - p.arrivedAt)})` : ''}${p.oaApproved ? ` · <b>${esc(U.oaInformed)}</b>` : ''}</div>
+    <div class="akte-cc">${esc(c.complaint)}</div></div></div>`;
+  let body = '';
+  if (mode === 'work') {
+    const groups = ['hx', 'dx', 'tx'].map(g => {
+      const list = c.actions.filter(a => a.g === g && (!a.requires || p.done[a.requires] != null)).map(a => actBtn(c, p, a)).join('');
+      return list ? `<div><div class="group-l">${esc(U.groups[g])}</div><div class="acts">${list}</div></div>` : '';
+    }).join('');
+    body = vitalsHTML(fmtVitals(c, p)) + `<div class="akte-body"><div style="min-width:0"><h3>${esc(U.actionsH)}</h3><div class="groups">${groups}</div></div><div style="min-width:0"><h3>${esc(U.findingsH)}</h3>${findingsHTML(p)}</div></div>
+      <div class="akte-foot"><div class="l"><button class="btn oa" type="button" data-oa>${esc(U.callOA)} <span class="cost">5 min</span></button></div><div class="r"><button class="btn" type="button" data-close>${esc(U.backHall)}</button><button class="btn primary" type="button" data-disp>${esc(U.decideBtn)}</button></div></div>`;
+  } else if (mode === 'disp') {
+    if (!p.order) p.order = shuffle(c.disps.map(d => d.id));
+    const opts = p.order.map((id, k) => {
+      const d = c.disps.find(x => x.id === id), veto = p.veto[id];
+      return `<button class="disp${selDisp === id ? ' sel' : ''}" type="button" data-d="${id}" aria-pressed="${selDisp === id}" ${veto ? 'disabled' : ''}><span class="key">${'ABCD'[k]}</span><span>${esc(d.text)}${veto ? `<span class="veto">${esc(U.vetoed)}</span>` : ''}</span></button>`;
+    }).join('');
+    body = vitalsHTML(fmtVitals(c, p)) + `<div class="akte-body"><div style="min-width:0"><p class="disp-q">${esc(U.dispQ(c.name, c.ref))}</p><div class="disp-list">${opts}</div></div><div style="min-width:0"><h3>${esc(U.findingsH)}</h3>${findingsHTML(p)}</div></div>
+      <div class="akte-foot"><div class="l"><button class="btn" type="button" data-back>${esc(U.backActions)}</button></div><div class="r"><button class="btn primary" type="button" data-confirm ${selDisp ? '' : 'disabled'}>${esc(U.confirm)} <span class="cost">${DISP_MIN} min</span></button></div></div>`;
+  } else {
+    const o = p.outcome, d = c.disps.find(x => x.id === p.disp);
+    const log = c.logbook ? c.logbook(p, d || { id: p.disp }).map(k => L.log[k]) : [];
+    body = `<div class="akte-body" style="grid-template-columns:minmax(0,1fr)"><div class="result" style="min-width:0">
+      <div class="result-head rh-${o.grade}">${portrait(c.look, expr, 64)}<div style="min-width:0"><div class="result-grade">${esc(L.grade[o.grade])} · → ${esc(o.dest)}</div><p class="result-title">${esc(o.title)}</p></div></div>
+      <p>${esc(o.text)}</p>
+      ${d ? `<p class="chosen">${esc(U.yourDecision)} <b>${esc(d.text)}</b></p>` : `<p class="chosen">${esc(U.noDecision)}</p>`}
+      <h3>${esc(U.why)}</h3><ul class="why">${c.rationale.map(r => `<li>${fmtWarn(esc(r))}</li>`).join('')}</ul>
+      <p class="src">${esc(U.sources)} ${esc(c.sources)}</p>
+      ${log.length ? `<span class="logline">${esc(U.logPlus(log.length))} ${esc(log.join(' · '))}</span>` : ''}
+      </div></div>
+      <div class="akte-foot"><div class="l"><span class="src" style="margin:0">${U.casePts(p.score)}</span></div><div class="r"><button class="btn primary" type="button" data-close>${esc(U.backHall)}</button></div></div>`;
+  }
+  $('#akte').innerHTML = top + headH + body;
+}
+
+/* ---------- Handlungen ---------- */
+const shortOf = (pid, aid) => U.short[aid] || actionOf(pid, aid).label;
+const blocked = () => busy || (!AUTO.on && !$('#dlg').hidden);
+
+async function performAction(c, p, a, delegate) {
+  if (delegate && a.delegable) {
+    if (S.nurseBusyUntil > S.t) { await say('jana', U.nurseBusySay(clockStr(S.nurseBusyUntil)), 'stern'); return; }
+    const nm = a.nurseMin || a.cost;
+    S.nurseBusyUntil = S.t + 1 + nm;
+    const ready = S.t + 1 + nm + (a.async || 0);
+    p.pending[a.id] = ready;
+    S.tasks.push({ pid: c.id, aid: a.id, readyAt: ready, by: a.async ? a.by : 'nurse' });
+    if ((S.delegations = (S.delegations || 0) + 1) <= 6) S.team = clamp(S.team + 2);
+    toast(U.nurseOk(a.label));
+    advance(1);
+    return;
+  }
+  advance(a.cost);
+  if (p.status !== 'here') return;
+  if (a.async) {
+    const ready = S.t + a.async;
+    p.pending[a.id] = ready;
+    S.tasks.push({ pid: c.id, aid: a.id, readyAt: ready, by: a.by });
+  } else {
+    complete(p, a);
+    renderAll();
+  }
+  if (a.note) await say(a.note.who, a.note.text, a.note.expr);
+}
+
+async function doAction(pid, aid, delegate) {
+  if (blocked() || !S || S.phase !== 'shift') return;
+  const c = CASE[pid], p = P(pid), a = actionOf(pid, aid);
+  if (!a || p.status !== 'here' || p.done[aid] != null || p.pending[aid] != null) return;
+  if (a.excl && c.actions.some(x => x.excl === a.excl && (p.done[x.id] != null || p.pending[x.id] != null))) return;
+  busy = true;
+  try { await performAction(c, p, a, delegate); } finally { busy = false; renderAll(); }
+  await flushEvents();
+}
+
+async function callOA(pid) {
+  const c = CASE[pid], p = P(pid);
+  advance(2);
+  await say('brenner', p.oaCalls > 0 ? U.oaHelloAgain : U.oaHello, 'sleepy', { phone: true });
+  if (!p.sbarOrder) p.sbarOrder = shuffle([0, 1, 2]);
+  const opts = p.sbarOrder.map(k => c.sbar[k]);
+  const k = await choose('player', U.howPresent, opts.map(o => o.text), 'neutral');
+  const q = opts[k].q;
+  advance(3);
+  p.oaCalls++;
+  if (p.oaCalls > 1) {
+    S.trust = clamp(S.trust - 4);
+    await say('brenner', c.needsOA ? U.oaAgainNeeded : U.oaAgainNot, 'stern', { phone: true });
+    return;
+  }
+  if (c.needsOA) {
+    p.oaApproved = true;
+    const lines = c.oa[q].slice();
+    for (const aid of (c.oaMissing || [])) if (p.done[aid] == null && p.pending[aid] == null) lines.push(c.oa.missing[aid]);
+    S.trust = clamp(S.trust + (q === 'good' ? 8 : q === 'incomplete' ? 1 : -3));
+    for (let i = 0; i < lines.length; i++) await say('brenner', lines[i], i === 0 && q !== 'good' ? 'stern' : 'neutral', { phone: true });
+    toast(U.oaApproved);
+  } else {
+    S.trust = clamp(S.trust - (q === 'good' ? 5 : 9));
+    p.bagatelle = true;
+    for (const l of c.oa.bagatelle(q, clockStr(S.t))) await say('brenner', l, 'sleepy', { phone: true });
+  }
+}
+
+async function doCall(pid) {
+  if (blocked() || !S || S.phase !== 'shift' || P(pid).status !== 'here') return;
+  busy = true;
+  try { await callOA(pid); } finally { busy = false; renderAll(); }
+  await flushEvents();
+}
+
+async function performDecision(c, p, d) {
+  if (d.requiresOA && !p.oaApproved) {
+    const k = await choose('anae', U.anaeLine, [U.anaeCall, U.anaeBack], 'stern', { phone: true });
+    if (k === 1) return false;
+    await callOA(c.id);
+    if (!p.oaApproved) {
+      p.veto[d.id] = true; p.vetoes++;
+      await say('brenner', c.vetoLine, 'stern', { phone: true });
+      selDisp = null;
+      return false;
+    }
+  }
+  advance(DISP_MIN);
+  if (p.status !== 'here') return false;
+  p.disp = d.id; p.status = 'done'; p.doneAt = S.t;
+  const o = resolveOutcome(c, p, d);
+  p.outcome = o;
+  if (d.oaFix) S.trust = clamp(S.trust - 8);
+  if (o.grade === 'critical' && c.kind === 'sepsis') S.trust = clamp(S.trust - 6);
+  if (o.grade === 'best' && c.needsOA) S.trust = clamp(S.trust + 3);
+  p.score = scorePatient(c, p, o);
+  mode = 'result';
+  return true;
+}
+
+async function decide(pid, did) {
+  if (blocked() || !S || S.phase !== 'shift') return;
+  const c = CASE[pid], p = P(pid), d = c.disps.find(x => x.id === did);
+  if (!d || p.status !== 'here' || p.veto[did]) return;
+  busy = true;
+  let decided = false;
+  try { decided = await performDecision(c, p, d); } finally { busy = false; renderAll(); }
+  if (decided && caseOpen()) $('#case').scrollTop = 0;
+  await flushEvents();
+}
+
+async function coffee() {
+  if (blocked() || !S || S.phase !== 'shift') return;
+  busy = true;
+  try {
+    await walkTo(278);
+    const open = S.patients.find(p => p.status === 'here' && p.alert && !p.alert.acked);
+    const urgent = S.patients.find(p => p.status === 'here' && ['sepsis', 'torsion'].includes(CASE[p.id].kind));
+    if (open || urgent) {
+      S.team = clamp(S.team - 3);
+      await say('jana', open ? U.coffeeOpen(CASE[open.id].name, CASE[open.id].ref) : U.coffeeUrgent(CASE[urgent.id].name, CASE[urgent.id].ref), 'stern');
+    }
+    const nexts = [...CASES.filter(c => P(c.id).status === 'future').map(c => c.arrive), ...S.tasks.filter(t => !t.done).map(t => t.readyAt)];
+    const target = nexts.length ? Math.min(...nexts) : S.t + 15;
+    const m = clamp(target - S.t, 5, 30);
+    const steam = $('#steam'); steam.classList.remove('on'); void steam.getBBox(); steam.classList.add('on');
+    toast(U.coffeeToast(m));
+    advance(m); S.coffee++;
+  } finally { busy = false; renderAll(); }
+  await flushEvents();
+}
+
+function urgency(p) {
+  const c = CASE[p.id];
+  if (c.id === 'albers') return 120 - p.stab + (p.flags.ab ? 0 : 25);
+  if (c.id === 'petersen') return 125 - p.stab + (p.flags.ab ? 0 : 25);
+  if (c.id === 'jonas') return 75 + (S.t - c.onset - 210) / 4;
+  if (c.id === 'kaya') return (p.done.analgesie != null || p.done.opioid != null) ? 12 : 40;
+  return p.flags.dk ? 10 : 35;
+}
+async function askJana() {
+  if (blocked() || !S || S.phase !== 'shift') return;
+  busy = true;
+  try {
+    await walkTo(300);
+    advance(1);
+    const here = S.patients.filter(p => p.status === 'here').sort((a, b) => urgency(b) - urgency(a));
+    if (S.team < 50) await say('jana', U.janaBusy, 'stern');
+    else if (!here.length) {
+      const nx = CASES.filter(c => P(c.id).status === 'future');
+      await say('jana', nx.length ? U.janaNobody : U.janaAllDone, 'smile');
+    } else {
+      const c = CASE[here[0].id];
+      await say('jana', c.hint(here[0], hrs(S.t - (c.onset || 0))), 'neutral');
+    }
+  } finally { busy = false; renderAll(); }
+  await flushEvents();
+}
+
+/* ---------- Ablauf ---------- */
+async function checkEnd() {
+  if (!S || S.phase !== 'shift') return;
+  if (S.patients.every(p => p.status === 'done')) {
+    if (caseOpen() && !AUTO.on) {
+      if (!S.endPending) toast(U.lastCase);
+      S.endPending = true;
+      return;
+    }
+    await endShift(false);
+  } else if (S.t >= SHIFT_LIMIT) await endShift(true);
+}
+
+async function endShift(forced) {
+  S.phase = 'night-end';
+  if (forced) {
+    for (const p of S.patients) {
+      if (p.status === 'done') continue;
+      const c = CASE[p.id];
+      if (p.status === 'future') { p.arrivedAt = S.t; }
+      p.status = 'done'; p.disp = 'uebergabe'; p.doneAt = S.t;
+      const h = c.kind === 'torsion' ? U.handoverTorsion(hrs(S.t - c.onset)) : U.handover;
+      p.outcome = { grade: c.kind === 'torsion' ? 'critical' : 'wrong', title: h.title, text: h.text, short: h.short, dest: L.dest.early };
+      p.score = scorePatient(c, p, p.outcome);
+    }
+  }
+  renderAll();
+  if (forced) await say('jana', U.handoverSay, 'neutral');
+  if (caseOpen()) closeCase();
+  await say('jana', S.team >= 60 ? U.endGood : U.endMeh, S.team >= 60 ? 'smile' : 'neutral');
+  await say('narrator', U.narr1(clockStr(S.t)));
+  await say('narrator', U.narr2);
+  await startBoss();
+}
+
+function bossScene(expr) {
+  let s = `<svg viewBox="0 0 1000 300" role="img" aria-label="${esc(U.bossAria)}"><defs><linearGradient id="g-morning" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffb37a"/><stop offset="1" stop-color="#ffe4b8"/></linearGradient></defs>
+    <rect width="1000" height="300" fill="#dfe6f2"/><rect y="250" width="1000" height="50" fill="#9aa6bf"/>
+    <rect x="40" y="40" width="130" height="120" rx="8" fill="url(#g-morning)" ${st(4)}/><circle cx="120" cy="120" r="22" fill="#fff3c4"/><path d="M105 40 V160 M40 100 H170" stroke="#eef2f8" stroke-width="5"/><rect x="40" y="40" width="130" height="120" rx="8" fill="none" ${st(4)}/>
+    <rect x="400" y="26" width="500" height="190" rx="6" fill="#fff" ${st(4)}/><rect x="400" y="26" width="500" height="34" fill="#2b3a6b"/>
+    <text x="650" y="50" text-anchor="middle" style="font-size:18px" fill="#fff">${esc(U.bossHeader)}</text>
+    <text x="650" y="104" text-anchor="middle" style="font-size:30px" fill="${OL}">${esc(U.bossTitle)}</text>
+    <text x="650" y="140" text-anchor="middle" class="mono" style="font-size:16px" fill="#4d5675">${esc(U.bossQ(S.boss.i + 1, BOSS_QS.length))}</text>
+    <path d="M470 184 h360" stroke="#dbe3ef" stroke-width="6" stroke-linecap="round"/><path d="M470 184 h${Math.round(360 * (S.boss.i + (S.boss.answered ? 1 : 0)) / BOSS_QS.length)}" stroke="#3cc7c1" stroke-width="6" stroke-linecap="round"/>
+    <g transform="translate(280 292) scale(.92)">${figure(PEOPLE.chef, expr)}</g>
+    <path d="M325 244 L404 168" stroke="#6d5634" stroke-width="5" stroke-linecap="round"/><circle cx="324" cy="244" r="8" fill="${PEOPLE.chef.skin}" ${st(2.5)}/>`;
+  const hair = ['#3b2a20', '#c9a24a', '#1f1b1a', '#8a8f99', '#6b3a2a', '#2f2a26'];
+  for (let i = 0; i < 6; i++) {
+    const x = 470 + i * 88;
+    s += `<g transform="translate(${x} 300) scale(.62)"><path d="M-62 0 Q-60 -62 0 -68 Q60 -62 62 0Z" fill="${i % 2 ? '#fbfcff' : '#5f7f9e'}" ${st(3)}/><ellipse cx="-40" cy="-112" rx="7" ry="10" fill="#e8c4a2" ${st(3)}/><ellipse cx="40" cy="-112" rx="7" ry="10" fill="#e8c4a2" ${st(3)}/><ellipse cx="0" cy="-116" rx="40" ry="44" fill="${hair[i]}" ${st(3)}/></g>`;
+  }
+  s += `<rect x="430" y="282" width="560" height="18" fill="#6d5634"/></svg>`;
+  return s;
+}
+
+async function startBoss() {
+  S.phase = 'boss';
+  S.boss = { i: 0, right: 0, answered: false, pick: null, last: null, order: BOSS_QS.map(q => shuffle(q.o.map((_, k) => k))) };
+  $('#boss-screen').hidden = false;
+  lockPage(true);
+  renderBoss();
+  const crit = S.patients.find(p => p.outcome && p.outcome.grade === 'critical');
+  const allBest = S.patients.every(p => p.outcome && p.outcome.grade === 'best');
+  await say('chef', U.chefOpen(who()), 'neutral');
+  if (crit) await say('chef', CASE[crit.id].mm.replace('{name}', who()), 'stern');
+  else if (allBest) await say('chef', U.chefAllBest, 'smile');
+  else await say('chef', U.chefDefault, 'neutral');
+}
+
+function renderBoss() {
+  const b = S.boss, q = BOSS_QS[b.i], ord = b.order[b.i];
+  const hp = 100 - b.right * 20;
+  const expr = b.answered ? (b.last ? 'smile' : 'stern') : 'neutral';
+  const opts = ord.map((oi, k) => {
+    let cls = '';
+    if (b.answered) { if (oi === q.a) cls = ' right'; else if (oi === b.pick) cls = ' wrong'; }
+    return `<button class="qopt${cls}" type="button" data-o="${oi}" ${b.answered ? 'disabled' : ''}><span class="key">${'ABCD'[k]}</span><span>${esc(q.o[oi])}</span></button>`;
+  }).join('');
+  $('#boss-inner').innerHTML = `<div class="boss-stage">${bossScene(expr)}</div>
+    <div class="hpbar"><b>${esc(U.skepsis)}</b><span class="hp"><i style="width:${hp}%"></i></span><span>${hp} %</span></div>
+    <div class="qcard"><div class="qnum">${esc(U.qOf(b.i + 1, BOSS_QS.length))}</div><p class="qtext">${esc(q.q)}</p><div class="qopts">${opts}</div>
+    ${b.answered ? `<div class="qwhy"><b>${esc(b.last ? U.right : U.wrong)}</b> ${fmtWarn(esc(q.why))}<div class="src">${esc(U.sources)} ${esc(q.src)}</div></div><div class="start-row"><button class="btn primary" type="button" data-next>${esc(b.i + 1 < BOSS_QS.length ? U.nextQ : U.toReport)}</button></div>` : ''}</div>`;
+}
+
+async function bossAnswer(oi) {
+  const b = S.boss;
+  if (!b || b.answered || busy) return;
+  busy = true;
+  try {
+    const q = BOSS_QS[b.i];
+    b.answered = true; b.pick = oi; b.last = oi === q.a;
+    if (b.last) b.right++;
+    renderBoss();
+    await say('chef', pick(b.last ? L.chefRight : L.chefWrong), b.last ? 'smile' : 'stern');
+  } finally { busy = false; }
+  const nb = $('#boss-inner [data-next]'); if (nb && !AUTO.on) nb.focus();
+}
+
+async function bossNext() {
+  const b = S.boss;
+  if (!b || !b.answered || busy) return;
+  if (b.i + 1 < BOSS_QS.length) {
+    b.i++; b.answered = false; b.pick = null; b.last = null;
+    renderBoss();
+    $('#boss-screen').scrollTop = 0;
+    const f = $('#boss-inner .qopt'); if (f && !AUTO.on) f.focus({ preventScroll: true });
+    return;
+  }
+  busy = true;
+  try { await say('chef', U.verdict(b.right, who()), b.right >= 4 ? 'smile' : 'stern'); } finally { busy = false; }
+  showReport();
+}
+
+function computeResult() {
+  const avg = Math.round(S.patients.reduce((s, p) => s + (p.score || 0), 0) / S.patients.length);
+  const boss = S.boss ? S.boss.right * 20 : 0;
+  const rel = Math.round((S.trust + S.team) / 2);
+  const total = Math.round(0.6 * avg + 0.25 * boss + 0.15 * rel);
+  const rank = U.ranks[total >= 85 ? 0 : total >= 70 ? 1 : total >= 50 ? 2 : 3];
+  return { avg, boss, rel, total, rank };
+}
+
+function showReport() {
+  S.phase = 'report';
+  const r = computeResult();
+  const prev = store(true) || {};
+  const best = Math.max(prev.best || 0, r.total);
+  store(false, { best, runs: (prev.runs || 0) + 1, name: S.name, avatar: S.avatar, title: S.title });
+  const log = [];
+  for (const p of S.patients) { const c = CASE[p.id]; const d = c.disps.find(x => x.id === p.disp) || { id: p.disp }; if (c.logbook) log.push(...c.logbook(p, d).map(k => L.log[k])); }
+  const rows = S.patients.map(p => {
+    const c = CASE[p.id], d = c.disps.find(x => x.id === p.disp), o = p.outcome;
+    const wait = p.seenAt != null ? dur(p.seenAt - p.arrivedAt) : U.neverSeen;
+    const extra = [];
+    if (p.done.ab != null) extra.push(U.abAfter(dur(p.done.ab - p.arrivedAt)));
+    if (p.metrics.isch != null) extra.push(U.ischTime(hrs(p.metrics.isch)));
+    if (p.oaCalls) extra.push(U.oaCalled(p.oaCalls, p.bagatelle));
+    if (p.waste) extra.push(U.waste(p.waste));
+    return `<details class="row"><summary><span><b>${esc(c.name)}, ${c.age}</b><span class="sub">${esc(o.short)} · ${esc(U.contactAfter(wait))}</span></span><span class="grade g-${o.grade}">${esc(L.grade[o.grade])}</span><span class="pts">${p.score}</span></summary>
+      <div class="inner"><p><b>${esc(o.title)}.</b> ${esc(o.text)}</p>${d ? `<p class="chosen">${esc(U.decision)} ${esc(d.text)}</p>` : ''}${extra.length ? `<p class="chosen">${esc(extra.join(' · '))}</p>` : ''}
+      <ul class="why">${c.rationale.map(x => `<li>${fmtWarn(esc(x))}</li>`).join('')}</ul><p class="src">${esc(U.sources)} ${esc(c.sources)}</p></div></details>`;
+  }).join('');
+  $('#report-inner').innerHTML = `<div class="report">
+    <div class="rep-head"><div><h1>${esc(U.reportTitle)}</h1><div class="rank">${esc(r.rank)}</div></div><div class="rep-score">${r.total}<small> / 100</small></div></div>
+    <div class="rep-body">
+      <div class="kpis">
+        <div class="kpi"><div class="l">${esc(U.kpiCare)}</div><div class="v">${r.avg}</div></div>
+        <div class="kpi"><div class="l">${esc(U.kpiBoss)}</div><div class="v">${S.boss.right}/5</div></div>
+        <div class="kpi"><div class="l">${esc(U.kpiTrust)}</div><div class="v">${Math.round(S.trust)}</div></div>
+        <div class="kpi"><div class="l">${esc(U.kpiTeam)}</div><div class="v">${Math.round(S.team)}</div></div>
+      </div>
+      <div><h2>${esc(U.yourCases)}</h2><div class="rows">${rows}</div></div>
+      <div><h2>${esc(U.othersSay)}</h2><div class="quotes">
+        <div class="quote">${portrait(PEOPLE.jana, S.team >= 60 ? 'smile' : 'stern', 48)}<div><b>${esc(PEOPLE.jana.name)}</b><span>${esc(U.janaQuote(S.team))}</span></div></div>
+        <div class="quote">${portrait(PEOPLE.brenner, S.trust >= 60 ? 'smile' : 'sleepy', 48)}<div><b>${esc(PEOPLE.brenner.name)}</b><span>${esc(U.oaQuote(S.trust))}</span></div></div>
+        <div class="quote">${portrait(PEOPLE.chef, r.total >= 70 ? 'smile' : 'stern', 48)}<div><b>${esc(PEOPLE.chef.name)}</b><span>${esc(U.chefQuote(r.total))}</span></div></div>
+      </div></div>
+      <div><h2>${esc(U.logbookH)}</h2>${log.length ? `<ul class="logbook">${log.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : `<p class="chosen">${esc(U.noLog)}</p>`}</div>
+      <p class="chosen">${esc(U.weighting(best))}</p>
+    </div>
+    <div class="rep-foot"><button class="btn primary" type="button" id="btn-again">${esc(U.again)}</button></div>
+  </div>`;
+  $('#report-screen').hidden = false;
+  $('#boss-screen').hidden = true;
+  lockPage(true);
+  $('#report-screen').scrollTop = 0;
+  $('#btn-again').onclick = () => { $('#report-screen').hidden = true; S = null; initTitle(); };
+}
+
+/* ---------- Start ---------- */
+let avatarSel = 0;
+function initTitle() {
+  const saved = store(true) || {};
+  if (typeof saved.avatar === 'number') avatarSel = saved.avatar;
+  if (saved.name) $('#player-name').value = saved.name;
+  if (L.titles && !$('#player-title')) {
+    const span = $('.namebox span');
+    span.innerHTML = `<select id="player-title" aria-label="${esc(L.titlesAria)}">${L.titles.map(t => `<option value="${esc(t)}">${esc(t)}</option>`).join('')}</select>`;
+  }
+  if (L.titles && saved.title) $('#player-title').value = saved.title;
+  $('#avatars').innerHTML = AVATARS.map((a, i) => `<button class="av" type="button" data-av="${i}" aria-pressed="${i === avatarSel}" aria-label="${esc(U.avatarAria(i + 1))}">${portrait(a, i === avatarSel ? 'smile' : 'neutral', 78)}</button>`).join('');
+  const looks = [[PEOPLE.chef, 'neutral'], [PEOPLE.brenner, 'sleepy'], [AVATARS[avatarSel], 'smile'], [PEOPLE.jana, 'smile']];
+  $('#roles').innerHTML = U.roles.map(([name, txt], i) => `<div class="role">${portrait(looks[i][0], looks[i][1], 54)}<div><b>${esc(name)}</b><span>${esc(txt)}</span></div></div>`).join('');
+  $('#best').textContent = saved.best ? U.bestText(saved.best, saved.runs || 1) : '';
+  $('#title-screen').hidden = false;
+  lockPage(true);
+}
+
+async function startGame(name, avatar, title) {
+  S = newState(name || L.defaultName, avatar || 0);
+  S.title = title || L.namePrefix;
+  cur = null; mode = 'work'; selDisp = null; busy = false; lastJana = ''; playerX = 290; animating.clear();
+  $('#title-screen').hidden = true; $('#report-screen').hidden = true; $('#boss-screen').hidden = true;
+  lockPage(false);
+  const pl = $('#player'); pl.style.transition = 'none'; pl.style.transform = 'translateX(290px)';
+  setPlayerFigure();
+  renderAll();
+  for (const [spk, text, expr, phone] of L.intro(who())) await say(spk, text, expr, { phone: !!phone });
+  await say('jana', CASE.kaya.arrivalLine, 'smile');
+  S.phase = 'shift';
+  renderAll();
+}
+
+function bind() {
+  $('#avatars').addEventListener('click', e => {
+    const b = e.target.closest('[data-av]'); if (!b) return;
+    avatarSel = +b.dataset.av; initTitle();
+    const nb = $(`#avatars [data-av="${avatarSel}"]`); if (nb) nb.focus();
+  });
+  $('#btn-start').addEventListener('click', () => {
+    const n = ($('#player-name').value || '').trim().replace(/^Dra?\.?\s*/i, '') || L.defaultName;
+    const tsel = $('#player-title');
+    startGame(n.slice(0, 18), avatarSel, tsel ? tsel.value : L.namePrefix);
+  });
+  $('#player-name').addEventListener('keydown', e => { if (e.key === 'Enter') $('#btn-start').click(); });
+  $('#board').addEventListener('click', e => { const b = e.target.closest('[data-pid]'); if (b) openCase(b.dataset.pid); });
+  for (let i = 0; i < 5; i++) {
+    const h = $('#hit-' + i);
+    const go = () => openCase(CASES[i].id);
+    h.addEventListener('click', go);
+    h.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+  }
+  const cf = $('#coffee');
+  cf.addEventListener('click', coffee);
+  cf.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); coffee(); } });
+  $('#btn-wait').addEventListener('click', coffee);
+  $('#btn-ask').addEventListener('click', askJana);
+  $('#who-jana').addEventListener('click', askJana);
+  $('#who-oa').addEventListener('click', () => { if (S && !blocked()) say('brenner', U.oaChip, 'sleepy', { phone: true }); });
+  $('#who-chef').addEventListener('click', () => { if (S && !blocked()) say('chef', pick(L.chefSayings), 'neutral'); });
+  $('#akte').addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (!b || b.disabled) return;
+    if (b.hasAttribute('data-close')) return closeCase();
+    if (b.dataset.a) return doAction(cur, b.dataset.a, !!b.dataset.del);
+    if (b.hasAttribute('data-oa')) return doCall(cur);
+    if (b.hasAttribute('data-disp')) { mode = 'disp'; selDisp = null; renderCase(); const f = $('#akte .disp'); if (f) f.focus(); return; }
+    if (b.hasAttribute('data-back')) { mode = 'work'; renderCase(); return; }
+    if (b.dataset.d) { selDisp = b.dataset.d; renderCase(); const f = $(`#akte [data-d="${selDisp}"]`); if (f) f.focus(); return; }
+    if (b.hasAttribute('data-confirm')) return decide(cur, selDisp);
+  });
+  $('#case').addEventListener('click', e => { if (e.target.id === 'case' && !busy) closeCase(); });
+  $('#boss-inner').addEventListener('click', e => {
+    const o = e.target.closest('[data-o]'); if (o && !o.disabled) return bossAnswer(+o.dataset.o);
+    if (e.target.closest('[data-next]')) return bossNext();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && caseOpen() && $('#dlg').hidden && !busy) closeCase();
+  });
+}
+
+function boot(data) {
+  $('#scene').innerHTML = sceneStatic();
+  ['jana', 'brenner', 'chef'].forEach(k => { const el = $(`[data-pt="${k}"]`); if (el) el.innerHTML = portrait(PEOPLE[k], k === 'brenner' ? 'sleepy' : 'neutral', 42); });
+  // Anrede (Prof./Dr./Dra.) separat setzen, damit sie auf schmalen Displays ausgeblendet werden kann.
+  document.querySelectorAll('.who-txt b').forEach(b => { const m = b.textContent.match(/^(\S+\.)\s+(.+)$/); if (m) b.innerHTML = `<span class="hon">${esc(m[1])} </span>${esc(m[2])}`; });
+  bind();
+  if (data && data.S && data.S.phase === 'shift') {
+    S = data.S;
+    $('#title-screen').hidden = true;
+    lockPage(false);
+    setPlayerFigure();
+    renderAll();
+  } else {
+    S = newState(L.defaultName, 0);
+    setPlayerFigure();
+    renderAll();
+    S = null;
+    initTitle();
+  }
+}
+
+window.__nd = {
+  AUTO, L, get S() { return S; }, CASES, BOSS_QS,
+  start: startGame, act: doAction, call: doCall, decide, open: openCase, close: closeCase,
+  coffee, ask: askJana, answer: bossAnswer, next: bossNext, advance: m => { advance(m); renderAll(); return flushEvents(); },
+  get mode() { return mode; }
+};
+
+try { if (window.claude && window.claude.hot && window.claude.hot.snapshot) window.claude.hot.snapshot(() => (S && S.phase === 'shift' && !busy ? { S: JSON.parse(JSON.stringify(S)) } : {})); } catch (e) { /* optional */ }
+if (window.claude && window.claude.hot && window.claude.hot.ready) window.claude.hot.ready(boot);
+else boot((window.claude && window.claude.hot && window.claude.hot.data) || {});
+
+})();
+</script>
+</body>
+</html>

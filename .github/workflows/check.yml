@@ -1,0 +1,36 @@
+name: Check and package
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Validate cases, translations, references and assets
+        run: python scripts/manage.py validate
+      - name: Check deterministic scheduling, validation and archive integrity
+        run: python -m unittest discover -s tests -v
+      - name: Check game scheduling, decisions and progress validation
+        run: node tests/tests-engine.cjs
+      - name: Check original cast, translated comedy and cartoon game extras
+        run: node tests/tests-cartoon.cjs
+      - name: Build the offline edition
+        run: python scripts/manage.py build
+      - name: Package the project
+        run: python scripts/manage.py package --output dist/night-shift-academy.zip
+      - name: Upload the complete ZIP
+        uses: actions/upload-artifact@v7
+        with:
+          name: night-shift-academy
+          path: dist/night-shift-academy.zip
+          if-no-files-found: error

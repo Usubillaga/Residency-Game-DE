@@ -1,0 +1,44 @@
+{
+  "archiveName": "Urofragen-GitHub-DE-EN-ES-2026-10-04.zip",
+  "archiveSha256": "388ef0ed51fdd17971248bd3b7867fb35bf6d9622b2331464e6f9e1a9ece799b",
+  "importedCases": 267,
+  "legacyCases": 30,
+  "totalCases": 297,
+  "languages": [
+    "de",
+    "en",
+    "es"
+  ],
+  "domains": [
+    "andrologie",
+    "funktionell",
+    "hodentumor",
+    "infektiologie",
+    "kinderurologie",
+    "mibc",
+    "nierenzellkarzinom",
+    "nmibc",
+    "operativ",
+    "peniskarzinom",
+    "prostatakarzinom",
+    "rekonstruktion",
+    "trauma",
+    "urethrakarzinom",
+    "urolithiasis",
+    "utuc"
+  ],
+  "casesPerArea": {
+    "clinic": 133,
+    "emergency": 26,
+    "endoscopy": 22,
+    "theatre": 63,
+    "ward": 23
+  },
+  "sourceStatuses": {
+    "published": 257,
+    "draft": 10
+  },
+  "flaggedSourceQuestions": 32,
+  "selectionSha256": "795840cc79879e662dfb0bd9a018a7e196a6a2959b23495d9942979140331dc3",
+  "contentPolicy": "All 267 original vignettes, questions, options, rationales and explanations are preserved once in DE/EN/ES. Drafts and evidence flags are retained. No archive scripts are executed. Missing or ambiguous ages and vital signs remain null. Uro identifiers represent teaching cases, including vignettes comparing multiple patients. Five minutes per answer are game time only."
+}

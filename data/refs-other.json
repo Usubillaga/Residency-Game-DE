@@ -1,0 +1,79 @@
+[
+  {
+    "id": "prostate",
+    "title": "EAU Prostate Cancer: Diagnostic Evaluation",
+    "url": "https://uroweb.org/guidelines/prostate-cancer/chapter/diagnostic-evaluation",
+    "checked": "2026-10-05",
+    "scope": "Supports individual PSA risk assessment, shared early-detection decisions, recognising non-cancer causes of raised PSA and staged diagnostic evaluation."
+  },
+  {
+    "id": "prostate-surveillance",
+    "title": "EAU Prostate Cancer: Treatment and Active Surveillance",
+    "url": "https://uroweb.org/guidelines/prostate-cancer/chapter/treatment",
+    "checked": "2026-10-05",
+    "scope": "Supports structured active surveillance and reassessment of PSA changes without declaring progression or changing treatment on PSA alone."
+  },
+  {
+    "id": "male-luts",
+    "title": "EAU Non-neurogenic Male LUTS: Diagnostic Evaluation",
+    "url": "https://uroweb.org/guidelines/management-of-non-neurogenic-male-luts/chapter/diagnostic-evaluation",
+    "checked": "2026-10-05",
+    "scope": "Supports history, symptom burden, urinalysis, examination, bladder diaries, uroflowmetry and residual urine assessment for male urinary symptoms."
+  },
+  {
+    "id": "other-infections",
+    "title": "EAU Urological Infections: Recurrent Cystitis and Systemic Infection",
+    "url": "https://uroweb.org/guidelines/urological-infections/chapter/the-guideline",
+    "checked": "2026-10-05",
+    "scope": "Supports culture-confirmed recurrent cystitis, tailored stepped prevention, assessment of systemic warning signs and coordinated management of urinary infection."
+  },
+  {
+    "id": "other-stones",
+    "title": "EAU Urolithiasis: Infection, Obstruction and Procedural Precautions",
+    "url": "https://uroweb.org/guidelines/urolithiasis/chapter/guidelines",
+    "checked": "2026-10-05",
+    "scope": "Supports treating infection before definitive stone removal and urgent source-control assessment when urinary infection coexists with obstruction."
+  },
+  {
+    "id": "stone-prevention",
+    "title": "EAU Urolithiasis: Metabolic Evaluation and Recurrence Prevention",
+    "url": "https://uroweb.org/guidelines/urolithiasis/chapter/metabolic-evaluation-and-recurrence-prevention",
+    "checked": "2026-10-05",
+    "scope": "Supports stone analysis, recurrence-risk assessment, specific metabolic evaluation and balanced dietary and fluid measures for stone prevention."
+  },
+  {
+    "id": "bladder",
+    "title": "EAU Non-muscle-invasive Bladder Cancer: Diagnosis",
+    "url": "https://uroweb.org/guidelines/non-muscle-invasive-bladder-cancer/chapter/diagnosis",
+    "checked": "2026-10-05",
+    "scope": "Supports investigation of haematuria, documentation of bladder findings, histological assessment of papillary lesions or suspected CIS and recognition of specimen staging limitations."
+  },
+  {
+    "id": "strictures",
+    "title": "EAU Urethral Strictures: Diagnostic Evaluation",
+    "url": "https://uroweb.org/guidelines/urethral-strictures/chapter/diagnostic-evaluation",
+    "checked": "2026-10-05",
+    "scope": "Supports assessment of suspected urethral stricture through history, urinary testing, uroflowmetry, residual urine and specialist anatomical evaluation."
+  },
+  {
+    "id": "stent-care",
+    "title": "University Hospitals Plymouth: Managing a Ureteric Stent after Ureteroscopy",
+    "url": "https://www.plymouthhospitals.nhs.uk/display-pil/pil-managing-a-ureteric-stent-after-ureteroscopy-8392",
+    "checked": "2026-10-05",
+    "scope": "Supports recognising common stent symptoms, identifying fever or severe symptoms requiring medical attention and maintaining a planned stent-removal pathway."
+  },
+  {
+    "id": "other-trauma",
+    "title": "EAU Urological Trauma: Ureteric Injury Recognition",
+    "url": "https://uroweb.org/guidelines/urological-trauma/chapter/urogenital-trauma-guidelines",
+    "checked": "2026-10-05",
+    "scope": "Supports suspicion and early specialist assessment of possible ureteric injury, recognising that absent haematuria does not exclude it."
+  },
+  {
+    "id": "who",
+    "title": "WHO Surgical Safety Checklist: Implementation Manual",
+    "url": "https://www.who.int/publications/i/item/9789241598590",
+    "checked": "2026-10-05",
+    "scope": "Supports shared checks at sign-in, time-out and sign-out, confirmation of identity and site, specimen labelling and communication of recovery concerns."
+  }
+]

@@ -1,0 +1,455 @@
+'use strict';
+
+const { test } = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const vm = require('node:vm');
+const E = require('../assets/engine.js');
+const assets = path.join(__dirname, '..', 'assets');
+const read = name => fs.readFileSync(path.join(assets, name), 'utf8').replace(/^\uFEFF/, '');
+const clone = value => JSON.parse(JSON.stringify(value));
+const areaIds = ['emergency', 'ward', 'clinic', 'endoscopy', 'theatre'];
+
+function loadAssets() {
+  const context = vm.createContext({ window: {} });
+  for (const name of ['catalog.js', 'banter.js', 'art.js', 'i18n.js']) {
+    vm.runInContext(read(name), context, { filename: name });
+  }
+  return context.window;
+}
+const data = loadAssets();
+const catalog = data.NSA_CATALOG;
+
+function shape(value, label) {
+  if (Array.isArray(value)) return value.map((item, index) => shape(item, label + '[' + index + ']'));
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(Object.keys(value).sort().map(key => [key, shape(value[key], label + '.' + key)]));
+  }
+  assert.equal(typeof value, 'string', label + ' must be a localized string');
+  assert.ok(value.trim(), label + ' must not be blank');
+  return 'string';
+}
+
+function attributes(tag) {
+  const result = {};
+  for (const match of tag.matchAll(/([\w-]+)="([^"]*)"/g)) result[match[1]] = match[2];
+  return result;
+}
+function groupsWith(markup, key) {
+  return [...markup.matchAll(/<g\b[^>]*>/g)].map(match => attributes(match[0])).filter(group => key in group);
+}
+const normalizeClipIds = svg => svg.replace(/pc\d+/g, 'patient-clip');
+const escape = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+
+// Run the actual app helpers with rendering and storage replaced by observable
+// boundaries. This exercises gameplay without copying its implementation.
+function appHarness(session = null, testCatalog = catalog) {
+  const source = read('app.js');
+  const start = source.indexOf('  function avatarChoices()');
+  const end = source.indexOf("  document.addEventListener('click'", start);
+  assert.ok(start >= 0 && end > start, 'The real game-helper section must be present');
+  const stats = { persisted: 0, rendered: 0, dialogs: [], navigated: [], scrolled: 0 };
+  const state = { lang: 'en', avatar: 0, sound: false, history: [], bookmarks: [], session };
+  const dom = {
+    querySelector() { return { close() {}, scrollIntoView() { stats.scrolled++; } }; }
+  };
+  const context = vm.createContext({
+    window: data, C: testCatalog, E, A: data.NSAArt, state,
+    document: dom, esc: escape,
+    comedy: () => data.NSABanter[state.lang],
+    getCase: id => testCatalog.cases.find(c => c.id === id),
+    getArea: id => testCatalog.areas.find(a => a.id === id),
+    t: key => data.NSABanter[state.lang][key] || data.NSA_TEXT[state.lang][key] || key,
+    loc: value => value[state.lang],
+    clock: minutes => String((22 + Math.floor(minutes / 60)) % 24).padStart(2, '0') + ':' + String(minutes % 60).padStart(2, '0'),
+    persist() { stats.persisted++; },
+    render() { stats.rendered++; },
+    navigate(view) { stats.navigated.push(view); },
+    openDialog(html) { stats.dialogs.push(html); return { classList: { add() {} } }; }
+  });
+  vm.runInContext("let areaFilter = 'all', query = '', savedOnly = false;\n" + source.slice(start, end) + `
+    globalThis.helpers = {
+      gameStage, handleScene, coffeeBreak, startBoss, answerBoss, nextBoss,
+      validBoss, bossCorrect, speakerFor, lineWithoutName,
+      filterState: () => ({ areaFilter, query, savedOnly })
+    };
+  `, context, { filename: 'app-game-helpers.js' });
+  return { state, stats, api: context.helpers };
+}
+
+function completedSession(seed = 'cartoon-regression') {
+  const session = E.create(catalog, E.schedule(catalog, seed), 'learn', seed);
+  for (const patient of session.patients) {
+    const c = catalog.cases.find(c => c.id === patient.id);
+    for (const step of c.steps) {
+      E.answer(session, catalog, c.id, step.best);
+      E.next(session, catalog, c.id);
+    }
+  }
+  assert.ok(session.finished);
+  return session;
+}
+
+test('all story keys and nested dialogue structures are present in English, German and Spanish', () => {
+  assert.deepEqual(Object.keys(data.NSABanter).sort(), ['de', 'en', 'es']);
+  const english = shape(data.NSABanter.en, 'en');
+  for (const lang of ['de', 'es']) assert.deepEqual(shape(data.NSABanter[lang], lang), english);
+  for (const [lang, text] of Object.entries(data.NSABanter)) {
+    assert.deepEqual(Object.keys(text.areaIntro).sort(), [...areaIds].sort());
+    assert.deepEqual([...new Set(text.opening.map(line => line.speaker))].sort(), ['attending', 'chief', 'nurse']);
+    assert.equal(text.opening.length, 5);
+    assert.equal(text.good.length, 6);
+    assert.equal(text.partial.length, 5);
+    assert.equal(text.unsafe.length, 5);
+    assert.equal(text.gameRank.length, 4);
+    assert.match(text.coffeeNote, /5/, lang + ' must describe the actual five-minute game break');
+    assert.doesNotMatch(text.challengeRetry, /try again|erneut versuchen|vuelva a intentarlo/i,
+      lang + ' feedback must not promise a retry when the game advances');
+    assert.doesNotMatch(text.hero.replace(/<br\s*\/?\s*>/gi, ''), /[<>]/,
+      lang + ' hero may contain line breaks, but no other HTML');
+  }
+});
+
+test('the original cast survives in every language and speaker matching finds their comments', () => {
+  const expected = {
+    en: { nurse: 'Grace', attending: 'Dr. Brennan', chief: 'Prof. Whitfield' },
+    de: { nurse: 'Jana', attending: 'Dr. Brenner', chief: 'Prof. Leuchtenberg' },
+    es: { nurse: 'Lucía', attending: 'Dr. Herrera', chief: 'Prof. Valdés' }
+  };
+  const h = appHarness();
+  for (const lang of Object.keys(expected)) {
+    h.state.lang = lang;
+    for (const [role, name] of Object.entries(expected[lang])) {
+      assert.equal(data.NSABanter[lang].staff[role].name, name);
+      assert.equal(h.api.speakerFor(name + ': Test'), role);
+      assert.equal(h.api.lineWithoutName(name + ': Test', role), 'Test');
+    }
+  }
+});
+
+test('the hero is a named localized SVG image and every case receives a stable original portrait', () => {
+  const art = data.NSAArt;
+  const heroes = ['en', 'de', 'es'].map(lang => art.hero(lang));
+  assert.equal(new Set(heroes).size, 3, 'Each hero must contain its own localized text');
+  for (const hero of heroes) {
+    const svg = attributes(hero.match(/<svg\b[^>]*>/)[0]);
+    assert.equal(svg.role, 'img');
+    assert.ok(svg['aria-label']);
+    assert.match(hero, /<title>[^<]+<\/title>/);
+    assert.doesNotMatch(hero, /undefined|NaN/);
+  }
+  assert.equal(catalog.cases.length, 297);
+  const ids = [];
+  const designs = [];
+  for (const c of catalog.cases) {
+    const svg = art.patientPortrait(c.id, 'neutral', 76);
+    assert.match(svg, /<svg\b/);
+    assert.match(svg, /aria-hidden="true"/);
+    assert.match(svg, /width="76" height="76"/);
+    assert.doesNotMatch(svg, /undefined|NaN/);
+    ids.push(svg.match(/<clipPath id="([^"]+)"/)[1]);
+    designs.push(normalizeClipIds(svg));
+    assert.equal(normalizeClipIds(art.patientPortrait(c.id, 'neutral', 76)), normalizeClipIds(svg),
+      'A case ID must keep its appearance across renders: ' + c.id);
+    assert.notEqual(normalizeClipIds(art.patientPortrait(c.id, 'unsafe', 76)), normalizeClipIds(svg),
+      'Feedback must change the expression without requiring an image download: ' + c.id);
+  }
+  assert.equal(new Set(ids).size, catalog.cases.length, 'Repeated portraits need unique SVG clip IDs');
+  assert.ok(new Set(designs).size >= 20, 'The patient cast should not collapse into one repeated portrait');
+});
+
+test('all room scenes expose five localized, keyboard-accessible department doors', () => {
+  const names = {
+    en: ['Emergency', 'Ward', 'Clinic', 'Endoscopy', 'Theatre'],
+    de: ['Notaufnahme', 'Station', 'Ambulanz', 'Endoskopie', 'OP-Saal'],
+    es: ['Urgencias', 'Planta', 'Consulta', 'Endoscopia', 'Quirófano']
+  };
+  for (const lang of Object.keys(names)) {
+    for (const area of areaIds) {
+      const scene = data.NSAArt.scene(area, [], null, '23:15', 0, lang);
+      const doors = groupsWith(scene, 'data-scene-area');
+      assert.equal(doors.length, 5);
+      assert.deepEqual(doors.map(door => door['data-scene-area']), areaIds);
+      assert.equal(doors.filter(door => door['aria-pressed'] === 'true').length, 1);
+      doors.forEach((door, index) => {
+        assert.equal(door.role, 'button');
+        assert.equal(door.tabindex, '0');
+        assert.equal(door['aria-label'], names[lang][index]);
+        assert.equal(door['aria-pressed'], String(areaIds[index] === area));
+      });
+      const coffee = groupsWith(scene, 'data-scene-coffee');
+      assert.equal(coffee.length, 1);
+      assert.equal(coffee[0].role, 'button');
+      assert.equal(coffee[0].tabindex, '0');
+      assert.ok(coffee[0]['aria-label']);
+    }
+  }
+});
+
+test('patient names, IDs, age labels and clock text are escaped before entering scene markup', () => {
+  const patient = {
+    id: 'ed-" onfocus="injected"><svg>&\'',
+    name: 'Eve <script>alert("x")</script> & \'quoted\'',
+    age: '"><script>age</script>', area: 'emergency', acuity: 'routine', available: true
+  };
+  const time = '<script>clock</script>';
+  const scene = data.NSAArt.scene('emergency', [patient], patient.id, time, 0, 'en');
+  assert.ok(scene.includes('data-scene-patient="' + escape(patient.id) + '"'));
+  assert.ok(scene.includes(escape(patient.name)));
+  assert.ok(scene.includes(escape(patient.age)));
+  assert.ok(scene.includes(escape(time)));
+  assert.doesNotMatch(scene, /<script>|<svg>&'|onfocus="injected"/);
+  assert.equal(groupsWith(scene, 'data-scene-patient').length, 1);
+});
+
+test('scenes filter patients by area and keep future patients out of keyboard interaction', () => {
+  const patients = [
+    { id: 'ed-one', name: 'Available', area: 'emergency', age: 40, acuity: 'routine', available: true },
+    { id: 'ed-two', name: 'Future', area: 'emergency', age: 42, acuity: 'urgent', available: false },
+    { id: 'clinic-three', name: 'Other area', area: 'clinic', age: 50, acuity: 'routine', available: true }
+  ];
+  const scene = data.NSAArt.scene('emergency', patients, 'ed-one');
+  const shown = groupsWith(scene, 'data-scene-patient');
+  assert.deepEqual(shown.map(p => p['data-scene-patient']), ['ed-one', 'ed-two']);
+  assert.equal(shown[0].tabindex, '0');
+  assert.equal(shown[0]['aria-disabled'], 'false');
+  assert.equal(shown[1].tabindex, '-1');
+  assert.equal(shown[1]['aria-disabled'], 'true');
+  assert.match(shown[1].class, /\bfuture\b/);
+  assert.ok(!scene.includes('Other area'));
+  const allPatients = catalog.cases.map(c => ({ id: c.id, name: c.patient.name, age: c.patient.age, area: c.area, acuity: c.acuity, available: true }));
+  for (const area of areaIds) {
+    const expected = catalog.cases.filter(c => c.area === area).map(c => c.id);
+    const selected = expected.at(-1);
+    const generated = groupsWith(data.NSAArt.scene(area, allPatients, selected), 'data-scene-patient');
+    const shownIds = generated.map(p => p['data-scene-patient']);
+    assert.equal(generated.length, Math.min(6, expected.length));
+    assert.equal(new Set(shownIds).size, shownIds.length);
+    assert.ok(shownIds.every(id => expected.includes(id)), 'A room cannot display another area\'s case');
+    assert.ok(shownIds.includes(selected), 'Selecting a case beyond the first six must keep it visible');
+    assert.equal(generated.filter(p => p['aria-pressed'] === 'true').length, 1);
+  }
+});
+
+test('scene actions cannot select a future arrival and department doors select only arrived patients', () => {
+  const ids = [catalog.cases.find(c => c.area === 'emergency').id,
+    catalog.cases.find(c => c.area === 'clinic').id,
+    catalog.cases.find(c => c.area === 'ward').id];
+  const s = E.create(catalog, ids, 'shift', 'scene-actions');
+  const h = appHarness(s);
+  h.api.handleScene({ dataset: { scenePatient: ids[1] } });
+  assert.equal(s.selected, ids[0]);
+  assert.equal(h.stats.persisted, 0);
+  h.api.handleScene({ dataset: { sceneArea: 'clinic' } });
+  assert.equal(s.selected, ids[0]);
+  assert.equal(h.stats.dialogs.length, 1, 'A room with no arrived case should explain why it is empty');
+  s.clock = 10;
+  h.api.handleScene({ dataset: { sceneArea: 'clinic' } });
+  assert.equal(s.selected, ids[1]);
+  assert.equal(h.stats.persisted, 1);
+  const idle = appHarness();
+  idle.api.handleScene({ dataset: { sceneArea: 'theatre' } });
+  assert.equal(idle.api.filterState().areaFilter, 'theatre');
+  assert.deepEqual(idle.stats.navigated, ['library']);
+});
+
+test('morning report is locked until the clinical session is finished', () => {
+  const session = E.create(catalog, [catalog.cases[0].id], 'learn', 'unfinished');
+  const h = appHarness(session);
+  h.api.startBoss();
+  assert.equal(session.boss, undefined);
+  assert.equal(h.stats.persisted, 0);
+  assert.ok(h.stats.dialogs[0].includes(escape(data.NSABanter.en.bossLocked)));
+});
+
+test('morning report selects five distinct reproducible questions, one from each completed area', () => {
+  for (const seed of ['morning-A', 'morning-B', 'morning-C']) {
+    const h = appHarness(completedSession(seed));
+    const untouched = clone(h.state.session.patients);
+    h.api.startBoss();
+    const boss = h.state.session.boss;
+    assert.equal(boss.items.length, 5);
+    assert.ok(h.api.validBoss(boss));
+    assert.equal(new Set(boss.items.map(item => item.caseId + ':' + item.stepIndex)).size, 5);
+    assert.deepEqual(clone(boss.items.map(item => catalog.cases.find(c => c.id === item.caseId).area)).sort(), [...areaIds].sort());
+    for (const item of boss.items) {
+      const step = catalog.cases.find(c => c.id === item.caseId).steps[item.stepIndex];
+      assert.deepEqual(clone(item.order).sort(), clone(step.options.map(option => option.id)).sort());
+    }
+    const second = appHarness(completedSession(seed));
+    second.api.startBoss();
+    assert.deepEqual(clone(second.state.session.boss.items), clone(boss.items));
+    assert.deepEqual(clone(h.state.session.patients), untouched);
+    const before = clone(boss);
+    h.api.startBoss();
+    assert.deepEqual(clone(h.state.session.boss), before, 'Reopening the quiz must not replace its questions or progress');
+  }
+});
+
+test('morning reports preserve real four-choice and five-choice source questions alongside original clinical steps', () => {
+  for (const optionCount of [4, 5]) {
+  const imported = catalog.cases.find(c => c.source && c.steps.length === 1 && c.steps[0].options.length === optionCount);
+  assert.ok(imported, 'The built catalog must contain a ' + optionCount + '-choice source question');
+  const legacy = catalog.cases.find(c => !c.source && c.area === imported.area && c.steps.length === 3);
+  assert.ok(legacy, 'The original case in this area must remain available');
+  const session = E.create(catalog, [legacy.id, imported.id], 'learn', 'mixed-chief-options-' + optionCount);
+  for (const c of [legacy, imported]) {
+    for (const step of c.steps) { E.answer(session, catalog, c.id, step.best); E.next(session, catalog, c.id); }
+  }
+  const h = appHarness(session), clinical = clone(session.patients), initialClock = session.clock;
+  h.api.startBoss();
+  const boss = session.boss;
+  assert.ok(h.api.validBoss(boss));
+  assert.equal(boss.items.length, legacy.steps.length + imported.steps.length);
+  assert.ok(boss.items.some(item => item.order.length === 3));
+  assert.ok(boss.items.some(item => item.order.length === optionCount));
+  let checkedSource = false;
+  for (const item of boss.items) {
+    const c = catalog.cases.find(c => c.id === item.caseId), step = c.steps[item.stepIndex];
+    const choice = item.caseId === imported.id ? step.options.at(-1) : step.options.find(option => option.id === step.best);
+    h.api.answerBoss(choice.id);
+    if (item.caseId === imported.id) {
+      checkedSource = true;
+      assert.equal(boss.answers[boss.index], step.options.at(-1).id, 'The last source choice remains selectable in the chief quiz');
+      if (optionCount === 5) assert.equal(boss.answers[boss.index], 'e');
+      assert.equal((h.stats.dialogs.at(-1).match(/data-boss-option="/g) || []).length, optionCount);
+      assert.ok(h.stats.dialogs.at(-1).includes(escape(choice.feedback.en)));
+      const missingLast = clone(boss);
+      missingLast.items[boss.index].order.pop();
+      assert.equal(h.api.validBoss(missingLast), false, 'A restored chief question cannot silently lose its last choice');
+    }
+    h.api.nextBoss();
+    assert.ok(h.api.validBoss(boss));
+  }
+  assert.ok(checkedSource && boss.done);
+  assert.equal(session.clock, initialClock);
+  assert.deepEqual(clone(session.patients), clinical);
+  }
+});
+
+test('chief questions validate and render the supported two-choice and six-choice boundaries', () => {
+  const makeCase = (id, area, count) => {
+    const c = clone(catalog.cases[0]);
+    c.id = id; c.area = area;
+    const step = clone(c.steps[0]);
+    step.id = 'fixture-decision';
+    step.options = Array.from({ length: count }, (_, i) => {
+      const option = clone(c.steps[0].options[i % c.steps[0].options.length]);
+      option.id = String.fromCharCode(97 + i); option.score = i === count - 1 ? 10 : 0; option.critical = false;
+      return option;
+    });
+    step.best = step.options.at(-1).id; c.steps = [step];
+    return c;
+  };
+  const testCatalog = { ...catalog, cases: [makeCase('fixture-boss-two', 'clinic', 2), makeCase('fixture-boss-six', 'theatre', 6)] };
+  const session = E.create(testCatalog, testCatalog.cases.map(c => c.id), 'learn', 'boss-boundaries');
+  for (const c of testCatalog.cases) { E.answer(session, testCatalog, c.id, c.steps[0].best); E.next(session, testCatalog, c.id); }
+  const h = appHarness(session, testCatalog);
+  h.api.startBoss();
+  const boss = session.boss;
+  assert.deepEqual(clone(boss.items.map(item => item.order.length)).sort((a, b) => a - b), [2, 6]);
+  for (const item of boss.items) {
+    const c = testCatalog.cases.find(c => c.id === item.caseId), step = c.steps[0];
+    assert.ok(h.api.validBoss(boss));
+    assert.equal((h.stats.dialogs.at(-1).match(/data-boss-option="/g) || []).length, step.options.length);
+    h.api.answerBoss(step.best); h.api.nextBoss();
+  }
+  assert.ok(boss.done);
+  assert.equal(h.api.bossCorrect(boss), 2);
+});
+
+test('morning-report answers count once, need feedback acknowledgement, and never alter clinical points or time', () => {
+  const h = appHarness(completedSession('morning-answer-regression'));
+  const clinical = clone(h.state.session.patients);
+  const initialClock = h.state.session.clock;
+  h.api.startBoss();
+  const boss = h.state.session.boss;
+  let correct = 0;
+  h.api.nextBoss();
+  assert.equal(boss.index, 0, 'An unanswered round cannot be skipped');
+  h.api.answerBoss('unknown');
+  assert.equal(boss.answers.length, 0);
+  for (let i = 0; i < boss.items.length; i++) {
+    const item = boss.items[i], step = catalog.cases.find(c => c.id === item.caseId).steps[item.stepIndex];
+    const answer = i === 1 ? step.options.find(option => option.id !== step.best).id : step.best;
+    h.api.answerBoss(answer);
+    correct += Number(answer === step.best);
+    const answered = clone(boss), saved = h.stats.persisted;
+    h.api.answerBoss(step.best);
+    assert.deepEqual(clone(boss), answered, 'A repeated answer click cannot retry, replace or add an answer');
+    assert.equal(h.stats.persisted, saved);
+    assert.match(h.stats.dialogs.at(-1), /data-action="boss-next"/);
+    assert.match(h.stats.dialogs.at(-1), /data-boss-option="[^"]+" disabled/);
+    h.api.nextBoss();
+    assert.ok(h.api.validBoss(boss));
+    if (i < boss.items.length - 1) {
+      const index = boss.index;
+      h.api.nextBoss();
+      assert.equal(boss.index, index, 'Double-clicking next cannot skip the following unanswered round');
+    }
+  }
+  assert.ok(boss.done);
+  assert.equal(h.api.bossCorrect(boss), correct);
+  assert.equal(correct, 4);
+  const done = clone(boss);
+  h.api.answerBoss('a'); h.api.nextBoss();
+  assert.deepEqual(clone(boss), done);
+  assert.equal(h.state.session.clock, initialClock);
+  assert.deepEqual(clone(h.state.session.patients), clinical);
+  assert.deepEqual(h.state.history, [], 'Quiz answers must not create clinical logbook records');
+});
+
+test('a coffee break adds exactly five game minutes without changing clinical scores, answers or error counts', () => {
+  const session = E.create(catalog, E.schedule(catalog, 'coffee-regression'), 'shift', 'coffee-regression');
+  const first = catalog.cases.find(c => c.id === session.selected);
+  E.answer(session, catalog, first.id, first.steps[0].best);
+  const h = appHarness(session);
+  const patients = clone(session.patients), initialClock = session.clock;
+  h.api.coffeeBreak();
+  assert.equal(session.clock, initialClock + 5);
+  assert.equal(session.coffees, 1);
+  assert.deepEqual(clone(session.patients), patients);
+  assert.ok(E.validSession(session, catalog));
+  h.api.coffeeBreak();
+  assert.equal(session.clock, initialClock + 10);
+  assert.equal(session.coffees, 2);
+  assert.deepEqual(clone(session.patients), patients);
+  assert.equal(h.stats.persisted, 2);
+  assert.equal(h.stats.rendered, 2);
+  assert.equal(h.stats.dialogs.length, 2);
+  assert.deepEqual(h.state.history, []);
+});
+
+test('coffee outside an unfinished shift cannot add time or claim it added five minutes', () => {
+  for (const session of [null, completedSession('coffee-finished')]) {
+    const h = appHarness(session), before = clone(h.state);
+    h.api.coffeeBreak();
+    assert.deepEqual(clone(h.state), before);
+    assert.equal(h.stats.persisted, 0);
+    assert.equal(h.stats.rendered, 0);
+    assert.equal(h.stats.dialogs.length, 1);
+    assert.ok(!h.stats.dialogs[0].includes(escape(data.NSABanter.en.coffeeNote)),
+      'A joke-only break must not display the active-shift time-cost message');
+  }
+});
+
+test('restored morning-report progress rejects premature completion, answer gaps and duplicated questions', async t => {
+  const h = appHarness(completedSession('boss-restore'));
+  h.api.startBoss();
+  const base = clone(h.state.session.boss);
+  const best = item => catalog.cases.find(c => c.id === item.caseId).steps[item.stepIndex].best;
+  const mutations = {
+    'done after only the first answer': boss => { boss.answers = [best(boss.items[0])]; boss.done = true; },
+    'a gap in already completed answers': boss => { boss.index = 2; boss.answers = [best(boss.items[0]), null]; },
+    'duplicated question': boss => { boss.items[1] = clone(boss.items[0]); },
+    'string rather than numeric step index': boss => { boss.items[0].stepIndex = String(boss.items[0].stepIndex); },
+    'invalid option in an earlier answer': boss => { boss.index = 1; boss.answers = ['unknown']; }
+  };
+  for (const [name, mutate] of Object.entries(mutations)) {
+    await t.test(name, () => {
+      const boss = clone(base); mutate(boss);
+      assert.equal(h.api.validBoss(boss), false, name);
+    });
+  }
+});
