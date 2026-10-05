@@ -409,7 +409,8 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{o
 .atlas-card .actions{margin-top:auto}
 .schema-modal{width:min(900px,calc(100vw - 28px))}
 .quiz-prompt{font-size:1.4rem!important}
-@media(max-width:760px){.schema{padding:10px}.schema-chip{font-size:.68rem}}
+/* Phones: let the drawing use nearly the full width so small structures stay tappable. */
+@media(max-width:760px){.schema{padding:6px;border-width:2px}.schema-chip{font-size:.68rem}.feedback .case-visuals{margin-inline:-26px}.dialog .case-visuals{margin-inline:-14px}.dialog.schema-modal{padding:16px}.schema-modal .schema{margin-inline:-8px}}
 /* Wrong answers: a cartoon urine splash. Right answers keep the confetti. */
 .splash{position:fixed;width:0;height:0;pointer-events:none;z-index:125}
 .splash .drop{position:absolute;left:-7px;top:-7px;width:14px;height:14px;background:#f6d53c;border:2px solid #a8861a;border-radius:50% 0 50% 50%;transform:rotate(var(--r)) scale(var(--s));animation:nsa-drop .9s cubic-bezier(.2,.7,.4,1) forwards}
