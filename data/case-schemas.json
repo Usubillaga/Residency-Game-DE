@@ -49,6 +49,19 @@
       "corpora-cavernosa"
     ]
   },
+  "bank-uro-fun-00001": {
+    "schema": "micturition-control",
+    "parts": [
+      "detrusor"
+    ]
+  },
+  "bank-uro-fun-00002": {
+    "schema": "micturition-control",
+    "parts": [
+      "external-sphincter",
+      "detrusor"
+    ]
+  },
   "bank-uro-fun-00007": {
     "schema": "female-pelvis",
     "parts": [
@@ -61,6 +74,19 @@
     "parts": [
       "bladder-neck",
       "external-sphincter"
+    ]
+  },
+  "bank-uro-fun-00011": {
+    "schema": "micturition-control",
+    "parts": [
+      "spinal-lesion",
+      "detrusor"
+    ]
+  },
+  "bank-uro-fun-00012": {
+    "schema": "micturition-control",
+    "parts": [
+      "pelvic-nerve"
     ]
   },
   "bank-uro-hod-00003": {
@@ -308,6 +334,14 @@
       "tumor-t2a"
     ]
   },
+  "bank-uro-mib-00009": {
+    "schema": "urinary-diversion",
+    "parts": [
+      "urethra",
+      "urethral-anastomosis",
+      "neobladder"
+    ]
+  },
   "bank-uro-nmi-00001": {
     "schema": "bladder-wall-staging",
     "parts": [
@@ -348,6 +382,13 @@
     "parts": [
       "puboprostatic-ligament",
       "symphysis"
+    ]
+  },
+  "bank-uro-op-00102": {
+    "schema": "micturition-control",
+    "parts": [
+      "pudendal-nerve",
+      "external-sphincter"
     ]
   },
   "bank-uro-op-00103": {
@@ -430,6 +471,13 @@
     "parts": [
       "sympathetic-trunk",
       "postganglionic-fibres"
+    ]
+  },
+  "bank-uro-ope-00008": {
+    "schema": "urinary-diversion",
+    "parts": [
+      "neobladder",
+      "bowel-anastomosis"
     ]
   },
   "bank-uro-ope-00009": {
@@ -587,6 +635,20 @@
       "bladder"
     ]
   },
+  "bank-uro-rek-00005": {
+    "schema": "urinary-diversion",
+    "parts": [
+      "urethra",
+      "neobladder"
+    ]
+  },
+  "bank-uro-rek-00006": {
+    "schema": "urinary-diversion",
+    "parts": [
+      "neobladder",
+      "urethral-anastomosis"
+    ]
+  },
   "bank-uro-rek-00007": {
     "schema": "urinary-tract-overview",
     "parts": [
@@ -598,6 +660,13 @@
     "parts": [
       "ureters",
       "aorta"
+    ]
+  },
+  "bank-uro-rek-00012": {
+    "schema": "urinary-diversion",
+    "parts": [
+      "ureteroileal-anastomoses-conduit",
+      "ileal-conduit"
     ]
   },
   "bank-uro-rek-00014": {
@@ -799,6 +868,13 @@
       "dj-stent"
     ]
   },
+  "ed-retention": {
+    "schema": "micturition-control",
+    "parts": [
+      "bladder-neck",
+      "detrusor"
+    ]
+  },
   "ed-torsion": {
     "schema": "scrotum-testis",
     "parts": [
@@ -858,6 +934,19 @@
     "parts": [
       "ureter",
       "uterine-artery"
+    ]
+  },
+  "ward-ileus": {
+    "schema": "urinary-diversion",
+    "parts": [
+      "bowel-anastomosis"
+    ]
+  },
+  "ward-postop-sepsis": {
+    "schema": "urinary-diversion",
+    "parts": [
+      "ureteroileal-anastomoses-conduit",
+      "bowel-anastomosis"
     ]
   }
 }

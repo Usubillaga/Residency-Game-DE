@@ -941,6 +941,359 @@
     ]
   },
   {
+    "id": "urinary-diversion",
+    "title": {
+      "en": "Urinary diversion after cystectomy",
+      "de": "Harnableitung nach Zystektomie",
+      "es": "Derivación urinaria tras cistectomía"
+    },
+    "caption": {
+      "en": "Two anterior views, patient’s right on the left of each panel – left panel: ileal conduit (incontinent diversion); right panel: orthotopic ileal neobladder. Bony pelvis shown as faded background; schematic, not to scale.",
+      "de": "Zwei Ansichten von ventral, rechte Körperseite jeweils links – linkes Bild: Ileum-Conduit (inkontinente Ableitung); rechtes Bild: orthotope Ileum-Neoblase. Knöchernes Becken blass im Hintergrund; schematisch, nicht maßstabsgetreu.",
+      "es": "Dos vistas anteriores, lado derecho del paciente a la izquierda de cada panel – panel izquierdo: conducto ileal (derivación incontinente); panel derecho: neovejiga ileal ortotópica. Pelvis ósea atenuada al fondo; esquemático, no a escala."
+    },
+    "domains": [
+      "rekonstruktion",
+      "mibc"
+    ],
+    "viewBox": "0 0 600 420",
+    "svg": "<rect x=\"20\" y=\"20\" width=\"276\" height=\"380\" rx=\"22\" fill=\"#f3ead2\" stroke=\"#2a2442\" stroke-width=\"3\"/><rect x=\"304\" y=\"20\" width=\"276\" height=\"380\" rx=\"22\" fill=\"#f3ead2\" stroke=\"#2a2442\" stroke-width=\"3\"/><path d=\"M38 32C34 110 32 180 34 240C36 300 32 350 32 388L284 388C284 350 280 300 282 240C284 180 282 110 278 32Z\" fill=\"#f4d6b8\"/><path d=\"M38 32C34 110 32 180 34 240C36 300 32 350 32 388M278 32C282 110 284 180 282 240C280 300 284 350 284 388\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"3.5\" stroke-linecap=\"round\"/><path d=\"M322 32C318 110 316 180 318 240C320 300 316 350 316 388L568 388C568 350 564 300 566 240C568 180 566 110 562 32Z\" fill=\"#f4d6b8\"/><path d=\"M322 32C318 110 316 180 318 240C320 300 316 350 316 388M562 32C566 110 568 180 566 240C564 300 568 350 568 388\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"3.5\" stroke-linecap=\"round\"/><path d=\"M136 244L180 244C182 280 172 304 158 318C144 304 134 280 136 244Z\" fill=\"#e9e4d8\" stroke=\"#2a2442\" stroke-opacity=\"0.3\" stroke-width=\"2.5\" stroke-linejoin=\"round\"/><path d=\"M134 246C114 220 68 212 46 230C36 240 38 256 46 264C52 278 56 296 60 308C74 304 90 294 102 282C114 268 124 256 134 246Z\" fill=\"#e9e4d8\" stroke=\"#2a2442\" stroke-opacity=\"0.3\" stroke-width=\"2.5\" stroke-linejoin=\"round\"/><path d=\"M155 286L155 312C142 326 120 352 108 386L80 386C86 360 78 324 64 308C58 300 56 290 60 282C84 272 128 280 155 286Z\" fill=\"#e9e4d8\" stroke=\"#2a2442\" stroke-opacity=\"0.3\" stroke-width=\"2.5\" stroke-linejoin=\"round\"/><ellipse cx=\"104\" cy=\"322\" rx=\"21\" ry=\"20\" fill=\"#f4d6b8\" stroke=\"#2a2442\" stroke-opacity=\"0.3\" stroke-width=\"2.5\" stroke-linejoin=\"round\"/><path d=\"M182 246C202 220 248 212 270 230C280 240 278 256 270 264C264 278 260 296 256 308C242 304 226 294 214 282C202 268 192 256 182 246Z\" fill=\"#e9e4d8\" stroke=\"#2a2442\" stroke-opacity=\"0.3\" stroke-width=\"2.5\" stroke-linejoin=\"round\"/><path d=\"M161 286L161 312C174 326 196 352 208 386L236 386C230 360 238 324 252 308C258 300 260 290 256 282C232 272 188 280 161 286Z\" fill=\"#e9e4d8\" stroke=\"#2a2442\" stroke-opacity=\"0.3\" stroke-width=\"2.5\" stroke-linejoin=\"round\"/><ellipse cx=\"212\" cy=\"322\" rx=\"21\" ry=\"20\" fill=\"#f4d6b8\" stroke=\"#2a2442\" stroke-opacity=\"0.3\" stroke-width=\"2.5\" stroke-linejoin=\"round\"/><path d=\"M420 244L464 244C466 280 456 304 442 318C428 304 418 280 420 244Z\" fill=\"#e9e4d8\" stroke=\"#2a2442\" stroke-opacity=\"0.3\" stroke-width=\"2.5\" stroke-linejoin=\"round\"/><path d=\"M418 246C398 220 352 212 330 230C320 240 322 256 330 264C336 278 340 296 344 308C358 304 374 294 386 282C398 268 408 256 418 246Z\" fill=\"#e9e4d8\" stroke=\"#2a2442\" stroke-opacity=\"0.3\" stroke-width=\"2.5\" stroke-linejoin=\"round\"/><path d=\"M439 286L439 312C426 326 404 352 392 386L364 386C370 360 362 324 348 308C342 300 340 290 344 282C368 272 412 280 439 286Z\" fill=\"#e9e4d8\" stroke=\"#2a2442\" stroke-opacity=\"0.3\" stroke-width=\"2.5\" stroke-linejoin=\"round\"/><ellipse cx=\"388\" cy=\"322\" rx=\"21\" ry=\"20\" fill=\"#f4d6b8\" stroke=\"#2a2442\" stroke-opacity=\"0.3\" stroke-width=\"2.5\" stroke-linejoin=\"round\"/><path d=\"M466 246C486 220 532 212 554 230C564 240 562 256 554 264C548 278 544 296 540 308C526 304 510 294 498 282C486 268 476 256 466 246Z\" fill=\"#e9e4d8\" stroke=\"#2a2442\" stroke-opacity=\"0.3\" stroke-width=\"2.5\" stroke-linejoin=\"round\"/><path d=\"M445 286L445 312C458 326 480 352 492 386L520 386C514 360 522 324 536 308C542 300 544 290 540 282C516 272 472 280 445 286Z\" fill=\"#e9e4d8\" stroke=\"#2a2442\" stroke-opacity=\"0.3\" stroke-width=\"2.5\" stroke-linejoin=\"round\"/><ellipse cx=\"496\" cy=\"322\" rx=\"21\" ry=\"20\" fill=\"#f4d6b8\" stroke=\"#2a2442\" stroke-opacity=\"0.3\" stroke-width=\"2.5\" stroke-linejoin=\"round\"/><g transform=\"translate(86 80) scale(0.55 0.55)\"><path d=\"M8 -66C-30 -67 -48 -32 -48 0C-48 32 -30 67 8 66C34 65 44 42 33 24C25 12 25 -12 33 -24C44 -42 34 -65 8 -66Z\" fill=\"#e59a8c\" stroke=\"#2a2442\" stroke-width=\"5.5\" stroke-linejoin=\"round\"/><path d=\"M6.2 -22.6L13.1 -49.9L-8.7 -46.5ZM-6.3 -14.4L-15.6 -39.5L-31.3 -24.1ZM-12 3L-35 -8L-35 14ZM-6.3 20.4L-31.3 30.1L-15.6 45.5ZM6.2 28.6L-8.7 52.5L13.1 55.9Z\" fill=\"#c97a6e\" stroke=\"#2a2442\" stroke-width=\"3\" stroke-linejoin=\"round\"/><path d=\"M16 -12C28 -14 38 -6 42 6C46 16 46 24 44 30L36 30C34 22 30 16 22 13C14 10 10 4 10 -2C10 -7 12 -10 16 -12Z\" fill=\"#f9de6b\" stroke=\"#2a2442\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/></g><g transform=\"translate(232 72) scale(-0.55 0.55)\"><path d=\"M8 -66C-30 -67 -48 -32 -48 0C-48 32 -30 67 8 66C34 65 44 42 33 24C25 12 25 -12 33 -24C44 -42 34 -65 8 -66Z\" fill=\"#e59a8c\" stroke=\"#2a2442\" stroke-width=\"5.5\" stroke-linejoin=\"round\"/><path d=\"M6.2 -22.6L13.1 -49.9L-8.7 -46.5ZM-6.3 -14.4L-15.6 -39.5L-31.3 -24.1ZM-12 3L-35 -8L-35 14ZM-6.3 20.4L-31.3 30.1L-15.6 45.5ZM6.2 28.6L-8.7 52.5L13.1 55.9Z\" fill=\"#c97a6e\" stroke=\"#2a2442\" stroke-width=\"3\" stroke-linejoin=\"round\"/><path d=\"M16 -12C28 -14 38 -6 42 6C46 16 46 24 44 30L36 30C34 22 30 16 22 13C14 10 10 4 10 -2C10 -7 12 -10 16 -12Z\" fill=\"#f9de6b\" stroke=\"#2a2442\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/></g><g opacity=\"0.75\"><path d=\"M50 120L50 211\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"30\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M50 120L50 211\" fill=\"none\" stroke=\"#f2b880\" stroke-width=\"24\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"52\" cy=\"219\" r=\"17\" fill=\"#f2b880\" stroke=\"#2a2442\" stroke-width=\"3\"/><path d=\"M39 211L61 211\" stroke=\"#f2b880\" stroke-width=\"8\"/><path d=\"M38 134L43 134M57 134L62 134M38 148L43 148M57 148L62 148M38 162L43 162M57 162L62 162M38 176L43 176M57 176L62 176M38 190L43 190M57 190L62 190\" fill=\"none\" stroke=\"#c98a4f\" stroke-width=\"2\" stroke-linecap=\"round\"/></g><g data-part=\"ureters-conduit\"><path d=\"M110 94C114 130 113 166 118 190C122 210 134 237 137 255M208 86C212 124 214 160 206 182C200 196 166.5 217 150.5 227\" fill=\"none\" stroke=\"#2a2442\" stroke-opacity=\"0\" stroke-width=\"22\" stroke-linecap=\"round\"/><path d=\"M110 94C114 130 113 166 118 190C122 210 134 237 137 255\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M110 94C114 130 113 166 118 190C122 210 134 237 137 255\" fill=\"none\" stroke=\"#f9de6b\" stroke-width=\"6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M208 86C212 124 214 160 206 182C200 196 166.5 217 150.5 227\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M208 86C212 124 214 160 206 182C200 196 166.5 217 150.5 227\" fill=\"none\" stroke=\"#f9de6b\" stroke-width=\"6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><path d=\"M168 32C170.3 35 182.7 44.3 182 50C181.3 55.7 171 62.3 164 66C157 69.7 145 67.7 140 72C135 76.3 131 86.7 134 92C137 97.3 150.3 99.7 158 104C165.7 108.3 176.3 115.7 180 118\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"24\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M168 32C170.3 35 182.7 44.3 182 50C181.3 55.7 171 62.3 164 66C157 69.7 145 67.7 140 72C135 76.3 131 86.7 134 92C137 97.3 150.3 99.7 158 104C165.7 108.3 176.3 115.7 180 118\" fill=\"none\" stroke=\"#f2b880\" stroke-width=\"18\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M180 118C181.3 121.7 189.7 133.3 188 140C186.3 146.7 178 152.7 170 158C162 163.3 150 168 140 172C130 176 119 179.7 110 182C101 184.3 92 186.6 85 190.5C77 195 72 200 68 205\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"24\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M180 118C181.3 121.7 189.7 133.3 188 140C186.3 146.7 178 152.7 170 158C162 163.3 150 168 140 172C130 176 119 179.7 110 182C101 184.3 92 186.6 85 190.5C77 195 72 200 68 205\" fill=\"none\" stroke=\"#f2b880\" stroke-width=\"18\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M168 41.8L177.6 31.7M173.7 47.8L184.7 39.2M173.5 51L183.6 60.7M167.7 55.7L175.5 67.3M154.8 61.3L156.7 75.2M145.7 62.4L148.1 76.2M129.3 74.7L141.8 81.1M126.2 84.5L140 86.3M136.8 102.8L142.9 90.2M146.6 106.7L151.5 93.6M162.5 114.9L170.1 103.1M170.5 120.1L178.2 108.5\" fill=\"none\" stroke=\"#c98a4f\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><path d=\"M176.9 127.2L189.2 120.5M180.4 134.5L193.5 129.8M179.1 141.9L189.7 151M173.6 146.9L182.1 158M157.8 156.8L164 169.4M147.8 161.3L153.1 174.2M127.4 169.3L132.1 182.4M117.5 172.6L121.6 185.9M99.1 177.6L103 191.1M90.1 180.5L95 193.6M73.7 189.6L82.2 200.7M67.4 195.1L77.4 204.9\" fill=\"none\" stroke=\"#c98a4f\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><g data-part=\"bowel-anastomosis\"><path d=\"M169 111L180 118L186 129\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"26\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M169 111L180 118L186 129\" fill=\"none\" stroke=\"#f2b880\" stroke-width=\"20\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><ellipse cx=\"180\" cy=\"118\" rx=\"16\" ry=\"7\" transform=\"rotate(140.2 180 118)\" fill=\"#e7a15e\" stroke=\"#2a2442\" stroke-width=\"2.5\"/><path d=\"M183.1 107.6L190.8 116.8M178.5 111.5L186.1 120.7M173.9 115.3L181.5 124.5M169.2 119.2L176.9 128.4\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"2\" stroke-linecap=\"round\"/></g><g data-part=\"ileal-conduit\"><path d=\"M164 226C152 258 124 272 102 256\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"28\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M164 226C152 258 124 272 102 256\" fill=\"none\" stroke=\"#f2b880\" stroke-width=\"22\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M150.2 234L165.6 243.2M143.8 242.6L156.9 254.9M136.6 248.8L146.5 263.8M129 252.4L134.6 269.5M121.7 253.6L121.9 271.6M114.5 252.5L108.9 269.6\" fill=\"none\" stroke=\"#c98a4f\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><path d=\"M153.5 225.3L171.8 233.3M169.8 228.1L166.5 235.4M164.3 225.6L161 233M158.8 223.2L155.5 230.5\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"2\" stroke-linecap=\"round\"/></g><g data-part=\"ureteroileal-anastomoses-conduit\"><circle cx=\"137\" cy=\"255\" r=\"10\" fill=\"#f6b6c1\" stroke=\"#2a2442\" stroke-width=\"2.5\"/><circle cx=\"137\" cy=\"255\" r=\"4.2\" fill=\"#f9de6b\" stroke=\"#2a2442\" stroke-width=\"1.6\"/><path d=\"M144 255L151 255M141.9 259.9L146.9 264.9M137 262L137 269M132.1 259.9L127.1 264.9M130 255L123 255M132.1 250.1L127.1 245.1M137 248L137 241M141.9 250.1L146.9 245.1\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"2\" stroke-linecap=\"round\"/><circle cx=\"150.5\" cy=\"227\" r=\"10\" fill=\"#f6b6c1\" stroke=\"#2a2442\" stroke-width=\"2.5\"/><circle cx=\"150.5\" cy=\"227\" r=\"4.2\" fill=\"#f9de6b\" stroke=\"#2a2442\" stroke-width=\"1.6\"/><path d=\"M157.5 227L164.5 227M155.4 231.9L160.4 236.9M150.5 234L150.5 241M145.6 231.9L140.6 236.9M143.5 227L136.5 227M145.6 222.1L140.6 217.1M150.5 220L150.5 213M155.4 222.1L160.4 217.1\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"2\" stroke-linecap=\"round\"/></g><g data-part=\"urostomy-pouch\"><path d=\"M72 244C72 233 84 228 96 228C108 228 120 233 120 244L124 304C126 326 112 336 100 336L92 336C80 336 66 326 68 304Z\" fill=\"#ffffff\" fill-opacity=\"0.45\" stroke=\"#2a2442\" stroke-width=\"2.5\" stroke-dasharray=\"7 5\"/><circle cx=\"96\" cy=\"250\" r=\"21\" fill=\"#ffffff\" fill-opacity=\"0.6\" stroke=\"#2a2442\" stroke-width=\"2\"/><rect x=\"90\" y=\"336\" width=\"12\" height=\"11\" rx=\"3\" fill=\"#ffffff\" stroke=\"#2a2442\" stroke-width=\"2.5\"/></g><g data-part=\"stoma\"><circle cx=\"96\" cy=\"250\" r=\"16\" fill=\"#f6b6c1\" stroke=\"#2a2442\" stroke-width=\"3\"/><circle cx=\"96\" cy=\"250\" r=\"9.5\" fill=\"none\" stroke=\"#d07a8c\" stroke-width=\"2\"/><circle cx=\"96\" cy=\"250\" r=\"4\" fill=\"#2a2442\"/></g><g transform=\"translate(370 80) scale(0.55 0.55)\"><path d=\"M8 -66C-30 -67 -48 -32 -48 0C-48 32 -30 67 8 66C34 65 44 42 33 24C25 12 25 -12 33 -24C44 -42 34 -65 8 -66Z\" fill=\"#e59a8c\" stroke=\"#2a2442\" stroke-width=\"5.5\" stroke-linejoin=\"round\"/><path d=\"M6.2 -22.6L13.1 -49.9L-8.7 -46.5ZM-6.3 -14.4L-15.6 -39.5L-31.3 -24.1ZM-12 3L-35 -8L-35 14ZM-6.3 20.4L-31.3 30.1L-15.6 45.5ZM6.2 28.6L-8.7 52.5L13.1 55.9Z\" fill=\"#c97a6e\" stroke=\"#2a2442\" stroke-width=\"3\" stroke-linejoin=\"round\"/><path d=\"M16 -12C28 -14 38 -6 42 6C46 16 46 24 44 30L36 30C34 22 30 16 22 13C14 10 10 4 10 -2C10 -7 12 -10 16 -12Z\" fill=\"#f9de6b\" stroke=\"#2a2442\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/></g><g transform=\"translate(516 72) scale(-0.55 0.55)\"><path d=\"M8 -66C-30 -67 -48 -32 -48 0C-48 32 -30 67 8 66C34 65 44 42 33 24C25 12 25 -12 33 -24C44 -42 34 -65 8 -66Z\" fill=\"#e59a8c\" stroke=\"#2a2442\" stroke-width=\"5.5\" stroke-linejoin=\"round\"/><path d=\"M6.2 -22.6L13.1 -49.9L-8.7 -46.5ZM-6.3 -14.4L-15.6 -39.5L-31.3 -24.1ZM-12 3L-35 -8L-35 14ZM-6.3 20.4L-31.3 30.1L-15.6 45.5ZM6.2 28.6L-8.7 52.5L13.1 55.9Z\" fill=\"#c97a6e\" stroke=\"#2a2442\" stroke-width=\"3\" stroke-linejoin=\"round\"/><path d=\"M16 -12C28 -14 38 -6 42 6C46 16 46 24 44 30L36 30C34 22 30 16 22 13C14 10 10 4 10 -2C10 -7 12 -10 16 -12Z\" fill=\"#f9de6b\" stroke=\"#2a2442\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/></g><g data-part=\"ureters-neobladder\"><path d=\"M394 94C398 130 400 168 404 196C407 214 411 226 417 232M492 86C488 124 484 166 480 196C477 214 473 226 467 232\" fill=\"none\" stroke=\"#2a2442\" stroke-opacity=\"0\" stroke-width=\"22\" stroke-linecap=\"round\"/><path d=\"M394 94C398 130 400 168 404 196C407 214 411 226 417 232\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M394 94C398 130 400 168 404 196C407 214 411 226 417 232\" fill=\"none\" stroke=\"#f9de6b\" stroke-width=\"6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M492 86C488 124 484 166 480 196C477 214 473 226 467 232\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M492 86C488 124 484 166 480 196C477 214 473 226 467 232\" fill=\"none\" stroke=\"#f9de6b\" stroke-width=\"6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><g opacity=\"0.45\"><path d=\"M334 120L334 211\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"30\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M334 120L334 211\" fill=\"none\" stroke=\"#f2b880\" stroke-width=\"24\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"336\" cy=\"219\" r=\"17\" fill=\"#f2b880\" stroke=\"#2a2442\" stroke-width=\"3\"/><path d=\"M323 211L345 211\" stroke=\"#f2b880\" stroke-width=\"8\"/><path d=\"M322 134L327 134M341 134L346 134M322 148L327 148M341 148L346 148M322 162L327 162M341 162L346 162M322 176L327 176M341 176L346 176M322 190L327 190M341 190L346 190\" fill=\"none\" stroke=\"#c98a4f\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M452 32C454.3 35 466.7 44.3 466 50C465.3 55.7 455 62.3 448 66C441 69.7 429 67.7 424 72C419 76.3 415 86.7 418 92C421 97.3 434.3 99.7 442 104C449.7 108.3 460.3 115.7 464 118\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"24\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M452 32C454.3 35 466.7 44.3 466 50C465.3 55.7 455 62.3 448 66C441 69.7 429 67.7 424 72C419 76.3 415 86.7 418 92C421 97.3 434.3 99.7 442 104C449.7 108.3 460.3 115.7 464 118\" fill=\"none\" stroke=\"#f2b880\" stroke-width=\"18\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M464 118C465.3 121.7 473.7 133.3 472 140C470.3 146.7 462 152.7 454 158C446 163.3 434 168 424 172C414 176 403 179.7 394 182C385 184.3 376 186.6 369 190.5C361 195 356 200 352 205\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"24\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M464 118C465.3 121.7 473.7 133.3 472 140C470.3 146.7 462 152.7 454 158C446 163.3 434 168 424 172C414 176 403 179.7 394 182C385 184.3 376 186.6 369 190.5C361 195 356 200 352 205\" fill=\"none\" stroke=\"#f2b880\" stroke-width=\"18\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M452 41.8L461.6 31.7M457.7 47.8L468.7 39.2M457.5 51L467.6 60.7M451.7 55.7L459.5 67.3M438.8 61.3L440.7 75.2M429.7 62.4L432.1 76.2M413.3 74.7L425.8 81.1M410.2 84.5L424 86.3M420.8 102.8L426.9 90.2M430.6 106.7L435.5 93.6M446.5 114.9L454.1 103.1M454.5 120.1L462.2 108.5\" fill=\"none\" stroke=\"#c98a4f\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><path d=\"M460.9 127.2L473.2 120.5M464.4 134.5L477.5 129.8M463.1 141.9L473.7 151M457.6 146.9L466.1 158M441.8 156.8L448 169.4M431.8 161.3L437.1 174.2M411.4 169.3L416.1 182.4M401.5 172.6L405.6 185.9M383.1 177.6L387 191.1M374.1 180.5L379 193.6M357.7 189.6L366.2 200.7M351.4 195.1L361.4 204.9\" fill=\"none\" stroke=\"#c98a4f\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><path d=\"M453 111L464 118L470 129\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"26\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M453 111L464 118L470 129\" fill=\"none\" stroke=\"#f2b880\" stroke-width=\"20\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><ellipse cx=\"464\" cy=\"118\" rx=\"16\" ry=\"7\" transform=\"rotate(140.2 464 118)\" fill=\"#e7a15e\" stroke=\"#2a2442\" stroke-width=\"2.5\"/><path d=\"M467.1 107.6L474.8 116.8M462.5 111.5L470.1 120.7M457.9 115.3L465.5 124.5M453.2 119.2L460.9 128.4\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"2\" stroke-linecap=\"round\"/></g><g data-part=\"urethra\"><path d=\"M442 305L442 387\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"20\"/><path d=\"M442 305L442 388\" fill=\"none\" stroke=\"#f6b6c1\" stroke-width=\"13\"/><path d=\"M442 311L442 387\" fill=\"none\" stroke=\"#d98a9b\" stroke-width=\"2\"/></g><g data-part=\"neobladder\"><path d=\"M442 222C468 222 480 236 480 258C480 276 470 288 456 292L450 300L434 300L428 292C414 288 404 276 404 258C404 236 416 222 442 222Z\" fill=\"#f2b880\" stroke=\"#2a2442\" stroke-width=\"3.5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M409.3 243.2Q418.3 250.2 427.3 243.2M409.3 251.2Q418.3 258.2 427.3 251.2\" transform=\"rotate(-35 418.3 246.2)\" fill=\"none\" stroke=\"#c98a4f\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><path d=\"M452.7 241.2Q461.7 248.2 470.7 241.2M452.7 249.2Q461.7 256.2 470.7 249.2\" transform=\"rotate(35 461.7 244.2)\" fill=\"none\" stroke=\"#c98a4f\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><path d=\"M412 272.5Q421 279.5 430 272.5M412 280.5Q421 287.5 430 280.5\" transform=\"rotate(30 421 275.5)\" fill=\"none\" stroke=\"#c98a4f\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><path d=\"M454 274Q463 281 472 274M454 282Q463 289 472 282\" transform=\"rotate(-30 463 277)\" fill=\"none\" stroke=\"#c98a4f\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><path d=\"M443.7 223.5C432.9 241.9 432.9 274 442 292.4M406.5 253.4C425.5 263.3 458.5 263.3 477.5 253.4\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><path d=\"M436.9 228.8L444.1 231.5M434.4 236.6L441.8 238.4M432.6 244.9L440.2 246M431.7 253.6L439.4 254M431.6 262.2L439.2 262.1M432.2 270.8L439.8 270.1M433.6 279.1L441 277.7M435.6 286.9L442.9 284.7M411.9 259.9L414.7 252.8M420 262.2L421.9 254.8M428.6 263.8L429.6 256.2M437.5 264.5L437.9 256.9M446.5 264.5L446.1 256.9M455.4 263.8L454.4 256.2M464 262.2L462.1 254.8M472.1 259.9L469.3 252.8\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"1.6\" stroke-linecap=\"round\"/></g><g data-part=\"urethral-anastomosis\"><ellipse cx=\"442\" cy=\"303\" rx=\"16\" ry=\"8.5\" fill=\"none\" stroke=\"#2a2442\" stroke-opacity=\"0\" stroke-width=\"8\"/><ellipse cx=\"442\" cy=\"303\" rx=\"16\" ry=\"8.5\" fill=\"#f6b6c1\" stroke=\"#2a2442\" stroke-width=\"2.5\"/><ellipse cx=\"442\" cy=\"303\" rx=\"5.5\" ry=\"3\" fill=\"#f9de6b\" stroke=\"#2a2442\" stroke-width=\"1.5\"/><path d=\"M454 303L460 303M451.2 305.9L455.8 308.8M444.1 307.4L445.1 311.9M436 306.9L433 310.8M430.7 304.5L425.1 306.1M430.7 301.5L425.1 299.9M436 299.1L433 295.2M444.1 298.6L445.1 294.1M451.2 300.1L455.8 297.2\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"2\" stroke-linecap=\"round\"/></g><g data-part=\"external-sphincter\"><rect x=\"423\" y=\"316\" width=\"38\" height=\"24\" rx=\"9\" fill=\"#d9827a\" stroke=\"#2a2442\" stroke-width=\"3\"/><path d=\"M429 320L429 336M435.5 320L435.5 336M442 320L442 336M448.5 320L448.5 336M455 320L455 336\" fill=\"none\" stroke=\"#a8564f\" stroke-width=\"2\" stroke-linecap=\"round\"/></g><g data-part=\"ureteroileal-anastomoses-neobladder\"><circle cx=\"417\" cy=\"232\" r=\"10\" fill=\"#f6b6c1\" stroke=\"#2a2442\" stroke-width=\"2.5\"/><circle cx=\"417\" cy=\"232\" r=\"4.2\" fill=\"#f9de6b\" stroke=\"#2a2442\" stroke-width=\"1.6\"/><path d=\"M424 232L431 232M421.9 236.9L426.9 241.9M417 239L417 246M412.1 236.9L407.1 241.9M410 232L403 232M412.1 227.1L407.1 222.1M417 225L417 218M421.9 227.1L426.9 222.1\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"2\" stroke-linecap=\"round\"/><circle cx=\"467\" cy=\"232\" r=\"10\" fill=\"#f6b6c1\" stroke=\"#2a2442\" stroke-width=\"2.5\"/><circle cx=\"467\" cy=\"232\" r=\"4.2\" fill=\"#f9de6b\" stroke=\"#2a2442\" stroke-width=\"1.6\"/><path d=\"M474 232L481 232M471.9 236.9L476.9 241.9M467 239L467 246M462.1 236.9L457.1 241.9M460 232L453 232M462.1 227.1L457.1 222.1M467 225L467 218M471.9 227.1L476.9 222.1\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"2\" stroke-linecap=\"round\"/></g>",
+    "parts": [
+      {
+        "id": "ureters-conduit",
+        "label": {
+          "en": "Ureters (to the conduit)",
+          "de": "Harnleiter (zum Conduit)",
+          "es": "Uréteres (al conducto)"
+        },
+        "note": {
+          "en": "The left ureter is passed beneath the sigmoid mesocolon to the right side.",
+          "de": "Der linke Harnleiter wird unter dem Sigmamesenterium auf die rechte Seite geführt.",
+          "es": "El uréter izquierdo se pasa por debajo del mesosigma hacia el lado derecho."
+        }
+      },
+      {
+        "id": "ureteroileal-anastomoses-conduit",
+        "label": {
+          "en": "Ureteroileal anastomoses (Bricker)",
+          "de": "Uretero-ileale Anastomosen (Bricker)",
+          "es": "Anastomosis ureteroileales (Bricker)"
+        },
+        "note": {
+          "en": "Separate end-to-side (Bricker) or joined ureters (Wallace); stricture is a typical late complication.",
+          "de": "Getrennt End-zu-Seit (Bricker) oder vereinigt (Wallace); die Stenose ist eine typische Spätkomplikation.",
+          "es": "Terminolaterales por separado (Bricker) o uréteres unidos (Wallace); la estenosis es una complicación tardía típica."
+        }
+      },
+      {
+        "id": "ileal-conduit",
+        "label": {
+          "en": "Ileal conduit",
+          "de": "Ileum-Conduit",
+          "es": "Conducto ileal"
+        },
+        "note": {
+          "en": "Short isolated isoperistaltic ileal segment, closed proximally – a passage, not a reservoir.",
+          "de": "Kurzes, isoperistaltisch ausgeschaltetes Ileumsegment, proximal blind verschlossen – Ableitung, kein Reservoir.",
+          "es": "Segmento ileal corto, aislado e isoperistáltico, cerrado proximalmente: vía de paso, no reservorio."
+        }
+      },
+      {
+        "id": "stoma",
+        "label": {
+          "en": "Urostomy (spout stoma)",
+          "de": "Urostoma (Nippelstoma)",
+          "es": "Urostomía (estoma en pezón)"
+        },
+        "note": {
+          "en": "Protruding spout in the right lower quadrant through the rectus muscle; urine drains continuously (incontinent diversion).",
+          "de": "Prominenter Nippel im rechten Unterbauch durch den M. rectus; Urin läuft ständig ab (inkontinente Ableitung).",
+          "es": "Pezón prominente en el cuadrante inferior derecho a través del músculo recto del abdomen; la orina drena continuamente (derivación incontinente)."
+        }
+      },
+      {
+        "id": "urostomy-pouch",
+        "label": {
+          "en": "Urostomy pouch",
+          "de": "Urostomiebeutel",
+          "es": "Bolsa de urostomía"
+        },
+        "note": {
+          "en": "Lifelong pouch care; mark the stoma site preoperatively while lying, sitting and standing.",
+          "de": "Lebenslange Beutelversorgung; Stomaposition präoperativ im Liegen, Sitzen und Stehen anzeichnen.",
+          "es": "Bolsa de por vida; marcar el sitio del estoma antes de operar, acostado, sentado y de pie."
+        }
+      },
+      {
+        "id": "bowel-anastomosis",
+        "label": {
+          "en": "Ileo-ileal anastomosis",
+          "de": "Ileo-ileale Anastomose",
+          "es": "Anastomosis ileoileal"
+        },
+        "note": {
+          "en": "Restores bowel continuity, cranial to the conduit; postoperative ileus is a common early complication.",
+          "de": "Stellt die Darmkontinuität wieder her, kranial des Conduits; postoperativer Ileus ist eine häufige Frühkomplikation.",
+          "es": "Restablece la continuidad intestinal, craneal al conducto; el íleo postoperatorio es una complicación precoz frecuente."
+        }
+      },
+      {
+        "id": "ureters-neobladder",
+        "label": {
+          "en": "Ureters (to the neobladder)",
+          "de": "Harnleiter (zur Neoblase)",
+          "es": "Uréteres (a la neovejiga)"
+        },
+        "note": {
+          "en": "Preserve the periureteral tissue: stripping causes ischaemia and anastomotic stricture.",
+          "de": "Periureterales Gewebe schonen: Skelettierung führt zu Ischämie und Anastomosenstriktur.",
+          "es": "Preservar el tejido periureteral: denudarlo causa isquemia y estenosis anastomótica."
+        }
+      },
+      {
+        "id": "ureteroileal-anastomoses-neobladder",
+        "label": {
+          "en": "Ureteroileal anastomoses (neobladder)",
+          "de": "Uretero-ileale Anastomosen (Neoblase)",
+          "es": "Anastomosis ureteroileales (neovejiga)"
+        },
+        "note": {
+          "en": "Usually splinted temporarily with ureteral stents; a stricture causes hydronephrosis and loss of renal function.",
+          "de": "Meist passager mit Harnleiterschienen gesichert; eine Stenose führt zu Harnstau und Nierenfunktionsverlust.",
+          "es": "Suelen ferulizarse temporalmente con catéteres ureterales; una estenosis causa hidronefrosis y pérdida de función renal."
+        }
+      },
+      {
+        "id": "neobladder",
+        "label": {
+          "en": "Orthotopic ileal neobladder",
+          "de": "Orthotope Ileum-Neoblase",
+          "es": "Neovejiga ileal ortotópica"
+        },
+        "note": {
+          "en": "Detubularised ileum forms a spherical low-pressure reservoir; mucus and hyperchloraemic metabolic acidosis may occur.",
+          "de": "Detubularisiertes Ileum bildet ein kugeliges Niederdruckreservoir; Schleimbildung und hyperchlorämische Azidose möglich.",
+          "es": "El íleon destubularizado forma un reservorio esférico de baja presión; posibles moco y acidosis metabólica hiperclorémica."
+        }
+      },
+      {
+        "id": "urethral-anastomosis",
+        "label": {
+          "en": "Neobladder–urethral anastomosis",
+          "de": "Neoblasen-Harnröhren-Anastomose",
+          "es": "Anastomosis uretro-neovesical"
+        },
+        "note": {
+          "en": "The lowest point of the neobladder is joined tension-free to the urethra; voiding by abdominal straining and pelvic floor relaxation.",
+          "de": "Tiefster Punkt der Neoblase spannungsfrei an die Harnröhre; Entleerung durch Bauchpresse und Beckenbodenrelaxation.",
+          "es": "El punto más declive de la neovejiga se une sin tensión a la uretra; micción con prensa abdominal y relajación del suelo pélvico."
+        }
+      },
+      {
+        "id": "external-sphincter",
+        "label": {
+          "en": "External urethral sphincter (rhabdosphincter)",
+          "de": "Äußerer Harnröhrenschließmuskel (Rhabdosphinkter)",
+          "es": "Esfínter uretral externo (rabdoesfínter)"
+        },
+        "note": {
+          "en": "The only remaining continence mechanism – must be spared at cystectomy; nocturnal incontinence is common.",
+          "de": "Einziger verbleibender Kontinenzmechanismus – bei der Zystektomie schonen; Nachtinkontinenz ist häufig.",
+          "es": "Único mecanismo de continencia restante: preservarlo en la cistectomía; la incontinencia nocturna es frecuente."
+        }
+      },
+      {
+        "id": "urethra",
+        "label": {
+          "en": "Urethra (urethral stump)",
+          "de": "Harnröhre (Urethrastumpf)",
+          "es": "Uretra (muñón uretral)"
+        },
+        "note": {
+          "en": "Prerequisite for a neobladder: tumour-free urethra, e.g. confirmed by frozen section of the urethral margin.",
+          "de": "Voraussetzung für die Neoblase: tumorfreie Harnröhre, z. B. Schnellschnitt am urethralen Absetzungsrand.",
+          "es": "Requisito para la neovejiga: uretra libre de tumor, p. ej. biopsia intraoperatoria del margen uretral."
+        }
+      }
+    ]
+  },
+  {
+    "id": "micturition-control",
+    "title": {
+      "en": "Neural control of the lower urinary tract",
+      "de": "Neurale Steuerung des unteren Harntrakts",
+      "es": "Control neural del tracto urinario inferior"
+    },
+    "caption": {
+      "en": "Schematic, not to scale: brain and spinal cord from the side (anterior to the right), bladder and urethra from the front; oval = cross-section of the sacral cord S2–S4 (dorsal up) with its nuclei, enlarged from the dotted frame; violet dashed line = pontine–sacral pathway; orange sympathetic, green parasympathetic, yellow somatic; + contraction, − relaxation; bar ending = inhibition.",
+      "de": "Schema, nicht maßstabsgetreu: Gehirn und Rückenmark von der Seite (vorne rechts), Blase und Harnröhre von vorn; Oval = Querschnitt des Sakralmarks S2–S4 (dorsal oben) mit seinen Kernen, vergrößert aus dem gepunkteten Rahmen; violett gestrichelt = pontosakrale Bahn; orange sympathisch, grün parasympathisch, gelb somatisch; + Kontraktion, − Relaxation; Querbalken = Hemmung.",
+      "es": "Esquema, no a escala: encéfalo y médula espinal de perfil (anterior a la derecha), vejiga y uretra de frente; óvalo = corte transversal de la médula sacra S2–S4 (dorsal arriba) con sus núcleos, ampliado a partir del marco punteado; línea violeta discontinua = vía pontosacra; naranja simpático, verde parasimpático, amarillo somático; + contracción, − relajación; barra terminal = inhibición."
+    },
+    "domains": [
+      "funktionell"
+    ],
+    "viewBox": "0 0 600 420",
+    "svg": "<rect x=\"20\" y=\"20\" width=\"560\" height=\"380\" rx=\"24\" fill=\"#f3ead2\" stroke=\"#2a2442\" stroke-width=\"3\"/><ellipse cx=\"104\" cy=\"140\" rx=\"32\" ry=\"17\" fill=\"#ecc3d0\" stroke=\"#2a2442\" stroke-width=\"3\"/><path d=\"M80 136Q104 146 128 136M84 145Q104 153 124 145\" fill=\"none\" stroke=\"#b98a9c\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><path d=\"M162 120L190 120C192 128 194 134 196 138C210 144 212 162 198 168C194 172 192 176 191 184L167 184C166 174 164 164 162 156C160 144 160 132 162 120Z\" fill=\"#efe2f0\" stroke=\"#2a2442\" stroke-width=\"3\" stroke-linejoin=\"round\"/><path d=\"M70 116C52 96 54 60 82 46C108 32 150 30 186 34C228 38 262 52 276 76C288 98 280 122 258 128C236 134 214 130 196 126C186 124 176 124 166 126C140 130 112 132 92 128C82 126 74 122 70 116Z\" fill=\"#f3d5df\" stroke=\"#2a2442\" stroke-width=\"3.5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M84 72C94 62 106 66 114 58M128 50C138 62 148 50 158 58C168 66 178 54 190 60M86 102C98 94 110 106 124 98C136 92 148 102 158 96M166 86C178 78 192 90 206 82M196 52C206 60 216 50 224 58M106 84C116 78 128 86 140 78M176 110C188 104 200 114 214 106\" fill=\"none\" stroke=\"#c49aab\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M166 178L166 372C166 380 174 384 178 390C182 384 190 380 190 372L190 178Z\" fill=\"#f4eef8\"/><rect x=\"166\" y=\"178\" width=\"24\" height=\"52.8\" fill=\"#e4d6ee\"/><rect x=\"166\" y=\"310\" width=\"24\" height=\"33\" fill=\"#e4d6ee\"/><path d=\"M166 184.6L171 184.6M185 184.6L190 184.6M166 191.2L171 191.2M185 191.2L190 191.2M166 197.8L171 197.8M185 197.8L190 197.8M166 204.4L171 204.4M185 204.4L190 204.4M166 211L171 211M185 211L190 211M166 217.6L171 217.6M185 217.6L190 217.6M166 224.2L171 224.2M185 224.2L190 224.2M166 230.8L190 230.8M166 237.4L171 237.4M185 237.4L190 237.4M166 244L171 244M185 244L190 244M166 250.6L171 250.6M185 250.6L190 250.6M166 257.2L171 257.2M185 257.2L190 257.2M166 263.8L171 263.8M185 263.8L190 263.8M166 270.4L171 270.4M185 270.4L190 270.4M166 277L171 277M185 277L190 277M166 283.6L171 283.6M185 283.6L190 283.6M166 290.2L171 290.2M185 290.2L190 290.2M166 296.8L171 296.8M185 296.8L190 296.8M166 303.4L171 303.4M185 303.4L190 303.4M166 310L190 310M166 316.6L171 316.6M185 316.6L190 316.6M166 323.2L171 323.2M185 323.2L190 323.2M166 329.8L171 329.8M185 329.8L190 329.8M166 336.4L171 336.4M185 336.4L190 336.4M166 343L190 343M166 349.6L171 349.6M185 349.6L190 349.6M166 356.2L171 356.2M185 356.2L190 356.2M166 362.8L171 362.8M185 362.8L190 362.8M166 369.4L171 369.4M185 369.4L190 369.4\" fill=\"none\" stroke=\"#2a2442\" stroke-opacity=\"0.55\" stroke-width=\"1.6\"/><path d=\"M175 160L178 182L178 349.6\" fill=\"none\" stroke=\"#7a5cc8\" stroke-width=\"2.2\" stroke-dasharray=\"5 4\" stroke-linecap=\"round\"/><path d=\"M166 178L166 372C166 380 174 384 178 390C182 384 190 380 190 372L190 178\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"3\" stroke-linejoin=\"round\"/><rect x=\"162\" y=\"349.6\" width=\"32\" height=\"19.8\" rx=\"5\" fill=\"none\" stroke=\"#9a96a6\" stroke-width=\"2.2\" stroke-dasharray=\"0.5 4.5\" stroke-linecap=\"round\"/><path d=\"M162 349.6L133.3 308.3M162 369.4L133.3 363.7\" fill=\"none\" stroke=\"#9a96a6\" stroke-width=\"2\" stroke-dasharray=\"0.5 4.5\" stroke-linecap=\"round\"/><ellipse cx=\"86\" cy=\"336\" rx=\"60\" ry=\"45\" fill=\"#f7f2fb\" stroke=\"#2a2442\" stroke-width=\"3\"/><path d=\"M86 330C92 326 96 316 98 306C99 301 105 299 108 303C110 310 107 320 105 327C112 331 118 337 119 345C121 355 118 364 112 369C104 373 95 367 93 359C91 353 89 349 86 349ZM86 330C80 326 76 316 74 306C73 301 67 299 64 303C62 310 65 320 67 327C60 331 54 337 53 345C51 355 54 364 60 369C68 373 77 367 79 359C81 353 83 349 86 349Z\" fill=\"#dccbe9\" stroke=\"#8a7ba8\" stroke-width=\"2\" stroke-linejoin=\"round\"/><circle cx=\"86\" cy=\"339\" r=\"2.6\" fill=\"#2a2442\"/><path d=\"M86 291L86 308M82 380L86 366L90 380\" fill=\"none\" stroke=\"#8a7ba8\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><g data-part=\"prefrontal-cortex\"><path d=\"M232 38C256 44 270 58 276 76C288 98 280 122 258 128C252 130 246 130 240 130C248 106 250 66 232 38Z\" fill=\"#e48fb3\" stroke=\"#2a2442\" stroke-width=\"3\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M238 116C222 130 204 140 187 148\" fill=\"none\" stroke=\"#b8457a\" stroke-width=\"3\" stroke-dasharray=\"5 4\" stroke-linecap=\"round\"/><path d=\"M183.5 141.6L190.5 154.4\" stroke=\"#b8457a\" stroke-width=\"3.5\" stroke-linecap=\"round\"/></g><g data-part=\"pontine-micturition-centre\"><circle cx=\"174\" cy=\"150\" r=\"10\" fill=\"#7a5cc8\" stroke=\"#2a2442\" stroke-width=\"2.5\"/><circle cx=\"174\" cy=\"150\" r=\"3.5\" fill=\"#ffffff\"/></g><g data-part=\"spinal-lesion\"><path d=\"M158 267.1L152 267.1L152 182L158 182\" fill=\"none\" stroke=\"#e25d5d\" stroke-width=\"3\" stroke-dasharray=\"5 4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"157 261.1 164 273.1 171 261.1 178 273.1 185 261.1 192 273.1 199 261.1\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"157 261.1 164 273.1 171 261.1 178 273.1 185 261.1 192 273.1 199 261.1\" fill=\"none\" stroke=\"#e25d5d\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polygon points=\"128 252.1 143 279.1 113 279.1\" fill=\"#f9de6b\" stroke=\"#2a2442\" stroke-width=\"2.5\" stroke-linejoin=\"round\"/><path d=\"M128 260.1L128 270.1\" stroke=\"#2a2442\" stroke-width=\"3\" stroke-linecap=\"round\"/><circle cx=\"128\" cy=\"274.6\" r=\"1.9\" fill=\"#2a2442\"/></g><g data-part=\"sympathetic-centre\"><rect x=\"160\" y=\"290.2\" width=\"36\" height=\"33\" rx=\"7\" fill=\"#f6ad84\" stroke=\"#2a2442\" stroke-width=\"2.5\"/><path d=\"M164 296.8L192 296.8M164 303.4L192 303.4M164 310L192 310M164 316.6L192 316.6\" fill=\"none\" stroke=\"#c4693c\" stroke-width=\"1.5\"/></g><g data-part=\"sacral-parasympathetic-nucleus\"><circle cx=\"109\" cy=\"336\" r=\"9.5\" fill=\"#3fb59a\" stroke=\"#2a2442\" stroke-width=\"2.5\"/></g><g data-part=\"onuf-nucleus\"><circle cx=\"108\" cy=\"361\" r=\"9.5\" fill=\"#e8b81f\" stroke=\"#2a2442\" stroke-width=\"2.5\"/></g><path d=\"M452 300L452 388\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"21\"/><path d=\"M452 300L452 388\" fill=\"none\" stroke=\"#f6b6c1\" stroke-width=\"14\"/><path d=\"M452 306L452 388\" fill=\"none\" stroke=\"#d98a9b\" stroke-width=\"2\"/><g data-part=\"detrusor\"><path d=\"M436 284C405 274 369 248 366 198C363 148 401 104 452 104C503 104 541 148 538 198C535 248 499 274 468 284\" fill=\"none\" stroke=\"#2a2442\" stroke-opacity=\"0\" stroke-width=\"24\" stroke-linecap=\"round\"/><path d=\"M434 290C402 280 364 250 360 198C356 144 398 98 452 98C506 98 548 144 544 198C540 250 502 280 470 290ZM464 273C490 264 523 241 526 198C529 156 494 116 452 116C410 116 375 156 378 198C381 241 414 264 440 273Z\" fill=\"#d9827a\" stroke=\"#2a2442\" stroke-width=\"3.5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M436 284C405 274 369 248 366 198C363 148 401 104 452 104C503 104 541 148 538 198C535 248 499 274 468 284\" fill=\"none\" stroke=\"#b5615a\" stroke-width=\"2\" stroke-dasharray=\"10 7\" stroke-linecap=\"round\"/></g><path d=\"M437 277C410 268 377 244 374 198C371 153 407 112 452 112C497 112 533 153 530 198C527 244 494 268 467 277ZM464 273C490 264 523 241 526 198C529 156 494 116 452 116C410 116 375 156 378 198C381 241 414 264 440 273Z\" fill=\"#f6b6c1\" stroke=\"none\"/><path d=\"M440 273C414 264 381 241 378 198C375 156 410 116 452 116C494 116 529 156 526 198C523 241 490 264 464 273Z\" fill=\"#f9de6b\" stroke=\"#2a2442\" stroke-width=\"1.8\"/><g data-part=\"bladder-neck\"><path d=\"M426 280L478 280C476 290 472 298 467 306L437 306C432 298 428 290 426 280Z\" fill=\"#a95768\" stroke=\"#2a2442\" stroke-width=\"3\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M433 288Q452 293 471 288M437 297Q452 302 467 297\" fill=\"none\" stroke=\"#7a3a4c\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M428 268C436 272 446 282 449 304L455 304C458 282 468 272 476 268\" fill=\"#f9de6b\" stroke=\"#2a2442\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/></g><g data-part=\"external-sphincter\"><rect x=\"430\" y=\"336\" width=\"44\" height=\"26\" rx=\"10\" fill=\"#f0a487\" stroke=\"#2a2442\" stroke-width=\"3\"/><path d=\"M437 340L437 358M443 340L443 358M449 340L449 358M455 340L455 358M461 340L461 358M467 340L467 358\" fill=\"none\" stroke=\"#a8564f\" stroke-width=\"2\" stroke-linecap=\"round\"/></g><g data-part=\"pelvic-nerve\"><path d=\"M192 353C240 352 300 318 377 250\" fill=\"none\" stroke=\"#2a2442\" stroke-opacity=\"0\" stroke-width=\"16\" stroke-linecap=\"round\"/><path d=\"M192 353C240 352 300 318 377 250\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"12.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M192 353C240 352 300 318 377 250\" fill=\"none\" stroke=\"#3fb59a\" stroke-width=\"7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"354.4\" cy=\"269.4\" r=\"9.5\" fill=\"#ffffff\" stroke=\"#2a2442\" stroke-width=\"2.5\"/><path d=\"M349.4 269.4L359.4 269.4M354.4 264.4L354.4 274.4\" stroke=\"#2a2442\" stroke-width=\"3\" stroke-linecap=\"round\"/></g><g data-part=\"pudendal-nerve\"><path d=\"M192 366C262 376 350 368 429 349\" fill=\"none\" stroke=\"#2a2442\" stroke-opacity=\"0\" stroke-width=\"16\" stroke-linecap=\"round\"/><path d=\"M192 366C262 376 350 368 429 349\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"12.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M192 366C262 376 350 368 429 349\" fill=\"none\" stroke=\"#e8b81f\" stroke-width=\"7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"400.2\" cy=\"355.4\" r=\"9.5\" fill=\"#ffffff\" stroke=\"#2a2442\" stroke-width=\"2.5\"/><path d=\"M395.2 355.4L405.2 355.4M400.2 350.4L400.2 360.4\" stroke=\"#2a2442\" stroke-width=\"3\" stroke-linecap=\"round\"/></g><g data-part=\"hypogastric-nerve\"><path d=\"M196 306C212 306 226 300 238 294M254 286C290 266 322 220 359 192M255 294C300 306 360 300 426 291\" fill=\"none\" stroke=\"#2a2442\" stroke-opacity=\"0\" stroke-width=\"20\" stroke-linecap=\"round\"/><path d=\"M196 306C212 306 226 300 238 294M254 286C290 266 322 220 359 192M255 294C300 306 360 300 426 291\" fill=\"none\" stroke=\"#2a2442\" stroke-width=\"12.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M196 306C212 306 226 300 238 294M254 286C290 266 322 220 359 192M255 294C300 306 360 300 426 291\" fill=\"none\" stroke=\"#ee7444\" stroke-width=\"7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><ellipse cx=\"246\" cy=\"290\" rx=\"11\" ry=\"8.5\" fill=\"#ee7444\" stroke=\"#2a2442\" stroke-width=\"2.5\"/><circle cx=\"341.6\" cy=\"206.6\" r=\"9.5\" fill=\"#ffffff\" stroke=\"#2a2442\" stroke-width=\"2.5\"/><path d=\"M336.6 206.6L346.6 206.6\" stroke=\"#2a2442\" stroke-width=\"3\" stroke-linecap=\"round\"/><circle cx=\"402.5\" cy=\"294.1\" r=\"9.5\" fill=\"#ffffff\" stroke=\"#2a2442\" stroke-width=\"2.5\"/><path d=\"M397.5 294.1L407.5 294.1M402.5 289.1L402.5 299.1\" stroke=\"#2a2442\" stroke-width=\"3\" stroke-linecap=\"round\"/></g>",
+    "parts": [
+      {
+        "id": "prefrontal-cortex",
+        "label": {
+          "en": "Prefrontal cortex",
+          "de": "Präfrontaler Kortex",
+          "es": "Corteza prefrontal"
+        },
+        "note": {
+          "en": "Voluntary inhibition of the micturition reflex; lesions (e.g. stroke) cause detrusor overactivity without dyssynergia.",
+          "de": "Willkürliche Hemmung des Miktionsreflexes; Läsionen (z. B. Schlaganfall) → Detrusorüberaktivität ohne Dyssynergie.",
+          "es": "Inhibición voluntaria del reflejo miccional; sus lesiones (p. ej., ictus) causan hiperactividad del detrusor sin disinergia."
+        }
+      },
+      {
+        "id": "pontine-micturition-centre",
+        "label": {
+          "en": "Pontine micturition centre (Barrington’s nucleus)",
+          "de": "Pontines Miktionszentrum (Barrington-Kern)",
+          "es": "Centro pontino de la micción (núcleo de Barrington)"
+        },
+        "note": {
+          "en": "Switches to voiding and coordinates detrusor contraction with simultaneous sphincter relaxation.",
+          "de": "Schaltet auf Entleerung um und koordiniert Detrusorkontraktion mit gleichzeitiger Sphinkterrelaxation.",
+          "es": "Activa el vaciado y coordina la contracción del detrusor con la relajación simultánea del esfínter."
+        }
+      },
+      {
+        "id": "spinal-lesion",
+        "label": {
+          "en": "Spinal cord lesion at or above T6",
+          "de": "Rückenmarksläsion in Höhe Th6 oder darüber",
+          "es": "Lesión medular a nivel de T6 o superior"
+        },
+        "note": {
+          "en": "Risk of autonomic dysreflexia: bladder distension triggers a hypertensive crisis – empty the bladder at once.",
+          "de": "Gefahr der autonomen Dysreflexie: Blasenüberdehnung löst eine hypertensive Krise aus – Blase sofort entleeren.",
+          "es": "Riesgo de disreflexia autonómica: la distensión vesical desencadena una crisis hipertensiva; vaciar la vejiga de inmediato."
+        }
+      },
+      {
+        "id": "sympathetic-centre",
+        "label": {
+          "en": "Sympathetic centre T10–L2",
+          "de": "Sympathisches Zentrum Th10–L2",
+          "es": "Centro simpático T10–L2"
+        },
+        "note": {
+          "en": "Thoracolumbar sympathetic outflow dominates the storage phase: detrusor relaxed, bladder neck closed.",
+          "de": "Der thorakolumbale Sympathikus dominiert die Speicherphase: Detrusor entspannt, Blasenhals geschlossen.",
+          "es": "El simpático toracolumbar domina la fase de llenado: detrusor relajado, cuello vesical cerrado."
+        }
+      },
+      {
+        "id": "hypogastric-nerve",
+        "label": {
+          "en": "Hypogastric nerve (sympathetic)",
+          "de": "N. hypogastricus (sympathisch)",
+          "es": "Nervio hipogástrico (simpático)"
+        },
+        "note": {
+          "en": "Noradrenaline: β3 receptors relax the detrusor, α1 receptors contract the bladder neck.",
+          "de": "Noradrenalin: β3-Rezeptoren relaxieren den Detrusor, α1-Rezeptoren kontrahieren den Blasenhals.",
+          "es": "Noradrenalina: los receptores β3 relajan el detrusor y los α1 contraen el cuello vesical."
+        }
+      },
+      {
+        "id": "sacral-parasympathetic-nucleus",
+        "label": {
+          "en": "Sacral micturition centre S2–S4 (parasympathetic nucleus)",
+          "de": "Sakrales Miktionszentrum S2–S4 (parasympathischer Kern)",
+          "es": "Centro sacro de la micción S2–S4 (núcleo parasimpático)"
+        },
+        "note": {
+          "en": "Conus or cauda equina lesion → acontractile detrusor with urinary retention and overflow incontinence.",
+          "de": "Läsion von Konus oder Cauda equina → akontraktiler Detrusor mit Harnverhalt und Überlaufinkontinenz.",
+          "es": "Lesión del cono o de la cola de caballo → detrusor acontráctil con retención urinaria e incontinencia por rebosamiento."
+        }
+      },
+      {
+        "id": "pelvic-nerve",
+        "label": {
+          "en": "Pelvic splanchnic nerves (pelvic nerve, parasympathetic)",
+          "de": "Nn. splanchnici pelvici (N. pelvicus, parasympathisch)",
+          "es": "Nervios esplácnicos pélvicos (nervio pélvico, parasimpático)"
+        },
+        "note": {
+          "en": "Acetylcholine at M3 receptors contracts the detrusor; also carries the bladder stretch afferents.",
+          "de": "Acetylcholin an M3-Rezeptoren kontrahiert den Detrusor; führt auch die Dehnungsafferenzen der Blase.",
+          "es": "La acetilcolina en receptores M3 contrae el detrusor; también lleva las aferencias de distensión vesical."
+        }
+      },
+      {
+        "id": "onuf-nucleus",
+        "label": {
+          "en": "Onuf’s nucleus (S2–S4, ventral horn)",
+          "de": "Onuf-Kern (S2–S4, Vorderhorn)",
+          "es": "Núcleo de Onuf (S2–S4, asta anterior)"
+        },
+        "note": {
+          "en": "Somatic motor neurons of the external sphincter; site of action of duloxetine in stress incontinence.",
+          "de": "Somatische Motoneurone des äußeren Sphinkters; Angriffspunkt von Duloxetin bei Belastungsinkontinenz.",
+          "es": "Motoneuronas somáticas del esfínter externo; lugar de acción de la duloxetina en la incontinencia de esfuerzo."
+        }
+      },
+      {
+        "id": "pudendal-nerve",
+        "label": {
+          "en": "Pudendal nerve (somatic)",
+          "de": "N. pudendus (somatisch)",
+          "es": "Nervio pudendo (somático)"
+        },
+        "note": {
+          "en": "Acetylcholine at nicotinic receptors contracts the striated external sphincter – under voluntary control.",
+          "de": "Acetylcholin an nikotinergen Rezeptoren kontrahiert den quergestreiften äußeren Sphinkter – willkürlich steuerbar.",
+          "es": "La acetilcolina en receptores nicotínicos contrae el esfínter externo estriado, de control voluntario."
+        }
+      },
+      {
+        "id": "detrusor",
+        "label": {
+          "en": "Detrusor muscle",
+          "de": "Detrusor (Blasenmuskulatur)",
+          "es": "Músculo detrusor"
+        },
+        "note": {
+          "en": "M3 receptors are the target of antimuscarinics; β3 receptors the target of β3 agonists such as mirabegron.",
+          "de": "M3-Rezeptoren: Ziel der Antimuskarinika; β3-Rezeptoren: Ziel von β3-Agonisten wie Mirabegron.",
+          "es": "Los receptores M3 son diana de los antimuscarínicos; los β3, de agonistas β3 como mirabegrón."
+        }
+      },
+      {
+        "id": "bladder-neck",
+        "label": {
+          "en": "Bladder neck (internal sphincter)",
+          "de": "Blasenhals (innerer Sphinkter)",
+          "es": "Cuello vesical (esfínter interno)"
+        },
+        "note": {
+          "en": "Smooth muscle with α1 receptors; alpha-blockers lower outlet resistance; closure prevents retrograde ejaculation.",
+          "de": "Glatte Muskulatur mit α1-Rezeptoren; α-Blocker senken den Auslasswiderstand; sein Schluss verhindert retrograde Ejakulation.",
+          "es": "Músculo liso con receptores α1; los alfabloqueantes reducen la resistencia de salida; su cierre evita la eyaculación retrógrada."
+        }
+      },
+      {
+        "id": "external-sphincter",
+        "label": {
+          "en": "External urethral sphincter (rhabdosphincter)",
+          "de": "Äußerer Harnröhrenschließmuskel (Rhabdosphinkter)",
+          "es": "Esfínter uretral externo (rabdoesfínter)"
+        },
+        "note": {
+          "en": "With lesions between pons and sacral cord it contracts together with the detrusor: detrusor–sphincter dyssynergia.",
+          "de": "Bei Läsion zwischen Pons und Sakralmark kontrahiert er gleichzeitig mit dem Detrusor: Detrusor-Sphinkter-Dyssynergie.",
+          "es": "En lesiones entre la protuberancia y la médula sacra se contrae junto con el detrusor: disinergia detrusor-esfínter."
+        }
+      }
+    ]
+  },
+  {
     "id": "prostate-sagittal",
     "title": {
       "en": "Prostate – zonal anatomy (sagittal)",
