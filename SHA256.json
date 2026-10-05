@@ -42,6 +42,6 @@
   "standalone.html": "5d6cee553a9bd462cc91600650624238f59e4e6e30ec7477d5d966b1ef265bff",
   "tests/test_import.py": "3d04ffc0ccb720606ab682f7f2594028bc1e82094667925bbf00f1ddb8a2f48f",
   "tests/test_manage.py": "6febb1faf40e0e8d0f4cea674cbbab50db9f5ebf144b45840e515aba14e0ba89",
-  "tests/tests-cartoon.cjs": "842058a13b270b44d2aafd0635b1fec91cf3b401f617d5a769b7d039257d79bb",
+  "tests/tests-cartoon.cjs": "024bb9fbf55f93c86303a403634bbf7a6cfb3f5d2be0fa357fc385666eaf22d8",
   "tests/tests-engine.cjs": "0e8b446be8014f891c46d02654fafd8cec74479ee1b1beb005e99441a9ff7561"
 }
