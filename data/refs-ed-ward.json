@@ -1,0 +1,93 @@
+[
+  {
+    "id": "stones",
+    "title": "EAU Guidelines on Urolithiasis",
+    "url": "https://uroweb.org/guidelines/urolithiasis/chapter/guidelines",
+    "checked": "2026-10-05",
+    "scope": "Supports red-flag assessment and prompt pain relief in suspected renal colic, and urgent decompression assessment when urinary obstruction is infected."
+  },
+  {
+    "id": "infections",
+    "title": "EAU Guidelines on Urological Infections",
+    "url": "https://uroweb.org/guidelines/urological-infections/chapter/the-guideline",
+    "checked": "2026-10-05",
+    "scope": "Supports recognising systemic urinary infection, addressing obstruction, and urgent multidisciplinary assessment of suspected Fournier gangrene."
+  },
+  {
+    "id": "paediatric",
+    "title": "EAU Paediatric Urology: Acute Scrotum",
+    "url": "https://uroweb.org/guidelines/paediatric-urology/chapter/acute-scrotum",
+    "checked": "2026-10-05",
+    "scope": "Supports immediate specialist action for suspected testicular torsion and avoiding ultrasound-related delays in urgent treatment decisions."
+  },
+  {
+    "id": "nice-retention",
+    "title": "NICE CG97: Lower urinary tract symptoms in men",
+    "url": "https://www.nice.org.uk/guidance/cg97/chapter/recommendations",
+    "checked": "2026-10-05",
+    "scope": "Supports prompt catheter drainage for acute urinary retention in men and attention to renal function in relevant retention presentations."
+  },
+  {
+    "id": "aua-emergencies",
+    "title": "AUA Medical Student Curriculum: Urologic Emergencies",
+    "url": "https://www.auanet.org/Documents/education/medical%20student%20curriculum/Urologic-%20Emergencies-AUA-Med-Student.pdf",
+    "checked": "2026-10-05",
+    "scope": "Supports recognising acute urinary retention and gross haematuria with clot retention as presentations requiring prompt urological assessment."
+  },
+  {
+    "id": "ssc",
+    "title": "Surviving Sepsis Campaign: Adult Guidelines",
+    "url": "https://www.sccm.org/survivingsepsiscampaign/guidelines-and-resources/surviving-sepsis-campaign-adult-guidelines",
+    "checked": "2026-10-05",
+    "scope": "Supports coordinated sepsis assessment and resuscitation with early evaluation of anatomical infection sources that require source control."
+  },
+  {
+    "id": "nice-deterioration",
+    "title": "NICE CG50: Recognising and responding to deterioration",
+    "url": "https://www.nice.org.uk/guidance/CG50/chapter/recommendations",
+    "checked": "2026-10-05",
+    "scope": "Supports physiological monitoring, escalation triggered by observations or clinical concern, immediate response to emergencies and explicit reassessment plans."
+  },
+  {
+    "id": "nice-aki",
+    "title": "NICE NG148: Acute kidney injury",
+    "url": "https://www.nice.org.uk/guidance/ng148/chapter/Recommendations",
+    "checked": "2026-10-05",
+    "scope": "Supports assessing oliguria and creatinine changes, reviewing perioperative risks and medicines, and investigating or escalating suspected urinary obstruction."
+  },
+  {
+    "id": "trauma",
+    "title": "EAU Urological Trauma: Urogenital trauma guidelines",
+    "url": "https://uroweb.org/guidelines/urological-trauma/chapter/urogenital-trauma-guidelines",
+    "checked": "2026-10-05",
+    "scope": "Supports concern for postoperative bladder injury when urinary output changes or urine leakage occurs, with specialist-directed investigation."
+  },
+  {
+    "id": "nice-sepsis",
+    "title": "NICE NG253: Could this be sepsis?",
+    "url": "https://www.nice.org.uk/guidance/NG253/chapter/could-this-be-sepsis",
+    "checked": "2026-10-05",
+    "scope": "Supports suspecting sepsis in possible infection with changes in behaviour, circulation or respiration, and taking patient or family concerns into account."
+  },
+  {
+    "id": "cystectomy",
+    "title": "EAU Bladder Cancer Guidelines: Disease management",
+    "url": "https://uroweb.org/guidelines/muscle-invasive-and-metastatic-bladder-cancer/chapter/disease-management",
+    "checked": "2026-10-05",
+    "scope": "Supports postoperative ileus, urinary leakage and serious infection as complications of cystectomy and urinary diversion that warrant clinical assessment."
+  },
+  {
+    "id": "nice-vte",
+    "title": "NICE NG158: Venous thromboembolic diseases",
+    "url": "https://www.nice.org.uk/guidance/ng158/chapter/Recommendations",
+    "checked": "2026-10-05",
+    "scope": "Supports probability-based diagnostic assessment of suspected pulmonary embolism or deep vein thrombosis and consideration of renal, bleeding and postoperative factors."
+  },
+  {
+    "id": "thromboprophylaxis",
+    "title": "NICE NG89: Reducing the risk of hospital-acquired VTE",
+    "url": "https://www.nice.org.uk/guidance/ng89/chapter/Recommendations",
+    "checked": "2026-10-05",
+    "scope": "Supports assessing and reassessing VTE and bleeding risks in surgical patients, including those undergoing abdominal or urological surgery."
+  }
+]

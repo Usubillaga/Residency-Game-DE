@@ -1,0 +1,114 @@
+[
+  {
+    "id": "bank-guide-andrologie",
+    "title": "EAU Sexual and Reproductive Health",
+    "url": "https://uroweb.org/guidelines/sexual-and-reproductive-health",
+    "checked": "2026-10-05",
+    "scope": "Related primary guideline for this topic. Original question citations and language-specific review status are preserved in data/imported-source.json; no new clinical approval is implied."
+  },
+  {
+    "id": "bank-guide-funktionell",
+    "title": "EAU Management of Non-neurogenic Male LUTS",
+    "url": "https://uroweb.org/guidelines/management-of-non-neurogenic-male-luts",
+    "checked": "2026-10-05",
+    "scope": "Related primary guideline for this topic. Original question citations and language-specific review status are preserved in data/imported-source.json; no new clinical approval is implied."
+  },
+  {
+    "id": "bank-guide-hodentumor",
+    "title": "EAU Testicular Cancer",
+    "url": "https://uroweb.org/guidelines/testicular-cancer",
+    "checked": "2026-10-05",
+    "scope": "Related primary guideline for this topic. Original question citations and language-specific review status are preserved in data/imported-source.json; no new clinical approval is implied."
+  },
+  {
+    "id": "bank-guide-infektiologie",
+    "title": "EAU Urological Infections",
+    "url": "https://uroweb.org/guidelines/urological-infections",
+    "checked": "2026-10-05",
+    "scope": "Related primary guideline for this topic. Original question citations and language-specific review status are preserved in data/imported-source.json; no new clinical approval is implied."
+  },
+  {
+    "id": "bank-guide-kinderurologie",
+    "title": "EAU Paediatric Urology",
+    "url": "https://uroweb.org/guidelines/paediatric-urology",
+    "checked": "2026-10-05",
+    "scope": "Related primary guideline for this topic. Original question citations and language-specific review status are preserved in data/imported-source.json; no new clinical approval is implied."
+  },
+  {
+    "id": "bank-guide-mibc",
+    "title": "EAU Muscle-invasive and Metastatic Bladder Cancer",
+    "url": "https://uroweb.org/guidelines/muscle-invasive-and-metastatic-bladder-cancer",
+    "checked": "2026-10-05",
+    "scope": "Related primary guideline for this topic. Original question citations and language-specific review status are preserved in data/imported-source.json; no new clinical approval is implied."
+  },
+  {
+    "id": "bank-guide-nierenzellkarzinom",
+    "title": "EAU Renal Cell Carcinoma",
+    "url": "https://uroweb.org/guidelines/renal-cell-carcinoma",
+    "checked": "2026-10-05",
+    "scope": "Related primary guideline for this topic. Original question citations and language-specific review status are preserved in data/imported-source.json; no new clinical approval is implied."
+  },
+  {
+    "id": "bank-guide-nmibc",
+    "title": "EAU Non-muscle-invasive Bladder Cancer",
+    "url": "https://uroweb.org/guidelines/non-muscle-invasive-bladder-cancer",
+    "checked": "2026-10-05",
+    "scope": "Related primary guideline for this topic. Original question citations and language-specific review status are preserved in data/imported-source.json; no new clinical approval is implied."
+  },
+  {
+    "id": "bank-guide-operativ",
+    "title": "EAU Guidelines: surgical topics",
+    "url": "https://uroweb.org/guidelines",
+    "checked": "2026-10-05",
+    "scope": "Related primary guideline for this topic. Original question citations and language-specific review status are preserved in data/imported-source.json; no new clinical approval is implied."
+  },
+  {
+    "id": "bank-guide-peniskarzinom",
+    "title": "EAU Penile Cancer",
+    "url": "https://uroweb.org/guidelines/penile-cancer",
+    "checked": "2026-10-05",
+    "scope": "Related primary guideline for this topic. Original question citations and language-specific review status are preserved in data/imported-source.json; no new clinical approval is implied."
+  },
+  {
+    "id": "bank-guide-prostatakarzinom",
+    "title": "EAU Prostate Cancer",
+    "url": "https://uroweb.org/guidelines/prostate-cancer",
+    "checked": "2026-10-05",
+    "scope": "Related primary guideline for this topic. Original question citations and language-specific review status are preserved in data/imported-source.json; no new clinical approval is implied."
+  },
+  {
+    "id": "bank-guide-rekonstruktion",
+    "title": "EAU Urethral Strictures",
+    "url": "https://uroweb.org/guidelines/urethral-strictures",
+    "checked": "2026-10-05",
+    "scope": "Related primary guideline for this topic. Original question citations and language-specific review status are preserved in data/imported-source.json; no new clinical approval is implied."
+  },
+  {
+    "id": "bank-guide-trauma",
+    "title": "EAU Urological Trauma",
+    "url": "https://uroweb.org/guidelines/urological-trauma",
+    "checked": "2026-10-05",
+    "scope": "Related primary guideline for this topic. Original question citations and language-specific review status are preserved in data/imported-source.json; no new clinical approval is implied."
+  },
+  {
+    "id": "bank-guide-urethrakarzinom",
+    "title": "EAU Primary Urethral Carcinoma",
+    "url": "https://uroweb.org/guidelines/primary-urethral-carcinoma",
+    "checked": "2026-10-05",
+    "scope": "Related primary guideline for this topic. Original question citations and language-specific review status are preserved in data/imported-source.json; no new clinical approval is implied."
+  },
+  {
+    "id": "bank-guide-urolithiasis",
+    "title": "EAU Urolithiasis",
+    "url": "https://uroweb.org/guidelines/urolithiasis",
+    "checked": "2026-10-05",
+    "scope": "Related primary guideline for this topic. Original question citations and language-specific review status are preserved in data/imported-source.json; no new clinical approval is implied."
+  },
+  {
+    "id": "bank-guide-utuc",
+    "title": "EAU Upper Urinary Tract Urothelial Cell Carcinoma",
+    "url": "https://uroweb.org/guidelines/upper-urinary-tract-urothelial-cell-carcinoma",
+    "checked": "2026-10-05",
+    "scope": "Related primary guideline for this topic. Original question citations and language-specific review status are preserved in data/imported-source.json; no new clinical approval is implied."
+  }
+]

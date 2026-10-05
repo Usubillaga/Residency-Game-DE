@@ -1,0 +1,2672 @@
+[
+  {
+    "sourcePath": "data/fragen/andrologie.json",
+    "questionId": "uro-and-00001",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Diagnostische Bestätigung eines Hypogonadismus vor Therapie; neue andrologische Sprechstunde.",
+    "topic": "Hypogonadismus",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/andrologie.json",
+    "questionId": "uro-and-00002",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Testosterontherapie.",
+    "topic": "Testosterontherapie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/andrologie.json",
+    "questionId": "uro-and-00003",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Fertilität.",
+    "topic": "Fertilität",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/andrologie.json",
+    "questionId": "uro-and-00004",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Einordnung und genetische Diagnostik der nichtobstruktiven Azoospermie.",
+    "topic": "Azoospermie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/andrologie.json",
+    "questionId": "uro-and-00005",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Beidseitige Vasaaplasie und partnerschaftliche CFTR-Abklärung.",
+    "topic": "kongenitale Vasaaplasie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/andrologie.json",
+    "questionId": "uro-and-00006",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Varikozele.",
+    "topic": "Varikozele",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/andrologie.json",
+    "questionId": "uro-and-00007",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: erektile Dysfunktion.",
+    "topic": "erektile Dysfunktion",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/andrologie.json",
+    "questionId": "uro-and-00008",
+    "area": "emergency",
+    "acuity": "critical",
+    "reason": "Schmerzhafte Dauererektion seit sieben Stunden: akuter andrologischer Notfall.",
+    "topic": "Priapismus",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/andrologie.json",
+    "questionId": "uro-and-00009",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Induratio penis plastica.",
+    "topic": "Induratio penis plastica",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/andrologie.json",
+    "questionId": "uro-and-00010",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Spermiogramm.",
+    "topic": "Spermiogramm",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/funktionell.json",
+    "questionId": "uro-fun-00001",
+    "area": "endoscopy",
+    "acuity": "stable",
+    "reason": "Botulinumtoxin-Injektion: Selbstkatheterismus vor intradetrusoralem Eingriff klären.",
+    "topic": "oab",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/funktionell.json",
+    "questionId": "uro-fun-00002",
+    "area": "endoscopy",
+    "acuity": "stable",
+    "reason": "Videourodynamische Funktionsdiagnostik mit simultaner anatomischer Beurteilung.",
+    "topic": "neurourologie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/funktionell.json",
+    "questionId": "uro-fun-00003",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: luts.",
+    "topic": "luts",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/funktionell.json",
+    "questionId": "uro-fun-00004",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: männliche LUTS.",
+    "topic": "männliche LUTS",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/funktionell.json",
+    "questionId": "uro-fun-00005",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Nykturie.",
+    "topic": "Nykturie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/funktionell.json",
+    "questionId": "uro-fun-00006",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: medikamentöse LUTS-Therapie.",
+    "topic": "medikamentöse LUTS-Therapie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/funktionell.json",
+    "questionId": "uro-fun-00007",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Erstlinienbehandlung weiblicher Belastungsinkontinenz; erweitert funktionelle Urologie.",
+    "topic": "Belastungsinkontinenz",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/funktionell.json",
+    "questionId": "uro-fun-00008",
+    "area": "endoscopy",
+    "acuity": "stable",
+    "reason": "Funktionsdiagnostik mit Urodynamik vor Inkontinenzoperation bei Mischbild und Voroperation.",
+    "topic": "Urodynamik",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/funktionell.json",
+    "questionId": "uro-fun-00009",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Überaktive Blase bei anticholinerger Belastung; andere Situation als vorhandene LUTS-Geschichte.",
+    "topic": "überaktive Blase",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/funktionell.json",
+    "questionId": "uro-fun-00010",
+    "area": "endoscopy",
+    "acuity": "stable",
+    "reason": "Zystoskopie und Urodynamik vor Verfahrenswahl bei Postprostatektomie-Inkontinenz.",
+    "topic": "Postprostatektomie-Inkontinenz",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/funktionell.json",
+    "questionId": "uro-fun-00011",
+    "area": "emergency",
+    "acuity": "critical",
+    "reason": "Autonome Dysreflexie mit akutem Blutdruckanstieg; neuro-urologischer Notfall.",
+    "topic": "Neurourologie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/funktionell.json",
+    "questionId": "uro-fun-00012",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Testphase mit temporärer Elektrode vor sakraler Neuromodulation.",
+    "topic": "sakrale Neuromodulation",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/funktionell.json",
+    "questionId": "uro-fun-00013",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Blasenschmerzsyndrom als Ausschlussdiagnose.",
+    "topic": "Blasenschmerzsyndrom",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00001",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Seminom Stadium I.",
+    "topic": "Seminom Stadium I",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00002",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Chemotherapie.",
+    "topic": "Chemotherapie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00003",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Primärdiagnostik.",
+    "topic": "Primärdiagnostik",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00004",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Nichtseminom Stadium I.",
+    "topic": "Nichtseminom Stadium I",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00005",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Markernegatives retroperitoneales Nichtseminom-Residuum: operative Resttumorresektion.",
+    "topic": "Residualtumor",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00006",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Seminom Stadium II.",
+    "topic": "Seminom Stadium II",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00007",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Spezielle Indikationsabwägung zur primären retroperitonealen Lymphadenektomie am Zentrum.",
+    "topic": "Seminom Stadium II",
+    "status": "published",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00008",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Nichtseminom Stadium I.",
+    "topic": "Nichtseminom Stadium I",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00009",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Stadium IS.",
+    "topic": "Stadium IS",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00010",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "RLA-Indikation bei Chemotherapieablehnung und hohem Teratomanteil.",
+    "topic": "retroperitoneale Lymphadenektomie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00011",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Seitenabhängiges Ausräumungsgebiet bei modifizierter nervschonender RLA.",
+    "topic": "retroperitoneale Lymphadenektomie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00012",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Wachsendes markernegatives Teratom unter Chemotherapie: Resektionsplanung.",
+    "topic": "Residualtumor",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00013",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Seminom-Residuum.",
+    "topic": "Seminom-Residuum",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00014",
+    "area": "ward",
+    "acuity": "stable",
+    "reason": "Postoperative Tumormarker-Halbwertszeiten nach Orchiektomie.",
+    "topic": "Tumormarker",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00015",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: IGCCCG.",
+    "topic": "IGCCCG",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00016",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Rezidivtherapie.",
+    "topic": "Rezidivtherapie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00017",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: kontralaterale Biopsie.",
+    "topic": "kontralaterale Biopsie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00018",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Kleine Raumforderung im verbliebenen Einzelhoden: organerhaltender Eingriff.",
+    "topic": "organerhaltende Operation",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00019",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Narkoseplanung vor Residualresektion nach Bleomycinvorbehandlung.",
+    "topic": "Therapietoxizität",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00020",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Langzeitnachsorge nach geheiltem Keimzelltumor mit hormonellen und kardiovaskulären Folgen.",
+    "topic": "Langzeitnachsorge",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00040",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Tumormarker.",
+    "topic": "Tumormarker",
+    "status": "published",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00041",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Tumormarker.",
+    "topic": "Tumormarker",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00042",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Tumormarker.",
+    "topic": "Tumormarker",
+    "status": "published",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00043",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Tumormarker.",
+    "topic": "Tumormarker",
+    "status": "published",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00044",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Tumormarker.",
+    "topic": "Tumormarker",
+    "status": "published",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00045",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Teratom-Konstellation während Chemotherapie: Zeitpunkt anschließender Resektion.",
+    "topic": "Pathologie und Sonderformen",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00046",
+    "area": "ward",
+    "acuity": "stable",
+    "reason": "R0-Resektion nach Chemotherapie mit spezieller Residualhistologie: postoperatives Behandlungsvorgehen.",
+    "topic": "Pathologie und Sonderformen",
+    "status": "published",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00047",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Pathologie und Sonderformen.",
+    "topic": "Pathologie und Sonderformen",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00048",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Offener oder robotischer Zugang zur geplanten RLA nach Zentrumsexpertise.",
+    "topic": "Operative Therapie",
+    "status": "published",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00049",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Tumorfreies Stadium IA: ambulante Beratung gegen nicht regulär erforderliche primäre RLA.",
+    "topic": "Operative Therapie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00050",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Template und robotischer Zugang zur Resektion eines solitären kleinen Residualbefundes.",
+    "topic": "Operative Therapie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00051",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Großes Residuum mit Gefäßkontakt und Voroperation: offener Zugang und interdisziplinäre Bereitschaft.",
+    "topic": "Operative Therapie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00052",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Komplexe Hodentumorchirurgie: Operationsort nach spezifischer RLA-Erfahrung wählen.",
+    "topic": "Operative Therapie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00053",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Präoperative Aufklärung zum Ejakulationserhalt bei nervschonender RLA.",
+    "topic": "Operative Therapie",
+    "status": "published",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00030",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Nachsorge.",
+    "topic": "Nachsorge",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00031",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Nachsorge.",
+    "topic": "Nachsorge",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00032",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Nachsorge.",
+    "topic": "Nachsorge",
+    "status": "published",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00033",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Nachsorge.",
+    "topic": "Nachsorge",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00034",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Nachsorge.",
+    "topic": "Nachsorge",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00035",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Nachsorge.",
+    "topic": "Nachsorge",
+    "status": "published",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00036",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Nachsorge.",
+    "topic": "Nachsorge",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00037",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Nachsorge.",
+    "topic": "Nachsorge",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00038",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Neue Raumforderung im kontralateralen Hoden: organerhaltendes operatives Vorgehen.",
+    "topic": "Nachsorge",
+    "status": "published",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00039",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Nachsorge.",
+    "topic": "Nachsorge",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00021",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Seminom Stadium II.",
+    "topic": "Seminom Stadium II",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00022",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Seminom Stadium II.",
+    "topic": "Seminom Stadium II",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00023",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Seminom Stadium II.",
+    "topic": "Seminom Stadium II",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00024",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Seminom Stadium II.",
+    "topic": "Seminom Stadium II",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00025",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Template und Zugang für geplante primäre RLA unter Berücksichtigung des Kinderwunsches.",
+    "topic": "Seminom Stadium II",
+    "status": "published",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00026",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Tumorboard nach komplikationsloser RLA: Nutzen einer adjuvanten Therapie individuell abwägen.",
+    "topic": "Seminom Stadium II",
+    "status": "published",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00027",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Seminom Stadium II.",
+    "topic": "Seminom Stadium II",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00028",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Geplante spezielle Radiochemotherapie nach Tumorboard und Aufklärung: systemischer/strahlentherapeutischer Ablauf.",
+    "topic": "Seminom Stadium II",
+    "status": "published",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/hodentumor.json",
+    "questionId": "uro-hod-00029",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Seminom Stadium II.",
+    "topic": "Seminom Stadium II",
+    "status": "published",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/infektiologie.json",
+    "questionId": "uro-inf-00001",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: unkomplizierte Zystitis.",
+    "topic": "unkomplizierte Zystitis",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/infektiologie.json",
+    "questionId": "uro-inf-00002",
+    "area": "emergency",
+    "acuity": "urgent",
+    "reason": "Unverändert fieberhafte Pyelonephritis trotz drei Tagen wirksamer Antibiose: akute erneute Abklärung.",
+    "topic": "Pyelonephritis",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/infektiologie.json",
+    "questionId": "uro-inf-00003",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: rezidivierende Harnwegsinfekte.",
+    "topic": "rezidivierende Harnwegsinfekte",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/infektiologie.json",
+    "questionId": "uro-inf-00004",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: asymptomatische Bakteriurie.",
+    "topic": "asymptomatische Bakteriurie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/infektiologie.json",
+    "questionId": "uro-inf-00005",
+    "area": "emergency",
+    "acuity": "critical",
+    "reason": "Hypotension, Verwirrtheit und erhöhtes Laktat bei obstruiertem Harntrakt: unmittelbare Notfallversorgung.",
+    "topic": "Urosepsis",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/infektiologie.json",
+    "questionId": "uro-inf-00006",
+    "area": "emergency",
+    "acuity": "urgent",
+    "reason": "Akute bakterielle Prostatitis als bislang fehlende Notfallsituation.",
+    "topic": "Prostatitis",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/infektiologie.json",
+    "questionId": "uro-inf-00007",
+    "area": "emergency",
+    "acuity": "critical",
+    "reason": "Rasch fortschreitende skrotale Infektion mit Krepitation und Kreislaufbeeinträchtigung: Notaufnahme.",
+    "topic": "Fournier-Gangrän",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/infektiologie.json",
+    "questionId": "uro-inf-00008",
+    "area": "emergency",
+    "acuity": "urgent",
+    "reason": "Epididymitis und infektiöse Differentialdiagnose des akuten Skrotums.",
+    "topic": "Epididymitis",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/infektiologie.json",
+    "questionId": "uro-inf-00009",
+    "area": "ward",
+    "acuity": "urgent",
+    "reason": "Fieberhafte katheterassoziierte Infektion bei langfristig liegendem Dauerkatheter: Pflege- und Stationsbehandlung.",
+    "topic": "katheterassoziierte Infektion",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/infektiologie.json",
+    "questionId": "uro-inf-00010",
+    "area": "emergency",
+    "acuity": "urgent",
+    "reason": "Emphysematöse Pyelonephritis; andere CT-Konstellation als die vorhandene infizierte Obstruktion.",
+    "topic": "emphysematöse Pyelonephritis",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/kinderurologie.json",
+    "questionId": "uro-kin-00001",
+    "area": "emergency",
+    "acuity": "critical",
+    "reason": "Plötzlicher kindlicher Skrotalschmerz mit Torsionszeichen und nicht zeitnah verfügbarer Bildgebung.",
+    "topic": "akutes Skrotum",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/kinderurologie.json",
+    "questionId": "uro-kin-00002",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Orchidopexie-Terminierung in der kindlichen Vorsorgesprechstunde.",
+    "topic": "Hodenhochstand",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/kinderurologie.json",
+    "questionId": "uro-kin-00003",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Auch in Narkose nicht tastbarer Hoden: diagnostische Laparoskopie mit Konsequenz im Eingriff.",
+    "topic": "nicht tastbarer Hoden",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/kinderurologie.json",
+    "questionId": "uro-kin-00004",
+    "area": "ward",
+    "acuity": "stable",
+    "reason": "Säugling nach Ansprechen auf Behandlung des fieberhaften Harnwegsinfekts: Verlaufs- und Nachsorgeplanung.",
+    "topic": "Harnwegsinfekt",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/kinderurologie.json",
+    "questionId": "uro-kin-00005",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Pränataler Nierenstaubefund beim beschwerdefreien Kind: Funktionsdiagnostik vor Operationsentscheidung.",
+    "topic": "Ureterabgangsstenose",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/kinderurologie.json",
+    "questionId": "uro-kin-00006",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Physiologische Vorhautenge ohne Infekte; kindliche Beratung in der Sprechstunde.",
+    "topic": "Phimose",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/kinderurologie.json",
+    "questionId": "uro-kin-00007",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Hypospadie und Erhalt des Präputiums vor geplanter Korrektur.",
+    "topic": "Hypospadie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/kinderurologie.json",
+    "questionId": "uro-kin-00008",
+    "area": "emergency",
+    "acuity": "critical",
+    "reason": "Neugeborener mit Abflussbehinderung und steigendem Kreatinin: sofortige Blasenentlastung.",
+    "topic": "Harnröhrenklappen",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/kinderurologie.json",
+    "questionId": "uro-kin-00009",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Enuresis.",
+    "topic": "Enuresis",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/kinderurologie.json",
+    "questionId": "uro-kin-00010",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Typische kindliche Nierenraumforderung: initiale kinderonkologische Behandlungsplanung.",
+    "topic": "Nephroblastom",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/mibc.json",
+    "questionId": "uro-mib-00001",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: perioperative Systemtherapie.",
+    "topic": "perioperative Systemtherapie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/mibc.json",
+    "questionId": "uro-mib-00002",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: perioperative Systemtherapie.",
+    "topic": "perioperative Systemtherapie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/mibc.json",
+    "questionId": "uro-mib-00003",
+    "area": "ward",
+    "acuity": "critical",
+    "reason": "Metabolischer Notfall während neoadjuvanter Tumortherapie; Stationsbehandlung und Therapiepause.",
+    "topic": "Toxizitätsmanagement",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/mibc.json",
+    "questionId": "uro-mib-00004",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: perioperative Systemtherapie.",
+    "topic": "perioperative Systemtherapie",
+    "status": "published",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/mibc.json",
+    "questionId": "uro-mib-00005",
+    "area": "endoscopy",
+    "acuity": "stable",
+    "reason": "Histologische Detrusorinvasion nach TUR-B und korrektes lokales Mindeststadium.",
+    "topic": "Muskelinvasion",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/mibc.json",
+    "questionId": "uro-mib-00006",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Staging.",
+    "topic": "Staging",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/mibc.json",
+    "questionId": "uro-mib-00007",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Trimodale Therapie.",
+    "topic": "Trimodale Therapie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/mibc.json",
+    "questionId": "uro-mib-00008",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Operables muskelinvasives Rezidiv nach Blasenerhalt: Salvage-Zystektomie.",
+    "topic": "Salvage-Zystektomie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/mibc.json",
+    "questionId": "uro-mib-00009",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Geplante Zystektomie mit erforderlicher Urethrektomie: operative Harnableitungswahl.",
+    "topic": "Harnableitung",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/mibc.json",
+    "questionId": "uro-mib-00010",
+    "area": "endoscopy",
+    "acuity": "stable",
+    "reason": "Zystoskopische und bildgebende Nachsorge nach trimodalem Blasenerhalt.",
+    "topic": "Nachsorge nach Blasenerhalt",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/nierenzellkarzinom.json",
+    "questionId": "uro-rcc-00001",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: adjuvant.",
+    "topic": "adjuvant",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/nierenzellkarzinom.json",
+    "questionId": "uro-rcc-00002",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: metastasiert.",
+    "topic": "metastasiert",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/nierenzellkarzinom.json",
+    "questionId": "uro-rcc-00003",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Sammelrohrkarzinom.",
+    "topic": "Sammelrohrkarzinom",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/nierenzellkarzinom.json",
+    "questionId": "uro-rcc-00004",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: medulläres Nierenkarzinom.",
+    "topic": "medulläres Nierenkarzinom",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/nierenzellkarzinom.json",
+    "questionId": "uro-rcc-00005",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: papilläres Nierenzellkarzinom.",
+    "topic": "papilläres Nierenzellkarzinom",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/nierenzellkarzinom.json",
+    "questionId": "uro-rcc-00006",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: sarkomatoide Differenzierung.",
+    "topic": "sarkomatoide Differenzierung",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/nierenzellkarzinom.json",
+    "questionId": "uro-rcc-00007",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: chromophobes Karzinom.",
+    "topic": "chromophobes Karzinom",
+    "status": "published",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/nierenzellkarzinom.json",
+    "questionId": "uro-rcc-00008",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Kleine Nierenraumforderung bei Komorbidität und ergebnisrelevanter Biopsie.",
+    "topic": "kleine Nierenraumforderung",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/nierenzellkarzinom.json",
+    "questionId": "uro-rcc-00009",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Angiomyolipom.",
+    "topic": "Angiomyolipom",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/nierenzellkarzinom.json",
+    "questionId": "uro-rcc-00010",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Bosniak-IV-Läsion mit solidem Anteil: organerhaltende Operationsplanung.",
+    "topic": "zystische Läsionen",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/nierenzellkarzinom.json",
+    "questionId": "uro-rcc-00011",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Nierenerhaltende Operation bei geeignetem cT1b-Tumor.",
+    "topic": "Nierenteilresektion",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/nierenzellkarzinom.json",
+    "questionId": "uro-rcc-00012",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Tumorthrombus bis in den Vorhof: Zugang und interdisziplinäres Operationsteam.",
+    "topic": "Tumorthrombus",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/nmibc.json",
+    "questionId": "uro-nmi-00001",
+    "area": "endoscopy",
+    "acuity": "stable",
+    "reason": "Fehlender Detrusor im T1-HG-Präparat: erneute transurethrale Resektion.",
+    "topic": "T1 High Grade",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/nmibc.json",
+    "questionId": "uro-nmi-00002",
+    "area": "endoscopy",
+    "acuity": "stable",
+    "reason": "BCG-Induktion und Erhaltung nach abgeschlossener Nachresektion.",
+    "topic": "Instillationstherapie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/nmibc.json",
+    "questionId": "uro-nmi-00003",
+    "area": "endoscopy",
+    "acuity": "stable",
+    "reason": "Verdächtiges Schleimhautareal bei Zystoskopie: gezielte endoskopische Biopsie.",
+    "topic": "CIS-Diagnostik",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/nmibc.json",
+    "questionId": "uro-nmi-00004",
+    "area": "endoscopy",
+    "acuity": "stable",
+    "reason": "Keine Frühinstillation bei vermuteter Perforation nach TUR-B.",
+    "topic": "Frühinstillation",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/nmibc.json",
+    "questionId": "uro-nmi-00005",
+    "area": "endoscopy",
+    "acuity": "stable",
+    "reason": "BCG verschieben bei neuem symptomatischem Infekt; Behandlungssicherheit in der Eingriffseinheit.",
+    "topic": "BCG-Sicherheit",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/nmibc.json",
+    "questionId": "uro-nmi-00006",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "BCG-unresponsive Rezidiv beim operablen Patienten: definitive Zystektomie.",
+    "topic": "BCG-unresponsive",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/nmibc.json",
+    "questionId": "uro-nmi-00007",
+    "area": "endoscopy",
+    "acuity": "stable",
+    "reason": "Zeitpunkt der ersten Kontrollzystoskopie nach Ta-Low-Grade-Resektion.",
+    "topic": "Erste Nachsorge",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/nmibc.json",
+    "questionId": "uro-nmi-00008",
+    "area": "endoscopy",
+    "acuity": "stable",
+    "reason": "Negative Zytologie ersetzt indizierte Zystoskopie nicht; methodenspezifische Aussage.",
+    "topic": "Zytologie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/nmibc.json",
+    "questionId": "uro-nmi-00009",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Rauchstopp.",
+    "topic": "Rauchstopp",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/nmibc.json",
+    "questionId": "uro-nmi-00010",
+    "area": "endoscopy",
+    "acuity": "stable",
+    "reason": "BCG als organerhaltende Erstbehandlung eines ausgedehnten primären CIS.",
+    "topic": "CIS und Resektion",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00001",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Nervschonende Prostatektomie und Lage des neurovaskulären Bündels.",
+    "topic": "radikale Prostatektomie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00002",
+    "area": "endoscopy",
+    "acuity": "stable",
+    "reason": "Obturatoriusreflex direkt während transurethraler Blasenresektion.",
+    "topic": "transurethrale Resektion",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00003",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Linksseitige Nephrektomie: Hilusanatomie und Gefäßreihenfolge.",
+    "topic": "Nephrektomie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00004",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Anatomie des perkutanen Nierenzugangs; ergänzt die reine Verfahrenswahl.",
+    "topic": "perkutane Nephrolitholapaxie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00005",
+    "area": "ward",
+    "acuity": "urgent",
+    "reason": "Harnstauung und Extravasation nach Hysterektomie: postoperative Ursachenklärung.",
+    "topic": "Ureterverletzung",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00006",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Nervenerhalt bei retroperitonealer Lymphadenektomie.",
+    "topic": "retroperitoneale Lymphadenektomie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00007",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Grenzen der radikalen inguinalen Lymphadenektomie.",
+    "topic": "inguinale Lymphadenektomie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00008",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Darmsegmentwahl für Ileumneoblase unter Aussparung des terminalen Ileums.",
+    "topic": "Harnableitung",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00009",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Nierenbeckenplastik bei gekreuztem Unterpolgefäß.",
+    "topic": "Nierenbeckenplastik",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00010",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Venöse Anatomie bei rechtsseitiger Adrenalektomie.",
+    "topic": "Adrenalektomie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00011",
+    "area": "ward",
+    "acuity": "stable",
+    "reason": "Neurologischer Befund am zweiten Tag nach Psoas-Hitch; postoperativer Stationskonsil.",
+    "topic": "Psoas Hitch",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00012",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Sofort erkannte Ureterdurchtrennung während Rektumresektion: Rekonstruktion im Eingriff.",
+    "topic": "Ureterrekonstruktion",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00013",
+    "area": "ward",
+    "acuity": "stable",
+    "reason": "Peroneusläsion nach Steinschnittlagerung; neue postoperative Komplikation.",
+    "topic": "Lagerungsschäden",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00014",
+    "area": "ward",
+    "acuity": "stable",
+    "reason": "Trendelenburg-bedingte Befunde nach Robotik; postoperative Differenzierung.",
+    "topic": "robotische Chirurgie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00015",
+    "area": "ward",
+    "acuity": "urgent",
+    "reason": "Blutung an der Trokarstelle mit Vorwölbung und Hämoglobinabfall am Folgetag: postoperative Komplikation.",
+    "topic": "laparoskopischer Zugang",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00016",
+    "area": "ward",
+    "acuity": "urgent",
+    "reason": "Symptomatische Lymphozele nach pelviner Lymphadenektomie; spezifische postoperative Ursache.",
+    "topic": "Lymphozele",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00017",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Intraoperative Rektumläsion und unmittelbare mehrschichtige Versorgung.",
+    "topic": "Rektumverletzung",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00018",
+    "area": "endoscopy",
+    "acuity": "critical",
+    "reason": "Neurologische Symptome und Hyponatriämie während laufender transurethraler Prostataresektion.",
+    "topic": "TUR-Syndrom",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00019",
+    "area": "ward",
+    "acuity": "urgent",
+    "reason": "Verzögerte Blutung nach PCNL mit spezifischer vaskulärer Ursache statt der vorhandenen unspezifischen OP-Blutung.",
+    "topic": "Blutung nach PCNL",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00020",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Unmittelbare Versorgung eines adaptierbaren Obturatoriusnervdefekts.",
+    "topic": "pelvine Lymphadenektomie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-op-00101",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Anatomische Struktur im OP-Bericht einer RALP.",
+    "topic": "Operative Anatomie und Kontinenz nach RALP",
+    "status": "draft",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-op-00102",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Faszienschicht und kontinenterhaltender Nerv bei nerverhaltender RALP.",
+    "topic": "Operative Anatomie und Kontinenz nach RALP",
+    "status": "draft",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-op-00103",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Anatomischer Landmark bei Apexpräparation und Urethradurchtrennung.",
+    "topic": "Operative Anatomie und Kontinenz nach RALP",
+    "status": "draft",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-op-00104",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Strukturen der posterioren Rekonstruktion vor vesikourethraler Anastomose.",
+    "topic": "Operative Anatomie und Kontinenz nach RALP",
+    "status": "draft",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-op-00105",
+    "area": "ward",
+    "acuity": "stable",
+    "reason": "Padquotient noch während des stationären Aufenthalts unmittelbar nach Katheterentfernung.",
+    "topic": "Operative Anatomie und Kontinenz nach RALP",
+    "status": "draft",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-op-00106",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Geplante Retzius-sparende RALP: aufklärungsrelevante operativ-onkologische Abwägung.",
+    "topic": "Operative Anatomie und Kontinenz nach RALP",
+    "status": "draft",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-op-00107",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Präoperatives Aufklärungsgespräch zum Kontinenznutzen des bilateralen Nerverhalts.",
+    "topic": "Operative Anatomie und Kontinenz nach RALP",
+    "status": "draft",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-op-00108",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Technische Grenze der geplanten blasenhalserhaltenden RALP bei großem Mittellappen.",
+    "topic": "Operative Anatomie und Kontinenz nach RALP",
+    "status": "draft",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-op-00109",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Erhaltene anatomische Struktur beim konkreten RALP-Präparationsmanöver.",
+    "topic": "Operative Anatomie und Kontinenz nach RALP",
+    "status": "draft",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-op-00110",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Operative Anastomosenrekonstruktion und funktioneller Nutzen.",
+    "topic": "Operative Anatomie und Kontinenz nach RALP",
+    "status": "draft",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00021",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Gesichertes organbegrenztes Lokalrezidiv nach Radiatio: Salvage-Prostatektomie am Zentrum.",
+    "topic": "Prostatakarzinom",
+    "status": "published",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00022",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Fortgeschrittenes Rezidiv mit suspektem Knoten: systemisches Tumorboardkonzept statt gewünschter Operation.",
+    "topic": "Prostatakarzinom",
+    "status": "published",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00023",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Biochemisches Rezidiv mit PSMA-positiven Knoten: Bestrahlungs- und ADT-Planung.",
+    "topic": "Prostatakarzinom",
+    "status": "published",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00024",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Präoperative Aufklärung zur geplanten Salvage-Lymphadenektomie.",
+    "topic": "Prostatakarzinom",
+    "status": "published",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00025",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Patientenwunsch nach zytoreduktiver Operation bei metastasierter Erkrankung: Tumorboard und Studienberatung.",
+    "topic": "Prostatakarzinom",
+    "status": "published",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00026",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Resektabler lokaler palliativ symptomatischer Tumor: Beckenchirurgie am Zentrum.",
+    "topic": "Prostatakarzinom",
+    "status": "published",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00027",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Solitäre Metastase nach Systemtherapie: operative Einzelfallabwägung bei kompletter Resektabilität.",
+    "topic": "Urothelkarzinom",
+    "status": "published",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00028",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Zusätzliche nicht resektable Knochenmetastase: Systemtherapie und fokale Therapie statt vollständiger Metastasenresektion.",
+    "topic": "Nierenzellkarzinom",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00029",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Operable solitäre Pankreasmetastase nach langem Intervall: Resektion und Morbiditätsaufklärung.",
+    "topic": "Nierenzellkarzinom",
+    "status": "published",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/operativ.json",
+    "questionId": "uro-ope-00030",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Komplexes markernegatives Keimzelltumor-Residuum mit Gefäßkontakt: Zentrumschirurgie.",
+    "topic": "Keimzelltumor",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/peniskarzinom.json",
+    "questionId": "uro-pen-00001",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Dynamische Sentinel-Lymphknotenbiopsie nach Primärtumoroperation.",
+    "topic": "Lymphknotenstaging",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/peniskarzinom.json",
+    "questionId": "uro-pen-00002",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Organerhaltende Exzision eines umschriebenen Glanstumors.",
+    "topic": "Primärtumor",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/peniskarzinom.json",
+    "questionId": "uro-pen-00003",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: fortgeschrittene Lymphknotenerkrankung.",
+    "topic": "fortgeschrittene Lymphknotenerkrankung",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/peniskarzinom.json",
+    "questionId": "uro-pen-00004",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Pelvine Lymphadenektomie nach spezifischem inguinalem Knotenbefall.",
+    "topic": "Lymphknotenstaging",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/peniskarzinom.json",
+    "questionId": "uro-pen-00005",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Biopsiepflicht vor topischer antitumoraler Therapie einer unklaren Glansläsion.",
+    "topic": "Biopsie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/peniskarzinom.json",
+    "questionId": "uro-pen-00006",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Lokales Staging einer Penisraumforderung bei unklarer Schwellkörperinfiltration.",
+    "topic": "Lokale Ausdehnung",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/peniskarzinom.json",
+    "questionId": "uro-pen-00007",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: PeIN.",
+    "topic": "PeIN",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/peniskarzinom.json",
+    "questionId": "uro-pen-00008",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: HPV und anatomisches Staging.",
+    "topic": "HPV und anatomisches Staging",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/peniskarzinom.json",
+    "questionId": "uro-pen-00009",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Suspekte Leistenlymphknoten.",
+    "topic": "Suspekte Leistenlymphknoten",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/peniskarzinom.json",
+    "questionId": "uro-pen-00010",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Versagen topischer Therapie.",
+    "topic": "Versagen topischer Therapie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/prostatakarzinom.json",
+    "questionId": "uro-pca-00001",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: mHSPC.",
+    "topic": "mHSPC",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/prostatakarzinom.json",
+    "questionId": "uro-pca-00002",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: nmCRPC.",
+    "topic": "nmCRPC",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/prostatakarzinom.json",
+    "questionId": "uro-pca-00003",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: BCR.",
+    "topic": "BCR",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/prostatakarzinom.json",
+    "questionId": "uro-pca-00004",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Früherkennung.",
+    "topic": "Früherkennung",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/prostatakarzinom.json",
+    "questionId": "uro-pca-00005",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Biopsieindikation.",
+    "topic": "Biopsieindikation",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/prostatakarzinom.json",
+    "questionId": "uro-pca-00006",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Erste Prostatabiopsie: ambulante diagnostische Verfahrenswahl bei resistenten Harnwegskeimen.",
+    "topic": "Biopsietechnik",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/prostatakarzinom.json",
+    "questionId": "uro-pca-00007",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Histopathologie.",
+    "topic": "Histopathologie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/prostatakarzinom.json",
+    "questionId": "uro-pca-00008",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Staging.",
+    "topic": "Staging",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/prostatakarzinom.json",
+    "questionId": "uro-pca-00009",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: aktive Überwachung.",
+    "topic": "aktive Überwachung",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/prostatakarzinom.json",
+    "questionId": "uro-pca-00010",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: pelvine Lymphadenektomie.",
+    "topic": "pelvine Lymphadenektomie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/prostatakarzinom.json",
+    "questionId": "uro-pca-00011",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Strahlentherapie.",
+    "topic": "Strahlentherapie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/prostatakarzinom.json",
+    "questionId": "uro-pca-00012",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "PSA-Kontrolle sechs Wochen nach Prostatektomie: ambulante Beratung über frühe Salvage-Bestrahlung.",
+    "topic": "postoperative Radiatio",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/prostatakarzinom.json",
+    "questionId": "uro-pca-00013",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Aufklärung vor Prostatektomie.",
+    "topic": "Aufklärung vor Prostatektomie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/prostatakarzinom.json",
+    "questionId": "uro-pca-00014",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: mHSPC.",
+    "topic": "mHSPC",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/prostatakarzinom.json",
+    "questionId": "uro-pca-00015",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: mHSPC.",
+    "topic": "mHSPC",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/prostatakarzinom.json",
+    "questionId": "uro-pca-00016",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: mCRPC.",
+    "topic": "mCRPC",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/prostatakarzinom.json",
+    "questionId": "uro-pca-00017",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Tumor- und Keimbahndiagnostik bei mCRPC und familiärer Belastung.",
+    "topic": "molekulare Diagnostik",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/prostatakarzinom.json",
+    "questionId": "uro-pca-00018",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Radioligandentherapie.",
+    "topic": "Radioligandentherapie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/prostatakarzinom.json",
+    "questionId": "uro-pca-00019",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Radium-223.",
+    "topic": "Radium-223",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/prostatakarzinom.json",
+    "questionId": "uro-pca-00020",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Knochenschutz.",
+    "topic": "Knochenschutz",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/prostatakarzinom.json",
+    "questionId": "uro-pca-00021",
+    "area": "emergency",
+    "acuity": "critical",
+    "reason": "Onkologischer Notfall mit möglicher Rückenmarkkompression erweitert die Notfallbreite.",
+    "topic": "onkologischer Notfall",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/prostatakarzinom.json",
+    "questionId": "uro-pca-00022",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Kastrationsresistenz.",
+    "topic": "Kastrationsresistenz",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/prostatakarzinom.json",
+    "questionId": "uro-pca-00023",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: aggressive Variante.",
+    "topic": "aggressive Variante",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/rekonstruktion.json",
+    "questionId": "uro-rek-00001",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Individuelle Urethroplastik nach bereits erfolgter Urethrotomie.",
+    "topic": "Harnröhrenstriktur",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/rekonstruktion.json",
+    "questionId": "uro-rek-00002",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Substitutionsurethroplastik bei langer Striktur mit Lichen sclerosus.",
+    "topic": "Harnröhrenstriktur",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/rekonstruktion.json",
+    "questionId": "uro-rek-00003",
+    "area": "emergency",
+    "acuity": "urgent",
+    "reason": "Akute Beckenfraktur mit vollständiger Harnröhrentrennung: primäre Harnableitung.",
+    "topic": "Harnröhrenverletzung",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/rekonstruktion.json",
+    "questionId": "uro-rek-00004",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Operativer transvaginaler Fistelverschluss mit Gewebeinterposition.",
+    "topic": "Harnfistel",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/rekonstruktion.json",
+    "questionId": "uro-rek-00005",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Neoblase vor geplanter radikaler Zystektomie: Rand- und Funktionsprüfung.",
+    "topic": "Harnableitung",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/rekonstruktion.json",
+    "questionId": "uro-rek-00006",
+    "area": "ward",
+    "acuity": "stable",
+    "reason": "B12-Mangel und Azidose nach Neoblase; metabolischer Stationskonsil.",
+    "topic": "Neoblase",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/rekonstruktion.json",
+    "questionId": "uro-rek-00007",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Lange Ureterstriktur: Wahl des operativen Ureterersatzes.",
+    "topic": "Ureterersatz",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/rekonstruktion.json",
+    "questionId": "uro-rek-00008",
+    "area": "ward",
+    "acuity": "urgent",
+    "reason": "Beidseitige Harnstauung bei retroperitonealer Fibrose: komplexer Konsil mit Ableitung und Ursachenbehandlung.",
+    "topic": "retroperitoneale Fibrose",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/rekonstruktion.json",
+    "questionId": "uro-rek-00009",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Blasenaugmentation bei refraktär hohem Speicherdruck und gesichertem Katheterismus.",
+    "topic": "Blasenaugmentation",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/rekonstruktion.json",
+    "questionId": "uro-rek-00010",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Katheterisierbarer kontinenter Kanal als operative Ableitungsplanung.",
+    "topic": "kontinente Ableitung",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/rekonstruktion.json",
+    "questionId": "uro-rek-00011",
+    "area": "ward",
+    "acuity": "stable",
+    "reason": "Elektrolytmuster unterschiedlicher Darmsegmente im Harntrakt; ergänzt die Harnableitungspflege.",
+    "topic": "Harnableitung",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/rekonstruktion.json",
+    "questionId": "uro-rek-00012",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Neue asymptomatische Harnstauung zwei Jahre nach Conduit: Nachsorge und weitere Bildgebung.",
+    "topic": "Harnableitung",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/rekonstruktion.json",
+    "questionId": "uro-rek-00013",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Transplantation.",
+    "topic": "Transplantation",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/rekonstruktion.json",
+    "questionId": "uro-rek-00014",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Standardanlage einer Nierentransplantation: Zugang, Gefäße und Ureter.",
+    "topic": "Transplantation",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/rekonstruktion.json",
+    "questionId": "uro-rek-00015",
+    "area": "ward",
+    "acuity": "urgent",
+    "reason": "Anurie am zweiten Tag nach Nierentransplantation; andere postoperative AKI-Konstellation.",
+    "topic": "Transplantation",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/rekonstruktion.json",
+    "questionId": "uro-rek-00016",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Neue schwer einstellbare Hypertonie zehn Monate nach Transplantation: vaskuläre Abklärung.",
+    "topic": "Transplantation",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/rekonstruktion.json",
+    "questionId": "uro-rek-00017",
+    "area": "ward",
+    "acuity": "urgent",
+    "reason": "Komprimierende Flüssigkeitsansammlung nach Transplantation: postoperative Drainageplanung.",
+    "topic": "Transplantation",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/rekonstruktion.json",
+    "questionId": "uro-rek-00018",
+    "area": "ward",
+    "acuity": "stable",
+    "reason": "BK-Virus-Last und Kreatininanstieg nach Transplantation; immunsuppressive Komplikation.",
+    "topic": "Transplantation",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/rekonstruktion.json",
+    "questionId": "uro-rek-00019",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Transplantation.",
+    "topic": "Transplantation",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/rekonstruktion.json",
+    "questionId": "uro-rek-00020",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "Lebendspende: Seitenwahl und operative Entnahmeplanung.",
+    "topic": "Lebendspende",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/trauma.json",
+    "questionId": "uro-tra-00001",
+    "area": "emergency",
+    "acuity": "urgent",
+    "reason": "Traumadiagnostik nach Kreislaufstatus und Hämaturie; neuer Notaufnahme-Schwerpunkt.",
+    "topic": "Nierentrauma",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/trauma.json",
+    "questionId": "uro-tra-00002",
+    "area": "emergency",
+    "acuity": "urgent",
+    "reason": "Konservative Überwachung eines stabilen Nierentraumas statt reflexhafter Operation.",
+    "topic": "Nierentrauma",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/trauma.json",
+    "questionId": "uro-tra-00003",
+    "area": "theatre",
+    "acuity": "critical",
+    "reason": "Instabiler Patient mit expandierendem retroperitonealem Hämatom während laufender Laparotomie.",
+    "topic": "Nierentrauma",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/trauma.json",
+    "questionId": "uro-tra-00004",
+    "area": "ward",
+    "acuity": "urgent",
+    "reason": "Fieberhaftes wachsendes Urinom nach zunächst konservativer Traumabehandlung; Folgebehandlung auf Station.",
+    "topic": "Nierentrauma",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/trauma.json",
+    "questionId": "uro-tra-00005",
+    "area": "emergency",
+    "acuity": "urgent",
+    "reason": "Akute traumatische Nierenarterienverletzung in stabiler Konstellation: Notfallentscheidung nach CT.",
+    "topic": "Nierengefäßverletzung",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/trauma.json",
+    "questionId": "uro-tra-00006",
+    "area": "emergency",
+    "acuity": "urgent",
+    "reason": "Penetrierendes Flankentrauma mit ausdrücklich stabilem Kreislauf und definierter CT-Konstellation.",
+    "topic": "penetrierendes Trauma",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/trauma.json",
+    "questionId": "uro-tra-00007",
+    "area": "ward",
+    "acuity": "urgent",
+    "reason": "Drainage mit hohem Kreatinin acht Tage nach kolorektaler Resektion: postoperative Harnleiterverletzung.",
+    "topic": "Ureterverletzung",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/trauma.json",
+    "questionId": "uro-tra-00008",
+    "area": "emergency",
+    "acuity": "urgent",
+    "reason": "Intraperitoneale gegen extraperitoneale Blasenruptur; neue Traumadifferenzierung.",
+    "topic": "Blasenruptur",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/trauma.json",
+    "questionId": "uro-tra-00009",
+    "area": "emergency",
+    "acuity": "urgent",
+    "reason": "Beckenfraktur mit Makrohämaturie: akute zuverlässige Rupturdiagnostik.",
+    "topic": "Blasenruptur",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/trauma.json",
+    "questionId": "uro-tra-00010",
+    "area": "emergency",
+    "acuity": "urgent",
+    "reason": "Rittlingsverletzung: Diagnostik vor Katheterversuch; ergänzt die allgemeine Retentionssimulation.",
+    "topic": "Harnröhrenverletzung",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/trauma.json",
+    "questionId": "uro-tra-00011",
+    "area": "ward",
+    "acuity": "urgent",
+    "reason": "Iatrogene Harnröhrenverletzung nach wiederholten Katheterversuchen auf Intensivstation.",
+    "topic": "Harnröhrenverletzung",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/trauma.json",
+    "questionId": "uro-tra-00012",
+    "area": "emergency",
+    "acuity": "urgent",
+    "reason": "Penisfraktur als neuer zeitkritischer Genitalnotfall.",
+    "topic": "Penisfraktur",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/trauma.json",
+    "questionId": "uro-tra-00013",
+    "area": "emergency",
+    "acuity": "urgent",
+    "reason": "Traumatische Hodenruptur; ergänzt statt wiederholt die vorhandene Torsionsgeschichte.",
+    "topic": "Hodentrauma",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/trauma.json",
+    "questionId": "uro-tra-00014",
+    "area": "emergency",
+    "acuity": "urgent",
+    "reason": "Traumatische Hodendislokation als eigener Verletzungstyp.",
+    "topic": "Hodentrauma",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/trauma.json",
+    "questionId": "uro-tra-00015",
+    "area": "emergency",
+    "acuity": "urgent",
+    "reason": "Kindliches Nierentrauma mit unverhältnismäßigem Befund und möglicher vorbestehender Anomalie.",
+    "topic": "Nierentrauma",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/urethrakarzinom.json",
+    "questionId": "uro-ure-00001",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Histologie.",
+    "topic": "Histologie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/urethrakarzinom.json",
+    "questionId": "uro-ure-00002",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "MRT zur lokalen Ausdehnung eines gesicherten Harnröhrenkarzinoms.",
+    "topic": "Staging",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/urethrakarzinom.json",
+    "questionId": "uro-ure-00003",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Risikofaktoren.",
+    "topic": "Risikofaktoren",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/urethrakarzinom.json",
+    "questionId": "uro-ure-00004",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Therapie der Frau.",
+    "topic": "Therapie der Frau",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/urethrakarzinom.json",
+    "questionId": "uro-ure-00005",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: lokal fortgeschritten.",
+    "topic": "lokal fortgeschritten",
+    "status": "published",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/urethrakarzinom.json",
+    "questionId": "uro-ure-00006",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Lymphabfluss.",
+    "topic": "Lymphabfluss",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/urethrakarzinom.json",
+    "questionId": "uro-ure-00007",
+    "area": "endoscopy",
+    "acuity": "stable",
+    "reason": "Transurethrale Therapie und BCG bei mukosalem/duktalem Befall ohne Stromainvasion.",
+    "topic": "prostatische Harnröhre",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/urethrakarzinom.json",
+    "questionId": "uro-ure-00008",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Systemtherapie.",
+    "topic": "Systemtherapie",
+    "status": "published",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/urethrakarzinom.json",
+    "questionId": "uro-ure-00009",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Prognose.",
+    "topic": "Prognose",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/urethrakarzinom.json",
+    "questionId": "uro-ure-00010",
+    "area": "endoscopy",
+    "acuity": "stable",
+    "reason": "Kontrollurethroskopie als Bestandteil der Nachsorge nach Organerhalt.",
+    "topic": "Nachsorge",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/urolithiasis.json",
+    "questionId": "uro-lit-00001",
+    "area": "emergency",
+    "acuity": "urgent",
+    "reason": "Fieberhafter obstruierender Harnleiterstein: zeitkritische Harnableitung.",
+    "topic": "akuttherapie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/urolithiasis.json",
+    "questionId": "uro-lit-00002",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: metaphylaxe.",
+    "topic": "metaphylaxe",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/urolithiasis.json",
+    "questionId": "uro-lit-00003",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: metaphylaxe.",
+    "topic": "metaphylaxe",
+    "status": "published",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/urolithiasis.json",
+    "questionId": "uro-lit-00004",
+    "area": "emergency",
+    "acuity": "urgent",
+    "reason": "Akute Nierenkolik: initiale Analgesie in der Notaufnahme.",
+    "topic": "Kolikanalgesie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/urolithiasis.json",
+    "questionId": "uro-lit-00005",
+    "area": "theatre",
+    "acuity": "stable",
+    "reason": "PCNL als primäre Verfahrenswahl bei 28-mm-Nierenbeckenstein.",
+    "topic": "Große Nierensteine",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/urolithiasis.json",
+    "questionId": "uro-lit-00006",
+    "area": "emergency",
+    "acuity": "urgent",
+    "reason": "Akuter Steinverdacht in der Schwangerschaft: erste Bildgebung bei stabilem Kreislauf.",
+    "topic": "Bildgebung Schwangerschaft",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/urolithiasis.json",
+    "questionId": "uro-lit-00007",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Medikamentöse Expulsion.",
+    "topic": "Medikamentöse Expulsion",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/urolithiasis.json",
+    "questionId": "uro-lit-00008",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Harnsäurechemolyse.",
+    "topic": "Harnsäurechemolyse",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/urolithiasis.json",
+    "questionId": "uro-lit-00009",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Aktive Überwachung.",
+    "topic": "Aktive Überwachung",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/urolithiasis.json",
+    "questionId": "uro-lit-00010",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Steinanalyse.",
+    "topic": "Steinanalyse",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/utuc.json",
+    "questionId": "uro-utu-00001",
+    "area": "endoscopy",
+    "acuity": "stable",
+    "reason": "Ureterorenoskopischer Organerhalt bei klar definierter Low-Risk-Konstellation.",
+    "topic": "organerhaltendes Vorgehen",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/utuc.json",
+    "questionId": "uro-utu-00002",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Risikostratifizierung.",
+    "topic": "Risikostratifizierung",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/utuc.json",
+    "questionId": "uro-utu-00003",
+    "area": "endoscopy",
+    "acuity": "stable",
+    "reason": "Unauffällige Blasenspiegelung bei positiver Zytologie: ergänzende Abklärung mit selektiver oberer Zytologie.",
+    "topic": "Diagnostik",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/utuc.json",
+    "questionId": "uro-utu-00004",
+    "area": "endoscopy",
+    "acuity": "stable",
+    "reason": "Diagnostische URS nur bei therapeutischem Zusatznutzen in bereits eindeutiger invasiver Hochrisiko-Konstellation.",
+    "topic": "Diagnostik",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/utuc.json",
+    "questionId": "uro-utu-00005",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Nephroureterektomie.",
+    "topic": "Nephroureterektomie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/utuc.json",
+    "questionId": "uro-utu-00006",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: Lymphadenektomie.",
+    "topic": "Lymphadenektomie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/utuc.json",
+    "questionId": "uro-utu-00007",
+    "area": "ward",
+    "acuity": "stable",
+    "reason": "Intravesikale Rezidivprophylaxe am zweiten Tag nach Nephroureterektomie bei nachgewiesen dichtem Verschluss.",
+    "topic": "Blasenrezidivprophylaxe",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/utuc.json",
+    "questionId": "uro-utu-00008",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: adjuvante Therapie.",
+    "topic": "adjuvante Therapie",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/utuc.json",
+    "questionId": "uro-utu-00009",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: perioperatives Konzept.",
+    "topic": "perioperatives Konzept",
+    "status": "published",
+    "evidenceFlag": true
+  },
+  {
+    "sourcePath": "data/fragen/utuc.json",
+    "questionId": "uro-utu-00010",
+    "area": "clinic",
+    "acuity": "stable",
+    "reason": "Ambulante Befundbeurteilung, Beratung oder Behandlungs-/Nachsorgeplanung: hereditäre Formen.",
+    "topic": "hereditäre Formen",
+    "status": "published",
+    "evidenceFlag": false
+  },
+  {
+    "sourcePath": "data/fragen/utuc.json",
+    "questionId": "uro-utu-00011",
+    "area": "endoscopy",
+    "acuity": "stable",
+    "reason": "Nachsorge nach ureterorenoskopischer Tumorablation mit erneuter Endoskopie.",
+    "topic": "Nachsorge",
+    "status": "published",
+    "evidenceFlag": false
+  }
+]
