@@ -146,7 +146,9 @@
     try{if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;}catch(_){return;}
     const r=target&&target.getBoundingClientRect?target.getBoundingClientRect():{left:window.innerWidth/2-60,top:window.innerHeight/2,width:120,height:40};
     const box=document.createElement('div');box.className='splash';box.setAttribute('aria-hidden','true');
-    box.style.left=Math.round(r.left+r.width*.8)+'px';box.style.top=Math.round(r.top+r.height/2)+'px';
+    // The punchline spans 60 px left to 180 px right of the anchor; keep it on screen on phones.
+    const x=Math.min(Math.max(r.left+r.width*.8,70),Math.max(70,window.innerWidth-190));
+    box.style.left=Math.round(x)+'px';box.style.top=Math.round(r.top+r.height/2)+'px';
     let drops='';
     for(let i=0;i<18;i++){
       const angle=(-170+i*(160/17)+(Math.random()*12-6))*Math.PI/180,dist=45+Math.random()*80;
@@ -269,9 +271,10 @@
     const label=part=>loc(s.parts.find(p=>p.id===part).label),hl=highlight.filter(part=>s.parts.some(p=>p.id===part));
     const svg=s.svg.replace(/data-part="([^"]+)"/g,(match,part)=>match+' tabindex="0" role="button" aria-label="'+esc(mode==='quiz'?t('atlasQuiz'):label(part))+'"'+(hl.includes(part)?' class="hl"':''));
     const order=[...hl,...s.parts.map(p=>p.id).filter(part=>!hl.includes(part))];
+    // The note sits right under the drawing so the fact a tap reveals stays in view; the legend follows.
     return '<figure class="schema" data-schema="'+esc(s.id)+'" data-mode="'+mode+'"><figcaption><b>'+esc(loc(s.title))+'</b><small>'+esc(loc(s.caption))+' '+esc(t('schemaNotice'))+'</small></figcaption><div class="schema-svg"><svg viewBox="'+esc(s.viewBox)+'" role="group" aria-label="'+esc(loc(s.title))+'" xmlns="http://www.w3.org/2000/svg">'+svg+'</svg></div>'+
-      (mode==='quiz'?'':'<div class="schema-legend">'+order.map(part=>'<button type="button" class="schema-chip'+(hl.includes(part)?' hl':'')+'" data-legend-part="'+esc(part)+'">'+(hl.includes(part)?'★ ':'')+esc(label(part))+'</button>').join('')+'</div>')+
-      '<p class="schema-note" aria-live="polite">'+(mode==='quiz'?'':esc(t(hl.length?'schemaHintCase':'schemaHint')))+'</p></figure>';
+      '<p class="schema-note" aria-live="polite">'+(mode==='quiz'?'':esc(t(hl.length?'schemaHintCase':'schemaHint')))+'</p>'+
+      (mode==='quiz'?'':'<div class="schema-legend">'+order.map(part=>'<button type="button" class="schema-chip'+(hl.includes(part)?' hl':'')+'" data-legend-part="'+esc(part)+'">'+(hl.includes(part)?'★ ':'')+esc(label(part))+'</button>').join('')+'</div>')+'</figure>';
   }
   function caseVisuals(c) {
     const schema=c.schema&&SCHEMAS.has(c.schema.id)?schemaFigure(c.schema.id,c.schema.parts||[]):'';
@@ -282,11 +285,12 @@
     const s=SCHEMAS.get(figure.dataset.schema),part=s&&s.parts.find(p=>p.id===id);if(!part)return;
     figure.classList.add('focus');
     figure.querySelectorAll('[data-part],[data-legend-part]').forEach(el=>el.classList.toggle('on',(el.dataset.part||el.dataset.legendPart)===id));
-    figure.querySelector('.schema-note').innerHTML='<b>'+esc(loc(part.label))+'</b> – '+esc(loc(part.note));
+    const note=figure.querySelector('.schema-note');note.innerHTML='<b>'+esc(loc(part.label))+'</b> – '+esc(loc(part.note));
+    note.scrollIntoView?.({block:'nearest'});
   }
   function atlas() {
     const used=id=>C.cases.filter(c=>c.schema&&c.schema.id===id).length;
-    return '<div class="page-head"><p class="eyebrow">'+esc(t('atlas'))+'</p><h1>'+esc(t('atlasTitle'))+'</h1><p>'+esc(t('atlasSub'))+'</p></div><div class="atlas-grid">'+[...SCHEMAS.values()].map(s=>'<article class="atlas-card"><div class="atlas-thumb" aria-hidden="true"><svg viewBox="'+esc(s.viewBox)+'" xmlns="http://www.w3.org/2000/svg">'+s.svg+'</svg></div><h3>'+esc(loc(s.title))+'</h3><p>'+esc(loc(s.caption))+'</p><small>'+esc(t('atlasUsed').replace('{n}',String(used(s.id))))+' · '+s.parts.length+' ⦿</small><div class="actions"><button class="btn small quiet" data-atlas-open="'+esc(s.id)+'">'+esc(t('atlasExplore'))+'</button><button class="btn small primary" data-atlas-quiz="'+esc(s.id)+'">🎯 '+esc(t('atlasQuiz'))+'</button></div></article>').join('')+'</div>';
+    return '<div class="page-head"><p class="eyebrow">'+esc(t('atlas'))+'</p><h1>'+esc(t('atlasTitle'))+'</h1><p>'+esc(t('atlasSub'))+'</p></div><div class="atlas-grid">'+[...SCHEMAS.values()].map(s=>'<article class="atlas-card"><div class="atlas-thumb" aria-hidden="true"><svg viewBox="'+esc(s.viewBox)+'" xmlns="http://www.w3.org/2000/svg">'+s.svg+'</svg></div><h3>'+esc(loc(s.title))+'</h3><p>'+esc(loc(s.caption))+'</p><small>'+esc(t(used(s.id)===1?'atlasUsedOne':'atlasUsed').replace('{n}',String(used(s.id))))+' · '+s.parts.length+' ⦿</small><div class="actions"><button class="btn small quiet" data-atlas-open="'+esc(s.id)+'">'+esc(t('atlasExplore'))+'</button><button class="btn small primary" data-atlas-quiz="'+esc(s.id)+'">🎯 '+esc(t('atlasQuiz'))+'</button></div></article>').join('')+'</div>';
   }
   let quiz=null;
   function openAtlas(id) {
@@ -315,13 +319,15 @@
   function answerQuiz(figure,id,element) {
     if(!quiz||quiz.answered!==null||quiz.index>=quiz.rounds.length)return;
     const s=SCHEMAS.get(quiz.id),target=quiz.rounds[quiz.index],right=id===target,part=s.parts.find(p=>p.id===target);
+    if(!s.parts.some(p=>p.id===id))return;
     quiz.answered=id;if(right)quiz.score++;
     figure.classList.add('focus');
     figure.querySelector('[data-part="'+target+'"]')?.classList.add('right','on');
     if(!right)figure.querySelector('[data-part="'+id+'"]')?.classList.add('wrong');
     figure.querySelector('.schema-note').innerHTML='<b>'+esc(right?t('quizRight'):t('quizWrong').replace('{part}',loc(s.parts.find(p=>p.id===id).label)))+'</b> '+esc(loc(part.label))+': '+esc(loc(part.note));
     document.querySelector('dialog[open] .quiz-actions')?.removeAttribute('hidden');
-    document.querySelector('dialog[open] [data-action="quiz-next"]')?.focus({preventScroll:true});
+    // Focusing the button scrolls the verdict and the way forward into view on short laptop screens.
+    document.querySelector('dialog[open] [data-action="quiz-next"]')?.focus();
     sound(right?'good':'splash');if(right)celebrate(false);else splash(element);
   }
   function sourceLinks(c) { return '<div class="case-refs"><span class="label">'+esc(t(c.source?'sourceRelated':'reviewSources'))+'</span><ul>'+c.references.map(id=>{const r=C.references.find(r=>r.id===id);return r?'<li><a href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">'+esc(r.title)+' ↗</a></li>':'';}).join('')+'</ul></div>'; }

@@ -371,7 +371,8 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{o
   .all-options{padding:8px 9px}
   .all-options li{padding:8px;gap:8px}
 }
-@media(max-width:420px){
+/* With five menu entries (Atlas included) the row needs wrapping up to 450 px. */
+@media(max-width:450px){
   .nav{flex-wrap:wrap;justify-content:flex-start;gap:2px 4px}
   .nav-btn{padding:5px 6px;font-size:.7rem}
 }
@@ -390,6 +391,15 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{o
 .schema [data-part].on{filter:drop-shadow(0 0 4px #ffcf5a) drop-shadow(0 0 8px #ffcf5a);opacity:1}
 .schema [data-part].right{filter:drop-shadow(0 0 5px #3f8e72) drop-shadow(0 0 9px #3f8e72);opacity:1}
 .schema [data-part].wrong{filter:drop-shadow(0 0 5px #d35468) drop-shadow(0 0 9px #d35468);opacity:1}
+/* A glowing (★) structure stops glowing while focused or selected, so the focus ring and the selection stay visible (also under reduced motion). */
+.schema [data-part].hl:focus-visible,.schema [data-part].hl.on{animation:none}
+.schema [data-part]:focus-visible,.schema [data-part].hl:focus-visible{filter:drop-shadow(0 0 1.5px #2a2442) drop-shadow(0 0 1.5px #2a2442) drop-shadow(0 0 7px #ffcf5a)}
+.schema [data-part].hl.on{filter:drop-shadow(0 0 4px #ffcf5a) drop-shadow(0 0 8px #ffcf5a)}
+/* In dialogs the drawing shrinks on short screens so the verdict and the next button fit below it. */
+.schema-modal .schema-svg svg{max-height:max(190px,min(440px,calc(100vh - 340px)))}
+/* Five menu entries plus the language switch: tighten the header between the phone and desktop layouts. */
+@media(min-width:761px) and (max-width:860px){.top-inner{flex-wrap:wrap;gap:8px;padding-top:13px;padding-bottom:8px}.nav{order:3;width:100%;justify-content:space-between}.nav-btn{padding:6px 8px;font-size:.76rem}}
+@media(min-width:861px) and (max-width:960px){.top-inner{gap:12px}.nav{gap:2px}.nav-btn{padding:8px 8px;font-size:.76rem}.brand small{display:none}}
 .schema-legend{display:flex;flex-wrap:wrap;gap:6px}
 .schema-chip{border:2px solid #9b89a6;background:#fff;color:#302944;border-radius:999px;padding:4px 10px;font-size:.72rem;font-weight:700}
 .schema-chip.hl{border-color:#ff9f1a;background:#fff0bb}
