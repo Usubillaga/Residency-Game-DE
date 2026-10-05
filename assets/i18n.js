@@ -43,6 +43,8 @@ en:{
   duty_night:'Night shift',duty_board:'Tumour board',duty_clinic:'Clinic',duty_elective:'Elective OR list',duty_mixed:'Mixed rotation',
   dutyText_night:'Emergencies only: colic, retention, bleeding, trauma, infection, emergency surgery.',dutyText_board:'Oncology decisions: staging, choice of treatment, systemic therapy.',dutyText_clinic:'Outpatient work-up, counselling and follow-up, including cancer follow-up.',dutyText_elective:'Planned operations and endoscopy: technique, anatomy, perioperative routine.',
   dutyTime_night:'from 22:00',dutyTime_board:'Wed 15:30',dutyTime_clinic:'from 08:00',dutyTime_elective:'from 07:30',dutyTime_mixed:'from 22:00',
+  atlas:'Atlas',atlasTitle:'Anatomy atlas',atlasSub:'Schematic drawings behind the cases. Tap any structure, or play “Find the structure”.',atlasExplore:'Explore',atlasQuiz:'Find the structure',atlasUsed:'{n} cases',schemaHint:'Tap a structure to see its name and a key fact.',schemaHintCase:'★ marks the structures that matter in this case. Tap any structure.',schemaNotice:'Schematic teaching drawing, not to scale.',
+  quizPrompt:'Tap: {part}',quizRound:'Round {n} of {total}',quizRight:'Right!',quizWrong:'Not quite: that was {part}.',quizDone:'Result: {score} of {total}',quizAgain:'Play again',imageSource:'Source',imageLicense:'Licence',
 },
 de:{
   caseSingular:'Fall',
@@ -87,6 +89,8 @@ de:{
   duty_night:'Nachtdienst',duty_board:'Tumorboard',duty_clinic:'Sprechstunde',duty_elective:'OP-Programm',duty_mixed:'Gemischte Rotation',
   dutyText_night:'Nur Notfälle: Kolik, Harnverhalt, Blutung, Trauma, Infektion, Notfall-OP.',dutyText_board:'Onkologische Entscheidungen: Staging, Therapiewahl, Systemtherapie.',dutyText_clinic:'Ambulante Abklärung, Beratung und Nachsorge, auch onkologisch.',dutyText_elective:'Geplante Operationen und Endoskopie: Technik, Anatomie, perioperative Routine.',
   dutyTime_night:'ab 22:00',dutyTime_board:'Mi 15:30',dutyTime_clinic:'ab 08:00',dutyTime_elective:'ab 07:30',dutyTime_mixed:'ab 22:00',
+  atlas:'Atlas',atlasTitle:'Anatomie-Atlas',atlasSub:'Schematische Zeichnungen zu den Fällen. Tippe auf eine Struktur – oder spiel „Finde die Struktur“.',atlasExplore:'Erkunden',atlasQuiz:'Finde die Struktur',atlasUsed:'{n} Fälle',schemaHint:'Tippe auf eine Struktur: Name und Merksatz erscheinen.',schemaHintCase:'★ markiert die Strukturen, auf die es in diesem Fall ankommt. Tippe auf jede Struktur.',schemaNotice:'Schematische Lernzeichnung, nicht maßstabsgetreu.',
+  quizPrompt:'Tippe auf: {part}',quizRound:'Runde {n} von {total}',quizRight:'Richtig!',quizWrong:'Daneben – das war {part}.',quizDone:'Ergebnis: {score} von {total}',quizAgain:'Nochmal',imageSource:'Quelle',imageLicense:'Lizenz',
 },
 es:{
   caseSingular:'caso',
@@ -131,5 +135,7 @@ es:{
   duty_night:'Guardia de noche',duty_board:'Comité de tumores',duty_clinic:'Consulta',duty_elective:'Programa quirúrgico',duty_mixed:'Rotación mixta',
   dutyText_night:'Solo urgencias: cólico, retención, sangrado, traumatismo, infección, cirugía urgente.',dutyText_board:'Decisiones oncológicas: estadificación, elección del tratamiento, terapia sistémica.',dutyText_clinic:'Estudio ambulatorio, asesoramiento y seguimiento, también oncológico.',dutyText_elective:'Cirugía y endoscopia programadas: técnica, anatomía, rutina perioperatoria.',
   dutyTime_night:'desde las 22:00',dutyTime_board:'mié 15:30',dutyTime_clinic:'desde las 08:00',dutyTime_elective:'desde las 07:30',dutyTime_mixed:'desde las 22:00',
+  atlas:'Atlas',atlasTitle:'Atlas anatómico',atlasSub:'Dibujos esquemáticos de los casos. Toca cualquier estructura o juega a «Encuentra la estructura».',atlasExplore:'Explorar',atlasQuiz:'Encuentra la estructura',atlasUsed:'{n} casos',schemaHint:'Toca una estructura para ver su nombre y un dato clave.',schemaHintCase:'★ marca las estructuras clave de este caso. Toca cualquier estructura.',schemaNotice:'Dibujo didáctico esquemático, no a escala.',
+  quizPrompt:'Toca: {part}',quizRound:'Ronda {n} de {total}',quizRight:'¡Correcto!',quizWrong:'Casi: eso era {part}.',quizDone:'Resultado: {score} de {total}',quizAgain:'Otra vez',imageSource:'Fuente',imageLicense:'Licencia',
 }
 };

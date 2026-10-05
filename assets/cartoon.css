@@ -375,8 +375,55 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{o
   .nav{flex-wrap:wrap;justify-content:flex-start;gap:2px 4px}
   .nav-btn{padding:5px 6px;font-size:.7rem}
 }
+/* Teaching schemas: tappable structures, glowing key structures, legend chips. */
+.case-visuals{display:grid;gap:14px;margin:16px 0}
+.schema{margin:0;padding:14px;border:3px solid #2a2442;border-radius:18px;background:#fffbed;color:#302944;box-shadow:0 4px 0 #2a24422b}
+.schema figcaption b{display:block;font-size:.95rem}
+.schema figcaption small{display:block;font-size:.7rem;color:#685a70;margin-top:3px}
+.schema-svg{margin:10px 0;border-radius:12px;background:#f3ead2;overflow:hidden}
+.schema-svg svg{display:block;width:100%;height:auto;max-height:440px}
+.schema [data-part]{cursor:pointer;transition:opacity .18s,filter .18s;outline:none}
+.schema [data-part]:hover,.schema [data-part]:focus-visible{filter:drop-shadow(0 0 3px #ffcf5a) drop-shadow(0 0 6px #ffcf5a)}
+.schema [data-part].hl{animation:nsa-glow 1.6s ease-in-out infinite}
+@keyframes nsa-glow{0%,100%{filter:drop-shadow(0 0 2px #ff9f1a)}50%{filter:drop-shadow(0 0 7px #ff9f1a) drop-shadow(0 0 3px #ff9f1a)}}
+.schema.focus [data-part]:not(.on):not(.right):not(.wrong){opacity:.32}
+.schema [data-part].on{filter:drop-shadow(0 0 4px #ffcf5a) drop-shadow(0 0 8px #ffcf5a);opacity:1}
+.schema [data-part].right{filter:drop-shadow(0 0 5px #3f8e72) drop-shadow(0 0 9px #3f8e72);opacity:1}
+.schema [data-part].wrong{filter:drop-shadow(0 0 5px #d35468) drop-shadow(0 0 9px #d35468);opacity:1}
+.schema-legend{display:flex;flex-wrap:wrap;gap:6px}
+.schema-chip{border:2px solid #9b89a6;background:#fff;color:#302944;border-radius:999px;padding:4px 10px;font-size:.72rem;font-weight:700}
+.schema-chip.hl{border-color:#ff9f1a;background:#fff0bb}
+.schema-chip.on{background:#2a2442;color:#fff4d6;border-color:#2a2442}
+.schema-note{min-height:1.4em;margin:10px 0 0;font-size:.8rem!important;line-height:1.5;color:#42374e!important}
+.case-media{margin:0;padding:12px;border:3px solid #2a2442;border-radius:18px;background:#fffbed}
+.case-media img{display:block;max-width:100%;height:auto;border-radius:10px;margin:0 auto}
+.case-media figcaption{font-size:.78rem;color:#42374e;margin-top:8px}
+.case-media figcaption small{display:block;font-size:.68rem;color:#685a70;margin-top:3px}
+.atlas-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;padding-bottom:40px}
+.atlas-card{display:flex;flex-direction:column;gap:8px;padding:14px;border:3px solid #574e72;border-radius:20px;background:#232d4a;box-shadow:0 5px 0 #0a1025}
+.atlas-thumb{border-radius:12px;background:#f3ead2;overflow:hidden;border:2px solid #2a2442}
+.atlas-thumb svg{display:block;width:100%;height:auto;pointer-events:none}
+.atlas-card h3{font-size:1rem;color:#fff4d6}
+.atlas-card p{font-size:.74rem;color:#cbd1e3;line-height:1.45}
+.atlas-card small{font-size:.68rem;color:#a9b0c8}
+.atlas-card .actions{margin-top:auto}
+.schema-modal{width:min(900px,calc(100vw - 28px))}
+.quiz-prompt{font-size:1.4rem!important}
+@media(max-width:760px){.schema{padding:10px}.schema-chip{font-size:.68rem}}
+/* Wrong answers: a cartoon urine splash. Right answers keep the confetti. */
+.splash{position:fixed;width:0;height:0;pointer-events:none;z-index:125}
+.splash .drop{position:absolute;left:-7px;top:-7px;width:14px;height:14px;background:#f6d53c;border:2px solid #a8861a;border-radius:50% 0 50% 50%;transform:rotate(var(--r)) scale(var(--s));animation:nsa-drop .9s cubic-bezier(.2,.7,.4,1) forwards}
+.splash .puddle{position:absolute;left:-46px;top:6px;width:92px;height:22px;border-radius:50%;background:#f6d53cbb;border:2px solid #a8861a;transform:scale(.2);animation:nsa-puddle 1.4s ease-out forwards}
+.splash .splash-word{position:absolute;left:-60px;top:-62px;width:240px;font:900 1.35rem/1 "Trebuchet MS",system-ui,sans-serif;color:#f6d53c;-webkit-text-stroke:1.5px #2a2442;text-shadow:2px 3px 0 #2a2442;transform:rotate(-8deg) scale(.4);opacity:0;animation:nsa-splash-word 1.2s ease-out forwards}
+@keyframes nsa-drop{0%{transform:translate(0,0) rotate(var(--r)) scale(var(--s));opacity:1}70%{transform:translate(var(--dx),var(--dy)) rotate(var(--r)) scale(var(--s));opacity:1}100%{transform:translate(var(--dx),calc(var(--dy) + 46px)) rotate(var(--r)) scale(calc(var(--s) * .6));opacity:0}}
+@keyframes nsa-puddle{0%{transform:scale(.2);opacity:0}25%{opacity:1}55%{transform:scale(1)}100%{transform:scale(1.15);opacity:0}}
+@keyframes nsa-splash-word{0%{opacity:0;transform:rotate(-8deg) scale(.4)}20%{opacity:1;transform:rotate(-8deg) scale(1.15)}35%{transform:rotate(-8deg) scale(1)}80%{opacity:1}100%{opacity:0;transform:rotate(-8deg) translateY(-14px)}}
+.toast.sticker-toast{background:#fff4d6;color:#2a2442;border:3px solid #2a2442;box-shadow:4px 5px 0 #2a2442;font-weight:800;animation:nsa-sticker .55s cubic-bezier(.2,1.6,.4,1) 1}
+@keyframes nsa-sticker{0%{transform:scale(.3) rotate(-14deg);opacity:0}60%{transform:scale(1.08) rotate(3deg);opacity:1}100%{transform:scale(1) rotate(-1deg)}}
 @media(prefers-reduced-motion:reduce){
   .option.shake,.streak-kpi.hot strong{animation:none!important}
-  .confetti{display:none}
+  .confetti,.splash{display:none}
+  .schema [data-part].hl{animation:none;filter:drop-shadow(0 0 5px #ff9f1a)}
+  .toast.sticker-toast{animation:none}
   .xp-fill{transition:none}
 }

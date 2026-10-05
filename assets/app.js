@@ -10,8 +10,8 @@
   const getCase = id=>C.cases.find(c=>c.id===id);
   const getArea = id=>C.areas.find(a=>a.id===id);
   // Stickers are derived from the logbook and a few game counters; the icons are language-neutral.
-  const BADGE_ICONS={firstCase:'📋',firstShift:'🌅',streak5:'📟',streak10:'🚀',perfectShift:'📘',bossPerfect:'🎓',coffee5:'☕',allAreas:'🗺️',comeback:'🔁',joker10:'🤝',specialist:'🔬',cases50:'🦉',nightOwl:'🌙'};
-  const STAT_KEYS=['shifts','perfectShifts','bossPerfect','maxCoffees','bestStreak','jokers','rank'];
+  const BADGE_ICONS={firstCase:'📋',firstShift:'🌅',streak5:'📟',streak10:'🚀',perfectShift:'📘',bossPerfect:'🎓',coffee5:'☕',allAreas:'🗺️',comeback:'🔁',joker10:'🤝',specialist:'🔬',cases50:'🦉',nightOwl:'🌙',anatomist:'🦴'};
+  const STAT_KEYS=['shifts','perfectShifts','bossPerfect','maxCoffees','bestStreak','jokers','rank','atlasPerfect'];
   // Duties decide which cases a session draws: emergencies at night, oncology decisions in the tumour board,
   // outpatient work in clinic and planned surgery on the elective list. Start times are game minutes after midnight.
   const DUTIES=['night','board','clinic','elective'],DUTY_START={night:1320,board:930,clinic:480,elective:450,mixed:1320};
@@ -33,7 +33,7 @@
       state.lastDuty=DUTIES.includes(s.lastDuty)?s.lastDuty:'night';
     }
   } catch (_) { /* In-memory play stays available when browser storage is blocked. */ }
-  let view=['intro','library','progress','sources','play','report'].includes(location.hash.slice(1))?location.hash.slice(1):'intro';
+  let view=['intro','library','atlas','progress','sources','play','report'].includes(location.hash.slice(1))?location.hash.slice(1):'intro';
   let areaFilter='all',topicFilter='all',dutyFilter='all',pendingDuty='night',libraryPage=0,query='',savedOnly=false,pendingIds=null,customSchedule=null,dialogSequence=0;
   const t = key => {const value=typeof comedy()[key]==='string'?comedy()[key]:(strings[state.lang][key] || strings.en[key] || key);return value.replaceAll('{cases}',String(C.cases.length)).replaceAll('{areas}',String(C.areas.length));};
   const loc = value => value[state.lang];
@@ -93,7 +93,7 @@
       firstCase:h.length>0,firstShift:st.shifts>0,streak5:st.bestStreak>=5,streak10:st.bestStreak>=10,perfectShift:st.perfectShifts>0,bossPerfect:st.bossPerfect>0,
       coffee5:st.maxCoffees>=5||count(state.session?.coffees)>=5,allAreas:C.areas.every(a=>h.some(r=>r.area===a.id)),comeback,joker10:st.jokers>=10,
       specialist:[...domains.values()].some(list=>list.every(c=>best.get(c.id)===caseMaximum(c))),cases50:best.size>=50,
-      nightOwl:h.some(r=>new Date(r.completedAt).getHours()<5)
+      nightOwl:h.some(r=>new Date(r.completedAt).getHours()<5),anatomist:st.atlasPerfect>0
     };
     return Object.keys(BADGE_ICONS).filter(id=>earned[id]);
   }
@@ -107,7 +107,7 @@
     if(!fresh.length&&!promoted)return;
     state.badges.push(...fresh);state.stats.rank=Math.max(rank,state.stats.rank);persist();
     if(promoted)showPromotion(rank,fresh);
-    else{toast('🏅 '+t('newSticker')+': '+fresh.map(id=>BADGE_ICONS[id]+' '+comedy().badges[id].title).join(' · '));celebrate(true);}
+    else toast('🏅 '+t('newSticker')+': '+fresh.map(id=>BADGE_ICONS[id]+' '+comedy().badges[id].title).join(' · '),'sticker');
   }
   function showPromotion(rank,fresh) {
     const line=quip('rankUp',String(rank)),role=speakerFor(line);
@@ -138,7 +138,23 @@
   }
   function answerEffects(choice,milestone) {
     if(choice.score===10){celebrate(milestone);return;}
-    document.querySelector('.chart .option.wrong,.chart .option.meh')?.classList.add('shake');
+    const wrong=document.querySelector('.chart .option.wrong,.chart .option.meh');
+    wrong?.classList.add('shake');splash(wrong);
+  }
+  function splash(target) {
+    // A wrong answer gets a cartoon urine splash: droplets, a puddle and a "Splash!" — pure slapstick.
+    try{if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;}catch(_){return;}
+    const r=target&&target.getBoundingClientRect?target.getBoundingClientRect():{left:window.innerWidth/2-60,top:window.innerHeight/2,width:120,height:40};
+    const box=document.createElement('div');box.className='splash';box.setAttribute('aria-hidden','true');
+    box.style.left=Math.round(r.left+r.width*.8)+'px';box.style.top=Math.round(r.top+r.height/2)+'px';
+    let drops='';
+    for(let i=0;i<18;i++){
+      const angle=(-170+i*(160/17)+(Math.random()*12-6))*Math.PI/180,dist=45+Math.random()*80;
+      drops+='<i class="drop" style="--dx:'+Math.round(Math.cos(angle)*dist)+'px;--dy:'+Math.round(Math.sin(angle)*dist)+'px;--s:'+(.55+Math.random()*.7).toFixed(2)+';--r:'+Math.round(angle*180/Math.PI+90)+'deg;animation-delay:'+(Math.random()*.08).toFixed(2)+'s"></i>';
+    }
+    const words=comedy().splash||['Splash!'];
+    box.innerHTML='<i class="puddle"></i>'+drops+'<b class="splash-word">'+esc(words[Math.floor(Math.random()*words.length)])+'</b>';
+    (document.querySelector('dialog[open]')||document.body).append(box);setTimeout(()=>box.remove(),1500);
   }
   function afterCaseFinished() {
     const s=state.session;
@@ -173,15 +189,15 @@
     view=next;location.hash=next;render();
     if(focus){window.scrollTo({top:0,behavior:'instant'});document.getElementById('main')?.focus({preventScroll:true});}
   }
-  function toast(message) {
+  function toast(message,kind) {
     document.querySelector('.toast')?.remove();
-    const el=document.createElement('div');el.className='toast';el.setAttribute('role','status');el.textContent=message;
+    const el=document.createElement('div');el.className='toast'+(kind?' '+kind+'-toast':'');el.setAttribute('role','status');el.textContent=message;
     (document.querySelector('dialog[open]')||document.body).append(el);setTimeout(()=>el.remove(),4500);
   }
   function badge(acuity) { return '<span class="badge '+acuity+'">'+esc(t(acuity))+'</span>'; }
   function bookmark(id) { return '<button class="bookmark '+(state.bookmarks.includes(id)?'on':'')+'" data-bookmark="'+esc(id)+'" aria-label="'+esc(t(state.bookmarks.includes(id)?'unsaveCase':'saveCase'))+'" aria-pressed="'+state.bookmarks.includes(id)+'">'+(state.bookmarks.includes(id)?'★':'☆')+'</button>'; }
   function header() {
-    return '<header class="topbar"><div class="container top-inner"><a href="#intro" class="brand" data-view="intro"><span class="brand-icon" aria-hidden="true">✚</span><div><strong>Night Shift Academy</strong><small>'+esc(t('tagline'))+'</small></div></a><nav class="nav" aria-label="'+esc(t('intro'))+'">'+['intro','library','progress','sources'].map(v=>'<button class="nav-btn '+(view===v?'active':'')+'" data-view="'+v+'" '+(view===v?'aria-current="page"':'')+'>'+esc(t(v))+'</button>').join('')+'</nav><div class="lang" role="group" aria-label="Language / Sprache / Idioma">'+['en','de','es'].map(l=>'<button data-lang="'+l+'" class="'+(state.lang===l?'active':'')+'" aria-pressed="'+(state.lang===l)+'" aria-label="'+({en:'English',de:'Deutsch',es:'Español'}[l])+'">'+l.toUpperCase()+'</button>').join('')+'</div></div></header>';
+    return '<header class="topbar"><div class="container top-inner"><a href="#intro" class="brand" data-view="intro"><span class="brand-icon" aria-hidden="true">✚</span><div><strong>Night Shift Academy</strong><small>'+esc(t('tagline'))+'</small></div></a><nav class="nav" aria-label="'+esc(t('intro'))+'">'+['intro','library','atlas','progress','sources'].map(v=>'<button class="nav-btn '+(view===v?'active':'')+'" data-view="'+v+'" '+(view===v?'aria-current="page"':'')+'>'+esc(t(v))+'</button>').join('')+'</nav><div class="lang" role="group" aria-label="Language / Sprache / Idioma">'+['en','de','es'].map(l=>'<button data-lang="'+l+'" class="'+(state.lang===l?'active':'')+'" aria-pressed="'+(state.lang===l)+'" aria-label="'+({en:'English',de:'Deutsch',es:'Español'}[l])+'">'+l.toUpperCase()+'</button>').join('')+'</div></div></header>';
   }
   function footer() { return '<footer class="footer"><div class="container footer-inner"><p>'+esc(t('education'))+'<br>'+esc(t('clockNote'))+'</p><button data-view="sources">'+esc(t('sources'))+' ↗</button></div></footer>'; }
   function hospital() {
@@ -246,6 +262,68 @@
       return '<li class="'+kind+(o.id===chosen?' chosen':'')+'"><span class="option-letter" aria-hidden="true">'+String.fromCharCode(65+i)+'</span><div><b>'+esc(loc(o.text))+'</b> <span class="explain-tag">'+(kind==='correct'?'✓ '+esc(t('correctMark')):kind==='meh'?'◐ '+o.score+' / 10':'✗')+(o.id===chosen?' · '+esc(t('yourChoice')):'')+'</span><p>'+esc(loc(o.feedback))+'</p></div></li>';
     }).join('')+'</ol></details>';
   }
+  // Teaching schemas are inline SVG drawn for the game. Every structure is tappable; a case's key structures glow.
+  const SCHEMAS=new Map((C.schemas||[]).map(s=>[s.id,s]));
+  function schemaFigure(id,highlight=[],mode='explore') {
+    const s=SCHEMAS.get(id);if(!s)return '';
+    const label=part=>loc(s.parts.find(p=>p.id===part).label),hl=highlight.filter(part=>s.parts.some(p=>p.id===part));
+    const svg=s.svg.replace(/data-part="([^"]+)"/g,(match,part)=>match+' tabindex="0" role="button" aria-label="'+esc(mode==='quiz'?t('atlasQuiz'):label(part))+'"'+(hl.includes(part)?' class="hl"':''));
+    const order=[...hl,...s.parts.map(p=>p.id).filter(part=>!hl.includes(part))];
+    return '<figure class="schema" data-schema="'+esc(s.id)+'" data-mode="'+mode+'"><figcaption><b>'+esc(loc(s.title))+'</b><small>'+esc(loc(s.caption))+' '+esc(t('schemaNotice'))+'</small></figcaption><div class="schema-svg"><svg viewBox="'+esc(s.viewBox)+'" role="group" aria-label="'+esc(loc(s.title))+'" xmlns="http://www.w3.org/2000/svg">'+svg+'</svg></div>'+
+      (mode==='quiz'?'':'<div class="schema-legend">'+order.map(part=>'<button type="button" class="schema-chip'+(hl.includes(part)?' hl':'')+'" data-legend-part="'+esc(part)+'">'+(hl.includes(part)?'★ ':'')+esc(label(part))+'</button>').join('')+'</div>')+
+      '<p class="schema-note" aria-live="polite">'+(mode==='quiz'?'':esc(t(hl.length?'schemaHintCase':'schemaHint')))+'</p></figure>';
+  }
+  function caseVisuals(c) {
+    const schema=c.schema&&SCHEMAS.has(c.schema.id)?schemaFigure(c.schema.id,c.schema.parts||[]):'';
+    const media=(c.media||[]).map(m=>'<figure class="case-media"><img src="'+esc(m.src)+'" alt="'+esc(loc(m.alt))+'" loading="lazy"><figcaption>'+esc(loc(m.caption))+'<small>'+esc(t('imageSource'))+': '+esc(m.credit)+' · '+esc(t('imageLicense'))+': '+esc(m.license)+'</small></figcaption></figure>').join('');
+    return schema||media?'<div class="case-visuals">'+schema+media+'</div>':'';
+  }
+  function selectPart(figure,id) {
+    const s=SCHEMAS.get(figure.dataset.schema),part=s&&s.parts.find(p=>p.id===id);if(!part)return;
+    figure.classList.add('focus');
+    figure.querySelectorAll('[data-part],[data-legend-part]').forEach(el=>el.classList.toggle('on',(el.dataset.part||el.dataset.legendPart)===id));
+    figure.querySelector('.schema-note').innerHTML='<b>'+esc(loc(part.label))+'</b> – '+esc(loc(part.note));
+  }
+  function atlas() {
+    const used=id=>C.cases.filter(c=>c.schema&&c.schema.id===id).length;
+    return '<div class="page-head"><p class="eyebrow">'+esc(t('atlas'))+'</p><h1>'+esc(t('atlasTitle'))+'</h1><p>'+esc(t('atlasSub'))+'</p></div><div class="atlas-grid">'+[...SCHEMAS.values()].map(s=>'<article class="atlas-card"><div class="atlas-thumb" aria-hidden="true"><svg viewBox="'+esc(s.viewBox)+'" xmlns="http://www.w3.org/2000/svg">'+s.svg+'</svg></div><h3>'+esc(loc(s.title))+'</h3><p>'+esc(loc(s.caption))+'</p><small>'+esc(t('atlasUsed').replace('{n}',String(used(s.id))))+' · '+s.parts.length+' ⦿</small><div class="actions"><button class="btn small quiet" data-atlas-open="'+esc(s.id)+'">'+esc(t('atlasExplore'))+'</button><button class="btn small primary" data-atlas-quiz="'+esc(s.id)+'">🎯 '+esc(t('atlasQuiz'))+'</button></div></article>').join('')+'</div>';
+  }
+  let quiz=null;
+  function openAtlas(id) {
+    if(!SCHEMAS.has(id))return;
+    const dlg=openDialog('<h2>'+esc(loc(SCHEMAS.get(id).title))+'</h2>'+schemaFigure(id)+'<div class="actions"><button class="btn primary" data-atlas-quiz="'+esc(id)+'">🎯 '+esc(t('atlasQuiz'))+'</button><button class="btn quiet" data-action="close-dialog">'+esc(t('close'))+'</button></div>');
+    dlg.classList.add('schema-modal');
+  }
+  function startQuiz(id) {
+    const s=SCHEMAS.get(id);if(!s)return;
+    quiz={id,rounds:E.shuffle(s.parts.map(p=>p.id),E.random(nowSeed())).slice(0,5),index:0,score:0,answered:null};
+    showQuiz();
+  }
+  function showQuiz() {
+    const s=SCHEMAS.get(quiz.id),done=quiz.index>=quiz.rounds.length;
+    if(done){
+      const perfect=quiz.score===quiz.rounds.length,line=comedy().atlasResult[perfect?'perfect':quiz.score>=3?'good':'poor'],role=speakerFor(line);
+      const dlg=openDialog('<div class="boss-finish">'+A.portrait(role,perfect?'smile':'stern',140,state.avatar)+'<h2>'+esc(t('quizDone').replace('{score}',quiz.score).replace('{total}',quiz.rounds.length))+'</h2><p><b>'+esc(comedy().staff[role].name)+':</b> '+esc(lineWithoutName(line,role))+'</p><div class="actions"><button class="btn primary" data-atlas-quiz="'+esc(quiz.id)+'">🎯 '+esc(t('quizAgain'))+'</button><button class="btn quiet" data-action="close-dialog">'+esc(t('close'))+'</button></div></div>');
+      dlg.classList.add('schema-modal');
+      if(perfect){state.stats.atlasPerfect++;persist();celebrate(true);checkRewards();}
+      return;
+    }
+    const target=s.parts.find(p=>p.id===quiz.rounds[quiz.index]);
+    const dlg=openDialog('<p class="eyebrow">'+esc(t('quizRound').replace('{n}',quiz.index+1).replace('{total}',quiz.rounds.length))+' · ★ '+quiz.score+'</p><h2 class="quiz-prompt">'+esc(t('quizPrompt').replace('{part}',loc(target.label)))+'</h2>'+schemaFigure(quiz.id,[],'quiz')+'<div class="actions quiz-actions" hidden><button class="btn primary" data-action="quiz-next">'+esc(t('dialogNext'))+' ▶</button></div>');
+    dlg.classList.add('schema-modal');
+  }
+  function answerQuiz(figure,id,element) {
+    if(!quiz||quiz.answered!==null||quiz.index>=quiz.rounds.length)return;
+    const s=SCHEMAS.get(quiz.id),target=quiz.rounds[quiz.index],right=id===target,part=s.parts.find(p=>p.id===target);
+    quiz.answered=id;if(right)quiz.score++;
+    figure.classList.add('focus');
+    figure.querySelector('[data-part="'+target+'"]')?.classList.add('right','on');
+    if(!right)figure.querySelector('[data-part="'+id+'"]')?.classList.add('wrong');
+    figure.querySelector('.schema-note').innerHTML='<b>'+esc(right?t('quizRight'):t('quizWrong').replace('{part}',loc(s.parts.find(p=>p.id===id).label)))+'</b> '+esc(loc(part.label))+': '+esc(loc(part.note));
+    document.querySelector('dialog[open] .quiz-actions')?.removeAttribute('hidden');
+    document.querySelector('dialog[open] [data-action="quiz-next"]')?.focus({preventScroll:true});
+    sound(right?'good':'splash');if(right)celebrate(false);else splash(element);
+  }
   function sourceLinks(c) { return '<div class="case-refs"><span class="label">'+esc(t(c.source?'sourceRelated':'reviewSources'))+'</span><ul>'+c.references.map(id=>{const r=C.references.find(r=>r.id===id);return r?'<li><a href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">'+esc(r.title)+' ↗</a></li>':'';}).join('')+'</ul></div>'; }
   function chart(p) {
     const c=getCase(p.id),a=getArea(c.area);
@@ -258,7 +336,7 @@
       body+='<section class="decision-panel"><div class="step-track" aria-hidden="true">'+c.steps.map((_,i)=>'<span class="'+(i<p.index?'past':i===p.index?'now':'')+'"></span>').join('')+'</div><div class="step-meta"><span>'+esc(t(c.source?'sourceQuestion':s.kind))+'</span><span>'+esc(t('decision'))+' '+(p.index+1)+' / '+c.steps.length+'</span></div><h3 id="decision-prompt">'+esc(loc(s.prompt))+'</h3><div class="options" role="group" aria-labelledby="decision-prompt">'+p.order[p.index].map((id,i)=>optionButton(s,o=>o.id===id,p,i)).join('')+'</div>';
       if(p.feedback){const o=s.options.find(o=>o.id===p.feedback),cls=o.score===10?'good':o.score>0||c.source?'partial':'unsafe';
         const streak=cls==='good'&&state.session.streakAt===p.id+':'+p.index?state.session.streak:0;
-        body+=characterComment(cls,p.id,p.index,streak,!!c.source)+'<div class="feedback '+cls+'" role="status"><span class="label">'+esc(t('feedback'))+'</span><h3>'+esc(t(c.source&&o.score!==10?'sourceIncorrect':cls))+(o.critical?' · '+esc(t('safety')):'')+'</h3><p>'+esc(loc(o.feedback))+'</p>'+preferredAnswer(s,o.id)+optionsExplained(s,p.order[p.index],o.id)+'<div class="actions"><button class="btn primary" data-action="next">'+esc(t(p.index===c.steps.length-1?'finishCase':'next'))+' →</button></div></div>';
+        body+=characterComment(cls,p.id,p.index,streak,!!c.source)+'<div class="feedback '+cls+'" role="status"><span class="label">'+esc(t('feedback'))+'</span><h3>'+esc(t(c.source&&o.score!==10?'sourceIncorrect':cls))+(o.critical?' · '+esc(t('safety')):'')+'</h3><p>'+esc(loc(o.feedback))+'</p>'+preferredAnswer(s,o.id)+(p.index===c.steps.length-1?caseVisuals(c):'')+optionsExplained(s,p.order[p.index],o.id)+'<div class="actions"><button class="btn primary" data-action="next">'+esc(t(p.index===c.steps.length-1?'finishCase':'next'))+' →</button></div></div>';
       } else {
         body+='<p class="keys-hint">⌨️ '+esc(t('keysHint'))+'</p>';
         if(state.session.mode==='learn')body+='<details class="hint-box"><summary>'+esc(t('hint'))+'</summary><p>'+esc(t('hintText'))+'</p></details>';
@@ -269,7 +347,7 @@
   }
   function debrief(p,c) {
     const max=c.steps.reduce((n,s)=>n+Math.max(...s.options.map(o=>o.score)),0);
-    return '<div class="debrief-score">'+Math.round(p.score/max*100)+'<small> / 100</small></div><p class="muted" style="font-size:.76rem">'+esc(t('elapsed'))+': '+p.elapsed+' '+esc(t('minute'))+' · '+esc(t('safetyConcerns'))+': '+p.criticalErrors+'</p><section class="takeaway" style="margin-top:22px"><span class="label">'+esc(t('takeaway'))+'</span><p>'+esc(loc(c.takeaway))+'</p></section>'+p.answers.map((ans,i)=>{const s=c.steps[i],o=s.options.find(o=>o.id===ans.optionId);return '<div class="answer-review"><h3>'+esc(loc(s.prompt))+'</h3><p><b>'+esc(t('yourChoice'))+':</b> '+esc(loc(o.text))+'</p><p>'+esc(loc(o.feedback))+'</p>'+preferredAnswer(s,o.id)+'<span class="badge '+(o.score===10?'done':'urgent')+'">'+o.score+' / 10</span>'+optionsExplained(s,p.order[i],o.id)+'</div>';}).join('')+sourceLinks(c)+'<div class="actions"><button class="btn primary" data-action="'+(state.session.finished?'report':'next-patient')+'">'+esc(t(state.session.finished?'report':'nextPatient'))+' →</button></div>';
+    return '<div class="debrief-score">'+Math.round(p.score/max*100)+'<small> / 100</small></div><p class="muted" style="font-size:.76rem">'+esc(t('elapsed'))+': '+p.elapsed+' '+esc(t('minute'))+' · '+esc(t('safetyConcerns'))+': '+p.criticalErrors+'</p><section class="takeaway" style="margin-top:22px"><span class="label">'+esc(t('takeaway'))+'</span><p>'+esc(loc(c.takeaway))+'</p></section>'+caseVisuals(c)+p.answers.map((ans,i)=>{const s=c.steps[i],o=s.options.find(o=>o.id===ans.optionId);return '<div class="answer-review"><h3>'+esc(loc(s.prompt))+'</h3><p><b>'+esc(t('yourChoice'))+':</b> '+esc(loc(o.text))+'</p><p>'+esc(loc(o.feedback))+'</p>'+preferredAnswer(s,o.id)+'<span class="badge '+(o.score===10?'done':'urgent')+'">'+o.score+' / 10</span>'+optionsExplained(s,p.order[i],o.id)+'</div>';}).join('')+sourceLinks(c)+'<div class="actions"><button class="btn primary" data-action="'+(state.session.finished?'report':'next-patient')+'">'+esc(t(state.session.finished?'report':'nextPatient'))+' →</button></div>';
   }
   function play() {
     const s=state.session;
@@ -314,7 +392,7 @@
   function render() {
     document.documentElement.lang=state.lang;document.title='Night Shift Academy · '+({en:'Urology',de:'Urologie',es:'Urología'}[state.lang]);
     document.querySelector('.skip').textContent=t('skip');
-    root.innerHTML=header()+'<main class="container" id="main" tabindex="-1">'+(storageFailed?'<div class="storage-banner" role="status">'+esc(t('storageError'))+'</div>':'')+({intro,library,progress,sources,play,report}[view]||intro)()+'</main>'+footer();
+    root.innerHTML=header()+'<main class="container" id="main" tabindex="-1">'+(storageFailed?'<div class="storage-banner" role="status">'+esc(t('storageError'))+'</div>':'')+({intro,library,atlas,progress,sources,play,report}[view]||intro)()+'</main>'+footer();
   }
   function openDialog(content) {
     document.querySelector('dialog')?.remove();
@@ -350,7 +428,7 @@
   }
   function reviewHistory(id,time) {
     const r=state.history.find(r=>r.caseId===id&&r.completedAt===time),c=getCase(id);if(!r)return;
-    openDialog('<p class="eyebrow">'+esc(t('debrief'))+'</p><h2>'+esc(loc(c.title))+'</h2><div class="debrief-score">'+pct(r)+'<small> / 100</small></div><section class="takeaway"><p>'+esc(loc(c.takeaway))+'</p></section>'+r.answers.map((ans,i)=>{const step=c.steps[i],option=step.options.find(o=>o.id===ans.optionId);return '<div class="answer-review"><h3>'+esc(loc(step.prompt))+'</h3><p><b>'+esc(t('yourChoice'))+':</b> '+esc(loc(option.text))+'</p><p>'+esc(loc(option.feedback))+'</p>'+preferredAnswer(step,option.id)+optionsExplained(step,step.options.map(o=>o.id),option.id)+'</div>';}).join('')+sourceLinks(c)+'<button class="btn" data-action="close-dialog">'+esc(t('close'))+'</button>');
+    openDialog('<p class="eyebrow">'+esc(t('debrief'))+'</p><h2>'+esc(loc(c.title))+'</h2><div class="debrief-score">'+pct(r)+'<small> / 100</small></div><section class="takeaway"><p>'+esc(loc(c.takeaway))+'</p></section>'+caseVisuals(c)+r.answers.map((ans,i)=>{const step=c.steps[i],option=step.options.find(o=>o.id===ans.optionId);return '<div class="answer-review"><h3>'+esc(loc(step.prompt))+'</h3><p><b>'+esc(t('yourChoice'))+':</b> '+esc(loc(option.text))+'</p><p>'+esc(loc(option.feedback))+'</p>'+preferredAnswer(step,option.id)+optionsExplained(step,step.options.map(o=>o.id),option.id)+'</div>';}).join('')+sourceLinks(c)+'<button class="btn" data-action="close-dialog">'+esc(t('close'))+'</button>');
   }
   function avatarChoices() {
     return '<fieldset class="avatar-field"><legend>'+esc(t('playerAvatar'))+'</legend><div class="avatar-choices">'+[0,1,2].map(i=>'<button class="avatar-choice '+(state.avatar===i?'selected':'')+'" type="button" data-avatar="'+i+'" aria-pressed="'+(state.avatar===i)+'" aria-label="'+esc(t('playerAvatar'))+' '+(i+1)+'">'+A.avatar(i,92)+'</button>').join('')+'</div></fieldset>';
@@ -429,6 +507,14 @@
       const Audio=window.AudioContext||window.webkitAudioContext;if(!Audio)return;
       audio=audio||new Audio();audio.resume();
       const start=audio.currentTime;
+      if(kind==='splash'){
+        const length=Math.floor(audio.sampleRate*.35),buffer=audio.createBuffer(1,length,audio.sampleRate),samples=buffer.getChannelData(0);
+        for(let i=0;i<length;i++)samples[i]=(Math.random()*2-1)*Math.pow(1-i/length,2.5);
+        const noise=audio.createBufferSource(),filter=audio.createBiquadFilter(),gain=audio.createGain();
+        noise.buffer=buffer;filter.type='bandpass';filter.frequency.setValueAtTime(1800,start);filter.frequency.exponentialRampToValueAtTime(500,start+.3);gain.gain.value=.25;
+        noise.connect(filter);filter.connect(gain);gain.connect(audio.destination);noise.start(start);
+        return;
+      }
       (kind==='good'?[523,659,784]:[880,660]).forEach((frequency,i)=>{
         const osc=audio.createOscillator(),gain=audio.createGain(),at=start+i*.11;
         osc.type='sine';osc.frequency.value=frequency;gain.gain.setValueAtTime(.0001,at);gain.gain.exponentialRampToValueAtTime(.06,at+.008);gain.gain.exponentialRampToValueAtTime(.0001,at+.09);
@@ -506,7 +592,7 @@
   function answerBoss(id) {
     const boss=state.session?.boss;if(!validBoss(boss)||boss.done||boss.answers[boss.index])return;
     const item=boss.items[boss.index],step=getCase(item.caseId).steps[item.stepIndex];if(!step.options.some(o=>o.id===id))return;
-    boss.answers.push(id);persist();sound(id===step.best?'good':'pager');showBoss();
+    boss.answers.push(id);persist();sound(id===step.best?'good':'splash');showBoss();
   }
   function nextBoss() {
     const boss=state.session?.boss;if(!validBoss(boss)||boss.done||!boss.answers[boss.index])return;
@@ -515,11 +601,17 @@
   }
 
   document.addEventListener('click',e=>{
+    const schemaHit=e.target.closest('.schema [data-part],.schema [data-legend-part]');
+    if(schemaHit){const figure=schemaHit.closest('.schema'),id=schemaHit.dataset.part||schemaHit.dataset.legendPart;if(figure.dataset.mode==='quiz')answerQuiz(figure,id,schemaHit);else selectPart(figure,id);return;}
     const scene=e.target.closest('[data-scene-area],[data-scene-patient],[data-scene-coffee]');if(scene){handleScene(scene);if(scene.dataset.sceneCoffee)checkRewards();return;}
     const b=e.target.closest('button,a[data-view]');if(!b||b.disabled)return;
     if(b.dataset.avatar!==undefined){state.avatar=Number(b.dataset.avatar);persist();document.querySelectorAll('[data-avatar]').forEach(el=>{el.classList.toggle('selected',Number(el.dataset.avatar)===state.avatar);el.setAttribute('aria-pressed',String(Number(el.dataset.avatar)===state.avatar));});return;}
     if(b.dataset.talk){talk(b.dataset.talk,comedy().opening.find(line=>line.speaker===b.dataset.talk)?.text||comedy().castWelcome);return;}
-    if(b.dataset.bossOption){answerBoss(b.dataset.bossOption);return;}
+    if(b.dataset.bossOption){
+      const before=state.session?.boss?.answers.length;answerBoss(b.dataset.bossOption);
+      const boss=state.session?.boss;
+      if(boss&&boss.answers.length>before){const item=boss.items[boss.index],right=boss.answers[boss.index]===getCase(item.caseId).steps[item.stepIndex].best;if(right)celebrate(false);else splash(document.querySelector('dialog[open] .option.chosen'));}
+      return;}
     if(b.dataset.view){e.preventDefault();navigate(b.dataset.view);return;}
     if(b.dataset.lang){state.lang=b.dataset.lang;persist();render();document.querySelector('[data-lang="'+state.lang+'"]')?.focus({preventScroll:true});return;}
     if(b.dataset.area){areaFilter=b.dataset.area;topicFilter='all';libraryPage=0;query='';savedOnly=false;navigate('library');return;}
@@ -527,9 +619,11 @@
     if(b.dataset.bookmark){const id=b.dataset.bookmark;state.bookmarks=state.bookmarks.includes(id)?state.bookmarks.filter(x=>x!==id):[...state.bookmarks,id];persist();render();document.querySelector('[data-bookmark="'+id+'"]')?.focus({preventScroll:true});return;}
     if(b.dataset.practice){setup([b.dataset.practice]);return;}
     if(b.dataset.dutyStart){setup(null,b.dataset.dutyStart);return;}
+    if(b.dataset.atlasOpen){openAtlas(b.dataset.atlasOpen);return;}
+    if(b.dataset.atlasQuiz){startQuiz(b.dataset.atlasQuiz);return;}
     if(b.dataset.patient){state.session.selected=b.dataset.patient;persist();navigate('play');return;}
     if(b.dataset.option){let choice;try{choice=E.answer(state.session,C,state.session.selected,b.dataset.option);}catch(_){return;}
-      const milestone=afterAnswer(choice);sound(choice.score===10?'good':'pager');persist();render();answerEffects(choice,milestone);
+      const milestone=afterAnswer(choice);sound(choice.score===10?'good':'splash');persist();render();answerEffects(choice,milestone);
       document.querySelector('.feedback [data-action]')?.focus({preventScroll:true});checkRewards();return;}
     if(b.dataset.train){const group=topicGroups().find(g=>g.key===b.dataset.train);if(group)setup(pickCases(group.cases,10,'topic-'+group.key,true));return;}
     if(b.dataset.review){reviewHistory(b.dataset.review,b.dataset.time);return;}
@@ -549,6 +643,7 @@
       case'story-skip':document.querySelector('dialog')?.close();break;
       case'chief-challenge':startBoss();break;
       case'boss-next':nextBoss();afterBoss();break;
+      case'quiz-next':if(quiz&&quiz.answered!==null){quiz.index++;quiz.answered=null;showQuiz();}break;
       case'resume':navigate(state.session?.finished?'report':'play');break;
       case'next':completeNext();break;
       case'next-patient':nextPatient();break;
@@ -561,7 +656,10 @@
       case'reset':state.history=[];state.bookmarks=[];state.session=null;state.stats=cleanStats(null);state.badges=[];persist();document.querySelector('dialog')?.close();render();break;
     }
   });
-  document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('[data-scene-area],[data-scene-patient],[data-scene-coffee]')){e.preventDefault();handleScene(e.target);}});
+  document.addEventListener('keydown',e=>{
+    if((e.key==='Enter'||e.key===' ')&&e.target.matches('.schema [data-part]')){e.preventDefault();e.target.dispatchEvent(new MouseEvent('click',{bubbles:true}));return;}
+    if((e.key==='Enter'||e.key===' ')&&e.target.matches('[data-scene-area],[data-scene-patient],[data-scene-coffee]')){e.preventDefault();handleScene(e.target);}
+  });
   document.addEventListener('keydown',e=>{
     if(e.altKey||e.ctrlKey||e.metaKey||e.repeat||e.target.closest?.('input,textarea,select,summary'))return;
     const key=e.key.toLowerCase(),index=/^[1-6]$/.test(key)?Number(key)-1:/^[a-f]$/.test(key)?key.charCodeAt(0)-97:-1;
@@ -596,7 +694,7 @@
     if(chosen&&!customSchedule)state.lastDuty=chosen;
     state.session=cleanSessionExtras(Object.assign(E.create(C,ids,mode,seed),{duty}));persist();document.querySelector('dialog').close();navigate('play');startOpening();
   });
-  window.addEventListener('hashchange',()=>{const v=location.hash.slice(1);if(v!==view&&['intro','library','progress','sources','play','report'].includes(v)){view=v;render();}});
+  window.addEventListener('hashchange',()=>{const v=location.hash.slice(1);if(v!==view&&['intro','library','atlas','progress','sources','play','report'].includes(v)){view=v;render();}});
   syncRewards();
   render();
 })();

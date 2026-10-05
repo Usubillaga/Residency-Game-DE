@@ -110,7 +110,9 @@ test('all story keys and nested dialogue structures are present in English, Germ
     assert.equal(text.careerJokes.length, 9);
     assert.equal(text.rankUp.length, 4);
     assert.deepEqual(Object.keys(text.badges), ['firstCase', 'firstShift', 'streak5', 'streak10', 'perfectShift', 'bossPerfect',
-      'coffee5', 'allAreas', 'comeback', 'joker10', 'specialist', 'cases50', 'nightOwl']);
+      'coffee5', 'allAreas', 'comeback', 'joker10', 'specialist', 'cases50', 'nightOwl', 'anatomist']);
+    assert.equal(text.splash.length, 5, lang + ' splash lines');
+    assert.deepEqual(Object.keys(text.atlasResult).sort(), ['good', 'perfect', 'poor']);
     for (const line of text.streak) assert.match(line, /\{n\}/, lang + ' streak lines must name the streak length');
     assert.match(text.jokerNote, /5/, lang + ' must describe the actual five-minute joker cost');
     assert.match(text.coffeeNote, /5/, lang + ' must describe the actual five-minute game break');

@@ -145,6 +145,48 @@ class AutomationTests(unittest.TestCase):
         with self.assertRaisesRegex(manage.ValidationError, "duty: expected one of"):
             manage.load_and_validate(self.root, check_assets=False)
 
+    def write_schema(self, svg_extra=""):
+        parts = [{"id": f"p{index}", "label": translated(f"Part {index}"), "note": translated("A fact")} for index in range(4)]
+        svg = "".join(f'<g data-part="p{index}"><circle cx="{50 + index * 60}" cy="100" r="20" fill="#e59a8c" stroke="#2a2442"/></g>' for index in range(4)) + svg_extra
+        schema = {"id": "fixture-schema", "title": translated("Schema"), "caption": translated("Schematic"), "domains": ["andrology"], "viewBox": "0 0 600 420", "svg": svg, "parts": parts}
+        manage.write_json(self.root / "data" / "schemas.json", [schema])
+
+    def test_schemas_links_and_licensed_images_are_built_into_the_catalog(self):
+        self.write_schema()
+        manage.write_json(self.root / "data" / "case-schemas.json", {"emergency-fixture-1": {"schema": "fixture-schema", "parts": ["p1"]}})
+        (self.root / "media").mkdir()
+        (self.root / "media" / "sketch.png").write_bytes(b"\x89PNG\r\n\x1a\n" + b"0" * 64)
+        row = {"case": "ward-fixture-2", "file": "media/sketch.png", "alt": translated("Sketch"), "caption": translated("Hand sketch"), "credit": "Own drawing", "license": "CC BY 4.0"}
+        manage.write_json(self.root / "data" / "case-media.json", [row])
+        catalog = manage.build(self.root)
+        self.assertEqual(catalog["schemas"][0]["id"], "fixture-schema")
+        linked = next(case for case in catalog["cases"] if case["id"] == "emergency-fixture-1")
+        self.assertEqual(linked["schema"], {"id": "fixture-schema", "parts": ["p1"]})
+        pictured = next(case for case in catalog["cases"] if case["id"] == "ward-fixture-2")
+        self.assertTrue(pictured["media"][0]["src"].startswith("data:image/png;base64,"))
+        self.assertEqual(pictured["media"][0]["license"], "CC BY 4.0")
+        row.pop("license")
+        manage.write_json(self.root / "data" / "case-media.json", [row])
+        with self.assertRaisesRegex(manage.ValidationError, "license"):
+            manage.build(self.root)
+        (self.root / "media" / "drawing.svg").write_text("<svg/>", encoding="utf-8")
+        manage.write_json(self.root / "data" / "case-media.json", [dict(row, license="CC0", file="media/drawing.svg")])
+        with self.assertRaisesRegex(manage.ValidationError, "only PNG, JPEG or WebP"):
+            manage.build(self.root)
+        manage.write_json(self.root / "data" / "case-media.json", [dict(row, license="CC0", file="../outside.png")])
+        with self.assertRaisesRegex(manage.ValidationError, "existing file in media/"):
+            manage.build(self.root)
+
+    def test_unsafe_schemas_and_unknown_highlights_are_rejected(self):
+        for extra, message in (('<text x="1" y="1">label</text>', "element <text>"), ('<g data-part="p9" onclick="x()"></g>', "not allowed"), ('<g data-part="p9"><circle cx="1" cy="1" r="1"/></g>', "without a label")):
+            self.write_schema(extra)
+            with self.assertRaisesRegex(manage.ValidationError, message):
+                manage.load_visuals(self.root, manage.load_and_validate(self.root, check_assets=False)[0])
+        self.write_schema()
+        manage.write_json(self.root / "data" / "case-schemas.json", {"emergency-fixture-1": {"schema": "fixture-schema", "parts": ["missing"]}})
+        with self.assertRaisesRegex(manage.ValidationError, "unknown part"):
+            manage.load_visuals(self.root, manage.load_and_validate(self.root, check_assets=False)[0])
+
     def test_schedule_rejects_noncanonical_date(self):
         with self.assertRaisesRegex(manage.ValidationError, "YYYY-MM-DD"):
             manage.schedule(self.root, "20261005", "seed", self.root / "outputs" / "shift.json")
