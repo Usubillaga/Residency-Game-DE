@@ -86,8 +86,28 @@ def approved_languages(question):
     return sorted(set(approval.get('languages', [])) & set(LANGS))
 
 
-def generate(archive_path, plan_path=ROOT / 'data/import-selection.json'):
+def patient_names(path):
+    """Curated fictional display names keyed by source question ID; absent IDs keep a Uro number."""
+    if not Path(path).exists():
+        return {}
+    patients = read_json(path)['patients']
+    require(len({entry['name'] for entry in patients.values()}) == len(patients), 'Patient display names must be unique')
+    require(all(entry.get('sex') in (None, 'female', 'male') for entry in patients.values()), 'Unsupported patient sex')
+    return patients
+
+
+def patient_entry(named, index, content):
+    patient = {'name': named.get('name') or 'Uro-' + str(index + 1).zfill(3), 'age': source_age(content),
+               'sex': named.get('sex'), 'ageBand': named.get('ageBand', 'unknown')}
+    if named.get('label'):
+        # A vignette without any patient (e.g. a departmental meeting) shows a translated label.
+        patient['label'] = {language: named['label'][language] for language in LANGS}
+    return patient
+
+
+def generate(archive_path, plan_path=ROOT / 'data/import-selection.json', names_path=ROOT / 'data/patient-names.json'):
     plan = read_json(plan_path)
+    names = patient_names(names_path)
     rows = plan['selection'] if isinstance(plan, dict) else plan
     require(len(rows) == 267, 'Selection must contain all 267 source questions')
     require(set(row['area'] for row in rows) == set(AREAS), 'All five departments must be represented')
@@ -146,7 +166,7 @@ def generate(archive_path, plan_path=ROOT / 'data/import-selection.json'):
                 'id': 'bank-' + question['id'], 'area': row['area'],
                 'level': max(1, min(3, int(question.get('difficulty_estimated', 2)))),
                 'acuity': 'routine' if row.get('acuity') == 'stable' else row.get('acuity', 'urgent' if row['area'] == 'emergency' else 'routine'),
-                'patient': {'name': 'Uro-' + str(index + 1).zfill(3), 'age': source_age(content)},
+                'patient': patient_entry(names.get(question['id'], {}), index, content),
                 'topic': {language: labels[domain][language] for language in LANGS},
                 'title': {language: content[language]['lead_in'] for language in LANGS},
                 'presenting': {language: content[language]['vignette'] for language in LANGS},
@@ -163,7 +183,7 @@ def generate(archive_path, plan_path=ROOT / 'data/import-selection.json'):
     used_domains = {row['domain'] for row in snapshots}
     require(used_domains == set(GUIDES), 'Selection must cover all 16 source domains')
     references = [{'id': 'bank-guide-' + domain, 'title': 'EAU ' + GUIDES[domain][0], 'url': 'https://uroweb.org/guidelines' + ('/' + GUIDES[domain][1] if GUIDES[domain][1] else ''), 'checked': '2026-10-05', 'scope': 'Related primary guideline for this topic. Original question citations and language-specific review status are preserved in data/imported-source.json; no new clinical approval is implied.'} for domain in sorted(used_domains)]
-    manifest = {'archiveName': Path(archive_path).name, 'archiveSha256': hashlib.sha256(Path(archive_path).read_bytes()).hexdigest(), 'importedCases': 267, 'legacyCases': 30, 'totalCases': 297, 'languages': list(LANGS), 'domains': sorted(used_domains), 'casesPerArea': dict(Counter(row['area'] for row in rows)), 'sourceStatuses': dict(Counter(row['status'] for row in snapshots)), 'flaggedSourceQuestions': sum(row['evidenceFlag'] for row in snapshots), 'selectionSha256': digest(rows), 'contentPolicy': 'All 267 original vignettes, questions, options, rationales and explanations are preserved once in DE/EN/ES. Drafts and evidence flags are retained. No archive scripts are executed. Missing or ambiguous ages and vital signs remain null. Uro identifiers represent teaching cases, including vignettes comparing multiple patients. Five minutes per answer are game time only.'}
+    manifest = {'archiveName': Path(archive_path).name, 'archiveSha256': hashlib.sha256(Path(archive_path).read_bytes()).hexdigest(), 'importedCases': 267, 'legacyCases': 30, 'totalCases': 297, 'languages': list(LANGS), 'domains': sorted(used_domains), 'casesPerArea': dict(Counter(row['area'] for row in rows)), 'sourceStatuses': dict(Counter(row['status'] for row in snapshots)), 'flaggedSourceQuestions': sum(row['evidenceFlag'] for row in snapshots), 'selectionSha256': digest(rows), 'contentPolicy': 'All 267 original vignettes, questions, options, rationales and explanations are preserved once in DE/EN/ES. Drafts and evidence flags are retained. No archive scripts are executed. Missing or ambiguous ages and vital signs remain null. Fictional display names come from data/patient-names.json; sex, patient count and age band there are taken only from the case text, and vignettes comparing several patients list one surname per patient. Five minutes per answer are game time only.'}
     return generated, snapshots, references, manifest
 
 

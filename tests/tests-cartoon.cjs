@@ -520,3 +520,35 @@ test('streak comments name the streak and wrong source answers get exam-style te
       lang + ' partly appropriate story answers keep their own lines');
   }
 });
+
+test('every case has its own patient name, and imported names match the sex and age the case text states', () => {
+  const names = catalog.cases.map(c => c.patient.name);
+  assert.equal(new Set(names).size, names.length, 'Every case needs its own patient name');
+  const mapping = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'patient-names.json'), 'utf8')).patients;
+  const imported = catalog.cases.filter(c => c.source);
+  assert.equal(Object.keys(mapping).length, imported.length, 'Every imported question needs exactly one name entry');
+  const stubble = 'M-34 12 Q-29 39 0 41';
+  for (const c of catalog.cases.filter(c => !c.source)) {
+    assert.ok([null, 'female', 'male'].includes(c.patient.sex), 'Story patients state their sex or null: ' + c.id);
+    if (c.patient.sex === 'female') {
+      assert.ok(!data.NSAArt.patientPortrait(c.id, 'neutral', 76, c.patient).includes(stubble), 'No stubble for women: ' + c.id);
+    }
+  }
+  for (const c of imported) {
+    const entry = mapping[c.source.questionId];
+    assert.ok(entry, 'Missing name for ' + c.source.questionId);
+    assert.equal(c.patient.name, entry.name);
+    assert.doesNotMatch(c.patient.name, /^Uro-\d+$/);
+    assert.equal(c.patient.sex, entry.sex);
+    assert.equal(c.patient.ageBand, entry.ageBand);
+    assert.equal(/ & /.test(c.patient.name), entry.kind === 'multiple', 'Only vignettes with several patients list several surnames: ' + c.id);
+    const female = /\b(woman|girl|pregnant)\b/i.test(c.presenting.en), male = /\b(man|boy)\b/i.test(c.presenting.en);
+    if (entry.kind === 'single' && female !== male) {
+      assert.equal(c.patient.sex, female ? 'female' : 'male', 'Name sex must follow the case text: ' + c.id);
+    }
+    const child = c.patient.age !== null ? c.patient.age < 13 : ['newborn', 'infant', 'child'].includes(c.patient.ageBand);
+    if (c.patient.sex === 'female' || child) {
+      assert.ok(!data.NSAArt.patientPortrait(c.id, 'neutral', 76, c.patient).includes(stubble), 'No stubble for women or children: ' + c.id);
+    }
+  }
+});

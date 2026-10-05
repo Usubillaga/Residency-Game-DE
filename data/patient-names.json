@@ -1,0 +1,2147 @@
+{
+  "version": 1,
+  "note": "Fictional display names for the imported teaching cases, keyed by source question ID. Sex, patient count and age band come only from the case text (double-blind classification, disagreements judged). Vignettes comparing several patients list one surname per patient. Names carry no clinical meaning and never imply a real person.",
+  "patients": {
+    "uro-and-00001": {
+      "name": "Tarık Polat",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "48-jähriger Mann ... Er hat keinen Kinderwunsch mehr"
+    },
+    "uro-and-00002": {
+      "name": "Ralf Gerber",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "Bei einem 56-jährigen Mann ist ein Hypogonadismus zweifach bestätigt (partner is not a patient)"
+    },
+    "uro-and-00003": {
+      "name": "Lukas Sander",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "32-jähriger Mann mit bestätigtem sekundärem Hypogonadismus"
+    },
+    "uro-and-00004": {
+      "name": "Tobias Winkler",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "35-jähriger Mann, in zwei getrennten Untersuchungen Azoospermie"
+    },
+    "uro-and-00005": {
+      "name": "Julian Barth",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "29-jähriger Mann mit Azoospermie"
+    },
+    "uro-and-00006": {
+      "name": "Weiß & Scholl",
+      "sex": "male",
+      "kind": "multiple",
+      "count": 2,
+      "ageBand": "unknown",
+      "evidence": "Zwei Männer mit Kinderwunsch seit zwei Jahren"
+    },
+    "uro-and-00007": {
+      "name": "Stavros Papadopoulos",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "52-jähriger Mann mit ... erektiler Dysfunktion"
+    },
+    "uro-and-00008": {
+      "name": "Lennart Heck",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "27-jähriger Mann mit ... schmerzhafter Dauererektion"
+    },
+    "uro-and-00009": {
+      "name": "Raúl Gil",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "44-jähriger Mann mit ... Penisdeviation nach dorsal"
+    },
+    "uro-and-00010": {
+      "name": "Tim Lux",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "Ein 34-jähriger Mann bringt ein auswärtiges Spermiogramm mit"
+    },
+    "uro-fun-00001": {
+      "name": "Panagiota Konstantinidou",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "68-jährige Patientin mit idiopathischer überaktiver Blase"
+    },
+    "uro-fun-00002": {
+      "name": "Sergej Rempel",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "DE: 22-jähriger Patient (generic); EN: 22-year-old man; ES: Hombre de 22 años"
+    },
+    "uro-fun-00003": {
+      "name": "Frank Dorn",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "74-jähriger Mann mit moderaten Symptomen des unteren Harntrakts"
+    },
+    "uro-fun-00004": {
+      "name": "Wolfgang Ehrhardt",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "62-jähriger Mann stellt sich erstmals ... vor"
+    },
+    "uro-fun-00005": {
+      "name": "Volker Brückner",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "71-jähriger Mann mit dreimaliger Nykturie; Prostatavolumen 32 ml"
+    },
+    "uro-fun-00006": {
+      "name": "Jürgen Paulsen",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "66-jähriger Mann, IPSS 21 ..., Prostatavolumen 68 ml"
+    },
+    "uro-fun-00007": {
+      "name": "Katrin Günther",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "52-jährige Frau, zwei vaginale Geburten"
+    },
+    "uro-fun-00008": {
+      "name": "Wille & Weller",
+      "sex": "female",
+      "kind": "multiple",
+      "count": 2,
+      "ageBand": "unknown",
+      "evidence": "Zwei Patientinnen sollen wegen Belastungsinkontinenz operiert werden"
+    },
+    "uro-fun-00009": {
+      "name": "Lieselotte Nolte",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "elderly",
+      "evidence": "78-jährige Patientin mit überaktiver Blase ... Sie nimmt bereits"
+    },
+    "uro-fun-00010": {
+      "name": "Harald Bartels",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "69-jähriger Patient, 14 Monate nach radikaler Prostatektomie ... Er"
+    },
+    "uro-fun-00011": {
+      "name": "Marvin Wittmann",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "DE: 34-jähriger Patient (generic); EN: 34-year-old man; ES: Hombre de 34 años"
+    },
+    "uro-fun-00012": {
+      "name": "Martina Wolter",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "58-jährige Patientin ... lehnt sie ausdrücklich ab"
+    },
+    "uro-fun-00013": {
+      "name": "Viktoria Reimer",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "41-jährige Patientin mit ... suprapubischem Schmerz"
+    },
+    "uro-hod-00001": {
+      "name": "Stefano Gallo",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "32-jähriger Patient nach inguinaler Ablatio testis; EN: 32-year-old man"
+    },
+    "uro-hod-00002": {
+      "name": "Jannik Maier",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "27-jähriger Patient mit metastasiertem Nichtseminom; EN: 27-year-old man"
+    },
+    "uro-hod-00003": {
+      "name": "Leon Schade",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "28-jähriger Patient mit ... Schwellung des rechten Hodens"
+    },
+    "uro-hod-00004": {
+      "name": "Nico Schulte",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "30-jähriger Patient nach inguinaler Ablatio testis"
+    },
+    "uro-hod-00005": {
+      "name": "Niklas Zander",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "34-jähriger Patient mit metastasiertem Nichtseminom; EN: 34-year-old man"
+    },
+    "uro-hod-00006": {
+      "name": "Markus Groß",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "35-jähriger Mann nach Orchiektomie eines reinen Seminoms"
+    },
+    "uro-hod-00007": {
+      "name": "Luis Naumann",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "Ein 30-jähriger Mann mit Seminom im Stadium IIA"
+    },
+    "uro-hod-00008": {
+      "name": "Reza Ahmadi",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "26-jähriger Patient nach Ablatio; EN: 26-year-old man after orchiectomy"
+    },
+    "uro-hod-00009": {
+      "name": "Maximilian Fritsch",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "31-jähriger Patient nach Ablatio; EN: 31-year-old man after orchiectomy"
+    },
+    "uro-hod-00010": {
+      "name": "Nikos Ioannou",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "Ein 28-jähriger Patient mit Nichtseminom ... Er fragt; EN: 28-year-old man"
+    },
+    "uro-hod-00011": {
+      "name": "Dirk Ott",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "RLA bei einem rechtsseitigen Nichtseminom (testicular primary); ES: para un paciente"
+    },
+    "uro-hod-00012": {
+      "name": "Christian Metz",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "metastasiertem Nichtseminom (testicular germ cell tumour) ... Der Patient ist beschwerdearm"
+    },
+    "uro-hod-00013": {
+      "name": "Patrick Pieper",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "38-jähriger Patient mit metastasiertem Seminom; EN: 38-year-old man"
+    },
+    "uro-hod-00014": {
+      "name": "Björn Eckert",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Nach Ablatio bei Nichtseminom; EN: After orchiectomy for non-seminoma"
+    },
+    "uro-hod-00015": {
+      "name": "Alessandro Romano",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "24-jähriger Patient mit Nichtseminom; EN: 24-year-old man"
+    },
+    "uro-hod-00016": {
+      "name": "Paul Kirsch",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "29-jähriger Patient mit Nichtseminom; EN: 29-year-old man"
+    },
+    "uro-hod-00017": {
+      "name": "Tom Funk",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "27-jähriger Patient mit Hodentumor rechts"
+    },
+    "uro-hod-00018": {
+      "name": "Piotr Kowalczyk",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "33-jähriger Patient ... Raumforderung im verbliebenen rechten Hoden"
+    },
+    "uro-hod-00019": {
+      "name": "Florian Sachs",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Residualtumorresektion nach BEP im Hodentumor-Katalog (testicular germ cell tumour, male-only anatomy); corrected after review"
+    },
+    "uro-hod-00020": {
+      "name": "Omar Rahman",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "36-jähriger Patient, sieben Jahre nach Ablatio ... Er klagt"
+    },
+    "uro-hod-00021": {
+      "name": "Andrej Penner",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "Ein 42-jähriger Mann ist nach inguinaler Orchiektomie links"
+    },
+    "uro-hod-00022": {
+      "name": "Maxim Hildebrandt",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "Ein 33-jähriger Mann mit reinem Seminom"
+    },
+    "uro-hod-00023": {
+      "name": "Kerem Korkmaz",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "Ein 45-jähriger Mann mit Seminom im Stadium IIA"
+    },
+    "uro-hod-00024": {
+      "name": "Timo Herrmann",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "Ein 38-jähriger Mann mit Seminom im Stadium IIA"
+    },
+    "uro-hod-00025": {
+      "name": "Giannis Georgiou",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "Ein 28-jähriger Mann mit Seminom links"
+    },
+    "uro-hod-00026": {
+      "name": "Paweł Zając",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "Ein 35-jähriger Mann mit Seminom im Stadium IIB"
+    },
+    "uro-hod-00027": {
+      "name": "Elias Wiegand",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "Ein 31-jähriger Mann hat vor neun Monaten ... RLA erhalten"
+    },
+    "uro-hod-00028": {
+      "name": "Alexander Franke",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "Ein 40-jähriger Mann mit Seminom im Stadium IIA"
+    },
+    "uro-hod-00029": {
+      "name": "Serkan Arslan",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "Ein 36-jähriger Mann mit Seminom"
+    },
+    "uro-hod-00030": {
+      "name": "Tomasz Mazur",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "Ein 24-jähriger Mann mit Seminom im klinischen Stadium I"
+    },
+    "uro-hod-00031": {
+      "name": "Kevin Wirth",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "Ein 31-jähriger Mann ist nach Orchiektomie"
+    },
+    "uro-hod-00032": {
+      "name": "Karim Hamdan",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "Ein 36-jähriger Mann hat wegen eines Seminoms ... drei Zyklen BEP erhalten"
+    },
+    "uro-hod-00033": {
+      "name": "Philipp Wolf",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "Ein 27-jähriger Mann mit Nichtseminom im klinischen Stadium I"
+    },
+    "uro-hod-00034": {
+      "name": "Jan Schenk",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "Ein 38-jähriger Mann, 4 Jahre nach Orchiektomie eines Seminoms"
+    },
+    "uro-hod-00035": {
+      "name": "Benjamin Brauer",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "Ein 42-jähriger Mann ist nach Orchiektomie ... unter Überwachung"
+    },
+    "uro-hod-00036": {
+      "name": "Fabian Hauser",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "Ein 29-jähriger Mann mit Nichtseminom im klinischen Stadium I"
+    },
+    "uro-hod-00037": {
+      "name": "Volkan Akın",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "Ein 23-jähriger Mann mit Nichtseminom im klinischen Stadium I"
+    },
+    "uro-hod-00038": {
+      "name": "Moritz Bergmann",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "Ein 29-jähriger Mann hatte vor 3 Jahren ein Nichtseminom des rechten Hodens"
+    },
+    "uro-hod-00039": {
+      "name": "Sebastian Hübner",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "Ein 41-jähriger Mann hat vor 6 Jahren ... drei Zyklen BEP erhalten"
+    },
+    "uro-hod-00040": {
+      "name": "Jakob Beck",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "Ein 34-jähriger Mann ist zwei Jahre nach Orchiektomie"
+    },
+    "uro-hod-00041": {
+      "name": "Felix Petersen",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "Ein 30-jähriger Mann unter Überwachung eines Nichtseminoms"
+    },
+    "uro-hod-00042": {
+      "name": "Kamil Król",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "Ein 46-jähriger Mann ist acht Jahre nach Chemotherapie ... rezidivfrei"
+    },
+    "uro-hod-00043": {
+      "name": "Hans-Peter Drescher",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "Ein 71-jähriger Mann mit lokal fortgeschrittenem Prostatakarzinom"
+    },
+    "uro-hod-00044": {
+      "name": "Norbert Hofmann",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "Ein 68-jähriger Mann mit metastasiertem Urothelkarzinom der Blase"
+    },
+    "uro-hod-00045": {
+      "name": "Lennart Thieme",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "Ein 28-jähriger Mann erhält wegen eines metastasierten Nichtseminoms die dritte Serie BEP"
+    },
+    "uro-hod-00046": {
+      "name": "Nico Gerlach",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "Bei einem 33-jährigen Mann wurde nach drei Zyklen BEP ein Residuum reseziert"
+    },
+    "uro-hod-00047": {
+      "name": "Holger Reich",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "Ein 35-jähriger Mann hat ... ein zweites Rezidiv eines Nichtseminoms"
+    },
+    "uro-hod-00048": {
+      "name": "Samir Khalil",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "Ein 29-jähriger Mann mit Nichtseminom hat ... einen paraaortalen Lymphknoten von 2,5 cm"
+    },
+    "uro-hod-00049": {
+      "name": "Philipp Jung",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "Ein 27-jähriger Mann hat ein Nichtseminom im Stadium IA"
+    },
+    "uro-hod-00050": {
+      "name": "Bilal Nasser",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "Ein 31-jähriger Mann ist nach drei Zyklen BEP wegen eines Nichtseminoms markernegativ"
+    },
+    "uro-hod-00051": {
+      "name": "Marco Fuchs",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "Ein 38-jähriger Mann mit intermediärer Prognose hat ... ein interaortocavales Residuum"
+    },
+    "uro-hod-00052": {
+      "name": "Niklas Busch",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "Vorgestellt wird ein 32-jähriger Mann mit einem 5 cm großen Residuum"
+    },
+    "uro-hod-00053": {
+      "name": "Eduard Dyck",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "Ein 26-jähriger Mann mit Kinderwunsch soll ... eine nervschonende Lymphadenektomie erhalten"
+    },
+    "uro-inf-00001": {
+      "name": "Efua Mensah",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "26-jährige, nicht schwangere Frau mit seit zwei Tagen bestehender Dysurie"
+    },
+    "uro-inf-00002": {
+      "name": "Raquel Prieto",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "34-jährige Frau mit akuter Pyelonephritis"
+    },
+    "uro-inf-00003": {
+      "name": "Despina Nikolaidou",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "63-jährige postmenopausale Frau mit fünf kulturell gesicherten Zystitiden"
+    },
+    "uro-inf-00004": {
+      "name": "Hess, Seidel, Henke & Blum",
+      "sex": null,
+      "kind": "multiple",
+      "count": 4,
+      "ageBand": "unknown",
+      "evidence": "Bei vier Patienten: einer schwangeren Frau, einem Mann, einer Diabetikerin, einem Patienten mit Dauerkatheter"
+    },
+    "uro-inf-00005": {
+      "name": "Viktor Unruh",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "EN: 72-year-old man with fever, confusion; ES: Varón de 72 años"
+    },
+    "uro-inf-00006": {
+      "name": "Thorsten Springer",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "44-jähriger Mann mit Fieber ... Die Prostata ist rektal äußerst druckschmerzhaft"
+    },
+    "uro-inf-00007": {
+      "name": "Waldemar Enns",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "67-jähriger Diabetiker mit rasch zunehmender Schwellung und Rötung des Skrotums"
+    },
+    "uro-inf-00008": {
+      "name": "Jannik Ebert",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "24-jähriger sexuell aktiver Mann mit ... Schwellung und Schmerz des linken Nebenhodens"
+    },
+    "uro-inf-00009": {
+      "name": "Elfriede Hansen",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "elderly",
+      "evidence": "79-jährige Pflegeheimbewohnerin mit Dauerkatheter ... Sie entwickelt Fieber"
+    },
+    "uro-inf-00010": {
+      "name": "Aikaterini Antoniou",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "58-jährige Patientin mit schlecht eingestelltem Diabetes"
+    },
+    "uro-kin-00001": {
+      "name": "Lukas Geiger",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "teen",
+      "evidence": "13-jähriger Junge, ... starke Schmerzen im rechten Hemiskrotum"
+    },
+    "uro-kin-00002": {
+      "name": "Henry Gottwald",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "infant",
+      "evidence": "Termingeborener Junge, bei der Vorsorgeuntersuchung mit neun Monaten ... linke Hoden"
+    },
+    "uro-kin-00003": {
+      "name": "Anton Mohr",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "infant",
+      "evidence": "14 Monate alter Junge, der rechte Hoden ist ... nicht tastbar"
+    },
+    "uro-kin-00004": {
+      "name": "Nicky Bach",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "infant",
+      "evidence": "Vier Monate alter Säugling mit erstem fieberhaftem Harnwegsinfekt"
+    },
+    "uro-kin-00005": {
+      "name": "Charlie Klose",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "infant",
+      "evidence": "Sechs Monate alter Säugling ... das Kind ist beschwerdefrei"
+    },
+    "uro-kin-00006": {
+      "name": "Szymon Krawczyk",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "child",
+      "evidence": "Fünfjähriger Junge, die Vorhaut lässt sich nicht zurückstreifen"
+    },
+    "uro-kin-00007": {
+      "name": "Ben Hecht",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "newborn",
+      "evidence": "Neugeborener Junge mit distaler Hypospadie"
+    },
+    "uro-kin-00008": {
+      "name": "Artjom Friesen",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "newborn",
+      "evidence": "Drei Tage alter Junge mit beidseitiger Hydronephrose"
+    },
+    "uro-kin-00009": {
+      "name": "Juna Fiedler",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "child",
+      "evidence": "Siebenjähriges Mädchen, seit jeher nächtliches Einnässen"
+    },
+    "uro-kin-00010": {
+      "name": "Leni Zobel",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "child",
+      "evidence": "Dreijähriges Mädchen mit tastbarer, schmerzloser Raumforderung im linken Oberbauch"
+    },
+    "uro-lit-00001": {
+      "name": "Claudia Bauer",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "41-jährige Patientin, seit zwei Tagen rechtsseitige Flankenschmerzen"
+    },
+    "uro-lit-00002": {
+      "name": "Roberto Barbieri",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "EN: 38-year-old man with his third stone episode; ES: Hombre de 38 años"
+    },
+    "uro-lit-00003": {
+      "name": "Jens Moser",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "EN: 52-year-old man with a second calcium oxalate stone; ES: Varón de 52 años"
+    },
+    "uro-lit-00004": {
+      "name": "Chris Vogt",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Akute Nierenkolik, normale Nierenfunktion, keine Schwangerschaft (exclusion only, not a sex cue)"
+    },
+    "uro-lit-00005": {
+      "name": "Uli Janssen",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "Ein Erwachsener hat einen 28-mm-Nierenbeckenstein (age word only, no number)"
+    },
+    "uro-lit-00006": {
+      "name": "Nina Scharf",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Eine Schwangere mit Verdacht auf Harnleiterstein ist kreislaufstabil"
+    },
+    "uro-lit-00007": {
+      "name": "Jo Thiel",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Distaler Harnleiterstein von 7 mm ... Beobachtung mit Kontrollen ist vereinbart"
+    },
+    "uro-lit-00008": {
+      "name": "Eike Löffler",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Ein nichtobstruierender Harnsäurestein soll medikamentös aufgelöst werden"
+    },
+    "uro-lit-00009": {
+      "name": "Robin Hilbert",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Ein zufällig entdeckter 4-mm-Kelchstein ist asymptomatisch ... verlässliche Kontrollen"
+    },
+    "uro-lit-00010": {
+      "name": "Sascha Schuster",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Nach dem ersten Steinabgang bringt ein Patient den geborgenen Stein mit"
+    },
+    "uro-mib-00001": {
+      "name": "Hartmut Fink",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "EN: 71-year-old man ... He is fit for cystectomy; ES: Varón de 71 años"
+    },
+    "uro-mib-00002": {
+      "name": "Uwe Schott",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "EN: 64-year-old man, cT3 cN0 cM0; ES: Varón de 64 años"
+    },
+    "uro-mib-00003": {
+      "name": "Elke Fleischer",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "68-jährige Patientin unter neoadjuvantem Enfortumab Vedotin plus Pembrolizumab"
+    },
+    "uro-mib-00004": {
+      "name": "Peter Holz",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "62-jähriger Patient ... Er hat von der Kombination ... gelesen"
+    },
+    "uro-mib-00005": {
+      "name": "Alex Kern",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Die TUR-B-Histologie zeigt Urothelkarzinom in der Muscularis propria"
+    },
+    "uro-mib-00006": {
+      "name": "Toni Rupp",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Ein MIBC wurde histologisch gesichert. Nierenfunktion und Kontrastmittelverträglichkeit sind unauffällig"
+    },
+    "uro-mib-00007": {
+      "name": "Kai Sievers",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Bei solitärem cT2N0M0-Tumor und guter Blasenfunktion wird eine trimodale Blasenerhaltung besprochen"
+    },
+    "uro-mib-00008": {
+      "name": "Kim Mayer",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Nach trimodaler Therapie ... lokal muskelinvasives Rezidiv. Der Patient ist operabel"
+    },
+    "uro-mib-00009": {
+      "name": "Sascha Plath",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Bei geplanter Zystektomie wird ein invasiver Urethratumor festgestellt"
+    },
+    "uro-mib-00010": {
+      "name": "Eike Menzel",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Der Patient möchte auf weitere Blasenuntersuchungen verzichten"
+    },
+    "uro-nmi-00001": {
+      "name": "Brigitte Frey",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "63-jährige Patientin nach transurethraler Resektion eines 3 cm großen Blasentumors"
+    },
+    "uro-nmi-00002": {
+      "name": "Gerd Haase",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "EN: 59-year-old man with pT1 high-grade urothelial carcinoma; ES: Hombre de 59 años"
+    },
+    "uro-nmi-00003": {
+      "name": "Alex Westphal",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Persistierende Dysurie, sterile Urinkultur und verdächtige Zytologie"
+    },
+    "uro-nmi-00004": {
+      "name": "Jo Kessler",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Nach TUR-B eines kleinen papillären Tumors besteht Verdacht auf Blasenperforation"
+    },
+    "uro-nmi-00005": {
+      "name": "Toni Reuter",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Vor einer BCG-Instillation bestehen Fieber, neue Dysurie und eine positive Urinkultur"
+    },
+    "uro-nmi-00006": {
+      "name": "Andreas Horn",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "Ein 67-jähriger Patient erhielt sechs BCG-Induktionen ... Er ist operabel"
+    },
+    "uro-nmi-00007": {
+      "name": "Uli Vetter",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Ein Ta-Low-Grade-Tumor wurde vollständig reseziert"
+    },
+    "uro-nmi-00008": {
+      "name": "Kim Meißner",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Bei schmerzloser Makrohämaturie ist die Urinzytologie negativ"
+    },
+    "uro-nmi-00009": {
+      "name": "Dennis Freitag",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Ein Raucher wird nach TUR-B beraten; EN: 'recommendation belongs in his care'"
+    },
+    "uro-nmi-00010": {
+      "name": "Olga Klassen",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "Bei einer 62-jährigen Patientin bestätigen mehrere Biopsien ein ausgedehntes primäres Blasen-CIS"
+    },
+    "uro-op-00101": {
+      "name": "Oliver Claßen",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "OP-Bericht zur roboterassistierten radikalen Prostatektomie ... Erhalt des puboprostatischen Kragens"
+    },
+    "uro-op-00102": {
+      "name": "Diego Martínez",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Bei einem cT2a-Karzinom, ISUP 1 ... Schicht zwischen Prostatafaszie und Levatorfaszie"
+    },
+    "uro-op-00103": {
+      "name": "Matthias Rademacher",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Apexpräparation während radikaler Prostatektomie: one patient on the table; prostate = male; corrected after review"
+    },
+    "uro-op-00104": {
+      "name": "Sven Baumann",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Vesikourethrale Anastomose bei radikaler Prostatektomie: one patient on the table; prostate = male; corrected after review"
+    },
+    "uro-op-00105": {
+      "name": "Luca Conti",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Der Quotient beträgt 0,03. Der Patient fragt nach seiner Prognose"
+    },
+    "uro-op-00106": {
+      "name": "Michael Winter",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "62-jähriger Patient, cT2c, ISUP 3 ... Er wünscht ausdrücklich eine Retzius-sparende RALP"
+    },
+    "uro-op-00107": {
+      "name": "Markus Krüger",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Ein Patient fragt, ob der Nerverhalt neben der Potenz auch seine Kontinenz verbessert"
+    },
+    "uro-op-00108": {
+      "name": "Christian Zeller",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "78-ml-Prostata mit ausgeprägtem intravesikalem Mittellappen ... blasenhalserhaltende RALP"
+    },
+    "uro-op-00109": {
+      "name": "Sebastian Riedel",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Im OP-Bericht einer antegraden RALP (radical prostatectomy)"
+    },
+    "uro-op-00110": {
+      "name": "Abteilungsbesprechung",
+      "label": {
+        "en": "Department meeting",
+        "de": "Abteilungsbesprechung",
+        "es": "Sesión del servicio"
+      },
+      "sex": null,
+      "kind": "none",
+      "count": 0,
+      "ageBand": "unknown",
+      "evidence": "In der Abteilungsbesprechung wird vorgeschlagen, die posteriore Rekonstruktion regelhaft ... zu ergänzen"
+    },
+    "uro-ope-00001": {
+      "name": "Tobias Schreiber",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Bei einer roboterassistierten radikalen Prostatektomie soll beidseits nervschonend vorgegangen werden"
+    },
+    "uro-ope-00002": {
+      "name": "Chris Wolff",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Resektion eines Tumors an der linken Seitenwand der Blase ... Der Patient ist in Spinalanästhesie"
+    },
+    "uro-ope-00003": {
+      "name": "Robin Ahrens",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Laparoskopische radikale Nephrektomie links. ... Die Nierenvene ist auffallend lang"
+    },
+    "uro-ope-00004": {
+      "name": "Kai Bender",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Perkutane Nephrolitholapaxie bei einem Ausgussstein"
+    },
+    "uro-ope-00005": {
+      "name": "Melanie Ziegler",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "Nach einer laparoskopischen Hysterektomie entwickelt eine 48-jährige Patientin Flankenschmerzen"
+    },
+    "uro-ope-00006": {
+      "name": "Elias Knapp",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "Ein 29-jähriger Patient ... Er hat einen aktuellen Kinderwunsch; EN 'A 29-year-old man'"
+    },
+    "uro-ope-00007": {
+      "name": "Jan Schlegel",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Radikale inguinale Lymphadenektomie rechts bei Peniskarzinom"
+    },
+    "uro-ope-00008": {
+      "name": "Robin Kramer",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Radikale Zystektomie mit orthotoper Ileumneoblase"
+    },
+    "uro-ope-00009": {
+      "name": "Hannah Kuhn",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "34-jährige Patientin mit rezidivierenden linksseitigen Flankenschmerzen"
+    },
+    "uro-ope-00010": {
+      "name": "Kai Graf",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Laparoskopische Adrenalektomie rechts bei hormonaktivem Adenom"
+    },
+    "uro-ope-00011": {
+      "name": "Ewa Michalak",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "klagt eine 54-jährige Patientin über Brennen und Taubheit in der rechten Leiste"
+    },
+    "uro-ope-00012": {
+      "name": "Kim Göbel",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Bei einer Rektumresektion wird der linke Ureter ... vollständig durchtrennt"
+    },
+    "uro-ope-00013": {
+      "name": "Detlef Kroll",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "kann ein 62-jähriger Patient den rechten Fuß nicht heben; EN 'a 62-year-old man'"
+    },
+    "uro-ope-00014": {
+      "name": "Javier Cano",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Nach vierstündiger roboterassistierter radikaler Prostatektomie ... ist der Patient ... ödematös"
+    },
+    "uro-ope-00015": {
+      "name": "Sascha Frenzel",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Nach laparoskopischer Nierenteilresektion blutet es ... aus der Bauchdecke"
+    },
+    "uro-ope-00016": {
+      "name": "Bernhard Jahn",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "nach radikaler Prostatektomie ... stellt sich ein 64-jähriger Patient ... vor"
+    },
+    "uro-ope-00017": {
+      "name": "Yusuf Koç",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Bei der Präparation der Prostatarückfläche entsteht ... Rektumläsion. Der Patient ist nicht vorbestrahlt"
+    },
+    "uro-ope-00018": {
+      "name": "Davide Ricci",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Während einer monopolaren transurethralen Prostataresektion ... wird der Patient ... unruhig"
+    },
+    "uro-ope-00019": {
+      "name": "Reinhard Kunz",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "stellt sich ein 57-jähriger Patient mit plötzlicher schwerer Makrohämaturie vor; EN 'man'"
+    },
+    "uro-ope-00020": {
+      "name": "Toni Brinkmann",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Bei der erweiterten pelvinen Lymphadenektomie wird der N. obturatorius ... durchtrennt"
+    },
+    "uro-ope-00021": {
+      "name": "Joachim Trautmann",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "Ein 68-jähriger Mann hat ... ein biopsiegesichertes Lokalrezidiv"
+    },
+    "uro-ope-00022": {
+      "name": "Nikolaos Dimitriou",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "Ein 71-jähriger Mann wünscht nach Strahlentherapie eine Salvage-Prostatektomie"
+    },
+    "uro-ope-00023": {
+      "name": "Bernd Kaiser",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "Ein 64-jähriger Mann hat zwei Jahre nach radikaler Prostatektomie ein biochemisches Rezidiv"
+    },
+    "uro-ope-00024": {
+      "name": "Rainer Schulze",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "Ein 66-jähriger Mann soll ... eine Salvage-Lymphadenektomie ... erhalten"
+    },
+    "uro-ope-00025": {
+      "name": "Bernhard Wagner",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "Ein 62-jähriger Mann mit de novo metastasiertem, hormonsensitivem Prostatakarzinom"
+    },
+    "uro-ope-00026": {
+      "name": "Uwe Brandt",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "Ein 74-jähriger Mann mit kastrationsresistentem, lokal fortgeschrittenem Prostatakarzinom"
+    },
+    "uro-ope-00027": {
+      "name": "Mahmoud Farah",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "Ein 61-jähriger Mann hat ... eine stabile solitäre Lungenmetastase"
+    },
+    "uro-ope-00028": {
+      "name": "Frank Kopp",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "Ein 63-jähriger Mann hat drei Jahre nach Nephrektomie drei resektable Lungenmetastasen"
+    },
+    "uro-ope-00029": {
+      "name": "Abdullah Mansour",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "Ein 70-jähriger Mann stellt sich neun Jahre nach Nephrektomie ... vor"
+    },
+    "uro-ope-00030": {
+      "name": "Fabian Rausch",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "Ein 29-jähriger Mann mit metastasiertem Nichtseminom"
+    },
+    "uro-pca-00001": {
+      "name": "Harald Heller",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "66-jähriger Patient, ECOG 0 ... PSA 184 ng/ml; EN '66-year-old man'"
+    },
+    "uro-pca-00002": {
+      "name": "Franco Moretti",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "74-jähriger Patient nach radikaler Prostatektomie und Salvage-Radiatio; EN 'man'"
+    },
+    "uro-pca-00003": {
+      "name": "Wolfgang Kirchner",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "69-jähriger Patient, Zustand nach radikaler Prostatektomie; EN '69-year-old man'"
+    },
+    "uro-pca-00004": {
+      "name": "Ahmet Özdemir",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "55-jähriger, beschwerdefreier Mann kommt zur Vorsorge"
+    },
+    "uro-pca-00005": {
+      "name": "Dragan Babić",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "63-jähriger Mann, PSA 6,4 ng/ml in zwei Kontrollen"
+    },
+    "uro-pca-00006": {
+      "name": "Michael Kraft",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "Ein 66-jähriger Mann soll erstmals prostatabiopsiert werden"
+    },
+    "uro-pca-00007": {
+      "name": "Mertens & Jansen",
+      "sex": "male",
+      "kind": "multiple",
+      "count": 2,
+      "ageBand": "unknown",
+      "evidence": "Zwei Patienten gleichen Alters mit PSA 7 ng/ml ... Gleason 3+4=7 / 4+3=7 (prostate histology)"
+    },
+    "uro-pca-00008": {
+      "name": "Haas & Güneş",
+      "sex": "male",
+      "kind": "multiple",
+      "count": 2,
+      "ageBand": "unknown",
+      "evidence": "Zwei neu diagnostizierte Patienten. Der erste hat PSA 5,8 ng/ml, ISUP 1 ... Der zweite PSA 34"
+    },
+    "uro-pca-00009": {
+      "name": "Ralf Böttcher",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "58-jähriger Mann, PSA 6,2 ng/ml, cT1c, ISUP 1"
+    },
+    "uro-pca-00010": {
+      "name": "Bernd Grimm",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "Bei einem 64-jährigen Patienten ... ist eine radikale Prostatektomie geplant; EN 'man'"
+    },
+    "uro-pca-00011": {
+      "name": "Brunner & Wendt",
+      "sex": "male",
+      "kind": "multiple",
+      "count": 2,
+      "ageBand": "unknown",
+      "evidence": "Zwei Patienten wählen externe Bestrahlung. Der erste hat PSA 9 ng/ml, ISUP 3 ... Der zweite"
+    },
+    "uro-pca-00012": {
+      "name": "Hartmut Meyer",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "67-jähriger Patient nach radikaler Prostatektomie ... Er ist kontinent"
+    },
+    "uro-pca-00013": {
+      "name": "Rainer Böhm",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "62-jähriger, sexuell aktiver Patient ... Er wünscht die radikale Prostatektomie"
+    },
+    "uro-pca-00014": {
+      "name": "Volker Lange",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "68-jähriger Patient, neu diagnostiziertes hormonsensitives metastasiertes Prostatakarzinom"
+    },
+    "uro-pca-00015": {
+      "name": "Andreas Wulf",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "71-jähriger Patient mit neu diagnostiziertem ... metastasiertem Prostatakarzinom; EN 'man'"
+    },
+    "uro-pca-00016": {
+      "name": "Ahmad Saleh",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "70-jähriger Patient ... Er fragt, ob man ... auf Enzalutamid wechseln könne"
+    },
+    "uro-pca-00017": {
+      "name": "Jürgen Sommer",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "64-jähriger Patient mit metastasiertem kastrationsresistentem Prostatakarzinom"
+    },
+    "uro-pca-00018": {
+      "name": "Nikolai Görzen",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "73-jähriger Patient mit mCRPC nach Enzalutamid und Docetaxel; EN 'man'"
+    },
+    "uro-pca-00019": {
+      "name": "Klaus Haag",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "elderly",
+      "evidence": "76-jähriger Patient mit mCRPC und ausschließlich ossären, schmerzhaften Metastasen"
+    },
+    "uro-pca-00020": {
+      "name": "Engel & Decker",
+      "sex": "male",
+      "kind": "multiple",
+      "count": 2,
+      "ageBand": "unknown",
+      "evidence": "Zwei Patienten unter Androgendeprivation ... hormonsensitives / kastrationsresistent (prostate cancer)"
+    },
+    "uro-pca-00021": {
+      "name": "Salvatore De Luca",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "74-jähriger Patient mit bekanntem ossär metastasiertem Prostatakarzinom"
+    },
+    "uro-pca-00022": {
+      "name": "Mustafa Doğan",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "69-jähriger Patient unter dreimonatlicher Depotgabe eines LHRH-Analogons; EN 'man'"
+    },
+    "uro-pca-00023": {
+      "name": "Osman Çelik",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "61-jähriger Patient, seit zwei Jahren mCRPC unter Enzalutamid; EN 'man ... he'"
+    },
+    "uro-pen-00001": {
+      "name": "Khaled Aziz",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "58-jähriger Patient nach Glansektomie wegen eines Plattenepithelkarzinoms des Penis"
+    },
+    "uro-pen-00002": {
+      "name": "Marco Nowotny",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "54-jähriger Patient mit einem auf die Glans begrenzten Plattenepithelkarzinom; EN 'man'"
+    },
+    "uro-pen-00003": {
+      "name": "Detlef Hahn",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "61-jähriger Patient mit ... Plattenepithelkarzinom des Penis"
+    },
+    "uro-pen-00004": {
+      "name": "Norbert Schmitz",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "63-jähriger Patient nach partieller Penektomie und beidseitiger inguinaler Lymphadenektomie"
+    },
+    "uro-pen-00005": {
+      "name": "Dirk Stolz",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Eine persistierende Glansläsion soll lokal mit einer Creme behandelt werden (penile glans)"
+    },
+    "uro-pen-00006": {
+      "name": "Sven Witt",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Bei Peniskarzinom bleibt nach Untersuchung unklar, ob die Corpora cavernosa infiltriert sind"
+    },
+    "uro-pen-00007": {
+      "name": "Florian Dreyer",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Biopsie einer umschriebenen Glansläsion zeigt PeIN ... Nach Zirkumzision ... Der Patient"
+    },
+    "uro-pen-00008": {
+      "name": "Tarek Abboud",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Die Biopsie einer Glansläsion zeigt ein invasives Plattenepithelkarzinom (penile cancer)"
+    },
+    "uro-pen-00009": {
+      "name": "Stefan Petrović",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Bei Peniskarzinom besteht ein neu tastbarer suspekter Leistenlymphknoten"
+    },
+    "uro-pen-00010": {
+      "name": "Murat Demir",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Nach abgeschlossener topischer PeIN-Therapie verbleibt eine verdickte, indurierte Läsion"
+    },
+    "uro-rcc-00001": {
+      "name": "Sevgi Kaya",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "58-jährige Patientin, radikale Nephrektomie; EN '58-year-old woman'"
+    },
+    "uro-rcc-00002": {
+      "name": "Ali Aslan",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "62-jähriger Mann mit klarzelligem Nierenzellkarzinom"
+    },
+    "uro-rcc-00003": {
+      "name": "Holger Oertel",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "EN: \"54-year-old man\"; ES: \"Varón de 54 años\""
+    },
+    "uro-rcc-00004": {
+      "name": "Tim Hartmann",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "EN: \"23-year-old man ... He is a known sickle cell trait carrier\""
+    },
+    "uro-rcc-00005": {
+      "name": "Gerd Ritter",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "EN: \"61-year-old man\"; ES: \"Varón de 61 años\""
+    },
+    "uro-rcc-00006": {
+      "name": "Cornelia Thomsen",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "DE: \"58-jährige Patientin\"; EN: \"58-year-old woman\""
+    },
+    "uro-rcc-00007": {
+      "name": "Anastasia Janzen",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "DE: \"Eine 49-jährige Patientin ... Sie ist beschwerdefrei\""
+    },
+    "uro-rcc-00008": {
+      "name": "Dieter Rösler",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "elderly",
+      "evidence": "EN: \"82-year-old man\"; ES: \"Varón de 82 años\""
+    },
+    "uro-rcc-00009": {
+      "name": "Jelena Wiebe",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "DE: \"35-jährige Patientin mit tuberöser Sklerose\""
+    },
+    "uro-rcc-00010": {
+      "name": "Marion Nagel",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "DE: \"57-jährige Patientin mit einer zystischen Nierenläsion\""
+    },
+    "uro-rcc-00011": {
+      "name": "Joachim Huber",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "EN: \"60-year-old man\"; ES: \"Varón de 60 años\""
+    },
+    "uro-rcc-00012": {
+      "name": "Peter Schubert",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "EN: \"66-year-old man\"; ES: \"Hombre de 66 años\""
+    },
+    "uro-rek-00001": {
+      "name": "Matthias Möller",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "DE: \"38-jähriger Mann mit obstruktiver Miktion\""
+    },
+    "uro-rek-00002": {
+      "name": "Reinhard Jäger",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "DE: \"55-jähriger Mann mit 5 cm langer Striktur der Penisurethra\""
+    },
+    "uro-rek-00003": {
+      "name": "Moritz Keller",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "DE: \"24-jähriger Mann ... tastbar hochstehende Prostata\""
+    },
+    "uro-rek-00004": {
+      "name": "Sandra Hanke",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "DE: \"51-jährige Patientin mit ständigem Urinabgang aus der Scheide\""
+    },
+    "uro-rek-00005": {
+      "name": "Andrzej Kaczmarek",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "DE: \"68-jähriger Patient ... prostatischen Harnröhre ... er lebt selbständig\""
+    },
+    "uro-rek-00006": {
+      "name": "Hans-Peter Schilling",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "DE: \"ein 63-jähriger Patient ... Er entleert die Neoblase\"; EN: \"63-year-old man\""
+    },
+    "uro-rek-00007": {
+      "name": "Chiara Colombo",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "DE: \"47-jährige Patientin mit einer 12 cm langen Striktur\""
+    },
+    "uro-rek-00008": {
+      "name": "Andreas Peters",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "DE: \"59-jähriger Mann mit dumpfen Rückenschmerzen\""
+    },
+    "uro-rek-00009": {
+      "name": "Lisa Brendel",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "DE: \"31-jährige Patientin ... Sie führt den Selbstkatheterismus\""
+    },
+    "uro-rek-00010": {
+      "name": "Marvin Koch",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "DE: \"26-jähriger Rollstuhlfahrer\"; ES: \"Hombre de 26 años\""
+    },
+    "uro-rek-00011": {
+      "name": "Ackermann, Ehlers & Gärtner",
+      "sex": null,
+      "kind": "multiple",
+      "count": 3,
+      "ageBand": "unknown",
+      "evidence": "DE: \"Bei drei Patienten mit Darmsegment im Harntrakt\"; no sex or age given"
+    },
+    "uro-rek-00012": {
+      "name": "Chris Feldmann",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "DE: \"Der Patient ist beschwerdefrei\" (generic), no age given"
+    },
+    "uro-rek-00013": {
+      "name": "Gerd Schütz",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "DE: \"Ein 58-jähriger dialysepflichtiger Patient\"; EN: \"his dialysis catheter\""
+    },
+    "uro-rek-00014": {
+      "name": "Alex Stahl",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "Nierentransplantation: one recipient on the table, sex not stated; corrected after review"
+    },
+    "uro-rek-00015": {
+      "name": "Eike Kolb",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "DE: \"Der Patient ist kreislaufstabil und schmerzfrei\" (generic), no age"
+    },
+    "uro-rek-00016": {
+      "name": "Tanja Langer",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "DE: \"entwickelt eine Patientin eine schwer einstellbare Hypertonie\"; EN: \"her creatinine\""
+    },
+    "uro-rek-00017": {
+      "name": "Jo Lindemann",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "DE: \"Sechs Wochen nach Transplantation ... das Bein ist geschwollen\"; no sex or age"
+    },
+    "uro-rek-00018": {
+      "name": "Uli König",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "DE: \"Der Patient ist beschwerdefrei\" (generic), no age"
+    },
+    "uro-rek-00019": {
+      "name": "Thorsten Unger",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "DE: \"Ein Patient ist seit sieben Jahren nierentransplantiert ... Er fragt\""
+    },
+    "uro-rek-00020": {
+      "name": "Thu Trang Pham",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "DE: \"Eine 52-jährige Frau möchte ihrem Bruder eine Niere spenden\""
+    },
+    "uro-tra-00001": {
+      "name": "Nguyen, Schulz & Engelhardt",
+      "sex": null,
+      "kind": "multiple",
+      "count": 3,
+      "ageBand": "unknown",
+      "evidence": "DE: \"Drei Erwachsene nach stumpfem Bauchtrauma\"; sexes not stated"
+    },
+    "uro-tra-00002": {
+      "name": "Sam Rothe",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "DE: \"28-jähriger Motorradfahrer\" (generic masculine); EN/ES \"motorcyclist\" neutral"
+    },
+    "uro-tra-00003": {
+      "name": "Eike Krämer",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "DE: \"Der Patient ist trotz Massivtransfusion weiter instabil\" (generic), no age"
+    },
+    "uro-tra-00004": {
+      "name": "Chris Kraus",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "DE: \"entwickelt der Patient Fieber und zunehmende Flankenschmerzen\" (generic), no age"
+    },
+    "uro-tra-00005": {
+      "name": "Kerstin Schramm",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "DE: \"35-jährige Patientin acht Stunden nach Hochrasanztrauma\""
+    },
+    "uro-tra-00006": {
+      "name": "Julian Krause",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "DE: \"31-jähriger Mann mit Stichverletzung in der linken Flanke\""
+    },
+    "uro-tra-00007": {
+      "name": "Stefanie Seifert",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "DE: \"Die Patientin ist afebril und stabil\"; no age"
+    },
+    "uro-tra-00008": {
+      "name": "Nowak & Heinze",
+      "sex": null,
+      "kind": "multiple",
+      "count": 2,
+      "ageBand": "unknown",
+      "evidence": "DE: \"Zwei Patienten nach stumpfem Trauma mit Makrohämaturie\"; sexes not stated"
+    },
+    "uro-tra-00009": {
+      "name": "Kim Behrens",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "DE: \"Bei einem Patienten mit Beckenfraktur und Makrohämaturie\" (generic), no age"
+    },
+    "uro-tra-00010": {
+      "name": "Kevin Wilke",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "DE: \"19-jähriger Mann nach Sturz rittlings auf eine Metallstange\""
+    },
+    "uro-tra-00011": {
+      "name": "Toni Kaufmann",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "DE: \"bei einem unruhigen Patienten mehrfach vergeblich katheterisiert\" (generic), no age"
+    },
+    "uro-tra-00012": {
+      "name": "Francesco Rizzo",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "33-jähriger Mann ... Der Penis ist stark geschwollen"
+    },
+    "uro-tra-00013": {
+      "name": "Burak Kılıç",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "DE: \"21-jähriger Fußballspieler nach direktem Tritt gegen das Skrotum ... Hodenkontur\""
+    },
+    "uro-tra-00014": {
+      "name": "Emre Erdem",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "young",
+      "evidence": "DE: \"29-jähriger Motorradfahrer ... rechte Skrotalfach ist leer ... Hoden\""
+    },
+    "uro-tra-00015": {
+      "name": "Zayd Qasim",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "child",
+      "evidence": "DE: \"Neunjähriger Junge nach Sturz vom Fahrrad\"; EN: \"Nine-year-old boy\""
+    },
+    "uro-ure-00001": {
+      "name": "Stark & Pfeiffer",
+      "sex": "male",
+      "kind": "multiple",
+      "count": 2,
+      "ageBand": "unknown",
+      "evidence": "DE: \"Zwei Männer mit primärem Harnröhrenkarzinom\""
+    },
+    "uro-ure-00002": {
+      "name": "Gabriele Dittrich",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "DE: \"Bei einer 64-jährigen Patientin ... Beteiligung von Blasenhals und Vagina\""
+    },
+    "uro-ure-00003": {
+      "name": "Ralf Kemper",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "DE: \"Ein 61-jähriger Mann mit seit Jahren rezidivierender Harnröhrenstriktur\""
+    },
+    "uro-ure-00004": {
+      "name": "Barbara Pawlak",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "DE: \"58-jährige Patientin ... keine Infiltration von Blasenhals oder Vagina. Sie ist kontinent\""
+    },
+    "uro-ure-00005": {
+      "name": "Stjepan Jovanović",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "DE: \"57-jähriger Mann mit Plattenepithelkarzinom der bulbomembranösen Harnröhre\""
+    },
+    "uro-ure-00006": {
+      "name": "Karagiannis & Hennig",
+      "sex": "male",
+      "kind": "multiple",
+      "count": 2,
+      "ageBand": "unknown",
+      "evidence": "DE: \"Zwei Patienten\": tumours in Penisurethra and bulbomembranöse Harnröhre (male-only anatomy)"
+    },
+    "uro-ure-00007": {
+      "name": "Volker Seeger",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "DE: \"Bei einem 66-jährigen Mann ... Urothelkarzinom der prostatischen Harnröhre\""
+    },
+    "uro-ure-00008": {
+      "name": "Şahin & Strauß",
+      "sex": null,
+      "kind": "multiple",
+      "count": 2,
+      "ageBand": "unknown",
+      "evidence": "DE: \"zwei Patienten mit lokal fortgeschrittenem Harnröhrenkarzinom\"; sexes not stated"
+    },
+    "uro-ure-00009": {
+      "name": "Christodoulou & Kühn",
+      "sex": "female",
+      "kind": "multiple",
+      "count": 2,
+      "ageBand": "unknown",
+      "evidence": "DE: \"Zwei Patientinnen mit Harnröhrenkarzinom\"; EN: \"Two women\""
+    },
+    "uro-ure-00010": {
+      "name": "Anja Ebner",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "DE: \"Eine Patientin ist ... tumorfrei. Sie fragt\"; no age"
+    },
+    "uro-utu-00001": {
+      "name": "Rainer Wicke",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "EN: \"68-year-old man\"; ES: \"Varón de 68 años\""
+    },
+    "uro-utu-00002": {
+      "name": "Monika Thiele",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "DE: \"64-jährige Patientin mit zwei getrennten Tumoren im linken Nierenbecken\""
+    },
+    "uro-utu-00003": {
+      "name": "Uli Hesse",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "DE: \"57-jähriger Raucher\"; ES: \"Fumador\" (generic masculine); EN \"smoker\" neutral"
+    },
+    "uro-utu-00004": {
+      "name": "Kai Lehmann",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "DE: \"Bei einem Patienten mit ... Tumor des rechten Nierenbeckens\" (generic), no age"
+    },
+    "uro-utu-00005": {
+      "name": "Jo Ritz",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "DE: \"Radikale Nephroureterektomie rechts bei einem Hochrisikotumor\"; one operation, no sex/age"
+    },
+    "uro-utu-00006": {
+      "name": "Sascha Wolters",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "DE: \"Nephroureterektomie eines invasiven Tumors des linken Nierenbeckens\"; no sex/age"
+    },
+    "uro-utu-00007": {
+      "name": "Alex Nickel",
+      "sex": null,
+      "kind": "single",
+      "count": 1,
+      "ageBand": "unknown",
+      "evidence": "DE: \"Zweiter postoperativer Tag nach radikaler Nephroureterektomie\"; no sex/age"
+    },
+    "uro-utu-00008": {
+      "name": "Mohammed Sabbagh",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "EN: \"68-year-old man\"; ES: \"Hombre de 68 años\""
+    },
+    "uro-utu-00009": {
+      "name": "Uwe Probst",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "EN: \"62-year-old man\"; ES: \"Hombre de 62 años\""
+    },
+    "uro-utu-00010": {
+      "name": "Christina Vlachou",
+      "sex": "female",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "adult",
+      "evidence": "DE: \"44-jährige Nichtraucherin mit Urothelkarzinom des rechten Ureters\""
+    },
+    "uro-utu-00011": {
+      "name": "Wolfgang Rühl",
+      "sex": "male",
+      "kind": "single",
+      "count": 1,
+      "ageBand": "senior",
+      "evidence": "DE: \"70-jähriger Patient ... Er ist beschwerdefrei\"; EN: \"70-year-old man\""
+    }
+  }
+}

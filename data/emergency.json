@@ -6,7 +6,8 @@
     "acuity": "urgent",
     "patient": {
       "name": "Alex Morgan",
-      "age": 36
+      "age": 36,
+      "sex": null
     },
     "title": {
       "en": "Flank pain at midnight",
@@ -237,7 +238,8 @@
     "acuity": "urgent",
     "patient": {
       "name": "Martin Weber",
-      "age": 72
+      "age": 72,
+      "sex": "male"
     },
     "title": {
       "en": "A painful full bladder",
@@ -469,7 +471,8 @@
     "acuity": "critical",
     "patient": {
       "name": "Sofia Ruiz",
-      "age": 59
+      "age": 59,
+      "sex": "female"
     },
     "title": {
       "en": "Fever behind an obstruction",
@@ -702,7 +705,8 @@
     "acuity": "critical",
     "patient": {
       "name": "Leo Fischer",
-      "age": 16
+      "age": 16,
+      "sex": "male"
     },
     "title": {
       "en": "Sudden scrotal pain",
@@ -933,7 +937,8 @@
     "acuity": "critical",
     "patient": {
       "name": "Jamal Hassan",
-      "age": 61
+      "age": 61,
+      "sex": "male"
     },
     "title": {
       "en": "Pain beyond the skin findings",
@@ -1165,7 +1170,8 @@
     "acuity": "urgent",
     "patient": {
       "name": "Elena Costa",
-      "age": 68
+      "age": 68,
+      "sex": "female"
     },
     "title": {
       "en": "Blood, clots and no urine",
@@ -1395,8 +1401,10 @@
     "level": 3,
     "acuity": "critical",
     "patient": {
-      "name": "Uro-008",
-      "age": 27
+      "name": "Lennart Heck",
+      "age": 27,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Andrologie & Reproduktion",
@@ -1538,8 +1546,10 @@
     "level": 3,
     "acuity": "critical",
     "patient": {
-      "name": "Uro-021",
-      "age": 34
+      "name": "Marvin Wittmann",
+      "age": 34,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Funktionelle Urologie & Neurourologie",
@@ -1681,8 +1691,10 @@
     "level": 3,
     "acuity": "urgent",
     "patient": {
-      "name": "Uro-078",
-      "age": 34
+      "name": "Raquel Prieto",
+      "age": 34,
+      "sex": "female",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Infektiologie",
@@ -1824,8 +1836,10 @@
     "level": 3,
     "acuity": "critical",
     "patient": {
-      "name": "Uro-081",
-      "age": 72
+      "name": "Viktor Unruh",
+      "age": 72,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Infektiologie",
@@ -1967,8 +1981,10 @@
     "level": 3,
     "acuity": "urgent",
     "patient": {
-      "name": "Uro-082",
-      "age": 44
+      "name": "Thorsten Springer",
+      "age": 44,
+      "sex": "male",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "Infektiologie",
@@ -2110,8 +2126,10 @@
     "level": 3,
     "acuity": "critical",
     "patient": {
-      "name": "Uro-083",
-      "age": 67
+      "name": "Waldemar Enns",
+      "age": 67,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Infektiologie",
@@ -2253,8 +2271,10 @@
     "level": 3,
     "acuity": "urgent",
     "patient": {
-      "name": "Uro-084",
-      "age": 24
+      "name": "Jannik Ebert",
+      "age": 24,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Infektiologie",
@@ -2396,8 +2416,10 @@
     "level": 3,
     "acuity": "urgent",
     "patient": {
-      "name": "Uro-086",
-      "age": 58
+      "name": "Aikaterini Antoniou",
+      "age": 58,
+      "sex": "female",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Infektiologie",
@@ -2539,8 +2561,10 @@
     "level": 2,
     "acuity": "critical",
     "patient": {
-      "name": "Uro-087",
-      "age": 13
+      "name": "Lukas Geiger",
+      "age": 13,
+      "sex": "male",
+      "ageBand": "teen"
     },
     "topic": {
       "de": "Kinderurologie",
@@ -2682,8 +2706,10 @@
     "level": 3,
     "acuity": "critical",
     "patient": {
-      "name": "Uro-094",
-      "age": null
+      "name": "Artjom Friesen",
+      "age": null,
+      "sex": "male",
+      "ageBand": "newborn"
     },
     "topic": {
       "de": "Kinderurologie",
@@ -2825,8 +2851,10 @@
     "level": 3,
     "acuity": "critical",
     "patient": {
-      "name": "Uro-199",
-      "age": 74
+      "name": "Salvatore De Luca",
+      "age": 74,
+      "sex": "male",
+      "ageBand": "senior"
     },
     "topic": {
       "de": "Prostatakarzinom",
@@ -2970,8 +2998,10 @@
     "level": 3,
     "acuity": "urgent",
     "patient": {
-      "name": "Uro-204",
-      "age": 24
+      "name": "Moritz Keller",
+      "age": 24,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Rekonstruktion & Transplantation",
@@ -3113,8 +3143,10 @@
     "level": 3,
     "acuity": "urgent",
     "patient": {
-      "name": "Uro-222",
-      "age": null
+      "name": "Nguyen, Schulz & Engelhardt",
+      "age": null,
+      "sex": null,
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Urologisches Trauma",
@@ -3256,8 +3288,10 @@
     "level": 3,
     "acuity": "urgent",
     "patient": {
-      "name": "Uro-223",
-      "age": 28
+      "name": "Sam Rothe",
+      "age": 28,
+      "sex": null,
+      "ageBand": "young"
     },
     "topic": {
       "de": "Urologisches Trauma",
@@ -3399,8 +3433,10 @@
     "level": 3,
     "acuity": "urgent",
     "patient": {
-      "name": "Uro-226",
-      "age": 35
+      "name": "Kerstin Schramm",
+      "age": 35,
+      "sex": "female",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "Urologisches Trauma",
@@ -3542,8 +3578,10 @@
     "level": 3,
     "acuity": "urgent",
     "patient": {
-      "name": "Uro-227",
-      "age": 31
+      "name": "Julian Krause",
+      "age": 31,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Urologisches Trauma",
@@ -3685,8 +3723,10 @@
     "level": 3,
     "acuity": "urgent",
     "patient": {
-      "name": "Uro-229",
-      "age": null
+      "name": "Nowak & Heinze",
+      "age": null,
+      "sex": null,
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Urologisches Trauma",
@@ -3828,8 +3868,10 @@
     "level": 3,
     "acuity": "urgent",
     "patient": {
-      "name": "Uro-230",
-      "age": null
+      "name": "Kim Behrens",
+      "age": null,
+      "sex": null,
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Urologisches Trauma",
@@ -3971,8 +4013,10 @@
     "level": 3,
     "acuity": "urgent",
     "patient": {
-      "name": "Uro-231",
-      "age": 19
+      "name": "Kevin Wilke",
+      "age": 19,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Urologisches Trauma",
@@ -4114,8 +4158,10 @@
     "level": 3,
     "acuity": "urgent",
     "patient": {
-      "name": "Uro-233",
-      "age": 33
+      "name": "Francesco Rizzo",
+      "age": 33,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Urologisches Trauma",
@@ -4257,8 +4303,10 @@
     "level": 3,
     "acuity": "urgent",
     "patient": {
-      "name": "Uro-234",
-      "age": 21
+      "name": "Burak Kılıç",
+      "age": 21,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Urologisches Trauma",
@@ -4406,8 +4454,10 @@
     "level": 3,
     "acuity": "urgent",
     "patient": {
-      "name": "Uro-235",
-      "age": 29
+      "name": "Emre Erdem",
+      "age": 29,
+      "sex": "male",
+      "ageBand": "young"
     },
     "topic": {
       "de": "Urologisches Trauma",
@@ -4549,8 +4599,10 @@
     "level": 3,
     "acuity": "urgent",
     "patient": {
-      "name": "Uro-236",
-      "age": null
+      "name": "Zayd Qasim",
+      "age": null,
+      "sex": "male",
+      "ageBand": "child"
     },
     "topic": {
       "de": "Urologisches Trauma",
@@ -4692,8 +4744,10 @@
     "level": 2,
     "acuity": "urgent",
     "patient": {
-      "name": "Uro-247",
-      "age": 41
+      "name": "Claudia Bauer",
+      "age": 41,
+      "sex": "female",
+      "ageBand": "adult"
     },
     "topic": {
       "de": "Urolithiasis",
@@ -4837,8 +4891,10 @@
     "level": 2,
     "acuity": "urgent",
     "patient": {
-      "name": "Uro-250",
-      "age": null
+      "name": "Chris Vogt",
+      "age": null,
+      "sex": null,
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Urolithiasis",
@@ -4982,8 +5038,10 @@
     "level": 2,
     "acuity": "urgent",
     "patient": {
-      "name": "Uro-252",
-      "age": null
+      "name": "Nina Scharf",
+      "age": null,
+      "sex": "female",
+      "ageBand": "unknown"
     },
     "topic": {
       "de": "Urolithiasis",

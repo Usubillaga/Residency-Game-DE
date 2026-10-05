@@ -198,13 +198,18 @@ function portrait(o, expr = 'neutral', size = 96, opt = {}) {
   const expression = expr => ({good:'relieved',partial:'worried',unsafe:'scared'}[expr] || (['neutral','pain','relieved','happy','smile','sleepy','scared','stern','worried','ill'].includes(expr) ? expr : 'neutral'));
   const safeSize = size => Math.max(24, Math.min(320, Number(size) || 96));
   function hash(value) { let n=2166136261; for (const ch of String(value)) n=Math.imul(n^ch.charCodeAt(0),16777619); return n>>>0; }
-  function patientLook(id) {
-    // Appearance is a stable fictional design derived only from case ID, never name, ethnicity or sex.
-    const n=hash(id);
+  const CHILD_BANDS=['newborn','infant','child'],OLD_BANDS=['elderly'];
+  function patientLook(id,hints) {
+    // Appearance is a stable fictional design derived from the case ID, never from name or ethnicity.
+    // Sex and age stated in the case text only rule out contradictions: no stubble on women or
+    // children, no baldness in children, grey hair from 75 years.
+    const n=hash(id),h=hints||{},age=Number.isInteger(h.age)?h.age:null;
+    const child=age!==null?age<13:CHILD_BANDS.includes(h.ageBand),old=age!==null?age>=75:OLD_BANDS.includes(h.ageBand);
     const skin=['#f3cfae','#d6a27a','#c98e66','#b57b55','#8c5738','#7a4a2e'][n%6];
-    return {skin,hair:['short','messy','pony','bob','curly','bun','sidepart','bald'][(n>>>4)%8],
-      hairColor:['#6b4226','#2b1d16','#d9dde6','#e0b453','#7a3b2a','#443b53'][(n>>>8)%6],
-      glasses:!!(n&256),freckles:!!(n&512),stubble:!!(n&1024),heavy:!!(n&2048),
+    const hairs=['short','messy','pony','bob','curly','bun','sidepart','bald'];
+    return {skin,hair:child&&hairs[(n>>>4)%8]==='bald'?'messy':hairs[(n>>>4)%8],
+      hairColor:old?['#d9dde6','#c3c8d3'][(n>>>8)%2]:['#6b4226','#2b1d16','#d9dde6','#e0b453','#7a3b2a','#443b53'][(n>>>8)%6],
+      glasses:!!(n&256),freckles:!!(n&512),stubble:!!(n&1024)&&h.sex!=='female'&&!child,heavy:!!(n&2048)&&!child,
       gown:['#bcd6ef','#c4b5f0','#9fdcc8','#f2c879'][(n>>>12)%4],
       top:'#bcd6ef',outfit:'scrubs',bg:['#4d7599','#6b5b95','#3f7d70','#8f6748'][(n>>>16)%4]};
   }
@@ -213,7 +218,7 @@ function portrait(o, expr = 'neutral', size = 96, opt = {}) {
     const look=STAFF[aliases[role]||role]||AVATARS[avatarIndex(index)];
     return portrait(look,expression(expr),safeSize(size),{phone:role==='attending'});
   }
-  function patientPortrait(id,expr='neutral',size=96) { return portrait(patientLook(id),expression(expr),safeSize(size)); }
+  function patientPortrait(id,expr='neutral',size=96,hints) { return portrait(patientLook(id,hints),expression(expr),safeSize(size)); }
   function avatar(index,size=96) { return portrait(AVATARS[avatarIndex(index)],'smile',safeSize(size)); }
   function iconPaths(area) {
     if(area==='emergency') return '<path d="M20 5H34V20H49V34H34V49H20V34H5V20H20Z" fill="#e65f68" '+st(3)+'/>';
@@ -325,7 +330,7 @@ function portrait(o, expr = 'neutral', size = 96, opt = {}) {
     return s;
   }
   function bedside(p,x,width,area,selectedId,language) {
-    const w=lang(language), look=patientLook(p.id), available=p.available!==false, selected=p.id===selectedId||p.selected;
+    const w=lang(language), look=patientLook(p.id,p), available=p.available!==false, selected=p.id===selectedId||p.selected;
     // These expressions communicate educational feedback, not recovery or severity predictions.
     const expr=p.finished?'neutral':p.feedback?expression(p.feedback):p.acuity==='critical'?'ill':p.acuity==='urgent'?'worried':'neutral';
     const fill=p.acuity==='critical'?'#d35468':p.acuity==='urgent'?'#e9a04f':'#57b997';
