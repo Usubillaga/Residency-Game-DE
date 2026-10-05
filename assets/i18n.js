@@ -35,6 +35,10 @@ en:{
   replaced:'Session replaced',noActive:'Start a session or choose a case from the library.',current:'Current session',goHome:'Back to overview',
   pressure:'Queue pressure',pressureText:'Waiting patients accumulate while your choices use game time.',viewSaved:'Saved only',showAll:'Show all',startAnother:'Another shift',results:'Results',
   mark:'Learning game',caseCount:'{cases} cases · {areas} departments · EN / DE / ES',
+  careerTitle:'Career ladder',xpLabel:'XP',xpNote:'XP = your best score per case, added up. Replaying improves it; farming does not.',nextRank:'Next rank',maxRank:'Top of the ladder',stickers:'Sticker album',stickersSub:'{got} of {all} collected. Grey stickers tell you how to earn them.',newSticker:'New sticker',rankUpTitle:'Promotion!',streakLabel:'Streak',streakBest:'best',
+  allOptions:'Every option explained',whyCorrect:'Why this is right',correctMark:'correct',keysHint:'Keyboard: A–E or 1–5 picks an answer, Enter continues.',struckMark:'crossed out by the nurse',
+  revenge:'Rematch: replay your misses',revengeText:'{n} cases are waiting for a second chance.',shiftRevenge:'Replay this shift\'s misses',practiceSelection:'Practise this selection ({n} random)',topicsTitle:'Specialties',topicsSub:'Share of cases solved at 100%. Train your weak spots on purpose.',train:'Train',storyTopic:'Shift stories',playedLabel:'played',masteredLabel:'at 100%',
+  blitz:'Quick round · 5 questions',blitzText:'Five random cases, unplayed ones first. Ideal for the bus or the on-call room.',
 },
 de:{
   caseSingular:'Fall',
@@ -71,6 +75,10 @@ de:{
   replaced:'Sitzung ersetzt',noActive:'Starte eine Sitzung oder wähle einen Fall aus der Bibliothek.',current:'Laufende Sitzung',goHome:'Zur Übersicht',
   pressure:'Wartelast',pressureText:'Weitere Patienten warten, während deine Entscheidungen Spielzeit verbrauchen.',viewSaved:'Nur gespeicherte',showAll:'Alle anzeigen',startAnother:'Weitere Schicht',results:'Ergebnisse',
   mark:'Lernspiel',caseCount:'{cases} Fälle · {areas} Bereiche · EN / DE / ES',
+  careerTitle:'Karriereleiter',xpLabel:'XP',xpNote:'XP = deine beste Punktzahl je Fall, aufsummiert. Wiederholen verbessert sie, Farmen nicht.',nextRank:'Nächster Rang',maxRank:'Ganz oben angekommen',stickers:'Sticker-Album',stickersSub:'{got} von {all} gesammelt. Graue Sticker verraten, wie du sie bekommst.',newSticker:'Neuer Sticker',rankUpTitle:'Beförderung!',streakLabel:'Serie',streakBest:'Rekord',
+  allOptions:'Alle Antworten erklärt',whyCorrect:'Warum das richtig ist',correctMark:'richtig',keysHint:'Tastatur: A–E oder 1–5 wählt eine Antwort, Enter geht weiter.',struckMark:'von der Pflege gestrichen',
+  revenge:'Revanche: Fehler wiederholen',revengeText:'{n} Fälle warten auf eine zweite Chance.',shiftRevenge:'Fehler dieser Schicht wiederholen',practiceSelection:'Diese Auswahl üben ({n} zufällige)',topicsTitle:'Fachgebiete',topicsSub:'Anteil der Fälle mit 100 %. Trainiere gezielt deine Schwachstellen.',train:'Trainieren',storyTopic:'Schichtgeschichten',playedLabel:'gespielt',masteredLabel:'mit 100 %',
+  blitz:'Blitzrunde · 5 Fragen',blitzText:'Fünf zufällige Fälle, ungespielte zuerst. Ideal für Bus oder Dienstzimmer.',
 },
 es:{
   caseSingular:'caso',
@@ -107,5 +115,9 @@ es:{
   replaced:'Sesión reemplazada',noActive:'Inicia una sesión o elige un caso en la biblioteca.',current:'Sesión actual',goHome:'Volver a la vista general',
   pressure:'Carga de espera',pressureText:'Los pacientes esperan mientras tus decisiones consumen tiempo del juego.',viewSaved:'Solo guardados',showAll:'Mostrar todos',startAnother:'Otra guardia',results:'Resultados',
   mark:'Juego educativo',caseCount:'{cases} casos · {areas} áreas · EN / DE / ES',
+  careerTitle:'Escalera profesional',xpLabel:'XP',xpNote:'XP = tu mejor puntuación por caso, sumada. Repetir la mejora; acumular repeticiones no.',nextRank:'Siguiente rango',maxRank:'En lo más alto',stickers:'Álbum de pegatinas',stickersSub:'{got} de {all} conseguidas. Las grises te dicen cómo ganarlas.',newSticker:'Nueva pegatina',rankUpTitle:'¡Ascenso!',streakLabel:'Racha',streakBest:'récord',
+  allOptions:'Todas las opciones explicadas',whyCorrect:'Por qué es correcta',correctMark:'correcta',keysHint:'Teclado: A–E o 1–5 elige una respuesta; Intro continúa.',struckMark:'tachada por enfermería',
+  revenge:'Revancha: repite tus fallos',revengeText:'{n} casos esperan una segunda oportunidad.',shiftRevenge:'Repetir los fallos de esta guardia',practiceSelection:'Practicar esta selección ({n} al azar)',topicsTitle:'Especialidades',topicsSub:'Proporción de casos resueltos al 100 %. Entrena tus puntos débiles a propósito.',train:'Entrenar',storyTopic:'Historias de guardia',playedLabel:'jugados',masteredLabel:'al 100 %',
+  blitz:'Ronda rápida · 5 preguntas',blitzText:'Cinco casos al azar, primero los no jugados. Ideal para el autobús o la sala de guardia.',
 }
 };

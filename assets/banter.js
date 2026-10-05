@@ -58,7 +58,13 @@ window.NSABanter = {
       "Grace: Nicely done. The clipboard has temporarily stopped judging us.",
       "Dr. Brennan: A useful decision and a clear explanation. A rare two-for-one.",
       "Grace: That's teamwork. No committee meeting required.",
-      "Prof. Whitfield: Sensible. Please don't make me change my facial expression."
+      "Prof. Whitfield: Sensible. Please don't make me change my facial expression.",
+      "Dr. Brennan: Correct. I'll pretend I wasn't about to explain it at length.",
+      "Grace: Spot on. I'm putting a gold star on the whiteboard. It's the only one; guard it.",
+      "Prof. Whitfield: Correct. I had prepared a disappointed sigh. I shall save it for the printer.",
+      "Grace: Textbook. Just without the 900 pages and the coffee stains.",
+      "Dr. Brennan: Right answer. My pager is almost offended it has nothing to add.",
+      "Grace: Perfect. Even the coffee machine just made a hopeful noise."
     ],
     "partial": [
       "Grace: A start. Now let's add the bit the next shift will ask about.",
@@ -84,7 +90,11 @@ window.NSABanter = {
       "Grace: The machine calls this 'premium'. It's very confident.",
       "Dr. Brennan: A short pause. My mug is doing its best impression of a personal assistant.",
       "Grace: The coffee has been here longer than the rota. It still won't cover a shift.",
-      "Prof. Whitfield: This coffee is admirably consistent. I have written to request a different quality."
+      "Prof. Whitfield: This coffee is admirably consistent. I have written to request a different quality.",
+      "Grace: Third cup? The machine has registered you as a loyal customer.",
+      "Dr. Brennan: Caffeine isn't a diagnosis. It is, however, solid supportive therapy.",
+      "Grace: The cup says 'caution: hot'. That's the only hot thing about this coffee.",
+      "Prof. Whitfield: In my day there was no coffee. Only a sense of duty. And coffee."
     ],
     "newPatient": [
       "Grace: A new case has arrived. The pager insists it told you first.",
@@ -128,7 +138,109 @@ window.NSABanter = {
     "gameRank": ["Pager whisperer", "Clipboard diplomat", "Promising night owl", "Orientation continues"],
     "yourPager": "Your pager",
     "cups": "Coffee breaks",
-    "castWelcome": "Welcome to the team"
+    "castWelcome": "Welcome to the team",
+    "miss": [
+      "Grace: Missed. But that's exactly why we practise here and not at 3 a.m. for real.",
+      "Dr. Brennan: Not quite. Read the explanation; it's shorter than my last discharge letter.",
+      "Prof. Whitfield: Interesting. Wrong, but interesting. Kindly read the rationale.",
+      "Grace: Close is still a miss. Good news: mistakes in a game only cost pride.",
+      "Dr. Brennan: That's the answer that looks so tempting in exams. That's why it's there.",
+      "Grace: No drama. Remember the right answer and I'll see you at the rematch.",
+      "Prof. Whitfield: That option winked at me during my board exam. I did not wink back.",
+      "Dr. Brennan: Wrong turn. No problem: the sat-nav is called 'explanation' and it's right below."
+    ],
+    "strike": [
+      "Grace: I'd cross this one out. Call it gut feeling. Or twenty years of nights.",
+      "Grace: Psst. The crossed-out one isn't it. You didn't hear it from me.",
+      "Grace: One fewer. You can manage the rest; I've got three drips to hang.",
+      "Grace: I know that answer. It escorted a resident to morning report just last week.",
+      "Grace: Crossed out. If Prof. Whitfield asks, you did it all by yourself.",
+      "Grace: This option is out. And no, I don't do this for everyone."
+    ],
+    "strikeUsed": "Grace: That's all I'm crossing out, or I'll end up sitting your exam for you. You've got this.",
+    "jokerLabel": "Joker: cross out a wrong answer",
+    "jokerNote": "Costs 5 game minutes; points are unaffected.",
+    "streak": [
+      "Grace: {n} in a row! I'm fetching the confetti canister. We have one. Don't ask why.",
+      "Dr. Brennan: {n} straight. I'm going back to sleep; you clearly have this under control.",
+      "Prof. Whitfield: {n} correct decisions in a row. I find myself obliged to be impressed.",
+      "Grace: A streak of {n}! The pager went quiet out of sheer respect.",
+      "Dr. Brennan: {n} hits. If this continues, I'll be paging YOU.",
+      "Prof. Whitfield: {n} in a row. I shall have it printed in bold in the minutes. Font size 12."
+    ],
+    "careerRanks": ["Medical student", "Final-year student", "Junior resident (year 1)", "Senior resident (year 4)", "Specialist", "Attending", "Senior attending", "Head of department", "Night-shift legend"],
+    "careerJokes": [
+      "Can find the coffee machine. Usually.",
+      "Allowed to hold retractors and ask questions. Preferably in that order.",
+      "The pager knows your name now. And your phone number.",
+      "Knows where the good pens are hidden.",
+      "Now YOU get the 3 a.m. phone calls.",
+      "Reachable by phone. In theory.",
+      "Two pagers, one coffee, zero sleep.",
+      "Prof. Whitfield is worried about his parking space.",
+      "Every case perfect. The coffee machine now bears your name."
+    ],
+    "rankUp": [
+      "Prof. Whitfield: Promotion! I've prepared a short speech. It lasts only forty minutes.",
+      "Grace: Congratulations on the promotion! We'll print your badge as soon as the printer talks to us again.",
+      "Dr. Brennan: New rank. More responsibility, same coffee.",
+      "Prof. Whitfield: You are moving up. I am moving on, from worrying about you."
+    ],
+    "revengeNone": "Grace: No open mistakes to replay. Prof. Whitfield is speechless, which has never happened before.",
+    "badges": {
+      "firstCase": {
+        "title": "First chart",
+        "text": "Complete your first case. The handwriting is even legible."
+      },
+      "firstShift": {
+        "title": "Survived!",
+        "text": "Finish a complete shift. The sunrise is all yours."
+      },
+      "streak5": {
+        "title": "Pager whisperer",
+        "text": "Make 5 correct decisions in a row."
+      },
+      "streak10": {
+        "title": "Unstoppable",
+        "text": "Make 10 correct decisions in a row. Dr. Brennan sleeps soundly."
+      },
+      "perfectShift": {
+        "title": "Textbook night",
+        "text": "Finish a session of at least 5 cases, all at 100%."
+      },
+      "bossPerfect": {
+        "title": "Chief's round conquered",
+        "text": "Answer every morning-report question correctly. The eyebrow stays down."
+      },
+      "coffee5": {
+        "title": "Caffeine level critical",
+        "text": "Take 5 coffee breaks in one session. Your hands only tremble slightly."
+      },
+      "allAreas": {
+        "title": "Grand tour",
+        "text": "Complete at least one case in each of the five departments."
+      },
+      "comeback": {
+        "title": "Learning from mistakes",
+        "text": "Replay a case you had not nailed and score 100%."
+      },
+      "joker10": {
+        "title": "Team player",
+        "text": "Use Grace's joker 10 times. Nursing is half the battle."
+      },
+      "specialist": {
+        "title": "Specialist, in the best sense",
+        "text": "Solve every case of one specialty at 100%."
+      },
+      "cases50": {
+        "title": "Night owl",
+        "text": "Complete 50 different cases."
+      },
+      "nightOwl": {
+        "title": "A real night shift",
+        "text": "Complete a case between midnight and 5 a.m. real time. Then go to bed!"
+      }
+    }
   },
   "de": {
     "tagline": "Dein Pieper hat heute noch viel vor.",
@@ -188,7 +300,13 @@ window.NSABanter = {
       "Jana: Sauber. Das Klemmbrett schaut uns kurz nicht vorwurfsvoll an.",
       "Dr. Brenner: Sinnvolle Entscheidung, verständliche Begründung. Zwei Dinge auf einmal, ganz ohne Zusatzformular.",
       "Jana: So geht Teamarbeit. Dafür brauchen wir keinen Arbeitskreis.",
-      "Prof. Leuchtenberg: Vernünftig. Bitte zwingen Sie mich nicht zu einem zufriedenen Gesichtsausdruck."
+      "Prof. Leuchtenberg: Vernünftig. Bitte zwingen Sie mich nicht zu einem zufriedenen Gesichtsausdruck.",
+      "Dr. Brenner: Richtig. Ich tu so, als hätte ich das nicht gleich ausführlich erklären wollen.",
+      "Jana: Volltreffer. Ich mal dir einen Stern ans Whiteboard. Den einzigen, pass gut drauf auf.",
+      "Prof. Leuchtenberg: Korrekt. Ich hatte einen enttäuschten Seufzer vorbereitet. Den hebe ich mir für den Drucker auf.",
+      "Jana: Wie im Lehrbuch. Nur ohne 900 Seiten und Kaffeeflecken.",
+      "Dr. Brenner: Stimmt. Mein Pieper ist fast beleidigt, dass er nichts beitragen darf.",
+      "Jana: Perfekt. Sogar der Kaffeeautomat hat gerade hoffnungsvoll geblubbert."
     ],
     "partial": [
       "Jana: Ein Anfang. Jetzt fehlt noch der Teil, nach dem der nächste Dienst fragt.",
@@ -214,7 +332,11 @@ window.NSABanter = {
       "Jana: Der Automat nennt das „Premium“. Selbstbewusstsein hat er.",
       "Dr. Brenner: Kurze Pause. Meine Tasse übt gerade für die Stelle als persönliche Assistenz.",
       "Jana: Der Kaffee kennt den Dienstplan länger als wir. Einen Dienst übernehmen will er trotzdem nicht.",
-      "Prof. Leuchtenberg: Der Kaffee ist bemerkenswert konstant. Ich habe einen Antrag auf Qualitätsänderung gestellt."
+      "Prof. Leuchtenberg: Der Kaffee ist bemerkenswert konstant. Ich habe einen Antrag auf Qualitätsänderung gestellt.",
+      "Jana: Dritte Tasse? Der Automat führt dich schon als Stammkundschaft.",
+      "Dr. Brenner: Koffein ist keine Diagnose. Aber eine solide Begleitmedikation.",
+      "Jana: Auf dem Becher steht „Vorsicht, heiß“. Das ist das einzig Heiße an diesem Kaffee.",
+      "Prof. Leuchtenberg: Zu meiner Zeit gab es keinen Kaffee. Nur Pflichtgefühl. Und Kaffee."
     ],
     "newPatient": [
       "Jana: Ein neuer Fall ist da. Der Pieper behauptet, er hätte es zuerst gesagt.",
@@ -258,7 +380,109 @@ window.NSABanter = {
     "gameRank": ["Pieperflüsterer", "Klemmbrettdiplomat", "Nachtdienst mit Potenzial", "Die Einarbeitung geht weiter"],
     "yourPager": "Dein Pieper",
     "cups": "Kaffeepausen",
-    "castWelcome": "Willkommen im Team"
+    "castWelcome": "Willkommen im Team",
+    "miss": [
+      "Jana: Daneben. Aber genau dafür üben wir hier und nicht um drei Uhr nachts im Ernstfall.",
+      "Dr. Brenner: Nicht ganz. Lies die Erklärung; sie ist kürzer als mein letzter Arztbrief.",
+      "Prof. Leuchtenberg: Interessant. Falsch, aber interessant. Lesen Sie bitte die Begründung.",
+      "Jana: Knapp vorbei ist auch vorbei. Die gute Nachricht: Fehler im Spiel kosten nur Stolz.",
+      "Dr. Brenner: Das ist die Antwort, die in Prüfungen so verlockend aussieht. Genau deshalb steht sie da.",
+      "Jana: Kein Drama. Merk dir die richtige Antwort, dann sehen wir uns bei der Revanche.",
+      "Prof. Leuchtenberg: Diese Option hat mir schon in meiner Facharztprüfung zugezwinkert. Ich habe nicht zurückgezwinkert.",
+      "Dr. Brenner: Falsch abgebogen. Kein Problem: Das Navi heißt „Erklärung“ und steht direkt darunter."
+    ],
+    "strike": [
+      "Jana: Die hier würde ich streichen. Nenn es Bauchgefühl. Oder zwanzig Jahre Nachtdienst.",
+      "Jana: Psst. Die durchgestrichene war's nicht. Du hast das nicht von mir.",
+      "Jana: Eine weniger. Den Rest schaffst du allein; ich muss noch drei Infusionen anhängen.",
+      "Jana: Die Antwort kenne ich. Die hat letzte Woche schon jemanden in die Frühbesprechung begleitet.",
+      "Jana: Gestrichen. Wenn Prof. Leuchtenberg fragt: Das warst du ganz allein.",
+      "Jana: Diese Option fliegt raus. Und nein, das mache ich nicht für alle."
+    ],
+    "strikeUsed": "Jana: Mehr streiche ich nicht, sonst schreibe ich am Ende noch deine Prüfung. Den Rest schaffst du.",
+    "jokerLabel": "Joker: 1 falsche Antwort streichen",
+    "jokerNote": "Kostet 5 Spielminuten; die Punkte bleiben unverändert.",
+    "streak": [
+      "Jana: {n} richtige in Folge! Ich hol schon mal die Konfettikanone. Wir haben eine. Frag nicht, warum.",
+      "Dr. Brenner: {n} am Stück. Ich leg mich wieder hin; du hast das hier offensichtlich im Griff.",
+      "Prof. Leuchtenberg: {n} korrekte Entscheidungen hintereinander. Ich sehe mich gezwungen, beeindruckt zu sein.",
+      "Jana: Serie von {n}! Der Pieper hat vor Ehrfurcht kurz aufgehört zu piepen.",
+      "Dr. Brenner: {n} Treffer. Wenn das so weitergeht, rufe ich DICH an.",
+      "Prof. Leuchtenberg: {n} in Folge. Das lasse ich fett ins Protokoll drucken. In Schriftgröße 12."
+    ],
+    "careerRanks": ["Famulant:in", "PJler:in", "Assistenzärzt:in (1. Jahr)", "Assistenzärzt:in (4. Jahr)", "Fachärzt:in", "Oberärzt:in", "Leitende:r Oberärzt:in", "Chefärzt:in", "Legende des Nachtdienstes"],
+    "careerJokes": [
+      "Findet den Kaffeeautomaten. Meistens.",
+      "Darf Haken halten und Fragen stellen. Bevorzugt in dieser Reihenfolge.",
+      "Der Pieper kennt jetzt deinen Namen. Und deine Telefonnummer.",
+      "Weiß, wo die guten Kugelschreiber versteckt sind.",
+      "Jetzt wirst DU nachts um drei angerufen.",
+      "Telefonisch erreichbar. Theoretisch.",
+      "Zwei Pieper, ein Kaffee, null Schlaf.",
+      "Prof. Leuchtenberg macht sich Sorgen um seinen Parkplatz.",
+      "Alle Fälle perfekt. Der Kaffeeautomat trägt jetzt deinen Namen."
+    ],
+    "rankUp": [
+      "Prof. Leuchtenberg: Beförderung! Ich habe eine kurze Rede vorbereitet. Sie dauert nur vierzig Minuten.",
+      "Jana: Glückwunsch zur Beförderung! Das Namensschild drucken wir, sobald der Drucker wieder mit uns redet.",
+      "Dr. Brenner: Neuer Rang. Mehr Verantwortung, gleicher Kaffee.",
+      "Prof. Leuchtenberg: Sie steigen auf. Ich steige aus, und zwar aus der Sorge um Sie."
+    ],
+    "revengeNone": "Jana: Keine offenen Fehler zum Wiederholen. Prof. Leuchtenberg ist sprachlos. Das gab es noch nie.",
+    "badges": {
+      "firstCase": {
+        "title": "Erste Akte",
+        "text": "Schließe deinen ersten Fall ab. Die Handschrift ist sogar lesbar."
+      },
+      "firstShift": {
+        "title": "Überlebt!",
+        "text": "Beende einen kompletten Dienst. Der Sonnenaufgang gehört dir."
+      },
+      "streak5": {
+        "title": "Pieperflüsterer",
+        "text": "Triff 5 richtige Entscheidungen in Folge."
+      },
+      "streak10": {
+        "title": "Unaufhaltsam",
+        "text": "Triff 10 richtige Entscheidungen in Folge. Dr. Brenner schläft beruhigt."
+      },
+      "perfectShift": {
+        "title": "Lehrbuchnacht",
+        "text": "Beende eine Sitzung mit mindestens 5 Fällen, alle mit 100 %."
+      },
+      "bossPerfect": {
+        "title": "Chefvisite gemeistert",
+        "text": "Beantworte alle Fragen der Frühbesprechung richtig. Die Augenbraue bleibt unten."
+      },
+      "coffee5": {
+        "title": "Koffeinspiegel kritisch",
+        "text": "Mach 5 Kaffeepausen in einer Sitzung. Die Hände zittern nur ein bisschen."
+      },
+      "allAreas": {
+        "title": "Hausrundgang",
+        "text": "Schließe in jedem der fünf Bereiche mindestens einen Fall ab."
+      },
+      "comeback": {
+        "title": "Fehlerkultur",
+        "text": "Wiederhole einen Fall, der vorher nicht perfekt war, mit 100 %."
+      },
+      "joker10": {
+        "title": "Teamplayer",
+        "text": "Nutze Janas Joker 10-mal. Pflege ist die halbe Miete."
+      },
+      "specialist": {
+        "title": "Fachidiot im besten Sinn",
+        "text": "Löse alle Fälle eines Fachgebiets mit 100 %."
+      },
+      "cases50": {
+        "title": "Nachteule",
+        "text": "Schließe 50 verschiedene Fälle ab."
+      },
+      "nightOwl": {
+        "title": "Echter Nachtdienst",
+        "text": "Schließe einen Fall zwischen 0 und 5 Uhr echter Uhrzeit ab. Und dann ab ins Bett!"
+      }
+    }
   },
   "es": {
     "tagline": "El busca tiene planes para ti.",
@@ -318,7 +542,13 @@ window.NSABanter = {
       "Lucía: Muy bien. La carpeta ha dejado de mirarnos con reproche por un momento.",
       "Dr. Herrera: Buena decisión y buena explicación. Dos por una, sin impreso adicional.",
       "Lucía: Eso es trabajar en equipo. Y sin convocar una comisión.",
-      "Prof. Valdés: Sensato. No me obligue a poner cara de satisfacción."
+      "Prof. Valdés: Sensato. No me obligue a poner cara de satisfacción.",
+      "Dr. Herrera: Correcto. Haré como si no fuera a explicarlo durante media hora.",
+      "Lucía: ¡Diana! Te pongo una estrella en la pizarra. Es la única; cuídala.",
+      "Prof. Valdés: Correcto. Tenía preparado un suspiro de decepción. Lo guardaré para la impresora.",
+      "Lucía: De libro. Pero sin las 900 páginas ni las manchas de café.",
+      "Dr. Herrera: Acertado. Mi busca casi se ofende por no poder opinar.",
+      "Lucía: Perfecto. Hasta la máquina de café ha hecho un ruido esperanzador."
     ],
     "partial": [
       "Lucía: Es un comienzo. Ahora falta lo que nos preguntará el siguiente turno.",
@@ -344,7 +574,11 @@ window.NSABanter = {
       "Lucía: La máquina lo llama «premium». Confianza no le falta.",
       "Dr. Herrera: Una pausa breve. Mi taza está ensayando para ser mi asistente personal.",
       "Lucía: El café lleva aquí más que el cuadrante. Aun así, no quiere cubrir ninguna guardia.",
-      "Prof. Valdés: Este café mantiene una calidad admirablemente constante. He solicitado que sea otra."
+      "Prof. Valdés: Este café mantiene una calidad admirablemente constante. He solicitado que sea otra.",
+      "Lucía: ¿Tercera taza? La máquina ya te tiene registrado como cliente habitual.",
+      "Dr. Herrera: La cafeína no es un diagnóstico. Pero sí un buen tratamiento de soporte.",
+      "Lucía: El vaso dice «cuidado, quema». Es lo único que quema de este café.",
+      "Prof. Valdés: En mis tiempos no había café. Solo sentido del deber. Y café."
     ],
     "newPatient": [
       "Lucía: Ha llegado otro caso. El busca insiste en que te lo dijo primero.",
@@ -388,6 +622,108 @@ window.NSABanter = {
     "gameRank": ["Domador del busca", "Diplomático de carpeta", "Talento para la guardia", "La acogida continúa"],
     "yourPager": "Tu busca",
     "cups": "Pausas para café",
-    "castWelcome": "Bienvenido al equipo"
+    "castWelcome": "Bienvenido al equipo",
+    "miss": [
+      "Lucía: Fallaste. Pero para eso practicamos aquí y no a las tres de la mañana de verdad.",
+      "Dr. Herrera: No exactamente. Lee la explicación; es más corta que mi último informe de alta.",
+      "Prof. Valdés: Interesante. Incorrecto, pero interesante. Lea la justificación, por favor.",
+      "Lucía: Casi también es fallar. La buena noticia: en el juego los errores solo cuestan orgullo.",
+      "Dr. Herrera: Es la respuesta que tanto tienta en los exámenes. Por eso está ahí.",
+      "Lucía: Sin drama. Recuerda la respuesta correcta y nos vemos en la revancha.",
+      "Prof. Valdés: Esa opción ya me guiñó el ojo en mi examen de especialidad. No le devolví el guiño.",
+      "Dr. Herrera: Te has desviado. Tranquilidad: el GPS se llama «explicación» y está justo debajo."
+    ],
+    "strike": [
+      "Lucía: Yo tacharía esta. Llámalo intuición. O veinte años de guardias.",
+      "Lucía: Psst. La tachada no es. Yo no te he dicho nada.",
+      "Lucía: Una menos. Con el resto puedes tú; tengo tres sueros que colgar.",
+      "Lucía: Conozco esa respuesta. La semana pasada acompañó a alguien a la sesión de la mañana.",
+      "Lucía: Tachada. Si pregunta el Prof. Valdés, lo hiciste sin ayuda.",
+      "Lucía: Esta opción, fuera. Y no, no lo hago por todo el mundo."
+    ],
+    "strikeUsed": "Lucía: No tacho más o acabaré haciendo tu examen. Con el resto puedes tú.",
+    "jokerLabel": "Comodín: tachar una respuesta incorrecta",
+    "jokerNote": "Cuesta 5 minutos de juego; los puntos no cambian.",
+    "streak": [
+      "Lucía: ¡{n} seguidas! Voy a por el cañón de confeti. Tenemos uno. No preguntes por qué.",
+      "Dr. Herrera: {n} seguidas. Me vuelvo a dormir; está claro que lo tienes controlado.",
+      "Prof. Valdés: {n} decisiones correctas seguidas. Me veo obligado a estar impresionado.",
+      "Lucía: ¡Racha de {n}! El busca se ha callado por puro respeto.",
+      "Dr. Herrera: {n} aciertos. Si sigues así, el que te llamará seré yo.",
+      "Prof. Valdés: {n} seguidas. Lo haré constar en negrita en el acta. En cuerpo 12."
+    ],
+    "careerRanks": ["Estudiante en rotación", "Estudiante de sexto", "Residente de primer año", "Residente de cuarto año", "Especialista", "Adjunto/a", "Jefe/a de sección", "Jefe/a de servicio", "Leyenda de la guardia"],
+    "careerJokes": [
+      "Encuentra la máquina de café. Casi siempre.",
+      "Puede sujetar separadores y hacer preguntas. Preferiblemente en ese orden.",
+      "El busca ya conoce tu nombre. Y tu teléfono.",
+      "Sabe dónde se esconden los bolígrafos buenos.",
+      "Ahora te llaman A TI a las tres de la mañana.",
+      "Localizable por teléfono. En teoría.",
+      "Dos buscas, un café, cero horas de sueño.",
+      "Al Prof. Valdés le preocupa su plaza de aparcamiento.",
+      "Todos los casos perfectos. La máquina de café ya lleva tu nombre."
+    ],
+    "rankUp": [
+      "Prof. Valdés: ¡Ascenso! He preparado un discurso breve. Solo dura cuarenta minutos.",
+      "Lucía: ¡Enhorabuena por el ascenso! Imprimiremos tu acreditación en cuanto la impresora vuelva a hablarnos.",
+      "Dr. Herrera: Nuevo rango. Más responsabilidad, el mismo café.",
+      "Prof. Valdés: Usted asciende. Yo dejo de preocuparme por usted."
+    ],
+    "revengeNone": "Lucía: No hay fallos pendientes que repetir. El Prof. Valdés se ha quedado sin palabras. Es la primera vez.",
+    "badges": {
+      "firstCase": {
+        "title": "Primera historia",
+        "text": "Completa tu primer caso. Hasta la letra es legible."
+      },
+      "firstShift": {
+        "title": "¡Sobreviviste!",
+        "text": "Termina una guardia completa. El amanecer es todo tuyo."
+      },
+      "streak5": {
+        "title": "Domador del busca",
+        "text": "Toma 5 decisiones correctas seguidas."
+      },
+      "streak10": {
+        "title": "Imparable",
+        "text": "Toma 10 decisiones correctas seguidas. El Dr. Herrera duerme tranquilo."
+      },
+      "perfectShift": {
+        "title": "Noche de libro",
+        "text": "Termina una sesión de al menos 5 casos, todos al 100 %."
+      },
+      "bossPerfect": {
+        "title": "Sesión superada",
+        "text": "Acierta todas las preguntas de la sesión de la mañana. La ceja no se mueve."
+      },
+      "coffee5": {
+        "title": "Cafeína en nivel crítico",
+        "text": "Haz 5 pausas para café en una sesión. Solo te tiemblan un poco las manos."
+      },
+      "allAreas": {
+        "title": "Vuelta al hospital",
+        "text": "Completa al menos un caso en cada una de las cinco áreas."
+      },
+      "comeback": {
+        "title": "Cultura del error",
+        "text": "Repite un caso que no te salió perfecto y saca un 100 %."
+      },
+      "joker10": {
+        "title": "Trabajo en equipo",
+        "text": "Usa el comodín de Lucía 10 veces. Enfermería es media guardia."
+      },
+      "specialist": {
+        "title": "Especialista en el buen sentido",
+        "text": "Resuelve todos los casos de una especialidad al 100 %."
+      },
+      "cases50": {
+        "title": "Ave nocturna",
+        "text": "Completa 50 casos distintos."
+      },
+      "nightOwl": {
+        "title": "Guardia de verdad",
+        "text": "Completa un caso entre las 0 y las 5 de la mañana, hora real. ¡Y luego a dormir!"
+      }
+    }
   }
 };

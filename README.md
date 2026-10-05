@@ -1,5 +1,7 @@
 # Night Shift Academy
 
+> **Residency-Game-DE – Rollenspiel als Assistenzärztin oder Assistenzarzt der Urologie.** Öffne `standalone.html` im Browser, wähle **DE** und tritt deinen ersten Nachtdienst an.
+
 A cartoon hospital comedy and urology decision game in **English, German and Spanish**, now with **297 cases**: the 30 original three-decision stories plus all 267 questions from the supplied Urofragen main bank, each included once. Choose an avatar, meet the original cast, navigate illustrated departments, collect coffee quips and face the chief's morning-report quiz.
 
 The expansion retains the original medical vignettes, questions, answer choices and explanations in all three languages. It covers **16 source specialties** across five game departments. The supplied classic HTML games remain unchanged in `classic/`.
@@ -23,6 +25,8 @@ Open `standalone.html`, choose **English**, meet the cast and start a shift. Sto
 ### Deutsch – Schnellstart
 
 Öffnen Sie `standalone.html`, wählen Sie **Deutsch**, lernen Sie die Figuren kennen und starten Sie eine Schicht. Das Spiel enthält **297 Fälle**: 30 Geschichten mit je drei Entscheidungen und sämtliche 267 Originalfragen der gelieferten Hauptbank mit je einer Entscheidung und vier oder fünf Antworten. Wählen Sie ein Fachgebiet, nutzen Sie die Lernhinweise der Pflegekraft und stellen Sie sich dem Abschlussquiz des Chefs. Der Cartoonstil, die Dialoge und die Kaffeepausen bleiben erhalten. Exportieren Sie Ihren Fortschritt als JSON für eine spätere Auswertung.
+
+**Neu in diesem Update:** Nach jeder Antwort siehst du, welche Option richtig war und warum. „Alle Antworten erklärt“ begründet jede Option. Janas Joker streicht eine falsche Antwort. Richtige Serien bringen Sprüche und Konfetti. Eine Karriereleiter führt von Famulant:in bis zur Legende des Nachtdienstes, und ein Sticker-Album macht Fortschritt sichtbar. *Revanche* wiederholt deine Fehler, *Fachgebiete* zeigen deine Schwachstellen mit Trainingsknopf, und die *Blitzrunde* bietet fünf schnelle Fragen. Tastatur: A–E oder 1–5 wählt, Enter geht weiter.
 
 ### Español – Inicio rápido
 
@@ -48,10 +52,18 @@ Imported cases use teaching identifiers such as `Uro-001`. These identifiers do 
 ## Characters and game mechanics
 
 - **Avatars and cartoon rooms:** choose your character and move through the hospital with the original cast and translated comedy.
-- **Nurse advice:** shows the current case's learning objectives without a score penalty.
+- **Nurse's joker (Grace / Jana / Lucía):** once per question, the nurse crosses out one of the weakest wrong answers. It costs five simulated minutes and never changes points. Story cases also show their learning objectives. After answering, she only gives advice.
+- **Answer marking and explanations:** after each decision the correct option is marked ✓ and a wrong choice ✗ (◐ for a partly appropriate story choice). A missed question shows **why the preferred answer is right**, and **"Every option explained"** opens the source rationale for each choice. The debrief and the logbook review repeat this.
+- **Streaks:** consecutive correct decisions build a 🔥 streak. Streaks of 3, 5, 10, 15 … earn a special line from the cast and confetti. A wrong source answer gets exam-style teasing that points to the explanation; safety feedback stays serious.
+- **Career ladder:** XP is the sum of your best score per case, so replaying a case improves XP, but repeating it does not inflate XP. Nine ranks lead from medical student to night-shift legend, each with its own joke and a promotion scene.
+- **Sticker album:** 13 collectable stickers, e.g. for streaks, a perfect session, a perfect chief's quiz, a case in every department, a rematch at 100% or completing every case of a specialty. Locked stickers say how to earn them.
+- **Targeted practice:** *Rematch* replays up to ten cases whose latest attempt was below 100%. The report can replay the current shift's misses. *Specialties* on the progress page lists mastery per source specialty, weakest first, with a *Train* button. The library can practise ten random cases from the current filter. The introduction offers a five-question *Quick round* that starts with unplayed cases.
+- **Keyboard play:** A–F or 1–6 picks an answer, including in the chief's quiz; Enter continues.
 - **Coffee:** during an unfinished session, a cup adds exactly **five simulated minutes** and a character quip. It changes no case score or vital signs. Outside an unfinished session, it only delivers a quip.
 - **Pager sounds:** optional synthesised audio is off by default.
 - **Chief's final quiz:** uses questions from completed case steps. Its results remain separate from saved case scores and CSV analysis.
+
+Streaks, jokers, ranks and stickers are game motivation only. They are stored with local progress (`stats`, `badges`), derived from the logbook where possible, and never alter case scores, the exported `history` or the CSV analysis. Progress saved by the earlier release loads unchanged; existing achievements are credited quietly on first load. Confetti and animations respect the system setting for reduced motion.
 
 Each source question gives 10 points for its original correct answer and 0 for another answer, with five fictional minutes per choice. The import does not invent clinical safety-error classifications. A source case has a maximum of 10 raw points; a three-step story has 30. Case results are displayed on a **0–100 scale**, so the two formats can be understood together. Source evidence flags and clinical review status are independent of game points.
 

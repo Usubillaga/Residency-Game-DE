@@ -1,5 +1,15 @@
 # Validation record
 
+## Game-feel and learning update — 5 October 2026
+
+Software changes only; **no case text, answer key, score, explanation or reference was changed**. `data/*.json` and the generated catalogue content are identical to the 297-case expansion; `assets/catalog.js` differs only in line endings after a rebuild on Linux.
+
+- Interface: correct/wrong marking after each answer, the preferred answer's own rationale on a miss, a collapsible explanation of every option (chart, debrief and logbook review), the nurse's joker, streaks, career ranks from best-per-case XP, 13 stickers, rematch, specialty training, practice from the library filter, a five-question quick round and keyboard answers.
+- Comedy: 6 more correct-answer lines, 4 more coffee lines, 8 lines for wrong source answers, 6 joker lines, 6 streak lines, 9 ranks with jokes, 4 promotion lines and 13 sticker texts, each in EN/DE/ES. Unsafe-choice feedback was left unchanged.
+- Checks: `manage.py validate` and `build` passed; **29 Python tests**, **40 engine tests** and **23 cartoon tests** passed. The new cartoon tests cover translation parity of all interface labels and story structures, the joker (never strikes the correct answer, costs exactly five game minutes, leaves answers and points untouched, cannot be used twice or after answering, is reproducible per session seed) and streak/miss comment selection.
+- Browser (Chromium, localhost): German play-through with joker, keyboard answers, marking, explanations, debrief, a ten-case perfect session with promotion, streak and perfect-session stickers, a perfect chief's quiz by keyboard, specialty training (10 urolithiasis cases), rematch of a missed case and the progress page in DE/EN/ES. A session saved by the previous release loaded and resumed. No console errors.
+- At 360 and 375 pixels there was no document-level horizontal overflow on the introduction, library, play view, feedback or progress page. The previous release overflowed by 17 pixels at 360 pixels in German (navigation and department cards); this is fixed.
+
 ## Current 297-case expansion — 5 October 2026
 
 The current source library contains **297 unique case IDs**: 30 existing three-step story cases and all 267 main-bank questions from `Urofragen-GitHub-DE-EN-ES-2026-10-04.zip`, each imported once. There are **357 steps and 1,382 options**. All case content is provided in English, German and Spanish.

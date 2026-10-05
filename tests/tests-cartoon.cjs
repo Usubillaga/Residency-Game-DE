@@ -70,7 +70,7 @@ function appHarness(session = null, testCatalog = catalog) {
   });
   vm.runInContext("let areaFilter = 'all', query = '', savedOnly = false;\n" + source.slice(start, end) + `
     globalThis.helpers = {
-      gameStage, handleScene, coffeeBreak, startBoss, answerBoss, nextBoss,
+      gameStage, handleScene, coffeeBreak, askNurse, characterComment, startBoss, answerBoss, nextBoss,
       validBoss, bossCorrect, speakerFor, lineWithoutName,
       filterState: () => ({ areaFilter, query, savedOnly })
     };
@@ -99,15 +99,35 @@ test('all story keys and nested dialogue structures are present in English, Germ
     assert.deepEqual(Object.keys(text.areaIntro).sort(), [...areaIds].sort());
     assert.deepEqual([...new Set(text.opening.map(line => line.speaker))].sort(), ['attending', 'chief', 'nurse']);
     assert.equal(text.opening.length, 5);
-    assert.equal(text.good.length, 6);
+    assert.equal(text.good.length, 12);
     assert.equal(text.partial.length, 5);
     assert.equal(text.unsafe.length, 5);
+    assert.equal(text.coffee.length, 8);
+    assert.equal(text.miss.length, 8);
+    assert.equal(text.strike.length, 6);
     assert.equal(text.gameRank.length, 4);
+    assert.equal(text.careerRanks.length, 9);
+    assert.equal(text.careerJokes.length, 9);
+    assert.equal(text.rankUp.length, 4);
+    assert.deepEqual(Object.keys(text.badges), ['firstCase', 'firstShift', 'streak5', 'streak10', 'perfectShift', 'bossPerfect',
+      'coffee5', 'allAreas', 'comeback', 'joker10', 'specialist', 'cases50', 'nightOwl']);
+    for (const line of text.streak) assert.match(line, /\{n\}/, lang + ' streak lines must name the streak length');
+    assert.match(text.jokerNote, /5/, lang + ' must describe the actual five-minute joker cost');
     assert.match(text.coffeeNote, /5/, lang + ' must describe the actual five-minute game break');
     assert.doesNotMatch(text.challengeRetry, /try again|erneut versuchen|vuelva a intentarlo/i,
       lang + ' feedback must not promise a retry when the game advances');
     assert.doesNotMatch(text.hero.replace(/<br\s*\/?\s*>/gi, ''), /[<>]/,
       lang + ' hero may contain line breaks, but no other HTML');
+  }
+});
+
+test('every interface label exists in English, German and Spanish', () => {
+  const english = Object.keys(data.NSA_TEXT.en).sort();
+  for (const lang of ['de', 'es']) assert.deepEqual(Object.keys(data.NSA_TEXT[lang]).sort(), english, lang + ' interface labels');
+  for (const lang of ['en', 'de', 'es']) {
+    for (const key of ['allOptions', 'whyCorrect', 'revenge', 'stickers', 'careerTitle', 'blitz', 'keysHint']) {
+      assert.ok(String(data.NSA_TEXT[lang][key] || '').trim(), lang + '.' + key);
+    }
   }
 });
 
@@ -451,5 +471,52 @@ test('restored morning-report progress rejects premature completion, answer gaps
       const boss = clone(base); mutate(boss);
       assert.equal(h.api.validBoss(boss), false, name);
     });
+  }
+});
+
+test("the nurse's joker crosses out one wrong answer, costs five game minutes and never touches points", () => {
+  for (const c of [catalog.cases.find(c => c.source && c.steps[0].options.length === 5), catalog.cases.find(c => !c.source)]) {
+    const session = E.create(catalog, [c.id], 'learn', 'joker-' + c.id);
+    session.struck = {};
+    const h = appHarness(session);
+    const patients = clone(session.patients), clock = session.clock;
+    h.api.askNurse();
+    const key = c.id + ':0', struck = session.struck[key], step = c.steps[0];
+    assert.ok(step.options.some(o => o.id === struck), 'The joker must strike a real option');
+    assert.notEqual(struck, step.best, 'The joker can never strike the correct answer');
+    assert.equal(step.options.find(o => o.id === struck).score, Math.min(...step.options.filter(o => o.id !== step.best).map(o => o.score)));
+    assert.equal(session.clock, clock + 5);
+    assert.equal(session.jokers, 1);
+    assert.deepEqual(clone(session.patients), patients, 'Clinical answers and points stay unchanged');
+    assert.ok(E.validSession(session, catalog));
+    h.api.askNurse();
+    assert.equal(session.struck[key], struck, 'A second request cannot strike another answer');
+    assert.equal(session.clock, clock + 5);
+    assert.ok(h.stats.dialogs[1].includes(escape(data.NSABanter.en.strikeUsed.replace(/^Grace: /, ''))));
+    E.answer(session, catalog, c.id, step.best);
+    const answered = session.clock;
+    h.api.askNurse();
+    assert.equal(session.clock, answered, 'After answering, the nurse only gives advice');
+    const repeat = E.create(catalog, [c.id], 'learn', 'joker-' + c.id);
+    repeat.struck = {};
+    appHarness(repeat).api.askNurse();
+    assert.equal(repeat.struck[key], struck, 'The struck answer is reproducible for the same session seed');
+  }
+});
+
+test('streak comments name the streak and wrong source answers get exam-style teasing', () => {
+  const h = appHarness();
+  for (const lang of ['en', 'de', 'es']) {
+    h.state.lang = lang;
+    const streak = h.api.characterComment('good', 'case-x', 0, 5, true);
+    assert.match(streak, /\b5\b/);
+    assert.doesNotMatch(streak, /\{n\}/);
+    assert.match(streak, /class="character-comment good streak"/);
+    const miss = h.api.characterComment('partial', 'case-x', 0, 0, true);
+    assert.ok(data.NSABanter[lang].miss.some(line => miss.includes(escape(line.slice(line.indexOf(':') + 1).trim()))),
+      lang + ' wrong source answers use the miss lines');
+    const story = h.api.characterComment('partial', 'case-x', 0, 0, false);
+    assert.ok(data.NSABanter[lang].partial.some(line => story.includes(escape(line.slice(line.indexOf(':') + 1).trim()))),
+      lang + ' partly appropriate story answers keep their own lines');
   }
 });
