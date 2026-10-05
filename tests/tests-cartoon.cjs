@@ -110,7 +110,9 @@ test('all story keys and nested dialogue structures are present in English, Germ
     assert.equal(text.careerJokes.length, 9);
     assert.equal(text.rankUp.length, 4);
     assert.deepEqual(Object.keys(text.badges), ['firstCase', 'firstShift', 'streak5', 'streak10', 'perfectShift', 'bossPerfect',
-      'coffee5', 'allAreas', 'comeback', 'joker10', 'specialist', 'cases50', 'nightOwl']);
+      'coffee5', 'allAreas', 'comeback', 'joker10', 'specialist', 'cases50', 'nightOwl', 'anatomist']);
+    assert.equal(text.splash.length, 5, lang + ' splash lines');
+    assert.deepEqual(Object.keys(text.atlasResult).sort(), ['good', 'perfect', 'poor']);
     for (const line of text.streak) assert.match(line, /\{n\}/, lang + ' streak lines must name the streak length');
     assert.match(text.jokerNote, /5/, lang + ' must describe the actual five-minute joker cost');
     assert.match(text.coffeeNote, /5/, lang + ' must describe the actual five-minute game break');
@@ -582,3 +584,120 @@ test('day duties wake the attending, and the tumour board shows every case as a 
   assert.ok(folders.every(f => f.role === 'button' && f.tabindex === '0'));
 });
 
+
+// The schema viewer, atlas and quiz live outside the game-helper section, so they get their own small harness.
+function schemaHarness(testCatalog = catalog) {
+  const source = read('app.js');
+  const start = source.indexOf('  // Teaching schemas are inline SVG');
+  const end = source.indexOf('  function sourceLinks(c)', start);
+  assert.ok(start >= 0 && end > start, 'The real schema section must be present');
+  const stats = { dialogs: [], sounds: [], celebrations: [], splashes: 0, persisted: 0, rewards: 0 };
+  const state = { lang: 'de', avatar: 0, stats: { atlasPerfect: 0 } };
+  const context = vm.createContext({
+    C: testCatalog, E, A: data.NSAArt, state, esc: escape,
+    document: { querySelector: () => null },
+    t: key => data.NSABanter[state.lang][key] || data.NSA_TEXT[state.lang][key] || key,
+    loc: value => value[state.lang],
+    comedy: () => data.NSABanter[state.lang],
+    nowSeed: () => 'schema-test',
+    speakerFor: () => 'attending',
+    lineWithoutName: line => line,
+    openDialog(html) { stats.dialogs.push(html); return { classList: { add() {} } }; },
+    persist() { stats.persisted++; },
+    celebrate(big) { stats.celebrations.push(big); },
+    checkRewards() { stats.rewards++; },
+    sound(kind) { stats.sounds.push(kind); },
+    splash() { stats.splashes++; }
+  });
+  vm.runInContext(source.slice(start, end) + `
+    globalThis.helpers = { schemaFigure, caseVisuals, atlas, startQuiz, answerQuiz,
+      quiz: () => quiz, next() { quiz.index++; quiz.answered = null; showQuiz(); } };
+  `, context, { filename: 'app-schema-helpers.js' });
+  return { state, stats, api: context.helpers };
+}
+function fakeFigure() {
+  const figure = { classes: new Set(), marks: {}, note: { innerHTML: '' } };
+  figure.classList = { add: name => figure.classes.add(name) };
+  figure.querySelector = selector => {
+    if (selector === '.schema-note') return figure.note;
+    const part = selector.match(/data-part="([^"]+)"/);
+    return part ? { classList: { add: (...names) => { figure.marks[part[1]] = (figure.marks[part[1]] || []).concat(names); } } } : null;
+  };
+  return figure;
+}
+const partIdsInSvg = svg => [...svg.matchAll(/data-part="([^"]+)"/g)].map(match => match[1]);
+
+test('teaching schemas are safe, every drawn structure is explained, and linked cases highlight real structures', () => {
+  const schemas = catalog.schemas;
+  assert.ok(schemas.length >= 12, 'The atlas ships the urology teaching schemas');
+  assert.equal(new Set(schemas.map(s => s.id)).size, schemas.length, 'Schema ids are unique');
+  for (const s of schemas) {
+    assert.equal(s.viewBox, '0 0 600 420', s.id + ' uses the shared canvas');
+    shape({ title: s.title, caption: s.caption, parts: s.parts.map(p => ({ label: p.label, note: p.note })) }, s.id);
+    assert.doesNotMatch(s.svg, /<(?:text|script|style|image|foreignObject|use|a)\b|\son\w+=|url\(|href|javascript:/i, s.id + ' contains only plain shapes');
+    const ids = s.parts.map(p => p.id);
+    assert.equal(new Set(ids).size, ids.length, s.id + ' part ids are unique');
+    assert.deepEqual([...new Set(partIdsInSvg(s.svg))].sort(), [...ids].sort(), s.id + ' draws exactly the structures it explains');
+    assert.ok(ids.length >= 5 && ids.length <= 16, s.id + ' has a playable number of structures');
+  }
+  const linked = catalog.cases.filter(c => c.schema);
+  assert.ok(linked.length >= catalog.cases.length * 0.4, 'At least 40 % of the cases come with a schema (' + linked.length + ')');
+  for (const c of linked) {
+    const s = schemas.find(s => s.id === c.schema.id);
+    assert.ok(s, c.id + ' links a schema that exists');
+    assert.ok(c.schema.parts.length >= 1 && c.schema.parts.length <= 4, c.id + ' highlights one to four structures');
+    for (const part of c.schema.parts) assert.ok(s.parts.some(p => p.id === part), c.id + ' highlights ' + part + ' which ' + s.id + ' draws');
+  }
+  for (const s of schemas) assert.ok(linked.some(c => c.schema.id === s.id), s.id + ' explains at least one case');
+});
+
+test('a case schema glows on its key structures, and the quiz view never names the answer', () => {
+  const { api } = schemaHarness();
+  const c = catalog.cases.find(c => c.schema && c.schema.parts.length >= 2);
+  const s = catalog.schemas.find(s => s.id === c.schema.id);
+  const html = api.caseVisuals(c);
+  const glowing = [...html.matchAll(/data-part="([^"]+)"[^>]*class="hl"/g)].map(m => m[1]);
+  assert.deepEqual(glowing.sort(), [...c.schema.parts].sort(), 'Exactly the case structures glow');
+  const chips = [...html.matchAll(/data-legend-part="([^"]+)">(★ )?/g)];
+  assert.equal(chips.length, s.parts.length, 'The legend lists every structure');
+  assert.deepEqual(chips.slice(0, c.schema.parts.length).map(m => [m[1], m[2]]), clone(c.schema.parts.map(p => [p, '★ '])), 'Case structures lead the legend with a star');
+  assert.ok(chips.slice(c.schema.parts.length).every(m => !m[2]));
+  assert.equal(api.schemaFigure(s.id, ['not-a-part']).includes('class="hl"'), false, 'Unknown highlights are ignored');
+  assert.equal(api.schemaFigure('no-such-schema'), '');
+  const quiz = api.schemaFigure(s.id, [], 'quiz');
+  assert.doesNotMatch(quiz, /schema-legend/, 'The quiz has no legend to peek at');
+  const labels = [...quiz.matchAll(/data-part="[^"]+" tabindex="0" role="button" aria-label="([^"]*)"/g)].map(m => m[1]);
+  assert.equal(labels.length, s.parts.length, 'Every structure is a keyboard button');
+  assert.ok(labels.every(label => label === data.NSA_TEXT.de.atlasQuiz), 'Screen-reader labels do not reveal the structure names in the quiz');
+  for (const part of s.parts) assert.ok(!quiz.includes('>' + escape(part.label.de) + '<'), 'The quiz markup does not print ' + part.label.de);
+  assert.ok(api.atlas().split('class="atlas-card"').length - 1 === catalog.schemas.length, 'The atlas shows every schema');
+});
+
+test('the find-the-structure quiz asks five different structures, scores each round once and rewards a perfect run', () => {
+  const { api, stats, state } = schemaHarness();
+  const s = catalog.schemas[0];
+  api.startQuiz(s.id);
+  const rounds = api.quiz().rounds;
+  assert.equal(rounds.length, 5);
+  assert.equal(new Set(rounds).size, 5, 'No structure is asked twice');
+  assert.ok(rounds.every(id => s.parts.some(p => p.id === id)));
+  const wrong = s.parts.find(p => p.id !== rounds[0]).id;
+  let figure = fakeFigure();
+  api.answerQuiz(figure, wrong, null);
+  api.answerQuiz(figure, rounds[0], null);
+  assert.equal(api.quiz().score, 0, 'A second tap in the same round changes nothing');
+  assert.deepEqual(figure.marks[rounds[0]], ['right', 'on'], 'The wanted structure is revealed');
+  assert.deepEqual(figure.marks[wrong], ['wrong']);
+  assert.deepEqual(stats.sounds, ['splash']);
+  assert.equal(stats.splashes, 1, 'A wrong tap splashes instead of confetti');
+  api.next();
+  for (let i = 1; i < 5; i++) { figure = fakeFigure(); api.answerQuiz(figure, rounds[i], null); api.next(); }
+  assert.equal(api.quiz().score, 4);
+  assert.equal(state.stats.atlasPerfect, 0, 'Four of five is not perfect');
+  assert.match(stats.dialogs.at(-1), /4 von 5/, "The result names the score");
+  api.startQuiz(s.id);
+  for (let i = 0; i < 5; i++) { api.answerQuiz(fakeFigure(), api.quiz().rounds[i], null); api.next(); }
+  assert.equal(state.stats.atlasPerfect, 1, 'A perfect quiz counts towards the anatomist sticker');
+  assert.equal(stats.rewards, 1);
+  assert.equal(stats.celebrations.at(-1), true, 'A perfect quiz ends with big confetti');
+});

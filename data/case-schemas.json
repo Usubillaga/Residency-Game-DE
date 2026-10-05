@@ -1,0 +1,952 @@
+{
+  "bank-uro-and-00001": {
+    "schema": "hpg-axis",
+    "parts": [
+      "lh",
+      "leydig-cells",
+      "testosterone-feedback"
+    ]
+  },
+  "bank-uro-and-00003": {
+    "schema": "hpg-axis",
+    "parts": [
+      "leydig-cells",
+      "intratesticular-testosterone",
+      "exogenous-testosterone"
+    ]
+  },
+  "bank-uro-and-00004": {
+    "schema": "hpg-axis",
+    "parts": [
+      "fsh",
+      "tubules",
+      "inhibin-feedback"
+    ]
+  },
+  "bank-uro-and-00005": {
+    "schema": "scrotum-testis",
+    "parts": [
+      "vas-deferens"
+    ]
+  },
+  "bank-uro-and-00006": {
+    "schema": "scrotum-testis",
+    "parts": [
+      "pampiniform-plexus",
+      "testis"
+    ]
+  },
+  "bank-uro-and-00008": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "corpora-cavernosa"
+    ]
+  },
+  "bank-uro-and-00009": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "tunica-albuginea",
+      "corpora-cavernosa"
+    ]
+  },
+  "bank-uro-fun-00001": {
+    "schema": "micturition-control",
+    "parts": [
+      "detrusor"
+    ]
+  },
+  "bank-uro-fun-00002": {
+    "schema": "micturition-control",
+    "parts": [
+      "external-sphincter",
+      "detrusor"
+    ]
+  },
+  "bank-uro-fun-00007": {
+    "schema": "female-pelvis",
+    "parts": [
+      "levator-ani",
+      "bladder-neck"
+    ]
+  },
+  "bank-uro-fun-00010": {
+    "schema": "prostate-sagittal",
+    "parts": [
+      "bladder-neck",
+      "external-sphincter"
+    ]
+  },
+  "bank-uro-fun-00011": {
+    "schema": "micturition-control",
+    "parts": [
+      "spinal-lesion",
+      "detrusor"
+    ]
+  },
+  "bank-uro-fun-00012": {
+    "schema": "micturition-control",
+    "parts": [
+      "pelvic-nerve"
+    ]
+  },
+  "bank-uro-hod-00003": {
+    "schema": "scrotum-testis",
+    "parts": [
+      "testis",
+      "inguinal-canal"
+    ]
+  },
+  "bank-uro-hod-00005": {
+    "schema": "retroperitoneum-nodes",
+    "parts": [
+      "interaortocaval-nodes",
+      "para-aortic-nodes"
+    ]
+  },
+  "bank-uro-hod-00006": {
+    "schema": "retroperitoneum-nodes",
+    "parts": [
+      "para-aortic-nodes"
+    ]
+  },
+  "bank-uro-hod-00010": {
+    "schema": "retroperitoneum-nodes",
+    "parts": [
+      "para-aortic-nodes",
+      "interaortocaval-nodes",
+      "postganglionic-fibres"
+    ]
+  },
+  "bank-uro-hod-00011": {
+    "schema": "retroperitoneum-nodes",
+    "parts": [
+      "paracaval-nodes",
+      "interaortocaval-nodes",
+      "right-gonadal-vein"
+    ]
+  },
+  "bank-uro-hod-00012": {
+    "schema": "retroperitoneum-nodes",
+    "parts": [
+      "para-aortic-nodes",
+      "interaortocaval-nodes",
+      "aorta",
+      "ivc"
+    ]
+  },
+  "bank-uro-hod-00018": {
+    "schema": "scrotum-testis",
+    "parts": [
+      "testis",
+      "inguinal-canal"
+    ]
+  },
+  "bank-uro-hod-00020": {
+    "schema": "hpg-axis",
+    "parts": [
+      "leydig-cells",
+      "lh"
+    ]
+  },
+  "bank-uro-hod-00021": {
+    "schema": "retroperitoneum-nodes",
+    "parts": [
+      "para-aortic-nodes"
+    ]
+  },
+  "bank-uro-hod-00024": {
+    "schema": "retroperitoneum-nodes",
+    "parts": [
+      "para-aortic-nodes",
+      "interaortocaval-nodes",
+      "paracaval-nodes"
+    ]
+  },
+  "bank-uro-hod-00025": {
+    "schema": "retroperitoneum-nodes",
+    "parts": [
+      "para-aortic-nodes",
+      "postganglionic-fibres"
+    ]
+  },
+  "bank-uro-hod-00034": {
+    "schema": "hpg-axis",
+    "parts": [
+      "lh",
+      "exogenous-testosterone",
+      "testosterone-feedback"
+    ]
+  },
+  "bank-uro-hod-00038": {
+    "schema": "scrotum-testis",
+    "parts": [
+      "testis"
+    ]
+  },
+  "bank-uro-hod-00043": {
+    "schema": "hpg-axis",
+    "parts": [
+      "gnrh",
+      "pituitary"
+    ]
+  },
+  "bank-uro-hod-00045": {
+    "schema": "retroperitoneum-nodes",
+    "parts": [
+      "para-aortic-nodes",
+      "interaortocaval-nodes"
+    ]
+  },
+  "bank-uro-hod-00050": {
+    "schema": "retroperitoneum-nodes",
+    "parts": [
+      "para-aortic-nodes",
+      "aorta"
+    ]
+  },
+  "bank-uro-hod-00051": {
+    "schema": "retroperitoneum-nodes",
+    "parts": [
+      "interaortocaval-nodes",
+      "ivc",
+      "aorta"
+    ]
+  },
+  "bank-uro-hod-00053": {
+    "schema": "retroperitoneum-nodes",
+    "parts": [
+      "postganglionic-fibres",
+      "sympathetic-trunk"
+    ]
+  },
+  "bank-uro-inf-00002": {
+    "schema": "upper-tract-drainage",
+    "parts": [
+      "calyces",
+      "stone",
+      "kidney"
+    ]
+  },
+  "bank-uro-inf-00005": {
+    "schema": "upper-tract-drainage",
+    "parts": [
+      "dj-stent",
+      "nephrostomy",
+      "stone"
+    ]
+  },
+  "bank-uro-inf-00006": {
+    "schema": "prostate-sagittal",
+    "parts": [
+      "prostatic-urethra",
+      "peripheral-zone"
+    ]
+  },
+  "bank-uro-inf-00007": {
+    "schema": "scrotum-testis",
+    "parts": [
+      "scrotal-wall",
+      "testicular-artery"
+    ]
+  },
+  "bank-uro-inf-00010": {
+    "schema": "kidney-section",
+    "parts": [
+      "cortex",
+      "medulla"
+    ]
+  },
+  "bank-uro-kin-00001": {
+    "schema": "scrotum-testis",
+    "parts": [
+      "spermatic-cord"
+    ]
+  },
+  "bank-uro-kin-00002": {
+    "schema": "scrotum-testis",
+    "parts": [
+      "testis",
+      "inguinal-canal"
+    ]
+  },
+  "bank-uro-kin-00003": {
+    "schema": "scrotum-testis",
+    "parts": [
+      "deep-ring",
+      "testicular-artery",
+      "vas-deferens"
+    ]
+  },
+  "bank-uro-kin-00004": {
+    "schema": "vur-grades",
+    "parts": [
+      "vur-grade-1",
+      "vur-grade-2"
+    ]
+  },
+  "bank-uro-kin-00005": {
+    "schema": "urinary-tract-overview",
+    "parts": [
+      "narrowing-puj",
+      "renal-pelvis",
+      "left-kidney"
+    ]
+  },
+  "bank-uro-kin-00008": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "prostatic-urethra"
+    ]
+  },
+  "bank-uro-lit-00001": {
+    "schema": "upper-tract-drainage",
+    "parts": [
+      "dj-stent",
+      "nephrostomy",
+      "stone"
+    ]
+  },
+  "bank-uro-lit-00005": {
+    "schema": "kidney-section",
+    "parts": [
+      "renal-pelvis",
+      "calyces"
+    ]
+  },
+  "bank-uro-lit-00007": {
+    "schema": "urinary-tract-overview",
+    "parts": [
+      "narrowing-vuj",
+      "ureters"
+    ]
+  },
+  "bank-uro-lit-00009": {
+    "schema": "kidney-section",
+    "parts": [
+      "calyces"
+    ]
+  },
+  "bank-uro-mib-00005": {
+    "schema": "bladder-wall-staging",
+    "parts": [
+      "muscle-inner",
+      "muscle-outer",
+      "tumor-t2a"
+    ]
+  },
+  "bank-uro-mib-00009": {
+    "schema": "urinary-diversion",
+    "parts": [
+      "urethra",
+      "urethral-anastomosis",
+      "neobladder"
+    ]
+  },
+  "bank-uro-nmi-00001": {
+    "schema": "bladder-wall-staging",
+    "parts": [
+      "tumor-t1",
+      "muscle-inner"
+    ]
+  },
+  "bank-uro-nmi-00002": {
+    "schema": "bladder-wall-staging",
+    "parts": [
+      "tumor-t1",
+      "lamina-propria"
+    ]
+  },
+  "bank-uro-nmi-00003": {
+    "schema": "bladder-wall-staging",
+    "parts": [
+      "tumor-tis",
+      "urothelium"
+    ]
+  },
+  "bank-uro-nmi-00004": {
+    "schema": "bladder-wall-staging",
+    "parts": [
+      "perivesical-fat",
+      "muscle-outer"
+    ]
+  },
+  "bank-uro-nmi-00010": {
+    "schema": "bladder-wall-staging",
+    "parts": [
+      "tumor-tis",
+      "urothelium"
+    ]
+  },
+  "bank-uro-op-00101": {
+    "schema": "prostate-sagittal",
+    "parts": [
+      "puboprostatic-ligament",
+      "symphysis"
+    ]
+  },
+  "bank-uro-op-00102": {
+    "schema": "micturition-control",
+    "parts": [
+      "pudendal-nerve",
+      "external-sphincter"
+    ]
+  },
+  "bank-uro-op-00103": {
+    "schema": "prostate-sagittal",
+    "parts": [
+      "verumontanum",
+      "prostatic-urethra",
+      "external-sphincter"
+    ]
+  },
+  "bank-uro-op-00104": {
+    "schema": "prostate-sagittal",
+    "parts": [
+      "denonvilliers",
+      "external-sphincter",
+      "bladder-neck"
+    ]
+  },
+  "bank-uro-op-00106": {
+    "schema": "prostate-sagittal",
+    "parts": [
+      "symphysis",
+      "puboprostatic-ligament"
+    ]
+  },
+  "bank-uro-op-00108": {
+    "schema": "prostate-sagittal",
+    "parts": [
+      "bladder-neck",
+      "transition-zone"
+    ]
+  },
+  "bank-uro-op-00109": {
+    "schema": "prostate-sagittal",
+    "parts": [
+      "anterior-stroma",
+      "puboprostatic-ligament"
+    ]
+  },
+  "bank-uro-ope-00001": {
+    "schema": "prostate-sagittal",
+    "parts": [
+      "denonvilliers",
+      "puboprostatic-ligament"
+    ]
+  },
+  "bank-uro-ope-00002": {
+    "schema": "pelvic-sidewall",
+    "parts": [
+      "obturator-nerve",
+      "bladder"
+    ]
+  },
+  "bank-uro-ope-00003": {
+    "schema": "retroperitoneum-nodes",
+    "parts": [
+      "left-renal-vein",
+      "left-gonadal-vein",
+      "aorta"
+    ]
+  },
+  "bank-uro-ope-00004": {
+    "schema": "kidney-section",
+    "parts": [
+      "calyces",
+      "medulla",
+      "renal-artery"
+    ]
+  },
+  "bank-uro-ope-00005": {
+    "schema": "female-pelvis",
+    "parts": [
+      "ureter",
+      "uterine-artery",
+      "cervix"
+    ]
+  },
+  "bank-uro-ope-00006": {
+    "schema": "retroperitoneum-nodes",
+    "parts": [
+      "sympathetic-trunk",
+      "postganglionic-fibres"
+    ]
+  },
+  "bank-uro-ope-00008": {
+    "schema": "urinary-diversion",
+    "parts": [
+      "neobladder",
+      "bowel-anastomosis"
+    ]
+  },
+  "bank-uro-ope-00009": {
+    "schema": "kidney-section",
+    "parts": [
+      "renal-pelvis",
+      "ureter",
+      "renal-artery"
+    ]
+  },
+  "bank-uro-ope-00010": {
+    "schema": "kidney-section",
+    "parts": [
+      "adrenal-gland",
+      "ivc"
+    ]
+  },
+  "bank-uro-ope-00011": {
+    "schema": "pelvic-sidewall",
+    "parts": [
+      "genitofemoral-nerve",
+      "psoas-major"
+    ]
+  },
+  "bank-uro-ope-00012": {
+    "schema": "urinary-tract-overview",
+    "parts": [
+      "ureters",
+      "bladder"
+    ]
+  },
+  "bank-uro-ope-00016": {
+    "schema": "pelvic-sidewall",
+    "parts": [
+      "external-iliac-vein",
+      "obturator-nodes"
+    ]
+  },
+  "bank-uro-ope-00017": {
+    "schema": "prostate-sagittal",
+    "parts": [
+      "rectum",
+      "denonvilliers"
+    ]
+  },
+  "bank-uro-ope-00019": {
+    "schema": "kidney-section",
+    "parts": [
+      "renal-artery"
+    ]
+  },
+  "bank-uro-ope-00020": {
+    "schema": "pelvic-sidewall",
+    "parts": [
+      "obturator-nerve",
+      "obturator-nodes"
+    ]
+  },
+  "bank-uro-ope-00030": {
+    "schema": "retroperitoneum-nodes",
+    "parts": [
+      "aorta",
+      "ivc",
+      "interaortocaval-nodes"
+    ]
+  },
+  "bank-uro-pca-00005": {
+    "schema": "prostate-sagittal",
+    "parts": [
+      "peripheral-zone",
+      "transition-zone"
+    ]
+  },
+  "bank-uro-pca-00006": {
+    "schema": "prostate-sagittal",
+    "parts": [
+      "rectum",
+      "anterior-stroma"
+    ]
+  },
+  "bank-uro-pca-00010": {
+    "schema": "pelvic-sidewall",
+    "parts": [
+      "obturator-nodes",
+      "external-iliac-nodes",
+      "internal-iliac-artery"
+    ]
+  },
+  "bank-uro-pca-00013": {
+    "schema": "prostate-sagittal",
+    "parts": [
+      "peripheral-zone",
+      "seminal-vesicle"
+    ]
+  },
+  "bank-uro-pen-00002": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "glans-penis",
+      "corpus-spongiosum"
+    ]
+  },
+  "bank-uro-pen-00004": {
+    "schema": "pelvic-sidewall",
+    "parts": [
+      "external-iliac-nodes",
+      "obturator-nodes"
+    ]
+  },
+  "bank-uro-pen-00006": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "corpora-cavernosa",
+      "tunica-albuginea"
+    ]
+  },
+  "bank-uro-rcc-00011": {
+    "schema": "kidney-section",
+    "parts": [
+      "cortex"
+    ]
+  },
+  "bank-uro-rcc-00012": {
+    "schema": "kidney-section",
+    "parts": [
+      "ivc",
+      "renal-vein"
+    ]
+  },
+  "bank-uro-rek-00001": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "bulbar-urethra",
+      "corpus-spongiosum"
+    ]
+  },
+  "bank-uro-rek-00002": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "penile-urethra",
+      "fossa-navicularis"
+    ]
+  },
+  "bank-uro-rek-00003": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "membranous-urethra",
+      "external-sphincter"
+    ]
+  },
+  "bank-uro-rek-00004": {
+    "schema": "female-pelvis",
+    "parts": [
+      "vagina",
+      "bladder"
+    ]
+  },
+  "bank-uro-rek-00005": {
+    "schema": "urinary-diversion",
+    "parts": [
+      "urethra",
+      "neobladder"
+    ]
+  },
+  "bank-uro-rek-00006": {
+    "schema": "urinary-diversion",
+    "parts": [
+      "neobladder",
+      "urethral-anastomosis"
+    ]
+  },
+  "bank-uro-rek-00007": {
+    "schema": "urinary-tract-overview",
+    "parts": [
+      "ureters"
+    ]
+  },
+  "bank-uro-rek-00008": {
+    "schema": "urinary-tract-overview",
+    "parts": [
+      "ureters",
+      "aorta"
+    ]
+  },
+  "bank-uro-rek-00012": {
+    "schema": "urinary-diversion",
+    "parts": [
+      "ureteroileal-anastomoses-conduit",
+      "ileal-conduit"
+    ]
+  },
+  "bank-uro-rek-00014": {
+    "schema": "kidney-transplant",
+    "parts": [
+      "graft-renal-artery",
+      "graft-renal-vein",
+      "ureteroneocystostomy",
+      "transplant-kidney"
+    ]
+  },
+  "bank-uro-rek-00015": {
+    "schema": "kidney-transplant",
+    "parts": [
+      "graft-renal-artery",
+      "graft-renal-vein",
+      "graft-pelvis"
+    ]
+  },
+  "bank-uro-rek-00016": {
+    "schema": "kidney-transplant",
+    "parts": [
+      "graft-renal-artery",
+      "external-iliac-artery"
+    ]
+  },
+  "bank-uro-rek-00017": {
+    "schema": "kidney-transplant",
+    "parts": [
+      "lymphocele",
+      "transplant-ureter"
+    ]
+  },
+  "bank-uro-rek-00020": {
+    "schema": "retroperitoneum-nodes",
+    "parts": [
+      "left-renal-vein",
+      "right-renal-vein"
+    ]
+  },
+  "bank-uro-tra-00002": {
+    "schema": "kidney-section",
+    "parts": [
+      "cortex",
+      "perirenal-fat",
+      "gerota-fascia"
+    ]
+  },
+  "bank-uro-tra-00003": {
+    "schema": "kidney-section",
+    "parts": [
+      "renal-artery",
+      "renal-vein",
+      "gerota-fascia"
+    ]
+  },
+  "bank-uro-tra-00004": {
+    "schema": "upper-tract-drainage",
+    "parts": [
+      "dj-stent",
+      "renal-pelvis"
+    ]
+  },
+  "bank-uro-tra-00005": {
+    "schema": "kidney-section",
+    "parts": [
+      "renal-artery"
+    ]
+  },
+  "bank-uro-tra-00006": {
+    "schema": "kidney-section",
+    "parts": [
+      "cortex",
+      "gerota-fascia"
+    ]
+  },
+  "bank-uro-tra-00007": {
+    "schema": "upper-tract-drainage",
+    "parts": [
+      "nephrostomy",
+      "dj-stent",
+      "ureter"
+    ]
+  },
+  "bank-uro-tra-00010": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "bulbar-urethra",
+      "corpus-spongiosum"
+    ]
+  },
+  "bank-uro-tra-00011": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "bulbar-urethra",
+      "membranous-urethra"
+    ]
+  },
+  "bank-uro-tra-00012": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "tunica-albuginea",
+      "corpora-cavernosa",
+      "penile-urethra"
+    ]
+  },
+  "bank-uro-tra-00013": {
+    "schema": "scrotum-testis",
+    "parts": [
+      "testis"
+    ]
+  },
+  "bank-uro-tra-00014": {
+    "schema": "scrotum-testis",
+    "parts": [
+      "testis",
+      "superficial-ring",
+      "inguinal-canal"
+    ]
+  },
+  "bank-uro-ure-00001": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "prostatic-urethra",
+      "penile-urethra"
+    ]
+  },
+  "bank-uro-ure-00002": {
+    "schema": "female-pelvis",
+    "parts": [
+      "urethra",
+      "bladder-neck",
+      "vagina"
+    ]
+  },
+  "bank-uro-ure-00003": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "bulbar-urethra"
+    ]
+  },
+  "bank-uro-ure-00004": {
+    "schema": "female-pelvis",
+    "parts": [
+      "urethra",
+      "meatus",
+      "bladder-neck"
+    ]
+  },
+  "bank-uro-ure-00006": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "penile-urethra",
+      "membranous-urethra"
+    ]
+  },
+  "bank-uro-ure-00007": {
+    "schema": "prostate-sagittal",
+    "parts": [
+      "prostatic-urethra",
+      "transition-zone"
+    ]
+  },
+  "bank-uro-ure-00009": {
+    "schema": "female-pelvis",
+    "parts": [
+      "urethra",
+      "meatus",
+      "bladder-neck"
+    ]
+  },
+  "bank-uro-utu-00005": {
+    "schema": "urinary-tract-overview",
+    "parts": [
+      "narrowing-vuj",
+      "ureters",
+      "bladder"
+    ]
+  },
+  "bank-uro-utu-00006": {
+    "schema": "retroperitoneum-nodes",
+    "parts": [
+      "para-aortic-nodes",
+      "left-renal-vein"
+    ]
+  },
+  "ed-colic": {
+    "schema": "urinary-tract-overview",
+    "parts": [
+      "narrowing-vuj",
+      "ureters"
+    ]
+  },
+  "ed-obstructed-infection": {
+    "schema": "upper-tract-drainage",
+    "parts": [
+      "calyces",
+      "nephrostomy",
+      "dj-stent"
+    ]
+  },
+  "ed-retention": {
+    "schema": "micturition-control",
+    "parts": [
+      "bladder-neck",
+      "detrusor"
+    ]
+  },
+  "ed-torsion": {
+    "schema": "scrotum-testis",
+    "parts": [
+      "spermatic-cord"
+    ]
+  },
+  "endoscopy-biopsy": {
+    "schema": "bladder-wall-staging",
+    "parts": [
+      "lamina-propria",
+      "muscle-inner",
+      "tumor-t1"
+    ]
+  },
+  "endoscopy-cis": {
+    "schema": "bladder-wall-staging",
+    "parts": [
+      "tumor-tis",
+      "urothelium"
+    ]
+  },
+  "endoscopy-infected-obstruction": {
+    "schema": "upper-tract-drainage",
+    "parts": [
+      "stone"
+    ]
+  },
+  "endoscopy-papillary": {
+    "schema": "bladder-wall-staging",
+    "parts": [
+      "tumor-ta",
+      "tumor-t1"
+    ]
+  },
+  "endoscopy-stent": {
+    "schema": "upper-tract-drainage",
+    "parts": [
+      "dj-stent",
+      "bladder"
+    ]
+  },
+  "endoscopy-stricture": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "bulbar-urethra",
+      "penile-urethra"
+    ]
+  },
+  "theatre-infected-stone": {
+    "schema": "upper-tract-drainage",
+    "parts": [
+      "stone"
+    ]
+  },
+  "theatre-ureter-injury": {
+    "schema": "female-pelvis",
+    "parts": [
+      "ureter",
+      "uterine-artery"
+    ]
+  },
+  "ward-ileus": {
+    "schema": "urinary-diversion",
+    "parts": [
+      "bowel-anastomosis"
+    ]
+  },
+  "ward-postop-sepsis": {
+    "schema": "urinary-diversion",
+    "parts": [
+      "ureteroileal-anastomoses-conduit",
+      "bowel-anastomosis"
+    ]
+  }
+}

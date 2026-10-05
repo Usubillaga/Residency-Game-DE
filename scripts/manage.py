@@ -299,12 +299,96 @@ def load_and_validate(root: Path = ROOT, *, check_assets: bool = True):
     return cases, [references[key] for key in sorted(references)]
 
 
+SCHEMA_ELEMENTS = {"g", "path", "rect", "circle", "ellipse", "line", "polyline", "polygon"}
+SCHEMA_ATTRIBUTES = {"d", "x", "y", "width", "height", "rx", "ry", "cx", "cy", "r", "x1", "y1", "x2", "y2", "points", "fill", "stroke",
+                     "stroke-width", "stroke-dasharray", "stroke-linecap", "stroke-linejoin", "opacity", "fill-opacity", "stroke-opacity",
+                     "transform", "data-part"}
+MEDIA_TYPES = {".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".webp": "image/webp"}
+MEDIA_MAX_BYTES = 400_000
+
+
+def validate_schema(schema, where: str) -> None:
+    """Teaching schemas are inline SVG, so only inert drawing elements and attributes are accepted."""
+    require(isinstance(schema, dict), f"{where}: expected an object")
+    require(bool(re.fullmatch(r"[a-z0-9-]+", str(schema.get("id", "")))), f"{where}.id: expected a kebab-case id")
+    for key in ("title", "caption"):
+        localised(schema.get(key), f"{where}.{key}")
+    require(schema.get("viewBox") == "0 0 600 420", f"{where}.viewBox: expected 0 0 600 420")
+    svg = schema.get("svg")
+    nonempty(svg, f"{where}.svg")
+    require(len(svg) <= 40000, f"{where}.svg: too long")
+    require(not re.search(r"\son[a-z]+\s*=|url\(|javascript:|href", svg, re.I), f"{where}.svg: scripts, links and url() are not allowed")
+    for tag in re.finditer(r"<\s*(/?)\s*([A-Za-z][\w-]*)([^>]*)>", svg):
+        require(tag[2] in SCHEMA_ELEMENTS, f"{where}.svg: element <{tag[2]}> is not allowed")
+        for attribute in re.finditer(r"([A-Za-z_:][\w:.-]*)\s*=", tag[3]):
+            require(attribute[1] in SCHEMA_ATTRIBUTES, f"{where}.svg: attribute {attribute[1]} is not allowed")
+    parts = schema.get("parts")
+    require(isinstance(parts, list) and 4 <= len(parts) <= 16, f"{where}.parts: expected 4..16 parts")
+    drawn = set(re.findall(r'data-part="([^"]+)"', svg))
+    ids = [part.get("id") for part in parts]
+    require(len(set(ids)) == len(ids), f"{where}.parts: duplicate part ids")
+    for index, part in enumerate(parts):
+        localised(part.get("label"), f"{where}.parts[{index}].label")
+        localised(part.get("note"), f"{where}.parts[{index}].note")
+        require(part.get("id") in drawn, f"{where}.parts[{index}]: {part.get('id')!r} is not drawn")
+    require(drawn <= set(ids), f"{where}.svg: drawn parts without a label: {sorted(drawn - set(ids))}")
+    require(isinstance(schema.get("domains"), list), f"{where}.domains: expected a list")
+
+
+def load_visuals(root: Path, cases: list) -> tuple[list, dict, dict]:
+    """Schemas, case-to-schema highlights and licensed case images; all three files are optional."""
+    root = Path(root)
+    by_id = {case["id"]: case for case in cases}
+    schemas = read_json(root / "data" / "schemas.json") if (root / "data" / "schemas.json").exists() else []
+    require(isinstance(schemas, list), "schemas.json: expected an array")
+    for index, schema in enumerate(schemas):
+        validate_schema(schema, f"schemas.json[{index}]")
+    schema_ids = [schema["id"] for schema in schemas]
+    require(len(set(schema_ids)) == len(schema_ids), "schemas.json: duplicate schema ids")
+    parts = {schema["id"]: {part["id"] for part in schema["parts"]} for schema in schemas}
+    links = read_json(root / "data" / "case-schemas.json") if (root / "data" / "case-schemas.json").exists() else {}
+    require(isinstance(links, dict), "case-schemas.json: expected an object keyed by case id")
+    for case_id, link in links.items():
+        where = f"case-schemas.json[{case_id!r}]"
+        require(case_id in by_id, f"{where}: unknown case")
+        require(isinstance(link, dict) and link.get("schema") in parts, f"{where}.schema: unknown schema")
+        highlight = link.get("parts", [])
+        require(isinstance(highlight, list) and len(highlight) <= 4, f"{where}.parts: expected up to 4 part ids")
+        require(set(highlight) <= parts[link["schema"]], f"{where}.parts: unknown part of {link['schema']}")
+    media_rows = read_json(root / "data" / "case-media.json") if (root / "data" / "case-media.json").exists() else []
+    require(isinstance(media_rows, list), "case-media.json: expected an array")
+    media: dict[str, list] = {}
+    for index, row in enumerate(media_rows):
+        where = f"case-media.json[{index}]"
+        require(isinstance(row, dict) and row.get("case") in by_id, f"{where}.case: unknown case")
+        file = str(row.get("file", ""))
+        path = (root / file).resolve()
+        require(file.startswith("media/") and root.resolve() / "media" in path.parents and path.is_file(), f"{where}.file: expected an existing file in media/")
+        require(path.suffix.lower() in MEDIA_TYPES, f"{where}.file: only PNG, JPEG or WebP images are embedded")
+        require(path.stat().st_size <= MEDIA_MAX_BYTES, f"{where}.file: larger than {MEDIA_MAX_BYTES // 1000} kB")
+        localised(row.get("alt"), f"{where}.alt")
+        localised(row.get("caption"), f"{where}.caption")
+        nonempty(row.get("credit"), f"{where}.credit")
+        nonempty(row.get("license"), f"{where}.license")
+        media.setdefault(row["case"], []).append({
+            "src": f"data:{MEDIA_TYPES[path.suffix.lower()]};base64," + base64.b64encode(path.read_bytes()).decode("ascii"),
+            "alt": row["alt"], "caption": row["caption"], "credit": row["credit"], "license": row["license"],
+        })
+    return schemas, links, media
+
+
 def build(root: Path = ROOT) -> dict:
     """Generate the no-fetch browser catalog and a single-file offline edition."""
     root = Path(root)
     # catalog.js is an output of this command, so validate other assets first.
     cases, references = load_and_validate(root, check_assets=False)
-    catalog = {"version": 2, "languages": list(LANGUAGES), "areas": AREAS, "cases": cases, "references": references}
+    schemas, links, media = load_visuals(root, cases)
+    for case in cases:
+        if case["id"] in links:
+            case["schema"] = {"id": links[case["id"]]["schema"], "parts": links[case["id"]].get("parts", [])}
+        if case["id"] in media:
+            case["media"] = media[case["id"]]
+    catalog = {"version": 2, "languages": list(LANGUAGES), "areas": AREAS, "cases": cases, "references": references, "schemas": schemas}
     assets = root / "assets"
     assets.mkdir(parents=True, exist_ok=True)
     (assets / "catalog.js").write_text("/* Generated by scripts/manage.py build. Edit data/*.json, then rebuild. */\nwindow.NSA_CATALOG = " + json.dumps(catalog, ensure_ascii=False, separators=(",", ":")) + ";\n", encoding="utf-8")
@@ -499,7 +583,8 @@ def main(argv=None) -> int:
     try:
         if args.command == "validate":
             cases, references = load_and_validate()
-            print(f"Valid: {len(cases)} cases, {len(references)} references, 3 languages, 5 areas.")
+            schemas, links, media = load_visuals(ROOT, cases)
+            print(f"Valid: {len(cases)} cases, {len(references)} references, {len(schemas)} schemas ({len(links)} linked cases), {sum(map(len, media.values()))} images, 3 languages, 5 areas.")
         elif args.command == "build":
             catalog = build()
             print(f"Built catalog.js and standalone.html with {len(catalog['cases'])} cases.")

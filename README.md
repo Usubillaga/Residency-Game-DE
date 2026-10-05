@@ -64,11 +64,20 @@ Each duty has its own briefing from the cast, whiteboard label and daylight or n
 
 Every case's duty is stored as `duty` in `data/*.json`; imported questions take it from `data/import-selection.json`, so a re-import keeps it. The assignment classifies by the decision the question asks for, not only by the diagnosis: two independent classifications of all 297 cases agreed on 288, a judge resolved nine, and one review change moved autonomic dysreflexia during urodynamics from the night shift to the clinic. See [docs/VALIDATION.md](docs/VALIDATION.md).
 
+## Schemas, anatomy atlas and own images
+
+- **Teaching schemas:** 15 cartoon schematic drawings made for this game (`data/schemas.json`) with 189 tappable structures, from the urinary tract overview, kidney envelopes, prostate zones and bladder-wall T stages to urinary diversion, micturition control, the retroperitoneal lymph-node landing zones and VUR grades. 133 of the 297 cases link to one; questions about drugs, laboratory values, counselling or guidelines deliberately have none. After the last decision of a case, the explanation shows the matching schema with the case's key structures glowing (★). Every structure is tappable and shows its name and one key fact. The debrief and the logbook review show it too. The links between cases and schemas are in `data/case-schemas.json`.
+- **Anatomy atlas:** a new *Atlas* page lists all schemas. *Find the structure* is a five-round tap quiz on a schema. A right tap gives confetti, a wrong one the splash, and 5 of 5 earns the *Anatomy ace* sticker. Quiz results never change case scores.
+- **Own images:** put licensed PNG, JPEG or WebP files in `media/` and list them in `data/case-media.json`, with alt text and caption in EN/DE/ES, `credit` and `license`. The build embeds them and refuses a file without credit or licence, a file outside `media/` or an SVG. See [media/README.md](media/README.md). Do not add identifiable patient images.
+
+The schemas are simplified teaching drawings, not to scale, and were not reviewed clinically. See [docs/VALIDATION.md](docs/VALIDATION.md) for how they were checked.
+
 ## Characters and game mechanics
 
 - **Avatars and cartoon rooms:** choose your character and move through the hospital with the original cast and translated comedy.
 - **Nurse's joker (Grace / Jana / Lucía):** once per question, the nurse crosses out one of the weakest wrong answers. It costs five simulated minutes and never changes points. Story cases also show their learning objectives. After answering, she only gives advice.
 - **Answer marking and explanations:** after each decision the correct option is marked ✓ and a wrong choice ✗ (◐ for a partly appropriate story choice). A missed question shows **why the preferred answer is right**, and **"Every option explained"** opens the source rationale for each choice. The debrief and the logbook review repeat this.
+- **Right or wrong you can feel:** a right answer brings confetti. A wrong one gets a cartoon *urine splash*, with droplets, a puddle and a line such as *Post-void dribble!*, plus a splash sound when pager sounds are on. New stickers pop up as a sticker instead of confetti, so confetti never follows a wrong answer.
 - **Streaks:** consecutive correct decisions build a 🔥 streak. Streaks of 3, 5, 10, 15 … earn a special line from the cast and confetti. A wrong source answer gets exam-style teasing that points to the explanation; safety feedback stays serious.
 - **Career ladder:** XP is the sum of your best score per case, so replaying a case improves XP, but repeating it does not inflate XP. Nine ranks lead from medical student to night-shift legend, each with its own joke and a promotion scene.
 - **Sticker album:** 13 collectable stickers, e.g. for streaks, a perfect session, a perfect chief's quiz, a case in every department, a rematch at 100% or completing every case of a specialty. Locked stickers say how to earn them.

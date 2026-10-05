@@ -240,6 +240,10 @@ window.NSABanter = {
       "nightOwl": {
         "title": "A real night shift",
         "text": "Complete a case between midnight and 5 a.m. real time. Then go to bed!"
+      },
+      "anatomist": {
+        "title": "Anatomy ace",
+        "text": "Score 5 of 5 in 'Find the structure'. Prof. Whitfield nods approvingly."
       }
     },
     "dutyOpening": {
@@ -311,6 +315,18 @@ window.NSABanter = {
       "board": "TUMOUR BOARD",
       "clinic": "CLINIC",
       "elective": "OR LIST · THEATRE 2"
+    },
+    "splash": [
+      "Splash!",
+      "Missed the target!",
+      "Puddle in the corridor!",
+      "Oops, forgot the splash guard!",
+      "Post-void dribble!"
+    ],
+    "atlasResult": {
+      "perfect": "Prof. Whitfield: Five out of five. I am bringing my anatomy atlas out of retirement.",
+      "good": "Dr. Brennan: Solid. You'll find the rest blindfolded next time; please not in theatre.",
+      "poor": "Grace: Don't worry, anatomy doesn't run away. It just sometimes sits somewhere other than expected."
     }
   },
   "de": {
@@ -553,6 +569,10 @@ window.NSABanter = {
       "nightOwl": {
         "title": "Echter Nachtdienst",
         "text": "Schließe einen Fall zwischen 0 und 5 Uhr echter Uhrzeit ab. Und dann ab ins Bett!"
+      },
+      "anatomist": {
+        "title": "Anatomie-Ass",
+        "text": "Erreiche 5 von 5 bei „Finde die Struktur“. Prof. Leuchtenberg nickt anerkennend."
       }
     },
     "dutyOpening": {
@@ -624,6 +644,18 @@ window.NSABanter = {
       "board": "TUMORBOARD",
       "clinic": "SPRECHSTUNDE",
       "elective": "OP-PLAN · SAAL 2"
+    },
+    "splash": [
+      "Platsch!",
+      "Daneben gezielt!",
+      "Pfütze im Flur!",
+      "Ups, Spritzschutz vergessen!",
+      "Nachträufeln!"
+    ],
+    "atlasResult": {
+      "perfect": "Prof. Leuchtenberg: Fünf von fünf. Ich hole meinen Anatomieatlas aus dem Ruhestand.",
+      "good": "Dr. Brenner: Solide. Den Rest findest du beim nächsten Mal blind – bitte nicht im OP.",
+      "poor": "Jana: Keine Sorge, die Anatomie läuft nicht weg. Sie liegt nur manchmal woanders als gedacht."
     }
   },
   "es": {
@@ -866,6 +898,10 @@ window.NSABanter = {
       "nightOwl": {
         "title": "Guardia de verdad",
         "text": "Completa un caso entre las 0 y las 5 de la mañana, hora real. ¡Y luego a dormir!"
+      },
+      "anatomist": {
+        "title": "As de la anatomía",
+        "text": "Consigue 5 de 5 en «Encuentra la estructura». El Prof. Valdés asiente con aprobación."
       }
     },
     "dutyOpening": {
@@ -937,6 +973,18 @@ window.NSABanter = {
       "board": "COMITÉ DE TUMORES",
       "clinic": "CONSULTA",
       "elective": "PROGRAMA QX · QUIRÓFANO 2"
+    },
+    "splash": [
+      "¡Chof!",
+      "¡Fuera de la diana!",
+      "¡Charco en el pasillo!",
+      "¡Uy, sin protector antisalpicaduras!",
+      "¡Goteo posmiccional!"
+    ],
+    "atlasResult": {
+      "perfect": "Prof. Valdés: Cinco de cinco. Saco mi atlas de anatomía de la jubilación.",
+      "good": "Dr. Herrera: Sólido. El resto lo encontrarás a ciegas la próxima vez; en quirófano, mejor no.",
+      "poor": "Lucía: Tranquilidad, la anatomía no se escapa. Solo a veces está en otro sitio del que pensabas."
     }
   }
 };
