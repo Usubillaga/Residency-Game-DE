@@ -1,5 +1,42 @@
 # Validation record
 
+## Teaching schemas, anatomy atlas and urine splash — 5 October 2026
+
+- **Feedback:** confetti now appears only for correct answers, streak milestones and promotions. Previously a sticker earned after a missed case also fired confetti; stickers now show as a toast. A wrong answer in a case, in the chief's quiz or in the anatomy quiz triggers a cartoon urine splash: droplets, a puddle, a random word such as "Platsch!" and a short splash sound. Reduced-motion settings suppress both splash and confetti.
+- **Schemas:** 15 cartoon teaching drawings with 189 tappable structures, drawn as inline SVG for this game: urinary tract overview, kidney section with envelopes, obstructed kidney with stent and nephrostomy, kidney transplant, bladder wall with T stages, urinary diversion (conduit and neobladder), neural control of micturition, prostate zones, male urethra and penis, female pelvis, pelvic side wall, scrotum and inguinal canal, retroperitoneal lymph nodes, hypothalamic-pituitary-testicular axis and VUR grades. No external or photographic images are used.
+- **Drawing and review:**
+  - An illustrator agent drew each schema in a render-and-check loop.
+  - A separate anatomy reviewer then checked relations, labels, notes, all three translations and tap size, and fixed what it found.
+  - An independent skeptic re-checked the result without editing it, and its findings were then applied and confirmed in renders.
+  - Examples of what was fixed:
+    - Pelvic side wall: the ureter had been painted behind the common iliac artery.
+    - Prostate: the urethra was interrupted at the bulbomembranous junction.
+    - Urinary tract overview: the left renal artery ran into the adrenal.
+    - Scrotum: the spermatic cord could not be tapped.
+    - Neobladder: the retroperitoneal ureters ran in front of the ileum.
+    - Female pelvis: the pubourethral ligament merged with the levator.
+    - VUR grades: drawn Roman numerals gave away the quiz answer.
+    - Urinary diversion: a Spanish note said "through the rectum" instead of "through the rectus muscle".
+- **Safety:** the build accepts only plain shapes (`g`, `path`, `rect`, `circle`, `ellipse`, `line`, `polyline`, `polygon`) with listed attributes. It rejects text, scripts, event handlers, links and `url()`. Every drawn structure needs a label and a note in EN, DE and ES, and every highlighted structure must exist.
+- **Tap size:** a browser hit test every 2 viewBox units measured the largest free disc of each structure. Thin structures received invisible wider hit strokes. All structures have a free diameter of at least 16 units except the ureter underneath the stent in the obstructed-kidney schema, which has 12 units because the stent really runs inside it. On phones the drawing now uses nearly the full width: 284 instead of 222 pixels at a 360-pixel viewport.
+- **Case links:**
+  - Two independent classifiers chose one schema, or none, for each of the 297 cases. One read the decision first, the other the anatomy first. They agreed on 286 cases, and a judge decided the other 11.
+  - The rule was to add a picture only where it explains the correct answer. Questions on drugs, laboratory values, counselling, imaging choice or guidelines get none.
+  - Result: 133 cases are linked and 164 have no schema.
+  - For each linked case, two independent pickers then chose the structures that glow. A case keeps only the structures both chose: 1 structure in 20 cases, 2 in 76, 3 in 35 and 4 in 2. The two pickers chose identical sets for 98 cases and overlapping sets for the rest, so no judge was needed.
+- **Atlas and quiz:** the *Atlas* page lists all schemas. *Find the structure* asks for five different structures. A right tap gives small confetti and a wrong tap the splash, and 5 of 5 earns the *Anatomy ace* sticker. Screen-reader labels in the quiz do not name the structures, and the quiz has no legend.
+- **Checks:** `manage.py validate`, `build` and `package` passed. 34 Python tests, 41 engine tests and 29 cartoon tests passed. Three new cartoon tests cover:
+  - schema safety and coverage: drawn and explained structures match, links are valid, every schema explains at least one case, and at least 40 % of cases are linked;
+  - glowing structures and the legend order, and that the quiz markup never reveals names;
+  - quiz rounds, one-time scoring per round, the splash on a wrong tap and the perfect-run reward.
+- **Browser** (Chromium, localhost, German, 1280 and 360 pixels):
+  - After the last decision of a linked case, the schema appeared and exactly the linked structures glowed.
+  - Tapping a structure showed its note. The atlas listed every schema.
+  - The quiz showed no legend, and a right tap answered "Richtig!".
+  - There was no horizontal overflow and there were no console errors.
+
+The schemas, their notes and the case links were checked by AI agents and by automated tests, **not by a urologist**. They are simplified teaching drawings, not to scale, and need specialist review before formal teaching.
+
 ## Duties: night shift, tumour board, clinic and elective list — 5 October 2026
 
 Sessions previously drew two cases from each department. A night shift could therefore contain oncology follow-up or elective operative technique. Every case now has one `duty`, and a session draws only that duty.

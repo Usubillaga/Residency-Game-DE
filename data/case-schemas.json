@@ -251,6 +251,13 @@
       "vas-deferens"
     ]
   },
+  "bank-uro-kin-00004": {
+    "schema": "vur-grades",
+    "parts": [
+      "vur-grade-1",
+      "vur-grade-2"
+    ]
+  },
   "bank-uro-kin-00005": {
     "schema": "urinary-tract-overview",
     "parts": [
