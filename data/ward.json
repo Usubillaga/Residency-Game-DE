@@ -4,6 +4,7 @@
     "area": "ward",
     "level": 3,
     "acuity": "critical",
+    "duty": "night",
     "patient": {
       "name": "Nora Becker",
       "age": 64,
@@ -236,6 +237,7 @@
     "area": "ward",
     "level": 2,
     "acuity": "urgent",
+    "duty": "night",
     "patient": {
       "name": "Robert Lang",
       "age": 77,
@@ -468,6 +470,7 @@
     "area": "ward",
     "level": 2,
     "acuity": "urgent",
+    "duty": "night",
     "patient": {
       "name": "Gabriel Moreno",
       "age": 62,
@@ -700,6 +703,7 @@
     "area": "ward",
     "level": 3,
     "acuity": "critical",
+    "duty": "night",
     "patient": {
       "name": "Clara Schmitt",
       "age": 70,
@@ -934,6 +938,7 @@
     "area": "ward",
     "level": 2,
     "acuity": "urgent",
+    "duty": "night",
     "patient": {
       "name": "Isabel Torres",
       "age": 66,
@@ -1167,6 +1172,7 @@
     "area": "ward",
     "level": 3,
     "acuity": "critical",
+    "duty": "night",
     "patient": {
       "name": "Peter Silva",
       "age": 71,
@@ -1401,6 +1407,7 @@
     "area": "ward",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Björn Eckert",
       "age": null,
@@ -1546,6 +1553,7 @@
     "area": "ward",
     "level": 3,
     "acuity": "routine",
+    "duty": "board",
     "patient": {
       "name": "Nico Gerlach",
       "age": 33,
@@ -1727,6 +1735,7 @@
     "area": "ward",
     "level": 3,
     "acuity": "urgent",
+    "duty": "night",
     "patient": {
       "name": "Elfriede Hansen",
       "age": 79,
@@ -1872,6 +1881,7 @@
     "area": "ward",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Nicky Bach",
       "age": null,
@@ -2023,6 +2033,7 @@
     "area": "ward",
     "level": 3,
     "acuity": "critical",
+    "duty": "night",
     "patient": {
       "name": "Elke Fleischer",
       "age": 68,
@@ -2180,6 +2191,7 @@
     "area": "ward",
     "level": 3,
     "acuity": "urgent",
+    "duty": "night",
     "patient": {
       "name": "Melanie Ziegler",
       "age": 48,
@@ -2325,6 +2337,7 @@
     "area": "ward",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Ewa Michalak",
       "age": 54,
@@ -2470,6 +2483,7 @@
     "area": "ward",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Detlef Kroll",
       "age": 62,
@@ -2615,6 +2629,7 @@
     "area": "ward",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Javier Cano",
       "age": null,
@@ -2760,6 +2775,7 @@
     "area": "ward",
     "level": 3,
     "acuity": "urgent",
+    "duty": "night",
     "patient": {
       "name": "Sascha Frenzel",
       "age": null,
@@ -2905,6 +2921,7 @@
     "area": "ward",
     "level": 3,
     "acuity": "urgent",
+    "duty": "night",
     "patient": {
       "name": "Bernhard Jahn",
       "age": 64,
@@ -3050,6 +3067,7 @@
     "area": "ward",
     "level": 3,
     "acuity": "urgent",
+    "duty": "night",
     "patient": {
       "name": "Reinhard Kunz",
       "age": 57,
@@ -3195,6 +3213,7 @@
     "area": "ward",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Luca Conti",
       "age": null,
@@ -3353,6 +3372,7 @@
     "area": "ward",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Hans-Peter Schilling",
       "age": 63,
@@ -3498,6 +3518,7 @@
     "area": "ward",
     "level": 3,
     "acuity": "urgent",
+    "duty": "clinic",
     "patient": {
       "name": "Andreas Peters",
       "age": 59,
@@ -3643,6 +3664,7 @@
     "area": "ward",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Ackermann, Ehlers & Gärtner",
       "age": null,
@@ -3788,6 +3810,7 @@
     "area": "ward",
     "level": 3,
     "acuity": "urgent",
+    "duty": "night",
     "patient": {
       "name": "Eike Kolb",
       "age": null,
@@ -3933,6 +3956,7 @@
     "area": "ward",
     "level": 3,
     "acuity": "urgent",
+    "duty": "elective",
     "patient": {
       "name": "Jo Lindemann",
       "age": null,
@@ -4078,6 +4102,7 @@
     "area": "ward",
     "level": 3,
     "acuity": "routine",
+    "duty": "clinic",
     "patient": {
       "name": "Uli König",
       "age": null,
@@ -4223,6 +4248,7 @@
     "area": "ward",
     "level": 3,
     "acuity": "urgent",
+    "duty": "night",
     "patient": {
       "name": "Chris Kraus",
       "age": null,
@@ -4368,6 +4394,7 @@
     "area": "ward",
     "level": 3,
     "acuity": "urgent",
+    "duty": "night",
     "patient": {
       "name": "Stefanie Seifert",
       "age": null,
@@ -4513,6 +4540,7 @@
     "area": "ward",
     "level": 3,
     "acuity": "urgent",
+    "duty": "night",
     "patient": {
       "name": "Toni Kaufmann",
       "age": null,
@@ -4658,6 +4686,7 @@
     "area": "ward",
     "level": 3,
     "acuity": "routine",
+    "duty": "elective",
     "patient": {
       "name": "Alex Nickel",
       "age": null,

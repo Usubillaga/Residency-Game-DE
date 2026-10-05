@@ -110,6 +110,7 @@ def generate(archive_path, plan_path=ROOT / 'data/import-selection.json', names_
     names = patient_names(names_path)
     rows = plan['selection'] if isinstance(plan, dict) else plan
     require(len(rows) == 267, 'Selection must contain all 267 source questions')
+    require(all(row.get('duty') in (None, 'night', 'board', 'clinic', 'elective') for row in rows), 'Unsupported duty in selection')
     require(set(row['area'] for row in rows) == set(AREAS), 'All five departments must be represented')
     require(len({row['questionId'] for row in rows}) == 267, 'Source question IDs must be unique')
     generated = {area: [] for area in AREAS}
@@ -166,6 +167,7 @@ def generate(archive_path, plan_path=ROOT / 'data/import-selection.json', names_
                 'id': 'bank-' + question['id'], 'area': row['area'],
                 'level': max(1, min(3, int(question.get('difficulty_estimated', 2)))),
                 'acuity': 'routine' if row.get('acuity') == 'stable' else row.get('acuity', 'urgent' if row['area'] == 'emergency' else 'routine'),
+                **({'duty': row['duty']} if row.get('duty') else {}),
                 'patient': patient_entry(names.get(question['id'], {}), index, content),
                 'topic': {language: labels[domain][language] for language in LANGS},
                 'title': {language: content[language]['lead_in'] for language in LANGS},

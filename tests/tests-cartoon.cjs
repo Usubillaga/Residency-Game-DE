@@ -552,3 +552,33 @@ test('every case has its own patient name, and imported names match the sex and 
     }
   }
 });
+
+test('every duty has a translated briefing, scene line and whiteboard label', () => {
+  for (const lang of ['en', 'de', 'es']) {
+    const text = data.NSABanter[lang];
+    for (const duty of E.DUTIES) {
+      assert.ok(text.dutyOpening[duty].length >= 2, lang + ' ' + duty + ' briefing');
+      assert.ok(text.dutyOpening[duty].every(line => ['nurse', 'attending', 'chief'].includes(line.speaker) && line.text.trim()));
+      assert.ok(text.dutyIntro[duty].trim() && text.dutyBoard[duty].trim());
+      for (const key of ['duty_', 'dutyText_', 'dutyTime_']) assert.ok(String(data.NSA_TEXT[lang][key + duty] || '').trim(), lang + '.' + key + duty);
+    }
+  }
+});
+
+test('day duties wake the attending, and the tumour board shows every case as a folder without doors', () => {
+  const pick = area => catalog.cases.find(c => c.area === area);
+  const patients = ['clinic', 'theatre', 'ward'].map(area => { const c = pick(area); return { id: c.id, name: c.patient.name, age: c.patient.age, area: c.area, acuity: c.acuity, available: true }; });
+  const night = data.NSAArt.scene('clinic', patients, patients[0].id, '22:10', 0, 'de', { duty: 'night' });
+  assert.match(night, /cartoon-rest/, 'The attending dozes at night');
+  assert.equal(groupsWith(night, 'data-scene-patient').length, 1, 'Room scenes show only their own department');
+  const clinic = data.NSAArt.scene('clinic', patients, patients[0].id, '08:10', 0, 'de', { duty: 'clinic', label: 'SPRECHSTUNDE' });
+  assert.doesNotMatch(clinic, /cartoon-rest/, 'The attending is awake for daytime duties');
+  assert.ok(clinic.includes('SPRECHSTUNDE'));
+  const board = data.NSAArt.scene('clinic', patients, patients[1].id, '15:40', 0, 'de', { duty: 'board', label: 'TUMORBOARD' });
+  assert.equal(groupsWith(board, 'data-scene-area').length, 0, 'The conference room has no department doors');
+  const folders = groupsWith(board, 'data-scene-patient');
+  assert.deepEqual(folders.map(f => f['data-scene-patient']), patients.map(p => p.id), 'Every session case lies on the table');
+  assert.equal(folders.filter(f => f['aria-pressed'] === 'true').length, 1);
+  assert.ok(folders.every(f => f.role === 'button' && f.tabindex === '0'));
+});
+

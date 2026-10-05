@@ -122,6 +122,29 @@ class AutomationTests(unittest.TestCase):
         self.assertIn(r"<\/ScRiPt>", standalone)
         manage.load_and_validate(self.root)
 
+    def test_duty_schedule_draws_only_that_duty(self):
+        for area in manage.AREA_IDS:
+            path = self.root / "data" / f"{area}.json"
+            cases = manage.read_json(path)
+            for index, case in enumerate(cases):
+                case["duty"] = "night" if area in ("emergency", "ward") or index == 0 else "clinic"
+            manage.write_json(path, cases)
+        first = manage.schedule(self.root, "2026-10-05", "seed", self.root / "outputs" / "night.json", "night")
+        second = manage.schedule(self.root, "2026-10-05", "seed", self.root / "outputs" / "again.json", "night")
+        self.assertEqual(first, second)
+        self.assertEqual(first["duty"], "night")
+        self.assertEqual(len(first["caseIds"]), 9, "Only the nine night cases of the fixture can be drawn")
+        self.assertEqual(len(set(first["caseIds"])), 9)
+        night = {case["id"] for area in manage.AREA_IDS for case in manage.read_json(self.root / "data" / f"{area}.json") if case["duty"] == "night"}
+        self.assertTrue(set(first["caseIds"]) <= night)
+        with self.assertRaisesRegex(manage.ValidationError, "No cases are assigned"):
+            manage.schedule(self.root, "2026-10-05", "seed", self.root / "outputs" / "board.json", "board")
+
+    def test_invalid_duty_is_rejected(self):
+        self.mutate_case(lambda case: case.update(duty="weekend"))
+        with self.assertRaisesRegex(manage.ValidationError, "duty: expected one of"):
+            manage.load_and_validate(self.root, check_assets=False)
+
     def test_schedule_rejects_noncanonical_date(self):
         with self.assertRaisesRegex(manage.ValidationError, "YYYY-MM-DD"):
             manage.schedule(self.root, "20261005", "seed", self.root / "outputs" / "shift.json")

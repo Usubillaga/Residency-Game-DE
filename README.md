@@ -49,6 +49,21 @@ The source specialties are andrology, functional urology, testicular cancer, inf
 
 Imported cases show fictional patient names from `data/patient-names.json`. The case text alone determines sex, number of patients and age band. Two independent classifications of all 267 vignettes agreed on 265 cases; a judge resolved the other two. A review then corrected four more: a testicular-cancer case is male, and three intraoperative technique questions have a patient on the table. When the text does not state the sex (42 cases), the patient gets a gender-neutral first name. A vignette that compares several patients lists one surname per patient, for example *Weiß & Scholl*. The one question without any patient, a departmental meeting, shows a translated label and the head of department's portrait. Names are unique, age-appropriate and culturally consistent. They avoid the surnames of the story patients and the cast, famous people and medical puns. The 30 story patients now also record `sex`, taken from the pronouns in their texts or, where the text has none, from the original author's name choice; *Alex Morgan* stays unspecified. Portraits never give women or children stubble, and patients aged 75 or older get grey hair. No additional vital signs are invented. Missing or ambiguous ages remain unrecorded, and a case may have `patient.age: null` and `vitals: null`.
 
+## Duties
+
+A session no longer mixes every department. You choose a **duty**, and the session draws only that duty's cases, rotating through topics:
+
+| Duty | Clock starts | Cases | Content |
+| --- | ---: | ---: | --- |
+| 🌙 Night shift (*Nachtdienst*) | 22:00 | 52 | Emergencies only: colic and obstructed or infected kidneys, retention, bleeding and clot retention, trauma, torsion, priapism, Fournier, acute infections, acute ward complications and emergency or consult surgery |
+| 🎗️ Tumour board (*Tumorboard*) | Wed 15:30 | 90 | Oncological staging and treatment decisions, systemic and salvage therapy, metastatic disease, residual tumour |
+| 🩺 Clinic (*Sprechstunde*) | 08:00 | 100 | Outpatient work-up, counselling and follow-up, including cancer follow-up, andrology, functional urology, stone metaphylaxis and elective paediatric urology |
+| ✂️ Elective list (*OP-Programm*) | 07:30 | 55 | Planned operations and endoscopy: technique, anatomy, intraoperative findings and perioperative routine |
+
+Each duty has its own briefing from the cast, whiteboard label and daylight or night window; the attending stays awake in the daytime. The tumour board meets in a conference room where the session's cases lie on the table as folders. The library filters by duty, every case card shows its duty, and the progress page reports performance by duty. Practice sessions started from the library, rematch or quick round take the duty of their cases, or a mixed rotation if the cases differ.
+
+Every case's duty is stored as `duty` in `data/*.json`; imported questions take it from `data/import-selection.json`, so a re-import keeps it. The assignment classifies by the decision the question asks for, not only by the diagnosis: two independent classifications of all 297 cases agreed on 288, a judge resolved nine, and one review change moved autonomic dysreflexia during urodynamics from the night shift to the clinic. See [docs/VALIDATION.md](docs/VALIDATION.md).
+
 ## Characters and game mechanics
 
 - **Avatars and cartoon rooms:** choose your character and move through the hospital with the original cast and translated comedy.
@@ -106,14 +121,14 @@ Use **Python 3.10 or newer**. The tools use the standard library, with no packag
 | Validate | `python scripts/manage.py validate` | Checks languages, structure, answer markers, provenance metadata, references and local assets |
 | Build | `python scripts/manage.py build` | Recreates `assets/catalog.js` and `standalone.html` |
 | Serve locally | `python scripts/manage.py serve --port 8000` | Opens a local-only service at `http://127.0.0.1:8000/`; stop with Ctrl+C |
-| Daily shift | `python scripts/manage.py schedule --date 2026-10-05 --seed team-a` | Creates 10 distinct cases, two per department, in `outputs/daily-shift.json` |
+| Daily shift | `python scripts/manage.py schedule --date 2026-10-05 --seed team-a --duty night` | Creates 10 distinct cases of one duty (`night`, `board`, `clinic` or `elective`), rotating through topics, in `outputs/daily-shift.json`; without `--duty`, two per department as before |
 | Analyse progress | `python scripts/manage.py analyse session-export.json --output outputs/progress.csv` | Writes one CSV row per decision, preserving repeated attempts |
 | Package | `python scripts/manage.py package --output dist/night-shift-academy.zip` | Rebuilds and creates a ZIP with fixed timestamps and a SHA-256 file manifest |
 | Python checks | `python -m unittest discover -s tests -v` | Runs the automation and import regression suite |
 | Game checks | `node tests/tests-engine.cjs` | Runs engine, save, score and mixed-format case checks |
 | Cartoon checks | `node tests/tests-cartoon.cjs` | Checks translated cast, artwork, accessible room controls and game extras |
 
-Daily shifts are reproducible for the same library, date and seed. They favour varied difficulty within each department. Import the generated JSON using the game's daily-shift control; change the seed for another roster.
+Daily shifts are reproducible for the same library, date, seed and duty. Without `--duty` they favour varied difficulty within each department. Import the generated JSON using the game's daily-shift control; change the seed for another roster.
 
 The progress export uses `version: 2` and a `history` array. Each completed attempt includes `caseId`, `area`, `score`, `maxScore`, `elapsed`, `criticalErrors`, `completedAt` and `answers`. The answer count follows the case: **one for an imported question, three for a story**. Each answer records `stepId`, `optionId`, `score` and `minutes`; the analyser validates these against the current library. CSV output has the same variable number of rows per attempt. `elapsed` sums case-decision minutes and excludes coffee and waiting on the overall game clock. Keep the matching library version if you alter a case after playing it.
 

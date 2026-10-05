@@ -365,3 +365,23 @@ test('malformed stored JSON-shaped inputs never throw while validating', () => {
   const bad = [null, undefined, {}, [], 'text', 42, { version: 2 }, { version: 2, patients: [null] }];
   for (const value of bad) assert.equal(E.validSession(value, catalog), false);
 });
+
+test('duty schedules draw only that duty, repeat for the same seed and mix topics', () => {
+  for (const duty of E.DUTIES) {
+    const pool = catalog.cases.filter(c => c.duty === duty);
+    assert.ok(pool.length >= 10, duty + ' needs enough cases for a full ten-case session');
+    const ids = E.scheduleDuty(catalog, 'duty-' + duty, duty);
+    assert.deepEqual(ids, E.scheduleDuty(catalog, 'duty-' + duty, duty));
+    assert.equal(ids.length, 10);
+    assert.equal(new Set(ids).size, 10);
+    assert.ok(ids.every(id => catalog.cases.find(c => c.id === id).duty === duty), duty + ' must not draw other duties');
+    const topics = new Set(ids.map(id => { const c = catalog.cases.find(c => c.id === id); return c.source ? c.source.domain : 'story-' + c.area; }));
+    assert.ok(topics.size >= Math.min(4, new Set(pool.map(c => c.source ? c.source.domain : 'story-' + c.area)).size), duty + ' sessions should rotate through topics');
+    const session = E.create(catalog, ids, 'shift', 'duty-' + duty);
+    assert.ok(E.validSession(Object.assign(session, { duty }), catalog));
+  }
+  assert.ok(new Set(['a', 'b', 'c'].map(seed => E.scheduleDuty(catalog, seed, 'night').join('|'))).size > 1);
+  assert.throws(() => E.scheduleDuty(catalog, 'seed', 'weekend'), /Unknown duty/);
+  assert.equal(catalog.cases.filter(c => !E.DUTIES.includes(c.duty)).length, 0, 'Every case needs a duty');
+});
+
