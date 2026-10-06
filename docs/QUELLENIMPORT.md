@@ -44,6 +44,17 @@ Medizinische Texte, richtige Schlüssel, rationale/core/teaching_point sowie Sta
 - data/import-manifest.json: Archivhash, Zuordnungshash, Umfang und Importregeln.
 - data/imported-source.json: Originalinhalte und Antwortschlüssel für alle 267 Fragen mit Herkunftspfad und Inhaltshash.
 
+## Korrekturschicht und Autorenregel
+
+Die Falldateien behalten den Originaltext des Archivs. Korrekturen stehen getrennt in `data/case-updates.json` und werden beim Bauen des Katalogs angewendet:
+
+- **Medizinische Korrekturen** (`"kind": "medical"`, Standard) halten fest, was nach aktueller Leitlinie falsch, ungenau oder veraltet war. Sie nennen Datum, Grund in DE/EN/ES und Quellen (EAU-Leitlinie und knowuro-Flowchart 2026). Im Spiel erscheinen sie als Hinweis „Aktualisiert“ am Fall.
+- **Redaktionelle Korrekturen** (`"kind": "editorial"`) ändern nur den Wortlaut und erscheinen im Spiel nicht als Aktualisierung. Sie werden vor den medizinischen angewendet.
+- Eine Änderung ersetzt entweder ein ganzes Feld (`path`, `from`, `to`) oder eine Textstelle in einer Sprache (`path`, `lang`, `find`, `replace`). `from` muss dem aktuellen Feld exakt entsprechen, und `find` muss genau einmal vorkommen. Passt eine Korrektur nach einem Neuimport nicht mehr, bricht die Validierung ab, statt sie still zu übergehen.
+- Der korrigierte Fall durchläuft dieselben Regeln wie jeder andere Fall. Importierte Fragen behalten 0 oder 10 Punkte und genau eine richtige Antwort.
+
+**Keine Autoren im Spiel:** Der Build entfernt Autorenzitate wie „(Dieckmann et al. 2025)“ oder „(Che & Papachristofilou 2025)“ aus allen Spieltexten. Leitlinienzitate wie „(EAU 2026, 7.1)“ bleiben stehen. Die Quellenliste eines Falls zeigt nur Titel und Jahr; die vollständigen Zitate mit Autorennamen bleiben in den Datendateien. Sätze, die Autoren oder „den Artikel“ nennen, sind über redaktionelle Korrekturen umformuliert. Die Validierung lehnt jede verbliebene Nennung ab, in Spieltexten aller drei Sprachen ebenso wie in Herkunftshinweisen.
+
 Quell-Skripte wurden nicht ausgeführt; Begleitdokumente wurden als Inhalte gelesen und nicht als Arbeitsanweisungen übernommen.
 
 SHA-256 der gelieferten ZIP: 388ef0ed51fdd17971248bd3b7867fb35bf6d9622b2331464e6f9e1a9ece799b

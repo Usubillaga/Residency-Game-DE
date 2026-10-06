@@ -221,6 +221,146 @@ class AutomationTests(unittest.TestCase):
                 with self.assertRaisesRegex(manage.ValidationError, message):
                     manage.load_visuals(self.root, cases)
 
+    def write_update(self, changes, case="emergency-fixture-1", references=("fixture-source",)):
+        update = {"case": case, "date": "2026-10-06", "reason": translated("Guideline update"), "references": list(references), "changes": changes}
+        manage.write_json(self.root / "data" / "case-updates.json", {"updates": [update]})
+
+    def test_reviewed_updates_change_the_built_case_but_not_the_case_file(self):
+        original = manage.read_json(self.root / "data" / "emergency.json")
+        self.write_update([
+            {"path": "takeaway", "from": original[0]["takeaway"], "to": translated("Updated teaching point")},
+            {"path": "steps.0.options.b.feedback", "from": translated("Review priorities"), "to": translated("Updated rationale")},
+        ])
+        catalog = manage.build(self.root)
+        case = next(case for case in catalog["cases"] if case["id"] == "emergency-fixture-1")
+        self.assertEqual(case["takeaway"], translated("Updated teaching point"))
+        self.assertEqual(case["steps"][0]["options"][1]["feedback"], translated("Updated rationale"))
+        self.assertEqual(case["update"]["fields"], ["takeaway", "steps.0.options.b.feedback"])
+        self.assertEqual(case["update"]["date"], "2026-10-06")
+        self.assertEqual(manage.read_json(self.root / "data" / "emergency.json"), original, "The case file keeps the original text")
+        untouched = next(case for case in catalog["cases"] if case["id"] == "emergency-fixture-2")
+        self.assertNotIn("update", untouched)
+
+    def test_updates_that_drift_break_rules_or_point_nowhere_are_rejected(self):
+        cases = (
+            ([{"path": "takeaway", "from": translated("Text the case no longer has"), "to": translated("New")}], "emergency-fixture-1", "no longer matches"),
+            ([{"path": "steps.0.options.z.text", "from": translated("x"), "to": translated("y")}], "emergency-fixture-1", "no such option"),
+            ([{"path": "patient.name", "from": "Fictional Patient", "to": "Someone"}], "emergency-fixture-1", "unsupported path"),
+            ([{"path": "steps.0.best", "from": "a", "to": "b"}], "emergency-fixture-1", "best option must score 10"),
+            ([{"path": "takeaway", "from": "x", "to": "y"}], "missing-case", "unknown case ids"),
+        )
+        for changes, case, message in cases:
+            with self.subTest(message=message):
+                self.write_update(changes, case=case)
+                with self.assertRaisesRegex(manage.ValidationError, message):
+                    manage.load_and_validate(self.root, check_assets=False)
+        self.write_update([{"path": "steps.0.prompt", "from": manage.read_json(self.root / "data" / "emergency.json")[0]["steps"][0]["prompt"], "to": translated("New prompt")}], references=("unknown-source",))
+        with self.assertRaisesRegex(manage.ValidationError, "unknown reference"):
+            manage.load_and_validate(self.root, check_assets=False)
+
+    def write_updates(self, *updates):
+        manage.write_json(self.root / "data" / "case-updates.json", {"updates": list(updates)})
+
+    def set_takeaway(self, en, de, es, index=0):
+        path = self.root / "data" / "emergency.json"
+        cases = manage.read_json(path)
+        cases[index]["takeaway"] = {"en": en, "de": de, "es": es}
+        manage.write_json(path, cases)
+        return cases
+
+    def test_author_citations_leave_the_game_but_guideline_citations_stay(self):
+        cases = self.set_takeaway("Follow up yearly (Dieckmann et al. 2025; EAU 2026, 7.1). Resect early (Che & Papachristofilou 2025).",
+                                  "Jährlich nachsorgen (Angerer et al. 2025 / Heidenreich & Pfister 2025).", "Seguimiento anual (EAU 2026, 7.1).")
+        imported = imported_case()
+        imported["source"]["originalSources"] = [{"type": "artikel", "title": "Follow-up update", "citation": "Doe J, Roe R. Journal 2025;1:1-2.", "year": 2025}]
+        manage.write_json(self.root / "data" / "emergency.json", cases + [imported])
+        catalog = manage.build(self.root)
+        case = next(case for case in catalog["cases"] if case["id"] == "emergency-fixture-1")
+        self.assertEqual(case["takeaway"], {"en": "Follow up yearly (EAU 2026, 7.1). Resect early.", "de": "Jährlich nachsorgen.", "es": "Seguimiento anual (EAU 2026, 7.1)."})
+        source = next(case for case in catalog["cases"] if case["id"] == imported["id"])["source"]
+        self.assertEqual(source["originalSources"], [{"type": "artikel", "title": "Follow-up update", "year": 2025}], "The game lists source titles without author names")
+        shipped = (self.root / "assets" / "catalog.js").read_text(encoding="utf-8")
+        self.assertNotIn("et al.", shipped)
+        self.assertNotIn("Doe J", shipped)
+        self.assertIn("Dieckmann et al. 2025", manage.read_json(self.root / "data" / "emergency.json")[0]["takeaway"]["en"], "The case file keeps the original text")
+
+    def test_author_and_article_mentions_left_in_prose_are_rejected(self):
+        for text in ("The authors recommend surgery.", "Knight et al. examined 54 sera.", "Der Artikel nennt 30 Gy.", "El artículo recomienda cirugía.",
+                     "Erstautor X hält Anteile.", "Smith and Jones 2024 found the same."):
+            with self.subTest(text=text):
+                self.set_takeaway(text, text, text)
+                with self.assertRaisesRegex(manage.ValidationError, r"emergency\.json\[0\]\.takeaway\.(en|de|es): no authors in the game"):
+                    manage.load_and_validate(self.root, check_assets=False)
+        self.set_takeaway("Authorisation and articles of faith are fine? No.", "Kostenübernahme beantragen.", "Autorización necesaria.")
+        with self.assertRaisesRegex(manage.ValidationError, "no authors in the game; rewrite 'articles'"):
+            manage.load_and_validate(self.root, check_assets=False)
+        self.set_takeaway("Authorisation is needed.", "Autorisierung beantragen (EAU 2026, 6.1).", "Autorización necesaria.")
+        manage.load_and_validate(self.root, check_assets=False)
+        imported = imported_case()
+        imported["source"]["evidenceNotes"] = [{"language": "en", "text": "The source article and the EAU differ; the answer follows the EAU."}]
+        path = self.root / "data" / "emergency.json"
+        manage.write_json(path, manage.read_json(path) + [imported])
+        manage.load_and_validate(self.root, check_assets=False)
+        imported["source"]["evidenceNotes"] = [{"language": "en", "text": "Based on case series by the author group."}]
+        manage.write_json(path, manage.read_json(path)[:-1] + [imported])
+        with self.assertRaisesRegex(manage.ValidationError, r"evidenceNotes\[0\]: no authors in the game"):
+            manage.load_and_validate(self.root, check_assets=False)
+
+    def test_editorial_passage_edits_reword_one_passage_without_an_update_notice(self):
+        self.set_takeaway("The authors recommend imaging at 8 weeks. Keep this.", "Die Autoren empfehlen eine Bildgebung nach 8 Wochen. Bleibt.",
+                          "Los autores recomiendan imagen a las 8 semanas. Queda.")
+        with self.assertRaisesRegex(manage.ValidationError, "no authors in the game"):
+            manage.load_and_validate(self.root, check_assets=False)
+        editorial = {"case": "emergency-fixture-1", "kind": "editorial", "date": "2026-10-06", "reason": translated("No authors in the game"), "changes": [
+            {"path": "takeaway", "lang": "en", "find": "The authors recommend imaging", "replace": "Imaging is recommended"},
+            {"path": "takeaway", "lang": "de", "find": "Die Autoren empfehlen eine Bildgebung", "replace": "Empfohlen wird eine Bildgebung"},
+            {"path": "takeaway", "lang": "es", "find": "Los autores recomiendan imagen", "replace": "Se recomienda imagen"},
+        ]}
+        medical = {"case": "emergency-fixture-1", "date": "2026-10-06", "reason": translated("Guideline update"), "references": ["fixture-source"], "changes": [
+            {"path": "takeaway", "lang": "en", "find": "at 8 weeks", "replace": "at 6 to 8 weeks"},
+            {"path": "takeaway", "lang": "de", "find": "nach 8 Wochen", "replace": "nach 6 bis 8 Wochen"},
+            {"path": "takeaway", "lang": "es", "find": "a las 8 semanas", "replace": "a las 6 a 8 semanas"},
+        ]}
+        self.write_updates(medical, editorial)
+        catalog = manage.build(self.root)
+        case = next(case for case in catalog["cases"] if case["id"] == "emergency-fixture-1")
+        self.assertEqual(case["takeaway"], {"en": "Imaging is recommended at 6 to 8 weeks. Keep this.", "de": "Empfohlen wird eine Bildgebung nach 6 bis 8 Wochen. Bleibt.",
+                                            "es": "Se recomienda imagen a las 6 a 8 semanas. Queda."}, "Editorial wording first, then the medical edit")
+        self.assertEqual(case["update"]["fields"], ["takeaway"], "Only the medical update is shown as an update")
+        self.write_updates(editorial)
+        case = next(case for case in manage.build(self.root)["cases"] if case["id"] == "emergency-fixture-1")
+        self.assertNotIn("update", case, "Editorial wording alone shows no update notice")
+
+    def test_passage_edits_must_match_once_and_follow_the_rules(self):
+        self.set_takeaway("Same word, same word.", "Gleich.", "Igual.")
+        edit = lambda **change: {"case": "emergency-fixture-1", "kind": "editorial", "date": "2026-10-06", "reason": translated("Wording"), "changes": [{"path": "takeaway", "lang": "en", **change}]}
+        imported = imported_case()
+        imported["source"]["evidenceNotes"] = [{"language": "de", "text": "Hinweis zur Quelle."}]
+        path = self.root / "data" / "emergency.json"
+        manage.write_json(path, manage.read_json(path) + [imported])
+        whole = {"path": "takeaway", "from": {"en": "Same word, same word.", "de": "Gleich.", "es": "Igual."}, "to": translated("New")}
+        for updates, message in (
+            ([edit(find="word", replace="term")], "must occur exactly once"),
+            ([edit(find="missing", replace="other")], "must occur exactly once"),
+            ([edit(find="Same", replace="Same")], "expected a changed passage"),
+            ([{**edit(find="Same", replace="One"), "changes": [{"path": "takeaway", "lang": "fr", "find": "Same", "replace": "One"}]}], "expected a language"),
+            ([{**edit(find="Same", replace="One"), "changes": [whole, {"path": "takeaway", "lang": "en", "find": "New", "replace": "Newer"}]}], "already replaced as a whole field"),
+            ([{**edit(find="Same", replace="One"), "changes": [{"path": "takeaway", "lang": "en", "find": "Same", "replace": "One"}, {**whole, "from": {"en": "One word, same word.", "de": "Gleich.", "es": "Igual."}}]}], "changed twice"),
+            ([edit(find="Same", replace="One"), edit(find="word,", replace="term,")], "more than one editorial update"),
+            ([{**edit(find="Same", replace="One"), "kind": "medical"}], "references: expected reference ids"),
+            ([{**edit(find="Same", replace="One"), "kind": "cosmetic"}], "expected editorial or medical"),
+            ([{"case": imported["id"], "kind": "editorial", "date": "2026-10-06", "reason": translated("Wording"),
+               "changes": [{"path": "source.evidenceNotes.0.text", "lang": "en", "find": "Hinweis", "replace": "Note"}]}], "evidence notes take passage edits in the note's language"),
+        ):
+            with self.subTest(message=message):
+                self.write_updates(*updates)
+                with self.assertRaisesRegex(manage.ValidationError, message):
+                    manage.load_and_validate(self.root, check_assets=False)
+        self.write_updates({"case": imported["id"], "kind": "editorial", "date": "2026-10-06", "reason": translated("Wording"),
+                            "changes": [{"path": "source.evidenceNotes.0.text", "lang": "de", "find": "zur Quelle", "replace": "zum Ursprung"}]})
+        case = next(case for case in manage.load_and_validate(self.root, check_assets=False)[0] if case["id"] == imported["id"])
+        self.assertEqual(case["source"]["evidenceNotes"][0]["text"], "Hinweis zum Ursprung.")
+
     def test_schedule_rejects_noncanonical_date(self):
         with self.assertRaisesRegex(manage.ValidationError, "YYYY-MM-DD"):
             manage.schedule(self.root, "20261005", "seed", self.root / "outputs" / "shift.json")

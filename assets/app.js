@@ -234,9 +234,16 @@
     const start=libraryPage*size,shown=cases.slice(start,start+size);
     return '<div class="library-pagination"><p role="status">'+(cases.length?(start+1)+'–'+(start+shown.length)+' / '+cases.length+' '+esc(t(cases.length===1?'caseSingular':'cases')):esc(t('empty')))+'</p>'+(cases.length?'<button class="btn small primary" data-action="practice-selection">🎯 '+esc(t('practiceSelection').replace('{n}',String(Math.min(10,cases.length))))+'</button>':'')+'<div class="actions"><button class="btn small quiet" data-action="page-prev" '+(libraryPage===0?'disabled':'')+'>'+esc(t('previousPage'))+'</button><span class="mono">'+(libraryPage+1)+' / '+pages+'</span><button class="btn small quiet" data-action="page-next" '+(libraryPage===pages-1?'disabled':'')+'>'+esc(t('nextPage'))+'</button></div></div><div class="case-grid" id="case-grid">'+shown.map(caseCard).join('')+'</div>';
   }
+  const updatedBadge=c=>c.update?' <span class="badge routine">↻ '+esc(t('updatedBadge').replace('{date}',c.update.date.slice(0,7)))+'</span>':'';
+  // Reviewed corrections from data/case-updates.json are always disclosed, with their reason and sources.
+  function updateNote(c) {
+    if(!c.update)return '';
+    const refs=c.update.references.map(id=>C.references.find(r=>r.id===id)).filter(Boolean);
+    return '<aside class="update-note"><b>↻ '+esc(t('updatedBadge').replace('{date}',c.update.date))+'</b> '+esc(loc(c.update.reason))+(refs.length?'<br><span>'+esc(t('updatedSources'))+': '+refs.map(r=>'<a href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">'+esc(r.title)+' ↗</a>').join(' · ')+'</span>':'')+'</aside>';
+  }
   function caseOriginBadge(c) {
-    if(!c.source)return '<div class="case-format">'+esc(t('storyCase'))+'</div>';
-    return '<div class="case-format">'+esc(loc(c.topic))+' · '+esc(t('bankCase'))+(c.source.status==='draft'?' <span class="badge urgent">'+esc(t('sourceDraft'))+'</span>':'')+(c.source.evidenceFlag?' <span class="badge urgent">'+esc(t('sourceEvidenceFlag'))+'</span>':'')+'</div>';
+    if(!c.source)return '<div class="case-format">'+esc(t('storyCase'))+updatedBadge(c)+'</div>';
+    return '<div class="case-format">'+esc(loc(c.topic))+' · '+esc(t('bankCase'))+(c.source.status==='draft'?' <span class="badge urgent">'+esc(t('sourceDraft'))+'</span>':'')+(c.source.evidenceFlag?' <span class="badge urgent">'+esc(t('sourceEvidenceFlag'))+'</span>':'')+updatedBadge(c)+'</div>';
   }
   function vitalPanel(c) {
     if(!c.vitals)return '<p class="source-note">'+esc(t('sourceNotRecorded'))+'</p>';
@@ -362,7 +369,7 @@
       }
       body+='</section>';
     }
-    return '<article class="chart"><div class="chart-top"><span>'+esc(loc(a.title))+' / '+esc(t(p.finished?'debrief':'open'))+'</span><span class="mono">'+esc(c.id.toUpperCase())+'</span></div><div class="chart-body"><div class="patient-head"><div class="patient-identity"><div class="patient-cartoon" aria-hidden="true">'+casePortrait(c,p.finished?'relieved':c.acuity==='critical'?'worried':'neutral',100)+'</div><div class="patient-name"><h2>'+esc(patientName(c))+' <span class="muted">'+(c.patient.age===null?'':c.patient.age)+'</span></h2><p>'+esc(loc(c.title))+'</p></div></div>'+bookmark(c.id)+'</div>'+sourceOrigin(c)+body+'</div></article>';
+    return '<article class="chart"><div class="chart-top"><span>'+esc(loc(a.title))+' / '+esc(t(p.finished?'debrief':'open'))+'</span><span class="mono">'+esc(c.id.toUpperCase())+'</span></div><div class="chart-body"><div class="patient-head"><div class="patient-identity"><div class="patient-cartoon" aria-hidden="true">'+casePortrait(c,p.finished?'relieved':c.acuity==='critical'?'worried':'neutral',100)+'</div><div class="patient-name"><h2>'+esc(patientName(c))+' <span class="muted">'+(c.patient.age===null?'':c.patient.age)+'</span></h2><p>'+esc(loc(c.title))+'</p></div></div>'+bookmark(c.id)+'</div>'+sourceOrigin(c)+updateNote(c)+body+'</div></article>';
   }
   function debrief(p,c) {
     const max=c.steps.reduce((n,s)=>n+Math.max(...s.options.map(o=>o.score)),0);

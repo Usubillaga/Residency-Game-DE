@@ -1,0 +1,946 @@
+{
+  "updates": [
+    {
+      "case": "bank-uro-hod-00007",
+      "kind": "editorial",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Autorennennungen entfernt (keine Autoren im Spiel).",
+        "en": "Author mentions removed (no authors in the game).",
+        "es": "Menciones de autores eliminadas (sin autores en el juego)."
+      },
+      "references": [],
+      "changes": [
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "de",
+          "find": "Artikel und EAU knüpfen die primäre RLA an Patientenselektion, chirurgische Qualität und ein spezialisiertes Zentrum, nach EAU idealerweise",
+          "replace": "Die EAU knüpft die primäre RLA an Patientenselektion, chirurgische Qualität und ein spezialisiertes Zentrum, idealerweise"
+        },
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "en",
+          "find": "The article and the EAU tie primary RPLND to patient selection, surgical quality and a specialised centre, per EAU ideally",
+          "replace": "The EAU ties primary RPLND to patient selection, surgical quality and a specialised centre, ideally"
+        },
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "es",
+          "find": "El artículo y la EAU vinculan la RPLND primaria a la selección del paciente, la calidad quirúrgica y un centro especializado, según la EAU idealmente",
+          "replace": "La EAU vincula la RPLND primaria a la selección del paciente, la calidad quirúrgica y un centro especializado, idealmente"
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00021",
+      "kind": "editorial",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Autorennennungen entfernt (keine Autoren im Spiel).",
+        "en": "Author mentions removed (no authors in the game).",
+        "es": "Menciones de autores eliminadas (sin autores en el juego)."
+      },
+      "references": [],
+      "changes": [
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Die Autoren empfehlen im Stadium IIA ohne Markererhöhung eine Wiederholung der Schnittbildgebung nach etwa 8 Wochen",
+          "replace": "Im Stadium IIA ohne Markererhöhung wird eine Wiederholung der Schnittbildgebung nach etwa 8 Wochen empfohlen"
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "The authors recommend repeat cross-sectional imaging after about 8 weeks",
+          "replace": "Repeat cross-sectional imaging after about 8 weeks is recommended"
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "Los autores recomiendan repetir la imagen seccional",
+          "replace": "Se recomienda repetir la imagen seccional"
+        },
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Im Fallbeispiel des Artikels war",
+          "replace": "In einem publizierten Fallbeispiel war"
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "In the article's case, the node",
+          "replace": "In a published case example, the node"
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "En el caso del artículo, el ganglio",
+          "replace": "En un caso publicado, el ganglio"
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00022",
+      "kind": "editorial",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Autorennennungen entfernt (keine Autoren im Spiel).",
+        "en": "Author mentions removed (no authors in the game).",
+        "es": "Menciones de autores eliminadas (sin autores en el juego)."
+      },
+      "references": [],
+      "changes": [
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "im Fallbeispiel erfolgte deshalb ein CT des Rumpfes",
+          "replace": "im Fallbeispiel wurde deshalb ein CT des Rumpfes durchgeführt"
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "the article's case therefore used CT of the trunk",
+          "replace": "in the case example, CT of the trunk was therefore performed"
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "por eso en el caso del artículo se realizó una TC de tronco",
+          "replace": "por eso en el caso de ejemplo se realizó una TC de tronco"
+        },
+        {
+          "path": "steps.0.options.e.feedback",
+          "lang": "de",
+          "find": "Genau dieses Szenario nennen die Autoren als Grund, warum eine lokale Bestrahlung ohne vollständiges Staging scheitert",
+          "replace": "Genau in diesem Szenario scheitert eine lokale Bestrahlung ohne vollständiges Staging"
+        },
+        {
+          "path": "steps.0.options.e.feedback",
+          "lang": "en",
+          "find": "The authors cite exactly this scenario as the reason why local radiotherapy fails without complete staging",
+          "replace": "This is exactly the scenario in which local radiotherapy fails without complete staging"
+        },
+        {
+          "path": "steps.0.options.e.feedback",
+          "lang": "es",
+          "find": "Los autores citan precisamente este escenario como la razón por la que la radioterapia local fracasa sin una estadificación completa",
+          "replace": "Precisamente en este escenario fracasa la radioterapia local sin una estadificación completa"
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00023",
+      "kind": "editorial",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Autorennennungen entfernt (keine Autoren im Spiel).",
+        "en": "Author mentions removed (no authors in the game).",
+        "es": "Menciones de autores eliminadas (sin autores en el juego)."
+      },
+      "references": [],
+      "changes": [
+        {
+          "path": "steps.0.options.a.feedback",
+          "lang": "de",
+          "find": "sehen Artikel und EAU ausdrücklich",
+          "replace": "sieht die EAU ausdrücklich"
+        },
+        {
+          "path": "steps.0.options.a.feedback",
+          "lang": "en",
+          "find": "both the article and the EAU name",
+          "replace": "the EAU names"
+        },
+        {
+          "path": "steps.0.options.a.feedback",
+          "lang": "es",
+          "find": "el artículo y la EAU prevén",
+          "replace": "la EAU prevé"
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "de",
+          "find": "Als Alternative nennt der Artikel vier Zyklen EP",
+          "replace": "Als Alternative gelten vier Zyklen EP"
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "en",
+          "find": "The article names four cycles of EP as the alternative",
+          "replace": "The alternative is four cycles of EP"
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "es",
+          "find": "El artículo propone cuatro ciclos de EP como alternativa",
+          "replace": "La alternativa son cuatro ciclos de EP"
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00024",
+      "kind": "editorial",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Autorennennungen entfernt (keine Autoren im Spiel).",
+        "en": "Author mentions removed (no authors in the game).",
+        "es": "Menciones de autores eliminadas (sin autores en el juego)."
+      },
+      "references": [],
+      "changes": [
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Der Artikel nennt 30 Gy für das Stadium IIA und 36 Gy für IIB bei paraaortaler und ipsilateral pelviner Bestrahlung",
+          "replace": "Bei paraaortaler und ipsilateral pelviner Bestrahlung gelten 30 Gy für das Stadium IIA und 36 Gy für IIB"
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "The article states 30 Gy for stage IIA and 36 Gy for IIB with para-aortic and ipsilateral pelvic radiotherapy",
+          "replace": "With para-aortic and ipsilateral pelvic radiotherapy, the dose is 30 Gy for stage IIA and 36 Gy for IIB"
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "El artículo indica 30 Gy para el estadio IIA y 36 Gy para el IIB con radioterapia paraaórtica y pélvica ipsilateral",
+          "replace": "Con radioterapia paraaórtica y pélvica ipsilateral, la dosis es de 30 Gy para el estadio IIA y de 36 Gy para el IIB"
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00030",
+      "kind": "editorial",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Autorennennungen entfernt (keine Autoren im Spiel).",
+        "en": "Author mentions removed (no authors in the game).",
+        "es": "Menciones de autores eliminadas (sin autores en el juego)."
+      },
+      "references": [],
+      "changes": [
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Der Artikel geht weiter und verzichtet ganz auf Routine-CT (Dieckmann et al. 2025).",
+          "replace": "Manche Nachsorgekonzepte gehen weiter und verzichten ganz auf Routine-CT."
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "The article goes further and omits routine CT altogether (Dieckmann et al. 2025).",
+          "replace": "Some follow-up concepts go further and omit routine CT altogether."
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "El artículo va más allá y prescinde por completo de la TC rutinaria (Dieckmann et al. 2025).",
+          "replace": "Algunos esquemas de seguimiento van más allá y prescinden por completo de la TC rutinaria."
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00032",
+      "kind": "editorial",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Autorennennungen entfernt (keine Autoren im Spiel).",
+        "en": "Author mentions removed (no authors in the game).",
+        "es": "Menciones de autores eliminadas (sin autores en el juego)."
+      },
+      "references": [],
+      "changes": [
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Der Artikel führt Seminome aller Stadien ohne Thoraxbildgebung, stützt den Verzicht aber auf Studien zum Stadium I (Dieckmann et al. 2025). Seine eigene Rezidivtabelle nennt nach",
+          "replace": "Die publizierte Expertentabelle führt Seminome aller Stadien ohne Thoraxbildgebung, stützt den Verzicht aber auf Studien zum Stadium I. Dieselbe Publikation nennt in ihrer Rezidivtabelle nach"
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "The article lists seminoma of all stages without chest imaging but bases the omission on stage I studies (Dieckmann et al. 2025). Its own relapse table reports",
+          "replace": "The published expert table lists seminoma of all stages without chest imaging but bases the omission on stage I studies. The same publication reports in its relapse table"
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "El artículo sitúa el seminoma de todos los estadios sin imagen torácica, pero basa esa omisión en estudios del estadio I (Dieckmann et al. 2025). Su propia tabla de recaídas recoge",
+          "replace": "La tabla de expertos publicada sitúa el seminoma de todos los estadios sin imagen torácica, pero basa esa omisión en estudios del estadio I. La misma publicación recoge en su tabla de recaídas"
+        },
+        {
+          "path": "source.evidenceNotes.0.text",
+          "lang": "de",
+          "find": "Artikel und EAU 2026 weichen ab: Der Artikel sieht",
+          "replace": "Expertentabelle und EAU 2026 weichen ab: Die Expertentabelle sieht"
+        },
+        {
+          "path": "source.evidenceNotes.1.text",
+          "lang": "en",
+          "find": "The article and the EAU 2026 differ: the article foresees",
+          "replace": "The expert table and the EAU 2026 differ: the table foresees"
+        },
+        {
+          "path": "source.evidenceNotes.2.text",
+          "lang": "es",
+          "find": "El artículo y la EAU 2026 difieren: el artículo no prevé",
+          "replace": "La tabla de expertos y la EAU 2026 difieren: la tabla no prevé"
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00033",
+      "kind": "editorial",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Autorennennungen entfernt (keine Autoren im Spiel).",
+        "en": "Author mentions removed (no authors in the game).",
+        "es": "Menciones de autores eliminadas (sin autores en el juego)."
+      },
+      "references": [],
+      "changes": [
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Der Artikel verlangt bei isolierter Markererhöhung zuerst Bildgebung,",
+          "replace": "Bei isolierter Markererhöhung folgt zuerst Bildgebung,"
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "The article requires imaging first for an isolated marker rise,",
+          "replace": "An isolated marker rise calls for imaging first,"
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "El artículo exige primero imagen ante una elevación aislada de marcadores,",
+          "replace": "Ante una elevación aislada de marcadores se realiza primero imagen,"
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00035",
+      "kind": "editorial",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Autorennennungen entfernt (keine Autoren im Spiel).",
+        "en": "Author mentions removed (no authors in the game).",
+        "es": "Menciones de autores eliminadas (sin autores en el juego)."
+      },
+      "references": [],
+      "changes": [
+        {
+          "path": "source.evidenceNotes.0.text",
+          "lang": "de",
+          "find": "Fallserien der Autorengruppe,",
+          "replace": "Fallserien,"
+        },
+        {
+          "path": "source.evidenceNotes.1.text",
+          "lang": "en",
+          "find": "case series by the author group,",
+          "replace": "case series,"
+        },
+        {
+          "path": "source.evidenceNotes.2.text",
+          "lang": "es",
+          "find": "series de casos del grupo de autores,",
+          "replace": "series de casos,"
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00036",
+      "kind": "editorial",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Autorennennungen entfernt (keine Autoren im Spiel).",
+        "en": "Author mentions removed (no authors in the game).",
+        "es": "Menciones de autores eliminadas (sin autores en el juego)."
+      },
+      "references": [],
+      "changes": [
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": " Erstautor Dieckmann hält 5,7 % der Anteile an der miRdetect GmbH (Dieckmann et al. 2025).",
+          "replace": ""
+        },
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": " Die Interessenkonflikterklärung gehört zur Bewertung der Empfehlung (Dieckmann et al. 2025).",
+          "replace": ""
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": " First author Dieckmann holds 5.7% of the shares in miRdetect GmbH (Dieckmann et al. 2025).",
+          "replace": ""
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": " The conflict-of-interest statement belongs in the appraisal of the recommendation (Dieckmann et al. 2025).",
+          "replace": ""
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": " El primer autor, Dieckmann, posee el 5,7 % de las participaciones de miRdetect GmbH (Dieckmann et al. 2025).",
+          "replace": ""
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": " La declaración de conflicto de intereses forma parte de la valoración de la recomendación (Dieckmann et al. 2025).",
+          "replace": ""
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "de",
+          "find": "in den Nachsorgeschemata von Artikel und EAU fester Bestandteil",
+          "replace": "auch in aktuellen Nachsorgeschemata ebenso wie in der EAU-Nachsorge fester Bestandteil"
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "en",
+          "find": "remain a fixed part of the follow-up schedules of both article and EAU",
+          "replace": "remain a fixed part of current follow-up schedules as well as of EAU follow-up"
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "es",
+          "find": "siguen siendo parte fija de los esquemas de seguimiento del artículo y de la EAU",
+          "replace": "siguen siendo parte fija tanto de los esquemas de seguimiento actuales como del seguimiento de la EAU"
+        },
+        {
+          "path": "steps.0.options.d.feedback",
+          "lang": "de",
+          "find": "Die Einsparung von Bildgebung leiten die Autoren aus Modellrechnungen ab und nennen die Implementierung wünschenswert",
+          "replace": "Die Einsparung von Bildgebung ist bisher aus Modellrechnungen abgeleitet, die Implementierung gilt als wünschenswert"
+        },
+        {
+          "path": "steps.0.options.d.feedback",
+          "lang": "en",
+          "find": "The authors derive savings in imaging from model calculations and call implementation desirable",
+          "replace": "Savings in imaging are so far derived from model calculations, and implementation is considered desirable"
+        },
+        {
+          "path": "steps.0.options.d.feedback",
+          "lang": "es",
+          "find": "Los autores deducen el ahorro de imagen de cálculos de modelos y califican de deseable su implantación",
+          "replace": "El ahorro de imagen se deduce hasta ahora de cálculos de modelos y su implantación se considera deseable"
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00037",
+      "kind": "editorial",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Autorennennungen entfernt (keine Autoren im Spiel).",
+        "en": "Author mentions removed (no authors in the game).",
+        "es": "Menciones de autores eliminadas (sin autores en el juego)."
+      },
+      "references": [],
+      "changes": [
+        {
+          "path": "steps.0.options.e.feedback",
+          "lang": "de",
+          "find": "der Artikel empfiehlt dasselbe Raster mit MRT",
+          "replace": "manche Nachsorgekonzepte empfehlen dasselbe Raster mit MRT"
+        },
+        {
+          "path": "steps.0.options.e.feedback",
+          "lang": "en",
+          "find": "the article recommends the same grid with MRI",
+          "replace": "some follow-up concepts recommend the same grid with MRI"
+        },
+        {
+          "path": "steps.0.options.e.feedback",
+          "lang": "es",
+          "find": "el artículo recomienda la misma pauta con RM",
+          "replace": "algunos esquemas de seguimiento recomiendan la misma pauta con RM"
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00038",
+      "kind": "editorial",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Autorennennungen entfernt (keine Autoren im Spiel).",
+        "en": "Author mentions removed (no authors in the game).",
+        "es": "Menciones de autores eliminadas (sin autores en el juego)."
+      },
+      "references": [],
+      "changes": [
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Die Autoren empfehlen Palpation und Sonographie des Gegenhodens bei jeder Nachsorge",
+          "replace": "Manche Nachsorgekonzepte sehen Palpation und Sonographie des Gegenhodens bei jeder Nachsorge vor"
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "The authors recommend palpation and ultrasound of the contralateral testis at every follow-up visit",
+          "replace": "Some follow-up concepts include palpation and ultrasound of the contralateral testis at every follow-up visit"
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "Los autores recomiendan palpación y ecografía del testículo contralateral en cada visita de seguimiento",
+          "replace": "Algunos esquemas de seguimiento prevén palpación y ecografía del testículo contralateral en cada visita de seguimiento"
+        },
+        {
+          "path": "source.evidenceNotes.0.text",
+          "lang": "de",
+          "find": "Der Artikel empfiehlt es bei jeder Nachsorge",
+          "replace": "Manche Nachsorgekonzepte sehen es bei jeder Nachsorge vor"
+        },
+        {
+          "path": "source.evidenceNotes.1.text",
+          "lang": "en",
+          "find": "the article recommends it at every visit",
+          "replace": "some follow-up concepts include it at every visit"
+        },
+        {
+          "path": "source.evidenceNotes.2.text",
+          "lang": "es",
+          "find": "el artículo lo recomienda en cada visita",
+          "replace": "algunos esquemas de seguimiento lo prevén en cada visita"
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00039",
+      "kind": "editorial",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Autorennennungen entfernt (keine Autoren im Spiel).",
+        "en": "Author mentions removed (no authors in the game).",
+        "es": "Menciones de autores eliminadas (sin autores en el juego)."
+      },
+      "references": [],
+      "changes": [
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "de",
+          "find": "der Artikel sieht jährlich",
+          "replace": "manche Nachsorgekonzepte sehen jährlich"
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "en",
+          "find": "the article foresees yearly",
+          "replace": "some follow-up concepts foresee yearly"
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "es",
+          "find": "el artículo prevé una revisión",
+          "replace": "algunos esquemas de seguimiento prevén una revisión"
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00040",
+      "kind": "editorial",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Autorennennungen entfernt (keine Autoren im Spiel).",
+        "en": "Author mentions removed (no authors in the game).",
+        "es": "Menciones de autores eliminadas (sin autores en el juego)."
+      },
+      "references": [],
+      "changes": [
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Knight et al. untersuchten 54 Seren",
+          "replace": "Eine Studie untersuchte 54 Seren"
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "Knight et al. examined 54 sera",
+          "replace": "A study examined 54 sera"
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "Knight et al. analizaron 54 sueros",
+          "replace": "Un estudio analizó 54 sueros"
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00043",
+      "kind": "editorial",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Autorennennungen entfernt (keine Autoren im Spiel).",
+        "en": "Author mentions removed (no authors in the game).",
+        "es": "Menciones de autores eliminadas (sin autores en el juego)."
+      },
+      "references": [],
+      "changes": [
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Yoshimura et al. untersuchten 44 Patienten",
+          "replace": "Eine Studie untersuchte 44 Patienten"
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "Yoshimura et al. studied 44 patients",
+          "replace": "A study examined 44 patients"
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "Yoshimura et al. estudiaron a 44 pacientes",
+          "replace": "Un estudio analizó a 44 pacientes"
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00045",
+      "kind": "editorial",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Autorennennungen entfernt (keine Autoren im Spiel).",
+        "en": "Author mentions removed (no authors in the game).",
+        "es": "Menciones de autores eliminadas (sin autores en el juego)."
+      },
+      "references": [],
+      "changes": [
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Pongratanakul et al. ordneten 50 Fälle",
+          "replace": "Eine Fallserie ordnete 50 Fälle"
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "Pongratanakul et al. grouped 50 cases",
+          "replace": "A case series grouped 50 cases"
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "Pongratanakul et al. agruparon 50 casos",
+          "replace": "Una serie de casos agrupó 50 casos"
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00047",
+      "kind": "editorial",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Autorennennungen entfernt (keine Autoren im Spiel).",
+        "en": "Author mentions removed (no authors in the game).",
+        "es": "Menciones de autores eliminadas (sin autores en el juego)."
+      },
+      "references": [],
+      "changes": [
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Der Artikel beschreibt für resistente Dottersacktumoren FGFR-, CHEK1- und PARP-gerichtete Substanzen, Multikinaseinhibitoren sowie CLDN6- und CXCR4-gerichtete Konjugate, geprüft",
+          "replace": "Für resistente Dottersacktumoren sind FGFR-, CHEK1- und PARP-gerichtete Substanzen, Multikinaseinhibitoren sowie CLDN6- und CXCR4-gerichtete Konjugate beschrieben, geprüft"
+        },
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Zugleich hält er fest, dass bei Keimzelltumoren nur eine kleine refraktäre Subgruppe auf Checkpointinhibitoren anspricht",
+          "replace": "Zugleich spricht bei Keimzelltumoren nur eine kleine refraktäre Subgruppe auf Checkpointinhibitoren an"
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "For resistant yolk-sac tumours the article describes FGFR-, CHEK1- and PARP-directed agents, multikinase inhibitors and CLDN6- and CXCR4-directed conjugates, tested",
+          "replace": "For resistant yolk-sac tumours, FGFR-, CHEK1- and PARP-directed agents, multikinase inhibitors and CLDN6- and CXCR4-directed conjugates have been described, tested"
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "It also states that only a small refractory subgroup",
+          "replace": "At the same time, only a small refractory subgroup"
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "Para los tumores del saco vitelino resistentes, el artículo describe fármacos dirigidos",
+          "replace": "Para los tumores del saco vitelino resistentes se han descrito fármacos dirigidos"
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "También constata que solo un pequeño subgrupo refractario",
+          "replace": "Al mismo tiempo, solo un pequeño subgrupo refractario"
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00050",
+      "kind": "editorial",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Autorennennungen entfernt (keine Autoren im Spiel).",
+        "en": "Author mentions removed (no authors in the game).",
+        "es": "Menciones de autores eliminadas (sin autores en el juego)."
+      },
+      "references": [],
+      "changes": [
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Der Artikel nennt als Auswahlkriterien",
+          "replace": "Publizierte Auswahlkriterien sind"
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "The article names as selection criteria",
+          "replace": "Published selection criteria are"
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "El artículo cita como criterios de selección",
+          "replace": "Los criterios de selección publicados son"
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00051",
+      "kind": "editorial",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Autorennennungen entfernt (keine Autoren im Spiel).",
+        "en": "Author mentions removed (no authors in the game).",
+        "es": "Menciones de autores eliminadas (sin autores en el juego)."
+      },
+      "references": [],
+      "changes": [
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Der Artikel benennt großvolumige oder multifokale Befunde und abdominelle Voreingriffe ausdrücklich als Domäne der offenen Chirurgie",
+          "replace": "Großvolumige oder multifokale Befunde und abdominelle Voreingriffe gelten ausdrücklich als Domäne der offenen Chirurgie"
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "The article names high-volume or multifocal findings and previous abdominal surgery explicitly as the domain of open surgery",
+          "replace": "High-volume or multifocal findings and previous abdominal surgery are explicitly regarded as the domain of open surgery"
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "El artículo señala expresamente los hallazgos voluminosos o multifocales y la cirugía abdominal previa como dominio de la cirugía abierta",
+          "replace": "Los hallazgos voluminosos o multifocales y la cirugía abdominal previa se consideran expresamente dominio de la cirugía abierta"
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-ope-00023",
+      "kind": "editorial",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Autorennennungen entfernt (keine Autoren im Spiel).",
+        "en": "Author mentions removed (no authors in the game).",
+        "es": "Menciones de autores eliminadas (sin autores en el juego)."
+      },
+      "references": [],
+      "changes": [
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": " Der Artikel nennt die Ergebnisse dieser Studie exzellent, ohne zu benennen, dass sie gegen das chirurgische Vorgehen ausfielen.",
+          "replace": ""
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": " The article calls the results of this trial excellent without stating that they came out against the surgical approach.",
+          "replace": ""
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": " El artículo califica de excelentes los resultados de ese ensayo sin señalar que fueron contrarios a la cirugía.",
+          "replace": ""
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-ope-00025",
+      "kind": "editorial",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Autorennennungen entfernt (keine Autoren im Spiel).",
+        "en": "Author mentions removed (no authors in the game).",
+        "es": "Menciones de autores eliminadas (sin autores en el juego)."
+      },
+      "references": [],
+      "changes": [
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Als Voraussetzung nennt der Artikel einen PSA-Nadir unter 0,2 ng/ml oder einen Abfall über 80 %",
+          "replace": "Als Voraussetzung gelten ein PSA-Nadir unter 0,2 ng/ml oder ein Abfall über 80 %"
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "As prerequisites the article names a PSA nadir",
+          "replace": "Prerequisites are a PSA nadir"
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "Como requisitos, el artículo cita un nadir",
+          "replace": "Se consideran requisitos un nadir"
+        },
+        {
+          "path": "steps.0.options.e.feedback",
+          "lang": "de",
+          "find": "Der Artikel selbst bezeichnet die Operation als sehr individuelle Therapieentscheidung",
+          "replace": "Die Operation gilt als sehr individuelle Therapieentscheidung"
+        },
+        {
+          "path": "steps.0.options.e.feedback",
+          "lang": "en",
+          "find": "The article itself calls the operation a highly individual treatment decision",
+          "replace": "The operation is regarded as a highly individual treatment decision"
+        },
+        {
+          "path": "steps.0.options.e.feedback",
+          "lang": "es",
+          "find": "El propio artículo califica la cirugía de decisión terapéutica muy individual",
+          "replace": "La cirugía se considera una decisión terapéutica muy individual"
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-ope-00026",
+      "kind": "editorial",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Autorennennungen entfernt (keine Autoren im Spiel).",
+        "en": "Author mentions removed (no authors in the game).",
+        "es": "Menciones de autores eliminadas (sin autores en el juego)."
+      },
+      "references": [],
+      "changes": [
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "In der Erfahrung der Autoren benötigen 80 % der Patienten",
+          "replace": "In einer Fallserie benötigten 80 % der Patienten"
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "In the authors' experience, 80% of patients need",
+          "replace": "In one case series, 80% of patients needed"
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "En la experiencia de los autores, el 80 % de los pacientes necesita",
+          "replace": "En una serie de casos, el 80 % de los pacientes necesitó"
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-ope-00028",
+      "kind": "editorial",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Autorennennungen entfernt (keine Autoren im Spiel).",
+        "en": "Author mentions removed (no authors in the game).",
+        "es": "Menciones de autores eliminadas (sin autores en el juego)."
+      },
+      "references": [],
+      "changes": [
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "nach Einschätzung des Artikels",
+          "replace": "nach Expertenmeinung"
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "are, in the article's view, better treated",
+          "replace": "are, in expert opinion, better treated"
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "Las oligometástasis esqueléticas, según el artículo, se tratan",
+          "replace": "Las oligometástasis esqueléticas, según la opinión de expertos, se tratan"
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-ope-00030",
+      "kind": "editorial",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Autorennennungen entfernt (keine Autoren im Spiel).",
+        "en": "Author mentions removed (no authors in the game).",
+        "es": "Menciones de autores eliminadas (sin autores en el juego)."
+      },
+      "references": [],
+      "changes": [
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Der Artikel verweist darauf, dass die 30-Tage-Mortalität außerhalb spezialisierter Zentren signifikant steigt und dort häufiger inkomplette Resektionen und Rezidive auftreten",
+          "replace": "Außerhalb spezialisierter Zentren steigt die 30-Tage-Mortalität signifikant, und es treten häufiger inkomplette Resektionen und Rezidive auf"
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "The article notes that 30-day mortality rises significantly outside specialised centres, where incomplete",
+          "replace": "Outside specialised centres, 30-day mortality rises significantly, and incomplete"
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "El artículo señala que la mortalidad a 30 días aumenta de forma significativa fuera de los centros especializados, donde también",
+          "replace": "Fuera de los centros especializados, la mortalidad a 30 días aumenta de forma significativa, y también"
+        },
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Der Artikel nennt eine Leitliniendiskordanz von knapp 40 % als eigentliches Versorgungsproblem",
+          "replace": "Als eigentliches Versorgungsproblem gilt eine Leitliniendiskordanz von knapp 40 %"
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "The article names a guideline discordance of nearly 40% as the real problem of care",
+          "replace": "A guideline discordance of nearly 40% is regarded as the real problem of care"
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "El artículo señala una discordancia con las guías de casi el 40 % como verdadero problema asistencial",
+          "replace": "Se considera verdadero problema asistencial una discordancia con las guías de casi el 40 %"
+        }
+      ]
+    }
+  ]
+}

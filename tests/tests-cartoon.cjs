@@ -161,7 +161,8 @@ test('the hero is a named localized SVG image and every case receives a stable o
     assert.match(hero, /<title>[^<]+<\/title>/);
     assert.doesNotMatch(hero, /undefined|NaN/);
   }
-  assert.equal(catalog.cases.length, 297);
+  assert.equal(catalog.cases.filter(c => c.source).length, 267, 'Every imported question is in the catalog');
+  assert.ok(catalog.cases.length >= 297, 'The 30 story cases and any newer authored cases are in the catalog');
   const ids = [];
   const designs = [];
   for (const c of catalog.cases) {
@@ -744,4 +745,16 @@ test('keyboard focus never hides what a structure shows', () => {
     assert.ok(css.slice(rule, css.indexOf('}', rule)).includes(colour), 'and keeps its verdict colour inside the ring');
   }
   assert.ok(css.includes('.schema.focus [data-part]:not(.on):not(.right):not(.wrong):not(:focus-visible){opacity:.32}'), 'A focused structure is not dimmed while another one is selected');
+});
+
+test('the game names no authors: no author citations, author or article mentions, or citation strings', () => {
+  const shipped = JSON.stringify(catalog.cases);
+  assert.doesNotMatch(shipped, /\bet al\b/, 'No "et al." anywhere in the cases');
+  assert.doesNotMatch(shipped, /"citation":/, 'Source lists carry titles, not author citations');
+  const mention = /\b(?:Erst|Letzt)?[Aa]utor(?:en|in|innen|es|as?)?(?:gruppe)?\b|\b[Aa]uthors?\b|\bArtikels?\b|\b[Aa]rticles?\b|\b[Aa]rtículos?\b|\b[A-ZÄÖÜ][a-zäöüß-]+ (?:&|and|und|y) [A-ZÄÖÜ][a-zäöüß-]+,? (?:19|20)\d{2}\b/;
+  for (const c of catalog.cases) {
+    const fields = [c.title, c.presenting, c.takeaway, c.topic, ...c.steps.flatMap(s => [s.prompt, ...s.options.flatMap(o => [o.text, o.feedback])])].filter(Boolean);
+    for (const field of fields) for (const text of Object.values(field)) assert.doesNotMatch(String(text), mention, c.id + ' names an author or an article');
+    for (const text of Object.values(c.objectives || {}).flat()) assert.doesNotMatch(String(text), mention, c.id + ' objectives name an author');
+  }
 });
