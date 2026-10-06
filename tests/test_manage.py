@@ -442,6 +442,13 @@ class AutomationTests(unittest.TestCase):
         with output.open(encoding="utf-8-sig", newline="") as stream:
             rows = list(csv.DictReader(stream))
         self.assertEqual({row["attempt"] for row in rows}, {"1", "2"})
+        game_file = {"format": "night-shift-academy-save", "version": 3, "name": "Dr. Test", "history": [record], "session": None, "stats": {}, "badges": []}
+        manage.write_json(source, game_file)
+        self.assertEqual(manage.analyse(source, output, self.root), len(case["steps"]), "The game file from the Save button is analysed too")
+        for wrong in ({**game_file, "format": "other"}, {**game_file, "version": 4}, {"version": 3, "history": [record]}):
+            manage.write_json(source, wrong)
+            with self.assertRaisesRegex(manage.ValidationError, "game file \\(version 3\\) or a logbook export \\(version 2\\)"):
+                manage.analyse(source, output, self.root)
         record["answers"][0]["score"] = 9
         manage.write_json(source, {"version": 2, "history": [record]})
         with self.assertRaisesRegex(manage.ValidationError, "score/minutes do not match"):

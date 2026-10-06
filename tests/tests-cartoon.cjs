@@ -758,3 +758,101 @@ test('the game names no authors: no author citations, author or article mentions
     for (const text of Object.values(c.objectives || {}).flat()) assert.doesNotMatch(String(text), mention, c.id + ' objectives name an author');
   }
 });
+
+// The real save-file helpers from app.js, with the constants they use taken from the same source.
+function saveHarness(state) {
+  const source = read('app.js');
+  const constant = name => { const match = source.match(new RegExp('const ' + name + '=[^\\n]*;')); assert.ok(match, name + ' is declared in app.js'); return match[0]; };
+  const start = source.indexOf('  function validRecord(r)');
+  const end = source.indexOf('  // Career XP counts', start);
+  assert.ok(start >= 0 && end > start, 'The real save section must be present');
+  const context = vm.createContext({ C: catalog, E, state, getCase: id => catalog.cases.find(c => c.id === id) });
+  vm.runInContext([constant('SAVE_FORMAT'), constant('BADGE_ICONS'), constant('STAT_KEYS'), constant('DUTIES'), constant('count')].join('\n') + '\n' + source.slice(start, end) +
+    '\nglobalThis.helpers = { cleanSave, saveFile, readSaveFile, mergeSave };', context, { filename: 'app-save-helpers.js' });
+  return context.helpers;
+}
+function playedState() {
+  const done = completedSession('save-roundtrip');
+  const history = done.patients.map(p => E.record(done, catalog, p.id));
+  const open = E.create(catalog, E.schedule(catalog, 'save-open'), 'shift', 'save-open');
+  const first = open.patients[0], c = catalog.cases.find(c => c.id === first.id);
+  E.answer(open, catalog, c.id, c.steps[0].best); E.next(open, catalog, c.id);
+  Object.assign(open, { duty: 'night', coffees: 2, streak: 1, bestStreak: 1, jokers: 0, streakAt: null, struck: {}, counted: false, bossCounted: false });
+  return { lang: 'de', name: 'Dr. Test', avatar: 2, sound: false, history, bookmarks: [history[0].caseId], session: open,
+    stats: { shifts: 3, perfectShifts: 1, bossPerfect: 0, maxCoffees: 4, bestStreak: 6, jokers: 2, rank: 2, atlasPerfect: 1 }, badges: ['firstCase', 'streak5'], lastDuty: 'board' };
+}
+const emptyState = () => ({ lang: 'en', name: '', avatar: 0, sound: false, history: [], bookmarks: [], session: null,
+  stats: { shifts: 0, perfectShifts: 0, bossPerfect: 0, maxCoffees: 0, bestStreak: 0, jokers: 0, rank: 0, atlasPerfect: 0 }, badges: [], lastDuty: 'night' });
+
+test('a downloaded game file loads again on a fresh device with logbook, rank counters, stickers and the open shift', () => {
+  const played = playedState();
+  const file = JSON.parse(JSON.stringify(saveHarness(played).saveFile()));
+  assert.equal(file.format, 'night-shift-academy-save');
+  assert.equal(file.version, 3);
+  const fresh = emptyState(), api = saveHarness(fresh);
+  const found = api.readSaveFile(file);
+  assert.ok(found && found.full && found.named);
+  assert.equal(found.skipped, 0);
+  const merged = clone(api.mergeSave(fresh, found));
+  assert.deepEqual(merged.history, clone(played.history), 'Every logbook entry comes back unchanged');
+  assert.deepEqual(merged.session, clone(played.session), 'The open shift continues where it stopped');
+  assert.deepEqual(merged.stats, played.stats);
+  assert.deepEqual(merged.badges, played.badges);
+  assert.deepEqual(merged.bookmarks, played.bookmarks);
+  assert.deepEqual([merged.name, merged.avatar, merged.lastDuty], ['Dr. Test', 2, 'board']);
+  const again = clone(api.mergeSave(merged, found));
+  assert.equal(again.history.length, played.history.length, 'Loading the same file twice does not count anything twice');
+  assert.deepEqual(again.stats, played.stats);
+});
+
+test('loading keeps the progress already on the device and accepts old logbook-only exports', () => {
+  const played = playedState(), device = playedState();
+  device.history = device.history.slice(0, 2).map(r => ({ ...r, completedAt: '2026-01-01T08:00:00.000Z' }));
+  device.session = null;
+  device.stats.shifts = 9; device.badges = ['coffee5']; device.bookmarks = [played.history[1].caseId];
+  device.name = 'Kept'; device.avatar = 1;
+  const api = saveHarness(device);
+  const logbook = { version: 2, exportedAt: '2026-05-01T10:00:00.000Z', history: clone(played.history) };
+  const found = api.readSaveFile(logbook);
+  assert.ok(found && !found.full && !found.named, 'Version-2 logbooks still load');
+  const merged = clone(api.mergeSave(device, found));
+  assert.equal(merged.history.length, 2 + played.history.length, 'Both logbooks are combined');
+  assert.ok(merged.history.every((r, i, all) => i === 0 || Date.parse(all[i - 1].completedAt) <= Date.parse(r.completedAt)), 'in time order');
+  assert.equal(merged.session, null, 'A logbook without a shift leaves the device without one');
+  assert.equal(merged.stats.shifts, 9, 'Counters keep the higher value');
+  assert.deepEqual([merged.name, merged.avatar, merged.lastDuty], ['Kept', 1, device.lastDuty], 'A logbook-only file does not rename the player');
+  const withShift = clone(api.mergeSave(device, api.readSaveFile(JSON.parse(JSON.stringify(saveHarness(played).saveFile())))));
+  assert.deepEqual(withShift.session, clone(played.session), 'A shift in the file replaces the open shift');
+  assert.deepEqual(withShift.badges.sort(), ['coffee5', 'firstCase', 'streak5']);
+  assert.deepEqual(withShift.bookmarks.sort(), [played.history[0].caseId, played.history[1].caseId].sort());
+});
+
+test('a game file is untrusted: wrong formats, changed scores, unknown cases and smuggled keys are refused', () => {
+  const played = playedState(), api = saveHarness(emptyState());
+  const file = () => JSON.parse(JSON.stringify(saveHarness(played).saveFile()));
+  for (const bad of [null, [], 'text', 42, {}, { version: 2 }, { version: 3, history: [] }, { ...file(), format: 'other-game' }, { ...file(), version: 4 },
+    { format: 'night-shift-academy-save', version: 2, history: file().history }, { ...file(), history: [], session: null }]) {
+    assert.equal(api.readSaveFile(bad), null, 'Refused: ' + JSON.stringify(bad).slice(0, 60));
+  }
+  const tampered = file();
+  tampered.history[0].score += 10;
+  tampered.history[1].caseId = 'no-such-case';
+  tampered.history[2].completedAt = 12345;
+  tampered.history[3].evil = '<img src=x onerror=alert(1)>';
+  tampered.history[3].answers[0].evil = 'x';
+  tampered.badges = ['toString', '__proto__', 'constructor', 'firstCase', 'firstCase'];
+  tampered.bookmarks = ['no-such-case', { id: 1 }, played.history[0].caseId];
+  tampered.session.patients[0].score += 10;
+  tampered.name = 'N'.repeat(500); tampered.avatar = 99; tampered.lastDuty = 'party';
+  tampered.stats = { shifts: -3, jokers: 'many', rank: 1.5, bestStreak: 4 };
+  const found = api.readSaveFile(tampered);
+  assert.equal(found.skipped, 3, 'Changed score, unknown case and a non-text time are skipped');
+  assert.equal(found.save.history.length, played.history.length - 3);
+  assert.ok(found.save.history.every(r => !('evil' in r) && r.answers.every(a => !('evil' in a))), 'Only known record fields are kept');
+  assert.deepEqual(clone(found.save.badges), ['firstCase'], 'Inherited object keys are not stickers');
+  assert.deepEqual(clone(found.save.bookmarks), [played.history[0].caseId]);
+  assert.equal(found.save.session, null, 'A shift whose points were changed is dropped');
+  assert.equal(found.save.name.length, 32);
+  assert.deepEqual([found.save.avatar, found.save.lastDuty], [0, 'night']);
+  assert.deepEqual(clone(found.save.stats), { shifts: 0, perfectShifts: 0, bossPerfect: 0, maxCoffees: 0, bestStreak: 4, jokers: 0, rank: 0, atlasPerfect: 0 });
+});

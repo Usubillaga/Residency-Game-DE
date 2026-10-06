@@ -5,6 +5,8 @@
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   if (!C || !E) { root.innerHTML='<main class="container page-head"><h1>Night Shift Academy</h1><p>'+esc(strings.en.dataError)+'</p></main>'; return; }
   const STORAGE='night-shift-academy-v2';
+  // A downloaded game file can be loaded again to carry on, on this or another device.
+  const SAVE_FORMAT='night-shift-academy-save',SAVE_LIMIT=5000000;
   const A=window.NSAArt;
   const comedy=()=>window.NSABanter[state.lang];
   const getCase = id=>C.cases.find(c=>c.id===id);
@@ -20,21 +22,10 @@
   let storageFailed=false, state={lang:'en',name:'',avatar:0,sound:false,history:[],bookmarks:[],session:null,stats:cleanStats(null),badges:[],lastDuty:'night'};
   try {
     const s=JSON.parse(localStorage.getItem(STORAGE)||'null');
-    if (s && typeof s==='object') {
-      state.lang=['en','de','es'].includes(s.lang)?s.lang:'en';
-      state.name=typeof s.name==='string'?s.name.slice(0,32):'';
-      state.avatar=Number.isInteger(s.avatar)&&s.avatar>=0&&s.avatar<3?s.avatar:0;
-      state.sound=s.sound===true;
-      state.bookmarks=Array.isArray(s.bookmarks)?[...new Set(s.bookmarks.filter(id=>C.cases.some(c=>c.id===id)))]:[];
-      state.history=Array.isArray(s.history)?s.history.filter(validRecord).slice(-1000):[];
-      state.session=E.validSession(s.session,C)?cleanSessionExtras(s.session):null;
-      state.stats=cleanStats(s.stats);
-      state.badges=Array.isArray(s.badges)?[...new Set(s.badges.filter(id=>id in BADGE_ICONS))]:[];
-      state.lastDuty=DUTIES.includes(s.lastDuty)?s.lastDuty:'night';
-    }
+    if (s && typeof s==='object' && !Array.isArray(s)) Object.assign(state,cleanSave(s));
   } catch (_) { /* In-memory play stays available when browser storage is blocked. */ }
   let view=['intro','library','atlas','progress','sources','play','report'].includes(location.hash.slice(1))?location.hash.slice(1):'intro';
-  let areaFilter='all',topicFilter='all',dutyFilter='all',pendingDuty='night',libraryPage=0,query='',savedOnly=false,pendingIds=null,customSchedule=null,dialogSequence=0;
+  let areaFilter='all',topicFilter='all',dutyFilter='all',pendingDuty='night',libraryPage=0,query='',savedOnly=false,pendingIds=null,customSchedule=null,dialogSequence=0,pendingSave=null;
   const t = key => {const value=typeof comedy()[key]==='string'?comedy()[key]:(strings[state.lang][key] || strings.en[key] || key);return value.replaceAll('{cases}',String(C.cases.length)).replaceAll('{areas}',String(C.areas.length));};
   const loc = value => value[state.lang];
   const pct = r=>Math.round(r.score/r.maxScore*100);
@@ -51,7 +42,7 @@
   function validRecord(r) {
     try {
       const c=getCase(r.caseId);
-      if (!c || r.area!==c.area || !Array.isArray(r.answers) || r.answers.length!==c.steps.length || !Number.isFinite(Date.parse(r.completedAt))) return false;
+      if (!c || r.area!==c.area || !Array.isArray(r.answers) || r.answers.length!==c.steps.length || typeof r.completedAt!=='string' || !Number.isFinite(Date.parse(r.completedAt))) return false;
       let score=0,minutes=0,errors=0;
       for (let i=0;i<c.steps.length;i++) {
         const a=r.answers[i],s=c.steps[i],o=s.options.find(o=>o.id===a.optionId);
@@ -74,14 +65,63 @@
     s.duty=DUTIES.includes(s.duty)?s.duty:'mixed';
     return s;
   }
+  // Saved games are untrusted input, whether they come from this browser or from a file: only what passes the checks is kept.
+  // Function declarations, not constants: the saved game is restored at start-up, before later constants exist.
+  function cleanRecord(r) {
+    return {caseId:r.caseId,area:r.area,score:r.score,maxScore:r.maxScore,elapsed:r.elapsed,criticalErrors:r.criticalErrors,completedAt:r.completedAt,
+      answers:r.answers.map(a=>({stepId:a.stepId,optionId:a.optionId,score:a.score,minutes:a.minutes}))};
+  }
+  function cleanSave(s) {
+    return {
+      lang:['en','de','es'].includes(s.lang)?s.lang:'en',
+      name:typeof s.name==='string'?s.name.slice(0,32):'',
+      avatar:Number.isInteger(s.avatar)&&s.avatar>=0&&s.avatar<3?s.avatar:0,
+      sound:s.sound===true,
+      bookmarks:Array.isArray(s.bookmarks)?[...new Set(s.bookmarks.filter(id=>typeof id==='string'&&C.cases.some(c=>c.id===id)))]:[],
+      history:Array.isArray(s.history)?s.history.filter(validRecord).map(cleanRecord).slice(-1000):[],
+      session:E.validSession(s.session,C)?cleanSessionExtras(s.session):null,
+      stats:cleanStats(s.stats),
+      badges:Array.isArray(s.badges)?[...new Set(s.badges.filter(id=>typeof id==='string'&&Object.prototype.hasOwnProperty.call(BADGE_ICONS,id)))]:[],
+      lastDuty:DUTIES.includes(s.lastDuty)?s.lastDuty:'night'
+    };
+  }
+  // The game file holds everything needed to carry on; the interface language and sound stay as they are on the device.
+  function saveFile() {
+    return {format:SAVE_FORMAT,version:3,exportedAt:new Date().toISOString(),name:state.name,avatar:state.avatar,lastDuty:state.lastDuty,
+      history:state.history,stats:state.stats,badges:state.badges,bookmarks:state.bookmarks,session:state.session};
+  }
+  // Reads a downloaded game file. Logbooks exported before version 3 held the history only and still load.
+  function readSaveFile(data) {
+    if (!data || typeof data!=='object' || Array.isArray(data)) return null;
+    const full=data.format===SAVE_FORMAT&&data.version===3,logbook=!('format' in data)&&data.version===2&&Array.isArray(data.history);
+    if (!full && !logbook) return null;
+    const save=cleanSave(full?data:{history:data.history}),offered=Array.isArray(data.history)?data.history.length:0;
+    if (!save.history.length && !save.session) return null;
+    return {save,full,named:full&&save.name.trim()!=='',skipped:offered-(Array.isArray(data.history)?data.history.filter(validRecord).length:0),
+      exportedAt:typeof data.exportedAt==='string'&&Number.isFinite(Date.parse(data.exportedAt))?data.exportedAt:null};
+  }
+  // Loading never loses progress: both logbooks are combined (the same record counts once), counters keep the higher value,
+  // stickers and bookmarks are united, and an open shift in the file replaces the open shift on this device.
+  function mergeSave(current,found) {
+    const incoming=found.save,seen=new Set(),history=[];
+    const records=[...current.history,...incoming.history].map((r,i)=>[r,i]).sort((a,b)=>Date.parse(a[0].completedAt)-Date.parse(b[0].completedAt)||a[1]-b[1]).map(([r])=>r);
+    for (const r of records) {
+      const key=r.caseId+'|'+r.completedAt+'|'+r.answers.map(a=>a.stepId+':'+a.optionId).join(',');
+      if (!seen.has(key)) { seen.add(key); history.push(r); }
+    }
+    const stats={};for (const key of STAT_KEYS) stats[key]=Math.max(count(current.stats[key]),count(incoming.stats[key]));
+    return {history:history.slice(-1000),stats,badges:[...new Set([...current.badges,...incoming.badges])],bookmarks:[...new Set([...current.bookmarks,...incoming.bookmarks])],
+      session:incoming.session||current.session,name:found.named?incoming.name:current.name,avatar:found.named?incoming.avatar:current.avatar,
+      lastDuty:found.full?incoming.lastDuty:current.lastDuty};
+  }
   // Career XP counts each case once, at its best result: replaying improves XP, farming does not.
   const MAX_XP=C.cases.reduce((n,c)=>n+caseMaximum(c),0);
   const RANK_XP=[0,80,250,550,1000,1600,2300,3000,MAX_XP];
-  function bestScores() {
-    const best=new Map();for(const r of state.history)best.set(r.caseId,Math.max(best.has(r.caseId)?best.get(r.caseId):-1,r.score));
+  function bestScores(history=state.history) {
+    const best=new Map();for(const r of history)best.set(r.caseId,Math.max(best.has(r.caseId)?best.get(r.caseId):-1,r.score));
     return best;
   }
-  function xp() { let n=0;for(const v of bestScores().values())n+=v;return n; }
+  function xp(history=state.history) { let n=0;for(const v of bestScores(history).values())n+=v;return n; }
   function rankIndex(points=xp()) { let rank=0;RANK_XP.forEach((need,i)=>{if(points>=need)rank=i;});return rank; }
   function rankName() { return comedy().careerRanks[rankIndex()]; }
   function earnedBadges() {
@@ -387,7 +427,7 @@
     return '<div class="metric-grid">'+[[items.length,'attempts'],[max?Math.round(sum/max*100)+'%':'—','average'],[mastered,'mastered'],[items.reduce((n,r)=>n+r.criticalErrors,0),'safetyConcerns']].map(([v,k])=>'<div class="metric-card"><span>'+esc(t(k))+'</span><strong>'+v+'</strong></div>').join('')+'</div>';
   }
   function progress() {
-    return '<div class="page-head"><p class="eyebrow">03 / '+esc(t('progress'))+'</p><h1>'+esc(t('progressTitle'))+'</h1><p>'+esc(t('progressSub'))+'</p></div>'+careerPanel()+metrics(state.history)+'<div class="actions" style="margin-bottom:25px"><button class="btn primary" data-action="revenge">🔁 '+esc(t('revenge'))+' ('+missedCases().length+')</button><button class="btn quiet" data-action="export" '+(!state.history.length?'disabled':'')+'>'+esc(t('export'))+' ↓</button><button class="btn quiet danger" data-action="reset-dialog">'+esc(t('reset'))+'</button>'+(state.session?'<button class="btn" data-action="resume">'+esc(t('resume'))+' →</button>':'')+'</div><div class="progress-grid"><section class="progress-panel"><h2>'+esc(t('byDuty'))+'</h2>'+DUTIES.map(d=>({id:d,title:dutyName(d)})).map(a=>{const h=state.history.filter(r=>dutyOf(getCase(r.caseId))===a.id);const average=h.length?Math.round(h.reduce((n,r)=>n+pct(r),0)/h.length):0;return '<div class="bar-row"><div class="bar-label"><span>'+esc(a.title)+'</span><span>'+h.length+' · '+(h.length?average+'%':'—')+'</span></div><div class="bar-track" role="meter" aria-label="'+esc(a.title)+'" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+average+'"><div class="bar-fill" style="width:'+average+'%"></div></div></div>';}).join('')+'</section><section class="progress-panel"><h2>'+esc(t('recent'))+'</h2>'+(state.history.length?state.history.slice(-8).reverse().map(r=>historyRow(r)).join(''):'<p class="muted" style="font-size:.8rem">'+esc(t('noHistory'))+'</p>')+'</section></div>'+topicPanel()+stickerAlbum()+'<div class="section-head"><h2>'+esc(t('bookmarks'))+'</h2></div><div class="case-grid">'+(state.bookmarks.length?state.bookmarks.map(id=>caseCard(getCase(id))).join(''):'<p class="empty">'+esc(t('noBookmarks'))+'</p>')+'</div>';
+    return '<div class="page-head"><p class="eyebrow">03 / '+esc(t('progress'))+'</p><h1>'+esc(t('progressTitle'))+'</h1><p>'+esc(t('progressSub'))+'</p></div>'+careerPanel()+metrics(state.history)+'<div class="actions" style="margin-bottom:25px"><button class="btn primary" data-action="revenge">🔁 '+esc(t('revenge'))+' ('+missedCases().length+')</button><button class="btn quiet" data-action="export" '+(!state.history.length&&!state.session?'disabled':'')+'>'+esc(t('export'))+' ↓</button><button class="btn quiet" data-action="import">'+esc(t('importSave'))+' ↑</button><input type="file" id="save-file" accept=".json,application/json" hidden><button class="btn quiet danger" data-action="reset-dialog">'+esc(t('reset'))+'</button>'+(state.session?'<button class="btn" data-action="resume">'+esc(t('resume'))+' →</button>':'')+'</div><p class="small-note save-note">'+esc(t('saveHelp'))+'</p><div class="progress-grid"><section class="progress-panel"><h2>'+esc(t('byDuty'))+'</h2>'+DUTIES.map(d=>({id:d,title:dutyName(d)})).map(a=>{const h=state.history.filter(r=>dutyOf(getCase(r.caseId))===a.id);const average=h.length?Math.round(h.reduce((n,r)=>n+pct(r),0)/h.length):0;return '<div class="bar-row"><div class="bar-label"><span>'+esc(a.title)+'</span><span>'+h.length+' · '+(h.length?average+'%':'—')+'</span></div><div class="bar-track" role="meter" aria-label="'+esc(a.title)+'" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+average+'"><div class="bar-fill" style="width:'+average+'%"></div></div></div>';}).join('')+'</section><section class="progress-panel"><h2>'+esc(t('recent'))+'</h2>'+(state.history.length?state.history.slice(-8).reverse().map(r=>historyRow(r)).join(''):'<p class="muted" style="font-size:.8rem">'+esc(t('noHistory'))+'</p>')+'</section></div>'+topicPanel()+stickerAlbum()+'<div class="section-head"><h2>'+esc(t('bookmarks'))+'</h2></div><div class="case-grid">'+(state.bookmarks.length?state.bookmarks.map(id=>caseCard(getCase(id))).join(''):'<p class="empty">'+esc(t('noBookmarks'))+'</p>')+'</div>';
   }
   function careerPanel() {
     const points=xp(),rank=rankIndex(points),ranks=comedy().careerRanks,next=RANK_XP[rank+1];
@@ -449,8 +489,29 @@
     if(p){s.selected=p.id;persist();navigate('play');}else navigate('report');
   }
   function exportHistory() {
-    const blob=new Blob([JSON.stringify({version:2,exportedAt:new Date().toISOString(),history:state.history},null,2)],{type:'application/json'});
+    const blob=new Blob([JSON.stringify(saveFile(),null,2)],{type:'application/json'});
     const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='night-shift-logbook-'+new Date().toLocaleDateString('sv-SE')+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+  }
+  // Reads a chosen game file and asks before anything changes; nothing is stored until the player confirms.
+  async function offerSave(file) {
+    let found=null;
+    try { if (file.size<=SAVE_LIMIT) found=readSaveFile(JSON.parse(await file.text())); } catch (_) { found=null; }
+    if (!found) { pendingSave=null; toast('⚠️ '+t('saveInvalid')); return; }
+    pendingSave=found;
+    const save=found.save,cases=new Set(save.history.map(r=>r.caseId)).size,s=save.session;
+    const date=found.exportedAt?new Date(found.exportedAt).toLocaleString(state.lang):'—';
+    const lines=[(found.named?'<b>'+esc(save.name)+'</b> · ':'')+esc(t('loadSaveFrom').replace('{date}',date)),
+      esc(t('loadSaveCases').replace('{records}',save.history.length).replace('{distinct}',cases)),
+      esc(t('loadSaveRank').replace('{rank}',comedy().careerRanks[rankIndex(xp(save.history))]).replace('{stickers}',new Set([...save.badges]).size)),
+      s?esc(t('loadSaveShift').replace('{done}',s.patients.filter(p=>p.finished).length).replace('{total}',s.patients.length)):''].filter(Boolean);
+    openDialog('<h2>'+esc(t('loadSaveTitle'))+'</h2><ul class="save-summary">'+lines.map(line=>'<li>'+line+'</li>').join('')+'</ul><p>'+esc(t('loadSaveMerge'))+'</p>'+
+      (s&&state.session?'<p class="warning-note">'+esc(t('loadSaveReplaces'))+'</p>':'')+(found.skipped>0?'<p class="small-note">'+esc(t('loadSaveSkipped').replace('{n}',found.skipped))+'</p>':'')+
+      '<div class="actions"><button class="btn primary" data-action="load-save">'+esc(t('loadSaveConfirm'))+'</button><button class="btn quiet" data-action="close-dialog">'+esc(t('cancel'))+'</button></div>');
+  }
+  function loadSave() {
+    if (!pendingSave) return;
+    Object.assign(state,mergeSave(state,pendingSave));pendingSave=null;
+    syncRewards();persist();document.querySelector('dialog')?.close();render();toast('✅ '+t('saveLoaded'));
   }
   function reviewHistory(id,time) {
     const r=state.history.find(r=>r.caseId===id&&r.completedAt===time),c=getCase(id);if(!r)return;
@@ -676,6 +737,8 @@
       case'wait':E.wait(state.session);persist();render();break;
       case'report':navigate('report');break;
       case'export':exportHistory();break;
+      case'import':document.getElementById('save-file')?.click();break;
+      case'load-save':loadSave();break;
       case'saved-only':savedOnly=!savedOnly;libraryPage=0;render();document.querySelector('[data-action="saved-only"]')?.focus({preventScroll:true});break;
       case'close-dialog':document.querySelector('dialog')?.close();break;
       case'reset-dialog':openDialog('<h2>'+esc(t('resetTitle'))+'</h2><p>'+esc(t('resetText'))+'</p><div class="actions"><button class="btn danger" data-action="reset">'+esc(t('resetConfirm'))+'</button><button class="btn quiet" data-action="close-dialog">'+esc(t('cancel'))+'</button></div>');break;
@@ -699,6 +762,7 @@
   document.addEventListener('change',async e=>{
     if(e.target.id==='duty-filter'){dutyFilter=['all',...DUTIES].includes(e.target.value)?e.target.value:'all';libraryPage=0;document.getElementById('case-results').innerHTML=libraryResults();return;}
     if(e.target.id==='topic-filter'){topicFilter=e.target.value;libraryPage=0;document.getElementById('case-results').innerHTML=libraryResults();return;}
+    if(e.target.id==='save-file'){const file=e.target.files[0];e.target.value='';if(file)offerSave(file);return;}
     if(e.target.id!=='schedule-file')return;
     const status=document.getElementById('schedule-status');
     try{

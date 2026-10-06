@@ -702,7 +702,9 @@ def package(root: Path, output: Path, *, rebuild: bool = True) -> dict:
 
 def analyse(source: Path, output: Path, root: Path = ROOT) -> int:
     data = read_json(source)
-    require(isinstance(data, dict) and data.get("version") == 2, "Export must have version 2")
+    # The game file (version 3) carries the logbook next to rank, stickers and the open shift; older exports held the logbook only.
+    require(isinstance(data, dict) and (data.get("version") == 2 or (data.get("format") == "night-shift-academy-save" and data.get("version") == 3)),
+            "Export must be a game file (version 3) or a logbook export (version 2)")
     history = data.get("history")
     require(isinstance(history, list), "Export.history must be an array")
     cases, _ = load_and_validate(root, check_assets=False)
