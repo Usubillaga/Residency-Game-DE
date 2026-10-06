@@ -923,6 +923,47 @@
       "penile-urethra"
     ]
   },
+  "onc-bladder-adjuvant-after-cystectomy": {
+    "schema": "bladder-wall-staging",
+    "parts": [
+      "tumor-t3",
+      "perivesical-fat"
+    ]
+  },
+  "onc-bladder-early-instillation": {
+    "schema": "bladder-wall-staging",
+    "parts": [
+      "tumor-ta",
+      "urothelium",
+      "lumen"
+    ]
+  },
+  "onc-bladder-positive-cytology": {
+    "schema": "urinary-tract-overview",
+    "parts": [
+      "renal-pelvis",
+      "ureters",
+      "bladder",
+      "urethra"
+    ]
+  },
+  "onc-bladder-very-high-risk-nmibc": {
+    "schema": "bladder-wall-staging",
+    "parts": [
+      "tumor-t1",
+      "tumor-tis",
+      "lamina-propria"
+    ]
+  },
+  "onc-prostate-cn1-radiotherapy": {
+    "schema": "pelvic-sidewall",
+    "parts": [
+      "obturator-nodes",
+      "external-iliac-nodes",
+      "common-iliac-artery",
+      "internal-iliac-artery"
+    ]
+  },
   "theatre-infected-stone": {
     "schema": "upper-tract-drainage",
     "parts": [

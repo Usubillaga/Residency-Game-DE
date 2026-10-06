@@ -1401,6 +1401,1566 @@
     ]
   },
   {
+    "id": "onc-bladder-very-high-risk-nmibc",
+    "area": "clinic",
+    "level": 3,
+    "acuity": "routine",
+    "duty": "board",
+    "patient": {
+      "name": "Werner Lindner",
+      "age": 74,
+      "sex": "male"
+    },
+    "title": {
+      "en": "T1 high grade with CIS: cystectomy or BCG?",
+      "de": "T1-High-Grade mit CIS: Zystektomie oder BCG?",
+      "es": "T1 de alto grado con CIS: ¿cistectomía o BCG?"
+    },
+    "presenting": {
+      "en": "Mr Lindner, 74, is presented at the tumour board after a repeat TURBT. The initial TURBT found three papillary tumours (largest 2.5 cm) with surrounding velvety erythema; histology: urothelial carcinoma pT1 high grade with concomitant carcinoma in situ, detrusor free of tumour, no lymphovascular invasion. The repeat TURBT after 5 weeks shows residual pT1 high-grade tumour without muscle invasion. CT urography and chest CT show no upper tract tumour and no metastases. ECOG 0, eGFR 71 mL/min, no relevant comorbidities.",
+      "de": "Herr Lindner, 74 Jahre, wird nach Nach-TUR-B in der Tumorkonferenz vorgestellt. Bei der Erst-TUR-B fanden sich drei papilläre Tumoren (größter 2,5 cm) mit umgebender samtartiger Rötung; Histologie: Urothelkarzinom pT1 High Grade mit begleitendem Carcinoma in situ, Detrusor tumorfrei, keine Lymphgefäßinvasion. Die Nach-TUR-B nach 5 Wochen zeigt Resttumor pT1 High Grade ohne Muskelinvasion. CT-Urographie und CT-Thorax ohne Anhalt für einen Tumor des oberen Harntrakts oder Metastasen. ECOG 0, eGFR 71 ml/min, keine relevanten Begleiterkrankungen.",
+      "es": "El Sr. Lindner, de 74 años, se presenta en el comité de tumores tras una re-RTU. En la primera RTU se hallaron tres tumores papilares (el mayor de 2,5 cm) con eritema aterciopelado alrededor; histología: carcinoma urotelial pT1 de alto grado con carcinoma in situ concomitante, detrusor libre de tumor, sin invasión linfovascular. La re-RTU a las 5 semanas muestra tumor residual pT1 de alto grado sin invasión muscular. La urografía por TC y la TC de tórax no muestran tumor del tracto urinario superior ni metástasis. ECOG 0, FGe 71 ml/min, sin comorbilidades relevantes."
+    },
+    "vitals": null,
+    "objectives": {
+      "en": [
+        "Classify NMIBC as very high risk using the EAU 2021 risk factors.",
+        "Classify BCG failure correctly and derive the treatment from it."
+      ],
+      "de": [
+        "Ein NMIBC mit den EAU-Risikofaktoren von 2021 als sehr hohes Risiko einstufen.",
+        "BCG-Versagen korrekt klassifizieren und daraus die Therapie ableiten."
+      ],
+      "es": [
+        "Clasificar un TVNMI como de muy alto riesgo con los factores de riesgo EAU 2021.",
+        "Clasificar correctamente el fracaso de la BCG y deducir el tratamiento."
+      ]
+    },
+    "steps": [
+      {
+        "id": "risk-group",
+        "kind": "assessment",
+        "prompt": {
+          "en": "Which EAU risk group (2021) does this finding belong to?",
+          "de": "In welche EAU-Risikogruppe (2021) ordnen Sie den Befund ein?",
+          "es": "¿En qué grupo de riesgo EAU (2021) clasifica este hallazgo?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "High risk: T1 high grade is high risk by definition; the CIS does not change the group.",
+              "de": "Hohes Risiko: T1 High Grade ist per se Hochrisiko, der CIS ändert die Gruppe nicht.",
+              "es": "Alto riesgo: el T1 de alto grado es de alto riesgo por definición; el CIS no cambia el grupo."
+            },
+            "score": 3,
+            "minutes": 4,
+            "feedback": {
+              "en": "T1 HG without CIS or further factors would be high risk; the concomitant CIS together with age and multiplicity lifts it into the very high-risk group, which carries a different recommendation.",
+              "de": "Ein T1 HG ohne CIS und ohne weitere Faktoren wäre Hochrisiko; der begleitende CIS zusammen mit Alter und Multiplizität hebt den Befund in die sehr hohe Risikogruppe mit anderer Therapieempfehlung.",
+              "es": "Un T1 AG sin CIS ni otros factores sería de alto riesgo; el CIS concomitante junto con la edad y la multiplicidad lo eleva al grupo de muy alto riesgo, con otra recomendación terapéutica."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Very high risk: T1 high grade with CIS plus further risk factors (age over 70, multiple tumours).",
+              "de": "Sehr hohes Risiko: T1 High Grade mit CIS und weiteren Risikofaktoren (Alter über 70 Jahre, multiple Tumoren).",
+              "es": "Muy alto riesgo: T1 de alto grado con CIS y otros factores de riesgo (edad mayor de 70 años, tumores múltiples)."
+            },
+            "score": 10,
+            "minutes": 5,
+            "feedback": {
+              "en": "T1 HG with CIS and at least one risk factor (age >70, multiple papillary tumours, diameter ≥3 cm) is very high risk; so are variant histology, lymphovascular invasion and CIS of the prostatic urethra.",
+              "de": "T1 HG mit CIS und mindestens einem Risikofaktor (Alter >70, multiple papilläre Tumoren, Durchmesser ≥3 cm) ist sehr hohes Risiko; ebenso Varianten-Histologie, Lymphgefäßinvasion und CIS der prostatischen Harnröhre.",
+              "es": "Un T1 AG con CIS y al menos un factor de riesgo (edad >70, tumores papilares múltiples, diámetro ≥3 cm) es de muy alto riesgo; también lo son la histología variante, la invasión linfovascular y el CIS de la uretra prostática."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Intermediate risk, because no tumour reaches 3 cm and there is no muscle invasion.",
+              "de": "Intermediäres Risiko, da kein Tumor 3 cm erreicht und keine Muskelinvasion vorliegt.",
+              "es": "Riesgo intermedio, porque ningún tumor alcanza 3 cm y no hay invasión muscular."
+            },
+            "score": 0,
+            "minutes": 3,
+            "feedback": {
+              "en": "T1 high grade and CIS rule out intermediate risk; this classification would lead to dangerous undertreatment.",
+              "de": "T1 High Grade und CIS schließen ein intermediäres Risiko aus; diese Einstufung würde zu einer gefährlichen Untertherapie führen.",
+              "es": "El T1 de alto grado y el CIS excluyen el riesgo intermedio; esta clasificación llevaría a un infratratamiento peligroso."
+            },
+            "critical": false
+          }
+        ],
+        "best": "b"
+      },
+      {
+        "id": "primary-treatment",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which treatment does the tumour board recommend?",
+          "de": "Welche Therapie empfiehlt das Tumorboard?",
+          "es": "¿Qué tratamiento recomienda el comité de tumores?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Offer immediate radical cystectomy with lymphadenectomy; BCG only if he declines or is unfit for surgery.",
+              "de": "Sofortige radikale Zystektomie mit Lymphadenektomie anbieten; BCG nur bei Ablehnung oder fehlender Operabilität.",
+              "es": "Ofrecer cistectomía radical inmediata con linfadenectomía; BCG solo si la rechaza o no es candidato a cirugía."
+            },
+            "score": 10,
+            "minutes": 10,
+            "feedback": {
+              "en": "In very high-risk disease the risk of progression is so high that the EAU recommends immediate cystectomy; patients who decline or are unfit receive full-dose BCG for 1–3 years.",
+              "de": "Bei sehr hohem Risiko ist die Progressionsgefahr so hoch, dass die EAU die sofortige Zystektomie empfiehlt; Patienten, die ablehnen oder inoperabel sind, erhalten BCG in voller Dosis über 1–3 Jahre.",
+              "es": "En el muy alto riesgo la probabilidad de progresión es tan alta que la EAU recomienda la cistectomía inmediata; quien la rechace o no sea operable recibe BCG a dosis completa durante 1–3 años."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "One year of intravesical mitomycin C chemotherapy with cystoscopy every 3 months.",
+              "de": "Ein Jahr intravesikale Chemotherapie mit Mitomycin C und Zystoskopie alle 3 Monate.",
+              "es": "Un año de quimioterapia intravesical con mitomicina C y cistoscopia cada 3 meses."
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "en": "Intravesical chemotherapy is inadequate for very high-risk disease with CIS; progression to muscle-invasive disease is likely.",
+              "de": "Intravesikale Chemotherapie ist bei sehr hohem Risiko und CIS unzureichend; es droht die Progression zur muskelinvasiven Erkrankung.",
+              "es": "La quimioterapia intravesical es insuficiente en el muy alto riesgo con CIS; amenaza la progresión a enfermedad músculo-infiltrante."
+            },
+            "critical": true
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "BCG induction with maintenance for 1–3 years as standard; cystectomy only at recurrence.",
+              "de": "BCG-Induktion mit Erhaltung über 1–3 Jahre als Standard; Zystektomie erst beim Rezidiv.",
+              "es": "Inducción con BCG y mantenimiento de 1–3 años como estándar; cistectomía solo ante recidiva."
+            },
+            "score": 3,
+            "minutes": 6,
+            "feedback": {
+              "en": "BCG is the alternative for patients who decline or are unfit for cystectomy, not the standard here; cystectomy delayed until progression worsens the prognosis.",
+              "de": "BCG ist hier die Alternative für Patienten, die die Zystektomie ablehnen oder nicht operabel sind, nicht der Standard; eine erst nach Progression durchgeführte Zystektomie verschlechtert die Prognose.",
+              "es": "Aquí la BCG es la alternativa para quien rechaza la cistectomía o no es operable, no el estándar; una cistectomía diferida hasta la progresión empeora el pronóstico."
+            },
+            "critical": false
+          }
+        ],
+        "best": "a"
+      },
+      {
+        "id": "bcg-failure",
+        "kind": "decision",
+        "prompt": {
+          "en": "Mr Lindner declines cystectomy and receives full-dose BCG (induction and 3 years of maintenance); all checks are tumour-free. Nine months after the last instillation, TURBT shows a solitary pTa high-grade recurrence, completely resected, detrusor free of tumour, no CIS. How do you classify this and what do you offer?",
+          "de": "Herr Lindner lehnt die Zystektomie ab und erhält BCG in voller Dosis (Induktion und 3 Jahre Erhaltung); alle Kontrollen sind tumorfrei. 9 Monate nach der letzten Instillation zeigt die TUR-B ein solitäres pTa-High-Grade-Rezidiv, komplett reseziert, Detrusor tumorfrei, kein CIS. Wie ordnen Sie das ein und was bieten Sie an?",
+          "es": "El Sr. Lindner rechaza la cistectomía y recibe BCG a dosis completa (inducción y 3 años de mantenimiento); todos los controles están libres de tumor. Nueve meses después de la última instilación, la RTU muestra una recidiva pTa de alto grado solitaria, resecada por completo, detrusor libre de tumor, sin CIS. ¿Cómo lo clasifica y qué ofrece?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "BCG-unresponsive: further BCG is pointless, only radical cystectomy remains.",
+              "de": "BCG-unresponsive: weitere BCG-Gaben sind sinnlos, nur noch radikale Zystektomie.",
+              "es": "BCG-unresponsive: más BCG no tiene sentido, solo queda la cistectomía radical."
+            },
+            "score": 3,
+            "minutes": 6,
+            "feedback": {
+              "en": "BCG-unresponsive means BCG-refractory disease or high-grade recurrence within 6 months or CIS within 12 months of adequate BCG; that does not apply here. Cystectomy remains correct, but repeat BCG is also an option.",
+              "de": "BCG-unresponsive bedeutet BCG-refraktär oder High-Grade-Rezidiv innerhalb von 6 Monaten bzw. CIS innerhalb von 12 Monaten nach adäquater BCG; das trifft hier nicht zu. Die Zystektomie bleibt richtig, aber erneutes BCG ist ebenfalls eine Option.",
+              "es": "BCG-unresponsive significa enfermedad refractaria a BCG o recidiva de alto grado en 6 meses o CIS en 12 meses tras una BCG adecuada; no es el caso. La cistectomía sigue siendo correcta, pero repetir BCG también es una opción."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Switch to one year of intravesical chemotherapy because BCG has failed.",
+              "de": "Wechsel auf ein Jahr intravesikale Chemotherapie, da BCG versagt hat.",
+              "es": "Cambiar a un año de quimioterapia intravesical porque la BCG ha fracasado."
+            },
+            "score": 0,
+            "minutes": 4,
+            "feedback": {
+              "en": "Switching to chemotherapy instillations is not a guideline choice for a late high-grade recurrence after adequate BCG; the recommended options are a repeat BCG course or radical cystectomy.",
+              "de": "Ein Wechsel auf Chemotherapie-Instillationen ist beim späten High-Grade-Rezidiv nach adäquater BCG keine leitliniengerechte Wahl; empfohlen sind ein erneuter BCG-Kurs oder die radikale Zystektomie.",
+              "es": "Cambiar a instilaciones de quimioterapia no es una opción recomendada por la guía ante una recidiva tardía de alto grado tras una BCG adecuada; lo recomendado es un nuevo ciclo de BCG o la cistectomía radical."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "BCG-relapsing (high-grade recurrence more than 6 months after completed adequate BCG): discuss repeat BCG induction or radical cystectomy.",
+              "de": "Spätes BCG-Rezidiv (BCG-relapsing: High-Grade-Rezidiv mehr als 6 Monate nach abgeschlossener adäquater BCG): erneute BCG-Induktion oder radikale Zystektomie besprechen.",
+              "es": "Recidiva tras BCG (BCG-relapsing: recidiva de alto grado más de 6 meses después de completar una BCG adecuada): plantear una nueva inducción con BCG o cistectomía radical."
+            },
+            "score": 10,
+            "minutes": 8,
+            "feedback": {
+              "en": "A late recurrence after adequate BCG often responds to a repeat BCG course; because of his very high risk, cystectomy is offered again and the decision is shared.",
+              "de": "Beim späten Rezidiv nach adäquater BCG spricht ein erneuter BCG-Kurs häufig wieder an; wegen des sehr hohen Risikos wird die Zystektomie erneut angeboten und gemeinsam entschieden.",
+              "es": "Una recidiva tardía tras BCG adecuada suele responder a un nuevo ciclo de BCG; por su muy alto riesgo se vuelve a ofrecer la cistectomía y se decide de forma compartida."
+            },
+            "critical": false
+          }
+        ],
+        "best": "c"
+      }
+    ],
+    "takeaway": {
+      "en": "T1 high grade with CIS and at least one risk factor is very high risk: offer immediate cystectomy, with 1–3 years of BCG only for patients who decline or are unfit. With BCG failure, define the type first: a late high-grade recurrence after adequate BCG (relapsing) allows repeat BCG or cystectomy, whereas BCG-unresponsive disease leads to cystectomy.",
+      "de": "T1 High Grade mit CIS und mindestens einem Risikofaktor ist sehr hohes Risiko: sofortige Zystektomie anbieten, BCG über 1–3 Jahre nur bei Ablehnung oder Inoperabilität. Bei BCG-Versagen zuerst den Typ bestimmen: Ein spätes High-Grade-Rezidiv nach adäquater BCG (relapsing) erlaubt erneutes BCG oder Zystektomie, BCG-unresponsive führt zur Zystektomie.",
+      "es": "Un T1 de alto grado con CIS y al menos un factor de riesgo es de muy alto riesgo: ofrecer cistectomía inmediata y BCG de 1–3 años solo si se rechaza o no es operable. Ante el fracaso de la BCG, definir primero el tipo: la recidiva tardía de alto grado tras BCG adecuada (relapsing) permite repetir BCG o cistectomía; la enfermedad BCG-unresponsive lleva a la cistectomía."
+    },
+    "references": [
+      "bank-guide-nmibc",
+      "knowuro-bladder-2026"
+    ]
+  },
+  {
+    "id": "onc-bladder-first-line-metastatic",
+    "area": "clinic",
+    "level": 3,
+    "acuity": "urgent",
+    "duty": "board",
+    "patient": {
+      "name": "Giuseppina Esposito",
+      "age": 69,
+      "sex": "female"
+    },
+    "title": {
+      "en": "Metastatic urothelial cancer: which first line?",
+      "de": "Metastasiertes Urothelkarzinom: welche Erstlinie?",
+      "es": "Carcinoma urotelial metastásico: ¿qué primera línea?"
+    },
+    "presenting": {
+      "en": "Mrs Esposito, 69, has newly diagnosed urothelial carcinoma of the bladder (TURBT: pT2 high grade) with pelvic lymph node metastases and bilateral lung metastases on CT (cT3 cN2 cM1b). ECOG 1, eGFR 52 mL/min. She has long-standing insulin-treated type 2 diabetes with HbA1c 9.6% and diabetic polyneuropathy CTCAE grade 2 with paraesthesia and unsteady gait. No autoimmune disease; hearing and cardiac function are normal.",
+      "de": "Frau Esposito, 69 Jahre, hat ein neu diagnostiziertes Urothelkarzinom der Harnblase (TUR-B: pT2 High Grade) mit pelvinen Lymphknotenmetastasen und bilateralen Lungenmetastasen im CT (cT3 cN2 cM1b). ECOG 1, eGFR 52 ml/min. Seit Jahren besteht ein insulinpflichtiger Typ-2-Diabetes mit HbA1c 9,6 % und eine diabetische Polyneuropathie CTCAE Grad 2 mit Parästhesien und Gangunsicherheit. Keine Autoimmunerkrankung, Gehör und Herzfunktion unauffällig.",
+      "es": "La Sra. Esposito, de 69 años, tiene un carcinoma urotelial vesical recién diagnosticado (RTU: pT2 de alto grado) con metástasis ganglionares pélvicas y metástasis pulmonares bilaterales en la TC (cT3 cN2 cM1b). ECOG 1, FGe 52 ml/min. Padece desde hace años diabetes tipo 2 insulinodependiente con HbA1c del 9,6 % y polineuropatía diabética CTCAE grado 2 con parestesias e inestabilidad de la marcha. Sin enfermedad autoinmune; audición y función cardiaca normales."
+    },
+    "vitals": {
+      "bp": "142/84",
+      "hr": 82,
+      "temp": 36.9,
+      "spo2": 95,
+      "rr": 16
+    },
+    "objectives": {
+      "en": [
+        "Check suitability for enfortumab vedotin plus pembrolizumab.",
+        "If unsuitable, assess cisplatin eligibility and plan avelumab maintenance."
+      ],
+      "de": [
+        "Die Eignung für Enfortumab vedotin plus Pembrolizumab prüfen.",
+        "Bei Nichteignung Cisplatin-Eignung bewerten und die Avelumab-Erhaltung einplanen."
+      ],
+      "es": [
+        "Comprobar la idoneidad para enfortumab vedotina más pembrolizumab.",
+        "Si no es candidata, valorar la elegibilidad para cisplatino y planificar el mantenimiento con avelumab."
+      ]
+    },
+    "steps": [
+      {
+        "id": "evp-fitness",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which first-line treatment does the tumour board recommend?",
+          "de": "Welche Erstlinientherapie empfiehlt das Tumorboard?",
+          "es": "¿Qué tratamiento de primera línea recomienda el comité de tumores?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Start enfortumab vedotin plus pembrolizumab now because it is the first-line standard.",
+              "de": "Enfortumab vedotin plus Pembrolizumab sofort beginnen, da es der Erstlinienstandard ist.",
+              "es": "Iniciar ya enfortumab vedotina más pembrolizumab porque es el estándar de primera línea."
+            },
+            "score": 0,
+            "minutes": 6,
+            "feedback": {
+              "en": "Enfortumab vedotin causes neuropathy, skin reactions and hyperglycaemia; with pre-existing grade 2 neuropathy and HbA1c 9.6%, severe neuropathy and diabetic decompensation up to ketoacidosis are likely.",
+              "de": "Enfortumab vedotin verursacht Neuropathie, Hautreaktionen und Hyperglykämien; bei vorbestehender Grad-2-Neuropathie und HbA1c 9,6 % drohen schwere Neuropathie und diabetische Entgleisung bis zur Ketoazidose.",
+              "es": "Enfortumab vedotina causa neuropatía, reacciones cutáneas e hiperglucemia; con neuropatía grado 2 previa y HbA1c del 9,6 % amenazan una neuropatía grave y una descompensación diabética hasta la cetoacidosis."
+            },
+            "critical": true
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "First optimise the diabetes over 3 months, then start enfortumab vedotin plus pembrolizumab.",
+              "de": "Zunächst den Diabetes über 3 Monate optimieren, dann mit Enfortumab vedotin plus Pembrolizumab beginnen.",
+              "es": "Optimizar primero la diabetes durante 3 meses y después iniciar enfortumab vedotina más pembrolizumab."
+            },
+            "score": 3,
+            "minutes": 5,
+            "feedback": {
+              "en": "Better glucose control is sensible, but the neuropathy remains, and three months without treatment are not acceptable with visceral metastases.",
+              "de": "Eine bessere Blutzuckereinstellung ist sinnvoll, aber die Neuropathie bleibt bestehen, und drei Monate ohne Therapie sind bei viszeraler Metastasierung nicht vertretbar.",
+              "es": "Mejorar el control glucémico es razonable, pero la neuropatía persiste y tres meses sin tratamiento no son aceptables con metástasis viscerales."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Enfortumab vedotin plus pembrolizumab is unsuitable because of grade 2 neuropathy and uncontrolled diabetes; platinum-based chemotherapy after checking cisplatin eligibility.",
+              "de": "Enfortumab vedotin plus Pembrolizumab ist wegen Grad-2-Neuropathie und unkontrolliertem Diabetes ungeeignet; platinbasierte Chemotherapie nach Prüfung der Cisplatin-Eignung.",
+              "es": "Enfortumab vedotina más pembrolizumab no es adecuado por la neuropatía grado 2 y la diabetes mal controlada; quimioterapia basada en platino tras valorar la elegibilidad para cisplatino."
+            },
+            "score": 10,
+            "minutes": 10,
+            "feedback": {
+              "en": "EV plus pembrolizumab is the first-line standard, but requires ECOG 0–1, eGFR ≥30 mL/min, no relevant neuropathy, no uncontrolled diabetes, no severe skin disease and no contraindication to immunotherapy.",
+              "de": "EV plus Pembrolizumab ist der Erstlinienstandard, setzt aber ECOG 0–1, eGFR ≥30 ml/min, keine relevante Neuropathie, keinen unkontrollierten Diabetes, keine schwere Hauterkrankung und keine Kontraindikation gegen Immuntherapie voraus.",
+              "es": "EV más pembrolizumab es el estándar de primera línea, pero exige ECOG 0–1, FGe ≥30 ml/min, ausencia de neuropatía relevante, de diabetes mal controlada y de enfermedad cutánea grave, y ninguna contraindicación para la inmunoterapia."
+            },
+            "critical": false
+          }
+        ],
+        "best": "c"
+      },
+      {
+        "id": "platinum-choice",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which platinum-based regimen do you choose?",
+          "de": "Welches platinbasierte Schema wählen Sie?",
+          "es": "¿Qué esquema basado en platino elige?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Split-dose gemcitabine/cisplatin plus nivolumab.",
+              "de": "Gemcitabin/Cisplatin im Split-Dose-Schema plus Nivolumab.",
+              "es": "Gemcitabina/cisplatino en dosis fraccionada más nivolumab."
+            },
+            "score": 0,
+            "minutes": 8,
+            "feedback": {
+              "en": "An eGFR of 52 mL/min alone would allow split-dose cisplatin, but grade 2 neuropathy excludes cisplatin because it markedly worsens neurotoxicity; first-line nivolumab is also supported only with standard-schedule gemcitabine/cisplatin.",
+              "de": "Die eGFR von 52 ml/min allein ließe Split-Dose-Cisplatin zu, die Polyneuropathie Grad 2 schließt Cisplatin aber aus, da es die Neurotoxizität deutlich verschlechtert; Nivolumab ist in der Erstlinie zudem nur mit Gemcitabin/Cisplatin im Standardschema belegt.",
+              "es": "Un FGe de 52 ml/min por sí solo permitiría cisplatino en dosis fraccionada, pero la neuropatía grado 2 excluye el cisplatino porque empeora claramente la neurotoxicidad; además, en primera línea nivolumab solo está respaldado con gemcitabina/cisplatino en pauta estándar."
+            },
+            "critical": true
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Cisplatin-ineligible because of grade 2 neuropathy: gemcitabine/carboplatin for 4–6 cycles.",
+              "de": "Cisplatin-ungeeignet wegen Polyneuropathie Grad 2: Gemcitabin/Carboplatin über 4–6 Zyklen.",
+              "es": "No elegible para cisplatino por la neuropatía grado 2: gemcitabina/carboplatino durante 4–6 ciclos."
+            },
+            "score": 10,
+            "minutes": 8,
+            "feedback": {
+              "en": "Neuropathy or hearing loss of grade 2 or more, ECOG 2, creatinine clearance below 60 mL/min and heart failure of NYHA III or worse argue against cisplatin (Galsky criteria); carboplatin is then the platinum alternative.",
+              "de": "Neuropathie oder Hörverlust ≥ Grad 2, ECOG 2, Kreatinin-Clearance unter 60 ml/min und Herzinsuffizienz ab NYHA III sprechen gegen Cisplatin (Galsky-Kriterien); Carboplatin ist dann die Platin-Alternative.",
+              "es": "La neuropatía o hipoacusia de grado 2 o mayor, ECOG 2, un aclaramiento de creatinina inferior a 60 ml/min y la insuficiencia cardiaca NYHA III o superior desaconsejan el cisplatino (criterios de Galsky); el carboplatino es entonces la alternativa de platino."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Pembrolizumab or atezolizumab monotherapy.",
+              "de": "Monotherapie mit Pembrolizumab oder Atezolizumab.",
+              "es": "Monoterapia con pembrolizumab o atezolizumab."
+            },
+            "score": 3,
+            "minutes": 5,
+            "feedback": {
+              "en": "According to the EAU, first-line checkpoint inhibitor monotherapy is reserved for PD-L1-positive patients unfit for any platinum chemotherapy; Mrs Esposito can receive carboplatin followed by avelumab maintenance.",
+              "de": "Nach EAU ist eine Checkpoint-Inhibitor-Monotherapie in der Erstlinie PD-L1-positiven Patienten vorbehalten, die für keine Platin-Chemotherapie geeignet sind; Frau Esposito kann Carboplatin erhalten und danach eine Avelumab-Erhaltung.",
+              "es": "Según la EAU, la monoterapia con inhibidores de puntos de control inmunitario en primera línea se reserva a pacientes PD-L1 positivos no aptos para ningún platino; la Sra. Esposito puede recibir carboplatino y después mantenimiento con avelumab."
+            },
+            "critical": false
+          }
+        ],
+        "best": "b"
+      },
+      {
+        "id": "maintenance",
+        "kind": "decision",
+        "prompt": {
+          "en": "After six cycles of gemcitabine/carboplatin, CT shows a partial response. What next?",
+          "de": "Nach sechs Zyklen Gemcitabin/Carboplatin zeigt das CT eine partielle Remission. Wie geht es weiter?",
+          "es": "Tras seis ciclos de gemcitabina/carboplatino, la TC muestra una respuesta parcial. ¿Cómo sigue?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Avelumab maintenance until progression, starting 4–10 weeks after the last chemotherapy.",
+              "de": "Avelumab-Erhaltungstherapie bis zur Progression, Beginn 4–10 Wochen nach der letzten Chemotherapie.",
+              "es": "Mantenimiento con avelumab hasta la progresión, iniciado 4–10 semanas tras la última quimioterapia."
+            },
+            "score": 10,
+            "minutes": 6,
+            "feedback": {
+              "en": "Without progression after platinum chemotherapy, avelumab maintenance prolongs overall survival and is approved in the EU for this setting.",
+              "de": "Ohne Progression nach Platin-Chemotherapie verlängert die Avelumab-Erhaltung das Gesamtüberleben und ist in der EU für diese Situation zugelassen.",
+              "es": "Sin progresión tras quimioterapia con platino, el mantenimiento con avelumab prolonga la supervivencia global y está aprobado en la UE para esta situación."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Continue gemcitabine/carboplatin until progression.",
+              "de": "Gemcitabin/Carboplatin bis zur Progression fortführen.",
+              "es": "Continuar gemcitabina/carboplatino hasta la progresión."
+            },
+            "score": 0,
+            "minutes": 4,
+            "feedback": {
+              "en": "More than six cycles increase myelotoxicity and fatigue without proven benefit; the right step is to switch to maintenance.",
+              "de": "Mehr als sechs Zyklen erhöhen Myelotoxizität und Erschöpfung ohne belegten Nutzen; richtig ist der Wechsel auf die Erhaltung.",
+              "es": "Más de seis ciclos aumentan la mielotoxicidad y la astenia sin beneficio demostrado; lo correcto es pasar al mantenimiento."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Treatment break with CT follow-up; avelumab only at progression.",
+              "de": "Therapiepause mit CT-Kontrollen; Avelumab erst bei Progression.",
+              "es": "Pausa terapéutica con controles de TC; avelumab solo ante progresión."
+            },
+            "score": 3,
+            "minutes": 4,
+            "feedback": {
+              "en": "A break is defensible but forfeits the survival benefit: avelumab is proven as immediate maintenance without progression, not as treatment at progression.",
+              "de": "Die Pause ist vertretbar, verschenkt aber den Überlebensvorteil: Avelumab ist als sofortige Erhaltung bei fehlender Progression belegt, nicht als Therapie bei Progression.",
+              "es": "La pausa es defendible, pero renuncia al beneficio en supervivencia: avelumab está demostrado como mantenimiento inmediato sin progresión, no como tratamiento en la progresión."
+            },
+            "critical": false
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "en": "First line in metastatic urothelial cancer is EV plus pembrolizumab if ECOG, renal function, neuropathy, diabetes, skin and immunotherapy suitability allow. Otherwise check cisplatin eligibility: gemcitabine/cisplatin plus nivolumab or gemcitabine/carboplatin, followed by avelumab maintenance after response or stable disease.",
+      "de": "Erstlinie beim metastasierten Urothelkarzinom ist EV plus Pembrolizumab, sofern ECOG, Nierenfunktion, Neuropathie, Diabetes, Haut und Immuntherapie-Eignung passen. Sonst Cisplatin-Eignung prüfen: Gemcitabin/Cisplatin plus Nivolumab oder Gemcitabin/Carboplatin, und nach Ansprechen oder stabiler Erkrankung Avelumab-Erhaltung.",
+      "es": "La primera línea del carcinoma urotelial metastásico es EV más pembrolizumab si el ECOG, la función renal, la neuropatía, la diabetes, la piel y la idoneidad para inmunoterapia lo permiten. Si no, valorar el cisplatino: gemcitabina/cisplatino más nivolumab o gemcitabina/carboplatino, y mantenimiento con avelumab tras respuesta o enfermedad estable."
+    },
+    "references": [
+      "bank-guide-mibc",
+      "knowuro-bladder-2026"
+    ]
+  },
+  {
+    "id": "onc-bladder-adjuvant-after-cystectomy",
+    "area": "clinic",
+    "level": 3,
+    "acuity": "routine",
+    "duty": "clinic",
+    "patient": {
+      "name": "Rachid Benali",
+      "age": 63,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Upstaged after cystectomy: adjuvant treatment?",
+      "de": "Upstaging nach Zystektomie: adjuvant behandeln?",
+      "es": "Supraestadificación tras cistectomía: ¿tratamiento adyuvante?"
+    },
+    "presenting": {
+      "en": "Mr Benali, 63, had very high-risk non-muscle-invasive urothelial carcinoma (cT1 high grade with CIS, cN0) and chose primary radical cystectomy with extended lymphadenectomy and an ileal conduit; neoadjuvant chemotherapy was not indicated for non-muscle-invasive disease. Histology shows upstaging to pT3a pN1 (1/24) R0, tumour-cell PD-L1 5%. Six weeks after surgery: ECOG 0, eGFR 78 mL/min, no hearing loss, no neuropathy, no heart failure. Postoperative CT shows no metastases.",
+      "de": "Herr Benali, 63 Jahre, hatte ein nicht muskelinvasives Urothelkarzinom der sehr hohen Risikogruppe (cT1 High Grade mit CIS, cN0) und entschied sich für die primäre radikale Zystektomie mit erweiterter Lymphadenektomie und Ileum-Conduit; eine neoadjuvante Chemotherapie war beim nicht muskelinvasiven Befund nicht indiziert. Die Histologie ergibt ein Upstaging auf pT3a pN1 (1/24) R0, PD-L1 auf Tumorzellen 5 %. Sechs Wochen postoperativ: ECOG 0, eGFR 78 ml/min, kein Hörverlust, keine Neuropathie, keine Herzinsuffizienz. Das postoperative CT zeigt keine Metastasen.",
+      "es": "El Sr. Benali, de 63 años, tenía un carcinoma urotelial no músculo-infiltrante de muy alto riesgo (cT1 de alto grado con CIS, cN0) y optó por cistectomía radical primaria con linfadenectomía ampliada y conducto ileal; la quimioterapia neoadyuvante no estaba indicada en la enfermedad no músculo-infiltrante. La histología muestra supraestadificación a pT3a pN1 (1/24) R0, PD-L1 en células tumorales del 5 %. Seis semanas tras la cirugía: ECOG 0, FGe 78 ml/min, sin hipoacusia, sin neuropatía, sin insuficiencia cardiaca. La TC postoperatoria no muestra metástasis."
+    },
+    "vitals": {
+      "bp": "128/80",
+      "hr": 70,
+      "temp": 36.7,
+      "spo2": 98,
+      "rr": 14
+    },
+    "objectives": {
+      "en": [
+        "Indicate adjuvant cisplatin-based chemotherapy after cystectomy without neoadjuvant treatment.",
+        "Place adjuvant nivolumab correctly (PD-L1 ≥1%, cisplatin unsuitable or declined, ypT2–4/ypN+ after neoadjuvant chemotherapy)."
+      ],
+      "de": [
+        "Die Indikation zur adjuvanten cisplatinbasierten Chemotherapie nach Zystektomie ohne neoadjuvante Therapie stellen.",
+        "Adjuvantes Nivolumab richtig einordnen (PD-L1 ≥1 %, Cisplatin ungeeignet oder abgelehnt, ypT2–4/ypN+ nach neoadjuvanter Chemotherapie)."
+      ],
+      "es": [
+        "Indicar la quimioterapia adyuvante basada en cisplatino tras cistectomía sin tratamiento neoadyuvante.",
+        "Situar correctamente el nivolumab adyuvante (PD-L1 ≥1 %, cisplatino no apto o rechazado, ypT2–4/ypN+ tras quimioterapia neoadyuvante)."
+      ]
+    },
+    "steps": [
+      {
+        "id": "adjuvant-choice",
+        "kind": "decision",
+        "prompt": {
+          "en": "What do you recommend as adjuvant therapy?",
+          "de": "Was empfehlen Sie als adjuvante Therapie?",
+          "es": "¿Qué recomienda como tratamiento adyuvante?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Adjuvant nivolumab for one year.",
+              "de": "Adjuvantes Nivolumab für ein Jahr.",
+              "es": "Nivolumab adyuvante durante un año."
+            },
+            "score": 3,
+            "minutes": 6,
+            "feedback": {
+              "en": "Nivolumab is approved for PD-L1 ≥1%, but is mainly offered to patients who are cisplatin-ineligible, decline it, or have ypT2–4/ypN+ after neoadjuvant chemotherapy; in a cisplatin-eligible patient chemotherapy comes first.",
+              "de": "Nivolumab ist bei PD-L1 ≥1 % zugelassen, wird aber vor allem Patienten angeboten, die für Cisplatin ungeeignet sind, es ablehnen oder nach neoadjuvanter Chemotherapie ypT2–4 bzw. ypN+ haben; bei Cisplatin-Eignung hat die Chemotherapie Vorrang.",
+              "es": "Nivolumab está aprobado con PD-L1 ≥1 %, pero se ofrece sobre todo a pacientes no aptos para cisplatino, que lo rechazan o con ypT2–4/ypN+ tras quimioterapia neoadyuvante; si el paciente es apto para cisplatino, la quimioterapia tiene prioridad."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Follow-up only, since the resection is R0.",
+              "de": "Nur Nachsorge, da R0 reseziert.",
+              "es": "Solo seguimiento, ya que la resección es R0."
+            },
+            "score": 0,
+            "minutes": 3,
+            "feedback": {
+              "en": "R0 does not protect against systemic relapse; with pT3 pN1 the relapse risk is high and adjuvant therapy improves the outlook.",
+              "de": "R0 schützt nicht vor einem systemischen Rezidiv; bei pT3 pN1 ist das Rezidivrisiko hoch, und eine adjuvante Therapie verbessert die Prognose.",
+              "es": "Una resección R0 no protege frente a la recidiva sistémica; con pT3 pN1 el riesgo de recidiva es alto y el tratamiento adyuvante mejora el pronóstico."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Adjuvant cisplatin-based combination chemotherapy (e.g. gemcitabine/cisplatin).",
+              "de": "Adjuvante cisplatinbasierte Kombinationschemotherapie (z. B. Gemcitabin/Cisplatin).",
+              "es": "Quimioterapia adyuvante combinada basada en cisplatino (p. ej., gemcitabina/cisplatino)."
+            },
+            "score": 10,
+            "minutes": 10,
+            "feedback": {
+              "en": "For pT3–4 and/or pN+ disease without neoadjuvant chemotherapy in a cisplatin-eligible patient, adjuvant cisplatin-based chemotherapy is the strongly recommended option.",
+              "de": "Bei pT3–4 und/oder pN+ ohne neoadjuvante Chemotherapie und erhaltener Cisplatin-Eignung ist die adjuvante cisplatinbasierte Chemotherapie die stark empfohlene Option.",
+              "es": "En pT3–4 y/o pN+ sin quimioterapia neoadyuvante y con elegibilidad para cisplatino, la quimioterapia adyuvante basada en cisplatino es la opción fuertemente recomendada."
+            },
+            "critical": false
+          }
+        ],
+        "best": "c"
+      },
+      {
+        "id": "declines-chemo",
+        "kind": "decision",
+        "prompt": {
+          "en": "After detailed counselling, Mr Benali declines any chemotherapy. What do you offer?",
+          "de": "Herr Benali lehnt nach ausführlicher Aufklärung jede Chemotherapie ab. Was bieten Sie an?",
+          "es": "Tras una información detallada, el Sr. Benali rechaza cualquier quimioterapia. ¿Qué le ofrece?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Imaging follow-up only with chest/abdominal CT, without adjuvant therapy.",
+              "de": "Nur bildgebende Nachsorge mit CT Thorax/Abdomen ohne adjuvante Therapie.",
+              "es": "Solo seguimiento con TC de tórax y abdomen, sin tratamiento adyuvante."
+            },
+            "score": 3,
+            "minutes": 4,
+            "feedback": {
+              "en": "This is possible after declining chemotherapy, but forgoes the approved immunotherapy with a proven disease-free survival benefit.",
+              "de": "Nach Ablehnung der Chemotherapie ist das möglich, verschenkt aber die zugelassene Immuntherapie mit belegtem Vorteil im krankheitsfreien Überleben.",
+              "es": "Es posible tras rechazar la quimioterapia, pero renuncia a la inmunoterapia aprobada con beneficio demostrado en supervivencia libre de enfermedad."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Adjuvant nivolumab for up to 1 year, starting within 120 days of surgery.",
+              "de": "Adjuvantes Nivolumab für bis zu 1 Jahr, Beginn innerhalb von 120 Tagen nach der Operation.",
+              "es": "Nivolumab adyuvante hasta 1 año, iniciado en los 120 días siguientes a la cirugía."
+            },
+            "score": 10,
+            "minutes": 8,
+            "feedback": {
+              "en": "For high-risk MIUC after radical resection with tumour-cell PD-L1 ≥1%, nivolumab is approved in the EU and prolongs disease-free survival; immune-related side effects (thyroid, colitis, pneumonitis) are monitored.",
+              "de": "Für Hochrisiko-MIUC nach radikaler Resektion mit PD-L1 ≥1 % auf Tumorzellen ist Nivolumab in der EU zugelassen und verlängert das krankheitsfreie Überleben; immunvermittelte Nebenwirkungen (Schilddrüse, Kolitis, Pneumonitis) werden überwacht.",
+              "es": "En el carcinoma urotelial músculo-infiltrante de alto riesgo tras resección radical con PD-L1 ≥1 % en células tumorales, nivolumab está aprobado en la UE y prolonga la supervivencia libre de enfermedad; se vigilan los efectos inmunomediados (tiroides, colitis, neumonitis)."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Adjuvant gemcitabine/carboplatin as a gentler alternative.",
+              "de": "Adjuvantes Gemcitabin/Carboplatin als schonendere Alternative.",
+              "es": "Gemcitabina/carboplatino adyuvante como alternativa más suave."
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "en": "Carboplatin does not replace cisplatin in the perioperative setting and has no proven benefit; moreover, the patient has declined chemotherapy.",
+              "de": "Carboplatin ersetzt Cisplatin perioperativ nicht und hat keinen belegten Nutzen; außerdem hat der Patient Chemotherapie abgelehnt.",
+              "es": "El carboplatino no sustituye al cisplatino en el contexto perioperatorio y no tiene beneficio demostrado; además, el paciente ha rechazado la quimioterapia."
+            },
+            "critical": false
+          }
+        ],
+        "best": "b"
+      }
+    ],
+    "takeaway": {
+      "en": "After cystectomy without neoadjuvant chemotherapy with pT3–4 and/or pN+: adjuvant cisplatin-based chemotherapy if cisplatin-eligible. Adjuvant nivolumab (tumour-cell PD-L1 ≥1%) is the option when cisplatin is unsuitable or declined, or for ypT2–4/ypN+ after neoadjuvant chemotherapy; carboplatin is no perioperative substitute.",
+      "de": "Nach Zystektomie ohne neoadjuvante Chemotherapie mit pT3–4 und/oder pN+: bei Cisplatin-Eignung adjuvante cisplatinbasierte Chemotherapie. Adjuvantes Nivolumab (PD-L1 ≥1 % auf Tumorzellen) ist die Option bei Cisplatin-Ungeeignetheit, Ablehnung oder ypT2–4/ypN+ nach neoadjuvanter Chemotherapie; Carboplatin ist perioperativ kein Ersatz.",
+      "es": "Tras cistectomía sin quimioterapia neoadyuvante con pT3–4 y/o pN+: quimioterapia adyuvante basada en cisplatino si es apto. El nivolumab adyuvante (PD-L1 ≥1 % en células tumorales) es la opción si el cisplatino no es apto o se rechaza, o con ypT2–4/ypN+ tras quimioterapia neoadyuvante; el carboplatino no es un sustituto perioperatorio."
+    },
+    "references": [
+      "bank-guide-mibc",
+      "knowuro-bladder-2026"
+    ]
+  },
+  {
+    "id": "onc-prostate-bcr-after-rp",
+    "area": "clinic",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "clinic",
+    "patient": {
+      "name": "Konrad Ostermann",
+      "age": 63,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Rising PSA two years after prostatectomy",
+      "de": "PSA-Anstieg zwei Jahre nach radikaler Prostatektomie",
+      "es": "Ascenso del PSA dos años después de la prostatectomía radical"
+    },
+    "presenting": {
+      "en": "Mr Ostermann underwent robot-assisted radical prostatectomy two years ago (pT3a pN0 (0/16), ISUP 3, R0); PSA was below 0.03 ng/ml six weeks after surgery. At follow-up, PSA has risen within six months from 0.18 to 0.26 and then 0.34 ng/ml (calculated PSA doubling time about 6.5 months). He has no symptoms, is fully continent and his testosterone is normal. He asks whether he could simply wait for now.",
+      "de": "Herr Ostermann wurde vor zwei Jahren roboterassistiert radikal prostatektomiert (pT3a pN0 (0/16), ISUP 3, R0); der PSA-Wert lag sechs Wochen postoperativ unter 0,03 ng/ml. In der Nachsorge steigt der PSA-Wert innerhalb von sechs Monaten von 0,18 über 0,26 auf 0,34 ng/ml (errechnete PSA-Verdopplungszeit etwa 6,5 Monate). Er ist beschwerdefrei, vollständig kontinent, das Testosteron liegt im Normbereich. Er fragt, ob man vorerst abwarten könne.",
+      "es": "El Sr. Ostermann se sometió hace dos años a una prostatectomía radical asistida por robot (pT3a pN0 (0/16), ISUP 3, R0); el PSA a las seis semanas de la cirugía era inferior a 0,03 ng/ml. En el seguimiento, el PSA ha subido en seis meses de 0,18 a 0,26 y después a 0,34 ng/ml (tiempo de duplicación del PSA calculado de unos 6,5 meses). Está asintomático, mantiene continencia completa y la testosterona es normal. Pregunta si podría simplemente esperar por ahora."
+    },
+    "vitals": {
+      "bp": "132/80",
+      "hr": 70,
+      "temp": 36.6,
+      "spo2": 98,
+      "rr": 14
+    },
+    "objectives": {
+      "en": [
+        "Classify biochemical recurrence after RP into EAU risk groups.",
+        "Plan PSMA-PET and early salvage radiotherapy at low PSA."
+      ],
+      "de": [
+        "Ein biochemisches Rezidiv nach RP den EAU-Risikogruppen zuordnen.",
+        "PSMA-PET und frühe Salvage-Strahlentherapie bei niedrigem PSA-Wert planen."
+      ],
+      "es": [
+        "Clasificar la recidiva bioquímica tras PR en los grupos de riesgo de la EAU.",
+        "Planificar PET-PSMA y radioterapia de rescate precoz con PSA bajo."
+      ]
+    },
+    "steps": [
+      {
+        "id": "classify-bcr",
+        "kind": "assessment",
+        "prompt": {
+          "en": "How do you classify the PSA course?",
+          "de": "Wie ordnen Sie den PSA-Verlauf ein?",
+          "es": "¿Cómo clasificas la evolución del PSA?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Biochemical recurrence, but EAU low risk because ISUP is below 4 and PSA is still below 0.5 ng/ml.",
+              "de": "Biochemisches Rezidiv, aber EAU-Niedrigrisiko, da ISUP < 4 und PSA noch < 0,5 ng/ml.",
+              "es": "Recidiva bioquímica, pero de bajo riesgo EAU porque el ISUP es menor de 4 y el PSA sigue por debajo de 0,5 ng/ml."
+            },
+            "score": 3,
+            "minutes": 4,
+            "feedback": {
+              "en": "The recurrence is recognised, but EAU risk depends on PSA doubling time (1 year or less) or pathological ISUP 4-5, not on the absolute PSA; a doubling time of 6.5 months means high risk.",
+              "de": "Das Rezidiv ist erkannt, die EAU-Risikogruppe richtet sich aber nach der PSA-Verdopplungszeit (≤ 1 Jahr) oder dem pathologischen ISUP 4–5, nicht nach dem absoluten PSA-Wert; 6,5 Monate Verdopplungszeit bedeuten Hochrisiko.",
+              "es": "La recidiva está reconocida, pero el riesgo EAU depende del tiempo de duplicación del PSA (1 año o menos) o del ISUP patológico 4-5, no del PSA absoluto; un tiempo de duplicación de 6,5 meses implica alto riesgo."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "No recurrence yet: biochemical recurrence is only defined from a PSA above 0.4 ng/ml.",
+              "de": "Noch kein Rezidiv: Ein biochemisches Rezidiv liegt erst ab einem PSA-Wert > 0,4 ng/ml vor.",
+              "es": "Todavía no hay recidiva: la recidiva bioquímica solo se define a partir de un PSA superior a 0,4 ng/ml."
+            },
+            "score": 0,
+            "minutes": 3,
+            "feedback": {
+              "en": "After RP, a confirmed PSA above 0.2 ng/ml defines biochemical recurrence; waiting for 0.4 ng/ml wastes the window for effective early salvage radiotherapy.",
+              "de": "Nach RP definiert ein bestätigter PSA-Wert > 0,2 ng/ml das biochemische Rezidiv; das Abwarten bis 0,4 ng/ml verspielt das Zeitfenster für eine wirksame frühe Salvage-Strahlentherapie.",
+              "es": "Tras la PR, un PSA confirmado superior a 0,2 ng/ml define la recidiva bioquímica; esperar a 0,4 ng/ml desperdicia la ventana para una radioterapia de rescate precoz eficaz."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Biochemical recurrence (PSA above 0.2 ng/ml, confirmed) with EAU high risk because the PSA doubling time is under 1 year.",
+              "de": "Biochemisches Rezidiv (PSA > 0,2 ng/ml, bestätigt) mit EAU-Hochrisiko wegen einer PSA-Verdopplungszeit < 1 Jahr.",
+              "es": "Recidiva bioquímica (PSA superior a 0,2 ng/ml, confirmado) de alto riesgo EAU porque el tiempo de duplicación del PSA es inferior a 1 año."
+            },
+            "score": 10,
+            "minutes": 5,
+            "feedback": {
+              "en": "Correct: high risk is PSA doubling time of 1 year or less or pathological ISUP 4-5; one criterion is enough and points towards early salvage treatment.",
+              "de": "Richtig: EAU-Hochrisiko bedeutet PSA-Verdopplungszeit ≤ 1 Jahr oder pathologisches ISUP 4–5; ein Kriterium genügt und spricht für eine frühe Salvage-Therapie.",
+              "es": "Correcto: alto riesgo EAU significa tiempo de duplicación del PSA de 1 año o menos o ISUP patológico 4-5; basta un criterio y orienta hacia un tratamiento de rescate precoz."
+            },
+            "critical": false
+          }
+        ],
+        "best": "c"
+      },
+      {
+        "id": "restaging",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which imaging do you request now?",
+          "de": "Welche Bildgebung veranlassen Sie jetzt?",
+          "es": "¿Qué prueba de imagen solicitas ahora?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "CT of the abdomen and pelvis plus bone scintigraphy.",
+              "de": "CT Abdomen/Becken und Skelettszintigrafie.",
+              "es": "TC de abdomen y pelvis y gammagrafía ósea."
+            },
+            "score": 3,
+            "minutes": 10,
+            "feedback": {
+              "en": "Restaging is reasonable, but conventional imaging has a very low detection rate at a PSA below 1 ng/ml and is not recommended in asymptomatic men at this level.",
+              "de": "Ein Restaging ist sinnvoll, die konventionelle Bildgebung hat bei PSA < 1 ng/ml aber eine sehr geringe Detektionsrate und wird bei asymptomatischen Patienten in dieser Situation nicht empfohlen.",
+              "es": "Reestadificar es razonable, pero la imagen convencional tiene una tasa de detección muy baja con PSA inferior a 1 ng/ml y no se recomienda en pacientes asintomáticos en esta situación."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "PSMA-PET/CT now, because the result can change the salvage plan.",
+              "de": "PSMA-PET/CT jetzt, da das Ergebnis das Salvage-Konzept verändern kann.",
+              "es": "PET/TC-PSMA ahora, porque el resultado puede cambiar el plan de rescate."
+            },
+            "score": 10,
+            "minutes": 8,
+            "feedback": {
+              "en": "Correct: with PSA above 0.2 ng/ml, PSMA-PET is recommended if it influences treatment, for example by showing nodal or distant disease outside the planned field.",
+              "de": "Richtig: Bei PSA > 0,2 ng/ml wird die PSMA-PET empfohlen, wenn sie die Therapie beeinflusst, etwa durch Nachweis von Lymphknoten- oder Fernmetastasen außerhalb des geplanten Feldes.",
+              "es": "Correcto: con PSA superior a 0,2 ng/ml se recomienda la PET-PSMA si influye en el tratamiento, por ejemplo al mostrar enfermedad ganglionar o a distancia fuera del campo previsto."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Wait until PSA exceeds 1 ng/ml so that the PSMA-PET has a higher detection rate.",
+              "de": "Abwarten, bis der PSA-Wert 1 ng/ml überschreitet, damit die PSMA-PET eine höhere Detektionsrate hat.",
+              "es": "Esperar a que el PSA supere 1 ng/ml para que la PET-PSMA tenga mayor tasa de detección."
+            },
+            "score": 0,
+            "minutes": 3,
+            "feedback": {
+              "en": "Salvage radiotherapy works best at the lowest possible PSA; delaying treatment to obtain a positive scan reduces the chance of cure.",
+              "de": "Die Salvage-Strahlentherapie wirkt am besten bei möglichst niedrigem PSA-Wert; eine Therapieverzögerung zugunsten eines positiven Befundes senkt die Heilungschance.",
+              "es": "La radioterapia de rescate es más eficaz con el PSA más bajo posible; retrasar el tratamiento para obtener una prueba positiva reduce la probabilidad de curación."
+            },
+            "critical": true
+          }
+        ],
+        "best": "b"
+      },
+      {
+        "id": "salvage-plan",
+        "kind": "decision",
+        "prompt": {
+          "en": "PSMA-PET/CT shows no lesion outside the prostate bed. What do you recommend?",
+          "de": "Die PSMA-PET/CT zeigt keinen Befund außerhalb der Prostataloge. Was empfehlen Sie?",
+          "es": "La PET/TC-PSMA no muestra lesiones fuera del lecho prostático. ¿Qué recomiendas?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "PSA monitoring every 3 months until the PSMA-PET shows a target lesion.",
+              "de": "PSA-Kontrollen alle 3 Monate, bis die PSMA-PET einen Zielbefund zeigt.",
+              "es": "Controles de PSA cada 3 meses hasta que la PET-PSMA muestre una lesión diana."
+            },
+            "score": 0,
+            "minutes": 4,
+            "feedback": {
+              "en": "Monitoring is an option only for EAU low-risk recurrence; a negative PSMA-PET does not exclude a local recurrence and should not delay salvage radiotherapy.",
+              "de": "Beobachtung ist nur beim EAU-Niedrigrisiko-Rezidiv eine Option; eine negative PSMA-PET schließt ein Lokalrezidiv nicht aus und darf die Salvage-Strahlentherapie nicht verzögern.",
+              "es": "La vigilancia solo es una opción en la recidiva de bajo riesgo EAU; una PET-PSMA negativa no descarta una recidiva local y no debe retrasar la radioterapia de rescate."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Early salvage radiotherapy to the prostate bed alone, without hormone therapy.",
+              "de": "Frühe Salvage-Strahlentherapie der Prostataloge allein, ohne Hormontherapie.",
+              "es": "Radioterapia de rescate precoz del lecho prostático sola, sin hormonoterapia."
+            },
+            "score": 3,
+            "minutes": 6,
+            "feedback": {
+              "en": "The timing is right, but in EAU high-risk recurrence adding androgen deprivation to salvage radiotherapy improves outcome.",
+              "de": "Der Zeitpunkt stimmt, beim EAU-Hochrisiko-Rezidiv verbessert die zusätzliche Androgendeprivation zur Salvage-Strahlentherapie jedoch das Ergebnis.",
+              "es": "El momento es correcto, pero en la recidiva de alto riesgo EAU añadir deprivación androgénica a la radioterapia de rescate mejora los resultados."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Early salvage radiotherapy to the prostate bed, starting at the current low PSA, combined with time-limited ADT (e.g. 6 months).",
+              "de": "Frühe Salvage-Strahlentherapie der Prostataloge beim aktuell niedrigen PSA-Wert, kombiniert mit zeitlich begrenzter ADT (z. B. 6 Monate).",
+              "es": "Radioterapia de rescate precoz del lecho prostático con el PSA bajo actual, combinada con TDA de duración limitada (p. ej., 6 meses)."
+            },
+            "score": 10,
+            "minutes": 8,
+            "feedback": {
+              "en": "Correct: EAU high-risk recurrence after RP is treated with early salvage radiotherapy plus ADT; long-term ADT is not needed at a PSA this low.",
+              "de": "Richtig: Das EAU-Hochrisiko-Rezidiv nach RP wird mit früher Salvage-Strahlentherapie plus ADT behandelt; eine Langzeit-ADT ist bei so niedrigem PSA-Wert nicht erforderlich.",
+              "es": "Correcto: la recidiva de alto riesgo EAU tras PR se trata con radioterapia de rescate precoz más TDA; con un PSA tan bajo no se necesita TDA prolongada."
+            },
+            "critical": false
+          }
+        ],
+        "best": "c"
+      }
+    ],
+    "takeaway": {
+      "en": "After RP, a confirmed PSA above 0.2 ng/ml is biochemical recurrence; EAU high risk means PSA doubling time of 1 year or less or pathological ISUP 4-5. Use PSMA-PET when it changes management, but do not wait for a positive scan: high-risk recurrence gets early salvage radiotherapy plus ADT, while monitoring is reserved for EAU low risk.",
+      "de": "Nach RP ist ein bestätigter PSA-Wert > 0,2 ng/ml ein biochemisches Rezidiv; EAU-Hochrisiko bedeutet PSA-Verdopplungszeit ≤ 1 Jahr oder pathologisches ISUP 4–5. PSMA-PET einsetzen, wenn sie die Therapie ändert, aber nicht auf einen positiven Befund warten: Das Hochrisiko-Rezidiv erhält eine frühe Salvage-Strahlentherapie plus ADT, Beobachtung bleibt dem EAU-Niedrigrisiko vorbehalten.",
+      "es": "Tras la PR, un PSA confirmado superior a 0,2 ng/ml es recidiva bioquímica; el alto riesgo EAU significa tiempo de duplicación del PSA de 1 año o menos o ISUP patológico 4-5. Usa la PET-PSMA cuando cambie el manejo, pero no esperes a una prueba positiva: la recidiva de alto riesgo recibe radioterapia de rescate precoz más TDA y la vigilancia queda para el bajo riesgo EAU."
+    },
+    "references": [
+      "bank-guide-prostatakarzinom",
+      "knowuro-prostate-2026"
+    ]
+  },
+  {
+    "id": "onc-prostate-cn1-radiotherapy",
+    "area": "clinic",
+    "level": 3,
+    "acuity": "routine",
+    "duty": "board",
+    "patient": {
+      "name": "Giuseppe Marchetti",
+      "age": 67,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Pelvic nodes on PSMA-PET: cure or palliation?",
+      "de": "PSMA-positive Beckenlymphknoten: kurativ oder palliativ?",
+      "es": "Ganglios pélvicos en la PET-PSMA: ¿curación o paliación?"
+    },
+    "presenting": {
+      "en": "Mr Marchetti (67 years, ECOG 0) has a PSA of 32 ng/ml and a firm nodule on the right on DRE. Biopsy shows adenocarcinoma ISUP 4 in 9 of 14 cores; mpMRI shows extraprostatic extension on the right (cT3a). PSMA-PET/CT shows two PSMA-avid lymph nodes on the right pelvic side wall (obturator and external iliac, 11 and 13 mm) and no distant metastases. After counselling he prefers radiotherapy to surgery.",
+      "de": "Herr Marchetti (67 Jahre, ECOG 0) hat einen PSA-Wert von 32 ng/ml und rechts einen derben Tastbefund. Die Biopsie zeigt ein Adenokarzinom ISUP 4 in 9 von 14 Stanzen; im mpMRT besteht rechts eine extraprostatische Ausdehnung (cT3a). Die PSMA-PET/CT zeigt zwei PSMA-avide Lymphknoten an der rechten Beckenwand (obturatorisch und iliakal extern, 11 und 13 mm), keine Fernmetastasen. Nach Aufklärung bevorzugt er eine Strahlentherapie gegenüber der Operation.",
+      "es": "El Sr. Marchetti (67 años, ECOG 0) tiene un PSA de 32 ng/ml y un nódulo duro derecho en el tacto rectal. La biopsia muestra adenocarcinoma ISUP 4 en 9 de 14 cilindros; la RM multiparamétrica muestra extensión extraprostática derecha (cT3a). La PET/TC-PSMA muestra dos ganglios ávidos de PSMA en la pared pélvica derecha (obturador e ilíaco externo, 11 y 13 mm) sin metástasis a distancia. Tras la información prefiere radioterapia a cirugía."
+    },
+    "vitals": null,
+    "objectives": {
+      "en": [
+        "Distinguish regional nodal disease (cN1 M0) from metastatic disease.",
+        "Recommend radiotherapy with long-term ADT and abiraterone for cN1 disease."
+      ],
+      "de": [
+        "Regionären Lymphknotenbefall (cN1 M0) von metastasierter Erkrankung abgrenzen.",
+        "Für cN1 eine Strahlentherapie mit Langzeit-ADT und Abirateron empfehlen."
+      ],
+      "es": [
+        "Distinguir la afectación ganglionar regional (cN1 M0) de la enfermedad metastásica.",
+        "Recomendar radioterapia con TDA prolongada y abiraterona en la enfermedad cN1."
+      ]
+    },
+    "steps": [
+      {
+        "id": "stage",
+        "kind": "assessment",
+        "prompt": {
+          "en": "How do you stage the disease for the tumour board?",
+          "de": "Wie ordnen Sie das Stadium für die Tumorkonferenz ein?",
+          "es": "¿Cómo estadificas la enfermedad para el comité de tumores?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Obtain histology of the nodes first (CT-guided biopsy or lymphadenectomy) before any treatment decision.",
+              "de": "Vor jeder Therapieentscheidung zunächst die Lymphknoten histologisch sichern (CT-gesteuerte Punktion oder Lymphadenektomie).",
+              "es": "Obtener primero histología de los ganglios (biopsia guiada por TC o linfadenectomía) antes de decidir el tratamiento."
+            },
+            "score": 3,
+            "minutes": 10,
+            "feedback": {
+              "en": "Histology would confirm the finding, but concordant PSMA-PET and morphology are sufficient for planning; an extra procedure delays treatment the patient has already chosen.",
+              "de": "Die Histologie würde den Befund sichern, übereinstimmende PSMA-PET und Morphologie reichen aber zur Planung; ein zusätzlicher Eingriff verzögert die bereits gewählte Therapie.",
+              "es": "La histología confirmaría el hallazgo, pero una PET-PSMA y una morfología concordantes bastan para planificar; un procedimiento adicional retrasa el tratamiento ya elegido."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Locally advanced disease cT3a cN1 M0 with regional pelvic nodes, to be treated with curative intent.",
+              "de": "Lokal fortgeschrittenes Karzinom cT3a cN1 M0 mit regionären Beckenlymphknoten, Behandlung in kurativer Intention.",
+              "es": "Enfermedad localmente avanzada cT3a cN1 M0 con ganglios pélvicos regionales, a tratar con intención curativa."
+            },
+            "score": 10,
+            "minutes": 5,
+            "feedback": {
+              "en": "Correct: the nodes of the true pelvis below the bifurcation of the common iliac arteries (obturator, internal and external iliac) are regional (N1); cN1 M0 disease is treated with multimodal therapy of curative intent.",
+              "de": "Richtig: Die Lymphknoten des kleinen Beckens unterhalb der Bifurkation der Aa. iliacae communes (obturatorisch, iliakal intern und extern) sind regionär (N1); cN1 M0 wird multimodal mit kurativer Intention behandelt.",
+              "es": "Correcto: los ganglios de la pelvis menor por debajo de la bifurcación de las arterias ilíacas comunes (obturadores, ilíacos internos y externos) son regionales (N1); la enfermedad cN1 M0 se trata de forma multimodal con intención curativa."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Nodal metastases mean metastatic disease (M1a): palliative systemic therapy without local treatment.",
+              "de": "Lymphknotenmetastasen bedeuten metastasierte Erkrankung (M1a): palliative Systemtherapie ohne Lokaltherapie.",
+              "es": "Las metástasis ganglionares significan enfermedad metastásica (M1a): tratamiento sistémico paliativo sin tratamiento local."
+            },
+            "score": 0,
+            "minutes": 3,
+            "feedback": {
+              "en": "M1a refers only to non-regional nodes, such as common iliac or para-aortic nodes; classifying pelvic nodes as M1 withholds a potentially curative treatment.",
+              "de": "M1a bezeichnet nur nicht-regionäre Lymphknoten, etwa iliakal kommunal oder paraaortal; wer Beckenlymphknoten als M1 einstuft, enthält dem Patienten eine potenziell kurative Therapie vor.",
+              "es": "M1a se refiere solo a ganglios no regionales, como los ilíacos comunes o paraaórticos; clasificar los ganglios pélvicos como M1 priva al paciente de un tratamiento potencialmente curativo."
+            },
+            "critical": false
+          }
+        ],
+        "best": "b"
+      },
+      {
+        "id": "treatment",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which treatment does the tumour board recommend?",
+          "de": "Welche Therapie empfiehlt die Tumorkonferenz?",
+          "es": "¿Qué tratamiento recomienda el comité de tumores?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "IMRT/IGRT to the prostate and pelvic lymph nodes, ADT for 2-3 years plus abiraterone with prednisolone for 2 years.",
+              "de": "IMRT/IGRT der Prostata und der pelvinen Lymphabflusswege, ADT für 2–3 Jahre plus Abirateron mit Prednisolon für 2 Jahre.",
+              "es": "IMRT/IGRT de próstata y cadenas ganglionares pélvicas, TDA durante 2-3 años más abiraterona con prednisolona durante 2 años."
+            },
+            "score": 10,
+            "minutes": 12,
+            "feedback": {
+              "en": "Correct: in STAMPEDE, 2 years of abiraterone added to radiotherapy and long-term ADT improved metastasis-free and overall survival in cN1 and high-risk cN0 disease. EAU recommends it, but it is off-label in Germany: apply for cost coverage first.",
+              "de": "Richtig: In STAMPEDE verbesserte Abirateron für 2 Jahre zusätzlich zu Strahlentherapie und Langzeit-ADT das metastasenfreie und das Gesamtüberleben bei cN1 und Hochrisiko-cN0. Die EAU empfiehlt es, in Deutschland ist es jedoch off-label: Kostenübernahme vorab beantragen.",
+              "es": "Correcto: en STAMPEDE, 2 años de abiraterona añadidos a la radioterapia y a la TDA prolongada mejoraron la supervivencia libre de metástasis y global en cN1 y cN0 de alto riesgo. La EAU lo recomienda, pero en Alemania es off-label: hay que solicitar antes la cobertura de costes."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Lifelong ADT alone; radiotherapy only if local symptoms develop.",
+              "de": "Lebenslange ADT allein; Strahlentherapie nur bei lokalen Beschwerden.",
+              "es": "TDA de por vida en monoterapia; radioterapia solo si aparecen síntomas locales."
+            },
+            "score": 0,
+            "minutes": 4,
+            "feedback": {
+              "en": "ADT alone undertreats cN1 M0 disease; adding radiotherapy of the prostate and pelvis improves survival.",
+              "de": "ADT allein untertherapiert cN1 M0; die zusätzliche Strahlentherapie von Prostata und Becken verbessert das Überleben.",
+              "es": "La TDA sola infratrata la enfermedad cN1 M0; añadir radioterapia de próstata y pelvis mejora la supervivencia."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "IMRT/IGRT to the prostate and pelvic lymph nodes with ADT for 2-3 years, without further intensification.",
+              "de": "IMRT/IGRT der Prostata und der pelvinen Lymphabflusswege mit ADT für 2–3 Jahre, ohne weitere Intensivierung.",
+              "es": "IMRT/IGRT de próstata y cadenas ganglionares pélvicas con TDA durante 2-3 años, sin más intensificación."
+            },
+            "score": 3,
+            "minutes": 10,
+            "feedback": {
+              "en": "Field and ADT duration are right, but omitting abiraterone forgoes the survival benefit shown for cN1 disease.",
+              "de": "Feld und ADT-Dauer sind richtig, ohne Abirateron entfällt jedoch der für cN1 belegte Überlebensvorteil.",
+              "es": "El campo y la duración de la TDA son correctos, pero omitir la abiraterona renuncia al beneficio de supervivencia demostrado en cN1."
+            },
+            "critical": false
+          }
+        ],
+        "best": "a"
+      },
+      {
+        "id": "abiraterone-safety",
+        "kind": "action",
+        "prompt": {
+          "en": "Cost coverage is approved and abiraterone is started. How do you organise co-medication and monitoring?",
+          "de": "Die Kostenübernahme liegt vor, Abirateron wird begonnen. Wie organisieren Sie Begleitmedikation und Kontrollen?",
+          "es": "Se aprueba la cobertura de costes y se inicia la abiraterona. ¿Cómo organizas la medicación concomitante y los controles?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Abiraterone with prednisolone; laboratory tests only together with the 3-monthly PSA.",
+              "de": "Abirateron mit Prednisolon; Laborkontrollen nur zusammen mit dem PSA-Wert alle 3 Monate.",
+              "es": "Abiraterona con prednisolona; analíticas solo junto con el PSA cada 3 meses."
+            },
+            "score": 3,
+            "minutes": 4,
+            "feedback": {
+              "en": "The glucocorticoid is right, but hepatotoxicity and hypokalaemia appear mainly in the first months and need closer checks.",
+              "de": "Das Glukokortikoid ist richtig, Hepatotoxizität und Hypokaliämie treten aber vor allem in den ersten Monaten auf und erfordern engere Kontrollen.",
+              "es": "El glucocorticoide es correcto, pero la hepatotoxicidad y la hipopotasemia aparecen sobre todo en los primeros meses y requieren controles más estrechos."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Abiraterone always with prednisolone; transaminases every 2 weeks for the first 3 months, then monthly; blood pressure, potassium and fluid retention monthly.",
+              "de": "Abirateron stets mit Prednisolon; Transaminasen in den ersten 3 Monaten alle 2 Wochen, danach monatlich; Blutdruck, Kalium und Flüssigkeitsretention monatlich.",
+              "es": "Abiraterona siempre con prednisolona; transaminasas cada 2 semanas durante los primeros 3 meses y después mensuales; presión arterial, potasio y retención de líquidos mensuales."
+            },
+            "score": 10,
+            "minutes": 6,
+            "feedback": {
+              "en": "Correct: the glucocorticoid prevents mineralocorticoid excess, and early liver and electrolyte checks detect the typical toxicities in time.",
+              "de": "Richtig: Das Glukokortikoid verhindert den Mineralokortikoidexzess, frühe Leber- und Elektrolytkontrollen erfassen die typischen Toxizitäten rechtzeitig.",
+              "es": "Correcto: el glucocorticoide evita el exceso de mineralocorticoides y los controles hepáticos y de electrolitos precoces detectan a tiempo las toxicidades típicas."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Abiraterone without a glucocorticoid, as he has no metastases and should avoid steroid side effects.",
+              "de": "Abirateron ohne Glukokortikoid, da er nicht metastasiert ist und Steroidnebenwirkungen vermeiden soll.",
+              "es": "Abiraterona sin glucocorticoide, porque no tiene metástasis y debe evitar los efectos adversos de los esteroides."
+            },
+            "score": 0,
+            "minutes": 2,
+            "feedback": {
+              "en": "Without a glucocorticoid, abiraterone causes mineralocorticoid excess with hypertension, hypokalaemia and fluid retention, regardless of stage.",
+              "de": "Ohne Glukokortikoid führt Abirateron unabhängig vom Stadium zu Mineralokortikoidexzess mit Hypertonie, Hypokaliämie und Ödemen.",
+              "es": "Sin glucocorticoide, la abiraterona provoca exceso de mineralocorticoides con hipertensión, hipopotasemia y edemas, independientemente del estadio."
+            },
+            "critical": true
+          }
+        ],
+        "best": "b"
+      }
+    ],
+    "takeaway": {
+      "en": "Pelvic nodes are regional: cN1 M0 is treated with curative intent. With radiotherapy this means the prostate and pelvic nodes plus 2-3 years of ADT and 2 years of abiraterone with prednisolone (also for cN0 with at least 2 of cT3-4, ISUP 4-5 or PSA 40 ng/ml or more); abiraterone is off-label in Germany in this setting and needs close liver, potassium and blood pressure monitoring.",
+      "de": "Beckenlymphknoten sind regionär: cN1 M0 wird kurativ behandelt. Bei Strahlentherapie bedeutet das Prostata und pelvine Lymphabflusswege plus 2–3 Jahre ADT und 2 Jahre Abirateron mit Prednisolon (ebenso bei cN0 mit ≥ 2 von cT3–4, ISUP 4–5 oder PSA ≥ 40 ng/ml); Abirateron ist hier in Deutschland off-label und erfordert engmaschige Kontrollen von Leberwerten, Kalium und Blutdruck.",
+      "es": "Los ganglios pélvicos son regionales: la enfermedad cN1 M0 se trata con intención curativa. Con radioterapia, esto significa próstata y cadenas pélvicas más 2-3 años de TDA y 2 años de abiraterona con prednisolona (también en cN0 con al menos 2 de cT3-4, ISUP 4-5 o PSA de 40 ng/ml o más); en Alemania la abiraterona es off-label en este contexto y requiere controles estrechos de función hepática, potasio y presión arterial."
+    },
+    "references": [
+      "bank-guide-prostatakarzinom",
+      "knowuro-prostate-2026"
+    ]
+  },
+  {
+    "id": "onc-prostate-mcrpc-brca2-sequencing",
+    "area": "clinic",
+    "level": 3,
+    "acuity": "routine",
+    "duty": "board",
+    "patient": {
+      "name": "Ryszard Wiśniewski",
+      "age": 70,
+      "sex": "male"
+    },
+    "title": {
+      "en": "BRCA2 and castration resistance: what comes next?",
+      "de": "BRCA2 und Kastrationsresistenz: Was folgt worauf?",
+      "es": "BRCA2 y resistencia a la castración: ¿qué va después?"
+    },
+    "presenting": {
+      "en": "Mr Wiśniewski (70 years, ECOG 1) received ADT with 6 cycles of docetaxel for high-volume mHSPC three years ago; he developed febrile neutropenia in cycle 4 and has never had an ARPI. On continued ADT (testosterone 18 ng/dl), PSA has risen in three measurements from a nadir of 0.8 to 7.4 ng/ml, and bone scintigraphy shows three new lesions; there are no visceral metastases. Germline and tumour tissue testing show a pathogenic BRCA2 mutation. Renal and liver function and blood count are normal.",
+      "de": "Herr Wiśniewski (70 Jahre, ECOG 1) erhielt vor drei Jahren bei hochvolumigem mHSPC eine ADT mit 6 Zyklen Docetaxel; im 4. Zyklus trat eine febrile Neutropenie auf; einen ARPI hat er bisher nicht erhalten. Unter fortgesetzter ADT (Testosteron 18 ng/dl) steigt der PSA-Wert in drei Messungen von einem Nadir von 0,8 auf 7,4 ng/ml, die Skelettszintigrafie zeigt drei neue Läsionen; viszerale Metastasen bestehen nicht. Die Keimbahn- und Tumorgewebetestung ergibt eine pathogene BRCA2-Mutation. Nieren-, Leberwerte und Blutbild sind unauffällig.",
+      "es": "El Sr. Wiśniewski (70 años, ECOG 1) recibió hace tres años TDA con 6 ciclos de docetaxel por un CPHSm de alto volumen; en el 4.º ciclo presentó una neutropenia febril y nunca ha recibido un ARPI. Con TDA mantenida (testosterona 18 ng/dl), el PSA ha subido en tres determinaciones desde un nadir de 0,8 hasta 7,4 ng/ml y la gammagrafía ósea muestra tres lesiones nuevas; no hay metástasis viscerales. El estudio germinal y del tejido tumoral muestra una mutación patogénica de BRCA2. La función renal y hepática y el hemograma son normales."
+    },
+    "vitals": null,
+    "objectives": {
+      "en": [
+        "Choose first-line mCRPC therapy for a BRCA2 carrier.",
+        "Apply progression criteria and sequencing rules after ARPI and docetaxel."
+      ],
+      "de": [
+        "Die Erstlinientherapie des mCRPC bei BRCA2-Mutation auswählen.",
+        "Progressionskriterien und Sequenzregeln nach ARPI und Docetaxel anwenden."
+      ],
+      "es": [
+        "Elegir el tratamiento de primera línea del CPRCm en un portador de BRCA2.",
+        "Aplicar los criterios de progresión y las reglas de secuenciación tras ARPI y docetaxel."
+      ]
+    },
+    "steps": [
+      {
+        "id": "first-line-mcrpc",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which first-line mCRPC therapy does the tumour board recommend?",
+          "de": "Welche Erstlinientherapie des mCRPC empfiehlt die Tumorkonferenz?",
+          "es": "¿Qué tratamiento de primera línea del CPRCm recomienda el comité de tumores?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "177Lu-PSMA-617, because he has already received a taxane.",
+              "de": "177Lu-PSMA-617, da bereits ein Taxan gegeben wurde.",
+              "es": "177Lu-PSMA-617, porque ya ha recibido un taxano."
+            },
+            "score": 0,
+            "minutes": 6,
+            "feedback": {
+              "en": "In the EU, 177Lu-PSMA-617 requires prior treatment with an ARPI and a taxane; he is ARPI-naive, so it is not an option yet.",
+              "de": "In der EU setzt 177Lu-PSMA-617 eine Vorbehandlung mit ARPI und Taxan voraus; er ist ARPI-naiv, daher ist es noch keine Option.",
+              "es": "En la UE, 177Lu-PSMA-617 exige tratamiento previo con un ARPI y un taxano; es naïve a ARPI, así que todavía no es una opción."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "ARPI monotherapy (enzalutamide or abiraterone with prednisolone).",
+              "de": "ARPI-Monotherapie (Enzalutamid oder Abirateron mit Prednisolon).",
+              "es": "Monoterapia con ARPI (enzalutamida o abiraterona con prednisolona)."
+            },
+            "score": 3,
+            "minutes": 5,
+            "feedback": {
+              "en": "An ARPI is active after docetaxel, but with a BRCA2 mutation the combination with a PARP inhibitor clearly prolongs radiographic progression-free survival and should be prioritised.",
+              "de": "Ein ARPI ist nach Docetaxel wirksam, bei BRCA2-Mutation verlängert die Kombination mit einem PARP-Inhibitor das radiologisch progressionsfreie Überleben jedoch deutlich und ist vorzuziehen.",
+              "es": "Un ARPI es activo tras docetaxel, pero con mutación de BRCA2 la combinación con un inhibidor de PARP prolonga claramente la supervivencia libre de progresión radiológica y debe priorizarse."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "PARP inhibitor plus ARPI, e.g. olaparib plus abiraterone, talazoparib plus enzalutamide or niraparib plus abiraterone.",
+              "de": "PARP-Inhibitor plus ARPI, z. B. Olaparib plus Abirateron, Talazoparib plus Enzalutamid oder Niraparib plus Abirateron.",
+              "es": "Inhibidor de PARP más ARPI, p. ej., olaparib más abiraterona, talazoparib más enzalutamida o niraparib más abiraterona."
+            },
+            "score": 10,
+            "minutes": 8,
+            "feedback": {
+              "en": "Correct: BRCA1/2 carriers gain most from PARP inhibitor plus ARPI in ARPI-naive mCRPC, also after docetaxel for mHSPC; all three are EU-approved, olaparib and talazoparib when chemotherapy is not clinically indicated, as here after febrile neutropenia on docetaxel.",
+              "de": "Richtig: BRCA1/2-Träger profitieren beim ARPI-naiven mCRPC, auch nach Docetaxel im mHSPC, am stärksten von PARP-Inhibitor plus ARPI; alle drei sind in der EU zugelassen, Olaparib und Talazoparib jeweils, wenn eine Chemotherapie klinisch nicht angezeigt ist, wie hier nach febriler Neutropenie unter Docetaxel.",
+              "es": "Correcto: los portadores de BRCA1/2 son los que más se benefician de inhibidor de PARP más ARPI en el CPRCm naïve a ARPI, también tras docetaxel en el CPHSm; las tres están aprobadas en la UE, olaparib y talazoparib cuando la quimioterapia no está clínicamente indicada, como aquí tras la neutropenia febril con docetaxel."
+            },
+            "critical": false
+          }
+        ],
+        "best": "c"
+      },
+      {
+        "id": "psa-rise",
+        "kind": "assessment",
+        "prompt": {
+          "en": "After 10 months on olaparib plus abiraterone, PSA rises from 1.1 to 2.0 ng/ml. He has no symptoms; CT and bone scintigraphy show no new lesions. What do you do?",
+          "de": "Nach 10 Monaten unter Olaparib plus Abirateron steigt der PSA-Wert von 1,1 auf 2,0 ng/ml. Er ist beschwerdefrei, CT und Skelettszintigrafie zeigen keine neuen Läsionen. Wie gehen Sie vor?",
+          "es": "Tras 10 meses con olaparib más abiraterona, el PSA sube de 1,1 a 2,0 ng/ml. Está asintomático y la TC y la gammagrafía ósea no muestran lesiones nuevas. ¿Qué haces?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Continue therapy with PSA and imaging follow-up; change treatment only when 2 of 3 criteria (PSA, radiographic, clinical progression) are met.",
+              "de": "Therapie fortführen mit PSA- und Bildgebungskontrollen; Wechsel erst, wenn 2 von 3 Kriterien (PSA-, radiologische, klinische Progression) erfüllt sind.",
+              "es": "Mantener el tratamiento con controles de PSA e imagen; cambiar solo cuando se cumplan 2 de 3 criterios (progresión del PSA, radiológica y clínica)."
+            },
+            "score": 10,
+            "minutes": 5,
+            "feedback": {
+              "en": "Correct: an isolated PSA rise without radiographic or clinical progression does not justify abandoning an effective therapy.",
+              "de": "Richtig: Ein isolierter PSA-Anstieg ohne radiologische oder klinische Progression rechtfertigt nicht, eine wirksame Therapie aufzugeben.",
+              "es": "Correcto: un ascenso aislado del PSA sin progresión radiológica ni clínica no justifica abandonar un tratamiento eficaz."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Switch to enzalutamide, as the PSA shows resistance to abiraterone.",
+              "de": "Wechsel auf Enzalutamid, da der PSA-Wert eine Resistenz gegen Abirateron zeigt.",
+              "es": "Cambiar a enzalutamida, porque el PSA indica resistencia a la abiraterona."
+            },
+            "score": 0,
+            "minutes": 4,
+            "feedback": {
+              "en": "ARPIs show marked cross-resistance and should not be sequenced; moreover, PSA alone does not define progression.",
+              "de": "ARPI zeigen eine ausgeprägte Kreuzresistenz und sollen nicht sequenziert werden; zudem definiert der PSA-Wert allein keine Progression.",
+              "es": "Los ARPI presentan una marcada resistencia cruzada y no deben secuenciarse; además, el PSA por sí solo no define progresión."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Continue therapy, but no further imaging until symptoms appear.",
+              "de": "Therapie fortführen, aber keine weitere Bildgebung bis zum Auftreten von Beschwerden.",
+              "es": "Mantener el tratamiento, pero sin más pruebas de imagen hasta que aparezcan síntomas."
+            },
+            "score": 3,
+            "minutes": 3,
+            "feedback": {
+              "en": "Continuing is right, but radiographic progression is one of the three criteria and must be checked regularly, especially with a rising PSA.",
+              "de": "Die Fortführung ist richtig, die radiologische Progression ist aber eines der drei Kriterien und muss gerade bei steigendem PSA regelmäßig kontrolliert werden.",
+              "es": "Continuar es correcto, pero la progresión radiológica es uno de los tres criterios y debe controlarse con regularidad, sobre todo con un PSA en ascenso."
+            },
+            "critical": false
+          }
+        ],
+        "best": "a"
+      },
+      {
+        "id": "after-arpi-docetaxel",
+        "kind": "decision",
+        "prompt": {
+          "en": "Five months later he has bone pain, PSA 46 ng/ml and new bone and liver metastases; all lesions are clearly PSMA-positive on PSMA-PET/CT. Because of the earlier febrile neutropenia he declines further chemotherapy after full counselling. What do you recommend?",
+          "de": "Fünf Monate später bestehen Knochenschmerzen, PSA 46 ng/ml sowie neue Knochen- und Lebermetastasen; in der PSMA-PET/CT sind alle Läsionen deutlich PSMA-positiv. Wegen der früheren febrilen Neutropenie lehnt er nach ausführlicher Aufklärung eine erneute Chemotherapie ab. Was empfehlen Sie?",
+          "es": "Cinco meses después presenta dolor óseo, PSA de 46 ng/ml y nuevas metástasis óseas y hepáticas; todas las lesiones son claramente positivas en la PET/TC-PSMA. Por la neutropenia febril previa, rechaza más quimioterapia después de una información completa. ¿Qué recomiendas?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Cabazitaxel.",
+              "de": "Cabazitaxel.",
+              "es": "Cabazitaxel."
+            },
+            "score": 3,
+            "minutes": 6,
+            "feedback": {
+              "en": "Cabazitaxel is a recommended option after docetaxel and an ARPI, but he has declined chemotherapy after informed counselling and has a PSMA-positive alternative.",
+              "de": "Cabazitaxel ist nach Docetaxel und ARPI eine empfohlene Option, er hat Chemotherapie aber nach Aufklärung abgelehnt und hat eine PSMA-positive Alternative.",
+              "es": "Cabazitaxel es una opción recomendada tras docetaxel y un ARPI, pero ha rechazado la quimioterapia tras ser informado y dispone de una alternativa PSMA-positiva."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "177Lu-PSMA-617.",
+              "de": "177Lu-PSMA-617.",
+              "es": "177Lu-PSMA-617."
+            },
+            "score": 10,
+            "minutes": 8,
+            "feedback": {
+              "en": "Correct: after an ARPI and a taxane, with PSMA-positive disease, 177Lu-PSMA-617 is EAU-recommended and EU-approved; radium-223 is excluded by the liver metastases.",
+              "de": "Richtig: Nach ARPI und Taxan ist 177Lu-PSMA-617 bei PSMA-positiver Erkrankung EAU-empfohlen und in der EU zugelassen; Radium-223 scheidet wegen der Lebermetastasen aus.",
+              "es": "Correcto: tras un ARPI y un taxano, con enfermedad PSMA-positiva, 177Lu-PSMA-617 está recomendado por la EAU y aprobado en la UE; el radio-223 queda excluido por las metástasis hepáticas."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Enzalutamide as a well-tolerated oral alternative.",
+              "de": "Enzalutamid als gut verträgliche orale Alternative.",
+              "es": "Enzalutamida como alternativa oral bien tolerada."
+            },
+            "score": 0,
+            "minutes": 3,
+            "feedback": {
+              "en": "A second ARPI after abiraterone is rarely effective because of cross-resistance and delays an active therapy.",
+              "de": "Ein zweiter ARPI nach Abirateron ist wegen der Kreuzresistenz kaum wirksam und verzögert eine aktive Therapie.",
+              "es": "Un segundo ARPI tras abiraterona apenas es eficaz por la resistencia cruzada y retrasa un tratamiento activo."
+            },
+            "critical": false
+          }
+        ],
+        "best": "b"
+      }
+    ],
+    "takeaway": {
+      "en": "In ARPI-naive mCRPC with a BRCA1/2 mutation, start a PARP inhibitor plus ARPI. Change therapy only when 2 of 3 progression criteria are met, never sequence ARPIs, and after docetaxel and an ARPI choose cabazitaxel or, in PSMA-positive disease, 177Lu-PSMA-617.",
+      "de": "Beim ARPI-naiven mCRPC mit BRCA1/2-Mutation mit PARP-Inhibitor plus ARPI beginnen. Therapie erst wechseln, wenn 2 von 3 Progressionskriterien erfüllt sind, ARPI nie sequenzieren, und nach Docetaxel und ARPI Cabazitaxel oder bei PSMA-positiver Erkrankung 177Lu-PSMA-617 wählen.",
+      "es": "En el CPRCm naïve a ARPI con mutación de BRCA1/2, iniciar inhibidor de PARP más ARPI. Cambiar el tratamiento solo cuando se cumplan 2 de 3 criterios de progresión, no secuenciar nunca ARPI y, tras docetaxel y un ARPI, elegir cabazitaxel o, en enfermedad PSMA-positiva, 177Lu-PSMA-617."
+    },
+    "references": [
+      "bank-guide-prostatakarzinom",
+      "knowuro-prostate-2026"
+    ]
+  },
+  {
+    "id": "onc-prostate-mhspc-chemo-unfit",
+    "area": "clinic",
+    "level": 2,
+    "acuity": "urgent",
+    "duty": "clinic",
+    "patient": {
+      "name": "Hüseyin Aydın",
+      "age": 81,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Bone metastases in a man unfit for chemotherapy",
+      "de": "Knochenmetastasen bei einem Patienten ohne Chemotherapiefähigkeit",
+      "es": "Metástasis óseas en un paciente no apto para quimioterapia"
+    },
+    "presenting": {
+      "en": "Mr Aydın (81 years) presents with right pelvic pain increasing over 4 weeks (NRS 7/10). PSA is 164 ng/ml and biopsy shows ISUP 4; CT and bone scintigraphy show six bone metastases (pelvis, ribs, T9) and no visceral metastases. He has heart failure with an LVEF of 35%, diabetes with polyneuropathy and ECOG 2; chemotherapy was judged unsuitable in the multidisciplinary discussion. He is neurologically intact, spinal MRI shows no cord compression, and calcium and creatinine are normal.",
+      "de": "Herr Aydın (81 Jahre) stellt sich mit seit 4 Wochen zunehmenden Schmerzen im rechten Becken vor (NRS 7/10). Der PSA-Wert beträgt 164 ng/ml, die Biopsie zeigt ISUP 4; CT und Skelettszintigrafie zeigen sechs Knochenmetastasen (Becken, Rippen, BWK 9), keine viszeralen Metastasen. Begleitend bestehen eine Herzinsuffizienz mit LVEF 35 %, ein Diabetes mellitus mit Polyneuropathie und ECOG 2; eine Chemotherapie wurde interdisziplinär als nicht geeignet eingestuft. Neurologisch ist er unauffällig, das MRT der Wirbelsäule zeigt keine Myelonkompression, Kalzium und Kreatinin sind normal.",
+      "es": "El Sr. Aydın (81 años) consulta por dolor en la pelvis derecha que aumenta desde hace 4 semanas (EVN 7/10). El PSA es de 164 ng/ml y la biopsia muestra ISUP 4; la TC y la gammagrafía ósea muestran seis metástasis óseas (pelvis, costillas, D9) sin metástasis viscerales. Tiene insuficiencia cardiaca con FEVI del 35 %, diabetes con polineuropatía y ECOG 2; en la valoración multidisciplinar se consideró no apto para quimioterapia. Está neurológicamente íntegro, la RM de columna no muestra compresión medular y el calcio y la creatinina son normales."
+    },
+    "vitals": {
+      "bp": "138/82",
+      "hr": 84,
+      "temp": 36.7,
+      "spo2": 96,
+      "rr": 16
+    },
+    "objectives": {
+      "en": [
+        "Intensify ADT with an ARPI in mHSPC when docetaxel is not an option.",
+        "Treat a painful bone metastasis and protect bone health under ADT."
+      ],
+      "de": [
+        "Die ADT beim mHSPC mit einem ARPI intensivieren, wenn Docetaxel ausscheidet.",
+        "Eine schmerzhafte Knochenmetastase behandeln und die Knochengesundheit unter ADT schützen."
+      ],
+      "es": [
+        "Intensificar la TDA con un ARPI en el CPHSm cuando el docetaxel no es una opción.",
+        "Tratar una metástasis ósea dolorosa y proteger la salud ósea durante la TDA."
+      ]
+    },
+    "steps": [
+      {
+        "id": "systemic-therapy",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which systemic therapy do you recommend?",
+          "de": "Welche Systemtherapie empfehlen Sie?",
+          "es": "¿Qué tratamiento sistémico recomiendas?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "ADT alone, as he is elderly and frail; add further drugs only at castration resistance.",
+              "de": "ADT allein, da er betagt und gebrechlich ist; weitere Substanzen erst bei Kastrationsresistenz.",
+              "es": "TDA sola, porque es mayor y frágil; añadir otros fármacos solo en la resistencia a la castración."
+            },
+            "score": 0,
+            "minutes": 4,
+            "feedback": {
+              "en": "ADT monotherapy is no longer standard in mHSPC; adding an ARPI prolongs survival and is feasible even when chemotherapy is not.",
+              "de": "Die ADT-Monotherapie ist beim mHSPC kein Standard mehr; die Kombination mit einem ARPI verlängert das Überleben und ist auch ohne Chemotherapiefähigkeit möglich.",
+              "es": "La TDA en monoterapia ya no es el estándar en el CPHSm; añadir un ARPI prolonga la supervivencia y es factible aunque la quimioterapia no lo sea."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "ADT plus enzalutamide or apalutamide.",
+              "de": "ADT plus Enzalutamid oder Apalutamid.",
+              "es": "TDA más enzalutamida o apalutamida."
+            },
+            "score": 10,
+            "minutes": 6,
+            "feedback": {
+              "en": "Correct: in chemotherapy-unfit men with mHSPC, ADT plus an ARPI is the standard; with an LVEF of 35%, an ARPI without mineralocorticoid effects is preferable.",
+              "de": "Richtig: Bei nicht chemotherapiefähigen Patienten mit mHSPC ist ADT plus ARPI Standard; bei einer LVEF von 35 % ist ein ARPI ohne mineralokortikoide Wirkung vorzuziehen.",
+              "es": "Correcto: en pacientes con CPHSm no aptos para quimioterapia, la TDA más un ARPI es el estándar; con una FEVI del 35 %, es preferible un ARPI sin efecto mineralocorticoide."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "ADT plus abiraterone with prednisolone.",
+              "de": "ADT plus Abirateron mit Prednisolon.",
+              "es": "TDA más abiraterona con prednisolona."
+            },
+            "score": 3,
+            "minutes": 6,
+            "feedback": {
+              "en": "Abiraterone is effective in high-risk mHSPC, but mineralocorticoid excess with fluid retention and hypokalaemia makes it the less suitable choice in heart failure with an LVEF of 35%.",
+              "de": "Abirateron ist beim Hochrisiko-mHSPC wirksam, Mineralokortikoidexzess mit Flüssigkeitsretention und Hypokaliämie machen es bei Herzinsuffizienz mit LVEF 35 % aber zur weniger geeigneten Wahl.",
+              "es": "La abiraterona es eficaz en el CPHSm de alto riesgo, pero el exceso de mineralocorticoides con retención de líquidos e hipopotasemia la hace menos adecuada con insuficiencia cardiaca y FEVI del 35 %."
+            },
+            "critical": false
+          }
+        ],
+        "best": "b"
+      },
+      {
+        "id": "painful-metastasis",
+        "kind": "action",
+        "prompt": {
+          "en": "The pain arises from an osteolytic metastasis in the right ilium without fracture risk on imaging. How do you treat it?",
+          "de": "Die Schmerzen gehen von einer osteolytischen Metastase im rechten Os ilium ohne bildgebend relevante Frakturgefährdung aus. Wie behandeln Sie diese?",
+          "es": "El dolor procede de una metástasis osteolítica en el ilion derecho sin riesgo de fractura relevante en la imagen. ¿Cómo la tratas?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Palliative radiotherapy with a single fraction of 8 Gy plus analgesia.",
+              "de": "Palliative Strahlentherapie mit einer Einzelfraktion von 8 Gy plus Analgesie.",
+              "es": "Radioterapia paliativa con una fracción única de 8 Gy más analgesia."
+            },
+            "score": 10,
+            "minutes": 8,
+            "feedback": {
+              "en": "Correct: for uncomplicated painful bone metastases, a single 8 Gy fraction relieves pain as well as fractionated schedules and spares a frail patient repeated visits.",
+              "de": "Richtig: Bei unkomplizierten schmerzhaften Knochenmetastasen lindert eine Einzelfraktion von 8 Gy die Schmerzen so gut wie fraktionierte Schemata und erspart dem gebrechlichen Patienten wiederholte Termine.",
+              "es": "Correcto: en las metástasis óseas dolorosas no complicadas, una fracción única de 8 Gy alivia el dolor igual que los esquemas fraccionados y evita desplazamientos repetidos a un paciente frágil."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Radium-223 to treat all bone metastases at once.",
+              "de": "Radium-223, um alle Knochenmetastasen gleichzeitig zu behandeln.",
+              "es": "Radio-223 para tratar todas las metástasis óseas a la vez."
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "en": "Radium-223 is indicated only in castration-resistant disease, not in mHSPC, and does not give rapid relief of a single painful lesion.",
+              "de": "Radium-223 ist nur beim kastrationsresistenten Karzinom indiziert, nicht beim mHSPC, und lindert eine einzelne schmerzhafte Läsion nicht rasch.",
+              "es": "El radio-223 solo está indicado en la enfermedad resistente a la castración, no en el CPHSm, y no alivia con rapidez una lesión dolorosa aislada."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Palliative radiotherapy with 10 fractions of 3 Gy plus analgesia.",
+              "de": "Palliative Strahlentherapie mit 10 Fraktionen à 3 Gy plus Analgesie.",
+              "es": "Radioterapia paliativa con 10 fracciones de 3 Gy más analgesia."
+            },
+            "score": 3,
+            "minutes": 8,
+            "feedback": {
+              "en": "Radiotherapy is right, but for an uncomplicated metastasis the fractionated schedule gives no better pain relief and burdens the patient with ten visits.",
+              "de": "Die Bestrahlung ist richtig, bei einer unkomplizierten Metastase bringt das fraktionierte Schema aber keine bessere Schmerzlinderung und belastet den Patienten mit zehn Terminen.",
+              "es": "La radioterapia es correcta, pero en una metástasis no complicada el esquema fraccionado no mejora el alivio del dolor y obliga al paciente a diez sesiones."
+            },
+            "critical": false
+          }
+        ],
+        "best": "a"
+      },
+      {
+        "id": "bone-health",
+        "kind": "handover",
+        "prompt": {
+          "en": "What do you plan for bone protection under long-term ADT?",
+          "de": "Was planen Sie zum Knochenschutz unter Langzeit-ADT?",
+          "es": "¿Qué planificas para la protección ósea durante la TDA prolongada?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "No specific measures, as ADT also controls the bone metastases.",
+              "de": "Keine besonderen Maßnahmen, da die ADT auch die Knochenmetastasen kontrolliert.",
+              "es": "Ninguna medida específica, porque la TDA también controla las metástasis óseas."
+            },
+            "score": 0,
+            "minutes": 2,
+            "feedback": {
+              "en": "ADT accelerates bone loss and raises fracture risk; bone metastases add to it, so bone protection must be planned actively.",
+              "de": "Die ADT beschleunigt den Knochenabbau und erhöht das Frakturrisiko; Knochenmetastasen verstärken dies, daher muss der Knochenschutz aktiv geplant werden.",
+              "es": "La TDA acelera la pérdida ósea y aumenta el riesgo de fractura; las metástasis óseas lo agravan, por lo que la protección ósea debe planificarse activamente."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Calcium and vitamin D, assessment of fracture risk and a dental check before any antiresorptive agent (denosumab or zoledronic acid).",
+              "de": "Kalzium und Vitamin D, Abschätzung des Frakturrisikos und zahnärztliche Kontrolle vor einem Antiresorptivum (Denosumab oder Zoledronsäure).",
+              "es": "Calcio y vitamina D, valoración del riesgo de fractura y revisión dental antes de cualquier antirresortivo (denosumab o ácido zoledrónico)."
+            },
+            "score": 10,
+            "minutes": 6,
+            "feedback": {
+              "en": "Correct: calcium and vitamin D are the basis; in mHSPC an antiresorptive agent is given for ADT-related bone loss at increased fracture risk, not to prevent skeletal events, and a dental check beforehand reduces the risk of osteonecrosis of the jaw.",
+              "de": "Richtig: Kalzium und Vitamin D bilden die Basis; beim mHSPC wird ein Antiresorptivum bei erhöhtem Frakturrisiko gegen den ADT-bedingten Knochenabbau gegeben, nicht zur Prävention skelettaler Ereignisse, und die vorherige zahnärztliche Kontrolle senkt das Risiko einer Kieferosteonekrose.",
+              "es": "Correcto: el calcio y la vitamina D son la base; en el CPHSm el antirresortivo se indica frente a la pérdida ósea por TDA con riesgo de fractura aumentado, no para prevenir eventos óseos, y la revisión dental previa reduce el riesgo de osteonecrosis de mandíbula."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Start denosumab today, without calcium and vitamin D or a dental check.",
+              "de": "Denosumab noch heute beginnen, ohne Kalzium und Vitamin D und ohne zahnärztliche Kontrolle.",
+              "es": "Iniciar denosumab hoy mismo, sin calcio ni vitamina D y sin revisión dental."
+            },
+            "score": 3,
+            "minutes": 4,
+            "feedback": {
+              "en": "An antiresorptive agent can be appropriate, but without calcium and vitamin D there is a risk of hypocalcaemia, and without a dental check a risk of osteonecrosis of the jaw.",
+              "de": "Ein Antiresorptivum kann sinnvoll sein, ohne Kalzium und Vitamin D droht jedoch eine Hypokalzämie und ohne zahnärztliche Kontrolle eine Kieferosteonekrose.",
+              "es": "Un antirresortivo puede ser adecuado, pero sin calcio ni vitamina D hay riesgo de hipocalcemia y sin revisión dental, de osteonecrosis de mandíbula."
+            },
+            "critical": false
+          }
+        ],
+        "best": "b"
+      }
+    ],
+    "takeaway": {
+      "en": "If docetaxel is not an option in mHSPC, combine ADT with an ARPI rather than giving ADT alone, choosing the agent by comorbidity. Treat an uncomplicated painful bone metastasis with a single 8 Gy fraction and protect bone with calcium, vitamin D and, where indicated, an antiresorptive agent after a dental check.",
+      "de": "Kommt Docetaxel beim mHSPC nicht infrage, ADT mit einem ARPI kombinieren statt ADT allein und die Substanz nach Komorbidität wählen. Eine unkomplizierte schmerzhafte Knochenmetastase mit einer Einzelfraktion von 8 Gy bestrahlen und den Knochen mit Kalzium, Vitamin D und bei Indikation einem Antiresorptivum nach zahnärztlicher Kontrolle schützen.",
+      "es": "Si el docetaxel no es una opción en el CPHSm, combina la TDA con un ARPI en lugar de TDA sola y elige el fármaco según la comorbilidad. Trata una metástasis ósea dolorosa no complicada con una fracción única de 8 Gy y protege el hueso con calcio, vitamina D y, si está indicado, un antirresortivo tras una revisión dental."
+    },
+    "references": [
+      "bank-guide-prostatakarzinom",
+      "knowuro-prostate-2026"
+    ]
+  },
+  {
     "id": "bank-uro-and-00001",
     "area": "clinic",
     "level": 3,
