@@ -271,7 +271,7 @@
     const label=part=>loc(s.parts.find(p=>p.id===part).label),hl=highlight.filter(part=>s.parts.some(p=>p.id===part));
     const svg=s.svg.replace(/data-part="([^"]+)"/g,(match,part)=>match+' tabindex="0" role="button" aria-label="'+esc(mode==='quiz'?t('atlasQuiz'):label(part))+'"'+(hl.includes(part)?' class="hl"':''));
     const order=[...hl,...s.parts.map(p=>p.id).filter(part=>!hl.includes(part))];
-    // The note sits right under the drawing so the fact a tap reveals stays in view; the legend follows.
+    // The note starts right under the drawing so the fact a tap reveals stays in view; selectPart moves it under the legend for chip taps.
     return '<figure class="schema" data-schema="'+esc(s.id)+'" data-mode="'+mode+'"><figcaption><b>'+esc(loc(s.title))+'</b><small>'+esc(loc(s.caption))+' '+esc(t('schemaNotice'))+'</small></figcaption><div class="schema-svg"><svg viewBox="'+esc(s.viewBox)+'" role="group" aria-label="'+esc(loc(s.title))+'" xmlns="http://www.w3.org/2000/svg">'+svg+'</svg></div>'+
       '<p class="schema-note" aria-live="polite">'+(mode==='quiz'?'':esc(t(hl.length?'schemaHintCase':'schemaHint')))+'</p>'+
       (mode==='quiz'?'':'<div class="schema-legend">'+order.map(part=>'<button type="button" class="schema-chip'+(hl.includes(part)?' hl':'')+'" data-legend-part="'+esc(part)+'">'+(hl.includes(part)?'★ ':'')+esc(label(part))+'</button>').join('')+'</div>')+'</figure>';
@@ -281,12 +281,25 @@
     const media=(c.media||[]).map(m=>'<figure class="case-media"><img src="'+esc(m.src)+'" alt="'+esc(loc(m.alt))+'" loading="lazy"><figcaption>'+esc(loc(m.caption))+'<small>'+esc(t('imageSource'))+': '+esc(m.credit)+' · '+esc(t('imageLicense'))+': '+esc(m.license)+'</small></figcaption></figure>').join('');
     return schema||media?'<div class="case-visuals">'+schema+media+'</div>':'';
   }
-  function selectPart(figure,id) {
+  // Scroll an element into view inside its dialog or the page; on the page it must not end up under the sticky header.
+  function reveal(el) {
+    el.scrollIntoView?.({block:'nearest'});
+    if(el.closest('dialog'))return;
+    const bar=document.querySelector('.topbar'),cover=bar?bar.getBoundingClientRect().bottom:0,top=el.getBoundingClientRect().top;
+    if(top<cover+8)window.scrollBy(0,top-cover-8);
+  }
+  function selectPart(figure,id,fromLegend=false) {
     const s=SCHEMAS.get(figure.dataset.schema),part=s&&s.parts.find(p=>p.id===id);if(!part)return;
     figure.classList.add('focus');
     figure.querySelectorAll('[data-part],[data-legend-part]').forEach(el=>el.classList.toggle('on',(el.dataset.part||el.dataset.legendPart)===id));
-    const note=figure.querySelector('.schema-note');note.innerHTML='<b>'+esc(loc(part.label))+'</b> – '+esc(loc(part.note));
-    note.scrollIntoView?.({block:'nearest'});
+    // The fact appears next to what was tapped: under the drawing for a structure, under the legend for a chip.
+    // A tapped chip must not move under the finger, so any shift of the legend is scrolled back and nothing else scrolls.
+    const note=figure.querySelector('.schema-note'),legend=figure.querySelector('.schema-legend');
+    const chip=fromLegend&&legend?[...legend.querySelectorAll('[data-legend-part]')].find(el=>el.dataset.legendPart===id):null,before=chip?.getBoundingClientRect().top;
+    if(legend)(chip?legend.after(note):legend.before(note));
+    note.innerHTML='<b>'+esc(loc(part.label))+'</b> – '+esc(loc(part.note));
+    if(chip){const shift=chip.getBoundingClientRect().top-before;if(shift)(figure.closest('dialog')||window).scrollBy(0,shift);}
+    else reveal(note);
   }
   function atlas() {
     const used=id=>C.cases.filter(c=>c.schema&&c.schema.id===id).length;
@@ -608,7 +621,7 @@
 
   document.addEventListener('click',e=>{
     const schemaHit=e.target.closest('.schema [data-part],.schema [data-legend-part]');
-    if(schemaHit){const figure=schemaHit.closest('.schema'),id=schemaHit.dataset.part||schemaHit.dataset.legendPart;if(figure.dataset.mode==='quiz')answerQuiz(figure,id,schemaHit);else selectPart(figure,id);return;}
+    if(schemaHit){const figure=schemaHit.closest('.schema'),id=schemaHit.dataset.part||schemaHit.dataset.legendPart;if(figure.dataset.mode==='quiz')answerQuiz(figure,id,schemaHit);else selectPart(figure,id,!!schemaHit.dataset.legendPart);return;}
     const scene=e.target.closest('[data-scene-area],[data-scene-patient],[data-scene-coffee]');if(scene){handleScene(scene);if(scene.dataset.sceneCoffee)checkRewards();return;}
     const b=e.target.closest('button,a[data-view]');if(!b||b.disabled)return;
     if(b.dataset.avatar!==undefined){state.avatar=Number(b.dataset.avatar);persist();document.querySelectorAll('[data-avatar]').forEach(el=>{el.classList.toggle('selected',Number(el.dataset.avatar)===state.avatar);el.setAttribute('aria-pressed',String(Number(el.dataset.avatar)===state.avatar));});return;}

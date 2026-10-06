@@ -408,7 +408,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{o
 .schema [data-part]:hover,.schema [data-part]:focus-visible{filter:drop-shadow(0 0 3px #ffcf5a) drop-shadow(0 0 6px #ffcf5a)}
 .schema [data-part].hl{animation:nsa-glow 1.6s ease-in-out infinite}
 @keyframes nsa-glow{0%,100%{filter:drop-shadow(0 0 2px #ff9f1a)}50%{filter:drop-shadow(0 0 7px #ff9f1a) drop-shadow(0 0 3px #ff9f1a)}}
-.schema.focus [data-part]:not(.on):not(.right):not(.wrong){opacity:.32}
+.schema.focus [data-part]:not(.on):not(.right):not(.wrong):not(:focus-visible){opacity:.32}
 .schema [data-part].on{filter:drop-shadow(0 0 4px #ffcf5a) drop-shadow(0 0 8px #ffcf5a);opacity:1}
 .schema [data-part].right{filter:drop-shadow(0 0 5px #3f8e72) drop-shadow(0 0 9px #3f8e72);opacity:1}
 .schema [data-part].wrong{filter:drop-shadow(0 0 5px #d35468) drop-shadow(0 0 9px #d35468);opacity:1}
@@ -416,6 +416,9 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{o
 .schema [data-part].hl:focus-visible,.schema [data-part].hl.on{animation:none}
 .schema [data-part]:focus-visible,.schema [data-part].hl:focus-visible{filter:drop-shadow(0 0 1.5px #2a2442) drop-shadow(0 0 1.5px #2a2442) drop-shadow(0 0 7px #ffcf5a)}
 .schema [data-part].hl.on{filter:drop-shadow(0 0 4px #ffcf5a) drop-shadow(0 0 8px #ffcf5a)}
+/* In the quiz a focused answer keeps its verdict colour inside the focus ring. */
+.schema [data-part].right:focus-visible{filter:drop-shadow(0 0 1.5px #2a2442) drop-shadow(0 0 1.5px #2a2442) drop-shadow(0 0 7px #3f8e72)}
+.schema [data-part].wrong:focus-visible{filter:drop-shadow(0 0 1.5px #2a2442) drop-shadow(0 0 1.5px #2a2442) drop-shadow(0 0 7px #d35468)}
 /* In dialogs the drawing shrinks on short screens so the verdict and the next button fit below it. */
 .schema-modal .schema-svg svg{max-height:max(190px,min(440px,calc(100vh - 340px)))}
 /* Five menu entries plus the language switch: tighten the header between the phone and desktop layouts. */
@@ -425,7 +428,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{o
 .schema-chip{border:2px solid #9b89a6;background:#fff;color:#302944;border-radius:999px;padding:4px 10px;font-size:.72rem;font-weight:700}
 .schema-chip.hl{border-color:#ff9f1a;background:#fff0bb}
 .schema-chip.on{background:#2a2442;color:#fff4d6;border-color:#2a2442}
-.schema-note{min-height:1.4em;margin:10px 0 0;font-size:.8rem!important;line-height:1.5;color:#42374e!important}
+.schema-note{min-height:1.4em;margin:10px 0;font-size:.8rem!important;line-height:1.5;color:#42374e!important}
 .case-media{margin:0;padding:12px;border:3px solid #2a2442;border-radius:18px;background:#fffbed}
 .case-media img{display:block;max-width:100%;height:auto;border-radius:10px;margin:0 auto}
 .case-media figcaption{font-size:.78rem;color:#42374e;margin-top:8px}
@@ -2415,7 +2418,7 @@ window.NSA_CATALOG = {"version":2,"languages":["en","de","es"],"areas":[{"id":"e
     const label=part=>loc(s.parts.find(p=>p.id===part).label),hl=highlight.filter(part=>s.parts.some(p=>p.id===part));
     const svg=s.svg.replace(/data-part="([^"]+)"/g,(match,part)=>match+' tabindex="0" role="button" aria-label="'+esc(mode==='quiz'?t('atlasQuiz'):label(part))+'"'+(hl.includes(part)?' class="hl"':''));
     const order=[...hl,...s.parts.map(p=>p.id).filter(part=>!hl.includes(part))];
-    // The note sits right under the drawing so the fact a tap reveals stays in view; the legend follows.
+    // The note starts right under the drawing so the fact a tap reveals stays in view; selectPart moves it under the legend for chip taps.
     return '<figure class="schema" data-schema="'+esc(s.id)+'" data-mode="'+mode+'"><figcaption><b>'+esc(loc(s.title))+'</b><small>'+esc(loc(s.caption))+' '+esc(t('schemaNotice'))+'</small></figcaption><div class="schema-svg"><svg viewBox="'+esc(s.viewBox)+'" role="group" aria-label="'+esc(loc(s.title))+'" xmlns="http://www.w3.org/2000/svg">'+svg+'</svg></div>'+
       '<p class="schema-note" aria-live="polite">'+(mode==='quiz'?'':esc(t(hl.length?'schemaHintCase':'schemaHint')))+'</p>'+
       (mode==='quiz'?'':'<div class="schema-legend">'+order.map(part=>'<button type="button" class="schema-chip'+(hl.includes(part)?' hl':'')+'" data-legend-part="'+esc(part)+'">'+(hl.includes(part)?'★ ':'')+esc(label(part))+'</button>').join('')+'</div>')+'</figure>';
@@ -2425,12 +2428,25 @@ window.NSA_CATALOG = {"version":2,"languages":["en","de","es"],"areas":[{"id":"e
     const media=(c.media||[]).map(m=>'<figure class="case-media"><img src="'+esc(m.src)+'" alt="'+esc(loc(m.alt))+'" loading="lazy"><figcaption>'+esc(loc(m.caption))+'<small>'+esc(t('imageSource'))+': '+esc(m.credit)+' · '+esc(t('imageLicense'))+': '+esc(m.license)+'</small></figcaption></figure>').join('');
     return schema||media?'<div class="case-visuals">'+schema+media+'</div>':'';
   }
-  function selectPart(figure,id) {
+  // Scroll an element into view inside its dialog or the page; on the page it must not end up under the sticky header.
+  function reveal(el) {
+    el.scrollIntoView?.({block:'nearest'});
+    if(el.closest('dialog'))return;
+    const bar=document.querySelector('.topbar'),cover=bar?bar.getBoundingClientRect().bottom:0,top=el.getBoundingClientRect().top;
+    if(top<cover+8)window.scrollBy(0,top-cover-8);
+  }
+  function selectPart(figure,id,fromLegend=false) {
     const s=SCHEMAS.get(figure.dataset.schema),part=s&&s.parts.find(p=>p.id===id);if(!part)return;
     figure.classList.add('focus');
     figure.querySelectorAll('[data-part],[data-legend-part]').forEach(el=>el.classList.toggle('on',(el.dataset.part||el.dataset.legendPart)===id));
-    const note=figure.querySelector('.schema-note');note.innerHTML='<b>'+esc(loc(part.label))+'</b> – '+esc(loc(part.note));
-    note.scrollIntoView?.({block:'nearest'});
+    // The fact appears next to what was tapped: under the drawing for a structure, under the legend for a chip.
+    // A tapped chip must not move under the finger, so any shift of the legend is scrolled back and nothing else scrolls.
+    const note=figure.querySelector('.schema-note'),legend=figure.querySelector('.schema-legend');
+    const chip=fromLegend&&legend?[...legend.querySelectorAll('[data-legend-part]')].find(el=>el.dataset.legendPart===id):null,before=chip?.getBoundingClientRect().top;
+    if(legend)(chip?legend.after(note):legend.before(note));
+    note.innerHTML='<b>'+esc(loc(part.label))+'</b> – '+esc(loc(part.note));
+    if(chip){const shift=chip.getBoundingClientRect().top-before;if(shift)(figure.closest('dialog')||window).scrollBy(0,shift);}
+    else reveal(note);
   }
   function atlas() {
     const used=id=>C.cases.filter(c=>c.schema&&c.schema.id===id).length;
@@ -2752,7 +2768,7 @@ window.NSA_CATALOG = {"version":2,"languages":["en","de","es"],"areas":[{"id":"e
 
   document.addEventListener('click',e=>{
     const schemaHit=e.target.closest('.schema [data-part],.schema [data-legend-part]');
-    if(schemaHit){const figure=schemaHit.closest('.schema'),id=schemaHit.dataset.part||schemaHit.dataset.legendPart;if(figure.dataset.mode==='quiz')answerQuiz(figure,id,schemaHit);else selectPart(figure,id);return;}
+    if(schemaHit){const figure=schemaHit.closest('.schema'),id=schemaHit.dataset.part||schemaHit.dataset.legendPart;if(figure.dataset.mode==='quiz')answerQuiz(figure,id,schemaHit);else selectPart(figure,id,!!schemaHit.dataset.legendPart);return;}
     const scene=e.target.closest('[data-scene-area],[data-scene-patient],[data-scene-coffee]');if(scene){handleScene(scene);if(scene.dataset.sceneCoffee)checkRewards();return;}
     const b=e.target.closest('button,a[data-view]');if(!b||b.disabled)return;
     if(b.dataset.avatar!==undefined){state.avatar=Number(b.dataset.avatar);persist();document.querySelectorAll('[data-avatar]').forEach(el=>{el.classList.toggle('selected',Number(el.dataset.avatar)===state.avatar);el.setAttribute('aria-pressed',String(Number(el.dataset.avatar)===state.avatar));});return;}

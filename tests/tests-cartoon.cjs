@@ -733,3 +733,15 @@ test('the find-the-structure quiz asks five different structures, scores each ro
   assert.equal(stats.rewards, 1);
   assert.equal(stats.celebrations.at(-1), true, 'A perfect quiz ends with big confetti');
 });
+
+test('keyboard focus never hides what a structure shows', () => {
+  const css = read('cartoon.css');
+  const ring = css.indexOf('.schema [data-part]:focus-visible,.schema [data-part].hl:focus-visible{');
+  assert.ok(ring > 0, 'Focused structures get a ring');
+  for (const [verdict, colour] of [['right', '#3f8e72'], ['wrong', '#d35468']]) {
+    const rule = css.indexOf('.schema [data-part].' + verdict + ':focus-visible{');
+    assert.ok(rule > ring, 'A focused ' + verdict + ' quiz answer has its own rule after the general ring');
+    assert.ok(css.slice(rule, css.indexOf('}', rule)).includes(colour), 'and keeps its verdict colour inside the ring');
+  }
+  assert.ok(css.includes('.schema.focus [data-part]:not(.on):not(.right):not(.wrong):not(:focus-visible){opacity:.32}'), 'A focused structure is not dimmed while another one is selected');
+});

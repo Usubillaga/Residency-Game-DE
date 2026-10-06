@@ -21,6 +21,16 @@ The schema work had been interrupted several times (sub-agents stopped by rate l
   7. On phones the splash punchline ran off the right edge. It is now kept on screen.
   8. The atlas said "1 Fälle". It now uses the singular.
 - **Tests:** each fix has a regression test that fails on the previous code and passes now: 10 bypass payloads plus malformed entries in Python, and the strict SVG grammar, the quiz with an unknown tap and the singular label in the cartoon suite. Browser re-check (Chromium): the quiz verdict and button were visible at 1366×657, 1280×720 and 1024×600; the splash stayed inside at 320, 375 and 414 px; a Tab-focused glowing structure showed a distinct ring; no console errors.
+- **Re-check of the fixes (6 October 2026):** two further agents attacked the merged fixes.
+  - The validator agent tried 15 bypasses (CDATA, comments, namespaced and duplicate attributes, encoded brackets, quotes inside values and others). Every payload was rejected or rendered inert, and all 15 schemas still render unchanged.
+  - The interface agent confirmed fixes 4, 5 and 7 at 14 screen sizes. It found five side effects of moving the fact under the drawing and of the new focus ring:
+    - on phones a fact opened from a legend chip could sit under the sticky header;
+    - the legend jumped under the finger;
+    - in the quiz the focus ring replaced the green or red verdict;
+    - a focused structure stayed dimmed while another one was selected;
+    - the legend touched the note.
+  - All five are fixed. A fact opened from the drawing still appears under the drawing, but a fact opened from a chip appears under the legend, as before the release, and any shift of the legend is scrolled back. Scrolling to a fact on the page now stops below the sticky header. A focused quiz answer keeps its verdict colour inside the ring.
+  - The interface agent's browser scripts were run again: 0 of 11 chip taps move the chip, and the fact is visible after a tap on the drawing at every size. A cartoon test pins the CSS order.
 
 ## Teaching schemas, anatomy atlas and urine splash — 5 October 2026
 
