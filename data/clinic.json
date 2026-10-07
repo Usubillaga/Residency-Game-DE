@@ -2961,6 +2961,2028 @@
     ]
   },
   {
+    "id": "onc-testis-intermediate-marker-decline",
+    "area": "clinic",
+    "level": 3,
+    "acuity": "urgent",
+    "duty": "board",
+    "patient": {
+      "name": "Kacper Dąbrowski",
+      "age": 31,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Intermediate prognosis and a slowly falling AFP",
+      "de": "Intermediäre Prognose und ein langsam fallendes AFP",
+      "es": "Pronóstico intermedio y una AFP que desciende lentamente"
+    },
+    "presenting": {
+      "en": "Mr Dąbrowski, 31, has undergone right inguinal orchiectomy: mixed germ cell tumour (70% embryonal carcinoma, 30% yolk sac tumour, no teratoma), pT2. Staging CT shows a 7 cm interaortocaval nodal mass, with no lung or other visceral metastases. Markers after orchiectomy and before treatment: AFP 3,800 ng/ml, beta-hCG 1,200 IU/l, LDH 1.3 times the upper limit of normal. Lung function is normal and he has no comorbidities.",
+      "de": "Herr Dąbrowski, 31 Jahre, nach inguinaler Ablatio testis rechts: gemischter Keimzelltumor (Embryonalzellkarzinom 70 %, Dottersacktumor 30 %, kein Teratom), pT2. Staging-CT: interaortokavales Lymphknotenkonglomerat von 7 cm, keine Lungen- oder sonstigen viszeralen Metastasen. Marker nach Ablatio und vor Therapiebeginn: AFP 3 800 ng/ml, beta-hCG 1 200 IU/l, LDH 1,3-fach der Norm. Lungenfunktion normal, keine Vorerkrankungen.",
+      "es": "El Sr. Dąbrowski, de 31 años, ha sido intervenido de orquiectomía inguinal derecha: tumor germinal mixto (70 % carcinoma embrionario, 30 % tumor del saco vitelino, sin teratoma), pT2. La TC de estadificación muestra un conglomerado adenopático interaortocavo de 7 cm, sin metástasis pulmonares ni otras viscerales. Marcadores tras la orquiectomía y antes del tratamiento: AFP 3.800 ng/ml, beta-hCG 1.200 UI/l, LDH 1,3 veces el límite superior de la normalidad. Función pulmonar normal y sin comorbilidades."
+    },
+    "vitals": {
+      "bp": "124/78",
+      "hr": 74,
+      "temp": 36.7,
+      "spo2": 98,
+      "rr": 14
+    },
+    "objectives": {
+      "en": [
+        "Assign the IGCCCG intermediate prognosis group and choose the regimen.",
+        "Act on marker kinetics and residual size after chemotherapy."
+      ],
+      "de": [
+        "Die intermediäre IGCCCG-Prognosegruppe zuordnen und das Schema wählen.",
+        "Nach Chemotherapie anhand von Markerverlauf und Restbefundgröße entscheiden."
+      ],
+      "es": [
+        "Asignar el grupo pronóstico intermedio del IGCCCG y elegir el esquema.",
+        "Decidir tras la quimioterapia según la cinética de marcadores y el tamaño residual."
+      ]
+    },
+    "steps": [
+      {
+        "id": "prognosis-regimen",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which IGCCCG prognosis group applies, and which chemotherapy does the tumour board recommend?",
+          "de": "Welche IGCCCG-Prognosegruppe liegt vor, und welche Chemotherapie empfiehlt das Tumorboard?",
+          "es": "¿Qué grupo pronóstico del IGCCCG corresponde y qué quimioterapia recomienda el comité de tumores?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Good prognosis, because there are no lung or visceral metastases: 3 cycles of BEP.",
+              "de": "Gute Prognose, da keine Lungen- oder viszeralen Metastasen vorliegen: 3 Zyklen BEP.",
+              "es": "Pronóstico favorable, al no haber metástasis pulmonares ni viscerales: 3 ciclos de BEP."
+            },
+            "score": 0,
+            "minutes": 6,
+            "feedback": {
+              "en": "Metastatic sites alone do not decide the group: an AFP of 1,000 to 10,000 ng/ml places a non-seminoma in the intermediate group. Three cycles would be undertreatment.",
+              "de": "Die Metastasenlokalisation allein entscheidet nicht: Ein AFP von 1 000 bis 10 000 ng/ml stuft ein Nichtseminom in die intermediäre Gruppe ein. Drei Zyklen wären eine Untertherapie.",
+              "es": "La localización de las metástasis no basta: una AFP de 1.000 a 10.000 ng/ml sitúa un no seminoma en el grupo intermedio. Tres ciclos supondrían un infratratamiento."
+            },
+            "critical": true
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Intermediate prognosis: 4 cycles of VIP as standard.",
+              "de": "Intermediäre Prognose: 4 Zyklen VIP als Standard.",
+              "es": "Pronóstico intermedio: 4 ciclos de VIP como estándar."
+            },
+            "score": 3,
+            "minutes": 6,
+            "feedback": {
+              "en": "The group is right. VIP is similarly effective but more myelotoxic and is reserved for patients in whom bleomycin is unsuitable, for example with impaired lung function.",
+              "de": "Die Gruppe ist richtig. VIP ist vergleichbar wirksam, aber hämatotoxischer und Patienten vorbehalten, für die Bleomycin ungeeignet ist, etwa bei eingeschränkter Lungenfunktion.",
+              "es": "El grupo es correcto. VIP tiene una eficacia comparable, pero es más mielotóxico y se reserva para pacientes en los que la bleomicina no es adecuada, por ejemplo con función pulmonar alterada."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Intermediate prognosis (AFP 1,000 to 10,000 ng/ml): 4 cycles of BEP.",
+              "de": "Intermediäre Prognose (AFP 1 000 bis 10 000 ng/ml): 4 Zyklen BEP.",
+              "es": "Pronóstico intermedio (AFP de 1.000 a 10.000 ng/ml): 4 ciclos de BEP."
+            },
+            "score": 10,
+            "minutes": 6,
+            "feedback": {
+              "en": "One marker in the intermediate range is enough (AFP 1,000 to 10,000 ng/ml, hCG 5,000 to 50,000 IU/l or LDH 1.5 to 10 times normal, without non-pulmonary visceral metastases). Standard is 4 cycles of BEP; if bleomycin is unsuitable, 4 cycles of VIP.",
+              "de": "Ein Marker im intermediären Bereich genügt (AFP 1 000 bis 10 000 ng/ml, hCG 5 000 bis 50 000 IU/l oder LDH 1,5- bis 10-fach der Norm, ohne nichtpulmonale viszerale Metastasen). Standard sind 4 Zyklen BEP; bei Kontraindikation gegen Bleomycin 4 Zyklen VIP.",
+              "es": "Basta un marcador en rango intermedio (AFP de 1.000 a 10.000 ng/ml, hCG de 5.000 a 50.000 UI/l o LDH de 1,5 a 10 veces la normalidad, sin metástasis viscerales no pulmonares). El estándar son 4 ciclos de BEP; si la bleomicina no es adecuada, 4 ciclos de VIP."
+            },
+            "critical": false
+          }
+        ],
+        "best": "c"
+      },
+      {
+        "id": "marker-decline",
+        "kind": "decision",
+        "prompt": {
+          "en": "Three weeks after the start of the fourth cycle, AFP is 52 ng/ml and still falling steadily (118 ng/ml two weeks ago, 79 ng/ml one week ago); beta-hCG is normal. CT shows a 2.4 cm retroperitoneal residual mass. What do you recommend?",
+          "de": "Drei Wochen nach Beginn des vierten Zyklus liegt das AFP bei 52 ng/ml und fällt weiterhin stetig (vor zwei Wochen 118 ng/ml, vor einer Woche 79 ng/ml); das beta-hCG ist normal. Im CT zeigt sich ein retroperitonealer Restbefund von 2,4 cm. Was empfehlen Sie?",
+          "es": "Tres semanas después del inicio del cuarto ciclo, la AFP es de 52 ng/ml y sigue descendiendo de forma constante (118 ng/ml hace dos semanas, 79 ng/ml hace una semana); la beta-hCG es normal. La TC muestra una masa residual retroperitoneal de 2,4 cm. ¿Qué recomiendas?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Check markers at short intervals; once they normalise or plateau, restage and decide on residual tumour resection.",
+              "de": "Marker in kurzen Abständen kontrollieren; nach Normalisierung oder Plateau Re-Staging und Entscheidung über die Residualtumorresektion.",
+              "es": "Controlar los marcadores a intervalos cortos; cuando se normalicen o alcancen una meseta, reestadificar y decidir sobre la resección de la masa residual."
+            },
+            "score": 10,
+            "minutes": 6,
+            "feedback": {
+              "en": "Slowly but steadily falling markers are not treatment failure. Monitor until they normalise or plateau; resection of residual masses over 1 cm is planned after that.",
+              "de": "Langsam, aber stetig fallende Marker bedeuten kein Therapieversagen. Es wird bis zur Normalisierung oder bis zum Plateau beobachtet; erst danach wird die Resektion von Restbefunden über 1 cm geplant.",
+              "es": "Unos marcadores que descienden lenta pero constantemente no indican fracaso terapéutico. Se vigila hasta su normalización o meseta; después se planifica la resección de masas residuales mayores de 1 cm."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Start salvage chemotherapy at once because AFP is still raised.",
+              "de": "Sofort Salvage-Chemotherapie, weil das AFP noch erhöht ist.",
+              "es": "Iniciar de inmediato quimioterapia de rescate porque la AFP sigue elevada."
+            },
+            "score": 0,
+            "minutes": 8,
+            "feedback": {
+              "en": "Salvage chemotherapy is indicated for rising markers, not for declining ones. Here it would be unnecessary, toxic overtreatment.",
+              "de": "Eine Salvage-Chemotherapie ist bei steigenden, nicht bei fallenden Markern indiziert. Hier wäre sie eine unnötige, toxische Übertherapie.",
+              "es": "La quimioterapia de rescate está indicada ante marcadores en ascenso, no en descenso. Aquí sería un sobretratamiento innecesario y tóxico."
+            },
+            "critical": true
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Immediate residual tumour resection because the mass is larger than 1 cm.",
+              "de": "Sofortige Residualtumorresektion, da der Restbefund größer als 1 cm ist.",
+              "es": "Resección inmediata de la masa residual porque mide más de 1 cm."
+            },
+            "score": 3,
+            "minutes": 10,
+            "feedback": {
+              "en": "Resecting residual masses over 1 cm is correct in principle, but only once markers have normalised or plateaued; until then the mass may shrink further.",
+              "de": "Die Resektion von Restbefunden über 1 cm ist grundsätzlich richtig, aber erst nach Normalisierung oder Plateau der Marker; bis dahin kann der Befund weiter schrumpfen.",
+              "es": "Resecar masas residuales de más de 1 cm es correcto en principio, pero solo cuando los marcadores se han normalizado o estabilizado; hasta entonces la masa puede seguir reduciéndose."
+            },
+            "critical": false
+          }
+        ],
+        "best": "a"
+      },
+      {
+        "id": "small-residual",
+        "kind": "decision",
+        "prompt": {
+          "en": "Six weeks later AFP is normal at 5 ng/ml. Follow-up CT shows an 8 mm retroperitoneal residual lesion. What do you recommend?",
+          "de": "Sechs Wochen später ist das AFP mit 5 ng/ml normal. Das Kontroll-CT zeigt noch einen retroperitonealen Restbefund von 8 mm. Was empfehlen Sie?",
+          "es": "Seis semanas después la AFP es normal (5 ng/ml). La TC de control muestra una lesión residual retroperitoneal de 8 mm. ¿Qué recomiendas?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Post-chemotherapy RPLND anyway, because teratoma can never be excluded.",
+              "de": "Trotzdem postchemotherapeutische retroperitoneale Lymphadenektomie, da ein Teratom nie auszuschließen ist.",
+              "es": "Linfadenectomía retroperitoneal poschemoterapia de todos modos, porque nunca se puede descartar un teratoma."
+            },
+            "score": 3,
+            "minutes": 10,
+            "feedback": {
+              "en": "Some centres resect even small residuals, but with normal markers and a residual under 1 cm, EAU guidance supports active surveillance, which avoids the morbidity of RPLND.",
+              "de": "Einzelne Zentren resezieren auch kleine Reste, doch bei normalen Markern und einem Rest unter 1 cm unterstützt die EAU-Leitlinie die aktive Überwachung, die die Morbidität der Lymphadenektomie vermeidet.",
+              "es": "Algunos centros resecan incluso masas pequeñas, pero con marcadores normales y una masa residual menor de 1 cm la guía de la EAU respalda la vigilancia activa, que evita la morbilidad de la linfadenectomía."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "FDG-PET/CT to decide whether resection is needed.",
+              "de": "FDG-PET/CT zur Entscheidung, ob reseziert werden muss.",
+              "es": "PET-TC con FDG para decidir si hace falta resecar."
+            },
+            "score": 0,
+            "minutes": 8,
+            "feedback": {
+              "en": "In non-seminoma, FDG-PET cannot reliably distinguish necrosis from teratoma and is not suitable for deciding on residual masses.",
+              "de": "Beim Nichtseminom unterscheidet FDG-PET nicht zuverlässig zwischen Nekrose und Teratom und eignet sich nicht für die Entscheidung über Restbefunde.",
+              "es": "En el no seminoma, la PET con FDG no distingue con fiabilidad entre necrosis y teratoma y no sirve para decidir sobre las masas residuales."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Active surveillance with regular marker checks and cross-sectional imaging.",
+              "de": "Aktive Überwachung mit regelmäßigen Markerkontrollen und Schnittbildgebung.",
+              "es": "Vigilancia activa con controles periódicos de marcadores y pruebas de imagen seccional."
+            },
+            "score": 10,
+            "minutes": 5,
+            "feedback": {
+              "en": "With normalised markers and a residual under 1 cm, active surveillance is appropriate; a growing lesion or rising markers would prompt re-evaluation.",
+              "de": "Bei normalisierten Markern und einem Rest unter 1 cm ist die aktive Überwachung angemessen; eine Größenzunahme oder steigende Marker führen zur erneuten Bewertung.",
+              "es": "Con marcadores normalizados y una masa residual menor de 1 cm, la vigilancia activa es adecuada; un crecimiento o un ascenso de marcadores obligaría a reevaluar."
+            },
+            "critical": false
+          }
+        ],
+        "best": "c"
+      }
+    ],
+    "takeaway": {
+      "en": "Non-seminoma with AFP 1,000 to 10,000 ng/ml, hCG 5,000 to 50,000 IU/l or LDH 1.5 to 10 times normal, without non-pulmonary visceral metastases, is intermediate prognosis: 4 cycles of BEP, or VIP if bleomycin is unsuitable. After chemotherapy: declining markers are monitored, rising markers need salvage chemotherapy; with normal markers, resect residuals over 1 cm and survey those under 1 cm.",
+      "de": "Nichtseminom mit AFP 1 000 bis 10 000 ng/ml, hCG 5 000 bis 50 000 IU/l oder LDH 1,5- bis 10-fach der Norm ohne nichtpulmonale viszerale Metastasen bedeutet intermediäre Prognose: 4 Zyklen BEP, bei Bleomycin-Kontraindikation VIP. Nach Chemotherapie: fallende Marker beobachten, steigende Marker erfordern eine Salvage-Chemotherapie; bei normalen Markern Reste über 1 cm resezieren, unter 1 cm überwachen.",
+      "es": "Un no seminoma con AFP de 1.000 a 10.000 ng/ml, hCG de 5.000 a 50.000 UI/l o LDH de 1,5 a 10 veces la normalidad, sin metástasis viscerales no pulmonares, tiene pronóstico intermedio: 4 ciclos de BEP, o VIP si la bleomicina no es adecuada. Tras la quimioterapia: vigilar marcadores en descenso, rescate si ascienden; con marcadores normales, resecar masas residuales de más de 1 cm y vigilar las menores de 1 cm."
+    },
+    "references": [
+      "bank-guide-hodentumor",
+      "knowuro-testis-2026"
+    ]
+  },
+  {
+    "id": "onc-testis-seminoma-stage1-risk",
+    "area": "clinic",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "clinic",
+    "patient": {
+      "name": "Matteo Ferrara",
+      "age": 36,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Stage I seminoma with two risk factors",
+      "de": "Seminom im Stadium I mit zwei Risikofaktoren",
+      "es": "Seminoma en estadio I con dos factores de riesgo"
+    },
+    "presenting": {
+      "en": "Mr Ferrara, 36, attends to discuss his results after left inguinal orchiectomy. Histology: pure seminoma, 5.5 cm, invasion of the rete testis stroma, no lymphovascular invasion, clear margin. Postoperative markers (AFP, beta-hCG, LDH) are normal, and CT of chest, abdomen and pelvis shows no metastases. He works full time, is reliable and says he wants to be on the safe side.",
+      "de": "Herr Ferrara, 36 Jahre, kommt zur Befundbesprechung nach inguinaler Ablatio testis links. Histologie: reines Seminom, 5,5 cm, Invasion des Rete-testis-Stromas, keine Lymphgefäßinvasion, Absetzungsrand tumorfrei. Die postoperativen Marker (AFP, beta-hCG, LDH) sind normal, das CT von Thorax, Abdomen und Becken zeigt keine Metastasen. Er ist voll berufstätig, zuverlässig und möchte nach eigener Aussage auf Nummer sicher gehen.",
+      "es": "El Sr. Ferrara, de 36 años, acude a comentar los resultados tras una orquiectomía inguinal izquierda. Histología: seminoma puro de 5,5 cm, invasión del estroma de la rete testis, sin invasión linfovascular y margen libre. Los marcadores posoperatorios (AFP, beta-hCG, LDH) son normales y la TC de tórax, abdomen y pelvis no muestra metástasis. Trabaja a jornada completa, es cumplidor y dice que quiere ir sobre seguro."
+    },
+    "vitals": {
+      "bp": "128/80",
+      "hr": 70,
+      "temp": 36.6,
+      "spo2": 99,
+      "rr": 14
+    },
+    "objectives": {
+      "en": [
+        "Identify the risk factors in stage I seminoma.",
+        "Counsel on surveillance versus one cycle of carboplatin and plan imaging follow-up."
+      ],
+      "de": [
+        "Die Risikofaktoren beim Seminom im Stadium I erkennen.",
+        "Über Surveillance versus einen Zyklus Carboplatin aufklären und die bildgebende Nachsorge planen."
+      ],
+      "es": [
+        "Identificar los factores de riesgo del seminoma en estadio I.",
+        "Informar sobre vigilancia frente a un ciclo de carboplatino y planificar el seguimiento por imagen."
+      ]
+    },
+    "steps": [
+      {
+        "id": "risk",
+        "kind": "assessment",
+        "prompt": {
+          "en": "How do you classify these findings?",
+          "de": "Wie ordnen Sie den Befund ein?",
+          "es": "¿Cómo clasificas estos hallazgos?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Stage I with one risk factor (tumour size); rete testis invasion has no prognostic weight in seminoma.",
+              "de": "Stadium I mit einem Risikofaktor (Tumorgröße); die Rete-testis-Invasion ist beim Seminom prognostisch ohne Bedeutung.",
+              "es": "Estadio I con un factor de riesgo (tamaño tumoral); la invasión de la rete testis carece de valor pronóstico en el seminoma."
+            },
+            "score": 3,
+            "minutes": 4,
+            "feedback": {
+              "en": "Size is recognised correctly, but stromal invasion of the rete testis is the second established risk factor in stage I seminoma.",
+              "de": "Die Tumorgröße ist richtig erkannt, doch die Invasion des Rete-testis-Stromas ist der zweite etablierte Risikofaktor beim Seminom im Stadium I.",
+              "es": "El tamaño se reconoce correctamente, pero la invasión del estroma de la rete testis es el segundo factor de riesgo establecido en el seminoma en estadio I."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Clinical stage I with an increased relapse risk: both risk factors present, tumour over 4 cm and rete testis invasion.",
+              "de": "Klinisches Stadium I mit erhöhtem Rezidivrisiko: beide Risikofaktoren vorhanden, Tumor über 4 cm und Rete-testis-Invasion.",
+              "es": "Estadio clínico I con riesgo de recaída aumentado: presenta ambos factores de riesgo, tumor mayor de 4 cm e invasión de la rete testis."
+            },
+            "score": 10,
+            "minutes": 4,
+            "feedback": {
+              "en": "Tumour size over 4 cm and rete testis invasion are the established risk factors in stage I seminoma. With both, relapse risk is clearly higher, yet cure rates remain close to 100%.",
+              "de": "Tumorgröße über 4 cm und Rete-testis-Invasion sind die etablierten Risikofaktoren beim Seminom im Stadium I. Mit beiden ist das Rezidivrisiko deutlich höher, die Heilungsrate bleibt dennoch nahe 100 %.",
+              "es": "El tamaño mayor de 4 cm y la invasión de la rete testis son los factores de riesgo establecidos en el seminoma en estadio I. Con ambos, el riesgo de recaída es claramente mayor, aunque la tasa de curación sigue cerca del 100 %."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Assess risk as in non-seminoma by lymphovascular invasion: without it, the risk is low.",
+              "de": "Risikobewertung wie beim Nichtseminom anhand der Lymphgefäßinvasion: ohne sie ist das Risiko gering.",
+              "es": "Valorar el riesgo como en el no seminoma por la invasión linfovascular: sin ella, el riesgo es bajo."
+            },
+            "score": 0,
+            "minutes": 3,
+            "feedback": {
+              "en": "Lymphovascular invasion is the key risk factor in stage I non-seminoma; in seminoma, risk assessment rests mainly on tumour size and rete testis invasion, and both are present here.",
+              "de": "Die Lymphgefäßinvasion ist der maßgebliche Risikofaktor beim Nichtseminom im Stadium I; beim Seminom stützt sich die Risikobewertung vor allem auf Tumorgröße und Rete-testis-Invasion, die hier beide vorliegen.",
+              "es": "La invasión linfovascular es el factor de riesgo clave del no seminoma en estadio I; en el seminoma, la valoración del riesgo se basa sobre todo en el tamaño tumoral y la invasión de la rete testis, y aquí están presentes ambos."
+            },
+            "critical": false
+          }
+        ],
+        "best": "b"
+      },
+      {
+        "id": "adjuvant",
+        "kind": "decision",
+        "prompt": {
+          "en": "What do you recommend to Mr Ferrara?",
+          "de": "Was empfehlen Sie Herrn Ferrara?",
+          "es": "¿Qué le recomiendas al Sr. Ferrara?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "One cycle of adjuvant BEP, as for non-seminoma with lymphovascular invasion.",
+              "de": "Einen Zyklus BEP adjuvant, wie beim Nichtseminom mit Lymphgefäßinvasion.",
+              "es": "Un ciclo de BEP adyuvante, como en el no seminoma con invasión linfovascular."
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "en": "BEP is not indicated in stage I seminoma; it adds bleomycin and cisplatin toxicity without benefit over carboplatin or surveillance.",
+              "de": "BEP ist beim Seminom im Stadium I nicht indiziert; es bringt Bleomycin- und Cisplatintoxizität ohne Vorteil gegenüber Carboplatin oder Surveillance.",
+              "es": "El BEP no está indicado en el seminoma en estadio I; añade toxicidad por bleomicina y cisplatino sin beneficio frente al carboplatino o la vigilancia."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Adjuvant para-aortic radiotherapy at 20 Gy as the safest option.",
+              "de": "Adjuvante paraaortale Radiotherapie mit 20 Gy als sicherste Option.",
+              "es": "Radioterapia paraaórtica adyuvante con 20 Gy como opción más segura."
+            },
+            "score": 3,
+            "minutes": 5,
+            "feedback": {
+              "en": "Radiotherapy lowers relapse risk, but because of second malignancies it now has a very limited role, only when surveillance and carboplatin are not possible.",
+              "de": "Die Radiotherapie senkt das Rezidivrisiko, hat wegen des Zweitmalignomrisikos aber nur noch einen sehr begrenzten Stellenwert, nämlich wenn Surveillance und Carboplatin nicht möglich sind.",
+              "es": "La radioterapia reduce el riesgo de recaída, pero por el riesgo de segundas neoplasias su papel es hoy muy limitado: solo si la vigilancia y el carboplatino no son posibles."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "After full counselling, active surveillance (favoured if he attends follow-up reliably) or one cycle of carboplatin AUC 7; he makes the choice.",
+              "de": "Nach ausführlicher Aufklärung aktive Surveillance (bei zuverlässiger Nachsorge favorisiert) oder ein Zyklus Carboplatin AUC 7; die Entscheidung trifft der Patient.",
+              "es": "Tras informarle con detalle, vigilancia activa (preferible si acude de forma fiable al seguimiento) o un ciclo de carboplatino AUC 7; la decisión es del paciente."
+            },
+            "score": 10,
+            "minutes": 12,
+            "feedback": {
+              "en": "Both options achieve cancer-specific survival close to 100%. Surveillance spares most patients treatment; one cycle of carboplatin AUC 7 lowers relapse risk. Wanting to be safe does not justify radiotherapy.",
+              "de": "Beide Optionen erreichen ein krebsspezifisches Überleben nahe 100 %. Surveillance erspart den meisten Patienten eine Therapie, ein Zyklus Carboplatin AUC 7 senkt das Rezidivrisiko. Der Wunsch nach Sicherheit rechtfertigt keine Radiotherapie.",
+              "es": "Ambas opciones logran una supervivencia cáncer-específica cercana al 100 %. La vigilancia evita el tratamiento a la mayoría; un ciclo de carboplatino AUC 7 reduce el riesgo de recaída. El deseo de seguridad no justifica la radioterapia."
+            },
+            "critical": false
+          }
+        ],
+        "best": "c"
+      },
+      {
+        "id": "surveillance-plan",
+        "kind": "handover",
+        "prompt": {
+          "en": "Mr Ferrara chooses surveillance. How do you set up follow-up?",
+          "de": "Herr Ferrara entscheidet sich für die Surveillance. Wie planen Sie die Nachsorge?",
+          "es": "El Sr. Ferrara elige la vigilancia. ¿Cómo organizas el seguimiento?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Structured follow-up with history, examination, markers and regular retroperitoneal imaging (MRI preferred, CT as alternative), most frequent in the first years, with fixed appointments.",
+              "de": "Strukturierte Nachsorge mit Anamnese, Untersuchung, Markern und regelmäßiger Bildgebung des Retroperitoneums (bevorzugt MRT, alternativ CT), am engmaschigsten in den ersten Jahren, mit fest vereinbarten Terminen.",
+              "es": "Seguimiento estructurado con anamnesis, exploración, marcadores e imagen periódica del retroperitoneo (preferentemente RM, TC como alternativa), más frecuente en los primeros años y con citas fijadas."
+            },
+            "score": 10,
+            "minutes": 8,
+            "feedback": {
+              "en": "Relapses occur mainly in the retroperitoneum and mostly in the first two to three years. Seminoma relapses are often marker-negative, so cross-sectional imaging is essential; MRI reduces radiation exposure.",
+              "de": "Rezidive treten überwiegend retroperitoneal und meist in den ersten zwei bis drei Jahren auf. Seminomrezidive sind häufig markernegativ, daher ist die Schnittbildgebung entscheidend; die MRT reduziert die Strahlenbelastung.",
+              "es": "Las recaídas son sobre todo retroperitoneales y suelen aparecer en los dos o tres primeros años. Las recaídas del seminoma a menudo no elevan los marcadores, por lo que la imagen seccional es imprescindible; la RM reduce la radiación."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Marker checks with the GP only; imaging only if symptoms appear.",
+              "de": "Nur Markerkontrollen beim Hausarzt; Bildgebung erst bei Beschwerden.",
+              "es": "Solo controles de marcadores con el médico de familia; imagen únicamente si aparecen síntomas."
+            },
+            "score": 0,
+            "minutes": 3,
+            "feedback": {
+              "en": "Seminoma relapses often occur without a marker rise and stay asymptomatic for a long time; without imaging they are detected late.",
+              "de": "Seminomrezidive verlaufen oft ohne Markeranstieg und lange symptomlos; ohne Bildgebung werden sie zu spät erkannt.",
+              "es": "Las recaídas del seminoma a menudo cursan sin elevación de marcadores y sin síntomas durante mucho tiempo; sin imagen se detectan tarde."
+            },
+            "critical": true
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "CT of chest, abdomen and pelvis every three months for five years.",
+              "de": "CT von Thorax, Abdomen und Becken alle drei Monate über fünf Jahre.",
+              "es": "TC de tórax, abdomen y pelvis cada tres meses durante cinco años."
+            },
+            "score": 3,
+            "minutes": 6,
+            "feedback": {
+              "en": "Imaging is right, but this frequency and routine chest CT cause unnecessary radiation exposure; lung relapse is rare in stage I seminoma.",
+              "de": "Bildgebung ist richtig, doch diese Frequenz und die routinemäßige Thorax-CT verursachen unnötige Strahlenbelastung; Lungenrezidive sind beim Seminom im Stadium I selten.",
+              "es": "La imagen es correcta, pero esta frecuencia y la TC torácica sistemática suponen radiación innecesaria; las recaídas pulmonares son raras en el seminoma en estadio I."
+            },
+            "critical": false
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "en": "Stage I seminoma with risk factors (tumour over 4 cm, rete testis invasion): after counselling, active surveillance or one cycle of carboplatin AUC 7; radiotherapy only if neither is possible. Surveillance relies on retroperitoneal imaging because relapses are often marker-negative.",
+      "de": "Seminom im Stadium I mit Risikofaktoren (Tumor über 4 cm, Rete-testis-Invasion): nach Aufklärung aktive Surveillance oder ein Zyklus Carboplatin AUC 7; Radiotherapie nur, wenn beides nicht möglich ist. Die Surveillance stützt sich auf die Bildgebung des Retroperitoneums, da Rezidive oft markernegativ sind.",
+      "es": "Seminoma en estadio I con factores de riesgo (tumor mayor de 4 cm, invasión de la rete testis): tras informar, vigilancia activa o un ciclo de carboplatino AUC 7; radioterapia solo si ninguna de las dos es posible. La vigilancia se basa en la imagen del retroperitoneo, porque las recaídas a menudo no elevan los marcadores."
+    },
+    "references": [
+      "bank-guide-hodentumor",
+      "knowuro-testis-2026"
+    ]
+  },
+  {
+    "id": "onc-kidney-imdc-first-line",
+    "area": "clinic",
+    "level": 3,
+    "acuity": "routine",
+    "duty": "board",
+    "patient": {
+      "name": "Gülay Toprak",
+      "age": 61,
+      "sex": "female"
+    },
+    "title": {
+      "en": "Synchronous metastatic clear cell RCC: which IMDC risk, which first line?",
+      "de": "Synchron metastasiertes klarzelliges NZK: welches IMDC-Risiko, welche Erstlinie?",
+      "es": "CCR de células claras metastásico sincrónico: ¿qué riesgo IMDC y qué primera línea?"
+    },
+    "presenting": {
+      "en": "Mrs Toprak, 61, is presented at the tumour board four weeks after diagnosis. CT shows a 9 cm right renal tumour, multiple bilateral lung metastases up to 2.5 cm and enlarged mediastinal lymph nodes; core biopsy of the renal tumour: clear cell RCC, ISUP grade 3, no sarcomatoid features. Karnofsky performance status 80 %, no flank pain, no haematuria. Labs: haemoglobin 10.9 g/dL (lower limit 12.0), corrected calcium 2.41 mmol/L, neutrophils 5.8/nL and platelets 352/nL (all within normal limits), eGFR 68 mL/min. No autoimmune disease, no prior systemic therapy.",
+      "de": "Frau Toprak, 61 Jahre, wird vier Wochen nach Diagnosestellung in der Tumorkonferenz vorgestellt. Im CT zeigen sich ein 9 cm großer Nierentumor rechts, multiple bipulmonale Metastasen bis 2,5 cm sowie vergrößerte mediastinale Lymphknoten; Stanzbiopsie des Nierentumors: klarzelliges NZK, ISUP-Grad 3, keine sarkomatoide Komponente. Karnofsky-Index 80 %, keine Flankenschmerzen, keine Hämaturie. Labor: Hämoglobin 10,9 g/dl (unterer Normwert 12,0), korrigiertes Kalzium 2,41 mmol/l, Neutrophile 5,8/nl und Thrombozyten 352/nl (jeweils im Normbereich), eGFR 68 ml/min. Keine Autoimmunerkrankung, keine systemische Vortherapie.",
+      "es": "La Sra. Toprak, de 61 años, se presenta en el comité de tumores cuatro semanas después del diagnóstico. La TC muestra un tumor renal derecho de 9 cm, múltiples metástasis pulmonares bilaterales de hasta 2,5 cm y adenopatías mediastínicas aumentadas; biopsia con aguja gruesa del tumor renal: CCR de células claras, grado ISUP 3, sin componente sarcomatoide. Índice de Karnofsky 80 %, sin dolor en flanco ni hematuria. Analítica: hemoglobina 10,9 g/dl (límite inferior 12,0), calcio corregido 2,41 mmol/l, neutrófilos 5,8/nl y plaquetas 352/nl (todos dentro de la normalidad), FGe 68 ml/min. Sin enfermedad autoinmune ni tratamiento sistémico previo."
+    },
+    "vitals": null,
+    "objectives": {
+      "en": [
+        "Calculate the IMDC score with all six factors, including the time to systemic therapy.",
+        "Choose an IO-based first-line combination by risk group and place deferred cytoreductive nephrectomy correctly."
+      ],
+      "de": [
+        "Den IMDC-Score mit allen sechs Faktoren einschließlich des Intervalls bis zur Systemtherapie berechnen.",
+        "Eine IO-basierte Erstlinienkombination nach Risikogruppe wählen und die verzögerte zytoreduktive Nephrektomie richtig einordnen."
+      ],
+      "es": [
+        "Calcular la puntuación IMDC con los seis factores, incluido el intervalo hasta el tratamiento sistémico.",
+        "Elegir una combinación de primera línea basada en inmunoterapia según el grupo de riesgo y situar correctamente la nefrectomía citorreductora diferida."
+      ]
+    },
+    "steps": [
+      {
+        "id": "imdc-score",
+        "kind": "assessment",
+        "prompt": {
+          "en": "Which IMDC risk group applies to Mrs Toprak?",
+          "de": "Welcher IMDC-Risikogruppe ordnen Sie Frau Toprak zu?",
+          "es": "¿En qué grupo de riesgo IMDC clasifica a la Sra. Toprak?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Favourable risk: Karnofsky 80 % and normal calcium, so no risk factor is present.",
+              "de": "Günstiges Risiko: Karnofsky 80 % und Kalzium normal, daher liegt kein Risikofaktor vor.",
+              "es": "Riesgo favorable: Karnofsky del 80 % y calcio normal, por lo que no hay ningún factor de riesgo."
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "en": "Karnofsky counts only below 80 %, but the anaemia and the interval of less than one year from diagnosis to systemic therapy are two factors; calling her favourable risk leads to the wrong treatment algorithm.",
+              "de": "Der Karnofsky-Index zählt erst unter 80 %, aber Anämie und ein Intervall von unter einem Jahr zwischen Diagnose und Systemtherapie sind zwei Faktoren; die Einstufung als günstiges Risiko führt in den falschen Therapiealgorithmus.",
+              "es": "El Karnofsky solo cuenta por debajo del 80 %, pero la anemia y un intervalo inferior a un año entre diagnóstico y tratamiento sistémico son dos factores; clasificarla como riesgo favorable lleva al algoritmo terapéutico equivocado."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Intermediate risk with two factors: haemoglobin below normal and less than one year from diagnosis to systemic therapy.",
+              "de": "Intermediäres Risiko mit zwei Faktoren: Hämoglobin unter dem Normwert und weniger als ein Jahr zwischen Diagnose und Systemtherapie.",
+              "es": "Riesgo intermedio con dos factores: hemoglobina por debajo de lo normal y menos de un año entre el diagnóstico y el tratamiento sistémico."
+            },
+            "score": 10,
+            "minutes": 6,
+            "feedback": {
+              "en": "Correct: the six IMDC factors are Karnofsky < 80 %, interval < 1 year, haemoglobin < LLN, corrected calcium > ULN, neutrophils > ULN and platelets > ULN; 1–2 factors mean intermediate risk, 3–6 poor risk. In synchronous metastatic disease the interval factor is always present.",
+              "de": "Richtig: Die sechs IMDC-Faktoren sind Karnofsky < 80 %, Intervall < 1 Jahr, Hämoglobin < unterer Normwert, korrigiertes Kalzium > oberer Normwert, Neutrophile > oberer Normwert und Thrombozyten > oberer Normwert; 1–2 Faktoren bedeuten intermediäres, 3–6 ungünstiges Risiko. Bei synchroner Metastasierung ist der Intervallfaktor immer erfüllt.",
+              "es": "Correcto: los seis factores IMDC son Karnofsky < 80 %, intervalo < 1 año, hemoglobina < límite inferior, calcio corregido > límite superior, neutrófilos > límite superior y plaquetas > límite superior; 1–2 factores indican riesgo intermedio y 3–6, riesgo desfavorable. En la enfermedad metastásica sincrónica el factor del intervalo siempre está presente."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Intermediate risk with one factor (anaemia); the time interval does not apply to newly diagnosed metastases.",
+              "de": "Intermediäres Risiko mit einem Faktor (Anämie); das Zeitintervall gilt bei neu diagnostizierten Metastasen nicht.",
+              "es": "Riesgo intermedio con un factor (anemia); el intervalo de tiempo no se aplica a metástasis recién diagnosticadas."
+            },
+            "score": 3,
+            "minutes": 5,
+            "feedback": {
+              "en": "The risk group is right, but the count is wrong: the interval from diagnosis to systemic therapy is under one year here and counts as a factor. With one more abnormal value she would already be poor risk.",
+              "de": "Die Risikogruppe stimmt, die Zählung nicht: Das Intervall von der Diagnose bis zur Systemtherapie liegt hier unter einem Jahr und zählt als Faktor. Mit einem weiteren auffälligen Wert läge bereits ein ungünstiges Risiko vor.",
+              "es": "El grupo de riesgo es correcto, pero el recuento no: el intervalo desde el diagnóstico hasta el tratamiento sistémico es inferior a un año y cuenta como factor. Con un valor alterado más ya tendría riesgo desfavorable."
+            },
+            "critical": false
+          }
+        ],
+        "best": "b"
+      },
+      {
+        "id": "first-line",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which first-line treatment does the tumour board recommend?",
+          "de": "Welche Erstlinientherapie empfiehlt die Tumorkonferenz?",
+          "es": "¿Qué tratamiento de primera línea recomienda el comité de tumores?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Upfront cytoreductive nephrectomy, then systemic therapy only when the metastases progress.",
+              "de": "Zunächst zytoreduktive Nephrektomie, Systemtherapie erst bei Progress der Metastasen.",
+              "es": "Nefrectomía citorreductora inicial y tratamiento sistémico solo cuando progresen las metástasis."
+            },
+            "score": 0,
+            "minutes": 15,
+            "feedback": {
+              "en": "With intermediate risk, a relevant metastatic burden and a clear need for systemic therapy, upfront nephrectomy delays effective treatment without a survival benefit; upfront CN is reserved for patients who do not yet need systemic therapy.",
+              "de": "Bei intermediärem Risiko, relevanter Metastasenlast und klarer Indikation zur Systemtherapie verzögert die primäre Nephrektomie die wirksame Behandlung ohne Überlebensvorteil; die primäre CN bleibt Patienten vorbehalten, die noch keine Systemtherapie benötigen.",
+              "es": "Con riesgo intermedio, carga metastásica relevante e indicación clara de tratamiento sistémico, la nefrectomía inicial retrasa el tratamiento eficaz sin beneficio en supervivencia; la NC inicial se reserva para pacientes que aún no necesitan tratamiento sistémico."
+            },
+            "critical": true
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Sunitinib monotherapy, because it is the best-studied first-line drug.",
+              "de": "Sunitinib-Monotherapie, da es das am längsten erprobte Erstlinienmedikament ist.",
+              "es": "Monoterapia con sunitinib, por ser el fármaco de primera línea más estudiado."
+            },
+            "score": 3,
+            "minutes": 6,
+            "feedback": {
+              "en": "A VEGFR-TKI alone is only the alternative when immunotherapy is contraindicated or not tolerated; IO-based combinations improved overall survival over sunitinib in intermediate and poor risk.",
+              "de": "Ein VEGFR-TKI allein ist nur die Alternative, wenn eine Immuntherapie kontraindiziert ist oder nicht vertragen wird; IO-basierte Kombinationen verbesserten bei intermediärem und ungünstigem Risiko das Gesamtüberleben gegenüber Sunitinib.",
+              "es": "Un ITC anti-VEGFR en monoterapia es solo la alternativa cuando la inmunoterapia está contraindicada o no se tolera; las combinaciones basadas en inmunoterapia mejoraron la supervivencia global frente a sunitinib en riesgo intermedio y desfavorable."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Nivolumab plus ipilimumab or an IO/TKI combination (pembrolizumab plus axitinib or lenvatinib, nivolumab plus cabozantinib), chosen with her by toxicity profile and comorbidity.",
+              "de": "Nivolumab plus Ipilimumab oder eine IO/TKI-Kombination (Pembrolizumab plus Axitinib oder Lenvatinib, Nivolumab plus Cabozantinib), gemeinsam mit der Patientin nach Toxizitätsprofil und Komorbidität ausgewählt.",
+              "es": "Nivolumab más ipilimumab o una combinación IO/ITC (pembrolizumab más axitinib o lenvatinib, nivolumab más cabozantinib), elegida con la paciente según el perfil de toxicidad y la comorbilidad."
+            },
+            "score": 10,
+            "minutes": 10,
+            "feedback": {
+              "en": "Correct: for intermediate and poor risk the EAU guideline recommends nivolumab plus ipilimumab or one of the three IO/TKI combinations; all four are EU-approved first-line options in advanced clear cell RCC. The primary tumour stays in place for now.",
+              "de": "Richtig: Für intermediäres und ungünstiges Risiko empfiehlt die EAU-Leitlinie Nivolumab plus Ipilimumab oder eine der drei IO/TKI-Kombinationen; alle vier sind in der EU für die Erstlinie des fortgeschrittenen klarzelligen NZK zugelassen. Der Primärtumor bleibt zunächst in situ.",
+              "es": "Correcto: para riesgo intermedio y desfavorable la guía EAU recomienda nivolumab más ipilimumab o una de las tres combinaciones IO/ITC; las cuatro están aprobadas en la UE en primera línea del CCR de células claras avanzado. El tumor primario se mantiene de momento."
+            },
+            "critical": false
+          }
+        ],
+        "best": "c"
+      },
+      {
+        "id": "deferred-cn",
+        "kind": "decision",
+        "prompt": {
+          "en": "She receives nivolumab plus ipilimumab, then nivolumab maintenance. After nine months the lung metastases have resolved, the mediastinal nodes have regressed and the renal tumour has shrunk to 6 cm and has been stable on two scans. She asks whether the kidney should now be removed. What do you advise?",
+          "de": "Sie erhält Nivolumab plus Ipilimumab, danach Nivolumab als Erhaltung. Nach neun Monaten sind die Lungenmetastasen nicht mehr nachweisbar, die mediastinalen Lymphknoten regredient und der Nierentumor auf 6 cm geschrumpft und in zwei Verlaufs-CTs stabil. Sie fragt, ob die Niere jetzt entfernt werden sollte. Was raten Sie?",
+          "es": "Recibe nivolumab más ipilimumab y después nivolumab de mantenimiento. A los nueve meses las metástasis pulmonares han desaparecido, las adenopatías mediastínicas han disminuido y el tumor renal se ha reducido a 6 cm y permanece estable en dos TC. Pregunta si ahora debería extirparse el riñón. ¿Qué le aconseja?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Switch to cabozantinib, because the residual renal tumour shows that the immunotherapy is failing.",
+              "de": "Auf Cabozantinib wechseln, da der verbliebene Nierentumor ein Versagen der Immuntherapie anzeigt.",
+              "es": "Cambiar a cabozantinib, porque el tumor renal residual indica que la inmunoterapia está fallando."
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "en": "A shrinking, stable primary with regressing metastases is a response, not progression; changing an effective therapy gives up its benefit.",
+              "de": "Ein schrumpfender, stabiler Primärtumor bei regredienten Metastasen ist ein Ansprechen und kein Progress; der Wechsel einer wirksamen Therapie verschenkt deren Nutzen.",
+              "es": "Un primario que se reduce y se mantiene estable con metástasis en regresión es una respuesta, no una progresión; cambiar un tratamiento eficaz desaprovecha su beneficio."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Continue nivolumab and discuss deferred cytoreductive nephrectomy with her at the tumour board as an individual option.",
+              "de": "Nivolumab fortführen und eine verzögerte zytoreduktive Nephrektomie in der Tumorkonferenz und mit ihr als individuelle Option besprechen.",
+              "es": "Continuar con nivolumab y comentar con ella en el comité de tumores la nefrectomía citorreductora diferida como opción individual."
+            },
+            "score": 10,
+            "minutes": 12,
+            "feedback": {
+              "en": "Correct: in patients with a clinical benefit from systemic therapy, deferred CN should be discussed; it is an individual decision without proven survival benefit, while the effective therapy continues.",
+              "de": "Richtig: Bei klinischem Nutzen der Systemtherapie soll eine verzögerte CN besprochen werden; sie ist eine individuelle Entscheidung ohne gesicherten Überlebensvorteil, während die wirksame Therapie weiterläuft.",
+              "es": "Correcto: en pacientes con beneficio clínico del tratamiento sistémico debe comentarse la NC diferida; es una decisión individual sin beneficio de supervivencia demostrado, mientras se mantiene el tratamiento eficaz."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Schedule nephrectomy now as the standard for every responder and stop nivolumab permanently afterwards.",
+              "de": "Die Nephrektomie jetzt als Standard für alle Responder planen und Nivolumab danach dauerhaft beenden.",
+              "es": "Programar ahora la nefrectomía como estándar para todo respondedor y suspender nivolumab definitivamente después."
+            },
+            "score": 3,
+            "minutes": 8,
+            "feedback": {
+              "en": "Surgery can be considered, but deferred CN is not a standard for all responders, and stopping an effective immunotherapy after surgery is not supported.",
+              "de": "Eine Operation ist erwägbar, aber die verzögerte CN ist kein Standard für alle Responder, und ein dauerhaftes Absetzen der wirksamen Immuntherapie nach der Operation ist nicht belegt.",
+              "es": "La cirugía puede valorarse, pero la NC diferida no es un estándar para todos los respondedores y la suspensión definitiva de una inmunoterapia eficaz tras la cirugía no está respaldada."
+            },
+            "critical": false
+          }
+        ],
+        "best": "b"
+      }
+    ],
+    "takeaway": {
+      "en": "Count all six IMDC factors; in synchronous metastases the interval of under one year always counts. Intermediate or poor risk: nivolumab plus ipilimumab or an IO/TKI combination, TKI alone only if IO is contraindicated. No upfront CN when systemic therapy is needed; discuss deferred CN after clinical benefit.",
+      "de": "Alle sechs IMDC-Faktoren zählen; bei synchroner Metastasierung ist das Intervall unter einem Jahr immer erfüllt. Intermediäres oder ungünstiges Risiko: Nivolumab plus Ipilimumab oder eine IO/TKI-Kombination, TKI allein nur bei Kontraindikation gegen IO. Keine primäre CN, wenn eine Systemtherapie nötig ist; verzögerte CN nach klinischem Nutzen besprechen.",
+      "es": "Cuente los seis factores IMDC; en las metástasis sincrónicas el intervalo inferior a un año siempre cuenta. Riesgo intermedio o desfavorable: nivolumab más ipilimumab o una combinación IO/ITC, ITC solo si la inmunoterapia está contraindicada. Sin NC inicial cuando se necesita tratamiento sistémico; comentar la NC diferida tras beneficio clínico."
+    },
+    "references": [
+      "bank-guide-nierenzellkarzinom",
+      "knowuro-kidney-2026"
+    ]
+  },
+  {
+    "id": "onc-kidney-ct2-upfront-cn",
+    "area": "clinic",
+    "level": 3,
+    "acuity": "routine",
+    "duty": "board",
+    "patient": {
+      "name": "Tomasz Wróbel",
+      "age": 58,
+      "sex": "male"
+    },
+    "title": {
+      "en": "8.5 cm renal tumour: staging, and nephrectomy despite lung nodules?",
+      "de": "Nierentumor von 8,5 cm: Staging und Nephrektomie trotz Lungenrundherden?",
+      "es": "Tumor renal de 8,5 cm: estadificación y ¿nefrectomía pese a nódulos pulmonares?"
+    },
+    "presenting": {
+      "en": "Mr Wróbel, 58, has an incidental 8.5 cm solid, contrast-enhancing tumour of the left kidney on ultrasound. Contrast CT of the abdomen and pelvis: tumour confined to the kidney (cT2a), renal vein and inferior vena cava free, adrenal gland unremarkable, no enlarged lymph nodes, right kidney normal. He has no symptoms, Karnofsky 100 %, eGFR 84 mL/min; haemoglobin, calcium, neutrophils and platelets are normal. No chest imaging has been done yet.",
+      "de": "Bei Herrn Wróbel, 58 Jahre, fiel sonographisch ein 8,5 cm großer, solider, kontrastmittelaufnehmender Tumor der linken Niere auf. Kontrastmittel-CT Abdomen/Becken: organbegrenzter Tumor (cT2a), Nierenvene und V. cava frei, Nebenniere unauffällig, keine vergrößerten Lymphknoten, rechte Niere unauffällig. Er ist beschwerdefrei, Karnofsky-Index 100 %, eGFR 84 ml/min; Hämoglobin, Kalzium, Neutrophile und Thrombozyten im Normbereich. Eine Thoraxbildgebung liegt noch nicht vor.",
+      "es": "Al Sr. Wróbel, de 58 años, se le detecta en una ecografía un tumor sólido de 8,5 cm con realce de contraste en el riñón izquierdo. TC con contraste de abdomen y pelvis: tumor confinado al riñón (cT2a), vena renal y vena cava libres, glándula suprarrenal normal, sin adenopatías aumentadas, riñón derecho normal. Está asintomático, Karnofsky 100 %, FGe 84 ml/min; hemoglobina, calcio, neutrófilos y plaquetas normales. Aún no se ha realizado imagen torácica."
+    },
+    "vitals": null,
+    "objectives": {
+      "en": [
+        "Complete staging of a cT2 renal tumour and choose the extent of radical nephrectomy.",
+        "Recognise when upfront cytoreductive nephrectomy is appropriate in low-volume metastatic RCC."
+      ],
+      "de": [
+        "Das Staging eines cT2-Nierentumors vervollständigen und den Umfang der radikalen Nephrektomie festlegen.",
+        "Erkennen, wann eine primäre zytoreduktive Nephrektomie beim gering metastasierten NZK sinnvoll ist."
+      ],
+      "es": [
+        "Completar la estadificación de un tumor renal cT2 y definir la extensión de la nefrectomía radical.",
+        "Reconocer cuándo está indicada la nefrectomía citorreductora inicial en el CCR metastásico de bajo volumen."
+      ]
+    },
+    "steps": [
+      {
+        "id": "staging",
+        "kind": "assessment",
+        "prompt": {
+          "en": "Which staging examination is still needed before the treatment decision?",
+          "de": "Welche Staginguntersuchung fehlt vor der Therapieentscheidung noch?",
+          "es": "¿Qué prueba de estadificación falta antes de decidir el tratamiento?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "A chest X-ray in two planes is sufficient.",
+              "de": "Ein Röntgen-Thorax in zwei Ebenen reicht aus.",
+              "es": "Basta con una radiografía de tórax en dos proyecciones."
+            },
+            "score": 3,
+            "minutes": 4,
+            "feedback": {
+              "en": "Chest imaging is the right idea, but a radiograph misses small pulmonary metastases; from cT1b onwards chest CT is recommended.",
+              "de": "Die Thoraxbildgebung ist richtig gedacht, aber das Röntgenbild übersieht kleine Lungenmetastasen; ab cT1b wird ein CT-Thorax empfohlen.",
+              "es": "La imagen torácica es la idea correcta, pero la radiografía no detecta metástasis pulmonares pequeñas; a partir de cT1b se recomienda TC de tórax."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "No further imaging; final staging follows from the nephrectomy histology.",
+              "de": "Keine weitere Bildgebung; das endgültige Staging ergibt sich aus der Histologie der Nephrektomie.",
+              "es": "Ninguna prueba más; la estadificación definitiva se obtiene de la histología de la nefrectomía."
+            },
+            "score": 0,
+            "minutes": 2,
+            "feedback": {
+              "en": "Histology gives pT and pN but not M; without chest CT, lung metastases that change the whole strategy can be missed.",
+              "de": "Die Histologie liefert pT und pN, aber kein M; ohne CT-Thorax werden Lungenmetastasen übersehen, die die gesamte Strategie ändern.",
+              "es": "La histología aporta pT y pN, pero no M; sin TC de tórax pueden pasar desapercibidas metástasis pulmonares que cambian toda la estrategia."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Contrast CT of the chest.",
+              "de": "CT-Thorax mit Kontrastmittel.",
+              "es": "TC de tórax con contraste."
+            },
+            "score": 10,
+            "minutes": 6,
+            "feedback": {
+              "en": "Correct: from cT1b, chest CT completes staging; bone scan or brain imaging only in case of symptoms or clinical suspicion.",
+              "de": "Richtig: Ab cT1b gehört ein CT-Thorax zum Staging; Skelettszintigraphie oder Schädelbildgebung nur bei Symptomen oder klinischem Verdacht.",
+              "es": "Correcto: a partir de cT1b la TC de tórax completa la estadificación; gammagrafía ósea o imagen craneal solo ante síntomas o sospecha clínica."
+            },
+            "critical": false
+          }
+        ],
+        "best": "c"
+      },
+      {
+        "id": "upfront-cn",
+        "kind": "decision",
+        "prompt": {
+          "en": "Chest CT shows three lung nodules of 6–12 mm in both lungs, highly suspicious for metastases; he remains free of symptoms. The only IMDC factor is the interval of under one year. What does the tumour board recommend?",
+          "de": "Das CT-Thorax zeigt drei bipulmonale Rundherde von 6–12 mm, hochverdächtig auf Metastasen; er ist weiterhin beschwerdefrei. Einziger IMDC-Faktor ist das Intervall unter einem Jahr. Was empfiehlt die Tumorkonferenz?",
+          "es": "La TC de tórax muestra tres nódulos pulmonares bilaterales de 6–12 mm, muy sospechosos de metástasis; sigue asintomático. El único factor IMDC es el intervalo inferior a un año. ¿Qué recomienda el comité de tumores?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Upfront cytoreductive radical nephrectomy, then CT surveillance of the lung nodules and systemic therapy when they progress.",
+              "de": "Primäre zytoreduktive radikale Nephrektomie, danach CT-Kontrollen der Rundherde und Systemtherapie bei Progress.",
+              "es": "Nefrectomía radical citorreductora inicial y después control con TC de los nódulos y tratamiento sistémico si progresan."
+            },
+            "score": 10,
+            "minutes": 10,
+            "feedback": {
+              "en": "Correct: with good performance status, low-volume asymptomatic metastases and only one IMDC factor, systemic therapy is not yet needed; this is the setting for upfront CN followed by surveillance. With few metastases, metastasis-directed therapy (stereotactic radiotherapy or resection) can be considered in addition.",
+              "de": "Richtig: Bei gutem Allgemeinzustand, geringer asymptomatischer Metastasenlast und nur einem IMDC-Faktor ist noch keine Systemtherapie nötig; genau hier ist die primäre CN mit anschließender Überwachung sinnvoll. Bei wenigen Metastasen kann zusätzlich eine metastasengerichtete Therapie (stereotaktische Bestrahlung oder Resektion) erwogen werden.",
+              "es": "Correcto: con buen estado general, metástasis de bajo volumen asintomáticas y un solo factor IMDC, aún no se necesita tratamiento sistémico; es el escenario para la NC inicial seguida de vigilancia. Con pocas metástasis puede valorarse además un tratamiento dirigido a las metástasis (radioterapia estereotáctica o resección)."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Start an IO/TKI combination at once and leave the primary tumour in place.",
+              "de": "Sofort eine IO/TKI-Kombination beginnen und den Primärtumor belassen.",
+              "es": "Iniciar de inmediato una combinación IO/ITC y dejar el tumor primario."
+            },
+            "score": 3,
+            "minutes": 8,
+            "feedback": {
+              "en": "That is the right path when systemic therapy is needed; with three small asymptomatic nodules it exposes him early to toxicity, while the primary could be removed now.",
+              "de": "Das ist der richtige Weg, wenn eine Systemtherapie nötig ist; bei drei kleinen asymptomatischen Rundherden setzt es ihn früh der Toxizität aus, obwohl der Primärtumor jetzt entfernt werden könnte.",
+              "es": "Es el camino correcto cuando se necesita tratamiento sistémico; con tres nódulos pequeños asintomáticos le expone precozmente a toxicidad, cuando el primario podría extirparse ahora."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Biopsy a lung nodule and start sunitinib monotherapy without surgery.",
+              "de": "Einen Lungenrundherd biopsieren und ohne Operation eine Sunitinib-Monotherapie beginnen.",
+              "es": "Biopsiar un nódulo pulmonar e iniciar monoterapia con sunitinib sin cirugía."
+            },
+            "score": 0,
+            "minutes": 8,
+            "feedback": {
+              "en": "TKI monotherapy is outdated as first choice and is not indicated in a fit patient who does not yet need systemic therapy; it adds toxicity without benefit.",
+              "de": "Eine TKI-Monotherapie ist als erste Wahl überholt und bei einem fitten Patienten ohne aktuellen Systemtherapiebedarf nicht indiziert; sie bringt Toxizität ohne Nutzen.",
+              "es": "La monoterapia con ITC está superada como primera opción y no está indicada en un paciente en buen estado que aún no necesita tratamiento sistémico; añade toxicidad sin beneficio."
+            },
+            "critical": false
+          }
+        ],
+        "best": "a"
+      },
+      {
+        "id": "extent",
+        "kind": "action",
+        "prompt": {
+          "en": "How do you plan the extent of the operation?",
+          "de": "Wie legen Sie den Umfang der Operation fest?",
+          "es": "¿Cómo planifica la extensión de la intervención?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Radical nephrectomy with routine ipsilateral adrenalectomy and extended retroperitoneal lymph node dissection.",
+              "de": "Radikale Nephrektomie mit routinemäßiger ipsilateraler Adrenalektomie und erweiterter retroperitonealer Lymphadenektomie.",
+              "es": "Nefrectomía radical con suprarrenalectomía ipsilateral sistemática y linfadenectomía retroperitoneal ampliada."
+            },
+            "score": 3,
+            "minutes": 10,
+            "feedback": {
+              "en": "Nephrectomy is right, but adrenalectomy is only indicated when invasion is suspected and lymphadenectomy is only considered for clinically enlarged nodes; routinely they add morbidity without survival benefit.",
+              "de": "Die Nephrektomie ist richtig, aber eine Adrenalektomie ist nur bei Verdacht auf Infiltration und eine Lymphadenektomie nur bei klinisch vergrößerten Lymphknoten zu erwägen; routinemäßig erhöhen sie die Morbidität ohne Überlebensvorteil.",
+              "es": "La nefrectomía es correcta, pero la suprarrenalectomía solo está indicada si se sospecha invasión y la linfadenectomía solo se valora con ganglios clínicamente aumentados; de forma sistemática añaden morbilidad sin beneficio en supervivencia."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Partial nephrectomy, because nephron-sparing surgery is always preferable when technically possible.",
+              "de": "Nierenteilresektion, da eine nierenerhaltende Operation immer vorzuziehen ist, wenn sie technisch möglich ist.",
+              "es": "Nefrectomía parcial, porque la cirugía conservadora de nefronas siempre es preferible si es técnicamente posible."
+            },
+            "score": 0,
+            "minutes": 10,
+            "feedback": {
+              "en": "For cT2, partial nephrectomy is reserved for a solitary kidney or chronic kidney disease when feasible; with a healthy contralateral kidney and eGFR 84 it adds complication risk in a cytoreductive setting.",
+              "de": "Bei cT2 bleibt die Teilresektion der Einzelniere oder der chronischen Niereninsuffizienz vorbehalten, sofern technisch machbar; bei gesunder Gegenniere und eGFR 84 erhöht sie im zytoreduktiven Setting nur das Komplikationsrisiko.",
+              "es": "En cT2, la nefrectomía parcial se reserva para riñón único o enfermedad renal crónica cuando sea factible; con riñón contralateral sano y FGe 84, en un contexto citorreductor solo aumenta el riesgo de complicaciones."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Radical nephrectomy, preserving the unremarkable adrenal gland and without lymphadenectomy.",
+              "de": "Radikale Nephrektomie unter Erhalt der unauffälligen Nebenniere und ohne Lymphadenektomie.",
+              "es": "Nefrectomía radical conservando la glándula suprarrenal normal y sin linfadenectomía."
+            },
+            "score": 10,
+            "minutes": 8,
+            "feedback": {
+              "en": "Correct: cT2 with a normal contralateral kidney means radical nephrectomy; adrenal gland and lymph nodes are removed only when imaging or intraoperative findings suggest involvement.",
+              "de": "Richtig: cT2 bei gesunder Gegenniere bedeutet radikale Nephrektomie; Nebenniere und Lymphknoten werden nur bei bildgebendem oder intraoperativem Verdacht auf Befall entfernt.",
+              "es": "Correcto: cT2 con riñón contralateral sano implica nefrectomía radical; la suprarrenal y los ganglios solo se extirpan si la imagen o los hallazgos intraoperatorios sugieren afectación."
+            },
+            "critical": false
+          }
+        ],
+        "best": "c"
+      }
+    ],
+    "takeaway": {
+      "en": "From cT1b, chest CT belongs to staging. cT2 means radical nephrectomy; partial nephrectomy only for a solitary kidney or CKD, adrenalectomy and lymphadenectomy only when involvement is suspected. Upfront cytoreductive nephrectomy fits fit patients with low-volume metastases who do not yet need systemic therapy.",
+      "de": "Ab cT1b gehört ein CT-Thorax zum Staging. cT2 bedeutet radikale Nephrektomie; Teilresektion nur bei Einzelniere oder chronischer Niereninsuffizienz, Adrenalektomie und Lymphadenektomie nur bei Verdacht auf Befall. Die primäre zytoreduktive Nephrektomie passt zu fitten Patienten mit geringer Metastasenlast, die noch keine Systemtherapie benötigen.",
+      "es": "A partir de cT1b la TC de tórax forma parte de la estadificación. cT2 implica nefrectomía radical; parcial solo con riñón único o enfermedad renal crónica, suprarrenalectomía y linfadenectomía solo si se sospecha afectación. La nefrectomía citorreductora inicial es adecuada en pacientes en buen estado con metástasis de bajo volumen que aún no necesitan tratamiento sistémico."
+    },
+    "references": [
+      "bank-guide-nierenzellkarzinom",
+      "knowuro-kidney-2026"
+    ]
+  },
+  {
+    "id": "onc-kidney-recurrence-adjuvant-io",
+    "area": "clinic",
+    "level": 3,
+    "acuity": "routine",
+    "duty": "clinic",
+    "patient": {
+      "name": "Salvatore Greco",
+      "age": 54,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Metastases during adjuvant pembrolizumab: what next?",
+      "de": "Metastasen unter adjuvantem Pembrolizumab: wie weiter?",
+      "es": "Metástasis durante pembrolizumab adyuvante: ¿y ahora qué?"
+    },
+    "presenting": {
+      "en": "Mr Greco, 54, underwent right radical nephrectomy ten months ago for clear cell RCC pT3a pN0, ISUP grade 3, R0. After restaging he started adjuvant pembrolizumab eight weeks after surgery and has received it for seven months. The scheduled CT now shows five new lung metastases up to 1.8 cm and a 2.5 cm liver metastasis; the nephrectomy bed is free. He is asymptomatic, Karnofsky 90 %, blood count and calcium are normal, eGFR 61 mL/min. No immune-related adverse events so far.",
+      "de": "Herr Greco, 54 Jahre, wurde vor zehn Monaten wegen eines klarzelligen NZK pT3a pN0, ISUP-Grad 3, R0 rechts radikal nephrektomiert. Nach Re-Staging begann acht Wochen postoperativ die adjuvante Therapie mit Pembrolizumab, die er seit sieben Monaten erhält. Das planmäßige CT zeigt jetzt fünf neue Lungenmetastasen bis 1,8 cm und eine 2,5 cm große Lebermetastase; die Nephrektomieloge ist frei. Er ist beschwerdefrei, Karnofsky-Index 90 %, Blutbild und Kalzium normal, eGFR 61 ml/min. Bislang keine immunvermittelten Nebenwirkungen.",
+      "es": "Al Sr. Greco, de 54 años, se le realizó hace diez meses una nefrectomía radical derecha por un CCR de células claras pT3a pN0, grado ISUP 3, R0. Tras la reestadificación inició pembrolizumab adyuvante ocho semanas después de la cirugía y lo recibe desde hace siete meses. La TC programada muestra ahora cinco metástasis pulmonares nuevas de hasta 1,8 cm y una metástasis hepática de 2,5 cm; el lecho de nefrectomía está libre. Está asintomático, Karnofsky 90 %, hemograma y calcio normales, FGe 61 ml/min. Sin efectos adversos inmunomediados hasta ahora."
+    },
+    "vitals": null,
+    "objectives": {
+      "en": [
+        "Recognise recurrence during or within six months after adjuvant pembrolizumab as IO-refractory disease.",
+        "Sequence VEGFR-TKI therapy after immunotherapy and choose a later line not used before."
+      ],
+      "de": [
+        "Ein Rezidiv unter oder innerhalb von sechs Monaten nach adjuvantem Pembrolizumab als IO-refraktär erkennen.",
+        "Die VEGFR-TKI-Therapie nach Immuntherapie richtig sequenzieren und eine bisher nicht eingesetzte Folgelinie wählen."
+      ],
+      "es": [
+        "Reconocer la recidiva durante o en los seis meses posteriores a pembrolizumab adyuvante como enfermedad refractaria a la inmunoterapia.",
+        "Secuenciar el ITC anti-VEGFR tras la inmunoterapia y elegir una línea posterior no utilizada antes."
+      ]
+    },
+    "steps": [
+      {
+        "id": "key-factor",
+        "kind": "assessment",
+        "prompt": {
+          "en": "Which factor decides the choice of systemic therapy most?",
+          "de": "Welcher Faktor bestimmt die Wahl der Systemtherapie am stärksten?",
+          "es": "¿Qué factor determina en mayor medida la elección del tratamiento sistémico?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "The PD-L1 expression of a liver metastasis biopsy.",
+              "de": "Die PD-L1-Expression in einer Biopsie der Lebermetastase.",
+              "es": "La expresión de PD-L1 en una biopsia de la metástasis hepática."
+            },
+            "score": 0,
+            "minutes": 6,
+            "feedback": {
+              "en": "PD-L1 is not a predictive biomarker for treatment selection in RCC; a biopsy for this purpose adds risk without guiding therapy.",
+              "de": "PD-L1 ist beim NZK kein prädiktiver Biomarker für die Therapiewahl; eine Biopsie zu diesem Zweck bringt Risiko ohne Therapiesteuerung.",
+              "es": "PD-L1 no es un biomarcador predictivo para elegir el tratamiento en el CCR; una biopsia con este fin añade riesgo sin orientar la terapia."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "The IMDC risk group alone, as for any first-line metastatic patient.",
+              "de": "Allein die IMDC-Risikogruppe, wie bei jeder metastasierten Erstlinie.",
+              "es": "Solo el grupo de riesgo IMDC, como en cualquier primera línea metastásica."
+            },
+            "score": 3,
+            "minutes": 5,
+            "feedback": {
+              "en": "IMDC risk remains prognostically relevant, but it ignores that his tumour has just progressed on a PD-1 inhibitor.",
+              "de": "Das IMDC-Risiko bleibt prognostisch relevant, übersieht aber, dass der Tumor gerade unter einem PD-1-Inhibitor progredient ist.",
+              "es": "El riesgo IMDC sigue siendo relevante para el pronóstico, pero ignora que el tumor acaba de progresar con un inhibidor de PD-1."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Recurrence during adjuvant pembrolizumab, i.e. disease progressing on PD-1 blockade.",
+              "de": "Das Rezidiv unter laufendem adjuvantem Pembrolizumab, also Progress unter PD-1-Blockade.",
+              "es": "La recidiva durante el pembrolizumab adyuvante, es decir, progresión bajo bloqueo de PD-1."
+            },
+            "score": 10,
+            "minutes": 4,
+            "feedback": {
+              "en": "Correct: recurrence during or within six months after adjuvant pembrolizumab marks IO-refractory disease and steers treatment towards a VEGFR-TKI instead of further checkpoint inhibition.",
+              "de": "Richtig: Ein Rezidiv unter oder innerhalb von sechs Monaten nach adjuvantem Pembrolizumab kennzeichnet eine IO-refraktäre Erkrankung und lenkt die Therapie zu einem VEGFR-TKI statt erneuter Checkpoint-Inhibition.",
+              "es": "Correcto: la recidiva durante o en los seis meses posteriores a pembrolizumab adyuvante indica enfermedad refractaria a la inmunoterapia y orienta hacia un ITC anti-VEGFR en lugar de más inhibición de puntos de control."
+            },
+            "critical": false
+          }
+        ],
+        "best": "c"
+      },
+      {
+        "id": "systemic",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which systemic therapy do you recommend?",
+          "de": "Welche Systemtherapie empfehlen Sie?",
+          "es": "¿Qué tratamiento sistémico recomienda?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "VEGFR-TKI monotherapy, for example cabozantinib.",
+              "de": "VEGFR-TKI-Monotherapie, zum Beispiel Cabozantinib.",
+              "es": "Monoterapia con un ITC anti-VEGFR, por ejemplo cabozantinib."
+            },
+            "score": 10,
+            "minutes": 8,
+            "feedback": {
+              "en": "Correct: after recurrence during or shortly after adjuvant pembrolizumab, a TKI-based therapy is preferred; re-exposure to checkpoint inhibitors has no proven benefit here.",
+              "de": "Richtig: Nach einem Rezidiv unter oder kurz nach adjuvantem Pembrolizumab wird eine TKI-basierte Therapie bevorzugt; eine erneute Checkpoint-Inhibition hat hier keinen belegten Nutzen.",
+              "es": "Correcto: tras una recidiva durante o poco después de pembrolizumab adyuvante se prefiere un tratamiento basado en ITC; la reexposición a inhibidores de puntos de control no ha demostrado beneficio en este contexto."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Pembrolizumab plus axitinib, the standard first-line combination.",
+              "de": "Pembrolizumab plus Axitinib als Standard-Erstlinienkombination.",
+              "es": "Pembrolizumab más axitinib, la combinación estándar de primera línea."
+            },
+            "score": 3,
+            "minutes": 8,
+            "feedback": {
+              "en": "The TKI component is right, but continuing the PD-1 inhibitor on which the tumour progressed adds immune toxicity without proven gain; in a randomised trial, adding a checkpoint inhibitor to cabozantinib after prior IO did not help.",
+              "de": "Der TKI-Anteil ist richtig, aber die Fortführung des PD-1-Inhibitors, unter dem der Tumor progredient war, bringt Immuntoxizität ohne belegten Gewinn; in einer randomisierten Studie half die Zugabe eines Checkpoint-Inhibitors zu Cabozantinib nach IO-Vortherapie nicht.",
+              "es": "El componente ITC es correcto, pero mantener el inhibidor de PD-1 con el que progresó el tumor añade toxicidad inmunitaria sin beneficio demostrado; en un ensayo aleatorizado, añadir un inhibidor de puntos de control a cabozantinib tras inmunoterapia previa no aportó beneficio."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Nivolumab plus ipilimumab, to intensify the immunotherapy.",
+              "de": "Nivolumab plus Ipilimumab, um die Immuntherapie zu intensivieren.",
+              "es": "Nivolumab más ipilimumab, para intensificar la inmunoterapia."
+            },
+            "score": 0,
+            "minutes": 6,
+            "feedback": {
+              "en": "Pure IO rechallenge after progression on PD-1 blockade is not supported and exposes him to considerable immune toxicity.",
+              "de": "Eine reine IO-Reexposition nach Progress unter PD-1-Blockade ist nicht belegt und setzt ihn erheblicher Immuntoxizität aus.",
+              "es": "La reexposición exclusiva a inmunoterapia tras progresar con bloqueo de PD-1 no está respaldada y le expone a una toxicidad inmunitaria considerable."
+            },
+            "critical": false
+          }
+        ],
+        "best": "a"
+      },
+      {
+        "id": "later-line",
+        "kind": "decision",
+        "prompt": {
+          "en": "After 14 months on cabozantinib the lung and liver metastases progress; Karnofsky is now 80 %. What is the next step?",
+          "de": "Nach 14 Monaten unter Cabozantinib sind die Lungen- und Lebermetastasen progredient; Karnofsky-Index jetzt 80 %. Was ist der nächste Schritt?",
+          "es": "Tras 14 meses con cabozantinib las metástasis pulmonares y hepáticas progresan; el Karnofsky es ahora del 80 %. ¿Cuál es el siguiente paso?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Everolimus as the standard second line after a TKI.",
+              "de": "Everolimus als Standard-Zweitlinie nach TKI.",
+              "es": "Everolimus como segunda línea estándar tras un ITC."
+            },
+            "score": 3,
+            "minutes": 6,
+            "feedback": {
+              "en": "Everolimus remains a possible later option, but it is less effective than VEGFR-targeted agents and is no longer the preferred next step.",
+              "de": "Everolimus bleibt eine mögliche spätere Option, ist aber weniger wirksam als VEGFR-gerichtete Substanzen und nicht mehr der bevorzugte nächste Schritt.",
+              "es": "Everolimus sigue siendo una opción posterior posible, pero es menos eficaz que los fármacos dirigidos contra VEGFR y ya no es el siguiente paso preferido."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "A VEGFR-TKI not given before, for example axitinib, and check eligibility for a clinical trial.",
+              "de": "Einen bisher nicht eingesetzten VEGFR-TKI, zum Beispiel Axitinib, und eine Studienteilnahme prüfen.",
+              "es": "Un ITC anti-VEGFR no utilizado antes, por ejemplo axitinib, y valorar la inclusión en un ensayo clínico."
+            },
+            "score": 10,
+            "minutes": 8,
+            "feedback": {
+              "en": "Correct: in later lines a VEGFR-targeted agent not used before is recommended; trials should be considered at every progression.",
+              "de": "Richtig: In späteren Linien wird eine bisher nicht eingesetzte VEGFR-gerichtete Substanz empfohlen; eine Studienteilnahme sollte bei jedem Progress geprüft werden.",
+              "es": "Correcto: en líneas posteriores se recomienda un fármaco anti-VEGFR no utilizado antes; en cada progresión debe valorarse un ensayo clínico."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Pembrolizumab monotherapy again, since he tolerated it well.",
+              "de": "Erneut Pembrolizumab-Monotherapie, da er es gut vertragen hat.",
+              "es": "De nuevo monoterapia con pembrolizumab, ya que lo toleró bien."
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "en": "Good tolerance is no reason for rechallenge: his disease progressed on pembrolizumab, so a drug with a new mechanism is needed.",
+              "de": "Gute Verträglichkeit ist kein Grund für eine Reexposition: Die Erkrankung ist unter Pembrolizumab progredient gewesen, daher braucht es eine Substanz mit neuem Wirkprinzip.",
+              "es": "La buena tolerancia no justifica la reexposición: la enfermedad progresó con pembrolizumab, por lo que se necesita un fármaco con un mecanismo nuevo."
+            },
+            "critical": false
+          }
+        ],
+        "best": "b"
+      }
+    ],
+    "takeaway": {
+      "en": "Recurrence during or within six months after adjuvant pembrolizumab counts as IO-refractory: offer a VEGFR-TKI rather than an IO rechallenge. In each later line, use a VEGFR-targeted agent not given before and consider clinical trials.",
+      "de": "Ein Rezidiv unter oder innerhalb von sechs Monaten nach adjuvantem Pembrolizumab gilt als IO-refraktär: VEGFR-TKI statt IO-Reexposition. In jeder Folgelinie eine bisher nicht eingesetzte VEGFR-gerichtete Substanz wählen und Studien prüfen.",
+      "es": "La recidiva durante o en los seis meses posteriores a pembrolizumab adyuvante se considera refractaria a la inmunoterapia: ofrecer un ITC anti-VEGFR en lugar de reexposición a inmunoterapia. En cada línea posterior, usar un fármaco anti-VEGFR no administrado antes y valorar ensayos clínicos."
+    },
+    "references": [
+      "bank-guide-nierenzellkarzinom",
+      "knowuro-kidney-2026"
+    ]
+  },
+  {
+    "id": "onc-utuc-metastatic-first-line",
+    "area": "clinic",
+    "level": 3,
+    "acuity": "routine",
+    "duty": "board",
+    "patient": {
+      "name": "Hermann Ostendorf",
+      "age": 70,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Metastatic renal pelvis carcinoma: EV plus pembrolizumab or platinum?",
+      "de": "Metastasiertes Nierenbeckenkarzinom: EV plus Pembrolizumab oder Platin?",
+      "es": "Carcinoma de pelvis renal metastásico: ¿EV más pembrolizumab o platino?"
+    },
+    "presenting": {
+      "en": "Mr Ostendorf, 70, has a high-grade urothelial carcinoma of the left renal pelvis (ureteroscopic biopsy). Staging CT shows enlarged retroperitoneal lymph nodes up to 3 cm and two liver metastases (cM1). ECOG 1, eGFR 48 mL/min. Long-standing type 2 diabetes with HbA1c 9.6 % and a painful diabetic polyneuropathy, grade 2, that limits his daily activities; no autoimmune disease, normal hearing.",
+      "de": "Bei Herrn Ostendorf, 70 Jahre, wurde ureterorenoskopisch ein High-Grade-Urothelkarzinom des linken Nierenbeckens gesichert. Das Staging-CT zeigt vergrößerte retroperitoneale Lymphknoten bis 3 cm und zwei Lebermetastasen (cM1). ECOG 1, eGFR 48 ml/min. Langjähriger Diabetes mellitus Typ 2 mit HbA1c 9,6 % und schmerzhafter diabetischer Polyneuropathie Grad 2, die ihn im Alltag einschränkt; keine Autoimmunerkrankung, Gehör unauffällig.",
+      "es": "Al Sr. Ostendorf, de 70 años, se le ha confirmado por ureterorrenoscopia un carcinoma urotelial de alto grado de la pelvis renal izquierda. La TC de estadificación muestra adenopatías retroperitoneales de hasta 3 cm y dos metástasis hepáticas (cM1). ECOG 1, FGe 48 ml/min. Diabetes mellitus tipo 2 de larga evolución con HbA1c del 9,6 % y polineuropatía diabética dolorosa de grado 2 que limita su actividad diaria; sin enfermedad autoinmune, audición normal."
+    },
+    "vitals": null,
+    "objectives": {
+      "en": [
+        "Check suitability for enfortumab vedotin plus pembrolizumab, then cisplatin and carboplatin eligibility, in metastatic UTUC.",
+        "Use avelumab maintenance after response or stable disease on platinum chemotherapy."
+      ],
+      "de": [
+        "Beim metastasierten UTUC die Eignung für Enfortumab Vedotin plus Pembrolizumab und danach die Cisplatin- und Carboplatin-Eignung prüfen.",
+        "Avelumab als Erhaltung nach Ansprechen oder stabiler Erkrankung unter Platin-Chemotherapie einsetzen."
+      ],
+      "es": [
+        "Comprobar en el CUTUS metastásico la idoneidad para enfortumab vedotina más pembrolizumab y después la elegibilidad para cisplatino y carboplatino.",
+        "Utilizar avelumab de mantenimiento tras respuesta o estabilización con quimioterapia basada en platino."
+      ]
+    },
+    "steps": [
+      {
+        "id": "evp-fit",
+        "kind": "assessment",
+        "prompt": {
+          "en": "Is Mr Ostendorf a good candidate for first-line enfortumab vedotin plus pembrolizumab (EVP)?",
+          "de": "Ist Herr Ostendorf ein geeigneter Kandidat für Enfortumab Vedotin plus Pembrolizumab (EVP) in der Erstlinie?",
+          "es": "¿Es el Sr. Ostendorf un buen candidato para enfortumab vedotina más pembrolizumab (EVP) en primera línea?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Yes: ECOG ≤ 2 and eGFR ≥ 30 mL/min are all that matters for EVP.",
+              "de": "Ja: Für EVP zählen nur ECOG ≤ 2 und eGFR ≥ 30 ml/min.",
+              "es": "Sí: para EVP solo cuentan ECOG ≤ 2 y FGe ≥ 30 ml/min."
+            },
+            "score": 3,
+            "minutes": 4,
+            "feedback": {
+              "en": "EVP is the preferred first line for fit patients and those criteria are right, but enfortumab vedotin also causes neuropathy and severe hyperglycaemia; his grade 2 neuropathy and uncontrolled diabetes argue against it.",
+              "de": "EVP ist die bevorzugte Erstlinie für geeignete Patienten und diese Kriterien stimmen, doch Enfortumab Vedotin verursacht zusätzlich Neuropathie und schwere Hyperglykämien; seine Neuropathie Grad 2 und der entgleiste Diabetes sprechen dagegen.",
+              "es": "EVP es la primera línea preferida en pacientes aptos y esos criterios son correctos, pero enfortumab vedotina también provoca neuropatía e hiperglucemia grave; su neuropatía de grado 2 y la diabetes mal controlada la desaconsejan."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "No: with eGFR 48 mL/min he is unfit for any systemic therapy; best supportive care.",
+              "de": "Nein: Mit eGFR 48 ml/min ist er für jede Systemtherapie ungeeignet; Best Supportive Care.",
+              "es": "No: con FGe 48 ml/min no es apto para ningún tratamiento sistémico; mejor tratamiento de soporte."
+            },
+            "score": 0,
+            "minutes": 3,
+            "feedback": {
+              "en": "An eGFR of 48 mL/min rules out cisplatin, not systemic therapy; at ECOG 1 there are effective options that would be withheld.",
+              "de": "Eine eGFR von 48 ml/min schließt Cisplatin aus, aber nicht jede Systemtherapie; bei ECOG 1 würden wirksame Optionen vorenthalten.",
+              "es": "Un FGe de 48 ml/min descarta el cisplatino, no el tratamiento sistémico; con ECOG 1 se le negarían opciones eficaces."
+            },
+            "critical": true
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Not a good candidate: grade 2 neuropathy and uncontrolled diabetes argue against enfortumab vedotin, so platinum eligibility is checked next.",
+              "de": "Eher nicht: Neuropathie Grad 2 und entgleister Diabetes sprechen gegen Enfortumab Vedotin, daher wird als Nächstes die Platin-Eignung geprüft.",
+              "es": "No es buen candidato: la neuropatía de grado 2 y la diabetes mal controlada desaconsejan enfortumab vedotina, por lo que a continuación se valora la elegibilidad para platino."
+            },
+            "score": 10,
+            "minutes": 6,
+            "feedback": {
+              "en": "Correct: EVP is the preferred first line for patients with ECOG 0–2, eGFR ≥ 30 mL/min and no contraindication to immunotherapy; pre-existing relevant neuropathy and uncontrolled diabetes are drug-specific reasons to choose the platinum pathway instead.",
+              "de": "Richtig: EVP ist die bevorzugte Erstlinie bei ECOG 0–2, eGFR ≥ 30 ml/min und ohne Kontraindikation gegen Immuntherapie; eine vorbestehende relevante Neuropathie und ein entgleister Diabetes sind substanzspezifische Gründe, stattdessen den Platinweg zu wählen.",
+              "es": "Correcto: EVP es la primera línea preferida con ECOG 0–2, FGe ≥ 30 ml/min y sin contraindicación para la inmunoterapia; una neuropatía relevante previa y una diabetes mal controlada son motivos específicos del fármaco para optar por la vía del platino."
+            },
+            "critical": false
+          }
+        ],
+        "best": "c"
+      },
+      {
+        "id": "platinum",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which chemotherapy-based first line is appropriate?",
+          "de": "Welche chemotherapiebasierte Erstlinie ist angemessen?",
+          "es": "¿Qué primera línea basada en quimioterapia es adecuada?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Gemcitabine plus cisplatin plus nivolumab.",
+              "de": "Gemcitabin plus Cisplatin plus Nivolumab.",
+              "es": "Gemcitabina más cisplatino más nivolumab."
+            },
+            "score": 0,
+            "minutes": 6,
+            "feedback": {
+              "en": "This is a first-line standard only for cisplatin-eligible patients; eGFR below 60 mL/min and grade 2 neuropathy make him cisplatin-ineligible, and cisplatin would worsen both.",
+              "de": "Das ist ein Erstlinienstandard nur für cisplatingeeignete Patienten; eine eGFR unter 60 ml/min und eine Neuropathie Grad 2 machen ihn cisplatinungeeignet, und Cisplatin würde beides verschlechtern.",
+              "es": "Es un estándar de primera línea solo para pacientes aptos para cisplatino; un FGe inferior a 60 ml/min y la neuropatía de grado 2 le hacen no apto, y el cisplatino empeoraría ambas."
+            },
+            "critical": true
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Gemcitabine plus carboplatin for four to six cycles.",
+              "de": "Gemcitabin plus Carboplatin über vier bis sechs Zyklen.",
+              "es": "Gemcitabina más carboplatino durante cuatro a seis ciclos."
+            },
+            "score": 10,
+            "minutes": 8,
+            "feedback": {
+              "en": "Correct: cisplatin-ineligible but carboplatin-eligible patients receive gemcitabine plus carboplatin, followed by restaging.",
+              "de": "Richtig: Cisplatinungeeignete, aber carboplatingeeignete Patienten erhalten Gemcitabin plus Carboplatin mit anschließendem Re-Staging.",
+              "es": "Correcto: los pacientes no aptos para cisplatino pero aptos para carboplatino reciben gemcitabina más carboplatino, seguido de reestadificación."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Pembrolizumab monotherapy without chemotherapy.",
+              "de": "Pembrolizumab-Monotherapie ohne Chemotherapie.",
+              "es": "Monoterapia con pembrolizumab sin quimioterapia."
+            },
+            "score": 3,
+            "minutes": 5,
+            "feedback": {
+              "en": "Checkpoint inhibitor monotherapy in the first line is reserved for platinum-ineligible patients with PD-L1-positive tumours; he can still receive carboplatin.",
+              "de": "Eine Checkpoint-Inhibitor-Monotherapie in der Erstlinie bleibt Patienten mit PD-L1-positivem Tumor vorbehalten, die für keine Platin-Chemotherapie geeignet sind; er kann noch Carboplatin erhalten.",
+              "es": "La monoterapia con inhibidor de puntos de control en primera línea se reserva para pacientes no aptos para platino con tumores PD-L1 positivos; él aún puede recibir carboplatino."
+            },
+            "critical": false
+          }
+        ],
+        "best": "b"
+      },
+      {
+        "id": "maintenance",
+        "kind": "decision",
+        "prompt": {
+          "en": "After six cycles of gemcitabine plus carboplatin the liver metastases are smaller and the lymph nodes are stable (partial response). What follows?",
+          "de": "Nach sechs Zyklen Gemcitabin plus Carboplatin sind die Lebermetastasen kleiner und die Lymphknoten stabil (partielles Ansprechen). Wie geht es weiter?",
+          "es": "Tras seis ciclos de gemcitabina más carboplatino las metástasis hepáticas han disminuido y las adenopatías están estables (respuesta parcial). ¿Qué sigue?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Treatment break with CT surveillance; second-line therapy at progression.",
+              "de": "Therapiepause mit CT-Kontrollen; Zweitlinie erst bei Progress.",
+              "es": "Pausa terapéutica con controles por TC; segunda línea al progresar."
+            },
+            "score": 3,
+            "minutes": 4,
+            "feedback": {
+              "en": "Surveillance was the former standard, but switch maintenance with avelumab prolongs overall survival after response or stable disease and should be offered.",
+              "de": "Die Überwachung war früher Standard, aber die Erhaltungstherapie mit Avelumab verlängert nach Ansprechen oder stabiler Erkrankung das Gesamtüberleben und soll angeboten werden.",
+              "es": "La vigilancia era el estándar anterior, pero el mantenimiento con avelumab prolonga la supervivencia global tras respuesta o estabilización y debe ofrecerse."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Consolidating nephroureterectomy with retroperitoneal lymphadenectomy.",
+              "de": "Konsolidierende Nephroureterektomie mit retroperitonealer Lymphadenektomie.",
+              "es": "Nefroureterectomía de consolidación con linfadenectomía retroperitoneal."
+            },
+            "score": 0,
+            "minutes": 15,
+            "feedback": {
+              "en": "Surgery after chemotherapy response is discussed at the tumour board for node-only disease; with liver metastases it adds major morbidity without proven benefit and delays maintenance therapy.",
+              "de": "Eine Operation nach Ansprechen wird in der Tumorkonferenz bei rein lymphogener Metastasierung erwogen; bei Lebermetastasen bringt sie erhebliche Morbidität ohne belegten Nutzen und verzögert die Erhaltungstherapie.",
+              "es": "La cirugía tras la respuesta se valora en el comité de tumores cuando la afectación es solo ganglionar; con metástasis hepáticas añade una morbilidad importante sin beneficio demostrado y retrasa el mantenimiento."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Start avelumab maintenance.",
+              "de": "Avelumab-Erhaltungstherapie beginnen.",
+              "es": "Iniciar mantenimiento con avelumab."
+            },
+            "score": 10,
+            "minutes": 6,
+            "feedback": {
+              "en": "Correct: avelumab maintenance is EU-approved and recommended for advanced urothelial carcinoma, including the upper tract, without progression after first-line platinum chemotherapy.",
+              "de": "Richtig: Die Avelumab-Erhaltung ist beim fortgeschrittenen Urothelkarzinom, auch des oberen Harntrakts, ohne Progress nach platinbasierter Erstlinie in der EU zugelassen und empfohlen.",
+              "es": "Correcto: el mantenimiento con avelumab está aprobado en la UE y recomendado en el carcinoma urotelial avanzado, también del tracto superior, sin progresión tras la primera línea con platino."
+            },
+            "critical": false
+          }
+        ],
+        "best": "c"
+      }
+    ],
+    "takeaway": {
+      "en": "Metastatic UTUC: first check suitability for EV plus pembrolizumab (ECOG 0–2, eGFR ≥ 30 mL/min, no IO contraindication, no relevant neuropathy or uncontrolled diabetes). Otherwise cisplatin-eligible patients receive gemcitabine/cisplatin plus nivolumab, cisplatin-ineligible ones gemcitabine/carboplatin. After response or stable disease on platinum, start avelumab maintenance.",
+      "de": "Metastasiertes UTUC: zuerst die Eignung für EV plus Pembrolizumab prüfen (ECOG 0–2, eGFR ≥ 30 ml/min, keine IO-Kontraindikation, keine relevante Neuropathie oder entgleister Diabetes). Sonst erhalten cisplatingeeignete Patienten Gemcitabin/Cisplatin plus Nivolumab, cisplatinungeeignete Gemcitabin/Carboplatin. Nach Ansprechen oder stabiler Erkrankung unter Platin folgt die Avelumab-Erhaltung.",
+      "es": "CUTUS metastásico: valorar primero la idoneidad para EV más pembrolizumab (ECOG 0–2, FGe ≥ 30 ml/min, sin contraindicación para inmunoterapia, sin neuropatía relevante ni diabetes mal controlada). Si no, los pacientes aptos para cisplatino reciben gemcitabina/cisplatino más nivolumab y los no aptos, gemcitabina/carboplatino. Tras respuesta o estabilización con platino, mantenimiento con avelumab."
+    },
+    "references": [
+      "bank-guide-utuc",
+      "knowuro-utuc-2026"
+    ]
+  },
+  {
+    "id": "onc-penile-cn1-node-t3-primary",
+    "area": "clinic",
+    "level": 3,
+    "acuity": "urgent",
+    "duty": "board",
+    "patient": {
+      "name": "Lorenzo Bianchi",
+      "age": 66,
+      "sex": "male"
+    },
+    "title": {
+      "en": "A palpable groin node in penile cancer",
+      "de": "Tastbarer Leistenlymphknoten beim Peniskarzinom",
+      "es": "Ganglio inguinal palpable en el cáncer de pene"
+    },
+    "presenting": {
+      "en": "Mr Bianchi, 66, presents with an ulcerated glans tumour that has grown for several months; biopsy shows a poorly differentiated squamous cell carcinoma (G3). A single, freely mobile 2 cm lymph node is palpable in the right groin, and fine-needle aspiration cytology (FNAC) is positive. The left groin is normal on palpation and ultrasound. Creatinine 0.9 mg/dL, ECOG 0.",
+      "de": "Herr Bianchi, 66 Jahre, stellt sich mit einem seit Monaten wachsenden, ulzerierten Tumor der Glans vor; die Biopsie zeigt ein gering differenziertes Plattenepithelkarzinom (G3). In der rechten Leiste tastet sich ein solitärer, gut verschieblicher Lymphknoten von 2 cm; die Feinnadelaspirationszytologie (FNAC) ist positiv. Die linke Leiste ist palpatorisch und sonographisch unauffällig. Kreatinin 0,9 mg/dl, ECOG 0.",
+      "es": "El Sr. Bianchi, de 66 años, consulta por un tumor ulcerado del glande que crece desde hace meses; la biopsia muestra un carcinoma epidermoide poco diferenciado (G3). En la ingle derecha se palpa un ganglio único, móvil, de 2 cm, y la punción-aspiración con aguja fina (PAAF) es positiva. La ingle izquierda es normal a la palpación y en la ecografía. Creatinina 0,9 mg/dl, ECOG 0."
+    },
+    "vitals": {
+      "bp": "138/82",
+      "hr": 74,
+      "temp": 36.7,
+      "spo2": 97,
+      "rr": 14
+    },
+    "objectives": {
+      "en": [
+        "Define staging and groin management for mobile, cytology-positive inguinal nodes.",
+        "Choose the operation for a primary tumour invading the corpora cavernosa."
+      ],
+      "de": [
+        "Bei verschieblichen, zytologisch positiven Leistenlymphknoten Staging und inguinales Vorgehen festlegen.",
+        "Die Operation eines Primärtumors mit Infiltration der Corpora cavernosa wählen."
+      ],
+      "es": [
+        "Definir la estadificación y el manejo inguinal ante ganglios inguinales móviles con citología positiva.",
+        "Elegir la cirugía de un tumor primario que invade los cuerpos cavernosos."
+      ]
+    },
+    "steps": [
+      {
+        "id": "systemic-staging",
+        "kind": "assessment",
+        "prompt": {
+          "en": "Cytology confirms a lymph node metastasis in the right groin. Which investigation do you arrange before the tumour board?",
+          "de": "Die Zytologie sichert eine Lymphknotenmetastase rechts inguinal. Welche Diagnostik veranlassen Sie vor der Tumorkonferenz?",
+          "es": "La citología confirma una metástasis ganglionar inguinal derecha. ¿Qué estudio solicitas antes del comité de tumores?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Schedule right radical inguinal lymph node dissection directly, without further imaging.",
+              "de": "Ohne weitere Bildgebung direkt die radikale inguinale Lymphadenektomie rechts planen.",
+              "es": "Programar directamente la linfadenectomía inguinal radical derecha sin más pruebas de imagen."
+            },
+            "score": 3,
+            "minutes": 4,
+            "feedback": {
+              "en": "The dissection is the right operation, but with cytologically proven nodal disease pelvic nodes and distant metastases must first be sought with CT (or FDG-PET/CT), because they change the treatment plan.",
+              "de": "Die Lymphadenektomie ist der richtige Eingriff, aber bei zytologisch gesichertem Lymphknotenbefall müssen vorher pelvine Lymphknoten und Fernmetastasen mit CT (oder FDG-PET/CT) gesucht werden, weil sie das Konzept ändern.",
+              "es": "La linfadenectomía es la cirugía adecuada, pero con afectación ganglionar confirmada por citología hay que buscar antes ganglios pélvicos y metástasis a distancia con TC (o PET-TC con FDG), porque cambian el plan terapéutico."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "CT of the chest, abdomen and pelvis (FDG-PET/CT as an alternative) to stage pelvic nodes and distant metastases.",
+              "de": "CT Thorax/Abdomen/Becken (alternativ FDG-PET/CT) zum Staging pelviner Lymphknoten und von Fernmetastasen.",
+              "es": "TC de tórax, abdomen y pelvis (como alternativa, PET-TC con FDG) para estadificar ganglios pélvicos y metástasis a distancia."
+            },
+            "score": 10,
+            "minutes": 10,
+            "feedback": {
+              "en": "With palpable, cytology-positive inguinal nodes the EAU guideline recommends systemic staging by CT of the chest, abdomen and pelvis; FDG-PET/CT is an alternative.",
+              "de": "Bei palpablen, zytologisch positiven Leistenlymphknoten empfiehlt die EAU-Leitlinie ein systemisches Staging mit CT von Thorax, Abdomen und Becken; die FDG-PET/CT ist eine Alternative.",
+              "es": "Ante ganglios inguinales palpables con citología positiva, la guía de la EAU recomienda estadificación sistémica con TC de tórax, abdomen y pelvis; la PET-TC con FDG es una alternativa."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Dynamic sentinel node biopsy (DSNB) of the right groin to confirm the finding.",
+              "de": "Dynamische Sentinel-Lymphknotenbiopsie (DSNB) der rechten Leiste zur Bestätigung.",
+              "es": "Biopsia dinámica del ganglio centinela (BDGC) de la ingle derecha para confirmar el hallazgo."
+            },
+            "score": 0,
+            "minutes": 8,
+            "feedback": {
+              "en": "DSNB is not suitable for palpable nodes: tumour can block lymphatic drainage and give false-negative results. Nodal involvement is already proven by cytology.",
+              "de": "Bei palpablen Lymphknoten ist die DSNB ungeeignet: Tumorgewebe kann den Lymphabfluss blockieren und falsch-negative Befunde erzeugen. Der Befall ist zytologisch bereits gesichert.",
+              "es": "La BDGC no es adecuada con ganglios palpables: el tumor puede bloquear el drenaje linfático y dar falsos negativos. La afectación ya está confirmada por citología."
+            },
+            "critical": false
+          }
+        ],
+        "best": "b"
+      },
+      {
+        "id": "inguinal-plan",
+        "kind": "decision",
+        "prompt": {
+          "en": "CT shows no enlarged pelvic nodes and no distant metastases (cN1 cM0). Which groin strategy does the tumour board recommend?",
+          "de": "Das CT zeigt keine vergrößerten pelvinen Lymphknoten und keine Fernmetastasen (cN1 cM0). Welches inguinale Vorgehen empfiehlt die Tumorkonferenz?",
+          "es": "La TC no muestra adenopatías pélvicas ni metástasis a distancia (cN1 cM0). ¿Qué estrategia inguinal recomienda el comité de tumores?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Neoadjuvant cisplatin- and taxane-based chemotherapy first, then lymph node dissection.",
+              "de": "Zunächst neoadjuvante cisplatin- und taxanhaltige Chemotherapie, danach Lymphadenektomie.",
+              "es": "Primero quimioterapia neoadyuvante con cisplatino y taxano y después linfadenectomía."
+            },
+            "score": 0,
+            "minutes": 6,
+            "feedback": {
+              "en": "Neoadjuvant chemotherapy is reserved for fixed or bulky nodal masses (cN3) and extensive disease. For a single mobile node it delays curative surgery without proven benefit.",
+              "de": "Die neoadjuvante Chemotherapie ist fixierten oder großen Lymphknotenpaketen (cN3) und ausgedehntem Befall vorbehalten. Bei einem solitären, verschieblichen Knoten verzögert sie die kurative Operation ohne belegten Nutzen.",
+              "es": "La quimioterapia neoadyuvante se reserva para masas ganglionares fijas o voluminosas (cN3) y enfermedad extensa. Con un único ganglio móvil retrasa la cirugía curativa sin beneficio demostrado."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Right radical inguinal lymph node dissection; simply observe the clinically normal left groin.",
+              "de": "Radikale inguinale Lymphadenektomie rechts; die klinisch unauffällige linke Leiste nur beobachten.",
+              "es": "Linfadenectomía inguinal radical derecha; solo observar la ingle izquierda clínicamente normal."
+            },
+            "score": 3,
+            "minutes": 8,
+            "feedback": {
+              "en": "The right side is treated correctly, but the penis drains to both groins and occult contralateral metastases are not rare; the left groin needs invasive staging (DSNB or modified dissection).",
+              "de": "Die rechte Seite ist richtig versorgt, aber der Penis drainiert in beide Leisten und okkulte Metastasen der Gegenseite sind nicht selten; die linke Leiste erfordert ein invasives Staging (DSNB oder modifizierte Lymphadenektomie).",
+              "es": "El lado derecho está bien tratado, pero el pene drena a ambas ingles y las metástasis ocultas contralaterales no son raras; la ingle izquierda requiere estadificación invasiva (BDGC o linfadenectomía modificada)."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Right radical inguinal lymph node dissection plus invasive staging of the left groin (DSNB or modified dissection), with completion dissection if positive.",
+              "de": "Radikale inguinale Lymphadenektomie rechts und invasives Staging der linken Leiste (DSNB oder modifizierte Lymphadenektomie), bei positivem Befund Komplettierung links.",
+              "es": "Linfadenectomía inguinal radical derecha y estadificación invasiva de la ingle izquierda (BDGC o linfadenectomía modificada), con linfadenectomía completa si es positiva."
+            },
+            "score": 10,
+            "minutes": 10,
+            "feedback": {
+              "en": "For cN1/cN2 the EAU guideline recommends primary radical dissection of the affected groin. The clinically negative side is staged invasively because penile lymph drains bilaterally.",
+              "de": "Bei cN1/cN2 empfiehlt die EAU-Leitlinie die primäre radikale Lymphadenektomie der befallenen Leiste. Die klinisch negative Gegenseite erhält ein invasives Staging, weil der Penis beidseits drainiert.",
+              "es": "En cN1/cN2 la guía de la EAU recomienda la linfadenectomía radical primaria de la ingle afectada. El lado clínicamente negativo se estadifica de forma invasiva porque el pene drena a ambos lados."
+            },
+            "critical": false
+          }
+        ],
+        "best": "c"
+      },
+      {
+        "id": "primary-tumour",
+        "kind": "decision",
+        "prompt": {
+          "en": "Penile MRI shows invasion of the distal corpora cavernosa (cT3) with the urethra free; the remaining proximal shaft would be long enough. Which operation on the primary tumour do you plan in the same session?",
+          "de": "Die MRT des Penis zeigt eine Infiltration der distalen Corpora cavernosa (cT3) bei freier Harnröhre; der verbleibende proximale Schaft wäre ausreichend lang. Welche Operation des Primärtumors planen Sie im selben Eingriff?",
+          "es": "La RM de pene muestra invasión de la porción distal de los cuerpos cavernosos (cT3) con la uretra libre; el cuerpo proximal restante sería suficientemente largo. ¿Qué cirugía del tumor primario planificas en el mismo acto?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Total penectomy with perineal urethrostomy.",
+              "de": "Totale Penektomie mit perinealer Urethrostomie.",
+              "es": "Penectomía total con uretrostomía perineal."
+            },
+            "score": 3,
+            "minutes": 12,
+            "feedback": {
+              "en": "Oncologically safe but overtreatment here: total penectomy is for tumours where a margin-negative resection would leave too little length for voiding standing up.",
+              "de": "Onkologisch sicher, hier aber eine Übertherapie: Die totale Penektomie ist Tumoren vorbehalten, bei denen nach tumorfreier Resektion keine ausreichende Restlänge für die Miktion im Stehen bleibt.",
+              "es": "Es oncológicamente segura, pero aquí supone un sobretratamiento: la penectomía total se reserva para tumores en los que una resección con márgenes negativos no dejaría longitud suficiente para orinar de pie."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Partial penectomy (glansectomy with distal corporectomy) with frozen sections of the margins and reconstruction.",
+              "de": "Partielle Penektomie (Glansektomie mit distaler Korporektomie) mit Schnellschnitt der Absetzungsränder und Rekonstruktion.",
+              "es": "Penectomía parcial (glandectomía con corporectomía distal) con biopsia intraoperatoria de los márgenes y reconstrucción."
+            },
+            "score": 10,
+            "minutes": 15,
+            "feedback": {
+              "en": "With invasion of the corpora cavernosa, partial amputation with a tumour-free margin is the standard. What matters is a histologically negative margin; the former 2 cm safety margin is not required, so length and standing micturition can be preserved.",
+              "de": "Bei Infiltration der Corpora cavernosa ist die Teilamputation mit tumorfreiem Rand der Standard. Entscheidend ist der histologisch negative Rand; der früher geforderte Sicherheitsabstand von 2 cm ist nicht nötig, sodass Penislänge und Miktion im Stehen erhalten bleiben.",
+              "es": "Con invasión de los cuerpos cavernosos, la amputación parcial con margen libre es el estándar. Lo decisivo es un margen histológico negativo; el antiguo margen de seguridad de 2 cm no es necesario, de modo que se conservan la longitud y la micción de pie."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Organ-sparing wide local excision or laser ablation to preserve full penile length.",
+              "de": "Organerhaltende weite lokale Exzision oder Laserablation, um die volle Penislänge zu erhalten.",
+              "es": "Escisión local amplia o ablación con láser con preservación del órgano para conservar toda la longitud del pene."
+            },
+            "score": 0,
+            "minutes": 8,
+            "feedback": {
+              "en": "Laser therapy and wide local excision are limited to superficial lesions (PeIN, Ta, T1a). With invasion of the corpora cavernosa they leave residual tumour and carry a high risk of local recurrence.",
+              "de": "Laser und weite lokale Exzision sind oberflächlichen Läsionen (PeIN, Ta, T1a) vorbehalten. Bei Infiltration der Corpora cavernosa hinterlassen sie Resttumor und bergen ein hohes Lokalrezidivrisiko.",
+              "es": "El láser y la escisión local amplia se limitan a lesiones superficiales (PeIN, Ta, T1a). Con invasión de los cuerpos cavernosos dejan tumor residual y conllevan un alto riesgo de recidiva local."
+            },
+            "critical": true
+          }
+        ],
+        "best": "b"
+      }
+    ],
+    "takeaway": {
+      "en": "Mobile, cytology-positive inguinal nodes (cN1/cN2): stage with CT or FDG-PET/CT, then perform primary radical dissection of the affected groin and invasive staging of the other side; no DSNB on the palpable side and no neoadjuvant chemotherapy. A cT3 primary is treated by partial amputation with a negative margin; total penectomy is kept for cases with insufficient residual length.",
+      "de": "Verschiebliche, zytologisch positive Leistenlymphknoten (cN1/cN2): Staging mit CT oder FDG-PET/CT, dann primäre radikale Lymphadenektomie der befallenen Leiste und invasives Staging der Gegenseite; keine DSNB auf der palpablen Seite und keine neoadjuvante Chemotherapie. Ein cT3-Primärtumor wird mit tumorfreiem Rand teilamputiert; die totale Penektomie bleibt Fällen mit unzureichender Restlänge vorbehalten.",
+      "es": "Ganglios inguinales móviles con citología positiva (cN1/cN2): estadificar con TC o PET-TC con FDG y después linfadenectomía radical primaria de la ingle afectada y estadificación invasiva del lado contrario; sin BDGC en el lado palpable ni quimioterapia neoadyuvante. Un tumor primario cT3 se trata con amputación parcial con margen libre; la penectomía total se reserva para los casos con longitud residual insuficiente."
+    },
+    "references": [
+      "bank-guide-peniskarzinom",
+      "knowuro-penile-2026"
+    ]
+  },
+  {
+    "id": "onc-penile-positive-sentinel-pn1",
+    "area": "clinic",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "clinic",
+    "patient": {
+      "name": "Krzysztof Wójcik",
+      "age": 59,
+      "sex": "male"
+    },
+    "title": {
+      "en": "A positive sentinel node after glansectomy",
+      "de": "Positiver Wächterlymphknoten nach Glansektomie",
+      "es": "Ganglio centinela positivo tras una glandectomía"
+    },
+    "presenting": {
+      "en": "Mr Wójcik, 59, underwent glansectomy three weeks ago: squamous cell carcinoma pT1b G2 with lymphovascular invasion, margins clear. Both groins were normal on palpation and ultrasound (cN0), so bilateral dynamic sentinel node biopsy (DSNB) was performed in the same session. Histology: one left sentinel node with a 6 mm metastasis without extranodal extension; two right sentinel nodes are tumour-free. He asks whether a further, larger operation is really necessary.",
+      "de": "Herr Wójcik, 59 Jahre, wurde vor drei Wochen glansektomiert: Plattenepithelkarzinom pT1b G2 mit Lymphgefäßinvasion, Ränder tumorfrei. Beide Leisten waren palpatorisch und sonographisch unauffällig (cN0), daher erfolgte im selben Eingriff eine beidseitige dynamische Sentinel-Lymphknotenbiopsie (DSNB). Histologie: links ein Wächterlymphknoten mit 6-mm-Metastase ohne extranodale Ausbreitung, rechts zwei tumorfreie Wächterlymphknoten. Er fragt, ob jetzt wirklich noch ein größerer Eingriff nötig ist.",
+      "es": "Al Sr. Wójcik, de 59 años, se le realizó hace tres semanas una glandectomía: carcinoma epidermoide pT1b G2 con invasión linfovascular y márgenes libres. Ambas ingles eran normales a la palpación y en la ecografía (cN0), por lo que en el mismo acto se hizo una biopsia dinámica bilateral del ganglio centinela (BDGC). Histología: a la izquierda, un ganglio centinela con una metástasis de 6 mm sin extensión extraganglionar; a la derecha, dos ganglios centinela libres de tumor. Pregunta si de verdad necesita otra intervención mayor."
+    },
+    "vitals": {
+      "bp": "132/80",
+      "hr": 70,
+      "temp": 36.6,
+      "spo2": 98,
+      "rr": 14
+    },
+    "objectives": {
+      "en": [
+        "Draw the consequence of a positive sentinel node.",
+        "Plan further treatment by the final nodal stage after inguinal dissection."
+      ],
+      "de": [
+        "Die Konsequenz eines positiven Wächterlymphknotens ziehen.",
+        "Das weitere Vorgehen nach dem endgültigen Lymphknotenstatus der Leistenlymphadenektomie planen."
+      ],
+      "es": [
+        "Extraer la consecuencia de un ganglio centinela positivo.",
+        "Planificar el tratamiento posterior según el estadio ganglionar definitivo tras la linfadenectomía inguinal."
+      ]
+    },
+    "steps": [
+      {
+        "id": "positive-sentinel",
+        "kind": "decision",
+        "prompt": {
+          "en": "How do you manage the positive left sentinel node?",
+          "de": "Wie gehen Sie mit dem positiven Wächterlymphknoten links um?",
+          "es": "¿Cómo manejas el ganglio centinela izquierdo positivo?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Monitor the left groin with ultrasound, since the metastasis is small and has no extranodal extension.",
+              "de": "Die linke Leiste sonographisch überwachen, da die Metastase klein ist und keine extranodale Ausbreitung zeigt.",
+              "es": "Vigilar la ingle izquierda con ecografía, ya que la metástasis es pequeña y no presenta extensión extraganglionar."
+            },
+            "score": 0,
+            "minutes": 4,
+            "feedback": {
+              "en": "A positive sentinel node always requires completion dissection of that groin; waiting for a clinical recurrence worsens the prognosis markedly. Surveillance alone is acceptable only for low-risk tumours (pTa/pT1a G1) with normal groins.",
+              "de": "Ein positiver Wächterlymphknoten verlangt immer die Komplettierungs-Lymphadenektomie dieser Leiste; das Abwarten bis zum klinischen Rezidiv verschlechtert die Prognose deutlich. Reine Überwachung ist nur bei Niedrigrisikotumoren (pTa/pT1a G1) mit unauffälligen Leisten vertretbar.",
+              "es": "Un ganglio centinela positivo exige siempre completar la linfadenectomía de esa ingle; esperar a la recidiva clínica empeora claramente el pronóstico. La vigilancia sola solo es aceptable en tumores de bajo riesgo (pTa/pT1a G1) con ingles normales."
+            },
+            "critical": true
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Completion radical inguinal lymph node dissection on the left; follow-up of the right groin, as its DSNB was negative.",
+              "de": "Komplettierende radikale inguinale Lymphadenektomie links; rechts Nachsorge, da die DSNB dort negativ war.",
+              "es": "Linfadenectomía inguinal radical de completación izquierda; seguimiento de la ingle derecha, ya que su BDGC fue negativa."
+            },
+            "score": 10,
+            "minutes": 10,
+            "feedback": {
+              "en": "After a positive DSNB the EAU guideline recommends completion dissection of the affected groin. The side with a negative DSNB is followed up and not dissected.",
+              "de": "Nach positiver DSNB empfiehlt die EAU-Leitlinie die Komplettierungs-Lymphadenektomie der betroffenen Leiste. Die Seite mit negativer DSNB wird nicht disseziert, sondern in der Nachsorge kontrolliert.",
+              "es": "Tras una BDGC positiva la guía de la EAU recomienda completar la linfadenectomía de la ingle afectada. El lado con BDGC negativa se sigue, sin disección."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Bilateral radical inguinal lymph node dissection plus left pelvic lymph node dissection in one session.",
+              "de": "Beidseitige radikale inguinale Lymphadenektomie und zusätzlich pelvine Lymphadenektomie links in einer Sitzung.",
+              "es": "Linfadenectomía inguinal radical bilateral y además linfadenectomía pélvica izquierda en el mismo acto."
+            },
+            "score": 3,
+            "minutes": 14,
+            "feedback": {
+              "en": "The left groin does need completion, but the right side is adequately staged by its negative DSNB, and pelvic dissection depends on the final inguinal histology.",
+              "de": "Die linke Leiste muss komplettiert werden, aber die rechte Seite ist durch die negative DSNB ausreichend gestaged, und die pelvine Lymphadenektomie richtet sich nach der endgültigen inguinalen Histologie.",
+              "es": "La ingle izquierda sí debe completarse, pero el lado derecho está adecuadamente estadificado por su BDGC negativa, y la linfadenectomía pélvica depende de la histología inguinal definitiva."
+            },
+            "critical": false
+          }
+        ],
+        "best": "b"
+      },
+      {
+        "id": "final-histology",
+        "kind": "decision",
+        "prompt": {
+          "en": "Completion dissection: none of 11 further nodes involved, so one metastasis on the left in total without extranodal extension (pN1). CT of the chest, abdomen and pelvis is unremarkable. What does the tumour board recommend?",
+          "de": "Komplettierung: keiner von 11 weiteren Lymphknoten befallen, insgesamt also eine Metastase links ohne extranodale Ausbreitung (pN1). Das CT Thorax/Abdomen/Becken ist unauffällig. Was empfiehlt die Tumorkonferenz?",
+          "es": "Linfadenectomía de completación: ninguno de 11 ganglios adicionales afectado, es decir, una sola metástasis izquierda sin extensión extraganglionar (pN1). La TC de tórax, abdomen y pelvis es normal. ¿Qué recomienda el comité de tumores?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Adjuvant chemotherapy with paclitaxel, cisplatin and ifosfamide.",
+              "de": "Adjuvante Chemotherapie mit Paclitaxel, Cisplatin und Ifosfamid.",
+              "es": "Quimioterapia adyuvante con paclitaxel, cisplatino e ifosfamida."
+            },
+            "score": 0,
+            "minutes": 6,
+            "feedback": {
+              "en": "Adjuvant chemotherapy is considered only for higher nodal stages (pN2/pN3). At pN1 it exposes the patient to relevant toxicity without proven benefit.",
+              "de": "Eine adjuvante Chemotherapie wird nur bei höherem Lymphknotenstadium (pN2/pN3) erwogen. Bei pN1 setzt sie den Patienten relevanter Toxizität ohne belegten Nutzen aus.",
+              "es": "La quimioterapia adyuvante solo se plantea en estadios ganglionares más altos (pN2/pN3). En pN1 expone al paciente a una toxicidad relevante sin beneficio demostrado."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Ipsilateral left pelvic lymph node dissection to exclude occult pelvic metastases.",
+              "de": "Ipsilaterale pelvine Lymphadenektomie links, um okkulte pelvine Metastasen auszuschließen.",
+              "es": "Linfadenectomía pélvica ipsilateral izquierda para descartar metástasis pélvicas ocultas."
+            },
+            "score": 3,
+            "minutes": 12,
+            "feedback": {
+              "en": "Pelvic dissection is indicated with three or more involved inguinal nodes on one side or extranodal extension. At pN1 the risk of pelvic metastases is low, while the morbidity is real.",
+              "de": "Die pelvine Lymphadenektomie ist bei drei oder mehr befallenen Leistenlymphknoten einer Seite oder extranodaler Ausbreitung angezeigt. Bei pN1 ist das Risiko pelviner Metastasen gering, die Morbidität aber real.",
+              "es": "La linfadenectomía pélvica está indicada con tres o más ganglios inguinales afectados en un lado o extensión extraganglionar. En pN1 el riesgo de metástasis pélvicas es bajo y la morbilidad es real."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "No further treatment; structured follow-up with clinical examination and groin ultrasound, closest in the first two years.",
+              "de": "Keine weitere Therapie; strukturierte Nachsorge mit klinischer Untersuchung und Leistensonographie, am engmaschigsten in den ersten zwei Jahren.",
+              "es": "Ningún tratamiento adicional; seguimiento estructurado con exploración clínica y ecografía inguinal, más estrecho durante los dos primeros años."
+            },
+            "score": 10,
+            "minutes": 8,
+            "feedback": {
+              "en": "For pN1 after radical inguinal dissection the EAU guideline recommends neither pelvic dissection nor adjuvant therapy. Most recurrences occur in the first two years, so follow-up is closest then.",
+              "de": "Bei pN1 nach radikaler Leistenlymphadenektomie empfiehlt die EAU-Leitlinie weder pelvine Lymphadenektomie noch adjuvante Therapie. Die meisten Rezidive treten in den ersten zwei Jahren auf, daher ist die Nachsorge dann am engsten.",
+              "es": "En pN1 tras linfadenectomía inguinal radical la guía de la EAU no recomienda linfadenectomía pélvica ni tratamiento adyuvante. La mayoría de las recidivas aparecen en los dos primeros años, por lo que el seguimiento es más estrecho en ese periodo."
+            },
+            "critical": false
+          }
+        ],
+        "best": "c"
+      }
+    ],
+    "takeaway": {
+      "en": "Only low-risk tumours (pTa/pT1a G1) with normal groins may be observed; a positive sentinel node requires completion dissection of that groin, while a side with negative DSNB is followed up. After radical dissection, pN1 without extranodal extension needs neither pelvic dissection nor adjuvant therapy, only close follow-up; pelvic dissection is reserved for three or more involved nodes on one side or extranodal extension.",
+      "de": "Nur Niedrigrisikotumoren (pTa/pT1a G1) mit unauffälligen Leisten dürfen überwacht werden; ein positiver Wächterlymphknoten verlangt die Komplettierungs-Lymphadenektomie dieser Leiste, eine Seite mit negativer DSNB wird in der Nachsorge kontrolliert. Nach radikaler Lymphadenektomie folgen bei pN1 ohne extranodale Ausbreitung weder pelvine Lymphadenektomie noch adjuvante Therapie, sondern eine engmaschige Nachsorge; die pelvine Lymphadenektomie bleibt drei oder mehr befallenen Lymphknoten einer Seite oder extranodaler Ausbreitung vorbehalten.",
+      "es": "Solo los tumores de bajo riesgo (pTa/pT1a G1) con ingles normales pueden vigilarse; un ganglio centinela positivo exige completar la linfadenectomía de esa ingle, mientras que el lado con BDGC negativa se sigue. Tras la linfadenectomía radical, un pN1 sin extensión extraganglionar no requiere linfadenectomía pélvica ni tratamiento adyuvante, sino un seguimiento estrecho; la linfadenectomía pélvica se reserva para tres o más ganglios afectados en un lado o extensión extraganglionar."
+    },
+    "references": [
+      "bank-guide-peniskarzinom",
+      "knowuro-penile-2026"
+    ]
+  },
+  {
+    "id": "onc-urethral-locally-advanced-uc",
+    "area": "clinic",
+    "level": 3,
+    "acuity": "urgent",
+    "duty": "board",
+    "patient": {
+      "name": "Ludwig Albers",
+      "age": 68,
+      "sex": "male"
+    },
+    "title": {
+      "en": "A 'stricture' that bleeds",
+      "de": "Eine „Striktur“, die blutet",
+      "es": "Una «estenosis» que sangra"
+    },
+    "presenting": {
+      "en": "Mr Albers, 68, a former smoker, has had a weak urinary stream and bloody urethral discharge for three months. A firm, roughly 3 cm induration is palpable perineally over the bulbar urethra; the groins are unremarkable. Uroflowmetry shows Qmax 7 mL/s. He has no history of bladder cancer; creatinine 1.0 mg/dL.",
+      "de": "Herr Albers, 68 Jahre, Ex-Raucher, klagt seit drei Monaten über einen abgeschwächten Harnstrahl und blutigen Harnröhrenausfluss. Perineal tastet sich über der bulbären Harnröhre eine derbe, etwa 3 cm große Verhärtung; die Leisten sind unauffällig. Uroflowmetrie: Qmax 7 ml/s. Ein Blasenkarzinom ist anamnestisch nicht bekannt; Kreatinin 1,0 mg/dl.",
+      "es": "El Sr. Albers, de 68 años y exfumador, refiere desde hace tres meses chorro miccional débil y secreción uretral sanguinolenta. En el periné se palpa una induración dura de unos 3 cm sobre la uretra bulbar; las ingles son normales. Flujometría: Qmax 7 ml/s. No tiene antecedentes de cáncer de vejiga; creatinina 1,0 mg/dl."
+    },
+    "vitals": {
+      "bp": "142/84",
+      "hr": 78,
+      "temp": 36.8,
+      "spo2": 97,
+      "rr": 15
+    },
+    "objectives": {
+      "en": [
+        "Work up suspected urethral cancer, including exclusion of bladder cancer.",
+        "Sequence multimodal treatment of locally advanced urothelial urethral carcinoma."
+      ],
+      "de": [
+        "Ein suspektes Harnröhrenkarzinom einschließlich Ausschluss eines Blasenkarzinoms abklären.",
+        "Die multimodale Therapie eines lokal fortgeschrittenen Urothelkarzinoms der Harnröhre in der richtigen Reihenfolge planen."
+      ],
+      "es": [
+        "Estudiar una sospecha de cáncer de uretra, incluida la exclusión de un cáncer de vejiga.",
+        "Secuenciar el tratamiento multimodal del carcinoma urotelial de uretra localmente avanzado."
+      ]
+    },
+    "steps": [
+      {
+        "id": "work-up",
+        "kind": "assessment",
+        "prompt": {
+          "en": "The GP has diagnosed a urethral stricture. Which work-up do you arrange?",
+          "de": "Der Hausarzt hat eine Harnröhrenstriktur diagnostiziert. Welche Abklärung veranlassen Sie?",
+          "es": "Su médico de familia ha diagnosticado una estenosis uretral. ¿Qué estudio solicitas?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Pelvic MRI and biopsy of the lesion; cystoscopy of the bladder is unnecessary without a bladder cancer history.",
+              "de": "MRT des Beckens und Biopsie der Läsion; eine Zystoskopie der Blase ist ohne Blasenkarzinom in der Anamnese entbehrlich.",
+              "es": "RM pélvica y biopsia de la lesión; la cistoscopia vesical es innecesaria sin antecedentes de cáncer de vejiga."
+            },
+            "score": 3,
+            "minutes": 8,
+            "feedback": {
+              "en": "MRI and biopsy are correct, but without cystoscopy a concomitant bladder tumour is missed; distinguishing primary from secondary urethral cancer changes staging and treatment planning.",
+              "de": "MRT und Biopsie sind richtig, aber ohne Zystoskopie wird ein begleitender Blasentumor übersehen; die Unterscheidung zwischen primärem und sekundärem Harnröhrenkarzinom verändert Staging und Therapieplanung.",
+              "es": "La RM y la biopsia son correctas, pero sin cistoscopia se pasa por alto un tumor vesical concomitante; distinguir un cáncer uretral primario de uno secundario cambia la estadificación y la planificación terapéutica."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Urethrocystoscopy with biopsy and urine cytology, actively excluding bladder cancer; if carcinoma is confirmed, pelvic MRI and CT of the chest, abdomen and pelvis.",
+              "de": "Urethrozystoskopie mit Biopsie und Urinzytologie unter aktivem Ausschluss eines Blasenkarzinoms; bei Karzinomnachweis MRT des Beckens und CT Thorax/Abdomen/Becken.",
+              "es": "Uretrocistoscopia con biopsia y citología urinaria, descartando activamente un cáncer de vejiga; si se confirma el carcinoma, RM pélvica y TC de tórax, abdomen y pelvis."
+            },
+            "score": 10,
+            "minutes": 12,
+            "feedback": {
+              "en": "The diagnosis is secured endoscopically by biopsy. Only after bladder cancer has been excluded can the tumour be classified as primary urethral carcinoma; pelvic MRI is the preferred local staging, and CT assesses nodes and distant metastases.",
+              "de": "Die Diagnose wird endoskopisch-bioptisch gesichert. Erst nach Ausschluss eines Blasenkarzinoms darf von einem primären Harnröhrenkarzinom gesprochen werden; die MRT des Beckens ist das bevorzugte lokale Staging, das CT erfasst Lymphknoten und Fernmetastasen.",
+              "es": "El diagnóstico se confirma por endoscopia y biopsia. Solo tras descartar un cáncer de vejiga puede clasificarse como carcinoma uretral primario; la RM pélvica es la estadificación local de elección y la TC valora ganglios y metástasis a distancia."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Internal urethrotomy and a check-up in three months.",
+              "de": "Urethrotomia interna und Kontrolle in drei Monaten.",
+              "es": "Uretrotomía interna y control en tres meses."
+            },
+            "score": 0,
+            "minutes": 6,
+            "feedback": {
+              "en": "A bleeding, palpable stricture without a known cause is suspicious for cancer until proven otherwise. Incision without biopsy delays the diagnosis by months.",
+              "de": "Eine blutende, tastbare Striktur ohne erkennbare Ursache ist bis zum Beweis des Gegenteils tumorverdächtig. Eine Schlitzung ohne Biopsie verzögert die Diagnose um Monate.",
+              "es": "Una estenosis palpable y sangrante sin causa conocida es sospechosa de cáncer hasta que se demuestre lo contrario. La incisión sin biopsia retrasa el diagnóstico meses."
+            },
+            "critical": true
+          }
+        ],
+        "best": "b"
+      },
+      {
+        "id": "treatment-sequence",
+        "kind": "decision",
+        "prompt": {
+          "en": "Histology: high-grade urothelial carcinoma of the bulbar urethra; bladder tumour-free, cytology positive. MRI: invasion of the corpus spongiosum and the adjacent corpora cavernosa (cT3); CT: one 16 mm left external iliac node (cN1), no distant metastases. ECOG 0, eGFR 78 mL/min. What does the tumour board recommend?",
+          "de": "Histologie: High-grade-Urothelkarzinom der bulbären Harnröhre; Blase tumorfrei, Zytologie positiv. MRT: Infiltration von Corpus spongiosum und angrenzenden Corpora cavernosa (cT3); CT: ein 16 mm großer Lymphknoten iliakal extern links (cN1), keine Fernmetastasen. ECOG 0, eGFR 78 ml/min. Was empfiehlt die Tumorkonferenz?",
+          "es": "Histología: carcinoma urotelial de alto grado de la uretra bulbar; vejiga libre de tumor, citología positiva. RM: invasión del cuerpo esponjoso y de los cuerpos cavernosos adyacentes (cT3); TC: un ganglio ilíaco externo izquierdo de 16 mm (cN1), sin metástasis a distancia. ECOG 0, FGe 78 ml/min. ¿Qué recomienda el comité de tumores?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Cisplatin-based neoadjuvant (induction) chemotherapy, then restaging and, if responding, radical cystoprostatectomy with urethrectomy and regional lymph node dissection.",
+              "de": "Cisplatinbasierte neoadjuvante (Induktions-)Chemotherapie, danach Restaging und bei Ansprechen radikale Zystoprostatektomie mit Urethrektomie und regionaler Lymphadenektomie.",
+              "es": "Quimioterapia neoadyuvante (de inducción) basada en cisplatino, después reestadificación y, si hay respuesta, cistoprostatectomía radical con uretrectomía y linfadenectomía regional."
+            },
+            "score": 10,
+            "minutes": 12,
+            "feedback": {
+              "en": "Locally advanced urethral carcinoma (T3-T4 or cN1-2) is treated multimodally: in cisplatin-eligible patients with urothelial histology, cisplatin-based chemotherapy is followed by consolidating radical surgery, planned by the multidisciplinary board of an experienced centre.",
+              "de": "Lokal fortgeschrittene Harnröhrenkarzinome (T3–T4 oder cN1–2) werden multimodal behandelt: Bei cisplatinfähigen Patienten mit Urothelkarzinom folgt auf die cisplatinbasierte Chemotherapie die konsolidierende radikale Operation, geplant im interdisziplinären Tumorboard eines erfahrenen Zentrums.",
+              "es": "El carcinoma uretral localmente avanzado (T3-T4 o cN1-2) se trata de forma multimodal: en pacientes aptos para cisplatino con histología urotelial, a la quimioterapia basada en cisplatino le sigue la cirugía radical de consolidación, planificada en el comité multidisciplinar de un centro con experiencia."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Segmental resection of the bulbar urethra with end-to-end anastomosis.",
+              "de": "Segmentresektion der bulbären Harnröhre mit End-zu-End-Anastomose.",
+              "es": "Resección segmentaria de la uretra bulbar con anastomosis término-terminal."
+            },
+            "score": 0,
+            "minutes": 10,
+            "feedback": {
+              "en": "At cT3 cN1 a segmental resection is oncologically inadequate: it leaves residual tumour in the corpora and does not treat the nodes.",
+              "de": "Bei cT3 cN1 ist eine Segmentresektion onkologisch unzureichend: Sie hinterlässt Resttumor in den Schwellkörpern und behandelt die Lymphknoten nicht.",
+              "es": "En cT3 cN1 una resección segmentaria es oncológicamente insuficiente: deja tumor residual en los cuerpos cavernosos y no trata los ganglios."
+            },
+            "critical": true
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Primary radical cystoprostatectomy with urethrectomy and lymph node dissection; chemotherapy only if pN+.",
+              "de": "Primär radikale Zystoprostatektomie mit Urethrektomie und Lymphadenektomie; Chemotherapie nur bei pN+.",
+              "es": "Cistoprostatectomía radical primaria con uretrectomía y linfadenectomía; quimioterapia solo si pN+."
+            },
+            "score": 3,
+            "minutes": 10,
+            "feedback": {
+              "en": "Surgery is part of the plan, but for locally advanced, node-positive urothelial carcinoma of the urethra the EAU guideline recommends cisplatin-based chemotherapy before surgery; surgery alone carries a high recurrence rate.",
+              "de": "Die Operation gehört zum Konzept, aber beim lokal fortgeschrittenen, nodal positiven Urothelkarzinom der Harnröhre empfiehlt die EAU-Leitlinie eine cisplatinbasierte Chemotherapie vor der Operation; die alleinige Operation geht mit einer hohen Rezidivrate einher.",
+              "es": "La cirugía forma parte del plan, pero en el carcinoma urotelial de uretra localmente avanzado y con ganglios positivos la guía de la EAU recomienda quimioterapia basada en cisplatino antes de la cirugía; la cirugía sola conlleva una alta tasa de recidiva."
+            },
+            "critical": false
+          }
+        ],
+        "best": "a"
+      },
+      {
+        "id": "after-induction",
+        "kind": "decision",
+        "prompt": {
+          "en": "After cisplatin-based chemotherapy, restaging shows marked shrinkage of the tumour; the iliac node now measures 8 mm and there are no new lesions. How do you proceed?",
+          "de": "Nach der cisplatinbasierten Chemotherapie zeigt das Restaging eine deutliche Verkleinerung des Tumors; der iliakale Lymphknoten misst nun 8 mm, neue Läsionen fehlen. Wie geht es weiter?",
+          "es": "Tras la quimioterapia basada en cisplatino, la reestadificación muestra una clara reducción del tumor; el ganglio ilíaco mide ahora 8 mm y no hay lesiones nuevas. ¿Cómo continúas?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Definitive chemoradiotherapy with organ preservation.",
+              "de": "Definitive Radiochemotherapie unter Organerhalt.",
+              "es": "Quimiorradioterapia definitiva con preservación del órgano."
+            },
+            "score": 3,
+            "minutes": 8,
+            "feedback": {
+              "en": "Chemoradiotherapy is an alternative for patients who are unfit for or decline surgery, with the best data in squamous cell carcinoma. For an operable responder with urothelial carcinoma, surgery is preferred.",
+              "de": "Die Radiochemotherapie ist eine Alternative für Patienten, die nicht operabel sind oder die Operation ablehnen; die beste Datenlage besteht beim Plattenepithelkarzinom. Bei einem operablen Responder mit Urothelkarzinom ist die Operation vorzuziehen.",
+              "es": "La quimiorradioterapia es una alternativa para pacientes no operables o que rechazan la cirugía, con los mejores datos en el carcinoma epidermoide. En un paciente operable con respuesta y carcinoma urotelial se prefiere la cirugía."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Avelumab maintenance instead of surgery, as the tumour has responded.",
+              "de": "Erhaltungstherapie mit Avelumab statt Operation, da der Tumor angesprochen hat.",
+              "es": "Mantenimiento con avelumab en lugar de cirugía, dado que el tumor ha respondido."
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "en": "Avelumab maintenance is a concept for unresectable or metastatic urothelial carcinoma after platinum. In a resectable, responding tumour, consolidating surgery is the curative step; omitting it jeopardises the chance of cure.",
+              "de": "Die Avelumab-Erhaltung ist ein Konzept für nicht resektable oder metastasierte Urothelkarzinome nach Platin. Bei einem resektablen, ansprechenden Tumor ist die konsolidierende Operation der kurative Schritt; der Verzicht darauf gefährdet die Heilungschance.",
+              "es": "El mantenimiento con avelumab es una estrategia para el carcinoma urotelial irresecable o metastásico tras platino. En un tumor resecable que responde, la cirugía de consolidación es el paso curativo; omitirla compromete la posibilidad de curación."
+            },
+            "critical": true
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Radical cystoprostatectomy with complete urethrectomy, en-bloc resection of the infiltrated corpora cavernosa (partial or total penectomy as required) and regional (pelvic) lymph node dissection; urinary diversion via ileal conduit.",
+              "de": "Radikale Zystoprostatektomie mit kompletter Urethrektomie, En-bloc-Resektion der infiltrierten Corpora cavernosa (partielle oder totale Penektomie je nach Ausdehnung) und regionaler (pelviner) Lymphadenektomie; Harnableitung über ein Ileum-Conduit.",
+              "es": "Cistoprostatectomía radical con uretrectomía completa, resección en bloque de los cuerpos cavernosos infiltrados (penectomía parcial o total según la extensión) y linfadenectomía regional (pélvica); derivación urinaria mediante conducto ileal."
+            },
+            "score": 10,
+            "minutes": 15,
+            "feedback": {
+              "en": "Responders undergo consolidating surgery: bladder, prostate, the whole urethra and the infiltrated parts of the corpora cavernosa are removed en bloc with regional lymph node dissection. An orthotopic neobladder is impossible after complete urethrectomy; an ileal conduit or a continent cutaneous diversion is used.",
+              "de": "Responder werden konsolidierend operiert: Blase, Prostata, die gesamte Harnröhre und die infiltrierten Schwellkörperanteile werden en bloc mit regionaler Lymphadenektomie entfernt. Eine orthotope Neoblase ist nach kompletter Urethrektomie nicht möglich; infrage kommen Ileum-Conduit oder kontinente kutane Harnableitung.",
+              "es": "Los pacientes con respuesta se someten a cirugía de consolidación: se extirpan en bloque vejiga, próstata, toda la uretra y las porciones infiltradas de los cuerpos cavernosos, con linfadenectomía regional. Tras una uretrectomía completa no es posible una neovejiga ortotópica; se utiliza un conducto ileal o una derivación cutánea continente."
+            },
+            "critical": false
+          }
+        ],
+        "best": "c"
+      }
+    ],
+    "takeaway": {
+      "en": "A bleeding or palpable 'stricture' is biopsied; primary urethral carcinoma presupposes exclusion of bladder cancer, and local staging uses pelvic MRI. Locally advanced urothelial urethral carcinoma (T3-T4 or cN1-2) in cisplatin-eligible patients receives cisplatin-based chemotherapy first, followed by radical surgery with urethrectomy and regional lymph node dissection.",
+      "de": "Eine blutende oder tastbare „Striktur“ wird biopsiert; ein primäres Harnröhrenkarzinom setzt den Ausschluss eines Blasenkarzinoms voraus, das lokale Staging erfolgt mit MRT des Beckens. Lokal fortgeschrittene Urothelkarzinome der Harnröhre (T3–T4 oder cN1–2) erhalten bei Cisplatin-Eignung zuerst eine cisplatinbasierte Chemotherapie, danach die radikale Operation mit Urethrektomie und regionaler Lymphadenektomie.",
+      "es": "Una «estenosis» sangrante o palpable se biopsia; el carcinoma uretral primario presupone haber descartado un cáncer de vejiga, y la estadificación local se hace con RM pélvica. El carcinoma urotelial de uretra localmente avanzado (T3-T4 o cN1-2) en pacientes aptos para cisplatino recibe primero quimioterapia basada en cisplatino y después cirugía radical con uretrectomía y linfadenectomía regional."
+    },
+    "references": [
+      "bank-guide-urethrakarzinom",
+      "knowuro-urethral-2026"
+    ]
+  },
+  {
     "id": "bank-uro-and-00001",
     "area": "clinic",
     "level": 3,

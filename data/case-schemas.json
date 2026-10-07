@@ -955,6 +955,40 @@
       "lamina-propria"
     ]
   },
+  "onc-kidney-ct2-upfront-cn": {
+    "schema": "kidney-section",
+    "parts": [
+      "adrenal-gland",
+      "lymph-nodes",
+      "renal-vein",
+      "gerota-fascia"
+    ]
+  },
+  "onc-kidney-embolisation-haematuria": {
+    "schema": "kidney-section",
+    "parts": [
+      "renal-artery",
+      "calyces",
+      "renal-pelvis"
+    ]
+  },
+  "onc-penile-cn1-node-t3-primary": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "corpora-cavernosa",
+      "glans-penis",
+      "penile-urethra",
+      "tunica-albuginea"
+    ]
+  },
+  "onc-penile-positive-sentinel-pn1": {
+    "schema": "pelvic-sidewall",
+    "parts": [
+      "external-iliac-nodes",
+      "obturator-nodes",
+      "external-iliac-vein"
+    ]
+  },
   "onc-prostate-cn1-radiotherapy": {
     "schema": "pelvic-sidewall",
     "parts": [
@@ -962,6 +996,32 @@
       "external-iliac-nodes",
       "common-iliac-artery",
       "internal-iliac-artery"
+    ]
+  },
+  "onc-testis-intermediate-marker-decline": {
+    "schema": "retroperitoneum-nodes",
+    "parts": [
+      "interaortocaval-nodes",
+      "paracaval-nodes",
+      "ivc",
+      "aorta"
+    ]
+  },
+  "onc-testis-seminoma-stage1-risk": {
+    "schema": "retroperitoneum-nodes",
+    "parts": [
+      "para-aortic-nodes",
+      "left-renal-vein",
+      "left-gonadal-vein"
+    ]
+  },
+  "onc-urethral-locally-advanced-uc": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "bulbar-urethra",
+      "corpus-spongiosum",
+      "corpora-cavernosa",
+      "prostate"
     ]
   },
   "theatre-infected-stone": {

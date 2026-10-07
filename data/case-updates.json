@@ -941,6 +941,2164 @@
           "replace": "Se considera verdadero problema asistencial una discordancia con las guías de casi el 40 %"
         }
       ]
+    },
+    {
+      "case": "bank-uro-pca-00019",
+      "kind": "editorial",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Spanische Übersetzung korrigiert (vorzeitige Entblindung).",
+        "en": "Spanish translation corrected (early unblinding).",
+        "es": "Traducción española corregida (desenmascaramiento precoz)."
+      },
+      "references": [],
+      "changes": [
+        {
+          "path": "steps.0.options.a.feedback",
+          "lang": "es",
+          "find": "ERA-223 no fue cegado temprano debido a un exceso de fracturas.",
+          "replace": "ERA-223 se desenmascaró antes de tiempo por un exceso de fracturas."
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-pca-00001",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Vignette an die CHAARTED-Definition der hohen Metastasenlast angepasst (mindestens eine Läsion außerhalb von Wirbelsäule und Becken, Bildgebung mit CT und Skelettszintigraphie).",
+        "en": "Vignette aligned with the CHAARTED definition of high metastatic burden (at least one lesion outside the spine and pelvis, imaging by CT and bone scan).",
+        "es": "Viñeta ajustada a la definición CHAARTED de carga metastásica alta (al menos una lesión fuera de la columna y la pelvis, estudio con TC y gammagrafía ósea)."
+      },
+      "references": [
+        "bank-guide-prostatakarzinom",
+        "knowuro-prostate-2026"
+      ],
+      "changes": [
+        {
+          "path": "presenting",
+          "lang": "de",
+          "find": "Im PSMA-PET/CT neun ossäre Läsionen an Wirbelsäule und Becken,",
+          "replace": "In CT und Skelettszintigraphie neun ossäre Läsionen an Wirbelsäule, Becken, Rippen und proximalem Femur,"
+        },
+        {
+          "path": "presenting",
+          "lang": "en",
+          "find": "PSMA-PET/CT shows nine bone lesions in the spine and pelvis,",
+          "replace": "CT and bone scan show nine bone lesions in the spine, pelvis, ribs and proximal femur,"
+        },
+        {
+          "path": "presenting",
+          "lang": "es",
+          "find": "PSMA-PET/CT muestra nueve lesiones óseas en la columna y la pelvis,",
+          "replace": "La TC y la gammagrafía ósea muestran nueve lesiones óseas en la columna, la pelvis, las costillas y el fémur proximal,"
+        },
+        {
+          "path": "steps.0.options.a.feedback",
+          "lang": "de",
+          "find": "bei chemotaugliche Patienten",
+          "replace": "bei chemotauglichen Patienten"
+        },
+        {
+          "path": "steps.0.options.a.feedback",
+          "lang": "en",
+          "find": "is preferred in chemotherapy-fit patients.",
+          "replace": "is preferred in patients fit for chemotherapy."
+        },
+        {
+          "path": "steps.0.options.a.feedback",
+          "lang": "es",
+          "find": "se prefiere en pacientes aptos para la quimioterapia.",
+          "replace": "se prefiere en pacientes aptos para quimioterapia."
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "de",
+          "find": "bei neun ossären Läsionen besteht keine Indikation.",
+          "replace": "bei hoher Last nach CHAARTED (mindestens vier Knochenläsionen, davon mindestens eine außerhalb von Wirbelsäule und Becken, oder viszerale Metastasen) besteht keine Indikation."
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "en",
+          "find": "with nine bone lesions there is no indication.",
+          "replace": "with high burden by CHAARTED (at least four bone lesions, at least one of them outside the spine and pelvis, or visceral metastases) there is no indication."
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "es",
+          "find": "con nueve lesiones óseas no hay indicación.",
+          "replace": "con carga alta según CHAARTED (al menos cuatro lesiones óseas, al menos una de ellas fuera de la columna y la pelvis, o metástasis viscerales) no hay indicación."
+        },
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "de",
+          "find": "Hohe Metastasenlast bei gutem Allgemeinzustand:",
+          "replace": "Hohe Metastasenlast nach CHAARTED bei gutem Allgemeinzustand:"
+        },
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "en",
+          "find": "High metastatic burden with good performance status:",
+          "replace": "High metastatic burden by CHAARTED with good performance status:"
+        },
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "es",
+          "find": "Alta carga metastásica con buen estado funcional:",
+          "replace": "Alta carga metastásica según CHAARTED con buen estado funcional:"
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-pca-00004",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Grenze der Lebenserwartung auf 15 Jahre präzisiert, PROBASE-Aussage korrigiert und doppelten Satz entfernt.",
+        "en": "Life-expectancy threshold specified as 15 years, PROBASE statement corrected and a duplicated sentence removed.",
+        "es": "Umbral de esperanza de vida precisado en 15 años, afirmación sobre PROBASE corregida y frase duplicada eliminada."
+      },
+      "references": [
+        "bank-guide-prostatakarzinom",
+        "knowuro-prostate-2026"
+      ],
+      "changes": [
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "unter etwa zehn bis fünfzehn Jahren",
+          "replace": "unter 15 Jahren"
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "below roughly ten to fifteen years",
+          "replace": "below 15 years"
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "inferior a aproximadamente diez a quince años",
+          "replace": "inferior a 15 años"
+        },
+        {
+          "path": "steps.0.options.a.feedback",
+          "lang": "de",
+          "find": "und einen erheblichen Teil der Karzinome erst in fortgeschrittenem Stadium findet.",
+          "replace": "und die meisten Karzinome nicht erfasst."
+        },
+        {
+          "path": "steps.0.options.a.feedback",
+          "lang": "en",
+          "find": "and finds a substantial proportion of cancers only at an advanced stage.",
+          "replace": "and misses most cancers."
+        },
+        {
+          "path": "steps.0.options.a.feedback",
+          "lang": "es",
+          "find": "y detecta una proporción sustancial de cánceres sólo en una etapa avanzada.",
+          "replace": "y no detecta la mayoría de los cánceres."
+        },
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "de",
+          "find": " Der Basis-PSA-Wert ist der stärkste einzelne Prädiktor und bestimmt das Kontrollintervall.",
+          "replace": ""
+        },
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "en",
+          "find": " Baseline PSA is the single strongest predictor and sets the interval.",
+          "replace": ""
+        },
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "es",
+          "find": " El PSA inicial es el predictor más fuerte y establece el intervalo.",
+          "replace": ""
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-pca-00005",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Schwellenwerte der PSA-Dichte bei PI-RADS 3 an den EAU-Algorithmus angepasst (0,10 und 0,20) und doppelten Satz entfernt.",
+        "en": "PSA density thresholds for PI-RADS 3 aligned with the EAU algorithm (0.10 and 0.20) and a duplicated sentence removed.",
+        "es": "Umbrales de densidad de PSA en PI-RADS 3 ajustados al algoritmo de la EAU (0,10 y 0,20) y frase duplicada eliminada."
+      },
+      "references": [
+        "bank-guide-prostatakarzinom",
+        "knowuro-prostate-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.b.text",
+          "from": {
+            "de": "Biopsie, weil die PSA-Dichte deutlich über 0,15 liegt",
+            "en": "Biopsy, because PSA density is well above 0.15",
+            "es": "Biopsia, porque la densidad del PSA está muy por encima de 0,15"
+          },
+          "to": {
+            "de": "Biopsie, weil die PSA-Dichte über 0,20 ng/ml/cm³ liegt",
+            "en": "Biopsy, because PSA density is above 0.20 ng/ml/cm³",
+            "es": "Biopsia, porque la densidad del PSA supera 0,20 ng/ml/cm³"
+          }
+        },
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Hier entscheidet die PSA-Dichte, mit einem gebräuchlichen Schwellenwert um 0,15, und bei Grenzfällen der Patientenwunsch.",
+          "replace": "Hier entscheidet die PSA-Dichte: ab 0,20 Biopsie, bei 0,10 bis 0,20 Biopsie erwägen (Risikokalkulator, Patientenwunsch), unter 0,10 ohne familiäre Belastung Verzicht nach gemeinsamer Entscheidung möglich."
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "here PSA density decides, with a commonly used threshold around 0.15, and patient preference settles borderline cases.",
+          "replace": "here PSA density decides: biopsy from 0.20, consider biopsy at 0.10 to 0.20 (risk calculator, patient preference), and below 0.10 without a family history biopsy may be omitted after shared decision-making."
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "aquí decide la densidad de PSA, con un umbral comúnmente utilizado alrededor de 0,15, y la preferencia del paciente resuelve los casos límite.",
+          "replace": "aquí decide la densidad de PSA: biopsia a partir de 0,20, valorar la biopsia entre 0,10 y 0,20 (calculadora de riesgo, preferencia del paciente) y, por debajo de 0,10 sin antecedentes familiares, puede omitirse tras una decisión compartida."
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "de",
+          "find": " Die systematischen Stanzen bleiben zusätzlich nötig, weil die MRT einen Teil der signifikanten Karzinome nicht darstellt.",
+          "replace": ""
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "en",
+          "find": " Systematic cores remain necessary in addition, because MRI fails to depict a proportion of significant cancers.",
+          "replace": ""
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "es",
+          "find": " Además, los cilindros sistemáticos siguen siendo necesarios, porque la resonancia magnética no logra representar una proporción de cánceres importantes.",
+          "replace": ""
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-pca-00006",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Evidenz zur geringeren Infektionsrate der transperinealen Biopsie präzisiert und Bewertung der transrektalen Biopsie nach Rektalabstrich klargestellt.",
+        "en": "Evidence on the lower infection rate of transperineal biopsy clarified and the assessment of transrectal biopsy after a rectal swab made explicit.",
+        "es": "Se precisa la evidencia sobre la menor tasa de infección de la biopsia transperineal y se aclara la valoración de la biopsia transrectal tras frotis rectal."
+      },
+      "references": [
+        "bank-guide-prostatakarzinom",
+        "knowuro-prostate-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.c.feedback",
+          "from": {
+            "de": "Ein vertretbares Konzept, das die Infektionsrate senkt, wenn nur der transrektale Zugang verfügbar ist. Es beseitigt aber nicht die Ursache, sondern verwaltet sie, und ist aufwendiger als der Wechsel des Zugangswegs.",
+            "en": "A defensible concept that lowers infection rates when only the transrectal route is available. It manages the problem rather than removing it, and is more laborious than changing the access route.",
+            "es": "Un concepto defendible que reduce las tasas de infección cuando sólo está disponible la vía transrectal. Gestiona el problema en lugar de eliminarlo y es más laborioso que cambiar la ruta de acceso."
+          },
+          "to": {
+            "de": "Nur vertretbar, wenn ausschließlich der transrektale Zugang verfügbar ist: Dann senkt die gezielte Prophylaxe nach Rektalabstrich die Infektionsrate. Steht wie hier der transperineale Zugang zur Verfügung, ist dieses Vorgehen nicht die richtige Wahl: Es beseitigt die Ursache nicht, sondern verwaltet sie, und ist aufwendiger als der Wechsel des Zugangswegs.",
+            "en": "Acceptable only when the transrectal route is the only one available: targeted prophylaxis guided by a rectal swab then lowers the infection rate. When the transperineal route is available, as here, this approach is not the right choice: it manages the problem rather than removing it and is more laborious than changing the access route.",
+            "es": "Solo es aceptable cuando la vía transrectal es la única disponible: entonces la profilaxis dirigida según el frotis rectal reduce la tasa de infección. Si se dispone de la vía transperineal, como aquí, esta opción no es la correcta: gestiona el problema en lugar de eliminarlo y es más laboriosa que cambiar la vía de acceso."
+          }
+        },
+        {
+          "path": "steps.0.options.d.feedback",
+          "from": {
+            "de": "Der Verzicht auf den transrektalen Weg entfernt den Keimtransport aus dem Verfahren, statt ihn medikamentös aufzufangen. Randomisierte Vergleiche zeigen eine deutlich geringere Infektionsrate bei gleichwertiger Detektion, und die apexnahen sowie anterioren Läsionen sind besser erreichbar.",
+            "en": "Abandoning the transrectal route removes bacterial transfer from the procedure instead of countering it with drugs. Randomised comparisons show markedly lower infection rates with equivalent detection, and apical and anterior lesions are more accessible.",
+            "es": "Abandonar la vía transrectal elimina la transferencia bacteriana del procedimiento en lugar de contrarrestarla con fármacos. Las comparaciones aleatorias muestran tasas de infección notablemente más bajas con una detección equivalente, y las lesiones apicales y anteriores son más accesibles. El abandono de la vía transrectal elimina la transferencia bacteriana del procedimiento. Se puede realizar con anestesia local y llega mejor a zonas anteriores y apicales."
+          },
+          "to": {
+            "de": "Der Verzicht auf den transrektalen Weg entfernt den Keimtransport aus dem Verfahren, statt ihn medikamentös aufzufangen. Metaanalysen zeigen eine geringere Infektionsrate bei gleichwertiger Detektion; in randomisierten Studien waren die Infektionsraten beider Zugänge niedrig. Apexnahe und anteriore Läsionen sind besser erreichbar.",
+            "en": "Abandoning the transrectal route removes bacterial transfer from the procedure instead of countering it with drugs. Meta-analyses show lower infection rates with equivalent detection; in randomised trials infection rates were low with both routes. Apical and anterior lesions are more accessible.",
+            "es": "Abandonar la vía transrectal elimina la transferencia bacteriana del procedimiento en lugar de contrarrestarla con fármacos. Los metaanálisis muestran tasas de infección más bajas con una detección equivalente; en los ensayos aleatorizados las tasas de infección fueron bajas con ambas vías. Las lesiones apicales y anteriores son más accesibles."
+          }
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-pca-00007",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Anteil an Muster 4 im ersten Befund an die Kriterien der aktiven Überwachung bei ISUP 2 angepasst und Kriterien ergänzt.",
+        "en": "Proportion of pattern 4 in the first finding aligned with the active surveillance criteria for ISUP 2, and the criteria added.",
+        "es": "Proporción de patrón 4 en el primer hallazgo ajustada a los criterios de vigilancia activa en ISUP 2 y criterios añadidos."
+      },
+      "references": [
+        "bank-guide-prostatakarzinom",
+        "knowuro-prostate-2026"
+      ],
+      "changes": [
+        {
+          "path": "presenting",
+          "lang": "de",
+          "find": "mit einem Anteil von 10 Prozent Muster 4, ohne kribriforme Formationen.",
+          "replace": "mit einem Anteil von 5 Prozent Muster 4 in zwei Stanzen, ohne kribriforme Formationen."
+        },
+        {
+          "path": "presenting",
+          "lang": "en",
+          "find": "with 10 per cent pattern 4 and no cribriform formations.",
+          "replace": "with 5 per cent pattern 4 in two cores and no cribriform formations."
+        },
+        {
+          "path": "presenting",
+          "lang": "es",
+          "find": "con un 10 por ciento de patrón 4 y sin formaciones cribiformes.",
+          "replace": "con un 5 por ciento de patrón 4 en dos cilindros y sin formaciones cribiformes."
+        },
+        {
+          "path": "steps.0.options.a.feedback",
+          "lang": "de",
+          "find": "Der überwiegende Anteil an Muster 4 hebt ihn in eine höhere ISUP-Gruppe, und kribriformes Wachstum wie intraduktales Karzinom sind unabhängige Risikofaktoren für Rezidiv und Metastasierung. Beim ersten Befund ist die aktive Überwachung nach Aufklärung erwägbar.",
+          "replace": "Der überwiegende Anteil an Muster 4 hebt den zweiten Befund in eine höhere ISUP-Gruppe. Beim ersten Befund ist die aktive Überwachung nach Aufklärung erwägbar (bei ISUP 2 nur mit weniger als 10 % Muster 4, höchstens drei positiven Stanzen und höchstens 50 % Befall je Stanze)."
+        },
+        {
+          "path": "steps.0.options.a.feedback",
+          "lang": "en",
+          "find": "Predominant pattern 4 raises it into a higher ISUP group, and cribriform growth and intraductal carcinoma are independent risk factors for recurrence and metastasis. In the first, active surveillance may be considered after counselling.",
+          "replace": "Predominant pattern 4 raises the second finding into a higher ISUP group. In the first, active surveillance may be considered after counselling (for ISUP 2 only with less than 10% pattern 4, no more than three positive cores and no more than 50% involvement per core)."
+        },
+        {
+          "path": "steps.0.options.a.feedback",
+          "lang": "es",
+          "find": "El patrón predominante 4 lo eleva a un grupo ISUP superior, y el crecimiento cribiforme y el carcinoma intraductal son factores de riesgo independientes de recurrencia y metástasis. En el primero, se puede considerar la vigilancia activa después de recibir asesoramiento.",
+          "replace": "El patrón 4 predominante eleva el segundo hallazgo a un grupo ISUP superior. En el primero, se puede considerar la vigilancia activa después de recibir asesoramiento (en ISUP 2 solo con menos del 10 % de patrón 4, como máximo tres cilindros positivos y como máximo un 50 % de afectación por cilindro)."
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-pca-00012",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Indikation zur adjuvanten Strahlentherapie an die Leitlinie angepasst (pN0 mit ISUP 4–5 und pT3).",
+        "en": "Indication for adjuvant radiotherapy aligned with the guideline (pN0 with ISUP 4–5 and pT3).",
+        "es": "Indicación de radioterapia adyuvante ajustada a la guía (pN0 con ISUP 4–5 y pT3)."
+      },
+      "references": [
+        "bank-guide-prostatakarzinom",
+        "knowuro-prostate-2026"
+      ],
+      "changes": [
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Ausnahmen werden bei sehr ungünstiger Konstellation diskutiert, etwa ausgedehnt positivem Rand mit ISUP 5 oder pN1, wo die adjuvante Strahlentherapie weiterhin erwogen wird.",
+          "replace": "Ausnahmen bestehen bei ungünstiger Konstellation: Bei pN0 mit ISUP 4–5 und pT3 (mit oder ohne R1) kann die adjuvante Strahlentherapie angeboten werden (schwache Empfehlung), bei pN1 kommt eine adjuvante Androgendeprivation mit oder ohne Bestrahlung in Betracht."
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "Exceptions are discussed in very unfavourable constellations, such as an extensively positive margin with ISUP 5 or pN1, where adjuvant radiotherapy is still considered.",
+          "replace": "Exceptions apply in unfavourable constellations: in pN0 with ISUP 4–5 and pT3 (with or without R1), adjuvant radiotherapy can be offered (weak recommendation); in pN1, adjuvant androgen deprivation with or without radiotherapy is an option."
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "Se discuten excepciones en constelaciones muy desfavorables, como un margen ampliamente positivo con ISUP 5 o pN1, donde todavía se considera la radioterapia adyuvante.",
+          "replace": "Hay excepciones en constelaciones desfavorables: en pN0 con ISUP 4–5 y pT3 (con o sin R1) puede ofrecerse radioterapia adyuvante (recomendación débil); en pN1 puede plantearse una deprivación androgénica adyuvante con o sin radioterapia."
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-pca-00016",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Zulassung der Radioligandentherapie präzisiert: in der EU nur nach ARPI und Taxan; dieser Patient ist zudem chemotauglich.",
+        "en": "Approval of radioligand therapy specified: in the EU only after an ARPI and a taxane; this patient is also fit for chemotherapy.",
+        "es": "Autorización de la terapia con radioligandos precisada: en la UE solo tras un ARPI y un taxano; además, este paciente es apto para quimioterapia."
+      },
+      "references": [
+        "bank-guide-prostatakarzinom",
+        "knowuro-prostate-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.c.feedback",
+          "from": {
+            "de": "Die Radioligandentherapie ist nach Versagen einer ARPI und einer Taxanchemotherapie zugelassen. Dieser Patient hat noch keine Chemotherapie erhalten, sodass die Reihenfolge nicht erfüllt wäre.",
+            "en": "Radioligand therapy is approved after failure of an ARPI and a taxane. This patient has had no chemotherapy, so the required sequence is not fulfilled.",
+            "es": "La terapia con radioligandos se aprueba después del fracaso de un ARPI y un taxano. Este paciente no ha recibido quimioterapia por lo que no se cumple la secuencia requerida."
+          },
+          "to": {
+            "de": "Die Radioligandentherapie mit 177Lu-PSMA-617 ist in der EU nur nach Vorbehandlung mit einer ARPI und einem Taxan zugelassen (in den USA auch vor einem Taxan). Dieser Patient hat noch keine Chemotherapie erhalten und ist ohnehin chemotauglich, daher ist zuerst Docetaxel angezeigt.",
+            "en": "In the EU, radioligand therapy with 177Lu-PSMA-617 is approved only after prior treatment with an ARPI and a taxane (in the USA also before a taxane). This patient has had no chemotherapy and is fit for it in any case, so docetaxel comes first.",
+            "es": "En la UE, la terapia con radioligandos con 177Lu-PSMA-617 solo está autorizada tras el tratamiento previo con un ARPI y un taxano (en EE. UU. también antes de un taxano). Este paciente no ha recibido quimioterapia y, en cualquier caso, es apto para ella, por lo que primero está indicado docetaxel."
+          }
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-pca-00017",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Stellenwert von Pembrolizumab bei Mikrosatelliteninstabilität korrigiert: in der EU für das Prostatakarzinom nicht zugelassen, nur Einzelfallentscheidung.",
+        "en": "Role of pembrolizumab in microsatellite instability corrected: not approved for prostate cancer in the EU, a case-by-case decision only.",
+        "es": "Papel de pembrolizumab en la inestabilidad de microsatélites corregido: no autorizado en la UE para el cáncer de próstata, solo decisión individualizada."
+      },
+      "references": [
+        "bank-guide-prostatakarzinom",
+        "knowuro-prostate-2026"
+      ],
+      "changes": [
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "sowie Pembrolizumab bei Mikrosatelliteninstabilität.",
+          "replace": "sowie bei Mikrosatelliteninstabilität/dMMR im Einzelfall eine Immuntherapie mit Pembrolizumab (in der EU für das Prostatakarzinom nicht zugelassen)."
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "and pembrolizumab in microsatellite instability.",
+          "replace": "and, in microsatellite instability/dMMR, immunotherapy with pembrolizumab on a case-by-case basis (not approved for prostate cancer in the EU)."
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "y pembrolizumab en inestabilidad de microsatélites.",
+          "replace": "y, en la inestabilidad de microsatélites/dMMR, una inmunoterapia con pembrolizumab de forma individualizada (no autorizada en la UE para el cáncer de próstata)."
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "de",
+          "find": "Zusätzlich ist auf Mikrosatelliteninstabilität zu prüfen, weil sich daraus eine Immuntherapieoption ergibt.",
+          "replace": "Zusätzlich kann auf Mikrosatelliteninstabilität/dMMR geprüft werden; eine Immuntherapie mit Pembrolizumab ist dann eine Einzelfallentscheidung (in der EU für das Prostatakarzinom nicht zugelassen)."
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "en",
+          "find": "Microsatellite instability should also be assessed, since it opens an immunotherapy option.",
+          "replace": "Microsatellite instability/dMMR can also be assessed; immunotherapy with pembrolizumab is then a case-by-case decision (not approved for prostate cancer in the EU)."
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "es",
+          "find": "También se debe evaluar la inestabilidad de los microsatélites, ya que abre una opción de inmunoterapia.",
+          "replace": "También puede evaluarse la inestabilidad de microsatélites/dMMR; la inmunoterapia con pembrolizumab es entonces una decisión individualizada (no autorizada en la UE para el cáncer de próstata)."
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-pca-00019",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Klargestellt, dass nur die Kombination mit Abirateron widerlegt ist (PEACE-3 mit Enzalutamid positiv) und dass die Kiefernekrose von den Antiresorptiva ausgeht.",
+        "en": "Clarified that only the combination with abiraterone was refuted (PEACE-3 with enzalutamide positive) and that jaw osteonecrosis is caused by the antiresorptive agents.",
+        "es": "Se aclara que solo se refutó la combinación con abiraterona (PEACE-3 con enzalutamida positivo) y que la osteonecrosis mandibular se debe a los antirresortivos."
+      },
+      "references": [
+        "bank-guide-prostatakarzinom",
+        "knowuro-prostate-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "de",
+          "find": "wurde aber geprüft und widerlegt.",
+          "replace": "wurde für Abirateron aber geprüft und widerlegt."
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "en",
+          "find": "but was tested and refuted.",
+          "replace": "but was tested and refuted for abiraterone."
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "es",
+          "find": "pero fue probado y refutado.",
+          "replace": "pero se probó y se refutó con abiraterona."
+        },
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Die Kombination mit Abirateron ist wegen der Frakturhäufung verlassen, und eine knochenschützende Begleitmedikation gehört obligat dazu. Vor Beginn ist eine zahnärztliche Untersuchung sinnvoll, da diese Präparate eine Kiefernekrose auslösen können.",
+          "replace": "Die Kombination mit Abirateron ist wegen der Frakturhäufung verlassen, und eine knochenschützende Begleitmedikation gehört obligat dazu. Mit Enzalutamid und obligater Knochenprotektion zeigte die Kombination dagegen in PEACE-3 einen Vorteil. Vor Beginn ist eine zahnärztliche Untersuchung sinnvoll, da die knochenprotektiven Antiresorptiva (Denosumab, Zoledronat) eine Kiefernekrose auslösen können."
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "Combination with abiraterone has been abandoned because of excess fractures, and concomitant bone protection is obligatory. A dental assessment before starting is advisable, since these agents can cause jaw necrosis.",
+          "replace": "Combination with abiraterone has been abandoned because of excess fractures, and concomitant bone protection is obligatory. With enzalutamide and mandatory bone protection, by contrast, the combination showed a benefit in PEACE-3. A dental assessment before starting is advisable, since the bone-protective antiresorptive agents (denosumab, zoledronic acid) can cause jaw necrosis."
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "Se ha abandonado la combinación con abiraterona debido al exceso de fracturas y es obligatoria la protección ósea concomitante. Es recomendable una valoración odontológica antes de comenzar, ya que estos agentes pueden provocar necrosis mandibular.",
+          "replace": "Se ha abandonado la combinación con abiraterona debido al exceso de fracturas y es obligatoria la protección ósea concomitante. En cambio, con enzalutamida y protección ósea obligatoria, la combinación mostró un beneficio en PEACE-3. Es recomendable una valoración odontológica antes de comenzar, ya que los antirresortivos de protección ósea (denosumab, ácido zoledrónico) pueden provocar necrosis mandibular."
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-ope-00023",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Studiendesign von PEACE V-STORM korrigiert: Androgendeprivation in beiden Armen, randomisierte Phase-II-Studie mit schwacher Empfehlung; kein Vergleich mit alleiniger Androgendeprivation.",
+        "en": "Design of PEACE V-STORM corrected: androgen deprivation in both arms, randomised phase II trial with a weak recommendation; no comparison with androgen deprivation alone.",
+        "es": "Diseño de PEACE V-STORM corregido: deprivación androgénica en ambos brazos, ensayo aleatorizado de fase II con recomendación débil; sin comparación con la deprivación androgénica sola."
+      },
+      "references": [
+        "bank-guide-prostatakarzinom",
+        "knowuro-prostate-2026"
+      ],
+      "changes": [
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Für das oligonodale Rezidiv liegt eine randomisierte Studie vor, und sie fällt nicht zugunsten der Chirurgie aus (Heidenreich et al. 2026). In PEACE V-STORM wurden 196 Patienten entweder einer metastasengerichteten Therapie durch Lymphadenektomie oder stereotaktische Bestrahlung mit sechsmonatiger Androgendeprivation oder einer pelvinen Bestrahlung mit 45 Gy und einem Boost von 65 Gy auf die PET-positiven Lymphknoten zugeführt;",
+          "replace": "Für das oligonodale Rezidiv liegt eine randomisierte Phase-II-Studie vor, und sie fällt nicht zugunsten der metastasengerichteten Therapie aus; die darauf gestützte Leitlinienempfehlung ist entsprechend schwach. In PEACE V-STORM wurden 196 Patienten entweder einer metastasengerichteten Therapie durch Lymphadenektomie oder stereotaktische Bestrahlung oder einer pelvinen Bestrahlung mit 45 Gy und einem Boost von 65 Gy auf die PET-positiven Lymphknoten zugeführt, in beiden Armen jeweils mit sechsmonatiger Androgendeprivation;"
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "For oligonodal recurrence a randomised trial exists, and it does not favour surgery (Heidenreich et al. 2026). In PEACE V-STORM, 196 patients received either metastasis-directed therapy by lymphadenectomy or stereotactic radiotherapy with six months of androgen deprivation, or pelvic radiotherapy with 45 Gy plus a boost of 65 Gy to the PET-positive nodes;",
+          "replace": "For oligonodal recurrence a randomised phase II trial exists, and it does not favour metastasis-directed therapy; the guideline recommendation based on it is accordingly weak. In PEACE V-STORM, 196 patients received either metastasis-directed therapy by lymphadenectomy or stereotactic radiotherapy, or pelvic radiotherapy with 45 Gy plus a boost of 65 Gy to the PET-positive nodes, with six months of androgen deprivation in both arms;"
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "Para la recidiva oligoganglionar existe un ensayo aleatorizado, y no favorece a la cirugía (Heidenreich et al. 2026). En PEACE V-STORM, 196 pacientes recibieron terapia dirigida a las metástasis mediante linfadenectomía o radioterapia estereotáctica con seis meses de deprivación androgénica, o bien radioterapia pélvica con 45 Gy y una sobreimpresión de 65 Gy sobre los ganglios PET positivos;",
+          "replace": "Para la recidiva oligoganglionar existe un ensayo aleatorizado de fase II, y no favorece a la terapia dirigida a las metástasis; la recomendación de la guía basada en él es, por tanto, débil. En PEACE V-STORM, 196 pacientes recibieron terapia dirigida a las metástasis mediante linfadenectomía o radioterapia estereotáctica, o bien radioterapia pélvica con 45 Gy y una sobreimpresión de 65 Gy sobre los ganglios PET positivos, en ambos brazos con seis meses de deprivación androgénica;"
+        },
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "pelvine Bestrahlung mit Boost und Hormontherapie schlägt die metastasengerichtete Chirurgie.",
+          "replace": "pelvine Bestrahlung mit Boost schneidet, jeweils mit Hormontherapie, besser ab als die metastasengerichtete Therapie (Phase II)."
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "pelvic radiotherapy with a boost plus hormone therapy beats metastasis-directed surgery.",
+          "replace": "pelvic radiotherapy with a boost does better than metastasis-directed therapy, each combined with hormone therapy (phase II)."
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "radioterapia pélvica con sobreimpresión y hormonoterapia por delante de la cirugía dirigida.",
+          "replace": "radioterapia pélvica con sobreimpresión por delante de la terapia dirigida a las metástasis, ambas con hormonoterapia (fase II)."
+        },
+        {
+          "path": "steps.0.options.d.feedback",
+          "lang": "de",
+          "find": "Die Kombination aus Bestrahlung und Androgendeprivation war im Vergleich überlegen (Heidenreich et al. 2026).",
+          "replace": "Eine alleinige Androgendeprivation verzichtet auf die lokale Kontrolle; für das oligonodale Rezidiv ist die Kombination aus Bestrahlung und Androgendeprivation der am besten begründete Ansatz."
+        },
+        {
+          "path": "steps.0.options.d.feedback",
+          "lang": "en",
+          "find": "The combination of radiotherapy and androgen deprivation was superior in the comparison (Heidenreich et al. 2026).",
+          "replace": "Androgen deprivation alone forgoes local control; for oligonodal recurrence the combination of radiotherapy and androgen deprivation is the best-supported approach."
+        },
+        {
+          "path": "steps.0.options.d.feedback",
+          "lang": "es",
+          "find": "La combinación de radioterapia y deprivación androgénica fue superior en la comparación (Heidenreich et al. 2026).",
+          "replace": "La deprivación androgénica sola renuncia al control local; en la recidiva oligoganglionar, la combinación de radioterapia y deprivación androgénica es el enfoque mejor fundamentado."
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-ope-00025",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Leitliniengestützte Lokaltherapie bei geringer Metastasenlast (Bestrahlung der Prostata) ergänzt und Selektionsverzerrung der SEER-Daten benannt.",
+        "en": "Guideline-based local therapy for low metastatic burden (prostate radiotherapy) added and the selection bias of the SEER data stated.",
+        "es": "Se añade la terapia local basada en la guía para la carga metastásica baja (radioterapia de la próstata) y se señala el sesgo de selección de los datos SEER."
+      },
+      "references": [
+        "bank-guide-prostatakarzinom",
+        "knowuro-prostate-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.e.feedback",
+          "lang": "de",
+          "find": "Die Operation gilt als sehr individuelle Therapieentscheidung auf retrospektiver Datenbasis (Heidenreich et al. 2026).",
+          "replace": "Die Operation gilt als sehr individuelle Therapieentscheidung auf retrospektiver Datenbasis. Leitliniengestützte Lokaltherapie bei geringer Last ist die Bestrahlung der Prostata zusätzlich zur Systemtherapie; die zytoreduktive Prostatektomie soll nur innerhalb von Studien erfolgen."
+        },
+        {
+          "path": "steps.0.options.e.feedback",
+          "lang": "en",
+          "find": "The operation is regarded as a highly individual treatment decision resting on retrospective data (Heidenreich et al. 2026).",
+          "replace": "The operation is regarded as a highly individual treatment decision resting on retrospective data. The guideline-based local therapy for low burden is radiotherapy to the prostate in addition to systemic therapy; cytoreductive prostatectomy should be performed only within trials."
+        },
+        {
+          "path": "steps.0.options.e.feedback",
+          "lang": "es",
+          "find": "La cirugía se considera una decisión terapéutica muy individual, basada en datos retrospectivos (Heidenreich et al. 2026).",
+          "replace": "La cirugía se considera una decisión terapéutica muy individual, basada en datos retrospectivos. La terapia local basada en la guía para la carga baja es la radioterapia de la próstata añadida al tratamiento sistémico; la prostatectomía citorreductora solo debe realizarse dentro de ensayos."
+        },
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "In der SEER-Analyse lagen",
+          "replace": "In der retrospektiven, stark selektionsverzerrten SEER-Registeranalyse lagen"
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "In the SEER analysis, overall",
+          "replace": "In the retrospective SEER registry analysis, which is heavily affected by selection bias, overall"
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "En el análisis SEER, la supervivencia",
+          "replace": "En el análisis retrospectivo del registro SEER, con un fuerte sesgo de selección, la supervivencia"
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00014",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Bedeutung eines verzögerten Markerabfalls nach Ablatio präzisiert und sachfremden Hinweis zur Niere entfernt.",
+        "en": "Meaning of a slow marker decline after orchiectomy clarified and an unrelated remark about the kidney removed.",
+        "es": "Se precisa el significado de un descenso lento de los marcadores tras la orquiectomía y se elimina una observación ajena sobre el riñón."
+      },
+      "references": [
+        "bank-guide-hodentumor",
+        "knowuro-testis-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.a.feedback",
+          "from": {
+            "de": "Die Halbwertszeiten sind vertauscht, und die Niere ist nicht die typische Fehlerquelle.",
+            "en": "The half-lives are swapped, and the kidney is not the typical source of error.",
+            "es": "Las vidas medias se intercambian y el riñón no es la fuente típica de error."
+          },
+          "to": {
+            "de": "Die Halbwertszeiten sind vertauscht.",
+            "en": "The half-lives are swapped.",
+            "es": "Las semividas están intercambiadas."
+          }
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "de",
+          "find": "Ein zu langsamer Abfall gemessen an diesen Halbwertszeiten gilt als Therapieversagen.",
+          "replace": "Ein zu langsamer Abfall gemessen an diesen Halbwertszeiten spricht nach der Ablatio für eine persistierende Erkrankung (Stadium IS bzw. Metastasen), unter Chemotherapie für ein unzureichendes Ansprechen."
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "en",
+          "find": "A decline slower than these half-lives counts as treatment failure.",
+          "replace": "After orchiectomy, a decline slower than these half-lives indicates persistent disease (stage IS or metastases); during chemotherapy it indicates an inadequate response."
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "es",
+          "find": "Una disminución más lenta que estas vidas medias se considera fracaso del tratamiento.",
+          "replace": "Tras la orquiectomía, un descenso más lento de lo que corresponde a estas semividas indica enfermedad persistente (estadio IS o metástasis); durante la quimioterapia indica una respuesta insuficiente."
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00001",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Carboplatin auf Patienten mit Risikofaktoren eingegrenzt; ohne Risikofaktoren wird keine adjuvante Therapie empfohlen.",
+        "en": "Carboplatin restricted to patients with risk factors; without risk factors no adjuvant treatment is recommended.",
+        "es": "El carboplatino se limita a pacientes con factores de riesgo; sin factores de riesgo no se recomienda tratamiento adyuvante."
+      },
+      "references": [
+        "bank-guide-hodentumor",
+        "knowuro-testis-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.b.feedback",
+          "from": {
+            "de": "Eine Alternative, die die Rezidivrate senkt, das Gesamtüberleben aber nicht verbessert. Sie kommt vor allem infrage, wenn eine engmaschige Nachsorge nicht sicherzustellen ist.",
+            "en": "An alternative that lowers the relapse rate but does not improve overall survival. It mainly applies when close follow-up cannot be assured.",
+            "es": "Una alternativa que reduce la tasa de recaída pero no mejora la supervivencia general. Se aplica principalmente cuando no se puede garantizar un seguimiento estrecho."
+          },
+          "to": {
+            "de": "Ohne Risikofaktoren (Tumor ≤ 4 cm, keine Rete-testis-Invasion) wird keine adjuvante Therapie empfohlen. Carboplatin AUC 7 ist eine Option bei Risikofaktoren; es senkt die Rezidivrate, verbessert das Gesamtüberleben aber nicht.",
+            "en": "Without risk factors (tumour ≤ 4 cm, no rete testis invasion), adjuvant treatment is not recommended. Carboplatin AUC 7 is an option when risk factors are present; it lowers the relapse rate but does not improve overall survival.",
+            "es": "Sin factores de riesgo (tumor ≤ 4 cm, sin invasión de la rete testis) no se recomienda tratamiento adyuvante. El carboplatino AUC 7 es una opción cuando hay factores de riesgo; reduce la tasa de recidiva, pero no mejora la supervivencia global."
+          }
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00002",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Missverständlichen Satz zum Vergleich von drei und vier Zyklen BEP richtiggestellt.",
+        "en": "Ambiguous sentence comparing three and four cycles of BEP corrected.",
+        "es": "Se corrige una frase ambigua que comparaba tres y cuatro ciclos de BEP."
+      },
+      "references": [
+        "bank-guide-hodentumor",
+        "knowuro-testis-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "de",
+          "find": "Drei Zyklen BEP sind bei guter Prognose der Standard und vier Zyklen gleichwertig bei geringerer Toxizität.",
+          "replace": "Drei Zyklen BEP sind bei guter Prognose der Standard; sie sind vier Zyklen gleichwertig, bei geringerer Toxizität."
+        },
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "en",
+          "find": "Three cycles of BEP are standard in good prognosis and equivalent to four cycles with lower toxicity.",
+          "replace": "Three cycles of BEP are standard in good prognosis; they are as effective as four cycles, with lower toxicity."
+        },
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "es",
+          "find": "Tres ciclos de BEP son estándar en buen pronóstico y equivalen a cuatro ciclos con menor toxicidad.",
+          "replace": "Tres ciclos de BEP son el estándar en buen pronóstico; son tan eficaces como cuatro ciclos, con menor toxicidad."
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00003",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Klargestellt, dass die IGCCCG-Gruppe auf den Markerwerten vor Chemotherapie beruht und der präoperative Wert der Beurteilung des Abfalls dient.",
+        "en": "Clarified that the IGCCCG group is based on marker levels before chemotherapy and that the preoperative value serves to assess the decline.",
+        "es": "Se aclara que el grupo IGCCCG se basa en los marcadores previos a la quimioterapia y que el valor preoperatorio sirve para valorar el descenso."
+      },
+      "references": [
+        "bank-guide-hodentumor",
+        "knowuro-testis-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.d.feedback",
+          "from": {
+            "de": "Die Marker vor und nach der Operation bestimmen gemeinsam die IGCCCG-Prognosegruppe. Die Kryokonservierung muss vor jeder gonadotoxischen Therapie erfolgen und wird sinnvollerweise vor der Ablatio angeboten. Bestimmt werden AFP, beta-hCG und LDH. Der präoperative Ausgangswert wird gebraucht, weil sich die IGCCCG-Prognosegruppe aus dem Verlauf nach der Operation ergibt.",
+            "en": "Markers before and after surgery together determine the IGCCCG prognostic group. Cryopreservation must precede any gonadotoxic treatment and is sensibly offered before orchiectomy. AFP, beta-hCG and LDH are measured. The preoperative baseline is needed because the IGCCCG prognostic group derives from the postoperative trajectory.",
+            "es": "Los marcadores antes y después de la cirugía determinan en conjunto el grupo pronóstico del IGCCCG. La criopreservación debe preceder a cualquier tratamiento gonadotóxico y es sensato ofrecerla antes de la orquiectomía. Se miden AFP, beta-hCG y LDH. La línea de base preoperatoria es necesaria porque el grupo pronóstico del IGCCCG deriva de la trayectoria posoperatoria."
+          },
+          "to": {
+            "de": "Der präoperative Ausgangswert wird gebraucht, um den Markerabfall nach der Ablatio (Halbwertszeit, Stadium IS) zu beurteilen; die IGCCCG-Prognosegruppe richtet sich nach den Markerwerten nach der Ablatio unmittelbar vor Beginn der Chemotherapie. Die Kryokonservierung muss vor jeder gonadotoxischen Therapie erfolgen und wird sinnvollerweise vor der Ablatio angeboten. Bestimmt werden AFP, beta-hCG und LDH.",
+            "en": "The preoperative baseline is needed to assess the marker decline after orchiectomy (half-life, stage IS); the IGCCCG prognostic group is based on marker levels after orchiectomy, immediately before chemotherapy starts. Cryopreservation must precede any gonadotoxic treatment and is sensibly offered before orchiectomy. AFP, beta-hCG and LDH are measured.",
+            "es": "El valor basal preoperatorio es necesario para valorar el descenso de los marcadores tras la orquiectomía (semivida, estadio IS); el grupo pronóstico del IGCCCG se basa en los valores de los marcadores tras la orquiectomía, inmediatamente antes de iniciar la quimioterapia. La criopreservación debe preceder a cualquier tratamiento gonadotóxico y es sensato ofrecerla antes de la orquiectomía. Se miden AFP, beta-hCG y LDH."
+          }
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00006",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Reihenfolge an die aktuelle EAU-Leitlinie angepasst: Chemotherapie und Radiatio sind etabliert, die Chemotherapie wird zuerst genannt.",
+        "en": "Order aligned with the current EAU guideline: chemotherapy and radiotherapy are established, with chemotherapy listed first.",
+        "es": "Orden adaptado a la guía actual de la EAU: la quimioterapia y la radioterapia están establecidas y la quimioterapia se menciona primero."
+      },
+      "references": [
+        "bank-guide-hodentumor",
+        "knowuro-testis-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.b.text",
+          "from": {
+            "de": "Radiatio des Lymphabflusses oder alternativ Chemotherapie",
+            "en": "Radiotherapy to the nodal field or alternatively chemotherapy",
+            "es": "Radioterapia al campo ganglionar o alternativamente quimioterapia."
+          },
+          "to": {
+            "de": "Chemotherapie (3× BEP oder 4× EP) oder Radiatio des Lymphabflusses (30 Gy)",
+            "en": "Chemotherapy (3× BEP or 4× EP) or radiotherapy to the nodal field (30 Gy)",
+            "es": "Quimioterapia (3× BEP o 4× EP) o radioterapia del campo ganglionar (30 Gy)"
+          }
+        },
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Im Stadium IIA des Seminoms stehen Strahlentherapie und Chemotherapie gleichwertig nebeneinander.",
+          "replace": "Im Stadium IIA des Seminoms sind Chemotherapie und Strahlentherapie etablierte Optionen mit hohen Heilungsraten; die aktuelle EAU-Leitlinie nennt die Chemotherapie zuerst."
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "In stage IIA seminoma radiotherapy and chemotherapy stand side by side.",
+          "replace": "In stage IIA seminoma, chemotherapy and radiotherapy are established options with high cure rates; the current EAU guideline lists chemotherapy first."
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "En el seminoma en estadio IIA, la radioterapia y la quimioterapia están una al lado de la otra.",
+          "replace": "En el seminoma en estadio IIA, la quimioterapia y la radioterapia son opciones establecidas con altas tasas de curación; la guía actual de la EAU menciona primero la quimioterapia."
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00008",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Indikationen der primären Lymphadenektomie im Stadium I nach EAU korrigiert.",
+        "en": "Indications for primary lymph node dissection in stage I corrected according to the EAU.",
+        "es": "Se corrigen las indicaciones de la linfadenectomía primaria en estadio I según la EAU."
+      },
+      "references": [
+        "bank-guide-hodentumor",
+        "knowuro-testis-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.b.feedback",
+          "from": {
+            "de": "Sie bleibt Sonderfällen vorbehalten: Ablehnung oder Kontraindikation der Chemotherapie, hoher Teratomanteil oder eine nicht sicherzustellende Nachsorge.",
+            "en": "It is reserved for special situations: refusal of or contraindication to chemotherapy, high teratoma content, or follow-up that cannot be assured.",
+            "es": "Se reserva para situaciones especiales: rechazo o contraindicación de la quimioterapia, alto componente de teratoma, o un seguimiento que no pueda asegurarse."
+          },
+          "to": {
+            "de": "Sie bleibt Sonderfällen vorbehalten: postpubertäres Teratom mit somatisch-maligner Komponente sowie Patienten, für die weder Surveillance noch adjuvante Chemotherapie infrage kommen; ein hoher Teratomanteil ist ein zusätzliches Argument.",
+            "en": "It is reserved for special situations: post-pubertal teratoma with a somatic-type malignant component, and patients for whom neither surveillance nor adjuvant chemotherapy is an option; a high teratoma content is a supporting argument.",
+            "es": "Se reserva para situaciones especiales: teratoma pospuberal con componente maligno de tipo somático y pacientes en los que no son opción ni la vigilancia ni la quimioterapia adyuvante; un alto componente de teratoma es un argumento adicional."
+          }
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00041",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Lymphknotengröße auf 1,8 cm korrigiert, damit das Stadium IIA stimmt (2,4 cm entspräche IIB), und Seminom-Angabe beim Nichtseminom ersetzt.",
+        "en": "Node size corrected to 1.8 cm so that stage IIA is accurate (2.4 cm would be IIB), and a seminoma statement replaced in this non-seminoma case.",
+        "es": "Tamaño ganglionar corregido a 1,8 cm para que el estadio IIA sea correcto (2,4 cm correspondería a IIB) y se sustituye un dato del seminoma en este caso de no seminoma."
+      },
+      "references": [
+        "bank-guide-hodentumor",
+        "knowuro-testis-2026"
+      ],
+      "changes": [
+        {
+          "path": "presenting",
+          "lang": "de",
+          "find": "Lymphknoten von 2,4 cm",
+          "replace": "Lymphknoten von 1,8 cm"
+        },
+        {
+          "path": "presenting",
+          "lang": "en",
+          "find": "lymph node of 2.4 cm",
+          "replace": "lymph node of 1.8 cm"
+        },
+        {
+          "path": "presenting",
+          "lang": "es",
+          "find": "ganglio paraaórtico nuevo de 2,4 cm",
+          "replace": "ganglio paraaórtico nuevo de 1,8 cm"
+        },
+        {
+          "path": "steps.0.options.a.feedback",
+          "lang": "de",
+          "find": "Lymphknoten von 2,4 cm",
+          "replace": "Lymphknoten von 1,8 cm"
+        },
+        {
+          "path": "steps.0.options.a.feedback",
+          "lang": "en",
+          "find": "lymph node of 2.4 cm",
+          "replace": "lymph node of 1.8 cm"
+        },
+        {
+          "path": "steps.0.options.a.feedback",
+          "lang": "es",
+          "find": "ganglio nuevo de 2,4 cm",
+          "replace": "ganglio nuevo de 1,8 cm"
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "de",
+          "find": "Seminome sezernieren nur in etwa 30 % hCG, und Biotin senkt Messwerte zusätzlich (Witte & Majewski 2025).",
+          "replace": "Auch beim Nichtseminom sind die Marker bei einem relevanten Teil der Rezidive normal, und Biotin senkt Messwerte zusätzlich."
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "en",
+          "find": "Seminomas secrete hCG in only about 30%, and biotin lowers measured values further (Witte & Majewski 2025).",
+          "replace": "Even in non-seminoma, markers are normal in a relevant proportion of relapses, and biotin lowers measured values further."
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "es",
+          "find": "Los seminomas secretan hCG solo en torno al 30 % y la biotina baja aún más los valores (Witte & Majewski 2025).",
+          "replace": "Incluso en el no seminoma los marcadores son normales en una parte relevante de las recaídas, y la biotina baja aún más los valores."
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00047",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Ergänzt, dass beim Zweitrezidiv noch Hochdosischemotherapie oder Resektion aller Herde als kurative Optionen zu prüfen sind.",
+        "en": "Added that high-dose chemotherapy or resection of all lesions must still be considered as curative options at second relapse.",
+        "es": "Se añade que en la segunda recaída aún deben valorarse la quimioterapia a dosis altas o la resección de todas las lesiones como opciones curativas."
+      },
+      "references": [
+        "bank-guide-hodentumor",
+        "knowuro-testis-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.b.feedback",
+          "from": {
+            "de": "Die beschriebenen Substanzen stammen aus Zellmodellen; die EAU ermutigt in dieser Lage zum Einschluss in klinische Studien an Zentren (EAU 2026, 6.3.5; Skowron et al. 2025).",
+            "en": "The agents described come from cell models; in this situation the EAU encourages inclusion in clinical trials at centres (EAU 2026, 6.3.5; Skowron et al. 2025).",
+            "es": "Los fármacos descritos proceden de modelos celulares; en esta situación la EAU anima a incluir al paciente en ensayos clínicos en centros (EAU 2026, 6.3.5; Skowron et al. 2025)."
+          },
+          "to": {
+            "de": "Die beschriebenen Substanzen stammen aus Zellmodellen; die EAU ermutigt in dieser Lage zum Einschluss in klinische Studien an Zentren (EAU 2026, 6.3.5). Im Zentrum wird zugleich geprüft, ob noch eine Hochdosischemotherapie (falls bisher nicht erfolgt) oder eine Resektion aller Herde (Desperation Surgery) infrage kommt.",
+            "en": "The agents described come from cell models; in this situation the EAU encourages inclusion in clinical trials at centres (EAU 2026, 6.3.5). At the centre it is also assessed whether high-dose chemotherapy (if not yet given) or resection of all lesions (desperation surgery) is still an option.",
+            "es": "Los fármacos descritos proceden de modelos celulares; en esta situación la EAU anima a incluir al paciente en ensayos clínicos en centros (EAU 2026, 6.3.5). En el centro se valora además si todavía son posibles una quimioterapia a dosis altas (si no se ha administrado antes) o la resección de todas las lesiones (desperation surgery)."
+          }
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00021",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Therapie des gesicherten Stadiums IIA korrigiert: Chemotherapie an erster Stelle, Bestrahlung als Alternative.",
+        "en": "Treatment of confirmed stage IIA corrected: chemotherapy first, radiotherapy as the alternative.",
+        "es": "Se corrige el tratamiento del estadio IIA confirmado: quimioterapia en primer lugar y radioterapia como alternativa."
+      },
+      "references": [
+        "bank-guide-hodentumor",
+        "knowuro-testis-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "de",
+          "find": "Die Bestrahlung ist Standard für ein gesichertes Stadium IIA (Che & Papachristofilou 2025); hier würde ein unbestätigter Befund behandelt.",
+          "replace": "Chemotherapie oder alternativ die Bestrahlung sind erst für ein gesichertes Stadium IIA vorgesehen; hier würde ein unbestätigter Befund behandelt."
+        },
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "en",
+          "find": "Radiotherapy is a standard for confirmed stage IIA (Che & Papachristofilou 2025); here an unconfirmed finding would be treated.",
+          "replace": "Chemotherapy or, alternatively, radiotherapy is reserved for confirmed stage IIA; here an unconfirmed finding would be treated."
+        },
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "es",
+          "find": "La radioterapia es estándar en el estadio IIA confirmado (Che & Papachristofilou 2025); aquí se trataría un hallazgo no confirmado.",
+          "replace": "La quimioterapia o, como alternativa, la radioterapia se reservan para el estadio IIA confirmado; aquí se trataría un hallazgo no confirmado."
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00024",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Bestrahlungsdosis im Stadium IIB korrigiert: 30 Gy auf das Feld plus 6-Gy-Boost auf den befallenen Knoten statt 36-Gy-Feld.",
+        "en": "Radiotherapy dose in stage IIB corrected: 30 Gy to the field plus a 6 Gy boost to the involved node instead of a 36 Gy field.",
+        "es": "Se corrige la dosis de radioterapia en el estadio IIB: 30 Gy al campo más una sobreimpresión de 6 Gy al ganglio afectado en lugar de un campo de 36 Gy."
+      },
+      "references": [
+        "bank-guide-hodentumor",
+        "knowuro-testis-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "de",
+          "find": "36 Gy sind die Dosis für das Stadium IIB (Che & Papachristofilou 2025); im Stadium IIA bedeutet das mehr Dosis ohne belegten Zusatznutzen.",
+          "replace": "Auch im Stadium IIB erhält das Feld 30 Gy; nur der befallene Knoten bekommt einen Boost von 6 Gy (36 Gy am Knoten). Ein 36-Gy-Feld bedeutet mehr Dosis ohne belegten Zusatznutzen."
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "en",
+          "find": "36 Gy is the dose for stage IIB (Che & Papachristofilou 2025); in stage IIA it adds dose without proven benefit.",
+          "replace": "Even in stage IIB the field receives 30 Gy; only the involved node gets a 6 Gy boost (36 Gy to the node). A 36 Gy field adds dose without proven benefit."
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "es",
+          "find": "36 Gy es la dosis del estadio IIB (Che & Papachristofilou 2025); en el estadio IIA añade dosis sin beneficio demostrado.",
+          "replace": "También en el estadio IIB el campo recibe 30 Gy; solo el ganglio afectado recibe una sobreimpresión de 6 Gy (36 Gy en el ganglio). Un campo de 36 Gy añade dosis sin beneficio demostrado."
+        },
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Bei paraaortaler und ipsilateral pelviner Bestrahlung gelten 30 Gy für das Stadium IIA und 36 Gy für IIB (Che & Papachristofilou 2025).",
+          "replace": "Bei paraaortaler und ipsilateral pelviner Bestrahlung erhält das Feld 30 Gy im Stadium IIA; im Stadium IIB erhält es ebenfalls 30 Gy, der befallene Knoten zusätzlich einen Boost von 6 Gy."
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "With para-aortic and ipsilateral pelvic radiotherapy, the dose is 30 Gy for stage IIA and 36 Gy for IIB (Che & Papachristofilou 2025).",
+          "replace": "With para-aortic and ipsilateral pelvic radiotherapy, the field receives 30 Gy in stage IIA; in stage IIB it also receives 30 Gy, with an additional 6 Gy boost to the involved node."
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "Con radioterapia paraaórtica y pélvica ipsilateral, la dosis es de 30 Gy para el estadio IIA y de 36 Gy para el IIB (Che & Papachristofilou 2025).",
+          "replace": "Con radioterapia paraaórtica y pélvica ipsilateral, el campo recibe 30 Gy en el estadio IIA; en el estadio IIB recibe también 30 Gy, con una sobreimpresión adicional de 6 Gy al ganglio afectado."
+        },
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "mit 30 Gy, nicht 27 Gy und nicht 36 Gy.",
+          "replace": "mit 30 Gy, nicht 27 Gy und kein 36-Gy-Feld."
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "at 30 Gy, not 27 Gy and not 36 Gy.",
+          "replace": "at 30 Gy, not 27 Gy and no 36 Gy field."
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "con 30 Gy, ni 27 Gy ni 36 Gy.",
+          "replace": "con 30 Gy, ni 27 Gy ni un campo de 36 Gy."
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00029",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Bestrahlungskonzept im Stadium IIB korrigiert: 30 Gy auf das Feld plus Boost auf den Knoten statt 36-Gy-Feld.",
+        "en": "Radiotherapy concept in stage IIB corrected: 30 Gy to the field plus a boost to the node instead of a 36 Gy field.",
+        "es": "Se corrige el esquema de radioterapia en el estadio IIB: 30 Gy al campo más sobreimpresión al ganglio en lugar de un campo de 36 Gy."
+      },
+      "references": [
+        "bank-guide-hodentumor",
+        "knowuro-testis-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.e.text",
+          "from": {
+            "de": "Bestrahlung paraaortal und pelvin mit 36 Gy als bevorzugte Wahl",
+            "en": "Para-aortic and pelvic radiotherapy with 36 Gy as preferred choice",
+            "es": "Radioterapia paraaórtica y pélvica con 36 Gy como opción preferente"
+          },
+          "to": {
+            "de": "Bestrahlung paraaortal und pelvin, 30 Gy plus Boost, als bevorzugte Wahl",
+            "en": "Para-aortic and pelvic radiotherapy, 30 Gy plus boost, as preferred choice",
+            "es": "Radioterapia paraaórtica y pélvica, 30 Gy más sobreimpresión, como opción preferente"
+          }
+        },
+        {
+          "path": "steps.0.options.e.feedback",
+          "lang": "de",
+          "find": "Die Bestrahlung mit 36 Gy ist möglich",
+          "replace": "Die Bestrahlung (30 Gy auf das Feld plus 6-Gy-Boost auf den Knoten) ist möglich"
+        },
+        {
+          "path": "steps.0.options.e.feedback",
+          "lang": "en",
+          "find": "Radiotherapy with 36 Gy is possible",
+          "replace": "Radiotherapy (30 Gy to the field plus a 6 Gy boost to the node) is possible"
+        },
+        {
+          "path": "steps.0.options.e.feedback",
+          "lang": "es",
+          "find": "La radioterapia con 36 Gy es posible",
+          "replace": "La radioterapia (30 Gy al campo más una sobreimpresión de 6 Gy al ganglio) es posible"
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00010",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Verbliebene Indikationen der primären Lymphadenektomie im Stadium I korrigiert; eine unsichere Nachsorge ist keine Indikation.",
+        "en": "Remaining indications for primary lymph node dissection in stage I corrected; unreliable follow-up is not an indication.",
+        "es": "Se corrigen las indicaciones restantes de la linfadenectomía primaria en el estadio I; un seguimiento no garantizado no es una indicación."
+      },
+      "references": [
+        "bank-guide-hodentumor",
+        "knowuro-testis-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "de",
+          "find": "Die verbliebenen Indikationen sind Ablehnung oder Kontraindikation der Chemotherapie, ein hoher Teratomanteil und eine nicht sicherzustellende Nachsorge.",
+          "replace": "Die verbliebenen Indikationen sind Ablehnung oder Kontraindikation von Chemotherapie bzw. Surveillance sowie ein postpubertäres Teratom mit somatisch-maligner Komponente; ein hoher Teratomanteil ist ein zusätzliches Argument."
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "en",
+          "find": "The remaining indications are refusal of or contraindication to chemotherapy, a high teratoma content, and follow-up that cannot be assured.",
+          "replace": "The remaining indications are refusal of or contraindication to chemotherapy or surveillance, and post-pubertal teratoma with a somatic-type malignant component; a high teratoma content is an additional argument."
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "es",
+          "find": "El resto de indicaciones son el rechazo o contraindicación de la quimioterapia, un alto contenido de teratoma y un seguimiento que no se puede asegurar.",
+          "replace": "Las indicaciones que quedan son el rechazo o la contraindicación de la quimioterapia o de la vigilancia y el teratoma pospuberal con componente maligno de tipo somático; un alto contenido de teratoma es un argumento adicional."
+        },
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Geblieben sind drei Indikationen: Ablehnung oder Kontraindikation der Chemotherapie, hoher Teratomanteil und die Situation, in der eine verlässliche Nachsorge nicht sicherzustellen ist.\n\nTeratom schrumpft nicht unter Chemotherapie. Das ist das stärkste Argument für die Operation.",
+          "replace": "Als Indikationen geblieben sind Ablehnung oder Kontraindikation von Chemotherapie bzw. Surveillance sowie ein postpubertäres Teratom mit somatisch-maligner Komponente; ein hoher Teratomanteil ist ein zusätzliches Argument. Eine nicht sicherzustellende Nachsorge ist keine Indikation, denn die Nachsorge bleibt auch nach der Operation erforderlich.\n\nTeratom schrumpft nicht unter Chemotherapie. Das spricht zusätzlich für die Operation."
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "Three indications remain: refusal of or contraindication to chemotherapy, a high teratoma content, and situations where reliable follow-up cannot be assured.\n\nTeratoma does not shrink with chemotherapy. That is the strongest argument for surgery.",
+          "replace": "The remaining indications are refusal of or contraindication to chemotherapy or surveillance, and post-pubertal teratoma with a somatic-type malignant component; a high teratoma content is an additional argument. Follow-up that cannot be assured is not an indication, because follow-up remains necessary after surgery as well.\n\nTeratoma does not shrink with chemotherapy. That is an additional argument for surgery."
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "Quedan tres indicaciones: rechazo o contraindicación de la quimioterapia, un alto contenido de teratoma y situaciones en las que no se puede garantizar un seguimiento fiable.\n\nEl teratoma no se reduce con la quimioterapia. Ese es el argumento más fuerte a favor de la cirugía.",
+          "replace": "Las indicaciones que quedan son el rechazo o la contraindicación de la quimioterapia o de la vigilancia y el teratoma pospuberal con componente maligno de tipo somático; un alto contenido de teratoma es un argumento adicional. No poder garantizar el seguimiento no es una indicación, porque el seguimiento sigue siendo necesario también después de la cirugía.\n\nEl teratoma no se reduce con la quimioterapia. Es un argumento adicional a favor de la cirugía."
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00012",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Aussage zum wachsenden Teratom präzisiert: Fallende Marker bei wachsender Raumforderung sind hochverdächtig, aber nicht beweisend.",
+        "en": "Statement on growing teratoma clarified: falling markers with a growing mass are highly suspicious but not diagnostic.",
+        "es": "Se precisa la afirmación sobre el teratoma creciente: marcadores en descenso con una masa creciente son muy sugestivos, pero no diagnósticos."
+      },
+      "references": [
+        "bank-guide-hodentumor",
+        "knowuro-testis-2026"
+      ],
+      "changes": [
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Die Kombination aus fallenden Markern und wachsender Raumforderung ist beim Keimzelltumor beweisend für Teratom.",
+          "replace": "Die Kombination aus fallenden Markern und wachsender Raumforderung ist beim Keimzelltumor hochverdächtig auf ein wachsendes Teratom; gesichert wird die Diagnose erst histologisch nach der Resektion."
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "Falling markers with a growing mass is diagnostic of teratoma in germ cell tumours.",
+          "replace": "Falling markers with a growing mass is highly suspicious of growing teratoma in germ cell tumours; the diagnosis is confirmed only by histology after resection."
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "La caída de marcadores con una masa creciente es diagnóstica de teratoma en tumores de células germinales.",
+          "replace": "La caída de marcadores con una masa creciente es muy sugestiva de teratoma creciente en tumores de células germinales; el diagnóstico solo se confirma con la histología tras la resección."
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00048",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Fall an das Stadium IIA angepasst (Knoten 1,8 cm, progredient) und Stellenwert der Lymphadenektomie als eine empfohlene Option korrigiert.",
+        "en": "Case adjusted to stage IIA (node 1.8 cm, progressing) and the role of lymph node dissection corrected to one recommended option.",
+        "es": "Se ajusta el caso al estadio IIA (ganglio de 1,8 cm en progresión) y se corrige el papel de la linfadenectomía como una opción recomendada."
+      },
+      "references": [
+        "bank-guide-hodentumor",
+        "knowuro-testis-2026"
+      ],
+      "changes": [
+        {
+          "path": "presenting",
+          "lang": "de",
+          "find": "hat bei normalisierten Markern einen paraaortalen Lymphknoten von 2,5 cm.",
+          "replace": "hat bei normalisierten Markern einen paraaortalen Lymphknoten, der in der Kontrolle nach sechs Wochen auf 1,8 cm größenprogredient ist."
+        },
+        {
+          "path": "presenting",
+          "lang": "en",
+          "find": "has a para-aortic lymph node of 2.5 cm with normalised markers.",
+          "replace": "has normalised markers and a para-aortic lymph node that has grown to 1.8 cm on re-imaging after six weeks."
+        },
+        {
+          "path": "presenting",
+          "lang": "es",
+          "find": "presenta un ganglio paraaórtico de 2,5 cm con marcadores normalizados.",
+          "replace": "presenta, con marcadores normalizados, un ganglio paraaórtico que en el control a las seis semanas ha crecido hasta 1,8 cm."
+        },
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "de",
+          "find": "ist die Operation die empfohlene Erstbehandlung und kann Chemotherapie ersparen",
+          "replace": "ist die nervschonende Lymphadenektomie eine empfohlene Option und kann Chemotherapie ersparen"
+        },
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "en",
+          "find": "surgery is the recommended initial treatment and can spare chemotherapy",
+          "replace": "nerve-sparing lymph node dissection is a recommended option and can spare chemotherapy"
+        },
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "es",
+          "find": "la cirugía es el tratamiento inicial recomendado y puede evitar la quimioterapia",
+          "replace": "la linfadenectomía con preservación nerviosa es una opción recomendada y puede evitar la quimioterapia"
+        },
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "im spezialisierten Zentrum als initiale Therapie (EAU 2026, 6.2.2.2.1).",
+          "replace": "im spezialisierten Zentrum als eine Option der initialen Therapie (EAU 2026, 6.2.2.2.1)."
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "in a specialised centre as initial treatment (EAU 2026, 6.2.2.2.1).",
+          "replace": "in a specialised centre as one initial treatment option (EAU 2026, 6.2.2.2.1)."
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "la EAU recomienda como tratamiento inicial la linfadenectomía con preservación nerviosa por un cirujano experimentado en un centro especializado (EAU 2026, 6.2.2.2.1).",
+          "replace": "la EAU recomienda la linfadenectomía con preservación nerviosa por un cirujano experimentado en un centro especializado como una de las opciones de tratamiento inicial (EAU 2026, 6.2.2.2.1)."
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-hod-00038",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Bestrahlung des Resthodens an GCNIS gebunden, Fertilitätsfolgen und Kryokonservierung ergänzt, Erhalt der Testosteronproduktion relativiert.",
+        "en": "Radiotherapy of the remaining testis tied to GCNIS, fertility consequences and cryopreservation added, preservation of testosterone production qualified.",
+        "es": "Se vincula la radioterapia del testículo residual a la GCNIS, se añaden las consecuencias para la fertilidad y la criopreservación y se matiza la conservación de la producción de testosterona."
+      },
+      "references": [
+        "bank-guide-hodentumor",
+        "knowuro-testis-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.a.text",
+          "from": {
+            "de": "Organerhaltende Exzision, danach Bestrahlung des Resthodens",
+            "en": "Organ-sparing excision, then radiotherapy of the remaining testis",
+            "es": "Exéresis conservadora del órgano y después radioterapia del testículo"
+          },
+          "to": {
+            "de": "Organerhaltende Exzision; Bestrahlung des Resthodens bei GCNIS",
+            "en": "Organ-sparing excision; radiotherapy of the remaining testis if GCNIS",
+            "es": "Exéresis conservadora; radioterapia del testículo residual si hay GCNIS"
+          }
+        },
+        {
+          "path": "steps.0.options.a.feedback",
+          "from": {
+            "de": "Bei früh erkanntem, kleinem Zweittumor kann oft organerhaltend exzidiert und der Hoden anschließend bestrahlt werden; so bleibt die lebenslange Testosteronsubstitution erspart (Dieckmann et al. 2025).",
+            "en": "An early detected small second tumour can often be excised organ-sparingly and the testis irradiated afterwards, sparing lifelong testosterone substitution (Dieckmann et al. 2025).",
+            "es": "Un segundo tumor pequeño detectado precozmente a menudo puede extirparse conservando el órgano e irradiarse después el testículo, lo que evita la sustitución de testosterona de por vida (Dieckmann et al. 2025)."
+          },
+          "to": {
+            "de": "Bei früh erkanntem, kleinem Zweittumor kann oft organerhaltend exzidiert werden; bei GCNIS im Resthoden folgt die Bestrahlung (18–20 Gy). Vorher Kryokonservierung: Die Bestrahlung hebt die Fertilität auf und kann bei Kinderwunsch unter engmaschiger Kontrolle aufgeschoben werden. Die Testosteronproduktion bleibt meist, aber nicht immer erhalten.",
+            "en": "An early detected small second tumour can often be excised organ-sparingly; if GCNIS is present in the remaining testis, radiotherapy (18–20 Gy) follows. Cryopreservation comes first: radiotherapy abolishes fertility and, if the patient wishes to father children, can be deferred under close follow-up. Testosterone production is usually, but not always, preserved.",
+            "es": "Un segundo tumor pequeño detectado precozmente a menudo puede extirparse conservando el órgano; si hay GCNIS en el testículo residual, se irradia después (18–20 Gy). Antes, criopreservación: la radioterapia anula la fertilidad y, si el paciente desea tener hijos, puede aplazarse con controles estrechos. La producción de testosterona suele conservarse, aunque no siempre."
+          }
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "de",
+          "find": "das die endokrine Funktion bewahrt",
+          "replace": "das die endokrine Funktion meist bewahrt"
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "en",
+          "find": "that preserves endocrine function is often possible",
+          "replace": "that usually preserves endocrine function is often possible"
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "es",
+          "find": "que preserva la función endocrina",
+          "replace": "que suele preservar la función endocrina"
+        },
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "kann oft organerhaltend exzidiert und der Hoden anschließend bestrahlt werden (Dieckmann et al. 2025). Das erspart die lebenslange Testosteronsubstitution.",
+          "replace": "kann oft organerhaltend exzidiert werden; bei GCNIS im Resthoden folgt die Bestrahlung. Weil sie die Fertilität aufhebt, gehört die Kryokonservierung vorher dazu, und bei Kinderwunsch kann die Bestrahlung unter engmaschiger Kontrolle aufgeschoben werden. Die Testosteronproduktion bleibt meist, aber nicht immer erhalten, sodass oft keine lebenslange Substitution nötig ist."
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "can often be excised organ-sparingly and the testis irradiated afterwards (Dieckmann et al. 2025). This spares lifelong testosterone substitution.",
+          "replace": "can often be excised organ-sparingly; if GCNIS is present in the remaining testis, radiotherapy follows. Because it abolishes fertility, cryopreservation comes first, and if the patient wishes to father children, radiotherapy can be deferred under close follow-up. Testosterone production is usually, but not always, preserved, so lifelong substitution is often unnecessary."
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "a menudo puede extirparse conservando el órgano e irradiarse después el testículo (Dieckmann et al. 2025). Así se evita la sustitución de testosterona de por vida.",
+          "replace": "a menudo puede extirparse conservando el órgano; si hay GCNIS en el testículo residual, se irradia después. Como la radioterapia anula la fertilidad, antes se realiza criopreservación y, si el paciente desea tener hijos, la radioterapia puede aplazarse con controles estrechos. La producción de testosterona suele conservarse, aunque no siempre, de modo que a menudo no hace falta sustitución de por vida."
+        },
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "organerhaltende Exzision plus Bestrahlung statt Orchiektomie, wo möglich.",
+          "replace": "organerhaltende Exzision statt Orchiektomie, wo möglich; Bestrahlung bei GCNIS nach Kryokonservierung."
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "organ-sparing excision plus radiotherapy instead of orchiectomy, where feasible.",
+          "replace": "organ-sparing excision instead of orchiectomy, where feasible; radiotherapy for GCNIS after cryopreservation."
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "exéresis conservadora más radioterapia en lugar de orquiectomía, cuando sea posible.",
+          "replace": "exéresis conservadora en lugar de orquiectomía, cuando sea posible; radioterapia si hay GCNIS, tras la criopreservación."
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-rcc-00001",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Doppelten Studiensatz gestrichen, Zeitfenster und Re-Staging vor adjuvantem Pembrolizumab ergänzt; alleinige Nachsorge nur nach informierter Ablehnung.",
+        "en": "Duplicated trial sentence removed, timing window and re-staging before adjuvant pembrolizumab added; follow-up alone only after informed refusal.",
+        "es": "Se elimina la frase duplicada sobre el ensayo y se añaden el plazo y la reestadificación antes del pembrolizumab adyuvante; seguimiento aislado solo tras rechazo informado."
+      },
+      "references": [
+        "bank-guide-nierenzellkarzinom",
+        "knowuro-kidney-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.a.feedback",
+          "from": {
+            "de": "War bis 2021 richtig. Bei erhöhtem Rezidivrisiko gibt es inzwischen eine wirksame und zugelassene Option.",
+            "en": "Correct until 2021. For increased recurrence risk an effective and approved option now exists.",
+            "es": "Correcto hasta 2021. Para un mayor riesgo de recurrencia, ahora existe una opción efectiva y aprobada."
+          },
+          "to": {
+            "de": "War bis 2021 Standard. Bei erhöhtem Rezidivrisiko sollte heute adjuvantes Pembrolizumab angeboten werden; die alleinige Nachsorge bleibt Patienten vorbehalten, die es nach Aufklärung ablehnen.",
+            "en": "Standard until 2021. With increased recurrence risk, adjuvant pembrolizumab should now be offered; follow-up alone is reserved for patients who decline it after counselling.",
+            "es": "Era el estándar hasta 2021. Con un riesgo de recidiva aumentado, hoy debe ofrecerse pembrolizumab adyuvante; el seguimiento aislado queda para los pacientes que lo rechacen tras ser informados."
+          }
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "de",
+          "find": "KEYNOTE-564 zeigte bei erhöhtem Rezidivrisiko einen Vorteil im krankheitsfreien und im Gesamtüberleben.",
+          "replace": "Beginn nach erneutem Staging innerhalb von 12 bis 16 Wochen nach der Nephrektomie."
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "en",
+          "find": "KEYNOTE-564 showed a benefit in disease-free and overall survival at increased recurrence risk.",
+          "replace": "Treatment starts after re-staging, within 12 to 16 weeks of nephrectomy."
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "es",
+          "find": "cada tres semanas o 400 mg cada seis semanas.",
+          "replace": "cada tres semanas o 400 mg cada seis semanas. Se inicia tras una nueva estadificación, en las 12 a 16 semanas siguientes a la nefrectomía."
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-rcc-00003",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Chemosensitivität des Sammelrohrkarzinoms realistisch beziffert und Cabozantinib sowie IO-Kombinationen als Alternativen ergänzt.",
+        "en": "Chemosensitivity of collecting duct carcinoma stated realistically; cabozantinib and IO combinations added as alternatives.",
+        "es": "Se cuantifica de forma realista la quimiosensibilidad del carcinoma del conducto colector y se añaden cabozantinib y las combinaciones de inmunoterapia como alternativas."
+      },
+      "references": [
+        "bank-guide-nierenzellkarzinom",
+        "knowuro-kidney-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "de",
+          "find": "entstammt dem distalen Nephron und teilt Verhalten und Chemotherapiesensibilität mit dem Urothelkarzinom.",
+          "replace": "entstammt dem distalen Nephron, ähnelt biologisch dem Urothelkarzinom und spricht auf eine platinbasierte Chemotherapie an, allerdings mit Ansprechraten um 25 %."
+        },
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "en",
+          "find": "arises from the distal nephron and shares behaviour and chemosensitivity with urothelial carcinoma.",
+          "replace": "arises from the distal nephron, resembles urothelial carcinoma biologically and responds to platinum-based chemotherapy, although response rates are only about 25%."
+        },
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "es",
+          "find": "surge de la nefrona distal y comparte comportamiento y quimiosensibilidad con el carcinoma urotelial.",
+          "replace": "surge de la nefrona distal, se parece biológicamente al carcinoma urotelial y responde a la quimioterapia basada en platino, aunque con tasas de respuesta en torno al 25 %."
+        },
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "de",
+          "find": " Der Tumor entstammt dem distalen Nephron und verhält sich entsprechend.",
+          "replace": ""
+        },
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "en",
+          "find": " The tumour arises from the distal nephron and behaves accordingly.",
+          "replace": ""
+        },
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "es",
+          "find": " El tumor surge de la nefrona distal y se comporta en consecuencia.",
+          "replace": ""
+        },
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "werden platinbasiert chemotherapiert, während Checkpointinhibitoren und Tyrosinkinasehemmer beim klarzelligen Karzinom ihren Platz haben.\n\nSammelrohrkarzinom heißt Chemotherapie, nicht Checkpointinhibition.",
+          "replace": "werden bevorzugt in Studien oder platinbasiert behandelt; Cabozantinib oder IO-basierte Kombinationen sind Alternativen mit begrenzter Datenlage.\n\nSammelrohrkarzinom: Studie oder Platin, nicht automatisch wie klarzellig."
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "are treated with platinum-based chemotherapy, whereas checkpoint inhibitors and tyrosine kinase inhibitors have their place in clear cell disease.\n\nCollecting duct carcinoma means chemotherapy, not checkpoint inhibition.",
+          "replace": "are preferably treated within trials or with platinum-based chemotherapy; cabozantinib or IO-based combinations are alternatives with limited evidence.\n\nCollecting duct carcinoma: trial or platinum, not automatically as in clear cell disease."
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "se tratan con quimioterapia basada en platino, mientras que los inhibidores de los puntos de control y los inhibidores de la tirosina quinasa tienen su lugar en la enfermedad de células claras.\n\nEl carcinoma del conducto colector significa quimioterapia, no inhibición de los puntos de control.",
+          "replace": "se tratan preferentemente dentro de ensayos o con quimioterapia basada en platino; cabozantinib o las combinaciones basadas en inmunoterapia son alternativas con evidencia limitada.\n\nCarcinoma del conducto colector: ensayo o platino, no automáticamente como en el de células claras."
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-rcc-00005",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Überzeichnete MET-Abhängigkeit korrigiert: Cabozantinib ist beim papillären Karzinom unabhängig vom MET-Status bevorzugt; Alternativen ergänzt.",
+        "en": "Overstated MET dependence corrected: cabozantinib is preferred in papillary carcinoma regardless of MET status; alternatives added.",
+        "es": "Se corrige la dependencia exagerada de MET: cabozantinib es de elección en el carcinoma papilar con independencia del estado de MET; se añaden alternativas."
+      },
+      "references": [
+        "bank-guide-nierenzellkarzinom",
+        "knowuro-kidney-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.d.feedback",
+          "from": {
+            "de": "Die MET-Achse ist beim papillären Karzinom der treibende Signalweg, und Cabozantinib hemmt neben VEGFR auch MET und AXL. In einem randomisierten Vergleich zeigte es gegenüber Sunitinib ein längeres progressionsfreies Überleben. Cabozantinib hemmt neben VEGFR auch MET und AXL.",
+            "en": "The MET axis is the driving pathway in papillary carcinoma, and cabozantinib inhibits MET and AXL in addition to VEGFR. In a randomised comparison it showed longer progression-free survival than sunitinib. Cabozantinib inhibits MET and AXL in addition to VEGFR.",
+            "es": "El eje MET es la vía impulsora en el carcinoma papilar y cabozantinib inhibe MET y AXL además de VEGFR. En una comparación aleatoria, mostró una supervivencia libre de progresión más larga que sunitinib. Cabozantinib inhibe MET y AXL además de VEGFR."
+          },
+          "to": {
+            "de": "Der MET-Signalweg spielt beim papillären Karzinom eine wichtige Rolle; Cabozantinib hemmt VEGFR, MET und AXL und war in PAPMET Sunitinib im progressionsfreien Überleben überlegen.",
+            "en": "The MET pathway plays an important role in papillary carcinoma; cabozantinib inhibits VEGFR, MET and AXL and was superior to sunitinib in progression-free survival in PAPMET.",
+            "es": "La vía MET desempeña un papel importante en el carcinoma papilar; cabozantinib inhibe VEGFR, MET y AXL y fue superior a sunitinib en supervivencia libre de progresión en PAPMET."
+          }
+        },
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Das papilläre Karzinom ist überwiegend MET-getrieben und spricht deshalb auf Cabozantinib besser an als auf reine VEGF-Hemmung.",
+          "replace": "Beim papillären Karzinom ist Cabozantinib unabhängig vom MET-Status die bevorzugte Erstlinie (schwache Empfehlung); Alternativen sind Pembrolizumab plus Lenvatinib, Nivolumab plus Cabozantinib oder Studien."
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "Papillary carcinoma is predominantly MET-driven and therefore responds better to cabozantinib than to pure VEGF inhibition.",
+          "replace": "In papillary carcinoma, cabozantinib is the preferred first line regardless of MET status (weak recommendation); alternatives are pembrolizumab plus lenvatinib, nivolumab plus cabozantinib or clinical trials."
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "El carcinoma papilar está predominantemente impulsado por MET y, por lo tanto, responde mejor a cabozantinib que a la inhibición pura de VEGF.",
+          "replace": "En el carcinoma papilar, cabozantinib es la primera línea de elección con independencia del estado de MET (recomendación débil); las alternativas son pembrolizumab más lenvatinib, nivolumab más cabozantinib o ensayos clínicos."
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-utu-00002",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Risikoeinteilung nach starken und schwachen Faktoren präzisiert; doppelter Satz entfernt.",
+        "en": "Risk classification clarified by strong and weak factors; duplicated sentence removed.",
+        "es": "Se precisa la clasificación de riesgo en factores fuertes y débiles; se elimina la frase duplicada."
+      },
+      "references": [
+        "bank-guide-utuc",
+        "knowuro-utuc-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.b.feedback",
+          "from": {
+            "de": "Jedes dieser Merkmale allein begründet bereits die Hochrisikogruppe; hier liegen vier davon vor. Multifokalität, ein Durchmesser über zwei Zentimeter, High-Grade-Zytologie und Hydronephrose treffen hier zusammen. Jedes dieser Merkmale allein begründet bereits die Hochrisikogruppe.",
+            "en": "Each of these features alone already defines high risk; four are present here. Multifocality, diameter above two centimetres, high-grade cytology and hydronephrosis coincide here. Each feature alone already defines high risk.",
+            "es": "Cada una de estas características por sí sola ya define un alto riesgo; cuatro están presentes aquí. Aquí coinciden la multifocalidad, el diámetro superior a dos centímetros, la citología de alto grado y la hidronefrosis. Cada característica por sí sola ya define un alto riesgo."
+          },
+          "to": {
+            "de": "Bereits die High-grade-Zytologie als starker Faktor begründet die Hochrisikogruppe. Multifokalität, Größe ≥ 2 cm und Hydronephrose schließen ein niedriges Risiko ebenfalls aus, gelten nach aktueller Einteilung aber nur als schwache Faktoren.",
+            "en": "High-grade cytology, a strong factor, already establishes the high-risk group. Multifocality, size ≥ 2 cm and hydronephrosis also exclude low risk, but in the current classification count only as weak factors.",
+            "es": "La citología de alto grado, como factor fuerte, ya establece el grupo de alto riesgo. La multifocalidad, el tamaño ≥ 2 cm y la hidronefrosis también excluyen el bajo riesgo, pero en la clasificación actual solo cuentan como factores débiles."
+          }
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-utu-00010",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Amsterdam-II-Kriterien benannt und Keimbahndiagnostik mit humangenetischer Beratung als direkter Schritt ergänzt.",
+        "en": "Amsterdam II criteria named; germline testing with genetic counselling added as the direct next step.",
+        "es": "Se nombran los criterios de Ámsterdam II y se añade el estudio germinal con consejo genético como paso directo."
+      },
+      "references": [
+        "bank-guide-utuc",
+        "knowuro-utuc-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.c.feedback",
+          "from": {
+            "de": "Junges Alter, fehlende Raucheranamnese und die Familienanamnese mit Kolon- und Endometriumkarzinom erfüllen die Kriterien für ein Screening. Die Konsequenz betrifft Koloskopieintervalle und die Beratung der Angehörigen. Begonnen wird mit der Immunhistochemie der Mismatch-Reparaturproteine oder einer Mikrosatellitenanalyse am Tumor, gefolgt von humangenetischer Beratung mit Konsequenzen für Patientin und Familie.",
+            "en": "Young age, absence of smoking history and the family history of colorectal and endometrial cancer meet screening criteria. The consequences concern colonoscopy intervals and counselling of relatives. It starts with immunohistochemistry for mismatch repair proteins or microsatellite analysis on the tumour, followed by genetic counselling with consequences for the patient and her family.",
+            "es": "La edad temprana, la ausencia de antecedentes de tabaquismo y los antecedentes familiares de cáncer colorrectal y de endometrio cumplen con los criterios de detección. Las consecuencias se refieren a los intervalos de colonoscopia y al asesoramiento de los familiares. Comienza con inmunohistoquímica para proteínas reparadoras de desajustes o análisis de microsatélites en el tumor, seguido de asesoramiento genético con consecuencias para la paciente y su familia."
+          },
+          "to": {
+            "de": "Junges Alter und fehlende Raucheranamnese wecken den Verdacht; mit der Familienanamnese aus Kolon- und Endometriumkarzinom sind die Amsterdam-II-Kriterien erfüllt. Daher humangenetische Beratung und Keimbahndiagnostik der Mismatch-Reparaturgene MLH1, MSH2, MSH6 und PMS2 veranlassen; MMR-Immunhistochemie oder MSI-Analyse am Tumor ergänzen die Einordnung. Weitere Lynch-assoziierte Tumoren sind abzuklären. Die Konsequenz betrifft Koloskopieintervalle und die Beratung der Angehörigen.",
+            "en": "Young age and absence of smoking history raise suspicion; with the family history of colorectal and endometrial cancer the Amsterdam II criteria are met. Therefore arrange genetic counselling and germline testing of the mismatch repair genes MLH1, MSH2, MSH6 and PMS2; mismatch repair immunohistochemistry or MSI analysis on the tumour complements the assessment. Other Lynch-associated tumours must be investigated. The consequences concern colonoscopy intervals and counselling of relatives.",
+            "es": "La edad temprana y la ausencia de tabaquismo despiertan la sospecha; con los antecedentes familiares de cáncer colorrectal y de endometrio se cumplen los criterios de Ámsterdam II. Por ello, deben solicitarse consejo genético y estudio genético germinal de los genes reparadores de errores de emparejamiento MLH1, MSH2, MSH6 y PMS2; la inmunohistoquímica de las proteínas reparadoras o el análisis de inestabilidad de microsatélites en el tumor completan la valoración. Deben descartarse otros tumores asociados al síndrome de Lynch. Las consecuencias se refieren a los intervalos de colonoscopia y al asesoramiento de los familiares."
+          }
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-rcc-00011",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Evidenz zur Nierenteilresektion bei cT1b präzisiert; bei cT2 kommt sie vor allem bei Einzelniere oder eingeschränkter Nierenfunktion infrage.",
+        "en": "Evidence for partial nephrectomy in cT1b stated more precisely; in cT2 it is considered mainly for a solitary kidney or impaired renal function.",
+        "es": "Se precisa la evidencia de la nefrectomía parcial en cT1b; en cT2 se plantea sobre todo en caso de riñón único o función renal alterada."
+      },
+      "references": [
+        "bank-guide-nierenzellkarzinom",
+        "knowuro-kidney-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.a.feedback",
+          "from": {
+            "de": "Der Organerhalt ist bei cT1b bei geeigneter Lage etabliert und onkologisch der radikalen Nephrektomie gleichwertig. Der Erhalt von Parenchym schützt die spätere Nierenfunktion und damit die kardiovaskuläre Prognose. Onkologisch ist der Organerhalt bei geeigneter Lage der radikalen Nephrektomie gleichwertig.",
+            "en": "Nephron-sparing surgery is established in cT1b with suitable tumour location and is oncologically equivalent to radical nephrectomy. Preserving parenchyma protects later renal function and thereby cardiovascular prognosis. With suitable tumour location it is oncologically equivalent to radical nephrectomy.",
+            "es": "La cirugía conservadora de nefronas se establece en cT1b con localización tumoral adecuada y es oncológicamente equivalente a la nefrectomía radical. La preservación del parénquima protege la función renal posterior y, por tanto, el pronóstico cardiovascular. Con una localización tumoral adecuada es oncológicamente equivalente a la nefrectomía radical."
+          },
+          "to": {
+            "de": "Der Organerhalt ist bei cT1b und geeigneter Lage etabliert; die onkologischen Ergebnisse sind mit der radikalen Nephrektomie vergleichbar, überwiegend auf Grundlage retrospektiver Daten. Der Erhalt von Parenchym schützt die spätere Nierenfunktion.",
+            "en": "Nephron-sparing surgery is established in cT1b with suitable tumour location; oncological outcomes are comparable to radical nephrectomy, based mainly on retrospective data. Preserving parenchyma protects later renal function.",
+            "es": "La cirugía conservadora de nefronas está establecida en cT1b con localización tumoral adecuada; los resultados oncológicos son comparables a los de la nefrectomía radical, sobre todo según datos retrospectivos. La preservación del parénquima protege la función renal posterior."
+          }
+        },
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Der Organerhalt ist beim lokalisierten Nierenzellkarzinom der Standard, solange er technisch möglich und onkologisch sicher ist.",
+          "replace": "Bei cT1-Tumoren ist die Nierenteilresektion Standard, sofern technisch möglich; bei cT2 kommt sie vor allem bei Einzelniere oder eingeschränkter Nierenfunktion infrage."
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "Nephron-sparing surgery is the standard in localised renal cell carcinoma as long as it is technically feasible and oncologically safe.",
+          "replace": "In cT1 tumours, partial nephrectomy is the standard if technically feasible; in cT2 it is considered mainly for a solitary kidney or impaired renal function."
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "La cirugía conservadora de nefronas es el estándar en el carcinoma de células renales localizado siempre que sea técnicamente factible y oncológicamente segura.",
+          "replace": "En los tumores cT1, la nefrectomía parcial es el estándar si es técnicamente factible; en cT2 se plantea sobre todo en caso de riñón único o función renal alterada."
+        },
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "weil eine niedrigere GFR mit erhöhter kardiovaskulärer Sterblichkeit einhergeht.",
+          "replace": "denn eine niedrigere GFR ist mit erhöhter kardiovaskulärer Sterblichkeit assoziiert; ein Überlebensvorteil des Organerhalts ist randomisiert allerdings nicht belegt."
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "since a lower GFR carries increased cardiovascular mortality.",
+          "replace": "since a lower GFR is associated with increased cardiovascular mortality; a survival benefit of nephron-sparing surgery has, however, not been shown in a randomised trial."
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "ya que una TFG más baja conlleva una mayor mortalidad cardiovascular.",
+          "replace": "ya que una TFG más baja se asocia a una mayor mortalidad cardiovascular; no obstante, un beneficio en supervivencia de la cirugía conservadora no se ha demostrado de forma aleatorizada."
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-utu-00011",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Nachsorgeschema bei niedrigem Risiko nach Organerhalt aktualisiert: Zystoskopie und CT-Urographie, Ureterorenoskopie nur nach 3 Monaten, keine Routinezytologie.",
+        "en": "Low-risk follow-up schedule after kidney-sparing surgery updated: cystoscopy and CT urography, ureteroscopy only at 3 months, no routine cytology.",
+        "es": "Se actualiza el esquema de seguimiento de bajo riesgo tras la cirugía conservadora: cistoscopia y urografía por TC, ureteroscopia solo a los 3 meses, sin citología rutinaria."
+      },
+      "references": [
+        "bank-guide-utuc",
+        "knowuro-utuc-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.b.text",
+          "from": {
+            "de": "Engmaschige Nachsorge mit wiederholter Endoskopie",
+            "en": "Close follow-up with repeated endoscopic review",
+            "es": "Seguimiento estrecho con revisión endoscópica repetida"
+          },
+          "to": {
+            "de": "Strukturierte Nachsorge mit Zystoskopie und CT-Urographie",
+            "en": "Structured follow-up with cystoscopy and CT urography",
+            "es": "Seguimiento estructurado con cistoscopia y urografía por TC"
+          }
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "from": {
+            "de": "Nach Organerhalt bleibt das gesamte Urothel erhalten und gefährdet. Nur die endoskopische Kontrolle erkennt Rezidive im behandelten Abschnitt rechtzeitig. Dazu gehören Zystoskopie, Zytologie, wiederholte Ureterorenoskopie und Schnittbildgebung des oberen Harntrakts in festgelegten Abständen.",
+            "en": "After organ preservation the entire urothelium remains in place and at risk. Only endoscopic review detects recurrence in the treated segment in time. It comprises cystoscopy, cytology, repeat ureteroscopy and cross-sectional imaging of the upper tract at defined intervals.",
+            "es": "Después de la preservación del órgano, todo el urotelio permanece en su lugar y en riesgo. Sólo la revisión endoscópica detecta a tiempo la recurrencia en el segmento tratado. Comprende cistoscopia, citología, repetición de ureteroscopia e imágenes transversales del tracto superior a intervalos definidos."
+          },
+          "to": {
+            "de": "Nach Organerhalt bleibt das gesamte Urothel erhalten und gefährdet. Bei niedrigem Risiko folgen Zystoskopie und CT-Urographie nach 3 und 6 Monaten, danach jährlich; eine Ureterorenoskopie ist nach 3 Monaten vorgesehen, falls keine Second-look-URS erfolgte. Jetzt, nach sechs Monaten, stehen also Zystoskopie und CT-Urographie an.",
+            "en": "After organ preservation the entire urothelium remains in place and at risk. In low-risk disease, cystoscopy and CT urography follow at 3 and 6 months, then yearly; ureteroscopy is scheduled at 3 months if no second-look ureteroscopy was performed. Now, at six months, cystoscopy and CT urography are therefore due.",
+            "es": "Después de la preservación del órgano, todo el urotelio permanece en su lugar y en riesgo. En el bajo riesgo se realizan cistoscopia y urografía por TC a los 3 y 6 meses y después anualmente; la ureteroscopia está prevista a los 3 meses si no se hizo una ureteroscopia de second look. Ahora, a los seis meses, corresponden por tanto cistoscopia y urografía por TC."
+          }
+        },
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "verpflichtet sich zur Endoskopie über Jahre.",
+          "replace": "verpflichtet sich zu Zystoskopie und CT-Urographie über Jahre."
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "commits you to years of endoscopy.",
+          "replace": "commits you to years of cystoscopy and CT urography."
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "lo compromete a años de endoscopia.",
+          "replace": "lo compromete a años de cistoscopia y urografía por TC."
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-ope-00028",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Vollständige metastasengerichtete Therapie mit Resektion und SBRT als Alternative ergänzt und Aussage zur Beobachtung an die Leitlinie angepasst.",
+        "en": "Complete metastasis-directed therapy with resection and SBRT added as an alternative; statement on observation aligned with the guideline.",
+        "es": "Se añade como alternativa la terapia completa dirigida a las metástasis con resección y SBRT, y se ajusta a la guía la afirmación sobre la observación."
+      },
+      "references": [
+        "bank-guide-nierenzellkarzinom",
+        "knowuro-kidney-2026"
+      ],
+      "changes": [
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "das ist hier nicht der Fall (Heidenreich et al. 2026).",
+          "replace": "das ist hier nicht der Fall. Alternativ kann bei metachroner Oligometastasierung nach bestätigender Bildgebung eine vollständige metastasengerichtete Therapie aller Herde, also Resektion der Lungenherde plus stereotaktische Bestrahlung des Knochenherdes, interdisziplinär erwogen werden."
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "that is not the case here (Heidenreich et al. 2026).",
+          "replace": "that is not the case here. Alternatively, in metachronous oligometastatic disease, complete metastasis-directed therapy of all lesions after confirmatory imaging, that is resection of the lung lesions plus stereotactic radiotherapy of the bone lesion, can be considered in a multidisciplinary setting."
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "y aquí no es el caso (Heidenreich et al. 2026).",
+          "replace": "y aquí no es el caso. Como alternativa, en la oligometástasis metacrónica puede valorarse de forma multidisciplinar, tras una imagen de confirmación, una terapia completa dirigida a todas las lesiones, es decir, resección de las lesiones pulmonares más radioterapia estereotáctica de la lesión ósea."
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "de",
+          "find": "fehlt die kurative Perspektive (Heidenreich et al. 2026).",
+          "replace": "bleibt eine alleinige Resektion unvollständig."
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "en",
+          "find": "the curative perspective is missing (Heidenreich et al. 2026).",
+          "replace": "resection alone remains incomplete."
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "es",
+          "find": "falta la perspectiva curativa (Heidenreich et al. 2026).",
+          "replace": "la resección aislada queda incompleta."
+        },
+        {
+          "path": "steps.0.options.e.feedback",
+          "from": {
+            "de": "Fehlannahme: Abwarten sei neutral. Die Erkrankung ist metastasiert und behandlungsbedürftig.",
+            "en": "Misconception: waiting is neutral. The disease is metastatic and requires treatment.",
+            "es": "Error de concepto: esperar sería neutral. La enfermedad está metastatizada y requiere tratamiento."
+          },
+          "to": {
+            "de": "Fehlannahme: Abwarten sei neutral. Eine Überwachung ist nur bei ausgewählten asymptomatischen Patienten mit geringer Tumorlast vertretbar; der Knochenherd sollte hier lokal behandelt werden, um skelettalen Komplikationen vorzubeugen.",
+            "en": "Misconception: waiting is neutral. Surveillance is acceptable only in selected asymptomatic patients with low tumour burden; here the bone lesion should be treated locally to prevent skeletal complications.",
+            "es": "Error de concepto: esperar sería neutral. La vigilancia solo es aceptable en pacientes asintomáticos seleccionados con baja carga tumoral; aquí la lesión ósea debe tratarse localmente para prevenir complicaciones esqueléticas."
+          }
+        },
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Nierenzellkarzinom: Metastasektomie nur, wenn alle Herde R0 entfernbar sind.",
+          "replace": "Nierenzellkarzinom: Metastasektomie nur als Teil einer vollständigen Behandlung aller Herde, sonst steht die Systemtherapie im Vordergrund."
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "Renal cell carcinoma: metastasectomy only if all lesions can be removed R0.",
+          "replace": "Renal cell carcinoma: metastasectomy only as part of complete treatment of all lesions; otherwise systemic therapy takes precedence."
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "Carcinoma renal: metastasectomía solo si todas las lesiones pueden extirparse con R0.",
+          "replace": "Carcinoma renal: metastasectomía solo como parte del tratamiento completo de todas las lesiones; si no, pasa a primer plano la terapia sistémica."
+        },
+        {
+          "path": "steps.0.options.a.feedback",
+          "lang": "de",
+          "find": "Der Überlebensvorteil hängt an der vollständigen Resektion (Heidenreich et al. 2026).",
+          "replace": "Der Überlebensvorteil hängt an der vollständigen Behandlung aller Herde; der Knochenherd bliebe hier unbehandelt."
+        },
+        {
+          "path": "steps.0.options.a.feedback",
+          "lang": "en",
+          "find": "The survival advantage depends on complete resection (Heidenreich et al. 2026).",
+          "replace": "The survival advantage depends on complete treatment of all lesions; here the bone lesion would remain untreated."
+        },
+        {
+          "path": "steps.0.options.a.feedback",
+          "lang": "es",
+          "find": "La ventaja en supervivencia depende de la resección completa (Heidenreich et al. 2026).",
+          "replace": "La ventaja en supervivencia depende del tratamiento completo de todas las lesiones; aquí la lesión ósea quedaría sin tratar."
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-ope-00029",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Stereotaktische Bestrahlung als leitliniengestützte Alternative bei hohem Operationsrisiko eingeordnet, bestätigende Bildgebung ergänzt und Widerspruch zum Intervall aufgelöst.",
+        "en": "Stereotactic radiotherapy placed as a guideline alternative for high surgical risk, confirmatory imaging added and contradiction about the interval resolved.",
+        "es": "Se sitúa la radioterapia estereotáctica como alternativa avalada por la guía en caso de alto riesgo quirúrgico, se añade la imagen de confirmación y se resuelve la contradicción sobre el intervalo."
+      },
+      "references": [
+        "bank-guide-nierenzellkarzinom",
+        "knowuro-kidney-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.d.feedback",
+          "from": {
+            "de": "Fehlannahme: Bestrahlung als gleichwertiger Ersatz. Die vorgelegten Daten stützen die Resektion (Heidenreich et al. 2026).",
+            "en": "Misconception: radiotherapy as an equivalent substitute. The data presented support resection (Heidenreich et al. 2026).",
+            "es": "Error de concepto: la radioterapia como sustituto equivalente. Los datos presentados respaldan la resección (Heidenreich et al. 2026)."
+          },
+          "to": {
+            "de": "Die stereotaktische Bestrahlung ist eine leitliniengestützte Alternative der metastasengerichteten Therapie, vor allem bei hohem Operationsrisiko. Bei diesem operablen Patienten liegen Langzeitdaten in erster Linie für die Resektion vor; sie ist daher vorzuziehen.",
+            "en": "Stereotactic radiotherapy is a guideline-supported alternative for metastasis-directed therapy, mainly in patients at high surgical risk. For this operable patient, long-term data exist primarily for resection, which is therefore preferable.",
+            "es": "La radioterapia estereotáctica es una alternativa avalada por la guía dentro de la terapia dirigida a las metástasis, sobre todo con alto riesgo quirúrgico. En este paciente operable, los datos a largo plazo existen principalmente para la resección, que por tanto es preferible."
+          }
+        },
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "frühere extrapankreatische Metastasen (Heidenreich et al. 2026).",
+          "replace": "frühere extrapankreatische Metastasen. Mit neun Jahren liegt das Intervall hier knapp darunter; bei solitärem Befund bleibt die Resektion nach bestätigender Bildgebung begründet."
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "previous extrapancreatic metastases are unfavourable (Heidenreich et al. 2026).",
+          "replace": "previous extrapancreatic metastases are unfavourable. At nine years the interval here lies just below that; with a solitary lesion, resection after confirmatory imaging remains justified."
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "metástasis extrapancreáticas previas (Heidenreich et al. 2026).",
+          "replace": "metástasis extrapancreáticas previas. Con nueve años, el intervalo queda aquí justo por debajo; ante una lesión única, la resección tras una imagen de confirmación sigue estando justificada."
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-mib-00003",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Lehrpunkt ergänzt: Ein HbA1c ab 8 Prozent war in den Enfortumab-Studien ein Ausschlusskriterium; der Diabetes ist vor Therapiebeginn zu optimieren.",
+        "en": "Teaching point added: an HbA1c of 8 per cent or more was an exclusion criterion in the enfortumab trials; diabetes should be optimised before treatment starts.",
+        "es": "Se añade un punto docente: una HbA1c igual o superior al 8 por ciento fue criterio de exclusión en los ensayos de enfortumab; la diabetes debe optimizarse antes de iniciar el tratamiento."
+      },
+      "references": [
+        "bank-guide-mibc",
+        "knowuro-bladder-2026"
+      ],
+      "changes": [
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Der Wirkstoff macht Hyperglykämien auch bei Patienten ohne bekannten Diabetes.",
+          "replace": "Der Wirkstoff macht Hyperglykämien auch bei Patienten ohne bekannten Diabetes. Ein HbA1c ab 8 Prozent war in den Zulassungsstudien von Enfortumab Vedotin ein Ausschlusskriterium; ein schlecht eingestellter Diabetes ist ein Risikofaktor und sollte vor Therapiebeginn optimiert und unter Therapie engmaschig überwacht werden."
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "The drug causes hyperglycaemia even in patients without known diabetes.",
+          "replace": "The drug causes hyperglycaemia even in patients without known diabetes. An HbA1c of 8 per cent or more was an exclusion criterion in the pivotal enfortumab vedotin trials; poorly controlled diabetes is a risk factor and should be optimised before treatment starts and monitored closely during therapy."
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "El fármaco provoca hiperglucemia incluso en pacientes sin diabetes conocida.",
+          "replace": "El fármaco provoca hiperglucemia incluso en pacientes sin diabetes conocida. Una HbA1c igual o superior al 8 por ciento fue criterio de exclusión en los ensayos pivotales de enfortumab vedotin; la diabetes mal controlada es un factor de riesgo y debe optimizarse antes de iniciar el tratamiento y vigilarse estrechamente durante el tratamiento."
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-mib-00004",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Doppelte Sätze entfernt, Zulassungsstand (positive CHMP-Stellungnahme vom 18.09.2026) ergänzt und klargestellt, dass cisplatinbasierte Chemotherapie allein leitliniengerecht bleibt.",
+        "en": "Duplicated sentences removed, regulatory status (positive CHMP opinion of 18 Sep 2026) added, and clarified that cisplatin-based chemotherapy alone remains guideline-compliant.",
+        "es": "Se eliminan frases duplicadas, se añade el estado regulatorio (dictamen positivo del CHMP del 18 de septiembre de 2026) y se aclara que la quimioterapia basada en cisplatino sola sigue siendo conforme a la guía."
+      },
+      "references": [
+        "bank-guide-mibc",
+        "knowuro-bladder-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.a.feedback",
+          "from": {
+            "de": "NIAGARA hat für diese Gruppe die perioperative Ergänzung um Durvalumab etabliert; die alleinige Chemotherapie ist nicht mehr Standard.",
+            "en": "NIAGARA established the perioperative addition of durvalumab for this group; chemotherapy alone is no longer standard.",
+            "es": "NIAGARA estableció la adición perioperatoria de durvalumab para este grupo; La quimioterapia por sí sola ya no es el estándar."
+          },
+          "to": {
+            "de": "Gemcitabin/Cisplatin allein bleibt leitliniengerecht, ist aber nicht mehr die einzige Option: NIAGARA hat für diese Gruppe die perioperative Ergänzung um Durvalumab etabliert, die bevorzugt zu besprechen ist. Zur gefragten Einordnung von Enfortumab Vedotin plus Pembrolizumab sagt diese Antwort nichts.",
+            "en": "Gemcitabine/cisplatin alone remains guideline-compliant but is no longer the only option: NIAGARA established the perioperative addition of durvalumab for this group, which should be discussed as the preferred choice. This answer says nothing about the status of enfortumab vedotin plus pembrolizumab, which is what was asked.",
+            "es": "La quimioterapia con gemcitabina/cisplatino sola sigue siendo conforme a la guía, pero ya no es la única opción: NIAGARA estableció para este grupo la adición perioperatoria de durvalumab, que debe plantearse como opción preferente. Esta respuesta no dice nada sobre la situación de enfortumab vedotin más pembrolizumab, que es lo que se pregunta."
+          }
+        },
+        {
+          "path": "steps.0.options.c.feedback",
+          "from": {
+            "de": "EV-304 (KEYNOTE-B15) erreichte ein ereignisfreies Überleben mit Hazard Ratio 0,53 und eine pathologische Komplettremission von 55,8 gegenüber 32,5 Prozent. Die FDA erweiterte die Zulassung im Juli 2026 auf alle Zystektomiekandidaten, die EU-Zulassung ist auf cisplatinungeeignete Patienten beschränkt. EV-304 erreichte ein ereignisfreies Überleben mit Hazard Ratio 0,53 und eine pathologische Komplettremission von 55,8 gegenüber 32,5 Prozent. Die FDA erweiterte im Juli 2026 auf alle Zystektomiekandidaten; zugelassener Standard bleibt hier das perioperative Durvalumab-Regime.",
+            "en": "EV-304 (KEYNOTE-B15) reached event-free survival with a hazard ratio of 0.53 and pathological complete response of 55.8 versus 32.5 per cent. The FDA broadened its approval in July 2026 to all cystectomy candidates; the EU approval is restricted to cisplatin-ineligible patients. EV-304 reached event-free survival with a hazard ratio of 0.53 and pathological complete response of 55.8 versus 32.5 per cent. The FDA broadened its label in July 2026 to all cystectomy candidates; the approved standard here remains the perioperative durvalumab regimen.",
+            "es": "EV-304 (KEYNOTE-B15) alcanzó una supervivencia libre de eventos con un índice de riesgo de 0,53 y una respuesta patológica completa de 55,8 frente a 32,5 por ciento. La FDA amplió su aprobación en julio de 2026 a todos los candidatos a cistectomía; la aprobación de la UE está restringida a pacientes no elegibles para cisplatino. EV-304 alcanzó una supervivencia libre de eventos con un índice de riesgo de 0,53 y una respuesta patológica completa de 55,8 frente a 32,5 por ciento. La FDA amplió su etiqueta en julio de 2026 a todos los candidatos a cistectomía; el estándar aprobado aquí sigue siendo el régimen perioperatorio de durvalumab."
+          },
+          "to": {
+            "de": "EV-304 (KEYNOTE-B15) erreichte ein ereignisfreies Überleben mit Hazard Ratio 0,53 und eine pathologische Komplettremission von 55,8 gegenüber 32,5 Prozent. Die FDA erweiterte die Zulassung im Juli 2026 auf alle Zystektomiekandidaten. Die EU-Zulassung vom Juni 2026 ist auf cisplatinungeeignete Patienten beschränkt; für Cisplatinfähige liegt seit dem 18. September 2026 eine positive CHMP-Stellungnahme vor, die Entscheidung der EU-Kommission steht noch aus. Zugelassener Standard bleibt hier Gemcitabin/Cisplatin, bevorzugt mit perioperativem Durvalumab.",
+            "en": "EV-304 (KEYNOTE-B15) reached event-free survival with a hazard ratio of 0.53 and pathological complete response of 55.8 versus 32.5 per cent. The FDA broadened its approval in July 2026 to all cystectomy candidates. The EU approval of June 2026 is restricted to cisplatin-ineligible patients; for cisplatin-eligible patients the CHMP issued a positive opinion on 18 September 2026, and the European Commission decision is still pending. The approved standard here remains gemcitabine/cisplatin, preferably with perioperative durvalumab.",
+            "es": "EV-304 (KEYNOTE-B15) alcanzó una supervivencia libre de eventos con un hazard ratio de 0,53 y una respuesta patológica completa del 55,8 frente al 32,5 por ciento. La FDA amplió su aprobación en julio de 2026 a todos los candidatos a cistectomía. La autorización de la UE de junio de 2026 se limita a pacientes no aptos para cisplatino; para los pacientes aptos existe desde el 18 de septiembre de 2026 un dictamen positivo del CHMP, y la decisión de la Comisión Europea sigue pendiente. El estándar autorizado aquí sigue siendo gemcitabina/cisplatino, preferentemente con durvalumab perioperatorio."
+          }
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-ope-00027",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Ergänzt, dass nach platinbasierter Chemotherapie ohne Progress die Erhaltungsimmuntherapie Standard bleibt; die Metastasektomie ist nur eine Einzelfallentscheidung.",
+        "en": "Added that maintenance immunotherapy remains standard after platinum-based chemotherapy without progression; metastasectomy is only an individual decision.",
+        "es": "Se añade que, tras quimioterapia basada en platino sin progresión, la inmunoterapia de mantenimiento sigue siendo el estándar; la metastasectomía es solo una decisión individual."
+      },
+      "references": [
+        "bank-guide-mibc",
+        "knowuro-bladder-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.c.feedback",
+          "from": {
+            "de": "Am ehesten profitieren Patienten mit isolierter Lungen- oder Lymphknotenmetastase und kompletter Resektabilität (Heidenreich et al. 2026).",
+            "en": "Those most likely to benefit have an isolated lung or nodal metastasis and complete resectability (Heidenreich et al. 2026).",
+            "es": "Quienes más se benefician son los pacientes con metástasis pulmonar o ganglionar aislada y resecabilidad completa (Heidenreich et al. 2026)."
+          },
+          "to": {
+            "de": "Am ehesten profitieren Patienten mit isolierter Lungen- oder Lymphknotenmetastase und kompletter Resektabilität. Unabhängig von der lokalen Maßnahme ist nach platinbasierter Chemotherapie ohne Progress eine Erhaltungsimmuntherapie Standard (Avelumab bzw. Fortführung von Nivolumab nach Cisplatin/Gemcitabin plus Nivolumab) und im Tumorboard mitzubesprechen.",
+            "en": "Those most likely to benefit have an isolated lung or nodal metastasis and complete resectability. Regardless of any local measure, maintenance immunotherapy is standard after platinum-based chemotherapy without progression (avelumab, or continuation of nivolumab after cisplatin/gemcitabine plus nivolumab) and should be discussed in the tumour board as well.",
+            "es": "Quienes más se benefician son los pacientes con metástasis pulmonar o ganglionar aislada y resecabilidad completa. Con independencia de la medida local, tras quimioterapia basada en platino sin progresión la inmunoterapia de mantenimiento es el estándar (avelumab o continuación de nivolumab tras cisplatino/gemcitabina más nivolumab) y debe valorarse también en el comité."
+          }
+        },
+        {
+          "path": "steps.0.options.e.feedback",
+          "from": {
+            "de": "Fehlannahme: Systemtherapie ersetze die lokale Entscheidung. Bei stabiler solitärer Metastase ist die Operation zu diskutieren (Heidenreich et al. 2026).",
+            "en": "Misconception: systemic therapy replaces the local decision. With a stable solitary metastasis surgery is worth discussing (Heidenreich et al. 2026).",
+            "es": "Error de concepto: la terapia sistémica sustituiría a la decisión local. Con una metástasis única y estable, la cirugía merece discutirse (Heidenreich et al. 2026)."
+          },
+          "to": {
+            "de": "Fehlannahme: Systemtherapie ersetze die lokale Entscheidung. Bei stabiler solitärer Metastase ist die Operation zu diskutieren. Nach vier Zyklen ohne Progress ist zudem keine erneute Chemotherapie, sondern eine Erhaltungsimmuntherapie Standard.",
+            "en": "Misconception: systemic therapy replaces the local decision. With a stable solitary metastasis surgery is worth discussing. Moreover, after four cycles without progression the standard is maintenance immunotherapy, not repeat chemotherapy.",
+            "es": "Error de concepto: la terapia sistémica sustituiría a la decisión local. Con una metástasis única y estable, la cirugía merece discutirse. Además, tras cuatro ciclos sin progresión el estándar es la inmunoterapia de mantenimiento, no repetir la quimioterapia."
+          }
+        },
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Urothelkarzinom: Metastasektomie nur bei isolierter, komplett resektabler Metastase und stabilem Verlauf.",
+          "replace": "Urothelkarzinom: Metastasektomie nur als Einzelfallentscheidung bei isolierter, komplett resektabler Metastase und stabilem Verlauf; die systemische Erhaltungstherapie bleibt Standard."
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "Urothelial carcinoma: metastasectomy only for an isolated, completely resectable metastasis with stable disease.",
+          "replace": "Urothelial carcinoma: metastasectomy only as an individual decision for an isolated, completely resectable metastasis with stable disease; systemic maintenance therapy remains standard."
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "Carcinoma urotelial: metastasectomía solo con metástasis aislada, completamente resecable y enfermedad estable.",
+          "replace": "Carcinoma urotelial: metastasectomía solo como decisión individual con metástasis aislada, completamente resecable y enfermedad estable; el tratamiento sistémico de mantenimiento sigue siendo el estándar."
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-ure-00004",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Organerhalt bei distalem Harnröhrenkarzinom der Frau als Alternative zur kompletten Urethrektomie (schwache Empfehlung, tumorfreie Schnellschnittränder) statt als Pflicht dargestellt.",
+        "en": "Organ preservation for distal female urethral carcinoma presented as an alternative to complete urethrectomy (weak recommendation, negative frozen-section margins) rather than as mandatory.",
+        "es": "La preservación de órgano en el carcinoma uretral distal femenino se presenta como alternativa a la uretrectomía completa (recomendación débil, márgenes intraoperatorios libres) y no como obligación."
+      },
+      "references": [
+        "bank-guide-urethrakarzinom",
+        "knowuro-urethral-2026"
+      ],
+      "changes": [
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Distale Tumoren sind organerhaltend zu behandeln, weil der Sphinktermechanismus proximal liegt und erhalten bleibt. Proximale und lokal fortgeschrittene Tumoren erfordern dagegen ein multimodales Vorgehen mit deutlich größerem Eingriff.\n\nDistal heißt organerhaltend, proximal heißt multimodal.",
+          "replace": "Distale Tumoren können organerhaltend behandelt werden, weil der Sphinktermechanismus proximal liegt und erhalten bleibt: harnröhrenerhaltende Resektion mit tumorfreien Schnellschnitträndern oder lokale Strahlentherapie als Alternative zur kompletten Urethrektomie (schwache Empfehlung). Proximale Tumoren erfordern einen größeren Eingriff (in der Regel komplette Urethrektomie, gegebenenfalls Zystourethrektomie), lokal fortgeschrittene ein multimodales Vorgehen.\n\nDistal ist Organerhalt möglich, proximal wird radikaler, lokal fortgeschritten multimodal behandelt."
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "Distal tumours are treated with organ preservation, because the sphincter mechanism lies proximally and is preserved. Proximal and locally advanced tumours require a multimodal approach with far more extensive surgery.\n\nDistal means organ-sparing, proximal means multimodal.",
+          "replace": "Distal tumours can be treated with organ preservation, because the sphincter mechanism lies proximally and is preserved: urethra-sparing resection with negative frozen-section margins or local radiotherapy as an alternative to complete urethrectomy (weak recommendation). Proximal tumours require more extensive surgery (usually complete urethrectomy, if necessary cystourethrectomy), locally advanced tumours a multimodal approach.\n\nDistal disease allows organ preservation; proximal disease is treated more radically, locally advanced disease multimodally."
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "Los tumores distales se tratan con preservación de órgano, porque el mecanismo esfinteriano es proximal y se conserva. Los tumores proximales y localmente avanzados exigen un abordaje multimodal con cirugía mucho más extensa.\n\nDistal significa conservador; proximal significa multimodal.",
+          "replace": "Los tumores distales pueden tratarse con preservación de órgano, porque el mecanismo esfinteriano es proximal y se conserva: resección con preservación uretral y márgenes intraoperatorios libres o radioterapia local como alternativa a la uretrectomía completa (recomendación débil). Los tumores proximales exigen una cirugía más extensa (en general uretrectomía completa y, si es preciso, cistouretrectomía), y los localmente avanzados, un abordaje multimodal.\n\nLo distal permite conservar el órgano; lo proximal se trata de forma más radical y lo localmente avanzado, de forma multimodal."
+        },
+        {
+          "path": "steps.0.options.d.feedback",
+          "lang": "de",
+          "find": "Bei distalem Sitz lässt sich das distale Drittel entfernen, ohne die Kontinenz zu gefährden.",
+          "replace": "Bei distalem Sitz lässt sich das distale Drittel in der Regel ohne Kontinenzverlust entfernen; Voraussetzung sind tumorfreie Schnellschnittränder."
+        },
+        {
+          "path": "steps.0.options.d.feedback",
+          "lang": "en",
+          "find": "With distal disease the distal third can be removed without endangering continence.",
+          "replace": "With distal disease the distal third can usually be removed without loss of continence; negative frozen-section margins are a prerequisite."
+        },
+        {
+          "path": "steps.0.options.d.feedback",
+          "lang": "es",
+          "find": "En la enfermedad distal puede extirparse el tercio distal sin comprometer la continencia.",
+          "replace": "En la enfermedad distal puede extirparse el tercio distal, por lo general sin pérdida de continencia; es requisito obtener márgenes intraoperatorios libres."
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-ure-00006",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Klargestellt, dass tastbare Lymphknoten multimodal behandelt werden: in der Regel induktive Chemotherapie, danach Lymphadenektomie, alternativ Radiochemotherapie.",
+        "en": "Clarified that palpable nodes are treated multimodally: usually induction chemotherapy followed by lymphadenectomy, or alternatively chemoradiotherapy.",
+        "es": "Se aclara que los ganglios palpables se tratan de forma multimodal: en general quimioterapia de inducción seguida de linfadenectomía o, como alternativa, quimiorradioterapia."
+      },
+      "references": [
+        "bank-guide-urethrakarzinom",
+        "knowuro-urethral-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "de",
+          "find": "Tastbare Lymphknoten werden ausgeräumt.",
+          "replace": "Tastbare Lymphknoten werden im multimodalen Konzept mitbehandelt: in der Regel induktive cisplatinbasierte Chemotherapie, danach regionäre Lymphadenektomie (inguinal ± pelvin), alternativ Radiochemotherapie."
+        },
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "en",
+          "find": "Palpable nodes are dissected.",
+          "replace": "Palpable nodes are treated within a multimodal concept: usually cisplatin-based induction chemotherapy followed by regional lymphadenectomy (inguinal ± pelvic), or alternatively chemoradiotherapy."
+        },
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "es",
+          "find": "Los ganglios palpables se disecan.",
+          "replace": "Los ganglios palpables se tratan dentro de un enfoque multimodal: en general quimioterapia de inducción basada en cisplatino seguida de linfadenectomía regional (inguinal ± pélvica) o, como alternativa, quimiorradioterapia."
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-ure-00008",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Veraltete Aussage korrigiert: Checkpointinhibitoren werden beim urothelialen Typ auch perioperativ bzw. adjuvant eingesetzt, nicht nur in der metastasierten Situation.",
+        "en": "Outdated statement corrected: in urothelial histology checkpoint inhibitors are also used perioperatively or adjuvantly, not only in metastatic disease.",
+        "es": "Se corrige una afirmación desactualizada: en la histología urotelial los inhibidores de puntos de control también se usan en el contexto perioperatorio o adyuvante, no solo en la enfermedad metastásica."
+      },
+      "references": [
+        "bank-guide-urethrakarzinom",
+        "knowuro-urethral-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.b.feedback",
+          "from": {
+            "de": "Die Immuntherapie hat ihren Platz im metastasierten Urothelkarzinom, nicht als einheitliche neoadjuvante Behandlung beider Histologien.",
+            "en": "Immunotherapy has its place in metastatic urothelial carcinoma, not as uniform neoadjuvant treatment of both histologies.",
+            "es": "La inmunoterapia tiene su lugar en el carcinoma urotelial metastásico, no como tratamiento neoadyuvante uniforme de ambas histologías."
+          },
+          "to": {
+            "de": "Eine alleinige Checkpointinhibition ist kein Standard. Beim urothelialen Typ wird sie analog zum muskelinvasiven Blasenkarzinom perioperativ mit cisplatinbasierter Chemotherapie kombiniert (z. B. Durvalumab plus Gemcitabin/Cisplatin) oder adjuvant eingesetzt; beim Plattenepithelkarzinom steht die Radiochemotherapie im Vordergrund.",
+            "en": "Checkpoint inhibition alone is not standard. In urothelial histology it is combined perioperatively with cisplatin-based chemotherapy, as in muscle-invasive bladder cancer (e.g. durvalumab plus gemcitabine/cisplatin), or used as adjuvant treatment; in squamous cell carcinoma chemoradiotherapy takes priority.",
+            "es": "La inhibición de puntos de control sola no es el estándar. En la histología urotelial se combina en el contexto perioperatorio con quimioterapia basada en cisplatino, como en el cáncer de vejiga músculo-invasivo (p. ej., durvalumab más gemcitabina/cisplatino), o se emplea como tratamiento adyuvante; en el carcinoma escamoso prima la quimiorradioterapia."
+          }
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-pen-00001",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Doppelten Satz entfernt und ergänzt, dass die modifizierte inguinale Lymphadenektomie beidseits die leitliniengerechte Alternative zur Sentinelbiopsie ist.",
+        "en": "Duplicated sentence removed and added that bilateral modified inguinal lymphadenectomy is the guideline-compliant alternative to sentinel biopsy.",
+        "es": "Se elimina una frase duplicada y se añade que la linfadenectomía inguinal modificada bilateral es la alternativa conforme a la guía a la biopsia del ganglio centinela."
+      },
+      "references": [
+        "bank-guide-peniskarzinom",
+        "knowuro-penile-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.c.feedback",
+          "from": {
+            "de": "Ab pT1 G3 besteht ein relevantes Risiko okkulter Metastasen. Die Sentinelbiopsie erfasst diese bei deutlich geringerer Morbidität als die vollständige Lymphadenektomie. Sie wird beidseits durchgeführt. Ab pT1 G3 besteht ein relevantes Risiko okkulter Metastasen, und die Sentinelbiopsie erfasst diese bei deutlich geringerer Morbidität als die vollständige Ausräumung.",
+            "en": "From pT1 G3 upwards there is a relevant risk of occult metastases. Sentinel biopsy detects these with far lower morbidity than complete lymphadenectomy. It is performed bilaterally. From pT1 G3 there is a relevant risk of occult metastases, and sentinel biopsy detects these with far lower morbidity than full dissection.",
+            "es": "A partir de pT1 G3 existe un riesgo importante de metástasis ocultas. La biopsia centinela los detecta con una morbilidad mucho menor que la linfadenectomía completa. Se realiza de forma bilateral. A partir de pT1 G3 existe un riesgo relevante de metástasis ocultas, y la biopsia centinela las detecta con una morbilidad mucho menor que la disección completa."
+          },
+          "to": {
+            "de": "Ab pT1 G3 besteht ein relevantes Risiko okkulter Metastasen. Die Sentinelbiopsie erfasst diese bei deutlich geringerer Morbidität als die vollständige Lymphadenektomie. Sie wird beidseits durchgeführt.",
+            "en": "From pT1 G3 upwards there is a relevant risk of occult metastases. Sentinel biopsy detects these with far lower morbidity than complete lymphadenectomy. It is performed bilaterally.",
+            "es": "A partir de pT1 G3 existe un riesgo relevante de metástasis ocultas. La biopsia centinela las detecta con una morbilidad mucho menor que la linfadenectomía completa. Se realiza de forma bilateral."
+          }
+        },
+        {
+          "path": "steps.0.options.a.feedback",
+          "from": {
+            "de": "Bei klinisch unauffälligen Leisten Übertherapie mit erheblicher Morbidität durch Lymphödem, Wundheilungsstörungen und Infektionen.",
+            "en": "Overtreatment with clinically negative groins, carrying substantial morbidity from lymphoedema, wound healing problems and infection.",
+            "es": "Tratamiento excesivo en ingles clínicamente negativos, que conlleva una morbilidad sustancial por linfedema, problemas de cicatrización de heridas e infección."
+          },
+          "to": {
+            "de": "Das radikale Template ist bei klinisch unauffälligen Leisten eine Übertherapie mit erheblicher Morbidität durch Lymphödem, Wundheilungsstörungen und Infektionen. Leitliniengerechte Alternative zur Sentinelbiopsie wäre die modifizierte inguinale Lymphadenektomie beidseits, vor allem wenn keine Erfahrung mit der Sentinelbiopsie besteht.",
+            "en": "The radical template is overtreatment with clinically negative groins, carrying substantial morbidity from lymphoedema, wound healing problems and infection. The guideline-compliant alternative to sentinel biopsy would be bilateral modified inguinal lymphadenectomy, especially where there is no experience with sentinel biopsy.",
+            "es": "La plantilla radical es un sobretratamiento con ingles clínicamente negativas y conlleva una morbilidad considerable por linfedema, problemas de cicatrización e infección. La alternativa conforme a la guía a la biopsia centinela sería la linfadenectomía inguinal modificada bilateral, sobre todo si no se dispone de experiencia con la biopsia centinela."
+          }
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-pen-00004",
+      "date": "2026-10-06",
+      "reason": {
+        "de": "Schwelle für die pelvine Lymphadenektomie präzisiert: drei oder mehr befallene inguinale Knoten auf einer Seite (pN2) oder extranodales Wachstum (pN3); bei pN1 folgt die Nachsorge.",
+        "en": "Threshold for pelvic lymphadenectomy specified: three or more involved inguinal nodes on one side (pN2) or extranodal extension (pN3); pN1 is followed by surveillance.",
+        "es": "Se precisa el umbral para la linfadenectomía pélvica: tres o más ganglios inguinales afectados en un lado (pN2) o extensión extraganglionar (pN3); en pN1 se realiza seguimiento."
+      },
+      "references": [
+        "bank-guide-peniskarzinom",
+        "knowuro-penile-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.b.feedback",
+          "from": {
+            "de": "Mehrere befallene inguinale Lymphknoten oder extranodales Wachstum auf einer Seite begründen die pelvine Ausräumung derselben Seite, weil der Lymphabfluss dorthin fortschreitet. Anschließend wird eine adjuvante Chemotherapie besprochen. M",
+            "en": "Several involved inguinal nodes or extranodal extension on one side justify pelvic dissection on that same side, because lymphatic spread proceeds there. Adjuvant chemotherapy is then discussed.",
+            "es": "Varios ganglios inguinales afectados o extensión extraganglionar en un lado justifican la disección pélvica en ese mismo lado, porque allí se produce la diseminación linfática. Luego se analiza la quimioterapia adyuvante."
+          },
+          "to": {
+            "de": "Drei oder mehr befallene inguinale Lymphknoten (pN2) oder extranodales Wachstum (pN3) auf einer Seite begründen die pelvine Ausräumung derselben Seite, weil der Lymphabfluss dorthin fortschreitet. Anschließend wird abhängig vom pelvinen Befund eine adjuvante Chemotherapie bzw. (Chemo-)Radiotherapie besprochen (schwache Empfehlung).",
+            "en": "Three or more involved inguinal nodes (pN2) or extranodal extension (pN3) on one side justify pelvic dissection on that same side, because lymphatic spread proceeds there. Depending on the pelvic findings, adjuvant chemotherapy or (chemo)radiotherapy is then discussed (weak recommendation).",
+            "es": "Tres o más ganglios inguinales afectados (pN2) o la extensión extraganglionar (pN3) en un lado justifican la disección pélvica en ese mismo lado, porque la diseminación linfática progresa hacia allí. Después, según el hallazgo pélvico, se valora quimioterapia o (quimio)radioterapia adyuvante (recomendación débil)."
+          }
+        },
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "Extranodales Wachstum und mehrere befallene Knoten sind die beiden Auslöser.",
+          "replace": "Extranodales Wachstum und drei oder mehr befallene Knoten auf einer Seite sind die beiden Auslöser; bei höchstens zwei befallenen Knoten ohne extranodales Wachstum (pN1) folgt die Nachsorge."
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "Extranodal extension and multiple involved nodes are the two triggers.",
+          "replace": "Extranodal extension and three or more involved nodes on one side are the two triggers; with no more than two involved nodes and no extranodal extension (pN1), surveillance follows."
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "La extensión extraganglionar y los múltiples ganglios afectados son los dos factores desencadenantes.",
+          "replace": "La extensión extraganglionar y la afectación de tres o más ganglios en un lado son los dos factores desencadenantes; con un máximo de dos ganglios afectados sin extensión extraganglionar (pN1) se realiza seguimiento."
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "The inguinal findings therefore decide side by side whether the pelvis is dissected.",
+          "replace": "The inguinal findings therefore decide separately for each side whether the pelvis is dissected."
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "Pelvic dissection follows the groin, and it follows it side by side.",
+          "replace": "Pelvic dissection follows the groin, separately for each side."
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "Por lo tanto, los hallazgos inguinales deciden en paralelo si se diseca la pelvis.",
+          "replace": "Por lo tanto, los hallazgos inguinales deciden por separado en cada lado si se diseca la pelvis."
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "La disección pélvica sigue la ingle y la sigue de lado a lado.",
+          "replace": "La disección pélvica sigue a la ingle, por separado en cada lado."
+        }
+      ]
     }
   ]
 }

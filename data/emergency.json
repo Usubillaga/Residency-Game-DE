@@ -1402,6 +1402,474 @@
     ]
   },
   {
+    "id": "onc-testis-chemo-before-orchiectomy",
+    "area": "emergency",
+    "level": 3,
+    "acuity": "critical",
+    "duty": "night",
+    "patient": {
+      "name": "Emre Yıldırım",
+      "age": 23,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Breathless at night: lung metastases and a testicular mass",
+      "de": "Nächtliche Atemnot: Lungenmetastasen und ein Hodentumor",
+      "es": "Disnea nocturna: metástasis pulmonares y una masa testicular"
+    },
+    "presenting": {
+      "en": "Mr Yıldırım presents at night with three weeks of increasing exertional dyspnoea and haemoptysis; SpO2 is 89% on room air and oxygen is started. Examination shows a hard, painless left testicular mass; ultrasound confirms a 4 cm inhomogeneous intratesticular tumour. CT chest, abdomen and pelvis shows more than 20 bilateral lung metastases up to 3 cm and a 9 cm retroperitoneal nodal mass, without liver or bone metastases. Blood tests: beta-hCG 310,000 IU/l, AFP 95 ng/ml, LDH 6 times the upper limit of normal. Neurological examination is normal.",
+      "de": "Herr Yıldırım stellt sich nachts mit seit drei Wochen zunehmender Belastungsdyspnoe und Hämoptysen vor; bei einer SpO2 von 89 % unter Raumluft erhält er Sauerstoff. Palpatorisch derbe, indolente Raumforderung des linken Hodens, sonographisch ein inhomogener intratestikulärer Tumor von 4 cm. CT Thorax/Abdomen/Becken: mehr als 20 beidseitige Lungenmetastasen bis 3 cm und ein retroperitoneales Lymphknotenkonglomerat von 9 cm, keine Leber- oder Knochenmetastasen. Labor: beta-hCG 310 000 IU/l, AFP 95 ng/ml, LDH 6-fach über der Norm. Neurologisch unauffälliger Befund.",
+      "es": "El Sr. Yıldırım acude de noche por disnea de esfuerzo progresiva y hemoptisis de tres semanas de evolución; la SpO2 es del 89 % con aire ambiente y se inicia oxigenoterapia. A la palpación presenta una masa testicular izquierda dura e indolora; la ecografía muestra un tumor intratesticular heterogéneo de 4 cm. La TC de tórax, abdomen y pelvis muestra más de 20 metástasis pulmonares bilaterales de hasta 3 cm y un conglomerado adenopático retroperitoneal de 9 cm, sin metástasis hepáticas ni óseas. Analítica: beta-hCG 310.000 UI/l, AFP 95 ng/ml, LDH 6 veces el límite superior de la normalidad. La exploración neurológica es normal."
+    },
+    "vitals": {
+      "bp": "118/72",
+      "hr": 116,
+      "temp": 37.4,
+      "spo2": 89,
+      "rr": 28
+    },
+    "objectives": {
+      "en": [
+        "Recognise when chemotherapy must start before orchiectomy.",
+        "Name the indications for brain MRI at staging."
+      ],
+      "de": [
+        "Erkennen, wann die Chemotherapie vor der Ablatio testis beginnen muss.",
+        "Die Indikationen zur Schädel-MRT im Staging benennen."
+      ],
+      "es": [
+        "Reconocer cuándo la quimioterapia debe iniciarse antes de la orquiectomía.",
+        "Enumerar las indicaciones de la RM craneal en la estadificación."
+      ]
+    },
+    "steps": [
+      {
+        "id": "sequence",
+        "kind": "decision",
+        "prompt": {
+          "en": "The consultant asks for your plan tonight. What do you recommend?",
+          "de": "Der Oberarzt fragt nach Ihrem Vorgehen in dieser Nacht. Was empfehlen Sie?",
+          "es": "El adjunto te pregunta por el plan para esta noche. ¿Qué recomiendas?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Inguinal orchiectomy tomorrow morning; start chemotherapy only once histology is available.",
+              "de": "Inguinale Ablatio testis am nächsten Morgen; Chemotherapie erst nach Vorliegen der Histologie.",
+              "es": "Orquiectomía inguinal mañana por la mañana; iniciar la quimioterapia solo cuando se disponga de la histología."
+            },
+            "score": 3,
+            "minutes": 10,
+            "feedback": {
+              "en": "Orchiectomy is the first step for most patients. With life-threatening metastatic disease and unequivocal markers, however, chemotherapy must not be delayed; orchiectomy is postponed until chemotherapy is complete.",
+              "de": "Bei den meisten Patienten ist die Ablatio testis der erste Schritt. Bei lebensbedrohlicher Metastasierung und eindeutigen Markern darf die Chemotherapie jedoch nicht verzögert werden; die Ablatio wird auf das Ende der Chemotherapie verschoben.",
+              "es": "En la mayoría de los pacientes la orquiectomía es el primer paso. Sin embargo, con enfermedad metastásica potencialmente mortal y marcadores inequívocos no debe retrasarse la quimioterapia; la orquiectomía se pospone hasta completarla."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "With markers drawn, involve a specialised centre and start cisplatin-based chemotherapy without delay; perform orchiectomy after chemotherapy is complete and offer sperm banking only if it does not delay treatment.",
+              "de": "Nach Markerabnahme ein spezialisiertes Zentrum einbinden und die cisplatinbasierte Chemotherapie ohne Verzögerung beginnen; Ablatio testis nach Abschluss der Chemotherapie, Kryokonservierung nur anbieten, wenn sie den Therapiebeginn nicht verzögert.",
+              "es": "Con los marcadores extraídos, implicar a un centro especializado e iniciar sin demora la quimioterapia basada en cisplatino; orquiectomía al completar la quimioterapia y ofrecer criopreservación de semen solo si no retrasa el tratamiento."
+            },
+            "score": 10,
+            "minutes": 12,
+            "feedback": {
+              "en": "With advanced, symptomatic metastatic disease and very high markers, clinical picture, imaging and markers establish the diagnosis. EAU guidance allows chemotherapy to start at once according to the IGCCCG group (here poor prognosis; with extensive lung metastases and hypoxia, consider a dose-reduced first induction cycle) and orchiectomy after it is complete.",
+              "de": "Bei fortgeschrittener, symptomatischer Metastasierung mit sehr hohen Markern sichern Klinik, Bildgebung und Marker die Diagnose. Die EAU-Leitlinie erlaubt hier den sofortigen Beginn der Chemotherapie nach IGCCCG-Gruppe (hier ungünstige Prognose; bei ausgedehnter Lungenmetastasierung mit Hypoxie ist ein dosisreduzierter erster Induktionszyklus zu erwägen) und die Ablatio nach deren Abschluss.",
+              "es": "En la enfermedad metastásica avanzada y sintomática con marcadores muy elevados, la clínica, la imagen y los marcadores establecen el diagnóstico. La guía de la EAU permite iniciar de inmediato la quimioterapia según el grupo IGCCCG (aquí, pronóstico desfavorable; con metástasis pulmonares extensas e hipoxemia, debe valorarse un primer ciclo de inducción a dosis reducida) y realizar la orquiectomía al terminarla."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "CT-guided lung biopsy for histological confirmation before any treatment.",
+              "de": "CT-gesteuerte Lungenbiopsie zur histologischen Sicherung vor jeder Therapie.",
+              "es": "Biopsia pulmonar guiada por TC para confirmación histológica antes de cualquier tratamiento."
+            },
+            "score": 0,
+            "minutes": 15,
+            "feedback": {
+              "en": "A biopsy delays life-saving treatment, is unnecessary with this typical picture and a massively raised beta-hCG, and adds bleeding and pneumothorax risk in a hypoxic patient.",
+              "de": "Eine Biopsie verzögert die lebensnotwendige Therapie, ist bei dieser typischen Konstellation mit massiv erhöhtem beta-hCG nicht erforderlich und birgt beim hypoxämischen Patienten zusätzlich Blutungs- und Pneumothoraxrisiken.",
+              "es": "Una biopsia retrasa un tratamiento vital, es innecesaria con este cuadro típico y una beta-hCG masivamente elevada, y añade riesgo de sangrado y neumotórax en un paciente hipoxémico."
+            },
+            "critical": true
+          }
+        ],
+        "best": "b"
+      },
+      {
+        "id": "brain-imaging",
+        "kind": "assessment",
+        "prompt": {
+          "en": "He has no neurological symptoms. Which staging imaging do you add?",
+          "de": "Neurologische Symptome bestehen nicht. Welche Bildgebung ergänzen Sie im Staging?",
+          "es": "No presenta síntomas neurológicos. ¿Qué prueba de imagen añades a la estadificación?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Brain MRI only if neurological symptoms develop.",
+              "de": "Schädel-MRT nur, falls neurologische Symptome auftreten.",
+              "es": "RM craneal solo si aparecen síntomas neurológicos."
+            },
+            "score": 3,
+            "minutes": 3,
+            "feedback": {
+              "en": "Symptoms are one indication, but not the only one. Brain metastases are often asymptomatic in this setting, and finding them changes treatment planning.",
+              "de": "Symptome sind eine Indikation, aber nicht die einzige. Hirnmetastasen sind in dieser Konstellation oft asymptomatisch, und ihr Nachweis verändert die Therapieplanung.",
+              "es": "Los síntomas son una indicación, pero no la única. En esta situación las metástasis cerebrales suelen ser asintomáticas y su detección modifica la planificación terapéutica."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "FDG-PET/CT instead of brain MRI and further staging.",
+              "de": "FDG-PET/CT anstelle der Schädel-MRT und als weiteres Staging.",
+              "es": "PET-TC con FDG en lugar de la RM craneal y como estadificación adicional."
+            },
+            "score": 0,
+            "minutes": 8,
+            "feedback": {
+              "en": "FDG-PET has no role in the primary staging of germ cell tumours and cannot replace brain MRI; physiological glucose uptake makes the brain hard to assess.",
+              "de": "FDG-PET hat im primären Staging von Keimzelltumoren keinen Stellenwert und ersetzt die Schädel-MRT nicht; wegen der physiologischen Glukoseaufnahme ist das Gehirn kaum beurteilbar.",
+              "es": "La PET con FDG no tiene papel en la estadificación inicial de los tumores germinales ni sustituye a la RM craneal; la captación fisiológica de glucosa dificulta valorar el cerebro."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Brain MRI promptly, ideally before or at the start of chemotherapy: poor-prognosis disease, very high hCG and multiple lung metastases are indications even without symptoms.",
+              "de": "Schädel-MRT zeitnah, möglichst vor oder zu Beginn der Chemotherapie: ungünstige Prognose, sehr hohes hCG und multiple Lungenmetastasen sind auch ohne Symptome Indikationen.",
+              "es": "RM craneal sin demora, idealmente antes o al inicio de la quimioterapia: el pronóstico desfavorable, la hCG muy elevada y las múltiples metástasis pulmonares son indicaciones aunque no haya síntomas."
+            },
+            "score": 10,
+            "minutes": 6,
+            "feedback": {
+              "en": "EAU guidance recommends brain MRI for neurological symptoms, poor-prognosis or high-risk disease, high hCG and multiple lung metastases. All of these apart from symptoms apply here.",
+              "de": "Die EAU-Leitlinie empfiehlt die Schädel-MRT bei neurologischen Symptomen, ungünstiger Prognose bzw. Hochrisikokonstellation, hohem hCG und multiplen Lungenmetastasen. Bis auf Symptome trifft hier alles zu.",
+              "es": "La guía de la EAU recomienda RM craneal ante síntomas neurológicos, pronóstico desfavorable o enfermedad de alto riesgo, hCG elevada y múltiples metástasis pulmonares. Aquí se cumplen todas salvo los síntomas."
+            },
+            "critical": false
+          }
+        ],
+        "best": "c"
+      },
+      {
+        "id": "orchiectomy-after-chemo",
+        "kind": "decision",
+        "prompt": {
+          "en": "After four cycles the markers have normalised and the lung lesions have regressed markedly. The left testis now feels smaller. How do you manage the primary tumour?",
+          "de": "Nach vier Zyklen sind die Marker normalisiert, die Lungenherde deutlich regredient. Der linke Hoden ist palpatorisch kleiner. Wie gehen Sie mit dem Primärtumor um?",
+          "es": "Tras cuatro ciclos los marcadores se han normalizado y las lesiones pulmonares han disminuido claramente. El testículo izquierdo se palpa más pequeño. ¿Cómo manejas el tumor primario?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Inguinal orchiectomy after completion of chemotherapy, coordinated with planning of any residual tumour resection.",
+              "de": "Inguinale Ablatio testis nach Abschluss der Chemotherapie, abgestimmt mit der Planung einer eventuellen Residualtumorresektion.",
+              "es": "Orquiectomía inguinal tras completar la quimioterapia, coordinada con la planificación de una posible resección de masas residuales."
+            },
+            "score": 10,
+            "minutes": 8,
+            "feedback": {
+              "en": "Because of the blood-testis barrier, the testis is a sanctuary site; viable tumour or teratoma is not rarely found there despite normal markers. The postponed orchiectomy is therefore mandatory.",
+              "de": "Wegen der Blut-Hoden-Schranke gilt der Hoden als Sanktuarium; trotz normaler Marker finden sich dort nicht selten vitaler Tumor oder Teratom. Die verschobene Ablatio ist daher obligat.",
+              "es": "Por la barrera hematotesticular, el testículo es un santuario; pese a marcadores normales no es raro encontrar tumor viable o teratoma. Por eso la orquiectomía diferida es obligada."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Testicular biopsy only; orchiectomy only if viable tumour is found.",
+              "de": "Nur eine Hodenbiopsie; Ablatio nur bei Nachweis von vitalem Tumor.",
+              "es": "Solo biopsia testicular; orquiectomía únicamente si se demuestra tumor viable."
+            },
+            "score": 3,
+            "minutes": 6,
+            "feedback": {
+              "en": "You recognise the risk of residual disease, but a biopsy can miss viable tumour or teratoma through sampling error. The standard is inguinal orchiectomy.",
+              "de": "Sie erkennen das Risiko residueller Erkrankung, doch eine Biopsie kann vitalen Tumor oder Teratom durch Stichprobenfehler verfehlen. Standard ist die inguinale Ablatio testis.",
+              "es": "Reconoces el riesgo de enfermedad residual, pero la biopsia puede no detectar tumor viable o teratoma por error de muestreo. El estándar es la orquiectomía inguinal."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Leave the testis in place because the markers are normal and chemotherapy has clearly worked.",
+              "de": "Hoden belassen, da die Marker normal sind und die Chemotherapie offensichtlich gewirkt hat.",
+              "es": "Conservar el testículo porque los marcadores son normales y la quimioterapia ha funcionado claramente."
+            },
+            "score": 0,
+            "minutes": 2,
+            "feedback": {
+              "en": "Normal markers do not prove complete response in the testis; a retained primary is a source of relapse.",
+              "de": "Normale Marker beweisen keine Vollremission im Hoden; ein belassener Primärtumor ist eine Rezidivquelle.",
+              "es": "Unos marcadores normales no demuestran respuesta completa en el testículo; un primario conservado es fuente de recaída."
+            },
+            "critical": true
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "en": "In life-threatening metastatic disease with unequivocal markers, start chemotherapy at once and perform orchiectomy after it is complete. Order brain MRI for symptoms, poor prognosis, very high hCG or multiple lung metastases.",
+      "de": "Bei lebensbedrohlicher Metastasierung mit eindeutigen Markern die Chemotherapie sofort beginnen und die Ablatio testis nach deren Abschluss durchführen. Schädel-MRT bei Symptomen, ungünstiger Prognose, sehr hohem hCG oder multiplen Lungenmetastasen.",
+      "es": "En la enfermedad metastásica potencialmente mortal con marcadores inequívocos, iniciar la quimioterapia de inmediato y realizar la orquiectomía al terminarla. Solicitar RM craneal ante síntomas, pronóstico desfavorable, hCG muy elevada o múltiples metástasis pulmonares."
+    },
+    "references": [
+      "bank-guide-hodentumor",
+      "knowuro-testis-2026"
+    ]
+  },
+  {
+    "id": "onc-kidney-embolisation-haematuria",
+    "area": "emergency",
+    "level": 2,
+    "acuity": "critical",
+    "duty": "night",
+    "patient": {
+      "name": "Samira Haddouchi",
+      "age": 83,
+      "sex": "female"
+    },
+    "title": {
+      "en": "Night shift: massive haematuria from a known inoperable renal tumour",
+      "de": "Nachtdienst: massive Hämaturie bei bekanntem inoperablem Nierentumor",
+      "es": "Guardia nocturna: hematuria masiva por un tumor renal inoperable conocido"
+    },
+    "presenting": {
+      "en": "Mrs Haddouchi, 83, arrives at 2 a.m. with heavy visible haematuria with clots and left flank pain since the evening. She has a known 10 cm left renal cell carcinoma with lung metastases, managed with best supportive care because of heart failure (ejection fraction 25 %) and COPD GOLD 3; she takes apixaban for atrial fibrillation. Haemoglobin 7.8 g/dL (10.6 g/dL two weeks ago), creatinine 1.3 mg/dL, INR 1.2. The bladder is distended with clots on ultrasound.",
+      "de": "Frau Haddouchi, 83 Jahre, stellt sich um 2 Uhr nachts mit starker Makrohämaturie mit Koageln und linksseitigen Flankenschmerzen seit dem Abend vor. Bekannt ist ein 10 cm großes NZK links mit Lungenmetastasen, wegen Herzinsuffizienz (Ejektionsfraktion 25 %) und COPD GOLD 3 unter Best Supportive Care; bei Vorhofflimmern nimmt sie Apixaban. Hämoglobin 7,8 g/dl (vor zwei Wochen 10,6 g/dl), Kreatinin 1,3 mg/dl, INR 1,2. Sonographisch Blasentamponade.",
+      "es": "La Sra. Haddouchi, de 83 años, acude a las 2 de la madrugada por hematuria macroscópica intensa con coágulos y dolor en el flanco izquierdo desde la tarde. Tiene un CCR izquierdo conocido de 10 cm con metástasis pulmonares, en tratamiento de soporte por insuficiencia cardiaca (fracción de eyección 25 %) y EPOC GOLD 3; toma apixabán por fibrilación auricular. Hemoglobina 7,8 g/dl (10,6 g/dl hace dos semanas), creatinina 1,3 mg/dl, INR 1,2. En la ecografía, vejiga distendida con coágulos."
+    },
+    "vitals": {
+      "bp": "98/58",
+      "hr": 112,
+      "temp": 36.6,
+      "spo2": 93,
+      "rr": 22
+    },
+    "objectives": {
+      "en": [
+        "Stabilise a patient with tumour haemorrhage and clot retention.",
+        "Choose palliative selective embolisation instead of emergency nephrectomy in unresectable or inoperable RCC."
+      ],
+      "de": [
+        "Eine Patientin mit Tumorblutung und Blasentamponade stabilisieren.",
+        "Beim nicht resektablen oder inoperablen NZK die palliative selektive Embolisation statt einer Notfall-Nephrektomie wählen."
+      ],
+      "es": [
+        "Estabilizar a una paciente con hemorragia tumoral y retención de coágulos.",
+        "Elegir la embolización selectiva paliativa en lugar de la nefrectomía urgente en el CCR irresecable o inoperable."
+      ]
+    },
+    "steps": [
+      {
+        "id": "stabilise",
+        "kind": "action",
+        "prompt": {
+          "en": "What do you do first?",
+          "de": "Was tun Sie zuerst?",
+          "es": "¿Qué hace en primer lugar?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Insert a urinary catheter, document the haemoglobin and reassess the patient on the morning round.",
+              "de": "Einen Dauerkatheter legen, das Hämoglobin dokumentieren und die Patientin in der Frühvisite neu beurteilen.",
+              "es": "Colocar una sonda vesical, documentar la hemoglobina y revalorar a la paciente en el pase de la mañana."
+            },
+            "score": 3,
+            "minutes": 4,
+            "feedback": {
+              "en": "Draining the bladder is part of the answer, but a standard catheter blocks with clots, and with hypotension, tachycardia and a falling haemoglobin she cannot wait until morning.",
+              "de": "Die Blasenentlastung gehört dazu, aber ein Standardkatheter verstopft durch Koagel, und bei Hypotonie, Tachykardie und fallendem Hämoglobin kann sie nicht bis zum Morgen warten.",
+              "es": "Drenar la vejiga forma parte de la respuesta, pero una sonda estándar se obstruye con coágulos, y con hipotensión, taquicardia y hemoglobina en descenso no puede esperar hasta la mañana."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Two large-bore cannulas, crossmatch and transfuse, pause apixaban, three-way catheter with clot evacuation and continuous irrigation.",
+              "de": "Zwei großlumige Zugänge, Kreuzblut und Transfusion, Apixaban pausieren, Spülkatheter mit Koagelausräumung und Dauerspülung.",
+              "es": "Dos vías de gran calibre, pruebas cruzadas y transfusión, suspender apixabán, sonda de tres vías con evacuación de coágulos e irrigación continua."
+            },
+            "score": 10,
+            "minutes": 15,
+            "feedback": {
+              "en": "Correct: circulatory stabilisation, transfusion, pausing the anticoagulant and clearing the clot retention come first; fluids must be given carefully because of her heart failure.",
+              "de": "Richtig: Kreislaufstabilisierung, Transfusion, Pausieren der Antikoagulation und Ausräumen der Tamponade stehen am Anfang; Volumen wegen der Herzinsuffizienz vorsichtig dosieren.",
+              "es": "Correcto: lo primero es estabilizar la hemodinámica, transfundir, suspender el anticoagulante y resolver la retención de coágulos; los líquidos deben dosificarse con cuidado por la insuficiencia cardiaca."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Inform theatre and prepare an emergency nephrectomy tonight.",
+              "de": "Den OP informieren und noch heute Nacht eine Notfall-Nephrektomie vorbereiten.",
+              "es": "Avisar a quirófano y preparar una nefrectomía urgente esta noche."
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "en": "With an ejection fraction of 25 % and COPD GOLD 3 she is unfit for major surgery; an emergency nephrectomy carries a prohibitive risk while less invasive haemostasis is available.",
+              "de": "Mit einer Ejektionsfraktion von 25 % und COPD GOLD 3 ist sie für eine große Operation nicht geeignet; die Notfall-Nephrektomie birgt ein unvertretbares Risiko, während weniger invasive Blutstillung verfügbar ist.",
+              "es": "Con una fracción de eyección del 25 % y EPOC GOLD 3 no es apta para cirugía mayor; la nefrectomía urgente conlleva un riesgo inasumible cuando existe hemostasia menos invasiva."
+            },
+            "critical": true
+          }
+        ],
+        "best": "b"
+      },
+      {
+        "id": "imaging",
+        "kind": "assessment",
+        "prompt": {
+          "en": "After two units of red cells her blood pressure is 112/64 mmHg, but the irrigation fluid stays dark red. Which examination do you arrange?",
+          "de": "Nach zwei Erythrozytenkonzentraten liegt der Blutdruck bei 112/64 mmHg, die Spülflüssigkeit bleibt jedoch dunkelrot. Welche Untersuchung veranlassen Sie?",
+          "es": "Tras dos concentrados de hematíes la presión arterial es de 112/64 mmHg, pero el líquido de irrigación sigue rojo oscuro. ¿Qué prueba solicita?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "CT angiography with arterial and venous phases to locate the bleeding and plan an intervention.",
+              "de": "CT-Angiographie mit arterieller und venöser Phase zur Lokalisation der Blutung und Planung einer Intervention.",
+              "es": "Angio-TC con fases arterial y venosa para localizar el sangrado y planificar una intervención."
+            },
+            "score": 10,
+            "minutes": 12,
+            "feedback": {
+              "en": "Correct: CT angiography shows the tumour vessels and active bleeding and lets interventional radiology plan selective embolisation; the contrast load is justified by the bleeding.",
+              "de": "Richtig: Die CT-Angiographie zeigt Tumorgefäße und aktive Blutung und ermöglicht der interventionellen Radiologie die Planung einer selektiven Embolisation; die Kontrastmittelgabe ist durch die Blutung gerechtfertigt.",
+              "es": "Correcto: la angio-TC muestra los vasos tumorales y el sangrado activo y permite a radiología intervencionista planificar la embolización selectiva; el contraste está justificado por la hemorragia."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Cystoscopy and ureterorenoscopy under general anaesthesia tonight to find the source.",
+              "de": "Noch heute Nacht Zystoskopie und Ureterorenoskopie in Vollnarkose zur Quellensuche.",
+              "es": "Cistoscopia y ureterorrenoscopia bajo anestesia general esta noche para buscar el origen."
+            },
+            "score": 0,
+            "minutes": 15,
+            "feedback": {
+              "en": "The source is the known renal tumour; endoscopy cannot stop parenchymal tumour bleeding and general anaesthesia carries a very high risk for her.",
+              "de": "Die Quelle ist der bekannte Nierentumor; endoskopisch lässt sich eine parenchymatöse Tumorblutung nicht stillen, und die Narkose ist für sie hochriskant.",
+              "es": "El origen es el tumor renal conocido; la endoscopia no puede detener un sangrado tumoral parenquimatoso y la anestesia supone un riesgo muy alto para ella."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Renal ultrasound only, and continue irrigation without further imaging.",
+              "de": "Nur Nierensonographie und die Spülung ohne weitere Bildgebung fortsetzen.",
+              "es": "Solo ecografía renal y continuar la irrigación sin más pruebas de imagen."
+            },
+            "score": 3,
+            "minutes": 5,
+            "feedback": {
+              "en": "Ultrasound helps to exclude upper tract obstruction but does not show the bleeding vessel; persistent bleeding needs a plan for definitive haemostasis.",
+              "de": "Die Sonographie hilft, eine Harnstauung auszuschließen, zeigt aber nicht das blutende Gefäß; eine anhaltende Blutung braucht einen Plan zur definitiven Blutstillung.",
+              "es": "La ecografía ayuda a descartar obstrucción del tracto superior, pero no muestra el vaso sangrante; un sangrado persistente necesita un plan de hemostasia definitiva."
+            },
+            "critical": false
+          }
+        ],
+        "best": "a"
+      },
+      {
+        "id": "haemostasis",
+        "kind": "decision",
+        "prompt": {
+          "en": "CT angiography shows a hypervascular tumour with contrast extravasation from a segmental artery into the collecting system. How do you stop the bleeding?",
+          "de": "Die CT-Angiographie zeigt einen hypervaskularisierten Tumor mit Kontrastmittelaustritt aus einer Segmentarterie ins Hohlsystem. Wie stillen Sie die Blutung?",
+          "es": "La angio-TC muestra un tumor hipervascular con extravasación de contraste desde una arteria segmentaria al sistema colector. ¿Cómo detiene el sangrado?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Palliative haemostatic radiotherapy of the kidney, starting the next working day.",
+              "de": "Palliative hämostyptische Bestrahlung der Niere ab dem nächsten Werktag.",
+              "es": "Radioterapia hemostática paliativa del riñón a partir del siguiente día laborable."
+            },
+            "score": 3,
+            "minutes": 6,
+            "feedback": {
+              "en": "Haemostatic radiotherapy can help with recurrent, slower bleeding, but its effect takes days; active arterial bleeding needs immediate haemostasis.",
+              "de": "Eine hämostyptische Bestrahlung kann bei rezidivierender, langsamer Blutung helfen, wirkt aber erst nach Tagen; eine aktive arterielle Blutung braucht sofortige Blutstillung.",
+              "es": "La radioterapia hemostática puede ayudar en sangrados recurrentes y lentos, pero su efecto tarda días; un sangrado arterial activo requiere hemostasia inmediata."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Emergency open nephrectomy now that she is circulatory stable.",
+              "de": "Offene Notfall-Nephrektomie, da sie jetzt kreislaufstabil ist.",
+              "es": "Nefrectomía abierta urgente ahora que está estable hemodinámicamente."
+            },
+            "score": 0,
+            "minutes": 10,
+            "feedback": {
+              "en": "Transient stability under transfusion does not make her fit for surgery; in inoperable or unresectable RCC, nephrectomy is not the way to control bleeding.",
+              "de": "Eine vorübergehende Stabilität unter Transfusion macht sie nicht operabel; beim inoperablen oder nicht resektablen NZK ist die Nephrektomie nicht der Weg zur Blutstillung.",
+              "es": "Una estabilidad transitoria con transfusión no la hace operable; en el CCR inoperable o irresecable, la nefrectomía no es la vía para controlar el sangrado."
+            },
+            "critical": true
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Palliative selective embolisation of the bleeding segmental artery by interventional radiology.",
+              "de": "Palliative selektive Embolisation der blutenden Segmentarterie durch die interventionelle Radiologie.",
+              "es": "Embolización selectiva paliativa de la arteria segmentaria sangrante por radiología intervencionista."
+            },
+            "score": 10,
+            "minutes": 15,
+            "feedback": {
+              "en": "Correct: in patients unfit for surgery or with unresectable disease, embolisation controls massive haematuria and flank pain; selective technique spares functioning parenchyma. Expect post-embolisation pain and fever.",
+              "de": "Richtig: Bei inoperablen Patienten oder nicht resektablem Tumor kontrolliert die Embolisation massive Hämaturie und Flankenschmerz; die selektive Technik schont funktionierendes Parenchym. Postembolisationsschmerz und Fieber sind zu erwarten.",
+              "es": "Correcto: en pacientes no aptos para cirugía o con tumor irresecable, la embolización controla la hematuria masiva y el dolor en flanco; la técnica selectiva preserva parénquima funcionante. Cabe esperar dolor y fiebre posembolización."
+            },
+            "critical": false
+          }
+        ],
+        "best": "c"
+      }
+    ],
+    "takeaway": {
+      "en": "Massive haematuria from an inoperable or unresectable renal tumour: stabilise, transfuse, pause anticoagulation and clear the clot retention, then CT angiography. Palliative selective embolisation stops the bleeding; emergency nephrectomy is not the answer in a patient unfit for surgery.",
+      "de": "Massive Hämaturie bei inoperablem oder nicht resektablem Nierentumor: stabilisieren, transfundieren, Antikoagulation pausieren und Tamponade ausräumen, dann CT-Angiographie. Die palliative selektive Embolisation stillt die Blutung; eine Notfall-Nephrektomie ist bei inoperablen Patienten nicht die Lösung.",
+      "es": "Hematuria masiva por un tumor renal inoperable o irresecable: estabilizar, transfundir, suspender la anticoagulación y resolver la retención de coágulos, y después angio-TC. La embolización selectiva paliativa detiene el sangrado; la nefrectomía urgente no es la solución en una paciente no apta para cirugía."
+    },
+    "references": [
+      "bank-guide-nierenzellkarzinom",
+      "knowuro-kidney-2026"
+    ]
+  },
+  {
     "id": "bank-uro-and-00008",
     "area": "emergency",
     "level": 3,

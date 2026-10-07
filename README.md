@@ -2,7 +2,7 @@
 
 > **Residency-Game-DE – Rollenspiel als Assistenzärztin oder Assistenzarzt der Urologie.** Öffne `standalone.html` im Browser, wähle **DE** und tritt deinen ersten Nachtdienst an.
 
-A cartoon hospital comedy and urology decision game in **English, German and Spanish**, now with **297 cases**: the 30 original three-decision stories plus all 267 questions from the supplied Urofragen main bank, each included once. Choose an avatar, meet the original cast, navigate illustrated departments, collect coffee quips and face the chief's morning-report quiz.
+A cartoon hospital comedy and urology decision game in **English, German and Spanish**, now with **317 cases**: the 30 original three-decision stories, 20 new oncology cases with two or three decisions each, and all 267 questions from the supplied Urofragen main bank, each included once. Choose an avatar, meet the original cast, navigate illustrated departments, collect coffee quips and face the chief's morning-report quiz.
 
 The expansion retains the original medical vignettes, questions, answer choices and explanations in all three languages. It covers **16 source specialties** across five game departments. The supplied classic HTML games remain unchanged in `classic/`.
 
@@ -14,36 +14,36 @@ The expansion retains the original medical vignettes, questions, answer choices 
 2. Open **`standalone.html`** in a current browser. The complete game is embedded in one file and needs no installation or server.
 3. Choose English, Deutsch or Español, select your avatar and start a department shift or mixed shift.
 4. Browse the library by department, specialty or search. It shows **18 cases per page**.
-5. Review each explanation and finish with the chief's quiz. Export your progress to keep a portable record.
+5. Review each explanation and finish with the chief's quiz. Save your game file to carry on later or on another device (*Load game file* on the progress page).
 
 `index.html` offers the same game with separate local assets. Keep the complete project for the original games, editable case data, import provenance and Python tools.
 
 ### English quick start
 
-Open `standalone.html`, choose **English**, meet the cast and start a shift. Story cases contain three decisions; imported question-bank cases contain one original question with four or five choices. Filter by specialty to focus your practice. The nurse offers learning reminders, coffee adds workplace comedy, and the chief gives a separate final quiz. Export your progress as JSON for later analysis.
+Open `standalone.html`, choose **English**, meet the cast and start a shift. Story cases contain three decisions, the new oncology cases two or three; imported question-bank cases contain one original question with four or five choices. Filter by specialty to focus your practice. The nurse offers learning reminders, coffee adds workplace comedy, and the chief gives a separate final quiz. Save your game file to continue later or on another device; the logbook inside can be analysed with Python.
 
 ### Deutsch – Schnellstart
 
-Öffnen Sie `standalone.html`, wählen Sie **Deutsch**, lernen Sie die Figuren kennen und starten Sie eine Schicht. Das Spiel enthält **297 Fälle**: 30 Geschichten mit je drei Entscheidungen und sämtliche 267 Originalfragen der gelieferten Hauptbank mit je einer Entscheidung und vier oder fünf Antworten. Wählen Sie ein Fachgebiet, nutzen Sie die Lernhinweise der Pflegekraft und stellen Sie sich dem Abschlussquiz des Chefs. Der Cartoonstil, die Dialoge und die Kaffeepausen bleiben erhalten. Exportieren Sie Ihren Fortschritt als JSON für eine spätere Auswertung.
+Öffnen Sie `standalone.html`, wählen Sie **Deutsch**, lernen Sie die Figuren kennen und starten Sie eine Schicht. Das Spiel enthält **317 Fälle**: 30 Geschichten mit je drei Entscheidungen, 20 neue Onkologie-Fälle mit zwei oder drei Entscheidungen und sämtliche 267 Originalfragen der gelieferten Hauptbank mit je einer Entscheidung und vier oder fünf Antworten. Wählen Sie ein Fachgebiet, nutzen Sie die Lernhinweise der Pflegekraft und stellen Sie sich dem Abschlussquiz des Chefs. Der Cartoonstil, die Dialoge und die Kaffeepausen bleiben erhalten. Speichern Sie Ihren Spielstand als Datei, um später oder auf einem anderen Gerät weiterzuspielen; das Logbuch darin lässt sich mit Python auswerten.
 
 **Neu in diesem Update:** Nach jeder Antwort siehst du, welche Option richtig war und warum. „Alle Antworten erklärt“ begründet jede Option. Janas Joker streicht eine falsche Antwort. Richtige Serien bringen Sprüche und Konfetti. Eine Karriereleiter führt von Famulant:in bis zur Legende des Nachtdienstes, und ein Sticker-Album macht Fortschritt sichtbar. *Revanche* wiederholt deine Fehler, *Fachgebiete* zeigen deine Schwachstellen mit Trainingsknopf, und die *Blitzrunde* bietet fünf schnelle Fragen. Tastatur: A–E oder 1–5 wählt, Enter geht weiter.
 
 ### Español – Inicio rápido
 
-Abra `standalone.html`, elija **Español**, conozca al reparto e inicie una guardia. Hay **297 casos**: 30 historias con tres decisiones y las 267 preguntas originales del banco principal, cada una con una decisión y cuatro o cinco opciones. Filtre por especialidad, consulte los objetivos con la enfermera y complete el cuestionario final del jefe. Se conservan los dibujos, los diálogos y las pausas para el café. Exporte su progreso en JSON para analizarlo después.
+Abra `standalone.html`, elija **Español**, conozca al reparto e inicie una guardia. Hay **317 casos**: 30 historias con tres decisiones, 20 casos nuevos de oncología con dos o tres decisiones y las 267 preguntas originales del banco principal, cada una con una decisión y cuatro o cinco opciones. Filtre por especialidad, consulte los objetivos con la enfermera y complete el cuestionario final del jefe. Se conservan los dibujos, los diálogos y las pausas para el café. Guarde su partida como archivo para continuar más tarde o en otro dispositivo; el registro que contiene puede analizarse con Python.
 
 ## Case library
 
-| Department | Story cases | Imported cases | Total |
+| Department | Authored cases | Imported cases | Total |
 | --- | ---: | ---: | ---: |
-| Emergency | 6 | 26 | 32 |
+| Emergency | 8 | 26 | 34 |
 | Ward | 6 | 23 | 29 |
-| Clinic | 6 | 133 | 139 |
-| Endoscopy | 6 | 22 | 28 |
+| Clinic | 22 | 133 | 155 |
+| Endoscopy | 8 | 22 | 30 |
 | Theatre | 6 | 63 | 69 |
-| **All departments** | **30** | **267** | **297** |
+| **All departments** | **50** | **267** | **317** |
 
-The library contains **357 decision steps and 1,382 answer options**. The story cases retain three choices per step. Of the 267 source questions, 223 have four choices and 44 have five; each has exactly one correct source answer. Separate CME modules, generated HTML copies and historical update blocks are not counted again.
+The library contains **415 decision steps and 1,556 answer options**. Authored cases (the 30 stories and the 20 oncology cases) have three choices per step. Of the 267 source questions, 223 have four choices and 44 have five; each has exactly one correct source answer. Separate CME modules, generated HTML copies and historical update blocks are not counted again.
 
 The source specialties are andrology, functional urology, testicular cancer, infections, paediatric urology, muscle-invasive and non-muscle-invasive bladder cancer, renal cancer, operative urology, penile cancer, prostate cancer, reconstruction, trauma, urethral cancer, stones and upper-tract urothelial cancer. Department allocation follows the clinical task in each vignette; the source's oncology emphasis explains the larger clinic collection.
 
@@ -55,18 +55,18 @@ A session no longer mixes every department. You choose a **duty**, and the sessi
 
 | Duty | Clock starts | Cases | Content |
 | --- | ---: | ---: | --- |
-| 🌙 Night shift (*Nachtdienst*) | 22:00 | 52 | Emergencies only: colic and obstructed or infected kidneys, retention, bleeding and clot retention, trauma, torsion, priapism, Fournier, acute infections, acute ward complications and emergency or consult surgery |
-| 🎗️ Tumour board (*Tumorboard*) | Wed 15:30 | 90 | Oncological staging and treatment decisions, systemic and salvage therapy, metastatic disease, residual tumour |
-| 🩺 Clinic (*Sprechstunde*) | 08:00 | 100 | Outpatient work-up, counselling and follow-up, including cancer follow-up, andrology, functional urology, stone metaphylaxis and elective paediatric urology |
-| ✂️ Elective list (*OP-Programm*) | 07:30 | 55 | Planned operations and endoscopy: technique, anatomy, intraoperative findings and perioperative routine |
+| 🌙 Night shift (*Nachtdienst*) | 22:00 | 54 | Emergencies only: colic and obstructed or infected kidneys, retention, bleeding and clot retention, trauma, torsion, priapism, Fournier, acute infections, acute ward complications and emergency or consult surgery |
+| 🎗️ Tumour board (*Tumorboard*) | Wed 15:30 | 100 | Oncological staging and treatment decisions, systemic and salvage therapy, metastatic disease, residual tumour |
+| 🩺 Clinic (*Sprechstunde*) | 08:00 | 107 | Outpatient work-up, counselling and follow-up, including cancer follow-up, andrology, functional urology, stone metaphylaxis and elective paediatric urology |
+| ✂️ Elective list (*OP-Programm*) | 07:30 | 56 | Planned operations and endoscopy: technique, anatomy, intraoperative findings and perioperative routine |
 
 Each duty has its own briefing from the cast, whiteboard label and daylight or night window; the attending stays awake in the daytime. The tumour board meets in a conference room where the session's cases lie on the table as folders. The library filters by duty, every case card shows its duty, and the progress page reports performance by duty. Practice sessions started from the library, rematch or quick round take the duty of their cases, or a mixed rotation if the cases differ.
 
-Every case's duty is stored as `duty` in `data/*.json`; imported questions take it from `data/import-selection.json`, so a re-import keeps it. The assignment classifies by the decision the question asks for, not only by the diagnosis: two independent classifications of all 297 cases agreed on 288, a judge resolved nine, and one review change moved autonomic dysreflexia during urodynamics from the night shift to the clinic. See [docs/VALIDATION.md](docs/VALIDATION.md).
+Every case's duty is stored as `duty` in `data/*.json`; imported questions take it from `data/import-selection.json`, so a re-import keeps it. The assignment classifies by the decision the question asks for, not only by the diagnosis: two independent classifications of all 297 cases agreed on 288, a judge resolved nine, and one review change moved autonomic dysreflexia during urodynamics from the night shift to the clinic. The 20 oncology cases added later carry the duty set when they were written and reviewed. See [docs/VALIDATION.md](docs/VALIDATION.md).
 
 ## Schemas, anatomy atlas and own images
 
-- **Teaching schemas:** 15 cartoon schematic drawings made for this game (`data/schemas.json`) with 189 tappable structures, from the urinary tract overview, kidney envelopes, prostate zones and bladder-wall T stages to urinary diversion, micturition control, the retroperitoneal lymph-node landing zones and VUR grades. 133 of the 297 cases link to one; questions about drugs, laboratory values, counselling or guidelines deliberately have none. After the last decision of a case, the explanation shows the matching schema with the case's key structures glowing (★). Every structure is tappable and shows its name and one key fact. The debrief and the logbook review show it too. The links between cases and schemas are in `data/case-schemas.json`.
+- **Teaching schemas:** 15 cartoon schematic drawings made for this game (`data/schemas.json`) with 189 tappable structures, from the urinary tract overview, kidney envelopes, prostate zones and bladder-wall T stages to urinary diversion, micturition control, the retroperitoneal lymph-node landing zones and VUR grades. 145 of the 317 cases link to one; questions about drugs, laboratory values, counselling or guidelines deliberately have none. After the last decision of a case, the explanation shows the matching schema with the case's key structures glowing (★). Every structure is tappable and shows its name and one key fact. The debrief and the logbook review show it too. The links between cases and schemas are in `data/case-schemas.json`.
 - **Anatomy atlas:** a new *Atlas* page lists all schemas. *Find the structure* is a five-round tap quiz on a schema. A right tap gives confetti, a wrong one the splash, and 5 of 5 earns the *Anatomy ace* sticker. Quiz results never change case scores.
 - **Own images:** put licensed PNG, JPEG or WebP files in `media/` and list them in `data/case-media.json`, with alt text and caption in EN/DE/ES, `credit` and `license`. The build embeds them and refuses a file without credit or licence, a file outside `media/` or an SVG. See [media/README.md](media/README.md). Do not add identifiable patient images.
 
@@ -120,6 +120,15 @@ python scripts/manage.py build
 ```
 
 Use the actual path to your original ZIP. The importer reads the domain metadata and main-bank JSON members only; it never executes scripts from the archive. It preserves the 30 existing story cases. Keep the supplied archive if you want to reproduce the source comparison later.
+
+## Oncology update (October 2026)
+
+The oncology cases were checked against the knowuro flowcharts 2026 for bladder, prostate, kidney, upper tract urothelial, testicular, penile and urethral cancer. These flowcharts are based on the EAU Guidelines and licensed CC BY-NC-ND 4.0. The game uses their facts only; it neither copies nor redraws them.
+
+- **Audit:** an auditor per tumour group checked 169 cases, and an independent skeptic tried to refute every finding. 43 findings were confirmed and are corrected. The skeptics refuted two. One of them rested on a drug approval that came after the flowcharts went to press, so approval statements in the game were checked on the web on 6 October 2026.
+- **Correction layer:** the corrections live in `data/case-updates.json`, not in the case files. Each change records the text it replaces, so a later re-import cannot silently overwrite or lose it. Corrected cases show an *Updated* badge with the reason and sources.
+- **20 new cases** cover decisions no case taught before, with two or three decisions each, in DE, EN and ES. Each was written from a reviewed gap list and then checked by an independent urologist reviewer. Topics: very high-risk NMIBC, single instillation and intermediate risk, positive cytology, first-line metastatic urothelial cancer, adjuvant therapy after cystectomy, BCR after prostatectomy, cN1 prostate cancer, BRCA2 mCRPC, mHSPC unfit for chemotherapy, life-threatening germ cell cancer, IGCCCG intermediate prognosis, stage I seminoma with risk factors, IMDC first line, cT2 renal cancer and cytoreductive nephrectomy, relapse after adjuvant pembrolizumab, metastatic UTUC, embolisation for haematuria, penile cancer cN1 and sentinel pN1, and locally advanced urethral cancer.
+- **No authors in the game:** article citations such as “(Dieckmann et al. 2025)” are removed when the catalog is built, and sentences that named authors or “the article” were reworded. Validation rejects any new author mention.
 
 ## Python automation
 
@@ -192,6 +201,6 @@ For optional later publication, the root `index.html` can serve as a GitHub Page
 
 This is an educational game for rehearsal and discussion, not a clinical protocol or credential. Clinical judgment, supervision, local policies and current specialist guidance remain necessary for real patients. The complete game and its translations have not received a new independent specialist review as part of this expansion.
 
-Original source citations and review metadata remain available. Related EAU guideline index links were checked as primary reference metadata; **the 267 imported questions were not newly checked against every guideline or certified clinically**. Such related links do not validate a specific dosing claim, translation, distractor or evidence level. See [docs/VALIDATION.md](docs/VALIDATION.md) for the distinction between software verification and medical review.
+Original source citations and review metadata remain available. Related EAU guideline index links were checked as primary reference metadata; **the 267 imported questions were not newly checked against every guideline or certified clinically**. The oncology cases were audited against the 2026 flowcharts as described above; the other specialties were not. Such related links do not validate a specific dosing claim, translation, distractor or evidence level. See [docs/VALIDATION.md](docs/VALIDATION.md) for the distinction between software verification and medical review.
 
 The original games in `classic/` retain their supplied medical claims, scoring, translations and notices unchanged. No ownership or licence has been inferred for either the games or the supplied question bank, and no invented licence is added. Check the applicable permissions before redistribution or public publication. Source links do not imply endorsement.
