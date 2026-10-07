@@ -1,5 +1,72 @@
 # Validation record
 
+## Oncology update, no authors in the game, save and load — 6–7 October 2026
+
+**Sources.** The update uses the knowuro flowcharts 2026 (EAU-based; CC BY-NC-ND 4.0) for bladder, prostate, kidney, UTUC, testicular, penile and urethral cancer. Only their facts are used; nothing is copied or redrawn. Some flowcharts date from spring 2026, so approval statements were checked on the web on 6 October 2026. The checks covered:
+- perioperative EV + pembrolizumab: EU approval in June 2026 for cisplatin-ineligible patients, a positive CHMP opinion on 18 September 2026 for all patients, FDA approval in July 2026;
+- 177Lu-PSMA in the EU only after an ARPI and a taxane;
+- durvalumab (NIAGARA) and erdafitinib approved in the EU.
+
+**Audit of existing cases.** For each of five tumour groups, one auditor gave a verdict on every case (169 in total), and an independent skeptic tried to refute every finding.
+- 45 cases were flagged; 43 findings were confirmed.
+- Two were refuted. A bladder case had been called wrong because the flowchart lists EV + pembrolizumab as 'approval pending', but the EU approved it on 24 June 2026, so the case is right. A salvage-prostatectomy case fits the EAU selection criteria.
+- A third proposal was overruled on the web check: making 177Lu-PSMA an option before a taxane is not correct in the EU.
+- Examples of confirmed corrections:
+  - CHAARTED high volume needs a lesion outside the spine and pelvis; the vignette had defined low volume.
+  - Early detection is offered at a life expectancy over 15 years.
+  - The PSA-density thresholds for PI-RADS 3 are 0.10 and 0.20.
+  - A 2.4 cm node is N2, stage IIB, not IIA.
+  - A stage IIB seminoma field gets 30 Gy plus a 6 Gy boost, not a 36 Gy field.
+  - UTUC follow-up after kidney-sparing surgery relies on CT urography.
+  - The pN2/pN3 threshold for pelvic dissection in penile cancer is three or more nodes or extranodal extension.
+  - Duplicated sentences were removed.
+- Each correction was written by a medical editor and then checked by an independent urologist and translator. Answer keys and scores were not changed; imported questions keep 0/10 scoring.
+
+**Correction layer.** `data/case-updates.json` holds 68 entries:
+- 43 medical updates, shown in the game with an *Updated* badge, reason and sources;
+- 25 editorial ones, which change wording only.
+Each change replaces a whole field, guarded by its exact old value, or one passage that must occur exactly once. If the text drifts, for example after a re-import, validation stops. The corrected case passes the same rules as every case.
+
+**No authors in the game.**
+- The build removes 648 author citations from play texts in three languages, for example (Dieckmann et al. 2025). Guideline citations such as (EAU 2026, 7.1) stay.
+- 105 passages in 24 cases that named authors or “the article” were rewritten. Each was reviewed for unchanged meaning and equivalent DE/EN/ES.
+- The catalog lists source titles without citation strings.
+- Validation rejects any remaining mention, and a cartoon test fails on the previous catalog.
+
+**New cases.** 20 multi-step oncology cases, with 58 decisions in DE/EN/ES:
+- 5 bladder, 4 prostate, 3 testis, 5 kidney/UTUC, 3 penile/urethral.
+- Each was drafted from a skeptic-checked gap list and run through the game validation plus extra rules: three options scored 10/3/0, new unique names, EAU and flowchart references, valid schema links.
+- An independent urologist reviewer then checked each case and fixed what it found, for example the TNM boundary of regional pelvic nodes, the Galsky criteria, the EORTC limit for a single instillation and a dose-reduced first cycle in life-threatening germ cell cancer.
+- Three near-identical patient names were changed.
+- The library now has 317 cases (50 authored, 267 imported), 415 decisions and 1,556 options.
+
+**Save and load.** The progress export is now a full game file (version 3) that *Load game file* reads back; older version-2 logbooks also load. It is described under *Save and continue* in the README.
+- The file is untrusted input and passes the same checks as local storage, which are now shared code.
+- A summary dialog comes before any change.
+- Loading merges without losing or double-counting progress.
+- A browser run covered play, save, clearing the browser, load and carrying on (also at 360 px). The Python analyser reads the new file.
+- **Adversarial review.** Three reviewers attacked the feature in Chromium over http and file://:
+  - untrusted input, with about 55 crafted files;
+  - state correctness, against the previous release;
+  - interface and wording in EN, DE and ES.
+
+  A skeptic re-ran every report; 11 defects were confirmed and 6 refuted. All 11 are fixed:
+  - Unknown fields in a loaded shift were kept and stored, which a 5 MB file could use to stop saving or to freeze clicks. A shift is now rebuilt from known fields only, and joker marks and morning reports are kept only if they fit.
+  - Loading an older copy of the same shift logged an attempt twice and counted shifts and morning reports twice. Log entries now carry their shift and count once per patient. Counted shifts are remembered, and the copy that got further is kept.
+  - A finished shift in the file replaced an open shift on the device. Now an open shift wins, and the dialog labels finished shifts.
+  - Counters and the rank accepted absurd values. They are capped, and the rank is recalculated from the logbook.
+  - The avatar was lost without a player name.
+  - Progress without a logbook (stickers, bookmarks) could not be saved or loaded.
+  - Singular forms were missing (“1 logbook entries”).
+  - Focus was lost after loading.
+  - On small phones the dialog opened scrolled to the bottom.
+  - The download was named “logbook”.
+  - The German help note was imprecise.
+
+  The reviewers' scripts were run again on the fixed code and confirm each fix. The cartoon tests grew to 35; they cover the shift choice, the shift identity of log entries and the rebuilt shift.
+
+**Checks.** All Python, engine and cartoon tests pass. The validation reports 317 valid cases, 43 of them updated. A browser run of new cases and corrected cases shows no console errors and no horizontal overflow.
+
 ## Integrity review after the schema release — 5 October 2026
 
 The schema work had been interrupted several times (sub-agents stopped by rate limits, a rebuild that briefly lost CRLF endings, parallel edits). The merged state was therefore checked again:
@@ -21,6 +88,16 @@ The schema work had been interrupted several times (sub-agents stopped by rate l
   7. On phones the splash punchline ran off the right edge. It is now kept on screen.
   8. The atlas said "1 Fälle". It now uses the singular.
 - **Tests:** each fix has a regression test that fails on the previous code and passes now: 10 bypass payloads plus malformed entries in Python, and the strict SVG grammar, the quiz with an unknown tap and the singular label in the cartoon suite. Browser re-check (Chromium): the quiz verdict and button were visible at 1366×657, 1280×720 and 1024×600; the splash stayed inside at 320, 375 and 414 px; a Tab-focused glowing structure showed a distinct ring; no console errors.
+- **Re-check of the fixes (6 October 2026):** two further agents attacked the merged fixes.
+  - The validator agent tried 15 bypasses (CDATA, comments, namespaced and duplicate attributes, encoded brackets, quotes inside values and others). Every payload was rejected or rendered inert, and all 15 schemas still render unchanged.
+  - The interface agent confirmed fixes 4, 5 and 7 at 14 screen sizes. It found five side effects of moving the fact under the drawing and of the new focus ring:
+    - on phones a fact opened from a legend chip could sit under the sticky header;
+    - the legend jumped under the finger;
+    - in the quiz the focus ring replaced the green or red verdict;
+    - a focused structure stayed dimmed while another one was selected;
+    - the legend touched the note.
+  - All five are fixed. A fact opened from the drawing still appears under the drawing, but a fact opened from a chip appears under the legend, as before the release, and any shift of the legend is scrolled back. Scrolling to a fact on the page now stops below the sticky header. A focused quiz answer keeps its verdict colour inside the ring.
+  - The interface agent's browser scripts were run again: 0 of 11 chip taps move the chip, and the fact is visible after a tap on the drawing at every size. A cartoon test pins the CSS order.
 
 ## Teaching schemas, anatomy atlas and urine splash — 5 October 2026
 

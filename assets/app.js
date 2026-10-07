@@ -5,6 +5,8 @@
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   if (!C || !E) { root.innerHTML='<main class="container page-head"><h1>Night Shift Academy</h1><p>'+esc(strings.en.dataError)+'</p></main>'; return; }
   const STORAGE='night-shift-academy-v2';
+  // A downloaded game file can be loaded again to carry on, on this or another device.
+  const SAVE_FORMAT='night-shift-academy-save',SAVE_LIMIT=5000000;
   const A=window.NSAArt;
   const comedy=()=>window.NSABanter[state.lang];
   const getCase = id=>C.cases.find(c=>c.id===id);
@@ -12,29 +14,19 @@
   // Stickers are derived from the logbook and a few game counters; the icons are language-neutral.
   const BADGE_ICONS={firstCase:'📋',firstShift:'🌅',streak5:'📟',streak10:'🚀',perfectShift:'📘',bossPerfect:'🎓',coffee5:'☕',allAreas:'🗺️',comeback:'🔁',joker10:'🤝',specialist:'🔬',cases50:'🦉',nightOwl:'🌙',anatomist:'🦴'};
   const STAT_KEYS=['shifts','perfectShifts','bossPerfect','maxCoffees','bestStreak','jokers','rank','atlasPerfect'];
+  const RANK_COUNT=9; // the career ladder: RANK_XP below and careerRanks in banter.js have nine steps
   // Duties decide which cases a session draws: emergencies at night, oncology decisions in the tumour board,
   // outpatient work in clinic and planned surgery on the elective list. Start times are game minutes after midnight.
   const DUTIES=['night','board','clinic','elective'],DUTY_START={night:1320,board:930,clinic:480,elective:450,mixed:1320};
   const DUTY_ICON={night:'🌙',board:'🎗️',clinic:'🩺',elective:'✂️',mixed:'🔀'};
   const count=v=>Number.isInteger(v)&&v>=0?v:0;
-  let storageFailed=false, state={lang:'en',name:'',avatar:0,sound:false,history:[],bookmarks:[],session:null,stats:cleanStats(null),badges:[],lastDuty:'night'};
+  let storageFailed=false, state={lang:'en',name:'',avatar:0,sound:false,history:[],bookmarks:[],session:null,stats:cleanStats(null),badges:[],lastDuty:'night',countedShifts:[]};
   try {
     const s=JSON.parse(localStorage.getItem(STORAGE)||'null');
-    if (s && typeof s==='object') {
-      state.lang=['en','de','es'].includes(s.lang)?s.lang:'en';
-      state.name=typeof s.name==='string'?s.name.slice(0,32):'';
-      state.avatar=Number.isInteger(s.avatar)&&s.avatar>=0&&s.avatar<3?s.avatar:0;
-      state.sound=s.sound===true;
-      state.bookmarks=Array.isArray(s.bookmarks)?[...new Set(s.bookmarks.filter(id=>C.cases.some(c=>c.id===id)))]:[];
-      state.history=Array.isArray(s.history)?s.history.filter(validRecord).slice(-1000):[];
-      state.session=E.validSession(s.session,C)?cleanSessionExtras(s.session):null;
-      state.stats=cleanStats(s.stats);
-      state.badges=Array.isArray(s.badges)?[...new Set(s.badges.filter(id=>id in BADGE_ICONS))]:[];
-      state.lastDuty=DUTIES.includes(s.lastDuty)?s.lastDuty:'night';
-    }
+    if (s && typeof s==='object' && !Array.isArray(s)) Object.assign(state,cleanSave(s));
   } catch (_) { /* In-memory play stays available when browser storage is blocked. */ }
   let view=['intro','library','atlas','progress','sources','play','report'].includes(location.hash.slice(1))?location.hash.slice(1):'intro';
-  let areaFilter='all',topicFilter='all',dutyFilter='all',pendingDuty='night',libraryPage=0,query='',savedOnly=false,pendingIds=null,customSchedule=null,dialogSequence=0;
+  let areaFilter='all',topicFilter='all',dutyFilter='all',pendingDuty='night',libraryPage=0,query='',savedOnly=false,pendingIds=null,customSchedule=null,dialogSequence=0,pendingSave=null;
   const t = key => {const value=typeof comedy()[key]==='string'?comedy()[key]:(strings[state.lang][key] || strings.en[key] || key);return value.replaceAll('{cases}',String(C.cases.length)).replaceAll('{areas}',String(C.areas.length));};
   const loc = value => value[state.lang];
   const pct = r=>Math.round(r.score/r.maxScore*100);
@@ -51,7 +43,7 @@
   function validRecord(r) {
     try {
       const c=getCase(r.caseId);
-      if (!c || r.area!==c.area || !Array.isArray(r.answers) || r.answers.length!==c.steps.length || !Number.isFinite(Date.parse(r.completedAt))) return false;
+      if (!c || r.area!==c.area || !Array.isArray(r.answers) || r.answers.length!==c.steps.length || typeof r.completedAt!=='string' || !Number.isFinite(Date.parse(r.completedAt))) return false;
       let score=0,minutes=0,errors=0;
       for (let i=0;i<c.steps.length;i++) {
         const a=r.answers[i],s=c.steps[i],o=s.options.find(o=>o.id===a.optionId);
@@ -62,26 +54,100 @@
     } catch(_){return false;}
   }
   function cleanStats(raw) {
-    const stats={};for(const key of STAT_KEYS)stats[key]=count(raw&&raw[key]);
+    // Counters are capped: a hand-edited file cannot store absurd values or a rank beyond the ladder.
+    const stats={};for(const key of STAT_KEYS)stats[key]=Math.min(count(raw&&raw[key]),key==='rank'?RANK_COUNT-1:1000000);
     return stats;
   }
-  function cleanSessionExtras(s) {
-    // Game-only extras: they never change clinical points, answers or the logbook.
-    s.coffees=count(s.coffees);s.streak=count(s.streak);s.bestStreak=Math.max(count(s.bestStreak),s.streak);s.jokers=count(s.jokers);
-    s.streakAt=typeof s.streakAt==='string'?s.streakAt:null;
-    s.struck=s.struck&&typeof s.struck==='object'&&!Array.isArray(s.struck)?s.struck:{};
-    s.counted=s.counted===true;s.bossCounted=s.bossCounted===true;
-    s.duty=DUTIES.includes(s.duty)?s.duty:'mixed';
-    return s;
+  function cleanSession(s) {
+    // Rebuilt from known fields only, so a saved shift cannot carry extra data into storage. Game-only extras never change
+    // clinical points, answers or the logbook. Call only after E.validSession has accepted the shift.
+    const patients=s.patients.map(p=>({id:p.id,index:p.index,answers:p.answers.map(a=>({stepId:a.stepId,optionId:a.optionId,score:a.score,minutes:a.minutes})),
+      score:p.score,elapsed:p.elapsed,criticalErrors:p.criticalErrors,availableAt:p.availableAt,feedback:p.feedback||null,finished:p.finished,order:p.order.map(order=>[...order]),logged:p.logged===true}));
+    const struck={};
+    if(s.struck&&typeof s.struck==='object'&&!Array.isArray(s.struck))for(const [key,value] of Object.entries(s.struck)){
+      const match=/^(.+):(\d+)$/.exec(key),patient=match&&patients.find(p=>p.id===match[1]),step=patient&&getCase(patient.id).steps[Number(match[2])];
+      if(step&&typeof value==='string'&&step.options.some(o=>o.id===value))struck[key]=value;
+    }
+    const capped=v=>Math.min(count(v),1000000),streak=capped(s.streak);
+    const clean={version:2,mode:s.mode,seed:s.seed.slice(0,120),clock:s.clock,patients,selected:s.selected,finished:s.finished,duty:DUTIES.includes(s.duty)?s.duty:'mixed',
+      coffees:capped(s.coffees),streak,bestStreak:Math.max(capped(s.bestStreak),streak),jokers:capped(s.jokers),
+      streakAt:typeof s.streakAt==='string'&&s.streakAt.length<=200?s.streakAt:null,struck,counted:s.counted===true,bossCounted:s.bossCounted===true};
+    if(validBoss(s.boss))clean.boss={index:s.boss.index,done:s.boss.done,answers:[...s.boss.answers],items:s.boss.items.map(item=>({caseId:item.caseId,stepIndex:item.stepIndex,order:[...item.order]}))};
+    return clean;
+  }
+  // Saved games are untrusted input, whether they come from this browser or from a file: only what passes the checks is kept.
+  // Function declarations, not constants: the saved game is restored at start-up, before later constants exist.
+  function cleanRecord(r) {
+    return {caseId:r.caseId,area:r.area,score:r.score,maxScore:r.maxScore,elapsed:r.elapsed,criticalErrors:r.criticalErrors,completedAt:r.completedAt,
+      answers:r.answers.map(a=>({stepId:a.stepId,optionId:a.optionId,score:a.score,minutes:a.minutes})),...(typeof r.shift==='string'&&r.shift.length<=120?{shift:r.shift}:{})};
+  }
+  // Any progress worth saving: a logbook entry, a shift, a sticker, a bookmark or a counter.
+  function hasProgress(s) { return s.history.length>0||!!s.session||s.badges.length>0||s.bookmarks.length>0||STAT_KEYS.some(key=>s.stats[key]>0); }
+  function cleanSave(s) {
+    return {
+      lang:['en','de','es'].includes(s.lang)?s.lang:'en',
+      name:typeof s.name==='string'?Array.from(s.name).slice(0,32).join(''):'',
+      avatar:Number.isInteger(s.avatar)&&s.avatar>=0&&s.avatar<3?s.avatar:0,
+      sound:s.sound===true,
+      bookmarks:Array.isArray(s.bookmarks)?[...new Set(s.bookmarks.filter(id=>typeof id==='string'&&C.cases.some(c=>c.id===id)))]:[],
+      history:Array.isArray(s.history)?s.history.filter(validRecord).map(cleanRecord).slice(-1000):[],
+      session:E.validSession(s.session,C)?cleanSession(s.session):null,
+      stats:cleanStats(s.stats),
+      badges:Array.isArray(s.badges)?[...new Set(s.badges.filter(id=>typeof id==='string'&&Object.prototype.hasOwnProperty.call(BADGE_ICONS,id)))]:[],
+      lastDuty:DUTIES.includes(s.lastDuty)?s.lastDuty:'night',
+      // Shifts and morning reports already counted, so an older copy of the same shift cannot count them again.
+      countedShifts:Array.isArray(s.countedShifts)?[...new Set(s.countedShifts.filter(key=>typeof key==='string'&&key.length<=130))].slice(-300):[]
+    };
+  }
+  // The game file holds everything needed to carry on; the interface language and sound stay as they are on the device.
+  function saveFile() {
+    return {format:SAVE_FORMAT,version:3,exportedAt:new Date().toISOString(),name:state.name,avatar:state.avatar,lastDuty:state.lastDuty,
+      history:state.history,stats:state.stats,badges:state.badges,bookmarks:state.bookmarks,session:state.session,countedShifts:state.countedShifts};
+  }
+  // Reads a downloaded game file. Logbooks exported before version 3 held the history only and still load.
+  function readSaveFile(data) {
+    if (!data || typeof data!=='object' || Array.isArray(data)) return null;
+    const full=data.format===SAVE_FORMAT&&data.version===3,logbook=!('format' in data)&&data.version===2&&Array.isArray(data.history);
+    if (!full && !logbook) return null;
+    const save=cleanSave(full?data:{history:data.history});
+    if (full ? !hasProgress(save) : !save.history.length) return null;
+    return {save,full,named:full&&save.name.trim()!=='',skipped:Array.isArray(data.history)?data.history.length-data.history.filter(validRecord).length:0,
+      exportedAt:typeof data.exportedAt==='string'&&Number.isFinite(Date.parse(data.exportedAt))?data.exportedAt:null};
+  }
+  // Which shift continues after loading: the same shift is kept where it got further; otherwise an open shift wins over a finished one,
+  // and the file's shift wins when both are open or both finished.
+  const openShift=s=>!!s&&!s.finished;
+  const shiftProgress=s=>(s.bossCounted?8e6:0)+(s.boss?(s.boss.done?4e6:0)+s.boss.answers.length:0)+(s.counted?2e6:0)+(s.finished?1e6:0)+
+    s.patients.reduce((n,p)=>n+p.index*4+(p.feedback?2:0)+(p.logged?1:0),0);
+  function chooseShift(current,incoming) {
+    if (!incoming) return {session:current,outcome:'none'};
+    if (current && current.seed===incoming.seed) return shiftProgress(incoming)>shiftProgress(current)?{session:incoming,outcome:'same'}:{session:current,outcome:'ahead'};
+    if (openShift(current) && !openShift(incoming)) return {session:current,outcome:'kept'};
+    return {session:incoming,outcome:openShift(current)?'replaces':'takes'};
+  }
+  // Loading never loses progress: both logbooks are combined (an attempt counts once), counters keep the higher value, stickers,
+  // bookmarks and counted shifts are united, and the shift is chosen by chooseShift. The rank is recalculated from the logbook afterwards.
+  function mergeSave(current,found) {
+    const incoming=found.save,seen=new Set(),history=[];
+    const records=[...current.history,...incoming.history].map((r,i)=>[r,i]).sort((a,b)=>Date.parse(a[0].completedAt)-Date.parse(b[0].completedAt)||a[1]-b[1]).map(([r])=>r);
+    for (const r of records) {
+      const key=r.shift?'shift|'+r.shift+'|'+r.caseId:r.caseId+'|'+r.completedAt+'|'+r.answers.map(a=>a.stepId+':'+a.optionId).join(',');
+      if (!seen.has(key)) { seen.add(key); history.push(r); }
+    }
+    const stats={};for (const key of STAT_KEYS) stats[key]=key==='rank'?count(current.stats.rank):Math.max(count(current.stats[key]),count(incoming.stats[key]));
+    const takeProfile=found.named||(found.full&&!current.name.trim());
+    return {history:history.slice(-1000),stats,badges:[...new Set([...current.badges,...incoming.badges])],bookmarks:[...new Set([...current.bookmarks,...incoming.bookmarks])],
+      session:chooseShift(current.session,incoming.session).session,name:found.named?incoming.name:current.name,avatar:takeProfile?incoming.avatar:current.avatar,
+      lastDuty:found.full?incoming.lastDuty:current.lastDuty,countedShifts:[...new Set([...(current.countedShifts||[]),...incoming.countedShifts])].slice(-300)};
   }
   // Career XP counts each case once, at its best result: replaying improves XP, farming does not.
   const MAX_XP=C.cases.reduce((n,c)=>n+caseMaximum(c),0);
   const RANK_XP=[0,80,250,550,1000,1600,2300,3000,MAX_XP];
-  function bestScores() {
-    const best=new Map();for(const r of state.history)best.set(r.caseId,Math.max(best.has(r.caseId)?best.get(r.caseId):-1,r.score));
+  function bestScores(history=state.history) {
+    const best=new Map();for(const r of history)best.set(r.caseId,Math.max(best.has(r.caseId)?best.get(r.caseId):-1,r.score));
     return best;
   }
-  function xp() { let n=0;for(const v of bestScores().values())n+=v;return n; }
+  function xp(history=state.history) { let n=0;for(const v of bestScores(history).values())n+=v;return n; }
   function rankIndex(points=xp()) { let rank=0;RANK_XP.forEach((need,i)=>{if(points>=need)rank=i;});return rank; }
   function rankName() { return comedy().careerRanks[rankIndex()]; }
   function earnedBadges() {
@@ -161,13 +227,15 @@
   function afterCaseFinished() {
     const s=state.session;
     if(!s.finished||s.counted)return;
-    s.counted=true;state.stats.shifts++;state.stats.maxCoffees=Math.max(state.stats.maxCoffees,count(s.coffees));
+    s.counted=true;if(state.countedShifts.includes('shift:'+s.seed))return;
+    state.countedShifts=[...state.countedShifts,'shift:'+s.seed].slice(-300);state.stats.shifts++;state.stats.maxCoffees=Math.max(state.stats.maxCoffees,count(s.coffees));
     if(s.patients.length>=5&&s.patients.every(p=>p.score===caseMaximum(getCase(p.id))))state.stats.perfectShifts++;
   }
   function afterBoss() {
     const s=state.session,b=s?.boss;
     if(!b||!b.done||s.bossCounted)return;
-    s.bossCounted=true;if(bossCorrect(b)===b.items.length)state.stats.bossPerfect++;
+    s.bossCounted=true;if(state.countedShifts.includes('boss:'+s.seed)){persist();return;}
+    state.countedShifts=[...state.countedShifts,'boss:'+s.seed].slice(-300);if(bossCorrect(b)===b.items.length)state.stats.bossPerfect++;
     persist();checkRewards();
   }
   function missedCases() {
@@ -234,9 +302,16 @@
     const start=libraryPage*size,shown=cases.slice(start,start+size);
     return '<div class="library-pagination"><p role="status">'+(cases.length?(start+1)+'–'+(start+shown.length)+' / '+cases.length+' '+esc(t(cases.length===1?'caseSingular':'cases')):esc(t('empty')))+'</p>'+(cases.length?'<button class="btn small primary" data-action="practice-selection">🎯 '+esc(t('practiceSelection').replace('{n}',String(Math.min(10,cases.length))))+'</button>':'')+'<div class="actions"><button class="btn small quiet" data-action="page-prev" '+(libraryPage===0?'disabled':'')+'>'+esc(t('previousPage'))+'</button><span class="mono">'+(libraryPage+1)+' / '+pages+'</span><button class="btn small quiet" data-action="page-next" '+(libraryPage===pages-1?'disabled':'')+'>'+esc(t('nextPage'))+'</button></div></div><div class="case-grid" id="case-grid">'+shown.map(caseCard).join('')+'</div>';
   }
+  const updatedBadge=c=>c.update?' <span class="badge routine">↻ '+esc(t('updatedBadge').replace('{date}',c.update.date.slice(0,7)))+'</span>':'';
+  // Reviewed corrections from data/case-updates.json are always disclosed, with their reason and sources.
+  function updateNote(c) {
+    if(!c.update)return '';
+    const refs=c.update.references.map(id=>C.references.find(r=>r.id===id)).filter(Boolean);
+    return '<aside class="update-note"><b>↻ '+esc(t('updatedBadge').replace('{date}',c.update.date))+'</b> '+esc(loc(c.update.reason))+(refs.length?'<br><span>'+esc(t('updatedSources'))+': '+refs.map(r=>'<a href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">'+esc(r.title)+' ↗</a>').join(' · ')+'</span>':'')+'</aside>';
+  }
   function caseOriginBadge(c) {
-    if(!c.source)return '<div class="case-format">'+esc(t('storyCase'))+'</div>';
-    return '<div class="case-format">'+esc(loc(c.topic))+' · '+esc(t('bankCase'))+(c.source.status==='draft'?' <span class="badge urgent">'+esc(t('sourceDraft'))+'</span>':'')+(c.source.evidenceFlag?' <span class="badge urgent">'+esc(t('sourceEvidenceFlag'))+'</span>':'')+'</div>';
+    if(!c.source)return '<div class="case-format">'+esc(t('storyCase'))+updatedBadge(c)+'</div>';
+    return '<div class="case-format">'+esc(loc(c.topic))+' · '+esc(t('bankCase'))+(c.source.status==='draft'?' <span class="badge urgent">'+esc(t('sourceDraft'))+'</span>':'')+(c.source.evidenceFlag?' <span class="badge urgent">'+esc(t('sourceEvidenceFlag'))+'</span>':'')+updatedBadge(c)+'</div>';
   }
   function vitalPanel(c) {
     if(!c.vitals)return '<p class="source-note">'+esc(t('sourceNotRecorded'))+'</p>';
@@ -271,7 +346,7 @@
     const label=part=>loc(s.parts.find(p=>p.id===part).label),hl=highlight.filter(part=>s.parts.some(p=>p.id===part));
     const svg=s.svg.replace(/data-part="([^"]+)"/g,(match,part)=>match+' tabindex="0" role="button" aria-label="'+esc(mode==='quiz'?t('atlasQuiz'):label(part))+'"'+(hl.includes(part)?' class="hl"':''));
     const order=[...hl,...s.parts.map(p=>p.id).filter(part=>!hl.includes(part))];
-    // The note sits right under the drawing so the fact a tap reveals stays in view; the legend follows.
+    // The note starts right under the drawing so the fact a tap reveals stays in view; selectPart moves it under the legend for chip taps.
     return '<figure class="schema" data-schema="'+esc(s.id)+'" data-mode="'+mode+'"><figcaption><b>'+esc(loc(s.title))+'</b><small>'+esc(loc(s.caption))+' '+esc(t('schemaNotice'))+'</small></figcaption><div class="schema-svg"><svg viewBox="'+esc(s.viewBox)+'" role="group" aria-label="'+esc(loc(s.title))+'" xmlns="http://www.w3.org/2000/svg">'+svg+'</svg></div>'+
       '<p class="schema-note" aria-live="polite">'+(mode==='quiz'?'':esc(t(hl.length?'schemaHintCase':'schemaHint')))+'</p>'+
       (mode==='quiz'?'':'<div class="schema-legend">'+order.map(part=>'<button type="button" class="schema-chip'+(hl.includes(part)?' hl':'')+'" data-legend-part="'+esc(part)+'">'+(hl.includes(part)?'★ ':'')+esc(label(part))+'</button>').join('')+'</div>')+'</figure>';
@@ -281,12 +356,25 @@
     const media=(c.media||[]).map(m=>'<figure class="case-media"><img src="'+esc(m.src)+'" alt="'+esc(loc(m.alt))+'" loading="lazy"><figcaption>'+esc(loc(m.caption))+'<small>'+esc(t('imageSource'))+': '+esc(m.credit)+' · '+esc(t('imageLicense'))+': '+esc(m.license)+'</small></figcaption></figure>').join('');
     return schema||media?'<div class="case-visuals">'+schema+media+'</div>':'';
   }
-  function selectPart(figure,id) {
+  // Scroll an element into view inside its dialog or the page; on the page it must not end up under the sticky header.
+  function reveal(el) {
+    el.scrollIntoView?.({block:'nearest'});
+    if(el.closest('dialog'))return;
+    const bar=document.querySelector('.topbar'),cover=bar?bar.getBoundingClientRect().bottom:0,top=el.getBoundingClientRect().top;
+    if(top<cover+8)window.scrollBy(0,top-cover-8);
+  }
+  function selectPart(figure,id,fromLegend=false) {
     const s=SCHEMAS.get(figure.dataset.schema),part=s&&s.parts.find(p=>p.id===id);if(!part)return;
     figure.classList.add('focus');
     figure.querySelectorAll('[data-part],[data-legend-part]').forEach(el=>el.classList.toggle('on',(el.dataset.part||el.dataset.legendPart)===id));
-    const note=figure.querySelector('.schema-note');note.innerHTML='<b>'+esc(loc(part.label))+'</b> – '+esc(loc(part.note));
-    note.scrollIntoView?.({block:'nearest'});
+    // The fact appears next to what was tapped: under the drawing for a structure, under the legend for a chip.
+    // A tapped chip must not move under the finger, so any shift of the legend is scrolled back and nothing else scrolls.
+    const note=figure.querySelector('.schema-note'),legend=figure.querySelector('.schema-legend');
+    const chip=fromLegend&&legend?[...legend.querySelectorAll('[data-legend-part]')].find(el=>el.dataset.legendPart===id):null,before=chip?.getBoundingClientRect().top;
+    if(legend)(chip?legend.after(note):legend.before(note));
+    note.innerHTML='<b>'+esc(loc(part.label))+'</b> – '+esc(loc(part.note));
+    if(chip){const shift=chip.getBoundingClientRect().top-before;if(shift)(figure.closest('dialog')||window).scrollBy(0,shift);}
+    else reveal(note);
   }
   function atlas() {
     const used=id=>C.cases.filter(c=>c.schema&&c.schema.id===id).length;
@@ -349,7 +437,7 @@
       }
       body+='</section>';
     }
-    return '<article class="chart"><div class="chart-top"><span>'+esc(loc(a.title))+' / '+esc(t(p.finished?'debrief':'open'))+'</span><span class="mono">'+esc(c.id.toUpperCase())+'</span></div><div class="chart-body"><div class="patient-head"><div class="patient-identity"><div class="patient-cartoon" aria-hidden="true">'+casePortrait(c,p.finished?'relieved':c.acuity==='critical'?'worried':'neutral',100)+'</div><div class="patient-name"><h2>'+esc(patientName(c))+' <span class="muted">'+(c.patient.age===null?'':c.patient.age)+'</span></h2><p>'+esc(loc(c.title))+'</p></div></div>'+bookmark(c.id)+'</div>'+sourceOrigin(c)+body+'</div></article>';
+    return '<article class="chart"><div class="chart-top"><span>'+esc(loc(a.title))+' / '+esc(t(p.finished?'debrief':'open'))+'</span><span class="mono">'+esc(c.id.toUpperCase())+'</span></div><div class="chart-body"><div class="patient-head"><div class="patient-identity"><div class="patient-cartoon" aria-hidden="true">'+casePortrait(c,p.finished?'relieved':c.acuity==='critical'?'worried':'neutral',100)+'</div><div class="patient-name"><h2>'+esc(patientName(c))+' <span class="muted">'+(c.patient.age===null?'':c.patient.age)+'</span></h2><p>'+esc(loc(c.title))+'</p></div></div>'+bookmark(c.id)+'</div>'+sourceOrigin(c)+updateNote(c)+body+'</div></article>';
   }
   function debrief(p,c) {
     const max=c.steps.reduce((n,s)=>n+Math.max(...s.options.map(o=>o.score)),0);
@@ -367,7 +455,7 @@
     return '<div class="metric-grid">'+[[items.length,'attempts'],[max?Math.round(sum/max*100)+'%':'—','average'],[mastered,'mastered'],[items.reduce((n,r)=>n+r.criticalErrors,0),'safetyConcerns']].map(([v,k])=>'<div class="metric-card"><span>'+esc(t(k))+'</span><strong>'+v+'</strong></div>').join('')+'</div>';
   }
   function progress() {
-    return '<div class="page-head"><p class="eyebrow">03 / '+esc(t('progress'))+'</p><h1>'+esc(t('progressTitle'))+'</h1><p>'+esc(t('progressSub'))+'</p></div>'+careerPanel()+metrics(state.history)+'<div class="actions" style="margin-bottom:25px"><button class="btn primary" data-action="revenge">🔁 '+esc(t('revenge'))+' ('+missedCases().length+')</button><button class="btn quiet" data-action="export" '+(!state.history.length?'disabled':'')+'>'+esc(t('export'))+' ↓</button><button class="btn quiet danger" data-action="reset-dialog">'+esc(t('reset'))+'</button>'+(state.session?'<button class="btn" data-action="resume">'+esc(t('resume'))+' →</button>':'')+'</div><div class="progress-grid"><section class="progress-panel"><h2>'+esc(t('byDuty'))+'</h2>'+DUTIES.map(d=>({id:d,title:dutyName(d)})).map(a=>{const h=state.history.filter(r=>dutyOf(getCase(r.caseId))===a.id);const average=h.length?Math.round(h.reduce((n,r)=>n+pct(r),0)/h.length):0;return '<div class="bar-row"><div class="bar-label"><span>'+esc(a.title)+'</span><span>'+h.length+' · '+(h.length?average+'%':'—')+'</span></div><div class="bar-track" role="meter" aria-label="'+esc(a.title)+'" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+average+'"><div class="bar-fill" style="width:'+average+'%"></div></div></div>';}).join('')+'</section><section class="progress-panel"><h2>'+esc(t('recent'))+'</h2>'+(state.history.length?state.history.slice(-8).reverse().map(r=>historyRow(r)).join(''):'<p class="muted" style="font-size:.8rem">'+esc(t('noHistory'))+'</p>')+'</section></div>'+topicPanel()+stickerAlbum()+'<div class="section-head"><h2>'+esc(t('bookmarks'))+'</h2></div><div class="case-grid">'+(state.bookmarks.length?state.bookmarks.map(id=>caseCard(getCase(id))).join(''):'<p class="empty">'+esc(t('noBookmarks'))+'</p>')+'</div>';
+    return '<div class="page-head"><p class="eyebrow">03 / '+esc(t('progress'))+'</p><h1>'+esc(t('progressTitle'))+'</h1><p>'+esc(t('progressSub'))+'</p></div>'+careerPanel()+metrics(state.history)+'<div class="actions" style="margin-bottom:25px"><button class="btn primary" data-action="revenge">🔁 '+esc(t('revenge'))+' ('+missedCases().length+')</button><button class="btn quiet" data-action="export" '+(!hasProgress(state)?'disabled':'')+'>'+esc(t('export'))+' ↓</button><button class="btn quiet" data-action="import">'+esc(t('importSave'))+' ↑</button><input type="file" id="save-file" accept=".json,application/json" hidden><button class="btn quiet danger" data-action="reset-dialog">'+esc(t('reset'))+'</button>'+(state.session?'<button class="btn" data-action="resume">'+esc(t('resume'))+' →</button>':'')+'</div><p class="small-note save-note">'+esc(t('saveHelp'))+'</p><div class="progress-grid"><section class="progress-panel"><h2>'+esc(t('byDuty'))+'</h2>'+DUTIES.map(d=>({id:d,title:dutyName(d)})).map(a=>{const h=state.history.filter(r=>dutyOf(getCase(r.caseId))===a.id);const average=h.length?Math.round(h.reduce((n,r)=>n+pct(r),0)/h.length):0;return '<div class="bar-row"><div class="bar-label"><span>'+esc(a.title)+'</span><span>'+h.length+' · '+(h.length?average+'%':'—')+'</span></div><div class="bar-track" role="meter" aria-label="'+esc(a.title)+'" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+average+'"><div class="bar-fill" style="width:'+average+'%"></div></div></div>';}).join('')+'</section><section class="progress-panel"><h2>'+esc(t('recent'))+'</h2>'+(state.history.length?state.history.slice(-8).reverse().map(r=>historyRow(r)).join(''):'<p class="muted" style="font-size:.8rem">'+esc(t('noHistory'))+'</p>')+'</section></div>'+topicPanel()+stickerAlbum()+'<div class="section-head"><h2>'+esc(t('bookmarks'))+'</h2></div><div class="case-grid">'+(state.bookmarks.length?state.bookmarks.map(id=>caseCard(getCase(id))).join(''):'<p class="empty">'+esc(t('noBookmarks'))+'</p>')+'</div>';
   }
   function careerPanel() {
     const points=xp(),rank=rankIndex(points),ranks=comedy().careerRanks,next=RANK_XP[rank+1];
@@ -416,7 +504,8 @@
   function completeNext() {
     const s=state.session,p=s.patients.find(p=>p.id===s.selected);
     const finished=E.next(s,C,p.id);
-    if(finished&&!p.logged){state.history.push(E.record(s,C,p.id));state.history=state.history.slice(-1000);p.logged=true;}
+    // A patient counts once per shift, even when an older copy of this shift was loaded from a game file.
+    if(finished&&!p.logged){if(!state.history.some(r=>r.shift===s.seed&&r.caseId===p.id)){state.history.push({...E.record(s,C,p.id),shift:s.seed});state.history=state.history.slice(-1000);}p.logged=true;}
     afterCaseFinished();
     persist();render();document.querySelector('.chart h2')?.scrollIntoView({block:'start',behavior:'instant'});
     document.querySelector(p.finished?'.chart [data-action]':'.option:not(:disabled)')?.focus({preventScroll:true});
@@ -429,8 +518,34 @@
     if(p){s.selected=p.id;persist();navigate('play');}else navigate('report');
   }
   function exportHistory() {
-    const blob=new Blob([JSON.stringify({version:2,exportedAt:new Date().toISOString(),history:state.history},null,2)],{type:'application/json'});
-    const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='night-shift-logbook-'+new Date().toLocaleDateString('sv-SE')+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+    const blob=new Blob([JSON.stringify(saveFile(),null,2)],{type:'application/json'});
+    const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='night-shift-save-'+new Date().toLocaleDateString('sv-SE')+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+  }
+  // Reads a chosen game file and asks before anything changes; nothing is stored until the player confirms.
+  async function offerSave(file) {
+    let found=null;
+    try { if (file.size<=SAVE_LIMIT) found=readSaveFile(JSON.parse(await file.text())); } catch (_) { found=null; }
+    if (!found) { pendingSave=null; toast('⚠️ '+t('saveInvalid')); return; }
+    pendingSave=found;
+    const save=found.save,records=save.history.length,cases=new Set(save.history.map(r=>r.caseId)).size,s=save.session,shift=chooseShift(state.session,s);
+    const plural=(one,many,n)=>t(n===1?one:many).replace('{n}',n);
+    const date=found.exportedAt?new Date(found.exportedAt).toLocaleString(state.lang):'—';
+    const lines=[(found.named?'<b>'+esc(save.name)+'</b> · ':'')+esc(t('loadSaveFrom').replace('{date}',date)),
+      records?esc(plural('loadSaveEntry','loadSaveEntries',records)+' · '+plural('loadSaveCase','loadSaveCasesCount',cases)):'',
+      esc(t('loadSaveRank').replace('{rank}',comedy().careerRanks[rankIndex(xp(save.history))])+' · '+plural('loadSaveSticker','loadSaveStickers',save.badges.length)),
+      s?esc(t(s.finished?'loadSaveShiftDone':'loadSaveShift').replace('{done}',s.patients.filter(p=>p.finished).length).replace('{total}',s.patients.length)):''].filter(Boolean);
+    const shiftNote={replaces:['warning-note','loadSaveReplaces'],kept:['small-note','loadSaveShiftKept'],ahead:['small-note','loadSaveShiftAhead']}[shift.outcome];
+    const dlg=openDialog('<h2>'+esc(t('loadSaveTitle'))+'</h2><ul class="save-summary">'+lines.map(line=>'<li>'+line+'</li>').join('')+'</ul><p>'+esc(t('loadSaveMerge'))+'</p>'+
+      (shiftNote?'<p class="'+shiftNote[0]+'">'+esc(t(shiftNote[1]))+'</p>':'')+(found.skipped>0?'<p class="small-note">'+esc(plural('loadSaveSkippedOne','loadSaveSkipped',found.skipped))+'</p>':'')+
+      '<div class="actions"><button class="btn primary" data-action="load-save">'+esc(t('loadSaveConfirm'))+'</button><button class="btn quiet" data-action="close-dialog">'+esc(t('cancel'))+'</button></div>');
+    // Start at the top, so the player reads which file and date they are loading before confirming (small phones too).
+    const title=dlg.querySelector('h2');title.tabIndex=-1;title.focus({preventScroll:true});dlg.scrollTop=0;
+  }
+  function loadSave() {
+    if (!pendingSave) return;
+    Object.assign(state,mergeSave(state,pendingSave));pendingSave=null;
+    syncRewards();persist();document.querySelector('dialog')?.close();render();
+    document.querySelector('[data-action="import"]')?.focus({preventScroll:true});toast('✅ '+t('saveLoaded'));
   }
   function reviewHistory(id,time) {
     const r=state.history.find(r=>r.caseId===id&&r.completedAt===time),c=getCase(id);if(!r)return;
@@ -608,7 +723,7 @@
 
   document.addEventListener('click',e=>{
     const schemaHit=e.target.closest('.schema [data-part],.schema [data-legend-part]');
-    if(schemaHit){const figure=schemaHit.closest('.schema'),id=schemaHit.dataset.part||schemaHit.dataset.legendPart;if(figure.dataset.mode==='quiz')answerQuiz(figure,id,schemaHit);else selectPart(figure,id);return;}
+    if(schemaHit){const figure=schemaHit.closest('.schema'),id=schemaHit.dataset.part||schemaHit.dataset.legendPart;if(figure.dataset.mode==='quiz')answerQuiz(figure,id,schemaHit);else selectPart(figure,id,!!schemaHit.dataset.legendPart);return;}
     const scene=e.target.closest('[data-scene-area],[data-scene-patient],[data-scene-coffee]');if(scene){handleScene(scene);if(scene.dataset.sceneCoffee)checkRewards();return;}
     const b=e.target.closest('button,a[data-view]');if(!b||b.disabled)return;
     if(b.dataset.avatar!==undefined){state.avatar=Number(b.dataset.avatar);persist();document.querySelectorAll('[data-avatar]').forEach(el=>{el.classList.toggle('selected',Number(el.dataset.avatar)===state.avatar);el.setAttribute('aria-pressed',String(Number(el.dataset.avatar)===state.avatar));});return;}
@@ -656,10 +771,12 @@
       case'wait':E.wait(state.session);persist();render();break;
       case'report':navigate('report');break;
       case'export':exportHistory();break;
+      case'import':document.getElementById('save-file')?.click();break;
+      case'load-save':loadSave();break;
       case'saved-only':savedOnly=!savedOnly;libraryPage=0;render();document.querySelector('[data-action="saved-only"]')?.focus({preventScroll:true});break;
       case'close-dialog':document.querySelector('dialog')?.close();break;
       case'reset-dialog':openDialog('<h2>'+esc(t('resetTitle'))+'</h2><p>'+esc(t('resetText'))+'</p><div class="actions"><button class="btn danger" data-action="reset">'+esc(t('resetConfirm'))+'</button><button class="btn quiet" data-action="close-dialog">'+esc(t('cancel'))+'</button></div>');break;
-      case'reset':state.history=[];state.bookmarks=[];state.session=null;state.stats=cleanStats(null);state.badges=[];persist();document.querySelector('dialog')?.close();render();break;
+      case'reset':state.history=[];state.bookmarks=[];state.session=null;state.stats=cleanStats(null);state.badges=[];state.countedShifts=[];persist();document.querySelector('dialog')?.close();render();break;
     }
   });
   document.addEventListener('keydown',e=>{
@@ -679,6 +796,7 @@
   document.addEventListener('change',async e=>{
     if(e.target.id==='duty-filter'){dutyFilter=['all',...DUTIES].includes(e.target.value)?e.target.value:'all';libraryPage=0;document.getElementById('case-results').innerHTML=libraryResults();return;}
     if(e.target.id==='topic-filter'){topicFilter=e.target.value;libraryPage=0;document.getElementById('case-results').innerHTML=libraryResults();return;}
+    if(e.target.id==='save-file'){const file=e.target.files[0];e.target.value='';if(file)offerSave(file);return;}
     if(e.target.id!=='schedule-file')return;
     const status=document.getElementById('schedule-status');
     try{
@@ -698,7 +816,7 @@
     const ids=pendingIds||customSchedule?.caseIds||E.scheduleDuty(C,seed,chosen||'night');
     const duty=pendingIds?commonDuty(pendingIds):customSchedule?(DUTIES.includes(customSchedule.duty)?customSchedule.duty:'mixed'):(chosen||'night');
     if(chosen&&!customSchedule)state.lastDuty=chosen;
-    state.session=cleanSessionExtras(Object.assign(E.create(C,ids,mode,seed),{duty}));persist();document.querySelector('dialog').close();navigate('play');startOpening();
+    state.session=cleanSession(Object.assign(E.create(C,ids,mode,seed),{duty}));persist();document.querySelector('dialog').close();navigate('play');startOpening();
   });
   window.addEventListener('hashchange',()=>{const v=location.hash.slice(1);if(v!==view&&['intro','library','atlas','progress','sources','play','report'].includes(v)){view=v;render();}});
   syncRewards();

@@ -60,6 +60,10 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{o
 .source-origin h3{margin-top:16px;font-size:.85rem}
 .source-origin ul{padding-left:20px;margin:10px 0 0}
 .source-origin a{color:#365182;text-decoration:underline}
+.update-note{margin:0 0 22px;padding:11px 15px;border:2px solid #3f8e72;border-radius:13px;background:#e3f3ea;color:#24493b;font-size:.74rem;line-height:1.6}
+.update-note a{color:#1f5f8b;text-decoration:underline}
+.save-note{margin:-12px 0 26px;max-width:72ch}
+.save-summary{margin:12px 0 14px;padding-left:20px;line-height:1.65}
 .source-evidence-note{border-left:3px solid #a97b28;padding-left:12px}
 .takeaway p,.feedback p,.answer-review p{white-space:pre-line}
 @media(max-width:760px){.topic-select{width:100%;flex-wrap:wrap}.topic-select select{width:100%}.library-pagination{align-items:flex-start}.case-origin{font-size:.7rem}}
@@ -387,7 +391,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{o
 .schema [data-part]:hover,.schema [data-part]:focus-visible{filter:drop-shadow(0 0 3px #ffcf5a) drop-shadow(0 0 6px #ffcf5a)}
 .schema [data-part].hl{animation:nsa-glow 1.6s ease-in-out infinite}
 @keyframes nsa-glow{0%,100%{filter:drop-shadow(0 0 2px #ff9f1a)}50%{filter:drop-shadow(0 0 7px #ff9f1a) drop-shadow(0 0 3px #ff9f1a)}}
-.schema.focus [data-part]:not(.on):not(.right):not(.wrong){opacity:.32}
+.schema.focus [data-part]:not(.on):not(.right):not(.wrong):not(:focus-visible){opacity:.32}
 .schema [data-part].on{filter:drop-shadow(0 0 4px #ffcf5a) drop-shadow(0 0 8px #ffcf5a);opacity:1}
 .schema [data-part].right{filter:drop-shadow(0 0 5px #3f8e72) drop-shadow(0 0 9px #3f8e72);opacity:1}
 .schema [data-part].wrong{filter:drop-shadow(0 0 5px #d35468) drop-shadow(0 0 9px #d35468);opacity:1}
@@ -395,6 +399,9 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{o
 .schema [data-part].hl:focus-visible,.schema [data-part].hl.on{animation:none}
 .schema [data-part]:focus-visible,.schema [data-part].hl:focus-visible{filter:drop-shadow(0 0 1.5px #2a2442) drop-shadow(0 0 1.5px #2a2442) drop-shadow(0 0 7px #ffcf5a)}
 .schema [data-part].hl.on{filter:drop-shadow(0 0 4px #ffcf5a) drop-shadow(0 0 8px #ffcf5a)}
+/* In the quiz a focused answer keeps its verdict colour inside the focus ring. */
+.schema [data-part].right:focus-visible{filter:drop-shadow(0 0 1.5px #2a2442) drop-shadow(0 0 1.5px #2a2442) drop-shadow(0 0 7px #3f8e72)}
+.schema [data-part].wrong:focus-visible{filter:drop-shadow(0 0 1.5px #2a2442) drop-shadow(0 0 1.5px #2a2442) drop-shadow(0 0 7px #d35468)}
 /* In dialogs the drawing shrinks on short screens so the verdict and the next button fit below it. */
 .schema-modal .schema-svg svg{max-height:max(190px,min(440px,calc(100vh - 340px)))}
 /* Five menu entries plus the language switch: tighten the header between the phone and desktop layouts. */
@@ -404,7 +411,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{o
 .schema-chip{border:2px solid #9b89a6;background:#fff;color:#302944;border-radius:999px;padding:4px 10px;font-size:.72rem;font-weight:700}
 .schema-chip.hl{border-color:#ff9f1a;background:#fff0bb}
 .schema-chip.on{background:#2a2442;color:#fff4d6;border-color:#2a2442}
-.schema-note{min-height:1.4em;margin:10px 0 0;font-size:.8rem!important;line-height:1.5;color:#42374e!important}
+.schema-note{min-height:1.4em;margin:10px 0;font-size:.8rem!important;line-height:1.5;color:#42374e!important}
 .case-media{margin:0;padding:12px;border:3px solid #2a2442;border-radius:18px;background:#fffbed}
 .case-media img{display:block;max-width:100%;height:auto;border-radius:10px;margin:0 auto}
 .case-media figcaption{font-size:.78rem;color:#42374e;margin-top:8px}

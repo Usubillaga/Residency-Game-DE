@@ -199,16 +199,18 @@ def run(archive_path, check=False):
         legacy = [case for case in existing if not case.get('source')]
         legacy_count += len(legacy)
         updates[path] = legacy + generated[area]
-    require(legacy_count == 30, 'Expected the unchanged 30 original expanded cases')
+    # The 30 original story cases plus any cases written for the game later; none of them come from the archive.
+    require(legacy_count >= 30, 'Expected at least the 30 original expanded cases')
+    manifest = {**manifest, 'legacyCases': legacy_count, 'totalCases': 267 + legacy_count}
     updates.update({ROOT / 'data/imported-source.json': snapshots, ROOT / 'data/refs-imported.json': references, ROOT / 'data/import-manifest.json': manifest})
     if check:
         for path, expected in updates.items():
             require(read_json(path) == expected, f'Imported data differs from source: {path.name}')
-        print('Verified: 267 source cases + 30 legacy cases = 297, all three languages match the archive.')
+        print(f'Verified: 267 source cases + {legacy_count} authored cases = {267 + legacy_count}, all three languages match the archive.')
     else:
         for path, value in updates.items():
             write_json(path, value)
-        print('Imported: all 267 source cases once; 297 total; 16 domains; DE/EN/ES preserved.')
+        print(f'Imported: all 267 source cases once; {267 + legacy_count} total; 16 domains; DE/EN/ES preserved.')
 
 
 def main():

@@ -188,6 +188,162 @@ def retained_attributes(attributes: dict, excluded: set[str]) -> str:
     return "".join(f" {name}" if value is None else f' {name}="{escape(value, quote=True)}"' for name, value in attributes.items() if name not in excluded)
 
 
+UPDATE_PATH = re.compile(r"(?P<field>title|presenting|takeaway)|steps\.(?P<step>\d+)\.(?P<step_field>prompt|best)"
+                         r"|steps\.(?P<ostep>\d+)\.options\.(?P<option>[a-z0-9-]+)\.(?P<option_field>text|feedback|score)")
+UPDATE_KINDS = ("editorial", "medical")
+
+# No authors in the game. Article citations such as "(Dieckmann et al. 2025)" or "(Che & Papachristofilou 2025)" are
+# removed when the catalog is built; guideline citations such as "(EAU 2026, 7.1)" stay. Prose that names authors or
+# "the article" has to be rewritten through an editorial update, and validation rejects whatever is left.
+AUTHOR_NAME = r"[A-ZÄÖÜ][a-zäöüßéèáíóúñ'’-]+"
+AUTHOR_CITATION = re.compile(rf"{AUTHOR_NAME}(?: et al\.| (?:&|and|und|y) {AUTHOR_NAME})?,? (?:19|20)\d{{2}}[a-z]?")
+CITATION_GROUP = re.compile(r"([ \t]*)\(([^()]*)\)")
+AUTHOR_WORDS = (rf"\bet al\b|\b{AUTHOR_NAME} (?:&|and|und|y) {AUTHOR_NAME},? (?:19|20)\d{{2}}\b|\({AUTHOR_NAME},? (?:19|20)\d{{2}}[a-z]?\)"
+                r"|\b(?:Erst|Letzt|Ko-?)?[Aa]utor(?:en|in|innen)?(?:gruppe)?\b|\b(?:first |senior |co-?)?[Aa]uthors?\b|\b[Aa]utor(?:es|as?)?\b")
+AUTHOR_MENTION = re.compile(AUTHOR_WORDS + r"|\bArtikels?\b|\b[Aa]rticles?\b|\b[Aa]rtículos?\b")
+# Provenance notes may say that a source article differs from the guideline, but they name no authors either.
+NOTE_AUTHOR_MENTION = re.compile(AUTHOR_WORDS)
+NOTE_PATH = re.compile(r"source\.evidenceNotes\.(?P<note>\d+)\.text")
+
+
+def strip_author_citations(text: str) -> str:
+    """Drop author-year items from parenthesised citations; keep any guideline items in the same parentheses."""
+    def group(match):
+        items = [item.strip() for item in match[2].split(";")]
+        kept = [item for item in items if not all(AUTHOR_CITATION.fullmatch(part.strip()) for part in item.split(" / "))]
+        if len(kept) == len(items):
+            return match[0]
+        return match[1] + "(" + "; ".join(kept) + ")" if kept else ""
+    return CITATION_GROUP.sub(group, text)
+
+
+def case_texts(case: dict):
+    """Yield (path, holder, key) for every localised text a player reads in a case."""
+    for key in ("title", "presenting", "takeaway", "objectives", "topic"):
+        if isinstance(case.get(key), dict):
+            yield key, case, key
+    patient = case.get("patient")
+    if isinstance(patient, dict) and isinstance(patient.get("label"), dict):
+        yield "patient.label", patient, "label"
+    for step_index, step in enumerate(case.get("steps") if isinstance(case.get("steps"), list) else []):
+        if not isinstance(step, dict):
+            continue
+        if isinstance(step.get("prompt"), dict):
+            yield f"steps.{step_index}.prompt", step, "prompt"
+        for option in step.get("options") if isinstance(step.get("options"), list) else []:
+            for key in ("text", "feedback"):
+                if isinstance(option, dict) and isinstance(option.get(key), dict):
+                    yield f"steps.{step_index}.options.{option.get('id')}.{key}", option, key
+
+
+def remove_authors(case: dict, where: str) -> None:
+    """Strip article citations from the texts a player reads, then reject any author or article mention left over."""
+    for path, holder, key in case_texts(case):
+        value = holder[key]
+        for language, text in value.items():
+            if isinstance(text, str):
+                value[language] = strip_author_citations(text)
+            elif isinstance(text, list):
+                value[language] = [strip_author_citations(item) if isinstance(item, str) else item for item in text]
+            for item in value[language] if isinstance(value[language], list) else [value[language]]:
+                hit = AUTHOR_MENTION.search(item) if isinstance(item, str) else None
+                require(hit is None, f"{where}.{path}.{language}: no authors in the game; rewrite {hit[0]!r} through an editorial update" if hit else "")
+    source = case.get("source")
+    for index, note in enumerate(source.get("evidenceNotes", []) if isinstance(source, dict) and isinstance(source.get("evidenceNotes"), list) else []):
+        if isinstance(note, dict) and isinstance(note.get("text"), str):
+            note["text"] = strip_author_citations(note["text"])
+            hit = NOTE_AUTHOR_MENTION.search(note["text"])
+            require(hit is None, f"{where}.source.evidenceNotes[{index}]: no authors in the game; rewrite {hit[0]!r} through an editorial update" if hit else "")
+
+
+def load_updates(root: Path) -> dict:
+    """Reviewed corrections in data/case-updates.json, keyed by case id. The case files keep the original text.
+
+    A case may have one editorial update (wording only, not shown as an update in the game) and one medical update."""
+    path = Path(root) / "data" / "case-updates.json"
+    if not path.exists():
+        return {}
+    data = read_json(path)
+    require(isinstance(data, dict) and isinstance(data.get("updates"), list), "case-updates.json: expected {\"updates\": [...]}")
+    updates = {}
+    for index, update in enumerate(data["updates"]):
+        where = f"case-updates.json[{index}]"
+        require(isinstance(update, dict), f"{where}: expected an object")
+        nonempty(update.get("case"), f"{where}.case")
+        kind = update.get("kind", "medical")
+        require(kind in UPDATE_KINDS, f"{where}.kind: expected editorial or medical")
+        require(kind not in updates.get(update["case"], {}), f"{where}: more than one {kind} update for {update['case']!r}")
+        require(bool(re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(update.get("date", "")))), f"{where}.date: expected YYYY-MM-DD")
+        localised(update.get("reason"), f"{where}.reason")
+        refs = update.get("references", [] if kind == "editorial" else None)
+        require(isinstance(refs, list) and (bool(refs) or kind == "editorial") and all(isinstance(ref, str) for ref in refs), f"{where}.references: expected reference ids")
+        changes = update.get("changes")
+        require(isinstance(changes, list) and bool(changes), f"{where}.changes: expected a nonempty list")
+        updates.setdefault(update["case"], {})[kind] = (update, where)
+    return updates
+
+
+def apply_update(case: dict, update: dict, where: str, references: dict) -> None:
+    """Replace reviewed fields of one case. Each change must still find the exact text it was written against.
+
+    A change either replaces a whole field ({"path", "from", "to"}) or edits one passage of one language
+    ({"path", "lang", "find", "replace"}); the passage must occur exactly once."""
+    whole, passages = [], set()
+    for index, change in enumerate(update["changes"]):
+        change_where = f"{where}.changes[{index}]"
+        require(isinstance(change, dict), f"{change_where}: expected an object")
+        note_match = NOTE_PATH.fullmatch(str(change.get("path", "")))
+        if note_match:
+            # Provenance notes are single-language entries; only passage edits in the note's own language are allowed.
+            notes = case.get("source", {}).get("evidenceNotes") if isinstance(case.get("source"), dict) else None
+            note_index = int(note_match["note"])
+            require(isinstance(notes, list) and note_index < len(notes) and isinstance(notes[note_index], dict), f"{change_where}.path: no such evidence note")
+            note = notes[note_index]
+            require("find" in change and set(change) == {"path", "lang", "find", "replace"} and change["lang"] == note.get("language"), f"{change_where}: evidence notes take passage edits in the note's language")
+            require(isinstance(change["find"], str) and bool(change["find"]) and isinstance(change["replace"], str) and change["replace"] != change["find"], f"{change_where}: find must be nonempty text and replace changed text")
+            require(isinstance(note.get("text"), str) and note["text"].count(change["find"]) == 1, f"{change_where}.find: must occur exactly once in the current text; review the update against the case")
+            note["text"] = note["text"].replace(change["find"], change["replace"])
+            passages.add(change["path"])
+            continue
+        match = UPDATE_PATH.fullmatch(str(change.get("path", "")))
+        require(match is not None, f"{change_where}.path: unsupported path {change.get('path')!r}")
+        container, key = case, None
+        if match["field"]:
+            key = match["field"]
+        else:
+            steps = case.get("steps") if isinstance(case.get("steps"), list) else []
+            step_index = int(match["step"] or match["ostep"])
+            require(step_index < len(steps) and isinstance(steps[step_index], dict), f"{change_where}.path: no such step")
+            container = steps[step_index]
+            key = match["step_field"]
+            if match["option"]:
+                options = [option for option in container.get("options", []) if isinstance(option, dict) and option.get("id") == match["option"]]
+                require(len(options) == 1, f"{change_where}.path: no such option")
+                container, key = options[0], match["option_field"]
+        require(key in container, f"{change_where}.path: field not present in the case")
+        if "find" in change:
+            require(set(change) == {"path", "lang", "find", "replace"}, f"{change_where}: a passage edit needs exactly path, lang, find and replace")
+            require(change["path"] not in whole, f"{change_where}.path: already replaced as a whole field")
+            require(change["lang"] in LANGUAGES and isinstance(container[key], dict) and isinstance(container[key].get(change["lang"]), str), f"{change_where}.lang: expected a language of a localised text")
+            require(isinstance(change["find"], str) and bool(change["find"]) and isinstance(change["replace"], str), f"{change_where}: find must be nonempty text and replace text")
+            text = container[key][change["lang"]]
+            require(text.count(change["find"]) == 1, f"{change_where}.find: must occur exactly once in the current text; review the update against the case")
+            require(change["replace"] != change["find"], f"{change_where}.replace: expected a changed passage")
+            container[key] = {**container[key], change["lang"]: text.replace(change["find"], change["replace"])}
+            passages.add(change["path"])
+            continue
+        require("from" in change and container[key] == change["from"], f"{change_where}.from: no longer matches the case; review the update against the current text")
+        require("to" in change and change["to"] != change["from"], f"{change_where}.to: expected a changed value")
+        require(change["path"] not in whole and change["path"] not in passages, f"{change_where}.path: changed twice")
+        container[key] = change["to"]
+        whole.append(change["path"])
+    refs = update.get("references", [])
+    require(all(ref in references for ref in refs), f"{where}.references: unknown reference id")
+    case["references"] = list(dict.fromkeys(list(case.get("references", [])) + refs))
+    if update.get("kind", "medical") == "medical":
+        case["update"] = {"date": update["date"], "reason": update["reason"], "references": refs, "fields": list(dict.fromkeys(whole + sorted(passages)))}
+
+
 def load_and_validate(root: Path = ROOT, *, check_assets: bool = True):
     """Return all cases and deduplicated references, after validating source data."""
     root = Path(root)
@@ -214,6 +370,7 @@ def load_and_validate(root: Path = ROOT, *, check_assets: bool = True):
 
     cases = []
     case_ids = set()
+    updates = load_updates(root)
     for area, filename in zip(AREA_IDS, CASE_FILES):
         rows = read_json(root / "data" / filename)
         require(isinstance(rows, list) and bool(rows), f"{filename}: expected a nonempty array")
@@ -223,6 +380,13 @@ def load_and_validate(root: Path = ROOT, *, check_assets: bool = True):
             nonempty(case.get("id"), f"{where}.id")
             require(case["id"] not in case_ids, f"{where}: duplicate case id {case['id']!r}")
             case_ids.add(case["id"])
+            # Editorial wording first, then medical corrections; the corrected case passes the same rules as every other case.
+            for kind in UPDATE_KINDS:
+                if kind in updates.get(case["id"], {}):
+                    update, update_where = updates[case["id"]].pop(kind)
+                    apply_update(case, update, update_where, references)
+            updates.pop(case["id"], None)
+            remove_authors(case, where)
             require(case.get("area") == area, f"{where}.area: expected {area!r}")
             require(type(case.get("level")) is int and case["level"] in (1, 2, 3), f"{where}.level: expected 1, 2 or 3")
             require(case.get("acuity") in ("routine", "urgent", "critical"), f"{where}.acuity: invalid acuity")
@@ -295,6 +459,7 @@ def load_and_validate(root: Path = ROOT, *, check_assets: bool = True):
             require(len(source_ids) == len(set(source_ids)), f"{where}.references: duplicate reference id")
             find_extra_translations(case, where)
             cases.append(case)
+    require(not updates, f"case-updates.json: unknown case ids {sorted(updates)}")
     if check_assets:
         validate_assets(root)
     return cases, [references[key] for key in sorted(references)]
@@ -409,6 +574,10 @@ def build(root: Path = ROOT) -> dict:
     for case in cases:
         if case["id"] in links:
             case["schema"] = {"id": links[case["id"]]["schema"], "parts": links[case["id"]].get("parts", [])}
+        # The game lists source titles only; the full citations with author names stay in the data files.
+        if isinstance(case.get("source"), dict) and isinstance(case["source"].get("originalSources"), list):
+            case["source"]["originalSources"] = [{key: value for key, value in item.items() if key != "citation"} if isinstance(item, dict) else item
+                                                 for item in case["source"]["originalSources"]]
         if case["id"] in media:
             case["media"] = media[case["id"]]
     catalog = {"version": 2, "languages": list(LANGUAGES), "areas": AREAS, "cases": cases, "references": references, "schemas": schemas}
@@ -533,7 +702,9 @@ def package(root: Path, output: Path, *, rebuild: bool = True) -> dict:
 
 def analyse(source: Path, output: Path, root: Path = ROOT) -> int:
     data = read_json(source)
-    require(isinstance(data, dict) and data.get("version") == 2, "Export must have version 2")
+    # The game file (version 3) carries the logbook next to rank, stickers and the open shift; older exports held the logbook only.
+    require(isinstance(data, dict) and (data.get("version") == 2 or (data.get("format") == "night-shift-academy-save" and data.get("version") == 3)),
+            "Export must be a game file (version 3) or a logbook export (version 2)")
     history = data.get("history")
     require(isinstance(history, list), "Export.history must be an array")
     cases, _ = load_and_validate(root, check_assets=False)
@@ -607,7 +778,8 @@ def main(argv=None) -> int:
         if args.command == "validate":
             cases, references = load_and_validate()
             schemas, links, media = load_visuals(ROOT, cases)
-            print(f"Valid: {len(cases)} cases, {len(references)} references, {len(schemas)} schemas ({len(links)} linked cases), {sum(map(len, media.values()))} images, 3 languages, 5 areas.")
+            updated = sum("update" in case for case in cases)
+            print(f"Valid: {len(cases)} cases ({updated} updated), {len(references)} references, {len(schemas)} schemas ({len(links)} linked cases), {sum(map(len, media.values()))} images, 3 languages, 5 areas.")
         elif args.command == "build":
             catalog = build()
             print(f"Built catalog.js and standalone.html with {len(catalog['cases'])} cases.")

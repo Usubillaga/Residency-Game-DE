@@ -20,7 +20,8 @@ const legacyIds = [
   'endoscopy-papillary', 'endoscopy-cis', 'endoscopy-stricture', 'endoscopy-stent', 'endoscopy-biopsy', 'endoscopy-infected-obstruction',
   'theatre-checklist', 'theatre-side-discrepancy', 'theatre-infected-stone', 'theatre-specimen-label', 'theatre-ureter-injury', 'theatre-postop-handover'
 ];
-const importedCases = catalog.cases.filter(c => !legacyIds.includes(c.id));
+const importedCases = catalog.cases.filter(c => c.source);
+const authoredCases = catalog.cases.filter(c => !c.source);
 const expectedSourceCases = 267;
 // Captured from the previous 30-case release, rather than derived from the
 // expanded catalog. These completed first answers are stored-progress contracts.
@@ -161,8 +162,9 @@ test('case records require completion and copy their answers for safe export', (
   assert.throws(() => E.answer(s, catalog, chosen.id, 'a'), /Session finished/);
 });
 
-test('the complete 297-case library can finish, with maxima and elapsed time calculated from its actual steps', () => {
-  assert.equal(catalog.cases.length, legacyIds.length + expectedSourceCases);
+test('the complete case library can finish, with maxima and elapsed time calculated from its actual steps', () => {
+  assert.equal(catalog.cases.length, authoredCases.length + expectedSourceCases);
+  assert.ok(legacyIds.every(id => authoredCases.some(c => c.id === id)), 'The 30 original story cases are still authored cases');
   const s = E.create(catalog, catalog.cases.map(c => c.id), 'learn', 'whole-library');
   let expectedMinutes = 0;
   for (const c of catalog.cases) {

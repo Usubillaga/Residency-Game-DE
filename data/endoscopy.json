@@ -1403,6 +1403,468 @@
     ]
   },
   {
+    "id": "onc-bladder-early-instillation",
+    "area": "endoscopy",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "elective",
+    "patient": {
+      "name": "Grażyna Lewandowska",
+      "age": 71,
+      "sex": "female"
+    },
+    "title": {
+      "en": "Early instillation and intermediate risk",
+      "de": "Frühinstillation und intermediäres Risiko",
+      "es": "Instilación precoz y riesgo intermedio"
+    },
+    "presenting": {
+      "en": "Mrs Lewandowska, 71, a non-smoker, was investigated for painless visible haematuria. At elective TURBT three exophytic papillary tumours on the left lateral wall (largest 1.5 cm) were completely resected, with detrusor muscle in the specimen and no perforation. No flat suspicious areas were seen. At the end of the operation the urine is clear and continuous irrigation is not needed.",
+      "de": "Frau Lewandowska, 71 Jahre, Nichtraucherin, wurde wegen schmerzloser Makrohämaturie abgeklärt. Bei der elektiven TUR-B wurden drei exophytische papilläre Tumoren an der linken Seitenwand (größter 1,5 cm) vollständig reseziert, mit Detrusormuskel im Präparat und ohne Perforation. Flache suspekte Areale zeigten sich nicht. Am Ende der Operation ist der Urin klar, eine Dauerspülung ist nicht nötig.",
+      "es": "La Sra. Lewandowska, de 71 años, no fumadora, fue estudiada por hematuria macroscópica indolora. En la RTU programada se resecaron por completo tres tumores papilares exofíticos en la pared lateral izquierda (el mayor de 1,5 cm), con músculo detrusor en la muestra y sin perforación. No se vieron áreas planas sospechosas. Al final de la intervención la orina es clara y no precisa lavado vesical continuo."
+    },
+    "vitals": {
+      "bp": "134/78",
+      "hr": 74,
+      "temp": 36.6,
+      "spo2": 97,
+      "rr": 14
+    },
+    "objectives": {
+      "en": [
+        "Know the indication and contraindications for a single instillation after TURBT.",
+        "Choose adjuvant therapy for intermediate risk and switch to BCG at recurrence."
+      ],
+      "de": [
+        "Indikation und Kontraindikationen der Frühinstillation nach TUR-B kennen.",
+        "Die adjuvante Therapie beim intermediären Risiko und den Wechsel auf BCG beim Rezidiv festlegen."
+      ],
+      "es": [
+        "Conocer la indicación y las contraindicaciones de la instilación precoz tras la RTU.",
+        "Elegir el tratamiento adyuvante en el riesgo intermedio y cambiar a BCG ante la recidiva."
+      ]
+    },
+    "steps": [
+      {
+        "id": "single-instillation",
+        "kind": "action",
+        "prompt": {
+          "en": "In the recovery room: what do you do about instillation?",
+          "de": "Im Aufwachraum: Wie verfahren Sie mit der Instillation?",
+          "es": "En la sala de recuperación: ¿qué hace con la instilación?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Immediate BCG instillation in the recovery room.",
+              "de": "Sofortige BCG-Instillation im Aufwachraum.",
+              "es": "Instilación inmediata de BCG en la sala de recuperación."
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "en": "BCG must never be given immediately after TURBT: the fresh resection area risks systemic BCG infection. BCG starts no earlier than 2 weeks after resection.",
+              "de": "BCG darf nie unmittelbar nach TUR-B gegeben werden: Über die frische Resektionsfläche droht eine systemische BCG-Infektion. BCG beginnt frühestens 2 Wochen nach der Resektion.",
+              "es": "La BCG nunca debe administrarse justo después de la RTU: el lecho de resección reciente expone a una infección sistémica por BCG. La BCG empieza como pronto 2 semanas tras la resección."
+            },
+            "critical": true
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "A single early instillation of chemotherapy (e.g. mitomycin C) within 24 hours.",
+              "de": "Einmalige Frühinstillation eines Chemotherapeutikums (z. B. Mitomycin C) innerhalb von 24 Stunden.",
+              "es": "Una única instilación precoz de quimioterapia (p. ej., mitomicina C) en las primeras 24 horas."
+            },
+            "score": 10,
+            "minutes": 6,
+            "feedback": {
+              "en": "With presumed low risk, or presumed intermediate risk with a low recurrence rate (here a primary tumour, EORTC recurrence score below 5), and no contraindication, the single instillation lowers the recurrence risk. Do not give it after perforation, extensive resection or bleeding that needs irrigation.",
+              "de": "Bei vermutlich niedrigem Risiko und bei vermutlich intermediärem Risiko mit niedriger Rezidivrate (hier Primärtumor, EORTC-Rezidiv-Score unter 5) senkt die Frühinstillation ohne Kontraindikation das Rezidivrisiko. Nicht geben bei Perforation, ausgedehnter Resektion oder Blutung mit Spülpflicht.",
+              "es": "Con riesgo presumiblemente bajo, o intermedio con baja tasa de recidiva (aquí un tumor primario, puntuación de recidiva EORTC inferior a 5), y sin contraindicación, la instilación precoz reduce el riesgo de recidiva. No se administra tras perforación, resección extensa o sangrado que requiera lavado."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Postpone the instillation until the histology is available.",
+              "de": "Die Instillation zurückstellen, bis die Histologie vorliegt.",
+              "es": "Aplazar la instilación hasta tener la histología."
+            },
+            "score": 3,
+            "minutes": 3,
+            "feedback": {
+              "en": "The benefit of the single instillation depends on early administration; by the time the histology arrives, the 24-hour window has passed.",
+              "de": "Der Nutzen der Einmalinstillation hängt von der frühen Gabe ab; wenn die Histologie eintrifft, ist das 24-Stunden-Fenster verstrichen.",
+              "es": "El beneficio de la instilación única depende de su administración precoz; cuando llega la histología, la ventana de 24 horas ya ha pasado."
+            },
+            "critical": false
+          }
+        ],
+        "best": "b"
+      },
+      {
+        "id": "adjuvant-intermediate",
+        "kind": "decision",
+        "prompt": {
+          "en": "Histology: three foci of pTa low grade, no CIS, detrusor free of tumour. Which adjuvant therapy do you recommend?",
+          "de": "Histologie: drei Herde pTa Low Grade, kein CIS, Detrusor tumorfrei. Welche adjuvante Therapie empfehlen Sie?",
+          "es": "Histología: tres focos pTa de bajo grado, sin CIS, detrusor libre de tumor. ¿Qué tratamiento adyuvante recomienda?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Intermediate risk: intravesical chemotherapy for up to 1 year or full-dose BCG for 1 year.",
+              "de": "Intermediäres Risiko: intravesikale Chemotherapie für bis zu 1 Jahr oder BCG in voller Dosis für 1 Jahr.",
+              "es": "Riesgo intermedio: quimioterapia intravesical hasta 1 año o BCG a dosis completa durante 1 año."
+            },
+            "score": 10,
+            "minutes": 8,
+            "feedback": {
+              "en": "A primary Ta LG tumour with two risk factors (age >70, multiple) is intermediate risk; both options follow the guideline, chosen by recurrence risk, tolerability and preference. Repeat TURBT is not needed for Ta LG.",
+              "de": "Ein primärer Ta LG mit zwei Risikofaktoren (Alter >70, multipel) ist intermediäres Risiko; beide Optionen sind leitliniengerecht, die Wahl richtet sich nach Rezidivrisiko, Verträglichkeit und Präferenz. Eine Nach-TUR-B ist bei Ta LG nicht nötig.",
+              "es": "Un Ta BG primario con dos factores de riesgo (edad >70, múltiple) es de riesgo intermedio; ambas opciones siguen la guía y se eligen según riesgo de recidiva, tolerancia y preferencia. En el Ta BG no hace falta re-RTU."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "No further therapy; next cystoscopy in 12 months.",
+              "de": "Keine weitere Therapie; nächste Zystoskopie in 12 Monaten.",
+              "es": "Ningún tratamiento adicional; próxima cistoscopia en 12 meses."
+            },
+            "score": 0,
+            "minutes": 3,
+            "feedback": {
+              "en": "This does not even match low-risk care, where the first check is at 3 months; intermediate risk requires adjuvant intravesical therapy.",
+              "de": "Das entspricht nicht einmal dem Vorgehen beim niedrigen Risiko, bei dem die erste Kontrolle nach 3 Monaten erfolgt; beim intermediären Risiko ist eine adjuvante Instillationstherapie indiziert.",
+              "es": "Ni siquiera corresponde al bajo riesgo, en el que el primer control es a los 3 meses; el riesgo intermedio requiere tratamiento intravesical adyuvante."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "BCG with maintenance for 3 years.",
+              "de": "BCG mit Erhaltung über 3 Jahre.",
+              "es": "BCG con mantenimiento durante 3 años."
+            },
+            "score": 3,
+            "minutes": 6,
+            "feedback": {
+              "en": "Three years of maintenance are reserved for high risk; in intermediate risk the longer course mainly adds side effects.",
+              "de": "Drei Jahre Erhaltung sind dem hohen Risiko vorbehalten; beim intermediären Risiko bringt die längere Dauer vor allem mehr Nebenwirkungen.",
+              "es": "Los tres años de mantenimiento se reservan para el alto riesgo; en el riesgo intermedio la mayor duración añade sobre todo efectos adversos."
+            },
+            "critical": false
+          }
+        ],
+        "best": "a"
+      },
+      {
+        "id": "recurrence-on-chemo",
+        "kind": "decision",
+        "prompt": {
+          "en": "You choose mitomycin C instillations. At the 6-month cystoscopy (during maintenance) two new small papillary tumours are seen; TURBT again shows pTa low grade without CIS. What next?",
+          "de": "Sie wählen Mitomycin-C-Instillationen. Bei der Kontrollzystoskopie nach 6 Monaten (unter laufender Erhaltung) zeigen sich zwei neue kleine papilläre Tumoren; die TUR-B ergibt erneut pTa Low Grade ohne CIS. Wie geht es weiter?",
+          "es": "Elige instilaciones de mitomicina C. En la cistoscopia de control a los 6 meses (durante el mantenimiento) aparecen dos tumores papilares pequeños nuevos; la RTU muestra de nuevo pTa de bajo grado sin CIS. ¿Cómo sigue?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Continue mitomycin C for another year.",
+              "de": "Mitomycin C für ein weiteres Jahr fortsetzen.",
+              "es": "Continuar con mitomicina C un año más."
+            },
+            "score": 3,
+            "minutes": 4,
+            "feedback": {
+              "en": "This repeats a strategy that is already failing; the guideline step is a switch to BCG.",
+              "de": "Damit wird eine bereits versagende Strategie wiederholt; leitliniengerecht ist der Wechsel auf BCG.",
+              "es": "Esto repite una estrategia que ya está fracasando; lo indicado por la guía es cambiar a BCG."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Radical cystectomy because of the early recurrence.",
+              "de": "Radikale Zystektomie wegen des frühen Rezidivs.",
+              "es": "Cistectomía radical por la recidiva precoz."
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "en": "A Ta low-grade recurrence does not justify cystectomy; that would be major overtreatment with considerable morbidity.",
+              "de": "Ein Rezidiv eines Ta Low Grade rechtfertigt keine Zystektomie; das wäre eine erhebliche Übertherapie mit großer Morbidität.",
+              "es": "Una recidiva Ta de bajo grado no justifica una cistectomía; sería un sobretratamiento importante con gran morbilidad."
+            },
+            "critical": true
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Switch to full-dose BCG with induction and maintenance.",
+              "de": "Auf BCG in voller Dosis mit Induktion und Erhaltung umstellen.",
+              "es": "Cambiar a BCG a dosis completa con inducción y mantenimiento."
+            },
+            "score": 10,
+            "minutes": 6,
+            "feedback": {
+              "en": "Recurrence during intravesical chemotherapy is the reason to switch to BCG; prior chemotherapy does not reduce the efficacy of BCG.",
+              "de": "Ein Rezidiv unter Chemotherapie-Instillation ist der Grund für den Wechsel auf BCG; eine vorangegangene Chemotherapie mindert die Wirksamkeit von BCG nicht.",
+              "es": "La recidiva durante la quimioterapia intravesical es el motivo para cambiar a BCG; la quimioterapia previa no reduce la eficacia de la BCG."
+            },
+            "critical": false
+          }
+        ],
+        "best": "c"
+      }
+    ],
+    "takeaway": {
+      "en": "Give a single chemotherapy instillation within 24 hours for presumed low risk or intermediate risk with a low recurrence rate, but never after perforation, extensive resection or bleeding needing irrigation, and never with BCG. Intermediate risk: 1 year of chemotherapy or BCG instillations; recurrence during chemotherapy means switching to BCG.",
+      "de": "Frühinstillation einer Chemotherapie innerhalb von 24 Stunden bei vermutlich niedrigem Risiko oder intermediärem Risiko mit niedriger Rezidivrate, aber nie bei Perforation, ausgedehnter Resektion oder Spülpflicht und nie mit BCG. Intermediäres Risiko: 1 Jahr Chemotherapie- oder BCG-Instillation; ein Rezidiv unter Chemotherapie führt zum Wechsel auf BCG.",
+      "es": "Instilación única de quimioterapia en 24 horas si el riesgo es presumiblemente bajo, o intermedio con baja tasa de recidiva, pero nunca tras perforación, resección extensa o sangrado con lavado, y nunca con BCG. Riesgo intermedio: 1 año de quimioterapia o BCG intravesical; la recidiva durante la quimioterapia obliga a cambiar a BCG."
+    },
+    "references": [
+      "bank-guide-nmibc",
+      "knowuro-bladder-2026"
+    ]
+  },
+  {
+    "id": "onc-bladder-positive-cytology",
+    "area": "endoscopy",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "clinic",
+    "patient": {
+      "name": "Mehmet Yıldız",
+      "age": 67,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Positive cytology, normal cystoscopy",
+      "de": "Positive Zytologie, unauffällige Zystoskopie",
+      "es": "Citología positiva, cistoscopia normal"
+    },
+    "presenting": {
+      "en": "Mr Yıldız, 67, a former smoker with 40 pack-years, had a single episode of painless visible haematuria three weeks ago. Flexible white-light cystoscopy in clinic is normal; ultrasound shows no hydronephrosis and no mass. Two voided urine cytologies both show high-grade urothelial carcinoma cells (Paris category HGUC). Urinalysis shows no signs of infection.",
+      "de": "Herr Yıldız, 67 Jahre, ehemaliger Raucher mit 40 Packungsjahren, hatte vor drei Wochen eine einmalige schmerzlose Makrohämaturie. Die flexible Weißlicht-Zystoskopie in der Ambulanz ist unauffällig; sonografisch keine Harnstauung und keine Raumforderung. Zwei Spontanurinzytologien zeigen jeweils hochgradige Urothelkarzinomzellen (Paris-Kategorie HGUC). Der Urinstatus zeigt keine Infektzeichen.",
+      "es": "El Sr. Yıldız, de 67 años, exfumador de 40 paquetes-año, tuvo hace tres semanas un único episodio de hematuria macroscópica indolora. La cistoscopia flexible con luz blanca en consulta es normal; la ecografía no muestra hidronefrosis ni masas. Dos citologías de orina espontánea muestran células de carcinoma urotelial de alto grado (categoría París HGUC). El sedimento no muestra signos de infección."
+    },
+    "vitals": null,
+    "objectives": {
+      "en": [
+        "Investigate the upper tract when cytology is positive and cystoscopy is normal.",
+        "Confirm and treat occult CIS with PDD-guided biopsies including the prostatic urethra."
+      ],
+      "de": [
+        "Bei positiver Zytologie und unauffälliger Zystoskopie den oberen Harntrakt abklären.",
+        "Ein okkultes CIS mit PDD-gestützten Biopsien einschließlich prostatischer Harnröhre sichern und behandeln."
+      ],
+      "es": [
+        "Estudiar el tracto urinario superior si la citología es positiva y la cistoscopia normal.",
+        "Confirmar y tratar un CIS oculto con biopsias guiadas por PDD, incluida la uretra prostática."
+      ]
+    },
+    "steps": [
+      {
+        "id": "upper-tract",
+        "kind": "decision",
+        "prompt": {
+          "en": "What do you arrange next?",
+          "de": "Was veranlassen Sie als Nächstes?",
+          "es": "¿Qué solicita a continuación?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "CT urography to exclude an upper tract tumour.",
+              "de": "CT-Urographie zum Ausschluss eines Tumors im oberen Harntrakt.",
+              "es": "Urografía por TC para descartar un tumor del tracto urinario superior."
+            },
+            "score": 10,
+            "minutes": 6,
+            "feedback": {
+              "en": "Positive cytology with normal cystoscopy points to CIS of the bladder or prostatic urethra or an upper tract tumour. CT urography is also indicated for trigonal, multiple or high-risk bladder tumours.",
+              "de": "Eine positive Zytologie bei unauffälliger Zystoskopie spricht für ein CIS der Blase oder der prostatischen Harnröhre oder einen Tumor des oberen Harntrakts. Die CT-Urographie ist auch bei trigonalen, multiplen oder Hochrisiko-Blasentumoren indiziert.",
+              "es": "Una citología positiva con cistoscopia normal sugiere CIS vesical o de la uretra prostática o un tumor del tracto superior. La urografía por TC también está indicada en tumores vesicales del trígono, múltiples o de alto riesgo."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Proceed straight to bladder biopsies under anaesthesia; investigate the upper tract only if they are negative.",
+              "de": "Direkt Blasenbiopsien in Narkose; den oberen Harntrakt nur bei negativem Ergebnis abklären.",
+              "es": "Ir directamente a biopsias vesicales bajo anestesia; estudiar el tracto superior solo si son negativas."
+            },
+            "score": 3,
+            "minutes": 5,
+            "feedback": {
+              "en": "Biopsies are needed, but even bladder CIS does not exclude a synchronous upper tract tumour; CT urography is required in any case and is best done first.",
+              "de": "Die Biopsien sind nötig, aber auch ein Blasen-CIS schließt einen gleichzeitigen Tumor des oberen Harntrakts nicht aus; die CT-Urographie gehört in jedem Fall dazu und wird sinnvollerweise vorab geplant.",
+              "es": "Las biopsias son necesarias, pero ni siquiera un CIS vesical excluye un tumor sincrónico del tracto superior; la urografía por TC es necesaria en cualquier caso y conviene hacerla antes."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Regard the cytology as false positive and repeat it in 6 months.",
+              "de": "Die Zytologie als falsch positiv werten und in 6 Monaten wiederholen.",
+              "es": "Considerar la citología un falso positivo y repetirla en 6 meses."
+            },
+            "score": 0,
+            "minutes": 2,
+            "feedback": {
+              "en": "High-grade positive cytology is highly specific; waiting delays the diagnosis of CIS or an upper tract tumour.",
+              "de": "Eine High-Grade-positive Zytologie ist sehr spezifisch; Abwarten verzögert die Diagnose eines CIS oder Oberharntrakttumors.",
+              "es": "Una citología positiva de alto grado es muy específica; esperar retrasa el diagnóstico de un CIS o de un tumor del tracto superior."
+            },
+            "critical": true
+          }
+        ],
+        "best": "a"
+      },
+      {
+        "id": "mapping",
+        "kind": "action",
+        "prompt": {
+          "en": "CT urography is normal. How do you establish the diagnosis?",
+          "de": "Die CT-Urographie ist unauffällig. Wie sichern Sie die Diagnose?",
+          "es": "La urografía por TC es normal. ¿Cómo confirma el diagnóstico?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Start empirical BCG induction without histological confirmation.",
+              "de": "Ohne histologische Sicherung empirisch eine BCG-Induktion beginnen.",
+              "es": "Iniciar una inducción empírica con BCG sin confirmación histológica."
+            },
+            "score": 0,
+            "minutes": 4,
+            "feedback": {
+              "en": "Without histology there is no diagnosis, no extent and no assessment of the prostatic urethra; treatment without confirmation does not follow the guideline.",
+              "de": "Ohne Histologie fehlen Diagnose, Ausdehnung und der Befund der prostatischen Harnröhre; eine Therapie ohne Sicherung ist nicht leitliniengerecht.",
+              "es": "Sin histología faltan el diagnóstico, la extensión y la valoración de la uretra prostática; tratar sin confirmación no sigue la guía."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Cystoscopy under anaesthesia with photodynamic diagnosis (PDD): biopsy of all fluorescent areas, mapping biopsies of normal-looking mucosa and biopsy of the prostatic urethra.",
+              "de": "Zystoskopie in Narkose mit photodynamischer Diagnostik (PDD): Biopsien aller fluoreszierenden Areale, Mapping-Biopsien der unauffälligen Schleimhaut und Biopsie der prostatischen Harnröhre.",
+              "es": "Cistoscopia bajo anestesia con diagnóstico fotodinámico (PDD): biopsia de todas las áreas fluorescentes, biopsias de mapeo de la mucosa de aspecto normal y biopsia de la uretra prostática."
+            },
+            "score": 10,
+            "minutes": 15,
+            "feedback": {
+              "en": "CIS is often invisible in white light, and PDD increases detection. In men the prostatic urethra must be included, because CIS there changes the risk group and treatment.",
+              "de": "CIS ist im Weißlicht oft unsichtbar, die PDD erhöht die Detektionsrate. Beim Mann gehört die prostatische Harnröhre dazu, da ein CIS dort Risikogruppe und Therapie verändert.",
+              "es": "El CIS suele ser invisible con luz blanca y el PDD aumenta la detección. En el varón debe incluirse la uretra prostática, porque un CIS allí cambia el grupo de riesgo y el tratamiento."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "White-light mapping biopsies of the bladder, without prostatic urethral biopsy.",
+              "de": "Mapping-Biopsien der Blase im Weißlicht, ohne Biopsie der prostatischen Harnröhre.",
+              "es": "Biopsias de mapeo vesical con luz blanca, sin biopsia de la uretra prostática."
+            },
+            "score": 3,
+            "minutes": 12,
+            "feedback": {
+              "en": "Random biopsies can find CIS, but without PDD the yield is lower and CIS of the prostatic urethra is missed.",
+              "de": "Zufallsbiopsien können ein CIS finden, ohne PDD sinkt aber die Trefferquote, und ein CIS der prostatischen Harnröhre bleibt unerkannt.",
+              "es": "Las biopsias aleatorias pueden detectar un CIS, pero sin PDD el rendimiento es menor y se pasa por alto un CIS de la uretra prostática."
+            },
+            "critical": false
+          }
+        ],
+        "best": "b"
+      },
+      {
+        "id": "cis-treatment",
+        "kind": "decision",
+        "prompt": {
+          "en": "Histology: multifocal carcinoma in situ on the posterior wall and trigone, prostatic urethra free of tumour, no invasive component. Which treatment do you recommend?",
+          "de": "Histologie: multifokales Carcinoma in situ an Hinterwand und Trigonum, prostatische Harnröhre tumorfrei, kein invasiver Anteil. Welche Therapie empfehlen Sie?",
+          "es": "Histología: carcinoma in situ multifocal en la pared posterior y el trígono, uretra prostática libre de tumor, sin componente infiltrante. ¿Qué tratamiento recomienda?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Intravesical mitomycin C chemotherapy for 1 year.",
+              "de": "Intravesikale Chemotherapie mit Mitomycin C über 1 Jahr.",
+              "es": "Quimioterapia intravesical con mitomicina C durante 1 año."
+            },
+            "score": 3,
+            "minutes": 6,
+            "feedback": {
+              "en": "Intravesical chemotherapy is inferior to BCG for CIS and is only considered if BCG is contraindicated or unavailable.",
+              "de": "Chemotherapie-Instillationen sind beim CIS der BCG unterlegen und kommen nur bei Kontraindikation gegen BCG oder fehlender Verfügbarkeit in Betracht.",
+              "es": "La quimioterapia intravesical es inferior a la BCG en el CIS y solo se plantea si la BCG está contraindicada o no está disponible."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "No adjuvant therapy; check cystoscopy in 3 months.",
+              "de": "Keine adjuvante Therapie; Kontrollzystoskopie in 3 Monaten.",
+              "es": "Sin tratamiento adyuvante; cistoscopia de control en 3 meses."
+            },
+            "score": 0,
+            "minutes": 3,
+            "feedback": {
+              "en": "Untreated CIS often progresses to muscle-invasive disease; biopsy alone is not treatment.",
+              "de": "Ein unbehandeltes CIS geht häufig in eine muskelinvasive Erkrankung über; die Biopsie allein ist keine Therapie.",
+              "es": "Un CIS no tratado progresa con frecuencia a enfermedad músculo-infiltrante; la biopsia por sí sola no es un tratamiento."
+            },
+            "critical": true
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Full-dose BCG with induction and 1–3 years of maintenance; follow-up with cystoscopy and cytology.",
+              "de": "BCG in voller Dosis mit Induktion und Erhaltung über 1–3 Jahre; Kontrollen mit Zystoskopie und Zytologie.",
+              "es": "BCG a dosis completa con inducción y mantenimiento de 1–3 años; seguimiento con cistoscopia y citología."
+            },
+            "score": 10,
+            "minutes": 8,
+            "feedback": {
+              "en": "Primary CIS belongs to the high-risk group, and BCG with maintenance is the standard. If it persists or recurs, the type of BCG failure determines the next step.",
+              "de": "Primäres CIS gehört zur Hochrisikogruppe; BCG mit Erhaltung ist der Standard. Bei Persistenz oder Rezidiv entscheidet die Klassifikation des BCG-Versagens über das weitere Vorgehen.",
+              "es": "El CIS primario pertenece al grupo de alto riesgo y la BCG con mantenimiento es el estándar. Si persiste o recidiva, el tipo de fracaso de la BCG decide el siguiente paso."
+            },
+            "critical": false
+          }
+        ],
+        "best": "c"
+      }
+    ],
+    "takeaway": {
+      "en": "High-grade positive cytology with normal cystoscopy: CT urography first, then PDD-guided bladder biopsies including mapping and the prostatic urethra. CIS found this way is high risk and is treated with full-dose BCG including maintenance.",
+      "de": "High-Grade-positive Zytologie bei unauffälliger Zystoskopie: zuerst CT-Urographie, dann PDD-gestützte Biopsien der Blase einschließlich Mapping und prostatischer Harnröhre. Ein so gefundenes CIS ist Hochrisiko und wird mit BCG in voller Dosis inklusive Erhaltung behandelt.",
+      "es": "Citología positiva de alto grado con cistoscopia normal: primero urografía por TC y después biopsias vesicales guiadas por PDD, con mapeo y uretra prostática. El CIS así hallado es de alto riesgo y se trata con BCG a dosis completa con mantenimiento."
+    },
+    "references": [
+      "bank-guide-nmibc",
+      "knowuro-bladder-2026"
+    ]
+  },
+  {
     "id": "bank-uro-fun-00001",
     "area": "endoscopy",
     "level": 3,

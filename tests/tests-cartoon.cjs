@@ -161,7 +161,8 @@ test('the hero is a named localized SVG image and every case receives a stable o
     assert.match(hero, /<title>[^<]+<\/title>/);
     assert.doesNotMatch(hero, /undefined|NaN/);
   }
-  assert.equal(catalog.cases.length, 297);
+  assert.equal(catalog.cases.filter(c => c.source).length, 267, 'Every imported question is in the catalog');
+  assert.ok(catalog.cases.length >= 297, 'The 30 story cases and any newer authored cases are in the catalog');
   const ids = [];
   const designs = [];
   for (const c of catalog.cases) {
@@ -732,4 +733,172 @@ test('the find-the-structure quiz asks five different structures, scores each ro
   assert.equal(state.stats.atlasPerfect, 1, 'A perfect quiz counts towards the anatomist sticker');
   assert.equal(stats.rewards, 1);
   assert.equal(stats.celebrations.at(-1), true, 'A perfect quiz ends with big confetti');
+});
+
+test('keyboard focus never hides what a structure shows', () => {
+  const css = read('cartoon.css');
+  const ring = css.indexOf('.schema [data-part]:focus-visible,.schema [data-part].hl:focus-visible{');
+  assert.ok(ring > 0, 'Focused structures get a ring');
+  for (const [verdict, colour] of [['right', '#3f8e72'], ['wrong', '#d35468']]) {
+    const rule = css.indexOf('.schema [data-part].' + verdict + ':focus-visible{');
+    assert.ok(rule > ring, 'A focused ' + verdict + ' quiz answer has its own rule after the general ring');
+    assert.ok(css.slice(rule, css.indexOf('}', rule)).includes(colour), 'and keeps its verdict colour inside the ring');
+  }
+  assert.ok(css.includes('.schema.focus [data-part]:not(.on):not(.right):not(.wrong):not(:focus-visible){opacity:.32}'), 'A focused structure is not dimmed while another one is selected');
+});
+
+test('the game names no authors: no author citations, author or article mentions, or citation strings', () => {
+  const shipped = JSON.stringify(catalog.cases);
+  assert.doesNotMatch(shipped, /\bet al\b/, 'No "et al." anywhere in the cases');
+  assert.doesNotMatch(shipped, /"citation":/, 'Source lists carry titles, not author citations');
+  const mention = /\b(?:Erst|Letzt)?[Aa]utor(?:en|in|innen|es|as?)?(?:gruppe)?\b|\b[Aa]uthors?\b|\bArtikels?\b|\b[Aa]rticles?\b|\b[Aa]rtículos?\b|\b[A-ZÄÖÜ][a-zäöüß-]+ (?:&|and|und|y) [A-ZÄÖÜ][a-zäöüß-]+,? (?:19|20)\d{2}\b/;
+  for (const c of catalog.cases) {
+    const fields = [c.title, c.presenting, c.takeaway, c.topic, ...c.steps.flatMap(s => [s.prompt, ...s.options.flatMap(o => [o.text, o.feedback])])].filter(Boolean);
+    for (const field of fields) for (const text of Object.values(field)) assert.doesNotMatch(String(text), mention, c.id + ' names an author or an article');
+    for (const text of Object.values(c.objectives || {}).flat()) assert.doesNotMatch(String(text), mention, c.id + ' objectives name an author');
+  }
+});
+
+// The real save-file helpers from app.js, with the constants they use taken from the same source.
+function saveHarness(state) {
+  const source = read('app.js');
+  const constant = name => { const match = source.match(new RegExp('const ' + name + '=[^\\n]*;')); assert.ok(match, name + ' is declared in app.js'); return match[0]; };
+  const section = (from, to) => { const start = source.indexOf(from), end = source.indexOf(to, start); assert.ok(start >= 0 && end > start, from + ' must be present'); return source.slice(start, end); };
+  const context = vm.createContext({ C: catalog, E, state, getCase: id => catalog.cases.find(c => c.id === id) });
+  vm.runInContext([constant('SAVE_FORMAT'), constant('BADGE_ICONS'), constant('STAT_KEYS'), constant('RANK_COUNT'), constant('DUTIES'), constant('count')].join('\n') + '\n' +
+    section('  function validRecord(r)', '  // Career XP counts') + section('  function validBoss(boss)', '  function bossCorrect(boss)') +
+    '\nglobalThis.helpers = { cleanSave, saveFile, readSaveFile, mergeSave, chooseShift, hasProgress };', context, { filename: 'app-save-helpers.js' });
+  return context.helpers;
+}
+function playedState() {
+  const done = completedSession('save-roundtrip');
+  const history = done.patients.map(p => ({ ...E.record(done, catalog, p.id), shift: done.seed }));
+  const open = E.create(catalog, E.schedule(catalog, 'save-open'), 'shift', 'save-open');
+  const first = open.patients[0], c = catalog.cases.find(c => c.id === first.id);
+  E.answer(open, catalog, c.id, c.steps[0].best); E.next(open, catalog, c.id);
+  for (const p of open.patients) p.logged = p.finished;
+  Object.assign(open, { duty: 'night', coffees: 2, streak: 1, bestStreak: 1, jokers: 0, streakAt: null, struck: {}, counted: false, bossCounted: false });
+  return { lang: 'de', name: 'Dr. Test', avatar: 2, sound: false, history, bookmarks: [history[0].caseId], session: open,
+    stats: { shifts: 3, perfectShifts: 1, bossPerfect: 0, maxCoffees: 4, bestStreak: 6, jokers: 2, rank: 2, atlasPerfect: 1 }, badges: ['firstCase', 'streak5'], lastDuty: 'board',
+    countedShifts: ['shift:' + done.seed] };
+}
+const emptyState = () => ({ lang: 'en', name: '', avatar: 0, sound: false, history: [], bookmarks: [], session: null,
+  stats: { shifts: 0, perfectShifts: 0, bossPerfect: 0, maxCoffees: 0, bestStreak: 0, jokers: 0, rank: 0, atlasPerfect: 0 }, badges: [], lastDuty: 'night', countedShifts: [] });
+const fileOf = state => JSON.parse(JSON.stringify(saveHarness(state).saveFile()));
+
+test('a downloaded game file loads again on a fresh device with logbook, counters, stickers and the open shift', () => {
+  const played = playedState(), file = fileOf(played);
+  assert.equal(file.format, 'night-shift-academy-save');
+  assert.equal(file.version, 3);
+  const fresh = emptyState(), api = saveHarness(fresh);
+  const found = api.readSaveFile(file);
+  assert.ok(found && found.full && found.named);
+  assert.equal(found.skipped, 0);
+  const merged = clone(api.mergeSave(fresh, found));
+  assert.deepEqual(merged.history, clone(played.history), 'Every logbook entry comes back unchanged');
+  assert.deepEqual(merged.session, clone(played.session), 'The open shift continues where it stopped');
+  assert.deepEqual({ ...merged.stats, rank: played.stats.rank }, played.stats);
+  assert.equal(merged.stats.rank, 0, 'The rank is recalculated from the logbook after loading, never taken from the file');
+  assert.deepEqual(merged.badges, played.badges);
+  assert.deepEqual(merged.bookmarks, played.bookmarks);
+  assert.deepEqual(merged.countedShifts, played.countedShifts);
+  assert.deepEqual([merged.name, merged.avatar, merged.lastDuty], ['Dr. Test', 2, 'board']);
+  const again = clone(api.mergeSave(merged, found));
+  assert.equal(again.history.length, played.history.length, 'Loading the same file twice does not count anything twice');
+  const replayed = clone(merged);
+  replayed.history = replayed.history.concat(played.history.slice(0, 2).map(r => ({ ...r, completedAt: '2030-01-01T00:00:00.000Z' })));
+  assert.equal(clone(api.mergeSave(emptyState(), api.readSaveFile(fileOf(replayed)))).history.length, played.history.length, 'The same patient of the same shift counts once');
+});
+
+test('loading keeps the progress already on the device and accepts old logbook-only exports', () => {
+  const played = playedState(), device = playedState();
+  device.history = device.history.slice(0, 2).map(r => ({ ...r, shift: 'other-shift', completedAt: '2026-01-01T08:00:00.000Z' }));
+  device.session = null;
+  device.stats.shifts = 9; device.badges = ['coffee5']; device.bookmarks = [played.history[1].caseId];
+  device.name = 'Kept'; device.avatar = 1;
+  const api = saveHarness(device);
+  const logbook = { version: 2, exportedAt: '2026-05-01T10:00:00.000Z', history: clone(played.history).map(({ shift, ...r }) => r) };
+  const found = api.readSaveFile(logbook);
+  assert.ok(found && !found.full && !found.named, 'Version-2 logbooks still load');
+  const merged = clone(api.mergeSave(device, found));
+  assert.equal(merged.history.length, 2 + played.history.length, 'Both logbooks are combined');
+  assert.ok(merged.history.every((r, i, all) => i === 0 || Date.parse(all[i - 1].completedAt) <= Date.parse(r.completedAt)), 'in time order');
+  assert.equal(merged.session, null, 'A logbook without a shift leaves the device without one');
+  assert.equal(merged.stats.shifts, 9, 'Counters keep the higher value');
+  assert.deepEqual([merged.name, merged.avatar, merged.lastDuty], ['Kept', 1, device.lastDuty], 'A logbook-only file does not rename the player');
+  const withShift = clone(api.mergeSave(device, api.readSaveFile(fileOf(played))));
+  assert.deepEqual(withShift.session, clone(played.session), 'A shift in the file is taken when the device has none');
+  assert.deepEqual(withShift.badges.sort(), ['coffee5', 'firstCase', 'streak5']);
+  assert.deepEqual(withShift.bookmarks.sort(), [played.history[0].caseId, played.history[1].caseId].sort());
+  const unnamed = { ...played, name: '', avatar: 2 };
+  assert.equal(clone(api.mergeSave(emptyState(), api.readSaveFile(fileOf(unnamed)))).avatar, 2, 'A fresh device takes the avatar even without a name');
+  assert.equal(clone(api.mergeSave(device, api.readSaveFile(fileOf(unnamed)))).avatar, 1, 'A named device keeps its avatar for an unnamed file');
+  const stickersOnly = { ...emptyState(), badges: ['anatomist'], stats: { ...emptyState().stats, atlasPerfect: 2 }, bookmarks: [played.history[0].caseId] };
+  assert.ok(saveHarness(stickersOnly).hasProgress(stickersOnly), 'Stickers and bookmarks alone are progress worth saving');
+  assert.ok(api.readSaveFile(fileOf(stickersOnly)), 'and such a file loads');
+});
+
+test('the shift that continues is never a step back: same shift further along, open before finished', () => {
+  const played = playedState(), api = saveHarness(emptyState());
+  const older = clone(played.session), newer = clone(played.session);
+  const second = newer.patients.find(p => !p.finished), c = catalog.cases.find(c => c.id === second.id);
+  newer.selected = second.id;
+  while (newer.clock < second.availableAt) E.wait(newer);
+  E.answer(newer, catalog, c.id, c.steps[0].best);
+  assert.equal(api.chooseShift(newer, older).outcome, 'ahead', 'An older copy of the same shift does not replace the device copy');
+  assert.equal(api.chooseShift(newer, older).session, newer);
+  assert.equal(api.chooseShift(older, newer).outcome, 'same', 'A newer copy of the same shift is taken');
+  const finished = completedSession('save-finished');
+  assert.equal(api.chooseShift(older, finished).outcome, 'kept', 'A finished shift in the file does not replace an open shift');
+  assert.equal(api.chooseShift(finished, older).outcome, 'takes', 'An open shift in the file replaces a finished one on the device');
+  const other = E.create(catalog, E.schedule(catalog, 'save-other'), 'shift', 'save-other');
+  assert.equal(api.chooseShift(older, other).outcome, 'replaces', 'Two different open shifts: the file wins, and the dialog warns');
+  assert.equal(api.chooseShift(older, null).outcome, 'none');
+});
+
+test('a game file is untrusted: wrong formats, changed scores, unknown cases and smuggled keys are refused', () => {
+  const played = playedState(), api = saveHarness(emptyState());
+  const file = () => fileOf(played);
+  for (const bad of [null, [], 'text', 42, {}, { version: 2 }, { version: 3, history: [] }, { ...file(), format: 'other-game' }, { ...file(), version: 4 },
+    { format: 'night-shift-academy-save', version: 2, history: file().history }, { ...file(), history: [], session: null, badges: [], bookmarks: [], stats: {} }]) {
+    assert.equal(api.readSaveFile(bad), null, 'Refused: ' + JSON.stringify(bad).slice(0, 60));
+  }
+  const tampered = file();
+  tampered.history[0].score += 10;
+  tampered.history[1].caseId = 'no-such-case';
+  tampered.history[2].completedAt = 12345;
+  tampered.history[3].evil = '<img src=x onerror=alert(1)>';
+  tampered.history[3].answers[0].evil = 'x';
+  tampered.history[4].shift = 'x'.repeat(500);
+  tampered.badges = ['toString', '__proto__', 'constructor', 'firstCase', 'firstCase'];
+  tampered.bookmarks = ['no-such-case', { id: 1 }, played.history[0].caseId];
+  tampered.session.patients[0].score += 10;
+  tampered.name = 'N'.repeat(31) + '🦉🦉'; tampered.avatar = 99; tampered.lastDuty = 'party';
+  tampered.stats = { shifts: -3, jokers: 'many', rank: 99, bestStreak: 4, atlasPerfect: 1e300 };
+  tampered.countedShifts = ['shift:a', 7, 'x'.repeat(400)];
+  const found = api.readSaveFile(tampered);
+  assert.equal(found.skipped, 3, 'Changed score, unknown case and a non-text time are skipped');
+  assert.equal(found.save.history.length, played.history.length - 3);
+  assert.ok(found.save.history.every(r => !('evil' in r) && r.answers.every(a => !('evil' in a))), 'Only known record fields are kept');
+  assert.ok(found.save.history.every(r => !r.shift || r.shift.length <= 120), 'An overlong shift tag is dropped');
+  assert.deepEqual(clone(found.save.badges), ['firstCase'], 'Inherited object keys are not stickers');
+  assert.deepEqual(clone(found.save.bookmarks), [played.history[0].caseId]);
+  assert.equal(found.save.session, null, 'A shift whose points were changed is dropped');
+  assert.equal(Array.from(found.save.name).length, 32, 'Names are cut by characters, never through an emoji');
+  assert.ok(!found.save.name.includes('�'));
+  assert.deepEqual([found.save.avatar, found.save.lastDuty], [0, 'night']);
+  assert.deepEqual(clone(found.save.stats), { shifts: 0, perfectShifts: 0, bossPerfect: 0, maxCoffees: 0, bestStreak: 4, jokers: 0, rank: 8, atlasPerfect: 1000000 });
+  assert.deepEqual(clone(found.save.countedShifts), ['shift:a']);
+  const smuggled = file();
+  Object.assign(smuggled.session, { junk: 'J'.repeat(1000), seed: smuggled.session.seed });
+  smuggled.session.patients[0].extra = { deep: [[[]]] };
+  smuggled.session.patients[0].answers[0].extra = 1;
+  const p0 = smuggled.session.patients[0];
+  smuggled.session.struck = { [p0.id + ':0']: catalog.cases.find(c => c.id === p0.id).steps[0].options[0].id, 'nobody:0': 'a', [p0.id + ':0x']: 'a', [p0.id + ':9']: 'a', [p0.id + ':1']: { evil: true } };
+  smuggled.session.boss = { index: 0, answers: [], done: false, items: [{ caseId: 'no-such-case', stepIndex: 0, order: [] }] };
+  const session = clone(api.readSaveFile(smuggled).save.session);
+  assert.ok(session, 'The valid shift itself still loads');
+  assert.ok(!('junk' in session) && !('boss' in session), 'Unknown keys and an invalid morning report are dropped');
+  assert.ok(!('extra' in session.patients[0]) && !('extra' in session.patients[0].answers[0]));
+  assert.deepEqual(Object.keys(session.struck), [p0.id + ':0'], 'Only joker marks for real steps and options survive');
 });
