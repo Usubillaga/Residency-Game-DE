@@ -40,12 +40,30 @@ Each change replaces a whole field, guarded by its exact old value, or one passa
 - Three near-identical patient names were changed.
 - The library now has 317 cases (50 authored, 267 imported), 415 decisions and 1,556 options.
 
-**Save and load.** The progress export is now a full game file (version 3) that *Load game file* reads back; older version-2 logbooks also load.
+**Save and load.** The progress export is now a full game file (version 3) that *Load game file* reads back; older version-2 logbooks also load. It is described under *Save and continue* in the README.
 - The file is untrusted input and passes the same checks as local storage, which are now shared code.
 - A summary dialog comes before any change.
 - Loading merges without losing or double-counting progress.
-- Three cartoon tests cover the round trip, merging and tampered files.
 - A browser run covered play, save, clearing the browser, load and carrying on (also at 360 px). The Python analyser reads the new file.
+- **Adversarial review.** Three reviewers attacked the feature in Chromium over http and file://:
+  - untrusted input, with about 55 crafted files;
+  - state correctness, against the previous release;
+  - interface and wording in EN, DE and ES.
+
+  A skeptic re-ran every report; 11 defects were confirmed and 6 refuted. All 11 are fixed:
+  - Unknown fields in a loaded shift were kept and stored, which a 5 MB file could use to stop saving or to freeze clicks. A shift is now rebuilt from known fields only, and joker marks and morning reports are kept only if they fit.
+  - Loading an older copy of the same shift logged an attempt twice and counted shifts and morning reports twice. Log entries now carry their shift and count once per patient. Counted shifts are remembered, and the copy that got further is kept.
+  - A finished shift in the file replaced an open shift on the device. Now an open shift wins, and the dialog labels finished shifts.
+  - Counters and the rank accepted absurd values. They are capped, and the rank is recalculated from the logbook.
+  - The avatar was lost without a player name.
+  - Progress without a logbook (stickers, bookmarks) could not be saved or loaded.
+  - Singular forms were missing (“1 logbook entries”).
+  - Focus was lost after loading.
+  - On small phones the dialog opened scrolled to the bottom.
+  - The download was named “logbook”.
+  - The German help note was imprecise.
+
+  The reviewers' scripts were run again on the fixed code and confirm each fix. The cartoon tests grew to 35; they cover the shift choice, the shift identity of log entries and the rebuilt shift.
 
 **Checks.** All Python, engine and cartoon tests pass. The validation reports 317 valid cases, 43 of them updated. A browser run of new cases and corrected cases shows no console errors and no horizontal overflow.
 
