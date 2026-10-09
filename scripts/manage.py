@@ -34,7 +34,7 @@ AREAS = [
 ]
 AREA_IDS = tuple(area["id"] for area in AREAS)
 CASE_FILES = tuple(f"{area}.json" for area in AREA_IDS)
-DUTIES = ("night", "board", "clinic", "elective")
+DUTIES = ("night", "board", "clinic", "elective", "dayclinic")
 AGE_BANDS = {"newborn", "infant", "child", "teen", "young", "adult", "senior", "elderly", "unknown"}
 IGNORED_DIRS = {".git", "__pycache__", ".pytest_cache", ".cache", "cache", ".venv", "venv", "node_modules", "work", "tmp", "temp"}
 
@@ -522,6 +522,99 @@ def validate_schema(schema, where: str) -> None:
     require(isinstance(schema.get("domains"), list), f"{where}.domains: expected a list")
 
 
+def attach_hints(root: Path, cases: list) -> int:
+    """The attending's hint per decision (data/attending-hints.json): a nudge towards the rule that decides, never the answer."""
+    path = Path(root) / "data" / "attending-hints.json"
+    if not path.exists():
+        return 0
+    data = read_json(path)
+    require(isinstance(data, dict), "attending-hints.json: expected {case id: {step id: {en, de, es}}}")
+    by_id = {case["id"]: case for case in cases}
+    attached = 0
+    for case_id, steps in data.items():
+        where = f"attending-hints.json[{case_id!r}]"
+        require(case_id in by_id, f"{where}: unknown case id")
+        require(isinstance(steps, dict) and bool(steps), f"{where}: expected {{step id: hint}}")
+        case_steps = {step["id"]: step for step in by_id[case_id]["steps"]}
+        for step_id, hint in steps.items():
+            step_where = f"{where}[{step_id!r}]"
+            require(step_id in case_steps, f"{step_where}: unknown step id")
+            localised(hint, step_where)
+            step = case_steps[step_id]
+            best = next(option for option in step["options"] if option["id"] == step["best"])
+            for language in LANGUAGES:
+                text = hint[language]
+                require(len(text) <= 360, f"{step_where}.{language}: a hint is one or two sentences (at most 360 characters)")
+                hit = AUTHOR_MENTION.search(text)
+                require(hit is None, f"{step_where}.{language}: no authors in the game (found {hit[0]!r})" if hit else "")
+                answer = best["text"][language].strip().lower()
+                require(len(answer) < 12 or answer not in text.lower(), f"{step_where}.{language}: the hint must not quote the correct answer")
+            step["hint"] = hint
+            attached += 1
+    return attached
+
+
+PROTOCOL_ROUTES = ("i.v.", "p.o.", "s.c.", "i.m.", "intravesical")
+
+
+def load_protocols(root: Path, cases: list) -> list:
+    """Therapy protocols for the protocol page (data/protocols.json): a learning overview with cycles, doses and sources."""
+    path = Path(root) / "data" / "protocols.json"
+    if not path.exists():
+        return []
+    data = read_json(path)
+    require(isinstance(data, dict) and isinstance(data.get("entities"), list) and bool(data["entities"]), "protocols.json: expected {\"entities\": [...]}")
+    case_ids = {case["id"] for case in cases}
+    entity_ids, regimen_ids = set(), set()
+    for index, entity in enumerate(data["entities"]):
+        where = f"protocols.json.entities[{index}]"
+        require(isinstance(entity, dict), f"{where}: expected an object")
+        nonempty(entity.get("id"), f"{where}.id")
+        require(entity["id"] not in entity_ids, f"{where}: duplicate entity id")
+        entity_ids.add(entity["id"])
+        localised(entity.get("title"), f"{where}.title")
+        regimens = entity.get("regimens")
+        require(isinstance(regimens, list) and bool(regimens), f"{where}.regimens: expected a nonempty list")
+        for r_index, regimen in enumerate(regimens):
+            r_where = f"{where}.regimens[{r_index}]"
+            require(isinstance(regimen, dict), f"{r_where}: expected an object")
+            require(bool(re.fullmatch(r"[a-z0-9][a-z0-9-]*", str(regimen.get("id", "")))), f"{r_where}.id: expected a kebab-case id")
+            require(regimen["id"] not in regimen_ids, f"{r_where}: duplicate regimen id {regimen['id']!r}")
+            regimen_ids.add(regimen["id"])
+            for key in ("name", "setting", "cycles", "support", "cautions", "evidence"):
+                localised(regimen.get(key), f"{r_where}.{key}")
+            cycle = regimen.get("cycleDays")
+            require(cycle is None or (type(cycle) is int and 1 <= cycle <= 365), f"{r_where}.cycleDays: expected days or null")
+            drugs = regimen.get("drugs")
+            require(isinstance(drugs, list) and bool(drugs), f"{r_where}.drugs: expected a nonempty list")
+            for d_index, drug in enumerate(drugs):
+                d_where = f"{r_where}.drugs[{d_index}]"
+                require(isinstance(drug, dict), f"{d_where}: expected an object")
+                for key in ("name", "dose", "schedule"):
+                    localised(drug.get(key), f"{d_where}.{key}")
+                require(drug.get("route") in PROTOCOL_ROUTES, f"{d_where}.route: expected one of {', '.join(PROTOCOL_ROUTES)}")
+                require(all(re.search(r"\d", drug["dose"][language]) for language in LANGUAGES), f"{d_where}.dose: expected a number with a unit")
+            sources = regimen.get("sources")
+            require(isinstance(sources, list) and bool(sources), f"{r_where}.sources: expected at least one source")
+            for s_index, source in enumerate(sources):
+                s_where = f"{r_where}.sources[{s_index}]"
+                require(isinstance(source, dict), f"{s_where}: expected an object")
+                nonempty(source.get("label"), f"{s_where}.label")
+                parsed = urlparse(str(source.get("url", "")))
+                require(parsed.scheme == "https" and bool(parsed.netloc), f"{s_where}.url: expected an HTTPS link")
+            questions = regimen.get("questions", [])
+            require(isinstance(questions, list) and all(isinstance(q, str) and q in case_ids for q in questions), f"{r_where}.questions: unknown case id")
+            texts = [entity["title"], *(regimen[key] for key in ("name", "setting", "cycles", "support", "cautions", "evidence")),
+                     *(drug[key] for drug in drugs for key in ("name", "dose", "schedule"))]
+            for text in [item[language] for item in texts for language in LANGUAGES]:
+                hit = AUTHOR_MENTION.search(text)
+                require(hit is None, f"{r_where}: no authors in the game (found {hit[0]!r})" if hit else "")
+            for source in sources:
+                hit = NOTE_AUTHOR_MENTION.search(source["label"])
+                require(hit is None, f"{r_where}.sources: no authors in the game (found {hit[0]!r})" if hit else "")
+    return data["entities"]
+
+
 def load_visuals(root: Path, cases: list) -> tuple[list, dict, dict]:
     """Schemas, case-to-schema highlights and licensed case images; all three files are optional."""
     root = Path(root)
@@ -571,6 +664,8 @@ def build(root: Path = ROOT) -> dict:
     # catalog.js is an output of this command, so validate other assets first.
     cases, references = load_and_validate(root, check_assets=False)
     schemas, links, media = load_visuals(root, cases)
+    attach_hints(root, cases)
+    protocols = load_protocols(root, cases)
     for case in cases:
         if case["id"] in links:
             case["schema"] = {"id": links[case["id"]]["schema"], "parts": links[case["id"]].get("parts", [])}
@@ -580,7 +675,7 @@ def build(root: Path = ROOT) -> dict:
                                                  for item in case["source"]["originalSources"]]
         if case["id"] in media:
             case["media"] = media[case["id"]]
-    catalog = {"version": 2, "languages": list(LANGUAGES), "areas": AREAS, "cases": cases, "references": references, "schemas": schemas}
+    catalog = {"version": 2, "languages": list(LANGUAGES), "areas": AREAS, "cases": cases, "references": references, "schemas": schemas, "protocols": protocols}
     assets = root / "assets"
     assets.mkdir(parents=True, exist_ok=True)
     (assets / "catalog.js").write_text("/* Generated by scripts/manage.py build. Edit data/*.json, then rebuild. */\nwindow.NSA_CATALOG = " + json.dumps(catalog, ensure_ascii=False, separators=(",", ":")) + ";\n", encoding="utf-8")
@@ -766,7 +861,7 @@ def main(argv=None) -> int:
     shifting = subcommands.add_parser("schedule", help="Create a reproducible, balanced 10-case shift")
     shifting.add_argument("--date", default=date.today().isoformat())
     shifting.add_argument("--seed", default="academy")
-    shifting.add_argument("--duty", choices=DUTIES, help="Draw only this duty's cases (night, board, clinic or elective)")
+    shifting.add_argument("--duty", choices=DUTIES, help="Draw only this duty's cases (night, board, clinic, elective or dayclinic)")
     shifting.add_argument("--output", type=Path, default=ROOT / "outputs" / "daily-shift.json")
     packing = subcommands.add_parser("package", help="Build a reproducible ZIP with SHA256 manifest")
     packing.add_argument("--output", type=Path, default=ROOT.parent / "night-shift-academy.zip")
@@ -778,8 +873,10 @@ def main(argv=None) -> int:
         if args.command == "validate":
             cases, references = load_and_validate()
             schemas, links, media = load_visuals(ROOT, cases)
+            hints, protocols = attach_hints(ROOT, cases), load_protocols(ROOT, cases)
+            steps = sum(len(case["steps"]) for case in cases)
             updated = sum("update" in case for case in cases)
-            print(f"Valid: {len(cases)} cases ({updated} updated), {len(references)} references, {len(schemas)} schemas ({len(links)} linked cases), {sum(map(len, media.values()))} images, 3 languages, 5 areas.")
+            print(f"Valid: {len(cases)} cases ({updated} updated), {len(references)} references, {len(schemas)} schemas ({len(links)} linked cases), {sum(map(len, media.values()))} images, attending hints for {hints} of {steps} decisions, {sum(len(e['regimens']) for e in protocols)} protocols, 3 languages, 5 areas.")
         elif args.command == "build":
             catalog = build()
             print(f"Built catalog.js and standalone.html with {len(catalog['cases'])} cases.")

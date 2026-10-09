@@ -302,20 +302,63 @@ window.NSABanter = {
           "speaker": "chief",
           "text": "Anatomy is not an opinion. Whoever knows the layers needs less luck."
         }
+      ],
+      "dayclinic": [
+        {
+          "speaker": "nurse",
+          "text": "Day clinic! Six chairs, six infusion pumps, and every one of them beeps in a different key."
+        },
+        {
+          "speaker": "attending",
+          "text": "Before every cycle: blood count, creatinine, toxicity check, then the dose. In that order, every time."
+        },
+        {
+          "speaker": "chief",
+          "text": "And read the protocol twice. Chemotherapy forgives nothing, not even a misplaced comma."
+        }
       ]
     },
     "dutyIntro": {
       "night": "Grace: Night shift. Emergencies only; everything else may sleep until morning. The pager, sadly, may not.",
       "board": "Prof. Whitfield: Tumour board. Five specialties, one projector, zero working remote controls.",
       "clinic": "Grace: Clinic. On time according to the schedule. The schedule is very optimistic.",
-      "elective": "Dr. Brennan: Elective list. Theatre 2, first incision at eight. Theoretically."
+      "elective": "Dr. Brennan: Elective list. Theatre 2, first incision at eight. Theoretically.",
+      "dayclinic": "Grace: Oncology day clinic. Lab values first, pumps second, coffee a distant third."
     },
     "dutyBoard": {
       "night": "ON CALL",
       "board": "TUMOUR BOARD",
       "clinic": "CLINIC",
-      "elective": "OR LIST · THEATRE 2"
+      "elective": "OR LIST · THEATRE 2",
+      "dayclinic": "DAY CLINIC · CHAIRS 1–6"
     },
+    "attendingNight": [
+      "Dr. Brennan: (half asleep) Mm-hm. I'm listening. Here's what I'd look at:",
+      "Dr. Brennan: It's the middle of the night, so I'll keep it short:",
+      "Dr. Brennan: I was dreaming of a tidy handover. Never mind. Think about this:"
+    ],
+    "attendingDay": [
+      "Dr. Brennan: (between two patients) Quick one:",
+      "Dr. Brennan: Good that you're asking before you decide:",
+      "Dr. Brennan: Let's think it through together:"
+    ],
+    "attendingAfter": [
+      "Dr. Brennan: Now that you've decided, the rule behind it:",
+      "Dr. Brennan: For next time, this is what decides it:"
+    ],
+    "attendingBusy": [
+      "Grace: Dr. Brennan is scrubbed in and can't take any more calls this shift. This one is yours.",
+      "Grace: The attending's phone goes straight to voicemail. You've used your calls; trust your plan."
+    ],
+    "attendingIdle": [
+      "Dr. Brennan: No open decision right now. Call me when a patient needs one.",
+      "Dr. Brennan: Nothing pending? Then I'll finish my coffee while it's still warm."
+    ],
+    "attendingWarn": [
+      "Dr. Brennan: Stop. That would have harmed the patient. Remember this:",
+      "Dr. Brennan: I'm coming down. Before anything else, the key point:",
+      "Dr. Brennan: That one is dangerous, and that's why we talk about it now:"
+    ],
     "splash": [
       "Splash!",
       "Missed the target!",
@@ -631,20 +674,63 @@ window.NSABanter = {
           "speaker": "chief",
           "text": "Anatomie ist keine Meinung. Wer die Schichten kennt, braucht weniger Glück."
         }
+      ],
+      "dayclinic": [
+        {
+          "speaker": "nurse",
+          "text": "Tagesklinik! Sechs Stühle, sechs Infusionspumpen – und jede piept in einer anderen Tonart."
+        },
+        {
+          "speaker": "attending",
+          "text": "Vor jedem Zyklus: Blutbild, Kreatinin, Toxizität abfragen, dann die Dosis. In dieser Reihenfolge, jedes Mal."
+        },
+        {
+          "speaker": "chief",
+          "text": "Und lesen Sie das Protokoll zweimal. Chemotherapie verzeiht nichts, nicht einmal ein falsches Komma."
+        }
       ]
     },
     "dutyIntro": {
       "night": "Jana: Nachtdienst. Nur Notfälle – der Rest darf bis morgen schlafen. Der Pieper leider nicht.",
       "board": "Prof. Leuchtenberg: Tumorboard. Fünf Disziplinen, ein Beamer, null funktionierende Fernbedienungen.",
       "clinic": "Jana: Sprechstunde. Pünktlich laut Plan. Der Plan ist sehr optimistisch.",
-      "elective": "Dr. Brenner: OP-Programm. Saal 2, erster Schnitt um acht. Theoretisch."
+      "elective": "Dr. Brenner: OP-Programm. Saal 2, erster Schnitt um acht. Theoretisch.",
+      "dayclinic": "Jana: Onkologische Tagesklinik. Erst die Laborwerte, dann die Pumpen, der Kaffee abgeschlagen auf Platz drei."
     },
     "dutyBoard": {
       "night": "BEREITSCHAFT",
       "board": "TUMORBOARD",
       "clinic": "SPRECHSTUNDE",
-      "elective": "OP-PLAN · SAAL 2"
+      "elective": "OP-PLAN · SAAL 2",
+      "dayclinic": "TAGESKLINIK · PLATZ 1–6"
     },
+    "attendingNight": [
+      "Dr. Brenner: (verschlafen) Hm-hm. Ich höre. Darauf würde ich achten:",
+      "Dr. Brenner: Es ist mitten in der Nacht, deshalb kurz:",
+      "Dr. Brenner: Ich habe gerade von einer sauberen Übergabe geträumt. Egal. Denk an Folgendes:"
+    ],
+    "attendingDay": [
+      "Dr. Brenner: (zwischen zwei Patienten) Ganz kurz:",
+      "Dr. Brenner: Gut, dass du vor der Entscheidung fragst:",
+      "Dr. Brenner: Lass uns das zusammen durchdenken:"
+    ],
+    "attendingAfter": [
+      "Dr. Brenner: Jetzt, wo du entschieden hast – die Regel dahinter:",
+      "Dr. Brenner: Fürs nächste Mal: Das entscheidet hier:"
+    ],
+    "attendingBusy": [
+      "Jana: Dr. Brenner steht am Tisch und nimmt in dieser Schicht keine Anrufe mehr an. Das hier entscheidest du.",
+      "Jana: Beim Oberarzt springt nur noch die Mailbox an. Deine Anrufe sind aufgebraucht – vertrau deinem Plan."
+    ],
+    "attendingIdle": [
+      "Dr. Brenner: Gerade steht keine Entscheidung an. Ruf an, wenn ein Patient eine braucht.",
+      "Dr. Brenner: Nichts offen? Dann trinke ich meinen Kaffee, solange er warm ist."
+    ],
+    "attendingWarn": [
+      "Dr. Brenner: Stopp. Das hätte dem Patienten geschadet. Merk dir:",
+      "Dr. Brenner: Ich komme runter. Vor allem anderen das Wichtigste:",
+      "Dr. Brenner: Das ist gefährlich, und deshalb reden wir jetzt darüber:"
+    ],
     "splash": [
       "Platsch!",
       "Daneben gezielt!",
@@ -960,20 +1046,63 @@ window.NSABanter = {
           "speaker": "chief",
           "text": "La anatomía no es una opinión. Quien conoce las capas necesita menos suerte."
         }
+      ],
+      "dayclinic": [
+        {
+          "speaker": "nurse",
+          "text": "¡Hospital de día! Seis sillones, seis bombas de infusión, y cada una pita en un tono distinto."
+        },
+        {
+          "speaker": "attending",
+          "text": "Antes de cada ciclo: hemograma, creatinina, toxicidad y después la dosis. En ese orden, siempre."
+        },
+        {
+          "speaker": "chief",
+          "text": "Y lea el protocolo dos veces. La quimioterapia no perdona nada, ni siquiera una coma mal puesta."
+        }
       ]
     },
     "dutyIntro": {
       "night": "Lucía: Guardia de noche. Solo urgencias; lo demás puede dormir hasta mañana. El busca, por desgracia, no.",
       "board": "Prof. Valdés: Comité de tumores. Cinco especialidades, un proyector y ningún mando a distancia que funcione.",
       "clinic": "Lucía: Consulta. Puntual según la agenda. La agenda es muy optimista.",
-      "elective": "Dr. Herrera: Programa quirúrgico. Quirófano 2, primera incisión a las ocho. En teoría."
+      "elective": "Dr. Herrera: Programa quirúrgico. Quirófano 2, primera incisión a las ocho. En teoría.",
+      "dayclinic": "Lucía: Hospital de día oncológico. Primero los análisis, luego las bombas y el café, muy por detrás."
     },
     "dutyBoard": {
       "night": "GUARDIA",
       "board": "COMITÉ DE TUMORES",
       "clinic": "CONSULTA",
-      "elective": "PROGRAMA QX · QUIRÓFANO 2"
+      "elective": "PROGRAMA QX · QUIRÓFANO 2",
+      "dayclinic": "HOSPITAL DE DÍA · SILLONES 1–6"
     },
+    "attendingNight": [
+      "Dr. Herrera: (medio dormido) Mm-hm. Te escucho. Yo me fijaría en esto:",
+      "Dr. Herrera: Es plena noche, así que seré breve:",
+      "Dr. Herrera: Estaba soñando con un pase de guardia ordenado. Da igual. Piensa en esto:"
+    ],
+    "attendingDay": [
+      "Dr. Herrera: (entre dos pacientes) Rápido:",
+      "Dr. Herrera: Bien que preguntes antes de decidir:",
+      "Dr. Herrera: Pensémoslo juntos:"
+    ],
+    "attendingAfter": [
+      "Dr. Herrera: Ahora que ya has decidido, la regla que hay detrás:",
+      "Dr. Herrera: Para la próxima vez, esto es lo que decide:"
+    ],
+    "attendingBusy": [
+      "Lucía: El Dr. Herrera está en quirófano y no atiende más llamadas en esta guardia. Esta decisión es tuya.",
+      "Lucía: El teléfono del adjunto salta directamente al buzón. Ya has usado tus llamadas; confía en tu plan."
+    ],
+    "attendingIdle": [
+      "Dr. Herrera: Ahora no hay ninguna decisión pendiente. Llámame cuando un paciente la necesite.",
+      "Dr. Herrera: ¿Nada pendiente? Entonces me termino el café mientras siga caliente."
+    ],
+    "attendingWarn": [
+      "Dr. Herrera: Para. Eso habría dañado al paciente. Recuerda esto:",
+      "Dr. Herrera: Ya bajo. Antes que nada, lo importante:",
+      "Dr. Herrera: Eso es peligroso, y por eso lo hablamos ahora:"
+    ],
     "splash": [
       "¡Chof!",
       "¡Fuera de la diana!",

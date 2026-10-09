@@ -535,6 +535,55 @@ class AutomationTests(unittest.TestCase):
                     with self.assertRaises(manage.ValidationError):
                         manage.load_and_validate(self.root, check_assets=False)
 
+    def test_attending_hints_reach_their_decision_and_never_give_the_answer_away(self):
+        hints = {"emergency-fixture-1": {"step-1": translated("Think about what threatens the patient first.")}}
+        manage.write_json(self.root / "data" / "attending-hints.json", hints)
+        catalog = manage.build(self.root)
+        case = next(case for case in catalog["cases"] if case["id"] == "emergency-fixture-1")
+        self.assertEqual(case["steps"][1]["hint"]["de"], "Think about what threatens the patient first.")
+        self.assertNotIn("hint", case["steps"][0])
+        self.mutate_case(lambda case: case["steps"][1]["options"][0].update(text=translated("Secure the airway now")))
+        for bad, message in (({"missing-case": {"step-1": translated("Nudge")}}, "unknown case id"),
+                             ({"emergency-fixture-1": {"step-9": translated("Nudge")}}, "unknown step id"),
+                             ({"emergency-fixture-1": {"step-1": {"en": "Nudge", "de": "Schubs"}}}, "es"),
+                             ({"emergency-fixture-1": {"step-1": translated("x" * 361)}}, "at most 360"),
+                             ({"emergency-fixture-1": {"step-1": translated("Simply SECURE THE AIRWAY NOW and you are done.")}}, "must not quote the correct answer"),
+                             ({"emergency-fixture-1": {"step-1": translated("As the authors write, check the airway.")}}, "no authors")):
+            manage.write_json(self.root / "data" / "attending-hints.json", bad)
+            with self.assertRaisesRegex(manage.ValidationError, message):
+                manage.build(self.root)
+
+    def protocol(self, **changes):
+        drug = {"name": translated("Cisplatin"), "dose": translated("70 mg/m²"), "route": "i.v.", "schedule": translated("Day 1")}
+        regimen = {"id": "fixture-regimen", "name": translated("Fixture regimen"), "setting": translated("Metastatic disease"), "cycleDays": 21,
+                   "cycles": translated("Up to 6 cycles"), "drugs": [drug], "support": translated("Hydration"), "cautions": translated("Renal function"),
+                   "evidence": translated("Guideline standard"), "sources": [{"label": "Fixture guideline", "url": "https://example.org/guideline"}],
+                   "questions": ["emergency-fixture-1"]}
+        regimen.update(changes)
+        return {"entities": [{"id": "fixture-entity", "title": translated("Fixture tumour"), "regimens": [regimen]}]}
+
+    def test_protocols_are_built_with_doses_cycles_and_linked_questions(self):
+        manage.write_json(self.root / "data" / "protocols.json", self.protocol())
+        catalog = manage.build(self.root)
+        regimen = catalog["protocols"][0]["regimens"][0]
+        self.assertEqual((regimen["cycleDays"], regimen["drugs"][0]["dose"]["en"], regimen["questions"]), (21, "70 mg/m²", ["emergency-fixture-1"]))
+        manage.write_json(self.root / "data" / "protocols.json", self.protocol(cycleDays=None))
+        self.assertIsNone(manage.build(self.root)["protocols"][0]["regimens"][0]["cycleDays"])
+        drug = self.protocol()["entities"][0]["regimens"][0]["drugs"][0]
+        twice = self.protocol()
+        twice["entities"][0]["regimens"].append(copy.deepcopy(twice["entities"][0]["regimens"][0]))
+        for bad, message in ((self.protocol(id="Not Kebab"), "kebab-case"), (twice, "duplicate regimen id"), (self.protocol(cycleDays=0), "cycleDays"),
+                             (self.protocol(cycleDays="21"), "cycleDays"), (self.protocol(drugs=[]), "drugs"),
+                             (self.protocol(drugs=[dict(drug, route="oral")]), "route"), (self.protocol(drugs=[dict(drug, dose=translated("weight-based"))]), "number"),
+                             (self.protocol(sources=[{"label": "Guideline", "url": "http://example.org"}]), "HTTPS"),
+                             (self.protocol(sources=[{"label": "Smith et al. trial", "url": "https://example.org"}]), "no authors"),
+                             (self.protocol(questions=["missing-case"]), "unknown case id"),
+                             (self.protocol(evidence=translated("The authors report longer survival.")), "no authors"),
+                             (self.protocol(support={"en": "Hydration"}), "de")):
+            manage.write_json(self.root / "data" / "protocols.json", bad)
+            with self.assertRaisesRegex(manage.ValidationError, message):
+                manage.build(self.root)
+
     def test_analysis_accepts_a_one_step_four_choice_source_export(self):
         case = self.add_imported_case()
         record = {"caseId": case["id"], "area": case["area"], "score": 10, "maxScore": 10, "elapsed": 2, "criticalErrors": 0, "completedAt": "2026-10-05T09:00:00Z", "answers": [{"stepId": case["steps"][0]["id"], "optionId": "a", "score": 10, "minutes": 2}]}

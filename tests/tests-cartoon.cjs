@@ -68,9 +68,10 @@ function appHarness(session = null, testCatalog = catalog) {
     navigate(view) { stats.navigated.push(view); },
     openDialog(html) { stats.dialogs.push(html); return { classList: { add() {} } }; }
   });
-  vm.runInContext("let areaFilter = 'all', query = '', savedOnly = false;\n" + source.slice(start, end) + `
+  const constants = ['ATTENDING_CALLS', 'count'].map(name => source.match(new RegExp('const ' + name + '=[^\\n]*;'))[0]).join('\n');
+  vm.runInContext(constants + "\nlet areaFilter = 'all', query = '', savedOnly = false;\n" + source.slice(start, end) + `
     globalThis.helpers = {
-      gameStage, handleScene, coffeeBreak, askNurse, characterComment, startBoss, answerBoss, nextBoss,
+      gameStage, handleScene, coffeeBreak, askNurse, callAttending, attendingWarning, characterComment, startBoss, answerBoss, nextBoss,
       validBoss, bossCorrect, speakerFor, lineWithoutName,
       filterState: () => ({ areaFilter, query, savedOnly })
     };
@@ -507,6 +508,98 @@ test("the nurse's joker crosses out one wrong answer, costs five game minutes an
   }
 });
 
+test('calling the attending costs five minutes, gives the decision rule but never the answer, and works three times a shift', () => {
+  const ids = catalog.cases.filter(c => !c.source && c.steps.length > 1).slice(0, 4).map(c => c.id);
+  const testCatalog = clone(catalog);
+  const first = testCatalog.cases.find(c => c.id === ids[0]);
+  first.steps[0].hint = { en: 'Think about what decides the next step.', de: 'Denk daran, was den nächsten Schritt entscheidet.', es: 'Piensa en lo que decide el siguiente paso.' };
+  const session = E.create(testCatalog, ids, 'shift', 'attending-calls');
+  Object.assign(session, { duty: 'night', selected: ids[0] });
+  const h = appHarness(session, testCatalog);
+  const patients = clone(session.patients), clock = session.clock;
+  h.api.callAttending();
+  assert.equal(session.clock, clock + 5, 'A call costs five game minutes');
+  assert.deepEqual(clone([session.calls, session.called]), [1, { [ids[0] + ':0']: true }]);
+  assert.deepEqual(clone(session.patients), patients, 'A call never touches answers or points');
+  assert.ok(E.validSession(session, testCatalog));
+  const said = h.stats.dialogs.at(-1);
+  assert.ok(said.includes(escape(first.steps[0].hint.en)), 'The attending gives the hint of this decision');
+  assert.ok(!said.includes(escape(first.steps[0].options.find(o => o.id === first.steps[0].best).text.en)), 'but never the answer');
+  assert.ok(said.includes(escape(data.NSA_TEXT.en.attendingNote.replace('{n}', 2))), 'and says how many calls are left');
+  h.api.callAttending();
+  assert.equal(session.clock, clock + 5, 'Asking again about the same decision is free');
+  assert.equal(session.calls, 1);
+  for (const id of ids.slice(1, 3)) { session.selected = id; h.api.callAttending(); }
+  assert.equal(session.calls, 3);
+  const withoutHint = testCatalog.cases.find(c => c.id === ids[1]);
+  assert.ok(h.stats.dialogs.at(-2).includes(escape(withoutHint.objectives.en[0])), 'Without a written hint the case objective is the nudge');
+  const beforeBusy = session.clock;
+  session.selected = ids[3];
+  h.api.callAttending();
+  assert.equal(session.clock, beforeBusy, 'A fourth call is not answered and costs nothing');
+  assert.equal(session.calls, 3);
+  assert.ok(data.NSABanter.en.attendingBusy.some(line => h.stats.dialogs.at(-1).includes(escape(line.replace(/^Grace: /, '')))), 'The nurse explains that the attending is busy');
+  session.selected = ids[0];
+  E.answer(session, testCatalog, ids[0], first.steps[0].best);
+  const answered = session.clock;
+  h.api.callAttending();
+  assert.equal(session.clock, answered, 'After the answer the attending debriefs for free');
+  assert.ok(h.stats.dialogs.at(-1).includes(escape(first.steps[0].hint.en)));
+  for (const lang of ['en', 'de', 'es']) {
+    const text = data.NSABanter[lang];
+    for (const kind of ['attendingNight', 'attendingDay', 'attendingAfter', 'attendingIdle', 'attendingWarn']) {
+      assert.ok(text[kind].length >= 2 && text[kind].every(line => line.startsWith(text.staff.attending.name + ':')), lang + ' ' + kind + ' lines are the attending\'s');
+    }
+    assert.ok(text.attendingBusy.every(line => line.startsWith(text.staff.nurse.name + ':')), lang + ' the nurse answers when no calls are left');
+  }
+});
+
+test('after a dangerous answer the attending steps in with the decisive rule', () => {
+  const c = clone(catalog.cases.find(c => !c.source && c.steps.some(s => s.options.some(o => o.critical))));
+  const h = appHarness(null);
+  const step = c.steps[0];
+  const fallback = h.api.attendingWarning(c, step, c.id + ':0');
+  assert.match(fallback, /attending-warning/);
+  assert.ok(fallback.includes(escape(c.takeaway.en)), 'Without a written hint the warning gives the take-home message');
+  assert.ok(fallback.includes(escape(data.NSA_TEXT.en.attendingImportant)));
+  step.hint = { en: 'Unstable <first>: secure the circulation.', de: 'x', es: 'x' };
+  const warned = h.api.attendingWarning(c, step, c.id + ':0');
+  assert.ok(warned.includes('Unstable &lt;first&gt;: secure the circulation.'), 'The hint is escaped and shown');
+  assert.ok(data.NSABanter.en.attendingWarn.some(line => warned.includes(escape(line.replace(/^Dr\. Brennan: /, '')))));
+});
+
+function protocolHarness(protocols, lang = 'en') {
+  const source = read('app.js');
+  const start = source.indexOf('  function protocols()'), end = source.indexOf('  function atlas()', start);
+  assert.ok(start >= 0 && end > start, 'The protocol page must be present');
+  const context = vm.createContext({ C: { ...catalog, protocols }, esc: escape, getCase: id => catalog.cases.find(c => c.id === id),
+    t: key => data.NSA_TEXT[lang][key] || key, loc: value => value[lang], protocolEntity: null });
+  vm.runInContext(source.slice(start, end) + '\nglobalThis.page = { protocols, protocolCard };', context, { filename: 'app-protocols.js' });
+  return context;
+}
+
+test('the protocol page shows cycles, doses, routes and sources per tumour and links its questions', () => {
+  const text = value => ({ en: value, de: value, es: value });
+  const regimen = { id: 'fixture-regimen', name: text('Gem<Cis>'), setting: text('Metastatic'), cycleDays: 21, cycles: text('4–6'), support: text('Hydration'), cautions: text('GFR'), evidence: text('Standard'),
+    drugs: [{ name: text('Gemcitabine'), dose: text('1000 mg/m²'), route: 'i.v.', schedule: text('Days 1 and 8') }, { name: text('Mitomycin C'), dose: text('40 mg'), route: 'intravesical', schedule: text('Weekly') }],
+    sources: [{ label: 'Guideline', url: 'https://example.org/g' }], questions: [catalog.cases[0].id, 'missing-case'] };
+  const continuous = { ...regimen, id: 'fixture-continuous', cycleDays: null, questions: [] };
+  const h = protocolHarness([{ id: 'one', title: text('Bladder'), regimens: [regimen, continuous] }, { id: 'two', title: text('Kidney'), regimens: [continuous] }]);
+  const page = h.page.protocols();
+  assert.ok(page.includes('protocol-warning'), 'The page always carries the learning-overview warning');
+  assert.equal((page.match(/data-protocol-entity=/g) || []).length, 2, 'One tab per tumour');
+  assert.equal((page.match(/class="protocol-card"/g) || []).length, 2, 'Only the regimens of the selected tumour');
+  assert.ok(page.includes('Gem&lt;Cis&gt;') && !page.includes('Gem<Cis>'), 'Protocol text is escaped');
+  assert.ok(page.includes('1000 mg/m²') && page.includes(escape(data.NSA_TEXT.en.routeIntravesical)), 'Doses and routes are shown');
+  assert.ok(page.includes(escape(data.NSA_TEXT.en.protocolCycleDays.replace('{n}', 21))) && page.includes(escape(data.NSA_TEXT.en.protocolContinuous)));
+  assert.ok(page.includes('href="https://example.org/g"') && page.includes('rel="noopener noreferrer"'));
+  assert.equal((page.match(/data-protocol-practice=/g) || []).length, 1, 'Only regimens with questions get a practice button');
+  assert.ok(page.includes(escape(data.NSA_TEXT.en.protocolPractice.replace('{n}', 1))), 'Unknown question ids are not counted');
+  h.protocolEntity = 'two';
+  assert.equal((h.page.protocols().match(/class="protocol-card"/g) || []).length, 1, 'Switching the tab shows the other tumour');
+  assert.ok(protocolHarness([]).page.protocols().includes('protocol-warning'), 'Without protocols the page still renders');
+});
+
 test('streak comments name the streak and wrong source answers get exam-style teasing', () => {
   const h = appHarness();
   for (const lang of ['en', 'de', 'es']) {
@@ -765,7 +858,7 @@ function saveHarness(state) {
   const constant = name => { const match = source.match(new RegExp('const ' + name + '=[^\\n]*;')); assert.ok(match, name + ' is declared in app.js'); return match[0]; };
   const section = (from, to) => { const start = source.indexOf(from), end = source.indexOf(to, start); assert.ok(start >= 0 && end > start, from + ' must be present'); return source.slice(start, end); };
   const context = vm.createContext({ C: catalog, E, state, getCase: id => catalog.cases.find(c => c.id === id) });
-  vm.runInContext([constant('SAVE_FORMAT'), constant('BADGE_ICONS'), constant('STAT_KEYS'), constant('RANK_COUNT'), constant('DUTIES'), constant('count')].join('\n') + '\n' +
+  vm.runInContext([constant('SAVE_FORMAT'), constant('BADGE_ICONS'), constant('STAT_KEYS'), constant('RANK_COUNT'), constant('ATTENDING_CALLS'), constant('DUTIES'), constant('count')].join('\n') + '\n' +
     section('  function validRecord(r)', '  // Career XP counts') + section('  function validBoss(boss)', '  function bossCorrect(boss)') +
     '\nglobalThis.helpers = { cleanSave, saveFile, readSaveFile, mergeSave, chooseShift, hasProgress };', context, { filename: 'app-save-helpers.js' });
   return context.helpers;
@@ -777,7 +870,7 @@ function playedState() {
   const first = open.patients[0], c = catalog.cases.find(c => c.id === first.id);
   E.answer(open, catalog, c.id, c.steps[0].best); E.next(open, catalog, c.id);
   for (const p of open.patients) p.logged = p.finished;
-  Object.assign(open, { duty: 'night', coffees: 2, streak: 1, bestStreak: 1, jokers: 0, streakAt: null, struck: {}, counted: false, bossCounted: false });
+  Object.assign(open, { duty: 'night', coffees: 2, streak: 1, bestStreak: 1, jokers: 0, streakAt: null, struck: {}, counted: false, bossCounted: false, calls: 0, called: {} });
   return { lang: 'de', name: 'Dr. Test', avatar: 2, sound: false, history, bookmarks: [history[0].caseId], session: open,
     stats: { shifts: 3, perfectShifts: 1, bossPerfect: 0, maxCoffees: 4, bestStreak: 6, jokers: 2, rank: 2, atlasPerfect: 1 }, badges: ['firstCase', 'streak5'], lastDuty: 'board',
     countedShifts: ['shift:' + done.seed] };

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "ema-medicines",
+    "title": "European Medicines Agency: product information (EPAR, summary of product characteristics)",
+    "url": "https://www.ema.europa.eu/en/medicines",
+    "checked": "2026-10-09",
+    "scope": "Approved EU indication, dose, schedule, adverse reactions and warnings of each named medicine. Questions and protocols cite the product information of the drugs they name."
+  },
+  {
+    "id": "fachinfo-de",
+    "title": "Fachinformationsverzeichnis Deutschland (Fachinformationen der Arzneimittel)",
+    "url": "https://www.fachinfo.de",
+    "checked": "2026-10-09",
+    "scope": "German summaries of product characteristics: dosing, contraindications, interactions and adverse reactions."
+  },
+  {
+    "id": "eau-female-luts",
+    "title": "EAU Non-neurogenic Female LUTS",
+    "url": "https://uroweb.org/guidelines/non-neurogenic-female-luts",
+    "checked": "2026-10-09",
+    "scope": "Female stress, urgency and mixed urinary incontinence: assessment, conservative, drug and surgical treatment (mid-urethral slings, colposuspension, bulking, sphincter)."
+  }
+]

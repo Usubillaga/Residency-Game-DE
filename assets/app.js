@@ -15,18 +15,20 @@
   const BADGE_ICONS={firstCase:'📋',firstShift:'🌅',streak5:'📟',streak10:'🚀',perfectShift:'📘',bossPerfect:'🎓',coffee5:'☕',allAreas:'🗺️',comeback:'🔁',joker10:'🤝',specialist:'🔬',cases50:'🦉',nightOwl:'🌙',anatomist:'🦴'};
   const STAT_KEYS=['shifts','perfectShifts','bossPerfect','maxCoffees','bestStreak','jokers','rank','atlasPerfect'];
   const RANK_COUNT=9; // the career ladder: RANK_XP below and careerRanks in banter.js have nine steps
+  // The attending in the background takes three calls per shift; each costs five game minutes, never points.
+  const ATTENDING_CALLS=3,CALL_MINUTES=5;
   // Duties decide which cases a session draws: emergencies at night, oncology decisions in the tumour board,
   // outpatient work in clinic and planned surgery on the elective list. Start times are game minutes after midnight.
-  const DUTIES=['night','board','clinic','elective'],DUTY_START={night:1320,board:930,clinic:480,elective:450,mixed:1320};
-  const DUTY_ICON={night:'🌙',board:'🎗️',clinic:'🩺',elective:'✂️',mixed:'🔀'};
+  const DUTIES=['night','board','clinic','elective','dayclinic'],DUTY_START={night:1320,board:930,clinic:480,elective:450,dayclinic:510,mixed:1320};
+  const DUTY_ICON={night:'🌙',board:'🎗️',clinic:'🩺',elective:'✂️',dayclinic:'💉',mixed:'🔀'};
   const count=v=>Number.isInteger(v)&&v>=0?v:0;
   let storageFailed=false, state={lang:'en',name:'',avatar:0,sound:false,history:[],bookmarks:[],session:null,stats:cleanStats(null),badges:[],lastDuty:'night',countedShifts:[]};
   try {
     const s=JSON.parse(localStorage.getItem(STORAGE)||'null');
     if (s && typeof s==='object' && !Array.isArray(s)) Object.assign(state,cleanSave(s));
   } catch (_) { /* In-memory play stays available when browser storage is blocked. */ }
-  let view=['intro','library','atlas','progress','sources','play','report'].includes(location.hash.slice(1))?location.hash.slice(1):'intro';
-  let areaFilter='all',topicFilter='all',dutyFilter='all',pendingDuty='night',libraryPage=0,query='',savedOnly=false,pendingIds=null,customSchedule=null,dialogSequence=0,pendingSave=null;
+  let view=['intro','library','atlas','protocols','progress','sources','play','report'].includes(location.hash.slice(1))?location.hash.slice(1):'intro';
+  let areaFilter='all',topicFilter='all',dutyFilter='all',pendingDuty='night',libraryPage=0,query='',savedOnly=false,pendingIds=null,customSchedule=null,dialogSequence=0,pendingSave=null,protocolEntity=null;
   const t = key => {const value=typeof comedy()[key]==='string'?comedy()[key]:(strings[state.lang][key] || strings.en[key] || key);return value.replaceAll('{cases}',String(C.cases.length)).replaceAll('{areas}',String(C.areas.length));};
   const loc = value => value[state.lang];
   const pct = r=>Math.round(r.score/r.maxScore*100);
@@ -68,10 +70,16 @@
       const match=/^(.+):(\d+)$/.exec(key),patient=match&&patients.find(p=>p.id===match[1]),step=patient&&getCase(patient.id).steps[Number(match[2])];
       if(step&&typeof value==='string'&&step.options.some(o=>o.id===value))struck[key]=value;
     }
+    const called={};
+    if(s.called&&typeof s.called==='object'&&!Array.isArray(s.called))for(const key of Object.keys(s.called)){
+      const match=/^(.+):(\d+)$/.exec(key),patient=match&&patients.find(p=>p.id===match[1]);
+      if(patient&&Number(match[2])<getCase(patient.id).steps.length&&s.called[key]===true)called[key]=true;
+    }
     const capped=v=>Math.min(count(v),1000000),streak=capped(s.streak);
     const clean={version:2,mode:s.mode,seed:s.seed.slice(0,120),clock:s.clock,patients,selected:s.selected,finished:s.finished,duty:DUTIES.includes(s.duty)?s.duty:'mixed',
       coffees:capped(s.coffees),streak,bestStreak:Math.max(capped(s.bestStreak),streak),jokers:capped(s.jokers),
-      streakAt:typeof s.streakAt==='string'&&s.streakAt.length<=200?s.streakAt:null,struck,counted:s.counted===true,bossCounted:s.bossCounted===true};
+      streakAt:typeof s.streakAt==='string'&&s.streakAt.length<=200?s.streakAt:null,struck,counted:s.counted===true,bossCounted:s.bossCounted===true,
+      calls:Math.min(capped(s.calls),ATTENDING_CALLS),called};
     if(validBoss(s.boss))clean.boss={index:s.boss.index,done:s.boss.done,answers:[...s.boss.answers],items:s.boss.items.map(item=>({caseId:item.caseId,stepIndex:item.stepIndex,order:[...item.order]}))};
     return clean;
   }
@@ -267,7 +275,7 @@
   function badge(acuity) { return '<span class="badge '+acuity+'">'+esc(t(acuity))+'</span>'; }
   function bookmark(id) { return '<button class="bookmark '+(state.bookmarks.includes(id)?'on':'')+'" data-bookmark="'+esc(id)+'" aria-label="'+esc(t(state.bookmarks.includes(id)?'unsaveCase':'saveCase'))+'" aria-pressed="'+state.bookmarks.includes(id)+'">'+(state.bookmarks.includes(id)?'★':'☆')+'</button>'; }
   function header() {
-    return '<header class="topbar"><div class="container top-inner"><a href="#intro" class="brand" data-view="intro"><span class="brand-icon" aria-hidden="true">✚</span><div><strong>Night Shift Academy</strong><small>'+esc(t('tagline'))+'</small></div></a><nav class="nav" aria-label="'+esc(t('intro'))+'">'+['intro','library','atlas','progress','sources'].map(v=>'<button class="nav-btn '+(view===v?'active':'')+'" data-view="'+v+'" '+(view===v?'aria-current="page"':'')+'>'+esc(t(v))+'</button>').join('')+'</nav><div class="lang" role="group" aria-label="Language / Sprache / Idioma">'+['en','de','es'].map(l=>'<button data-lang="'+l+'" class="'+(state.lang===l?'active':'')+'" aria-pressed="'+(state.lang===l)+'" aria-label="'+({en:'English',de:'Deutsch',es:'Español'}[l])+'">'+l.toUpperCase()+'</button>').join('')+'</div></div></header>';
+    return '<header class="topbar"><div class="container top-inner"><a href="#intro" class="brand" data-view="intro"><span class="brand-icon" aria-hidden="true">✚</span><div><strong>Night Shift Academy</strong><small>'+esc(t('tagline'))+'</small></div></a><nav class="nav" aria-label="'+esc(t('intro'))+'">'+['intro','library','atlas','protocols','progress','sources'].map(v=>'<button class="nav-btn '+(view===v?'active':'')+'" data-view="'+v+'" '+(view===v?'aria-current="page"':'')+'>'+esc(t(v))+'</button>').join('')+'</nav><div class="lang" role="group" aria-label="Language / Sprache / Idioma">'+['en','de','es'].map(l=>'<button data-lang="'+l+'" class="'+(state.lang===l?'active':'')+'" aria-pressed="'+(state.lang===l)+'" aria-label="'+({en:'English',de:'Deutsch',es:'Español'}[l])+'">'+l.toUpperCase()+'</button>').join('')+'</div></div></header>';
   }
   function footer() { return '<footer class="footer"><div class="container footer-inner"><p>'+esc(t('education'))+'<br>'+esc(t('clockNote'))+'</p><button data-view="sources">'+esc(t('sources'))+' ↗</button></div></footer>'; }
   function hospital() {
@@ -376,6 +384,23 @@
     if(chip){const shift=chip.getBoundingClientRect().top-before;if(shift)(figure.closest('dialog')||window).scrollBy(0,shift);}
     else reveal(note);
   }
+  // Therapy protocols: a learning overview of cycles and doses per tumour, each with its questions to practise.
+  function protocols() {
+    const entities=C.protocols||[],current=entities.find(e=>e.id===protocolEntity)||entities[0];
+    const head='<div class="page-head"><p class="eyebrow">'+esc(t('protocols'))+'</p><h1>'+esc(t('protocolsTitle'))+'</h1><p>'+esc(t('protocolsSub'))+'</p></div><p class="warning-note protocol-warning" role="note">⚠️ '+esc(t('protocolsWarning'))+'</p>';
+    if(!current)return head;
+    return head+'<div class="protocol-tabs" role="tablist" aria-label="'+esc(t('protocols'))+'">'+entities.map(e=>'<button role="tab" class="protocol-tab'+(e===current?' active':'')+'" aria-selected="'+(e===current)+'" data-protocol-entity="'+esc(e.id)+'">'+esc(loc(e.title))+' <span class="mono">'+e.regimens.length+'</span></button>').join('')+'</div>'+
+      '<div class="protocol-grid" role="tabpanel">'+current.regimens.map(protocolCard).join('')+'</div>';
+  }
+  function protocolCard(r) {
+    const questions=(r.questions||[]).filter(id=>getCase(id)),route=d=>d.route==='intravesical'?t('routeIntravesical'):d.route;
+    return '<article class="protocol-card" id="protocol-'+esc(r.id)+'"><h2>'+esc(loc(r.name))+'</h2><p class="protocol-setting"><b>'+esc(t('protocolSetting'))+':</b> '+esc(loc(r.setting))+'</p>'+
+      '<p class="protocol-cycle"><b>'+esc(t('protocolCycle'))+':</b> '+esc(r.cycleDays?t('protocolCycleDays').replace('{n}',r.cycleDays):t('protocolContinuous'))+' · <b>'+esc(t('protocolCycles'))+':</b> '+esc(loc(r.cycles))+'</p>'+
+      '<div class="protocol-table-wrap"><table class="protocol-table"><thead><tr><th scope="col">'+esc(t('protocolDrug'))+'</th><th scope="col">'+esc(t('protocolDose'))+'</th><th scope="col">'+esc(t('protocolRoute'))+'</th><th scope="col">'+esc(t('protocolSchedule'))+'</th></tr></thead><tbody>'+
+      r.drugs.map(d=>'<tr><th scope="row">'+esc(loc(d.name))+'</th><td class="mono">'+esc(loc(d.dose))+'</td><td>'+esc(route(d))+'</td><td>'+esc(loc(d.schedule))+'</td></tr>').join('')+'</tbody></table></div>'+
+      '<details class="protocol-more"><summary>'+esc(t('protocolSupport'))+' · '+esc(t('protocolCautions'))+' · '+esc(t('protocolEvidence'))+'</summary><p><b>'+esc(t('protocolSupport'))+':</b> '+esc(loc(r.support))+'</p><p><b>'+esc(t('protocolCautions'))+':</b> '+esc(loc(r.cautions))+'</p><p><b>'+esc(t('protocolEvidence'))+':</b> '+esc(loc(r.evidence))+'</p><p class="protocol-sources"><b>'+esc(t('protocolSources'))+':</b> '+r.sources.map(source=>'<a href="'+esc(source.url)+'" target="_blank" rel="noopener noreferrer">'+esc(source.label)+' ↗</a>').join(' · ')+'</p></details>'+
+      (questions.length?'<div class="actions"><button class="btn" data-protocol-practice="'+esc(r.id)+'">🎯 '+esc(t('protocolPractice').replace('{n}',questions.length))+'</button></div>':'')+'</article>';
+  }
   function atlas() {
     const used=id=>C.cases.filter(c=>c.schema&&c.schema.id===id).length;
     return '<div class="page-head"><p class="eyebrow">'+esc(t('atlas'))+'</p><h1>'+esc(t('atlasTitle'))+'</h1><p>'+esc(t('atlasSub'))+'</p></div><div class="atlas-grid">'+[...SCHEMAS.values()].map(s=>'<article class="atlas-card"><div class="atlas-thumb" aria-hidden="true"><svg viewBox="'+esc(s.viewBox)+'" xmlns="http://www.w3.org/2000/svg">'+s.svg+'</svg></div><h3>'+esc(loc(s.title))+'</h3><p>'+esc(loc(s.caption))+'</p><small>'+esc(t(used(s.id)===1?'atlasUsedOne':'atlasUsed').replace('{n}',String(used(s.id))))+' · '+s.parts.length+' ⦿</small><div class="actions"><button class="btn small quiet" data-atlas-open="'+esc(s.id)+'">'+esc(t('atlasExplore'))+'</button><button class="btn small primary" data-atlas-quiz="'+esc(s.id)+'">🎯 '+esc(t('atlasQuiz'))+'</button></div></article>').join('')+'</div>';
@@ -430,7 +455,7 @@
       body+='<section class="decision-panel"><div class="step-track" aria-hidden="true">'+c.steps.map((_,i)=>'<span class="'+(i<p.index?'past':i===p.index?'now':'')+'"></span>').join('')+'</div><div class="step-meta"><span>'+esc(t(c.source?'sourceQuestion':s.kind))+'</span><span>'+esc(t('decision'))+' '+(p.index+1)+' / '+c.steps.length+'</span></div><h3 id="decision-prompt">'+esc(loc(s.prompt))+'</h3><div class="options" role="group" aria-labelledby="decision-prompt">'+p.order[p.index].map((id,i)=>optionButton(s,o=>o.id===id,p,i)).join('')+'</div>';
       if(p.feedback){const o=s.options.find(o=>o.id===p.feedback),cls=o.score===10?'good':o.score>0||c.source?'partial':'unsafe';
         const streak=cls==='good'&&state.session.streakAt===p.id+':'+p.index?state.session.streak:0;
-        body+=characterComment(cls,p.id,p.index,streak,!!c.source)+'<div class="feedback '+cls+'" role="status"><span class="label">'+esc(t('feedback'))+'</span><h3>'+esc(t(c.source&&o.score!==10?'sourceIncorrect':cls))+(o.critical?' · '+esc(t('safety')):'')+'</h3><p>'+esc(loc(o.feedback))+'</p>'+preferredAnswer(s,o.id)+(p.index===c.steps.length-1?caseVisuals(c):'')+optionsExplained(s,p.order[p.index],o.id)+'<div class="actions"><button class="btn primary" data-action="next">'+esc(t(p.index===c.steps.length-1?'finishCase':'next'))+' →</button></div></div>';
+        body+=(o.critical?attendingWarning(c,s,p.id+':'+p.index):characterComment(cls,p.id,p.index,streak,!!c.source))+'<div class="feedback '+cls+'" role="status"><span class="label">'+esc(t('feedback'))+'</span><h3>'+esc(t(c.source&&o.score!==10?'sourceIncorrect':cls))+(o.critical?' · '+esc(t('safety')):'')+'</h3><p>'+esc(loc(o.feedback))+'</p>'+preferredAnswer(s,o.id)+(p.index===c.steps.length-1?caseVisuals(c):'')+optionsExplained(s,p.order[p.index],o.id)+'<div class="actions"><button class="btn primary" data-action="next">'+esc(t(p.index===c.steps.length-1?'finishCase':'next'))+' →</button></div></div>';
       } else {
         body+='<p class="keys-hint">⌨️ '+esc(t('keysHint'))+'</p>';
         if(state.session.mode==='learn')body+='<details class="hint-box"><summary>'+esc(t('hint'))+'</summary><p>'+esc(t('hintText'))+'</p></details>';
@@ -486,7 +511,7 @@
   function render() {
     document.documentElement.lang=state.lang;document.title='Night Shift Academy · '+({en:'Urology',de:'Urologie',es:'Urología'}[state.lang]);
     document.querySelector('.skip').textContent=t('skip');
-    root.innerHTML=header()+'<main class="container" id="main" tabindex="-1">'+(storageFailed?'<div class="storage-banner" role="status">'+esc(t('storageError'))+'</div>':'')+({intro,library,atlas,progress,sources,play,report}[view]||intro)()+'</main>'+footer();
+    root.innerHTML=header()+'<main class="container" id="main" tabindex="-1">'+(storageFailed?'<div class="storage-banner" role="status">'+esc(t('storageError'))+'</div>':'')+({intro,library,atlas,protocols,progress,sources,play,report}[view]||intro)()+'</main>'+footer();
   }
   function openDialog(content) {
     document.querySelector('dialog')?.remove();
@@ -578,7 +603,7 @@
       return {id:p.id,name:c.patient.label?loc(c.patient.label):c.patient.name,age:c.patient.age,sex:c.patient.sex,ageBand:c.patient.ageBand,area:c.area,acuity:c.acuity,finished:p.finished,available:p.availableAt<=session.clock,selected:p.id===selected.id,feedback:choice?(choice.score===10?'good':choice.score>0||c.source?'partial':'unsafe'):null};
     });
     const duty=session.duty,board=duty==='board',room=board?t('duty_board'):loc(getArea(area).title);
-    return '<section class="cartoon-stage duty-'+esc(duty||'mixed')+'" aria-label="'+esc(room)+'"><div class="game-scene-heading"><h2>'+esc(room)+'</h2><span class="scene-tip">'+esc(t(board?'sceneHintBoard':'sceneHint'))+'</span></div>'+A.scene(area,patients,selected.id,clock(session.clock),state.avatar,state.lang,{duty,label:comedy().dutyBoard&&comedy().dutyBoard[duty]})+'<div class="game-team">'+['nurse','attending','chief'].map(role=>'<button class="team-character" data-action="'+({nurse:'ask-nurse',attending:'ask-attending',chief:'chief-challenge'}[role])+'">'+A.portrait(role,role==='attending'?attendingMood():role==='chief'?'stern':'smile',52,state.avatar)+'<span><b>'+esc(comedy().staff[role].name)+'</b><small>'+esc(t({nurse:'jokerLabel',attending:'askAttending',chief:'chiefChallenge'}[role]))+'</small></span></button>').join('')+'<button class="btn coffee-button" data-action="coffee" '+(session.finished?'disabled':'')+' title="'+esc(t('coffeeNote'))+'">☕ '+esc(t('coffeeLabel'))+' <span class="mono">+5 '+esc(t('minute'))+'</span></button><button class="btn quiet sound-button" data-action="sound" aria-pressed="'+state.sound+'">'+(state.sound?'♫ ':'♪ ')+esc(t(state.sound?'soundOn':'soundOff'))+'</button></div><p class="scene-banter">'+esc(board?comedy().dutyIntro.board:comedy().areaIntro[area])+'</p></section>';
+    return '<section class="cartoon-stage duty-'+esc(duty||'mixed')+'" aria-label="'+esc(room)+'"><div class="game-scene-heading"><h2>'+esc(room)+'</h2><span class="scene-tip">'+esc(t(board?'sceneHintBoard':'sceneHint'))+'</span></div>'+A.scene(area,patients,selected.id,clock(session.clock),state.avatar,state.lang,{duty,label:comedy().dutyBoard&&comedy().dutyBoard[duty]})+'<div class="game-team">'+['nurse','attending','chief'].map(role=>'<button class="team-character" data-action="'+({nurse:'ask-nurse',attending:'ask-attending',chief:'chief-challenge'}[role])+'">'+A.portrait(role,role==='attending'?attendingMood():role==='chief'?'stern':'smile',52,state.avatar)+'<span><b>'+esc(comedy().staff[role].name)+'</b><small>'+esc(t({nurse:'jokerLabel',attending:'askAttending',chief:'chiefChallenge'}[role]))+(role==='attending'?' · 📞 '+(ATTENDING_CALLS-count(session.calls))+'/'+ATTENDING_CALLS:'')+'</small></span></button>').join('')+'<button class="btn coffee-button" data-action="coffee" '+(session.finished?'disabled':'')+' title="'+esc(t('coffeeNote'))+'">☕ '+esc(t('coffeeLabel'))+' <span class="mono">+5 '+esc(t('minute'))+'</span></button><button class="btn quiet sound-button" data-action="sound" aria-pressed="'+state.sound+'">'+(state.sound?'♫ ':'♪ ')+esc(t(state.sound?'soundOn':'soundOff'))+'</button></div><p class="scene-banter">'+esc(board?comedy().dutyIntro.board:comedy().areaIntro[area])+'</p></section>';
   }
   function attendingMood() {
     // The attending sleeps through the night shift's quiet moments but is awake for daytime duties.
@@ -648,6 +673,26 @@
     if(!session||session.finished){const line=quip('coffee',session?.coffees||Date.now());talk(speakerFor(line),line);return;}
     session.clock+=5;session.coffees=(Number.isInteger(session.coffees)?session.coffees:0)+1;persist();render();
     const line=quip('coffee',session.coffees);talk(speakerFor(line),line+'\n\n'+t('coffeeNote'));
+  }
+  // Calling the attending gives the decision's hint: the rule that decides it, never the answer itself. A second call about the
+  // same decision is free; after the answer the hint is a free debrief. Without hints left in the shift the nurse answers.
+  function callAttending() {
+    const session=state.session,p=session?.patients.find(p=>p.id===session.selected);
+    if(!p||session.finished){talk('attending',quip('attendingIdle',session?.seed||'idle'));return;}
+    const c=getCase(p.id),index=Math.min(p.index,c.steps.length-1),key=p.id+':'+index,step=c.steps[index];
+    const hint=step.hint?loc(step.hint):loc(c.objectives)[0];
+    if(p.finished||p.feedback){talk('attending',quip('attendingAfter',key)+'\n\n💡 '+hint);return;}
+    session.called=session.called&&typeof session.called==='object'?session.called:{};
+    if(!session.called[key]){
+      if(count(session.calls)>=ATTENDING_CALLS){talk('nurse',quip('attendingBusy',key));return;}
+      session.calls=count(session.calls)+1;session.called[key]=true;session.clock+=CALL_MINUTES;persist();render();
+    }
+    talk('attending',quip(session.duty==='night'?'attendingNight':'attendingDay',key)+'\n\n💡 '+hint+'\n\n'+t('attendingNote').replace('{n}',ATTENDING_CALLS-count(session.calls)));
+  }
+  // After an answer that would have harmed the patient, the attending steps in with the decisive rule.
+  function attendingWarning(c,step,key) {
+    const hint=step.hint?loc(step.hint):loc(c.takeaway);
+    return '<aside class="character-comment unsafe attending-warning">'+A.portrait('attending','worried',92,state.avatar)+'<div class="comic-speech"><b>'+esc(comedy().staff.attending.name)+'</b><p>'+esc(lineWithoutName(quip('attendingWarn',key),'attending'))+'</p><p class="attending-hint"><b>'+esc(t('attendingImportant'))+':</b> '+esc(hint)+'</p></div></aside>';
   }
   function askNurse() {
     // The nurse's joker crosses out one of the weakest wrong answers. It costs game time, never points.
@@ -739,6 +784,8 @@
     if(b.dataset.filter){areaFilter=b.dataset.filter;libraryPage=0;render();document.querySelector('[data-filter="'+areaFilter+'"]')?.focus({preventScroll:true});return;}
     if(b.dataset.bookmark){const id=b.dataset.bookmark;state.bookmarks=state.bookmarks.includes(id)?state.bookmarks.filter(x=>x!==id):[...state.bookmarks,id];persist();render();document.querySelector('[data-bookmark="'+id+'"]')?.focus({preventScroll:true});return;}
     if(b.dataset.practice){setup([b.dataset.practice]);return;}
+    if(b.dataset.protocolEntity){protocolEntity=b.dataset.protocolEntity;render();document.querySelector('[data-protocol-entity="'+protocolEntity+'"]')?.focus({preventScroll:true});return;}
+    if(b.dataset.protocolPractice){const r=(C.protocols||[]).flatMap(e=>e.regimens).find(r=>r.id===b.dataset.protocolPractice),ids=(r?.questions||[]).filter(id=>getCase(id));if(ids.length)setup(pickCases(ids.map(getCase),10,'protocol-'+r.id,false));return;}
     if(b.dataset.dutyStart){setup(null,b.dataset.dutyStart);return;}
     if(b.dataset.atlasOpen){openAtlas(b.dataset.atlasOpen);return;}
     if(b.dataset.atlasQuiz){startQuiz(b.dataset.atlasQuiz);return;}
@@ -758,7 +805,7 @@
       case'revenge':{const ids=missedCases().slice(0,10);if(ids.length)setup(ids);else talk('nurse',comedy().revengeNone);break;}
       case'shift-revenge':{const ids=state.session?.patients.filter(p=>p.score<caseMaximum(getCase(p.id))).map(p=>p.id)||[];if(ids.length)setup(ids);break;}
       case'practice-selection':{const pool=filteredCases();if(pool.length)setup(pickCases(pool,10,'selection',false));break;}
-      case'ask-attending':talk('attending',comedy().opening.find(x=>x.speaker==='attending').text);break;
+      case'ask-attending':callAttending();break;
       case'sound':state.sound=!state.sound;persist();sound('pager');render();document.querySelector('[data-action="sound"]')?.focus({preventScroll:true});break;
       case'story-next':advanceOpening();break;
       case'story-skip':document.querySelector('dialog')?.close();break;
@@ -818,7 +865,7 @@
     if(chosen&&!customSchedule)state.lastDuty=chosen;
     state.session=cleanSession(Object.assign(E.create(C,ids,mode,seed),{duty}));persist();document.querySelector('dialog').close();navigate('play');startOpening();
   });
-  window.addEventListener('hashchange',()=>{const v=location.hash.slice(1);if(v!==view&&['intro','library','atlas','progress','sources','play','report'].includes(v)){view=v;render();}});
+  window.addEventListener('hashchange',()=>{const v=location.hash.slice(1);if(v!==view&&['intro','library','atlas','protocols','progress','sources','play','report'].includes(v)){view=v;render();}});
   syncRewards();
   render();
 })();

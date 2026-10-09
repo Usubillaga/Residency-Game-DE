@@ -386,7 +386,7 @@ function portrait(o, expr = 'neutral', size = 96, opt = {}) {
   function scene(area,patients,selectedId,time='22:00',index=0,language='en',options) {
     // Daytime duties get daylight and an awake attending; the tumour board meets in a conference room
     // where every case of the session lies on the table as a folder.
-    const o=options||{},board=o.duty==='board',day=board||o.duty==='clinic'||o.duty==='elective';
+    const o=options||{},board=o.duty==='board',day=board||o.duty==='clinic'||o.duty==='elective'||o.duty==='dayclinic';
     if(!AREAS.includes(area))area='emergency';
     const w=lang(language);
     const list=(Array.isArray(patients)?patients:[]).filter(p=>board||patientArea(p)===area);
