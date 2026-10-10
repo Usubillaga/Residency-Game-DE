@@ -7,7 +7,7 @@
   "assets/art.js": "17f84955b822640f81beeb4f76e1136bcb149d2df726fc1702b39a5173d31c37",
   "assets/banter.js": "564b6bd9d4f8c1fd8799691a2c16ae0523b790c8f73f96258f4dc6daf3e45c5a",
   "assets/cartoon.css": "3399a195e5b820f70f77efb3d13468e13acac0e5674afbc24a338b363ee19991",
-  "assets/catalog.js": "8ce494e427317049a34ca8fd08ef7f6ecf8692e068e20752ba273bd478ec3bb3",
+  "assets/catalog.js": "c738da864a311b8fff5614949630e6e810f0b7dd1f73b59f06f5f3a64273d990",
   "assets/engine.js": "03433aa905a4029c66aacf67fd46ffada770f26f61841a89427d33665092324f",
   "assets/favicon.svg": "2b81e11b7f1fa84d705653315ee616de7367a6777f28e52c65af29247df41281",
   "assets/i18n.js": "0c4e75d3150a832d6bffd4f65c49e8bb2089ae0b48692a012597ee8b64a28c95",
@@ -27,6 +27,7 @@
   "data/imported-source.json": "313c36ac134667d2d41eb9b70067231775cdfb119a71ff4c503e4eab0aeb51b7",
   "data/patient-names.json": "71fb8ef62f3fe041db1597de1034fd82b48512233fa150a40eb5c9da192cf197",
   "data/protocols.json": "eb0fdbec06b7a8083162cf289111926d7192fb88d6a62f00b3427b609e1bbc5d",
+  "data/refs-awmf.json": "bf1acf8d43e9ccebf2306df1ec3b5ef4c392c6a18fdf30f9ec5bcbed878a2612",
   "data/refs-drugs.json": "9152d82c0d678f30ee02eaed9aa8c727fb339c13390781f9188ef6547446c33c",
   "data/refs-ed-ward.json": "0aab6395f9193e1a1308dec392bcc8ee38cde7367c5098bf69a21662e4c124f5",
   "data/refs-imported.json": "39addcb0cbd6f0c60b1e31fd9321b239c60bfd81ad61372b9d337a7f8a365b3c",
@@ -44,9 +45,9 @@
   "outputs/daily-shift.json": "329ed4f7c4b604884d8db22c8c068666c0f95bdbd1c24dedcb576202e1bb3d55",
   "scripts/import_urofragen.py": "7a6dba20a062fc87b949f744e69710515d2be440f98d12072761497d679ee79e",
   "scripts/manage.py": "09eb100264736046e1842d01f7195f15d6b6084e2d3cb99969090175995aca81",
-  "standalone.html": "531972f16981bbecd74808ceb792d49f9f635527257c802ce69fba87107498bb",
+  "standalone.html": "425a308e48ff2bfbf09ee67ac9e307fd563934b440eda7bf5eb1916c8db16cab",
   "tests/test_import.py": "3d04ffc0ccb720606ab682f7f2594028bc1e82094667925bbf00f1ddb8a2f48f",
   "tests/test_manage.py": "ee6fc31582cd0966f1992f366bb92d74b0bb92fe30058c4e0f93a7267b68957f",
-  "tests/tests-cartoon.cjs": "4e1feeb5a059b6ba19602579c37bc03b9fc8b9beb3fe72cf081b1d3014a719e2",
+  "tests/tests-cartoon.cjs": "398009aa5fa3538d571add88c2cc01bd415a5f6f702d88245013661141f43fa6",
   "tests/tests-engine.cjs": "9419b188e7a4028d7571af2f99d65f9e55e3aca3d52d51b16fdb7fba7df63030"
 }
