@@ -598,6 +598,22 @@ test('radiotherapy questions are answered by the radiation oncologist, on the ph
   assert.notEqual(data.NSAArt.portrait('radiotherapist', 'smile', 96), data.NSAArt.portrait('attending', 'smile', 96), 'She has her own portrait');
 });
 
+test('every decision has a written hint in all three languages that never quotes an answer option', () => {
+  const letter = /\b(?:option|Option|answer|Antwort|respuesta|opción)\s*\(?[A-Ea-e]\)?\b|\([A-Ea-e]\)/;
+  for (const c of catalog.cases) for (const s of c.steps) {
+    assert.ok(s.hint, c.id + '/' + s.id + ' has a hint');
+    for (const lang of ['en', 'de', 'es']) {
+      const hint = String(s.hint[lang] || '');
+      assert.ok(hint.length >= 40 && hint.length <= 360, c.id + '/' + s.id + ' ' + lang + ' hint length');
+      assert.doesNotMatch(hint, letter, c.id + '/' + s.id + ' names no option letter');
+      for (const o of s.options) {
+        const text = o.text[lang].trim().toLowerCase();
+        if (text.length >= 12) assert.ok(!hint.toLowerCase().includes(text), c.id + '/' + s.id + ' ' + lang + ' does not quote option ' + o.id);
+      }
+    }
+  }
+});
+
 function protocolHarness(protocols, lang = 'en') {
   const source = read('app.js');
   const start = source.indexOf('  function protocols()'), end = source.indexOf('  function atlas()', start);
