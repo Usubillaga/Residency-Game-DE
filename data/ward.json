@@ -2690,6 +2690,152 @@
     ]
   },
   {
+    "id": "q-ped-duplex-ureterocele-vcug-lower-pole-reflux",
+    "area": "ward",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "clinic",
+    "patient": {
+      "name": "Mila Brandauer",
+      "age": null,
+      "sex": "female",
+      "ageBand": "infant"
+    },
+    "title": {
+      "en": "Duplex kidney with ureterocele after a febrile UTI",
+      "de": "Doppelniere mit Ureterozele nach fieberhaftem Harnwegsinfekt",
+      "es": "Riñón doble con ureterocele tras una infección urinaria febril"
+    },
+    "presenting": {
+      "en": "A 7-month-old girl is on the paediatric urology ward after her first febrile urinary tract infection (E. coli); after three days of intravenous antibiotics she has been afebrile for 48 hours. Ultrasound shows a complete duplex left kidney: the upper-pole moiety has thinned parenchyma, hydronephrosis and a dilated ureter ending in a 1.8 cm cystic structure at the bladder base (ureterocele); the lower-pole moiety has a renal pelvis of 8 mm anteroposterior diameter. The right kidney is normal. She voids with a good stream.",
+      "de": "7 Monate altes Mädchen auf der kinderurologischen Station nach ihrem ersten fieberhaften Harnwegsinfekt (E. coli); nach drei Tagen intravenöser Antibiotikatherapie ist sie seit 48 Stunden fieberfrei. Sonographie: komplette Doppelniere links; die obere Anlage zeigt verschmälertes Parenchym, Hydronephrose und einen erweiterten Harnleiter, der in einer 1,8 cm großen zystischen Struktur am Blasenboden endet (Ureterozele); das Nierenbecken der unteren Anlage misst 8 mm im anteroposterioren Durchmesser. Die rechte Niere ist unauffällig. Sie uriniert mit kräftigem Strahl.",
+      "es": "Niña de 7 meses ingresada en la planta de urología pediátrica tras su primera infección urinaria febril (E. coli); tras tres días de antibiótico intravenoso lleva 48 horas afebril. Ecografía: riñón izquierdo con duplicidad completa; el hemirriñón superior presenta parénquima adelgazado, hidronefrosis y un uréter dilatado que termina en una estructura quística de 1,8 cm en la base vesical (ureterocele); la pelvis del hemirriñón inferior mide 8 mm de diámetro anteroposterior. El riñón derecho es normal. Orina con buen chorro."
+    },
+    "vitals": {
+      "bp": "92/56",
+      "hr": 128,
+      "temp": 36.9,
+      "spo2": 99,
+      "rr": 32
+    },
+    "objectives": {
+      "en": [
+        "Apply the Weigert-Meyer rule: the upper-pole ureter inserts inferior and medial and tends to obstruct, the lower-pole ureter tends to reflux",
+        "Plan the work-up of a duplex kidney with ureterocele: VCUG for reflux and ureterocele behaviour, then nuclear medicine for split function"
+      ],
+      "de": [
+        "Die Weigert-Meyer-Regel anwenden: Der Harnleiter der oberen Anlage mündet kaudal und medial und neigt zur Obstruktion, der der unteren Anlage neigt zum Reflux",
+        "Die Diagnostik einer Doppelniere mit Ureterozele planen: MCU für Reflux und Verhalten der Ureterozele, danach Nuklearmedizin für die seitengetrennte Funktion"
+      ],
+      "es": [
+        "Aplicar la regla de Weigert-Meyer: el uréter del polo superior desemboca en posición inferior y medial y tiende a obstruirse; el del polo inferior tiende al reflujo",
+        "Planificar el estudio de un riñón doble con ureterocele: CUMS para el reflujo y el comportamiento del ureterocele, y después medicina nuclear para la función por separado"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which examination is the priority once the infection has settled?",
+          "de": "Welche Untersuchung ist nach Abklingen des Infekts vorrangig?",
+          "es": "¿Qué exploración es prioritaria una vez resuelta la infección?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Voiding cystourethrography (VCUG)",
+              "de": "Miktionszysturethrographie (MCU)",
+              "es": "Cistouretrografía miccional seriada (CUMS)"
+            },
+            "score": 10,
+            "minutes": 10,
+            "critical": false,
+            "feedback": {
+              "en": "Correct. By the Weigert-Meyer rule the upper-pole ureter inserts inferior and medial and obstructs (here via the ureterocele), whereas the lower-pole orifice lies higher and more lateral with a short submucosal tunnel and tends to reflux; reflux into the lower moiety is common in duplex systems with ureterocele, and the contralateral side can reflux as well. After a febrile UTI, VCUG shows this reflux and how the ureterocele behaves during voiding; split function is then assessed with DMSA or MAG3 before treatment is chosen.",
+              "de": "Richtig. Nach der Weigert-Meyer-Regel mündet der Harnleiter der oberen Anlage kaudal und medial und obstruiert (hier über die Ureterozele), während das Ostium der unteren Anlage höher und lateral mit kurzem submukösem Tunnel liegt und zum Reflux neigt; ein Reflux in die untere Anlage ist bei Doppelsystemen mit Ureterozele häufig, auch die Gegenseite kann refluxieren. Nach fieberhaftem Harnwegsinfekt zeigt das MCU diesen Reflux und das Verhalten der Ureterozele bei der Miktion; die seitengetrennte Funktion wird anschließend mit DMSA oder MAG3 bestimmt, bevor die Therapie festgelegt wird.",
+              "es": "Correcto. Según la regla de Weigert-Meyer, el uréter del polo superior desemboca en posición inferior y medial y se obstruye (aquí a través del ureterocele), mientras que el orificio del polo inferior queda más alto y lateral, con un túnel submucoso corto, y tiende al reflujo; el reflujo hacia el polo inferior es frecuente en los sistemas dobles con ureterocele, y también puede haber reflujo contralateral. Tras una infección urinaria febril, la CUMS muestra este reflujo y el comportamiento del ureterocele durante la micción; después se valora la función por separado con DMSA o MAG3 antes de decidir el tratamiento."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "MAG3 diuretic renography as the only further test, because an obstructed upper pole cannot reflux",
+              "de": "MAG3-Diureseszintigraphie als einzige weitere Untersuchung, da eine obstruierte obere Anlage nicht refluxiert",
+              "es": "Renograma diurético con MAG3 como única prueba adicional, ya que un polo superior obstruido no puede refluir"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": false,
+            "feedback": {
+              "en": "The reasoning stops at the upper pole. The moiety at risk of reflux is the lower pole, which drains through the normally sited but short-tunnelled orifice; renography assesses function and drainage but does not show reflux.",
+              "de": "Die Überlegung endet bei der oberen Anlage. Refluxgefährdet ist die untere Anlage mit ihrem orthotop gelegenen, aber kurz tunnelierten Ostium; die Szintigraphie beurteilt Funktion und Abfluss, zeigt aber keinen Reflux.",
+              "es": "El razonamiento se queda en el polo superior. El hemirriñón con riesgo de reflujo es el inferior, que drena por el orificio de posición normal pero con túnel corto; la gammagrafía valora función y drenaje, pero no muestra el reflujo."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "CT urography to display the anatomy of both ureters",
+              "de": "CT-Urographie zur Darstellung der Anatomie beider Harnleiter",
+              "es": "Urografía por TC para mostrar la anatomía de ambos uréteres"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": false,
+            "feedback": {
+              "en": "CT exposes an infant to considerable radiation and contrast, adds little to ultrasound for the anatomy and cannot show reflux. If anatomy remains unclear, MR urography is the radiation-free option.",
+              "de": "Das CT belastet einen Säugling mit erheblicher Strahlung und Kontrastmittel, ergänzt die Sonographie anatomisch kaum und kann keinen Reflux zeigen. Bleibt die Anatomie unklar, ist die MR-Urographie die strahlenfreie Option.",
+              "es": "La TC expone al lactante a una radiación y un contraste considerables, aporta poco a la ecografía en cuanto a la anatomía y no puede mostrar el reflujo. Si la anatomía sigue sin aclararse, la urografía por RM es la opción sin radiación."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Diagnostic cystoscopy with retrograde pyelography of the upper-pole ureter",
+              "de": "Diagnostische Zystoskopie mit retrograder Darstellung des Harnleiters der oberen Anlage",
+              "es": "Cistoscopia diagnóstica con pielografía retrógrada del uréter del polo superior"
+            },
+            "score": 0,
+            "minutes": 20,
+            "critical": false,
+            "feedback": {
+              "en": "Cystoscopy under general anaesthesia is reserved for treatment (for example endoscopic incision of the ureterocele) or for unresolved anatomy; it is not the first diagnostic step and does not show reflux into the lower pole.",
+              "de": "Die Zystoskopie in Narkose ist der Therapie (z. B. endoskopische Inzision der Ureterozele) oder einer ungeklärten Anatomie vorbehalten; sie ist nicht der erste diagnostische Schritt und zeigt keinen Reflux in die untere Anlage.",
+              "es": "La cistoscopia bajo anestesia general se reserva para el tratamiento (por ejemplo, la incisión endoscópica del ureterocele) o para una anatomía no aclarada; no es el primer paso diagnóstico y no muestra el reflujo al polo inferior."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Repeat ultrasound in six months only, without further tests",
+              "de": "Nur Sonographiekontrolle in sechs Monaten, ohne weitere Diagnostik",
+              "es": "Solo ecografía de control en seis meses, sin otras pruebas"
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false,
+            "feedback": {
+              "en": "After a febrile UTI in a duplex system with an obstructing ureterocele, waiting misses lower-pole reflux and leaves the obstruction unassessed, so recurrent pyelonephritis and renal scarring are likely.",
+              "de": "Nach fieberhaftem Harnwegsinfekt bei Doppelsystem mit obstruierender Ureterozele übersieht Abwarten einen Reflux der unteren Anlage und lässt die Obstruktion unbeurteilt – erneute Pyelonephritiden und Parenchymnarben sind dann wahrscheinlich.",
+              "es": "Tras una infección urinaria febril en un sistema doble con ureterocele obstructivo, esperar pasa por alto el reflujo del polo inferior y deja sin valorar la obstrucción, de modo que son probables nuevas pielonefritis y cicatrices renales."
+            }
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "en": "Weigert-Meyer: in a complete duplex kidney the upper-pole ureter opens inferior and medial and obstructs (ureterocele, ectopic insertion), while the lower-pole ureter opens superior and lateral and refluxes. After a febrile UTI, VCUG looks for lower-pole and contralateral reflux and assesses the ureterocele; DMSA or MAG3 then measures the function of each moiety.",
+      "de": "Merksatz Weigert-Meyer: Bei kompletter Doppelniere mündet der Harnleiter der oberen Anlage kaudal und medial und obstruiert (Ureterozele, ektope Mündung), der der unteren Anlage mündet kranial und lateral und refluxiert. Nach fieberhaftem Harnwegsinfekt sucht das MCU den Reflux der unteren Anlage und der Gegenseite und beurteilt die Ureterozele; DMSA oder MAG3 bestimmen danach die Funktion jeder Anlage.",
+      "es": "Regla de Weigert-Meyer: en el riñón doble completo, el uréter del polo superior desemboca en posición inferior y medial y se obstruye (ureterocele, inserción ectópica), mientras que el del polo inferior desemboca en posición superior y lateral y refluye. Tras una infección urinaria febril, la CUMS busca el reflujo del polo inferior y del lado contralateral y valora el ureterocele; después, el DMSA o el MAG3 miden la función de cada hemirriñón."
+    },
+    "references": [
+      "bank-guide-kinderurologie"
+    ]
+  },
+  {
     "id": "bank-uro-hod-00014",
     "area": "ward",
     "level": 3,

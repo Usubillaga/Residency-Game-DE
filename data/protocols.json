@@ -1909,7 +1909,8 @@
             }
           ],
           "questions": [
-            "sys-prot-arasens-docetaxel-darolutamide-order"
+            "sys-prot-arasens-docetaxel-darolutamide-order",
+            "q-pca-mhspc-docetaxel-doublet-to-triplet"
           ]
         },
         {
@@ -2036,6 +2037,9 @@
               "label": "EMA: Taxotere (docetaxel) product information",
               "url": "https://www.ema.europa.eu/en/documents/product-information/taxotere-epar-product-information_en.pdf"
             }
+          ],
+          "questions": [
+            "q-pca-mhspc-docetaxel-doublet-to-triplet"
           ]
         },
         {
@@ -2242,7 +2246,8 @@
             }
           ],
           "questions": [
-            "sys-prot-cabazitaxel-premedication-primary-g-csf"
+            "sys-prot-cabazitaxel-premedication-primary-g-csf",
+            "q-pca-mcrpc-post-docetaxel-psma-negative-liver"
           ]
         },
         {
@@ -2367,7 +2372,8 @@
             }
           ],
           "questions": [
-            "sys-prot-abiraterone-mcrpc-steroid-dose-fasting"
+            "sys-prot-abiraterone-mcrpc-steroid-dose-fasting",
+            "q-pca-mcrpc-after-docetaxel-arpi-naive-no-hrr"
           ]
         },
         {
@@ -2450,6 +2456,10 @@
               "label": "Urology Times: enzalutamide granted EU approval for nmHSPC (EMBARK)",
               "url": "https://www.urologytimes.com/view/enzalutamide-granted-approval-in-eu-for-nmhspc"
             }
+          ],
+          "questions": [
+            "q-pca-mhspc-low-volume-low-risk-prostate-rt",
+            "q-pca-mcrpc-after-docetaxel-arpi-naive-no-hrr"
           ]
         },
         {
@@ -2532,6 +2542,9 @@
               "label": "Erleada dose modifications (J&J Medical Connect)",
               "url": "https://www.jnjmedicalconnect.com/products/erleada/medical-content/erleada-dose-modifications"
             }
+          ],
+          "questions": [
+            "q-pca-mhspc-low-volume-low-risk-prostate-rt"
           ]
         },
         {
@@ -2968,6 +2981,9 @@
               "label": "NCBI Bookshelf: Olaparib clinical review (dose)",
               "url": "https://www.ncbi.nlm.nih.gov/books/NBK604446/"
             }
+          ],
+          "questions": [
+            "q-pca-mcrpc-brca2-parpi-partner-germline"
           ]
         },
         {
@@ -3090,6 +3106,9 @@
               "label": "HemOnc: olaparib (EMA history)",
               "url": "https://hemonc.org/wiki/Olaparib_(Lynparza)"
             }
+          ],
+          "questions": [
+            "q-pca-mcrpc-brca2-parpi-partner-germline"
           ]
         },
         {
@@ -3198,6 +3217,9 @@
               "label": "EC Union Register: Akeega product information",
               "url": "https://ec.europa.eu/health/documents/community-register/2023/20230419158798/anx_158798_en.pdf"
             }
+          ],
+          "questions": [
+            "q-pca-mcrpc-brca2-parpi-partner-germline"
           ]
         },
         {
@@ -3302,6 +3324,10 @@
               "label": "EMA: Talzenna product information (PT)",
               "url": "https://www.ema.europa.eu/en/documents/product-information/talzenna-epar-product-information_pt.pdf"
             }
+          ],
+          "questions": [
+            "q-pca-mcrpc-brca2-parpi-partner-germline",
+            "q-pca-talazoparib-anaemia-hb-below-8"
           ]
         },
         {
@@ -3390,7 +3416,9 @@
             }
           ],
           "questions": [
-            "sys-prot-lu-psma-617-reduction-no-reescalation"
+            "sys-prot-lu-psma-617-reduction-no-reescalation",
+            "q-pca-mcrpc-post-docetaxel-psma-negative-liver",
+            "q-pca-mcrpc-after-docetaxel-arpi-naive-no-hrr"
           ]
         },
         {
@@ -3473,6 +3501,10 @@
               "label": "EMA: EMA restricts use of prostate cancer medicine Xofigo (2018)",
               "url": "https://www.ema.europa.eu/en/documents/referral/xofigo-article-20-procedure-ema-restricts-use-prostate-cancer-medicine-xofigo_en.pdf"
             }
+          ],
+          "questions": [
+            "q-pca-mcrpc-post-docetaxel-psma-negative-liver",
+            "q-pca-mcrpc-after-docetaxel-arpi-naive-no-hrr"
           ]
         },
         {
@@ -4708,6 +4740,9 @@
               "label": "Belzutifan receives European approval (CancerNetwork)",
               "url": "https://www.cancernetwork.com/view/belzutifan-receives-european-approval-in-localized-advanced-rcc-indications"
             }
+          ],
+          "questions": [
+            "q-rcc-belzutifan-grade3-hypoxia-withhold-reduce"
           ]
         }
       ]

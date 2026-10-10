@@ -2630,6 +2630,181 @@
       "es": "Respuesta parcial tras platino con metástasis hepáticas: ¿qué estrategia prolongó la supervivencia global tras respuesta o estabilización con platino, y qué aporta la cirugía con metástasis viscerales?"
     }
   },
+  "q-and-ed-four-screening-questions-basic-workup": {
+    "question": {
+      "en": "The four answers only tell you that he wants help, not why the erections fail. Remember that in smokers with hypertension, erection problems often appear years before coronary disease, and think about what has to come before any prescription.",
+      "de": "Die vier Antworten zeigen nur, dass er Hilfe möchte – nicht, warum die Erektion versagt. Denk daran, dass Erektionsstörungen bei Rauchern mit Hypertonie oft Jahre vor einer koronaren Herzkrankheit auftreten, und überleg, was vor jedem Rezept stehen muss.",
+      "es": "Las cuatro respuestas solo muestran que quiere ayuda, no por qué falla la erección. Recuerda que en fumadores hipertensos los problemas de erección suelen aparecer años antes de la cardiopatía coronaria, y piensa qué debe ir antes de cualquier receta."
+    }
+  },
+  "q-and-gynaecomastia-persistent-no-serm-surgery": {
+    "question": {
+      "en": "After one to two years the glandular tissue is largely fibrotic, and hormones hardly reach it any more. Ask yourself what can still change the shape when the hormone status is normal and the distress is high.",
+      "de": "Nach ein bis zwei Jahren ist das Drüsengewebe weitgehend fibrosiert, Hormone erreichen dann kaum noch etwas. Frag dich, was bei normalem Hormonstatus und hohem Leidensdruck die Form noch verändern kann.",
+      "es": "Tras uno o dos años, el tejido glandular está en gran parte fibrosado y las hormonas apenas consiguen ya nada. Pregúntate qué puede cambiar todavía la forma cuando el perfil hormonal es normal y el malestar es grande."
+    }
+  },
+  "q-and-gynaecomastia-raised-hcg-scrotal-ultrasound": {
+    "question": {
+      "en": "hCG acts like LH on the Leydig cells and drives oestrogen production; in a young man without drugs it usually comes from a tumour. Think about why a normal palpation does not end the search.",
+      "de": "hCG wirkt wie LH an den Leydig-Zellen und treibt die Östrogenbildung an; bei einem jungen Mann ohne Medikamente stammt es meist aus einem Tumor. Überleg, warum ein unauffälliger Tastbefund die Suche nicht beendet.",
+      "es": "La hCG actúa como la LH sobre las células de Leydig e impulsa la producción de estrógenos; en un varón joven sin fármacos suele proceder de un tumor. Piensa por qué una palpación normal no pone fin a la búsqueda."
+    }
+  },
+  "q-and-pde5-weekend-window-tadalafil": {
+    "question": {
+      "en": "Compare the half-lives: one substance at roughly 17.5 hours covers a whole weekend, the others only hours. The blue tinge comes from inhibiting retinal PDE6, so ask yourself which adverse effect belongs to the long-acting agent instead.",
+      "de": "Vergleiche die Halbwertszeiten: Ein Wirkstoff mit rund 17,5 Stunden deckt ein ganzes Wochenende ab, die anderen nur Stunden. Der Blaustich kommt von der Hemmung der retinalen PDE6 – frag dich, welche Nebenwirkung stattdessen zum langwirksamen Wirkstoff gehört.",
+      "es": "Compara las semividas: un principio activo con unas 17,5 horas cubre todo un fin de semana, los demás solo unas horas. El tinte azulado se debe a la inhibición de la PDE6 retiniana: pregúntate qué efecto adverso corresponde en cambio al fármaco de acción prolongada."
+    }
+  },
+  "q-nmibc-active-surveillance-exit-positive-cytology": {
+    "question": {
+      "en": "Watching is only safe while every entry condition still holds. Check which one has changed today and what that finding says about the grade you can no longer take for granted.",
+      "de": "Beobachten ist nur sicher, solange jede Eingangsbedingung erfüllt bleibt. Prüf, welche sich heute geändert hat und was dieser Befund über das Grading aussagt, das du nicht mehr voraussetzen kannst.",
+      "es": "Vigilar solo es seguro mientras se mantenga cada condición de entrada. Comprueba cuál ha cambiado hoy y qué dice ese hallazgo sobre el grado que ya no puedes dar por supuesto."
+    }
+  },
+  "q-nmibc-ibcg-intermediate-risk-factor-count": {
+    "question": {
+      "en": "Go through the five IBCG factors one by one against his findings: number of tumours, size, time to recurrence, recurrence frequency and earlier instillation failure. The count decides how intensive and how long the adjuvant therapy has to be.",
+      "de": "Geh die fünf IBCG-Faktoren einzeln an seinen Befunden durch: Tumoranzahl, Größe, Zeit bis zum Rezidiv, Rezidivhäufigkeit und Versagen einer früheren Instillation. Die Zahl entscheidet, wie intensiv und wie lange die adjuvante Therapie sein muss.",
+      "es": "Repasa uno a uno los cinco factores del IBCG con sus hallazgos: número de tumores, tamaño, tiempo hasta la recidiva, frecuencia de recidivas y fracaso de una instilación previa. El recuento decide la intensidad y la duración de la terapia adyuvante."
+    }
+  },
+  "q-pca-baseline-psa-intermediate-interval": {
+    "question": {
+      "en": "The risk-adapted scheme splits baseline PSA at 1.5 and at 3 ng/ml, and each band has its own interval. Where does 2.1 fall, and what happened to the rectal exam in the update?",
+      "de": "Das risikoadaptierte Schema teilt den Basis-PSA bei 1,5 und bei 3 ng/ml, jedes Band hat sein eigenes Intervall. Wo liegt 2,1, und was wurde in der Aktualisierung aus der Tastuntersuchung?",
+      "es": "El esquema adaptado al riesgo divide el PSA basal en 1,5 y en 3 ng/ml, y cada franja tiene su propio intervalo. ¿Dónde cae 2,1 y qué pasó con el tacto rectal en la actualización?"
+    }
+  },
+  "q-pca-brca2-carrier-confirmed-psa-mri": {
+    "question": {
+      "de": "Zwei Dinge entscheiden: Seine Keimbahnvariante erlaubt den Beginn vor 45, und der erhöhte Wert ist bereits unter sauberen Bedingungen bestätigt. Welche Untersuchung entscheidet im S3-Pfad, ob überhaupt biopsiert wird?",
+      "en": "Two things decide here: his germline variant allows a start before 45, and the raised value has already been confirmed under clean conditions. In the S3 pathway, which test decides whether a biopsy is taken at all?",
+      "es": "Aquí deciden dos cosas: su variante germinal permite empezar antes de los 45 y el valor elevado ya se ha confirmado en condiciones adecuadas. En la vía de la S3, ¿qué prueba decide si se hace biopsia o no?"
+    }
+  },
+  "q-pca-mcrpc-after-docetaxel-arpi-naive-no-hrr": {
+    "question": {
+      "en": "Look at which drug class he has had and which he has not: most later options require a particular pretreatment or mutation, and that is missing here.",
+      "de": "Schau, welche Wirkklasse er schon hatte und welche nicht: Die meisten späteren Optionen setzen eine bestimmte Vorbehandlung oder Mutation voraus, die hier fehlt.",
+      "es": "Fíjate en qué clase de fármaco ha recibido y cuál no: la mayoría de las opciones posteriores exigen un tratamiento previo o una mutación concretos que aquí faltan."
+    }
+  },
+  "q-pca-mcrpc-brca2-parpi-partner-germline": {
+    "question": {
+      "en": "Two questions: which PARP inhibitor was tested with which hormonal agent in the licensing trials, and what does a BRCA2 result in the tumour mean for his family?",
+      "de": "Zwei Fragen: Welcher PARP-Inhibitor wurde in den Zulassungsstudien mit welchem Hormonpräparat geprüft, und was bedeutet ein BRCA2-Befund im Tumor für seine Familie?",
+      "es": "Dos preguntas: ¿qué inhibidor de PARP se evaluó con qué fármaco hormonal en los ensayos de registro, y qué significa un BRCA2 en el tumor para su familia?"
+    }
+  },
+  "q-pca-mcrpc-post-docetaxel-psma-negative-liver": {
+    "question": {
+      "en": "For radioligand therapy what is PSMA-negative counts as much as what is positive: look at the liver lesions and their size, and remember what CARD compared after an ARPI and docetaxel.",
+      "de": "Für die Radioligandentherapie zählt das PSMA-Negative so viel wie das Positive: Schau auf die Leberherde und ihre Größe, und denk daran, was CARD nach ARPI und Docetaxel verglichen hat.",
+      "es": "Para la terapia con radioligandos importa tanto lo PSMA negativo como lo positivo: mira las lesiones hepáticas y su tamaño, y recuerda qué comparó CARD tras un ARPI y docetaxel."
+    }
+  },
+  "q-pca-mhspc-docetaxel-doublet-to-triplet": {
+    "question": {
+      "de": "Beim mHSPC läuft Docetaxel nicht mehr allein mit der ADT. Frag dich, welche Hormonpartner in der Dreierkombination tatsächlich randomisiert gegen ADT plus Docetaxel geprüft wurden.",
+      "en": "In mHSPC, docetaxel no longer runs with ADT alone. Ask yourself which hormonal partners in the three-drug combination were actually tested in randomised trials against ADT plus docetaxel.",
+      "es": "En el CPHSm el docetaxel ya no va solo con la TDA. Pregúntate qué compañeros hormonales de la combinación de tres se compararon realmente en ensayos aleatorizados frente a TDA más docetaxel."
+    }
+  },
+  "q-pca-mhspc-low-volume-low-risk-prostate-rt": {
+    "question": {
+      "en": "Count the criteria separately: how many bone lesions, where are they, are there organ metastases, and what is the Gleason score? With a small de novo burden, also think about the primary tumour.",
+      "de": "Zähl die Kriterien getrennt: Wie viele Knochenherde, wo liegen sie, gibt es Organmetastasen, und wie hoch ist der Gleason-Score? Bei geringer Last de novo denk auch an den Primärtumor.",
+      "es": "Cuenta los criterios por separado: cuántas lesiones óseas, dónde están, si hay metástasis en órganos y cuál es el Gleason. Con poca carga de novo, piensa también en el tumor primario."
+    }
+  },
+  "q-pca-talazoparib-anaemia-hb-below-8": {
+    "question": {
+      "de": "Die Fachinformation kennt bei Anämie eine Hb-Schwelle, unterhalb derer nicht einfach eine Stufe tiefer weiterdosiert wird, und einen eigenen Zielwert für die Rückkehr. Welches der beiden Medikamente trifft eigentlich das Knochenmark?",
+      "en": "The label has a haemoglobin threshold for anaemia below which you do not simply carry on one step lower, and a separate target for restarting. Which of the two drugs actually hits the bone marrow?",
+      "es": "La ficha técnica tiene un umbral de hemoglobina por debajo del cual no basta con seguir un escalón más abajo, y un objetivo propio para reanudar. ¿Cuál de los dos fármacos afecta realmente a la médula ósea?"
+    }
+  },
+  "q-ped-duplex-ureterocele-vcug-lower-pole-reflux": {
+    "question": {
+      "en": "Think Weigert-Meyer: one ureter of the duplex opens low and medial and obstructs, the other opens high and lateral with a short tunnel. Which problem of the second moiety must you actively look for after a febrile infection?",
+      "de": "Denk an Weigert-Meyer: Ein Harnleiter der Doppelanlage mündet tief und medial und staut, der andere hoch und lateral mit kurzem Tunnel. Welches Problem der zweiten Anlage musst du nach einem fieberhaften Infekt aktiv suchen?",
+      "es": "Piensa en Weigert-Meyer: un uréter del sistema doble desemboca bajo y medial y se obstruye; el otro, alto y lateral con un túnel corto. ¿Qué problema del segundo hemirriñón debes buscar activamente tras una infección febril?"
+    }
+  },
+  "q-pri-ischaemic-40h-mri-necrosis-early-prosthesis": {
+    "question": {
+      "en": "What matters is whether any viable smooth muscle is left for a drainage procedure to save. Also consider what the fibrosis of the coming weeks means for any later operation.",
+      "de": "Entscheidend ist, ob noch vitale glatte Muskulatur da ist, die eine Drainage retten könnte. Bedenke auch, was die Fibrose der kommenden Wochen für jeden späteren Eingriff bedeutet.",
+      "es": "Lo decisivo es si queda músculo liso viable que un drenaje pueda salvar. Piensa también en lo que supondrá la fibrosis de las próximas semanas para cualquier cirugía posterior."
+    }
+  },
+  "q-pri-prolonged-erection-after-ici-terbutaline-first": {
+    "question": {
+      "de": "Die 4-Stunden-Grenze definiert den Priapismus, nach einer Schwellkörperinjektion beginnt die Stufentherapie aber schon früher. Was passt in dieses Zeitfenster, und was muss feststehen und überwacht sein, bevor ein Vasokonstriktor in die Schwellkörper geht?",
+      "en": "The 4-hour mark defines priapism, but after an intracavernous injection stepwise treatment starts earlier. What fits into this window, and what must be confirmed and monitored before a vasoconstrictor goes into the corpora?",
+      "es": "El límite de 4 horas define el priapismo, pero tras una inyección intracavernosa el tratamiento escalonado empieza antes. ¿Qué encaja en este intervalo y qué debe confirmarse y monitorizarse antes de inyectar un vasoconstrictor en los cuerpos cavernosos?"
+    }
+  },
+  "q-rcc-belzutifan-grade3-hypoxia-withhold-reduce": {
+    "question": {
+      "en": "Grade the hypoxia by the resting value and check whether imaging shows another cause. The HIF-2α inhibitor itself lowers saturation, and the SmPC links each severity grade to its own reaction.",
+      "de": "Stufe die Hypoxie nach dem Ruhewert ein und prüf, ob die Bildgebung eine andere Ursache zeigt. Der HIF-2α-Hemmer senkt die Sättigung selbst, und die Fachinformation ordnet jedem Schweregrad eine eigene Reaktion zu.",
+      "es": "Gradúa la hipoxia según el valor en reposo y comprueba si la imagen muestra otra causa. El inhibidor de HIF-2α baja la saturación por sí mismo, y la ficha técnica asigna a cada grado de gravedad su propia respuesta."
+    }
+  },
+  "q-rcc-cystic-mass-ceus-contrast-anaphylaxis": {
+    "question": {
+      "de": "Zähl die Hürden: Jod hätte sie fast das Leben gekostet, die Nieren sind schwach, und ihr Gerät schließt einen Scanner aus. Welches Kontrastverfahren bleibt von allen drei Hürden unberührt?",
+      "en": "Count the obstacles: iodine nearly killed her once, her kidneys are weak and her device rules out one scanner. Which contrast technique is untouched by all three obstacles?",
+      "es": "Cuenta los obstáculos: el yodo casi le cuesta la vida, sus riñones están débiles y su dispositivo descarta un escáner. ¿Qué técnica con contraste no se ve afectada por ninguno de los tres?"
+    }
+  },
+  "q-rcc-renal-mass-equivocal-enhancement-mri": {
+    "question": {
+      "de": "Ordne die Differenz zwischen Nativ- und nephrographischer Phase ein: Unter 10 HU heißt keine Anreicherung, eindeutig wird es erst ab etwa 20 HU. In dieser Grauzone brauchst du ein Verfahren, das echte Anreicherung von Pseudoanreicherung trennt.",
+      "en": "Classify the difference between the unenhanced and the nephrographic phase: below 10 HU means no enhancement, only from about 20 HU is it unequivocal. In this grey zone you need a test that separates true enhancement from pseudoenhancement.",
+      "es": "Clasifica la diferencia entre la fase sin contraste y la nefrográfica: por debajo de 10 UH no hay realce y solo a partir de unas 20 UH es inequívoco. En esta zona gris necesitas una prueba que separe el realce verdadero del pseudorrealce."
+    }
+  },
+  "q-rcc-sestamibi-positive-biopsy-before-surveillance": {
+    "question": {
+      "en": "The uptake points to an oncocytic tumour but is not histology, and the data come from small series. Ask yourself what the guideline requires before it accepts watching an oncocytic tumour instead of treating it.",
+      "de": "Die Aufnahme deutet auf einen onkozytären Tumor hin, ist aber keine Histologie, und die Daten stammen aus kleinen Serien. Frag dich, was die Leitlinie verlangt, bevor sie das Beobachten statt Behandeln eines onkozytären Tumors akzeptiert.",
+      "es": "La captación apunta a un tumor oncocítico, pero no es histología, y los datos proceden de series pequeñas. Pregúntate qué exige la guía antes de aceptar vigilar un tumor oncocítico en lugar de tratarlo."
+    }
+  },
+  "q-stone-cystinuria-tiopronin-after-alkalinisation": {
+    "question": {
+      "en": "Check which steps of the ladder he has already climbed: volume and pH are on target, yet cystine excretion stays above 3 mmol/d and stones recur. What changes the cystine molecule itself?",
+      "de": "Prüfe, welche Stufen er schon genommen hat: Volumen und pH sind im Ziel, trotzdem bleibt die Zystinausscheidung über 3 mmol/d und die Steine kommen wieder. Was verändert das Zystinmolekül selbst?",
+      "es": "Comprueba qué peldaños ya ha subido: volumen y pH están en objetivo, pero la excreción de cistina sigue por encima de 3 mmol/d y los cálculos recidivan. ¿Qué modifica la propia molécula de cistina?"
+    }
+  },
+  "q-stone-hydrochlorothiazide-hypercalciuria-skin-counselling": {
+    "question": {
+      "en": "The 2018 safety letter rests on photosensitisation: the risk grows with cumulative dose and UV exposure, and it is not about melanoma. Work out from this which dose and which advice fit a woman who works outdoors.",
+      "de": "Der Rote-Hand-Brief von 2018 beruht auf Photosensibilisierung: Das Risiko wächst mit kumulativer Dosis und UV-Exposition und betrifft nicht das Melanom. Leite daraus ab, welche Dosis und welcher Rat zu einer Frau passen, die im Freien arbeitet.",
+      "es": "La carta de seguridad de 2018 se basa en la fotosensibilización: el riesgo crece con la dosis acumulada y la exposición UV, y no se refiere al melanoma. Deduce de ello qué dosis y qué consejo encajan en una mujer que trabaja al aire libre."
+    }
+  },
+  "q-stone-uric-acid-alkali-citrate-allopurinol": {
+    "question": {
+      "en": "Two levers decide uric acid prevention: how acidic the urine is and how much uric acid is excreted. Check both against his numbers, keep the pH band below dissolution levels, and remember his heart history when choosing the drug.",
+      "de": "Zwei Stellschrauben entscheiden bei Harnsäuresteinen: wie sauer der Urin ist und wie viel Harnsäure ausgeschieden wird. Prüfe beides an seinen Werten, bleib mit dem pH unter dem Bereich der Chemolyse und denk bei der Medikamentenwahl an sein Herz.",
+      "es": "Dos palancas deciden la prevención de la litiasis úrica: cuán ácida es la orina y cuánto ácido úrico se excreta. Revisa ambas con sus valores, mantén el pH por debajo del rango de disolución y recuerda su historia cardiaca al elegir el fármaco."
+    }
+  },
+  "q-utuc-weak-criterion-size-kidney-sparing": {
+    "question": {
+      "en": "In UTUC, grade is the strongest surrogate; size, multifocality and hydronephrosis carry far less weight. Decide which group of criteria she actually meets and what that means for organ preservation versus radical surgery.",
+      "de": "Beim UTUC ist das Grading der stärkste Surrogatparameter; Größe, Multifokalität und Hydronephrose wiegen deutlich weniger. Überleg, welche Kriteriengruppe sie tatsächlich erfüllt und was das für Organerhalt gegenüber Radikaloperation bedeutet.",
+      "es": "En el CTUS el grado es el subrogado más fuerte; el tamaño, la multifocalidad y la hidronefrosis pesan mucho menos. Piensa qué grupo de criterios cumple realmente y qué implica para la conservación renal frente a la cirugía radical."
+    }
+  },
   "rt-bladder-palliative-haematuria-21-gy": {
     "question": {
       "en": "Cure is no longer the goal here: ECOG 3, bone metastases, pelvic sidewall invasion. Which palliative bladder schedule controls bleeding as well as longer courses while needing the fewest trips from 70 km away?",

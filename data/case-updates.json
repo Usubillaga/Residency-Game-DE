@@ -1050,15 +1050,16 @@
     },
     {
       "case": "bank-uro-pca-00004",
-      "date": "2026-10-06",
+      "date": "2026-10-10",
       "reason": {
-        "de": "Grenze der Lebenserwartung auf 15 Jahre präzisiert, PROBASE-Aussage korrigiert und doppelten Satz entfernt.",
-        "en": "Life-expectancy threshold specified as 15 years, PROBASE statement corrected and a duplicated sentence removed.",
-        "es": "Umbral de esperanza de vida precisado en 15 años, afirmación sobre PROBASE corregida y frase duplicada eliminada."
+        "de": "Grenze der Lebenserwartung auf 15 Jahre präzisiert, PROBASE-Aussage korrigiert und doppelten Satz entfernt. Die Tastuntersuchung gehört nach der S3-Leitlinie 8.1 nicht mehr zur Früherkennung, bleibt aber für das lokale Staging wichtig.",
+        "en": "Life-expectancy threshold specified as 15 years, PROBASE statement corrected and a duplicated sentence removed. Under the German S3 guideline 8.1, digital rectal examination is no longer part of early detection; it remains important for local staging.",
+        "es": "Umbral de esperanza de vida precisado en 15 años, afirmación sobre PROBASE corregida y frase duplicada eliminada. Según la guía alemana S3 8.1, el tacto rectal ya no forma parte de la detección precoz; sigue siendo importante para la estadificación local."
       },
       "references": [
         "bank-guide-prostatakarzinom",
-        "knowuro-prostate-2026"
+        "knowuro-prostate-2026",
+        "awmf-s3-prostata"
       ],
       "changes": [
         {
@@ -1114,6 +1115,24 @@
           "lang": "es",
           "find": " El PSA inicial es el predictor más fuerte y establece el intervalo.",
           "replace": ""
+        },
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "de",
+          "find": "Die Tastuntersuchung ergänzt, ersetzt ihn aber nicht;",
+          "replace": "Die Tastuntersuchung gehört nach der S3-Leitlinie 8.1 nicht mehr zur Früherkennung, bleibt aber für das lokale Staging wichtig;"
+        },
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "en",
+          "find": "Digital examination complements but does not replace it;",
+          "replace": "Under the German S3 guideline 8.1, digital examination is no longer part of early detection but remains important for local staging;"
+        },
+        {
+          "path": "steps.0.options.c.feedback",
+          "lang": "es",
+          "find": "El examen digital lo complementa pero no lo reemplaza;",
+          "replace": "Según la guía alemana S3 8.1, el examen digital ya no forma parte de la detección precoz, aunque sigue siendo importante para la estadificación local;"
         }
       ]
     },
