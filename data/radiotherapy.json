@@ -1060,7 +1060,8 @@
             }
           ],
           "questions": [
-            "rt-prostate-mhspc-low-volume-axial-55gy"
+            "rt-prostate-mhspc-low-volume-axial-55gy",
+            "q-pca-mhspc-low-volume-low-risk-prostate-rt"
           ]
         },
         {
@@ -1137,7 +1138,8 @@
           ],
           "questions": [
             "rt-prostate-mhspc-low-volume-axial-55gy",
-            "rt-prostate-salvage-early-start-66gy"
+            "rt-prostate-salvage-early-start-66gy",
+            "q-pca-mhspc-low-volume-low-risk-prostate-rt"
           ]
         },
         {

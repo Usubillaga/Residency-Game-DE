@@ -1,5 +1,21 @@
 # Validation record
 
+## Questions on current guideline topics — 10 October 2026
+
+The user supplied photos of journal pages, slides and posters. They served only to pick topics; no figure, table or text was copied, and no author is named. One image, a treatment algorithm with garbled drug names and labels, was not used as a source; its topics were checked against the guidelines themselves.
+
+- **Writing and review:** 25 single questions in 7 batches (metastatic prostate cancer, PARP inhibitor toxicity and early detection, stone metaphylaxis, NMIBC and UTUC, priapism, andrology, kidney). Each was written by one author with its hint, checked against EAU 2026, the German S3 prostate cancer guideline and EU product information, and then reviewed by an independent reviewer acting as urologist, and for drug questions also as clinical pharmacologist. None was dropped; reviewers fixed 19. Examples:
+  - the triplet is an option, not generally preferred over ADT plus an ARPI;
+  - a PSMA-negative liver lesion counts from 1 cm (VISION exclusion);
+  - a confirmed PSA of 3 ng/ml or more leads to a short-term recheck, not a fixed 3-month interval;
+  - a hint that almost spelled out the haemoglobin thresholds for talazoparib was rewritten;
+  - the ED screening answer now allows treatment alongside the basic work-up.
+- **Conflicts with existing cases:** reviewers compared each question with the cases on the same topic.
+  - *Priapism:* the existing case said an immediate prosthesis is discussed after about 36 hours; the new one said 48. The AUA/SMSNA guideline uses 36 hours, while the European text puts the limit of benefit from interventions at 48–72 hours. Both cases now say "about 36–48 hours"; the new question is decided by MRI-proven necrosis, so its answer does not depend on the exact hour.
+  - *Early detection:* bank-uro-pca-00004 said the rectal examination complements the PSA test. Under the German S3 guideline 8.1 it is no longer part of early detection but stays relevant for local staging; the explanation was corrected through the correction layer.
+  - The other overlaps (ARPI switch after abiraterone, thiazide dose, uric acid dissolution, cardiovascular work-up for ED, biopsy before surveillance, belzutifan on the protocol page) agree in content and were left unchanged.
+- **Links:** 17 links from protocol regimens and 2 from radiotherapy schemes lead to the new questions, so *Practise questions* finds them.
+
 ## Protocols, radiation oncology, new questions and the attending's hints — 9–10 October 2026
 
 **Network limits.** EMA, fachinfo.de, PubMed and uroweb.org cannot be downloaded from the build environment. Every number was therefore checked through web-search results, label copies (emc, DailyMed, company HCP pages) and trial reports. Where the EU text itself was not returned, the record below says which other source was used.

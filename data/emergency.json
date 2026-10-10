@@ -1980,9 +1980,9 @@
             "minutes": 20,
             "critical": false,
             "feedback": {
-              "en": "Immediate prosthesis is discussed after very long ischaemia (presentation later than about 36 hours) or after failed shunts, because fibrosis almost always follows. At 22 hours in a previously potent man, a shunt comes first.",
-              "de": "Die Sofortprothese wird bei sehr langer Ischämie (Vorstellung nach mehr als etwa 36 Stunden) oder nach Versagen der Shunts diskutiert, weil dann fast immer eine Fibrose folgt. Nach 22 Stunden bei zuvor potentem Patienten ist zunächst der Shunt indiziert.",
-              "es": "La prótesis inmediata se plantea tras una isquemia muy prolongada (consulta pasadas unas 36 horas) o tras fracaso de las derivaciones, porque casi siempre sigue fibrosis. A las 22 horas en un paciente previamente potente, primero se indica la derivación."
+              "en": "Immediate prosthesis is discussed after very long ischaemia (presentation later than about 36–48 hours) or after failed shunts, because fibrosis almost always follows. At 22 hours in a previously potent man, a shunt comes first.",
+              "de": "Die Sofortprothese wird bei sehr langer Ischämie (Vorstellung nach mehr als etwa 36–48 Stunden) oder nach Versagen der Shunts diskutiert, weil dann fast immer eine Fibrose folgt. Nach 22 Stunden bei zuvor potentem Patienten ist zunächst der Shunt indiziert.",
+              "es": "La prótesis inmediata se plantea tras una isquemia muy prolongada (consulta pasadas unas 36–48 horas) o tras fracaso de las derivaciones, porque casi siempre sigue fibrosis. A las 22 horas en un paciente previamente potente, primero se indica la derivación."
             }
           },
           {
@@ -2006,9 +2006,9 @@
       }
     ],
     "takeaway": {
-      "en": "Ischaemic priapism: aspiration/irrigation, then intracavernous phenylephrine with monitoring; if this fails, distal shunt (Winter, Ebbehoj, T-shunt, Al-Ghorab, with tunnelling if needed), proximal shunts only afterwards. When presentation is later than about 36 hours or shunts fail, discuss immediate penile prosthesis implantation.",
-      "de": "Ischämischer Priapismus: Aspiration/Spülung, dann intrakavernöses Phenylephrin unter Monitoring; bei Versagen distaler Shunt (Winter, Ebbehoj, T-Shunt, Al-Ghorab, ggf. mit Tunnelung), erst danach proximale Shunts. Bei Vorstellung nach mehr als etwa 36 Stunden oder Shunt-Versagen die Sofortimplantation einer Penisprothese besprechen.",
-      "es": "Priapismo isquémico: aspiración/irrigación y después fenilefrina intracavernosa con monitorización; si fracasa, derivación distal (Winter, Ebbehoj, T-shunt, Al-Ghorab, con tunelización si es necesario) y solo después derivaciones proximales. Si la consulta se produce pasadas unas 36 horas o fracasan las derivaciones, plantear el implante inmediato de prótesis de pene."
+      "en": "Ischaemic priapism: aspiration/irrigation, then intracavernous phenylephrine with monitoring; if this fails, distal shunt (Winter, Ebbehoj, T-shunt, Al-Ghorab, with tunnelling if needed), proximal shunts only afterwards. When presentation is later than about 36–48 hours or shunts fail, discuss immediate penile prosthesis implantation.",
+      "de": "Ischämischer Priapismus: Aspiration/Spülung, dann intrakavernöses Phenylephrin unter Monitoring; bei Versagen distaler Shunt (Winter, Ebbehoj, T-Shunt, Al-Ghorab, ggf. mit Tunnelung), erst danach proximale Shunts. Bei Vorstellung nach mehr als etwa 36–48 Stunden oder Shunt-Versagen die Sofortimplantation einer Penisprothese besprechen.",
+      "es": "Priapismo isquémico: aspiración/irrigación y después fenilefrina intracavernosa con monitorización; si fracasa, derivación distal (Winter, Ebbehoj, T-shunt, Al-Ghorab, con tunelización si es necesario) y solo después derivaciones proximales. Si la consulta se produce pasadas unas 36–48 horas o fracasan las derivaciones, plantear el implante inmediato de prótesis de pene."
     },
     "references": [
       "bank-guide-andrologie"
@@ -2876,6 +2876,151 @@
       "bank-guide-infektiologie",
       "ema-medicines",
       "fachinfo-de"
+    ]
+  },
+  {
+    "id": "q-pri-ischaemic-40h-mri-necrosis-early-prosthesis",
+    "area": "emergency",
+    "level": 3,
+    "acuity": "urgent",
+    "duty": "night",
+    "patient": {
+      "name": "Marco Hensel",
+      "age": 44,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Priapism for 40 hours with corporal necrosis on MRI",
+      "de": "Priapismus seit 40 Stunden mit Schwellkörpernekrose im MRT",
+      "es": "Priapismo de 40 horas con necrosis cavernosa en la RM"
+    },
+    "presenting": {
+      "en": "44-year-old man presenting with a painful sustained erection that started 40 hours ago after cocaine use. Both corpora cavernosa are fully rigid, the glans is soft. Cavernous blood gas: pO2 12 mmHg, pCO2 92 mmHg, pH 6.98. Aspiration, irrigation with 0.9% saline and repeated intracavernous phenylephrine (1 mg cumulative within one hour, with ECG and blood pressure monitoring) produce no detumescence. Contrast-enhanced penile MRI shows no gadolinium enhancement of either corpus cavernosum along its whole length, while the corpus spongiosum and glans enhance normally; erectile function was normal before, and after counselling he wishes to remain sexually active.",
+      "de": "44-jähriger Patient mit schmerzhafter Dauererektion seit 40 Stunden nach Kokainkonsum. Beide Corpora cavernosa sind vollständig rigide, die Glans ist weich. Kavernöse Blutgasanalyse: pO2 12 mmHg, pCO2 92 mmHg, pH 6,98. Aspiration, Spülung mit NaCl 0,9 % und wiederholte intrakavernöse Phenylephrin-Gabe (kumulativ 1 mg innerhalb einer Stunde, unter EKG- und Blutdruckmonitoring) führen zu keiner Detumeszenz. Das kontrastmittelgestützte MRT des Penis zeigt in beiden Corpora cavernosa über die gesamte Länge keine Gadolinium-Anreicherung, Corpus spongiosum und Glans reichern regelrecht an; die erektile Funktion war zuvor normal, und nach Aufklärung möchte der Patient weiterhin sexuell aktiv sein.",
+      "es": "Varón de 44 años con erección dolorosa y mantenida desde hace 40 horas tras consumo de cocaína. Ambos cuerpos cavernosos están completamente rígidos y el glande está blando. Gasometría cavernosa: pO2 12 mmHg, pCO2 92 mmHg, pH 6,98. La aspiración, la irrigación con suero fisiológico al 0,9 % y la fenilefrina intracavernosa repetida (1 mg acumulado en una hora, con monitorización de ECG y presión arterial) no consiguen la detumescencia. La RM de pene con contraste no muestra captación de gadolinio en ninguno de los cuerpos cavernosos en toda su longitud, mientras que el cuerpo esponjoso y el glande captan con normalidad; la función eréctil previa era normal y, tras recibir información, desea seguir siendo sexualmente activo."
+    },
+    "vitals": {
+      "bp": "158/92",
+      "hr": 98,
+      "temp": 37.0,
+      "spo2": 98,
+      "rr": 17
+    },
+    "objectives": {
+      "de": [
+        "Die Rolle des Penis-MRT zur Beurteilung der Vitalität der Schwellkörpermuskulatur beim protrahierten, refraktären ischämischen Priapismus kennen.",
+        "Zwischen Shunt mit Tunnelung und früher Penisprothesenimplantation anhand von Dauer und Nekrosenachweis entscheiden."
+      ],
+      "en": [
+        "Know the role of penile MRI in assessing cavernous smooth muscle viability in prolonged, refractory ischaemic priapism.",
+        "Choose between a shunt with tunnelling and early penile prosthesis implantation based on duration and proof of necrosis."
+      ],
+      "es": [
+        "Conocer el papel de la RM de pene para valorar la viabilidad del músculo liso cavernoso en el priapismo isquémico prolongado y refractario.",
+        "Elegir entre derivación con tunelización e implante precoz de prótesis de pene según la duración y la demostración de necrosis."
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which procedure is most appropriate now?",
+          "de": "Welches Vorgehen ist jetzt am sinnvollsten?",
+          "es": "¿Qué actuación es ahora la más adecuada?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Distal T-shunt with tunnelling now; penile prosthesis only after 3-6 months if erectile dysfunction persists",
+              "de": "Jetzt distaler T-Shunt mit Tunnelung; Penisprothese erst nach 3–6 Monaten bei persistierender erektiler Dysfunktion",
+              "es": "Derivación distal en T con tunelización ahora; prótesis de pene solo a los 3-6 meses si persiste la disfunción eréctil"
+            },
+            "score": 0,
+            "minutes": 15,
+            "critical": false,
+            "feedback": {
+              "en": "A shunt with tunnelling is the right step when the cavernous smooth muscle is still viable. Here the MRI shows non-enhancing corpora, i.e. necrosis, so lasting erectile dysfunction is practically certain and the shunt cannot preserve function. Fibrosis then develops, making delayed implantation technically harder, with more intraoperative complications and loss of penile length; in addition, after a shunt implantation is usually deferred because of the higher risk of infection and erosion.",
+              "de": "Ein Shunt mit Tunnelung ist richtig, solange die Schwellkörpermuskulatur noch vital ist. Hier zeigt das MRT nicht anreichernde Corpora, also eine Nekrose; eine bleibende erektile Dysfunktion ist praktisch sicher, der Shunt kann die Funktion nicht erhalten. Danach entwickelt sich eine Fibrose: Die spätere Implantation ist technisch schwieriger, mit mehr intraoperativen Komplikationen und Längenverlust, und nach einem Shunt wird die Implantation wegen des höheren Infektions- und Erosionsrisikos ohnehin meist aufgeschoben.",
+              "es": "La derivación con tunelización es correcta mientras el músculo liso cavernoso siga siendo viable. Aquí la RM muestra cuerpos cavernosos sin captación, es decir, necrosis; la disfunción eréctil permanente es prácticamente segura y la derivación no puede preservar la función. Después se desarrolla fibrosis: el implante tardío es técnicamente más difícil, con más complicaciones intraoperatorias y pérdida de longitud, y tras una derivación el implante suele diferirse por el mayor riesgo de infección y erosión."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Early (immediate) penile prosthesis implantation after informed consent",
+              "de": "Frühe (sofortige) Implantation einer Penisprothese nach Aufklärung",
+              "es": "Implante precoz (inmediato) de prótesis de pene tras consentimiento informado"
+            },
+            "score": 10,
+            "minutes": 20,
+            "critical": false,
+            "feedback": {
+              "en": "Correct: in prolonged ischaemic priapism refractory to aspiration and phenylephrine, the EAU guideline recommends penile MRI as an adjunct to predict smooth muscle viability; complete absence of corporal enhancement indicates necrosis. Erectile dysfunction is then inevitable, and early implantation (ideally in the same admission) relieves the priapism, avoids the dense fibrosis and penile shortening that make delayed surgery difficult, and in comparative series has had a lower complication rate than delayed implantation.",
+              "de": "Richtig: Beim protrahierten, auf Aspiration und Phenylephrin refraktären ischämischen Priapismus empfiehlt die EAU-Leitlinie das Penis-MRT als Zusatzuntersuchung zur Abschätzung der Vitalität der glatten Muskulatur; fehlende Anreicherung der Corpora spricht für eine Nekrose. Die erektile Dysfunktion ist dann unvermeidlich; die frühe Implantation (möglichst im selben Aufenthalt) beendet den Priapismus, vermeidet die ausgeprägte Fibrose und Penisverkürzung, die eine spätere Operation erschweren, und war in Vergleichsserien komplikationsärmer als die verzögerte Implantation.",
+              "es": "Correcto: en el priapismo isquémico prolongado y refractario a aspiración y fenilefrina, la guía EAU recomienda la RM de pene como prueba complementaria para predecir la viabilidad del músculo liso; la ausencia de captación de los cuerpos cavernosos indica necrosis. La disfunción eréctil es entonces inevitable, y el implante precoz (idealmente en el mismo ingreso) resuelve el priapismo, evita la fibrosis densa y el acortamiento que dificultan la cirugía tardía y en series comparativas ha tenido menos complicaciones que el implante diferido."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Further phenylephrine cycles at a higher dose for several hours",
+              "de": "Weitere Phenylephrin-Zyklen in höherer Dosis über mehrere Stunden",
+              "es": "Más ciclos de fenilefrina a dosis más alta durante varias horas"
+            },
+            "score": 0,
+            "minutes": 20,
+            "critical": true,
+            "feedback": {
+              "en": "After 40 hours, with acidotic blood gas and necrotic corpora, sympathomimetics cannot restore anything: necrotic smooth muscle no longer contracts. Further escalation only adds the risk of hypertensive crisis, arrhythmia and myocardial ischaemia (blood pressure already 158/92 mmHg, after cocaine).",
+              "de": "Nach 40 Stunden, mit azidotischer Blutgasanalyse und nekrotischen Corpora, kann ein Sympathomimetikum nichts mehr erreichen: Nekrotische glatte Muskulatur kontrahiert nicht mehr. Weitere Eskalation erhöht nur das Risiko von hypertensiver Entgleisung, Arrhythmien und Myokardischämie (Blutdruck bereits 158/92 mmHg, nach Kokainkonsum).",
+              "es": "Tras 40 horas, con gasometría acidótica y cuerpos cavernosos necróticos, un simpaticomimético ya no puede conseguir nada: el músculo liso necrótico no se contrae. Seguir escalando solo añade riesgo de crisis hipertensiva, arritmias e isquemia miocárdica (presión ya de 158/92 mmHg, tras consumo de cocaína)."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Proximal cavernospongiosal shunt (Quackels)",
+              "de": "Proximaler kavernospongiöser Shunt (Quackels)",
+              "es": "Derivación proximal cavernoesponjosa (Quackels)"
+            },
+            "score": 0,
+            "minutes": 15,
+            "critical": false,
+            "feedback": {
+              "en": "Proximal shunts come after failed distal shunts and carry risks of urethral injury, fistula and cavernositis. With MRI-proven necrosis, no shunt can preserve erectile function, and the resulting fibrosis complicates later implantation.",
+              "de": "Proximale Shunts folgen erst auf versagende distale Shunts und sind mit Urethraverletzung, Fistelbildung und Kavernitis belastet. Bei im MRT nachgewiesener Nekrose kann kein Shunt die erektile Funktion erhalten, und die folgende Fibrose erschwert die spätere Implantation.",
+              "es": "Las derivaciones proximales se indican tras el fracaso de las distales y conllevan riesgo de lesión uretral, fístula y cavernositis. Con necrosis demostrada en la RM ninguna derivación puede preservar la función eréctil, y la fibrosis resultante dificulta el implante posterior."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Analgesia and waiting for spontaneous detumescence; penile prosthesis electively once the fibrosis has matured",
+              "de": "Analgesie und Abwarten der spontanen Detumeszenz; Penisprothese elektiv nach Ausreifung der Fibrose",
+              "es": "Analgesia y esperar la detumescencia espontánea; prótesis de pene electiva cuando la fibrosis haya madurado"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": false,
+            "feedback": {
+              "en": "Waiting leaves the patient in pain and lets dense corporal fibrosis develop. Delayed implantation then often needs extended corporotomy, dilation against scar tissue and downsized cylinders, with more intraoperative complications (corporal perforation, urethral injury) and loss of penile length compared with early implantation.",
+              "de": "Abwarten belässt den Patienten mit Schmerzen und lässt eine dichte Schwellkörperfibrose entstehen. Die verzögerte Implantation erfordert dann oft erweiterte Korporotomie, Dilatation gegen Narbengewebe und kleinere Zylinder, mit mehr intraoperativen Komplikationen (Perforation der Corpora, Urethraverletzung) und Längenverlust im Vergleich zur frühen Implantation.",
+              "es": "Esperar mantiene al paciente con dolor y permite una fibrosis cavernosa densa. El implante tardío requiere entonces a menudo corporotomía ampliada, dilatación contra tejido cicatricial y cilindros de menor tamaño, con más complicaciones intraoperatorias (perforación de los cuerpos cavernosos, lesión uretral) y pérdida de longitud que el implante precoz."
+            }
+          }
+        ],
+        "best": "b"
+      }
+    ],
+    "takeaway": {
+      "en": "In ischaemic priapism lasting about 24-48 hours and refractory to aspiration and phenylephrine, penile MRI helps to judge smooth muscle viability. Viable corpora: distal shunt, with tunnelling if needed. Non-enhancing, necrotic corpora (or presentation beyond about 36–48 hours): discuss early penile prosthesis implantation instead of a shunt, because later implantation into fibrotic corpora is harder and costs length.",
+      "de": "Beim ischämischen Priapismus von etwa 24–48 Stunden Dauer, der auf Aspiration und Phenylephrin nicht anspricht, hilft das Penis-MRT bei der Beurteilung der Muskelvitalität. Vitale Corpora: distaler Shunt, ggf. mit Tunnelung. Nicht anreichernde, nekrotische Corpora (oder Vorstellung nach mehr als etwa 36–48 Stunden): frühe Penisprothese statt Shunt besprechen, weil die spätere Implantation in fibrotische Corpora schwieriger ist und Länge kostet.",
+      "es": "En el priapismo isquémico de unas 24-48 horas refractario a aspiración y fenilefrina, la RM de pene ayuda a valorar la viabilidad muscular. Cuerpos viables: derivación distal, con tunelización si es necesario. Cuerpos sin captación y necróticos (o consulta pasadas unas 36–48 horas): plantear un implante precoz de prótesis en lugar de una derivación, porque el implante tardío en cuerpos fibróticos es más difícil y cuesta longitud."
+    },
+    "references": [
+      "bank-guide-andrologie"
     ]
   },
   {
