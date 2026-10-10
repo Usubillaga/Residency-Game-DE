@@ -513,6 +513,7 @@ test('calling the attending costs five minutes, gives the decision rule but neve
   const testCatalog = clone(catalog);
   const first = testCatalog.cases.find(c => c.id === ids[0]);
   first.steps[0].hint = { en: 'Think about what decides the next step.', de: 'Denk daran, was den nächsten Schritt entscheidet.', es: 'Piensa en lo que decide el siguiente paso.' };
+  delete testCatalog.cases.find(c => c.id === ids[1]).steps[0].hint;
   const session = E.create(testCatalog, ids, 'shift', 'attending-calls');
   Object.assign(session, { duty: 'night', selected: ids[0] });
   const h = appHarness(session, testCatalog);
@@ -558,6 +559,7 @@ test('after a dangerous answer the attending steps in with the decisive rule', (
   const c = clone(catalog.cases.find(c => !c.source && c.steps.some(s => s.options.some(o => o.critical))));
   const h = appHarness(null);
   const step = c.steps[0];
+  delete step.hint;
   const fallback = h.api.attendingWarning(c, step, c.id + ':0');
   assert.match(fallback, /attending-warning/);
   assert.ok(fallback.includes(escape(c.takeaway.en)), 'Without a written hint the warning gives the take-home message');
