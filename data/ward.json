@@ -1403,6 +1403,724 @@
     ]
   },
   {
+    "id": "fun-inc-band-retention-lockerung",
+    "area": "ward",
+    "level": 2,
+    "acuity": "urgent",
+    "duty": "elective",
+    "patient": {
+      "name": "Gudrun Oltmanns",
+      "age": 61,
+      "sex": "female"
+    },
+    "title": {
+      "en": "Urinary retention after sling insertion",
+      "de": "Harnverhalt nach Bandeinlage",
+      "es": "Retención urinaria tras colocación de banda"
+    },
+    "presenting": {
+      "en": "A 61-year-old woman had a retropubic tape (TVT) for stress incontinence six days ago; preoperatively she voided normally with a post-void residual of 20 ml. Since the catheter was removed on day one she can only dribble despite urgency to void, with repeated residuals of 400–550 ml, and she has been on intermittent catheterisation since. Urine culture is sterile, ultrasound shows no haematoma, she is mobile and takes no anticholinergic drugs.",
+      "de": "61-jährige Patientin, vor sechs Tagen retropubisches Band (TVT) bei Belastungsinkontinenz; präoperativ unauffällige Miktion, Restharn 20 ml. Seit Entfernung des Katheters am ersten Tag kann sie trotz Harndrang nur tröpfchenweise miktionieren, Restharn wiederholt 400–550 ml, sie wird seither intermittierend katheterisiert. Urinkultur steril, kein Hämatom in der Sonografie, die Patientin ist mobil und nimmt keine anticholinergen Medikamente.",
+      "es": "Mujer de 61 años, hace seis días se le colocó una banda retropúbica (TVT) por incontinencia de esfuerzo; antes de la cirugía micción normal, residuo de 20 ml. Desde la retirada de la sonda el primer día solo consigue orinar gota a gota pese al deseo miccional, con residuos repetidos de 400–550 ml, y desde entonces se realiza sondaje intermitente. Urocultivo estéril, sin hematoma en la ecografía, deambula y no toma fármacos anticolinérgicos."
+    },
+    "vitals": {
+      "bp": "134/80",
+      "hr": 78,
+      "temp": 36.8,
+      "spo2": 97,
+      "rr": 15
+    },
+    "objectives": {
+      "en": [
+        "Recognise obstructive voiding dysfunction after sling insertion",
+        "Determine the timing and type of tape loosening"
+      ],
+      "de": [
+        "Eine obstruktive Entleerungsstörung nach Bandeinlage erkennen",
+        "Den Zeitpunkt und die Art der Bandlockerung festlegen"
+      ],
+      "es": [
+        "Reconocer la disfunción miccional obstructiva tras colocar una banda",
+        "Establecer el momento y el tipo de aflojamiento de la banda"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "What is the most appropriate next step?",
+          "de": "Was ist das angemessene weitere Vorgehen?",
+          "es": "¿Cuál es el siguiente paso más adecuado?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Intermittent catheterisation for three months, then urethrolysis",
+              "de": "Intermittierenden Katheterismus für drei Monate, dann Urethrolyse",
+              "es": "Sondaje intermitente durante tres meses y después uretrólisis"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong. Persistent obstruction by the tape rarely resolves spontaneously. Waiting for months promotes de novo detrusor overactivity and makes later surgery more difficult because the tape has become incorporated.",
+              "de": "Falsch. Eine anhaltende Obstruktion durch das Band bessert sich selten spontan. Abwarten über Monate fördert eine De-novo-Detrusorüberaktivität und macht einen späteren Eingriff aufwendiger, weil das Band dann eingewachsen ist.",
+              "es": "Incorrecto. Una obstrucción persistente por la banda rara vez se resuelve espontáneamente. Esperar meses favorece una hiperactividad del detrusor de novo y complica la cirugía posterior porque la banda ya se ha integrado."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Tamsulosin 0.4 mg and review in four weeks",
+              "de": "Tamsulosin 0,4 mg und Kontrolle in vier Wochen",
+              "es": "Tamsulosina 0,4 mg y control en cuatro semanas"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong. The cause is mechanical compression of the urethra by a tape that is too tight. An alpha-blocker is not licensed for this in women, has little effect and only delays causal treatment.",
+              "de": "Falsch. Die Ursache ist eine mechanische Kompression der Urethra durch ein zu straff liegendes Band. Ein Alphablocker ist bei Frauen dafür nicht zugelassen, wirkt kaum und verzögert nur die kausale Therapie.",
+              "es": "Incorrecto. La causa es una compresión mecánica de la uretra por una banda demasiado tensa. Un alfabloqueante no está autorizado para ello en mujeres, apenas actúa y solo retrasa el tratamiento causal."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Dilate the urethra with Hegar dilators to stretch the tape",
+              "de": "Urethra mit Hegarstiften aufbougieren, um das Band zu dehnen",
+              "es": "Dilatar la uretra con bujías de Hegar para estirar la banda"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Dangerous. Dilating against mesh can injure the urethra and cause tape erosion into the urethra, which then requires mesh excision with urethral reconstruction.",
+              "de": "Gefährlich. Die Bougierung gegen ein Netz kann die Urethra verletzen und eine Banderosion in die Harnröhre auslösen, die dann eine Netzresektion mit Urethrarekonstruktion erfordert.",
+              "es": "Peligroso. Dilatar contra la malla puede lesionar la uretra y provocar la erosión de la banda hacia la uretra, que entonces exige su extirpación con reconstrucción uretral."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Early tape loosening through the vaginal incision, division of the tape if needed",
+              "de": "Frühe Bandlockerung über die vaginale Inzision, bei Bedarf Banddurchtrennung",
+              "es": "Aflojamiento precoz de la banda por la incisión vaginal y, si hace falta, sección de la banda"
+            },
+            "score": 10,
+            "minutes": 15,
+            "critical": false,
+            "feedback": {
+              "en": "Correct. In relevant retention during the first one to two postoperative weeks the tape is mobilised through the reopened vaginal incision and pulled down; if it is already fixed, it is divided in the midline. Continence is usually preserved.",
+              "de": "Richtig. Bei relevanter Retention in der ersten bis zweiten postoperativen Woche wird das Band über die eröffnete Kolpotomie mobilisiert und nach kaudal gezogen; ist es bereits fixiert, wird es mittig durchtrennt. Die Kontinenz bleibt dabei meist erhalten.",
+              "es": "Correcto. Ante una retención relevante en la primera o segunda semana posoperatoria se moviliza la banda a través de la colpotomía reabierta y se tracciona hacia abajo; si ya está fijada, se secciona en la línea media. La continencia suele mantenerse."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Complete tape explantation including the retropubic arms",
+              "de": "Vollständige Bandexplantation einschließlich der retropubischen Anteile",
+              "es": "Explantación completa de la banda incluidos los brazos retropúbicos"
+            },
+            "score": 0,
+            "minutes": 20,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong. The obstruction is suburethral; complete explantation is unnecessarily invasive, risks bleeding and bladder injury and frequently leads to recurrent stress incontinence.",
+              "de": "Falsch. Die Obstruktion entsteht suburethral; eine komplette Explantation ist unnötig invasiv, birgt Blutungs- und Blasenverletzungsrisiken und führt häufig zum Rezidiv der Belastungsinkontinenz.",
+              "es": "Incorrecto. La obstrucción es suburetral; la explantación completa es innecesariamente invasiva, conlleva riesgo de sangrado y lesión vesical y con frecuencia provoca la recidiva de la incontinencia de esfuerzo."
+            }
+          }
+        ],
+        "best": "d"
+      }
+    ],
+    "takeaway": {
+      "en": "Rule: persistent retention after sling surgery means the tape is too tight. Early (first 1–2 weeks) loosen it through the vaginal incision, later divide it suburethrally. Do not catheterise for months and never dilate against the tape.",
+      "de": "Merksatz: Persistierender Harnverhalt nach Schlingenoperation bedeutet ein zu straffes Band. Früh (erste 1–2 Wochen) Band über die vaginale Inzision lockern, später suburethral durchtrennen. Nicht monatelang katheterisieren und nie gegen das Band bougieren.",
+      "es": "Regla: la retención persistente tras una cirugía de banda indica una banda demasiado tensa. Precozmente (primeras 1–2 semanas) aflojarla por la incisión vaginal; más tarde, seccionarla bajo la uretra. No mantener sondajes durante meses ni dilatar nunca contra la banda."
+    },
+    "references": [
+      "eau-female-luts"
+    ]
+  },
+  {
+    "id": "fun-inc-aus-catheter-deactivate-cuff",
+    "area": "ward",
+    "level": 2,
+    "acuity": "urgent",
+    "duty": "night",
+    "patient": {
+      "name": "Horst Lindemayr",
+      "age": 79,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Bladder catheter with an artificial sphincter in place",
+      "de": "Blasenkatheter bei liegendem künstlichem Sphinkter",
+      "es": "Sondaje vesical con un esfínter artificial implantado"
+    },
+    "presenting": {
+      "en": "A 79-year-old man is on the trauma ward in the evening after hip replacement for a femoral neck fracture. Since radical prostatectomy four years ago he has had an artificial urinary sphincter (AMS 800) and manages well with one pad per day. He has not voided since surgery and ultrasound shows 450 ml in the bladder; the nurse tried twice to pass a 16 Ch catheter and met firm resistance at about 12 cm, with no blood at the meatus. The pump is easily palpable in the right hemiscrotum, and the patient is awake and oriented. You are called as the urologist on call.",
+      "de": "79-jähriger Patient, am Abend nach Hüftendoprothese wegen Schenkelhalsfraktur auf der unfallchirurgischen Station. Seit vier Jahren trägt er nach radikaler Prostatektomie einen künstlichen Harnröhrensphinkter (AMS 800) und kommt mit einer Vorlage pro Tag gut zurecht. Seit der Operation hat er nicht uriniert, sonographisch 450 ml Blaseninhalt; die Pflegekraft hat zweimal einen 16-Ch-Katheter versucht und ist nach etwa 12 cm auf festen Widerstand gestoßen, kein Blut am Meatus. Die Pumpe ist im rechten Hemiskrotum gut tastbar, der Patient ist wach und orientiert. Sie werden als urologischer Dienst gerufen.",
+      "es": "Varón de 79 años, por la tarde en la planta de traumatología tras una prótesis de cadera por fractura del cuello femoral. Desde la prostatectomía radical hace cuatro años lleva un esfínter urinario artificial (AMS 800) y se maneja bien con una compresa al día. No ha orinado desde la intervención y la ecografía muestra 450 ml en la vejiga; la enfermera ha intentado dos veces colocar una sonda de 16 Ch y ha notado una resistencia firme a unos 12 cm, sin sangre en el meato. La bomba se palpa bien en el hemiescroto derecho y el paciente está despierto y orientado. Le llaman como urólogo de guardia."
+    },
+    "vitals": {
+      "bp": "118/70",
+      "hr": 94,
+      "temp": 36.8,
+      "spo2": 96,
+      "rr": 18
+    },
+    "objectives": {
+      "de": [
+        "Vor jeder transurethralen Manipulation die Sphinktermanschette öffnen und deaktivieren",
+        "Das Vorgehen bei nicht zu öffnender Manschette kennen"
+      ],
+      "en": [
+        "Open and deactivate the sphincter cuff before any transurethral manipulation",
+        "Know what to do when the cuff cannot be opened"
+      ],
+      "es": [
+        "Abrir y desactivar el manguito del esfínter antes de cualquier manipulación transuretral",
+        "Saber qué hacer si el manguito no se puede abrir"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "How do you proceed?",
+          "de": "Wie gehen Sie vor?",
+          "es": "¿Cómo procede?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Try again with an 18 Ch Tiemann catheter, plenty of lubricant and firm pressure",
+              "de": "Erneuter Versuch mit einem 18-Ch-Tiemann-Katheter, reichlich Gleitgel und kräftigem Vorschub",
+              "es": "Nuevo intento con una sonda Tiemann de 18 Ch, abundante lubricante y empuje firme"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "The resistance is the closed cuff. A catheter forced against the closed cuff injures the urethra and can lead to erosion and loss of the implant.",
+              "de": "Der Widerstand ist die geschlossene Manschette. Ein Katheter, der gegen die geschlossene Manschette gedrückt wird, verletzt die Harnröhre und kann zur Erosion und zum Verlust des Implantats führen.",
+              "es": "La resistencia es el manguito cerrado. Una sonda forzada contra el manguito cerrado lesiona la uretra y puede provocar erosión y pérdida del implante."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Squeeze the scrotal pump repeatedly until the cuff is empty, lock the sphincter open with the deactivation button, then pass a 12–14 Ch catheter and leave it in only briefly",
+              "de": "Pumpe im Skrotum mehrfach drücken, bis die Manschette entleert ist, Sphinkter mit dem Deaktivierungsknopf in offener Stellung sperren, dann 12–14-Ch-Katheter einlegen und nur kurz belassen",
+              "es": "Comprimir varias veces la bomba escrotal hasta vaciar el manguito, bloquear el esfínter abierto con el botón de desactivación y después colocar una sonda de 12–14 Ch, que se mantiene poco tiempo"
+            },
+            "score": 10,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Correct. Before any transurethral catheter or cystoscopy, the cuff is opened by pumping and the device is deactivated. A thin catheter is left in as briefly as possible to avoid pressure damage to the urethra under the cuff; the device is reactivated only after the catheter is removed.",
+              "de": "Richtig. Vor jedem transurethralen Katheter und jeder Zystoskopie wird die Manschette durch Pumpen geöffnet und das System deaktiviert. Ein dünner Katheter wird so kurz wie möglich belassen, um Druckschäden der Harnröhre unter der Manschette zu vermeiden; reaktiviert wird erst nach Entfernung des Katheters.",
+              "es": "Correcto. Antes de cualquier sonda transuretral o cistoscopia, el manguito se abre con la bomba y el dispositivo se desactiva. Se deja una sonda fina el menor tiempo posible para evitar lesiones por presión de la uretra bajo el manguito; el dispositivo se reactiva solo tras retirar la sonda."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Flexible cystoscopy, place a guidewire and pass a catheter over it with the cuff closed",
+              "de": "Flexible Zystoskopie mit Einlage eines Führungsdrahts und Katheters über den Draht bei geschlossener Manschette",
+              "es": "Cistoscopia flexible, colocación de una guía y paso de una sonda sobre ella con el manguito cerrado"
+            },
+            "score": 0,
+            "minutes": 15,
+            "critical": true,
+            "feedback": {
+              "en": "The endoscope and the catheter over the wire also pass a compressed segment of urethra while the cuff is closed. The risk of urethral injury and later erosion remains; the cuff must be opened first.",
+              "de": "Auch das Endoskop und der Katheter über Draht passieren bei geschlossener Manschette einen komprimierten Harnröhrenabschnitt. Das Risiko der Harnröhrenverletzung und späteren Erosion bleibt; zuerst muss die Manschette geöffnet werden.",
+              "es": "El endoscopio y la sonda sobre guía también atraviesan un segmento uretral comprimido si el manguito está cerrado. Persiste el riesgo de lesión uretral y erosión posterior; primero hay que abrir el manguito."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Avoid an indwelling catheter and have the nurses perform intermittent catheterisation every six hours",
+              "de": "Auf einen Dauerkatheter verzichten und die Blase sechsstündlich durch die Pflege einmalkatheterisieren lassen",
+              "es": "Evitar la sonda permanente y que enfermería realice sondajes intermitentes cada seis horas"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "The problem is not how long the catheter stays in but the closed cuff. Every intermittent catheterisation against the closed cuff carries the same injury risk, and the bladder now holds 450 ml.",
+              "de": "Das Problem ist nicht die Liegedauer, sondern die geschlossene Manschette. Jeder Einmalkatheterismus gegen die geschlossene Manschette birgt dasselbe Verletzungsrisiko, und die Blase ist jetzt mit 450 ml gefüllt.",
+              "es": "El problema no es el tiempo de permanencia sino el manguito cerrado. Cada sondaje intermitente contra el manguito cerrado conlleva el mismo riesgo de lesión, y la vejiga contiene ahora 450 ml."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Place a suprapubic catheter first, without operating the pump",
+              "de": "Primär suprapubischen Katheter anlegen, ohne die Pumpe zu betätigen",
+              "es": "Colocar primero una sonda suprapúbica sin accionar la bomba"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": false,
+            "feedback": {
+              "en": "A suprapubic catheter is the solution when the cuff cannot be opened, for example with a non-palpable or faulty pump or no experience with the device. Here the pump is easily palpable, so deactivation is the simpler and less invasive route.",
+              "de": "Der suprapubische Katheter ist die Lösung, wenn sich die Manschette nicht öffnen lässt, etwa bei nicht tastbarer oder defekter Pumpe oder fehlender Erfahrung mit dem System. Hier ist die Pumpe gut tastbar, sodass die Deaktivierung der einfachere und weniger invasive Weg ist.",
+              "es": "La sonda suprapúbica es la solución cuando el manguito no se puede abrir, por ejemplo con una bomba no palpable o averiada o sin experiencia con el dispositivo. Aquí la bomba se palpa bien, por lo que la desactivación es la vía más sencilla y menos invasiva."
+            }
+          }
+        ],
+        "best": "b"
+      }
+    ],
+    "takeaway": {
+      "en": "Rule: with an artificial sphincter in place, open the cuff by pumping and deactivate the device before any transurethral catheter or cystoscopy; use only thin catheters and for as short a time as possible. If the cuff cannot be opened, drain the bladder suprapubically in an emergency, never by forcing a urethral catheter.",
+      "de": "Merksatz: Bei liegendem künstlichem Sphinkter vor jedem transurethralen Katheter und jeder Zystoskopie die Manschette durch Pumpen öffnen und das System deaktivieren; nur dünne Katheter und so kurz wie möglich. Lässt sich die Manschette nicht öffnen, wird die Blase im Notfall suprapubisch entlastet, nie transurethral mit Gewalt.",
+      "es": "Regla: con un esfínter artificial implantado, abrir el manguito con la bomba y desactivar el dispositivo antes de cualquier sonda transuretral o cistoscopia; usar solo sondas finas y el menor tiempo posible. Si el manguito no se puede abrir, en urgencias se drena la vejiga por vía suprapúbica, nunca forzando una sonda uretral."
+    },
+    "references": [
+      "bank-guide-funktionell"
+    ]
+  },
+  {
+    "id": "sys-prot-ddmvac-gcsf-support",
+    "area": "ward",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "dayclinic",
+    "patient": {
+      "name": "Lothar Eichhorn",
+      "age": 57,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Dose-dense MVAC: supportive orders for cycle 1",
+      "de": "Dosisdichtes MVAC: Supportivanordnung für Zyklus 1",
+      "es": "MVAC de dosis densa: órdenes de soporte para el ciclo 1"
+    },
+    "presenting": {
+      "en": "57-year-old man with muscle-invasive urothelial carcinoma of the bladder, cT3b cN0 cM0, is admitted for neoadjuvant dose-dense MVAC (6 cycles every 14 days, then cystectomy). ECOG 0, body surface area 2.00 m², GFR 91 mL/min, LVEF 62%, no ascites, no pleural effusion. The plan is methotrexate 30 mg/m² on day 1 and vinblastine 3 mg/m², doxorubicin 30 mg/m² and cisplatin 70 mg/m² on day 2. Hydration and antiemetics (NK1 antagonist, 5-HT3 antagonist, dexamethasone) are already ordered.",
+      "de": "57-jähriger Patient mit muskelinvasivem Urothelkarzinom der Harnblase cT3b cN0 cM0 wird zur neoadjuvanten Chemotherapie mit dosisdichtem MVAC (6 Zyklen alle 14 Tage, danach Zystektomie) stationär aufgenommen. ECOG 0, Körperoberfläche 2,00 m², GFR 91 ml/min, LVEF 62 %, kein Aszites, kein Pleuraerguss. Geplant sind Methotrexat 30 mg/m² an Tag 1 sowie Vinblastin 3 mg/m², Doxorubicin 30 mg/m² und Cisplatin 70 mg/m² an Tag 2. Hydrierung und Antiemese (NK1-Antagonist, 5-HT3-Antagonist, Dexamethason) sind bereits angeordnet.",
+      "es": "Varón de 57 años con carcinoma urotelial vesical músculo-invasivo cT3b cN0 cM0 que ingresa para quimioterapia neoadyuvante con MVAC de dosis densa (6 ciclos cada 14 días y después cistectomía). ECOG 0, superficie corporal 2,00 m², FG 91 ml/min, FEVI 62 %, sin ascitis, sin derrame pleural. Se prevén metotrexato 30 mg/m² el día 1 y vinblastina 3 mg/m², doxorrubicina 30 mg/m² y cisplatino 70 mg/m² el día 2. La hidratación y la profilaxis antiemética (antagonista NK1, antagonista 5-HT3, dexametasona) ya están prescritas."
+    },
+    "vitals": {
+      "bp": "128/76",
+      "hr": 70,
+      "temp": 36.5,
+      "spo2": 98,
+      "rr": 14
+    },
+    "objectives": {
+      "en": [
+        "Order the mandatory G-CSF support for dose-dense MVAC",
+        "Time pegfilgrastim correctly after the end of chemotherapy"
+      ],
+      "de": [
+        "Die obligate G-CSF-Unterstützung bei dosisdichtem MVAC anordnen",
+        "Den korrekten Zeitpunkt der Pegfilgrastim-Gabe nach Ende der Chemotherapie festlegen"
+      ],
+      "es": [
+        "Prescribir el soporte obligatorio con G-CSF en el MVAC de dosis densa",
+        "Programar correctamente el pegfilgrastim tras el final de la quimioterapia"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which additional order is mandatory for this regimen?",
+          "de": "Welche zusätzliche Anordnung ist für dieses Schema zwingend erforderlich?",
+          "es": "¿Qué prescripción adicional es obligatoria para este esquema?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Mesna i.v. at the start of cisplatin and again after 4 and 8 hours",
+              "de": "Mesna i.v. zu Beginn der Cisplatingabe sowie nach 4 und 8 Stunden",
+              "es": "Mesna i.v. al inicio del cisplatino y de nuevo a las 4 y 8 horas"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: mesna protects the bladder from the metabolites of ifosfamide and cyclophosphamide and is not part of MVAC. The support that dose-dense MVAC really needs, G-CSF, is missing.",
+              "de": "Falsch: Mesna schützt die Blase vor den Metaboliten von Ifosfamid und Cyclophosphamid und gehört nicht zu MVAC. Die Unterstützung, die dosisdichtes MVAC tatsächlich braucht, nämlich G-CSF, fehlt.",
+              "es": "Incorrecto: el mesna protege la vejiga de los metabolitos de la ifosfamida y la ciclofosfamida y no forma parte del MVAC. Falta el soporte que realmente necesita el MVAC de dosis densa: el G-CSF."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "G-CSF only as secondary prophylaxis, if febrile neutropenia occurs in cycle 1",
+              "de": "G-CSF nur sekundärprophylaktisch, falls in Zyklus 1 eine febrile Neutropenie auftritt",
+              "es": "G-CSF solo como profilaxis secundaria, si aparece neutropenia febril en el ciclo 1"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Wrong and harmful: G-CSF support is mandatory from cycle 1 onwards in dose-dense MVAC. Without primary prophylaxis the 14-day interval leads to a high rate of febrile neutropenia and sepsis.",
+              "de": "Falsch und gefährlich: Bei dosisdichtem MVAC ist die G-CSF-Unterstützung ab Zyklus 1 obligat. Ohne Primärprophylaxe führt das 14-Tage-Intervall zu einer hohen Rate an febriler Neutropenie und Sepsis.",
+              "es": "Incorrecto y peligroso: en el MVAC de dosis densa el soporte con G-CSF es obligatorio desde el ciclo 1. Sin profilaxis primaria, el intervalo de 14 días provoca una alta tasa de neutropenia febril y sepsis."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Pegfilgrastim 6 mg s.c. on day 2 directly before cisplatin",
+              "de": "Pegfilgrastim 6 mg s.c. an Tag 2 unmittelbar vor der Cisplatingabe",
+              "es": "Pegfilgrastim 6 mg s.c. el día 2 justo antes del cisplatino"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: G-CSF is given at least 24 hours after the end of chemotherapy. Given together with the cytotoxic drugs it drives bone marrow precursors into division while they are exposed, which worsens myelotoxicity.",
+              "de": "Falsch: G-CSF wird frühestens 24 Stunden nach Ende der Chemotherapie gegeben. Zeitgleich mit den Zytostatika treibt es die Vorläuferzellen im Knochenmark in die Teilung, während sie exponiert sind, und verstärkt so die Myelotoxizität.",
+              "es": "Incorrecto: el G-CSF se administra como pronto 24 horas después del final de la quimioterapia. Administrado junto con los citostáticos, estimula la división de los precursores medulares mientras están expuestos y agrava la mielotoxicidad."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Pegfilgrastim 6 mg s.c. once per cycle at least 24 hours after the end of chemotherapy (e.g. day 3-4), alternatively filgrastim 5 µg/kg/day s.c. on days 3-10",
+              "de": "Pegfilgrastim 6 mg s.c. einmal pro Zyklus frühestens 24 Stunden nach Ende der Chemotherapie (z. B. Tag 3–4), alternativ Filgrastim 5 µg/kg/Tag s.c. an Tag 3–10",
+              "es": "Pegfilgrastim 6 mg s.c. una vez por ciclo como pronto 24 horas después del final de la quimioterapia (p. ej., días 3-4); alternativa: filgrastim 5 µg/kg/día s.c. los días 3-10"
+            },
+            "score": 10,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Correct: the 14-day interval of dose-dense MVAC is only feasible with primary G-CSF support. Pegfilgrastim 6 mg is given once per cycle at least 24 hours after the last cytotoxic drug on day 2, i.e. on day 3-4; filgrastim on days 3-10 is the alternative.",
+              "de": "Richtig: Das 14-Tage-Intervall von dosisdichtem MVAC ist nur mit primärer G-CSF-Unterstützung durchführbar. Pegfilgrastim 6 mg wird einmal pro Zyklus frühestens 24 Stunden nach dem letzten Zytostatikum an Tag 2 gegeben, also an Tag 3–4; Filgrastim an Tag 3–10 ist die Alternative.",
+              "es": "Correcto: el intervalo de 14 días del MVAC de dosis densa solo es factible con soporte primario con G-CSF. Pegfilgrastim 6 mg se administra una vez por ciclo como pronto 24 horas después del último citostático del día 2, es decir, los días 3-4; el filgrastim los días 3-10 es la alternativa."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "No G-CSF; instead lengthen the cycle interval to 21 days if the neutrophils are low on day 14",
+              "de": "Kein G-CSF; stattdessen das Zyklusintervall auf 21 Tage verlängern, falls die Neutrophilen an Tag 14 erniedrigt sind",
+              "es": "Sin G-CSF; en su lugar, alargar el intervalo del ciclo a 21 días si los neutrófilos están bajos el día 14"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Wrong and harmful: the benefit of dose-dense MVAC rests on the 14-day interval, and that interval needs G-CSF. Without G-CSF the risk of neutropenic fever in cycle 1 remains, and lengthening the interval turns the regimen into something that is no longer dose-dense.",
+              "de": "Falsch und gefährlich: Der Nutzen von dosisdichtem MVAC beruht auf dem 14-Tage-Intervall, und dieses Intervall braucht G-CSF. Ohne G-CSF bleibt das Risiko eines neutropenischen Fiebers in Zyklus 1 bestehen, und mit verlängertem Intervall ist das Schema nicht mehr dosisdicht.",
+              "es": "Incorrecto y peligroso: el beneficio del MVAC de dosis densa se basa en el intervalo de 14 días, y ese intervalo requiere G-CSF. Sin G-CSF persiste el riesgo de fiebre neutropénica en el ciclo 1, y al alargar el intervalo el esquema deja de ser de dosis densa."
+            }
+          }
+        ],
+        "best": "d"
+      }
+    ],
+    "takeaway": {
+      "en": "Dose-dense MVAC is given every 14 days and is only feasible with primary G-CSF support: pegfilgrastim 6 mg s.c. once per cycle at least 24 hours after chemotherapy (e.g. day 3-4) or filgrastim 5 µg/kg/day on days 3-10. Mesna is not part of the regimen.",
+      "de": "Dosisdichtes MVAC wird alle 14 Tage gegeben und ist nur mit primärer G-CSF-Unterstützung durchführbar: Pegfilgrastim 6 mg s.c. einmal pro Zyklus frühestens 24 Stunden nach der Chemotherapie (z. B. Tag 3–4) oder Filgrastim 5 µg/kg/Tag an Tag 3–10. Mesna gehört nicht zum Schema.",
+      "es": "El MVAC de dosis densa se administra cada 14 días y solo es factible con soporte primario con G-CSF: pegfilgrastim 6 mg s.c. una vez por ciclo como pronto 24 horas después de la quimioterapia (p. ej., días 3-4) o filgrastim 5 µg/kg/día los días 3-10. El mesna no forma parte del esquema."
+    },
+    "references": [
+      "bank-guide-mibc",
+      "ema-medicines",
+      "fachinfo-de"
+    ]
+  },
+  {
+    "id": "sys-prot-sipi-mitomycin-order-after-turb",
+    "area": "ward",
+    "level": 1,
+    "acuity": "routine",
+    "duty": "dayclinic",
+    "patient": {
+      "name": "Siegfried Hollmann",
+      "age": 68,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Ordering the single instillation after TURB",
+      "de": "Anordnung der Frühinstillation nach TUR-B",
+      "es": "Prescripción de la instilación única tras RTU-V"
+    },
+    "presenting": {
+      "en": "A 68-year-old man with a first diagnosis of a solitary 1.5 cm papillary bladder tumour on the left lateral wall (macroscopically Ta) underwent TURB, which ended at 10:30. Resection was macroscopically complete and there was no perforation. In the recovery room the urine draining from the 18 Ch indwelling catheter is light pink and no continuous irrigation is needed. It is now 11:15 and the nurse asks for the order for the planned single immediate instillation.",
+      "de": "68-jähriger Patient mit Erstdiagnose eines solitären, 1,5 cm großen papillären Blasentumors an der linken Seitenwand (makroskopisch Ta). Die TUR-B endete um 10:30 Uhr; die Resektion war makroskopisch komplett, eine Perforation lag nicht vor. Im Aufwachraum ist der Urin über den 18-Ch-Dauerkatheter hellrosa, eine Dauerspülung ist nicht erforderlich. Es ist 11:15 Uhr, die Pflege bittet um die Anordnung der geplanten Frühinstillation.",
+      "es": "Varón de 68 años con diagnóstico inicial de un tumor vesical papilar solitario de 1,5 cm en la pared lateral izquierda (macroscópicamente Ta). La RTU-V terminó a las 10:30; la resección fue macroscópicamente completa y no hubo perforación. En la sala de recuperación la orina por la sonda permanente de 18 Ch es rosada clara y no precisa lavado vesical continuo. Son las 11:15 y enfermería solicita la prescripción de la instilación única inmediata prevista."
+    },
+    "vitals": null,
+    "objectives": {
+      "en": [
+        "Order the single immediate post-TURB instillation with the correct drug, dose, timing and dwell time.",
+        "Name the situations in which the single instillation must not be given."
+      ],
+      "de": [
+        "Die Frühinstillation nach TUR-B mit korrektem Wirkstoff, korrekter Dosis, korrektem Zeitpunkt und korrekter Verweildauer anordnen.",
+        "Die Situationen benennen, in denen keine Frühinstillation erfolgen darf."
+      ],
+      "es": [
+        "Prescribir la instilación única inmediata tras RTU-V con el fármaco, la dosis, el momento y el tiempo de permanencia correctos.",
+        "Identificar las situaciones en las que no debe administrarse la instilación única."
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which order is correct?",
+          "de": "Welche Anordnung ist korrekt?",
+          "es": "¿Qué prescripción es correcta?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Mitomycin C 20 mg with a dwell time of 30 minutes to avoid chemical cystitis.",
+              "de": "Mitomycin C 20 mg mit einer Verweildauer von 30 Minuten, um eine chemische Zystitis zu vermeiden.",
+              "es": "Mitomicina C 20 mg con un tiempo de permanencia de 30 minutos para evitar la cistitis química."
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Below the protocol dose and too short. The single instillation is one 40 mg vial of mitomycin C with a dwell time of 1-2 h; halving the dose and shortening the dwell time reduces the recurrence-preventing effect without a reason in this patient.",
+              "de": "Unter der Protokolldosis und zu kurz. Die Frühinstillation besteht aus einer Durchstechflasche Mitomycin C 40 mg mit 1-2 Stunden Verweildauer; halbe Dosis und verkürzte Verweildauer mindern die rezidivprophylaktische Wirkung ohne Anlass bei diesem Patienten.",
+              "es": "Dosis inferior a la del protocolo y permanencia demasiado corta. La instilación única consiste en un vial de 40 mg de mitomicina C con 1-2 h de permanencia; reducir la dosis a la mitad y acortar la permanencia disminuye el efecto preventivo de recidivas sin motivo en este paciente."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Postpone the instillation until histology is available (about day 5), then give mitomycin C 40 mg once.",
+              "de": "Instillation zurückstellen, bis die Histologie vorliegt (etwa Tag 5), dann einmalig Mitomycin C 40 mg.",
+              "es": "Posponer la instilación hasta disponer de la histología (hacia el día 5) y administrar entonces una dosis única de mitomicina C 40 mg."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false,
+            "feedback": {
+              "en": "Too late. The single instillation works on floating tumour cells and is given as early as possible: ideally within 2 h, at the latest within 24 h after TURB. After histology the decision is about adjuvant therapy according to risk group, not about a delayed single dose.",
+              "de": "Zu spät. Die Frühinstillation wirkt auf flottierende Tumorzellen und wird so früh wie möglich gegeben: idealerweise innerhalb von 2 Stunden, spätestens innerhalb von 24 Stunden nach TUR-B. Nach Vorliegen der Histologie wird über eine risikoadaptierte adjuvante Therapie entschieden, nicht über eine verspätete Einmalgabe.",
+              "es": "Demasiado tarde. La instilación única actúa sobre células tumorales flotantes y se administra lo antes posible: idealmente en las 2 h siguientes y como máximo en las 24 h posteriores a la RTU-V. Con la histología se decide el tratamiento adyuvante según el grupo de riesgo, no una dosis única diferida."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "One vial of BCG now in the recovery room, dwell time 2 h.",
+              "de": "BCG, 1 Durchstechflasche, jetzt im Aufwachraum, Verweildauer 2 Stunden.",
+              "es": "BCG, 1 vial, ahora en la sala de recuperación, permanencia de 2 h."
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Dangerous. BCG must never be instilled into a fresh resection wound: it starts about 2-3 weeks after TURB and never with macroscopic haematuria, because of the risk of systemic BCG infection. BCG is also not the drug of the single immediate instillation.",
+              "de": "Gefährlich. BCG darf nie in die frische Resektionswunde instilliert werden: Beginn etwa 2-3 Wochen nach TUR-B und nie bei Makrohämaturie, da sonst eine systemische BCG-Infektion droht. Zudem ist BCG nicht der Wirkstoff der Frühinstillation.",
+              "es": "Peligroso. La BCG nunca debe instilarse sobre un lecho de resección reciente: se inicia unas 2-3 semanas después de la RTU-V y nunca con hematuria macroscópica, por el riesgo de infección sistémica por BCG. Además, la BCG no es el fármaco de la instilación única inmediata."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Mitomycin C 40 mg now through the catheter, clamp the catheter, drain after 1-2 h; restricted fluid intake until the end of the dwell time.",
+              "de": "Mitomycin C 40 mg jetzt über den Katheter instillieren, Katheter abklemmen, nach 1-2 Stunden ablassen; reduzierte Trinkmenge bis zum Ende der Verweildauer.",
+              "es": "Mitomicina C 40 mg ahora a través de la sonda, pinzar la sonda y vaciar tras 1-2 h; restringir la ingesta de líquidos hasta el final de la permanencia."
+            },
+            "score": 10,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Correct. Complete resection of a small solitary Ta tumour, no perforation and no bleeding requiring irrigation: a single instillation of mitomycin C 40 mg is indicated, ideally within 2 h (here 45 minutes after the end of surgery), with a dwell time of 1-2 h and reduced fluid intake so the drug is not diluted. It would be withheld with (suspected) perforation or bleeding requiring irrigation, because extravasation causes severe necrosis.",
+              "de": "Richtig. Komplette Resektion eines kleinen solitären Ta-Tumors, keine Perforation und keine spülpflichtige Nachblutung: Indikation zur Einmalgabe von Mitomycin C 40 mg, idealerweise innerhalb von 2 Stunden (hier 45 Minuten nach OP-Ende), Verweildauer 1-2 Stunden, reduzierte Trinkmenge, damit der Wirkstoff nicht verdünnt wird. Bei (Verdacht auf) Perforation oder spülpflichtiger Nachblutung würde nicht instilliert, weil eine Extravasation schwere Nekrosen verursacht.",
+              "es": "Correcto. Resección completa de un tumor Ta solitario pequeño, sin perforación ni sangrado que requiera lavado: está indicada una dosis única de mitomicina C 40 mg, idealmente en las 2 h siguientes (aquí 45 minutos tras el final de la cirugía), con 1-2 h de permanencia y restricción de líquidos para no diluir el fármaco. Se omitiría ante perforación (o sospecha) o sangrado que requiera lavado, porque la extravasación causa necrosis graves."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Mitomycin C 40 mg once weekly for 6 weeks, first dose now.",
+              "de": "Mitomycin C 40 mg einmal wöchentlich über 6 Wochen, erste Gabe jetzt.",
+              "es": "Mitomicina C 40 mg una vez a la semana durante 6 semanas, primera dosis ahora."
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Not the protocol. The immediate post-TURB instillation is a single dose. Whether further instillations follow depends on the final histology and risk group, which are not known yet.",
+              "de": "Nicht protokollgerecht. Die Frühinstillation nach TUR-B ist eine Einmalgabe. Ob weitere Instillationen folgen, hängt von der endgültigen Histologie und der Risikogruppe ab, die noch nicht bekannt sind.",
+              "es": "No se ajusta al protocolo. La instilación inmediata tras RTU-V es una dosis única. Que sigan más instilaciones depende de la histología definitiva y del grupo de riesgo, que aún no se conocen."
+            }
+          }
+        ],
+        "best": "d"
+      }
+    ],
+    "takeaway": {
+      "en": "The single immediate instillation is one dose of mitomycin C 40 mg, ideally within 2 h and at the latest 24 h after complete TURB, with a dwell time of 1-2 h. It is not given with (suspected) perforation or bleeding requiring irrigation, and BCG never goes into a fresh resection wound.",
+      "de": "Die Frühinstillation ist eine Einmalgabe von Mitomycin C 40 mg, idealerweise innerhalb von 2 Stunden, spätestens 24 Stunden nach kompletter TUR-B, mit 1-2 Stunden Verweildauer. Bei (Verdacht auf) Perforation oder spülpflichtiger Nachblutung wird nicht instilliert, und BCG gehört nie in die frische Resektionswunde.",
+      "es": "La instilación única inmediata es una dosis de mitomicina C 40 mg, idealmente en las 2 h siguientes y como máximo 24 h tras una RTU-V completa, con 1-2 h de permanencia. No se administra ante perforación (o sospecha) o sangrado que requiera lavado, y la BCG nunca se instila sobre un lecho de resección reciente."
+    },
+    "references": [
+      "bank-guide-nmibc",
+      "fachinfo-de"
+    ]
+  },
+  {
+    "id": "sys-prot-mitomycin-after-nephroureterectomy-timing",
+    "area": "ward",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "dayclinic",
+    "patient": {
+      "name": "Werner Stallbaum",
+      "age": 72,
+      "sex": "male"
+    },
+    "title": {
+      "en": "When to instil after nephroureterectomy",
+      "de": "Zeitpunkt der Instillation nach Nephroureterektomie",
+      "es": "Momento de la instilación tras nefroureterectomía"
+    },
+    "presenting": {
+      "en": "A 72-year-old man is on day 1 after right radical nephroureterectomy with excision of a bladder cuff for a high-grade urothelial carcinoma of the renal pelvis. He has no history of bladder cancer, and preoperative cystoscopy was normal. The bladder cuff was closed in two layers; an indwelling catheter is in place and its removal is planned for postoperative day 7. The nurse asks whether the mitomycin C instillation should be given today within 24 hours, as after a TURB.",
+      "de": "72-jähriger Patient am 1. postoperativen Tag nach radikaler Nephroureterektomie rechts mit Exzision der Blasenmanschette wegen eines High-grade-Urothelkarzinoms des Nierenbeckens. Kein Harnblasenkarzinom in der Anamnese, die präoperative Zystoskopie war unauffällig. Die Blasenmanschette wurde zweischichtig verschlossen; ein Dauerkatheter liegt, die Entfernung ist für den 7. postoperativen Tag geplant. Die Pflege fragt, ob die Mitomycin-C-Instillation wie nach einer TUR-B heute innerhalb von 24 Stunden erfolgen soll.",
+      "es": "Varón de 72 años en el primer día posoperatorio de una nefroureterectomía radical derecha con exéresis de rodete vesical por un carcinoma urotelial de alto grado de la pelvis renal. No tiene antecedentes de cáncer vesical y la cistoscopia preoperatoria fue normal. El rodete vesical se cerró en dos planos; lleva sonda vesical permanente, cuya retirada está prevista para el día 7 posoperatorio. Enfermería pregunta si la instilación de mitomicina C debe administrarse hoy, dentro de las 24 h, como tras una RTU-V."
+    },
+    "vitals": null,
+    "objectives": {
+      "en": [
+        "Time the single mitomycin C bladder instillation after nephroureterectomy according to ODMIT-C.",
+        "Recognise the risk of extravasation through a bladder closure that may still leak."
+      ],
+      "de": [
+        "Die einmalige Mitomycin-C-Blaseninstillation nach Nephroureterektomie gemäß ODMIT-C zeitlich richtig planen.",
+        "Das Extravasationsrisiko bei einem möglicherweise noch undichten Blasenverschluss erkennen."
+      ],
+      "es": [
+        "Programar correctamente la instilación vesical única de mitomicina C tras nefroureterectomía según ODMIT-C.",
+        "Reconocer el riesgo de extravasación a través de un cierre vesical que aún puede no ser estanco."
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "What do you order?",
+          "de": "Was ordnen Sie an?",
+          "es": "¿Qué prescribe?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Mitomycin C 40 mg today through the catheter, dwell time 1-2 h, because the effect is only established within 24 hours.",
+              "de": "Mitomycin C 40 mg heute über den Katheter, Verweildauer 1-2 Stunden, da die Wirkung nur innerhalb von 24 Stunden gesichert ist.",
+              "es": "Mitomicina C 40 mg hoy por la sonda, permanencia de 1-2 h, porque el efecto solo está demostrado dentro de las 24 h."
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Dangerous. The 24-hour rule applies to TURB. On day 1 the freshly sutured bladder cuff may still leak; extravasated mitomycin C causes pain, persistent leakage, cellulitis and bowel complications. After nephroureterectomy the instillation is given at catheter removal.",
+              "de": "Gefährlich. Die 24-Stunden-Regel gilt für die TUR-B. Am 1. Tag kann die frisch genähte Blasenmanschette noch undicht sein; extravasiertes Mitomycin C verursacht Schmerzen, persistierende Leckage, Phlegmone und Darmkomplikationen. Nach Nephroureterektomie wird bei Katheterentfernung instilliert.",
+              "es": "Peligroso. La regla de las 24 h se aplica a la RTU-V. En el día 1 el rodete vesical recién suturado puede no ser estanco; la mitomicina C extravasada causa dolor, fuga persistente, celulitis y complicaciones intestinales. Tras la nefroureterectomía se instila al retirar la sonda."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Mitomycin C 40 mg once at catheter removal, provided a watertight bladder closure is assumed or confirmed (cystogram if in doubt); dwell time 1-2 h, then drain and remove the catheter.",
+              "de": "Mitomycin C 40 mg einmalig bei Katheterentfernung, sofern ein dichter Blasenverschluss angenommen bzw. gesichert ist (im Zweifel Zystogramm); Verweildauer 1-2 Stunden, danach ablassen und Katheter entfernen.",
+              "es": "Mitomicina C 40 mg en dosis única al retirar la sonda, siempre que se asuma o confirme un cierre vesical estanco (cistografía si hay dudas); permanencia de 1-2 h, después vaciar y retirar la sonda."
+            },
+            "score": 10,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Correct. In ODMIT-C a single dose of mitomycin C 40 mg at catheter removal after nephroureterectomy reduced bladder recurrences in the first year (per protocol 16% vs 27%, NNT 9). The EAU UTUC guideline recommends a single postoperative instillation; in Germany this use of mitomycin C is guideline-based but formally outside the wording of the marketing authorisation. It does not replace cystoscopic follow-up.",
+              "de": "Richtig. In ODMIT-C senkte eine Einmalgabe von Mitomycin C 40 mg bei Katheterentfernung nach Nephroureterektomie die Blasenrezidivrate im ersten Jahr (per Protokoll 16 % vs. 27 %, NNT 9). Die EAU-Leitlinie UTUC empfiehlt eine einmalige postoperative Instillation; in Deutschland ist dieser Einsatz leitlinienbasiert, formal aber außerhalb des Zulassungswortlauts. Die zystoskopische Nachsorge ersetzt sie nicht.",
+              "es": "Correcto. En ODMIT-C una dosis única de mitomicina C 40 mg al retirar la sonda tras nefroureterectomía redujo las recidivas vesicales el primer año (por protocolo 16 % frente a 27 %, NNT 9). La guía de la EAU sobre el carcinoma urotelial del tracto urinario superior recomienda una instilación posoperatoria única; en Alemania este uso se basa en la guía, aunque formalmente queda fuera del texto de la autorización. No sustituye el seguimiento cistoscópico."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "No instillation: bladder recurrence after nephroureterectomy is rare without a history of bladder cancer.",
+              "de": "Keine Instillation: Blasenrezidive nach Nephroureterektomie sind ohne Blasenkarzinom in der Anamnese selten.",
+              "es": "No instilar: las recidivas vesicales tras nefroureterectomía son raras sin antecedentes de cáncer vesical."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong. Intravesical recurrence after nephroureterectomy is common; even in ODMIT-C, which included only patients without bladder cancer history, 27% recurred in the first year without instillation. That is exactly the group in which the single instillation is indicated.",
+              "de": "Falsch. Intravesikale Rezidive nach Nephroureterektomie sind häufig; selbst in ODMIT-C, das nur Patienten ohne Blasenkarzinom in der Anamnese einschloss, traten ohne Instillation im ersten Jahr 27 % Rezidive auf. Genau in dieser Gruppe ist die Einmalinstillation indiziert.",
+              "es": "Incorrecto. Las recidivas intravesicales tras nefroureterectomía son frecuentes; incluso en ODMIT-C, que solo incluyó pacientes sin antecedentes de cáncer vesical, recidivó un 27 % el primer año sin instilación. Precisamente en este grupo está indicada la instilación única."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "BCG induction with 6 weekly instillations from the third postoperative week.",
+              "de": "BCG-Induktion mit 6 wöchentlichen Instillationen ab der 3. postoperativen Woche.",
+              "es": "Inducción con BCG, 6 instilaciones semanales, a partir de la tercera semana posoperatoria."
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Not indicated. There is no bladder tumour to treat; the evidence for prophylaxis after nephroureterectomy is for a single chemotherapy instillation (mitomycin C, pirarubicin), not for BCG.",
+              "de": "Nicht indiziert. Es gibt keinen Blasentumor zu behandeln; die Evidenz zur Prophylaxe nach Nephroureterektomie betrifft eine einmalige Chemotherapie-Instillation (Mitomycin C, Pirarubicin), nicht BCG.",
+              "es": "No indicado. No hay tumor vesical que tratar; la evidencia de profilaxis tras nefroureterectomía se refiere a una instilación única de quimioterapia (mitomicina C, pirarubicina), no a la BCG."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Mitomycin C 40 mg weekly for 6 weeks from catheter removal, then monthly up to 12 months.",
+              "de": "Mitomycin C 40 mg wöchentlich über 6 Wochen ab Katheterentfernung, dann monatlich bis 12 Monate.",
+              "es": "Mitomicina C 40 mg semanal durante 6 semanas desde la retirada de la sonda y después mensual hasta 12 meses."
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "That is adjuvant chemotherapy for intermediate-risk bladder NMIBC. After nephroureterectomy without a bladder tumour the protocol is a single dose of 40 mg.",
+              "de": "Das ist die adjuvante Chemotherapie bei NMIBC der Harnblase mit intermediärem Risiko. Nach Nephroureterektomie ohne Blasentumor sieht das Protokoll eine Einmalgabe von 40 mg vor.",
+              "es": "Esto corresponde a la quimioterapia adyuvante del CVNMI de riesgo intermedio. Tras nefroureterectomía sin tumor vesical el protocolo es una dosis única de 40 mg."
+            }
+          }
+        ],
+        "best": "b"
+      }
+    ],
+    "takeaway": {
+      "en": "After radical nephroureterectomy, give mitomycin C 40 mg once at catheter removal (ODMIT-C), with a dwell time of 1-2 h. Never instil while the bladder cuff may leak: if in doubt, obtain a cystogram first.",
+      "de": "Nach radikaler Nephroureterektomie wird Mitomycin C 40 mg einmalig bei Katheterentfernung instilliert (ODMIT-C), Verweildauer 1-2 Stunden. Nie instillieren, solange die Blasenmanschette undicht sein kann: im Zweifel vorher Zystogramm.",
+      "es": "Tras nefroureterectomía radical se instila mitomicina C 40 mg en dosis única al retirar la sonda (ODMIT-C), con 1-2 h de permanencia. Nunca instilar mientras el rodete vesical pueda no ser estanco: si hay dudas, cistografía previa."
+    },
+    "references": [
+      "bank-guide-utuc",
+      "bank-guide-nmibc",
+      "fachinfo-de"
+    ]
+  },
+  {
     "id": "bank-uro-hod-00014",
     "area": "ward",
     "level": 3,

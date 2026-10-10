@@ -1870,6 +1870,1015 @@
     ]
   },
   {
+    "id": "and-pri-ischaemic-refractory-distal-shunt",
+    "area": "emergency",
+    "level": 3,
+    "acuity": "critical",
+    "duty": "night",
+    "patient": {
+      "name": "Tobias Reinhold",
+      "age": 52,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Ischaemic priapism after failed phenylephrine therapy",
+      "de": "Ischämischer Priapismus nach erfolgloser Phenylephrin-Therapie",
+      "es": "Priapismo isquémico tras fracaso de la fenilefrina"
+    },
+    "presenting": {
+      "en": "52-year-old man with a painful sustained erection for 22 hours after starting trazodone. The corpora cavernosa are fully rigid, the glans is soft. Cavernous blood gas: pO2 18 mmHg, pCO2 78 mmHg, pH 7.10. After aspiration and irrigation with 0.9% saline and repeated intracavernous phenylephrine (200 µg per dose, 1 mg cumulative within 60 minutes, with ECG and blood pressure monitoring), detumescence is only transient; after 15 minutes the penis is rigid again. Normal erectile function before this episode.",
+      "de": "52-jähriger Patient mit seit 22 Stunden bestehender, schmerzhafter Dauererektion nach Beginn einer Trazodon-Therapie. Corpora cavernosa vollständig rigide, Glans weich. Kavernöse Blutgasanalyse: pO2 18 mmHg, pCO2 78 mmHg, pH 7,10. Nach Aspiration und Spülung mit NaCl 0,9 % sowie wiederholter intrakavernöser Gabe von Phenylephrin (je 200 µg, kumulativ 1 mg innerhalb von 60 Minuten, unter EKG- und Blutdruckmonitoring) kommt es nur zu einer kurzzeitigen Detumeszenz; nach 15 Minuten ist der Penis erneut rigide. Präinterventionell normale erektile Funktion.",
+      "es": "Varón de 52 años con erección dolorosa y mantenida desde hace 22 horas tras iniciar tratamiento con trazodona. Cuerpos cavernosos completamente rígidos, glande blando. Gasometría cavernosa: pO2 18 mmHg, pCO2 78 mmHg, pH 7,10. Tras aspiración e irrigación con suero fisiológico al 0,9 % y fenilefrina intracavernosa repetida (200 µg por dosis, 1 mg acumulado en 60 minutos, con monitorización de ECG y presión arterial), la detumescencia es solo transitoria; a los 15 minutos el pene vuelve a estar rígido. Función eréctil normal previa."
+    },
+    "vitals": {
+      "bp": "162/94",
+      "hr": 104,
+      "temp": 36.9,
+      "spo2": 98,
+      "rr": 18
+    },
+    "objectives": {
+      "de": [
+        "Das Eskalationsschema beim therapierefraktären ischämischen Priapismus kennen (distaler vor proximalem Shunt).",
+        "Die Indikation zur Sofortimplantation einer Penisprothese zeitlich einordnen."
+      ],
+      "en": [
+        "Know the escalation pathway in refractory ischaemic priapism (distal before proximal shunt).",
+        "Place the indication for immediate penile prosthesis implantation in time."
+      ],
+      "es": [
+        "Conocer la escalada terapéutica en el priapismo isquémico refractario (derivación distal antes que proximal).",
+        "Situar en el tiempo la indicación de implante inmediato de prótesis de pene."
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "What is the next step?",
+          "de": "Was ist der nächste Schritt?",
+          "es": "¿Cuál es el siguiente paso?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Continue phenylephrine at a higher dose for several more hours",
+              "de": "Phenylephrin in höherer Dosis über weitere Stunden fortsetzen",
+              "es": "Continuar con fenilefrina a dosis más altas durante varias horas más"
+            },
+            "score": 0,
+            "minutes": 20,
+            "critical": true,
+            "feedback": {
+              "en": "After about one hour with up to 1 mg phenylephrine without lasting success, the conservative step is exhausted. Further escalation raises the risk of hypertensive crisis, reflex bradycardia and arrhythmia (blood pressure already 162/94 mmHg here) while cavernous ischaemia progresses.",
+              "de": "Nach etwa einer Stunde mit bis zu 1 mg Phenylephrin ohne anhaltenden Erfolg ist die konservative Stufe ausgeschöpft. Weitere Eskalation erhöht das Risiko von hypertensiver Entgleisung, Reflexbradykardie und Arrhythmien (Blutdruck hier bereits 162/94 mmHg), während die Ischämie des Schwellkörpers fortschreitet.",
+              "es": "Tras aproximadamente una hora con hasta 1 mg de fenilefrina sin éxito mantenido, el escalón conservador está agotado. Seguir escalando aumenta el riesgo de crisis hipertensiva, bradicardia refleja y arritmias (aquí la presión ya es de 162/94 mmHg), mientras progresa la isquemia cavernosa."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Proximal shunt (Quackels or Grayhack) as the next procedure",
+              "de": "Proximaler Shunt (Quackels oder Grayhack) als nächster Eingriff",
+              "es": "Derivación proximal (Quackels o Grayhack) como siguiente intervención"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": false,
+            "feedback": {
+              "en": "Proximal shunts are technically more demanding and carry risks of urethral injury, cavernositis, fistula and thrombosis (Grayhack: pulmonary embolism). They are only considered after distal shunts have failed.",
+              "de": "Proximale Shunts sind technisch aufwendiger und mit Urethraverletzung, Kavernitis, Fistelbildung und Thrombose (Grayhack: Lungenembolie) belastet. Sie kommen erst in Betracht, wenn distale Shunts versagt haben.",
+              "es": "Las derivaciones proximales son técnicamente más complejas y conllevan riesgo de lesión uretral, cavernositis, fístulas y trombosis (Grayhack: embolia pulmonar). Solo se consideran cuando han fracasado las derivaciones distales."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Distal cavernoglanular shunt (e.g. T-shunt, with tunnelling if needed, or Al-Ghorab)",
+              "de": "Distaler kavernoglandulärer Shunt (z. B. T-Shunt, ggf. mit Tunnelung, oder Al-Ghorab)",
+              "es": "Derivación distal cavernoglandular (p. ej., T-shunt, con tunelización si es necesario, o Al-Ghorab)"
+            },
+            "score": 10,
+            "minutes": 15,
+            "critical": false,
+            "feedback": {
+              "en": "Correct: when aspiration/irrigation and repeated sympathomimetic injection fail, a distal shunt follows (Winter, Ebbehoj, T-shunt, Al-Ghorab). It is simple, has low morbidity and can be combined with tunnelling into the shaft after long ischaemia; success is checked clinically and by repeat blood gas or duplex.",
+              "de": "Richtig: Versagen Aspiration/Spülung und wiederholte Sympathomimetika-Gabe, folgt der distale Shunt (Winter, Ebbehoj, T-Shunt, Al-Ghorab). Er ist einfach, wenig morbide und kann bei langer Ischämie mit Tunnelung in den Schaft kombiniert werden; Erfolg wird klinisch und per erneuter Blutgasanalyse oder Duplex kontrolliert.",
+              "es": "Correcto: si fracasan la aspiración/irrigación y la administración repetida de simpaticomiméticos, el siguiente paso es la derivación distal (Winter, Ebbehoj, T-shunt, Al-Ghorab). Es sencilla, de baja morbilidad y puede combinarse con tunelización hacia el cuerpo del pene tras una isquemia prolongada; el éxito se comprueba clínicamente y con nueva gasometría o dúplex."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Immediate penile prosthesis implantation",
+              "de": "Sofortige Implantation einer Penisprothese",
+              "es": "Implante inmediato de prótesis de pene"
+            },
+            "score": 0,
+            "minutes": 20,
+            "critical": false,
+            "feedback": {
+              "en": "Immediate prosthesis is discussed after very long ischaemia (presentation later than about 36 hours) or after failed shunts, because fibrosis almost always follows. At 22 hours in a previously potent man, a shunt comes first.",
+              "de": "Die Sofortprothese wird bei sehr langer Ischämie (Vorstellung nach mehr als etwa 36 Stunden) oder nach Versagen der Shunts diskutiert, weil dann fast immer eine Fibrose folgt. Nach 22 Stunden bei zuvor potentem Patienten ist zunächst der Shunt indiziert.",
+              "es": "La prótesis inmediata se plantea tras una isquemia muy prolongada (consulta pasadas unas 36 horas) o tras fracaso de las derivaciones, porque casi siempre sigue fibrosis. A las 22 horas en un paciente previamente potente, primero se indica la derivación."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Selective embolisation of the internal pudendal artery",
+              "de": "Selektive Embolisation der A. pudenda interna",
+              "es": "Embolización selectiva de la arteria pudenda interna"
+            },
+            "score": 0,
+            "minutes": 15,
+            "critical": false,
+            "feedback": {
+              "en": "Embolisation treats arterial (high-flow) priapism with an arteriocavernous fistula. Here the blood gas shows ischaemia with absent inflow; embolisation would worsen the ischaemia.",
+              "de": "Die Embolisation behandelt den arteriellen (High-flow-)Priapismus mit arteriokavernöser Fistel. Hier zeigt die Blutgasanalyse eine Ischämie mit fehlendem Einstrom; eine Embolisation würde die Ischämie verschlimmern.",
+              "es": "La embolización trata el priapismo arterial (de alto flujo) con fístula arteriocavernosa. Aquí la gasometría muestra isquemia con ausencia de aflujo; la embolización empeoraría la isquemia."
+            }
+          }
+        ],
+        "best": "c"
+      }
+    ],
+    "takeaway": {
+      "en": "Ischaemic priapism: aspiration/irrigation, then intracavernous phenylephrine with monitoring; if this fails, distal shunt (Winter, Ebbehoj, T-shunt, Al-Ghorab, with tunnelling if needed), proximal shunts only afterwards. When presentation is later than about 36 hours or shunts fail, discuss immediate penile prosthesis implantation.",
+      "de": "Ischämischer Priapismus: Aspiration/Spülung, dann intrakavernöses Phenylephrin unter Monitoring; bei Versagen distaler Shunt (Winter, Ebbehoj, T-Shunt, Al-Ghorab, ggf. mit Tunnelung), erst danach proximale Shunts. Bei Vorstellung nach mehr als etwa 36 Stunden oder Shunt-Versagen die Sofortimplantation einer Penisprothese besprechen.",
+      "es": "Priapismo isquémico: aspiración/irrigación y después fenilefrina intracavernosa con monitorización; si fracasa, derivación distal (Winter, Ebbehoj, T-shunt, Al-Ghorab, con tunelización si es necesario) y solo después derivaciones proximales. Si la consulta se produce pasadas unas 36 horas o fracasan las derivaciones, plantear el implante inmediato de prótesis de pene."
+    },
+    "references": [
+      "bank-guide-andrologie"
+    ]
+  },
+  {
+    "id": "fun-inc-aus-cuff-erosion-explant",
+    "area": "emergency",
+    "level": 2,
+    "acuity": "urgent",
+    "duty": "elective",
+    "patient": {
+      "name": "Günter Brackmann",
+      "age": 73,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Pain, bleeding and recurrent incontinence after sphincter implantation",
+      "de": "Schmerzen, Blutung und erneute Inkontinenz nach Sphinkterimplantation",
+      "es": "Dolor, sangrado e incontinencia recurrente tras implantar un esfínter"
+    },
+    "presenting": {
+      "en": "A 73-year-old man had an artificial urinary sphincter (AMS 800) implanted 14 months ago after prostatectomy and radiotherapy; until three weeks ago he was satisfied with one pad per day. Since then he has had increasing perineal pain, recurrent leakage needing five pads per day and bloody discharge from the meatus. The skin over the pump in the right hemiscrotum is red and warm. White cell count 13.8 × 10⁹/l, CRP 96 mg/l. After deactivation, flexible cystoscopy shows exposed cuff material in the bulbar urethra.",
+      "de": "73-jähriger Patient, Implantation eines künstlichen Harnröhrensphinkters (AMS 800) vor 14 Monaten nach Prostatektomie und Strahlentherapie; bis vor drei Wochen war er mit einer Vorlage pro Tag zufrieden. Seither zunehmende perineale Schmerzen, erneuter Urinverlust mit fünf Vorlagen pro Tag und blutiger Ausfluss aus dem Meatus. Die Haut über der Pumpe im rechten Hemiskrotum ist gerötet und überwärmt. Leukozyten 13,8 G/l, CRP 96 mg/l. Nach Deaktivierung zeigt die flexible Zystoskopie in der bulbären Harnröhre freiliegendes Manschettenmaterial.",
+      "es": "Varón de 73 años al que se implantó un esfínter urinario artificial (AMS 800) hace 14 meses tras prostatectomía y radioterapia; hasta hace tres semanas estaba satisfecho con una compresa al día. Desde entonces presenta dolor perineal creciente, nuevas pérdidas que requieren cinco compresas al día y secreción sanguinolenta por el meato. La piel sobre la bomba en el hemiescroto derecho está enrojecida y caliente. Leucocitos 13,8 × 10⁹/l, PCR 96 mg/l. Tras la desactivación, la cistoscopia flexible muestra material del manguito expuesto en la uretra bulbar."
+    },
+    "vitals": {
+      "bp": "134/78",
+      "hr": 104,
+      "temp": 38.4,
+      "spo2": 97,
+      "rr": 19
+    },
+    "objectives": {
+      "de": [
+        "Manschettenerosion und Infektion des künstlichen Sphinkters erkennen",
+        "Explantation und verzögerte Reimplantation als Therapie kennen"
+      ],
+      "en": [
+        "Recognise cuff erosion and infection of an artificial sphincter",
+        "Know explantation and delayed re-implantation as the treatment"
+      ],
+      "es": [
+        "Reconocer la erosión del manguito y la infección del esfínter artificial",
+        "Conocer la explantación y la reimplantación diferida como tratamiento"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which management is indicated?",
+          "de": "Welches Vorgehen ist angezeigt?",
+          "es": "¿Qué actitud está indicada?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Remove all components (cuff, pump, reservoir), drain the bladder by catheter, give culture-directed antibiotics; re-implant no earlier than 3–6 months",
+              "de": "Explantation aller Komponenten (Manschette, Pumpe, Reservoir), Harnableitung per Katheter, Antibiotika nach Kultur; Reimplantation frühestens nach 3–6 Monaten",
+              "es": "Explantar todos los componentes (manguito, bomba, reservorio), derivar la orina con sonda y dar antibióticos según cultivo; reimplantar no antes de 3–6 meses"
+            },
+            "score": 10,
+            "minutes": 15,
+            "critical": false,
+            "feedback": {
+              "en": "Correct. Cuff erosion means a contaminated implant, and the infected pump confirms it. The whole device is removed, the urethra heals over a catheter, and a new implant is placed only after healing, usually after 3–6 months and often at a different site.",
+              "de": "Richtig. Eine Erosion der Manschette bedeutet ein kontaminiertes Implantat; die Infektion der Pumpe bestätigt dies. Das gesamte System wird entfernt, die Harnröhre heilt über einen Katheter aus, und eine neue Implantation erfolgt erst nach Abheilung, meist nach 3–6 Monaten und oft an anderer Stelle.",
+              "es": "Correcto. La erosión del manguito implica un implante contaminado, y la infección de la bomba lo confirma. Se retira todo el dispositivo, la uretra cicatriza sobre una sonda y solo se coloca un nuevo implante tras la curación, normalmente a los 3–6 meses y a menudo en otra localización."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Six weeks of antibiotics with the device left in place and deactivated",
+              "de": "Antibiotische Therapie über sechs Wochen bei deaktiviert belassenem Implantat",
+              "es": "Seis semanas de antibióticos dejando el implante desactivado"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": false,
+            "feedback": {
+              "en": "An eroded and infected implant is colonised by biofilm and cannot be cleared with antibiotics. The infection progresses and the urethral damage increases.",
+              "de": "Ein erodiertes und infiziertes Implantat ist mit einem Biofilm besiedelt und lässt sich mit Antibiotika nicht sanieren. Die Infektion schreitet fort, und die Harnröhrenschädigung nimmt zu.",
+              "es": "Un implante erosionado e infectado está colonizado por biopelícula y no se esteriliza con antibióticos. La infección progresa y aumenta el daño uretral."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Replace only the cuff, with a new cuff at the same site",
+              "de": "Austausch nur der Manschette, neue Manschette an derselben Stelle",
+              "es": "Sustituir solo el manguito, con uno nuevo en la misma localización"
+            },
+            "score": 0,
+            "minutes": 15,
+            "critical": false,
+            "feedback": {
+              "en": "With erosion and infection the whole device is contaminated, not just the cuff. A new cuff at the eroded, inflamed site would erode again.",
+              "de": "Bei Erosion mit Infektion ist das gesamte System kontaminiert, nicht nur die Manschette. Eine neue Manschette an der erodierten, entzündeten Stelle würde erneut erodieren.",
+              "es": "Con erosión e infección todo el dispositivo está contaminado, no solo el manguito. Un manguito nuevo en el lugar erosionado e inflamado volvería a erosionarse."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Remove the device and implant a new one in the same session",
+              "de": "Explantation und sofortige Neuimplantation eines neuen Systems in derselben Sitzung",
+              "es": "Explantar y colocar un dispositivo nuevo en la misma intervención"
+            },
+            "score": 0,
+            "minutes": 15,
+            "critical": false,
+            "feedback": {
+              "en": "No new implant is placed into an infected field with an open urethra. Re-implantation is delayed until the urethra has healed and the infection has resolved.",
+              "de": "In ein infiziertes Wundgebiet mit offener Harnröhre wird kein neues Implantat eingesetzt. Die Reimplantation erfolgt verzögert nach Abheilung der Harnröhre und Abklingen der Infektion.",
+              "es": "No se coloca un implante nuevo en un campo infectado con la uretra abierta. La reimplantación se difiere hasta que la uretra haya cicatrizado y la infección se haya resuelto."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Reactivate the sphincter and review in four weeks",
+              "de": "Sphinkter wieder aktivieren und Kontrolle in vier Wochen",
+              "es": "Reactivar el esfínter y revisar en cuatro semanas"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "The findings show erosion with local and systemic infection. Leaving and activating the implant increases pressure necrosis of the urethra and risks spreading infection up to sepsis.",
+              "de": "Die Befunde zeigen eine Erosion mit lokaler und systemischer Infektion. Ein Belassen und Aktivieren des Implantats verstärkt die Drucknekrose der Harnröhre und riskiert eine Ausbreitung der Infektion bis zur Sepsis.",
+              "es": "Los hallazgos muestran una erosión con infección local y sistémica. Mantener y activar el implante aumenta la necrosis por presión de la uretra y arriesga la diseminación de la infección hasta la sepsis."
+            }
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "en": "Rule: pain, urethral bleeding and recurrent incontinence with an artificial sphincter suggest cuff erosion or device infection. With erosion and infection, all components are removed and the bladder is drained by catheter; re-implantation is delayed until healing, usually after 3–6 months.",
+      "de": "Merksatz: Schmerzen, Blutung aus der Harnröhre und erneute Inkontinenz bei künstlichem Sphinkter sprechen für eine Manschettenerosion oder Infektion des Systems. Bei Erosion mit Infektion werden alle Komponenten explantiert und die Blase per Katheter abgeleitet; eine Reimplantation erfolgt verzögert nach Abheilung, meist nach 3–6 Monaten.",
+      "es": "Regla: dolor, sangrado uretral e incontinencia recurrente con un esfínter artificial sugieren erosión del manguito o infección del dispositivo. Ante erosión con infección se explantan todos los componentes y se drena la vejiga con sonda; la reimplantación se difiere hasta la curación, normalmente 3–6 meses."
+    },
+    "references": [
+      "bank-guide-funktionell",
+      "bank-guide-infektiologie"
+    ]
+  },
+  {
+    "id": "sys-ae-sildenafil-chest-pain-nitrates",
+    "area": "emergency",
+    "level": 2,
+    "acuity": "critical",
+    "duty": "night",
+    "patient": {
+      "name": "Holger Kemmerling",
+      "age": 58,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Chest pain after taking sildenafil",
+      "de": "Thoraxschmerz nach Sildenafil-Einnahme",
+      "es": "Dolor torácico tras tomar sildenafilo"
+    },
+    "presenting": {
+      "en": "A 58-year-old man presents to the emergency department at 1:30 a.m. with retrosternal pressure for 30 minutes that began during intercourse. At about 11 p.m. he took sildenafil 100 mg, prescribed in the urology clinic for erectile dysfunction; you are therefore called in as the urologist on call. Known hypertension, smoker. ECG: ST depression in V4–V6, troponin pending. The nurse already has a glyceryl trinitrate spray ready and asks whether she should give it.",
+      "de": "58-jähriger Patient, um 1:30 Uhr in der Notaufnahme mit retrosternalem Druckgefühl seit 30 Minuten, das beim Geschlechtsverkehr begonnen hat. Gegen 23 Uhr hatte er Sildenafil 100 mg eingenommen, das ihm in der urologischen Sprechstunde wegen erektiler Dysfunktion verordnet wurde; Sie werden deshalb als urologischer Dienstarzt hinzugezogen. Bekannte arterielle Hypertonie, Raucher. EKG: ST-Senkungen in V4–V6, Troponin ausstehend. Die Pflegekraft hält bereits Glyceroltrinitrat-Spray bereit und fragt, ob sie es geben soll.",
+      "es": "Varón de 58 años que acude a urgencias a la 1:30 h por opresión retroesternal desde hace 30 minutos, iniciada durante una relación sexual. Hacia las 23 h tomó sildenafilo 100 mg, prescrito en la consulta de urología por disfunción eréctil; por eso le llaman a usted como urólogo de guardia. Hipertensión arterial conocida, fumador. ECG: descenso del ST en V4–V6, troponina pendiente. La enfermera tiene ya preparado un espray de nitroglicerina y pregunta si debe administrarlo."
+    },
+    "vitals": {
+      "bp": "146/88",
+      "hr": 98,
+      "temp": 36.8,
+      "spo2": 96,
+      "rr": 20
+    },
+    "objectives": {
+      "en": [
+        "Know the absolute contraindication of PDE5 inhibitors with nitrates, NO donors and riociguat.",
+        "In chest pain after PDE5 inhibitor intake, inform the treating team and enforce the nitrate-free interval (sildenafil 24 h, tadalafil 48 h)."
+      ],
+      "de": [
+        "Die absolute Kontraindikation von PDE-5-Hemmern mit Nitraten, NO-Donatoren und Riociguat kennen.",
+        "Bei Thoraxschmerz nach PDE-5-Hemmer-Einnahme das Behandlungsteam informieren und die Nitratkarenz (Sildenafil 24 h, Tadalafil 48 h) durchsetzen."
+      ],
+      "es": [
+        "Conocer la contraindicación absoluta de los inhibidores de la PDE5 con nitratos, donantes de NO y riociguat.",
+        "Ante un dolor torácico tras tomar un inhibidor de la PDE5, informar al equipo y garantizar el intervalo sin nitratos (sildenafilo 24 h, tadalafilo 48 h)."
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "What do you order?",
+          "de": "Was ordnen Sie an?",
+          "es": "¿Qué indica?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Give glyceryl trinitrate 0.4 mg sublingually at once, as nitrates are standard in suspected acute coronary syndrome",
+              "de": "Glyceroltrinitrat 0,4 mg sublingual sofort geben, da Nitrate bei Verdacht auf akutes Koronarsyndrom Standard sind",
+              "es": "Administrar de inmediato nitroglicerina 0,4 mg sublingual, ya que los nitratos son el estándar ante la sospecha de síndrome coronario agudo"
+            },
+            "score": 0,
+            "minutes": 2,
+            "critical": true,
+            "feedback": {
+              "en": "Wrong and dangerous: sildenafil greatly potentiates the hypotensive effect of nitrates; severe hypotension, syncope and myocardial ischaemia may follow.",
+              "de": "Falsch und gefährlich: Sildenafil verstärkt die blutdrucksenkende Wirkung von Nitraten massiv; es drohen schwere Hypotonie, Synkope und Myokardischämie.",
+              "es": "Incorrecto y peligroso: el sildenafilo potencia enormemente el efecto hipotensor de los nitratos; puede producirse hipotensión grave, síncope e isquemia miocárdica."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "No nitrate (at the earliest 24 h after sildenafil); inform the team and cardiology about the PDE5 inhibitor intake and work up and treat the acute coronary syndrome without nitrates",
+              "de": "Kein Nitrat (frühestens 24 h nach Sildenafil); Team und Kardiologie über die PDE-5-Hemmer-Einnahme informieren und das akute Koronarsyndrom ohne Nitrate abklären und behandeln",
+              "es": "Ningún nitrato (como pronto 24 h después del sildenafilo); informar al equipo y a cardiología de la toma del inhibidor de la PDE5, y estudiar y tratar el síndrome coronario agudo sin nitratos"
+            },
+            "score": 10,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Correct: nitrates and NO donors are contraindicated for at least 24 h after sildenafil and 48 h after tadalafil. The rest of the ACS work-up and treatment (monitoring, serial troponin, cardiology input) continues unchanged.",
+              "de": "Richtig: Nitrate und NO-Donatoren sind nach Sildenafil für mindestens 24 h kontraindiziert, nach Tadalafil für 48 h. Die übrige ACS-Diagnostik und -Therapie (Monitoring, serielles Troponin, kardiologische Mitbehandlung) läuft unverändert weiter.",
+              "es": "Correcto: los nitratos y los donantes de NO están contraindicados durante al menos 24 h tras el sildenafilo y 48 h tras el tadalafilo. El resto del estudio y del tratamiento del SCA (monitorización, troponina seriada, valoración por cardiología) sigue sin cambios."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "A nitrate is allowed as long as systolic blood pressure is above 140 mmHg",
+              "de": "Nitrat ist erlaubt, solange der systolische Blutdruck über 140 mmHg liegt",
+              "es": "El nitrato está permitido mientras la presión arterial sistólica supere los 140 mmHg"
+            },
+            "score": 0,
+            "minutes": 2,
+            "critical": true,
+            "feedback": {
+              "en": "Wrong and dangerous: the interaction does not depend on baseline blood pressure; even a hypertensive patient can become severely hypotensive after a nitrate on sildenafil.",
+              "de": "Falsch und gefährlich: Die Wechselwirkung ist unabhängig vom Ausgangsblutdruck; auch ein hypertensiver Patient kann nach Nitratgabe unter Sildenafil schwer hypoton werden.",
+              "es": "Incorrecto y peligroso: la interacción no depende de la presión arterial basal; incluso un paciente hipertenso puede presentar una hipotensión grave tras un nitrato con sildenafilo."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Give molsidomine instead of glyceryl trinitrate, as it is not a nitrate",
+              "de": "Molsidomin statt Glyceroltrinitrat geben, da es kein Nitrat ist",
+              "es": "Administrar molsidomina en lugar de nitroglicerina, ya que no es un nitrato"
+            },
+            "score": 0,
+            "minutes": 2,
+            "critical": true,
+            "feedback": {
+              "en": "Wrong and dangerous: molsidomine is an NO donor and is just as contraindicated with PDE5 inhibitors as organic nitrates.",
+              "de": "Falsch und gefährlich: Molsidomin ist ein NO-Donator und mit PDE-5-Hemmern ebenso kontraindiziert wie organische Nitrate.",
+              "es": "Incorrecto y peligroso: la molsidomina es un donante de NO y está tan contraindicada con los inhibidores de la PDE5 como los nitratos orgánicos."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Interpret the symptoms as a harmless flushing or dyspepsia side effect of sildenafil, give an antacid and discharge",
+              "de": "Die Beschwerden als harmlose Flush- oder Dyspepsie-Nebenwirkung des Sildenafil werten, Antazidum geben und entlassen",
+              "es": "Interpretar los síntomas como un efecto adverso banal de rubefacción o dispepsia del sildenafilo, administrar un antiácido y dar el alta"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Wrong and dangerous: chest pressure with ST depression is an acute coronary syndrome until proven otherwise; discharge without work-up endangers the patient.",
+              "de": "Falsch und gefährlich: Thoraxdruck mit ST-Senkungen ist ein akutes Koronarsyndrom bis zum Beweis des Gegenteils; eine Entlassung ohne Abklärung gefährdet den Patienten.",
+              "es": "Incorrecto y peligroso: la opresión torácica con descenso del ST es un síndrome coronario agudo mientras no se demuestre lo contrario; dar el alta sin estudio pone en peligro al paciente."
+            }
+          }
+        ],
+        "best": "b"
+      }
+    ],
+    "takeaway": {
+      "en": "PDE5 inhibitors are absolutely contraindicated with nitrates and NO donors in any form (e.g. glyceryl trinitrate, isosorbide dinitrate, molsidomine, amyl nitrite) and with riociguat. In chest pain after intake, no nitrates until at least 24 h after sildenafil or 48 h after tadalafil, otherwise the usual ACS work-up; patients prescribed a PDE5 inhibitor are told always to mention it in an emergency.",
+      "de": "PDE-5-Hemmer sind mit Nitraten und NO-Donatoren in jeder Form (z. B. Glyceroltrinitrat, Isosorbiddinitrat, Molsidomin, Amylnitrit) sowie mit Riociguat absolut kontraindiziert. Bei Thoraxschmerz nach Einnahme Nitrate frühestens 24 h nach Sildenafil bzw. 48 h nach Tadalafil, ansonsten ACS-Abklärung wie üblich; Patienten mit PDE-5-Hemmer-Rezept werden aufgeklärt, die Einnahme im Notfall immer anzugeben.",
+      "es": "Los inhibidores de la PDE5 están absolutamente contraindicados con nitratos y donantes de NO en cualquier forma (p. ej., nitroglicerina, dinitrato de isosorbida, molsidomina, nitrito de amilo) y con riociguat. Ante un dolor torácico tras la toma, no administrar nitratos hasta al menos 24 h después del sildenafilo o 48 h después del tadalafilo y, por lo demás, estudiar el SCA como de costumbre; a los pacientes con receta de un inhibidor de la PDE5 se les indica que lo mencionen siempre en una urgencia."
+    },
+    "references": [
+      "bank-guide-andrologie",
+      "ema-medicines",
+      "fachinfo-de"
+    ]
+  },
+  {
+    "id": "sys-ae-apalutamide-seizure",
+    "area": "emergency",
+    "level": 2,
+    "acuity": "urgent",
+    "duty": "night",
+    "patient": {
+      "name": "Volker Tiedemann",
+      "age": 76,
+      "sex": "male"
+    },
+    "title": {
+      "en": "First seizure on apalutamide",
+      "de": "Erster Krampfanfall unter Apalutamid",
+      "es": "Primera crisis convulsiva con apalutamida"
+    },
+    "presenting": {
+      "en": "76-year-old man with metastatic hormone-sensitive prostate cancer (bone metastases) on ADT plus apalutamide 240 mg daily for 5 months; latest PSA 0.4 ng/ml. During treatment he developed a grade 1 maculopapular rash, which healed with a topical steroid, and hypothyroidism, treated with levothyroxine 50 µg for 2 months (TSH one week ago 2.1 mU/l). Tonight, according to his wife, he had a first generalised tonic-clonic seizure with tongue biting; no history of epilepsy. In the emergency department he is awake again, oriented and without focal neurological deficit. Glucose 112 mg/dl, sodium 139 mmol/l, calcium 2.3 mmol/l; non-contrast head CT shows no haemorrhage and no mass.",
+      "de": "76-jähriger Patient mit metastasiertem hormonsensitivem Prostatakarzinom (Knochenmetastasen) erhält seit 5 Monaten ADT plus Apalutamid 240 mg täglich; PSA zuletzt 0,4 ng/ml. Im Verlauf traten ein makulopapulöses Exanthem Grad 1, das unter topischem Steroid abheilte, und eine Hypothyreose auf, die seit 2 Monaten mit Levothyroxin 50 µg behandelt wird (TSH vor 1 Woche 2,1 mU/l). Heute Nacht erlitt er laut Ehefrau einen ersten generalisierten tonisch-klonischen Anfall mit Zungenbiss; eine Epilepsie ist nicht bekannt. In der Notaufnahme ist er wieder wach, orientiert und ohne fokal-neurologisches Defizit. Blutzucker 112 mg/dl, Natrium 139 mmol/l, Kalzium 2,3 mmol/l, das native CT des Schädels zeigt keine Blutung und keine Raumforderung.",
+      "es": "Varón de 76 años con cáncer de próstata metastásico hormonosensible (metástasis óseas) en tratamiento desde hace 5 meses con deprivación androgénica más apalutamida 240 mg diarios; último PSA 0,4 ng/ml. Durante el tratamiento presentó un exantema maculopapular de grado 1, resuelto con corticoide tópico, y un hipotiroidismo tratado desde hace 2 meses con levotiroxina 50 µg (TSH hace una semana 2,1 mU/l). Esta noche, según su esposa, sufrió una primera crisis tónico-clónica generalizada con mordedura de lengua; sin antecedentes de epilepsia. En urgencias está de nuevo despierto, orientado y sin focalidad neurológica. Glucemia 112 mg/dl, sodio 139 mmol/l, calcio 2,3 mmol/l; la TC craneal sin contraste no muestra hemorragia ni masa."
+    },
+    "vitals": {
+      "bp": "152/86",
+      "hr": 94,
+      "temp": 36.9,
+      "spo2": 96,
+      "rr": 18
+    },
+    "objectives": {
+      "en": [
+        "Recognise seizures as a class effect of androgen receptor inhibitors and draw the consequence for therapy",
+        "Classify typical side effects of apalutamide (rash, hypothyroidism, falls and fractures)"
+      ],
+      "de": [
+        "Krampfanfälle als Klasseneffekt der Androgenrezeptor-Inhibitoren erkennen und die Konsequenz für die Therapie ziehen",
+        "Typische Nebenwirkungen von Apalutamid (Exanthem, Hypothyreose, Stürze und Frakturen) einordnen"
+      ],
+      "es": [
+        "Reconocer las crisis convulsivas como efecto de clase de los inhibidores del receptor androgénico y extraer la consecuencia terapéutica",
+        "Clasificar los efectos adversos típicos de la apalutamida (exantema, hipotiroidismo, caídas y fracturas)"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "What is the appropriate approach regarding systemic therapy?",
+          "de": "Was ist das angemessene Vorgehen bezüglich der Systemtherapie?",
+          "es": "¿Cuál es la actitud adecuada respecto al tratamiento sistémico?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Continue apalutamide unchanged and start levetiracetam as seizure prophylaxis",
+              "de": "Apalutamid unverändert fortführen und Levetiracetam als Anfallsprophylaxe beginnen",
+              "es": "Mantener la apalutamida sin cambios e iniciar levetiracetam como profilaxis anticonvulsiva"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Dangerous: apalutamide lowers the seizure threshold; according to the product information it must be stopped permanently after a seizure. An anticonvulsant does not make continuing the causative drug safe, and further seizures with falls and fractures may follow.",
+              "de": "Gefährlich: Apalutamid senkt die Krampfschwelle; nach einem Anfall ist es laut Fachinformation dauerhaft abzusetzen. Ein Antikonvulsivum macht die Weitergabe des auslösenden Medikaments nicht sicher, und weitere Anfälle mit Sturz und Fraktur drohen.",
+              "es": "Peligroso: la apalutamida reduce el umbral convulsivo; según la ficha técnica debe suspenderse definitivamente tras una crisis. Un anticonvulsivo no hace seguro mantener el fármaco causal y amenazan nuevas crisis con caídas y fracturas."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Pause apalutamide for 1 week and then continue at 180 mg daily",
+              "de": "Apalutamid 1 Woche pausieren und dann mit 180 mg täglich fortsetzen",
+              "es": "Interrumpir la apalutamida 1 semana y continuar después con 180 mg diarios"
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: interruption and dose reduction are intended for intolerable grade ≥ 3 adverse reactions such as a severe rash, not for a seizure. After a seizure apalutamide is not restarted.",
+              "de": "Falsch: Pause und Dosisreduktion sind für intolerable Nebenwirkungen Grad ≥ 3 wie ein schweres Exanthem vorgesehen, nicht für einen Krampfanfall. Nach einem Anfall wird Apalutamid nicht wieder aufgenommen.",
+              "es": "Incorrecto: la interrupción y la reducción de dosis están previstas para efectos adversos intolerables de grado ≥ 3, como un exantema grave, no para una crisis convulsiva. Tras una crisis no se reanuda la apalutamida."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Switch to enzalutamide 160 mg daily",
+              "de": "Auf Enzalutamid 160 mg täglich umstellen",
+              "es": "Cambiar a enzalutamida 160 mg diarios"
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: enzalutamide also inhibits GABA-A receptors, crosses the blood–brain barrier and carries a seizure warning. Switching within the same class does not remove the risk and makes no sense after a seizure.",
+              "de": "Falsch: Auch Enzalutamid hemmt GABA-A-Rezeptoren, passiert die Blut-Hirn-Schranke und trägt eine Warnung zu Krampfanfällen. Ein Wechsel innerhalb derselben Klasse beseitigt das Risiko nicht und ist nach einem Anfall nicht sinnvoll.",
+              "es": "Incorrecto: la enzalutamida también inhibe los receptores GABA-A, atraviesa la barrera hematoencefálica y tiene advertencia de crisis convulsivas. Cambiar dentro de la misma clase no elimina el riesgo y no tiene sentido tras una crisis."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Increase levothyroxine because hypothyroidism explains the seizure; continue apalutamide",
+              "de": "Levothyroxin erhöhen, da die Hypothyreose den Anfall erklärt; Apalutamid fortführen",
+              "es": "Aumentar la levotiroxina porque el hipotiroidismo explica la crisis; mantener la apalutamida"
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: hypothyroidism is a known side effect of apalutamide, but with a TSH of 2.1 mU/l it is well controlled and does not explain a seizure. Increasing the dose would risk iatrogenic hyperthyroidism and miss the actual cause.",
+              "de": "Falsch: Die Hypothyreose ist eine bekannte Nebenwirkung von Apalutamid, ist aber mit einem TSH von 2,1 mU/l gut eingestellt und erklärt keinen Anfall. Eine Dosiserhöhung würde eine iatrogene Hyperthyreose riskieren und die eigentliche Ursache übersehen.",
+              "es": "Incorrecto: el hipotiroidismo es un efecto adverso conocido de la apalutamida, pero con una TSH de 2,1 mU/l está bien controlado y no explica una crisis. Aumentar la dosis arriesgaría un hipertiroidismo iatrogénico y pasaría por alto la causa real."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Stop apalutamide permanently, continue ADT, arrange brain MRI and a neurological work-up and decide on further systemic therapy at the tumour board",
+              "de": "Apalutamid dauerhaft absetzen, ADT fortführen, cMRT und neurologische Abklärung veranlassen und die weitere Systemtherapie im Tumorboard festlegen",
+              "es": "Suspender definitivamente la apalutamida, mantener la deprivación androgénica, solicitar RM cerebral y valoración neurológica y decidir el tratamiento sistémico posterior en el comité de tumores"
+            },
+            "score": 10,
+            "minutes": 10,
+            "critical": false,
+            "feedback": {
+              "en": "Correct: a seizure on apalutamide requires permanent discontinuation; castration is continued. MRI and neurology clarify other causes such as brain metastases. Further therapy is decided at the multidisciplinary board, preferably with an agent without relevant CNS penetration.",
+              "de": "Richtig: Ein Krampfanfall unter Apalutamid erfordert das dauerhafte Absetzen; die Kastration wird fortgeführt. MRT und Neurologie klären andere Ursachen wie Hirnmetastasen. Die Folgetherapie wird interdisziplinär festgelegt, bevorzugt mit einer Substanz ohne relevante ZNS-Gängigkeit.",
+              "es": "Correcto: una crisis convulsiva con apalutamida obliga a suspenderla definitivamente; la castración se mantiene. La RM y la neurología descartan otras causas, como metástasis cerebrales. El tratamiento posterior se decide en el comité multidisciplinar, preferiblemente con un fármaco sin paso relevante al SNC."
+            }
+          }
+        ],
+        "best": "e"
+      }
+    ],
+    "takeaway": {
+      "en": "Rule: enzalutamide and apalutamide lower the seizure threshold; after a seizure they are stopped permanently, and switching within the class is no solution. On apalutamide also watch for rash (topical steroid, interruption only from grade 3), hypothyroidism (check TSH) and falls and fractures.",
+      "de": "Merksatz: Enzalutamid und Apalutamid senken die Krampfschwelle; nach einem Anfall werden sie dauerhaft abgesetzt, und ein Wechsel innerhalb der Klasse ist keine Lösung. Unter Apalutamid zusätzlich auf Exanthem (Steroid topisch, Pause erst ab Grad 3), Hypothyreose (TSH kontrollieren) sowie Stürze und Frakturen achten.",
+      "es": "Regla: la enzalutamida y la apalutamida reducen el umbral convulsivo; tras una crisis se suspenden definitivamente y cambiar dentro de la clase no es una solución. Con apalutamida vigilar además el exantema (corticoide tópico, interrupción solo a partir de grado 3), el hipotiroidismo (controlar TSH) y las caídas y fracturas."
+    },
+    "references": [
+      "bank-guide-prostatakarzinom",
+      "ema-medicines",
+      "fachinfo-de"
+    ]
+  },
+  {
+    "id": "sys-ae-gnrh-flare-impending-cord-compression",
+    "area": "emergency",
+    "level": 2,
+    "acuity": "critical",
+    "duty": "night",
+    "patient": {
+      "name": "Uwe Marquardt",
+      "age": 66,
+      "sex": "male"
+    },
+    "title": {
+      "de": "Beginn der Androgendeprivation bei drohender Myelonkompression",
+      "en": "Starting androgen deprivation with impending spinal cord compression",
+      "es": "Inicio de la deprivación androgénica con compresión medular inminente"
+    },
+    "presenting": {
+      "en": "66-year-old man with thoracic back pain increasing over 6 weeks (NRS 6/10). PSA 612 ng/ml, biopsy ISUP 5; PSMA PET/CT shows more than 20 bone metastases. Spinal MRI shows a T10 metastasis with an epidural component touching the spinal cord, without myelopathy signal. He is neurologically intact with preserved bladder and bowel function. Androgen deprivation is to be started tonight; radiation oncology and spinal surgery have been informed.",
+      "de": "66-jähriger Patient mit seit 6 Wochen zunehmenden thorakalen Rückenschmerzen (NRS 6/10). PSA 612 ng/ml, Biopsie ISUP 5; das PSMA-PET/CT zeigt mehr als 20 Knochenmetastasen. Im MRT der Wirbelsäule findet sich eine Metastase in BWK 10 mit epiduraler Komponente, die das Myelon berührt, ohne Myelopathiesignal. Neurologisch ist er unauffällig, Blasen- und Mastdarmfunktion sind erhalten. Eine Androgendeprivation soll noch in dieser Nacht begonnen werden; Strahlentherapie und Wirbelsäulenchirurgie sind informiert.",
+      "es": "Varón de 66 años con dolor dorsal torácico creciente desde hace 6 semanas (EVN 6/10). PSA 612 ng/ml, biopsia ISUP 5; la PET/TC PSMA muestra más de 20 metástasis óseas. La RM de columna muestra una metástasis en D10 con componente epidural que contacta con la médula, sin señal de mielopatía. Neurológicamente está intacto, con función vesical e intestinal conservada. Se va a iniciar la deprivación androgénica esta misma noche; radioterapia y cirugía de columna están avisadas."
+    },
+    "vitals": {
+      "bp": "142/84",
+      "hr": 82,
+      "temp": 36.8,
+      "spo2": 97,
+      "rr": 16
+    },
+    "objectives": {
+      "en": [
+        "Explain the flare phenomenon with LHRH agonists and its dangers in high-volume disease",
+        "Start androgen deprivation without a testosterone surge when spinal cord compression is impending"
+      ],
+      "de": [
+        "Das Flare-Phänomen unter LHRH-Agonisten und seine Gefahren bei hoher Tumorlast erklären",
+        "Bei drohender Myelonkompression die Androgendeprivation ohne Testosteronanstieg beginnen"
+      ],
+      "es": [
+        "Explicar el fenómeno flare con agonistas LHRH y sus riesgos con alta carga tumoral",
+        "Iniciar la deprivación androgénica sin aumento de testosterona ante una compresión medular inminente"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "How do you start androgen deprivation?",
+          "de": "Wie beginnen Sie die Androgendeprivation?",
+          "es": "¿Cómo inicia la deprivación androgénica?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "LHRH agonist depot today; bicalutamide only if the pain increases",
+              "de": "LHRH-Agonist-Depot heute; Bicalutamid nur, falls die Schmerzen zunehmen",
+              "es": "Agonista LHRH depot hoy; bicalutamida solo si aumenta el dolor"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Dangerous: the agonist causes a testosterone surge in the first 1–2 weeks that can stimulate epidural tumour growth and cause paraplegia. An antiandrogen only once symptoms appear comes too late.",
+              "de": "Gefährlich: Der Agonist löst in den ersten 1–2 Wochen einen Testosteronanstieg aus, der das epidurale Tumorwachstum anfachen und eine Querschnittslähmung verursachen kann. Ein Antiandrogen erst bei Symptomen kommt zu spät.",
+              "es": "Peligroso: el agonista provoca un aumento de testosterona en las primeras 1–2 semanas que puede estimular el crecimiento tumoral epidural y causar paraplejia. Un antiandrógeno solo cuando aparecen síntomas llega tarde."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "A GnRH antagonist, e.g. degarelix 240 mg s.c. today and then 80 mg monthly, alongside assessment by radiation oncology and spinal surgery",
+              "de": "GnRH-Antagonist, z. B. Degarelix 240 mg s.c. heute und danach 80 mg monatlich, parallel zur Mitbeurteilung durch Strahlentherapie und Wirbelsäulenchirurgie",
+              "es": "Un antagonista de GnRH, p. ej. degarelix 240 mg s.c. hoy y después 80 mg mensuales, junto con la valoración por radioterapia y cirugía de columna"
+            },
+            "score": 10,
+            "minutes": 10,
+            "critical": false,
+            "feedback": {
+              "en": "Correct: the antagonist lowers testosterone to castrate levels within a few days without a flare. With impending spinal cord compression or outflow obstruction it (or orchiectomy) is preferred over an agonist; local treatment of the metastasis is planned in parallel.",
+              "de": "Richtig: Der Antagonist senkt das Testosteron innerhalb weniger Tage auf Kastrationsniveau, ohne Flare. Bei drohender Myelon- oder Harnabflussstörung ist er (oder die Orchiektomie) einem Agonisten vorzuziehen; die lokale Therapie der Metastase wird parallel geplant.",
+              "es": "Correcto: el antagonista reduce la testosterona a niveles de castración en pocos días, sin flare. Ante compresión medular u obstrucción urinaria inminentes es preferible a un agonista (o la orquiectomía); el tratamiento local de la metástasis se planifica en paralelo."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "LHRH agonist depot today and bicalutamide 50 mg from the second week",
+              "de": "LHRH-Agonist-Depot heute und Bicalutamid 50 mg ab der zweiten Woche",
+              "es": "Agonista LHRH depot hoy y bicalutamida 50 mg a partir de la segunda semana"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Dangerous: the antiandrogen must start before or at the latest together with the agonist, because the testosterone surge occurs in the first days. Starting in the second week does not protect the cord; with impending compression an antagonist is preferred anyway.",
+              "de": "Gefährlich: Das Antiandrogen muss vor oder spätestens zeitgleich mit dem Agonisten beginnen, weil der Testosteronanstieg in den ersten Tagen auftritt. Ein Start in der zweiten Woche schützt das Myelon nicht; bei drohender Kompression ist ohnehin ein Antagonist vorzuziehen.",
+              "es": "Peligroso: el antiandrógeno debe iniciarse antes o como muy tarde a la vez que el agonista, porque el aumento de testosterona se produce en los primeros días. Empezar en la segunda semana no protege la médula; ante compresión inminente es preferible de todos modos un antagonista."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Start hormone therapy only after radiotherapy of T10 is completed",
+              "de": "Hormontherapie erst nach Abschluss der Strahlentherapie von BWK 10 beginnen",
+              "es": "Iniciar la hormonoterapia solo tras completar la radioterapia de D10"
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: androgen deprivation is the most effective systemic therapy and should start immediately in high-volume disease. Radiotherapy and hormone therapy are not mutually exclusive; delaying wastes time.",
+              "de": "Falsch: Die Androgendeprivation ist die wirksamste Systemtherapie und soll bei hoher Tumorlast sofort beginnen. Bestrahlung und Hormontherapie schließen sich nicht aus, ein Aufschub verschenkt Zeit.",
+              "es": "Incorrecto: la deprivación androgénica es el tratamiento sistémico más eficaz y debe iniciarse de inmediato con alta carga tumoral. Radioterapia y hormonoterapia no se excluyen; retrasarla hace perder tiempo."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Apalutamide 240 mg daily as sole therapy without castration",
+              "de": "Apalutamid 240 mg täglich als alleinige Therapie ohne Kastration",
+              "es": "Apalutamida 240 mg diarios como tratamiento único sin castración"
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: androgen receptor inhibitors are approved and supported by evidence in metastatic disease only in combination with castration. Without castration testosterone rises reactively and the effect is insufficient.",
+              "de": "Falsch: Androgenrezeptor-Inhibitoren sind beim metastasierten Karzinom nur in Kombination mit einer Kastration zugelassen und belegt. Ohne Kastration steigt das Testosteron reaktiv an, und die Wirkung ist unzureichend.",
+              "es": "Incorrecto: los inhibidores del receptor androgénico solo están aprobados y respaldados en enfermedad metastásica en combinación con castración. Sin castración la testosterona aumenta de forma reactiva y el efecto es insuficiente."
+            }
+          }
+        ],
+        "best": "b"
+      }
+    ],
+    "takeaway": {
+      "en": "Rule: LHRH agonists cause an initial testosterone surge (flare). In high-volume disease an antiandrogen is started before or with the first injection; with impending spinal cord compression or urinary retention a GnRH antagonist (or orchiectomy) is the safe choice.",
+      "de": "Merksatz: LHRH-Agonisten verursachen einen initialen Testosteronanstieg (Flare). Bei hoher Tumorlast wird ein Antiandrogen vor oder mit der ersten Injektion begonnen; bei drohender Myelonkompression oder Harnverhalt ist ein GnRH-Antagonist (oder die Orchiektomie) die sichere Wahl.",
+      "es": "Regla: los agonistas LHRH provocan un aumento inicial de testosterona (flare). Con alta carga tumoral se inicia un antiandrógeno antes o con la primera inyección; ante compresión medular o retención urinaria inminentes, un antagonista de GnRH (o la orquiectomía) es la opción segura."
+    },
+    "references": [
+      "bank-guide-prostatakarzinom",
+      "ema-medicines",
+      "fachinfo-de"
+    ]
+  },
+  {
+    "id": "sys-ae-bcg-systemic-infection-sepsis",
+    "area": "emergency",
+    "level": 3,
+    "acuity": "critical",
+    "duty": "night",
+    "patient": {
+      "name": "Konrad Wettstein",
+      "age": 73,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Rigors and hypotension after BCG instillation",
+      "de": "Schüttelfrost und Hypotonie nach BCG-Instillation",
+      "es": "Escalofríos e hipotensión tras instilación de BCG"
+    },
+    "presenting": {
+      "en": "73-year-old man with pTa high-grade bladder cancer and CIS; 30 hours ago he received the sixth BCG induction instillation, given after a traumatic catheterisation with mild visible haematuria. Since the previous evening he has had rigors, fever up to 39.6 °C, increasing confusion and dyspnoea. BP 88/52 mmHg, pulse 122/min, SpO2 93 % on room air. Laboratory: CRP 186 mg/l, platelets 96/nl, ALT 142 U/l, ALP 310 U/l, lactate 3.8 mmol/l; the chest X-ray shows fine nodular opacities on both sides. Blood and urine cultures have been taken.",
+      "de": "73-jähriger Patient mit pTa High Grade und CIS der Harnblase; vor 30 Stunden erhielt er die sechste BCG-Induktionsinstillation, die nach traumatischer Katheterisierung mit leichter Makrohämaturie erfolgte. Seit dem Vorabend Schüttelfrost, Fieber bis 39,6 °C, zunehmende Verwirrtheit und Luftnot. RR 88/52 mmHg, Puls 122/min, SpO2 93 % unter Raumluft. Labor: CRP 186 mg/l, Thrombozyten 96/nl, ALT 142 U/l, AP 310 U/l, Laktat 3,8 mmol/l; die Röntgenaufnahme des Thorax zeigt feinnoduläre Verschattungen beidseits. Blutkulturen und Urinkultur sind abgenommen.",
+      "es": "Varón de 73 años con carcinoma vesical pTa de alto grado y CIS; hace 30 horas recibió la sexta instilación de inducción de BCG, administrada tras un sondaje traumático con hematuria macroscópica leve. Desde la tarde anterior presenta escalofríos, fiebre de hasta 39,6 °C, confusión creciente y disnea. PA 88/52 mmHg, pulso 122/min, SpO2 93 % con aire ambiente. Analítica: PCR 186 mg/l, plaquetas 96/nl, ALT 142 U/l, FA 310 U/l, lactato 3,8 mmol/l; la radiografía de tórax muestra opacidades micronodulares bilaterales. Se han extraído hemocultivos y urocultivo."
+    },
+    "vitals": {
+      "bp": "88/52",
+      "hr": 122,
+      "temp": 39.6,
+      "spo2": 93,
+      "rr": 26
+    },
+    "objectives": {
+      "de": [
+        "Lokale BCG-Zystitis von systemischer BCG-Infektion bzw. BCG-Sepsis abgrenzen",
+        "Die Akuttherapie der BCG-Sepsis mit tuberkulostatischer Dreifachtherapie und Kortikosteroiden kennen"
+      ],
+      "en": [
+        "Distinguish local BCG cystitis from systemic BCG infection or BCG sepsis",
+        "Know the acute treatment of BCG sepsis with triple antituberculous therapy and corticosteroids"
+      ],
+      "es": [
+        "Distinguir la cistitis local por BCG de la infección sistémica o sepsis por BCG",
+        "Conocer el tratamiento agudo de la sepsis por BCG con triple terapia antituberculosa y corticoides"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "What is the most appropriate management?",
+          "de": "Was ist das angemessene Vorgehen?",
+          "es": "¿Cuál es el manejo más adecuado?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Outpatient treatment with an NSAID and an antispasmodic, postpone the next BCG instillation by one week",
+              "de": "Ambulante Therapie mit NSAR und Spasmolytikum, nächste BCG-Instillation um eine Woche verschieben",
+              "es": "Tratamiento ambulatorio con AINE y espasmolítico, aplazar una semana la siguiente instilación de BCG"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": true,
+            "feedback": {
+              "en": "This is the approach for mild local BCG cystitis. Here there are fever, hypotension, hypoxaemia, hepatitis and pulmonary lesions: a systemic BCG infection that is life-threatening without inpatient treatment.",
+              "de": "Das ist das Vorgehen bei lokaler BCG-Zystitis mit leichten Beschwerden. Hier liegen Fieber, Hypotonie, Hypoxämie, Hepatitis und pulmonale Herde vor: eine systemische BCG-Infektion, die ohne stationäre Therapie lebensbedrohlich ist.",
+              "es": "Es el manejo de la cistitis local leve por BCG. Aquí hay fiebre, hipotensión, hipoxemia, hepatitis y lesiones pulmonares: una infección sistémica por BCG potencialmente mortal sin tratamiento hospitalario."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Ciprofloxacin monotherapy for 14 days, then continue BCG maintenance at one third of the dose",
+              "de": "Ciprofloxacin-Monotherapie über 14 Tage, danach BCG-Erhaltung mit einem Drittel der Dosis fortsetzen",
+              "es": "Monoterapia con ciprofloxacino durante 14 días y después continuar el mantenimiento con un tercio de la dosis de BCG"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": true,
+            "feedback": {
+              "en": "A fluoroquinolone alone does not adequately treat a disseminated Mycobacterium bovis infection. After BCG sepsis any further BCG is contraindicated, even at a reduced dose.",
+              "de": "Ein Fluorchinolon allein behandelt eine disseminierte Infektion mit Mycobacterium bovis nicht ausreichend. Nach einer BCG-Sepsis ist jede weitere BCG-Gabe kontraindiziert, auch in reduzierter Dosis.",
+              "es": "Una fluoroquinolona sola no trata adecuadamente una infección diseminada por Mycobacterium bovis. Tras una sepsis por BCG está contraindicada cualquier nueva dosis de BCG, incluso reducida."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Admit to the ward or intensive care, stop BCG permanently, start isoniazid, rifampicin and ethambutol plus prednisolone, and add empirical broad-spectrum antibiotics until bacterial urosepsis is excluded",
+              "de": "Stationäre bzw. intensivmedizinische Aufnahme, BCG endgültig absetzen, Isoniazid, Rifampicin und Ethambutol plus Prednisolon, zusätzlich empirisch breit antibiotisch bis zum Ausschluss einer bakteriellen Urosepsis",
+              "es": "Ingreso en planta o UCI, suspender BCG definitivamente, iniciar isoniazida, rifampicina y etambutol más prednisolona y añadir antibioterapia empírica de amplio espectro hasta descartar urosepsis bacteriana"
+            },
+            "score": 10,
+            "minutes": 20,
+            "critical": false,
+            "feedback": {
+              "en": "Correct: after a traumatic instillation this picture is BCG sepsis. The guideline recommends triple antituberculous therapy (isoniazid 300 mg, rifampicin 600 mg, ethambutol 1200 mg daily, about 6 months) with early prednisolone; empirical antibiotics are added until gram-negative sepsis is excluded.",
+              "de": "Richtig: Das klinische Bild nach traumatischer Instillation entspricht einer BCG-Sepsis. Die Leitlinie empfiehlt die tuberkulostatische Dreifachtherapie (Isoniazid 300 mg, Rifampicin 600 mg, Ethambutol 1200 mg täglich, etwa 6 Monate) mit frühzeitigem Prednisolon; bis zum Ausschluss einer gramnegativen Sepsis wird zusätzlich empirisch antibiotisch behandelt.",
+              "es": "Correcto: tras una instilación traumática, este cuadro corresponde a una sepsis por BCG. La guía recomienda triple terapia antituberculosa (isoniazida 300 mg, rifampicina 600 mg, etambutol 1200 mg diarios, unos 6 meses) con prednisolona precoz; se añade antibioterapia empírica hasta descartar sepsis por gramnegativos."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Isoniazid monotherapy 300 mg daily for three months and continue BCG maintenance once afebrile",
+              "de": "Isoniazid-Monotherapie 300 mg täglich über drei Monate und BCG-Erhaltung nach Entfieberung fortsetzen",
+              "es": "Monoterapia con isoniazida 300 mg diarios durante tres meses y continuar el mantenimiento con BCG cuando ceda la fiebre"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": true,
+            "feedback": {
+              "de": "Eine Isoniazid-Monotherapie reicht bei disseminierter M.-bovis-Infektion mit Organdysfunktion nicht aus; erforderlich ist die Dreifachkombination mit Kortikosteroiden. Nach einer systemischen BCG-Reaktion ist jede weitere BCG-Gabe kontraindiziert.",
+              "en": "Isoniazid monotherapy is insufficient for disseminated M. bovis infection with organ dysfunction; triple therapy with corticosteroids is required. After a systemic BCG reaction any further BCG is contraindicated.",
+              "es": "La monoterapia con isoniazida es insuficiente en una infección diseminada por M. bovis con disfunción orgánica; se requiere la triple terapia con corticoides. Tras una reacción sistémica a BCG, cualquier nueva administración de BCG está contraindicada."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Quadruple antituberculous therapy including pyrazinamide without corticosteroids, resume BCG after completing therapy",
+              "de": "Tuberkulostatische Vierfachtherapie mit Pyrazinamid ohne Kortikosteroide, BCG nach Abschluss der Therapie wieder aufnehmen",
+              "es": "Cuádruple terapia antituberculosa con pirazinamida sin corticoides, reanudar BCG al terminar el tratamiento"
+            },
+            "score": 0,
+            "minutes": 15,
+            "critical": false,
+            "feedback": {
+              "en": "Mycobacterium bovis is naturally resistant to pyrazinamide, which therefore adds nothing. In BCG sepsis corticosteroids belong early in treatment, and re-exposure to BCG is contraindicated.",
+              "de": "Mycobacterium bovis ist natürlich resistent gegen Pyrazinamid, das daher nichts beiträgt. Bei BCG-Sepsis gehören Kortikosteroide früh dazu, und eine erneute BCG-Exposition ist kontraindiziert.",
+              "es": "Mycobacterium bovis es resistente de forma natural a la pirazinamida, que por tanto no aporta nada. En la sepsis por BCG los corticoides deben darse precozmente y la reexposición a BCG está contraindicada."
+            }
+          }
+        ],
+        "best": "c"
+      }
+    ],
+    "takeaway": {
+      "de": "Lokale BCG-Zystitis wird symptomatisch behandelt, ggf. wird die nächste Instillation verschoben. Fieber > 38,5 °C über 48 Stunden, Hypotonie, Organdysfunktion oder Organbefall nach BCG bedeuten: BCG endgültig absetzen, sofort abklären und bei BCG-Sepsis Isoniazid, Rifampicin und Ethambutol plus frühzeitig Kortikosteroide geben, zusätzlich empirisch antibiotisch bis zum Ausschluss einer bakteriellen Sepsis. Keine Fluorchinolon-Monotherapie; Pyrazinamid wirkt nicht gegen M. bovis.",
+      "en": "Local BCG cystitis is treated symptomatically, postponing the next instillation if needed. Fever > 38.5 °C for more than 48 hours, hypotension, organ dysfunction or organ involvement after BCG mean: stop BCG permanently, investigate at once and, in BCG sepsis, give isoniazid, rifampicin and ethambutol plus early corticosteroids, with empirical antibiotics until bacterial sepsis is excluded. No fluoroquinolone monotherapy; pyrazinamide does not work against M. bovis.",
+      "es": "La cistitis local por BCG se trata sintomáticamente, aplazando la siguiente instilación si es necesario. Fiebre > 38,5 °C durante más de 48 horas, hipotensión, disfunción orgánica o afectación de órganos tras BCG implican: suspender BCG definitivamente, estudiar de inmediato y, en la sepsis por BCG, administrar isoniazida, rifampicina y etambutol más corticoides precoces, con antibioterapia empírica hasta descartar una sepsis bacteriana. No se debe usar monoterapia con fluoroquinolonas; la pirazinamida no actúa frente a M. bovis."
+    },
+    "references": [
+      "bank-guide-nmibc",
+      "ema-medicines"
+    ]
+  },
+  {
+    "id": "sys-ae-fluoroquinolone-achilles-steroid",
+    "area": "emergency",
+    "level": 2,
+    "acuity": "urgent",
+    "duty": "night",
+    "patient": {
+      "name": "Ingeborg Lammers",
+      "age": 74,
+      "sex": "female"
+    },
+    "title": {
+      "en": "Heel pain on day three of cystitis treatment",
+      "de": "Fersenschmerz am dritten Tag der Zystitistherapie",
+      "es": "Dolor en el talón al tercer día de tratamiento de una cistitis"
+    },
+    "presenting": {
+      "en": "A 74-year-old woman presents at night with pain in both Achilles tendons, worse on the right, increasing since the afternoon; walking is painful. Three days ago an on-call doctor prescribed ciprofloxacin 500 mg twice daily for uncomplicated cystitis. Regular medication: prednisolone 7.5 mg daily (polymyalgia rheumatica), ramipril; known infrarenal aortic aneurysm of 4.1 cm. Examination: tender, thickened Achilles tendons, Thompson test normal on both sides, tendons palpably continuous. Dysuria is improving, the urine culture is pending, eGFR 52 ml/min/1.73 m².",
+      "de": "74-jährige Patientin stellt sich nachts mit seit dem Nachmittag zunehmenden Schmerzen an beiden Achillessehnen vor, rechts stärker; das Gehen ist schmerzhaft. Wegen einer unkomplizierten Zystitis erhielt sie vor drei Tagen im Bereitschaftsdienst Ciprofloxacin 500 mg zweimal täglich. Dauermedikation: Prednisolon 7,5 mg täglich (Polymyalgia rheumatica), Ramipril; bekanntes infrarenales Aortenaneurysma 4,1 cm. Befund: druckschmerzhafte, verdickte Achillessehnen, Thompson-Test beidseits unauffällig, Sehnen tastbar durchgehend. Die Dysurie ist rückläufig, die Urinkultur steht aus, eGFR 52 ml/min/1,73 m².",
+      "es": "Mujer de 74 años que acude de noche por dolor en ambos tendones de Aquiles, de predominio derecho, creciente desde la tarde; caminar le duele. Hace tres días un médico de guardia le pautó ciprofloxacino 500 mg cada 12 horas por una cistitis no complicada. Medicación habitual: prednisolona 7,5 mg diarios (polimialgia reumática), ramipril; aneurisma aórtico infrarrenal conocido de 4,1 cm. Exploración: tendones de Aquiles engrosados y dolorosos a la palpación, prueba de Thompson normal en ambos lados, tendones palpables sin solución de continuidad. La disuria está mejorando, el urocultivo está pendiente, FGe 52 ml/min/1,73 m²."
+    },
+    "vitals": {
+      "bp": "146/82",
+      "hr": 84,
+      "temp": 36.8,
+      "spo2": 97,
+      "rr": 16
+    },
+    "objectives": {
+      "de": [
+        "Sehnenschäden als schwere Nebenwirkung der Fluorchinolone und deren Risikofaktoren erkennen",
+        "Die EU-Anwendungsbeschränkungen der Fluorchinolone bei unkomplizierter Zystitis kennen"
+      ],
+      "en": [
+        "Recognise tendon damage as a serious adverse effect of fluoroquinolones and its risk factors",
+        "Know the EU restrictions on fluoroquinolone use in uncomplicated cystitis"
+      ],
+      "es": [
+        "Reconocer el daño tendinoso como efecto adverso grave de las fluoroquinolonas y sus factores de riesgo",
+        "Conocer las restricciones de la UE al uso de fluoroquinolonas en la cistitis no complicada"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "What is the most appropriate management?",
+          "de": "Was ist das angemessene Vorgehen?",
+          "es": "¿Cuál es el manejo más adecuado?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Continue ciprofloxacin for the remaining days and add ibuprofen for pain relief",
+              "de": "Ciprofloxacin für die restlichen Tage fortsetzen und Ibuprofen zur Schmerzlinderung ergänzen",
+              "es": "Continuar el ciprofloxacino los días restantes y añadir ibuprofeno para el dolor"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "At the first signs of tendinitis the fluoroquinolone must be stopped immediately; the risk of rupture persists for months after treatment ends. An NSAID only treats the symptom and also strains the kidneys.",
+              "de": "Bei ersten Zeichen einer Tendinitis muss das Fluorchinolon sofort abgesetzt werden; die Rupturgefahr besteht noch Monate nach Therapieende. Ein NSAR behandelt nur das Symptom und belastet zusätzlich die Niere.",
+              "es": "Ante los primeros signos de tendinitis hay que suspender de inmediato la fluoroquinolona; el riesgo de rotura persiste meses después de terminar el tratamiento. Un AINE solo trata el síntoma y además sobrecarga el riñón."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Switch to levofloxacin because it causes tendon damage less often",
+              "de": "Umstellung auf Levofloxacin, da es seltener Sehnenschäden verursacht",
+              "es": "Cambiar a levofloxacino porque causa daño tendinoso con menos frecuencia"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Tendon damage, aortic aneurysm risk and neuropsychiatric effects are class effects of all fluoroquinolones. After such a reaction the whole class must be avoided.",
+              "de": "Sehnenschäden, Aortenaneurysma-Risiko und neuropsychiatrische Effekte sind Klasseneffekte aller Fluorchinolone. Nach einer solchen Reaktion ist die gesamte Substanzklasse zu meiden.",
+              "es": "El daño tendinoso, el riesgo de aneurisma aórtico y los efectos neuropsiquiátricos son efectos de clase de todas las fluoroquinolonas. Tras una reacción así debe evitarse toda la clase."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Local corticosteroid injection into the right Achilles tendon and continue ciprofloxacin",
+              "de": "Lokale Kortikosteroid-Infiltration der rechten Achillessehne und Ciprofloxacin fortsetzen",
+              "es": "Infiltración local de corticoide en el tendón de Aquiles derecho y continuar el ciprofloxacino"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Corticosteroids are already a major risk factor for fluoroquinolone-induced tendon rupture; injecting the damaged tendon while exposure continues greatly increases the risk of rupture.",
+              "de": "Kortikosteroide sind bereits ein wesentlicher Risikofaktor für die fluorchinolonbedingte Sehnenruptur; eine Infiltration in die geschädigte Sehne bei fortgesetzter Exposition erhöht die Rupturgefahr erheblich.",
+              "es": "Los corticoides ya son un factor de riesgo importante de rotura tendinosa por fluoroquinolonas; infiltrar el tendón dañado manteniendo la exposición aumenta mucho el riesgo de rotura."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Stop ciprofloxacin immediately, offload and immobilise the tendons, complete cystitis treatment with a non-fluoroquinolone (e.g. fosfomycin or pivmecillinam, adjusted to culture), document and report the reaction",
+              "de": "Ciprofloxacin sofort absetzen, Sehnen entlasten und ruhigstellen, Zystitistherapie mit einer Nicht-Fluorchinolon-Substanz beenden (z. B. Fosfomycin oder Pivmecillinam, nach Kultur anpassen), Unverträglichkeit dokumentieren und melden",
+              "es": "Suspender de inmediato el ciprofloxacino, descargar e inmovilizar los tendones, completar el tratamiento de la cistitis con un fármaco no fluoroquinolona (p. ej., fosfomicina o pivmecilinam, ajustado al cultivo), documentar y notificar la reacción"
+            },
+            "score": 10,
+            "minutes": 10,
+            "critical": false,
+            "feedback": {
+              "en": "Correct: age over 60, corticosteroids and impaired renal function increase the risk of tendinitis and rupture. Under the EU restrictions fluoroquinolones are allowed for uncomplicated cystitis only when other antibiotics are unsuitable; with a known aortic aneurysm they should especially be avoided.",
+              "de": "Richtig: Alter über 60 Jahre, Kortikosteroide und eingeschränkte Nierenfunktion erhöhen das Risiko für Tendinitis und Ruptur. Nach den EU-Beschränkungen sind Fluorchinolone bei unkomplizierter Zystitis ohnehin nur zulässig, wenn andere Antibiotika ungeeignet sind; bei bekanntem Aortenaneurysma sind sie besonders zu meiden.",
+              "es": "Correcto: la edad superior a 60 años, los corticoides y la insuficiencia renal aumentan el riesgo de tendinitis y rotura. Según las restricciones de la UE, en la cistitis no complicada las fluoroquinolonas solo se permiten si otros antibióticos no son adecuados; con un aneurisma aórtico conocido deben evitarse especialmente."
+            }
+          }
+        ],
+        "best": "d"
+      }
+    ],
+    "takeaway": {
+      "en": "In the EU fluoroquinolones are approved for uncomplicated cystitis only when other antibiotics are unsuitable; risk factors for tendon rupture are older age, corticosteroids, renal impairment and organ transplantation, and the product information also warns of aortic aneurysm and neuropsychiatric effects. With tendon pain stop the fluoroquinolone at once, offload the tendon and switch to another drug class.",
+      "de": "Fluorchinolone sind in der EU bei unkomplizierter Zystitis nur zugelassen, wenn andere Antibiotika ungeeignet sind; Risikofaktoren für Sehnenruptur sind höheres Alter, Kortikosteroide, Niereninsuffizienz und Organtransplantation, zusätzlich warnt die Fachinformation vor Aortenaneurysma und neuropsychiatrischen Effekten. Bei Sehnenschmerz das Fluorchinolon sofort absetzen, die Sehne entlasten und auf eine andere Substanzklasse wechseln.",
+      "es": "En la UE las fluoroquinolonas solo están autorizadas en la cistitis no complicada cuando otros antibióticos no son adecuados; los factores de riesgo de rotura tendinosa son la edad avanzada, los corticoides, la insuficiencia renal y el trasplante de órganos, y la ficha técnica advierte además de aneurisma aórtico y efectos neuropsiquiátricos. Ante dolor tendinoso, suspender de inmediato la fluoroquinolona, descargar el tendón y cambiar a otra clase de fármaco."
+    },
+    "references": [
+      "bank-guide-infektiologie",
+      "ema-medicines",
+      "fachinfo-de"
+    ]
+  },
+  {
     "id": "bank-uro-and-00008",
     "area": "emergency",
     "level": 3,

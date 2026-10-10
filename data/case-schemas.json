@@ -1,4 +1,18 @@
 {
+  "and-pri-high-flow-after-perineal-trauma": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "corpora-cavernosa"
+    ]
+  },
+  "and-pri-ischaemic-refractory-distal-shunt": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "corpora-cavernosa",
+      "glans-penis",
+      "tunica-albuginea"
+    ]
+  },
   "bank-uro-and-00001": {
     "schema": "hpg-axis",
     "parts": [
@@ -921,6 +935,123 @@
     "parts": [
       "bulbar-urethra",
       "penile-urethra"
+    ]
+  },
+  "fun-inc-aus-after-salvage-radiotherapy": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "bulbar-urethra",
+      "corpus-spongiosum",
+      "external-sphincter"
+    ]
+  },
+  "fun-inc-aus-catheter-deactivate-cuff": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "bulbar-urethra",
+      "corpus-spongiosum"
+    ]
+  },
+  "fun-inc-aus-cuff-erosion-explant": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "bulbar-urethra",
+      "corpus-spongiosum"
+    ]
+  },
+  "fun-inc-band-retention-lockerung": {
+    "schema": "female-pelvis",
+    "parts": [
+      "urethra",
+      "pubourethral-support",
+      "vagina"
+    ]
+  },
+  "fun-inc-band-vaginale-exposition": {
+    "schema": "female-pelvis",
+    "parts": [
+      "vagina",
+      "pubourethral-support",
+      "urethra"
+    ]
+  },
+  "fun-inc-bulking-agent-counselling": {
+    "schema": "female-pelvis",
+    "parts": [
+      "urethra",
+      "bladder-neck"
+    ]
+  },
+  "fun-inc-duloxetine-counselling": {
+    "schema": "micturition-control",
+    "parts": [
+      "onuf-nucleus",
+      "pudendal-nerve",
+      "external-sphincter"
+    ]
+  },
+  "fun-inc-mixed-urgency-predominant": {
+    "schema": "micturition-control",
+    "parts": [
+      "detrusor",
+      "prefrontal-cortex"
+    ]
+  },
+  "fun-inc-mus-tvt-tot-aufklaerung": {
+    "schema": "female-pelvis",
+    "parts": [
+      "pubourethral-support",
+      "urethra",
+      "bladder",
+      "symphysis"
+    ]
+  },
+  "fun-inc-pessary-family-planning": {
+    "schema": "female-pelvis",
+    "parts": [
+      "vagina",
+      "bladder-neck",
+      "urethra"
+    ]
+  },
+  "fun-inc-pfmt-supervised-after-app": {
+    "schema": "female-pelvis",
+    "parts": [
+      "levator-ani",
+      "bladder-neck",
+      "urethra"
+    ]
+  },
+  "fun-inc-ppi-early-conservative": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "external-sphincter",
+      "membranous-urethra"
+    ]
+  },
+  "fun-inc-refractory-oab-tibial-stimulation": {
+    "schema": "micturition-control",
+    "parts": [
+      "detrusor",
+      "sacral-parasympathetic-nucleus",
+      "pelvic-nerve"
+    ]
+  },
+  "fun-inc-rezidiv-ohne-netz": {
+    "schema": "female-pelvis",
+    "parts": [
+      "bladder-neck",
+      "pubourethral-support",
+      "symphysis",
+      "urethra"
+    ]
+  },
+  "fun-inc-tvt-blasenperforation": {
+    "schema": "female-pelvis",
+    "parts": [
+      "bladder",
+      "symphysis",
+      "pubourethral-support"
     ]
   },
   "onc-bladder-adjuvant-after-cystectomy": {

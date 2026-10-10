@@ -758,7 +758,10 @@ test('teaching schemas are safe, every drawn structure is explained, and linked 
     assert.ok(ids.length >= 5 && ids.length <= 16, s.id + ' has a playable number of structures');
   }
   const linked = catalog.cases.filter(c => c.schema);
-  assert.ok(linked.length >= catalog.cases.length * 0.4, 'At least 40 % of the cases come with a schema (' + linked.length + ')');
+  // Drug, dose and protocol questions (sys-*) deliberately have no anatomy schema.
+  const anatomical = catalog.cases.filter(c => !c.id.startsWith('sys-'));
+  assert.ok(linked.length >= anatomical.length * 0.4, 'At least 40 % of the cases outside drug questions come with a schema (' + linked.length + ' of ' + anatomical.length + ')');
+  assert.ok(!linked.some(c => c.id.startsWith('sys-')), 'Drug questions link no anatomy schema');
   for (const c of linked) {
     const s = schemas.find(s => s.id === c.schema.id);
     assert.ok(s, c.id + ' links a schema that exists');
