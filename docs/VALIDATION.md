@@ -1,5 +1,65 @@
 # Validation record
 
+## Protocols, radiation oncology, new questions and the attending's hints — 9–10 October 2026
+
+**Network limits.** EMA, fachinfo.de, PubMed and uroweb.org cannot be downloaded from the build environment. Every number was therefore checked through web-search results, label copies (emc, DailyMed, company HCP pages) and trial reports. Where the EU text itself was not returned, the record below says which other source was used.
+
+**Systemic therapy protocols (`data/protocols.json`, 58 regimens).**
+- *Research:* one clinical pharmacist per tumour group wrote the regimens with doses, cycles, support, cautions, EU approval status and sources.
+- *Verification:* an independent verifier re-derived every dose, schedule and cycle count with fresh searches and corrected the file. Urothelial carcinoma and intravesical therapy were verified twice, because an interrupted run was resumed.
+  - Corrections at this step included the NYHA ≥ III wording for cisplatin ineligibility and the dd-MVAC cycle range (3–6).
+  - Durvalumab under 30 kg (20 mg/kg) was added.
+  - The EU indication of EV + pembrolizumab in first line was restricted to patients eligible for platinum.
+  - Nivolumab maintenance runs up to 24 months from the first dose.
+  - Erdafitinib phosphate steps and the epirubicin and BCG Fachinformation wording were corrected.
+- *Tables:* an editor shortened the table cells and moved explanations to support and cautions. A script compared each file with its verified version and refused any change that lost a number.
+- *Review findings fixed in the protocols:* the question reviewers found four further points, all fixed:
+  - abiraterone is taken fasting (no food 2 h before and 1 h after, EU SmPC; the fixed niraparib/abiraterone tablet keeps its own label wording);
+  - primary G-CSF with cabazitaxel is *recommended* for high-risk patients, not mandatory;
+  - Lu-PSMA is stopped if a further dose reduction would be needed;
+  - the mesna rule is sourced to the mesna Fachinformation.
+- *Non-EU sources:* where the EU text was not returned, US label wording was used. This applies to the erdafitinib step above 10 mg/dl, pembrolizumab 400 mg every 6 weeks in the adjuvant part of EV-303, and the weight-based durvalumab dose (HCP page).
+- *Left out:* chemoradiation for urethral and penile squamous cell carcinoma has no protocol entry, because its doses could not be confirmed.
+
+**Radiotherapy schemes (`data/radiotherapy.json`, 42 schemes).** The same two steps, research and independent verification, ran per group. Validation rejects a phase whose total dose is not dose per fraction × fractions; continuous low-dose-rate brachytherapy (permanent seeds or a temporary LDR/PDR implant) has a total dose only. An independent radiation oncologist re-checked every scheme and changed one dose statement: the salvage range for the prostate bed is 64–70 Gy, not 64–72 Gy (70 Gy was no better than 64 Gy in SAKK 09/10, with more late bowel toxicity). The verifiers also corrected evidence and toxicity statements, among them the PACE-B late urinary toxicity (cumulative grade 2+ 26.9% vs 18.3%, not the year-5 prevalence), the BC2001 late toxicity figures, BCON's 10-year result, the STAMPEDE toxicity figures, the ASTRO bone metastasis update year (2017) and the vertebral fracture rate after spine SBRT (11% vs 17%). The brain metastasis scheme no longer offers 15 Gy single fraction for 3–4 cm lesions, where multifraction stereotactic radiotherapy is recommended. Seminoma stage IIB is 30 Gy to the dog-leg field plus a 6 Gy nodal boost, consistent with the corrected cases. Statements that could not be confirmed were removed rather than kept.
+
+**New questions (82 in total).** Each batch was written by one author and checked by an independent specialist: a urologist, plus a clinical pharmacist for drug questions or a radiation oncologist for radiotherapy questions. A script then checked the rules:
+- one step with four or five options, exactly one scoring 10;
+- critical flags only on wrong options;
+- new, unique patient names;
+- a guideline reference, plus EU product information for drug questions;
+- no authors;
+- the full game validation.
+
+None of the 62 questions on protocols, side effects, incontinence and priapism was dropped; reviewers fixed 35 of them. Examples:
+- a phenylephrine timeline that did not add up;
+- a cystoscopic clock position on the wrong side;
+- a CTCAE audiogram grade;
+- a mesh exposure size that sat exactly on a threshold;
+- split-dose cisplatin, which was penalised in one protocol question although it is the right answer in another;
+- the EU fasting wording for abiraterone.
+
+Protocol questions use the doses of the protocol page; reviewers recomputed every body surface area, mg/kg dose, cap and Calvert dose. The 20 radiotherapy questions were checked against the radiotherapy page by an independent radiation oncologist; none was dropped and 16 were fixed. Examples: 60 Gy in 20 fractions is an equivalent *alternative* to 76–78 Gy, not a proven equivalent; cT2c counts as a high-risk feature; SPPORT never tested pelvic radiotherapy without ADT; a vignette with IPSS 9 described as unremarkable now has IPSS 6; and a denosumab dose for skeletal events in hormone-sensitive disease was replaced by the osteoporosis dose, since the higher dose is indicated only in castration-resistant disease.
+
+**The attending's hints (`data/attending-hints.json`, one per decision).** One author per batch wrote a hint for every decision; an independent urologist (a radiation oncologist for the 20 radiotherapy questions) reviewed each hint for:
+- giveaways (a word that appears only in the keyed option);
+- correctness;
+- concreteness;
+- language.
+
+A script rejects hints that name an option letter, quote any option, announce the answer, name authors or fall outside 40–360 characters. Reviewers rewrote 83 hints, most of them for giveaways; 4 of them belong to the radiotherapy questions, which were only shortened. The cartoon tests check that every decision has a hint and that no hint quotes an option.
+
+**Corrections found while writing hints.** The hint reviewers reported doubts about four existing cases; three were confirmed and corrected through the correction layer:
+- uretero-ileal strictures are more common on the left (bank-uro-rek-00012);
+- citrate 2.2 mmol/d is below the EAU threshold, so the explanation now asks for a repeat collection (bank-uro-lit-00003);
+- a vignette now matches its explanation (bank-uro-rek-00013).
+
+EV + pembrolizumab in an authored case now allows ECOG 0–2, as in EV-302. Eponyms such as Gleason, Galsky, Calvert and Clavien-Dindo remain as standard terms; the no-authors rule targets citations and mentions of authors or articles.
+
+**Schema links.** Two urologists mapped the 18 priapism and incontinence questions to the anatomy schemas without seeing each other's work, and a judge reconciled them: 17 links, 12 of them agreed by both.
+
+**Code review.** A code review of the branch found ten points, all fixed: a duty without cases is no longer offered and cannot crash the game; the day clinic and radiotherapy duties have their own colour, with a grey fallback; long whiteboard labels are squeezed to the board; the protocol tabs use `aria-pressed`; practice questions are deduplicated and looked up in the table on screen; the attending's lines follow the time of day in a mixed rotation; the warning bubble's tail has the warning colour; validation rejects duplicate question links, numeric regimen ids and a regimen id used in both protocol files; and the importer accepts all six duties. A brachytherapy phase without fractions now reads *continuous (implant)* instead of *permanent implant*, because a temporary LDR/PDR implant for penile cancer has no fractions either.
+
 ## Oncology update, no authors in the game, save and load — 6–7 October 2026
 
 **Sources.** The update uses the knowuro flowcharts 2026 (EAU-based; CC BY-NC-ND 4.0) for bladder, prostate, kidney, UTUC, testicular, penile and urethral cancer. Only their facts are used; nothing is copied or redrawn. Some flowcharts date from spring 2026, so approval statements were checked on the web on 6 October 2026. The checks covered:
