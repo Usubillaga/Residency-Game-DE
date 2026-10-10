@@ -2414,6 +2414,282 @@
     ]
   },
   {
+    "id": "rt-bladder-palliative-haematuria-21-gy",
+    "area": "ward",
+    "level": 2,
+    "acuity": "urgent",
+    "duty": "radiotherapy",
+    "consultant": "radiotherapist",
+    "patient": {
+      "name": "Lothar Vierling",
+      "age": 84,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Recurrent haematuria from inoperable bladder cancer despite coagulation",
+      "de": "Rezidivierende Hämaturie bei inoperablem Harnblasenkarzinom trotz Koagulation",
+      "es": "Hematuria recurrente por cáncer de vejiga inoperable pese a la coagulación"
+    },
+    "presenting": {
+      "en": "An 84-year-old man, ECOG 3, is an inpatient because of recurrent gross haematuria with clot retention. He has known locally advanced urothelial carcinoma of the bladder (cT4b, invading the pelvic wall) with bone metastases; he has declined systemic therapy, and curative treatment is not possible. Despite two transurethral coagulations in the last 6 weeks the bleeding has recurred; the bladder is irrigated through a three-way catheter, haemoglobin is 7.9 g/dl after 2 units of red cells, he takes no anticoagulants, and CT urography shows no bleeding source in the upper tract. He has had no prior pelvic radiotherapy, lives 70 km away and wants as few treatment visits as possible.",
+      "de": "84-jähriger Patient, ECOG 3, wird wegen rezidivierender Makrohämaturie mit Blasentamponade stationär behandelt. Bekanntes, lokal fortgeschrittenes Urothelkarzinom der Harnblase (cT4b, Infiltration der Beckenwand) mit Knochenmetastasen; eine Systemtherapie lehnt er ab, eine kurative Behandlung ist nicht möglich. Trotz zweimaliger transurethraler Koagulation in den letzten 6 Wochen blutet es erneut; über einen Dreiwegekatheter wird gespült, Hb 7,9 g/dl nach 2 Erythrozytenkonzentraten, keine Antikoagulation, die CT-Urographie zeigt keine Blutungsquelle im oberen Harntrakt. Keine Vorbestrahlung des Beckens; er wohnt 70 km entfernt und wünscht möglichst wenige Behandlungstermine.",
+      "es": "Varón de 84 años, ECOG 3, ingresado por hematuria macroscópica recurrente con taponamiento vesical. Tiene un carcinoma urotelial de vejiga localmente avanzado conocido (cT4b, con infiltración de la pared pélvica) con metástasis óseas; ha rechazado el tratamiento sistémico y no es posible un tratamiento curativo. Pese a dos coagulaciones transuretrales en las últimas 6 semanas, el sangrado ha recidivado; se irriga la vejiga a través de una sonda de tres vías, Hb 7,9 g/dl tras 2 concentrados de hematíes, sin anticoagulación, y la urografía por TC no muestra un origen del sangrado en el tracto urinario superior. Sin radioterapia pélvica previa; vive a 70 km y desea el menor número posible de sesiones."
+    },
+    "vitals": {
+      "bp": "118/70",
+      "hr": 94,
+      "temp": 36.8,
+      "spo2": 95,
+      "rr": 16
+    },
+    "objectives": {
+      "en": [
+        "Indicate palliative radiotherapy for haematuria when transurethral coagulation fails in inoperable bladder cancer",
+        "Choose 21 Gy in 3 fractions of 7 Gy on alternate days within 1 week as the palliative schedule of choice"
+      ],
+      "de": [
+        "Die palliative Strahlentherapie bei Hämaturie indizieren, wenn die transurethrale Koagulation beim inoperablen Harnblasenkarzinom versagt",
+        "21 Gy in 3 Fraktionen à 7 Gy jeden zweiten Tag innerhalb einer Woche als palliatives Schema der Wahl wählen"
+      ],
+      "es": [
+        "Indicar la radioterapia paliativa por hematuria cuando la coagulación transuretral fracasa en el cáncer de vejiga inoperable",
+        "Elegir 21 Gy en 3 fracciones de 7 Gy en días alternos en 1 semana como esquema paliativo de elección"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which radiotherapy do you recommend?",
+          "de": "Welche Strahlentherapie empfehlen Sie?",
+          "es": "¿Qué radioterapia recomienda?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "55 Gy in 20 fractions of 2.75 Gy with mitomycin C and 5-FU",
+              "de": "55 Gy in 20 Fraktionen à 2,75 Gy mit Mitomycin C und 5-FU",
+              "es": "55 Gy en 20 fracciones de 2,75 Gy con mitomicina C y 5-FU"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Harmful: this is curative trimodal therapy for cT2-T4a N0 M0 disease. In a metastatic patient with ECOG 3 it means 4 weeks of daily treatment and the myelosuppression of chemotherapy without a curative aim.",
+              "de": "Gefährlich: Das ist die kurative trimodale Therapie für cT2–T4a N0 M0. Bei einem metastasierten Patienten mit ECOG 3 bedeutet sie 4 Wochen tägliche Behandlung und die Myelosuppression der Chemotherapie ohne kuratives Ziel.",
+              "es": "Peligroso: es la terapia trimodal curativa para la enfermedad cT2-T4a N0 M0. En un paciente metastásico con ECOG 3 supone 4 semanas de tratamiento diario y la mielosupresión de la quimioterapia sin finalidad curativa."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "35 Gy in 10 fractions of 3.5 Gy over 2 weeks",
+              "de": "35 Gy in 10 Fraktionen à 3,5 Gy über 2 Wochen",
+              "es": "35 Gy en 10 fracciones de 3,5 Gy en 2 semanas"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Possible, but not preferred: in BA09 it was not significantly better than 21 Gy in 3 fractions (symptom improvement 71% vs 64%, p = 0.192), with similar toxicity and ten instead of three visits.",
+              "de": "Möglich, aber nicht bevorzugt: In BA09 war es 21 Gy in 3 Fraktionen nicht signifikant überlegen (Symptombesserung 71 % vs. 64 %, p = 0,192), bei ähnlicher Toxizität und zehn statt drei Terminen.",
+              "es": "Posible, pero no preferible: en BA09 no fue significativamente superior a 21 Gy en 3 fracciones (mejoría sintomática del 71 % frente al 64 %, p = 0,192), con toxicidad similar y diez sesiones en lugar de tres."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "21 Gy in 3 fractions of 7 Gy on alternate days within 1 week to the bladder ± gross extravesical tumour",
+              "de": "21 Gy in 3 Fraktionen à 7 Gy jeden zweiten Tag innerhalb einer Woche auf die Harnblase ± makroskopischen extravesikalen Tumor",
+              "es": "21 Gy en 3 fracciones de 7 Gy en días alternos en 1 semana sobre la vejiga ± tumor extravesical macroscópico"
+            },
+            "score": 10,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Correct. Radiotherapy can stop tumour bleeding when transurethral measures fail. 21 Gy in 3 fractions on alternate days is the palliative regimen of choice: as effective as 35 Gy in 10 fractions in BA09, with only three visits, and the haemostatic effect usually starts within days to weeks.",
+              "de": "Richtig. Die Bestrahlung kann eine Tumorblutung stillen, wenn transurethrale Maßnahmen versagen. 21 Gy in 3 Fraktionen jeden zweiten Tag ist das palliative Schema der Wahl: in BA09 so wirksam wie 35 Gy in 10 Fraktionen, mit nur drei Terminen, und die blutstillende Wirkung setzt meist innerhalb von Tagen bis Wochen ein.",
+              "es": "Correcto. La radioterapia puede detener el sangrado tumoral cuando fracasan las medidas transuretrales. 21 Gy en 3 fracciones en días alternos es el esquema paliativo de elección: tan eficaz como 35 Gy en 10 fracciones en BA09, con solo tres sesiones, y el efecto hemostático suele aparecer en días o semanas."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "36 Gy in 6 fractions of 6 Gy, once weekly",
+              "de": "36 Gy in 6 Fraktionen à 6 Gy, einmal wöchentlich",
+              "es": "36 Gy en 6 fracciones de 6 Gy, una vez por semana"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "The weekly schedule was developed for frail patients with T2-T4a N0 M0 disease to achieve durable local control, and it is also accepted for palliation of local symptoms. However, the course takes 6 weeks and needs twice as many visits as 21 Gy in 3 fractions; for a patient who is bleeding now and wants as few visits as possible, 21 Gy in 3 fractions is the better choice.",
+              "de": "Das wöchentliche Schema wurde für gebrechliche Patienten mit T2–T4a N0 M0 mit dem Ziel einer dauerhaften lokalen Kontrolle entwickelt und ist auch zur Palliation lokaler Symptome anerkannt. Die Serie dauert jedoch 6 Wochen und braucht doppelt so viele Termine wie 21 Gy in 3 Fraktionen; bei einem Patienten, der jetzt blutet und möglichst wenige Termine wünscht, ist 21 Gy in 3 Fraktionen die bessere Wahl.",
+              "es": "El esquema semanal se desarrolló para pacientes frágiles con enfermedad T2-T4a N0 M0 con el objetivo de un control local duradero, y también se acepta para paliar síntomas locales. Sin embargo, dura 6 semanas y requiere el doble de sesiones que 21 Gy en 3 fracciones; en un paciente que sangra ahora y desea el menor número posible de sesiones, 21 Gy en 3 fracciones es la mejor opción."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "No radiotherapy; immediate palliative cystectomy with urinary diversion",
+              "de": "Keine Bestrahlung; sofortige palliative Zystektomie mit Harnableitung",
+              "es": "Sin radioterapia; cistectomía paliativa inmediata con derivación urinaria"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "With ECOG 3, bone metastases and a tumour fixed to the pelvic wall, major surgery carries high morbidity and mortality. Palliative cystectomy with urinary diversion is reserved for haematuria that remains refractory to less invasive measures such as radiotherapy or selective embolisation.",
+              "de": "Bei ECOG 3, Knochenmetastasen und einem an der Beckenwand fixierten Tumor ist ein großer Eingriff mit hoher Morbidität und Letalität verbunden. Die palliative Zystektomie mit Harnableitung bleibt einer Hämaturie vorbehalten, die auch auf weniger invasive Maßnahmen wie Bestrahlung oder selektive Embolisation nicht anspricht.",
+              "es": "Con ECOG 3, metástasis óseas y un tumor fijo a la pared pélvica, una cirugía mayor conlleva alta morbilidad y mortalidad. La cistectomía paliativa con derivación urinaria se reserva para la hematuria refractaria a medidas menos invasivas, como la radioterapia o la embolización selectiva."
+            }
+          }
+        ],
+        "best": "c"
+      }
+    ],
+    "takeaway": {
+      "en": "When transurethral coagulation fails in inoperable bladder cancer, palliative radiotherapy can stop the bleeding. The regimen of choice is 21 Gy in 3 fractions of 7 Gy on alternate days within 1 week; 35 Gy in 10 fractions gave no proven additional benefit, and prior pelvic radiotherapy requires a cumulative dose review first.",
+      "de": "Versagt beim inoperablen Harnblasenkarzinom die transurethrale Koagulation, kann eine palliative Bestrahlung die Blutung stillen. Schema der Wahl sind 21 Gy in 3 Fraktionen à 7 Gy jeden zweiten Tag innerhalb einer Woche; 35 Gy in 10 Fraktionen brachte keinen belegten Zusatznutzen, und nach Vorbestrahlung des Beckens ist zuerst eine Prüfung der kumulativen Dosis nötig.",
+      "es": "Cuando fracasa la coagulación transuretral en el cáncer de vejiga inoperable, la radioterapia paliativa puede detener el sangrado. El esquema de elección es 21 Gy en 3 fracciones de 7 Gy en días alternos en 1 semana; 35 Gy en 10 fracciones no aportó un beneficio adicional demostrado, y tras radioterapia pélvica previa hay que revisar primero la dosis acumulada."
+    },
+    "references": [
+      "bank-guide-mibc"
+    ]
+  },
+  {
+    "id": "rt-palliative-mscc-ward-first-hours",
+    "area": "ward",
+    "level": 2,
+    "acuity": "critical",
+    "duty": "radiotherapy",
+    "consultant": "radiotherapist",
+    "patient": {
+      "name": "Rudolf Vollmer",
+      "age": 72,
+      "sex": "male"
+    },
+    "title": {
+      "en": "New leg weakness on the ward in known bone metastases",
+      "de": "Neue Beinschwäche auf Station bei bekannten Knochenmetastasen",
+      "es": "Nueva debilidad en las piernas en planta con metástasis óseas conocidas"
+    },
+    "presenting": {
+      "en": "A 72-year-old man with metastatic castration-resistant prostate cancer on enzalutamide was admitted to the urology ward 2 days ago for pain control; a bone scan 6 weeks ago showed metastases in the thoracic and lumbar spine and in the pelvis. This morning he reports a band-like pain around the lower chest and new heaviness in both legs since the night. Hip flexion is 4/5 on both sides, he can walk only with a walking frame, and sensation is reduced below the umbilicus. The bladder scan shows 350 ml residual urine; there were no urinary problems before. Up to now he walked independently (ECOG 1).",
+      "de": "72-jähriger Patient mit metastasiertem kastrationsresistentem Prostatakarzinom unter Enzalutamid, seit 2 Tagen zur Schmerztherapie auf der urologischen Station; die Skelettszintigrafie vor 6 Wochen zeigte Metastasen in BWS, LWS und Becken. Heute Morgen berichtet er über gürtelförmige Schmerzen am unteren Thorax und seit der Nacht über ein neues Schweregefühl in beiden Beinen. Die Hüftbeugung ist beidseits 4/5, er geht nur noch mit Rollator, unterhalb des Nabels ist die Sensibilität vermindert. Der Blasenscan zeigt 350 ml Restharn; zuvor bestanden keine Miktionsprobleme. Bisher war er selbstständig gehfähig (ECOG 1).",
+      "es": "Varón de 72 años con cáncer de próstata metastásico resistente a la castración en tratamiento con enzalutamida, ingresado hace 2 días en la planta de urología para control del dolor; una gammagrafía ósea de hace 6 semanas mostró metástasis en columna dorsal, lumbar y pelvis. Esta mañana refiere un dolor en cinturón en la parte baja del tórax y, desde la noche, una nueva sensación de pesadez en ambas piernas. La flexión de cadera es 4/5 bilateral, solo camina con andador y la sensibilidad está disminuida por debajo del ombligo. La ecografía vesical muestra 350 ml de orina residual; antes no tenía problemas miccionales. Hasta ahora caminaba de forma autónoma (ECOG 1)."
+    },
+    "vitals": {
+      "bp": "142/84",
+      "hr": 88,
+      "temp": 36.7,
+      "spo2": 97,
+      "rr": 16
+    },
+    "objectives": {
+      "en": [
+        "Recognise metastatic spinal cord compression and start dexamethasone 16 mg immediately, without waiting for imaging",
+        "Arrange emergency MRI of the whole spine and an immediate spinal surgical and radiation oncology assessment so that surgery or radiotherapy starts without delay (radiotherapy ideally within 24 hours)"
+      ],
+      "de": [
+        "Eine metastatische Myelonkompression erkennen und Dexamethason 16 mg sofort beginnen, ohne die Bildgebung abzuwarten",
+        "Notfall-MRT der gesamten Wirbelsäule sowie die sofortige wirbelsäulenchirurgische und strahlentherapeutische Beurteilung veranlassen, damit OP oder RT ohne Verzögerung beginnen (RT möglichst innerhalb von 24 Stunden)"
+      ],
+      "es": [
+        "Reconocer una compresión medular metastásica e iniciar dexametasona 16 mg de inmediato, sin esperar a la imagen",
+        "Solicitar una RM urgente de toda la columna y una valoración inmediata por cirugía de columna y oncología radioterápica para que la cirugía o la RT comiencen sin demora (la RT, idealmente en 24 horas)"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "What do you arrange now?",
+          "de": "Was veranlassen Sie jetzt?",
+          "es": "¿Qué dispone ahora?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "MRI of the thoracic spine at the level of the band-like pain on the next working day; start dexamethasone only once the scan confirms compression",
+              "de": "MRT der BWS in Höhe der Gürtelschmerzen am nächsten Werktag; Dexamethason erst beginnen, wenn die Bildgebung eine Kompression bestätigt",
+              "es": "RM de la columna dorsal a la altura del dolor en cinturón el siguiente día laborable; iniciar dexametasona solo cuando la imagen confirme la compresión"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": true,
+            "feedback": {
+              "en": "This loses time twice. Dexamethasone 16 mg is given immediately on clinical suspicion, and the MRI is an emergency. Imaging only the thoracic spine misses further compression levels, which are common with metastases throughout the spine; the whole spine must be imaged.",
+              "de": "Hier geht doppelt Zeit verloren. Dexamethason 16 mg wird bereits bei klinischem Verdacht sofort gegeben, und das MRT ist eine Notfalluntersuchung. Ein MRT nur der BWS übersieht weitere Kompressionshöhen, die bei Metastasen in der ganzen Wirbelsäule häufig sind; es muss die gesamte Wirbelsäule untersucht werden.",
+              "es": "Así se pierde tiempo por partida doble. La dexametasona 16 mg se administra de inmediato ante la sospecha clínica, y la RM es urgente. Explorar solo la columna dorsal pasa por alto otros niveles de compresión, frecuentes cuando hay metástasis en toda la columna; debe estudiarse la columna completa."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Dexamethasone 16 mg now, emergency MRI of the whole spine today, immediate assessment by spinal surgery and radiation oncology; surgery or radiotherapy without delay",
+              "de": "Dexamethason 16 mg sofort, Notfall-MRT der gesamten Wirbelsäule noch heute, umgehende wirbelsäulenchirurgische und strahlentherapeutische Beurteilung; OP bzw. RT ohne Verzögerung",
+              "es": "Dexametasona 16 mg ya, RM urgente de toda la columna hoy mismo, valoración inmediata por cirugía de columna y oncología radioterápica; cirugía o RT sin demora"
+            },
+            "score": 10,
+            "minutes": 10,
+            "critical": false,
+            "feedback": {
+              "en": "Correct. Band-like pain, bilateral leg weakness, a sensory level and new urinary retention indicate metastatic spinal cord compression. Dexamethasone 16 mg is started at once (with PPI and glucose checks) and tapered after RT has begun; the whole-spine MRI shows all levels, and the spinal surgeon decides on surgery first. Without a surgical indication, RT starts as early as possible, ideally within 24 hours: 8 Gy × 1 by default, 20 Gy/5 with a more favourable prognosis.",
+              "de": "Richtig. Gürtelschmerz, beidseitige Beinschwäche, sensibles Niveau und neuer Harnverhalt sprechen für eine metastatische Myelonkompression. Dexamethason 16 mg wird sofort begonnen (mit PPI-Schutz und BZ-Kontrollen) und nach Beginn der RT ausgeschlichen; das MRT der gesamten Wirbelsäule zeigt alle Höhen, und die Wirbelsäulenchirurgie entscheidet über eine vorrangige OP. Ohne OP-Indikation beginnt die RT so früh wie möglich, möglichst innerhalb von 24 Stunden: standardmäßig 8 Gy × 1, bei günstigerer Prognose 20 Gy/5.",
+              "es": "Correcto. El dolor en cinturón, la debilidad bilateral de piernas, el nivel sensitivo y la nueva retención urinaria indican una compresión medular metastásica. La dexametasona 16 mg se inicia de inmediato (con IBP y controles de glucemia) y se retira de forma progresiva tras iniciar la RT; la RM de toda la columna muestra todos los niveles y cirugía de columna decide si se opera primero. Sin indicación quirúrgica, la RT comienza lo antes posible, idealmente en 24 horas: 8 Gy × 1 por defecto, 20 Gy/5 con un pronóstico más favorable."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Immediate single fraction of 8 Gy to the thoracic spine based on the bone scan, without MRI, so as not to lose time",
+              "de": "Sofortige Einzeitbestrahlung mit 8 Gy der BWS anhand der Skelettszintigrafie, ohne MRT, um keine Zeit zu verlieren",
+              "es": "Fracción única inmediata de 8 Gy sobre la columna dorsal según la gammagrafía ósea, sin RM, para no perder tiempo"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": true,
+            "feedback": {
+              "en": "Speed matters, but not at the cost of the plan. Without MRI, the compressing level(s) and the target volume (each level plus one vertebra above and below) are unknown, further levels may be missed, and the surgical assessment is skipped although surgery comes first in suitable patients. Dexamethasone is also missing.",
+              "de": "Tempo ist wichtig, aber nicht auf Kosten der Planung. Ohne MRT sind die komprimierende(n) Höhe(n) und damit das Zielvolumen (je Höhe plus ein Wirbelkörper kranial und kaudal) unbekannt, weitere Höhen können übersehen werden, und die chirurgische Beurteilung entfällt, obwohl geeignete Patienten zuerst operiert werden. Außerdem fehlt das Dexamethason.",
+              "es": "La rapidez importa, pero no a costa de la planificación. Sin RM se desconocen el nivel o los niveles de compresión y, por tanto, el volumen diana (cada nivel más una vértebra por encima y por debajo), pueden pasarse por alto otros niveles y se omite la valoración quirúrgica, aunque los pacientes adecuados se operan primero. Además, falta la dexametasona."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Dexamethasone 4 mg daily, physiotherapy with gait training and an outpatient MRI of the spine within a week",
+              "de": "Dexamethason 4 mg täglich, Physiotherapie mit Gangschulung und ambulantes MRT der Wirbelsäule innerhalb einer Woche",
+              "es": "Dexametasona 4 mg al día, fisioterapia con reeducación de la marcha y RM ambulatoria de la columna en el plazo de una semana"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": true,
+            "feedback": {
+              "en": "This treats a neurological emergency as a routine problem. The steroid dose is too low (16 mg is indicated), mobilisation is risky with a possibly unstable spine (flat positioning and log-rolling until stability is assessed), and a week's delay can cost the ability to walk, which depends on the neurological status at the start of treatment.",
+              "de": "Hier wird ein neurologischer Notfall wie ein Routineproblem behandelt. Die Steroiddosis ist zu niedrig (indiziert sind 16 mg), eine Mobilisation ist bei möglicherweise instabiler Wirbelsäule riskant (bis zur Stabilitätsbeurteilung flache Lagerung und En-bloc-Drehen), und eine Woche Verzögerung kann die Gehfähigkeit kosten, die vom neurologischen Status bei Therapiebeginn abhängt.",
+              "es": "Se trata una urgencia neurológica como un problema rutinario. La dosis de corticoide es insuficiente (están indicados 16 mg), la movilización es arriesgada con una columna posiblemente inestable (decúbito plano y movilización en bloque hasta valorar la estabilidad) y una semana de retraso puede costar la capacidad de caminar, que depende del estado neurológico al inicio del tratamiento."
+            }
+          }
+        ],
+        "best": "b"
+      }
+    ],
+    "takeaway": {
+      "en": "Suspected metastatic spinal cord compression is an emergency: dexamethasone 16 mg at once, emergency MRI of the whole spine and immediate spinal surgical assessment. Suitable patients are operated first; otherwise RT starts as early as possible, ideally within 24 hours, covering each compressing level plus one vertebra above and below.",
+      "de": "Der Verdacht auf eine metastatische Myelonkompression ist ein Notfall: sofort Dexamethason 16 mg, Notfall-MRT der gesamten Wirbelsäule und umgehende wirbelsäulenchirurgische Beurteilung. Geeignete Patienten werden zuerst operiert; sonst beginnt die RT so früh wie möglich, möglichst innerhalb von 24 Stunden, über jede Kompressionshöhe plus je einen Wirbelkörper kranial und kaudal.",
+      "es": "La sospecha de compresión medular metastásica es una urgencia: dexametasona 16 mg de inmediato, RM urgente de toda la columna y valoración inmediata por cirugía de columna. Los pacientes adecuados se operan primero; si no, la RT comienza lo antes posible, idealmente en 24 horas, sobre cada nivel de compresión más una vértebra por encima y por debajo."
+    },
+    "references": [
+      "bank-guide-prostatakarzinom"
+    ]
+  },
+  {
     "id": "bank-uro-hod-00014",
     "area": "ward",
     "level": 3,

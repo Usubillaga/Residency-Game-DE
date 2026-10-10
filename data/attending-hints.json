@@ -2630,6 +2630,146 @@
       "es": "Respuesta parcial tras platino con metástasis hepáticas: ¿qué estrategia prolongó la supervivencia global tras respuesta o estabilización con platino, y qué aporta la cirugía con metástasis viscerales?"
     }
   },
+  "rt-bladder-palliative-haematuria-21-gy": {
+    "question": {
+      "en": "Cure is no longer the goal here: ECOG 3, bone metastases, pelvic sidewall invasion. Which palliative bladder schedule controls bleeding as well as longer courses while needing the fewest trips from 70 km away?",
+      "de": "Hier geht es nicht mehr um Heilung: ECOG 3, Knochenmetastasen, Infiltration der Beckenwand. Welches palliative Blasenschema stillt die Blutung so gut wie längere Serien und kommt mit den wenigsten Fahrten aus 70 km Entfernung aus?",
+      "es": "Aquí ya no se trata de curar: ECOG 3, metástasis óseas, infiltración de la pared pélvica. ¿Qué esquema paliativo vesical controla el sangrado igual que las series más largas con el menor número de viajes desde 70 km?"
+    }
+  },
+  "rt-bladder-tmt-55-20-mitomycin-5fu": {
+    "question": {
+      "en": "With ECOG 1 she can have full trimodal therapy, but look at the creatinine clearance of 42 ml/min and the hearing aids: what does that mean for cisplatin? Which radiosensitiser works without cisplatin (DPD is tested), and which fractionation is shorter with at least equal local control?",
+      "de": "Mit ECOG 1 bekommt sie die volle trimodale Therapie, aber schau auf die Kreatinin-Clearance von 42 ml/min und die Hörgeräte: Was heißt das für Cisplatin? Welche Radiosensibilisierung geht ohne Cisplatin (DPD ist getestet), und welche Fraktionierung ist kürzer und lokal mindestens gleich gut?",
+      "es": "Con ECOG 1 puede recibir la terapia trimodal completa, pero fíjate en el aclaramiento de 42 ml/min y los audífonos: ¿qué implica para el cisplatino? ¿Qué radiosensibilización funciona sin cisplatino (DPD testado) y qué fraccionamiento es más corto con control local al menos igual?"
+    }
+  },
+  "rt-bladder-tmt-noninvasive-recurrence-bcg": {
+    "question": {
+      "en": "What decides this is the depth of the recurrence: pTa high grade, detrusor present and tumour-free, no metastases. How do you treat a non-muscle-invasive high-grade recurrence after bladder preservation, and for how long does surveillance of bladder and upper tract continue?",
+      "de": "Entscheidend ist die Invasionstiefe des Rezidivs: pTa High Grade, Detrusor vorhanden und tumorfrei, keine Metastasen. Wie behandelst du ein nicht-muskelinvasives High-Grade-Rezidiv nach Blasenerhalt, und wie lange läuft die Nachsorge von Blase und oberem Harntrakt danach weiter?",
+      "es": "Lo que decide es la profundidad de la recidiva: pTa de alto grado, detrusor presente y libre de tumor, sin metástasis. ¿Cómo tratas una recidiva no músculo-invasiva de alto grado tras la preservación vesical, y durante cuánto tiempo sigue la vigilancia de vejiga y tracto urinario superior?"
+    }
+  },
+  "rt-bladder-tmt-unsuitable-multifocal-cis": {
+    "question": {
+      "en": "Before thinking about dose and chemotherapy, check his suitability for bladder preservation: solitary tumour, complete TURBT, no hydronephrosis, good capacity. What does CIS in 4 of 6 mapping areas mean in a patient who is fit, cisplatin-eligible and willing to have surgery?",
+      "de": "Bevor du über Dosis und Chemo nachdenkst, prüf die Eignung für die Blasenerhaltung: solitärer Tumor, komplette TUR-B, keine Harnstauung, gute Kapazität. Was bedeutet ein CIS in 4 von 6 Mapping-Arealen, wenn der Patient fit, cisplatinfähig und zur Operation bereit ist?",
+      "es": "Antes de pensar en dosis y quimioterapia, comprueba si es candidato a preservación vesical: tumor solitario, RTU completa, sin hidronefrosis, buena capacidad. ¿Qué significa un CIS en 4 de 6 zonas del mapeo en un paciente en forma, apto para cisplatino y dispuesto a operarse?"
+    }
+  },
+  "rt-palliative-bone-counselling-flare-denosumab": {
+    "question": {
+      "en": "Check each part of the statement on its own: do single-fraction and fractionated RT relieve pain equally? In which direction does the re-treatment rate differ? What does a pain increase in the first days mean, and is there any reason to pause denosumab?",
+      "de": "Prüf jede Teilaussage für sich: Lindern Einzeit- und fraktionierte Bestrahlung gleich gut? In welche Richtung unterscheidet sich die Re-Bestrahlungsrate? Was bedeutet eine Schmerzzunahme in den ersten Tagen, und gibt es einen Grund, Denosumab zu pausieren?",
+      "es": "Comprueba cada parte de la afirmación por separado: ¿alivian igual la dosis única y la radioterapia fraccionada? ¿En qué sentido difiere la tasa de reirradiación? ¿Qué significa un aumento del dolor en los primeros días y hay algún motivo para suspender el denosumab?"
+    }
+  },
+  "rt-palliative-frail-spine-pain-8gy-single": {
+    "question": {
+      "en": "The metastasis is uncomplicated (SINS 5, no epidural extension, no fracture), and he is ECOG 3 with a prognosis of weeks to months. All conventional schedules relieve pain equally: what burdens him least, and who is stereotactic treatment reserved for?",
+      "de": "Die Metastase ist unkompliziert (SINS 5, keine epidurale Ausdehnung, keine Fraktur), und er hat ECOG 3 mit einer Prognose von Wochen bis Monaten. Alle konventionellen Schemata lindern gleich gut: Was belastet ihn am wenigsten, und wem bleibt die Stereotaxie vorbehalten?",
+      "es": "La metástasis no es complicada (SINS 5, sin extensión epidural, sin fractura) y tiene ECOG 3 con un pronóstico de semanas a meses. Todos los esquemas convencionales alivian igual: ¿qué le supone menos carga y para quién se reserva la estereotaxia?"
+    }
+  },
+  "rt-palliative-mscc-ward-first-hours": {
+    "question": {
+      "en": "Band-like pain, bilateral leg weakness, a sensory level and new residual urine: cord compression until proven otherwise, and walking ability at treatment start decides the outcome. What do you give on suspicion alone, how fast and how far do you image, and who decides with you?",
+      "de": "Gürtelschmerz, beidseitige Beinschwäche, sensibles Niveau und neuer Restharn: Myelonkompression bis zum Beweis des Gegenteils, und die Gehfähigkeit bei Therapiebeginn bestimmt das Ergebnis. Was gibst du schon beim Verdacht, wie schnell und wie weit bildest du ab, wer entscheidet mit?",
+      "es": "Dolor en cinturón, debilidad de ambas piernas, nivel sensitivo y residuo nuevo: compresión medular hasta que se demuestre lo contrario, y la marcha al iniciar el tratamiento decide el pronóstico. ¿Qué das ya ante la sospecha, con qué rapidez y extensión haces la imagen y quién decide contigo?"
+    }
+  },
+  "rt-penile-glans-brachytherapy-organ-sparing": {
+    "question": {
+      "en": "cT2 under 4 cm, cN0, an explicit wish for organ preservation: which form of radiotherapy gives the best local control on the penis, what must happen before any penile irradiation, and does local treatment cover the risk of occult inguinal metastases in cT2 G2?",
+      "de": "cT2 unter 4 cm, cN0, ausdrücklicher Wunsch nach Organerhalt: Welche Bestrahlungsform erreicht am Penis die beste Lokalkontrolle, was muss vor jeder Penisbestrahlung passieren, und deckt die Lokaltherapie das Risiko okkulter Leistenmetastasen bei cT2 G2 mit ab?",
+      "es": "cT2 de menos de 4 cm, cN0 y deseo expreso de conservar el órgano: ¿qué forma de radioterapia logra el mejor control local en el pene, qué debe hacerse antes de cualquier irradiación peneana y cubre el tratamiento local el riesgo de metástasis inguinales ocultas en cT2 G2?"
+    }
+  },
+  "rt-prostate-bed-acute-toxicity-week-four": {
+    "question": {
+      "en": "Frequency, burning and loose stools in week four are typical acute reactions. Look for red flags: fever, haematuria, rectal bleeding, retention? If they are absent, what do you still rule out, and what do unplanned breaks or stopping below 64 Gy mean for tumour control?",
+      "de": "Pollakisurie, Brennen und weiche Stühle in Woche vier sind typische Akutreaktionen. Such die Alarmzeichen: Fieber, Hämaturie, rektale Blutung, Harnverhalt? Fehlen sie, was schließt du noch aus, und was bedeuten ungeplante Pausen oder ein Abbruch unter 64 Gy für die Tumorkontrolle?",
+      "es": "Polaquiuria, escozor y heces blandas en la cuarta semana son reacciones agudas típicas. Busca signos de alarma: ¿fiebre, hematuria, rectorragia, retención? Si faltan, ¿qué descartas aún y qué suponen las pausas no planificadas o interrumpir por debajo de 64 Gy para el control tumoral?"
+    }
+  },
+  "rt-prostate-high-risk-long-term-adt": {
+    "question": {
+      "en": "Classify the risk group first: Gleason 8 (and per EAU also cT2c) is high risk, and that sets the ADT duration. Then count the STAMPEDE criteria for abiraterone in cN0 (cT3–4, Gleason 8–10, PSA 40 ng/ml or more): how many does he meet, and how many would be needed?",
+      "de": "Ordne zuerst die Risikogruppe: Gleason 8 (nach EAU auch cT2c) ist hohes Risiko, und danach richtet sich die ADT-Dauer. Dann zähl die STAMPEDE-Kriterien für Abirateron bei cN0 (cT3–4, Gleason 8–10, PSA ab 40 ng/ml): Wie viele erfüllt er, und wie viele wären nötig?",
+      "es": "Clasifica primero el grupo de riesgo: Gleason 8 (y según la EAU también cT2c) es alto riesgo, y eso fija la duración de la ADT. Luego cuenta los criterios de STAMPEDE para abiraterona en cN0 (cT3–4, Gleason 8–10, PSA de 40 ng/ml o más): ¿cuántos cumple y cuántos harían falta?"
+    }
+  },
+  "rt-prostate-igrt-bladder-rectum-preparation": {
+    "question": {
+      "en": "He arrived with an empty bladder and bloating, exactly what should not happen at planning or treatment. Which bladder and rectal filling keeps the prostate stable and the bowel out of the high-dose region, how often must it be reproduced, and what can daily image guidance not correct?",
+      "de": "Er kam mit leerer Blase und Blähungen, genau das soll bei Planung und Bestrahlung nicht sein. Welche Füllung von Blase und Rektum hält die Prostata stabil und den Darm aus dem Hochdosisbereich, wie oft muss sie reproduziert werden, und was gleicht die tägliche Bildführung nicht aus?",
+      "es": "Llegó con la vejiga vacía y gases, justo lo que no debe ocurrir en la planificación ni en el tratamiento. ¿Qué llenado de vejiga y recto mantiene estable la próstata y el intestino fuera de la zona de dosis alta, con qué frecuencia debe reproducirse y qué no puede corregir la imagen diaria?"
+    }
+  },
+  "rt-prostate-intermediate-60gy-short-adt": {
+    "question": {
+      "en": "ISUP 3 means unfavourable intermediate risk. Which moderate hypofractionation was non-inferior in CHHiP (not every arm managed that), which risk groups is 5-fraction SBRT validated for, and how long an ADT course belongs to this risk group?",
+      "de": "ISUP 3 heißt ungünstiges intermediäres Risiko. Welche moderate Hypofraktionierung war in CHHiP nicht unterlegen (nicht jeder Arm hat das geschafft), für welche Risikogruppen ist die SBRT in 5 Fraktionen validiert, und wie lange ADT gehört zu dieser Risikogruppe?",
+      "es": "ISUP 3 significa riesgo intermedio desfavorable. ¿Qué hipofraccionamiento moderado fue no inferior en CHHiP (no todos los brazos lo lograron), para qué grupos de riesgo está validada la SBRT en 5 fracciones y cuánto tiempo de ADT corresponde a este grupo de riesgo?"
+    }
+  },
+  "rt-prostate-luts-large-gland-no-sbrt-ldr": {
+    "question": {
+      "en": "The risk group would allow many options; what decides here is voiding: IPSS 21, Qmax 9 ml/s, 110 ml residual, an 85 ml gland with a median lobe. Which techniques require good baseline voiding, and which short schedule is well supported regardless of it?",
+      "de": "Die Risikogruppe würde vieles erlauben, entscheidend ist hier die Miktion: IPSS 21, Qmax 9 ml/s, 110 ml Restharn, 85 ml Drüse mit Mittellappen. Welche Techniken setzen eine gute Ausgangsmiktion voraus, und welches kurze Schema ist davon unabhängig gut belegt?",
+      "es": "El grupo de riesgo permitiría muchas opciones; lo que decide aquí es la micción: IPSS 21, Qmax 9 ml/s, residuo de 110 ml, glándula de 85 ml con lóbulo medio. ¿Qué técnicas exigen una buena micción basal y qué esquema corto está bien respaldado independientemente de ella?"
+    }
+  },
+  "rt-prostate-mhspc-low-volume-axial-55gy": {
+    "question": {
+      "en": "Work out the metastatic volume by CHAARTED exactly: high volume means visceral disease or at least 4 bone metastases with at least one outside the spine and pelvis. Where are his five lesions, and which target volume was irradiated in STAMPEDE on top of systemic therapy?",
+      "de": "Bestimm die Metastasenlast nach CHAARTED genau: Hohe Last heißt viszeral oder mindestens 4 Knochenmetastasen mit mindestens einer außerhalb von Wirbelsäule und Becken. Wo liegen seine fünf Herde, und welches Zielvolumen wurde in STAMPEDE zusätzlich zur Systemtherapie bestrahlt?",
+      "es": "Determina con precisión la carga metastásica según CHAARTED: alta carga significa metástasis viscerales o al menos 4 óseas con al menos una fuera de columna y pelvis. ¿Dónde están sus cinco lesiones y qué volumen diana se irradió en STAMPEDE además del tratamiento sistémico?"
+    }
+  },
+  "rt-prostate-salvage-adt-24-months-high-risk": {
+    "question": {
+      "en": "Count his adverse factors: ISUP 5, pT3b, R1, PSA 0.61 ng/ml and a doubling time of about 4 months. The ADT duration with salvage RT follows this risk (RADICALS-HD compared durations), and a negative PSMA PET or a larger field does not replace the systemic component.",
+      "de": "Zähl seine ungünstigen Faktoren: ISUP 5, pT3b, R1, PSA 0,61 ng/ml und eine Verdopplungszeit um 4 Monate. Die ADT-Dauer zur Salvage-RT richtet sich nach diesem Risiko (RADICALS-HD hat Dauern verglichen), und eine negative PSMA-PET oder ein größeres Feld ersetzen die systemische Komponente nicht.",
+      "es": "Cuenta sus factores desfavorables: ISUP 5, pT3b, R1, PSA 0,61 ng/ml y un tiempo de duplicación de unos 4 meses. La duración de la ADT con la radioterapia de rescate depende de este riesgo (RADICALS-HD comparó duraciones), y un PET-PSMA negativo o un campo mayor no sustituyen el componente sistémico."
+    }
+  },
+  "rt-prostate-salvage-early-start-66gy": {
+    "question": {
+      "en": "Two consecutive PSA rises after RP, PSMA PET negative: does EAU 2026 want you to wait for a PSA threshold? And which dose range applies to the prostate bed in 2 Gy fractions, given that escalating beyond it in SAKK 09/10 only added bowel toxicity?",
+      "de": "Zwei konsekutive PSA-Anstiege nach RP, PSMA-PET ohne Befund: Muss man nach EAU 2026 einen PSA-Schwellenwert abwarten? Und welche Dosisspanne gilt für die Prostataloge in 2-Gy-Fraktionen, wenn eine Eskalation darüber in SAKK 09/10 nur mehr Darmtoxizität brachte?",
+      "es": "Dos ascensos consecutivos del PSA tras la PR, PET-PSMA negativo: ¿pide la EAU 2026 esperar a un umbral de PSA? ¿Y qué rango de dosis se aplica al lecho prostático en fracciones de 2 Gy, si escalar por encima en SAKK 09/10 solo añadió toxicidad intestinal?"
+    }
+  },
+  "rt-rcc-primary-sabr-small-inoperable": {
+    "question": {
+      "en": "In SABR for primary RCC, tumour size decides the schedule, with 4 cm as the cut-off. Also remember that the kidney moves with breathing and renal function declines modestly after SABR: what do you need for planning and as baseline work-up?",
+      "de": "Bei der SABR des primären NZK entscheidet die Tumorgröße über das Schema, mit 4 cm als Grenze. Bedenk außerdem, dass die Niere atemverschieblich ist und die Nierenfunktion nach SABR mäßig abnimmt: Was brauchst du für die Planung und vorab an Diagnostik?",
+      "es": "En la SABR del carcinoma renal primario, el tamaño tumoral decide el esquema, con 4 cm como límite. Recuerda además que el riñón se mueve con la respiración y que la función renal disminuye moderadamente tras la SABR: ¿qué necesitas para la planificación y como estudio previo?"
+    }
+  },
+  "rt-seminoma-late-effects-hematuria-after-dogleg": {
+    "question": {
+      "en": "Painless visible haematuria is still painless visible haematuria, even 21 years after radiotherapy. What are the main late effects of infradiaphragmatic seminoma RT, is 30 Gy at the bladder edge enough for radiation cystitis, and what do blood pressure and BMI tell you?",
+      "de": "Schmerzlose Makrohämaturie bleibt schmerzlose Makrohämaturie, auch 21 Jahre nach der Bestrahlung. Welche Spätfolgen sind nach infradiaphragmaler Seminom-RT die wichtigsten, reichen 30 Gy am Blasenrand für eine Strahlenzystitis, und was sagen dir Blutdruck und BMI?",
+      "es": "Una hematuria macroscópica indolora lo sigue siendo 21 años después de la radioterapia. ¿Cuáles son los principales efectos tardíos de la radioterapia infradiafragmática del seminoma, bastan 30 Gy en el borde vesical para una cistitis rádica y qué te dicen la tensión arterial y el IMC?"
+    }
+  },
+  "rt-seminoma-stage1-paraaortic-20gy-selected": {
+    "question": {
+      "en": "Surveillance and carboplatin are both ruled out, which makes him one of the rare candidates for adjuvant RT. Which field is enough without prior inguinal or scrotal surgery (TE10), which dose was non-inferior in TE18, and what do you arrange before the first fraction given his wish for children?",
+      "de": "Surveillance und Carboplatin fallen bei ihm aus, damit ist er einer der seltenen Kandidaten für adjuvante RT. Welches Feld genügt ohne inguinale oder skrotale Voroperation (TE10), welche Dosis war in TE18 nicht unterlegen, und was erledigst du bei Kinderwunsch vor der ersten Fraktion?",
+      "es": "La vigilancia y el carboplatino quedan descartados, así que es uno de los pocos candidatos a radioterapia adyuvante. ¿Qué campo basta sin cirugía inguinal o escrotal previa (TE10), qué dosis fue no inferior en TE18 y qué organizas antes de la primera fracción dado su deseo de tener hijos?"
+    }
+  },
+  "rt-seminoma-stage2b-dogleg-boost-36gy": {
+    "question": {
+      "en": "A 3.8 cm node makes this stage IIB. Which drainage regions of a left testis without prior surgery belong electively in the field, does the macroscopic node need more dose than in stage IIA, and under what condition has irradiating only the node actually been studied?",
+      "de": "Ein Knoten von 3,8 cm macht Stadium IIB. Welche Lymphabflussregionen eines linken Hodens ohne Voroperation gehören elektiv ins Feld, braucht die Makrometastase mehr Dosis als im Stadium IIA, und unter welcher Voraussetzung wäre eine Bestrahlung nur des Knotens überhaupt geprüft?",
+      "es": "Un ganglio de 3,8 cm lo convierte en estadio IIB. ¿Qué regiones de drenaje de un testículo izquierdo sin cirugía previa entran de forma electiva en el campo, necesita la metástasis macroscópica más dosis que en el estadio IIA y en qué condición se ha estudiado irradiar solo el ganglio?"
+    }
+  },
   "sys-ae-abiraterone-mineralocorticoid-excess": {
     "question": {
       "de": "Er hat das Prednisolon vor drei Wochen selbst abgesetzt, seitdem Hypokaliämie, Hypertonie und Ödeme. Warum gehört zu Abirateron immer ein Steroid, und erreicht eine ALT knapp unter dem Doppelten schon die Pausenschwelle von mehr als dem Fünffachen der Norm?",
