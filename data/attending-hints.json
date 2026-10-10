@@ -1,4 +1,25 @@
 {
+  "and-pri-high-flow-after-perineal-trauma": {
+    "question": {
+      "de": "Schau auf die Blutgasanalyse: pO2 94 mmHg und pH 7,40 sind arterielle Werte, der Schwellkörper ist nicht ischämisch. Was folgt daraus für die Dringlichkeit, und welches Vorgehen schont die spätere Erektionsfähigkeit am meisten?",
+      "en": "Look at the blood gas: pO2 94 mmHg and pH 7.40 are arterial values, so the corporal tissue is not ischaemic. What does that mean for urgency, and which approach best protects his future erectile function?",
+      "es": "Fíjate en la gasometría: pO2 94 mmHg y pH 7,40 son valores arteriales, el tejido cavernoso no está isquémico. ¿Qué implica eso para la urgencia y qué abordaje protege mejor su función eréctil futura?"
+    }
+  },
+  "and-pri-ischaemic-refractory-distal-shunt": {
+    "question": {
+      "de": "Aspiration, Spülung und Phenylephrin bis 1 mg sind ausgeschöpft, die Blutgase sind eindeutig ischämisch. Die Shunt-Chirurgie folgt einer festen Stufenfolge vom einfachsten, am wenigsten morbiden Eingriff aufwärts: Womit fängst du an, und ab welcher Ischämiedauer wäre eine Sofortprothese überhaupt ein Thema?",
+      "en": "Aspiration, irrigation and phenylephrine up to 1 mg are exhausted, and the blood gases are clearly ischaemic. Shunt surgery follows a fixed sequence from the simplest, least morbid procedure upwards: where do you start, and after how long an ischaemia would an immediate prosthesis even be considered?",
+      "es": "La aspiración, el lavado y la fenilefrina hasta 1 mg están agotados, y la gasometría es claramente isquémica. La cirugía de derivación sigue una secuencia fija desde el procedimiento más sencillo y menos mórbido: ¿por dónde empiezas, y a partir de cuánto tiempo de isquemia se plantearía siquiera una prótesis inmediata?"
+    }
+  },
+  "and-pri-stuttering-sickle-cell-prevention": {
+    "question": {
+      "de": "HbSS mit wiederholten, teils ischämischen Episoden: Hier geht es um zwei Dinge. Was muss er bei der nächsten anhaltenden Erektion konkret tun, und wie verhinderst du Rezidive, ohne seine Fertilität zu gefährden?",
+      "en": "HbSS with recurrent, partly ischaemic episodes: two things matter here. What exactly must he do at the next prolonged erection, and how do you prevent recurrences without putting his fertility at risk?",
+      "es": "HbSS con episodios recurrentes, en parte isquémicos: aquí importan dos cosas. ¿Qué debe hacer exactamente en la próxima erección prolongada y cómo previenes las recurrencias sin poner en riesgo su fertilidad?"
+    }
+  },
   "bank-uro-and-00001": {
     "source-decision": {
       "en": "Testosterone follows a daily rhythm, so a single afternoon value in the grey zone is not enough. What does the diagnosis require regarding timing and repetition of the measurement, and which lab value then separates primary from secondary hypogonadism?",
@@ -2174,6 +2195,111 @@
       "es": "Pregúntate: ¿qué debe saber Thomas sobre la exploración de hoy, quién va a estudiar el estrechamiento y qué síntomas no pueden esperar a la próxima cita?"
     }
   },
+  "fun-inc-aus-after-salvage-radiotherapy": {
+    "question": {
+      "de": "Entscheidend sind zwei Befunde: 650 g im 24-h-Vorlagentest, also eine schwere Inkontinenz, und die Salvage-Bestrahlung der Loge. Welches Verfahren bleibt bei bestrahltem Gewebe und schwerem Urinverlust zuverlässig wirksam?",
+      "en": "Two findings decide this: 650 g on the 24-hour pad test, i.e. severe incontinence, and salvage radiotherapy to the prostate bed. Which procedure remains reliably effective in irradiated tissue with heavy leakage?",
+      "es": "Deciden dos hallazgos: 650 g en la prueba de compresas de 24 h, es decir, incontinencia grave, y la radioterapia de rescate del lecho. ¿Qué procedimiento sigue siendo eficaz de forma fiable en tejido irradiado con pérdidas importantes?"
+    }
+  },
+  "fun-inc-aus-catheter-deactivate-cuff": {
+    "question": {
+      "de": "Der feste Widerstand nach etwa 12 cm ist die geschlossene Manschette in der bulbären Harnröhre. Was musst du am Implantat tun, bevor irgendein Instrument transurethral passiert, und welches Kaliber schont die Harnröhre?",
+      "en": "The firm resistance at about 12 cm is the closed cuff in the bulbar urethra. What must you do to the device before any instrument passes transurethrally, and which calibre spares the urethra?",
+      "es": "La resistencia firme a unos 12 cm es el manguito cerrado en la uretra bulbar. ¿Qué tienes que hacer con el dispositivo antes de que pase cualquier instrumento por vía transuretral, y qué calibre protege la uretra?"
+    }
+  },
+  "fun-inc-aus-cuff-erosion-explant": {
+    "question": {
+      "de": "Freiliegendes Manschettenmaterial in der Harnröhre, Rötung über der Pumpe und CRP 96 mg/l: Das ganze System gilt als infiziert. Kann man ein kontaminiertes Implantat belassen oder in derselben Sitzung ersetzen?",
+      "en": "Exposed cuff material in the urethra, redness over the pump and CRP 96 mg/l: the whole system is considered infected. Can a contaminated implant be left in place or replaced in the same session?",
+      "es": "Material del manguito expuesto en la uretra, enrojecimiento sobre la bomba y PCR 96 mg/l: todo el sistema se considera infectado. ¿Se puede dejar un implante contaminado o sustituirlo en el mismo acto?"
+    }
+  },
+  "fun-inc-band-retention-lockerung": {
+    "question": {
+      "de": "Präoperativ normale Miktion, jetzt seit sechs Tagen Restharn über 400 ml ohne Hämatom, Infekt oder Anticholinergika: Das ist ein mechanisches Problem durch das Band. Denk an das Zeitfenster – was ist in den ersten ein bis zwei Wochen über den vaginalen Zugang noch einfach möglich?",
+      "en": "Normal voiding before surgery, now six days of residuals over 400 ml with no haematoma, infection or anticholinergics: this is a mechanical problem caused by the tape. Think about timing: what is still easy via the vaginal access in the first one to two weeks?",
+      "es": "Micción normal antes de la cirugía y ahora seis días con residuos de más de 400 ml sin hematoma, infección ni anticolinérgicos: es un problema mecánico causado por la banda. Piensa en el momento: ¿qué es aún sencillo por el acceso vaginal en las primeras una o dos semanas?"
+    }
+  },
+  "fun-inc-band-vaginale-exposition": {
+    "question": {
+      "de": "Nur 4 mm Netz in der Vaginalwand, keine Entzündung, Urethrozystoskopie unauffällig, dazu eine atrophe Schleimhaut. Eine kleine vaginale Exposition wird ganz anders behandelt als eine Erosion in Urethra oder Blase: Wie invasiv musst du hier sein, und was braucht die atrophe Schleimhaut?",
+      "en": "Only 4 mm of mesh in the vaginal wall, no inflammation, normal urethrocystoscopy, and atrophic mucosa. A small vaginal exposure is managed very differently from erosion into urethra or bladder: how invasive do you need to be, and what does atrophic mucosa need?",
+      "es": "Solo 4 mm de malla en la pared vaginal, sin inflamación, uretrocistoscopia normal y mucosa atrófica. Una exposición vaginal pequeña se trata de forma muy distinta a una erosión en uretra o vejiga: ¿cuán invasivo tienes que ser y qué necesita la mucosa atrófica?"
+    }
+  },
+  "fun-inc-bulking-agent-counselling": {
+    "question": {
+      "de": "Sie wählt bewusst den risikoärmsten Eingriff. Überleg, was sie dafür im Vergleich zum Band langfristig in Kauf nimmt, und prüf jede Aussage auf Indikation (reine Belastungsinkontinenz), Materialwahl und spätere Optionen.",
+      "en": "She is deliberately choosing the lowest-risk procedure. Consider what she gives up in the long run compared with a sling, and check each statement for indication (pure stress incontinence), choice of material and later options.",
+      "es": "Elige a propósito la intervención de menor riesgo. Piensa qué acepta a largo plazo a cambio frente a una banda, y revisa cada afirmación en cuanto a indicación (incontinencia de esfuerzo pura), elección del material y opciones posteriores."
+    }
+  },
+  "fun-inc-duloxetine-counselling": {
+    "question": {
+      "de": "Duloxetin ist ein SNRI: Welche Nebenwirkungen sind typisch und welche eher nicht, was droht beim abrupten Absetzen, und hält die Wirkung über die Einnahme hinaus an?",
+      "en": "Duloxetine is an SNRI: which side effects are typical and which are not, what happens on abrupt withdrawal, and does the effect last beyond the time she takes it?",
+      "es": "La duloxetina es un IRSN: ¿qué efectos adversos son típicos y cuáles no, qué ocurre al suspenderla bruscamente, y se mantiene el efecto más allá del tiempo de toma?"
+    }
+  },
+  "fun-inc-mixed-urgency-predominant": {
+    "question": {
+      "de": "Lies das Miktionstagebuch: vier Drang- gegen eine Belastungsepisode, und der Drang belastet sie am meisten. Bei Mischinkontinenz behandelst du die führende Komponente zuerst – mit welcher Therapiestufe beginnt man bei dieser Komponente?",
+      "en": "Read the bladder diary: four urgency episodes versus one stress episode, and urgency bothers her most. In mixed incontinence you treat the predominant component first; which line of treatment do you start with for that component?",
+      "es": "Lee el diario miccional: cuatro episodios de urgencia frente a uno de esfuerzo, y lo que más le molesta es la urgencia. En la incontinencia mixta tratas primero el componente predominante: ¿con qué escalón terapéutico empiezas para ese componente?"
+    }
+  },
+  "fun-inc-mus-tvt-tot-aufklaerung": {
+    "question": {
+      "de": "Für die Aufklärung zählen die Vergleichsdaten aus großen Studien: Wie unterscheiden sich die Heilungsraten, und welche Komplikationen ergeben sich aus dem Trokarweg – retropubisch dicht an der Blase, transobturatorisch durch die Adduktoren?",
+      "en": "For counselling, the comparative data from large trials matter: how do cure rates differ, and which complications follow from the trocar path, retropubic close to the bladder versus transobturator through the adductors?",
+      "es": "Para la información al paciente cuentan los datos comparativos de grandes ensayos: ¿en qué difieren las tasas de curación y qué complicaciones derivan de la trayectoria del trocar, retropúbica junto a la vejiga o transobturadora a través de los aductores?"
+    }
+  },
+  "fun-inc-pessary-family-planning": {
+    "question": {
+      "de": "Entscheidend sind der Kinderwunsch in ein bis zwei Jahren und der rein situative Urinverlust beim Sport. Was droht einer definitiven Inkontinenzoperation durch eine weitere Schwangerschaft und Geburt, und welche reversiblen Hilfsmittel gibt es?",
+      "en": "What decides this is her plan for another child within one to two years and leakage only during sport. What can a further pregnancy and delivery do to a definitive continence operation, and which reversible aids exist?",
+      "es": "Lo decisivo es su deseo de otro hijo en uno o dos años y la pérdida solo durante el deporte. ¿Qué puede hacer otro embarazo y parto con una cirugía definitiva de incontinencia, y qué ayudas reversibles existen?"
+    }
+  },
+  "fun-inc-pfmt-supervised-after-app": {
+    "question": {
+      "de": "Sechs Wochen App-Training ohne Anleitung bei einer Willkürkontraktion von Oxford 2/5: Zählt das schon als gescheiterte Erstlinientherapie? Überleg, wie lange und in welcher Form das Beckenbodentraining laut Leitlinie erfolgen muss.",
+      "en": "Six weeks of unsupervised app training with a voluntary contraction of Oxford 2/5: does that count as failed first-line therapy? Consider how long and in what form pelvic floor training must be done according to the guidelines.",
+      "es": "Seis semanas de entrenamiento con una app sin supervisión y una contracción voluntaria de Oxford 2/5: ¿cuenta eso como fracaso del tratamiento de primera línea? Piensa cuánto tiempo y de qué forma debe hacerse el entrenamiento del suelo pélvico según las guías."
+    }
+  },
+  "fun-inc-ppi-early-conservative": {
+    "question": {
+      "de": "Sechs Wochen postoperativ und mit abnehmender Vorlagenzahl: Die Kontinenz erholt sich nach Prostatektomie oft noch über viele Monate. Ab welcher Dauer persistierender Inkontinenz ist eine Operation überhaupt indiziert?",
+      "en": "Six weeks after surgery with a falling pad count: continence after prostatectomy often keeps recovering for many months. After how long must incontinence persist before surgery is even indicated?",
+      "es": "Seis semanas tras la cirugía y con un número de compresas en descenso: la continencia tras la prostatectomía suele seguir recuperándose durante muchos meses. ¿Tras cuánto tiempo de incontinencia persistente está siquiera indicada la cirugía?"
+    }
+  },
+  "fun-inc-refractory-oab-tibial-stimulation": {
+    "question": {
+      "de": "Zwei Substanzklassen sind gescheitert, Selbstkatheterismus ist wegen der Hände unmöglich, und ein Implantat lehnt sie ab. Welche Drittlinienverfahren gibt es bei refraktärer OAB, und welches setzt weder Katheterbereitschaft noch einen implantierten Impulsgeber voraus?",
+      "en": "Two drug classes have failed, self-catheterisation is impossible because of her hands, and she refuses an implant. Which third-line treatments exist for refractory OAB, and which one requires neither readiness to self-catheterise nor an implanted pulse generator?",
+      "es": "Han fracasado dos clases de fármacos, el autocateterismo es imposible por sus manos y rechaza un implante. ¿Qué tratamientos de tercera línea existen para la VH refractaria, y cuál no exige ni disposición al autocateterismo ni un generador de impulsos implantado?"
+    }
+  },
+  "fun-inc-rezidiv-ohne-netz": {
+    "question": {
+      "de": "Sie lehnt jedes synthetische Netz ab und will eine dauerhafte Lösung bei hypermobiler Urethra. Welche Verfahren gegen Belastungsinkontinenz kommen ganz ohne Fremdmaterial aus und haben gute Langzeitdaten?",
+      "en": "She refuses any synthetic mesh and wants a durable solution for a hypermobile urethra. Which stress incontinence procedures use no foreign material at all and have good long-term data?",
+      "es": "Rechaza cualquier malla sintética y quiere una solución duradera con uretra hipermóvil. ¿Qué procedimientos para la incontinencia de esfuerzo no usan ningún material extraño y tienen buenos datos a largo plazo?"
+    }
+  },
+  "fun-inc-tvt-blasenperforation": {
+    "question": {
+      "de": "Eine intraoperativ erkannte Trokarperforation bei klarem Urin und stabilem Kreislauf ist häufig und heilt mit kurzer Ableitung. Gefährlich ist nur ein Band, das am Ende durch die Blase verläuft: Wie stellst du sicher und belegst, dass es außerhalb der Blase liegt, ohne den Eingriff unnötig zu eskalieren?",
+      "en": "A trocar perforation recognised intraoperatively with clear urine and stable haemodynamics is common and heals with brief drainage. The only danger is a tape that ends up running through the bladder: how do you make sure, and document, that it lies outside the bladder without escalating the procedure unnecessarily?",
+      "es": "Una perforación por el trocar detectada durante la cirugía, con orina clara y hemodinámica estable, es frecuente y cura con un drenaje breve. Lo único peligroso es una banda que acabe atravesando la vejiga: ¿cómo te aseguras, y lo compruebas, de que queda fuera de la vejiga sin escalar innecesariamente la intervención?"
+    }
+  },
   "onc-bladder-adjuvant-after-cystectomy": {
     "adjuvant-choice": {
       "en": "pT3a pN1 without neoadjuvant chemotherapy meets the criteria for adjuvant treatment. Check cisplatin eligibility (eGFR, hearing, neuropathy, heart, ECOG): it sets the ranking of the adjuvant options, not PD-L1 status alone.",
@@ -2502,6 +2628,314 @@
       "de": "Partielles Ansprechen nach Platin bei Lebermetastasen: Welche Strategie hat nach Ansprechen oder Stabilisierung unter Platin das Gesamtüberleben verlängert, und was bringt eine Operation bei viszeraler Metastasierung?",
       "en": "Partial response after platinum with liver metastases: which strategy prolonged overall survival after response or stable disease on platinum, and what does surgery add in visceral metastatic disease?",
       "es": "Respuesta parcial tras platino con metástasis hepáticas: ¿qué estrategia prolongó la supervivencia global tras respuesta o estabilización con platino, y qué aporta la cirugía con metástasis viscerales?"
+    }
+  },
+  "sys-ae-abiraterone-mineralocorticoid-excess": {
+    "question": {
+      "de": "Er hat das Prednisolon vor drei Wochen selbst abgesetzt, seitdem Hypokaliämie, Hypertonie und Ödeme. Warum gehört zu Abirateron immer ein Steroid, und erreicht eine ALT knapp unter dem Doppelten schon die Pausenschwelle von mehr als dem Fünffachen der Norm?",
+      "en": "He stopped prednisolone himself three weeks ago, and since then he has hypokalaemia, hypertension and oedema. Why is abiraterone always paired with a steroid, and does an ALT just under twice normal reach the hold threshold of more than five times the upper limit?",
+      "es": "Dejó la prednisolona por su cuenta hace tres semanas y desde entonces tiene hipopotasemia, hipertensión y edemas. ¿Por qué la abiraterona va siempre con un corticoide, y una ALT de casi el doble alcanza ya el umbral de suspensión de más de cinco veces el límite superior?"
+    }
+  },
+  "sys-ae-adt-bone-metabolic-baseline": {
+    "question": {
+      "de": "Die DXA zeigt am Schenkelhals einen T-Score von −2,7, also Osteoporose, dazu Hypertonie, Prädiabetes, hohes LDL und Vitamin-D-Mangel. Welche antiresorptive Dosierung dient der Frakturprävention unter ADT, und welche ist Knochenmetastasen beim CRPC vorbehalten?",
+      "en": "The DXA shows a femoral neck T-score of −2.7, i.e. osteoporosis, plus hypertension, prediabetes, high LDL and vitamin D deficiency. Which antiresorptive dosing is meant for fracture prevention on ADT, and which is reserved for bone metastases in CRPC?",
+      "es": "La DXA muestra un T-score de −2,7 en el cuello femoral, es decir, osteoporosis, además de hipertensión, prediabetes, LDL alto y déficit de vitamina D. ¿Qué pauta antirresortiva sirve para prevenir fracturas con la ADT y cuál se reserva para metástasis óseas en el CPRC?"
+    }
+  },
+  "sys-ae-apalutamide-seizure": {
+    "question": {
+      "de": "Ein erster generalisierter Anfall ohne andere Ursache – Natrium, Glukose, Kalzium, TSH und CT sind unauffällig – unter einem AR-Signalweg-Hemmer, der die Krampfschwelle senkt. Was sagt die Fachinformation zu Fortführung, Dosisreduktion und Wechsel innerhalb der Substanzklasse?",
+      "en": "A first generalised seizure with no other cause (sodium, glucose, calcium, TSH and CT normal) on an androgen receptor pathway inhibitor that lowers the seizure threshold. What does the label say about continuing, dose reduction and switching within the class?",
+      "es": "Una primera crisis generalizada sin otra causa (sodio, glucosa, calcio, TSH y TC normales) con un inhibidor de la vía del receptor androgénico que reduce el umbral convulsivo. ¿Qué dice la ficha técnica sobre continuar, reducir la dosis y cambiar dentro de la misma clase?"
+    }
+  },
+  "sys-ae-bcg-systemic-infection-sepsis": {
+    "question": {
+      "de": "Hypotonie, Laktat 3,8 mmol/l, Verwirrtheit, Thrombopenie und miliare Lungenzeichnung 30 Stunden nach traumatischer Instillation: Das ist eine systemische BCG-Infektion. Denk daran, welche Tuberkulostatika gegen M. bovis wirken, was die Steroide leisten und was das für künftiges BCG heißt.",
+      "en": "Hypotension, lactate 3.8 mmol/l, confusion, thrombocytopenia and a miliary lung pattern 30 hours after a traumatic instillation: this is systemic BCG infection. Remember which antituberculous drugs work against M. bovis, what steroids add and what it means for future BCG.",
+      "es": "Hipotensión, lactato 3,8 mmol/l, confusión, trombocitopenia y patrón pulmonar miliar 30 horas después de una instilación traumática: es una infección sistémica por BCG. Recuerda qué tuberculostáticos actúan contra M. bovis, qué aportan los corticoides y qué implica para futuras dosis de BCG."
+    }
+  },
+  "sys-ae-bleomycin-pneumonitis-dlco": {
+    "question": {
+      "de": "DLCO von 94 auf 62 %, basale Rasselgeräusche und neue Milchglas- und Retikulärzeichnung: Das ist eine Bleomycin-Pneumonitis. Darf Bleomycin danach je wieder gegeben werden, wie komplettierst du die Chemo ohne diese Substanz, und was gilt für die Sauerstoffgabe?",
+      "en": "DLCO down from 94 to 62%, basal crackles and new ground-glass and reticular changes: this is bleomycin pneumonitis. Can bleomycin ever be given again after this, how do you complete chemotherapy without it, and what applies to oxygen?",
+      "es": "DLCO de 94 a 62 %, crepitantes basales y nuevas opacidades en vidrio deslustrado y reticulares: es una neumonitis por bleomicina. ¿Se puede volver a dar bleomicina después de esto, cómo completas la quimioterapia sin ella y qué hay que tener en cuenta con el oxígeno?"
+    }
+  },
+  "sys-ae-cisplatin-nephro-ototoxicity-neoadjuvant": {
+    "question": {
+      "de": "eGFR von 74 auf 46 gefallen und ein neuer Hörverlust von 30–35 dB: Beides schließt weiteres Cisplatin aus. Bringt ein Wechsel auf Carboplatin in der neoadjuvanten Situation einen belegten Nutzen, oder was ist jetzt der schnellste Weg zur kurativen Therapie?",
+      "en": "eGFR has fallen from 74 to 46 and there is new 30–35 dB hearing loss: both rule out further cisplatin. Does switching to carboplatin have proven benefit in the neoadjuvant setting, or what is now the fastest route to curative treatment?",
+      "es": "El FGe ha bajado de 74 a 46 y hay una nueva hipoacusia de 30–35 dB: ambas cosas excluyen más cisplatino. ¿Tiene un beneficio demostrado cambiar a carboplatino en el contexto neoadyuvante, o cuál es ahora el camino más rápido al tratamiento curativo?"
+    }
+  },
+  "sys-ae-desmopressin-elderly-sodium-monitoring": {
+    "question": {
+      "de": "Desmopressin ist im Alter nicht verboten, aber das Hyponatriämierisiko steigt mit Alter und Dosis und ist in den ersten Tagen am höchsten. Welche Höchstdosis gilt ab 65 Jahren für Männer, und wann muss das erste Kontroll-Natrium nach Beginn liegen?",
+      "en": "Desmopressin is not forbidden in older patients, but the risk of hyponatraemia rises with age and dose and is highest in the first few days. What is the maximum dose for men aged 65 and over, and when must the first sodium check after starting take place?",
+      "es": "La desmopresina no está prohibida en mayores, pero el riesgo de hiponatremia aumenta con la edad y la dosis y es máximo en los primeros días. ¿Qué dosis máxima rige para varones a partir de 65 años, y cuándo debe hacerse el primer control de sodio tras el inicio?"
+    }
+  },
+  "sys-ae-dutasteride-psa-rise-sexual": {
+    "question": {
+      "de": "Unter 5-Alpha-Reduktasehemmern halbiert sich das PSA; bewerte den Verlauf ab dem Nadir von 1,9 ng/ml, also einen bestätigten Anstieg auf 3,0. Ist das unauffällig, und welche Diagnostik kommt heute vor jeder Biopsie? Seine Frage zu Libido und Ejakulat verdient eine ehrliche Antwort.",
+      "en": "On 5-alpha reductase inhibitors PSA halves; judge the course from the nadir of 1.9 ng/ml, i.e. a confirmed rise to 3.0. Is that unremarkable, and which test comes before any biopsy today? His question about libido and ejaculate deserves an honest answer.",
+      "es": "Con inhibidores de la 5-alfa reductasa el PSA se reduce a la mitad; valora la evolución desde el nadir de 1,9 ng/ml, es decir, una subida confirmada a 3,0. ¿Es eso anodino, y qué prueba va hoy antes de cualquier biopsia? Su pregunta sobre libido y eyaculado merece una respuesta honesta."
+    }
+  },
+  "sys-ae-enfortumab-vedotin-sjs-ten": {
+    "question": {
+      "de": "Schießscheibenläsionen, schlaffe Blasen, positives Nikolski-Zeichen und Befall von Mund und Augen: Verdacht auf SJS/TEN, ein lebensbedrohliches Bild. Beide Substanzen können es auslösen – welches Setting braucht sie, und ist eine Dosisreduktion hier überhaupt eine Option?",
+      "en": "Target lesions, flaccid blisters, a positive Nikolsky sign and oral and ocular involvement: suspected SJS/TEN, a life-threatening picture. Both drugs can cause it; what setting does she need, and is a dose reduction an option at all here?",
+      "es": "Lesiones en diana, ampollas flácidas, signo de Nikolsky positivo y afectación oral y ocular: sospecha de SSJ/NET, un cuadro potencialmente mortal. Ambos fármacos pueden causarlo; ¿qué entorno asistencial necesita, y es siquiera una opción reducir la dosis?"
+    }
+  },
+  "sys-ae-fluoroquinolone-achilles-steroid": {
+    "question": {
+      "de": "Beidseitige Achillessehnenschmerzen drei Tage nach Ciprofloxacin, dazu Alter, Prednisolon, eingeschränkte Nierenfunktion und ein Aortenaneurysma. Was bedeutet Sehnenschmerz unter einem Fluorchinolon für die ganze Substanzklasse, und womit behandelst du die Zystitis zu Ende?",
+      "en": "Bilateral Achilles pain three days after ciprofloxacin, plus age, prednisolone, reduced renal function and an aortic aneurysm. What does tendon pain on a fluoroquinolone mean for the whole drug class, and what do you use to finish treating the cystitis?",
+      "es": "Dolor bilateral del tendón de Aquiles tres días después de ciprofloxacino, además de edad, prednisolona, función renal reducida y un aneurisma aórtico. ¿Qué significa el dolor tendinoso con una fluoroquinolona para toda la clase, y con qué terminas de tratar la cistitis?"
+    }
+  },
+  "sys-ae-gnrh-flare-impending-cord-compression": {
+    "question": {
+      "de": "Epidurale Metastase mit Myelonkontakt bei sehr hoher Tumorlast: Schon ein kurzer Testosteronanstieg in den ersten Tagen kann eine Querschnittssymptomatik auslösen. Welche Form der Androgendeprivation senkt das Testosteron sofort, ganz ohne Flare?",
+      "en": "An epidural metastasis touching the cord with very high tumour burden: even a brief testosterone surge in the first days can trigger cord compression. Which form of androgen deprivation lowers testosterone immediately, with no flare at all?",
+      "es": "Metástasis epidural en contacto con la médula y carga tumoral muy alta: incluso un breve aumento de testosterona en los primeros días puede desencadenar una compresión medular. ¿Qué forma de deprivación androgénica baja la testosterona de inmediato y sin ningún flare?"
+    }
+  },
+  "sys-ae-ici-hypophysitis-hydrocortisone-first": {
+    "question": {
+      "de": "Cortisol 2,1 µg/dl bei niedrigem ACTH und zusätzlich zentrale Hypothyreose: Hier zählt die Reihenfolge der Substitution. Was droht, wenn du Schilddrüsenhormon vor dem Cortisol ersetzt, und brauchst du ohne Chiasmakontakt überhaupt hochdosierte Steroide?",
+      "en": "Cortisol 2.1 µg/dl with low ACTH plus central hypothyroidism: the order of replacement matters here. What happens if you replace thyroid hormone before cortisol, and without chiasmal contact do you need high-dose steroids at all?",
+      "es": "Cortisol de 2,1 µg/dl con ACTH baja y además hipotiroidismo central: aquí importa el orden de la sustitución. ¿Qué pasa si repones la hormona tiroidea antes que el cortisol, y sin contacto con el quiasma necesitas siquiera corticoides a dosis altas?"
+    }
+  },
+  "sys-ae-ifosfamide-encephalopathy-mesna": {
+    "question": {
+      "de": "Somnolenz, Halluzinationen und Myoklonien unter laufender Ifosfamid-Infusion bei Albumin 2,7 g/dl und ohne metabolische Ursache: typische Ifosfamid-Enzephalopathie. Was machst du mit der Infusion, welches Antidot gibt es, und wovor schützt Mesna weiterhin?",
+      "en": "Somnolence, hallucinations and myoclonus during the ifosfamide infusion with albumin 2.7 g/dl and no metabolic cause: classic ifosfamide encephalopathy. What do you do with the infusion, which antidote exists, and what does mesna still protect against?",
+      "es": "Somnolencia, alucinaciones y mioclonías durante la infusión de ifosfamida con albúmina de 2,7 g/dl y sin causa metabólica: encefalopatía típica por ifosfamida. ¿Qué haces con la infusión, qué antídoto existe y de qué sigue protegiendo el mesna?"
+    }
+  },
+  "sys-ae-mirabegron-uncontrolled-hypertension": {
+    "question": {
+      "de": "184/112 mmHg auch nach Ruhe – liegt das über der Grenze der Kontraindikation von systolisch ≥ 180 und/oder diastolisch ≥ 110 mmHg? Überleg auch, ob das ein dauerhafter Ausschluss ist oder ob Mirabegron nach Blutdruckeinstellung wieder infrage kommt.",
+      "en": "184/112 mmHg even after rest: is that above the contraindication threshold of systolic ≥ 180 and/or diastolic ≥ 110 mmHg? Also consider whether this is a permanent exclusion or whether mirabegron becomes an option once her blood pressure is controlled.",
+      "es": "184/112 mmHg incluso tras reposo: ¿supera el umbral de contraindicación de sistólica ≥ 180 y/o diastólica ≥ 110 mmHg? Piensa también si es una exclusión permanente o si el mirabegrón vuelve a ser una opción cuando la presión esté controlada."
+    }
+  },
+  "sys-ae-mitomycin-palmar-genital-dermatitis": {
+    "question": {
+      "de": "Juckende Ekzeme an Handflächen, Fußsohlen und Genitale unter Mitomycin-Instillationen, die Urinkultur ist steril: Das ist eine allergische Kontaktdermatitis, weder Mykose noch Infekt. Kann man ein Allergen weiter instillieren, und welche adjuvanten Alternativen gibt es beim intermediären Risiko?",
+      "en": "Itchy eczema on palms, soles and genitals during mitomycin instillations with a sterile urine culture: this is allergic contact dermatitis, neither fungal nor infectious. Can you keep instilling an allergen, and which adjuvant alternatives exist for intermediate risk?",
+      "es": "Eccema pruriginoso en palmas, plantas y genitales durante las instilaciones de mitomicina, con urocultivo estéril: es una dermatitis alérgica de contacto, ni micosis ni infección. ¿Se puede seguir instilando un alérgeno, y qué alternativas adyuvantes hay en riesgo intermedio?"
+    }
+  },
+  "sys-ae-nitrofurantoin-longterm-lung-liver": {
+    "question": {
+      "de": "Husten, Belastungsdyspnoe, basales Knistern und Transaminasen über dem Dreifachen nach 14 Monaten Nitrofurantoin, dazu eine eGFR von 28: Das sind Lungen- und Lebertoxizität bei bestehender Kontraindikation. Lässt sich so etwas mit einer Dosisanpassung lösen?",
+      "en": "Cough, exertional dyspnoea, basal crackles and transaminases over three times normal after 14 months of nitrofurantoin, plus an eGFR of 28: that is lung and liver toxicity in the presence of a contraindication. Can a dose adjustment solve that?",
+      "es": "Tos, disnea de esfuerzo, crepitantes basales y transaminasas por encima del triple tras 14 meses de nitrofurantoína, además de un FGe de 28: es toxicidad pulmonar y hepática con una contraindicación ya presente. ¿Se puede resolver con un ajuste de dosis?"
+    }
+  },
+  "sys-ae-oxybutynin-cognition-deprescribing": {
+    "question": {
+      "de": "MoCA von 27 auf 21, Stürze und Obstipation unter Oxybutynin plus Amitriptylin: Denk an die anticholinerge Gesamtlast. Behandelst du eine Nebenwirkung mit einem weiteren Medikament, oder setzt du an der Ursache an – und welche OAB-Substanzklasse ist kognitiv günstiger?",
+      "en": "MoCA down from 27 to 21, falls and constipation on oxybutynin plus amitriptyline: think about the total anticholinergic burden. Do you treat a side effect with another drug or address the cause, and which OAB drug class is kinder to cognition?",
+      "es": "MoCA de 27 a 21, caídas y estreñimiento con oxibutinina más amitriptilina: piensa en la carga anticolinérgica total. ¿Tratas un efecto adverso con otro fármaco o actúas sobre la causa, y qué clase de fármacos para la VH es más favorable a nivel cognitivo?"
+    }
+  },
+  "sys-ae-sildenafil-chest-pain-nitrates": {
+    "question": {
+      "de": "Sildenafil wurde vor zweieinhalb Stunden eingenommen. Welche Wechselwirkung droht mit NO-Donatoren jeder Art, welcher Mindestabstand gilt nach Sildenafil, und wie klärst du das akute Koronarsyndrom trotzdem leitliniengerecht ab?",
+      "en": "He took sildenafil two and a half hours ago. What interaction threatens with any kind of NO donor, what minimum interval applies after sildenafil, and how do you still work up the acute coronary syndrome according to guidelines?",
+      "es": "Tomó sildenafilo hace dos horas y media. ¿Qué interacción amenaza con cualquier donante de NO, qué intervalo mínimo rige tras el sildenafilo, y cómo estudias igualmente el síndrome coronario agudo según las guías?"
+    }
+  },
+  "sys-ae-tamsulosin-ifis-cataract": {
+    "question": {
+      "de": "Tamsulosin kann ein intraoperatives Floppy-Iris-Syndrom auslösen, auch noch nach längerer Einnahmepause. Entscheidend ist, wer im OP darauf vorbereitet sein muss und ob eine kurze Pause das Risiko wirklich beseitigt.",
+      "en": "Tamsulosin can cause intraoperative floppy iris syndrome, even after a long break from the drug. What matters is who in theatre must be prepared for it, and whether a short pause really removes the risk.",
+      "es": "La tamsulosina puede provocar el síndrome del iris flácido intraoperatorio, incluso tras una pausa larga. Lo decisivo es quién en el quirófano debe estar preparado y si una pausa corta elimina realmente el riesgo."
+    }
+  },
+  "sys-ae-testosterone-erythrocytosis": {
+    "question": {
+      "de": "Ein Hämatokrit von 55,8 % liegt über der Schwelle von 54 %, dazu Schnarchen mit Atempausen bei BMI 33. Der PSA-Anstieg um 0,4 ng/ml nach Therapiebeginn ist erwartbar. Was verlangt die Hämatokrit-Schwelle, und welche Ursache klärst du parallel ab?",
+      "en": "A haematocrit of 55.8% is above the 54% threshold, and he snores with apnoeas at a BMI of 33. A PSA rise of 0.4 ng/ml after starting therapy is expected. What does the haematocrit threshold require, and which cause do you investigate in parallel?",
+      "es": "Un hematocrito de 55,8 % supera el umbral del 54 %, y ronca con apneas con un IMC de 33. Una subida del PSA de 0,4 ng/ml tras iniciar el tratamiento es esperable. ¿Qué exige el umbral de hematocrito y qué causa estudias en paralelo?"
+    }
+  },
+  "sys-prot-abiraterone-mcrpc-steroid-dose-fasting": {
+    "question": {
+      "de": "Hier liegt ein mCRPC vor, kein mHSPC: Die Prednisolondosis unterscheidet sich zwischen beiden Situationen. Denk außerdem an die Einnahme im Verhältnis zu den Mahlzeiten, an die laufende ADT und an das Lebermonitoring in den ersten drei Monaten.",
+      "en": "This is mCRPC, not mHSPC: the prednisolone dose differs between the two settings. Also think about timing relative to meals, the ongoing ADT and liver monitoring during the first three months.",
+      "es": "Esto es un CPRCm, no un CPHSm: la dosis de prednisolona es distinta en ambas situaciones. Piensa además en la toma respecto a las comidas, en la ADT en curso y en la vigilancia hepática durante los tres primeros meses."
+    }
+  },
+  "sys-prot-adjuvant-pembrolizumab-q6w-duration": {
+    "question": {
+      "de": "Sie wünscht möglichst wenige Termine: Welches Fixdosis-Intervall ist für Pembrolizumab zugelassen, wie viele Gaben ergeben ein Jahr adjuvante Therapie, und braucht ein Checkpoint-Inhibitor überhaupt eine Steroid-Prämedikation?",
+      "en": "She wants as few visits as possible: which fixed-dose interval is approved for pembrolizumab, how many doses make up one year of adjuvant therapy, and does a checkpoint inhibitor need steroid premedication at all?",
+      "es": "Quiere el menor número posible de citas: ¿qué intervalo de dosis fija está aprobado para pembrolizumab, cuántas dosis suman un año de tratamiento adyuvante, y necesita un inhibidor de checkpoint premedicación con corticoides?"
+    }
+  },
+  "sys-prot-arasens-docetaxel-darolutamide-order": {
+    "question": {
+      "de": "In der mHSPC-Tripeltherapie hat Docetaxel eine feste Zyklenzahl und eine Dexamethason-Prämedikation gegen Überempfindlichkeit und Flüssigkeitsretention. Und was passiert mit Darolutamid und ADT während der Chemo – Pause oder durchgehend?",
+      "en": "In mHSPC triplet therapy, docetaxel has a fixed number of cycles and dexamethasone premedication against hypersensitivity and fluid retention. And what happens to darolutamide and ADT during chemotherapy: paused or continuous?",
+      "es": "En la triple terapia del CPHSm, el docetaxel tiene un número fijo de ciclos y premedicación con dexametasona contra la hipersensibilidad y la retención de líquidos. ¿Y qué pasa con la darolutamida y la ADT durante la quimioterapia: se pausan o siguen sin interrupción?"
+    }
+  },
+  "sys-prot-avelumab-maintenance-order": {
+    "question": {
+      "de": "Partielle Remission nach Platin, letzte Chemo vor fünf Wochen: Liegt sie im Startfenster der Erhaltung von 4–10 Wochen? Prüf außerdem Fixdosis gegen kg-Dosis, das Intervall und vor welchen Infusionen die Prämedikation gegen Infusionsreaktionen vorgeschrieben ist.",
+      "en": "Partial response after platinum, last chemotherapy five weeks ago: is she within the 4–10-week start window for maintenance? Also check fixed versus weight-based dosing, the interval, and before which infusions premedication against infusion reactions is mandatory.",
+      "es": "Respuesta parcial tras platino, última quimioterapia hace cinco semanas: ¿está dentro de la ventana de inicio del mantenimiento de 4–10 semanas? Comprueba además dosis fija frente a dosis por kg, el intervalo y antes de qué infusiones es obligatoria la premedicación contra reacciones infusionales."
+    }
+  },
+  "sys-prot-bcg-maintenance-schedule-high-risk": {
+    "question": {
+      "de": "Hohes Risiko und gute Verträglichkeit: Wie lange soll die BCG-Erhaltung nach dem SWOG-Schema laufen, in welchem Rhythmus folgen die Dreierserien nach Monat 6, und wie viele Instillationen sind es insgesamt höchstens?",
+      "en": "High risk and good tolerance: how long should BCG maintenance run on the SWOG schedule, at what rhythm do the three-instillation series follow after month 6, and what is the maximum total number of instillations?",
+      "es": "Riesgo alto y buena tolerancia: ¿cuánto debe durar el mantenimiento con BCG según el esquema SWOG, con qué ritmo siguen las series de tres instilaciones después del mes 6, y cuántas instilaciones son como máximo en total?"
+    }
+  },
+  "sys-prot-bep-intermediate-cycle1-order": {
+    "question": {
+      "de": "Die intermediäre Prognose nach IGCCCG bestimmt die Zyklenzahl. Prüf dann jede Substanz einzeln: Dosierst du nach tatsächlicher KOF ohne Kappung, ist Bleomycin eine m²- oder eine Absolutdosis, an welchen Tagen, und bleibt die kumulative Dosis unter 400 mg?",
+      "en": "Intermediate IGCCCG prognosis determines the number of cycles. Then check each drug: do you dose on actual BSA without capping, is bleomycin a per-m² or a flat dose, on which days, and does the cumulative dose stay below 400 mg?",
+      "es": "El pronóstico intermedio según IGCCCG determina el número de ciclos. Luego revisa cada fármaco: ¿dosificas según la superficie corporal real sin tope, la bleomicina es una dosis por m² o fija, en qué días, y la dosis acumulada queda por debajo de 400 mg?"
+    }
+  },
+  "sys-prot-cabazitaxel-premedication-primary-g-csf": {
+    "question": {
+      "de": "Cabazitaxel hat ein höheres Risiko für Überempfindlichkeit und Neutropenie als Docetaxel, und der Patient ist über 65. Welche Prämedikation ist vorgeschrieben, ab welchem Zyklus gehört G-CSF dazu, und ist 20 mg/m² Startdosis oder Reduktionsstufe?",
+      "en": "Cabazitaxel carries a higher risk of hypersensitivity and neutropenia than docetaxel, and the patient is over 65. Which premedication is mandatory, from which cycle does G-CSF belong, and is 20 mg/m² the starting dose or the reduction level?",
+      "es": "El cabazitaxel tiene más riesgo de hipersensibilidad y neutropenia que el docetaxel, y el paciente tiene más de 65 años. ¿Qué premedicación es obligatoria, desde qué ciclo se añade G-CSF, y 20 mg/m² es la dosis inicial o el escalón de reducción?"
+    }
+  },
+  "sys-prot-cabozantinib-dose-with-nivolumab": {
+    "question": {
+      "de": "Die TKI-Dosis hängt vom Kombinationspartner ab: Die 60 mg des Ehemanns sind die Monotherapiedosis. Prüf außerdem das Fixdosisintervall von Nivolumab, die Einnahme in Bezug auf die Mahlzeiten und ob Kapseln und Tabletten austauschbar sind.",
+      "en": "The TKI dose depends on the combination partner: her husband's 60 mg is the monotherapy dose. Also check the nivolumab fixed-dose interval, timing relative to meals, and whether capsules and tablets are interchangeable.",
+      "es": "La dosis del ITC depende del fármaco con el que se combina: los 60 mg de su marido son la dosis en monoterapia. Revisa además el intervalo de dosis fija de nivolumab, la toma respecto a las comidas y si cápsulas y comprimidos son intercambiables."
+    }
+  },
+  "sys-prot-ddmvac-gcsf-support": {
+    "question": {
+      "de": "Dosisdicht alle 14 Tage geht nur mit primärer Unterstützung der Neutrophilen. Entscheidend ist das Timing: Warum darf G-CSF nicht am Tag der Chemotherapie laufen, und wie lange musst du nach dem Ende der Chemo mindestens warten?",
+      "en": "Dose-dense every 14 days is only feasible with primary neutrophil support. Timing is what matters: why must G-CSF not be given on the day of chemotherapy, and how long must you wait at least after chemotherapy ends?",
+      "es": "La pauta de dosis densa cada 14 días solo es viable con soporte primario de neutrófilos. Lo decisivo es el momento: ¿por qué no se debe dar G-CSF el mismo día de la quimioterapia, y cuánto tienes que esperar como mínimo tras terminarla?"
+    }
+  },
+  "sys-prot-denosumab-prolia-to-xgeva-mcrpc": {
+    "question": {
+      "de": "Jetzt geht es nicht mehr um Osteoporose unter ADT, sondern um die Prävention skelettbezogener Ereignisse beim mCRPC mit Knochenmetastasen. Welche Denosumab-Dosis und welches Intervall gelten dafür, darf man beide Präparate kombinieren, und spielt die Kreatinin-Clearance von 45 eine Rolle?",
+      "en": "This is no longer about osteoporosis on ADT but about preventing skeletal-related events in mCRPC with bone metastases. Which denosumab dose and interval apply, can both products be combined, and does a creatinine clearance of 45 matter?",
+      "es": "Ya no se trata de osteoporosis con ADT, sino de prevenir eventos óseos en el CPRCm con metástasis óseas. ¿Qué dosis e intervalo de denosumab se aplican, se pueden combinar ambos preparados, y importa un aclaramiento de creatinina de 45?"
+    }
+  },
+  "sys-prot-epirubicin-adjuvant-cystitis-dose": {
+    "question": {
+      "de": "Nach der letzten Gabe hatte sie eine chemische Zystitis, heute ist der Urin infektfrei. Welche Konsequenz sieht das Protokoll bei lokaler Toxizität vor, und wie lange dauert die adjuvante Instillation beim intermediären Risiko insgesamt?",
+      "en": "After the last dose she had chemical cystitis, and today her urine shows no infection. What does the protocol prescribe for local toxicity, and how long does adjuvant instillation last in total for intermediate risk?",
+      "es": "Tras la última dosis tuvo una cistitis química y hoy la orina está libre de infección. ¿Qué prevé el protocolo ante toxicidad local, y cuánto dura en total la instilación adyuvante en riesgo intermedio?"
+    }
+  },
+  "sys-prot-ev-pembro-dose-cap": {
+    "question": {
+      "de": "112 kg: Enfortumab Vedotin wird nach tatsächlichem Körpergewicht dosiert, hat aber ab 100 kg eine Obergrenze. Prüf außerdem die Gabetage im 21-Tage-Zyklus und die Reihenfolge der beiden Substanzen an Tag 1.",
+      "en": "112 kg: enfortumab vedotin is dosed on actual body weight but has a cap from 100 kg. Also check the dosing days in the 21-day cycle and the order of the two drugs on day 1.",
+      "es": "112 kg: el enfortumab vedotina se dosifica por peso real, pero tiene un tope a partir de 100 kg. Revisa además los días de administración en el ciclo de 21 días y el orden de los dos fármacos el día 1."
+    }
+  },
+  "sys-prot-lu-psma-617-reduction-no-reescalation": {
+    "question": {
+      "de": "Nach einer Thrombozytopenie Grad 3 sieht die Fachinformation eine einmalige Reduktion der Aktivität um 20 % vor. Darf man danach wieder hochgehen, und ändert die Reduktion etwas an der Höchstzahl von sechs Gaben?",
+      "en": "After grade 3 thrombocytopenia the label prescribes a one-time 20% reduction in activity. May you escalate again afterwards, and does the reduction change the maximum of six doses?",
+      "es": "Tras una trombocitopenia de grado 3, la ficha técnica prevé una reducción única del 20 % de la actividad. ¿Se puede volver a subir después, y cambia la reducción el máximo de seis dosis?"
+    }
+  },
+  "sys-prot-mitomycin-after-nephroureterectomy-timing": {
+    "question": {
+      "de": "Bei der Nephroureterektomie wurde die Blase eröffnet und vernäht, das ist keine TUR-B. Wann ist die Einmalinstillation laut ODMIT-C vorgesehen, und welche Voraussetzung muss die Blasennaht vorher erfüllen?",
+      "en": "During nephroureterectomy the bladder was opened and sutured; this is not a TURBT. When is the single instillation scheduled according to ODMIT-C, and what must be true of the bladder closure beforehand?",
+      "es": "En la nefroureterectomía se abrió y suturó la vejiga; no es una RTU. ¿Cuándo está prevista la instilación única según ODMIT-C, y qué condición debe cumplir antes el cierre vesical?"
+    }
+  },
+  "sys-prot-niagara-split-dose-cisplatin": {
+    "question": {
+      "de": "Die Kreatinin-Clearance beträgt 52 ml/min. Im NIAGARA-Protokoll entscheidet die Schwelle von 60 ml/min über die Art der Cisplatin-Gabe: Was ist für 40–59 ml/min vorgesehen, und bleibt die Gesamtdosis pro Zyklus dabei gleich?",
+      "en": "Creatinine clearance is 52 ml/min. In the NIAGARA protocol the 60 ml/min threshold decides how cisplatin is given: what is specified for 40–59 ml/min, and does the total dose per cycle stay the same?",
+      "es": "El aclaramiento de creatinina es de 52 ml/min. En el protocolo NIAGARA el umbral de 60 ml/min decide cómo se administra el cisplatino: ¿qué se prevé para 40–59 ml/min, y se mantiene igual la dosis total por ciclo?"
+    }
+  },
+  "sys-prot-nivolumab-ipilimumab-induction-maintenance": {
+    "question": {
+      "de": "Beim Nierenzellkarzinom ist die Dosierung anders als beim Melanom: Welche Substanz bekommt 3 mg/kg, welche 1 mg/kg, und welche läuft am selben Tag zuerst? Der Start der vierwöchentlichen Erhaltung hängt vom gewählten Intervall ab.",
+      "en": "In renal cell carcinoma the dosing differs from melanoma: which drug gets 3 mg/kg, which 1 mg/kg, and which runs first on the same day? The start of four-weekly maintenance depends on the chosen interval.",
+      "es": "En el carcinoma renal la dosificación es distinta a la del melanoma: ¿qué fármaco recibe 3 mg/kg, cuál 1 mg/kg y cuál se administra primero el mismo día? El inicio del mantenimiento cada cuatro semanas depende del intervalo elegido."
+    }
+  },
+  "sys-prot-nivolumab-maintenance-duration": {
+    "question": {
+      "de": "Die Höchstdauer von Nivolumab nach CheckMate 901 beträgt 24 Monate – aber ab welchem Datum wird gezählt, ab der ersten Nivolumab-Gabe im März oder ab Beginn der Erhaltung im Juli? Prüf auch Dosis und Intervall der Erhaltung.",
+      "en": "The maximum duration of nivolumab after CheckMate 901 is 24 months, but from which date is it counted: the first nivolumab dose in March or the start of maintenance in July? Also check the maintenance dose and interval.",
+      "es": "La duración máxima de nivolumab tras CheckMate 901 es de 24 meses, pero ¿desde qué fecha se cuenta: la primera dosis de nivolumab en marzo o el inicio del mantenimiento en julio? Revisa también la dosis y el intervalo del mantenimiento."
+    }
+  },
+  "sys-prot-penile-tip-neoadjuvant-cn3": {
+    "question": {
+      "de": "cN3 beim Peniskarzinom: TIP neoadjuvant, aber nicht nach dem Salvage-Schema des Keimzelltumors. Prüf Zyklenzahl, Infusionsdauer von Paclitaxel, die Cisplatin-Tagesdosis über drei Tage und ob operiert wird, bevor das Ansprechen im Restaging bekannt ist.",
+      "en": "cN3 penile cancer: neoadjuvant TIP, but not on the germ cell salvage schedule. Check the number of cycles, the paclitaxel infusion time, the daily cisplatin dose over three days, and whether surgery happens before restaging shows the response.",
+      "es": "Cáncer de pene cN3: TIP neoadyuvante, pero no con el esquema de rescate de tumores germinales. Revisa el número de ciclos, la duración de la infusión de paclitaxel, la dosis diaria de cisplatino durante tres días y si se opera antes de conocer la respuesta en la reestadificación."
+    }
+  },
+  "sys-prot-pout-carboplatin-calvert": {
+    "question": {
+      "de": "GFR der Einzelniere 42 ml/min, also unter der Cisplatin-Schwelle von 50, aber über 30. Welches Platin ist dann vorgesehen, und rechne die Calvert-Formel genau nach: Was wird zur GFR addiert, bevor du mit der AUC multiplizierst?",
+      "en": "GFR of the solitary kidney is 42 ml/min, below the cisplatin threshold of 50 but above 30. Which platinum is then indicated, and work through the Calvert formula carefully: what is added to the GFR before you multiply by the AUC?",
+      "es": "El FG del riñón único es de 42 ml/min, por debajo del umbral de 50 para cisplatino pero por encima de 30. ¿Qué platino está indicado entonces? Calcula con cuidado la fórmula de Calvert: ¿qué se suma al FG antes de multiplicar por el AUC?"
+    }
+  },
+  "sys-prot-relugolix-restart-after-interruption": {
+    "question": {
+      "de": "14 Tage Pause sind deutlich mehr als die 7 Tage, ab denen die Fachinformation eine Konsequenz für den Wiederbeginn vorsieht. Was bedeutet das für die Dosis heute, und warum ist ein Wechsel auf einen GnRH-Agonisten ohne Flare-Schutz riskant?",
+      "en": "A 14-day gap is well beyond the 7 days after which the label specifies a consequence for restarting. What does that mean for today's dose, and why is switching to a GnRH agonist without flare protection risky?",
+      "es": "Una pausa de 14 días supera claramente los 7 días a partir de los cuales la ficha técnica prevé una consecuencia al reiniciar. ¿Qué implica para la dosis de hoy, y por qué es arriesgado cambiar a un agonista de GnRH sin protección frente al flare?"
+    }
+  },
+  "sys-prot-seminoma-carboplatin-auc7-calvert": {
+    "question": {
+      "de": "Rechne Calvert mit der gemessenen 51Cr-EDTA-GFR, nicht mit der geschätzten, und mit der AUC, die für das Stadium I belegt ist. Bedenke: Die 90-%-Korrektur galt nur für die Kreatinin-Clearance – und wie viele Gaben sind adjuvant vorgesehen?",
+      "en": "Use the Calvert formula with the measured 51Cr-EDTA GFR, not the estimated one, and with the AUC proven for stage I. The 90% correction applied only to creatinine clearance. And how many doses are given in the adjuvant setting?",
+      "es": "Aplica Calvert con el FG medido por 51Cr-EDTA, no con el estimado, y con el AUC demostrado para el estadio I. La corrección del 90 % solo se aplicaba al aclaramiento de creatinina. ¿Y cuántas dosis se dan en adyuvancia?"
+    }
+  },
+  "sys-prot-sipi-mitomycin-order-after-turb": {
+    "question": {
+      "de": "Komplette TUR-B, keine Perforation, keine spülpflichtige Blutung, 45 Minuten nach OP-Ende: Alle Voraussetzungen für die Frühinstillation sind erfüllt. Welches Zeitfenster zählt für die Wirksamkeit, und welche Dosis und Verweildauer sind für die Einmalgabe Standard?",
+      "en": "Complete TURBT, no perforation, no bleeding requiring irrigation, 45 minutes after the end of surgery: all requirements for early instillation are met. Which time window matters for efficacy, and what dose and dwell time are standard for the single dose?",
+      "es": "RTU completa, sin perforación ni sangrado que requiera lavado, 45 minutos tras terminar la cirugía: se cumplen todos los requisitos para la instilación precoz. ¿Qué ventana temporal importa para la eficacia, y qué dosis y tiempo de permanencia son estándar para la dosis única?"
+    }
+  },
+  "sys-prot-sunitinib-4-2-first-order": {
+    "question": {
+      "de": "Günstiges Risiko, aber Checkpoint-Inhibitoren scheiden wegen der Myasthenie aus. Prüf das zugelassene Standardschema: Startdosis, Wochen mit Einnahme und Pause, und ob eine Kreatinin-Clearance von 52 ml/min überhaupt eine Reduktion der Startdosis verlangt.",
+      "en": "Favourable risk, but checkpoint inhibitors are ruled out by the myasthenia. Check the approved standard schedule: starting dose, weeks on and off, and whether a creatinine clearance of 52 ml/min requires any reduction of the starting dose.",
+      "es": "Riesgo favorable, pero los inhibidores de checkpoint quedan excluidos por la miastenia. Revisa el esquema estándar aprobado: dosis inicial, semanas de toma y de descanso, y si un aclaramiento de creatinina de 52 ml/min exige siquiera reducir la dosis inicial."
+    }
+  },
+  "sys-prot-vip-mesna-gcsf-order": {
+    "question": {
+      "de": "Ifosfamid wird zu Acrolein verstoffwechselt, das die Blase schädigt; Hydrierung allein reicht nicht. Wie oft am Tag muss Mesna laufen, damit es mindestens 60 % der Ifosfamid-Dosis erreicht, und ist bei VIP eine primäre G-CSF-Prophylaxe vorgesehen?",
+      "en": "Ifosfamide is metabolised to acrolein, which damages the bladder; hydration alone is not enough. How many times a day must mesna be given to reach at least 60% of the ifosfamide dose, and is primary G-CSF prophylaxis part of VIP?",
+      "es": "La ifosfamida se metaboliza a acroleína, que daña la vejiga; la hidratación sola no basta. ¿Cuántas veces al día debe darse mesna para alcanzar al menos el 60 % de la dosis de ifosfamida, y forma parte del VIP la profilaxis primaria con G-CSF?"
     }
   },
   "theatre-checklist": {
