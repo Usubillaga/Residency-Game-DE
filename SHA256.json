@@ -6,7 +6,7 @@
   "assets/app.js": "3d351b66e43f2473f70d0dc60039dd2e4de92c5eb1cc9ba0cc38b3218723c21d",
   "assets/art.js": "019b973f8626208e7e88579be0d97820f8f1a98ba832e670e0293bd42f87c084",
   "assets/banter.js": "eaef0fe720b896676199a479a557b5090568a0df9902e3069c8cba0dafdd3114",
-  "assets/cartoon.css": "b90839305a52afd93e0920e47efcad8920e2025a9246f67f19ddf9ea42ab5eed",
+  "assets/cartoon.css": "bdec522a54289d16081e6367930597792f42b5e18193553a851e337499be6bfd",
   "assets/catalog.js": "a686a62ec2b3ac1c64cdbf6a80773d7222fd042c1b5dc41a0fb9a4b56f444b9d",
   "assets/engine.js": "e516e76aa30776ea62cb024fa39b06410ade86eebf3d50c5d3b63c415bef4e71",
   "assets/favicon.svg": "2b81e11b7f1fa84d705653315ee616de7367a6777f28e52c65af29247df41281",
@@ -41,10 +41,10 @@
   "media/README.md": "173d2ac0a486a1e0f554cb3b6601edb52b9458111cf0b58ac8900493e265f34b",
   "outputs/daily-shift.json": "329ed4f7c4b604884d8db22c8c068666c0f95bdbd1c24dedcb576202e1bb3d55",
   "scripts/import_urofragen.py": "7a6dba20a062fc87b949f744e69710515d2be440f98d12072761497d679ee79e",
-  "scripts/manage.py": "e3d9929f53fb1f4600b294d3f676f6e65682af0fdb2bebbf7e7e927724c53c38",
-  "standalone.html": "a0d3b5e6ce89d35969ba0fe8fae23dade0531e5583606b856c24f283e180fefa",
+  "scripts/manage.py": "2bd3bf58631282994df8198f13f0b63d5da35687bcc77b34306053e9fa0768f5",
+  "standalone.html": "8a13a87545aae30502729ac0772ff0d0b6bab2a9b8f108f484327d2db0a0591c",
   "tests/test_import.py": "3d04ffc0ccb720606ab682f7f2594028bc1e82094667925bbf00f1ddb8a2f48f",
-  "tests/test_manage.py": "f349a827ddd8ae68b2360312cacb03c625ebaeac08dea63a2312b962eb4e74f2",
+  "tests/test_manage.py": "7572121fb54ae4e63885f7d69674bc1833de8ffce190c0fc03fdc87cef1e153c",
   "tests/tests-cartoon.cjs": "e57e67711f674d5ea7b93b9dad209a6be3dc0cd3890b52173cd5e8d3fa575bfc",
   "tests/tests-engine.cjs": "9419b188e7a4028d7571af2f99d65f9e55e3aca3d52d51b16fdb7fba7df63030"
 }

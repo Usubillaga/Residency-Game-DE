@@ -555,6 +555,8 @@ def attach_hints(root: Path, cases: list) -> int:
 
 
 PROTOCOL_ROUTES = ("i.v.", "p.o.", "s.c.", "i.m.", "intravesical")
+# The drug table shows the dose and the days; explanations belong in support or cautions.
+PROTOCOL_CELL_LIMITS = {"name": 48, "dose": 48, "schedule": 80}
 
 
 def load_protocols(root: Path, cases: list) -> list:
@@ -594,6 +596,9 @@ def load_protocols(root: Path, cases: list) -> list:
                     localised(drug.get(key), f"{d_where}.{key}")
                 require(drug.get("route") in PROTOCOL_ROUTES, f"{d_where}.route: expected one of {', '.join(PROTOCOL_ROUTES)}")
                 require(all(re.search(r"\d", drug["dose"][language]) for language in LANGUAGES), f"{d_where}.dose: expected a number with a unit")
+                for key, limit in PROTOCOL_CELL_LIMITS.items():
+                    for language in LANGUAGES:
+                        require(len(drug[key][language]) <= limit, f"{d_where}.{key}.{language}: at most {limit} characters in the table; move details to support or cautions")
             sources = regimen.get("sources")
             require(isinstance(sources, list) and bool(sources), f"{r_where}.sources: expected at least one source")
             for s_index, source in enumerate(sources):

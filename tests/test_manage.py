@@ -575,6 +575,7 @@ class AutomationTests(unittest.TestCase):
         for bad, message in ((self.protocol(id="Not Kebab"), "kebab-case"), (twice, "duplicate regimen id"), (self.protocol(cycleDays=0), "cycleDays"),
                              (self.protocol(cycleDays="21"), "cycleDays"), (self.protocol(drugs=[]), "drugs"),
                              (self.protocol(drugs=[dict(drug, route="oral")]), "route"), (self.protocol(drugs=[dict(drug, dose=translated("weight-based"))]), "number"),
+                             (self.protocol(drugs=[dict(drug, schedule=translated("Day 1, " + "x" * 80))]), "at most 80 characters"),
                              (self.protocol(sources=[{"label": "Guideline", "url": "http://example.org"}]), "HTTPS"),
                              (self.protocol(sources=[{"label": "Smith et al. trial", "url": "https://example.org"}]), "no authors"),
                              (self.protocol(questions=["missing-case"]), "unknown case id"),
