@@ -658,7 +658,7 @@ test('the radiotherapy schemes show total dose, dose per fraction and fractions 
   assert.ok(page.includes('data-protocol-kind="radiotherapy"') && page.includes('aria-pressed="true"'), 'The switch shows the radiotherapy view as selected');
   assert.ok(page.includes(escape(data.NSA_TEXT.de.rtWarning)), 'The radiotherapy page has its own warning');
   assert.ok(page.includes('36,25 Gy') && page.includes('7,25 Gy') && page.includes('>5<'), 'German shows the decimal comma');
-  assert.ok(page.includes('145 Gy') && page.includes(escape(data.NSA_TEXT.de.rtPermanent)), 'A permanent implant has a total dose only');
+  assert.ok(page.includes('145 Gy') && page.includes(escape(data.NSA_TEXT.de.rtContinuous)), 'Continuous brachytherapy has a total dose only');
   assert.ok(page.includes('Seeds &lt;I-125&gt;'), 'Scheme text is escaped');
   const en = protocolHarness([], 'en'); en.C.radiotherapy = h.C.radiotherapy; en.protocolKind = 'radiotherapy';
   assert.ok(en.page.protocols().includes('36.25 Gy'), 'English keeps the decimal point');

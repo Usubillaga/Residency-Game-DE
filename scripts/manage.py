@@ -629,8 +629,8 @@ def check_regimen_links(regimen: dict, where: str, case_ids: set, texts: list) -
         require(hit is None, f"{where}: no authors in the game (found {hit[0]!r})" if hit else "")
 
 
-# A radiotherapy phase: target volume, total dose, dose per fraction and number of fractions. A permanent seed implant
-# (LDR brachytherapy) has a total dose only. Otherwise the total must equal dose per fraction times fractions.
+# A radiotherapy phase: target volume, total dose, dose per fraction and number of fractions. Continuous low-dose-rate
+# brachytherapy (permanent seeds or a temporary LDR/PDR implant) has a total dose only. Otherwise the total must equal dose per fraction times fractions.
 RT_CELL_LIMITS = {"target": 60, "schedule": 80}
 
 
@@ -672,7 +672,7 @@ def load_radiotherapy(root: Path, cases: list) -> list:
                         require(len(phase[key][language]) <= limit, f"{p_where}.{key}.{language}: at most {limit} characters in the table; move details to support or cautions")
                 total, per, count = phase.get("totalGy"), phase.get("fractionGy"), phase.get("fractions")
                 require(number(total) and 0 < total <= 200, f"{p_where}.totalGy: expected the total dose in Gy")
-                require((per is None) == (count is None), f"{p_where}: give both fractionGy and fractions, or neither for a permanent implant")
+                require((per is None) == (count is None), f"{p_where}: give both fractionGy and fractions, or neither for continuous low-dose-rate brachytherapy")
                 if per is not None:
                     require(number(per) and 0 < per <= 30, f"{p_where}.fractionGy: expected the dose per fraction in Gy")
                     require(type(count) is int and 1 <= count <= 60, f"{p_where}.fractions: expected 1 to 60 fractions")
