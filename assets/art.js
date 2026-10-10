@@ -240,6 +240,10 @@ function portrait(o, expr = 'neutral', size = 96, opt = {}) {
   function text(x,y,words,size=20,fill=OL,anchor='start',extra='') {
     return '<text x="'+x+'" y="'+y+'" text-anchor="'+anchor+'" fill="'+fill+'" font-size="'+size+'" '+extra+'>'+escape(words)+'</text>';
   }
+  function boardLabel(label) {
+    // Long duty labels are squeezed to the whiteboard width instead of running past its edge.
+    return text(367,126,label,13,OL,'middle',String(label).length>20?'textLength="184" lengthAdjust="spacingAndGlyphs"':'');
+  }
   function wrappedWords(value,max) {
     const result=[]; let row='';
     for (const word of String(value).split(/\s+/)) {
@@ -411,7 +415,7 @@ function portrait(o, expr = 'neutral', size = 96, opt = {}) {
     for(let x=35;x<1580;x+=120)svg+='<path d="M'+x+' 390l-24 50" stroke="#a9b5ce" stroke-width="2"/>';
     svg+=(day?dayWindow(18,37,133,129):nightWindow(18,37,133,129))+clockFace(200,74,time,31)+text(200,128,time,23,OL,'middle','font-family="monospace" font-weight="800"')+
       '<rect x="259" y="33" width="216" height="53" rx="9" fill="#263456" '+st(3)+'/>'+text(367,66,board?w.room:w.areas[AREAS.indexOf(area)],22,'#fff4d6','middle','font-weight="800"')+
-      '<rect x="266" y="103" width="201" height="75" rx="7" fill="#fff4d6" '+st(3)+'/>'+text(367,126,o.label||w.sleep,13,OL,'middle')+
+      '<rect x="266" y="103" width="201" height="75" rx="7" fill="#fff4d6" '+st(3)+'/>'+boardLabel(o.label||w.sleep)+
       '<path d="M282 140H452M282 153H439M282 166H412" stroke="#b2a181" stroke-width="3"/>'+
       (board?boardScreen()+'<rect x="488" y="343" width="1094" height="30" rx="12" fill="#b0845a" '+st(3)+'/><path d="M540 373V412M1530 373V412" '+st(6)+'/>':
         AREAS.map((id,i)=>roomDoor(id,505+i*214,id===area,language)).join('')+roomDecor(area,Math.max(visible.length,2)))+

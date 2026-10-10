@@ -351,7 +351,7 @@ window.NSABanter = {
       "clinic": "CLINIC",
       "elective": "OR LIST · THEATRE 2",
       "dayclinic": "DAY CLINIC · CHAIRS 1–6",
-      "radiotherapy": "RADIATION ONCOLOGY · LINAC 1"
+      "radiotherapy": "RADIOTHERAPY · LINAC 1"
     },
     "attendingNight": [
       "Dr. Brennan: (half asleep) Mm-hm. I'm listening. Here's what I'd look at:",
@@ -1177,9 +1177,9 @@ window.NSABanter = {
       "night": "GUARDIA",
       "board": "COMITÉ DE TUMORES",
       "clinic": "CONSULTA",
-      "elective": "PROGRAMA QX · QUIRÓFANO 2",
-      "dayclinic": "HOSPITAL DE DÍA · SILLONES 1–6",
-      "radiotherapy": "RADIOTERAPIA · ACELERADOR 1"
+      "elective": "QUIRÓFANO 2 · PROGRAMA",
+      "dayclinic": "HOSPITAL DE DÍA · 1–6",
+      "radiotherapy": "RADIOTERAPIA · LINAC 1"
     },
     "attendingNight": [
       "Dr. Herrera: (medio dormido) Mm-hm. Te escucho. Yo me fijaría en esto:",

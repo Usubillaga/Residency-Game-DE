@@ -584,7 +584,7 @@ def load_protocols(root: Path, cases: list) -> list:
         for r_index, regimen in enumerate(regimens):
             r_where = f"{where}.regimens[{r_index}]"
             require(isinstance(regimen, dict), f"{r_where}: expected an object")
-            require(bool(re.fullmatch(r"[a-z0-9][a-z0-9-]*", str(regimen.get("id", "")))), f"{r_where}.id: expected a kebab-case id")
+            require(isinstance(regimen.get("id"), str) and bool(re.fullmatch(r"[a-z0-9][a-z0-9-]*", regimen["id"])), f"{r_where}.id: expected a kebab-case id")
             require(regimen["id"] not in regimen_ids, f"{r_where}: duplicate regimen id {regimen['id']!r}")
             regimen_ids.add(regimen["id"])
             for key in ("name", "setting", "cycles", "support", "cautions", "evidence"):
@@ -623,6 +623,7 @@ def check_regimen_links(regimen: dict, where: str, case_ids: set, texts: list) -
         require(hit is None, f"{where}.sources: no authors in the game (found {hit[0]!r})" if hit else "")
     questions = regimen.get("questions", [])
     require(isinstance(questions, list) and all(isinstance(q, str) and q in case_ids for q in questions), f"{where}.questions: unknown case id")
+    require(len(set(questions)) == len(questions), f"{where}.questions: duplicate case id")
     for text in [item[language] for item in texts for language in LANGUAGES]:
         hit = AUTHOR_MENTION.search(text)
         require(hit is None, f"{where}: no authors in the game (found {hit[0]!r})" if hit else "")
@@ -655,7 +656,7 @@ def load_radiotherapy(root: Path, cases: list) -> list:
         for r_index, scheme in enumerate(schemes):
             r_where = f"{where}.regimens[{r_index}]"
             require(isinstance(scheme, dict), f"{r_where}: expected an object")
-            require(bool(re.fullmatch(r"[a-z0-9][a-z0-9-]*", str(scheme.get("id", "")))), f"{r_where}.id: expected a kebab-case id")
+            require(isinstance(scheme.get("id"), str) and bool(re.fullmatch(r"[a-z0-9][a-z0-9-]*", scheme["id"])), f"{r_where}.id: expected a kebab-case id")
             require(scheme["id"] not in scheme_ids, f"{r_where}: duplicate scheme id {scheme['id']!r}")
             scheme_ids.add(scheme["id"])
             for key in ("name", "setting", "technique", "combined", "support", "cautions", "evidence"):
@@ -680,6 +681,15 @@ def load_radiotherapy(root: Path, cases: list) -> list:
                      *(phase[key] for phase in phases for key in RT_CELL_LIMITS)]
             check_regimen_links(scheme, r_where, case_ids, texts)
     return data["entities"]
+
+
+def load_regimens(root: Path, cases: list) -> tuple[list, list]:
+    """Both halves of the protocol page; a regimen id names one table on the page, so it is unique across both files."""
+    protocols, radiotherapy = load_protocols(root, cases), load_radiotherapy(root, cases)
+    ids = [regimen["id"] for entities in (protocols, radiotherapy) for entity in entities for regimen in entity["regimens"]]
+    shared = sorted({item for item in ids if ids.count(item) > 1})
+    require(not shared, f"radiotherapy.json: regimen id {', '.join(shared)} is also used in protocols.json")
+    return protocols, radiotherapy
 
 
 def load_visuals(root: Path, cases: list) -> tuple[list, dict, dict]:
@@ -732,8 +742,7 @@ def build(root: Path = ROOT) -> dict:
     cases, references = load_and_validate(root, check_assets=False)
     schemas, links, media = load_visuals(root, cases)
     attach_hints(root, cases)
-    protocols = load_protocols(root, cases)
-    radiotherapy = load_radiotherapy(root, cases)
+    protocols, radiotherapy = load_regimens(root, cases)
     for case in cases:
         if case["id"] in links:
             case["schema"] = {"id": links[case["id"]]["schema"], "parts": links[case["id"]].get("parts", [])}
@@ -941,7 +950,7 @@ def main(argv=None) -> int:
         if args.command == "validate":
             cases, references = load_and_validate()
             schemas, links, media = load_visuals(ROOT, cases)
-            hints, protocols, radiotherapy = attach_hints(ROOT, cases), load_protocols(ROOT, cases), load_radiotherapy(ROOT, cases)
+            hints, (protocols, radiotherapy) = attach_hints(ROOT, cases), load_regimens(ROOT, cases)
             steps = sum(len(case["steps"]) for case in cases)
             updated = sum("update" in case for case in cases)
             print(f"Valid: {len(cases)} cases ({updated} updated), {len(references)} references, {len(schemas)} schemas ({len(links)} linked cases), {sum(map(len, media.values()))} images, attending hints for {hints} of {steps} decisions, {sum(len(e['regimens']) for e in protocols)} protocols, {sum(len(e['regimens']) for e in radiotherapy)} radiotherapy schemes, 3 languages, 5 areas.")

@@ -579,6 +579,8 @@ class AutomationTests(unittest.TestCase):
                              (self.protocol(sources=[{"label": "Guideline", "url": "http://example.org"}]), "HTTPS"),
                              (self.protocol(sources=[{"label": "Smith et al. trial", "url": "https://example.org"}]), "no authors"),
                              (self.protocol(questions=["missing-case"]), "unknown case id"),
+                             (self.protocol(questions=["emergency-fixture-1", "emergency-fixture-1"]), "duplicate case id"),
+                             (self.protocol(id=5), "kebab-case"),
                              (self.protocol(evidence=translated("The authors report longer survival.")), "no authors"),
                              (self.protocol(support={"en": "Hydration"}), "de")):
             manage.write_json(self.root / "data" / "protocols.json", bad)
@@ -609,10 +611,20 @@ class AutomationTests(unittest.TestCase):
                              (self.radiotherapy(phases=[]), "phases"),
                              (self.radiotherapy(technique={"en": "IMRT"}), "de"),
                              (self.radiotherapy(questions=["missing-case"]), "unknown case id"),
-                             (self.radiotherapy(evidence=translated("The authors showed less toxicity.")), "no authors")):
+                             (self.radiotherapy(evidence=translated("The authors showed less toxicity.")), "no authors"),
+                             (self.radiotherapy(id=7), "kebab-case")):
             manage.write_json(self.root / "data" / "radiotherapy.json", bad)
             with self.assertRaisesRegex(manage.ValidationError, message):
                 manage.build(self.root)
+
+    def test_regimen_ids_are_unique_across_protocols_and_radiotherapy(self):
+        manage.write_json(self.root / "data" / "protocols.json", self.protocol(id="shared-id"))
+        manage.write_json(self.root / "data" / "radiotherapy.json", self.radiotherapy(id="shared-id"))
+        with self.assertRaisesRegex(manage.ValidationError, "shared-id is also used in protocols.json"):
+            manage.build(self.root)
+        manage.write_json(self.root / "data" / "radiotherapy.json", self.radiotherapy())
+        catalog = manage.build(self.root)
+        self.assertEqual((len(catalog["protocols"]), len(catalog["radiotherapy"])), (1, 1))
 
     def test_consultant_and_radiotherapy_duty_are_validated(self):
         self.mutate_case(lambda case: case.update(consultant="radiotherapist", duty="radiotherapy"))

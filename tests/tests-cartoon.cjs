@@ -725,6 +725,14 @@ test('every duty has a translated briefing, scene line and whiteboard label', ()
   }
 });
 
+test('every duty has its own colour, and long whiteboard labels are squeezed to the board', () => {
+  const css = read('cartoon.css');
+  for (const duty of E.DUTIES) assert.match(css, new RegExp('\\.duty-' + duty + '\\{--duty:#[0-9a-f]{6}\\}'), duty + ' colour');
+  const scene = label => data.NSAArt.scene('clinic', [], null, '09:00', 0, 'en', { duty: 'clinic', label });
+  assert.doesNotMatch(scene('CLINIC'), /textLength/);
+  assert.match(scene('HOSPITAL DE DÍA · SILLONES 1–6'), /textLength="184" lengthAdjust="spacingAndGlyphs">HOSPITAL DE DÍA/);
+});
+
 test('day duties wake the attending, and the tumour board shows every case as a folder without doors', () => {
   const pick = area => catalog.cases.find(c => c.area === area);
   const patients = ['clinic', 'theatre', 'ward'].map(area => { const c = pick(area); return { id: c.id, name: c.patient.name, age: c.patient.age, area: c.area, acuity: c.acuity, available: true }; });

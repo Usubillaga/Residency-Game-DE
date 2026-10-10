@@ -142,6 +142,20 @@ class ImportTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Duplicate clinical question content"):
             self.generate()
 
+    def test_selection_accepts_every_game_duty(self):
+        spec = importlib.util.spec_from_file_location("manage", ROOT / "scripts" / "manage.py")
+        manage = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(manage)
+        self.assertEqual(importer.DUTIES, manage.DUTIES)
+        self.rows = copy.deepcopy(self.plan)
+        self.rows[0]["duty"] = "radiotherapy"
+        self.write_fixture()
+        self.generate()
+        self.rows[0]["duty"] = "radiology"
+        self.write_fixture()
+        with self.assertRaisesRegex(ValueError, "Unsupported duty"):
+            self.generate()
+
     def test_missing_coverage_and_duplicate_plan_ids_are_rejected(self):
         for kind in ("missing", "duplicate"):
             with self.subTest(kind=kind):

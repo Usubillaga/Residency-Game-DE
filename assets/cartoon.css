@@ -342,20 +342,20 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{o
   .option-mark{width:24px;height:24px;font-size:1rem}
 }
 /* Duties: night shift, tumour board, clinic and elective list each have their own accent. */
-.duty-night{--duty:#6f86d6}.duty-board{--duty:#b07cc6}.duty-clinic{--duty:#4fb38f}.duty-elective{--duty:#e0995a}.duty-mixed{--duty:#a9b0c8}
+.duty-night{--duty:#6f86d6}.duty-board{--duty:#b07cc6}.duty-clinic{--duty:#4fb38f}.duty-elective{--duty:#e0995a}.duty-mixed{--duty:#a9b0c8}.duty-dayclinic{--duty:#e06c8a}.duty-radiotherapy{--duty:#3cc7c1}
 .duty-section{padding-top:8px}
 .duty-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-.duty-card{display:flex;flex-direction:column;gap:8px;padding:20px 18px;border:3px solid #574e72;border-top:8px solid var(--duty);border-radius:21px;background:#232d4a;box-shadow:0 5px 0 #0a1025}
+.duty-card{display:flex;flex-direction:column;gap:8px;padding:20px 18px;border:3px solid #574e72;border-top:8px solid var(--duty,#a9b0c8);border-radius:21px;background:#232d4a;box-shadow:0 5px 0 #0a1025}
 .duty-card .duty-icon{font-size:2rem;line-height:1}
 .duty-card h3{font-size:1.15rem;color:#fff4d6}
-.duty-card .duty-time{font-size:.72rem;font-weight:800;color:var(--duty)}
+.duty-card .duty-time{font-size:.72rem;font-weight:800;color:var(--duty,#a9b0c8)}
 .duty-card p{font-size:.78rem;color:#cbd1e3;line-height:1.55}
 .duty-card .btn{margin-top:auto;align-self:flex-start}
-.case-duty{display:inline-block;align-self:flex-start;font-size:.66rem;font-weight:800;padding:3px 9px;border-radius:999px;border:2px solid var(--duty);color:#fff4d6;background:#1b2240}
+.case-duty{display:inline-block;align-self:flex-start;font-size:.66rem;font-weight:800;padding:3px 9px;border-radius:999px;border:2px solid var(--duty,#a9b0c8);color:#fff4d6;background:#1b2240}
 .duty-field{border:0;margin:6px 0 0;padding:0}
 .duty-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.duty-choice{position:relative;display:grid;grid-template-columns:auto 1fr;column-gap:10px;row-gap:2px;align-items:center;padding:11px 12px;border:2px solid #9a84a5;border-left:7px solid var(--duty);border-radius:13px;background:#fffbef;color:#302944;cursor:pointer}
-.duty-choice:has(input:checked){background:#fff0bb;border-color:#ab7d1e;border-left-color:var(--duty);box-shadow:0 3px 0 #b18b3f}
+.duty-choice{position:relative;display:grid;grid-template-columns:auto 1fr;column-gap:10px;row-gap:2px;align-items:center;padding:11px 12px;border:2px solid #9a84a5;border-left:7px solid var(--duty,#a9b0c8);border-radius:13px;background:#fffbef;color:#302944;cursor:pointer}
+.duty-choice:has(input:checked){background:#fff0bb;border-color:#ab7d1e;border-left-color:var(--duty,#a9b0c8);box-shadow:0 3px 0 #b18b3f}
 .duty-choice input{position:absolute;opacity:0;width:1px;height:1px}
 .duty-choice:has(input:focus-visible){outline:3px solid #ffcf5a;outline-offset:3px}
 .duty-choice .duty-icon{grid-row:span 3;font-size:1.6rem}
@@ -473,4 +473,5 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{o
 .protocol-sources a{color:#91dfcd}
 .protocol-card .actions{margin-top:4px}
 .attending-warning .comic-speech{border-color:#b6505d}
+.attending-warning .comic-speech:before{border-color:#b6505d}
 .attending-hint{margin-top:6px}
