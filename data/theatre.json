@@ -1403,6 +1403,151 @@
     ]
   },
   {
+    "id": "fun-inc-tvt-blasenperforation",
+    "area": "theatre",
+    "level": 2,
+    "acuity": "urgent",
+    "duty": "elective",
+    "patient": {
+      "name": "Margot Wilmsen",
+      "age": 57,
+      "sex": "female"
+    },
+    "title": {
+      "en": "Trocar in the bladder during TVT insertion",
+      "de": "Trokar in der Blase bei TVT-Einlage",
+      "es": "Trócar en la vejiga durante la colocación de una TVT"
+    },
+    "presenting": {
+      "en": "A 57-year-old woman undergoes a planned retropubic tape insertion (TVT) for stress incontinence under spinal anaesthesia. After both trocars have been passed, check cystoscopy with a 70° lens at a filling of 300 ml shows the trocar perforating the right anterolateral bladder wall; the left side and the urethra are intact. The urine is clear, there is no bleeding, and she is haemodynamically stable.",
+      "de": "57-jährige Patientin, geplante retropubische Bandeinlage (TVT) wegen Belastungsinkontinenz in Spinalanästhesie. Nach Passage beider Trokare erfolgt die Kontrollzystoskopie mit 70°-Optik bei 300 ml Füllung: Rechts anterolateral durchstößt der Trokar die Blasenwand, die linke Seite und die Urethra sind unverletzt. Der Urin ist klar, keine Blutung, Kreislauf stabil.",
+      "es": "Mujer de 57 años, colocación programada de banda retropúbica (TVT) por incontinencia de esfuerzo bajo anestesia raquídea. Tras pasar ambos trócares se realiza la cistoscopia de control con óptica de 70° y 300 ml de llenado: en la pared anterolateral derecha el trócar atraviesa la pared vesical; el lado izquierdo y la uretra están indemnes. La orina es clara, no hay sangrado y está hemodinámicamente estable."
+    },
+    "vitals": {
+      "bp": "128/76",
+      "hr": 72,
+      "temp": 36.6,
+      "spo2": 98,
+      "rr": 14
+    },
+    "objectives": {
+      "en": [
+        "Recognise and manage an intraoperative bladder perforation during TVT",
+        "Explain why cystoscopy is mandatory with a retropubic tape"
+      ],
+      "de": [
+        "Eine intraoperative Blasenperforation beim TVT erkennen und korrekt behandeln",
+        "Die Bedeutung der obligaten Zystoskopie beim retropubischen Band begründen"
+      ],
+      "es": [
+        "Reconocer y tratar una perforación vesical intraoperatoria durante una TVT",
+        "Justificar la cistoscopia obligatoria en la banda retropúbica"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "How do you proceed?",
+          "de": "Wie gehen Sie vor?",
+          "es": "¿Cómo procede?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Abort the procedure and close the bladder through an open laparotomy",
+              "de": "Eingriff abbrechen und die Blase über eine Laparotomie offen übernähen",
+              "es": "Suspender la intervención y suturar la vejiga mediante laparotomía abierta"
+            },
+            "score": 0,
+            "minutes": 20,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong. An extraperitoneal trocar perforation of the bladder is small and heals spontaneously with catheter drainage. Open repair is unnecessary overtreatment with its own morbidity.",
+              "de": "Falsch. Eine extraperitoneale Trokarperforation der Blase ist klein und heilt unter Katheterableitung spontan. Eine offene Übernähung ist eine unnötige Übertherapie mit eigener Morbidität.",
+              "es": "Incorrecto. La perforación vesical extraperitoneal por trócar es pequeña y cicatriza espontáneamente con drenaje vesical. La sutura abierta es un sobretratamiento innecesario con morbilidad propia."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Leave the tape as it is because it will epithelialise in the bladder wall; catheter for 24 hours",
+              "de": "Band so belassen, da es in der Blasenwand epithelialisiert; Katheter für 24 Stunden",
+              "es": "Dejar la banda tal cual porque se epitelizará en la pared vesical; sonda durante 24 horas"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Dangerous. Mesh running through the bladder does not reliably epithelialise; it causes stones, recurrent infections, pain and haematuria and later needs complex removal. A trocar lying inside the bladder must always be withdrawn.",
+              "de": "Gefährlich. Ein durch die Blase verlaufendes Netz epithelialisiert nicht zuverlässig, sondern führt zu Steinbildung, rezidivierenden Infekten, Schmerzen und Hämaturie und muss später aufwendig entfernt werden. Ein intravesikal liegender Trokar muss immer zurückgezogen werden.",
+              "es": "Peligroso. Una malla que atraviesa la vejiga no se epiteliza de forma fiable, sino que provoca litiasis, infecciones recurrentes, dolor y hematuria, y después requiere una extracción compleja. Un trócar intravesical siempre debe retirarse."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Withdraw, re-pass the trocar laterally, repeat cystoscopy, catheter 1–2 days",
+              "de": "Trokar zurückziehen, lateral neu führen, erneut zystoskopieren, Katheter 1–2 Tage",
+              "es": "Retirar y repasar el trócar más lateral, repetir cistoscopia, sonda 1–2 días"
+            },
+            "score": 10,
+            "minutes": 10,
+            "critical": false,
+            "feedback": {
+              "en": "Correct. After a perforation the trocar is withdrawn and re-passed more laterally, hugging the back of the pubic bone; repeat cystoscopy must show an intact bladder. The procedure can be completed and the bladder is drained briefly with a catheter.",
+              "de": "Richtig. Bei Perforation wird der Trokar zurückgezogen und weiter lateral, hinter der Symphyse anliegend, erneut geführt; die anschließende Zystoskopie muss die Blase intakt zeigen. Der Eingriff kann beendet werden, die Blase wird kurzzeitig über einen Katheter entlastet.",
+              "es": "Correcto. Ante una perforación se retira el trócar y se vuelve a pasar más lateral, pegado a la cara posterior del pubis; la cistoscopia posterior debe mostrar la vejiga intacta. La intervención puede completarse y la vejiga se drena brevemente con una sonda."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Remove the trocar, abort the procedure and repeat the tape insertion in six months",
+              "de": "Trokar entfernen, Eingriff abbrechen und die Bandeinlage in sechs Monaten wiederholen",
+              "es": "Retirar el trócar, suspender la intervención y repetir la colocación de la banda en seis meses"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong. A recognised trocar perforation is no reason to abort. After correct re-passage and a normal check cystoscopy the outcome is no worse; a second operation would be avoidable.",
+              "de": "Falsch. Eine erkannte Trokarperforation ist kein Grund zum Abbruch. Nach korrekter Neuplatzierung und unauffälliger Kontrollzystoskopie ist das Ergebnis nicht schlechter; ein Zweiteingriff wäre vermeidbar.",
+              "es": "Incorrecto. Una perforación por trócar detectada no obliga a suspender. Tras recolocarlo correctamente y con una cistoscopia de control normal, el resultado no es peor; una segunda intervención sería evitable."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Leave the tape and insert a suprapubic catheter for three weeks",
+              "de": "Band belassen und für drei Wochen einen suprapubischen Katheter einlegen",
+              "es": "Dejar la banda y colocar una sonda suprapúbica durante tres semanas"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong. Prolonged drainage does not change the fact that the mesh runs through the bladder. Moreover, a suprapubic catheter should not be placed next to a fresh retropubic tape without need.",
+              "de": "Falsch. Längere Ableitung ändert nichts daran, dass das Netz durch die Blase verläuft. Zudem wird ein suprapubischer Katheter neben einem retropubischen Band nicht ohne Not punktiert.",
+              "es": "Incorrecto. Un drenaje prolongado no cambia que la malla atraviese la vejiga. Además, no se debe colocar sin necesidad una sonda suprapúbica junto a una banda retropúbica recién implantada."
+            }
+          }
+        ],
+        "best": "c"
+      }
+    ],
+    "takeaway": {
+      "en": "Rule: with a retropubic tape, cystoscopy after each trocar passage is mandatory. Perforation: withdraw the trocar, re-pass laterally, repeat cystoscopy, catheter for 1–2 days. Mesh must never run through the bladder.",
+      "de": "Merksatz: Beim retropubischen Band ist die Zystoskopie nach jeder Trokarpassage Pflicht. Perforation: Trokar zurückziehen, lateral neu führen, erneut zystoskopieren, Katheter für 1–2 Tage. Ein Netz darf nie durch die Blase verlaufen.",
+      "es": "Regla: en la banda retropúbica la cistoscopia tras cada paso de trócar es obligatoria. Perforación: retirar el trócar, volver a pasarlo más lateral, repetir la cistoscopia, sonda durante 1–2 días. La malla nunca debe atravesar la vejiga."
+    },
+    "references": [
+      "eau-female-luts"
+    ]
+  },
+  {
     "id": "bank-uro-fun-00012",
     "area": "theatre",
     "level": 3,

@@ -20,7 +20,7 @@
     const ids = catalog.areas.flatMap(a => shuffle(catalog.cases.filter(c => c.area === a.id), rng).slice(0, perArea).map(c => c.id));
     return shuffle(ids, rng);
   }
-  const DUTIES = ['night', 'board', 'clinic', 'elective'];
+  const DUTIES = ['night', 'board', 'clinic', 'elective', 'dayclinic', 'radiotherapy'];
   // One duty's cases only, interleaving topics so a shift does not repeat a single subject.
   function scheduleDuty(catalog, seed, duty, size = 10) {
     if (!DUTIES.includes(duty)) throw new Error('Unknown duty');

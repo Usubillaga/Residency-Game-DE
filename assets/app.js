@@ -15,18 +15,22 @@
   const BADGE_ICONS={firstCase:'📋',firstShift:'🌅',streak5:'📟',streak10:'🚀',perfectShift:'📘',bossPerfect:'🎓',coffee5:'☕',allAreas:'🗺️',comeback:'🔁',joker10:'🤝',specialist:'🔬',cases50:'🦉',nightOwl:'🌙',anatomist:'🦴'};
   const STAT_KEYS=['shifts','perfectShifts','bossPerfect','maxCoffees','bestStreak','jokers','rank','atlasPerfect'];
   const RANK_COUNT=9; // the career ladder: RANK_XP below and careerRanks in banter.js have nine steps
+  // The attending in the background takes three calls per shift; each costs five game minutes, never points.
+  const ATTENDING_CALLS=3,CALL_MINUTES=5;
   // Duties decide which cases a session draws: emergencies at night, oncology decisions in the tumour board,
   // outpatient work in clinic and planned surgery on the elective list. Start times are game minutes after midnight.
-  const DUTIES=['night','board','clinic','elective'],DUTY_START={night:1320,board:930,clinic:480,elective:450,mixed:1320};
-  const DUTY_ICON={night:'🌙',board:'🎗️',clinic:'🩺',elective:'✂️',mixed:'🔀'};
+  const DUTIES=['night','board','clinic','elective','dayclinic','radiotherapy'],DUTY_START={night:1320,board:930,clinic:480,elective:450,dayclinic:510,radiotherapy:495,mixed:1320};
+  const DUTY_ICON={night:'🌙',board:'🎗️',clinic:'🩺',elective:'✂️',dayclinic:'💉',radiotherapy:'☢️',mixed:'🔀'};
+  // Radiotherapy questions are answered by the radiation oncologist; every other case by the attending.
+  const consultantOf=c=>c&&c.consultant==='radiotherapist'?'radiotherapist':'attending';
   const count=v=>Number.isInteger(v)&&v>=0?v:0;
   let storageFailed=false, state={lang:'en',name:'',avatar:0,sound:false,history:[],bookmarks:[],session:null,stats:cleanStats(null),badges:[],lastDuty:'night',countedShifts:[]};
   try {
     const s=JSON.parse(localStorage.getItem(STORAGE)||'null');
     if (s && typeof s==='object' && !Array.isArray(s)) Object.assign(state,cleanSave(s));
   } catch (_) { /* In-memory play stays available when browser storage is blocked. */ }
-  let view=['intro','library','atlas','progress','sources','play','report'].includes(location.hash.slice(1))?location.hash.slice(1):'intro';
-  let areaFilter='all',topicFilter='all',dutyFilter='all',pendingDuty='night',libraryPage=0,query='',savedOnly=false,pendingIds=null,customSchedule=null,dialogSequence=0,pendingSave=null;
+  let view=['intro','library','atlas','protocols','progress','sources','play','report'].includes(location.hash.slice(1))?location.hash.slice(1):'intro';
+  let areaFilter='all',topicFilter='all',dutyFilter='all',pendingDuty='night',libraryPage=0,query='',savedOnly=false,pendingIds=null,customSchedule=null,dialogSequence=0,pendingSave=null,protocolEntity=null,protocolKind='systemic';
   const t = key => {const value=typeof comedy()[key]==='string'?comedy()[key]:(strings[state.lang][key] || strings.en[key] || key);return value.replaceAll('{cases}',String(C.cases.length)).replaceAll('{areas}',String(C.areas.length));};
   const loc = value => value[state.lang];
   const pct = r=>Math.round(r.score/r.maxScore*100);
@@ -39,6 +43,8 @@
   const clock=(min,duty=state.session?.duty)=>{const at=(DUTY_START[duty]??DUTY_START.night)+min;return String(Math.floor(at/60)%24).padStart(2,'0')+':'+String(at%60).padStart(2,'0');};
   const dutyOf=c=>DUTIES.includes(c.duty)?c.duty:({emergency:'night',ward:'night',clinic:'clinic',endoscopy:'elective',theatre:'elective'}[c.area]||'clinic');
   const dutyName=d=>DUTY_ICON[d]+' '+t('duty_'+d);
+  // Only duties with cases are offered; saved sessions and filters still accept every known duty.
+  const PLAYABLE=DUTIES.filter(d=>C.cases.some(c=>dutyOf(c)===d));
   const commonDuty=ids=>{const found=new Set(ids.map(id=>dutyOf(getCase(id))));return found.size===1?[...found][0]:'mixed';};
   function validRecord(r) {
     try {
@@ -68,10 +74,16 @@
       const match=/^(.+):(\d+)$/.exec(key),patient=match&&patients.find(p=>p.id===match[1]),step=patient&&getCase(patient.id).steps[Number(match[2])];
       if(step&&typeof value==='string'&&step.options.some(o=>o.id===value))struck[key]=value;
     }
+    const called={};
+    if(s.called&&typeof s.called==='object'&&!Array.isArray(s.called))for(const key of Object.keys(s.called)){
+      const match=/^(.+):(\d+)$/.exec(key),patient=match&&patients.find(p=>p.id===match[1]);
+      if(patient&&Number(match[2])<getCase(patient.id).steps.length&&s.called[key]===true)called[key]=true;
+    }
     const capped=v=>Math.min(count(v),1000000),streak=capped(s.streak);
     const clean={version:2,mode:s.mode,seed:s.seed.slice(0,120),clock:s.clock,patients,selected:s.selected,finished:s.finished,duty:DUTIES.includes(s.duty)?s.duty:'mixed',
       coffees:capped(s.coffees),streak,bestStreak:Math.max(capped(s.bestStreak),streak),jokers:capped(s.jokers),
-      streakAt:typeof s.streakAt==='string'&&s.streakAt.length<=200?s.streakAt:null,struck,counted:s.counted===true,bossCounted:s.bossCounted===true};
+      streakAt:typeof s.streakAt==='string'&&s.streakAt.length<=200?s.streakAt:null,struck,counted:s.counted===true,bossCounted:s.bossCounted===true,
+      calls:Math.min(capped(s.calls),ATTENDING_CALLS),called};
     if(validBoss(s.boss))clean.boss={index:s.boss.index,done:s.boss.done,answers:[...s.boss.answers],items:s.boss.items.map(item=>({caseId:item.caseId,stepIndex:item.stepIndex,order:[...item.order]}))};
     return clean;
   }
@@ -267,14 +279,14 @@
   function badge(acuity) { return '<span class="badge '+acuity+'">'+esc(t(acuity))+'</span>'; }
   function bookmark(id) { return '<button class="bookmark '+(state.bookmarks.includes(id)?'on':'')+'" data-bookmark="'+esc(id)+'" aria-label="'+esc(t(state.bookmarks.includes(id)?'unsaveCase':'saveCase'))+'" aria-pressed="'+state.bookmarks.includes(id)+'">'+(state.bookmarks.includes(id)?'★':'☆')+'</button>'; }
   function header() {
-    return '<header class="topbar"><div class="container top-inner"><a href="#intro" class="brand" data-view="intro"><span class="brand-icon" aria-hidden="true">✚</span><div><strong>Night Shift Academy</strong><small>'+esc(t('tagline'))+'</small></div></a><nav class="nav" aria-label="'+esc(t('intro'))+'">'+['intro','library','atlas','progress','sources'].map(v=>'<button class="nav-btn '+(view===v?'active':'')+'" data-view="'+v+'" '+(view===v?'aria-current="page"':'')+'>'+esc(t(v))+'</button>').join('')+'</nav><div class="lang" role="group" aria-label="Language / Sprache / Idioma">'+['en','de','es'].map(l=>'<button data-lang="'+l+'" class="'+(state.lang===l?'active':'')+'" aria-pressed="'+(state.lang===l)+'" aria-label="'+({en:'English',de:'Deutsch',es:'Español'}[l])+'">'+l.toUpperCase()+'</button>').join('')+'</div></div></header>';
+    return '<header class="topbar"><div class="container top-inner"><a href="#intro" class="brand" data-view="intro"><span class="brand-icon" aria-hidden="true">✚</span><div><strong>Night Shift Academy</strong><small>'+esc(t('tagline'))+'</small></div></a><nav class="nav" aria-label="'+esc(t('intro'))+'">'+['intro','library','atlas','protocols','progress','sources'].map(v=>'<button class="nav-btn '+(view===v?'active':'')+'" data-view="'+v+'" '+(view===v?'aria-current="page"':'')+'>'+esc(t(v))+'</button>').join('')+'</nav><div class="lang" role="group" aria-label="Language / Sprache / Idioma">'+['en','de','es'].map(l=>'<button data-lang="'+l+'" class="'+(state.lang===l?'active':'')+'" aria-pressed="'+(state.lang===l)+'" aria-label="'+({en:'English',de:'Deutsch',es:'Español'}[l])+'">'+l.toUpperCase()+'</button>').join('')+'</div></div></header>';
   }
   function footer() { return '<footer class="footer"><div class="container footer-inner"><p>'+esc(t('education'))+'<br>'+esc(t('clockNote'))+'</p><button data-view="sources">'+esc(t('sources'))+' ↗</button></div></footer>'; }
   function hospital() {
     return '<div class="cartoon-hero-art">'+A.hero(state.lang)+'<div class="cartoon-sticker">'+esc(t('caseCount'))+'</div></div>';
   }
   function castStrip() {
-    return '<section class="cast-intro"><div class="section-head"><div><h2>'+esc(t('meetTeam'))+'</h2><p>'+esc(t('castSub'))+'</p></div></div><div class="cast-grid">'+['nurse','attending','chief'].map(role=>{const person=comedy().staff[role];const quote=comedy().opening.find(line=>line.speaker===role)?.text||comedy().castWelcome;return '<button class="cast-card" data-talk="'+role+'">'+A.portrait(role,role==='attending'?'sleepy':role==='chief'?'stern':'smile',110,state.avatar)+'<div><h3>'+esc(person.name)+'</h3><small>'+esc(person.role)+'</small><p>“'+esc(quote)+'”</p></div></button>';}).join('')+'</div></section>';
+    return '<section class="cast-intro"><div class="section-head"><div><h2>'+esc(t('meetTeam'))+'</h2><p>'+esc(t('castSub'))+'</p></div></div><div class="cast-grid">'+['nurse','attending','chief','radiotherapist'].map(role=>{const person=comedy().staff[role];const quote=castLine(role);return '<button class="cast-card" data-talk="'+role+'">'+A.portrait(role,role==='attending'?'sleepy':role==='chief'?'stern':'smile',110,state.avatar)+'<div><h3>'+esc(person.name)+'</h3><small>'+esc(person.role)+'</small><p>“'+esc(quote)+'”</p></div></button>';}).join('')+'</div></section>';
   }
 
   function intro() {
@@ -283,7 +295,7 @@
   }
 
   function dutyCards() {
-    return '<section class="section duty-section"><div class="section-head"><div><h2>'+esc(t('dutiesTitle'))+'</h2><p>'+esc(t('dutiesSub'))+'</p></div></div><div class="duty-grid">'+DUTIES.map(d=>'<article class="duty-card duty-'+d+'"><span class="duty-icon" aria-hidden="true">'+DUTY_ICON[d]+'</span><h3>'+esc(t('duty_'+d))+'</h3><p class="duty-time">'+esc(t('dutyTime_'+d))+' · '+esc(t('dutyCount').replace('{n}',String(C.cases.filter(c=>dutyOf(c)===d).length)))+'</p><p>'+esc(t('dutyText_'+d))+'</p><button class="btn small primary" data-duty-start="'+d+'">'+esc(t('dutyStart'))+' ▶</button></article>').join('')+'</div></section>';
+    return '<section class="section duty-section"><div class="section-head"><div><h2>'+esc(t('dutiesTitle'))+'</h2><p>'+esc(t('dutiesSub'))+'</p></div></div><div class="duty-grid">'+PLAYABLE.map(d=>'<article class="duty-card duty-'+d+'"><span class="duty-icon" aria-hidden="true">'+DUTY_ICON[d]+'</span><h3>'+esc(t('duty_'+d))+'</h3><p class="duty-time">'+esc(t('dutyTime_'+d))+' · '+esc(t('dutyCount').replace('{n}',String(C.cases.filter(c=>dutyOf(c)===d).length)))+'</p><p>'+esc(t('dutyText_'+d))+'</p><button class="btn small primary" data-duty-start="'+d+'">'+esc(t('dutyStart'))+' ▶</button></article>').join('')+'</div></section>';
   }
   function caseCard(c) {
     const attempts=state.history.filter(h=>h.caseId===c.id),best=attempts.length?Math.max(...attempts.map(pct)):null;
@@ -295,7 +307,7 @@
   }
   function library() {
     const topics=[...new Map(C.cases.filter(c=>c.source&&c.topic).map(c=>[c.source.domain,c.topic])).entries()].sort((a,b)=>loc(a[1]).localeCompare(loc(b[1]),state.lang));
-    return '<div class="page-head"><p class="eyebrow">02 / '+esc(t('mark'))+'</p><h1>'+esc(t('library'))+'</h1><p>'+esc(t('schematic'))+'</p></div><div class="toolbar"><input class="search" id="case-search" type="search" value="'+esc(query)+'" placeholder="'+esc(t('search'))+'" aria-label="'+esc(t('search'))+'"><label class="topic-select"><span>'+esc(t('dutyLabel'))+'</span><select id="duty-filter" aria-label="'+esc(t('dutyLabel'))+'">'+['all',...DUTIES].map(d=>'<option value="'+d+'" '+(dutyFilter===d?'selected':'')+'>'+esc(d==='all'?t('allDuties'):dutyName(d))+'</option>').join('')+'</select></label><label class="topic-select"><span>'+esc(t('topic'))+'</span><select id="topic-filter" aria-label="'+esc(t('topic'))+'"><option value="all">'+esc(t('allTopics'))+'</option>'+topics.map(([id,label])=>'<option value="'+esc(id)+'" '+(topicFilter===id?'selected':'')+'>'+esc(loc(label))+'</option>').join('')+'</select></label><button class="btn small quiet" data-action="saved-only" aria-pressed="'+savedOnly+'">'+esc(t(savedOnly?'showAll':'viewSaved'))+'</button></div><div class="chips" role="group" aria-label="'+esc(t('filter'))+'">'+[{id:'all',title:{en:t('all'),de:t('all'),es:t('all')}},...C.areas].map(a=>'<button class="chip '+(a.id===areaFilter?'active':'')+'" data-filter="'+a.id+'" aria-pressed="'+(a.id===areaFilter)+'">'+esc(loc(a.title))+'</button>').join('')+'</div><div id="case-results">'+libraryResults()+'</div>';
+    return '<div class="page-head"><p class="eyebrow">02 / '+esc(t('mark'))+'</p><h1>'+esc(t('library'))+'</h1><p>'+esc(t('schematic'))+'</p></div><div class="toolbar"><input class="search" id="case-search" type="search" value="'+esc(query)+'" placeholder="'+esc(t('search'))+'" aria-label="'+esc(t('search'))+'"><label class="topic-select"><span>'+esc(t('dutyLabel'))+'</span><select id="duty-filter" aria-label="'+esc(t('dutyLabel'))+'">'+['all',...PLAYABLE].map(d=>'<option value="'+d+'" '+(dutyFilter===d?'selected':'')+'>'+esc(d==='all'?t('allDuties'):dutyName(d))+'</option>').join('')+'</select></label><label class="topic-select"><span>'+esc(t('topic'))+'</span><select id="topic-filter" aria-label="'+esc(t('topic'))+'"><option value="all">'+esc(t('allTopics'))+'</option>'+topics.map(([id,label])=>'<option value="'+esc(id)+'" '+(topicFilter===id?'selected':'')+'>'+esc(loc(label))+'</option>').join('')+'</select></label><button class="btn small quiet" data-action="saved-only" aria-pressed="'+savedOnly+'">'+esc(t(savedOnly?'showAll':'viewSaved'))+'</button></div><div class="chips" role="group" aria-label="'+esc(t('filter'))+'">'+[{id:'all',title:{en:t('all'),de:t('all'),es:t('all')}},...C.areas].map(a=>'<button class="chip '+(a.id===areaFilter?'active':'')+'" data-filter="'+a.id+'" aria-pressed="'+(a.id===areaFilter)+'">'+esc(loc(a.title))+'</button>').join('')+'</div><div id="case-results">'+libraryResults()+'</div>';
   }
   function libraryResults() {
     const cases=filteredCases(),size=18,pages=Math.max(1,Math.ceil(cases.length/size));libraryPage=Math.min(libraryPage,pages-1);
@@ -376,6 +388,40 @@
     if(chip){const shift=chip.getBoundingClientRect().top-before;if(shift)(figure.closest('dialog')||window).scrollBy(0,shift);}
     else reveal(note);
   }
+  // Therapy protocols: a learning overview of cycles and doses per tumour, each with its questions to practise. A switch shows
+  // the radiotherapy schemes (total dose, dose per fraction, fractions, target) in the same layout.
+  function protocols() {
+    const rt=protocolKind==='radiotherapy'&&(C.radiotherapy||[]).length>0,entities=(rt?C.radiotherapy:C.protocols)||[],current=entities.find(e=>e.id===protocolEntity)||entities[0];
+    const kinds=(C.radiotherapy||[]).length?'<div class="protocol-kinds" role="group" aria-label="'+esc(t('protocols'))+'">'+[['systemic','💊'],['radiotherapy','☢️']].map(([k,icon])=>'<button class="protocol-kind'+((k==='radiotherapy')===rt?' active':'')+'" aria-pressed="'+((k==='radiotherapy')===rt)+'" data-protocol-kind="'+k+'">'+icon+' '+esc(t(k==='radiotherapy'?'protocolKindRadiotherapy':'protocolKindSystemic'))+'</button>').join('')+'</div>':'';
+    const head='<div class="page-head"><p class="eyebrow">'+esc(t('protocols'))+'</p><h1>'+esc(t(rt?'rtTitle':'protocolsTitle'))+'</h1><p>'+esc(t(rt?'rtSub':'protocolsSub'))+'</p></div>'+kinds+'<p class="warning-note protocol-warning" role="note">⚠️ '+esc(t(rt?'rtWarning':'protocolsWarning'))+'</p>';
+    if(!current)return head;
+    return head+'<div class="protocol-tabs" role="group" aria-label="'+esc(t('protocols'))+'">'+entities.map(e=>'<button class="protocol-tab'+(e===current?' active':'')+'" aria-pressed="'+(e===current)+'" data-protocol-entity="'+esc(e.id)+'">'+esc(loc(e.title))+' <span class="mono" aria-hidden="true">'+e.regimens.length+'</span></button>').join('')+'</div>'+
+      '<div class="protocol-grid">'+current.regimens.map(rt?rtCard:protocolCard).join('')+'</div>';
+  }
+  const gy=value=>(state.lang==='en'?String(value):String(value).replace('.',','))+' Gy';
+  function practiceButton(r) {
+    const questions=[...new Set((r.questions||[]).filter(id=>getCase(id)))];
+    return questions.length?'<div class="actions"><button class="btn" data-protocol-practice="'+esc(r.id)+'">🎯 '+esc(t('protocolPractice').replace('{n}',questions.length))+'</button></div>':'';
+  }
+  function protocolDetails(r) {
+    return '<details class="protocol-more"><summary>'+esc(t('protocolSupport'))+' · '+esc(t('protocolCautions'))+' · '+esc(t('protocolEvidence'))+'</summary><p><b>'+esc(t('protocolSupport'))+':</b> '+esc(loc(r.support))+'</p><p><b>'+esc(t('protocolCautions'))+':</b> '+esc(loc(r.cautions))+'</p><p><b>'+esc(t('protocolEvidence'))+':</b> '+esc(loc(r.evidence))+'</p><p class="protocol-sources"><b>'+esc(t('protocolSources'))+':</b> '+r.sources.map(source=>'<a href="'+esc(source.url)+'" target="_blank" rel="noopener noreferrer">'+esc(source.label)+' ↗</a>').join(' · ')+'</p></details>';
+  }
+  function rtCard(r) {
+    return '<article class="protocol-card rt-card" id="protocol-'+esc(r.id)+'"><h2>'+esc(loc(r.name))+'</h2><p class="protocol-setting"><b>'+esc(t('protocolSetting'))+':</b> '+esc(loc(r.setting))+'</p>'+
+      '<p class="protocol-cycle"><b>'+esc(t('rtTechnique'))+':</b> '+esc(loc(r.technique))+'</p><p class="protocol-cycle"><b>'+esc(t('rtCombined'))+':</b> '+esc(loc(r.combined))+'</p>'+
+      '<div class="protocol-table-wrap"><table class="protocol-table"><thead><tr><th scope="col">'+esc(t('rtTarget'))+'</th><th scope="col">'+esc(t('rtTotal'))+'</th><th scope="col">'+esc(t('rtPerFraction'))+'</th><th scope="col">'+esc(t('rtFractions'))+'</th><th scope="col">'+esc(t('protocolSchedule'))+'</th></tr></thead><tbody>'+
+      r.phases.map(ph=>'<tr><th scope="row">'+esc(loc(ph.target))+'</th><td class="mono" data-label="'+esc(t('rtTotal'))+'">'+esc(gy(ph.totalGy))+'</td><td class="mono" data-label="'+esc(t('rtPerFraction'))+'">'+esc(ph.fractionGy==null?'–':gy(ph.fractionGy))+'</td><td class="mono" data-label="'+esc(t('rtFractions'))+'">'+esc(ph.fractions==null?t('rtContinuous'):String(ph.fractions))+'</td><td data-label="'+esc(t('protocolSchedule'))+'">'+esc(loc(ph.schedule))+'</td></tr>').join('')+'</tbody></table></div>'+
+      protocolDetails(r)+practiceButton(r)+'</article>';
+  }
+  function protocolCard(r) {
+    const route=d=>d.route==='intravesical'?t('routeIntravesical'):d.route;
+    return '<article class="protocol-card" id="protocol-'+esc(r.id)+'"><h2>'+esc(loc(r.name))+'</h2><p class="protocol-setting"><b>'+esc(t('protocolSetting'))+':</b> '+esc(loc(r.setting))+'</p>'+
+      '<p class="protocol-cycle"><b>'+esc(t('protocolCycle'))+':</b> '+esc(r.cycleDays?t('protocolCycleDays').replace('{n}',r.cycleDays):t('protocolContinuous'))+' · <b>'+esc(t('protocolCycles'))+':</b> '+esc(loc(r.cycles))+'</p>'+
+      '<div class="protocol-table-wrap"><table class="protocol-table"><thead><tr><th scope="col">'+esc(t('protocolDrug'))+'</th><th scope="col">'+esc(t('protocolDose'))+'</th><th scope="col">'+esc(t('protocolRoute'))+'</th><th scope="col">'+esc(t('protocolSchedule'))+'</th></tr></thead><tbody>'+
+      r.drugs.map(d=>'<tr><th scope="row">'+esc(loc(d.name))+'</th><td class="mono" data-label="'+esc(t('protocolDose'))+'">'+esc(loc(d.dose))+'</td><td data-label="'+esc(t('protocolRoute'))+'">'+esc(route(d))+'</td><td data-label="'+esc(t('protocolSchedule'))+'">'+esc(loc(d.schedule))+'</td></tr>').join('')+'</tbody></table></div>'+
+      protocolDetails(r)+practiceButton(r)+'</article>';
+  }
+
   function atlas() {
     const used=id=>C.cases.filter(c=>c.schema&&c.schema.id===id).length;
     return '<div class="page-head"><p class="eyebrow">'+esc(t('atlas'))+'</p><h1>'+esc(t('atlasTitle'))+'</h1><p>'+esc(t('atlasSub'))+'</p></div><div class="atlas-grid">'+[...SCHEMAS.values()].map(s=>'<article class="atlas-card"><div class="atlas-thumb" aria-hidden="true"><svg viewBox="'+esc(s.viewBox)+'" xmlns="http://www.w3.org/2000/svg">'+s.svg+'</svg></div><h3>'+esc(loc(s.title))+'</h3><p>'+esc(loc(s.caption))+'</p><small>'+esc(t(used(s.id)===1?'atlasUsedOne':'atlasUsed').replace('{n}',String(used(s.id))))+' · '+s.parts.length+' ⦿</small><div class="actions"><button class="btn small quiet" data-atlas-open="'+esc(s.id)+'">'+esc(t('atlasExplore'))+'</button><button class="btn small primary" data-atlas-quiz="'+esc(s.id)+'">🎯 '+esc(t('atlasQuiz'))+'</button></div></article>').join('')+'</div>';
@@ -430,7 +476,7 @@
       body+='<section class="decision-panel"><div class="step-track" aria-hidden="true">'+c.steps.map((_,i)=>'<span class="'+(i<p.index?'past':i===p.index?'now':'')+'"></span>').join('')+'</div><div class="step-meta"><span>'+esc(t(c.source?'sourceQuestion':s.kind))+'</span><span>'+esc(t('decision'))+' '+(p.index+1)+' / '+c.steps.length+'</span></div><h3 id="decision-prompt">'+esc(loc(s.prompt))+'</h3><div class="options" role="group" aria-labelledby="decision-prompt">'+p.order[p.index].map((id,i)=>optionButton(s,o=>o.id===id,p,i)).join('')+'</div>';
       if(p.feedback){const o=s.options.find(o=>o.id===p.feedback),cls=o.score===10?'good':o.score>0||c.source?'partial':'unsafe';
         const streak=cls==='good'&&state.session.streakAt===p.id+':'+p.index?state.session.streak:0;
-        body+=characterComment(cls,p.id,p.index,streak,!!c.source)+'<div class="feedback '+cls+'" role="status"><span class="label">'+esc(t('feedback'))+'</span><h3>'+esc(t(c.source&&o.score!==10?'sourceIncorrect':cls))+(o.critical?' · '+esc(t('safety')):'')+'</h3><p>'+esc(loc(o.feedback))+'</p>'+preferredAnswer(s,o.id)+(p.index===c.steps.length-1?caseVisuals(c):'')+optionsExplained(s,p.order[p.index],o.id)+'<div class="actions"><button class="btn primary" data-action="next">'+esc(t(p.index===c.steps.length-1?'finishCase':'next'))+' →</button></div></div>';
+        body+=(o.critical?attendingWarning(c,s,p.id+':'+p.index):characterComment(cls,p.id,p.index,streak,!!c.source))+'<div class="feedback '+cls+'" role="status"><span class="label">'+esc(t('feedback'))+'</span><h3>'+esc(t(c.source&&o.score!==10?'sourceIncorrect':cls))+(o.critical?' · '+esc(t('safety')):'')+'</h3><p>'+esc(loc(o.feedback))+'</p>'+preferredAnswer(s,o.id)+(p.index===c.steps.length-1?caseVisuals(c):'')+optionsExplained(s,p.order[p.index],o.id)+'<div class="actions"><button class="btn primary" data-action="next">'+esc(t(p.index===c.steps.length-1?'finishCase':'next'))+' →</button></div></div>';
       } else {
         body+='<p class="keys-hint">⌨️ '+esc(t('keysHint'))+'</p>';
         if(state.session.mode==='learn')body+='<details class="hint-box"><summary>'+esc(t('hint'))+'</summary><p>'+esc(t('hintText'))+'</p></details>';
@@ -455,7 +501,7 @@
     return '<div class="metric-grid">'+[[items.length,'attempts'],[max?Math.round(sum/max*100)+'%':'—','average'],[mastered,'mastered'],[items.reduce((n,r)=>n+r.criticalErrors,0),'safetyConcerns']].map(([v,k])=>'<div class="metric-card"><span>'+esc(t(k))+'</span><strong>'+v+'</strong></div>').join('')+'</div>';
   }
   function progress() {
-    return '<div class="page-head"><p class="eyebrow">03 / '+esc(t('progress'))+'</p><h1>'+esc(t('progressTitle'))+'</h1><p>'+esc(t('progressSub'))+'</p></div>'+careerPanel()+metrics(state.history)+'<div class="actions" style="margin-bottom:25px"><button class="btn primary" data-action="revenge">🔁 '+esc(t('revenge'))+' ('+missedCases().length+')</button><button class="btn quiet" data-action="export" '+(!hasProgress(state)?'disabled':'')+'>'+esc(t('export'))+' ↓</button><button class="btn quiet" data-action="import">'+esc(t('importSave'))+' ↑</button><input type="file" id="save-file" accept=".json,application/json" hidden><button class="btn quiet danger" data-action="reset-dialog">'+esc(t('reset'))+'</button>'+(state.session?'<button class="btn" data-action="resume">'+esc(t('resume'))+' →</button>':'')+'</div><p class="small-note save-note">'+esc(t('saveHelp'))+'</p><div class="progress-grid"><section class="progress-panel"><h2>'+esc(t('byDuty'))+'</h2>'+DUTIES.map(d=>({id:d,title:dutyName(d)})).map(a=>{const h=state.history.filter(r=>dutyOf(getCase(r.caseId))===a.id);const average=h.length?Math.round(h.reduce((n,r)=>n+pct(r),0)/h.length):0;return '<div class="bar-row"><div class="bar-label"><span>'+esc(a.title)+'</span><span>'+h.length+' · '+(h.length?average+'%':'—')+'</span></div><div class="bar-track" role="meter" aria-label="'+esc(a.title)+'" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+average+'"><div class="bar-fill" style="width:'+average+'%"></div></div></div>';}).join('')+'</section><section class="progress-panel"><h2>'+esc(t('recent'))+'</h2>'+(state.history.length?state.history.slice(-8).reverse().map(r=>historyRow(r)).join(''):'<p class="muted" style="font-size:.8rem">'+esc(t('noHistory'))+'</p>')+'</section></div>'+topicPanel()+stickerAlbum()+'<div class="section-head"><h2>'+esc(t('bookmarks'))+'</h2></div><div class="case-grid">'+(state.bookmarks.length?state.bookmarks.map(id=>caseCard(getCase(id))).join(''):'<p class="empty">'+esc(t('noBookmarks'))+'</p>')+'</div>';
+    return '<div class="page-head"><p class="eyebrow">03 / '+esc(t('progress'))+'</p><h1>'+esc(t('progressTitle'))+'</h1><p>'+esc(t('progressSub'))+'</p></div>'+careerPanel()+metrics(state.history)+'<div class="actions" style="margin-bottom:25px"><button class="btn primary" data-action="revenge">🔁 '+esc(t('revenge'))+' ('+missedCases().length+')</button><button class="btn quiet" data-action="export" '+(!hasProgress(state)?'disabled':'')+'>'+esc(t('export'))+' ↓</button><button class="btn quiet" data-action="import">'+esc(t('importSave'))+' ↑</button><input type="file" id="save-file" accept=".json,application/json" hidden><button class="btn quiet danger" data-action="reset-dialog">'+esc(t('reset'))+'</button>'+(state.session?'<button class="btn" data-action="resume">'+esc(t('resume'))+' →</button>':'')+'</div><p class="small-note save-note">'+esc(t('saveHelp'))+'</p><div class="progress-grid"><section class="progress-panel"><h2>'+esc(t('byDuty'))+'</h2>'+PLAYABLE.map(d=>({id:d,title:dutyName(d)})).map(a=>{const h=state.history.filter(r=>dutyOf(getCase(r.caseId))===a.id);const average=h.length?Math.round(h.reduce((n,r)=>n+pct(r),0)/h.length):0;return '<div class="bar-row"><div class="bar-label"><span>'+esc(a.title)+'</span><span>'+h.length+' · '+(h.length?average+'%':'—')+'</span></div><div class="bar-track" role="meter" aria-label="'+esc(a.title)+'" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+average+'"><div class="bar-fill" style="width:'+average+'%"></div></div></div>';}).join('')+'</section><section class="progress-panel"><h2>'+esc(t('recent'))+'</h2>'+(state.history.length?state.history.slice(-8).reverse().map(r=>historyRow(r)).join(''):'<p class="muted" style="font-size:.8rem">'+esc(t('noHistory'))+'</p>')+'</section></div>'+topicPanel()+stickerAlbum()+'<div class="section-head"><h2>'+esc(t('bookmarks'))+'</h2></div><div class="case-grid">'+(state.bookmarks.length?state.bookmarks.map(id=>caseCard(getCase(id))).join(''):'<p class="empty">'+esc(t('noBookmarks'))+'</p>')+'</div>';
   }
   function careerPanel() {
     const points=xp(),rank=rankIndex(points),ranks=comedy().careerRanks,next=RANK_XP[rank+1];
@@ -486,7 +532,7 @@
   function render() {
     document.documentElement.lang=state.lang;document.title='Night Shift Academy · '+({en:'Urology',de:'Urologie',es:'Urología'}[state.lang]);
     document.querySelector('.skip').textContent=t('skip');
-    root.innerHTML=header()+'<main class="container" id="main" tabindex="-1">'+(storageFailed?'<div class="storage-banner" role="status">'+esc(t('storageError'))+'</div>':'')+({intro,library,atlas,progress,sources,play,report}[view]||intro)()+'</main>'+footer();
+    root.innerHTML=header()+'<main class="container" id="main" tabindex="-1">'+(storageFailed?'<div class="storage-banner" role="status">'+esc(t('storageError'))+'</div>':'')+({intro,library,atlas,protocols,progress,sources,play,report}[view]||intro)()+'</main>'+footer();
   }
   function openDialog(content) {
     document.querySelector('dialog')?.remove();
@@ -495,10 +541,10 @@
     dlg.addEventListener('close',()=>dlg.remove());dlg.showModal();return dlg;
   }
   function dutyChoices() {
-    return '<fieldset class="duty-field"><legend class="field">'+esc(t('dutyPick'))+'</legend><div class="duty-choices">'+DUTIES.map(d=>'<label class="duty-choice duty-'+d+'"><input type="radio" name="duty" value="'+d+'" '+(d===pendingDuty?'checked':'')+'><span class="duty-icon" aria-hidden="true">'+DUTY_ICON[d]+'</span><b>'+esc(t('duty_'+d))+'</b><small>'+esc(t('dutyTime_'+d))+' · '+esc(t('dutyCount').replace('{n}',String(C.cases.filter(c=>dutyOf(c)===d).length)))+'</small><span>'+esc(t('dutyText_'+d))+'</span></label>').join('')+'</div></fieldset>';
+    return '<fieldset class="duty-field"><legend class="field">'+esc(t('dutyPick'))+'</legend><div class="duty-choices">'+PLAYABLE.map(d=>'<label class="duty-choice duty-'+d+'"><input type="radio" name="duty" value="'+d+'" '+(d===pendingDuty?'checked':'')+'><span class="duty-icon" aria-hidden="true">'+DUTY_ICON[d]+'</span><b>'+esc(t('duty_'+d))+'</b><small>'+esc(t('dutyTime_'+d))+' · '+esc(t('dutyCount').replace('{n}',String(C.cases.filter(c=>dutyOf(c)===d).length)))+'</small><span>'+esc(t('dutyText_'+d))+'</span></label>').join('')+'</div></fieldset>';
   }
   function setup(ids=null,duty=null) {
-    pendingIds=ids;customSchedule=null;pendingDuty=DUTIES.includes(duty)?duty:state.lastDuty;
+    pendingIds=ids;customSchedule=null;pendingDuty=PLAYABLE.includes(duty)?duty:PLAYABLE.includes(state.lastDuty)?state.lastDuty:PLAYABLE[0];
     openDialog('<form id="setup-form"><p class="eyebrow">'+esc(t('briefing'))+'</p><h2>'+esc(t('briefingTitle'))+'</h2><p>'+esc(t(ids?'learnText':'setupText'))+'</p>'+(state.session&&!state.session.finished?'<p class="warning-note">'+esc(t('newSession'))+'</p>':'')+avatarChoices()+'<label class="field" for="player-name">'+esc(t('player'))+'</label><input class="text-input" id="player-name" maxlength="32" autocomplete="nickname" value="'+esc(state.name)+'" placeholder="'+esc(t('namePlaceholder'))+'">'+(ids?'':dutyChoices())+'<fieldset style="border:0;margin:0;padding:0"><legend class="field">'+esc(t('modeLabel'))+'</legend><div class="radio-grid">'+(ids?['learn']:['learn','shift']).map(k=>'<label class="radio-card"><input type="radio" name="mode" value="'+k+'" '+(k===(ids?'learn':'shift')?'checked':'')+'>'+esc(t(k))+'</label>').join('')+'</div></fieldset>'+(ids?'':'<div style="margin-top:20px"><label class="file-label" for="schedule-file">'+esc(t('importSchedule'))+' ↑</label><input type="file" id="schedule-file" accept="application/json,.json" hidden><p class="small-note" id="schedule-status">'+esc(t('scheduleHelp'))+'</p></div>')+'<p class="small-note">'+esc(t('clockNote'))+'</p><div class="actions"><button class="btn primary" type="submit">'+esc(t('begin'))+' →</button><button class="btn quiet" type="button" data-action="close-dialog">'+esc(t('cancel'))+'</button></div></form>');
   }
   function completeNext() {
@@ -559,8 +605,11 @@
     for(const char of String(salt))hash=(hash*31+char.charCodeAt(0))>>>0;
     return lines[hash%lines.length];
   }
+  function castLine(role) {
+    return comedy().opening.find(line=>line.speaker===role)?.text||(comedy().dutyOpening?.radiotherapy||[]).find(line=>line.speaker===role)?.text||comedy().castWelcome;
+  }
   function speakerFor(text) {
-    return ['nurse','attending','chief'].find(role=>text.startsWith(comedy().staff[role].name+':'))||'nurse';
+    return ['nurse','attending','chief','radiotherapist'].find(role=>text.startsWith(comedy().staff[role].name+':'))||'nurse';
   }
   function lineWithoutName(text,role) {
     const prefix=comedy().staff[role].name+':';
@@ -577,8 +626,8 @@
       const c=getCase(p.id),step=c.steps[p.index],choice=p.feedback&&step?.options.find(o=>o.id===p.feedback);
       return {id:p.id,name:c.patient.label?loc(c.patient.label):c.patient.name,age:c.patient.age,sex:c.patient.sex,ageBand:c.patient.ageBand,area:c.area,acuity:c.acuity,finished:p.finished,available:p.availableAt<=session.clock,selected:p.id===selected.id,feedback:choice?(choice.score===10?'good':choice.score>0||c.source?'partial':'unsafe'):null};
     });
-    const duty=session.duty,board=duty==='board',room=board?t('duty_board'):loc(getArea(area).title);
-    return '<section class="cartoon-stage duty-'+esc(duty||'mixed')+'" aria-label="'+esc(room)+'"><div class="game-scene-heading"><h2>'+esc(room)+'</h2><span class="scene-tip">'+esc(t(board?'sceneHintBoard':'sceneHint'))+'</span></div>'+A.scene(area,patients,selected.id,clock(session.clock),state.avatar,state.lang,{duty,label:comedy().dutyBoard&&comedy().dutyBoard[duty]})+'<div class="game-team">'+['nurse','attending','chief'].map(role=>'<button class="team-character" data-action="'+({nurse:'ask-nurse',attending:'ask-attending',chief:'chief-challenge'}[role])+'">'+A.portrait(role,role==='attending'?attendingMood():role==='chief'?'stern':'smile',52,state.avatar)+'<span><b>'+esc(comedy().staff[role].name)+'</b><small>'+esc(t({nurse:'jokerLabel',attending:'askAttending',chief:'chiefChallenge'}[role]))+'</small></span></button>').join('')+'<button class="btn coffee-button" data-action="coffee" '+(session.finished?'disabled':'')+' title="'+esc(t('coffeeNote'))+'">☕ '+esc(t('coffeeLabel'))+' <span class="mono">+5 '+esc(t('minute'))+'</span></button><button class="btn quiet sound-button" data-action="sound" aria-pressed="'+state.sound+'">'+(state.sound?'♫ ':'♪ ')+esc(t(state.sound?'soundOn':'soundOff'))+'</button></div><p class="scene-banter">'+esc(board?comedy().dutyIntro.board:comedy().areaIntro[area])+'</p></section>';
+    const duty=session.duty,board=duty==='board',room=board?t('duty_board'):loc(getArea(area).title),consultant=consultantOf(getCase(selected.id));
+    return '<section class="cartoon-stage duty-'+esc(duty||'mixed')+'" aria-label="'+esc(room)+'"><div class="game-scene-heading"><h2>'+esc(room)+'</h2><span class="scene-tip">'+esc(t(board?'sceneHintBoard':'sceneHint'))+'</span></div>'+A.scene(area,patients,selected.id,clock(session.clock),state.avatar,state.lang,{duty,label:comedy().dutyBoard&&comedy().dutyBoard[duty]})+'<div class="game-team">'+['nurse',consultant,'chief'].map(role=>'<button class="team-character" data-action="'+({nurse:'ask-nurse',attending:'ask-attending',radiotherapist:'ask-attending',chief:'chief-challenge'}[role])+'">'+A.portrait(role,role==='attending'?attendingMood():role==='chief'?'stern':'smile',52,state.avatar)+'<span><b>'+esc(comedy().staff[role].name)+'</b><small>'+esc(t({nurse:'jokerLabel',attending:'askAttending',radiotherapist:'askRadiotherapist',chief:'chiefChallenge'}[role]))+(role===consultant?' · 📞 '+(ATTENDING_CALLS-count(session.calls))+'/'+ATTENDING_CALLS:'')+'</small></span></button>').join('')+'<button class="btn coffee-button" data-action="coffee" '+(session.finished?'disabled':'')+' title="'+esc(t('coffeeNote'))+'">☕ '+esc(t('coffeeLabel'))+' <span class="mono">+5 '+esc(t('minute'))+'</span></button><button class="btn quiet sound-button" data-action="sound" aria-pressed="'+state.sound+'">'+(state.sound?'♫ ':'♪ ')+esc(t(state.sound?'soundOn':'soundOff'))+'</button></div><p class="scene-banter">'+esc(board?comedy().dutyIntro.board:comedy().areaIntro[area])+'</p></section>';
   }
   function attendingMood() {
     // The attending sleeps through the night shift's quiet moments but is awake for daytime duties.
@@ -649,6 +698,29 @@
     session.clock+=5;session.coffees=(Number.isInteger(session.coffees)?session.coffees:0)+1;persist();render();
     const line=quip('coffee',session.coffees);talk(speakerFor(line),line+'\n\n'+t('coffeeNote'));
   }
+  // Calling the attending gives the decision's hint: the rule that decides it, never the answer itself. A second call about the
+  // same decision is free; after the answer the hint is a free debrief. Without hints left in the shift the nurse answers.
+  function callAttending() {
+    // Radiotherapy questions go to the radiation oncologist; the calls of a shift are shared.
+    const session=state.session,p=session?.patients.find(p=>p.id===session.selected);
+    if(!p||session.finished){const role=session?.duty==='radiotherapy'?'radiotherapist':'attending';talk(role,quip(role==='radiotherapist'?'radioIdle':'attendingIdle',session?.seed||'idle'));return;}
+    const c=getCase(p.id),index=Math.min(p.index,c.steps.length-1),key=p.id+':'+index,step=c.steps[index];
+    const role=consultantOf(c),radio=role==='radiotherapist';
+    const hint=step.hint?loc(step.hint):loc(c.objectives)[0];
+    if(p.finished||p.feedback){talk(role,quip(radio?'radioAfter':'attendingAfter',key)+'\n\n💡 '+hint);return;}
+    session.called=session.called&&typeof session.called==='object'?session.called:{};
+    if(!session.called[key]){
+      if(count(session.calls)>=ATTENDING_CALLS){talk('nurse',quip(radio?'radioBusy':'attendingBusy',key));return;}
+      session.calls=count(session.calls)+1;session.called[key]=true;session.clock+=CALL_MINUTES;persist();render();
+    }
+    talk(role,quip(radio?'radioCall':attendingMood()==='sleepy'?'attendingNight':'attendingDay',key)+'\n\n💡 '+hint+'\n\n'+t('attendingNote').replace('{n}',ATTENDING_CALLS-count(session.calls)));
+  }
+  // After an answer that would have harmed the patient, the consultant steps in with the decisive rule.
+  function attendingWarning(c,step,key) {
+    const role=consultantOf(c),hint=step.hint?loc(step.hint):loc(c.takeaway);
+    return '<aside class="character-comment unsafe attending-warning">'+A.portrait(role,'worried',92,state.avatar)+'<div class="comic-speech"><b>'+esc(comedy().staff[role].name)+'</b><p>'+esc(lineWithoutName(quip(role==='radiotherapist'?'radioWarn':'attendingWarn',key),role))+'</p><p class="attending-hint"><b>'+esc(t('attendingImportant'))+':</b> '+esc(hint)+'</p></div></aside>';
+  }
+
   function askNurse() {
     // The nurse's joker crosses out one of the weakest wrong answers. It costs game time, never points.
     const session=state.session,p=session?.patients.find(p=>p.id===session.selected);
@@ -727,7 +799,7 @@
     const scene=e.target.closest('[data-scene-area],[data-scene-patient],[data-scene-coffee]');if(scene){handleScene(scene);if(scene.dataset.sceneCoffee)checkRewards();return;}
     const b=e.target.closest('button,a[data-view]');if(!b||b.disabled)return;
     if(b.dataset.avatar!==undefined){state.avatar=Number(b.dataset.avatar);persist();document.querySelectorAll('[data-avatar]').forEach(el=>{el.classList.toggle('selected',Number(el.dataset.avatar)===state.avatar);el.setAttribute('aria-pressed',String(Number(el.dataset.avatar)===state.avatar));});return;}
-    if(b.dataset.talk){talk(b.dataset.talk,comedy().opening.find(line=>line.speaker===b.dataset.talk)?.text||comedy().castWelcome);return;}
+    if(b.dataset.talk){talk(b.dataset.talk,castLine(b.dataset.talk));return;}
     if(b.dataset.bossOption){
       const before=state.session?.boss?.answers.length;answerBoss(b.dataset.bossOption);
       const boss=state.session?.boss;
@@ -739,6 +811,9 @@
     if(b.dataset.filter){areaFilter=b.dataset.filter;libraryPage=0;render();document.querySelector('[data-filter="'+areaFilter+'"]')?.focus({preventScroll:true});return;}
     if(b.dataset.bookmark){const id=b.dataset.bookmark;state.bookmarks=state.bookmarks.includes(id)?state.bookmarks.filter(x=>x!==id):[...state.bookmarks,id];persist();render();document.querySelector('[data-bookmark="'+id+'"]')?.focus({preventScroll:true});return;}
     if(b.dataset.practice){setup([b.dataset.practice]);return;}
+    if(b.dataset.protocolKind){protocolKind=b.dataset.protocolKind==='radiotherapy'?'radiotherapy':'systemic';protocolEntity=null;render();document.querySelector('[data-protocol-kind="'+protocolKind+'"]')?.focus({preventScroll:true});return;}
+    if(b.dataset.protocolEntity){protocolEntity=b.dataset.protocolEntity;render();document.querySelector('[data-protocol-entity="'+protocolEntity+'"]')?.focus({preventScroll:true});return;}
+    if(b.dataset.protocolPractice){const r=((protocolKind==='radiotherapy'&&(C.radiotherapy||[]).length?C.radiotherapy:C.protocols)||[]).flatMap(e=>e.regimens).find(r=>String(r.id)===b.dataset.protocolPractice),ids=[...new Set((r?.questions||[]).filter(id=>getCase(id)))];if(ids.length)setup(pickCases(ids.map(getCase),10,'protocol-'+r.id,false));return;}
     if(b.dataset.dutyStart){setup(null,b.dataset.dutyStart);return;}
     if(b.dataset.atlasOpen){openAtlas(b.dataset.atlasOpen);return;}
     if(b.dataset.atlasQuiz){startQuiz(b.dataset.atlasQuiz);return;}
@@ -758,7 +833,7 @@
       case'revenge':{const ids=missedCases().slice(0,10);if(ids.length)setup(ids);else talk('nurse',comedy().revengeNone);break;}
       case'shift-revenge':{const ids=state.session?.patients.filter(p=>p.score<caseMaximum(getCase(p.id))).map(p=>p.id)||[];if(ids.length)setup(ids);break;}
       case'practice-selection':{const pool=filteredCases();if(pool.length)setup(pickCases(pool,10,'selection',false));break;}
-      case'ask-attending':talk('attending',comedy().opening.find(x=>x.speaker==='attending').text);break;
+      case'ask-attending':callAttending();break;
       case'sound':state.sound=!state.sound;persist();sound('pager');render();document.querySelector('[data-action="sound"]')?.focus({preventScroll:true});break;
       case'story-next':advanceOpening();break;
       case'story-skip':document.querySelector('dialog')?.close();break;
@@ -810,15 +885,18 @@
   });
   document.addEventListener('submit',e=>{
     if(e.target.id!=='setup-form')return;e.preventDefault();
-    const form=new FormData(e.target),mode=form.get('mode')||'shift',chosen=DUTIES.includes(form.get('duty'))?form.get('duty'):null;
+    const form=new FormData(e.target),mode=form.get('mode')||'shift',chosen=PLAYABLE.includes(form.get('duty'))?form.get('duty'):null;
     state.name=document.getElementById('player-name').value.trim().slice(0,32);
     const seed=customSchedule?String(customSchedule.seed||nowSeed()):nowSeed();
     const ids=pendingIds||customSchedule?.caseIds||E.scheduleDuty(C,seed,chosen||'night');
     const duty=pendingIds?commonDuty(pendingIds):customSchedule?(DUTIES.includes(customSchedule.duty)?customSchedule.duty:'mixed'):(chosen||'night');
+    // A duty without cases cannot start; the last duty is remembered only once a session exists.
+    let session;
+    try{session=E.create(C,ids,mode,seed);}catch(_){toast('⚠️ '+t('dutyEmpty'));return;}
     if(chosen&&!customSchedule)state.lastDuty=chosen;
-    state.session=cleanSession(Object.assign(E.create(C,ids,mode,seed),{duty}));persist();document.querySelector('dialog').close();navigate('play');startOpening();
+    state.session=cleanSession(Object.assign(session,{duty}));persist();document.querySelector('dialog').close();navigate('play');startOpening();
   });
-  window.addEventListener('hashchange',()=>{const v=location.hash.slice(1);if(v!==view&&['intro','library','atlas','progress','sources','play','report'].includes(v)){view=v;render();}});
+  window.addEventListener('hashchange',()=>{const v=location.hash.slice(1);if(v!==view&&['intro','library','atlas','protocols','progress','sources','play','report'].includes(v)){view=v;render();}});
   syncRewards();
   render();
 })();

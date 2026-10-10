@@ -15,6 +15,8 @@ from zipfile import ZipFile
 ROOT = Path(__file__).resolve().parents[1]
 LANGS = ('de', 'en', 'es')
 AREAS = ('emergency', 'ward', 'clinic', 'endoscopy', 'theatre')
+# The same duties as scripts/manage.py; a test keeps both lists equal.
+DUTIES = ('night', 'board', 'clinic', 'elective', 'dayclinic', 'radiotherapy')
 GUIDES = {
     'andrologie': ('Sexual and Reproductive Health', 'sexual-and-reproductive-health'),
     'funktionell': ('Management of Non-neurogenic Male LUTS', 'management-of-non-neurogenic-male-luts'),
@@ -110,7 +112,7 @@ def generate(archive_path, plan_path=ROOT / 'data/import-selection.json', names_
     names = patient_names(names_path)
     rows = plan['selection'] if isinstance(plan, dict) else plan
     require(len(rows) == 267, 'Selection must contain all 267 source questions')
-    require(all(row.get('duty') in (None, 'night', 'board', 'clinic', 'elective') for row in rows), 'Unsupported duty in selection')
+    require(all(row.get('duty') in (None, *DUTIES) for row in rows), 'Unsupported duty in selection')
     require(set(row['area'] for row in rows) == set(AREAS), 'All five departments must be represented')
     require(len({row['questionId'] for row in rows}) == 267, 'Source question IDs must be unique')
     generated = {area: [] for area in AREAS}

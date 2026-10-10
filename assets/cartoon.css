@@ -342,20 +342,20 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{o
   .option-mark{width:24px;height:24px;font-size:1rem}
 }
 /* Duties: night shift, tumour board, clinic and elective list each have their own accent. */
-.duty-night{--duty:#6f86d6}.duty-board{--duty:#b07cc6}.duty-clinic{--duty:#4fb38f}.duty-elective{--duty:#e0995a}.duty-mixed{--duty:#a9b0c8}
+.duty-night{--duty:#6f86d6}.duty-board{--duty:#b07cc6}.duty-clinic{--duty:#4fb38f}.duty-elective{--duty:#e0995a}.duty-mixed{--duty:#a9b0c8}.duty-dayclinic{--duty:#e06c8a}.duty-radiotherapy{--duty:#3cc7c1}
 .duty-section{padding-top:8px}
 .duty-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-.duty-card{display:flex;flex-direction:column;gap:8px;padding:20px 18px;border:3px solid #574e72;border-top:8px solid var(--duty);border-radius:21px;background:#232d4a;box-shadow:0 5px 0 #0a1025}
+.duty-card{display:flex;flex-direction:column;gap:8px;padding:20px 18px;border:3px solid #574e72;border-top:8px solid var(--duty,#a9b0c8);border-radius:21px;background:#232d4a;box-shadow:0 5px 0 #0a1025}
 .duty-card .duty-icon{font-size:2rem;line-height:1}
 .duty-card h3{font-size:1.15rem;color:#fff4d6}
-.duty-card .duty-time{font-size:.72rem;font-weight:800;color:var(--duty)}
+.duty-card .duty-time{font-size:.72rem;font-weight:800;color:var(--duty,#a9b0c8)}
 .duty-card p{font-size:.78rem;color:#cbd1e3;line-height:1.55}
 .duty-card .btn{margin-top:auto;align-self:flex-start}
-.case-duty{display:inline-block;align-self:flex-start;font-size:.66rem;font-weight:800;padding:3px 9px;border-radius:999px;border:2px solid var(--duty);color:#fff4d6;background:#1b2240}
+.case-duty{display:inline-block;align-self:flex-start;font-size:.66rem;font-weight:800;padding:3px 9px;border-radius:999px;border:2px solid var(--duty,#a9b0c8);color:#fff4d6;background:#1b2240}
 .duty-field{border:0;margin:6px 0 0;padding:0}
 .duty-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.duty-choice{position:relative;display:grid;grid-template-columns:auto 1fr;column-gap:10px;row-gap:2px;align-items:center;padding:11px 12px;border:2px solid #9a84a5;border-left:7px solid var(--duty);border-radius:13px;background:#fffbef;color:#302944;cursor:pointer}
-.duty-choice:has(input:checked){background:#fff0bb;border-color:#ab7d1e;border-left-color:var(--duty);box-shadow:0 3px 0 #b18b3f}
+.duty-choice{position:relative;display:grid;grid-template-columns:auto 1fr;column-gap:10px;row-gap:2px;align-items:center;padding:11px 12px;border:2px solid #9a84a5;border-left:7px solid var(--duty,#a9b0c8);border-radius:13px;background:#fffbef;color:#302944;cursor:pointer}
+.duty-choice:has(input:checked){background:#fff0bb;border-color:#ab7d1e;border-left-color:var(--duty,#a9b0c8);box-shadow:0 3px 0 #b18b3f}
 .duty-choice input{position:absolute;opacity:0;width:1px;height:1px}
 .duty-choice:has(input:focus-visible){outline:3px solid #ffcf5a;outline-offset:3px}
 .duty-choice .duty-icon{grid-row:span 3;font-size:1.6rem}
@@ -375,8 +375,8 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{o
   .all-options{padding:8px 9px}
   .all-options li{padding:8px;gap:8px}
 }
-/* With five menu entries (Atlas included) the row needs wrapping up to 450 px. */
-@media(max-width:450px){
+/* With six menu entries (Atlas and Protocols included) the row needs wrapping up to 560 px. */
+@media(max-width:560px){
   .nav{flex-wrap:wrap;justify-content:flex-start;gap:2px 4px}
   .nav-btn{padding:5px 6px;font-size:.7rem}
 }
@@ -404,9 +404,8 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{o
 .schema [data-part].wrong:focus-visible{filter:drop-shadow(0 0 1.5px #2a2442) drop-shadow(0 0 1.5px #2a2442) drop-shadow(0 0 7px #d35468)}
 /* In dialogs the drawing shrinks on short screens so the verdict and the next button fit below it. */
 .schema-modal .schema-svg svg{max-height:max(190px,min(440px,calc(100vh - 340px)))}
-/* Five menu entries plus the language switch: tighten the header between the phone and desktop layouts. */
-@media(min-width:761px) and (max-width:860px){.top-inner{flex-wrap:wrap;gap:8px;padding-top:13px;padding-bottom:8px}.nav{order:3;width:100%;justify-content:space-between}.nav-btn{padding:6px 8px;font-size:.76rem}}
-@media(min-width:861px) and (max-width:960px){.top-inner{gap:12px}.nav{gap:2px}.nav-btn{padding:8px 8px;font-size:.76rem}.brand small{display:none}}
+/* Six menu entries plus the language switch: the menu gets its own row between the phone and desktop layouts. */
+@media(min-width:761px) and (max-width:1120px){.top-inner{flex-wrap:wrap;gap:8px;padding-top:13px;padding-bottom:8px}.nav{order:3;width:100%;justify-content:space-between}.nav-btn{padding:6px 8px;font-size:.76rem}}
 .schema-legend{display:flex;flex-wrap:wrap;gap:6px}
 .schema-chip{border:2px solid #9b89a6;background:#fff;color:#302944;border-radius:999px;padding:4px 10px;font-size:.72rem;font-weight:700}
 .schema-chip.hl{border-color:#ff9f1a;background:#fff0bb}
@@ -445,3 +444,34 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{o
   .toast.sticker-toast{animation:none}
   .xp-fill{transition:none}
 }
+/* Therapy protocols: dark cards like the atlas, readable dose tables that scroll sideways on small phones. */
+.protocol-warning{margin:0 0 18px;max-width:90ch}
+.protocol-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.protocol-tab{border:2px solid #574e72;background:#232d4a;color:#e7e2f2;border-radius:999px;padding:7px 13px;font-weight:700;font-size:.8rem;cursor:pointer}
+.protocol-tab.active{background:#ffcf5a;color:#2a2442;border-color:#ffcf5a}
+.protocol-tab .mono{opacity:.75;font-size:.72rem}
+/* Systemic therapy or radiotherapy: a two-way switch above the tumour tabs. */
+.protocol-kinds{display:inline-flex;flex-wrap:wrap;max-width:100%;gap:4px;margin:0 0 14px;padding:4px;border:2px solid #574e72;border-radius:14px;background:#1a2238}
+.protocol-kind{border:0;background:transparent;color:#e7e2f2;border-radius:10px;padding:8px 14px;font-weight:800;font-size:.84rem;cursor:pointer}
+.protocol-kind.active{background:#3cc7c1;color:#13202a}
+.rt-card .protocol-table td.mono{white-space:nowrap}
+.protocol-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,470px),1fr));gap:16px;padding-bottom:40px}
+.protocol-card{display:flex;flex-direction:column;gap:6px;padding:16px;border:3px solid #574e72;border-radius:20px;background:#232d4a;box-shadow:0 5px 0 #0a1025;min-width:0;overflow-wrap:anywhere;hyphens:auto}
+.protocol-card h2{font-size:1.05rem;color:#fff4d6;margin:0}
+.protocol-card p{font-size:.78rem;color:#cbd1e3;line-height:1.5;margin:0}
+.protocol-card b{color:#fff4d6}
+.protocol-table-wrap{overflow-x:auto;margin:6px 0;border-radius:12px;border:1px solid #574e72}
+.protocol-table{width:100%;border-collapse:collapse;font-size:.78rem;color:#e7e2f2}
+.protocol-table th,.protocol-table td{border-bottom:1px solid #3a4466;padding:7px 9px;text-align:left;vertical-align:top}
+.protocol-table thead th{background:#1a2238;color:#ffcf5a;font-size:.68rem;text-transform:uppercase;letter-spacing:.05em}
+.protocol-table tbody th{color:#fff4d6;font-weight:700}
+.protocol-table td.mono{color:#91dfcd;overflow-wrap:break-word}
+/* On phones each drug row becomes a small card, so doses never hide behind sideways scrolling. */
+@media(max-width:560px){.rt-card td.mono{white-space:normal}.page-head h1{overflow-wrap:anywhere;hyphens:auto}.protocol-table thead{display:none}.protocol-table tr{display:block;border-bottom:1px solid #3a4466;padding:6px 0}.protocol-table tr:last-child{border-bottom:0}.protocol-table th[scope=row],.protocol-table td{display:block;border:0;padding:2px 10px}.protocol-table td{display:grid;grid-template-columns:6.8em minmax(0,1fr);gap:8px}.protocol-table td::before{content:attr(data-label);color:#ffcf5a;font-family:system-ui,sans-serif;font-size:.64rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding-top:2px}}
+.protocol-more summary{cursor:pointer;font-weight:700;font-size:.78rem;color:#ffcf5a;padding:4px 0}
+.protocol-more p{margin:6px 0}
+.protocol-sources a{color:#91dfcd}
+.protocol-card .actions{margin-top:4px}
+.attending-warning .comic-speech{border-color:#b6505d}
+.attending-warning .comic-speech:before{border-color:#b6505d}
+.attending-hint{margin-top:6px}

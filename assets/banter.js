@@ -21,6 +21,10 @@ window.NSABanter = {
       "chief": {
         "name": "Prof. Whitfield",
         "role": "Head of department · morning-report enthusiast"
+      },
+      "radiotherapist": {
+        "name": "Dr. Okoro",
+        "role": "Radiation oncologist · plans in millimetres, explains in plain words"
       }
     },
     "opening": [
@@ -136,6 +140,7 @@ window.NSABanter = {
     "bossLocked": "Finish your patients first. The professor can wait. Probably.",
     "bossScore": "Morning-report score",
     "askAttending": "Call Dr. Brennan",
+    "askRadiotherapist": "Call Dr. Okoro",
     "gameRank": ["Pager whisperer", "Clipboard diplomat", "Promising night owl", "Orientation continues"],
     "yourPager": "Your pager",
     "cups": "Coffee breaks",
@@ -302,20 +307,100 @@ window.NSABanter = {
           "speaker": "chief",
           "text": "Anatomy is not an opinion. Whoever knows the layers needs less luck."
         }
+      ],
+      "dayclinic": [
+        {
+          "speaker": "nurse",
+          "text": "Day clinic! Six chairs, six infusion pumps, and every one of them beeps in a different key."
+        },
+        {
+          "speaker": "attending",
+          "text": "Before every cycle: blood count, creatinine, toxicity check, then the dose. In that order, every time."
+        },
+        {
+          "speaker": "chief",
+          "text": "And read the protocol twice. Chemotherapy forgives nothing, not even a misplaced comma."
+        }
+      ],
+      "radiotherapy": [
+        {
+          "speaker": "nurse",
+          "text": "Radiation oncology! The linac is warmed up, the masks are labelled, and the planning CT has a waiting list."
+        },
+        {
+          "speaker": "radiotherapist",
+          "text": "I'm Dr. Okoro. Total dose, dose per fraction, target volume and what goes with it: we always look at all four together."
+        },
+        {
+          "speaker": "chief",
+          "text": "And remember: a gray is not a feeling. Write the fractionation down every time."
+        }
       ]
     },
     "dutyIntro": {
       "night": "Grace: Night shift. Emergencies only; everything else may sleep until morning. The pager, sadly, may not.",
       "board": "Prof. Whitfield: Tumour board. Five specialties, one projector, zero working remote controls.",
       "clinic": "Grace: Clinic. On time according to the schedule. The schedule is very optimistic.",
-      "elective": "Dr. Brennan: Elective list. Theatre 2, first incision at eight. Theoretically."
+      "elective": "Dr. Brennan: Elective list. Theatre 2, first incision at eight. Theoretically.",
+      "dayclinic": "Grace: Oncology day clinic. Lab values first, pumps second, coffee a distant third.",
+      "radiotherapy": "Dr. Okoro: Radiation oncology. Planning CTs in the morning, follow-ups in the afternoon, and every dose has its fractions."
     },
     "dutyBoard": {
       "night": "ON CALL",
       "board": "TUMOUR BOARD",
       "clinic": "CLINIC",
-      "elective": "OR LIST · THEATRE 2"
+      "elective": "OR LIST · THEATRE 2",
+      "dayclinic": "DAY CLINIC · CHAIRS 1–6",
+      "radiotherapy": "RADIOTHERAPY · LINAC 1"
     },
+    "attendingNight": [
+      "Dr. Brennan: (half asleep) Mm-hm. I'm listening. Here's what I'd look at:",
+      "Dr. Brennan: It's the middle of the night, so I'll keep it short:",
+      "Dr. Brennan: I was dreaming of a tidy handover. Never mind. Think about this:"
+    ],
+    "attendingDay": [
+      "Dr. Brennan: (between two patients) Quick one:",
+      "Dr. Brennan: Good that you're asking before you decide:",
+      "Dr. Brennan: Let's think it through together:"
+    ],
+    "attendingAfter": [
+      "Dr. Brennan: Now that you've decided, the rule behind it:",
+      "Dr. Brennan: For next time, this is what decides it:"
+    ],
+    "attendingBusy": [
+      "Grace: Dr. Brennan is scrubbed in and can't take any more calls this shift. This one is yours.",
+      "Grace: The attending's phone goes straight to voicemail. You've used your calls; trust your plan."
+    ],
+    "attendingIdle": [
+      "Dr. Brennan: No open decision right now. Call me when a patient needs one.",
+      "Dr. Brennan: Nothing pending? Then I'll finish my coffee while it's still warm."
+    ],
+    "attendingWarn": [
+      "Dr. Brennan: Stop. That would have harmed the patient. Remember this:",
+      "Dr. Brennan: I'm coming down. Before anything else, the key point:",
+      "Dr. Brennan: That one is dangerous, and that's why we talk about it now:"
+    ],
+    "radioCall": [
+      "Dr. Okoro: Radiation oncology here. Let's look at it together:",
+      "Dr. Okoro: Good that you're calling before the plan is signed:",
+      "Dr. Okoro: Short consult between two plans:"
+    ],
+    "radioAfter": [
+      "Dr. Okoro: Now that you've decided, here is the reasoning behind it:",
+      "Dr. Okoro: For the next patient, this is what decides it:"
+    ],
+    "radioWarn": [
+      "Dr. Okoro: Stop, that plan would harm the patient. The key point:",
+      "Dr. Okoro: I'm stepping in before anything is irradiated. Remember this:"
+    ],
+    "radioBusy": [
+      "Grace: Dr. Okoro is in the planning room and can't take any more calls this shift. You've got this.",
+      "Grace: Radiation oncology says: no more consults today. Trust your plan."
+    ],
+    "radioIdle": [
+      "Dr. Okoro: No open decision right now. Call me when a patient needs a plan.",
+      "Dr. Okoro: Nothing pending? Then I'll check the next contours."
+    ],
     "splash": [
       "Splash!",
       "Missed the target!",
@@ -350,6 +435,10 @@ window.NSABanter = {
       "chief": {
         "name": "Prof. Leuchtenberg",
         "role": "Chefarzt · Freund der gepflegten Frühbesprechung"
+      },
+      "radiotherapist": {
+        "name": "Dr. Falkner",
+        "role": "Strahlentherapeutin · plant in Millimetern, erklärt in klaren Worten"
       }
     },
     "opening": [
@@ -465,6 +554,7 @@ window.NSABanter = {
     "bossLocked": "Erst deine Patienten abschließen. Der Professor kann warten. Vermutlich.",
     "bossScore": "Punkte in der Frühbesprechung",
     "askAttending": "Dr. Brenner anrufen",
+    "askRadiotherapist": "Dr. Falkner anrufen",
     "gameRank": ["Pieperflüsterer", "Klemmbrettdiplomat", "Nachtdienst mit Potenzial", "Die Einarbeitung geht weiter"],
     "yourPager": "Dein Pieper",
     "cups": "Kaffeepausen",
@@ -631,20 +721,100 @@ window.NSABanter = {
           "speaker": "chief",
           "text": "Anatomie ist keine Meinung. Wer die Schichten kennt, braucht weniger Glück."
         }
+      ],
+      "dayclinic": [
+        {
+          "speaker": "nurse",
+          "text": "Tagesklinik! Sechs Stühle, sechs Infusionspumpen – und jede piept in einer anderen Tonart."
+        },
+        {
+          "speaker": "attending",
+          "text": "Vor jedem Zyklus: Blutbild, Kreatinin, Toxizität abfragen, dann die Dosis. In dieser Reihenfolge, jedes Mal."
+        },
+        {
+          "speaker": "chief",
+          "text": "Und lesen Sie das Protokoll zweimal. Chemotherapie verzeiht nichts, nicht einmal ein falsches Komma."
+        }
+      ],
+      "radiotherapy": [
+        {
+          "speaker": "nurse",
+          "text": "Radioonkologie! Der Linac ist warm, die Masken sind beschriftet, und für das Planungs-CT gibt es eine Warteliste."
+        },
+        {
+          "speaker": "radiotherapist",
+          "text": "Ich bin Dr. Falkner. Gesamtdosis, Einzeldosis, Zielvolumen und Begleittherapie: Wir schauen immer alle vier zusammen an."
+        },
+        {
+          "speaker": "chief",
+          "text": "Und merken Sie sich: Ein Gray ist kein Gefühl. Die Fraktionierung wird jedes Mal aufgeschrieben."
+        }
       ]
     },
     "dutyIntro": {
       "night": "Jana: Nachtdienst. Nur Notfälle – der Rest darf bis morgen schlafen. Der Pieper leider nicht.",
       "board": "Prof. Leuchtenberg: Tumorboard. Fünf Disziplinen, ein Beamer, null funktionierende Fernbedienungen.",
       "clinic": "Jana: Sprechstunde. Pünktlich laut Plan. Der Plan ist sehr optimistisch.",
-      "elective": "Dr. Brenner: OP-Programm. Saal 2, erster Schnitt um acht. Theoretisch."
+      "elective": "Dr. Brenner: OP-Programm. Saal 2, erster Schnitt um acht. Theoretisch.",
+      "dayclinic": "Jana: Onkologische Tagesklinik. Erst die Laborwerte, dann die Pumpen, der Kaffee abgeschlagen auf Platz drei.",
+      "radiotherapy": "Dr. Falkner: Radioonkologie. Vormittags Planungs-CTs, nachmittags Nachsorge, und jede Dosis hat ihre Fraktionen."
     },
     "dutyBoard": {
       "night": "BEREITSCHAFT",
       "board": "TUMORBOARD",
       "clinic": "SPRECHSTUNDE",
-      "elective": "OP-PLAN · SAAL 2"
+      "elective": "OP-PLAN · SAAL 2",
+      "dayclinic": "TAGESKLINIK · PLATZ 1–6",
+      "radiotherapy": "RADIOONKOLOGIE · LINAC 1"
     },
+    "attendingNight": [
+      "Dr. Brenner: (verschlafen) Hm-hm. Ich höre. Darauf würde ich achten:",
+      "Dr. Brenner: Es ist mitten in der Nacht, deshalb kurz:",
+      "Dr. Brenner: Ich habe gerade von einer sauberen Übergabe geträumt. Egal. Denk an Folgendes:"
+    ],
+    "attendingDay": [
+      "Dr. Brenner: (zwischen zwei Patienten) Ganz kurz:",
+      "Dr. Brenner: Gut, dass du vor der Entscheidung fragst:",
+      "Dr. Brenner: Lass uns das zusammen durchdenken:"
+    ],
+    "attendingAfter": [
+      "Dr. Brenner: Jetzt, wo du entschieden hast – die Regel dahinter:",
+      "Dr. Brenner: Fürs nächste Mal: Das entscheidet hier:"
+    ],
+    "attendingBusy": [
+      "Jana: Dr. Brenner steht am Tisch und nimmt in dieser Schicht keine Anrufe mehr an. Das hier entscheidest du.",
+      "Jana: Beim Oberarzt springt nur noch die Mailbox an. Deine Anrufe sind aufgebraucht – vertrau deinem Plan."
+    ],
+    "attendingIdle": [
+      "Dr. Brenner: Gerade steht keine Entscheidung an. Ruf an, wenn ein Patient eine braucht.",
+      "Dr. Brenner: Nichts offen? Dann trinke ich meinen Kaffee, solange er warm ist."
+    ],
+    "attendingWarn": [
+      "Dr. Brenner: Stopp. Das hätte dem Patienten geschadet. Merk dir:",
+      "Dr. Brenner: Ich komme runter. Vor allem anderen das Wichtigste:",
+      "Dr. Brenner: Das ist gefährlich, und deshalb reden wir jetzt darüber:"
+    ],
+    "radioCall": [
+      "Dr. Falkner: Hier Strahlentherapie. Schauen wir es uns gemeinsam an:",
+      "Dr. Falkner: Gut, dass du anrufst, bevor der Plan unterschrieben ist:",
+      "Dr. Falkner: Kurzes Konsil zwischen zwei Plänen:"
+    ],
+    "radioAfter": [
+      "Dr. Falkner: Jetzt, wo du entschieden hast, die Überlegung dahinter:",
+      "Dr. Falkner: Für den nächsten Patienten, darauf kommt es an:"
+    ],
+    "radioWarn": [
+      "Dr. Falkner: Stopp, dieser Plan würde dem Patienten schaden. Das Entscheidende:",
+      "Dr. Falkner: Ich schalte mich ein, bevor bestrahlt wird. Merk dir das:"
+    ],
+    "radioBusy": [
+      "Jana: Dr. Falkner sitzt in der Bestrahlungsplanung und nimmt in dieser Schicht keine Anrufe mehr an. Das schaffst du.",
+      "Jana: Die Strahlentherapie sagt: heute keine Konsile mehr. Vertrau deinem Plan."
+    ],
+    "radioIdle": [
+      "Dr. Falkner: Gerade ist keine Entscheidung offen. Ruf mich an, wenn ein Patient einen Plan braucht.",
+      "Dr. Falkner: Nichts offen? Dann prüfe ich die nächsten Konturen."
+    ],
     "splash": [
       "Platsch!",
       "Daneben gezielt!",
@@ -679,6 +849,10 @@ window.NSABanter = {
       "chief": {
         "name": "Prof. Valdés",
         "role": "Jefe de servicio · aficionado a las sesiones de la mañana"
+      },
+      "radiotherapist": {
+        "name": "Dra. Robledo",
+        "role": "Oncóloga radioterápica · planifica en milímetros, explica con palabras claras"
       }
     },
     "opening": [
@@ -794,6 +968,7 @@ window.NSABanter = {
     "bossLocked": "Termina primero con tus pacientes. El profesor puede esperar. Probablemente.",
     "bossScore": "Puntos de la sesión de la mañana",
     "askAttending": "Llamar al Dr. Herrera",
+    "askRadiotherapist": "Llamar a la Dra. Robledo",
     "gameRank": ["Domador del busca", "Diplomático de carpeta", "Talento para la guardia", "La acogida continúa"],
     "yourPager": "Tu busca",
     "cups": "Pausas para café",
@@ -960,20 +1135,100 @@ window.NSABanter = {
           "speaker": "chief",
           "text": "La anatomía no es una opinión. Quien conoce las capas necesita menos suerte."
         }
+      ],
+      "dayclinic": [
+        {
+          "speaker": "nurse",
+          "text": "¡Hospital de día! Seis sillones, seis bombas de infusión, y cada una pita en un tono distinto."
+        },
+        {
+          "speaker": "attending",
+          "text": "Antes de cada ciclo: hemograma, creatinina, toxicidad y después la dosis. En ese orden, siempre."
+        },
+        {
+          "speaker": "chief",
+          "text": "Y lea el protocolo dos veces. La quimioterapia no perdona nada, ni siquiera una coma mal puesta."
+        }
+      ],
+      "radiotherapy": [
+        {
+          "speaker": "nurse",
+          "text": "¡Oncología radioterápica! El acelerador está listo, las máscaras etiquetadas y el TAC de planificación tiene lista de espera."
+        },
+        {
+          "speaker": "radiotherapist",
+          "text": "Soy la Dra. Robledo. Dosis total, dosis por fracción, volumen diana y tratamiento asociado: siempre miramos los cuatro juntos."
+        },
+        {
+          "speaker": "chief",
+          "text": "Y recuerde: un gray no es una sensación. El fraccionamiento se anota siempre."
+        }
       ]
     },
     "dutyIntro": {
       "night": "Lucía: Guardia de noche. Solo urgencias; lo demás puede dormir hasta mañana. El busca, por desgracia, no.",
       "board": "Prof. Valdés: Comité de tumores. Cinco especialidades, un proyector y ningún mando a distancia que funcione.",
       "clinic": "Lucía: Consulta. Puntual según la agenda. La agenda es muy optimista.",
-      "elective": "Dr. Herrera: Programa quirúrgico. Quirófano 2, primera incisión a las ocho. En teoría."
+      "elective": "Dr. Herrera: Programa quirúrgico. Quirófano 2, primera incisión a las ocho. En teoría.",
+      "dayclinic": "Lucía: Hospital de día oncológico. Primero los análisis, luego las bombas y el café, muy por detrás.",
+      "radiotherapy": "Dra. Robledo: Oncología radioterápica. TAC de planificación por la mañana, revisiones por la tarde, y cada dosis tiene sus fracciones."
     },
     "dutyBoard": {
       "night": "GUARDIA",
       "board": "COMITÉ DE TUMORES",
       "clinic": "CONSULTA",
-      "elective": "PROGRAMA QX · QUIRÓFANO 2"
+      "elective": "QUIRÓFANO 2 · PROGRAMA",
+      "dayclinic": "HOSPITAL DE DÍA · 1–6",
+      "radiotherapy": "RADIOTERAPIA · LINAC 1"
     },
+    "attendingNight": [
+      "Dr. Herrera: (medio dormido) Mm-hm. Te escucho. Yo me fijaría en esto:",
+      "Dr. Herrera: Es plena noche, así que seré breve:",
+      "Dr. Herrera: Estaba soñando con un pase de guardia ordenado. Da igual. Piensa en esto:"
+    ],
+    "attendingDay": [
+      "Dr. Herrera: (entre dos pacientes) Rápido:",
+      "Dr. Herrera: Bien que preguntes antes de decidir:",
+      "Dr. Herrera: Pensémoslo juntos:"
+    ],
+    "attendingAfter": [
+      "Dr. Herrera: Ahora que ya has decidido, la regla que hay detrás:",
+      "Dr. Herrera: Para la próxima vez, esto es lo que decide:"
+    ],
+    "attendingBusy": [
+      "Lucía: El Dr. Herrera está en quirófano y no atiende más llamadas en esta guardia. Esta decisión es tuya.",
+      "Lucía: El teléfono del adjunto salta directamente al buzón. Ya has usado tus llamadas; confía en tu plan."
+    ],
+    "attendingIdle": [
+      "Dr. Herrera: Ahora no hay ninguna decisión pendiente. Llámame cuando un paciente la necesite.",
+      "Dr. Herrera: ¿Nada pendiente? Entonces me termino el café mientras siga caliente."
+    ],
+    "attendingWarn": [
+      "Dr. Herrera: Para. Eso habría dañado al paciente. Recuerda esto:",
+      "Dr. Herrera: Ya bajo. Antes que nada, lo importante:",
+      "Dr. Herrera: Eso es peligroso, y por eso lo hablamos ahora:"
+    ],
+    "radioCall": [
+      "Dra. Robledo: Aquí radioterapia. Veámoslo juntos:",
+      "Dra. Robledo: Bien que llames antes de firmar el plan:",
+      "Dra. Robledo: Interconsulta rápida entre dos planes:"
+    ],
+    "radioAfter": [
+      "Dra. Robledo: Ahora que has decidido, el razonamiento detrás:",
+      "Dra. Robledo: Para el próximo paciente, esto es lo que decide:"
+    ],
+    "radioWarn": [
+      "Dra. Robledo: Alto, ese plan dañaría al paciente. Lo esencial:",
+      "Dra. Robledo: Intervengo antes de irradiar nada. Recuerda esto:"
+    ],
+    "radioBusy": [
+      "Lucía: La Dra. Robledo está en planificación y no atiende más llamadas en este turno. Tú puedes.",
+      "Lucía: Radioterapia dice que hoy no hay más interconsultas. Confía en tu plan."
+    ],
+    "radioIdle": [
+      "Dra. Robledo: Ahora no hay ninguna decisión abierta. Llámame cuando un paciente necesite un plan.",
+      "Dra. Robledo: ¿Nada pendiente? Entonces reviso los siguientes contornos."
+    ],
     "splash": [
       "¡Chof!",
       "¡Fuera de la diana!",

@@ -2,7 +2,7 @@
 
 > **Residency-Game-DE – Rollenspiel als Assistenzärztin oder Assistenzarzt der Urologie.** Öffne `standalone.html` im Browser, wähle **DE** und tritt deinen ersten Nachtdienst an.
 
-A cartoon hospital comedy and urology decision game in **English, German and Spanish**, now with **317 cases**: the 30 original three-decision stories, 20 new oncology cases with two or three decisions each, and all 267 questions from the supplied Urofragen main bank, each included once. Choose an avatar, meet the original cast, navigate illustrated departments, collect coffee quips and face the chief's morning-report quiz.
+A cartoon hospital comedy and urology decision game in **English, German and Spanish**, now with **399 cases**: the 30 original three-decision stories, 20 new oncology cases with two or three decisions each, 82 single questions on therapy protocols, drug side effects, incontinence, priapism and radiotherapy, and all 267 questions from the supplied Urofragen main bank, each included once. Choose an avatar, meet the original cast, navigate illustrated departments, collect coffee quips and face the chief's morning-report quiz.
 
 The expansion retains the original medical vignettes, questions, answer choices and explanations in all three languages. It covers **16 source specialties** across five game departments. The supplied classic HTML games remain unchanged in `classic/`.
 
@@ -20,30 +20,30 @@ The expansion retains the original medical vignettes, questions, answer choices 
 
 ### English quick start
 
-Open `standalone.html`, choose **English**, meet the cast and start a shift. Story cases contain three decisions, the new oncology cases two or three; imported question-bank cases contain one original question with four or five choices. Filter by specialty to focus your practice. The nurse offers learning reminders, coffee adds workplace comedy, and the chief gives a separate final quiz. Save your game file to continue later or on another device; the logbook inside can be analysed with Python.
+Open `standalone.html`, choose **English**, meet the cast and start a shift. Story cases contain three decisions, the new oncology cases two or three; the new single questions and the imported question-bank cases contain one question with four or five choices. Filter by specialty to focus your practice. The nurse offers learning reminders, coffee adds workplace comedy, and the chief gives a separate final quiz. Save your game file to continue later or on another device; the logbook inside can be analysed with Python.
 
 ### Deutsch – Schnellstart
 
-Öffnen Sie `standalone.html`, wählen Sie **Deutsch**, lernen Sie die Figuren kennen und starten Sie eine Schicht. Das Spiel enthält **317 Fälle**: 30 Geschichten mit je drei Entscheidungen, 20 neue Onkologie-Fälle mit zwei oder drei Entscheidungen und sämtliche 267 Originalfragen der gelieferten Hauptbank mit je einer Entscheidung und vier oder fünf Antworten. Wählen Sie ein Fachgebiet, nutzen Sie die Lernhinweise der Pflegekraft und stellen Sie sich dem Abschlussquiz des Chefs. Der Cartoonstil, die Dialoge und die Kaffeepausen bleiben erhalten. Speichern Sie Ihren Spielstand als Datei, um später oder auf einem anderen Gerät weiterzuspielen; das Logbuch darin lässt sich mit Python auswerten.
+Öffnen Sie `standalone.html`, wählen Sie **Deutsch**, lernen Sie die Figuren kennen und starten Sie eine Schicht. Das Spiel enthält **399 Fälle**: 30 Geschichten mit je drei Entscheidungen, 20 neue Onkologie-Fälle mit zwei oder drei Entscheidungen, 82 Einzelfragen zu Therapieprotokollen, Nebenwirkungen, Inkontinenz, Priapismus und Strahlentherapie sowie sämtliche 267 Originalfragen der gelieferten Hauptbank mit je einer Entscheidung und vier oder fünf Antworten. Wählen Sie ein Fachgebiet, nutzen Sie die Lernhinweise der Pflegekraft und stellen Sie sich dem Abschlussquiz des Chefs. Der Cartoonstil, die Dialoge und die Kaffeepausen bleiben erhalten. Speichern Sie Ihren Spielstand als Datei, um später oder auf einem anderen Gerät weiterzuspielen; das Logbuch darin lässt sich mit Python auswerten.
 
 **Neu in diesem Update:** Nach jeder Antwort siehst du, welche Option richtig war und warum. „Alle Antworten erklärt“ begründet jede Option. Janas Joker streicht eine falsche Antwort. Richtige Serien bringen Sprüche und Konfetti. Eine Karriereleiter führt von Famulant:in bis zur Legende des Nachtdienstes, und ein Sticker-Album macht Fortschritt sichtbar. *Revanche* wiederholt deine Fehler, *Fachgebiete* zeigen deine Schwachstellen mit Trainingsknopf, und die *Blitzrunde* bietet fünf schnelle Fragen. Tastatur: A–E oder 1–5 wählt, Enter geht weiter.
 
 ### Español – Inicio rápido
 
-Abra `standalone.html`, elija **Español**, conozca al reparto e inicie una guardia. Hay **317 casos**: 30 historias con tres decisiones, 20 casos nuevos de oncología con dos o tres decisiones y las 267 preguntas originales del banco principal, cada una con una decisión y cuatro o cinco opciones. Filtre por especialidad, consulte los objetivos con la enfermera y complete el cuestionario final del jefe. Se conservan los dibujos, los diálogos y las pausas para el café. Guarde su partida como archivo para continuar más tarde o en otro dispositivo; el registro que contiene puede analizarse con Python.
+Abra `standalone.html`, elija **Español**, conozca al reparto e inicie una guardia. Hay **399 casos**: 30 historias con tres decisiones, 20 casos nuevos de oncología con dos o tres decisiones, 82 preguntas sueltas sobre protocolos de tratamiento, efectos adversos, incontinencia, priapismo y radioterapia, y las 267 preguntas originales del banco principal, cada una con una decisión y cuatro o cinco opciones. Filtre por especialidad, consulte los objetivos con la enfermera y complete el cuestionario final del jefe. Se conservan los dibujos, los diálogos y las pausas para el café. Guarde su partida como archivo para continuar más tarde o en otro dispositivo; el registro que contiene puede analizarse con Python.
 
 ## Case library
 
 | Department | Authored cases | Imported cases | Total |
 | --- | ---: | ---: | ---: |
-| Emergency | 8 | 26 | 34 |
-| Ward | 6 | 23 | 29 |
-| Clinic | 22 | 133 | 155 |
+| Emergency | 15 | 26 | 41 |
+| Ward | 15 | 23 | 38 |
+| Clinic | 87 | 133 | 220 |
 | Endoscopy | 8 | 22 | 30 |
-| Theatre | 6 | 63 | 69 |
-| **All departments** | **50** | **267** | **317** |
+| Theatre | 7 | 63 | 70 |
+| **All departments** | **132** | **267** | **399** |
 
-The library contains **415 decision steps and 1,556 answer options**. Authored cases (the 30 stories and the 20 oncology cases) have three choices per step. Of the 267 source questions, 223 have four choices and 44 have five; each has exactly one correct source answer. Separate CME modules, generated HTML copies and historical update blocks are not counted again.
+The library contains **497 decision steps and 1,956 answer options**. The 30 stories and the 20 oncology cases have three choices per step; the 82 new single questions have five (72) or four (10). Of the 267 source questions, 223 have four choices and 44 have five; each has exactly one correct source answer. Separate CME modules, generated HTML copies and historical update blocks are not counted again.
 
 The source specialties are andrology, functional urology, testicular cancer, infections, paediatric urology, muscle-invasive and non-muscle-invasive bladder cancer, renal cancer, operative urology, penile cancer, prostate cancer, reconstruction, trauma, urethral cancer, stones and upper-tract urothelial cancer. Department allocation follows the clinical task in each vignette; the source's oncology emphasis explains the larger clinic collection.
 
@@ -55,14 +55,27 @@ A session no longer mixes every department. You choose a **duty**, and the sessi
 
 | Duty | Clock starts | Cases | Content |
 | --- | ---: | ---: | --- |
-| 🌙 Night shift (*Nachtdienst*) | 22:00 | 54 | Emergencies only: colic and obstructed or infected kidneys, retention, bleeding and clot retention, trauma, torsion, priapism, Fournier, acute infections, acute ward complications and emergency or consult surgery |
-| 🎗️ Tumour board (*Tumorboard*) | Wed 15:30 | 100 | Oncological staging and treatment decisions, systemic and salvage therapy, metastatic disease, residual tumour |
-| 🩺 Clinic (*Sprechstunde*) | 08:00 | 107 | Outpatient work-up, counselling and follow-up, including cancer follow-up, andrology, functional urology, stone metaphylaxis and elective paediatric urology |
-| ✂️ Elective list (*OP-Programm*) | 07:30 | 56 | Planned operations and endoscopy: technique, anatomy, intraoperative findings and perioperative routine |
+| 🌙 Night shift (*Nachtdienst*) | 22:00 | 61 | Emergencies only: colic and obstructed or infected kidneys, retention, bleeding and clot retention, trauma, torsion, priapism, Fournier, acute infections, acute ward complications and emergency or consult surgery |
+| 🎗️ Tumour board (*Tumorboard*) | Wed 15:30 | 103 | Oncological staging and treatment decisions, systemic and salvage therapy, metastatic disease, residual tumour |
+| 🩺 Clinic (*Sprechstunde*) | 08:00 | 128 | Outpatient work-up, counselling and follow-up, including cancer follow-up, andrology, functional urology, stone metaphylaxis and elective paediatric urology |
+| ✂️ Elective list (*OP-Programm*) | 07:30 | 59 | Planned operations and endoscopy: technique, anatomy, intraoperative findings and perioperative routine |
+| 💉 Oncology day clinic (*Onkologische Tagesklinik*) | 08:30 | 31 | Therapy protocols: doses, caps, renal thresholds, cycles, mandatory support and maintenance, plus drug toxicities of systemic cancer therapy |
+| ☢️ Radiation oncology (*Radioonkologie*) | 08:15 | 17 | Fractionation, ADT with radiotherapy, salvage after prostatectomy, trimodal bladder preservation, seminoma, palliative and stereotactic radiotherapy |
 
 Each duty has its own briefing from the cast, whiteboard label and daylight or night window; the attending stays awake in the daytime. The tumour board meets in a conference room where the session's cases lie on the table as folders. The library filters by duty, every case card shows its duty, and the progress page reports performance by duty. Practice sessions started from the library, rematch or quick round take the duty of their cases, or a mixed rotation if the cases differ.
 
-Every case's duty is stored as `duty` in `data/*.json`; imported questions take it from `data/import-selection.json`, so a re-import keeps it. The assignment classifies by the decision the question asks for, not only by the diagnosis: two independent classifications of all 297 cases agreed on 288, a judge resolved nine, and one review change moved autonomic dysreflexia during urodynamics from the night shift to the clinic. The 20 oncology cases added later carry the duty set when they were written and reviewed. See [docs/VALIDATION.md](docs/VALIDATION.md).
+Every case's duty is stored as `duty` in `data/*.json`; imported questions take it from `data/import-selection.json`, so a re-import keeps it. The assignment classifies by the decision the question asks for, not only by the diagnosis: two independent classifications of all 297 cases agreed on 288, a judge resolved nine, and one review change moved autonomic dysreflexia during urodynamics from the night shift to the clinic. The 20 oncology cases and the 82 single questions added later carry the duty set when they were written and reviewed. See [docs/VALIDATION.md](docs/VALIDATION.md).
+
+## Protocol page, day clinic and radiation oncology
+
+- **Protocol page (*Protokolle*):** a switch shows either **systemic therapy** or **radiotherapy**, with one tab per tumour group.
+  - *Systemic therapy:* 58 regimens for urothelial carcinoma (15), intravesical therapy (5), prostate (19), kidney (12), testis (6) and penis/urethra (1). Each card gives indication, cycle length and number of cycles, and a drug table with dose, route and days. A fold-out adds support (premedication, hydration, G-CSF, mesna, monitoring), cautions (renal thresholds, cumulative limits, contraindications), evidence with the EU approval status, and sources.
+  - *Radiotherapy:* 42 schemes in 6 groups (primary prostate radiotherapy, after prostatectomy and metastatic prostate cancer, bladder, seminoma, penile and urethral cancer, palliative and stereotactic), each with target volume, total dose, dose per fraction, number of fractions and schedule, plus technique, combined systemic therapy (for example ADT and its duration), planning, toxicity and evidence.
+  - Every regimen or scheme with questions has a *Practise questions* button. On phones each table row becomes a small card, so doses never hide behind sideways scrolling.
+  - The page always says it is a learning overview, not a prescription or treatment plan. `manage.py` refuses doses without a number, table cells longer than the table allows, radiotherapy phases whose total dose is not dose per fraction × fractions, sources that are not HTTPS, and any author mention.
+- **Oncology day clinic (*Onkologische Tagesklinik*, from 08:30):** 24 protocol questions (dose calculation with caps, AUC and Calvert, renal thresholds, cycle length and number, mandatory support, maintenance and its duration) and the questions on drug toxicities of systemic cancer therapy.
+- **Radiation oncology (*Radioonkologie*, from 08:15):** 17 of the 20 radiotherapy questions (the other 3 sit in the tumour board) on fractionation, ADT with radiotherapy, salvage after prostatectomy, trimodal bladder preservation, seminoma, palliation and stereotactic radiotherapy. The radiation oncologist briefs the duty, answers the phone and stands at the station instead of the attending.
+- **New exam-style questions:** besides the protocol and radiotherapy questions, 20 on adverse drug effects in urology, 15 on incontinence (pelvic floor training, bulking, duloxetine, pessary, TVT/TOT, sling complications, colposuspension and fascial sling, male slings, artificial urinary sphincter, refractory overactive bladder) and 3 on priapism (ischaemic with distal shunt, high-flow after perineal trauma, stuttering). Each has four or five options with an explanation for every option.
 
 ## Schemas, anatomy atlas and own images
 
@@ -76,6 +89,9 @@ The schemas are simplified teaching drawings, not to scale, and were not reviewe
 
 - **Avatars and cartoon rooms:** choose your character and move through the hospital with the original cast and translated comedy.
 - **Nurse's joker (Grace / Jana / Lucía):** once per question, the nurse crosses out one of the weakest wrong answers. It costs five simulated minutes and never changes points. Story cases also show their learning objectives. After answering, she only gives advice.
+- **Call the attending (Dr. Brennan / Dr. Brenner / Dr. Herrera):** three calls per shift, five simulated minutes each. The attending gives the hint written for this decision: the finding, rule or threshold that decides it, never the answer. Asking again about the same decision is free; after answering, the call is a free debrief. When the calls are used up, the nurse says so. Every decision of the game has its own hint in EN/DE/ES (`data/attending-hints.json`).
+- **Radiation oncologist (Dr. Okoro / Dr. Falkner / Dra. Robledo):** a new cast member with her own portrait and lines. She answers the phone for radiotherapy questions (case field `consultant: "radiotherapist"`), shares the three calls of the shift and briefs the radiation-oncology duty.
+- **"Important" after a dangerous answer:** when an answer would have harmed the patient, the attending (or, for radiotherapy questions, the radiation oncologist) steps in with the decisive rule instead of a joke.
 - **Answer marking and explanations:** after each decision the correct option is marked ✓ and a wrong choice ✗ (◐ for a partly appropriate story choice). A missed question shows **why the preferred answer is right**, and **"Every option explained"** opens the source rationale for each choice. The debrief and the logbook review repeat this.
 - **Right or wrong you can feel:** a right answer brings confetti. A wrong one gets a cartoon *urine splash*, with droplets, a puddle and a line such as *Post-void dribble!*, plus a splash sound when pager sounds are on. New stickers pop up as a sticker instead of confetti, so confetti never follows a wrong answer.
 - **Streaks:** consecutive correct decisions build a 🔥 streak. Streaks of 3, 5, 10, 15 … earn a special line from the cast and confetti. A wrong source answer gets exam-style teasing that points to the explanation; safety feedback stays serious.
@@ -139,7 +155,7 @@ Use **Python 3.10 or newer**. The tools use the standard library, with no packag
 | Validate | `python scripts/manage.py validate` | Checks languages, structure, answer markers, provenance metadata, references and local assets |
 | Build | `python scripts/manage.py build` | Recreates `assets/catalog.js` and `standalone.html` |
 | Serve locally | `python scripts/manage.py serve --port 8000` | Opens a local-only service at `http://127.0.0.1:8000/`; stop with Ctrl+C |
-| Daily shift | `python scripts/manage.py schedule --date 2026-10-05 --seed team-a --duty night` | Creates 10 distinct cases of one duty (`night`, `board`, `clinic` or `elective`), rotating through topics, in `outputs/daily-shift.json`; without `--duty`, two per department as before |
+| Daily shift | `python scripts/manage.py schedule --date 2026-10-05 --seed team-a --duty night` | Creates 10 distinct cases of one duty (`night`, `board`, `clinic`, `elective`, `dayclinic` or `radiotherapy`), rotating through topics, in `outputs/daily-shift.json`; without `--duty`, two per department as before |
 | Analyse progress | `python scripts/manage.py analyse session-export.json --output outputs/progress.csv` | Writes one CSV row per decision, preserving repeated attempts |
 | Package | `python scripts/manage.py package --output dist/night-shift-academy.zip` | Rebuilds and creates a ZIP with fixed timestamps and a SHA-256 file manifest |
 | Python checks | `python -m unittest discover -s tests -v` | Runs the automation and import regression suite |
@@ -175,6 +191,10 @@ data/theatre.json            69 theatre cases
 data/imported-source.json    Original question snapshot and provenance
 data/import-selection.json   Source-to-case mapping
 data/import-manifest.json    Import counts and hashes
+data/case-updates.json       Reviewed corrections and editorial edits applied at build
+data/protocols.json          Systemic and intravesical therapy protocols (protocol page)
+data/radiotherapy.json       Radiotherapy schemes (protocol page)
+data/attending-hints.json    The attending's hint for every decision
 data/refs-*.json             Reference metadata and related-source links
 scripts/import_urofragen.py  JSON-only source importer and comparison
 scripts/manage.py            Build, validation, scheduling, analysis and packaging

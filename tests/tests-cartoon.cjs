@@ -68,9 +68,10 @@ function appHarness(session = null, testCatalog = catalog) {
     navigate(view) { stats.navigated.push(view); },
     openDialog(html) { stats.dialogs.push(html); return { classList: { add() {} } }; }
   });
-  vm.runInContext("let areaFilter = 'all', query = '', savedOnly = false;\n" + source.slice(start, end) + `
+  const constants = ['ATTENDING_CALLS', 'count', 'consultantOf'].map(name => source.match(new RegExp('const ' + name + '=[^\\n]*;'))[0]).join('\n');
+  vm.runInContext(constants + "\nlet areaFilter = 'all', query = '', savedOnly = false;\n" + source.slice(start, end) + `
     globalThis.helpers = {
-      gameStage, handleScene, coffeeBreak, askNurse, characterComment, startBoss, answerBoss, nextBoss,
+      gameStage, handleScene, coffeeBreak, askNurse, callAttending, attendingWarning, characterComment, startBoss, answerBoss, nextBoss,
       validBoss, bossCorrect, speakerFor, lineWithoutName,
       filterState: () => ({ areaFilter, query, savedOnly })
     };
@@ -507,6 +508,162 @@ test("the nurse's joker crosses out one wrong answer, costs five game minutes an
   }
 });
 
+test('calling the attending costs five minutes, gives the decision rule but never the answer, and works three times a shift', () => {
+  const ids = catalog.cases.filter(c => !c.source && c.steps.length > 1).slice(0, 4).map(c => c.id);
+  const testCatalog = clone(catalog);
+  const first = testCatalog.cases.find(c => c.id === ids[0]);
+  first.steps[0].hint = { en: 'Think about what decides the next step.', de: 'Denk daran, was den nächsten Schritt entscheidet.', es: 'Piensa en lo que decide el siguiente paso.' };
+  delete testCatalog.cases.find(c => c.id === ids[1]).steps[0].hint;
+  const session = E.create(testCatalog, ids, 'shift', 'attending-calls');
+  Object.assign(session, { duty: 'night', selected: ids[0] });
+  const h = appHarness(session, testCatalog);
+  const patients = clone(session.patients), clock = session.clock;
+  h.api.callAttending();
+  assert.equal(session.clock, clock + 5, 'A call costs five game minutes');
+  assert.deepEqual(clone([session.calls, session.called]), [1, { [ids[0] + ':0']: true }]);
+  assert.deepEqual(clone(session.patients), patients, 'A call never touches answers or points');
+  assert.ok(E.validSession(session, testCatalog));
+  const said = h.stats.dialogs.at(-1);
+  assert.ok(said.includes(escape(first.steps[0].hint.en)), 'The attending gives the hint of this decision');
+  assert.ok(!said.includes(escape(first.steps[0].options.find(o => o.id === first.steps[0].best).text.en)), 'but never the answer');
+  assert.ok(said.includes(escape(data.NSA_TEXT.en.attendingNote.replace('{n}', 2))), 'and says how many calls are left');
+  h.api.callAttending();
+  assert.equal(session.clock, clock + 5, 'Asking again about the same decision is free');
+  assert.equal(session.calls, 1);
+  for (const id of ids.slice(1, 3)) { session.selected = id; h.api.callAttending(); }
+  assert.equal(session.calls, 3);
+  const withoutHint = testCatalog.cases.find(c => c.id === ids[1]);
+  assert.ok(h.stats.dialogs.at(-2).includes(escape(withoutHint.objectives.en[0])), 'Without a written hint the case objective is the nudge');
+  const beforeBusy = session.clock;
+  session.selected = ids[3];
+  h.api.callAttending();
+  assert.equal(session.clock, beforeBusy, 'A fourth call is not answered and costs nothing');
+  assert.equal(session.calls, 3);
+  assert.ok(data.NSABanter.en.attendingBusy.some(line => h.stats.dialogs.at(-1).includes(escape(line.replace(/^Grace: /, '')))), 'The nurse explains that the attending is busy');
+  session.selected = ids[0];
+  E.answer(session, testCatalog, ids[0], first.steps[0].best);
+  const answered = session.clock;
+  h.api.callAttending();
+  assert.equal(session.clock, answered, 'After the answer the attending debriefs for free');
+  assert.ok(h.stats.dialogs.at(-1).includes(escape(first.steps[0].hint.en)));
+  for (const lang of ['en', 'de', 'es']) {
+    const text = data.NSABanter[lang];
+    for (const kind of ['attendingNight', 'attendingDay', 'attendingAfter', 'attendingIdle', 'attendingWarn']) {
+      assert.ok(text[kind].length >= 2 && text[kind].every(line => line.startsWith(text.staff.attending.name + ':')), lang + ' ' + kind + ' lines are the attending\'s');
+    }
+    assert.ok(text.attendingBusy.every(line => line.startsWith(text.staff.nurse.name + ':')), lang + ' the nurse answers when no calls are left');
+  }
+});
+
+test('after a dangerous answer the attending steps in with the decisive rule', () => {
+  const c = clone(catalog.cases.find(c => !c.source && c.steps.some(s => s.options.some(o => o.critical))));
+  const h = appHarness(null);
+  const step = c.steps[0];
+  delete step.hint;
+  const fallback = h.api.attendingWarning(c, step, c.id + ':0');
+  assert.match(fallback, /attending-warning/);
+  assert.ok(fallback.includes(escape(c.takeaway.en)), 'Without a written hint the warning gives the take-home message');
+  assert.ok(fallback.includes(escape(data.NSA_TEXT.en.attendingImportant)));
+  step.hint = { en: 'Unstable <first>: secure the circulation.', de: 'x', es: 'x' };
+  const warned = h.api.attendingWarning(c, step, c.id + ':0');
+  assert.ok(warned.includes('Unstable &lt;first&gt;: secure the circulation.'), 'The hint is escaped and shown');
+  assert.ok(data.NSABanter.en.attendingWarn.some(line => warned.includes(escape(line.replace(/^Dr\. Brennan: /, '')))));
+});
+
+test('radiotherapy questions are answered by the radiation oncologist, on the phone and after a dangerous answer', () => {
+  const testCatalog = clone(catalog);
+  const c = testCatalog.cases.find(c => !c.source && c.steps.some(s => s.options.some(o => o.critical)));
+  c.consultant = 'radiotherapist';
+  c.steps[0].hint = { en: 'Total dose, dose per fraction and target belong together.', de: 'x', es: 'x' };
+  const session = E.create(testCatalog, [c.id], 'shift', 'radio-call');
+  Object.assign(session, { duty: 'radiotherapy', selected: c.id });
+  const h = appHarness(session, testCatalog);
+  h.api.callAttending();
+  const said = h.stats.dialogs.at(-1), staff = data.NSABanter.en.staff;
+  assert.ok(said.includes(escape(staff.radiotherapist.name)) && !said.includes(escape(staff.attending.name)), 'The radiation oncologist takes the call');
+  assert.ok(said.includes(escape(c.steps[0].hint.en)));
+  assert.ok(data.NSABanter.en.radioCall.some(line => said.includes(escape(line.replace(/^Dr\. Okoro: /, '')))));
+  assert.equal(session.calls, 1, 'Her calls count against the same three calls of the shift');
+  const warned = h.api.attendingWarning(c, c.steps[0], c.id + ':0');
+  assert.ok(warned.includes(escape(staff.radiotherapist.name)) && data.NSABanter.en.radioWarn.some(line => warned.includes(escape(line.replace(/^Dr\. Okoro: /, '')))));
+  delete c.consultant;
+  assert.ok(h.api.attendingWarning(c, c.steps[0], c.id + ':0').includes(escape(staff.attending.name)), 'Other cases keep the attending');
+  for (const lang of ['en', 'de', 'es']) {
+    const text = data.NSABanter[lang];
+    for (const kind of ['radioCall', 'radioAfter', 'radioWarn', 'radioIdle']) assert.ok(text[kind].length >= 2 && text[kind].every(line => line.startsWith(text.staff.radiotherapist.name + ':')), lang + ' ' + kind);
+    assert.ok(text.radioBusy.every(line => line.startsWith(text.staff.nurse.name + ':')));
+    assert.ok(text.askRadiotherapist && text.staff.radiotherapist.role);
+  }
+  assert.match(data.NSAArt.portrait('radiotherapist', 'smile', 96), /<svg/);
+  assert.notEqual(data.NSAArt.portrait('radiotherapist', 'smile', 96), data.NSAArt.portrait('attending', 'smile', 96), 'She has her own portrait');
+});
+
+test('every decision has a written hint in all three languages that never quotes an answer option', () => {
+  const letter = /\b(?:option|Option|answer|Antwort|respuesta|opción)\s*\(?[A-Ea-e]\)?\b|\([A-Ea-e]\)/;
+  for (const c of catalog.cases) for (const s of c.steps) {
+    assert.ok(s.hint, c.id + '/' + s.id + ' has a hint');
+    for (const lang of ['en', 'de', 'es']) {
+      const hint = String(s.hint[lang] || '');
+      assert.ok(hint.length >= 40 && hint.length <= 360, c.id + '/' + s.id + ' ' + lang + ' hint length');
+      assert.doesNotMatch(hint, letter, c.id + '/' + s.id + ' names no option letter');
+      for (const o of s.options) {
+        const text = o.text[lang].trim().toLowerCase();
+        if (text.length >= 12) assert.ok(!hint.toLowerCase().includes(text), c.id + '/' + s.id + ' ' + lang + ' does not quote option ' + o.id);
+      }
+    }
+  }
+});
+
+function protocolHarness(protocols, lang = 'en') {
+  const source = read('app.js');
+  const start = source.indexOf('  function protocols()'), end = source.indexOf('  function atlas()', start);
+  assert.ok(start >= 0 && end > start, 'The protocol page must be present');
+  const context = vm.createContext({ C: { ...catalog, protocols }, esc: escape, getCase: id => catalog.cases.find(c => c.id === id),
+    t: key => data.NSA_TEXT[lang][key] || key, loc: value => value[lang], protocolEntity: null, protocolKind: 'systemic', state: { lang } });
+  vm.runInContext(source.slice(start, end) + '\nglobalThis.page = { protocols, protocolCard, rtCard };', context, { filename: 'app-protocols.js' });
+  return context;
+}
+
+test('the protocol page shows cycles, doses, routes and sources per tumour and links its questions', () => {
+  const text = value => ({ en: value, de: value, es: value });
+  const regimen = { id: 'fixture-regimen', name: text('Gem<Cis>'), setting: text('Metastatic'), cycleDays: 21, cycles: text('4–6'), support: text('Hydration'), cautions: text('GFR'), evidence: text('Standard'),
+    drugs: [{ name: text('Gemcitabine'), dose: text('1000 mg/m²'), route: 'i.v.', schedule: text('Days 1 and 8') }, { name: text('Mitomycin C'), dose: text('40 mg'), route: 'intravesical', schedule: text('Weekly') }],
+    sources: [{ label: 'Guideline', url: 'https://example.org/g' }], questions: [catalog.cases[0].id, 'missing-case'] };
+  const continuous = { ...regimen, id: 'fixture-continuous', cycleDays: null, questions: [] };
+  const h = protocolHarness([{ id: 'one', title: text('Bladder'), regimens: [regimen, continuous] }, { id: 'two', title: text('Kidney'), regimens: [continuous] }]);
+  const page = h.page.protocols();
+  assert.ok(page.includes('protocol-warning'), 'The page always carries the learning-overview warning');
+  assert.equal((page.match(/data-protocol-entity=/g) || []).length, 2, 'One tab per tumour');
+  assert.equal((page.match(/class="protocol-card"/g) || []).length, 2, 'Only the regimens of the selected tumour');
+  assert.ok(page.includes('Gem&lt;Cis&gt;') && !page.includes('Gem<Cis>'), 'Protocol text is escaped');
+  assert.ok(page.includes('1000 mg/m²') && page.includes(escape(data.NSA_TEXT.en.routeIntravesical)), 'Doses and routes are shown');
+  assert.ok(page.includes(escape(data.NSA_TEXT.en.protocolCycleDays.replace('{n}', 21))) && page.includes(escape(data.NSA_TEXT.en.protocolContinuous)));
+  assert.ok(page.includes('href="https://example.org/g"') && page.includes('rel="noopener noreferrer"'));
+  assert.equal((page.match(/data-protocol-practice=/g) || []).length, 1, 'Only regimens with questions get a practice button');
+  assert.ok(page.includes(escape(data.NSA_TEXT.en.protocolPractice.replace('{n}', 1))), 'Unknown question ids are not counted');
+  h.protocolEntity = 'two';
+  assert.equal((h.page.protocols().match(/class="protocol-card"/g) || []).length, 1, 'Switching the tab shows the other tumour');
+  assert.ok(protocolHarness([]).page.protocols().includes('protocol-warning'), 'Without protocols the page still renders');
+});
+
+test('the radiotherapy schemes show total dose, dose per fraction and fractions with the decimal comma of the language', () => {
+  const text = value => ({ en: value, de: value, es: value });
+  const scheme = { id: 'rt-fixture', name: text('Ultrahypo'), setting: text('Localised'), technique: text('SBRT'), combined: text('None'), support: text('Spacer'), cautions: text('Rectum'), evidence: text('Trial'),
+    phases: [{ target: text('Prostate'), totalGy: 36.25, fractionGy: 7.25, fractions: 5, schedule: text('Every other day') }, { target: text('Seeds <I-125>'), totalGy: 145, fractionGy: null, fractions: null, schedule: text('Once') }],
+    sources: [{ label: 'Guideline', url: 'https://example.org/rt' }], questions: [] };
+  const h = protocolHarness([{ id: 'one', title: text('Bladder'), regimens: [] }], 'de');
+  h.C.radiotherapy = [{ id: 'rt-one', title: text('Prostata'), regimens: [scheme] }];
+  h.protocolKind = 'radiotherapy';
+  const page = h.page.protocols();
+  assert.ok(page.includes('data-protocol-kind="radiotherapy"') && page.includes('aria-pressed="true"'), 'The switch shows the radiotherapy view as selected');
+  assert.ok(page.includes(escape(data.NSA_TEXT.de.rtWarning)), 'The radiotherapy page has its own warning');
+  assert.ok(page.includes('36,25 Gy') && page.includes('7,25 Gy') && page.includes('>5<'), 'German shows the decimal comma');
+  assert.ok(page.includes('145 Gy') && page.includes(escape(data.NSA_TEXT.de.rtContinuous)), 'Continuous brachytherapy has a total dose only');
+  assert.ok(page.includes('Seeds &lt;I-125&gt;'), 'Scheme text is escaped');
+  const en = protocolHarness([], 'en'); en.C.radiotherapy = h.C.radiotherapy; en.protocolKind = 'radiotherapy';
+  assert.ok(en.page.protocols().includes('36.25 Gy'), 'English keeps the decimal point');
+});
+
 test('streak comments name the streak and wrong source answers get exam-style teasing', () => {
   const h = appHarness();
   for (const lang of ['en', 'de', 'es']) {
@@ -561,11 +718,19 @@ test('every duty has a translated briefing, scene line and whiteboard label', ()
     const text = data.NSABanter[lang];
     for (const duty of E.DUTIES) {
       assert.ok(text.dutyOpening[duty].length >= 2, lang + ' ' + duty + ' briefing');
-      assert.ok(text.dutyOpening[duty].every(line => ['nurse', 'attending', 'chief'].includes(line.speaker) && line.text.trim()));
+      assert.ok(text.dutyOpening[duty].every(line => ['nurse', 'attending', 'chief', 'radiotherapist'].includes(line.speaker) && line.text.trim()));
       assert.ok(text.dutyIntro[duty].trim() && text.dutyBoard[duty].trim());
       for (const key of ['duty_', 'dutyText_', 'dutyTime_']) assert.ok(String(data.NSA_TEXT[lang][key + duty] || '').trim(), lang + '.' + key + duty);
     }
   }
+});
+
+test('every duty has its own colour, and long whiteboard labels are squeezed to the board', () => {
+  const css = read('cartoon.css');
+  for (const duty of E.DUTIES) assert.match(css, new RegExp('\\.duty-' + duty + '\\{--duty:#[0-9a-f]{6}\\}'), duty + ' colour');
+  const scene = label => data.NSAArt.scene('clinic', [], null, '09:00', 0, 'en', { duty: 'clinic', label });
+  assert.doesNotMatch(scene('CLINIC'), /textLength/);
+  assert.match(scene('HOSPITAL DE DÍA · SILLONES 1–6'), /textLength="184" lengthAdjust="spacingAndGlyphs">HOSPITAL DE DÍA/);
 });
 
 test('day duties wake the attending, and the tumour board shows every case as a folder without doors', () => {
@@ -665,7 +830,10 @@ test('teaching schemas are safe, every drawn structure is explained, and linked 
     assert.ok(ids.length >= 5 && ids.length <= 16, s.id + ' has a playable number of structures');
   }
   const linked = catalog.cases.filter(c => c.schema);
-  assert.ok(linked.length >= catalog.cases.length * 0.4, 'At least 40 % of the cases come with a schema (' + linked.length + ')');
+  // Drug, dose and protocol questions (sys-*) deliberately have no anatomy schema.
+  const anatomical = catalog.cases.filter(c => !c.id.startsWith('sys-'));
+  assert.ok(linked.length >= anatomical.length * 0.4, 'At least 40 % of the cases outside drug questions come with a schema (' + linked.length + ' of ' + anatomical.length + ')');
+  assert.ok(!linked.some(c => c.id.startsWith('sys-')), 'Drug questions link no anatomy schema');
   for (const c of linked) {
     const s = schemas.find(s => s.id === c.schema.id);
     assert.ok(s, c.id + ' links a schema that exists');
@@ -765,7 +933,7 @@ function saveHarness(state) {
   const constant = name => { const match = source.match(new RegExp('const ' + name + '=[^\\n]*;')); assert.ok(match, name + ' is declared in app.js'); return match[0]; };
   const section = (from, to) => { const start = source.indexOf(from), end = source.indexOf(to, start); assert.ok(start >= 0 && end > start, from + ' must be present'); return source.slice(start, end); };
   const context = vm.createContext({ C: catalog, E, state, getCase: id => catalog.cases.find(c => c.id === id) });
-  vm.runInContext([constant('SAVE_FORMAT'), constant('BADGE_ICONS'), constant('STAT_KEYS'), constant('RANK_COUNT'), constant('DUTIES'), constant('count')].join('\n') + '\n' +
+  vm.runInContext([constant('SAVE_FORMAT'), constant('BADGE_ICONS'), constant('STAT_KEYS'), constant('RANK_COUNT'), constant('ATTENDING_CALLS'), constant('DUTIES'), constant('count')].join('\n') + '\n' +
     section('  function validRecord(r)', '  // Career XP counts') + section('  function validBoss(boss)', '  function bossCorrect(boss)') +
     '\nglobalThis.helpers = { cleanSave, saveFile, readSaveFile, mergeSave, chooseShift, hasProgress };', context, { filename: 'app-save-helpers.js' });
   return context.helpers;
@@ -777,7 +945,7 @@ function playedState() {
   const first = open.patients[0], c = catalog.cases.find(c => c.id === first.id);
   E.answer(open, catalog, c.id, c.steps[0].best); E.next(open, catalog, c.id);
   for (const p of open.patients) p.logged = p.finished;
-  Object.assign(open, { duty: 'night', coffees: 2, streak: 1, bestStreak: 1, jokers: 0, streakAt: null, struck: {}, counted: false, bossCounted: false });
+  Object.assign(open, { duty: 'night', coffees: 2, streak: 1, bestStreak: 1, jokers: 0, streakAt: null, struck: {}, counted: false, bossCounted: false, calls: 0, called: {} });
   return { lang: 'de', name: 'Dr. Test', avatar: 2, sound: false, history, bookmarks: [history[0].caseId], session: open,
     stats: { shifts: 3, perfectShifts: 1, bossPerfect: 0, maxCoffees: 4, bestStreak: 6, jokers: 2, rank: 2, atlasPerfect: 1 }, badges: ['firstCase', 'streak5'], lastDuty: 'board',
     countedShifts: ['shift:' + done.seed] };
