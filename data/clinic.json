@@ -1722,9 +1722,9 @@
             "score": 10,
             "minutes": 10,
             "feedback": {
-              "en": "EV plus pembrolizumab is the first-line standard, but requires ECOG 0–1, eGFR ≥30 mL/min, no relevant neuropathy, no uncontrolled diabetes, no severe skin disease and no contraindication to immunotherapy.",
-              "de": "EV plus Pembrolizumab ist der Erstlinienstandard, setzt aber ECOG 0–1, eGFR ≥30 ml/min, keine relevante Neuropathie, keinen unkontrollierten Diabetes, keine schwere Hauterkrankung und keine Kontraindikation gegen Immuntherapie voraus.",
-              "es": "EV más pembrolizumab es el estándar de primera línea, pero exige ECOG 0–1, FGe ≥30 ml/min, ausencia de neuropatía relevante, de diabetes mal controlada y de enfermedad cutánea grave, y ninguna contraindicación para la inmunoterapia."
+              "en": "EV plus pembrolizumab is the first-line standard, but requires ECOG 0–2, eGFR ≥30 mL/min, no relevant neuropathy, no uncontrolled diabetes, no severe skin disease and no contraindication to immunotherapy.",
+              "de": "EV plus Pembrolizumab ist der Erstlinienstandard, setzt aber ECOG 0–2, eGFR ≥30 ml/min, keine relevante Neuropathie, keinen unkontrollierten Diabetes, keine schwere Hauterkrankung und keine Kontraindikation gegen Immuntherapie voraus.",
+              "es": "EV más pembrolizumab es el estándar de primera línea, pero exige ECOG 0–2, FGe ≥30 ml/min, ausencia de neuropatía relevante, de diabetes mal controlada y de enfermedad cutánea grave, y ninguna contraindicación para la inmunoterapia."
             },
             "critical": false
           }

@@ -3099,6 +3099,121 @@
           "replace": "La disección pélvica sigue a la ingle, por separado en cada lado."
         }
       ]
+    },
+    {
+      "case": "bank-uro-rek-00012",
+      "kind": "medical",
+      "date": "2026-10-10",
+      "reason": {
+        "de": "Seitenverteilung korrigiert: Ureteroileale Anastomosenstrikturen treten häufiger links auf.",
+        "en": "Side corrected: uretero-ileal anastomotic strictures are more common on the left.",
+        "es": "Lado corregido: las estenosis de la anastomosis ureteroileal son más frecuentes en el lado izquierdo."
+      },
+      "references": [
+        "bank-guide-rekonstruktion"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "de",
+          "find": "rechts häufiger als links",
+          "replace": "links häufiger als rechts"
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "en",
+          "find": "more often on the right",
+          "replace": "more often on the left"
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "lang": "es",
+          "find": "más a menudo en el lado derecho",
+          "replace": "más a menudo en el lado izquierdo"
+        },
+        {
+          "path": "takeaway",
+          "lang": "de",
+          "find": "und die rechte Seite ist wegen der Kreuzung häufiger betroffen",
+          "replace": "und die linke Seite ist häufiger betroffen, weil der linke Harnleiter weiter mobilisiert und unter dem Sigmamesenterium durchgezogen wird"
+        },
+        {
+          "path": "takeaway",
+          "lang": "en",
+          "find": "and the right side is more often affected because of the crossing",
+          "replace": "and the left side is more often affected because the left ureter is mobilised further and passed beneath the sigmoid mesentery"
+        },
+        {
+          "path": "takeaway",
+          "lang": "es",
+          "find": "y el lado derecho se ve afectado con mayor frecuencia debido al cruce",
+          "replace": "y el lado izquierdo se ve afectado con mayor frecuencia porque el uréter izquierdo se moviliza más y pasa por debajo del mesosigma"
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-lit-00003",
+      "kind": "medical",
+      "date": "2026-10-10",
+      "reason": {
+        "de": "Citrat 2,2 mmol/d liegt unter dem EAU-Grenzwert von 2,5 mmol/d; die Erklärung nennt jetzt die Kontrollmessung statt „nicht belegt“.",
+        "en": "Citrate of 2.2 mmol/d is below the EAU threshold of 2.5 mmol/d; the explanation now asks for a repeat collection instead of calling it “not demonstrated”.",
+        "es": "El citrato de 2,2 mmol/d está por debajo del umbral EAU de 2,5 mmol/d; la explicación pide ahora repetir la recogida en lugar de decir «no demostrada»."
+      },
+      "references": [
+        "bank-guide-urolithiasis"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.d.feedback",
+          "lang": "de",
+          "find": "Eine Hyperkalziurie oder Hypozitraturie ist hier nicht belegt. Daher zunächst die allgemeinen Maßnahmen verbessern und den 24-Stunden-Urin kontrollieren; weder Thiazid noch Kaliumzitrat automatisch ansetzen.",
+          "replace": "Eine Hyperkalziurie liegt nicht vor, und das Citrat liegt mit 2,2 mmol/d in einer einzelnen Sammlung nur knapp unter 2,5 mmol/d. Daher zunächst Trinkmenge und Ernährung verbessern und den 24-Stunden-Urin wiederholen; Kaliumcitrat erst bei bestätigter Hypozitraturie, kein Thiazid."
+        },
+        {
+          "path": "steps.0.options.d.feedback",
+          "lang": "en",
+          "find": "Neither hypercalciuria nor hypocitraturia is demonstrated. Improve general preventive measures and reassess 24-hour urine; prescribe neither a thiazide nor potassium citrate automatically.",
+          "replace": "There is no hypercalciuria, and citrate is only just below 2.5 mmol/d in a single collection. Improve fluid intake and diet first and repeat the 24-hour urine; potassium citrate only if hypocitraturia is confirmed, and no thiazide."
+        },
+        {
+          "path": "steps.0.options.d.feedback",
+          "lang": "es",
+          "find": "No se demuestra ni hipercalciuria ni hipocitraturia. Mejorar las medidas preventivas generales y reevaluar la orina de 24 horas; No prescriba automáticamente tiazidas ni citrato de potasio.",
+          "replace": "No hay hipercalciuria y el citrato está apenas por debajo de 2,5 mmol/d en una sola recogida. Primero mejorar la ingesta de líquidos y la dieta y repetir la orina de 24 horas; citrato de potasio solo si se confirma la hipocitraturia, y sin tiazida."
+        }
+      ]
+    },
+    {
+      "case": "bank-uro-rek-00013",
+      "kind": "editorial",
+      "date": "2026-10-10",
+      "reason": {
+        "de": "Fallbeschreibung an Erklärung angeglichen (stabile koronare Zweigefäßerkrankung).",
+        "en": "Vignette aligned with the explanation (stable two-vessel coronary disease).",
+        "es": "Viñeta alineada con la explicación (enfermedad coronaria estable de dos vasos)."
+      },
+      "references": [],
+      "changes": [
+        {
+          "path": "presenting",
+          "lang": "de",
+          "find": "das Herzkatheterergebnis zeigt eine unbehandelte Zweigefäßerkrankung",
+          "replace": "das Herzkatheterergebnis zeigt eine stabile, bisher nicht revaskularisierte Zweigefäßerkrankung"
+        },
+        {
+          "path": "presenting",
+          "lang": "en",
+          "find": "coronary angiography shows untreated two-vessel disease",
+          "replace": "coronary angiography shows stable two-vessel disease that has not been revascularised"
+        },
+        {
+          "path": "presenting",
+          "lang": "es",
+          "find": "la angiografía coronaria muestra una enfermedad de dos vasos no tratada",
+          "replace": "la angiografía coronaria muestra una enfermedad estable de dos vasos aún no revascularizada"
+        }
+      ]
     }
   ]
 }
