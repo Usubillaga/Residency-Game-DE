@@ -450,6 +450,11 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{o
 .protocol-tab{border:2px solid #574e72;background:#232d4a;color:#e7e2f2;border-radius:999px;padding:7px 13px;font-weight:700;font-size:.8rem;cursor:pointer}
 .protocol-tab.active{background:#ffcf5a;color:#2a2442;border-color:#ffcf5a}
 .protocol-tab .mono{opacity:.75;font-size:.72rem}
+/* Systemic therapy or radiotherapy: a two-way switch above the tumour tabs. */
+.protocol-kinds{display:inline-flex;gap:4px;margin:0 0 14px;padding:4px;border:2px solid #574e72;border-radius:14px;background:#1a2238}
+.protocol-kind{border:0;background:transparent;color:#e7e2f2;border-radius:10px;padding:8px 14px;font-weight:800;font-size:.84rem;cursor:pointer}
+.protocol-kind.active{background:#3cc7c1;color:#13202a}
+.rt-card .protocol-table td.mono{white-space:nowrap}
 .protocol-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,470px),1fr));gap:16px;padding-bottom:40px}
 .protocol-card{display:flex;flex-direction:column;gap:6px;padding:16px;border:3px solid #574e72;border-radius:20px;background:#232d4a;box-shadow:0 5px 0 #0a1025;min-width:0}
 .protocol-card h2{font-size:1.05rem;color:#fff4d6;margin:0}

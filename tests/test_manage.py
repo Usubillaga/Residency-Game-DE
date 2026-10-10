@@ -585,6 +585,42 @@ class AutomationTests(unittest.TestCase):
             with self.assertRaisesRegex(manage.ValidationError, message):
                 manage.build(self.root)
 
+    def radiotherapy(self, **changes):
+        phase = {"target": translated("Prostate"), "totalGy": 60, "fractionGy": 3, "fractions": 20, "schedule": translated("5 per week")}
+        scheme = {"id": "rt-fixture", "name": translated("Moderate hypofractionation"), "setting": translated("Localised"), "technique": translated("IMRT"),
+                  "phases": [phase], "combined": translated("ADT 6 months"), "support": translated("Full bladder"), "cautions": translated("Rectum"),
+                  "evidence": translated("Guideline standard"), "sources": [{"label": "Fixture guideline", "url": "https://example.org/rt"}], "questions": ["emergency-fixture-1"]}
+        scheme.update(changes)
+        return {"entities": [{"id": "rt-entity", "title": translated("Prostate"), "regimens": [scheme]}]}
+
+    def test_radiotherapy_schemes_check_the_gray_arithmetic(self):
+        manage.write_json(self.root / "data" / "radiotherapy.json", self.radiotherapy())
+        phase = manage.build(self.root)["radiotherapy"][0]["regimens"][0]["phases"][0]
+        self.assertEqual((phase["totalGy"], phase["fractionGy"], phase["fractions"]), (60, 3, 20))
+        seeds = {"target": translated("Prostate"), "totalGy": 145, "fractionGy": None, "fractions": None, "schedule": translated("Once")}
+        manage.write_json(self.root / "data" / "radiotherapy.json", self.radiotherapy(phases=[seeds]))
+        manage.build(self.root)
+        base = self.radiotherapy()["entities"][0]["regimens"][0]["phases"][0]
+        for bad, message in ((self.radiotherapy(phases=[dict(base, totalGy=62)]), "3 Gy x 20 fractions is 60 Gy, not 62 Gy"),
+                             (self.radiotherapy(phases=[dict(base, fractions=None)]), "give both fractionGy and fractions"),
+                             (self.radiotherapy(phases=[dict(base, totalGy="60")]), "totalGy"),
+                             (self.radiotherapy(phases=[dict(base, fractions=2.5)]), "fractions"),
+                             (self.radiotherapy(phases=[dict(base, target=translated("x" * 61))]), "at most 60 characters"),
+                             (self.radiotherapy(phases=[]), "phases"),
+                             (self.radiotherapy(technique={"en": "IMRT"}), "de"),
+                             (self.radiotherapy(questions=["missing-case"]), "unknown case id"),
+                             (self.radiotherapy(evidence=translated("The authors showed less toxicity.")), "no authors")):
+            manage.write_json(self.root / "data" / "radiotherapy.json", bad)
+            with self.assertRaisesRegex(manage.ValidationError, message):
+                manage.build(self.root)
+
+    def test_consultant_and_radiotherapy_duty_are_validated(self):
+        self.mutate_case(lambda case: case.update(consultant="radiotherapist", duty="radiotherapy"))
+        manage.load_and_validate(self.root, check_assets=False)
+        self.mutate_case(lambda case: case.update(consultant="physicist"))
+        with self.assertRaisesRegex(manage.ValidationError, "consultant"):
+            manage.load_and_validate(self.root, check_assets=False)
+
     def test_analysis_accepts_a_one_step_four_choice_source_export(self):
         case = self.add_imported_case()
         record = {"caseId": case["id"], "area": case["area"], "score": 10, "maxScore": 10, "elapsed": 2, "criticalErrors": 0, "completedAt": "2026-10-05T09:00:00Z", "answers": [{"stepId": case["steps"][0]["id"], "optionId": "a", "score": 10, "minutes": 2}]}

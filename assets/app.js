@@ -19,8 +19,10 @@
   const ATTENDING_CALLS=3,CALL_MINUTES=5;
   // Duties decide which cases a session draws: emergencies at night, oncology decisions in the tumour board,
   // outpatient work in clinic and planned surgery on the elective list. Start times are game minutes after midnight.
-  const DUTIES=['night','board','clinic','elective','dayclinic'],DUTY_START={night:1320,board:930,clinic:480,elective:450,dayclinic:510,mixed:1320};
-  const DUTY_ICON={night:'🌙',board:'🎗️',clinic:'🩺',elective:'✂️',dayclinic:'💉',mixed:'🔀'};
+  const DUTIES=['night','board','clinic','elective','dayclinic','radiotherapy'],DUTY_START={night:1320,board:930,clinic:480,elective:450,dayclinic:510,radiotherapy:495,mixed:1320};
+  const DUTY_ICON={night:'🌙',board:'🎗️',clinic:'🩺',elective:'✂️',dayclinic:'💉',radiotherapy:'☢️',mixed:'🔀'};
+  // Radiotherapy questions are answered by the radiation oncologist; every other case by the attending.
+  const consultantOf=c=>c&&c.consultant==='radiotherapist'?'radiotherapist':'attending';
   const count=v=>Number.isInteger(v)&&v>=0?v:0;
   let storageFailed=false, state={lang:'en',name:'',avatar:0,sound:false,history:[],bookmarks:[],session:null,stats:cleanStats(null),badges:[],lastDuty:'night',countedShifts:[]};
   try {
@@ -28,7 +30,7 @@
     if (s && typeof s==='object' && !Array.isArray(s)) Object.assign(state,cleanSave(s));
   } catch (_) { /* In-memory play stays available when browser storage is blocked. */ }
   let view=['intro','library','atlas','protocols','progress','sources','play','report'].includes(location.hash.slice(1))?location.hash.slice(1):'intro';
-  let areaFilter='all',topicFilter='all',dutyFilter='all',pendingDuty='night',libraryPage=0,query='',savedOnly=false,pendingIds=null,customSchedule=null,dialogSequence=0,pendingSave=null,protocolEntity=null;
+  let areaFilter='all',topicFilter='all',dutyFilter='all',pendingDuty='night',libraryPage=0,query='',savedOnly=false,pendingIds=null,customSchedule=null,dialogSequence=0,pendingSave=null,protocolEntity=null,protocolKind='systemic';
   const t = key => {const value=typeof comedy()[key]==='string'?comedy()[key]:(strings[state.lang][key] || strings.en[key] || key);return value.replaceAll('{cases}',String(C.cases.length)).replaceAll('{areas}',String(C.areas.length));};
   const loc = value => value[state.lang];
   const pct = r=>Math.round(r.score/r.maxScore*100);
@@ -282,7 +284,7 @@
     return '<div class="cartoon-hero-art">'+A.hero(state.lang)+'<div class="cartoon-sticker">'+esc(t('caseCount'))+'</div></div>';
   }
   function castStrip() {
-    return '<section class="cast-intro"><div class="section-head"><div><h2>'+esc(t('meetTeam'))+'</h2><p>'+esc(t('castSub'))+'</p></div></div><div class="cast-grid">'+['nurse','attending','chief'].map(role=>{const person=comedy().staff[role];const quote=comedy().opening.find(line=>line.speaker===role)?.text||comedy().castWelcome;return '<button class="cast-card" data-talk="'+role+'">'+A.portrait(role,role==='attending'?'sleepy':role==='chief'?'stern':'smile',110,state.avatar)+'<div><h3>'+esc(person.name)+'</h3><small>'+esc(person.role)+'</small><p>“'+esc(quote)+'”</p></div></button>';}).join('')+'</div></section>';
+    return '<section class="cast-intro"><div class="section-head"><div><h2>'+esc(t('meetTeam'))+'</h2><p>'+esc(t('castSub'))+'</p></div></div><div class="cast-grid">'+['nurse','attending','chief','radiotherapist'].map(role=>{const person=comedy().staff[role];const quote=castLine(role);return '<button class="cast-card" data-talk="'+role+'">'+A.portrait(role,role==='attending'?'sleepy':role==='chief'?'stern':'smile',110,state.avatar)+'<div><h3>'+esc(person.name)+'</h3><small>'+esc(person.role)+'</small><p>“'+esc(quote)+'”</p></div></button>';}).join('')+'</div></section>';
   }
 
   function intro() {
@@ -384,23 +386,40 @@
     if(chip){const shift=chip.getBoundingClientRect().top-before;if(shift)(figure.closest('dialog')||window).scrollBy(0,shift);}
     else reveal(note);
   }
-  // Therapy protocols: a learning overview of cycles and doses per tumour, each with its questions to practise.
+  // Therapy protocols: a learning overview of cycles and doses per tumour, each with its questions to practise. A switch shows
+  // the radiotherapy schemes (total dose, dose per fraction, fractions, target) in the same layout.
   function protocols() {
-    const entities=C.protocols||[],current=entities.find(e=>e.id===protocolEntity)||entities[0];
-    const head='<div class="page-head"><p class="eyebrow">'+esc(t('protocols'))+'</p><h1>'+esc(t('protocolsTitle'))+'</h1><p>'+esc(t('protocolsSub'))+'</p></div><p class="warning-note protocol-warning" role="note">⚠️ '+esc(t('protocolsWarning'))+'</p>';
+    const rt=protocolKind==='radiotherapy'&&(C.radiotherapy||[]).length>0,entities=(rt?C.radiotherapy:C.protocols)||[],current=entities.find(e=>e.id===protocolEntity)||entities[0];
+    const kinds=(C.radiotherapy||[]).length?'<div class="protocol-kinds" role="group" aria-label="'+esc(t('protocols'))+'">'+[['systemic','💊'],['radiotherapy','☢️']].map(([k,icon])=>'<button class="protocol-kind'+((k==='radiotherapy')===rt?' active':'')+'" aria-pressed="'+((k==='radiotherapy')===rt)+'" data-protocol-kind="'+k+'">'+icon+' '+esc(t(k==='radiotherapy'?'protocolKindRadiotherapy':'protocolKindSystemic'))+'</button>').join('')+'</div>':'';
+    const head='<div class="page-head"><p class="eyebrow">'+esc(t('protocols'))+'</p><h1>'+esc(t(rt?'rtTitle':'protocolsTitle'))+'</h1><p>'+esc(t(rt?'rtSub':'protocolsSub'))+'</p></div>'+kinds+'<p class="warning-note protocol-warning" role="note">⚠️ '+esc(t(rt?'rtWarning':'protocolsWarning'))+'</p>';
     if(!current)return head;
     return head+'<div class="protocol-tabs" role="tablist" aria-label="'+esc(t('protocols'))+'">'+entities.map(e=>'<button role="tab" class="protocol-tab'+(e===current?' active':'')+'" aria-selected="'+(e===current)+'" data-protocol-entity="'+esc(e.id)+'">'+esc(loc(e.title))+' <span class="mono">'+e.regimens.length+'</span></button>').join('')+'</div>'+
-      '<div class="protocol-grid" role="tabpanel">'+current.regimens.map(protocolCard).join('')+'</div>';
+      '<div class="protocol-grid" role="tabpanel">'+current.regimens.map(rt?rtCard:protocolCard).join('')+'</div>';
+  }
+  const gy=value=>(state.lang==='en'?String(value):String(value).replace('.',','))+' Gy';
+  function practiceButton(r) {
+    const questions=(r.questions||[]).filter(id=>getCase(id));
+    return questions.length?'<div class="actions"><button class="btn" data-protocol-practice="'+esc(r.id)+'">🎯 '+esc(t('protocolPractice').replace('{n}',questions.length))+'</button></div>':'';
+  }
+  function protocolDetails(r) {
+    return '<details class="protocol-more"><summary>'+esc(t('protocolSupport'))+' · '+esc(t('protocolCautions'))+' · '+esc(t('protocolEvidence'))+'</summary><p><b>'+esc(t('protocolSupport'))+':</b> '+esc(loc(r.support))+'</p><p><b>'+esc(t('protocolCautions'))+':</b> '+esc(loc(r.cautions))+'</p><p><b>'+esc(t('protocolEvidence'))+':</b> '+esc(loc(r.evidence))+'</p><p class="protocol-sources"><b>'+esc(t('protocolSources'))+':</b> '+r.sources.map(source=>'<a href="'+esc(source.url)+'" target="_blank" rel="noopener noreferrer">'+esc(source.label)+' ↗</a>').join(' · ')+'</p></details>';
+  }
+  function rtCard(r) {
+    return '<article class="protocol-card rt-card" id="protocol-'+esc(r.id)+'"><h2>'+esc(loc(r.name))+'</h2><p class="protocol-setting"><b>'+esc(t('protocolSetting'))+':</b> '+esc(loc(r.setting))+'</p>'+
+      '<p class="protocol-cycle"><b>'+esc(t('rtTechnique'))+':</b> '+esc(loc(r.technique))+'</p><p class="protocol-cycle"><b>'+esc(t('rtCombined'))+':</b> '+esc(loc(r.combined))+'</p>'+
+      '<div class="protocol-table-wrap"><table class="protocol-table"><thead><tr><th scope="col">'+esc(t('rtTarget'))+'</th><th scope="col">'+esc(t('rtTotal'))+'</th><th scope="col">'+esc(t('rtPerFraction'))+'</th><th scope="col">'+esc(t('rtFractions'))+'</th><th scope="col">'+esc(t('protocolSchedule'))+'</th></tr></thead><tbody>'+
+      r.phases.map(ph=>'<tr><th scope="row">'+esc(loc(ph.target))+'</th><td class="mono" data-label="'+esc(t('rtTotal'))+'">'+esc(gy(ph.totalGy))+'</td><td class="mono" data-label="'+esc(t('rtPerFraction'))+'">'+esc(ph.fractionGy==null?'–':gy(ph.fractionGy))+'</td><td class="mono" data-label="'+esc(t('rtFractions'))+'">'+esc(ph.fractions==null?t('rtPermanent'):String(ph.fractions))+'</td><td data-label="'+esc(t('protocolSchedule'))+'">'+esc(loc(ph.schedule))+'</td></tr>').join('')+'</tbody></table></div>'+
+      protocolDetails(r)+practiceButton(r)+'</article>';
   }
   function protocolCard(r) {
-    const questions=(r.questions||[]).filter(id=>getCase(id)),route=d=>d.route==='intravesical'?t('routeIntravesical'):d.route;
+    const route=d=>d.route==='intravesical'?t('routeIntravesical'):d.route;
     return '<article class="protocol-card" id="protocol-'+esc(r.id)+'"><h2>'+esc(loc(r.name))+'</h2><p class="protocol-setting"><b>'+esc(t('protocolSetting'))+':</b> '+esc(loc(r.setting))+'</p>'+
       '<p class="protocol-cycle"><b>'+esc(t('protocolCycle'))+':</b> '+esc(r.cycleDays?t('protocolCycleDays').replace('{n}',r.cycleDays):t('protocolContinuous'))+' · <b>'+esc(t('protocolCycles'))+':</b> '+esc(loc(r.cycles))+'</p>'+
       '<div class="protocol-table-wrap"><table class="protocol-table"><thead><tr><th scope="col">'+esc(t('protocolDrug'))+'</th><th scope="col">'+esc(t('protocolDose'))+'</th><th scope="col">'+esc(t('protocolRoute'))+'</th><th scope="col">'+esc(t('protocolSchedule'))+'</th></tr></thead><tbody>'+
       r.drugs.map(d=>'<tr><th scope="row">'+esc(loc(d.name))+'</th><td class="mono" data-label="'+esc(t('protocolDose'))+'">'+esc(loc(d.dose))+'</td><td data-label="'+esc(t('protocolRoute'))+'">'+esc(route(d))+'</td><td data-label="'+esc(t('protocolSchedule'))+'">'+esc(loc(d.schedule))+'</td></tr>').join('')+'</tbody></table></div>'+
-      '<details class="protocol-more"><summary>'+esc(t('protocolSupport'))+' · '+esc(t('protocolCautions'))+' · '+esc(t('protocolEvidence'))+'</summary><p><b>'+esc(t('protocolSupport'))+':</b> '+esc(loc(r.support))+'</p><p><b>'+esc(t('protocolCautions'))+':</b> '+esc(loc(r.cautions))+'</p><p><b>'+esc(t('protocolEvidence'))+':</b> '+esc(loc(r.evidence))+'</p><p class="protocol-sources"><b>'+esc(t('protocolSources'))+':</b> '+r.sources.map(source=>'<a href="'+esc(source.url)+'" target="_blank" rel="noopener noreferrer">'+esc(source.label)+' ↗</a>').join(' · ')+'</p></details>'+
-      (questions.length?'<div class="actions"><button class="btn" data-protocol-practice="'+esc(r.id)+'">🎯 '+esc(t('protocolPractice').replace('{n}',questions.length))+'</button></div>':'')+'</article>';
+      protocolDetails(r)+practiceButton(r)+'</article>';
   }
+
   function atlas() {
     const used=id=>C.cases.filter(c=>c.schema&&c.schema.id===id).length;
     return '<div class="page-head"><p class="eyebrow">'+esc(t('atlas'))+'</p><h1>'+esc(t('atlasTitle'))+'</h1><p>'+esc(t('atlasSub'))+'</p></div><div class="atlas-grid">'+[...SCHEMAS.values()].map(s=>'<article class="atlas-card"><div class="atlas-thumb" aria-hidden="true"><svg viewBox="'+esc(s.viewBox)+'" xmlns="http://www.w3.org/2000/svg">'+s.svg+'</svg></div><h3>'+esc(loc(s.title))+'</h3><p>'+esc(loc(s.caption))+'</p><small>'+esc(t(used(s.id)===1?'atlasUsedOne':'atlasUsed').replace('{n}',String(used(s.id))))+' · '+s.parts.length+' ⦿</small><div class="actions"><button class="btn small quiet" data-atlas-open="'+esc(s.id)+'">'+esc(t('atlasExplore'))+'</button><button class="btn small primary" data-atlas-quiz="'+esc(s.id)+'">🎯 '+esc(t('atlasQuiz'))+'</button></div></article>').join('')+'</div>';
@@ -584,8 +603,11 @@
     for(const char of String(salt))hash=(hash*31+char.charCodeAt(0))>>>0;
     return lines[hash%lines.length];
   }
+  function castLine(role) {
+    return comedy().opening.find(line=>line.speaker===role)?.text||(comedy().dutyOpening?.radiotherapy||[]).find(line=>line.speaker===role)?.text||comedy().castWelcome;
+  }
   function speakerFor(text) {
-    return ['nurse','attending','chief'].find(role=>text.startsWith(comedy().staff[role].name+':'))||'nurse';
+    return ['nurse','attending','chief','radiotherapist'].find(role=>text.startsWith(comedy().staff[role].name+':'))||'nurse';
   }
   function lineWithoutName(text,role) {
     const prefix=comedy().staff[role].name+':';
@@ -602,8 +624,8 @@
       const c=getCase(p.id),step=c.steps[p.index],choice=p.feedback&&step?.options.find(o=>o.id===p.feedback);
       return {id:p.id,name:c.patient.label?loc(c.patient.label):c.patient.name,age:c.patient.age,sex:c.patient.sex,ageBand:c.patient.ageBand,area:c.area,acuity:c.acuity,finished:p.finished,available:p.availableAt<=session.clock,selected:p.id===selected.id,feedback:choice?(choice.score===10?'good':choice.score>0||c.source?'partial':'unsafe'):null};
     });
-    const duty=session.duty,board=duty==='board',room=board?t('duty_board'):loc(getArea(area).title);
-    return '<section class="cartoon-stage duty-'+esc(duty||'mixed')+'" aria-label="'+esc(room)+'"><div class="game-scene-heading"><h2>'+esc(room)+'</h2><span class="scene-tip">'+esc(t(board?'sceneHintBoard':'sceneHint'))+'</span></div>'+A.scene(area,patients,selected.id,clock(session.clock),state.avatar,state.lang,{duty,label:comedy().dutyBoard&&comedy().dutyBoard[duty]})+'<div class="game-team">'+['nurse','attending','chief'].map(role=>'<button class="team-character" data-action="'+({nurse:'ask-nurse',attending:'ask-attending',chief:'chief-challenge'}[role])+'">'+A.portrait(role,role==='attending'?attendingMood():role==='chief'?'stern':'smile',52,state.avatar)+'<span><b>'+esc(comedy().staff[role].name)+'</b><small>'+esc(t({nurse:'jokerLabel',attending:'askAttending',chief:'chiefChallenge'}[role]))+(role==='attending'?' · 📞 '+(ATTENDING_CALLS-count(session.calls))+'/'+ATTENDING_CALLS:'')+'</small></span></button>').join('')+'<button class="btn coffee-button" data-action="coffee" '+(session.finished?'disabled':'')+' title="'+esc(t('coffeeNote'))+'">☕ '+esc(t('coffeeLabel'))+' <span class="mono">+5 '+esc(t('minute'))+'</span></button><button class="btn quiet sound-button" data-action="sound" aria-pressed="'+state.sound+'">'+(state.sound?'♫ ':'♪ ')+esc(t(state.sound?'soundOn':'soundOff'))+'</button></div><p class="scene-banter">'+esc(board?comedy().dutyIntro.board:comedy().areaIntro[area])+'</p></section>';
+    const duty=session.duty,board=duty==='board',room=board?t('duty_board'):loc(getArea(area).title),consultant=consultantOf(getCase(selected.id));
+    return '<section class="cartoon-stage duty-'+esc(duty||'mixed')+'" aria-label="'+esc(room)+'"><div class="game-scene-heading"><h2>'+esc(room)+'</h2><span class="scene-tip">'+esc(t(board?'sceneHintBoard':'sceneHint'))+'</span></div>'+A.scene(area,patients,selected.id,clock(session.clock),state.avatar,state.lang,{duty,label:comedy().dutyBoard&&comedy().dutyBoard[duty]})+'<div class="game-team">'+['nurse',consultant,'chief'].map(role=>'<button class="team-character" data-action="'+({nurse:'ask-nurse',attending:'ask-attending',radiotherapist:'ask-attending',chief:'chief-challenge'}[role])+'">'+A.portrait(role,role==='attending'?attendingMood():role==='chief'?'stern':'smile',52,state.avatar)+'<span><b>'+esc(comedy().staff[role].name)+'</b><small>'+esc(t({nurse:'jokerLabel',attending:'askAttending',radiotherapist:'askRadiotherapist',chief:'chiefChallenge'}[role]))+(role===consultant?' · 📞 '+(ATTENDING_CALLS-count(session.calls))+'/'+ATTENDING_CALLS:'')+'</small></span></button>').join('')+'<button class="btn coffee-button" data-action="coffee" '+(session.finished?'disabled':'')+' title="'+esc(t('coffeeNote'))+'">☕ '+esc(t('coffeeLabel'))+' <span class="mono">+5 '+esc(t('minute'))+'</span></button><button class="btn quiet sound-button" data-action="sound" aria-pressed="'+state.sound+'">'+(state.sound?'♫ ':'♪ ')+esc(t(state.sound?'soundOn':'soundOff'))+'</button></div><p class="scene-banter">'+esc(board?comedy().dutyIntro.board:comedy().areaIntro[area])+'</p></section>';
   }
   function attendingMood() {
     // The attending sleeps through the night shift's quiet moments but is awake for daytime duties.
@@ -677,23 +699,26 @@
   // Calling the attending gives the decision's hint: the rule that decides it, never the answer itself. A second call about the
   // same decision is free; after the answer the hint is a free debrief. Without hints left in the shift the nurse answers.
   function callAttending() {
+    // Radiotherapy questions go to the radiation oncologist; the calls of a shift are shared.
     const session=state.session,p=session?.patients.find(p=>p.id===session.selected);
-    if(!p||session.finished){talk('attending',quip('attendingIdle',session?.seed||'idle'));return;}
+    if(!p||session.finished){const role=session?.duty==='radiotherapy'?'radiotherapist':'attending';talk(role,quip(role==='radiotherapist'?'radioIdle':'attendingIdle',session?.seed||'idle'));return;}
     const c=getCase(p.id),index=Math.min(p.index,c.steps.length-1),key=p.id+':'+index,step=c.steps[index];
+    const role=consultantOf(c),radio=role==='radiotherapist';
     const hint=step.hint?loc(step.hint):loc(c.objectives)[0];
-    if(p.finished||p.feedback){talk('attending',quip('attendingAfter',key)+'\n\n💡 '+hint);return;}
+    if(p.finished||p.feedback){talk(role,quip(radio?'radioAfter':'attendingAfter',key)+'\n\n💡 '+hint);return;}
     session.called=session.called&&typeof session.called==='object'?session.called:{};
     if(!session.called[key]){
-      if(count(session.calls)>=ATTENDING_CALLS){talk('nurse',quip('attendingBusy',key));return;}
+      if(count(session.calls)>=ATTENDING_CALLS){talk('nurse',quip(radio?'radioBusy':'attendingBusy',key));return;}
       session.calls=count(session.calls)+1;session.called[key]=true;session.clock+=CALL_MINUTES;persist();render();
     }
-    talk('attending',quip(session.duty==='night'?'attendingNight':'attendingDay',key)+'\n\n💡 '+hint+'\n\n'+t('attendingNote').replace('{n}',ATTENDING_CALLS-count(session.calls)));
+    talk(role,quip(radio?'radioCall':session.duty==='night'?'attendingNight':'attendingDay',key)+'\n\n💡 '+hint+'\n\n'+t('attendingNote').replace('{n}',ATTENDING_CALLS-count(session.calls)));
   }
-  // After an answer that would have harmed the patient, the attending steps in with the decisive rule.
+  // After an answer that would have harmed the patient, the consultant steps in with the decisive rule.
   function attendingWarning(c,step,key) {
-    const hint=step.hint?loc(step.hint):loc(c.takeaway);
-    return '<aside class="character-comment unsafe attending-warning">'+A.portrait('attending','worried',92,state.avatar)+'<div class="comic-speech"><b>'+esc(comedy().staff.attending.name)+'</b><p>'+esc(lineWithoutName(quip('attendingWarn',key),'attending'))+'</p><p class="attending-hint"><b>'+esc(t('attendingImportant'))+':</b> '+esc(hint)+'</p></div></aside>';
+    const role=consultantOf(c),hint=step.hint?loc(step.hint):loc(c.takeaway);
+    return '<aside class="character-comment unsafe attending-warning">'+A.portrait(role,'worried',92,state.avatar)+'<div class="comic-speech"><b>'+esc(comedy().staff[role].name)+'</b><p>'+esc(lineWithoutName(quip(role==='radiotherapist'?'radioWarn':'attendingWarn',key),role))+'</p><p class="attending-hint"><b>'+esc(t('attendingImportant'))+':</b> '+esc(hint)+'</p></div></aside>';
   }
+
   function askNurse() {
     // The nurse's joker crosses out one of the weakest wrong answers. It costs game time, never points.
     const session=state.session,p=session?.patients.find(p=>p.id===session.selected);
@@ -772,7 +797,7 @@
     const scene=e.target.closest('[data-scene-area],[data-scene-patient],[data-scene-coffee]');if(scene){handleScene(scene);if(scene.dataset.sceneCoffee)checkRewards();return;}
     const b=e.target.closest('button,a[data-view]');if(!b||b.disabled)return;
     if(b.dataset.avatar!==undefined){state.avatar=Number(b.dataset.avatar);persist();document.querySelectorAll('[data-avatar]').forEach(el=>{el.classList.toggle('selected',Number(el.dataset.avatar)===state.avatar);el.setAttribute('aria-pressed',String(Number(el.dataset.avatar)===state.avatar));});return;}
-    if(b.dataset.talk){talk(b.dataset.talk,comedy().opening.find(line=>line.speaker===b.dataset.talk)?.text||comedy().castWelcome);return;}
+    if(b.dataset.talk){talk(b.dataset.talk,castLine(b.dataset.talk));return;}
     if(b.dataset.bossOption){
       const before=state.session?.boss?.answers.length;answerBoss(b.dataset.bossOption);
       const boss=state.session?.boss;
@@ -784,8 +809,9 @@
     if(b.dataset.filter){areaFilter=b.dataset.filter;libraryPage=0;render();document.querySelector('[data-filter="'+areaFilter+'"]')?.focus({preventScroll:true});return;}
     if(b.dataset.bookmark){const id=b.dataset.bookmark;state.bookmarks=state.bookmarks.includes(id)?state.bookmarks.filter(x=>x!==id):[...state.bookmarks,id];persist();render();document.querySelector('[data-bookmark="'+id+'"]')?.focus({preventScroll:true});return;}
     if(b.dataset.practice){setup([b.dataset.practice]);return;}
+    if(b.dataset.protocolKind){protocolKind=b.dataset.protocolKind==='radiotherapy'?'radiotherapy':'systemic';protocolEntity=null;render();document.querySelector('[data-protocol-kind="'+protocolKind+'"]')?.focus({preventScroll:true});return;}
     if(b.dataset.protocolEntity){protocolEntity=b.dataset.protocolEntity;render();document.querySelector('[data-protocol-entity="'+protocolEntity+'"]')?.focus({preventScroll:true});return;}
-    if(b.dataset.protocolPractice){const r=(C.protocols||[]).flatMap(e=>e.regimens).find(r=>r.id===b.dataset.protocolPractice),ids=(r?.questions||[]).filter(id=>getCase(id));if(ids.length)setup(pickCases(ids.map(getCase),10,'protocol-'+r.id,false));return;}
+    if(b.dataset.protocolPractice){const r=[...(C.protocols||[]),...(C.radiotherapy||[])].flatMap(e=>e.regimens).find(r=>r.id===b.dataset.protocolPractice),ids=(r?.questions||[]).filter(id=>getCase(id));if(ids.length)setup(pickCases(ids.map(getCase),10,'protocol-'+r.id,false));return;}
     if(b.dataset.dutyStart){setup(null,b.dataset.dutyStart);return;}
     if(b.dataset.atlasOpen){openAtlas(b.dataset.atlasOpen);return;}
     if(b.dataset.atlasQuiz){startQuiz(b.dataset.atlasQuiz);return;}

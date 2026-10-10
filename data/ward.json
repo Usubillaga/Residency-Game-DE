@@ -2121,6 +2121,299 @@
     ]
   },
   {
+    "id": "sys-prot-vip-mesna-gcsf-order",
+    "area": "ward",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "dayclinic",
+    "patient": {
+      "name": "Timo Rehberg",
+      "age": 26,
+      "sex": "male"
+    },
+    "title": {
+      "en": "VIP instead of BEP: ordering mesna and G-CSF",
+      "de": "PEI/VIP statt BEP: Mesna und G-CSF anordnen",
+      "es": "VIP en lugar de BEP: prescripción de mesna y G-CSF"
+    },
+    "presenting": {
+      "en": "26-year-old man with a metastatic non-seminomatous germ cell tumour, intermediate prognosis according to IGCCCG (AFP 4200 ng/mL, retroperitoneal lymph nodes up to 6 cm, no non-pulmonary visceral metastases). He is a professional diver; the pulmonologist explicitly advises against bleomycin, so the tumour board recommends 4 cycles of VIP (etoposide 75 mg/m², ifosfamide 1200 mg/m², cisplatin 20 mg/m², each on days 1-5, every 21 days). Body surface area 1.90 m², creatinine clearance 105 mL/min, urinalysis normal. You are preparing the order for cycle 1 on the ward; the daily ifosfamide dose is 2280 mg.",
+      "de": "26-jähriger Patient mit metastasiertem nichtseminomatösem Keimzelltumor, intermediäre Prognose nach IGCCCG (AFP 4200 ng/ml, retroperitoneale Lymphknoten bis 6 cm, keine nichtpulmonalen viszeralen Metastasen). Er ist Berufstaucher; die Pneumologie rät ausdrücklich von Bleomycin ab, das Tumorboard empfiehlt daher 4 Zyklen PEI/VIP (Etoposid 75 mg/m², Ifosfamid 1200 mg/m², Cisplatin 20 mg/m², jeweils an Tag 1–5, alle 21 Tage). Körperoberfläche 1,90 m², Kreatinin-Clearance 105 ml/min, Urinstatus unauffällig. Sie bereiten auf der Station die Anordnung für Zyklus 1 vor; die Tagesdosis Ifosfamid beträgt 2280 mg.",
+      "es": "Varón de 26 años con un tumor de células germinales no seminomatoso metastásico, pronóstico intermedio según IGCCCG (AFP 4200 ng/ml, ganglios retroperitoneales de hasta 6 cm, sin metástasis viscerales no pulmonares). Es buceador profesional; el neumólogo desaconseja expresamente la bleomicina, por lo que el comité de tumores recomienda 4 ciclos de VIP (etopósido 75 mg/m², ifosfamida 1200 mg/m², cisplatino 20 mg/m², cada uno los días 1-5, cada 21 días). Superficie corporal 1,90 m², aclaramiento de creatinina 105 ml/min, análisis de orina normal. Está preparando en la planta la prescripción del ciclo 1; la dosis diaria de ifosfamida es de 2280 mg."
+    },
+    "vitals": {
+      "bp": "118/72",
+      "hr": 70,
+      "temp": 36.7,
+      "spo2": 99,
+      "rr": 14
+    },
+    "objectives": {
+      "en": [
+        "Order and justify the mesna dose in relation to the ifosfamide dose",
+        "Set the mandatory supportive care for VIP, including primary G-CSF prophylaxis"
+      ],
+      "de": [
+        "Die Mesna-Dosis im Verhältnis zur Ifosfamid-Dosis anordnen und begründen",
+        "Die obligate Supportivtherapie von VIP einschließlich primärer G-CSF-Prophylaxe festlegen"
+      ],
+      "es": [
+        "Prescribir y justificar la dosis de mesna en relación con la dosis de ifosfamida",
+        "Establecer el tratamiento de soporte obligatorio de VIP, incluida la profilaxis primaria con G-CSF"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which order for uroprotection and supportive care is correct?",
+          "de": "Welche Anordnung zu Uroprotektion und Supportivtherapie ist korrekt?",
+          "es": "¿Qué prescripción de uroprotección y tratamiento de soporte es correcta?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Mesna 456 mg (240 mg/m²) once daily immediately before ifosfamide on days 1-5; G-CSF only in case of febrile neutropenia",
+              "de": "Mesna 456 mg (240 mg/m²) einmal täglich unmittelbar vor Ifosfamid an Tag 1–5; G-CSF nur bei febriler Neutropenie",
+              "es": "Mesna 456 mg (240 mg/m²) una vez al día justo antes de la ifosfamida los días 1-5; G-CSF solo en caso de neutropenia febril"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Wrong and harmful: a single mesna dose equals only 20% of the ifosfamide dose. Acrolein is formed for hours after the infusion; without the doses at 4 and 8 hours, haemorrhagic cystitis is likely. At least 60% of the ifosfamide dose is required, and primary G-CSF prophylaxis is recommended with VIP.",
+              "de": "Falsch und gefährlich: Eine einzelne Mesna-Gabe entspricht nur 20 % der Ifosfamid-Dosis. Acrolein entsteht noch Stunden nach der Infusion; ohne die Gaben nach 4 und 8 Stunden droht eine hämorrhagische Zystitis. Gefordert sind mindestens 60 % der Ifosfamid-Dosis, zudem wird bei VIP eine primäre G-CSF-Prophylaxe empfohlen.",
+              "es": "Incorrecto y peligroso: una sola dosis de mesna equivale solo al 20 % de la dosis de ifosfamida. La acroleína se sigue formando durante horas tras la infusión; sin las dosis a las 4 y 8 horas es probable una cistitis hemorrágica. Se requiere al menos el 60 % de la dosis de ifosfamida y, además, con VIP se recomienda profilaxis primaria con G-CSF."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Mesna 456 mg (240 mg/m²) i.v. before ifosfamide and 4 and 8 hours after it on days 1-5 (1368 mg/day = 60% of the ifosfamide dose), primary G-CSF prophylaxis, generous hydration and a daily urine dipstick for haematuria",
+              "de": "Mesna 456 mg (240 mg/m²) i.v. vor Ifosfamid sowie 4 und 8 Stunden danach an Tag 1–5 (1368 mg/Tag = 60 % der Ifosfamid-Dosis), primäre G-CSF-Prophylaxe, großzügige Hydrierung und täglich Urin-Stix auf Hämaturie",
+              "es": "Mesna 456 mg (240 mg/m²) i.v. antes de la ifosfamida y a las 4 y 8 horas los días 1-5 (1368 mg/día = 60 % de la dosis de ifosfamida), profilaxis primaria con G-CSF, hidratación abundante y tira reactiva de orina diaria para detectar hematuria"
+            },
+            "score": 10,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Correct: mesna binds the urotoxic ifosfamide metabolite acrolein in the bladder and is mandatory. The total mesna dose must be at least 60% (ideally 100%) of the ifosfamide dose: 3 × 456 mg = 1368 mg is 60% of 2280 mg. VIP is more haematotoxic than BEP, so primary G-CSF prophylaxis is recommended; check urine dipstick, electrolytes, creatinine and neurological status daily.",
+              "de": "Richtig: Mesna bindet den urotoxischen Ifosfamid-Metaboliten Acrolein in der Blase und ist obligat. Die Mesna-Gesamtdosis muss mindestens 60 % (idealerweise 100 %) der Ifosfamid-Dosis betragen: 3 × 456 mg = 1368 mg entsprechen 60 % von 2280 mg. VIP ist hämatotoxischer als BEP, deshalb wird eine primäre G-CSF-Prophylaxe empfohlen; täglich Urin-Stix, Elektrolyte, Kreatinin und neurologischen Status kontrollieren.",
+              "es": "Correcto: la mesna fija en la vejiga la acroleína, el metabolito urotóxico de la ifosfamida, y es obligatoria. La dosis total de mesna debe ser al menos el 60 % (idealmente el 100 %) de la dosis de ifosfamida: 3 × 456 mg = 1368 mg equivalen al 60 % de 2280 mg. VIP es más hematotóxico que BEP, por lo que se recomienda profilaxis primaria con G-CSF; controlar a diario la tira de orina, los electrolitos, la creatinina y el estado neurológico."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "No mesna, because generous hydration with forced diuresis protects the bladder adequately; primary G-CSF prophylaxis",
+              "de": "Kein Mesna, da großzügige Hydrierung mit forcierter Diurese die Blase ausreichend schützt; primäre G-CSF-Prophylaxe",
+              "es": "Sin mesna, porque la hidratación abundante con diuresis forzada protege suficientemente la vejiga; profilaxis primaria con G-CSF"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Wrong and harmful: hydration does not replace uroprotection. Without mesna, acrolein from ifosfamide at these daily doses frequently causes haemorrhagic cystitis; mesna is mandatory with every ifosfamide dose.",
+              "de": "Falsch und gefährlich: Hydrierung ersetzt die Uroprotektion nicht. Ohne Mesna führt Acrolein bei Ifosfamid-Tagesdosen dieser Höhe häufig zu einer hämorrhagischen Zystitis; Mesna ist zu jeder Ifosfamid-Gabe obligat.",
+              "es": "Incorrecto y peligroso: la hidratación no sustituye a la uroprotección. Sin mesna, la acroleína de la ifosfamida a estas dosis diarias produce con frecuencia cistitis hemorrágica; la mesna es obligatoria con cada dosis de ifosfamida."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Mesna 456 mg before ifosfamide and 4 and 8 hours after it on days 1-5; G-CSF only as secondary prophylaxis after febrile neutropenia in cycle 1",
+              "de": "Mesna 456 mg vor Ifosfamid sowie 4 und 8 Stunden danach an Tag 1–5; G-CSF erst sekundär nach einer febrilen Neutropenie im ersten Zyklus",
+              "es": "Mesna 456 mg antes de la ifosfamida y a las 4 y 8 horas los días 1-5; G-CSF solo como profilaxis secundaria tras una neutropenia febril en el ciclo 1"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: the mesna order is correct, but VIP is clearly more haematotoxic than BEP. Primary G-CSF prophylaxis from cycle 1 is recommended to prevent febrile neutropenia and treatment delays.",
+              "de": "Falsch: Die Mesna-Anordnung ist korrekt, VIP ist jedoch deutlich hämatotoxischer als BEP. Empfohlen ist die primäre G-CSF-Prophylaxe ab Zyklus 1, um febrile Neutropenien und Therapieverschiebungen zu vermeiden.",
+              "es": "Incorrecto: la prescripción de mesna es correcta, pero VIP es claramente más hematotóxico que BEP. Se recomienda profilaxis primaria con G-CSF desde el ciclo 1 para evitar la neutropenia febril y los retrasos del tratamiento."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "4 cycles of EP (cisplatin/etoposide) instead of VIP, which avoids ifosfamide, mesna and G-CSF",
+              "de": "Statt VIP 4 Zyklen EP (Cisplatin/Etoposid), weil damit Ifosfamid, Mesna und G-CSF entfallen",
+              "es": "4 ciclos de EP (cisplatino/etopósido) en lugar de VIP, con lo que se evitan la ifosfamida, la mesna y el G-CSF"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: EP for 4 cycles is the bleomycin-free alternative only for good prognosis. For intermediate or poor prognosis, the bleomycin-free alternative to BEP for 4 cycles is VIP for 4 cycles.",
+              "de": "Falsch: EP über 4 Zyklen ist die bleomycinfreie Alternative nur bei guter Prognose. Bei intermediärer oder schlechter Prognose ist die bleomycinfreie Alternative zu BEP über 4 Zyklen das VIP-Schema über 4 Zyklen.",
+              "es": "Incorrecto: EP durante 4 ciclos es la alternativa sin bleomicina solo en el pronóstico bueno. En el pronóstico intermedio o malo, la alternativa sin bleomicina a 4 ciclos de BEP es VIP durante 4 ciclos."
+            }
+          }
+        ],
+        "best": "b"
+      }
+    ],
+    "takeaway": {
+      "en": "Mesna is mandatory with VIP: the total dose must be at least 60% (ideally 100%) of the ifosfamide dose, for example 240 mg/m² before ifosfamide and 4 and 8 hours after it. The order also includes primary G-CSF prophylaxis, generous hydration and daily checks for haematuria and encephalopathy.",
+      "de": "Bei VIP ist Mesna obligat: Die Gesamtdosis muss mindestens 60 % (idealerweise 100 %) der Ifosfamid-Dosis betragen, z. B. 240 mg/m² vor Ifosfamid sowie 4 und 8 Stunden danach. Zur Anordnung gehören außerdem primäre G-CSF-Prophylaxe, großzügige Hydrierung und tägliche Kontrollen auf Hämaturie und Enzephalopathie.",
+      "es": "Con VIP la mesna es obligatoria: la dosis total debe ser al menos el 60 % (idealmente el 100 %) de la dosis de ifosfamida, por ejemplo 240 mg/m² antes de la ifosfamida y a las 4 y 8 horas. La prescripción incluye además profilaxis primaria con G-CSF, hidratación abundante y controles diarios de hematuria y encefalopatía."
+    },
+    "references": [
+      "bank-guide-hodentumor",
+      "fachinfo-de",
+      "ema-medicines"
+    ]
+  },
+  {
+    "id": "sys-prot-penile-tip-neoadjuvant-cn3",
+    "area": "ward",
+    "level": 3,
+    "acuity": "routine",
+    "duty": "dayclinic",
+    "patient": {
+      "name": "Reinhard Pötschke",
+      "age": 61,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Fixed inguinal nodes in penile cancer: neoadjuvant TIP",
+      "de": "Fixierte Leistenlymphknoten beim Peniskarzinom: neoadjuvantes TIP",
+      "es": "Adenopatías inguinales fijas en el cáncer de pene: TIP neoadyuvante"
+    },
+    "presenting": {
+      "en": "61-year-old man with a poorly differentiated squamous cell carcinoma of the glans (cT2). In the right groin there is a fixed lymph node mass of 5 cm (cytology: squamous cell carcinoma); CT also shows two enlarged right iliac lymph nodes (2 cm) and no distant metastases (cN3 cM0). ECOG 1, creatinine clearance 74 mL/min, audiometry normal for age, no neuropathy, body surface area 1.95 m². The tumour board recommends neoadjuvant chemotherapy with TIP and inpatient admission for cycle 1.",
+      "de": "61-jähriger Patient mit einem gering differenzierten Plattenepithelkarzinom der Glans (cT2). In der rechten Leiste besteht ein fixiertes, 5 cm großes Lymphknotenkonglomerat (zytologisch Plattenepithelkarzinom); das CT zeigt zusätzlich zwei vergrößerte Lymphknoten rechts iliakal (2 cm) und keine Fernmetastasen (cN3 cM0). ECOG 1, Kreatinin-Clearance 74 ml/min, Audiometrie altersentsprechend, keine Neuropathie, Körperoberfläche 1,95 m². Die Tumorkonferenz empfiehlt eine neoadjuvante Chemotherapie mit TIP und die stationäre Aufnahme zu Zyklus 1.",
+      "es": "Varón de 61 años con un carcinoma epidermoide poco diferenciado del glande (cT2). En la ingle derecha presenta un conglomerado adenopático fijo de 5 cm (citología: carcinoma epidermoide); la TC muestra además dos ganglios ilíacos derechos aumentados de tamaño (2 cm) y ausencia de metástasis a distancia (cN3 cM0). ECOG 1, aclaramiento de creatinina 74 ml/min, audiometría acorde con la edad, sin neuropatía, superficie corporal 1,95 m². El comité de tumores recomienda quimioterapia neoadyuvante con TIP e ingreso hospitalario para el ciclo 1."
+    },
+    "vitals": {
+      "bp": "142/86",
+      "hr": 78,
+      "temp": 36.8,
+      "spo2": 97,
+      "rr": 16
+    },
+    "objectives": {
+      "en": [
+        "Recognise the indication for neoadjuvant chemotherapy in penile cancer with cN3 nodes",
+        "Order the neoadjuvant TIP regimen with doses, days, number of cycles and supportive care, and distinguish it from salvage TIP"
+      ],
+      "de": [
+        "Die Indikation zur neoadjuvanten Chemotherapie beim Peniskarzinom mit cN3 erkennen",
+        "Das neoadjuvante TIP-Schema mit Dosis, Tagen, Zyklenzahl und Supportivtherapie anordnen und vom Salvage-TIP abgrenzen"
+      ],
+      "es": [
+        "Reconocer la indicación de quimioterapia neoadyuvante en el cáncer de pene con cN3",
+        "Prescribir el esquema TIP neoadyuvante con dosis, días, número de ciclos y tratamiento de soporte, y distinguirlo del TIP de rescate"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which order and treatment plan are correct?",
+          "de": "Welche Anordnung und welcher Behandlungsplan sind korrekt?",
+          "es": "¿Qué prescripción y qué plan de tratamiento son correctos?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Paclitaxel 175 mg/m² over 3 hours on day 1 (premedication with dexamethasone and H1/H2 blockers), ifosfamide 1200 mg/m² with mesna and cisplatin 25 mg/m², each on days 1-3; 4 cycles every 3-4 weeks, CT restaging and inguinal and pelvic lymphadenectomy if there is a response",
+              "de": "Paclitaxel 175 mg/m² über 3 h an Tag 1 (Prämedikation mit Dexamethason und H1-/H2-Blocker), Ifosfamid 1200 mg/m² mit Mesna und Cisplatin 25 mg/m² jeweils an Tag 1–3; 4 Zyklen alle 3–4 Wochen, CT-Restaging und bei Ansprechen inguinale und pelvine Lymphadenektomie",
+              "es": "Paclitaxel 175 mg/m² en 3 h el día 1 (premedicación con dexametasona y antihistamínicos H1/H2), ifosfamida 1200 mg/m² con mesna y cisplatino 25 mg/m², ambos los días 1-3; 4 ciclos cada 3-4 semanas, TC de reestadificación y linfadenectomía inguinal y pélvica si hay respuesta"
+            },
+            "score": 10,
+            "minutes": 8,
+            "critical": false,
+            "feedback": {
+              "en": "Correct: this is the neoadjuvant TIP regimen for penile cancer with cN3 nodes. Paclitaxel requires premedication against hypersensitivity reactions and ifosfamide requires mesna with every dose. After 4 cycles, CT restaging follows; surgery is done for response or stable resectable disease, because non-responders have a poor prognosis. Check cisplatin fitness (renal function, hearing, neuropathy) before every cycle.",
+              "de": "Richtig: Dies ist das neoadjuvante TIP-Schema beim Peniskarzinom mit cN3. Paclitaxel erfordert eine Prämedikation gegen Überempfindlichkeitsreaktionen, Ifosfamid eine Mesna-Uroprotektion zu jeder Gabe. Nach 4 Zyklen folgt das CT-Restaging; operiert wird bei Ansprechen oder stabiler resektabler Erkrankung, weil Non-Responder eine schlechte Prognose haben. Die Cisplatin-Eignung (Nierenfunktion, Gehör, Neuropathie) vor jedem Zyklus prüfen.",
+              "es": "Correcto: es el esquema TIP neoadyuvante del cáncer de pene con cN3. El paclitaxel requiere premedicación frente a las reacciones de hipersensibilidad y la ifosfamida, uroprotección con mesna en cada dosis. Tras 4 ciclos se realiza la TC de reestadificación; se opera si hay respuesta o enfermedad estable resecable, porque los no respondedores tienen mal pronóstico. Comprobar la aptitud para cisplatino (función renal, audición, neuropatía) antes de cada ciclo."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Paclitaxel 250 mg/m² as a 24-hour infusion on day 1, ifosfamide 1500 mg/m² and cisplatin 25 mg/m² on days 2-5 with mesna; 4 cycles every 21 days, then surgery",
+              "de": "Paclitaxel 250 mg/m² als 24-h-Infusion an Tag 1, Ifosfamid 1500 mg/m² und Cisplatin 25 mg/m² an Tag 2–5 mit Mesna; 4 Zyklen alle 21 Tage, danach Operation",
+              "es": "Paclitaxel 250 mg/m² en infusión de 24 h el día 1, ifosfamida 1500 mg/m² y cisplatino 25 mg/m² los días 2-5 con mesna; 4 ciclos cada 21 días y después cirugía"
+            },
+            "score": 0,
+            "minutes": 8,
+            "critical": true,
+            "feedback": {
+              "en": "Wrong and harmful: this is the salvage TIP regimen for relapsed germ cell tumours, which is given with primary G-CSF prophylaxis. In penile cancer the patient would receive per cycle paclitaxel 250 instead of 175 mg/m², ifosfamide 6000 instead of 3600 mg/m² and cisplatin 100 instead of 75 mg/m²; regimens must not be mixed.",
+              "de": "Falsch und gefährlich: Das ist das TIP-Salvage-Schema für rezidivierte Keimzelltumoren, das mit primärer G-CSF-Prophylaxe gegeben wird. Beim Peniskarzinom erhielte der Patient pro Zyklus Paclitaxel 250 statt 175 mg/m², Ifosfamid 6000 statt 3600 mg/m² und Cisplatin 100 statt 75 mg/m²; Schemata dürfen nicht vermischt werden.",
+              "es": "Incorrecto y peligroso: es el esquema TIP de rescate para tumores de células germinales en recaída, que se administra con profilaxis primaria con G-CSF. En el cáncer de pene el paciente recibiría por ciclo paclitaxel 250 en lugar de 175 mg/m², ifosfamida 6000 en lugar de 3600 mg/m² y cisplatino 100 en lugar de 75 mg/m²; los esquemas no deben mezclarse."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Paclitaxel 175 mg/m², ifosfamide 1200 mg/m² with mesna and cisplatin 25 mg/m² as above, but only 2 cycles followed by surgery regardless of response",
+              "de": "Paclitaxel 175 mg/m², Ifosfamid 1200 mg/m² mit Mesna und Cisplatin 25 mg/m² wie oben, aber nur 2 Zyklen und anschließend Operation unabhängig vom Ansprechen",
+              "es": "Paclitaxel 175 mg/m², ifosfamida 1200 mg/m² con mesna y cisplatino 25 mg/m² como arriba, pero solo 2 ciclos y después cirugía con independencia de la respuesta"
+            },
+            "score": 0,
+            "minutes": 8,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: the regimen comprises 4 cycles. Surgery follows only for response or stable resectable disease after CT restaging; with progression, lymphadenectomy is of little use because non-responders have a poor prognosis.",
+              "de": "Falsch: Vorgesehen sind 4 Zyklen. Die Operation folgt nur bei Ansprechen oder stabiler resektabler Erkrankung nach CT-Restaging; bei Progress ist die Lymphadenektomie wenig sinnvoll, da Non-Responder eine schlechte Prognose haben.",
+              "es": "Incorrecto: el esquema consta de 4 ciclos. La cirugía solo se realiza si hay respuesta o enfermedad estable resecable tras la TC de reestadificación; con progresión la linfadenectomía aporta poco, porque los no respondedores tienen mal pronóstico."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Paclitaxel 175 mg/m² on day 1, ifosfamide 1200 mg/m² with mesna on days 1-3 and cisplatin 75 mg/m² on days 1-3; 4 cycles every 3-4 weeks",
+              "de": "Paclitaxel 175 mg/m² an Tag 1, Ifosfamid 1200 mg/m² mit Mesna an Tag 1–3 und Cisplatin 75 mg/m² an Tag 1–3; 4 Zyklen alle 3–4 Wochen",
+              "es": "Paclitaxel 175 mg/m² el día 1, ifosfamida 1200 mg/m² con mesna los días 1-3 y cisplatino 75 mg/m² los días 1-3; 4 ciclos cada 3-4 semanas"
+            },
+            "score": 0,
+            "minutes": 8,
+            "critical": true,
+            "feedback": {
+              "en": "Wrong and harmful: 75 mg/m² is the total cisplatin dose per cycle (3 × 25 mg/m²), the same total as in the outpatient InPACT schedule. 75 mg/m² daily on days 1-3 would give 225 mg/m² per cycle, three times the dose, with a high risk of nephro-, oto- and neurotoxicity.",
+              "de": "Falsch und gefährlich: 75 mg/m² ist die Cisplatin-Gesamtdosis pro Zyklus (3 × 25 mg/m²), wie sie auch das ambulante InPACT-Schema vorsieht. Täglich 75 mg/m² an Tag 1–3 ergäben 225 mg/m² pro Zyklus, das Dreifache, mit hohem Risiko für Nephro-, Oto- und Neurotoxizität.",
+              "es": "Incorrecto y peligroso: 75 mg/m² es la dosis total de cisplatino por ciclo (3 × 25 mg/m²), la misma que prevé el esquema ambulatorio de InPACT. 75 mg/m² diarios los días 1-3 supondrían 225 mg/m² por ciclo, el triple, con un riesgo alto de nefro-, oto- y neurotoxicidad."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Immediate right inguinal and pelvic lymphadenectomy, with TIP given only as adjuvant treatment after histology",
+              "de": "Sofortige inguinale und pelvine Lymphadenektomie rechts, TIP erst adjuvant nach Vorliegen der Histologie",
+              "es": "Linfadenectomía inguinal y pélvica derecha inmediata, con TIP solo como tratamiento adyuvante tras la histología"
+            },
+            "score": 0,
+            "minutes": 8,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: for fixed inguinal or pelvic lymph nodes (cN3), the EAU-ASCO guideline recommends neoadjuvant cisplatin- and taxane-based chemotherapy for patients fit for chemotherapy. It can improve resectability and selects the patients who benefit from surgery.",
+              "de": "Falsch: Bei fixierten inguinalen oder pelvinen Lymphknoten (cN3) empfiehlt die EAU-ASCO-Leitlinie bei chemotherapiefähigen Patienten eine neoadjuvante cisplatin- und taxanbasierte Chemotherapie. Sie kann die Resektabilität verbessern und selektiert die Patienten, die von der Operation profitieren.",
+              "es": "Incorrecto: ante adenopatías inguinales fijas o pélvicas (cN3), la guía EAU-ASCO recomienda en los pacientes aptos para quimioterapia una quimioterapia neoadyuvante basada en cisplatino y taxano. Puede mejorar la resecabilidad y selecciona a los pacientes que se benefician de la cirugía."
+            }
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "en": "In penile cancer with cN3 nodes, patients fit for chemotherapy receive 4 cycles of TIP before lymphadenectomy: paclitaxel 175 mg/m² on day 1, ifosfamide 1200 mg/m² and cisplatin 25 mg/m² on days 1-3, every 3-4 weeks, with mesna and paclitaxel premedication. Surgery follows restaging if there is a response; the doses of germ cell salvage TIP or of the outpatient schedule must not be mixed in.",
+      "de": "Beim Peniskarzinom mit cN3 erhalten chemotherapiefähige Patienten vor der Lymphadenektomie 4 Zyklen TIP: Paclitaxel 175 mg/m² an Tag 1, Ifosfamid 1200 mg/m² und Cisplatin 25 mg/m² an Tag 1–3, alle 3–4 Wochen, mit Mesna und Paclitaxel-Prämedikation. Operiert wird nach dem Restaging bei Ansprechen; die Dosierungen des Salvage-TIP beim Keimzelltumor oder des ambulanten Schemas dürfen nicht eingemischt werden.",
+      "es": "En el cáncer de pene con cN3, los pacientes aptos para quimioterapia reciben 4 ciclos de TIP antes de la linfadenectomía: paclitaxel 175 mg/m² el día 1, ifosfamida 1200 mg/m² y cisplatino 25 mg/m² los días 1-3, cada 3-4 semanas, con mesna y premedicación del paclitaxel. Se opera tras la reestadificación si hay respuesta; no deben mezclarse las dosis del TIP de rescate del tumor germinal ni las del esquema ambulatorio."
+    },
+    "references": [
+      "bank-guide-peniskarzinom",
+      "fachinfo-de"
+    ]
+  },
+  {
     "id": "bank-uro-hod-00014",
     "area": "ward",
     "level": 3,

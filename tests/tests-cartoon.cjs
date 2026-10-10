@@ -68,7 +68,7 @@ function appHarness(session = null, testCatalog = catalog) {
     navigate(view) { stats.navigated.push(view); },
     openDialog(html) { stats.dialogs.push(html); return { classList: { add() {} } }; }
   });
-  const constants = ['ATTENDING_CALLS', 'count'].map(name => source.match(new RegExp('const ' + name + '=[^\\n]*;'))[0]).join('\n');
+  const constants = ['ATTENDING_CALLS', 'count', 'consultantOf'].map(name => source.match(new RegExp('const ' + name + '=[^\\n]*;'))[0]).join('\n');
   vm.runInContext(constants + "\nlet areaFilter = 'all', query = '', savedOnly = false;\n" + source.slice(start, end) + `
     globalThis.helpers = {
       gameStage, handleScene, coffeeBreak, askNurse, callAttending, attendingWarning, characterComment, startBoss, answerBoss, nextBoss,
@@ -568,13 +568,41 @@ test('after a dangerous answer the attending steps in with the decisive rule', (
   assert.ok(data.NSABanter.en.attendingWarn.some(line => warned.includes(escape(line.replace(/^Dr\. Brennan: /, '')))));
 });
 
+test('radiotherapy questions are answered by the radiation oncologist, on the phone and after a dangerous answer', () => {
+  const testCatalog = clone(catalog);
+  const c = testCatalog.cases.find(c => !c.source && c.steps.some(s => s.options.some(o => o.critical)));
+  c.consultant = 'radiotherapist';
+  c.steps[0].hint = { en: 'Total dose, dose per fraction and target belong together.', de: 'x', es: 'x' };
+  const session = E.create(testCatalog, [c.id], 'shift', 'radio-call');
+  Object.assign(session, { duty: 'radiotherapy', selected: c.id });
+  const h = appHarness(session, testCatalog);
+  h.api.callAttending();
+  const said = h.stats.dialogs.at(-1), staff = data.NSABanter.en.staff;
+  assert.ok(said.includes(escape(staff.radiotherapist.name)) && !said.includes(escape(staff.attending.name)), 'The radiation oncologist takes the call');
+  assert.ok(said.includes(escape(c.steps[0].hint.en)));
+  assert.ok(data.NSABanter.en.radioCall.some(line => said.includes(escape(line.replace(/^Dr\. Okoro: /, '')))));
+  assert.equal(session.calls, 1, 'Her calls count against the same three calls of the shift');
+  const warned = h.api.attendingWarning(c, c.steps[0], c.id + ':0');
+  assert.ok(warned.includes(escape(staff.radiotherapist.name)) && data.NSABanter.en.radioWarn.some(line => warned.includes(escape(line.replace(/^Dr\. Okoro: /, '')))));
+  delete c.consultant;
+  assert.ok(h.api.attendingWarning(c, c.steps[0], c.id + ':0').includes(escape(staff.attending.name)), 'Other cases keep the attending');
+  for (const lang of ['en', 'de', 'es']) {
+    const text = data.NSABanter[lang];
+    for (const kind of ['radioCall', 'radioAfter', 'radioWarn', 'radioIdle']) assert.ok(text[kind].length >= 2 && text[kind].every(line => line.startsWith(text.staff.radiotherapist.name + ':')), lang + ' ' + kind);
+    assert.ok(text.radioBusy.every(line => line.startsWith(text.staff.nurse.name + ':')));
+    assert.ok(text.askRadiotherapist && text.staff.radiotherapist.role);
+  }
+  assert.match(data.NSAArt.portrait('radiotherapist', 'smile', 96), /<svg/);
+  assert.notEqual(data.NSAArt.portrait('radiotherapist', 'smile', 96), data.NSAArt.portrait('attending', 'smile', 96), 'She has her own portrait');
+});
+
 function protocolHarness(protocols, lang = 'en') {
   const source = read('app.js');
   const start = source.indexOf('  function protocols()'), end = source.indexOf('  function atlas()', start);
   assert.ok(start >= 0 && end > start, 'The protocol page must be present');
   const context = vm.createContext({ C: { ...catalog, protocols }, esc: escape, getCase: id => catalog.cases.find(c => c.id === id),
-    t: key => data.NSA_TEXT[lang][key] || key, loc: value => value[lang], protocolEntity: null });
-  vm.runInContext(source.slice(start, end) + '\nglobalThis.page = { protocols, protocolCard };', context, { filename: 'app-protocols.js' });
+    t: key => data.NSA_TEXT[lang][key] || key, loc: value => value[lang], protocolEntity: null, protocolKind: 'systemic', state: { lang } });
+  vm.runInContext(source.slice(start, end) + '\nglobalThis.page = { protocols, protocolCard, rtCard };', context, { filename: 'app-protocols.js' });
   return context;
 }
 
@@ -598,6 +626,24 @@ test('the protocol page shows cycles, doses, routes and sources per tumour and l
   h.protocolEntity = 'two';
   assert.equal((h.page.protocols().match(/class="protocol-card"/g) || []).length, 1, 'Switching the tab shows the other tumour');
   assert.ok(protocolHarness([]).page.protocols().includes('protocol-warning'), 'Without protocols the page still renders');
+});
+
+test('the radiotherapy schemes show total dose, dose per fraction and fractions with the decimal comma of the language', () => {
+  const text = value => ({ en: value, de: value, es: value });
+  const scheme = { id: 'rt-fixture', name: text('Ultrahypo'), setting: text('Localised'), technique: text('SBRT'), combined: text('None'), support: text('Spacer'), cautions: text('Rectum'), evidence: text('Trial'),
+    phases: [{ target: text('Prostate'), totalGy: 36.25, fractionGy: 7.25, fractions: 5, schedule: text('Every other day') }, { target: text('Seeds <I-125>'), totalGy: 145, fractionGy: null, fractions: null, schedule: text('Once') }],
+    sources: [{ label: 'Guideline', url: 'https://example.org/rt' }], questions: [] };
+  const h = protocolHarness([{ id: 'one', title: text('Bladder'), regimens: [] }], 'de');
+  h.C.radiotherapy = [{ id: 'rt-one', title: text('Prostata'), regimens: [scheme] }];
+  h.protocolKind = 'radiotherapy';
+  const page = h.page.protocols();
+  assert.ok(page.includes('data-protocol-kind="radiotherapy"') && page.includes('aria-pressed="true"'), 'The switch shows the radiotherapy view as selected');
+  assert.ok(page.includes(escape(data.NSA_TEXT.de.rtWarning)), 'The radiotherapy page has its own warning');
+  assert.ok(page.includes('36,25 Gy') && page.includes('7,25 Gy') && page.includes('>5<'), 'German shows the decimal comma');
+  assert.ok(page.includes('145 Gy') && page.includes(escape(data.NSA_TEXT.de.rtPermanent)), 'A permanent implant has a total dose only');
+  assert.ok(page.includes('Seeds &lt;I-125&gt;'), 'Scheme text is escaped');
+  const en = protocolHarness([], 'en'); en.C.radiotherapy = h.C.radiotherapy; en.protocolKind = 'radiotherapy';
+  assert.ok(en.page.protocols().includes('36.25 Gy'), 'English keeps the decimal point');
 });
 
 test('streak comments name the streak and wrong source answers get exam-style teasing', () => {
@@ -654,7 +700,7 @@ test('every duty has a translated briefing, scene line and whiteboard label', ()
     const text = data.NSABanter[lang];
     for (const duty of E.DUTIES) {
       assert.ok(text.dutyOpening[duty].length >= 2, lang + ' ' + duty + ' briefing');
-      assert.ok(text.dutyOpening[duty].every(line => ['nurse', 'attending', 'chief'].includes(line.speaker) && line.text.trim()));
+      assert.ok(text.dutyOpening[duty].every(line => ['nurse', 'attending', 'chief', 'radiotherapist'].includes(line.speaker) && line.text.trim()));
       assert.ok(text.dutyIntro[duty].trim() && text.dutyBoard[duty].trim());
       for (const key of ['duty_', 'dutyText_', 'dutyTime_']) assert.ok(String(data.NSA_TEXT[lang][key + duty] || '').trim(), lang + '.' + key + duty);
     }

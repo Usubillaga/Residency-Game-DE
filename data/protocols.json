@@ -1907,6 +1907,9 @@
               "label": "ClinicalTrials.gov NCT05676203 (ARASAFE, docetaxel schedules with darolutamide)",
               "url": "https://clinicaltrials.gov/study/NCT05676203"
             }
+          ],
+          "questions": [
+            "sys-prot-arasens-docetaxel-darolutamide-order"
           ]
         },
         {
@@ -1941,9 +1944,9 @@
               },
               "route": "p.o.",
               "schedule": {
-                "en": "once daily on an empty stomach (≥ 1 h before or ≥ 2 h after food)",
-                "de": "1 x täglich nüchtern (≥ 1 h vor oder ≥ 2 h nach dem Essen)",
-                "es": "una vez al día en ayunas (≥ 1 h antes o ≥ 2 h después de comer)"
+                "en": "once daily, fasting: no food 2 h before and 1 h after",
+                "de": "1 x täglich nüchtern: 2 h vorher und 1 h danach nichts essen",
+                "es": "una vez al día en ayunas: sin comer 2 h antes ni 1 h después"
               }
             },
             {
@@ -2210,9 +2213,9 @@
             }
           ],
           "support": {
-            "en": "Premedication ≥ 30 min before each infusion: antihistamine (dexchlorpheniramine 5 mg or diphenhydramine 25 mg), dexamethasone 8 mg and an H2 antagonist i.v.; antiemesis. G-CSF: EU label allows prophylaxis per ASCO/institutional guidelines; in CARD primary G-CSF prophylaxis was given every cycle - standard practice in Germany, mandatory for high-risk patients (age > 65, poor performance status, prior febrile neutropenia, extensive prior radiotherapy). Treat diarrhoea early; hydration. ADT: GnRH agonist or antagonist dosed per product (see ADT regimens), or prior orchiectomy; castration target testosterone < 50 ng/dl.",
-            "de": "Prämedikation ≥ 30 min vor jeder Infusion: Antihistaminikum (Dexchlorphenamin 5 mg oder Diphenhydramin 25 mg), Dexamethason 8 mg und H2-Blocker i.v.; Antiemese. G-CSF: laut EU-Fachinformation Prophylaxe gemäß ASCO-/lokalen Standards; in CARD erhielten alle Patienten in jedem Zyklus eine G-CSF-Primärprophylaxe - in Deutschland gängiger Standard, bei Hochrisikopatienten (Alter > 65, reduzierter Allgemeinzustand, frühere febrile Neutropenie, ausgedehnte Vorbestrahlung) obligat. Diarrhö früh behandeln; Hydratation. ADT: GnRH-Agonist oder -Antagonist, Dosis gemäß Präparat (siehe ADT-Protokolle), bzw. Z. n. Orchiektomie; Ziel Kastrationsniveau Testosteron < 50 ng/dl.",
-            "es": "Premedicación ≥ 30 min antes de cada infusión: antihistamínico (dexclorfeniramina 5 mg o difenhidramina 25 mg), dexametasona 8 mg y antagonista H2 i.v.; antiemesis. G-CSF: la ficha técnica UE permite profilaxis según guías ASCO/institucionales; en CARD se administró profilaxis primaria con G-CSF en cada ciclo - práctica estándar en Alemania y obligatoria en alto riesgo (edad > 65, mal estado general, neutropenia febril previa, radioterapia extensa previa). Tratar la diarrea precozmente; hidratación. TDA: agonista o antagonista de GnRH, dosis según preparado (ver pautas de TDA), u orquiectomía previa; objetivo testosterona de castración < 50 ng/dl."
+            "en": "Premedication ≥ 30 min before each infusion: antihistamine (dexchlorpheniramine 5 mg or diphenhydramine 25 mg), dexamethasone 8 mg and an H2 antagonist i.v.; antiemesis. G-CSF: EU label allows prophylaxis per ASCO/institutional guidelines; in CARD primary G-CSF prophylaxis was given every cycle - standard practice in Germany, recommended for high-risk patients (EU SmPC: should be considered) (age > 65, poor performance status, prior febrile neutropenia, extensive prior radiotherapy). Treat diarrhoea early; hydration. ADT: GnRH agonist or antagonist dosed per product (see ADT regimens), or prior orchiectomy; castration target testosterone < 50 ng/dl.",
+            "de": "Prämedikation ≥ 30 min vor jeder Infusion: Antihistaminikum (Dexchlorphenamin 5 mg oder Diphenhydramin 25 mg), Dexamethason 8 mg und H2-Blocker i.v.; Antiemese. G-CSF: laut EU-Fachinformation Prophylaxe gemäß ASCO-/lokalen Standards; in CARD erhielten alle Patienten in jedem Zyklus eine G-CSF-Primärprophylaxe - in Deutschland gängiger Standard, bei Hochrisikopatienten (Alter > 65, reduzierter Allgemeinzustand, frühere febrile Neutropenie, ausgedehnte Vorbestrahlung) empfohlen (EU-Fachinformation: sollte erwogen werden). Diarrhö früh behandeln; Hydratation. ADT: GnRH-Agonist oder -Antagonist, Dosis gemäß Präparat (siehe ADT-Protokolle), bzw. Z. n. Orchiektomie; Ziel Kastrationsniveau Testosteron < 50 ng/dl.",
+            "es": "Premedicación ≥ 30 min antes de cada infusión: antihistamínico (dexclorfeniramina 5 mg o difenhidramina 25 mg), dexametasona 8 mg y antagonista H2 i.v.; antiemesis. G-CSF: la ficha técnica UE permite profilaxis según guías ASCO/institucionales; en CARD se administró profilaxis primaria con G-CSF en cada ciclo - práctica estándar en Alemania y recomendada en alto riesgo (ficha técnica UE: debe considerarse) (edad > 65, mal estado general, neutropenia febril previa, radioterapia extensa previa). Tratar la diarrea precozmente; hidratación. TDA: agonista o antagonista de GnRH, dosis según preparado (ver pautas de TDA), u orquiectomía previa; objetivo testosterona de castración < 50 ng/dl."
           },
           "cautions": {
             "en": "Contraindicated if neutrophils < 1.5 x 10^9/l, in severe hepatic impairment (bilirubin > 3 x ULN) and with yellow fever vaccine. Mild hepatic impairment: 20 mg/m²; moderate: 15 mg/m². Reduce to 20 mg/m² after febrile neutropenia, prolonged grade ≥ 3 neutropenia or grade ≥ 3 diarrhoea. Avoid strong CYP3A inhibitors/inducers. CARD (with primary G-CSF prophylaxis): febrile neutropenia 3.2 %.",
@@ -2237,6 +2240,9 @@
               "label": "Jevtana prescribing information - CARD trial design",
               "url": "https://medlibrary.org/lib/rx/meds/jevtana/page/7/"
             }
+          ],
+          "questions": [
+            "sys-prot-cabazitaxel-premedication-primary-g-csf"
           ]
         },
         {
@@ -2271,9 +2277,9 @@
               },
               "route": "p.o.",
               "schedule": {
-                "en": "once daily on an empty stomach (≥ 1 h before or ≥ 2 h after food)",
-                "de": "1 x täglich nüchtern (≥ 1 h vor oder ≥ 2 h nach dem Essen)",
-                "es": "una vez al día en ayunas (≥ 1 h antes o ≥ 2 h después de comer)"
+                "en": "once daily, fasting: no food 2 h before and 1 h after",
+                "de": "1 x täglich nüchtern: 2 h vorher und 1 h danach nichts essen",
+                "es": "una vez al día en ayunas: sin comer 2 h antes ni 1 h después"
               }
             },
             {
@@ -2359,6 +2365,9 @@
               "label": "eMC: Zytiga 500 mg SmPC",
               "url": "https://www.medicines.org.uk/emc/product/2381/smpc"
             }
+          ],
+          "questions": [
+            "sys-prot-abiraterone-mcrpc-steroid-dose-fasting"
           ]
         },
         {
@@ -2695,6 +2704,9 @@
               "label": "Fachinformation Bicalutamid-ratiopharm 50 mg",
               "url": "https://www.ratiopharm.de/assets/products/de/label/Bicalutamid-ratiopharm%2050%20mg%20Filmtabletten%20-%203.pdf?pzn=3574397"
             }
+          ],
+          "questions": [
+            "sys-prot-relugolix-restart-after-interruption"
           ]
         },
         {
@@ -2867,6 +2879,9 @@
               "label": "EC Union Register: Orgovyx product information (2024)",
               "url": "https://ec.europa.eu/health/documents/community-register/2024/20241118164179/anx_164179_en.pdf"
             }
+          ],
+          "questions": [
+            "sys-prot-relugolix-restart-after-interruption"
           ]
         },
         {
@@ -3351,9 +3366,9 @@
             "es": "PET-PSMA (p. ej. 68Ga-PSMA-11) antes del tratamiento para confirmar la positividad PSMA. Hidratación y micción frecuente; hemograma, creatinina y función hepática antes de cada dosis; profilaxis/cuidado de la xerostomía; normas de radioprotección (unidad de medicina nuclear). TDA: agonista o antagonista de GnRH, dosis según preparado (ver pautas de TDA), u orquiectomía previa; objetivo testosterona de castración < 50 ng/dl."
           },
           "cautions": {
-            "en": "Myelosuppression (anaemia, thrombocytopenia), xerostomia, nausea, renal toxicity; for toxicity reduce once by 20 % to 5.9 GBq (5,900 MBq), no re-escalation. Urinary incontinence/obstruction increases radiation exposure (catheter if needed). Fertility counselling.",
-            "de": "Myelosuppression (Anämie, Thrombozytopenie), Xerostomie, Übelkeit, Nephrotoxizität; bei Toxizität einmalig um 20 % auf 5,9 GBq (5900 MBq) reduzieren, keine Re-Eskalation. Harninkontinenz/-abflussstörung erhöht die Strahlenexposition (ggf. Katheter). Fertilitätsberatung.",
-            "es": "Mielosupresión (anemia, trombocitopenia), xerostomía, náuseas, toxicidad renal; ante toxicidad reducir una sola vez un 20 % a 5,9 GBq (5900 MBq), sin reescalar. La incontinencia/obstrucción urinaria aumenta la exposición a radiación (sonda si precisa). Consejo sobre fertilidad."
+            "en": "Myelosuppression (anaemia, thrombocytopenia), xerostomia, nausea, renal toxicity; for toxicity reduce once by 20 % to 5.9 GBq (5,900 MBq), no re-escalation. Urinary incontinence/obstruction increases radiation exposure (catheter if needed). Fertility counselling. Stop treatment if a further dose reduction would be needed or a dose is delayed by more than 4 weeks (EU SmPC).",
+            "de": "Myelosuppression (Anämie, Thrombozytopenie), Xerostomie, Übelkeit, Nephrotoxizität; bei Toxizität einmalig um 20 % auf 5,9 GBq (5900 MBq) reduzieren, keine Re-Eskalation. Harninkontinenz/-abflussstörung erhöht die Strahlenexposition (ggf. Katheter). Fertilitätsberatung. Abbruch, wenn eine weitere Dosisreduktion nötig wäre oder eine Gabe um mehr als 4 Wochen verschoben werden muss (EU-Fachinformation).",
+            "es": "Mielosupresión (anemia, trombocitopenia), xerostomía, náuseas, toxicidad renal; ante toxicidad reducir una sola vez un 20 % a 5,9 GBq (5900 MBq), sin reescalar. La incontinencia/obstrucción urinaria aumenta la exposición a radiación (sonda si precisa). Consejo sobre fertilidad. Suspender si fuera necesaria otra reducción de dosis o si una dosis se retrasa más de 4 semanas (ficha técnica UE)."
           },
           "evidence": {
             "en": "VISION (after ARPI and taxane: OS benefit). PSMAfore (taxane-naive after one ARPI) - this setting is not EU-approved (EU approval only after ARPI and taxane; off-label in Germany before taxane).",
@@ -3373,6 +3388,9 @@
               "label": "Pluvicto HCP: dosing and administration",
               "url": "https://www.pluvicto-hcp.com/psma-positive-mcrpc/dosing-and-administration"
             }
+          ],
+          "questions": [
+            "sys-prot-lu-psma-617-reduction-no-reescalation"
           ]
         },
         {
@@ -3559,6 +3577,9 @@
               "label": "eMC: Zoledronic acid 4 mg/100 ml SmPC (renal dose table)",
               "url": "https://www.medicines.org.uk/emc/product/7205/smpc"
             }
+          ],
+          "questions": [
+            "sys-prot-denosumab-prolia-to-xgeva-mcrpc"
           ]
         },
         {
@@ -3641,6 +3662,9 @@
               "label": "eMC: Prolia 60 mg SmPC",
               "url": "https://www.medicines.org.uk/emc/product/568/smpc"
             }
+          ],
+          "questions": [
+            "sys-prot-denosumab-prolia-to-xgeva-mcrpc"
           ]
         }
       ]
@@ -3737,6 +3761,9 @@
               "label": "KEYNOTE-564 overall survival (ASCO Post)",
               "url": "https://ascopost.com/news/april-2024/adjuvant-pembrolizumab-in-renal-cell-carcinoma-overall-survival-in-keynote-564/"
             }
+          ],
+          "questions": [
+            "sys-prot-adjuvant-pembrolizumab-q6w-duration"
           ]
         },
         {
@@ -3863,6 +3890,9 @@
               "label": "Nivolumab dosing in RCC (Drugs.com)",
               "url": "https://www.drugs.com/dosage/nivolumab.html"
             }
+          ],
+          "questions": [
+            "sys-prot-nivolumab-ipilimumab-induction-maintenance"
           ]
         },
         {
@@ -4175,6 +4205,9 @@
               "label": "Cabozantinib dosing reference (Medscape)",
               "url": "https://reference.medscape.com/drug/cometriq-cabometyx-cabozantinib-999791"
             }
+          ],
+          "questions": [
+            "sys-prot-cabozantinib-dose-with-nivolumab"
           ]
         },
         {
@@ -4243,6 +4276,9 @@
               "label": "EC approves cabozantinib after VEGF-targeted therapy (Exelixis)",
               "url": "https://ir.exelixis.com/news-releases/news-release-details/european-commission-approves-cabometyxtm-cabozantinib-tablets"
             }
+          ],
+          "questions": [
+            "sys-prot-cabozantinib-dose-with-nivolumab"
           ]
         },
         {
@@ -4311,6 +4347,9 @@
               "label": "Sunitinib 4/2 vs 2/1 schedule (PMC)",
               "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7836283/"
             }
+          ],
+          "questions": [
+            "sys-prot-sunitinib-4-2-first-order"
           ]
         },
         {
@@ -4787,6 +4826,9 @@
               "label": "Onkopedia – Keimzelltumoren des Mannes (Gonadale Keimzelltumoren)",
               "url": "https://www.onkopedia.com/de/onkopedia/guidelines/keimzelltumoren-des-mannes-gonadale-keimzelltumoren"
             }
+          ],
+          "questions": [
+            "sys-prot-bep-intermediate-cycle1-order"
           ]
         },
         {
@@ -5068,9 +5110,9 @@
             }
           ],
           "support": {
-            "en": "Mesna uroprotection is mandatory: total mesna at least 60% (ideally 100%) of the ifosfamide dose (EAU) – the schedule shown (3 × 240 mg/m² = 720 mg/m²/day; institutional schedules vary) equals 60%; alternative published schedule: mesna 1200 mg/m² i.v. together with ifosfamide plus mesna 2000 mg p.o. 2 and 6 h after ifosfamide. Primary G-CSF prophylaxis is recommended with VIP (EAU). Generous hydration, daily urine dipstick for haematuria; highly emetogenic antiemesis (NK1 + 5-HT3 antagonist + dexamethasone); daily electrolytes, creatinine and neurological status.",
-            "de": "Mesna-Uroprotektion obligat: Mesna-Gesamtdosis mindestens 60 % (idealerweise 100 %) der Ifosfamid-Dosis (EAU) – das angegebene Schema (3 × 240 mg/m² = 720 mg/m²/Tag; Hausschemata variieren) entspricht 60 %; alternatives publiziertes Schema: Mesna 1200 mg/m² i.v. zeitgleich mit Ifosfamid plus Mesna 2000 mg p.o. 2 und 6 h nach Ifosfamid. Primäre G-CSF-Prophylaxe bei VIP empfohlen (EAU). Großzügige Hydrierung, täglich Urin-Stix auf Hämaturie; Antiemese für hoch emetogene Therapie (NK1- + 5-HT3-Antagonist + Dexamethason); tägliche Kontrolle von Elektrolyten, Kreatinin und neurologischem Status.",
-            "es": "Uroprotección con mesna obligatoria: dosis total de mesna de al menos el 60 % (idealmente el 100 %) de la dosis de ifosfamida (EAU) – el esquema indicado (3 × 240 mg/m² = 720 mg/m²/día; los esquemas institucionales varían) equivale al 60 %; esquema publicado alternativo: mesna 1200 mg/m² i.v. junto con la ifosfamida más mesna 2000 mg p.o. a las 2 y 6 h. Se recomienda profilaxis primaria con G-CSF con VIP (EAU). Hidratación abundante, tira reactiva de orina diaria para hematuria; antiemesis de alto riesgo emetógeno (antagonista NK1 + 5-HT3 + dexametasona); control diario de electrolitos, creatinina y estado neurológico."
+            "en": "Mesna uroprotection is mandatory: total mesna at least 60% (ideally 100%) of the ifosfamide dose (mesna SmPC: 20 % at 0, 4 and 8 h) – the schedule shown (3 × 240 mg/m² = 720 mg/m²/day; institutional schedules vary) equals 60%; alternative published schedule: mesna 1200 mg/m² i.v. together with ifosfamide plus mesna 2000 mg p.o. 2 and 6 h after ifosfamide. Primary G-CSF prophylaxis is recommended with VIP (EAU). Generous hydration, daily urine dipstick for haematuria; highly emetogenic antiemesis (NK1 + 5-HT3 antagonist + dexamethasone); daily electrolytes, creatinine and neurological status.",
+            "de": "Mesna-Uroprotektion obligat: Mesna-Gesamtdosis mindestens 60 % (idealerweise 100 %) der Ifosfamid-Dosis (Fachinformation Mesna: je 20 % zu Stunde 0, 4 und 8) – das angegebene Schema (3 × 240 mg/m² = 720 mg/m²/Tag; Hausschemata variieren) entspricht 60 %; alternatives publiziertes Schema: Mesna 1200 mg/m² i.v. zeitgleich mit Ifosfamid plus Mesna 2000 mg p.o. 2 und 6 h nach Ifosfamid. Primäre G-CSF-Prophylaxe bei VIP empfohlen (EAU). Großzügige Hydrierung, täglich Urin-Stix auf Hämaturie; Antiemese für hoch emetogene Therapie (NK1- + 5-HT3-Antagonist + Dexamethason); tägliche Kontrolle von Elektrolyten, Kreatinin und neurologischem Status.",
+            "es": "Uroprotección con mesna obligatoria: dosis total de mesna de al menos el 60 % (idealmente el 100 %) de la dosis de ifosfamida (ficha técnica de mesna: 20 % a las 0, 4 y 8 h) – el esquema indicado (3 × 240 mg/m² = 720 mg/m²/día; los esquemas institucionales varían) equivale al 60 %; esquema publicado alternativo: mesna 1200 mg/m² i.v. junto con la ifosfamida más mesna 2000 mg p.o. a las 2 y 6 h. Se recomienda profilaxis primaria con G-CSF con VIP (EAU). Hidratación abundante, tira reactiva de orina diaria para hematuria; antiemesis de alto riesgo emetógeno (antagonista NK1 + 5-HT3 + dexametasona); control diario de electrolitos, creatinina y estado neurológico."
           },
           "cautions": {
             "en": "Ifosfamide: haemorrhagic cystitis (mesna), encephalopathy (confusion, somnolence – stop ifosfamide; methylene blue may be used), nephrotoxicity incl. Fanconi syndrome, especially combined with cisplatin. More haematotoxic than BEP. Usually given as an inpatient. Cisplatin: renal function before each cycle.",
@@ -5099,6 +5141,9 @@
               "label": "Fachinformation Holoxan (Ifosfamid), Baxter",
               "url": "https://www.baxter.de/de_DE/assets/downloads/fachinformation/holoxan.pdf"
             }
+          ],
+          "questions": [
+            "sys-prot-vip-mesna-gcsf-order"
           ]
         },
         {
@@ -5171,6 +5216,9 @@
               "label": "Onkopedia – Keimzelltumoren des Mannes (Gonadale Keimzelltumoren)",
               "url": "https://www.onkopedia.com/de/onkopedia/guidelines/keimzelltumoren-des-mannes-gonadale-keimzelltumoren"
             }
+          ],
+          "questions": [
+            "sys-prot-seminoma-carboplatin-auc7-calvert"
           ]
         },
         {
@@ -5397,6 +5445,9 @@
               "label": "Penile Cancer: EAU-ASCO 2026 Guideline Summary (Medscape)",
               "url": "https://reference.medscape.com/cc2/p10/eau-asco-guideline-penile-cancer-2025a1000hb9"
             }
+          ],
+          "questions": [
+            "sys-prot-penile-tip-neoadjuvant-cn3"
           ]
         }
       ]

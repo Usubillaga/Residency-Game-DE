@@ -149,8 +149,15 @@ function figure(o, expr = 'neutral') {
   if (o.badge) s += `<rect x="17" y="-101" width="16" height="11" rx="2" fill="#fff" ${st(2)}/><rect x="17" y="-101" width="16" height="3.5" fill="${o.badge}"/>`;
   if (o.pens) s += `<rect x="13" y="-97" width="17" height="13" rx="2" fill="${shade(top, -14)}" ${st(2)}/><path d="M17 -97 v-7 M21.5 -97 v-8" stroke="#e5484d" stroke-width="3" stroke-linecap="round"/><path d="M26 -97 v-6" stroke="#3cc7c1" stroke-width="3" stroke-linecap="round"/>`;
   if (o.bowtie) s += `<path d="M-12 -121 L-1 -115 L-12 -109Z M12 -121 L1 -115 L12 -109Z" fill="#c0392b" ${st(2)}/><circle cx="0" cy="-115" r="3" fill="#a52f23" ${st(1.8)}/>`;
+  if (o.dosimeter) s += dosimeter(-26, -92, 0.8);
   s += `<g transform="translate(0 -163)">${head(o, expr)}</g></g>`;
   return s;
+}
+
+// A film-badge dosimeter with the radiation trefoil: the radiation oncologist's mark.
+function dosimeter(x, y, scale) {
+  const blade = a => `<path d="M0 0 L${(9 * Math.cos(a)).toFixed(2)} ${(9 * Math.sin(a)).toFixed(2)} A9 9 0 0 1 ${(9 * Math.cos(a + 1.047)).toFixed(2)} ${(9 * Math.sin(a + 1.047)).toFixed(2)}Z" fill="${OL}"/>`;
+  return `<g transform="translate(${x} ${y}) scale(${scale})"><rect x="-12" y="-12" width="24" height="24" rx="4" fill="#f2c94c" ${st(2.2)}/><g transform="scale(.95)">${[-1.571, 0.524, 2.618].map(a => blade(a - 0.524)).join('')}<circle r="3" fill="#f2c94c" ${st(1.4)}/></g></g>`;
 }
 
 let clipSeq = 0;
@@ -169,6 +176,7 @@ function portrait(o, expr = 'neutral', size = 96, opt = {}) {
     if (o.bowtie) body += `<path d="M-12 26 L-1 32 L-12 38Z M12 26 L1 32 L12 38Z" fill="#c0392b" ${st(2)}/><circle cx="0" cy="32" r="3" fill="#a52f23"/>`;
     if (o.stetho) body += `<path d="M-22 30 Q-26 52 -10 58 Q2 60 6 48" fill="none" stroke="#3a4157" stroke-width="3.5" stroke-linecap="round"/><circle cx="6" cy="46" r="5" fill="#cfd6e6" ${st(2.2)}/>`;
     if (o.pens) body += `<rect x="18" y="40" width="16" height="13" rx="2" fill="${shade(top, -14)}" ${st(2)}/><path d="M22 40 v-6 M27 40 v-7" stroke="#e5484d" stroke-width="3" stroke-linecap="round"/>`;
+    if (o.dosimeter) body += dosimeter(26, 46, 1);
   }
   const neck = `<rect x="-9" y="16" width="18" height="16" fill="${o.skin}" ${st()}/>`;
   const phone = opt.phone ? `<g transform="translate(30 2) rotate(18)"><rect x="-7" y="-24" width="14" height="40" rx="6" fill="#2d3344" ${st(2.2)}/><circle cx="0" cy="18" r="9" fill="${o.skin}" ${st(2.5)}/></g>` : '';
@@ -185,7 +193,8 @@ function portrait(o, expr = 'neutral', size = 96, opt = {}) {
   const STAFF = {
     nurse:{skin:'#f4d2b5',hair:'bun',hairColor:'#e0b453',top:'#2f4f9e',outfit:'scrubs',pens:true,badge:'#e5484d',bg:'#3d5fb8'},
     attending:{skin:'#efc9a6',hair:'messy',hairColor:'#5b4a3c',glasses:true,stubble:true,top:'#5f7f9e',outfit:'coat',bg:'#6b5b95'},
-    chief:{skin:'#f0caa8',hair:'sidepart',hairColor:'#d9dde6',browColor:'#c9ccd6',bushy:true,glasses:true,bowtie:true,outfit:'coatsuit',bg:'#9b3d3d'}
+    chief:{skin:'#f0caa8',hair:'sidepart',hairColor:'#d9dde6',browColor:'#c9ccd6',bushy:true,glasses:true,bowtie:true,outfit:'coatsuit',bg:'#9b3d3d'},
+    radiotherapist:{skin:'#a8714f',hair:'bob',hairColor:'#2b1d16',top:'#2f8f86',outfit:'coat',dosimeter:true,bg:'#2d7f7a'}
   };
   const WORDS = {
     en:{areas:['Emergency','Ward','Clinic','Endoscopy','Theatre'],nurse:'Nurse',attending:'Attending',chief:'The chief',player:'You',coffee:'Coffee break',night:'UROLOGY · NIGHT SHIFT',room:'Conference room',stage:'Cartoon hospital: choose a department, a patient or the coffee machine',hero:'Your night team in a cartoon hospital, with a sleepy attending, a helpful nurse and a stern chief',welcome:'First night. Fresh scrubs. Very old coffee.',nurseLine:'Two hands. Five doors. We have got this.',chiefLine:'My question has three subquestions.',sleep:'ON CALL',paper:'PAPERWORK',waiting:'Not here yet',finished:'Case reviewed',available:'Open the chart',empty:'Quiet room. The pager disagrees.',routine:'Routine',urgent:'Urgent',critical:'Critical',station:'NURSING STATION',machine:'COFFEE'},
@@ -216,7 +225,7 @@ function portrait(o, expr = 'neutral', size = 96, opt = {}) {
   function portraitRole(role,expr='neutral',size=96,index=0) {
     const aliases={jana:'nurse',brenner:'attending',chef:'chief'};
     const look=STAFF[aliases[role]||role]||AVATARS[avatarIndex(index)];
-    return portrait(look,expression(expr),safeSize(size),{phone:role==='attending'});
+    return portrait(look,expression(expr),safeSize(size),{phone:role==='attending'||role==='radiotherapist'});
   }
   function patientPortrait(id,expr='neutral',size=96,hints) { return portrait(patientLook(id,hints),expression(expr),safeSize(size)); }
   function avatar(index,size=96) { return portrait(AVATARS[avatarIndex(index)],'smile',safeSize(size)); }
@@ -386,7 +395,9 @@ function portrait(o, expr = 'neutral', size = 96, opt = {}) {
   function scene(area,patients,selectedId,time='22:00',index=0,language='en',options) {
     // Daytime duties get daylight and an awake attending; the tumour board meets in a conference room
     // where every case of the session lies on the table as a folder.
-    const o=options||{},board=o.duty==='board',day=board||o.duty==='clinic'||o.duty==='elective'||o.duty==='dayclinic';
+    const o=options||{},board=o.duty==='board',day=board||['clinic','elective','dayclinic','radiotherapy'].includes(o.duty);
+    // In radiation oncology the radiation oncologist stands at the station instead of the attending.
+    const consultant=o.duty==='radiotherapy'?STAFF.radiotherapist:STAFF.attending;
     if(!AREAS.includes(area))area='emergency';
     const w=lang(language);
     const list=(Array.isArray(patients)?patients:[]).filter(p=>board||patientArea(p)===area);
@@ -407,7 +418,7 @@ function portrait(o, expr = 'neutral', size = 96, opt = {}) {
       '<g transform="translate(177 410) scale(.90)" class="cartoon-breathe">'+figure(STAFF.nurse,visible.some(p=>p.feedback==='unsafe')?'stern':'smile')+'</g>'+
       '<g transform="translate(339 409) scale(.85)">'+figure(STAFF.chief,'stern')+'</g>'+
       '<g transform="translate(451 412) scale(.87)" class="cartoon-breathe">'+figure(AVATARS[avatarIndex(index)],visible.some(p=>p.feedback==='unsafe')?'scared':'neutral')+'</g>'+
-      (day?'<g transform="translate(90 296) scale(.53)">'+figure(STAFF.attending,'smile')+'</g>':'<g transform="translate(90 296) scale(.53)" class="cartoon-rest">'+figure(STAFF.attending,'sleepy')+'</g>')+
+      (day?'<g transform="translate(90 296) scale(.53)">'+figure(consultant,'smile')+'</g>':'<g transform="translate(90 296) scale(.53)" class="cartoon-rest">'+figure(STAFF.attending,'sleepy')+'</g>')+
       '<rect x="9" y="346" width="219" height="66" rx="7" fill="#d8c29d" '+st(3)+'/><rect x="5" y="334" width="227" height="17" rx="5" fill="#ecdcbd" '+st(3)+'/>'+text(118,379,w.station,14,OL,'middle','font-weight="800"')+
       '<rect x="88" y="296" width="61" height="36" rx="5" fill="#293249" '+st(3)+'/><rect x="95" y="302" width="47" height="24" rx="3" fill="#8cd6cc"/><path d="M119 332V337" '+st(3)+'/>'+
       coffeeMachine(239,302,language,true,.71)+pager(410,327)+

@@ -9877,6 +9877,1770 @@
     ]
   },
   {
+    "id": "sys-prot-arasens-docetaxel-darolutamide-order",
+    "area": "clinic",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "dayclinic",
+    "patient": {
+      "name": "Hartmut Sonnleitner",
+      "age": 64,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Triplet with darolutamide: writing the docetaxel order",
+      "de": "Tripeltherapie mit Darolutamid: die Docetaxel-Verordnung",
+      "es": "Triplete con darolutamida: la prescripción de docetaxel"
+    },
+    "presenting": {
+      "en": "64-year-old man with de novo metastatic hormone-sensitive prostate cancer (ISUP grade group 5, PSA 212 ng/ml); PSMA PET/CT shows 14 bone metastases and retroperitoneal nodes, no visceral metastases (high volume). ADT with degarelix was started 3 weeks ago (testosterone now 18 ng/dl), and darolutamide 600 mg twice daily 2 weeks ago. The tumour board recommends the triplet as in ARASENS. Height 180 cm, weight 82 kg, BSA 2.0 m², ECOG 0, neutrophils 4.1 × 10⁹/l, bilirubin and transaminases normal, creatinine clearance 84 mL/min, no neuropathy. You are writing the docetaxel order.",
+      "de": "64-jähriger Patient mit de-novo-metastasiertem hormonsensitivem Prostatakarzinom (ISUP-Graduierungsgruppe 5, PSA 212 ng/ml); die PSMA-PET/CT zeigt 14 Knochenmetastasen und retroperitoneale Lymphknoten, keine viszeralen Metastasen (High-Volume). Vor 3 Wochen wurde die ADT mit Degarelix begonnen (Testosteron jetzt 18 ng/dl), vor 2 Wochen Darolutamid 600 mg 2 x täglich. Das Tumorboard empfiehlt die Tripeltherapie nach ARASENS. Größe 180 cm, Gewicht 82 kg, KOF 2,0 m², ECOG 0, Neutrophile 4,1 × 10⁹/l, Bilirubin und Transaminasen normal, Kreatinin-Clearance 84 ml/min, keine Neuropathie. Sie schreiben die Docetaxel-Verordnung.",
+      "es": "Varón de 64 años con cáncer de próstata hormonosensible metastásico de novo (grupo de grado ISUP 5, PSA 212 ng/ml); la PET/TC PSMA muestra 14 metástasis óseas y ganglios retroperitoneales, sin metástasis viscerales (alto volumen). Hace 3 semanas se inició la ADT con degarelix (testosterona actual 18 ng/dl) y hace 2 semanas darolutamida 600 mg 2 veces al día. El comité de tumores recomienda el triplete según ARASENS. Talla 180 cm, peso 82 kg, superficie corporal 2,0 m², ECOG 0, neutrófilos 4,1 × 10⁹/l, bilirrubina y transaminasas normales, aclaramiento de creatinina 84 ml/min, sin neuropatía. Usted redacta la prescripción de docetaxel."
+    },
+    "vitals": {
+      "bp": "136/82",
+      "hr": 76,
+      "temp": 36.6,
+      "spo2": 98,
+      "rr": 14
+    },
+    "objectives": {
+      "en": [
+        "Order docetaxel in the mHSPC triplet: 75 mg/m² every 21 days for 6 cycles",
+        "Give the dexamethasone premedication and continue darolutamide and ADT without a break"
+      ],
+      "de": [
+        "Docetaxel in der mHSPC-Tripeltherapie verordnen: 75 mg/m² alle 21 Tage, 6 Zyklen",
+        "Dexamethason-Prämedikation geben und Darolutamid sowie ADT ohne Pause fortführen"
+      ],
+      "es": [
+        "Prescribir docetaxel en el triplete del CPHSm: 75 mg/m² cada 21 días, 6 ciclos",
+        "Administrar la premedicación con dexametasona y mantener darolutamida y ADT sin interrupción"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which order is correct?",
+          "de": "Welche Verordnung ist korrekt?",
+          "es": "¿Qué prescripción es correcta?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Docetaxel 75 mg/m² (150 mg) i.v. on day 1 every 3 weeks for 10 cycles plus prednisone 5 mg twice daily; pause darolutamide during chemotherapy",
+              "de": "Docetaxel 75 mg/m² (150 mg) i.v. an Tag 1 alle 3 Wochen, 10 Zyklen, plus Prednison 5 mg 2 x täglich; Darolutamid während der Chemotherapie pausieren",
+              "es": "Docetaxel 75 mg/m² (150 mg) i.v. el día 1 cada 3 semanas, 10 ciclos, más prednisona 5 mg 2 veces al día; suspender darolutamida durante la quimioterapia"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: up to 10 cycles with prednisone 5 mg twice daily is the mCRPC regimen (TAX 327). In the mHSPC triplet docetaxel is limited to 6 cycles, and darolutamide is continued throughout, even when a docetaxel cycle is delayed, interrupted or stopped.",
+              "de": "Falsch: Bis zu 10 Zyklen mit Prednison 5 mg 2 x täglich sind das mCRPC-Schema (TAX 327). In der mHSPC-Tripeltherapie ist Docetaxel auf 6 Zyklen begrenzt, und Darolutamid läuft durchgehend weiter, auch wenn ein Docetaxel-Zyklus verschoben, unterbrochen oder abgebrochen wird.",
+              "es": "Incorrecto: hasta 10 ciclos con prednisona 5 mg 2 veces al día es la pauta del CPRCm (TAX 327). En el triplete del CPHSm el docetaxel se limita a 6 ciclos y la darolutamida se mantiene de forma continua, aunque un ciclo de docetaxel se retrase, se interrumpa o se suspenda."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Docetaxel 75 mg/m² (150 mg) i.v. over 1 h on day 1 every 3 weeks, 6 cycles; dexamethasone 8 mg p.o. 12 h, 3 h and 1 h before each infusion; continue darolutamide 600 mg twice daily with food and ADT unchanged",
+              "de": "Docetaxel 75 mg/m² (150 mg) i.v. über 1 h an Tag 1 alle 3 Wochen, 6 Zyklen; Dexamethason 8 mg p.o. 12 h, 3 h und 1 h vor jeder Infusion; Darolutamid 600 mg 2 x täglich zu einer Mahlzeit und ADT unverändert fortführen",
+              "es": "Docetaxel 75 mg/m² (150 mg) i.v. en 1 h el día 1 cada 3 semanas, 6 ciclos; dexametasona 8 mg v.o. 12 h, 3 h y 1 h antes de cada infusión; mantener sin cambios darolutamida 600 mg 2 veces al día con alimentos y la ADT"
+            },
+            "score": 10,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Correct: 75 mg/m² × 2.0 m² = 150 mg on day 1 of a 21-day cycle, 6 cycles in total, started within 6 weeks of darolutamide. Dexamethasone 8 mg 12, 3 and 1 h before docetaxel reduces fluid retention and hypersensitivity reactions. Darolutamide (1200 mg/day) and ADT continue until progression; check neutrophils before each cycle (≥ 1.5 × 10⁹/l).",
+              "de": "Richtig: 75 mg/m² × 2,0 m² = 150 mg an Tag 1 eines 21-Tage-Zyklus, insgesamt 6 Zyklen, Beginn innerhalb von 6 Wochen nach Start von Darolutamid. Dexamethason 8 mg 12, 3 und 1 h vor Docetaxel vermindert Flüssigkeitsretention und Überempfindlichkeitsreaktionen. Darolutamid (1200 mg/Tag) und ADT laufen bis zum Progress weiter; vor jedem Zyklus Neutrophile prüfen (≥ 1,5 × 10⁹/l).",
+              "es": "Correcto: 75 mg/m² × 2,0 m² = 150 mg el día 1 de un ciclo de 21 días, 6 ciclos en total, iniciados en las 6 semanas siguientes al comienzo de la darolutamida. La dexametasona 8 mg 12, 3 y 1 h antes del docetaxel reduce la retención de líquidos y las reacciones de hipersensibilidad. La darolutamida (1200 mg/día) y la ADT continúan hasta la progresión; antes de cada ciclo se comprueban los neutrófilos (≥ 1,5 × 10⁹/l)."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Docetaxel 75 mg/m² (150 mg) i.v. on days 1, 8 and 15 every 3 weeks, 6 cycles; dexamethasone 8 mg before each infusion; continue darolutamide",
+              "de": "Docetaxel 75 mg/m² (150 mg) i.v. an Tag 1, 8 und 15 alle 3 Wochen, 6 Zyklen; Dexamethason 8 mg vor jeder Infusion; Darolutamid fortführen",
+              "es": "Docetaxel 75 mg/m² (150 mg) i.v. los días 1, 8 y 15 cada 3 semanas, 6 ciclos; dexametasona 8 mg antes de cada infusión; mantener darolutamida"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Dangerous: 75 mg/m² is given once per 21-day cycle. Three doses per cycle triple the dose intensity and risk life-threatening febrile neutropenia; the nadir of the first dose falls on day 7-10, exactly when the second dose would be given.",
+              "de": "Gefährlich: 75 mg/m² werden einmal pro 21-Tage-Zyklus gegeben. Drei Gaben pro Zyklus verdreifachen die Dosisintensität und riskieren eine lebensbedrohliche febrile Neutropenie; der Nadir der ersten Gabe liegt an Tag 7-10, genau dann wäre die zweite Gabe fällig.",
+              "es": "Peligroso: 75 mg/m² se administran una vez por ciclo de 21 días. Tres dosis por ciclo triplican la intensidad de dosis y exponen a una neutropenia febril potencialmente mortal; el nadir de la primera dosis cae en los días 7-10, justo cuando tocaría la segunda dosis."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Docetaxel 60 mg/m² (120 mg) i.v. on day 1 every 3 weeks, 6 cycles, with dexamethasone premedication; reduce darolutamide to 300 mg twice daily",
+              "de": "Docetaxel 60 mg/m² (120 mg) i.v. an Tag 1 alle 3 Wochen, 6 Zyklen, mit Dexamethason-Prämedikation; Darolutamid auf 300 mg 2 x täglich reduzieren",
+              "es": "Docetaxel 60 mg/m² (120 mg) i.v. el día 1 cada 3 semanas, 6 ciclos, con premedicación de dexametasona; reducir darolutamida a 300 mg 2 veces al día"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: 60 mg/m² is the reduced dose after febrile neutropenia, neutrophils < 0.5 × 10⁹/l for more than 1 week or severe skin or nerve toxicity, none of which applies. Darolutamide 300 mg twice daily is reserved for grade ≥ 3 toxicity, eGFR 15-29 mL/min/1.73 m² or Child-Pugh B/C; his clearance is 84 mL/min.",
+              "de": "Falsch: 60 mg/m² ist die reduzierte Dosis nach febriler Neutropenie, Neutrophilen < 0,5 × 10⁹/l über mehr als 1 Woche oder schweren Haut- bzw. Nervenreaktionen, was hier alles nicht vorliegt. Darolutamid 2 x 300 mg ist Toxizität Grad ≥ 3, einer eGFR von 15-29 ml/min/1,73 m² oder Child-Pugh B/C vorbehalten; seine Clearance beträgt 84 ml/min.",
+              "es": "Incorrecto: 60 mg/m² es la dosis reducida tras neutropenia febril, neutrófilos < 0,5 × 10⁹/l durante más de 1 semana o toxicidad cutánea o neurológica grave, y nada de ello se da aquí. La darolutamida 300 mg 2 veces al día se reserva para toxicidad de grado ≥ 3, FGe de 15-29 ml/min/1,73 m² o Child-Pugh B/C; su aclaramiento es de 84 ml/min."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Docetaxel 75 mg/m² (150 mg) i.v. on day 1 every 3 weeks until progression; dexamethasone only if a hypersensitivity reaction occurs; continue darolutamide",
+              "de": "Docetaxel 75 mg/m² (150 mg) i.v. an Tag 1 alle 3 Wochen bis zum Progress; Dexamethason nur bei Überempfindlichkeitsreaktion; Darolutamid fortführen",
+              "es": "Docetaxel 75 mg/m² (150 mg) i.v. el día 1 cada 3 semanas hasta la progresión; dexametasona solo si aparece una reacción de hipersensibilidad; mantener darolutamida"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: in the triplet docetaxel is a fixed course of 6 cycles; only darolutamide and ADT continue until progression. The dexamethasone premedication (8 mg 12, 3 and 1 h before) is given routinely, not only after a reaction, because it prevents fluid retention and hypersensitivity.",
+              "de": "Falsch: In der Tripeltherapie ist Docetaxel ein fester Kurs von 6 Zyklen; nur Darolutamid und ADT laufen bis zum Progress. Die Dexamethason-Prämedikation (8 mg 12, 3 und 1 h vorher) wird regelhaft gegeben, nicht erst nach einer Reaktion, weil sie Flüssigkeitsretention und Überempfindlichkeitsreaktionen vorbeugt.",
+              "es": "Incorrecto: en el triplete el docetaxel es un curso fijo de 6 ciclos; solo la darolutamida y la ADT continúan hasta la progresión. La premedicación con dexametasona (8 mg 12, 3 y 1 h antes) se administra de forma sistemática, no solo tras una reacción, porque previene la retención de líquidos y la hipersensibilidad."
+            }
+          }
+        ],
+        "best": "b"
+      }
+    ],
+    "takeaway": {
+      "en": "In the mHSPC triplet docetaxel is given at 75 mg/m² on day 1 every 21 days for exactly 6 cycles, with dexamethasone 8 mg 12, 3 and 1 h before each infusion. Darolutamide 600 mg twice daily and ADT continue without a break until progression, even if a docetaxel cycle is delayed.",
+      "de": "Merksatz: In der mHSPC-Tripeltherapie wird Docetaxel mit 75 mg/m² an Tag 1 alle 21 Tage über genau 6 Zyklen gegeben, mit Dexamethason 8 mg 12, 3 und 1 h vor jeder Infusion. Darolutamid 600 mg 2 x täglich und ADT laufen ohne Pause bis zum Progress weiter, auch wenn ein Docetaxel-Zyklus verschoben wird.",
+      "es": "En el triplete del CPHSm el docetaxel se administra a 75 mg/m² el día 1 cada 21 días durante exactamente 6 ciclos, con dexametasona 8 mg 12, 3 y 1 h antes de cada infusión. La darolutamida 600 mg 2 veces al día y la ADT continúan sin pausa hasta la progresión, aunque se retrase un ciclo de docetaxel."
+    },
+    "references": [
+      "bank-guide-prostatakarzinom",
+      "ema-medicines",
+      "fachinfo-de"
+    ]
+  },
+  {
+    "id": "sys-prot-abiraterone-mcrpc-steroid-dose-fasting",
+    "area": "clinic",
+    "level": 1,
+    "acuity": "routine",
+    "duty": "dayclinic",
+    "patient": {
+      "name": "Reinhold Pfannstiel",
+      "age": 73,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Starting abiraterone in castration-resistant disease",
+      "de": "Abirateron-Start beim kastrationsresistenten Karzinom",
+      "es": "Inicio de abiraterona en la enfermedad resistente a la castración"
+    },
+    "presenting": {
+      "en": "73-year-old man who received radiotherapy with 24 months of ADT for high-risk prostate cancer 6 years ago. Three years ago nodal metastases appeared; he declined treatment intensification at that time and has since received leuprorelin 11.25 mg every 3 months alone. PSA has now risen from 3.1 to 9.8 ng/ml with testosterone at 14 ng/dl; PSMA PET/CT shows 4 new bone metastases, no visceral metastases. He is asymptomatic, ECOG 0 and chemotherapy-naive. Blood pressure 132/80 mmHg, potassium 4.3 mmol/l, ALT, AST and bilirubin normal, no liver disease, no heart failure. The tumour board recommends abiraterone acetate.",
+      "de": "73-jähriger Patient, vor 6 Jahren Strahlentherapie mit 24 Monaten ADT wegen eines Hochrisiko-Prostatakarzinoms. Vor 3 Jahren traten Lymphknotenmetastasen auf; eine Therapieintensivierung lehnte er damals ab und erhält seitdem allein Leuprorelin 11,25 mg alle 3 Monate. Jetzt ist das PSA von 3,1 auf 9,8 ng/ml gestiegen, Testosteron 14 ng/dl; die PSMA-PET/CT zeigt 4 neue Knochenmetastasen, keine viszeralen Metastasen. Er ist asymptomatisch, ECOG 0, Chemotherapie-naiv. Blutdruck 132/80 mmHg, Kalium 4,3 mmol/l, GPT, GOT und Bilirubin normal, keine Lebererkrankung, keine Herzinsuffizienz. Das Tumorboard empfiehlt Abirateronacetat.",
+      "es": "Varón de 73 años que hace 6 años recibió radioterapia con 24 meses de ADT por un cáncer de próstata de alto riesgo. Hace 3 años aparecieron metástasis ganglionares; entonces rechazó intensificar el tratamiento y desde entonces recibe solo leuprorelina 11,25 mg cada 3 meses. Ahora el PSA ha subido de 3,1 a 9,8 ng/ml con testosterona de 14 ng/dl; la PET/TC PSMA muestra 4 metástasis óseas nuevas, sin metástasis viscerales. Está asintomático, ECOG 0 y sin quimioterapia previa. Presión arterial 132/80 mmHg, potasio 4,3 mmol/l, ALT, AST y bilirrubina normales, sin hepatopatía ni insuficiencia cardiaca. El comité de tumores recomienda acetato de abiraterona."
+    },
+    "vitals": {
+      "bp": "132/80",
+      "hr": 70,
+      "temp": 36.5,
+      "spo2": 97,
+      "rr": 14
+    },
+    "objectives": {
+      "en": [
+        "Choose the steroid dose of abiraterone in mCRPC (10 mg daily) as opposed to mHSPC (5 mg daily)",
+        "Instruct fasting intake and set up liver, blood pressure and potassium monitoring"
+      ],
+      "de": [
+        "Die Steroiddosis zu Abirateron im mCRPC (10 mg täglich) von der im mHSPC (5 mg täglich) unterscheiden",
+        "Nüchterne Einnahme anordnen und Kontrollen von Leberwerten, Blutdruck und Kalium festlegen"
+      ],
+      "es": [
+        "Distinguir la dosis de corticoide con abiraterona en el CPRCm (10 mg diarios) de la del CPHSm (5 mg diarios)",
+        "Indicar la toma en ayunas y organizar los controles de perfil hepático, presión arterial y potasio"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which order and monitoring plan is correct?",
+          "de": "Welche Verordnung und welches Monitoring sind korrekt?",
+          "es": "¿Qué prescripción y qué plan de controles son correctos?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Abiraterone acetate 1000 mg once daily on an empty stomach plus prednisolone 5 mg once daily, as in hormone-sensitive disease; continue leuprorelin; liver enzymes every 2 weeks for 3 months",
+              "de": "Abirateronacetat 1000 mg 1 x täglich nüchtern plus Prednisolon 5 mg 1 x täglich wie beim hormonsensitiven Karzinom; Leuprorelin fortführen; Transaminasen 3 Monate lang alle 2 Wochen",
+              "es": "Acetato de abiraterona 1000 mg 1 vez al día en ayunas más prednisolona 5 mg 1 vez al día, como en la enfermedad hormonosensible; mantener leuprorelina; transaminasas cada 2 semanas durante 3 meses"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: prednisone or prednisolone 5 mg once daily is the mHSPC dose (LATITUDE). In mCRPC the EU label specifies 10 mg daily; the lower dose suppresses the ACTH-driven mineralocorticoid excess less well.",
+              "de": "Falsch: Prednison oder Prednisolon 5 mg 1 x täglich ist die mHSPC-Dosis (LATITUDE). Beim mCRPC sieht die EU-Fachinformation 10 mg täglich vor; die niedrigere Dosis unterdrückt den ACTH-getriebenen Mineralokortikoid-Exzess schlechter.",
+              "es": "Incorrecto: prednisona o prednisolona 5 mg 1 vez al día es la dosis del CPHSm (LATITUDE). En el CPRCm la ficha técnica europea indica 10 mg diarios; la dosis menor frena peor el exceso de mineralocorticoides inducido por la ACTH."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Abiraterone acetate 1000 mg once daily with breakfast for better tolerance plus prednisolone 10 mg daily; continue leuprorelin",
+              "de": "Abirateronacetat 1000 mg 1 x täglich zum Frühstück zur besseren Verträglichkeit plus Prednisolon 10 mg täglich; Leuprorelin fortführen",
+              "es": "Acetato de abiraterona 1000 mg 1 vez al día con el desayuno para tolerarlo mejor más prednisolona 10 mg diarios; mantener leuprorelina"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Dangerous: food raises the exposure to abiraterone up to about 10-fold (AUC) in a highly variable way, an uncontrolled overexposure whose safety has not been established. It must always be taken fasting: at least 2 h after eating, and no food for at least 1 h afterwards.",
+              "de": "Gefährlich: Nahrung steigert die Exposition gegenüber Abirateron stark schwankend bis etwa auf das 10-Fache (AUC), eine unkontrollierte Überexposition, deren Sicherheit nicht belegt ist. Die Einnahme erfolgt immer nüchtern: frühestens 2 h nach dem Essen, danach mindestens 1 h nichts essen.",
+              "es": "Peligroso: los alimentos aumentan la exposición a la abiraterona de forma muy variable, hasta unas 10 veces (AUC), una sobreexposición no controlada cuya seguridad no está establecida. Debe tomarse siempre en ayunas: al menos 2 h después de comer y sin comer durante al menos 1 h después."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Abiraterone acetate 500 mg once daily on an empty stomach plus prednisolone 10 mg daily as a cautious start at 73 years; liver enzymes every 3 months",
+              "de": "Abirateronacetat 500 mg 1 x täglich nüchtern plus Prednisolon 10 mg täglich als vorsichtiger Start mit 73 Jahren; Transaminasen alle 3 Monate",
+              "es": "Acetato de abiraterona 500 mg 1 vez al día en ayunas más prednisolona 10 mg diarios como inicio prudente a los 73 años; transaminasas cada 3 meses"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: 500 mg is not a starting dose but the dose for resuming after hepatotoxicity (ALT/AST > 5 × ULN) has resolved; age alone is no reason to reduce. Liver enzymes are checked every 2 weeks for the first 3 months, then monthly, not every 3 months.",
+              "de": "Falsch: 500 mg ist keine Startdosis, sondern die Dosis zur Wiederaufnahme nach abgeklungener Hepatotoxizität (GPT/GOT > 5 x ONW); das Alter allein rechtfertigt keine Reduktion. Transaminasen werden in den ersten 3 Monaten alle 2 Wochen und danach monatlich kontrolliert, nicht alle 3 Monate.",
+              "es": "Incorrecto: 500 mg no es una dosis de inicio, sino la dosis para reanudar tras resolverse una hepatotoxicidad (ALT/AST > 5 × LSN); la edad sola no justifica reducir. Las transaminasas se controlan cada 2 semanas los primeros 3 meses y después mensualmente, no cada 3 meses."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Abiraterone acetate 1000 mg once daily on an empty stomach (no food for ≥ 2 h before and ≥ 1 h after the dose) plus prednisolone 10 mg daily; continue leuprorelin; liver enzymes every 2 weeks for 3 months, then monthly; blood pressure, potassium and oedema monthly",
+              "de": "Abirateronacetat 1000 mg 1 x täglich nüchtern (≥ 2 h vor und ≥ 1 h nach der Einnahme nichts essen) plus Prednisolon 10 mg täglich; Leuprorelin fortführen; Transaminasen 3 Monate lang alle 2 Wochen, dann monatlich; Blutdruck, Kalium und Ödeme monatlich",
+              "es": "Acetato de abiraterona 1000 mg 1 vez al día en ayunas (sin comer ≥ 2 h antes y ≥ 1 h después de la toma) más prednisolona 10 mg diarios; mantener leuprorelina; transaminasas cada 2 semanas durante 3 meses y después mensualmente; presión arterial, potasio y edemas cada mes"
+            },
+            "score": 10,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Correct: in mCRPC abiraterone 1000 mg is combined with prednisone or prednisolone 10 mg daily, taken fasting because food markedly increases absorption. ADT continues. Liver enzymes every 2 weeks for 3 months, then monthly, and monthly blood pressure, potassium and fluid status detect hepatotoxicity and mineralocorticoid excess early. The steroid must not be stopped abruptly.",
+              "de": "Richtig: Im mCRPC wird Abirateron 1000 mg mit Prednison oder Prednisolon 10 mg täglich kombiniert und nüchtern eingenommen, weil Nahrung die Resorption deutlich steigert. Die ADT läuft weiter. Transaminasen 3 Monate lang alle 2 Wochen, dann monatlich, sowie monatlich Blutdruck, Kalium und Ödeme erfassen Hepatotoxizität und Mineralokortikoid-Exzess früh. Das Steroid darf nicht abrupt abgesetzt werden.",
+              "es": "Correcto: en el CPRCm la abiraterona 1000 mg se combina con prednisona o prednisolona 10 mg diarios y se toma en ayunas, porque los alimentos aumentan mucho la absorción. La ADT continúa. Las transaminasas cada 2 semanas durante 3 meses y luego mensuales, y el control mensual de presión arterial, potasio y edemas detectan pronto la hepatotoxicidad y el exceso de mineralocorticoides. El corticoide no debe suspenderse bruscamente."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Abiraterone acetate 1000 mg once daily on an empty stomach plus prednisolone 10 mg daily; stop leuprorelin because the disease is now castration-resistant",
+              "de": "Abirateronacetat 1000 mg 1 x täglich nüchtern plus Prednisolon 10 mg täglich; Leuprorelin absetzen, da das Karzinom jetzt kastrationsresistent ist",
+              "es": "Acetato de abiraterona 1000 mg 1 vez al día en ayunas más prednisolona 10 mg diarios; suspender la leuprorelina porque la enfermedad ya es resistente a la castración"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: ADT is continued in mCRPC. Stopping leuprorelin lets testosterone recover, and abiraterone is approved together with ADT; the castration target remains testosterone < 50 ng/dl.",
+              "de": "Falsch: Die ADT wird im mCRPC fortgeführt. Nach Absetzen von Leuprorelin erholt sich das Testosteron, und Abirateron ist in Kombination mit ADT zugelassen; Ziel bleibt das Kastrationsniveau Testosteron < 50 ng/dl.",
+              "es": "Incorrecto: la ADT se mantiene en el CPRCm. Al suspender la leuprorelina la testosterona se recupera, y la abiraterona está autorizada junto con la ADT; el objetivo sigue siendo una testosterona de castración < 50 ng/dl."
+            }
+          }
+        ],
+        "best": "d"
+      }
+    ],
+    "takeaway": {
+      "en": "Abiraterone 1000 mg is always taken fasting; the companion steroid is prednisone or prednisolone 5 mg daily in mHSPC but 10 mg daily in mCRPC. ADT continues, liver enzymes are checked every 2 weeks for 3 months and then monthly, and blood pressure, potassium and oedema monthly.",
+      "de": "Merksatz: Abirateron 1000 mg wird immer nüchtern eingenommen; das Begleitsteroid ist Prednison oder Prednisolon 5 mg täglich im mHSPC, aber 10 mg täglich im mCRPC. Die ADT läuft weiter, Transaminasen werden 3 Monate lang alle 2 Wochen und dann monatlich kontrolliert, Blutdruck, Kalium und Ödeme monatlich.",
+      "es": "La abiraterona 1000 mg se toma siempre en ayunas; el corticoide acompañante es prednisona o prednisolona 5 mg diarios en el CPHSm, pero 10 mg diarios en el CPRCm. La ADT continúa, las transaminasas se controlan cada 2 semanas durante 3 meses y después mensualmente, y la presión arterial, el potasio y los edemas cada mes."
+    },
+    "references": [
+      "bank-guide-prostatakarzinom",
+      "ema-medicines",
+      "fachinfo-de"
+    ]
+  },
+  {
+    "id": "sys-prot-cabazitaxel-premedication-primary-g-csf",
+    "area": "clinic",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "dayclinic",
+    "patient": {
+      "name": "Volkmar Trautwein",
+      "age": 71,
+      "sex": "male"
+    },
+    "title": {
+      "en": "First cabazitaxel cycle after docetaxel and enzalutamide",
+      "de": "Erster Cabazitaxel-Zyklus nach Docetaxel und Enzalutamid",
+      "es": "Primer ciclo de cabazitaxel tras docetaxel y enzalutamida"
+    },
+    "presenting": {
+      "en": "71-year-old man with mCRPC and bone and nodal metastases. He received 8 cycles of docetaxel with prednisone (last dose 10 months ago), then enzalutamide, on which PSA and imaging progressed after 7 months. ADT continues, testosterone 12 ng/dl. Height 176 cm, weight 78 kg, BSA 1.94 m², ECOG 1. Neutrophils 3.8 × 10⁹/l, haemoglobin 11.6 g/dl, platelets 210 × 10⁹/l, bilirubin, ALT and AST normal, creatinine clearance 66 mL/min; no previous febrile neutropenia, no prior radiotherapy. The tumour board recommends cabazitaxel as in CARD.",
+      "de": "71-jähriger Patient mit mCRPC mit Knochen- und Lymphknotenmetastasen. Er erhielt 8 Zyklen Docetaxel mit Prednison (letzte Gabe vor 10 Monaten), danach Enzalutamid, unter dem PSA und Bildgebung nach 7 Monaten progredient sind. Die ADT läuft weiter, Testosteron 12 ng/dl. Größe 176 cm, Gewicht 78 kg, KOF 1,94 m², ECOG 1. Neutrophile 3,8 × 10⁹/l, Hb 11,6 g/dl, Thrombozyten 210 × 10⁹/l, Bilirubin, GPT und GOT normal, Kreatinin-Clearance 66 ml/min; keine frühere febrile Neutropenie, keine Vorbestrahlung. Das Tumorboard empfiehlt Cabazitaxel nach CARD.",
+      "es": "Varón de 71 años con CPRCm con metástasis óseas y ganglionares. Recibió 8 ciclos de docetaxel con prednisona (última dosis hace 10 meses) y después enzalutamida, con progresión del PSA y de la imagen a los 7 meses. La ADT continúa, testosterona 12 ng/dl. Talla 176 cm, peso 78 kg, superficie corporal 1,94 m², ECOG 1. Neutrófilos 3,8 × 10⁹/l, hemoglobina 11,6 g/dl, plaquetas 210 × 10⁹/l, bilirrubina, ALT y AST normales, aclaramiento de creatinina 66 ml/min; sin neutropenia febril previa ni radioterapia previa. El comité de tumores recomienda cabazitaxel según CARD."
+    },
+    "vitals": {
+      "bp": "128/76",
+      "hr": 78,
+      "temp": 36.7,
+      "spo2": 97,
+      "rr": 15
+    },
+    "objectives": {
+      "en": [
+        "Calculate cabazitaxel 25 mg/m² every 21 days with prednisone 10 mg daily",
+        "Order the triple premedication and primary G-CSF prophylaxis for a patient over 65"
+      ],
+      "de": [
+        "Cabazitaxel 25 mg/m² alle 21 Tage mit Prednison 10 mg täglich berechnen",
+        "Dreifache Prämedikation und primäre G-CSF-Prophylaxe bei einem Patienten über 65 Jahre verordnen"
+      ],
+      "es": [
+        "Calcular cabazitaxel 25 mg/m² cada 21 días con prednisona 10 mg diarios",
+        "Prescribir la premedicación triple y la profilaxis primaria con G-CSF en un paciente mayor de 65 años"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which order for the first cycle is correct?",
+          "de": "Welche Verordnung für den ersten Zyklus ist korrekt?",
+          "es": "¿Qué prescripción para el primer ciclo es correcta?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Cabazitaxel 25 mg/m² (48.5 mg) i.v. over 1 h on day 1 every 3 weeks with prednisone 10 mg daily and triple premedication; G-CSF only from the next cycle if febrile neutropenia occurs",
+              "de": "Cabazitaxel 25 mg/m² (48,5 mg) i.v. über 1 h an Tag 1 alle 3 Wochen mit Prednison 10 mg täglich und dreifacher Prämedikation; G-CSF erst ab dem nächsten Zyklus, falls eine febrile Neutropenie auftritt",
+              "es": "Cabazitaxel 25 mg/m² (48,5 mg) i.v. en 1 h el día 1 cada 3 semanas con prednisona 10 mg diarios y premedicación triple; G-CSF solo a partir del siguiente ciclo si aparece neutropenia febril"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: at 71 he is a high-risk patient (age > 65), for whom primary G-CSF prophylaxis is indicated from the first cycle. In CARD every patient received G-CSF in every cycle, which kept febrile neutropenia at 3.2 %; waiting for the first episode accepts a preventable, potentially fatal complication.",
+              "de": "Falsch: Mit 71 Jahren ist er Hochrisikopatient (Alter > 65), bei dem die primäre G-CSF-Prophylaxe ab dem ersten Zyklus indiziert ist. In CARD erhielten alle Patienten in jedem Zyklus G-CSF, die febrile Neutropenie lag damit bei 3,2 %; das Abwarten der ersten Episode nimmt eine vermeidbare, potenziell tödliche Komplikation in Kauf.",
+              "es": "Incorrecto: con 71 años es un paciente de alto riesgo (edad > 65), en el que la profilaxis primaria con G-CSF está indicada desde el primer ciclo. En CARD todos los pacientes recibieron G-CSF en cada ciclo, con una neutropenia febril del 3,2 %; esperar al primer episodio acepta una complicación evitable y potencialmente mortal."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Cabazitaxel 20 mg/m² (39 mg) i.v. on day 1 every 3 weeks with prednisone 10 mg daily, triple premedication and primary G-CSF prophylaxis",
+              "de": "Cabazitaxel 20 mg/m² (39 mg) i.v. an Tag 1 alle 3 Wochen mit Prednison 10 mg täglich, dreifacher Prämedikation und primärer G-CSF-Prophylaxe",
+              "es": "Cabazitaxel 20 mg/m² (39 mg) i.v. el día 1 cada 3 semanas con prednisona 10 mg diarios, premedicación triple y profilaxis primaria con G-CSF"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: the protocol starting dose is 25 mg/m². 20 mg/m² is the reduction step after febrile neutropenia, prolonged grade ≥ 3 neutropenia or grade ≥ 3 diarrhoea, or the dose for mild hepatic impairment; his bilirubin and transaminases are normal.",
+              "de": "Falsch: Die Startdosis laut Protokoll beträgt 25 mg/m². 20 mg/m² ist die Reduktionsstufe nach febriler Neutropenie, anhaltender Neutropenie Grad ≥ 3 oder Diarrhö Grad ≥ 3 bzw. die Dosis bei leichter Leberinsuffizienz; Bilirubin und Transaminasen sind normal.",
+              "es": "Incorrecto: la dosis inicial del protocolo es 25 mg/m². 20 mg/m² es el escalón de reducción tras neutropenia febril, neutropenia de grado ≥ 3 prolongada o diarrea de grado ≥ 3, o la dosis en insuficiencia hepática leve; su bilirrubina y transaminasas son normales."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Cabazitaxel 25 mg/m² (48.5 mg) i.v. on days 1, 8 and 15 every 3 weeks with prednisone 10 mg daily, triple premedication and G-CSF",
+              "de": "Cabazitaxel 25 mg/m² (48,5 mg) i.v. an Tag 1, 8 und 15 alle 3 Wochen mit Prednison 10 mg täglich, dreifacher Prämedikation und G-CSF",
+              "es": "Cabazitaxel 25 mg/m² (48,5 mg) i.v. los días 1, 8 y 15 cada 3 semanas con prednisona 10 mg diarios, premedicación triple y G-CSF"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Dangerous: 25 mg/m² is given once per 21-day cycle. Weekly administration triples the dose intensity and risks severe neutropenic sepsis and diarrhoea even with G-CSF.",
+              "de": "Gefährlich: 25 mg/m² werden einmal pro 21-Tage-Zyklus gegeben. Die wöchentliche Gabe verdreifacht die Dosisintensität und riskiert trotz G-CSF eine schwere neutropene Sepsis und Diarrhö.",
+              "es": "Peligroso: 25 mg/m² se administran una vez por ciclo de 21 días. La administración semanal triplica la intensidad de dosis y expone, incluso con G-CSF, a sepsis neutropénica grave y diarrea."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Cabazitaxel 25 mg/m² (48.5 mg) i.v. on day 1 every 3 weeks with prednisone 10 mg daily and primary G-CSF; premedication as for docetaxel: dexamethasone 8 mg p.o. 12 h, 3 h and 1 h before, no antihistamine or H2 antagonist",
+              "de": "Cabazitaxel 25 mg/m² (48,5 mg) i.v. an Tag 1 alle 3 Wochen mit Prednison 10 mg täglich und primärem G-CSF; Prämedikation wie bei Docetaxel: Dexamethason 8 mg p.o. 12 h, 3 h und 1 h vorher, kein Antihistaminikum, kein H2-Blocker",
+              "es": "Cabazitaxel 25 mg/m² (48,5 mg) i.v. el día 1 cada 3 semanas con prednisona 10 mg diarios y G-CSF primario; premedicación como con docetaxel: dexametasona 8 mg v.o. 12 h, 3 h y 1 h antes, sin antihistamínico ni anti-H2"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: cabazitaxel needs its own premedication at least 30 min before each infusion: an antihistamine (dexchlorpheniramine 5 mg or diphenhydramine 25 mg), dexamethasone 8 mg and an H2 antagonist i.v. Without the antihistamine and H2 antagonist the protection against severe hypersensitivity reactions is incomplete.",
+              "de": "Falsch: Cabazitaxel braucht eine eigene Prämedikation mindestens 30 min vor jeder Infusion: Antihistaminikum (Dexchlorphenamin 5 mg oder Diphenhydramin 25 mg), Dexamethason 8 mg und H2-Blocker i.v. Ohne Antihistaminikum und H2-Blocker ist der Schutz vor schweren Überempfindlichkeitsreaktionen unvollständig.",
+              "es": "Incorrecto: el cabazitaxel requiere su propia premedicación al menos 30 min antes de cada infusión: un antihistamínico (dexclorfeniramina 5 mg o difenhidramina 25 mg), dexametasona 8 mg y un anti-H2 i.v. Sin el antihistamínico y el anti-H2 la protección frente a reacciones de hipersensibilidad graves es incompleta."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Cabazitaxel 25 mg/m² (48.5 mg) i.v. over 1 h on day 1 every 3 weeks; prednisone 10 mg daily; ≥ 30 min before each infusion an antihistamine, dexamethasone 8 mg and an H2 antagonist i.v.; primary G-CSF prophylaxis from cycle 1; continue ADT",
+              "de": "Cabazitaxel 25 mg/m² (48,5 mg) i.v. über 1 h an Tag 1 alle 3 Wochen; Prednison 10 mg täglich; ≥ 30 min vor jeder Infusion Antihistaminikum, Dexamethason 8 mg und H2-Blocker i.v.; primäre G-CSF-Prophylaxe ab Zyklus 1; ADT fortführen",
+              "es": "Cabazitaxel 25 mg/m² (48,5 mg) i.v. en 1 h el día 1 cada 3 semanas; prednisona 10 mg diarios; ≥ 30 min antes de cada infusión antihistamínico, dexametasona 8 mg y anti-H2 i.v.; profilaxis primaria con G-CSF desde el ciclo 1; mantener la ADT"
+            },
+            "score": 10,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Correct: 25 mg/m² × 1.94 m² = 48.5 mg on day 1 every 21 days until progression or unacceptable toxicity, with prednisone 10 mg daily. The triple premedication protects against hypersensitivity, and as a patient over 65 he needs primary G-CSF prophylaxis from the first cycle, as every patient in CARD received. Neutrophils must be ≥ 1.5 × 10⁹/l before each cycle; treat diarrhoea early.",
+              "de": "Richtig: 25 mg/m² × 1,94 m² = 48,5 mg an Tag 1 alle 21 Tage bis Progress oder inakzeptable Toxizität, mit Prednison 10 mg täglich. Die dreifache Prämedikation schützt vor Überempfindlichkeitsreaktionen, und als Patient über 65 Jahre braucht er ab dem ersten Zyklus eine primäre G-CSF-Prophylaxe, wie sie in CARD alle Patienten erhielten. Vor jedem Zyklus müssen die Neutrophilen ≥ 1,5 × 10⁹/l betragen; Diarrhö früh behandeln.",
+              "es": "Correcto: 25 mg/m² × 1,94 m² = 48,5 mg el día 1 cada 21 días hasta progresión o toxicidad inaceptable, con prednisona 10 mg diarios. La premedicación triple protege frente a la hipersensibilidad y, al ser mayor de 65 años, necesita profilaxis primaria con G-CSF desde el primer ciclo, como recibieron todos los pacientes de CARD. Antes de cada ciclo los neutrófilos deben ser ≥ 1,5 × 10⁹/l; la diarrea se trata precozmente."
+            }
+          }
+        ],
+        "best": "e"
+      }
+    ],
+    "takeaway": {
+      "en": "Cabazitaxel is given at 25 mg/m² on day 1 every 21 days with prednisone 10 mg daily, after an antihistamine, dexamethasone 8 mg and an H2 antagonist at least 30 min before. Primary G-CSF prophylaxis from cycle 1 is standard and clearly indicated in high-risk patients such as those over 65; 20 mg/m² is the reduction step.",
+      "de": "Merksatz: Cabazitaxel wird mit 25 mg/m² an Tag 1 alle 21 Tage mit Prednison 10 mg täglich gegeben, nach Antihistaminikum, Dexamethason 8 mg und H2-Blocker mindestens 30 min vorher. Die primäre G-CSF-Prophylaxe ab Zyklus 1 ist Standard und bei Hochrisikopatienten wie über 65-Jährigen klar indiziert; 20 mg/m² ist die Reduktionsstufe.",
+      "es": "El cabazitaxel se administra a 25 mg/m² el día 1 cada 21 días con prednisona 10 mg diarios, tras antihistamínico, dexametasona 8 mg y anti-H2 al menos 30 min antes. La profilaxis primaria con G-CSF desde el ciclo 1 es el estándar y está claramente indicada en pacientes de alto riesgo, como los mayores de 65 años; 20 mg/m² es el escalón de reducción."
+    },
+    "references": [
+      "bank-guide-prostatakarzinom",
+      "ema-medicines",
+      "fachinfo-de"
+    ]
+  },
+  {
+    "id": "sys-prot-relugolix-restart-after-interruption",
+    "area": "clinic",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "dayclinic",
+    "patient": {
+      "name": "Gottfried Wiesinger",
+      "age": 69,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Relugolix forgotten during a hospital stay",
+      "de": "Relugolix während eines Krankenhausaufenthalts vergessen",
+      "es": "Relugolix olvidado durante un ingreso hospitalario"
+    },
+    "presenting": {
+      "en": "69-year-old man with hormone-sensitive prostate cancer and pelvic nodal recurrence after radiotherapy, on relugolix 120 mg once daily for 8 months; testosterone 3 months ago 9 ng/dl. He was in another hospital for 12 days with pneumonia, where relugolix was not given because it was not on the formulary; he has been home for 2 days without taking it, so he has missed 14 days in total. The antibiotics are finished; he takes no P-gp inhibitor and no CYP3A inducer. QTc 428 ms. He comes to the day clinic and asks how to continue.",
+      "de": "69-jähriger Patient mit hormonsensitivem Prostatakarzinom und pelvinem Lymphknotenrezidiv nach Strahlentherapie, seit 8 Monaten unter Relugolix 120 mg 1 x täglich; Testosteron vor 3 Monaten 9 ng/dl. Wegen einer Pneumonie lag er 12 Tage in einem anderen Krankenhaus, wo Relugolix nicht gegeben wurde, weil es nicht in der Hausliste stand; seit 2 Tagen ist er zu Hause und hat es noch nicht wieder eingenommen, insgesamt also 14 Tage Pause. Die Antibiose ist beendet; er nimmt keinen P-gp-Inhibitor und keinen CYP3A-Induktor ein. QTc 428 ms. Er stellt sich in der Tagesklinik vor und fragt, wie es weitergeht.",
+      "es": "Varón de 69 años con cáncer de próstata hormonosensible y recidiva ganglionar pélvica tras radioterapia, en tratamiento con relugolix 120 mg 1 vez al día desde hace 8 meses; testosterona hace 3 meses 9 ng/dl. Estuvo ingresado 12 días en otro hospital por una neumonía, donde no se le dio relugolix porque no figuraba en la guía farmacoterapéutica; lleva 2 días en casa sin tomarlo, es decir, 14 días de interrupción en total. Ha terminado los antibióticos; no toma inhibidores de la P-gp ni inductores del CYP3A. QTc 428 ms. Acude al hospital de día y pregunta cómo continuar."
+    },
+    "vitals": {
+      "bp": "134/82",
+      "hr": 74,
+      "temp": 36.6,
+      "spo2": 97,
+      "rr": 15
+    },
+    "objectives": {
+      "en": [
+        "Recognise that relugolix must be reloaded with 360 mg after an interruption of more than 7 days",
+        "Distinguish the reload from the 240 mg dose used with inducers and from switching to an agonist without flare cover"
+      ],
+      "de": [
+        "Erkennen, dass Relugolix nach einer Unterbrechung von mehr als 7 Tagen mit 360 mg neu aufgesättigt werden muss",
+        "Die Neuaufsättigung von der 240-mg-Dosis bei Induktoren und vom Wechsel auf einen Agonisten ohne Flare-Schutz abgrenzen"
+      ],
+      "es": [
+        "Reconocer que relugolix debe reiniciarse con una dosis de carga de 360 mg tras una interrupción de más de 7 días",
+        "Diferenciar la nueva carga de la dosis de 240 mg con inductores y del cambio a un agonista sin protección frente al flare"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "How do you continue androgen deprivation?",
+          "de": "Wie setzen Sie die Androgendeprivation fort?",
+          "es": "¿Cómo continúa la deprivación androgénica?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Restart with a single loading dose of relugolix 360 mg (3 × 120 mg) today, then 120 mg once daily at about the same time; discuss adherence and how to bring his own tablets to future admissions",
+              "de": "Heute einmalig Relugolix 360 mg (3 x 120 mg) als Initialdosis, danach 120 mg 1 x täglich etwa zur gleichen Uhrzeit; Adhärenz besprechen und eigene Tabletten bei künftigen Aufnahmen mitbringen lassen",
+              "es": "Reiniciar hoy con una dosis de carga única de relugolix 360 mg (3 × 120 mg) y después 120 mg 1 vez al día a la misma hora aproximadamente; hablar de la adherencia y de llevar sus propios comprimidos en futuros ingresos"
+            },
+            "score": 10,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Correct: after an interruption of more than 7 days relugolix is restarted with the 360 mg loading dose and then continued at 120 mg once daily. As an oral antagonist it needs no flare cover, but castration is lost quickly when doses are missed, so adherence, including during hospital stays, is part of the treatment.",
+              "de": "Richtig: Nach einer Unterbrechung von mehr als 7 Tagen wird Relugolix mit der Initialdosis 360 mg neu begonnen und dann mit 120 mg 1 x täglich fortgeführt. Als oraler Antagonist braucht es keinen Flare-Schutz, die Kastration geht bei vergessenen Dosen aber rasch verloren; die Adhärenz, auch bei Krankenhausaufenthalten, gehört deshalb zur Therapie.",
+              "es": "Correcto: tras una interrupción de más de 7 días relugolix se reinicia con la dosis de carga de 360 mg y después se mantiene con 120 mg 1 vez al día. Como antagonista oral no necesita protección frente al flare, pero la castración se pierde rápidamente si se olvidan dosis, por lo que la adherencia, también durante los ingresos, forma parte del tratamiento."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Simply continue relugolix 120 mg once daily without making up the missed days",
+              "de": "Relugolix 120 mg 1 x täglich einfach weiter einnehmen, verpasste Tage nicht nachholen",
+              "es": "Seguir simplemente con relugolix 120 mg 1 vez al día sin recuperar los días perdidos"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: continuing at 120 mg is only correct after a short gap. After more than 7 days without relugolix (here 14 days) the label requires a new 360 mg loading dose; otherwise testosterone takes too long to return to castration level.",
+              "de": "Falsch: Das einfache Weiterführen mit 120 mg ist nur nach kurzer Lücke richtig. Nach mehr als 7 Tagen ohne Relugolix (hier 14 Tage) verlangt die Fachinformation eine erneute Initialdosis von 360 mg; sonst erreicht das Testosteron zu langsam wieder das Kastrationsniveau.",
+              "es": "Incorrecto: continuar con 120 mg solo es correcto tras una pausa corta. Después de más de 7 días sin relugolix (aquí 14 días) la ficha técnica exige una nueva dosis de carga de 360 mg; de lo contrario la testosterona tarda demasiado en volver a niveles de castración."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Relugolix 240 mg once daily for 14 days to make up for the gap, then 120 mg once daily",
+              "de": "Relugolix 240 mg 1 x täglich für 14 Tage zum Ausgleich der Pause, danach 120 mg 1 x täglich",
+              "es": "Relugolix 240 mg 1 vez al día durante 14 días para compensar la pausa y después 120 mg 1 vez al día"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: 240 mg once daily is reserved for unavoidable co-medication with a combined P-gp and strong CYP3A inducer, which he does not take. Missed doses are not made up; the correct restart is a single 360 mg loading dose followed by 120 mg daily.",
+              "de": "Falsch: 240 mg 1 x täglich ist der unvermeidbaren Komedikation mit einem kombinierten P-gp- und starken CYP3A-Induktor vorbehalten, den er nicht einnimmt. Verpasste Dosen werden nicht nachgeholt; richtig ist ein Neustart mit einmalig 360 mg und danach 120 mg täglich.",
+              "es": "Incorrecto: 240 mg 1 vez al día se reserva para la comedicación inevitable con un inductor combinado de la P-gp y potente del CYP3A, que no toma. Las dosis olvidadas no se recuperan; lo correcto es reiniciar con una dosis única de 360 mg y después 120 mg diarios."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Switch to leuprorelin 11.25 mg s.c. every 3 months today without an antiandrogen, because testosterone is probably still suppressed",
+              "de": "Heute auf Leuprorelin 11,25 mg s.c. alle 3 Monate umstellen, ohne Antiandrogen, da das Testosteron vermutlich noch supprimiert ist",
+              "es": "Cambiar hoy a leuprorelina 11,25 mg s.c. cada 3 meses sin antiandrógeno, porque la testosterona probablemente siga suprimida"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: after stopping relugolix testosterone recovers quickly, so it cannot be assumed to be suppressed after 14 days. A GnRH agonist first causes a testosterone flare and must be covered by an antiandrogen (bicalutamide 50 mg started at least 3 days before the depot). There is also no reason to change a well-tolerated drug; reloading relugolix is enough.",
+              "de": "Falsch: Nach Absetzen von Relugolix erholt sich das Testosteron rasch; nach 14 Tagen kann nicht mehr von einer Suppression ausgegangen werden. Ein GnRH-Agonist löst zunächst einen Testosteron-Flare aus und braucht Antiandrogen-Schutz (Bicalutamid 50 mg, mindestens 3 Tage vor dem Depot beginnen). Zudem gibt es keinen Grund, ein gut vertragenes Medikament zu wechseln; die Neuaufsättigung mit Relugolix genügt.",
+              "es": "Incorrecto: tras suspender relugolix la testosterona se recupera rápido, de modo que a los 14 días no puede suponerse suprimida. Un agonista de la GnRH provoca primero un flare de testosterona y requiere protección con antiandrógeno (bicalutamida 50 mg iniciada al menos 3 días antes del depot). Además, no hay motivo para cambiar un fármaco bien tolerado; basta con la nueva carga de relugolix."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Measure testosterone first and resume relugolix 120 mg once daily only when testosterone rises above 50 ng/dl",
+              "de": "Zunächst Testosteron bestimmen und Relugolix 120 mg 1 x täglich erst wieder ansetzen, wenn das Testosteron über 50 ng/dl steigt",
+              "es": "Medir primero la testosterona y reanudar relugolix 120 mg 1 vez al día solo cuando supere 50 ng/dl"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: ADT is continuous; deliberately waiting for testosterone to escape castration level exposes the tumour to androgen stimulation. The restart does not depend on a testosterone value: after more than 7 days give 360 mg once, then 120 mg daily, and check castration (< 50 ng/dl) later.",
+              "de": "Falsch: Die ADT ist kontinuierlich; bewusst abzuwarten, bis das Testosteron das Kastrationsniveau verlässt, setzt den Tumor einer Androgenstimulation aus. Der Neustart hängt nicht von einem Testosteronwert ab: nach mehr als 7 Tagen einmalig 360 mg, dann 120 mg täglich, und das Kastrationsniveau (< 50 ng/dl) später kontrollieren.",
+              "es": "Incorrecto: la ADT es continua; esperar deliberadamente a que la testosterona salga del nivel de castración expone el tumor a estímulo androgénico. El reinicio no depende de un valor de testosterona: tras más de 7 días se da una dosis única de 360 mg, luego 120 mg diarios, y la castración (< 50 ng/dl) se comprueba más tarde."
+            }
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "en": "Relugolix starts with a 360 mg loading dose and continues at 120 mg once daily; after an interruption of more than 7 days the 360 mg loading dose is repeated. 240 mg daily is only for unavoidable combined P-gp and strong CYP3A inducers, and a switch to a GnRH agonist always needs antiandrogen flare cover.",
+      "de": "Merksatz: Relugolix beginnt mit 360 mg als Initialdosis und läuft mit 120 mg 1 x täglich weiter; nach einer Unterbrechung von mehr als 7 Tagen wird die Initialdosis von 360 mg wiederholt. 240 mg täglich gilt nur bei unvermeidbaren kombinierten P-gp- und starken CYP3A-Induktoren, und ein Wechsel auf einen GnRH-Agonisten braucht immer Antiandrogen-Flare-Schutz.",
+      "es": "Relugolix empieza con una dosis de carga de 360 mg y continúa con 120 mg 1 vez al día; tras una interrupción de más de 7 días se repite la carga de 360 mg. 240 mg diarios solo se usan con inductores combinados de la P-gp y potentes del CYP3A inevitables, y el cambio a un agonista de la GnRH siempre requiere protección antiandrogénica frente al flare."
+    },
+    "references": [
+      "bank-guide-prostatakarzinom",
+      "ema-medicines",
+      "fachinfo-de"
+    ]
+  },
+  {
+    "id": "sys-prot-lu-psma-617-reduction-no-reescalation",
+    "area": "clinic",
+    "level": 3,
+    "acuity": "routine",
+    "duty": "dayclinic",
+    "patient": {
+      "name": "Ottmar Kesselring",
+      "age": 70,
+      "sex": "male"
+    },
+    "title": {
+      "en": "177Lu-PSMA-617 after grade 3 thrombocytopenia",
+      "de": "177Lu-PSMA-617 nach Thrombozytopenie Grad 3",
+      "es": "177Lu-PSMA-617 tras trombocitopenia de grado 3"
+    },
+    "presenting": {
+      "en": "70-year-old man with PSMA-positive mCRPC (68Ga-PSMA-11 PET: all lesions PSMA-positive) after abiraterone and docetaxel, with ADT continued. He is receiving 177Lu-PSMA-617 7.4 GBq every 6 weeks and has had 3 doses; PSA has fallen from 86 to 21 ng/ml. After the third dose he developed grade 3 thrombocytopenia (38 × 10⁹/l) without bleeding, which recovered without transfusion. Today, 6 weeks after the third dose: platelets 128 × 10⁹/l, neutrophils 2.6 × 10⁹/l, haemoglobin 11.2 g/dl, creatinine clearance 64 mL/min, liver values normal, ECOG 1. You discuss the further plan with nuclear medicine.",
+      "de": "70-jähriger Patient mit PSMA-positivem mCRPC (68Ga-PSMA-11-PET: alle Läsionen PSMA-positiv) nach Abirateron und Docetaxel, die ADT läuft weiter. Er erhält 177Lu-PSMA-617 7,4 GBq alle 6 Wochen und hat bisher 3 Gaben bekommen; das PSA ist von 86 auf 21 ng/ml gefallen. Nach der dritten Gabe trat eine Thrombozytopenie Grad 3 (38 × 10⁹/l) ohne Blutung auf, die sich ohne Transfusion erholt hat. Heute, 6 Wochen nach der dritten Gabe: Thrombozyten 128 × 10⁹/l, Neutrophile 2,6 × 10⁹/l, Hb 11,2 g/dl, Kreatinin-Clearance 64 ml/min, Leberwerte normal, ECOG 1. Sie besprechen das weitere Vorgehen mit der Nuklearmedizin.",
+      "es": "Varón de 70 años con CPRCm PSMA positivo (PET con 68Ga-PSMA-11: todas las lesiones PSMA positivas) tras abiraterona y docetaxel, con ADT mantenida. Recibe 177Lu-PSMA-617 7,4 GBq cada 6 semanas y lleva 3 dosis; el PSA ha bajado de 86 a 21 ng/ml. Tras la tercera dosis presentó una trombocitopenia de grado 3 (38 × 10⁹/l) sin sangrado, que se recuperó sin transfusión. Hoy, 6 semanas después de la tercera dosis: plaquetas 128 × 10⁹/l, neutrófilos 2,6 × 10⁹/l, hemoglobina 11,2 g/dl, aclaramiento de creatinina 64 ml/min, perfil hepático normal, ECOG 1. Usted comenta el plan con medicina nuclear."
+    },
+    "vitals": {
+      "bp": "126/78",
+      "hr": 72,
+      "temp": 36.5,
+      "spo2": 97,
+      "rr": 14
+    },
+    "objectives": {
+      "en": [
+        "Apply the single 20 % reduction of 177Lu-PSMA-617 to 5.9 GBq without re-escalation",
+        "Keep the 6-week interval and the maximum of 6 doses"
+      ],
+      "de": [
+        "Die einmalige Reduktion von 177Lu-PSMA-617 um 20 % auf 5,9 GBq ohne Re-Eskalation anwenden",
+        "Das 6-Wochen-Intervall und die Höchstzahl von 6 Gaben einhalten"
+      ],
+      "es": [
+        "Aplicar la reducción única del 20 % de 177Lu-PSMA-617 a 5,9 GBq sin reescalada",
+        "Mantener el intervalo de 6 semanas y el máximo de 6 dosis"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "How does radioligand therapy continue?",
+          "de": "Wie geht es mit der Radioligandentherapie weiter?",
+          "es": "¿Cómo continúa la terapia con radioligandos?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Fourth dose at 7.4 GBq, because the platelets have recovered",
+              "de": "Vierte Gabe mit 7,4 GBq, da sich die Thrombozyten erholt haben",
+              "es": "Cuarta dosis de 7,4 GBq, porque las plaquetas se han recuperado"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: recovery allows treatment to continue, but after a grade 3 thrombocytopenia the activity is reduced once by 20 % to 5.9 GBq. Giving the full 7.4 GBq again risks a more severe, longer cytopenia.",
+              "de": "Falsch: Die Erholung erlaubt die Fortsetzung, nach einer Thrombozytopenie Grad 3 wird die Aktivität aber einmalig um 20 % auf 5,9 GBq reduziert. Erneut die volle Aktivität von 7,4 GBq zu geben, riskiert eine schwerere und längere Zytopenie.",
+              "es": "Incorrecto: la recuperación permite continuar, pero tras una trombocitopenia de grado 3 la actividad se reduce una vez un 20 % a 5,9 GBq. Volver a dar los 7,4 GBq completos expone a una citopenia más grave y prolongada."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Fourth dose at 5.9 GBq; if well tolerated, fifth and sixth doses back at 7.4 GBq",
+              "de": "Vierte Gabe mit 5,9 GBq; bei guter Verträglichkeit fünfte und sechste Gabe wieder mit 7,4 GBq",
+              "es": "Cuarta dosis de 5,9 GBq; si se tolera bien, quinta y sexta dosis de nuevo con 7,4 GBq"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: the reduction to 5.9 GBq is permanent. Re-escalation to 7.4 GBq is not allowed, because the bone marrow damage from radiation is cumulative and does not disappear with a normal blood count.",
+              "de": "Falsch: Die Reduktion auf 5,9 GBq ist endgültig. Eine Re-Eskalation auf 7,4 GBq ist nicht vorgesehen, weil die Knochenmarkschädigung durch Strahlung kumulativ ist und mit einem normalen Blutbild nicht verschwindet.",
+              "es": "Incorrecto: la reducción a 5,9 GBq es definitiva. No se permite reescalar a 7,4 GBq, porque el daño medular por radiación es acumulativo y no desaparece con un hemograma normal."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Fourth, fifth and sixth doses at 5.9 GBq every 6 weeks (± 1 week), then stop; no re-escalation; blood count, creatinine and liver values before each dose",
+              "de": "Vierte, fünfte und sechste Gabe mit 5,9 GBq alle 6 Wochen (± 1 Woche), danach Ende; keine Re-Eskalation; Blutbild, Kreatinin und Leberwerte vor jeder Gabe",
+              "es": "Cuarta, quinta y sexta dosis de 5,9 GBq cada 6 semanas (± 1 semana) y después fin del tratamiento; sin reescalada; hemograma, creatinina y perfil hepático antes de cada dosis"
+            },
+            "score": 10,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Correct: after toxicity the activity is reduced once by 20 % from 7.4 to 5.9 GBq and stays there. The interval remains 6 weeks (± 1 week) and the course ends after a maximum of 6 doses in total, i.e. 3 more. Blood count, creatinine and liver values are checked before each dose, together with hydration and xerostomia care.",
+              "de": "Richtig: Nach Toxizität wird die Aktivität einmalig um 20 % von 7,4 auf 5,9 GBq reduziert und bleibt dort. Das Intervall bleibt 6 Wochen (± 1 Woche), und die Therapie endet nach insgesamt höchstens 6 Gaben, also noch 3 weiteren. Vor jeder Gabe werden Blutbild, Kreatinin und Leberwerte kontrolliert, dazu Hydratation und Xerostomie-Pflege.",
+              "es": "Correcto: tras la toxicidad la actividad se reduce una vez un 20 %, de 7,4 a 5,9 GBq, y se mantiene así. El intervalo sigue siendo de 6 semanas (± 1 semana) y el tratamiento termina tras un máximo de 6 dosis en total, es decir, 3 más. Antes de cada dosis se controlan hemograma, creatinina y perfil hepático, junto con hidratación y cuidado de la xerostomía."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Reduce to 3.7 GBq (50 %) and extend the course to 8 doses to reach a similar cumulative activity",
+              "de": "Auf 3,7 GBq (50 %) reduzieren und die Therapie auf 8 Gaben verlängern, um eine ähnliche kumulative Aktivität zu erreichen",
+              "es": "Reducir a 3,7 GBq (50 %) y ampliar el tratamiento a 8 dosis para alcanzar una actividad acumulada similar"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: the only defined reduction is 20 % to 5.9 GBq, and the maximum is 6 doses. Extending to 8 doses exceeds the studied and approved cumulative exposure of bone marrow, kidneys and salivary glands.",
+              "de": "Falsch: Die einzige definierte Reduktion ist 20 % auf 5,9 GBq, und die Höchstzahl beträgt 6 Gaben. Eine Verlängerung auf 8 Gaben überschreitet die untersuchte und zugelassene kumulative Belastung von Knochenmark, Nieren und Speicheldrüsen.",
+              "es": "Incorrecto: la única reducción definida es del 20 % a 5,9 GBq, y el máximo es de 6 dosis. Ampliar a 8 dosis supera la exposición acumulada estudiada y autorizada de médula ósea, riñones y glándulas salivales."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Stop 177Lu-PSMA-617 permanently because of the grade 3 thrombocytopenia",
+              "de": "177Lu-PSMA-617 wegen der Thrombozytopenie Grad 3 endgültig beenden",
+              "es": "Suspender definitivamente 177Lu-PSMA-617 por la trombocitopenia de grado 3"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: a single episode of grade 3 thrombocytopenia that has recovered is managed with one 20 % reduction to 5.9 GBq, not by stopping. He is responding (PSA 86 to 21 ng/ml); treatment is stopped only if toxicity recurs that would require a further reduction.",
+              "de": "Falsch: Eine einmalige, erholte Thrombozytopenie Grad 3 wird mit einer Reduktion um 20 % auf 5,9 GBq behandelt, nicht mit Abbruch. Er spricht an (PSA von 86 auf 21 ng/ml); beendet wird erst, wenn erneut eine Toxizität auftritt, die eine weitere Reduktion erfordern würde.",
+              "es": "Incorrecto: un episodio único y recuperado de trombocitopenia de grado 3 se maneja con una reducción del 20 % a 5,9 GBq, no con la suspensión. Está respondiendo (PSA de 86 a 21 ng/ml); solo se suspende si reaparece una toxicidad que requeriría una nueva reducción."
+            }
+          }
+        ],
+        "best": "c"
+      }
+    ],
+    "takeaway": {
+      "en": "177Lu-PSMA-617 is given at 7.4 GBq every 6 weeks (± 1 week) for up to 6 doses. After toxicity the activity is reduced once by 20 % to 5.9 GBq, without re-escalation and without adding doses beyond 6.",
+      "de": "Merksatz: 177Lu-PSMA-617 wird mit 7,4 GBq alle 6 Wochen (± 1 Woche) für bis zu 6 Gaben gegeben. Nach Toxizität wird die Aktivität einmalig um 20 % auf 5,9 GBq reduziert, ohne Re-Eskalation und ohne zusätzliche Gaben über 6 hinaus.",
+      "es": "El 177Lu-PSMA-617 se administra a 7,4 GBq cada 6 semanas (± 1 semana) hasta un máximo de 6 dosis. Tras una toxicidad la actividad se reduce una vez un 20 % a 5,9 GBq, sin reescalada y sin añadir dosis por encima de 6."
+    },
+    "references": [
+      "bank-guide-prostatakarzinom",
+      "ema-medicines",
+      "fachinfo-de"
+    ]
+  },
+  {
+    "id": "sys-prot-denosumab-prolia-to-xgeva-mcrpc",
+    "area": "clinic",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "dayclinic",
+    "patient": {
+      "name": "Wendelin Harzbecker",
+      "age": 67,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Denosumab 60 mg or 120 mg when bone metastases appear",
+      "de": "Denosumab 60 mg oder 120 mg bei neuen Knochenmetastasen",
+      "es": "Denosumab 60 mg o 120 mg al aparecer metástasis óseas"
+    },
+    "presenting": {
+      "en": "67-year-old man on continuous ADT for 3 years for a PSA recurrence after radical prostatectomy. Because of osteoporosis on DXA (T-score −2.7) he has received denosumab 60 mg (Prolia) every 6 months for 2 years, the last dose 4 months ago. He is now castration-resistant (testosterone 11 ng/dl, rising PSA) with 6 new bone metastases on PSMA PET/CT and no visceral metastases. The tumour board recommends enzalutamide and bone protection to prevent skeletal-related events. Creatinine clearance 45 mL/min, albumin-corrected calcium 2.31 mmol/l, 25-OH vitamin D 32 ng/ml; a dental examination 2 weeks ago was unremarkable and no dental procedures are planned.",
+      "de": "67-jähriger Patient unter kontinuierlicher ADT seit 3 Jahren wegen eines PSA-Rezidivs nach radikaler Prostatektomie. Wegen einer Osteoporose in der DXA (T-Score −2,7) erhält er seit 2 Jahren Denosumab 60 mg (Prolia) alle 6 Monate, die letzte Gabe vor 4 Monaten. Jetzt ist er kastrationsresistent (Testosteron 11 ng/dl, steigendes PSA) mit 6 neuen Knochenmetastasen in der PSMA-PET/CT, ohne viszerale Metastasen. Das Tumorboard empfiehlt Enzalutamid und eine Knochenprotektion zur Prävention skelettbezogener Ereignisse. Kreatinin-Clearance 45 ml/min, albuminkorrigiertes Calcium 2,31 mmol/l, 25-OH-Vitamin-D 32 ng/ml; die zahnärztliche Untersuchung vor 2 Wochen war unauffällig, Zahneingriffe sind nicht geplant.",
+      "es": "Varón de 67 años con ADT continua desde hace 3 años por una recidiva bioquímica tras prostatectomía radical. Por una osteoporosis en la DXA (T-score −2,7) recibe desde hace 2 años denosumab 60 mg (Prolia) cada 6 meses, la última dosis hace 4 meses. Ahora es resistente a la castración (testosterona 11 ng/dl, PSA en ascenso) con 6 metástasis óseas nuevas en la PET/TC PSMA, sin metástasis viscerales. El comité de tumores recomienda enzalutamida y protección ósea para prevenir eventos relacionados con el esqueleto. Aclaramiento de creatinina 45 ml/min, calcio corregido por albúmina 2,31 mmol/l, 25-OH vitamina D 32 ng/ml; la revisión dental de hace 2 semanas fue normal y no hay intervenciones dentales previstas."
+    },
+    "vitals": {
+      "bp": "138/84",
+      "hr": 70,
+      "temp": 36.6,
+      "spo2": 98,
+      "rr": 14
+    },
+    "objectives": {
+      "en": [
+        "Switch from the osteoporosis dose (denosumab 60 mg every 6 months) to the skeletal-event dose (120 mg every 4 weeks) without combining them",
+        "Add calcium and vitamin D, monitor calcium and know the renal limits of zoledronic acid"
+      ],
+      "de": [
+        "Von der Osteoporose-Dosis (Denosumab 60 mg alle 6 Monate) auf die SRE-Dosis (120 mg alle 4 Wochen) umstellen, ohne beide zu kombinieren",
+        "Calcium und Vitamin D ergänzen, Calcium überwachen und die renalen Grenzen der Zoledronsäure kennen"
+      ],
+      "es": [
+        "Pasar de la dosis para osteoporosis (denosumab 60 mg cada 6 meses) a la dosis para eventos esqueléticos (120 mg cada 4 semanas) sin combinarlas",
+        "Añadir calcio y vitamina D, vigilar el calcio y conocer los límites renales del ácido zoledrónico"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which bone protection do you order?",
+          "de": "Welche Knochenprotektion verordnen Sie?",
+          "es": "¿Qué protección ósea prescribe?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Continue Prolia 60 mg every 6 months unchanged, because he is already on denosumab",
+              "de": "Prolia 60 mg alle 6 Monate unverändert fortführen, da er bereits Denosumab erhält",
+              "es": "Mantener Prolia 60 mg cada 6 meses sin cambios, porque ya recibe denosumab"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: 60 mg every 6 months is the osteoporosis dose for ADT-associated bone loss. To prevent skeletal-related events in mCRPC with bone metastases denosumab is given at 120 mg every 4 weeks; the lower dose is not sufficient for this.",
+              "de": "Falsch: 60 mg alle 6 Monate ist die Osteoporose-Dosis bei ADT-assoziiertem Knochenverlust. Zur Prävention skelettbezogener Ereignisse beim mCRPC mit Knochenmetastasen wird Denosumab mit 120 mg alle 4 Wochen gegeben; die niedrige Dosis reicht dafür nicht.",
+              "es": "Incorrecto: 60 mg cada 6 meses es la dosis para la osteoporosis por ADT. Para prevenir eventos relacionados con el esqueleto en el CPRCm con metástasis óseas el denosumab se administra a 120 mg cada 4 semanas; la dosis baja no es suficiente."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Add Xgeva 120 mg every 4 weeks to Prolia 60 mg every 6 months",
+              "de": "Xgeva 120 mg alle 4 Wochen zusätzlich zu Prolia 60 mg alle 6 Monate geben",
+              "es": "Añadir Xgeva 120 mg cada 4 semanas a Prolia 60 mg cada 6 meses"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Dangerous: Xgeva and Prolia contain the same active substance and must never be given together. The double dose of denosumab adds risk of severe hypocalcaemia and osteonecrosis of the jaw without additional benefit.",
+              "de": "Gefährlich: Xgeva und Prolia enthalten denselben Wirkstoff und dürfen nie zusammen gegeben werden. Die doppelte Denosumab-Gabe erhöht das Risiko einer schweren Hypokalzämie und einer Kieferosteonekrose ohne zusätzlichen Nutzen.",
+              "es": "Peligroso: Xgeva y Prolia contienen el mismo principio activo y nunca deben administrarse juntos. La doble dosis de denosumab aumenta el riesgo de hipocalcemia grave y osteonecrosis maxilar sin beneficio adicional."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Stop Prolia and give zoledronic acid 4 mg i.v. over 15 min every 3-4 weeks",
+              "de": "Prolia beenden und Zoledronsäure 4 mg i.v. über 15 min alle 3-4 Wochen geben",
+              "es": "Suspender Prolia y administrar ácido zoledrónico 4 mg i.v. en 15 min cada 3-4 semanas"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Dangerous: 4 mg is the dose only for creatinine clearance > 60 mL/min. At 45 mL/min the dose is 3.3 mg; the full dose increases the risk of renal failure. A bisphosphonate would be a possible alternative, but only renally adjusted.",
+              "de": "Gefährlich: 4 mg ist die Dosis nur bei einer Kreatinin-Clearance > 60 ml/min. Bei 45 ml/min beträgt die Dosis 3,3 mg; die volle Dosis erhöht das Risiko eines Nierenversagens. Ein Bisphosphonat wäre eine mögliche Alternative, aber nur nierenangepasst.",
+              "es": "Peligroso: 4 mg es la dosis solo con aclaramiento de creatinina > 60 ml/min. Con 45 ml/min la dosis es de 3,3 mg; la dosis completa aumenta el riesgo de insuficiencia renal. Un bifosfonato sería una alternativa posible, pero solo ajustado a la función renal."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Stop Prolia and switch to denosumab 120 mg (Xgeva) s.c. every 4 weeks without renal dose adjustment; calcium at least 500 mg plus vitamin D 400 IU daily; check calcium before each dose",
+              "de": "Prolia beenden und auf Denosumab 120 mg (Xgeva) s.c. alle 4 Wochen umstellen, ohne renale Dosisanpassung; täglich mindestens 500 mg Calcium plus 400 I.E. Vitamin D; Calcium vor jeder Gabe kontrollieren",
+              "es": "Suspender Prolia y cambiar a denosumab 120 mg (Xgeva) s.c. cada 4 semanas, sin ajuste renal; calcio al menos 500 mg más vitamina D 400 UI al día; controlar el calcio antes de cada dosis"
+            },
+            "score": 10,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Correct: with bone metastases in mCRPC denosumab 120 mg every 4 weeks replaces the osteoporosis dose; since denosumab continues at the higher dose there is no rebound after stopping Prolia. It needs no renal adjustment, but the risk of hypocalcaemia is higher, so calcium at least 500 mg and vitamin D 400 IU daily (unless hypercalcaemic) and calcium checks before each dose, especially in the first weeks, are required. The dental examination has been done; avoid invasive dental procedures.",
+              "de": "Richtig: Bei Knochenmetastasen im mCRPC ersetzt Denosumab 120 mg alle 4 Wochen die Osteoporose-Dosis; da Denosumab in höherer Dosis weiterläuft, droht nach Beenden von Prolia kein Rebound. Eine renale Dosisanpassung ist nicht nötig, das Hypokalzämierisiko ist aber erhöht, daher täglich mindestens 500 mg Calcium und 400 I.E. Vitamin D (außer bei Hyperkalzämie) und Calciumkontrollen vor jeder Gabe, besonders in den ersten Wochen. Die zahnärztliche Untersuchung ist erfolgt; invasive Zahneingriffe meiden.",
+              "es": "Correcto: con metástasis óseas en el CPRCm el denosumab 120 mg cada 4 semanas sustituye a la dosis para osteoporosis; como el denosumab continúa a mayor dosis, no hay efecto rebote al suspender Prolia. No requiere ajuste renal, pero el riesgo de hipocalcemia es mayor, por lo que se necesitan al menos 500 mg de calcio y 400 UI de vitamina D al día (salvo hipercalcemia) y control del calcio antes de cada dosis, sobre todo las primeras semanas. La revisión dental ya está hecha; deben evitarse las intervenciones dentales invasivas."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Stop Prolia and give Xgeva 120 mg s.c. every 6 months with calcium and vitamin D",
+              "de": "Prolia beenden und Xgeva 120 mg s.c. alle 6 Monate mit Calcium und Vitamin D geben",
+              "es": "Suspender Prolia y administrar Xgeva 120 mg s.c. cada 6 meses con calcio y vitamina D"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: Xgeva 120 mg is given every 4 weeks, not every 6 months. Mixing the dose of one product with the interval of the other is the typical denosumab mix-up; every 6 months belongs only to Prolia 60 mg.",
+              "de": "Falsch: Xgeva 120 mg wird alle 4 Wochen gegeben, nicht alle 6 Monate. Die Dosis des einen mit dem Intervall des anderen Präparats zu kombinieren, ist die typische Denosumab-Verwechslung; alle 6 Monate gilt nur für Prolia 60 mg.",
+              "es": "Incorrecto: Xgeva 120 mg se administra cada 4 semanas, no cada 6 meses. Combinar la dosis de un preparado con el intervalo del otro es la confusión típica con denosumab; cada 6 meses corresponde solo a Prolia 60 mg."
+            }
+          }
+        ],
+        "best": "d"
+      }
+    ],
+    "takeaway": {
+      "en": "Denosumab 60 mg every 6 months (Prolia) treats ADT-associated bone loss; denosumab 120 mg every 4 weeks (Xgeva) prevents skeletal-related events in mCRPC with bone metastases, and the two are never combined. Xgeva needs calcium at least 500 mg and vitamin D 400 IU daily, calcium checks and a dental examination; zoledronic acid 4 mg is reduced at a creatinine clearance of 60 mL/min or less.",
+      "de": "Merksatz: Denosumab 60 mg alle 6 Monate (Prolia) behandelt den ADT-assoziierten Knochenverlust; Denosumab 120 mg alle 4 Wochen (Xgeva) verhindert skelettbezogene Ereignisse beim mCRPC mit Knochenmetastasen, und beide werden nie kombiniert. Xgeva braucht täglich mindestens 500 mg Calcium und 400 I.E. Vitamin D, Calciumkontrollen und eine zahnärztliche Untersuchung; Zoledronsäure 4 mg wird ab einer Kreatinin-Clearance von 60 ml/min oder weniger reduziert.",
+      "es": "Denosumab 60 mg cada 6 meses (Prolia) trata la pérdida ósea por ADT; denosumab 120 mg cada 4 semanas (Xgeva) previene los eventos relacionados con el esqueleto en el CPRCm con metástasis óseas, y nunca se combinan. Xgeva requiere al menos 500 mg de calcio y 400 UI de vitamina D al día, controles de calcio y revisión dental; el ácido zoledrónico 4 mg se reduce con un aclaramiento de creatinina de 60 ml/min o menos."
+    },
+    "references": [
+      "bank-guide-prostatakarzinom",
+      "ema-medicines",
+      "fachinfo-de"
+    ]
+  },
+  {
+    "id": "sys-prot-adjuvant-pembrolizumab-q6w-duration",
+    "area": "clinic",
+    "level": 1,
+    "acuity": "routine",
+    "duty": "dayclinic",
+    "patient": {
+      "name": "Dorothea Hambüchen",
+      "age": 57,
+      "sex": "female"
+    },
+    "title": {
+      "en": "Adjuvant pembrolizumab every 6 weeks: how many doses?",
+      "de": "Adjuvantes Pembrolizumab alle 6 Wochen: wie viele Gaben?",
+      "es": "Pembrolizumab adyuvante cada 6 semanas: ¿cuántas dosis?"
+    },
+    "presenting": {
+      "en": "57-year-old woman, 7 weeks after right radical nephrectomy for clear-cell renal cell carcinoma pT3a pN0, ISUP grade 3, R0. Postoperative restaging CT shows no residual tumour and no metastases. The tumour board recommends adjuvant pembrolizumab. Weight 68 kg, ECOG 0, creatinine clearance 71 mL/min, TSH, transaminases and cortisol normal, no autoimmune disease. She lives 90 km away and asks for as few day-clinic visits as possible; you are writing the treatment plan.",
+      "de": "57-jährige Patientin, 7 Wochen nach radikaler Nephrektomie rechts wegen eines klarzelligen Nierenzellkarzinoms pT3a pN0, ISUP-Grad 3, R0. Das postoperative Restaging-CT zeigt weder Resttumor noch Metastasen. Das Tumorboard empfiehlt eine adjuvante Therapie mit Pembrolizumab. Gewicht 68 kg, ECOG 0, Kreatinin-Clearance 71 ml/min, TSH, Transaminasen und Cortisol normal, keine Autoimmunerkrankung. Sie wohnt 90 km entfernt und wünscht möglichst wenige Termine in der Tagesklinik; Sie schreiben den Therapieplan.",
+      "es": "Mujer de 57 años, 7 semanas después de una nefrectomía radical derecha por carcinoma de células renales de células claras pT3a pN0, grado ISUP 3, R0. La TC de reestadificación postoperatoria no muestra tumor residual ni metástasis. El comité de tumores recomienda tratamiento adyuvante con pembrolizumab. Peso 68 kg, ECOG 0, aclaramiento de creatinina 71 ml/min, TSH, transaminasas y cortisol normales, sin enfermedad autoinmune. Vive a 90 km y desea acudir al hospital de día lo menos posible; usted redacta el plan de tratamiento."
+    },
+    "vitals": {
+      "bp": "128/78",
+      "hr": 72,
+      "temp": 36.6,
+      "spo2": 98,
+      "rr": 14
+    },
+    "objectives": {
+      "en": [
+        "Choose the flat dose and interval of adjuvant pembrolizumab",
+        "Limit adjuvant pembrolizumab to 1 year (17 doses every 3 weeks or 9 doses every 6 weeks)"
+      ],
+      "de": [
+        "Fixdosis und Intervall des adjuvanten Pembrolizumab festlegen",
+        "Adjuvantes Pembrolizumab auf 1 Jahr begrenzen (17 Gaben alle 3 Wochen bzw. 9 Gaben alle 6 Wochen)"
+      ],
+      "es": [
+        "Elegir la dosis fija y el intervalo del pembrolizumab adyuvante",
+        "Limitar el pembrolizumab adyuvante a 1 año (17 dosis cada 3 semanas o 9 dosis cada 6 semanas)"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which treatment plan is correct?",
+          "de": "Welcher Therapieplan ist korrekt?",
+          "es": "¿Qué plan de tratamiento es correcto?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Pembrolizumab 2 mg/kg (136 mg) i.v. every 3 weeks for 2 years",
+              "de": "Pembrolizumab 2 mg/kg (136 mg) i.v. alle 3 Wochen über 2 Jahre",
+              "es": "Pembrolizumab 2 mg/kg (136 mg) i.v. cada 3 semanas durante 2 años"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: in the adjuvant setting pembrolizumab is given as a flat dose (200 mg every 3 weeks or 400 mg every 6 weeks), not by weight, and for at most 1 year, not 2 years. This plan also does not meet her wish for fewer visits.",
+              "de": "Falsch: Adjuvant wird Pembrolizumab als Fixdosis gegeben (200 mg alle 3 Wochen oder 400 mg alle 6 Wochen), nicht gewichtsbasiert, und höchstens 1 Jahr lang, nicht 2 Jahre. Den Wunsch nach wenigen Terminen erfüllt dieser Plan zudem nicht.",
+              "es": "Incorrecto: en adyuvancia el pembrolizumab se administra a dosis fija (200 mg cada 3 semanas o 400 mg cada 6 semanas), no según el peso, y durante 1 año como máximo, no 2 años. Además, este plan no responde a su deseo de acudir menos."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Pembrolizumab 400 mg i.v. over 30 min every 6 weeks, 9 doses (up to 1 year), no premedication",
+              "de": "Pembrolizumab 400 mg i.v. über 30 min alle 6 Wochen, 9 Gaben (bis zu 1 Jahr), keine Prämedikation",
+              "es": "Pembrolizumab 400 mg i.v. en 30 min cada 6 semanas, 9 dosis (hasta 1 año), sin premedicación"
+            },
+            "score": 10,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Correct: 400 mg every 6 weeks is the approved alternative to 200 mg every 3 weeks and halves the number of visits. The adjuvant course lasts up to 1 year, i.e. 9 doses of 400 mg, and stops earlier on recurrence or unacceptable toxicity. No premedication is needed; check blood count, creatinine, electrolytes, liver values, glucose, TSH/fT4 before every dose.",
+              "de": "Richtig: 400 mg alle 6 Wochen ist die zugelassene Alternative zu 200 mg alle 3 Wochen und halbiert die Zahl der Termine. Die adjuvante Therapie dauert bis zu 1 Jahr, also 9 Gaben à 400 mg, und endet früher bei Rezidiv oder inakzeptabler Toxizität. Eine Prämedikation ist nicht erforderlich; vor jeder Gabe Blutbild, Kreatinin, Elektrolyte, Leberwerte, Glukose und TSH/fT4 kontrollieren.",
+              "es": "Correcto: 400 mg cada 6 semanas es la alternativa autorizada a 200 mg cada 3 semanas y reduce a la mitad el número de visitas. El tratamiento adyuvante dura hasta 1 año, es decir, 9 dosis de 400 mg, y se suspende antes si hay recidiva o toxicidad inaceptable. No se necesita premedicación; antes de cada dosis se controlan hemograma, creatinina, electrolitos, perfil hepático, glucosa y TSH/T4 libre."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Pembrolizumab 400 mg i.v. every 6 weeks, 17 doses",
+              "de": "Pembrolizumab 400 mg i.v. alle 6 Wochen, 17 Gaben",
+              "es": "Pembrolizumab 400 mg i.v. cada 6 semanas, 17 dosis"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: 17 doses belong to the 200 mg every-3-weeks schedule. Seventeen doses every 6 weeks would extend the adjuvant therapy to about 2 years and nearly double the exposure; with 400 mg every 6 weeks the course ends after 9 doses.",
+              "de": "Falsch: 17 Gaben gehören zum Schema 200 mg alle 3 Wochen. 17 Gaben im 6-Wochen-Abstand würden die adjuvante Therapie auf etwa 2 Jahre ausdehnen und die Exposition nahezu verdoppeln; bei 400 mg alle 6 Wochen endet die Therapie nach 9 Gaben.",
+              "es": "Incorrecto: las 17 dosis corresponden al esquema de 200 mg cada 3 semanas. Diecisiete dosis cada 6 semanas prolongarían la adyuvancia a unos 2 años y casi duplicarían la exposición; con 400 mg cada 6 semanas el tratamiento termina tras 9 dosis."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Pembrolizumab 200 mg i.v. every 3 weeks until recurrence, without a fixed end",
+              "de": "Pembrolizumab 200 mg i.v. alle 3 Wochen bis zum Rezidiv, ohne festes Therapieende",
+              "es": "Pembrolizumab 200 mg i.v. cada 3 semanas hasta la recidiva, sin fecha de finalización"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: the dose is correct, but adjuvant pembrolizumab is limited to 1 year (17 doses of 200 mg). The patient is tumour-free, so open-ended treatment only adds immune-related toxicity. The 3-weekly schedule also ignores her wish for fewer visits.",
+              "de": "Falsch: Die Dosis stimmt, aber das adjuvante Pembrolizumab ist auf 1 Jahr (17 Gaben à 200 mg) begrenzt. Die Patientin ist tumorfrei, eine Therapie ohne Ende erhöht nur das Risiko immunvermittelter Toxizität. Das 3-Wochen-Schema übergeht zudem ihren Wunsch nach wenigen Terminen.",
+              "es": "Incorrecto: la dosis es correcta, pero el pembrolizumab adyuvante se limita a 1 año (17 dosis de 200 mg). La paciente está libre de tumor, por lo que un tratamiento sin final solo añade toxicidad inmunomediada. El esquema cada 3 semanas tampoco atiende a su deseo de acudir menos."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Pembrolizumab 400 mg i.v. every 6 weeks, 9 doses, each after dexamethasone 8 mg i.v. as premedication",
+              "de": "Pembrolizumab 400 mg i.v. alle 6 Wochen, 9 Gaben, jeweils nach Prämedikation mit Dexamethason 8 mg i.v.",
+              "es": "Pembrolizumab 400 mg i.v. cada 6 semanas, 9 dosis, cada una tras premedicación con dexametasona 8 mg i.v."
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: dose, interval and number of doses are right, but checkpoint inhibitors need no premedication. Routine glucocorticoids are not indicated; they are reserved for treating immune-related adverse events of grade 2 or higher.",
+              "de": "Falsch: Dosis, Intervall und Zahl der Gaben stimmen, aber Checkpoint-Inhibitoren brauchen keine Prämedikation. Routinemäßige Glukokortikoide sind nicht indiziert; sie bleiben der Behandlung immunvermittelter Nebenwirkungen ab Grad 2 vorbehalten.",
+              "es": "Incorrecto: dosis, intervalo y número de dosis son correctos, pero los inhibidores de puntos de control no requieren premedicación. Los glucocorticoides sistemáticos no están indicados; se reservan para tratar efectos adversos inmunomediados de grado 2 o superior."
+            }
+          }
+        ],
+        "best": "b"
+      }
+    ],
+    "takeaway": {
+      "en": "Adjuvant pembrolizumab after nephrectomy is a flat dose: 200 mg every 3 weeks (17 doses) or 400 mg every 6 weeks (9 doses), for up to 1 year. No premedication is needed, and checkpoint inhibitors are never dose-reduced, only paused or stopped.",
+      "de": "Adjuvantes Pembrolizumab nach Nephrektomie ist eine Fixdosis: 200 mg alle 3 Wochen (17 Gaben) oder 400 mg alle 6 Wochen (9 Gaben), für bis zu 1 Jahr. Eine Prämedikation ist nicht nötig, und Checkpoint-Inhibitoren werden nie dosisreduziert, nur pausiert oder abgesetzt.",
+      "es": "El pembrolizumab adyuvante tras la nefrectomía se administra a dosis fija: 200 mg cada 3 semanas (17 dosis) o 400 mg cada 6 semanas (9 dosis), durante un máximo de 1 año. No requiere premedicación, y los inhibidores de puntos de control nunca se reducen de dosis: solo se interrumpen o se suspenden."
+    },
+    "references": [
+      "bank-guide-nierenzellkarzinom",
+      "ema-medicines",
+      "fachinfo-de"
+    ]
+  },
+  {
+    "id": "sys-prot-nivolumab-ipilimumab-induction-maintenance",
+    "area": "clinic",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "dayclinic",
+    "patient": {
+      "name": "Reinhard Kieslich",
+      "age": 66,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Nivolumab plus ipilimumab: induction and switch to maintenance",
+      "de": "Nivolumab plus Ipilimumab: Induktion und Wechsel in die Erhaltung",
+      "es": "Nivolumab más ipilimumab: inducción y paso al mantenimiento"
+    },
+    "presenting": {
+      "en": "66-year-old man with newly diagnosed metastatic clear-cell renal cell carcinoma (lung and mediastinal lymph node metastases), IMDC intermediate risk with two factors (anaemia, less than 1 year from diagnosis to systemic therapy). The tumour board recommends first-line nivolumab plus ipilimumab. Weight 82 kg, ECOG 1, creatinine clearance 64 mL/min, TSH, cortisol and transaminases normal, no autoimmune disease. After the induction he would like to come to the day clinic only every 4 weeks; you are writing the complete treatment plan.",
+      "de": "66-jähriger Patient mit neu diagnostiziertem metastasiertem klarzelligem Nierenzellkarzinom (Lungen- und mediastinale Lymphknotenmetastasen), intermediäres IMDC-Risiko mit zwei Faktoren (Anämie, weniger als 1 Jahr zwischen Diagnose und Systemtherapie). Das Tumorboard empfiehlt die Erstlinie mit Nivolumab plus Ipilimumab. Gewicht 82 kg, ECOG 1, Kreatinin-Clearance 64 ml/min, TSH, Cortisol und Transaminasen normal, keine Autoimmunerkrankung. Nach der Induktion möchte er nur noch alle 4 Wochen in die Tagesklinik kommen; Sie schreiben den vollständigen Therapieplan.",
+      "es": "Varón de 66 años con carcinoma de células renales de células claras metastásico de nuevo diagnóstico (metástasis pulmonares y ganglionares mediastínicas), riesgo IMDC intermedio con dos factores (anemia, menos de 1 año entre el diagnóstico y el tratamiento sistémico). El comité de tumores recomienda en primera línea nivolumab más ipilimumab. Peso 82 kg, ECOG 1, aclaramiento de creatinina 64 ml/min, TSH, cortisol y transaminasas normales, sin enfermedad autoinmune. Tras la inducción desea acudir al hospital de día solo cada 4 semanas; usted redacta el plan de tratamiento completo."
+    },
+    "vitals": {
+      "bp": "138/84",
+      "hr": 80,
+      "temp": 36.8,
+      "spo2": 96,
+      "rr": 16
+    },
+    "objectives": {
+      "en": [
+        "Calculate the weight-based induction doses of nivolumab 3 mg/kg and ipilimumab 1 mg/kg for 4 doses",
+        "Start flat-dose nivolumab maintenance at the correct interval after the last combination dose"
+      ],
+      "de": [
+        "Die gewichtsbasierten Induktionsdosen Nivolumab 3 mg/kg und Ipilimumab 1 mg/kg für 4 Gaben berechnen",
+        "Die Nivolumab-Erhaltung als Fixdosis im richtigen Abstand zur letzten Kombinationsgabe beginnen"
+      ],
+      "es": [
+        "Calcular las dosis de inducción según el peso, nivolumab 3 mg/kg e ipilimumab 1 mg/kg, durante 4 dosis",
+        "Iniciar el mantenimiento con nivolumab a dosis fija con el intervalo correcto tras la última dosis combinada"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which treatment plan is correct?",
+          "de": "Welcher Therapieplan ist korrekt?",
+          "es": "¿Qué plan de tratamiento es correcto?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Nivolumab 1 mg/kg (82 mg) plus ipilimumab 3 mg/kg (246 mg) every 3 weeks for 4 doses, then nivolumab 480 mg every 4 weeks, starting 6 weeks after the last combination dose",
+              "de": "Nivolumab 1 mg/kg (82 mg) plus Ipilimumab 3 mg/kg (246 mg) alle 3 Wochen, 4 Gaben, danach Nivolumab 480 mg alle 4 Wochen, Beginn 6 Wochen nach der letzten Kombinationsgabe",
+              "es": "Nivolumab 1 mg/kg (82 mg) más ipilimumab 3 mg/kg (246 mg) cada 3 semanas, 4 dosis; después nivolumab 480 mg cada 4 semanas, empezando 6 semanas tras la última dosis combinada"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Wrong and harmful: these are the melanoma doses, the classic prescribing error. In renal cell carcinoma nivolumab is 3 mg/kg and ipilimumab 1 mg/kg; ipilimumab at 3 mg/kg triples the dose of the drug that drives most of the immune-related toxicity (colitis, hepatitis, hypophysitis).",
+              "de": "Falsch und gefährlich: Das sind die Dosen beim Melanom, der klassische Verordnungsfehler. Beim Nierenzellkarzinom gilt Nivolumab 3 mg/kg und Ipilimumab 1 mg/kg; Ipilimumab mit 3 mg/kg verdreifacht die Dosis der Substanz, die den Großteil der immunvermittelten Toxizität (Kolitis, Hepatitis, Hypophysitis) verursacht.",
+              "es": "Incorrecto y peligroso: son las dosis del melanoma, el error de prescripción clásico. En el carcinoma de células renales se usan nivolumab 3 mg/kg e ipilimumab 1 mg/kg; ipilimumab a 3 mg/kg triplica la dosis del fármaco responsable de la mayor parte de la toxicidad inmunomediada (colitis, hepatitis, hipofisitis)."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Nivolumab 3 mg/kg (246 mg) plus ipilimumab 1 mg/kg (82 mg) every 3 weeks until progression, without switching to nivolumab alone",
+              "de": "Nivolumab 3 mg/kg (246 mg) plus Ipilimumab 1 mg/kg (82 mg) alle 3 Wochen bis zum Progress, ohne Wechsel auf Nivolumab allein",
+              "es": "Nivolumab 3 mg/kg (246 mg) más ipilimumab 1 mg/kg (82 mg) cada 3 semanas hasta la progresión, sin pasar a nivolumab en monoterapia"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Wrong and harmful: the doses are right, but ipilimumab is given for 4 doses only. Continuing the combination beyond the induction exposes the patient to cumulative ipilimumab toxicity without proven benefit; after 4 doses nivolumab continues alone.",
+              "de": "Falsch und gefährlich: Die Dosen stimmen, aber Ipilimumab wird nur 4-mal gegeben. Die Kombination über die Induktion hinaus fortzuführen, setzt den Patienten einer kumulativen Ipilimumab-Toxizität ohne belegten Nutzen aus; nach 4 Gaben läuft Nivolumab allein weiter.",
+              "es": "Incorrecto y peligroso: las dosis son correctas, pero el ipilimumab se administra solo 4 veces. Mantener la combinación más allá de la inducción expone al paciente a toxicidad acumulada de ipilimumab sin beneficio demostrado; tras 4 dosis se continúa solo con nivolumab."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Nivolumab 3 mg/kg (246 mg) plus ipilimumab 1 mg/kg (82 mg) every 3 weeks for 4 doses, then nivolumab 480 mg every 4 weeks, starting 3 weeks after the last combination dose",
+              "de": "Nivolumab 3 mg/kg (246 mg) plus Ipilimumab 1 mg/kg (82 mg) alle 3 Wochen, 4 Gaben, danach Nivolumab 480 mg alle 4 Wochen, Beginn 3 Wochen nach der letzten Kombinationsgabe",
+              "es": "Nivolumab 3 mg/kg (246 mg) más ipilimumab 1 mg/kg (82 mg) cada 3 semanas, 4 dosis; después nivolumab 480 mg cada 4 semanas, empezando 3 semanas tras la última dosis combinada"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: the 3-week gap applies to maintenance with 240 mg every 2 weeks. With 480 mg every 4 weeks, the first maintenance dose is given 6 weeks after the last combination dose.",
+              "de": "Falsch: Der Abstand von 3 Wochen gilt für die Erhaltung mit 240 mg alle 2 Wochen. Bei 480 mg alle 4 Wochen folgt die erste Erhaltungsgabe 6 Wochen nach der letzten Kombinationsgabe.",
+              "es": "Incorrecto: el intervalo de 3 semanas corresponde al mantenimiento con 240 mg cada 2 semanas. Con 480 mg cada 4 semanas, la primera dosis de mantenimiento se administra 6 semanas después de la última dosis combinada."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Nivolumab 3 mg/kg (246 mg), then ipilimumab 1 mg/kg (82 mg) on the same day, every 3 weeks for 4 doses; then nivolumab 480 mg every 4 weeks, starting 6 weeks after the last combination dose",
+              "de": "Nivolumab 3 mg/kg (246 mg), danach am selben Tag Ipilimumab 1 mg/kg (82 mg), alle 3 Wochen, 4 Gaben; anschließend Nivolumab 480 mg alle 4 Wochen, Beginn 6 Wochen nach der letzten Kombinationsgabe",
+              "es": "Nivolumab 3 mg/kg (246 mg) y después, el mismo día, ipilimumab 1 mg/kg (82 mg), cada 3 semanas, 4 dosis; a continuación nivolumab 480 mg cada 4 semanas, empezando 6 semanas tras la última dosis combinada"
+            },
+            "score": 10,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Correct: 3 mg/kg x 82 kg = 246 mg nivolumab, followed on the same day by 1 mg/kg x 82 kg = 82 mg ipilimumab, every 3 weeks for 4 doses. Maintenance is flat-dose nivolumab; 480 mg every 4 weeks fits his wish and starts 6 weeks after the last combination dose. It continues until progression or unacceptable toxicity.",
+              "de": "Richtig: 3 mg/kg × 82 kg = 246 mg Nivolumab, am selben Tag gefolgt von 1 mg/kg × 82 kg = 82 mg Ipilimumab, alle 3 Wochen, 4 Gaben. Die Erhaltung ist Nivolumab als Fixdosis; 480 mg alle 4 Wochen entspricht seinem Wunsch und beginnt 6 Wochen nach der letzten Kombinationsgabe. Sie läuft bis Progress oder inakzeptable Toxizität.",
+              "es": "Correcto: 3 mg/kg × 82 kg = 246 mg de nivolumab, seguidos el mismo día de 1 mg/kg × 82 kg = 82 mg de ipilimumab, cada 3 semanas, 4 dosis. El mantenimiento es nivolumab a dosis fija; 480 mg cada 4 semanas responde a su deseo y empieza 6 semanas después de la última dosis combinada. Se mantiene hasta la progresión o toxicidad inaceptable."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Nivolumab 3 mg/kg (246 mg) plus ipilimumab 1 mg/kg (82 mg) every 3 weeks for 4 doses, then nivolumab 3 mg/kg (246 mg) every 3 weeks",
+              "de": "Nivolumab 3 mg/kg (246 mg) plus Ipilimumab 1 mg/kg (82 mg) alle 3 Wochen, 4 Gaben, danach Nivolumab 3 mg/kg (246 mg) alle 3 Wochen",
+              "es": "Nivolumab 3 mg/kg (246 mg) más ipilimumab 1 mg/kg (82 mg) cada 3 semanas, 4 dosis; después nivolumab 3 mg/kg (246 mg) cada 3 semanas"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: the induction is right, but the weight-based dose and the 3-week interval belong to the combination phase only. Nivolumab maintenance is a flat dose of 240 mg every 2 weeks or 480 mg every 4 weeks; a 3-weekly schedule also misses his wish.",
+              "de": "Falsch: Die Induktion stimmt, aber die gewichtsbasierte Dosis und das 3-Wochen-Intervall gehören nur zur Kombinationsphase. Die Nivolumab-Erhaltung ist eine Fixdosis von 240 mg alle 2 Wochen oder 480 mg alle 4 Wochen; ein 3-Wochen-Rhythmus verfehlt zudem seinen Wunsch.",
+              "es": "Incorrecto: la inducción es correcta, pero la dosis según el peso y el intervalo de 3 semanas corresponden solo a la fase combinada. El mantenimiento con nivolumab es una dosis fija de 240 mg cada 2 semanas o 480 mg cada 4 semanas; un ritmo cada 3 semanas tampoco atiende a su deseo."
+            }
+          }
+        ],
+        "best": "d"
+      }
+    ],
+    "takeaway": {
+      "en": "In renal cell carcinoma the induction is nivolumab 3 mg/kg followed by ipilimumab 1 mg/kg on the same day, every 3 weeks for 4 doses (in melanoma it is the other way round). Maintenance is flat-dose nivolumab: 240 mg every 2 weeks from 3 weeks, or 480 mg every 4 weeks from 6 weeks after the last combination dose.",
+      "de": "Beim Nierenzellkarzinom lautet die Induktion Nivolumab 3 mg/kg, am selben Tag gefolgt von Ipilimumab 1 mg/kg, alle 3 Wochen für 4 Gaben (beim Melanom umgekehrt). Die Erhaltung ist Nivolumab als Fixdosis: 240 mg alle 2 Wochen ab 3 Wochen bzw. 480 mg alle 4 Wochen ab 6 Wochen nach der letzten Kombinationsgabe.",
+      "es": "En el carcinoma de células renales la inducción es nivolumab 3 mg/kg seguido el mismo día de ipilimumab 1 mg/kg, cada 3 semanas durante 4 dosis (en el melanoma es al revés). El mantenimiento es nivolumab a dosis fija: 240 mg cada 2 semanas a partir de las 3 semanas, o 480 mg cada 4 semanas a partir de las 6 semanas tras la última dosis combinada."
+    },
+    "references": [
+      "bank-guide-nierenzellkarzinom",
+      "ema-medicines",
+      "fachinfo-de"
+    ]
+  },
+  {
+    "id": "sys-prot-sunitinib-4-2-first-order",
+    "area": "clinic",
+    "level": 1,
+    "acuity": "routine",
+    "duty": "dayclinic",
+    "patient": {
+      "name": "Eckhard Vosskuhl",
+      "age": 71,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Sunitinib when checkpoint inhibitors are ruled out",
+      "de": "Sunitinib, wenn Checkpoint-Inhibitoren ausscheiden",
+      "es": "Sunitinib cuando se descartan los inhibidores de puntos de control"
+    },
+    "presenting": {
+      "en": "71-year-old man with metastatic clear-cell renal cell carcinoma (lung and bone metastases), IMDC favourable risk. Because of generalised myasthenia gravis treated with azathioprine and pyridostigmine, the tumour board rules out checkpoint inhibitors and recommends first-line sunitinib. Weight 79 kg, ECOG 1, creatinine clearance 52 mL/min, TSH and transaminases normal, LVEF 60%; no other medication, in particular no strong CYP3A4 inhibitors or inducers. You are writing the first order.",
+      "de": "71-jähriger Patient mit metastasiertem klarzelligem Nierenzellkarzinom (Lungen- und Knochenmetastasen), günstiges IMDC-Risiko. Wegen einer generalisierten Myasthenia gravis unter Azathioprin und Pyridostigmin schließt das Tumorboard Checkpoint-Inhibitoren aus und empfiehlt die Erstlinie mit Sunitinib. Gewicht 79 kg, ECOG 1, Kreatinin-Clearance 52 ml/min, TSH und Transaminasen normal, LVEF 60 %; keine weitere Medikation, insbesondere keine starken CYP3A4-Inhibitoren oder -Induktoren. Sie schreiben die Erstverordnung.",
+      "es": "Varón de 71 años con carcinoma de células renales de células claras metastásico (metástasis pulmonares y óseas), riesgo IMDC favorable. Por una miastenia grave generalizada tratada con azatioprina y piridostigmina, el comité de tumores descarta los inhibidores de puntos de control y recomienda sunitinib en primera línea. Peso 79 kg, ECOG 1, aclaramiento de creatinina 52 ml/min, TSH y transaminasas normales, FEVI 60 %; ninguna otra medicación, en particular ningún inhibidor ni inductor potente del CYP3A4. Usted redacta la primera prescripción."
+    },
+    "vitals": {
+      "bp": "134/82",
+      "hr": 74,
+      "temp": 36.5,
+      "spo2": 97,
+      "rr": 15
+    },
+    "objectives": {
+      "en": [
+        "Order sunitinib 50 mg once daily in the 4/2 schedule (6-week cycle)",
+        "Distinguish the sunitinib schedule from the tivozanib 21/7 schedule and from unjustified dose changes"
+      ],
+      "de": [
+        "Sunitinib 50 mg 1-mal täglich im Schema 4/2 (6-Wochen-Zyklus) verordnen",
+        "Das Sunitinib-Schema vom Tivozanib-Schema 21/7 und von unbegründeten Dosisänderungen abgrenzen"
+      ],
+      "es": [
+        "Prescribir sunitinib 50 mg una vez al día en el esquema 4/2 (ciclo de 6 semanas)",
+        "Distinguir el esquema de sunitinib del esquema 21/7 de tivozanib y de cambios de dosis injustificados"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which order is correct?",
+          "de": "Welche Verordnung ist korrekt?",
+          "es": "¿Qué prescripción es correcta?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Sunitinib 50 mg orally once daily for 4 weeks, then 2 weeks off; cycle length 6 weeks",
+              "de": "Sunitinib 50 mg p.o. 1-mal täglich über 4 Wochen, danach 2 Wochen Pause; Zykluslänge 6 Wochen",
+              "es": "Sunitinib 50 mg v.o. una vez al día durante 4 semanas, seguido de 2 semanas de descanso; ciclo de 6 semanas"
+            },
+            "score": 10,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Correct: the standard schedule is 50 mg once daily for 4 weeks followed by a 2-week break (4/2), repeated every 6 weeks until progression or unacceptable toxicity. Doses are adjusted later in 12.5 mg steps between 25 and 75 mg per day. Monitor blood pressure, TSH every cycle, blood count, liver values and urine protein.",
+              "de": "Richtig: Das Standardschema ist 50 mg 1-mal täglich über 4 Wochen, gefolgt von 2 Wochen Pause (4/2), wiederholt alle 6 Wochen bis Progress oder inakzeptable Toxizität. Dosisanpassungen erfolgen später in 12,5-mg-Schritten zwischen 25 und 75 mg pro Tag. Blutdruck, TSH jeden Zyklus, Blutbild, Leberwerte und Urin-Eiweiß kontrollieren.",
+              "es": "Correcto: el esquema estándar es 50 mg una vez al día durante 4 semanas seguido de 2 semanas de descanso (4/2), repetido cada 6 semanas hasta la progresión o toxicidad inaceptable. Los ajustes posteriores se hacen en pasos de 12,5 mg entre 25 y 75 mg al día. Se controlan presión arterial, TSH en cada ciclo, hemograma, perfil hepático y proteínas en orina."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Sunitinib 50 mg orally once daily, continuously without a break",
+              "de": "Sunitinib 50 mg p.o. 1-mal täglich, kontinuierlich ohne Pause",
+              "es": "Sunitinib 50 mg v.o. una vez al día, de forma continua sin descanso"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Wrong and harmful: 50 mg is only given with the 2-week break. Continuous 50 mg raises the dose intensity by half and leads to cumulative fatigue, hand-foot syndrome, mucositis, cytopenias and hypertension.",
+              "de": "Falsch und gefährlich: 50 mg werden nur mit der 2-wöchigen Pause gegeben. Kontinuierlich 50 mg erhöhen die Dosisintensität um die Hälfte und führen zu kumulativer Fatigue, Hand-Fuß-Syndrom, Mukositis, Zytopenien und Hypertonie.",
+              "es": "Incorrecto y peligroso: los 50 mg solo se administran con el descanso de 2 semanas. Administrar 50 mg de forma continua aumenta la intensidad de dosis en un 50 % y provoca fatiga acumulada, síndrome mano-pie, mucositis, citopenias e hipertensión."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Sunitinib 37.5 mg orally once daily for 4 weeks, then 2 weeks off, because of the creatinine clearance of 52 mL/min",
+              "de": "Sunitinib 37,5 mg p.o. 1-mal täglich über 4 Wochen, danach 2 Wochen Pause, wegen der Kreatinin-Clearance von 52 ml/min",
+              "es": "Sunitinib 37,5 mg v.o. una vez al día durante 4 semanas, seguido de 2 semanas de descanso, por el aclaramiento de creatinina de 52 ml/min"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: sunitinib needs no starting-dose reduction for reduced renal function. A reduction to at least 37.5 mg per day is only foreseen when a strong CYP3A4 inhibitor cannot be avoided, which is not the case here. The lower dose would undertreat him.",
+              "de": "Falsch: Bei eingeschränkter Nierenfunktion ist keine Reduktion der Startdosis nötig. Eine Reduktion auf mindestens 37,5 mg pro Tag ist nur bei unvermeidbarer Komedikation mit einem starken CYP3A4-Inhibitor vorgesehen, die hier nicht vorliegt. Die niedrigere Dosis würde ihn unterbehandeln.",
+              "es": "Incorrecto: el sunitinib no requiere reducir la dosis inicial por función renal disminuida. La reducción a un mínimo de 37,5 mg al día solo está prevista cuando no puede evitarse un inhibidor potente del CYP3A4, lo que no ocurre aquí. La dosis menor lo infratrataría."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Sunitinib 50 mg orally once daily on days 1-21, then 7 days off; cycle length 4 weeks",
+              "de": "Sunitinib 50 mg p.o. 1-mal täglich an Tag 1-21, danach 7 Tage Pause; Zykluslänge 4 Wochen",
+              "es": "Sunitinib 50 mg v.o. una vez al día los días 1-21, seguido de 7 días de descanso; ciclo de 4 semanas"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: 21 days on and 7 days off in a 4-week cycle is the tivozanib schedule. For sunitinib it means 3 weeks on and only 1 week off, a higher dose intensity than the approved 4/2 schedule.",
+              "de": "Falsch: 21 Tage Einnahme und 7 Tage Pause im 4-Wochen-Zyklus ist das Tivozanib-Schema. Für Sunitinib bedeutet es 3 Wochen Einnahme bei nur 1 Woche Pause, also eine höhere Dosisintensität als im zugelassenen Schema 4/2.",
+              "es": "Incorrecto: 21 días de tratamiento y 7 de descanso en un ciclo de 4 semanas es el esquema de tivozanib. Para sunitinib supone 3 semanas de tratamiento con solo 1 semana de descanso, una intensidad de dosis mayor que la del esquema 4/2 autorizado."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Sunitinib 75 mg orally once daily for 4 weeks, then 2 weeks off, because the metastases are in two organs",
+              "de": "Sunitinib 75 mg p.o. 1-mal täglich über 4 Wochen, danach 2 Wochen Pause, da zwei Organe metastasiert sind",
+              "es": "Sunitinib 75 mg v.o. una vez al día durante 4 semanas, seguido de 2 semanas de descanso, porque hay metástasis en dos órganos"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Wrong and harmful: the starting dose is 50 mg regardless of tumour burden. 75 mg per day is the upper limit for later dose increases in 12.5 mg steps, not a starting dose; it is an overdose with a high risk of severe toxicity.",
+              "de": "Falsch und gefährlich: Die Startdosis beträgt unabhängig von der Tumorlast 50 mg. 75 mg pro Tag ist die Obergrenze für spätere Dosissteigerungen in 12,5-mg-Schritten, keine Startdosis; es ist eine Überdosierung mit hohem Risiko schwerer Toxizität.",
+              "es": "Incorrecto y peligroso: la dosis inicial es 50 mg independientemente de la carga tumoral. 75 mg al día es el límite superior para aumentos posteriores en pasos de 12,5 mg, no una dosis inicial; supone una sobredosis con alto riesgo de toxicidad grave."
+            }
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "en": "Sunitinib starts at 50 mg once daily for 4 weeks followed by 2 weeks off (4/2, 6-week cycle). Later changes are made in 12.5 mg steps between 25 and 75 mg per day; a reduction to at least 37.5 mg is only foreseen for an unavoidable strong CYP3A4 inhibitor, not for impaired renal function (no starting-dose change at any degree of renal impairment, including haemodialysis).",
+      "de": "Sunitinib beginnt mit 50 mg 1-mal täglich über 4 Wochen, gefolgt von 2 Wochen Pause (4/2, 6-Wochen-Zyklus). Spätere Anpassungen erfolgen in 12,5-mg-Schritten zwischen 25 und 75 mg pro Tag; eine Reduktion auf mindestens 37,5 mg ist nur bei unvermeidbarem starkem CYP3A4-Inhibitor vorgesehen, nicht bei eingeschränkter Nierenfunktion (keine Anpassung der Startdosis bei Niereninsuffizienz jeden Grades, auch nicht bei Hämodialyse).",
+      "es": "El sunitinib se inicia con 50 mg una vez al día durante 4 semanas seguido de 2 semanas de descanso (4/2, ciclo de 6 semanas). Los cambios posteriores se hacen en pasos de 12,5 mg entre 25 y 75 mg al día; la reducción a un mínimo de 37,5 mg solo está prevista ante un inhibidor potente del CYP3A4 inevitable, no por insuficiencia renal (sin ajuste de la dosis inicial en ningún grado de insuficiencia renal, incluida la hemodiálisis)."
+    },
+    "references": [
+      "bank-guide-nierenzellkarzinom",
+      "ema-medicines",
+      "fachinfo-de"
+    ]
+  },
+  {
+    "id": "sys-prot-cabozantinib-dose-with-nivolumab",
+    "area": "clinic",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "dayclinic",
+    "patient": {
+      "name": "Marlies Achterberg",
+      "age": 59,
+      "sex": "female"
+    },
+    "title": {
+      "en": "Cabozantinib dose in combination with nivolumab",
+      "de": "Cabozantinib-Dosis in Kombination mit Nivolumab",
+      "es": "Dosis de cabozantinib en combinación con nivolumab"
+    },
+    "presenting": {
+      "en": "59-year-old woman with metastatic clear-cell renal cell carcinoma (liver and lung metastases), IMDC intermediate risk. The tumour board recommends first-line nivolumab plus cabozantinib. Weight 64 kg, ECOG 1, creatinine clearance 68 mL/min, transaminases, bilirubin and TSH normal, blood pressure controlled on amlodipine, dental status checked without findings. Her husband has been taking cabozantinib 60 mg tablets as monotherapy for a year and she asks whether she will get the same tablets. You are writing the order for the first 4-week cycle.",
+      "de": "59-jährige Patientin mit metastasiertem klarzelligem Nierenzellkarzinom (Leber- und Lungenmetastasen), intermediäres IMDC-Risiko. Das Tumorboard empfiehlt die Erstlinie mit Nivolumab plus Cabozantinib. Gewicht 64 kg, ECOG 1, Kreatinin-Clearance 68 ml/min, Transaminasen, Bilirubin und TSH normal, Blutdruck unter Amlodipin eingestellt, Zahnstatus ohne Befund. Ihr Ehemann nimmt seit einem Jahr Cabozantinib-Tabletten 60 mg als Monotherapie, und sie fragt, ob sie dieselben Tabletten bekommt. Sie schreiben die Anordnung für den ersten 4-Wochen-Zyklus.",
+      "es": "Mujer de 59 años con carcinoma de células renales de células claras metastásico (metástasis hepáticas y pulmonares), riesgo IMDC intermedio. El comité de tumores recomienda en primera línea nivolumab más cabozantinib. Peso 64 kg, ECOG 1, aclaramiento de creatinina 68 ml/min, transaminasas, bilirrubina y TSH normales, presión arterial controlada con amlodipino, estado dental revisado sin hallazgos. Su marido toma desde hace un año comprimidos de cabozantinib de 60 mg en monoterapia y ella pregunta si recibirá los mismos comprimidos. Usted redacta la prescripción del primer ciclo de 4 semanas."
+    },
+    "vitals": {
+      "bp": "130/80",
+      "hr": 76,
+      "temp": 36.6,
+      "spo2": 98,
+      "rr": 14
+    },
+    "objectives": {
+      "en": [
+        "Order cabozantinib at 40 mg with nivolumab instead of the 60 mg monotherapy dose",
+        "Combine it with flat-dose nivolumab 240 mg every 2 weeks or 480 mg every 4 weeks and take cabozantinib fasting"
+      ],
+      "de": [
+        "Cabozantinib mit Nivolumab in der Dosis 40 mg statt der Monotherapiedosis 60 mg verordnen",
+        "Mit Nivolumab als Fixdosis 240 mg alle 2 Wochen bzw. 480 mg alle 4 Wochen kombinieren und Cabozantinib nüchtern einnehmen lassen"
+      ],
+      "es": [
+        "Prescribir cabozantinib a 40 mg con nivolumab en lugar de la dosis de 60 mg de la monoterapia",
+        "Combinarlo con nivolumab a dosis fija de 240 mg cada 2 semanas o 480 mg cada 4 semanas y tomar el cabozantinib en ayunas"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which order is correct?",
+          "de": "Welche Anordnung ist korrekt?",
+          "es": "¿Qué prescripción es correcta?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Nivolumab 480 mg i.v. every 4 weeks plus cabozantinib tablets 60 mg orally once daily, fasting",
+              "de": "Nivolumab 480 mg i.v. alle 4 Wochen plus Cabozantinib-Tabletten 60 mg p.o. 1-mal täglich nüchtern",
+              "es": "Nivolumab 480 mg i.v. cada 4 semanas más comprimidos de cabozantinib 60 mg v.o. una vez al día en ayunas"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Wrong and harmful: 60 mg is the monotherapy dose, as her husband takes it. With nivolumab the cabozantinib dose is 40 mg; 60 mg in the combination is an overdose and increases the hepatotoxicity, which is already more frequent in this combination.",
+              "de": "Falsch und gefährlich: 60 mg ist die Monotherapiedosis, wie sie ihr Ehemann einnimmt. Mit Nivolumab beträgt die Cabozantinib-Dosis 40 mg; 60 mg in der Kombination sind eine Überdosierung und verstärken die Hepatotoxizität, die in dieser Kombination ohnehin häufiger ist.",
+              "es": "Incorrecto y peligroso: 60 mg es la dosis de la monoterapia, como la que toma su marido. Con nivolumab la dosis de cabozantinib es de 40 mg; 60 mg en la combinación son una sobredosis y aumentan la hepatotoxicidad, ya más frecuente en esta combinación."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Nivolumab 3 mg/kg (192 mg) i.v. every 3 weeks plus cabozantinib tablets 40 mg orally once daily, fasting",
+              "de": "Nivolumab 3 mg/kg (192 mg) i.v. alle 3 Wochen plus Cabozantinib-Tabletten 40 mg p.o. 1-mal täglich nüchtern",
+              "es": "Nivolumab 3 mg/kg (192 mg) i.v. cada 3 semanas más comprimidos de cabozantinib 40 mg v.o. una vez al día en ayunas"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: 3 mg/kg every 3 weeks is the nivolumab induction dose in combination with ipilimumab. With cabozantinib nivolumab is given as a flat dose of 240 mg every 2 weeks or 480 mg every 4 weeks, for up to 2 years.",
+              "de": "Falsch: 3 mg/kg alle 3 Wochen ist die Nivolumab-Induktionsdosis in Kombination mit Ipilimumab. Mit Cabozantinib wird Nivolumab als Fixdosis 240 mg alle 2 Wochen oder 480 mg alle 4 Wochen gegeben, für bis zu 2 Jahre.",
+              "es": "Incorrecto: 3 mg/kg cada 3 semanas es la dosis de inducción de nivolumab en combinación con ipilimumab. Con cabozantinib, el nivolumab se administra a dosis fija de 240 mg cada 2 semanas o 480 mg cada 4 semanas, durante un máximo de 2 años."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Nivolumab 240 mg i.v. every 2 weeks plus cabozantinib tablets 40 mg orally once daily, fasting (no food from 2 h before until 1 h after intake)",
+              "de": "Nivolumab 240 mg i.v. alle 2 Wochen plus Cabozantinib-Tabletten 40 mg p.o. 1-mal täglich nüchtern (2 h vor bis 1 h nach Einnahme keine Nahrung)",
+              "es": "Nivolumab 240 mg i.v. cada 2 semanas más comprimidos de cabozantinib 40 mg v.o. una vez al día en ayunas (sin alimentos desde 2 h antes hasta 1 h después de la toma)"
+            },
+            "score": 10,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Correct: with nivolumab, cabozantinib is given at 40 mg once daily, fasting; the 60 mg monotherapy dose does not apply. Nivolumab is a flat dose of 240 mg every 2 weeks (alternatively 480 mg every 4 weeks) for up to 2 years, cabozantinib continues until progression. Check transaminases before every cycle; if they rise, pause both drugs. Further reductions are 20 mg daily, then 20 mg every other day.",
+              "de": "Richtig: Mit Nivolumab wird Cabozantinib in einer Dosis von 40 mg 1-mal täglich nüchtern gegeben; die Monotherapiedosis von 60 mg gilt hier nicht. Nivolumab ist eine Fixdosis von 240 mg alle 2 Wochen (alternativ 480 mg alle 4 Wochen) für bis zu 2 Jahre, Cabozantinib läuft bis Progress. Transaminasen vor jedem Zyklus; bei Anstieg beide Substanzen pausieren. Reduktionsstufen: 20 mg täglich, dann 20 mg jeden 2. Tag.",
+              "es": "Correcto: con nivolumab, el cabozantinib se administra a 40 mg una vez al día en ayunas; la dosis de 60 mg de la monoterapia no se aplica. El nivolumab es una dosis fija de 240 mg cada 2 semanas (alternativa: 480 mg cada 4 semanas) durante un máximo de 2 años, y el cabozantinib continúa hasta la progresión. Se controlan las transaminasas antes de cada ciclo; si aumentan, se interrumpen ambos fármacos. Escalones de reducción: 20 mg al día y después 20 mg en días alternos."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Nivolumab 240 mg i.v. every 2 weeks plus cabozantinib tablets 40 mg orally once daily with breakfast to improve tolerance",
+              "de": "Nivolumab 240 mg i.v. alle 2 Wochen plus Cabozantinib-Tabletten 40 mg p.o. 1-mal täglich zum Frühstück zur besseren Verträglichkeit",
+              "es": "Nivolumab 240 mg i.v. cada 2 semanas más comprimidos de cabozantinib 40 mg v.o. una vez al día con el desayuno para mejorar la tolerancia"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: the doses are right, but cabozantinib must be taken fasting, with no food from 2 h before until 1 h after intake. Food, especially a fatty meal, increases absorption and therefore exposure and toxicity.",
+              "de": "Falsch: Die Dosen stimmen, aber Cabozantinib muss nüchtern eingenommen werden, 2 h vor bis 1 h nach der Einnahme keine Nahrung. Nahrung, besonders eine fettreiche Mahlzeit, steigert die Resorption und damit Exposition und Toxizität.",
+              "es": "Incorrecto: las dosis son correctas, pero el cabozantinib debe tomarse en ayunas, sin alimentos desde 2 h antes hasta 1 h después de la toma. Los alimentos, sobre todo una comida grasa, aumentan la absorción y con ello la exposición y la toxicidad."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Nivolumab 240 mg i.v. every 2 weeks plus cabozantinib capsules (Cometriq) 40 mg orally once daily, fasting, because capsules and tablets are equivalent",
+              "de": "Nivolumab 240 mg i.v. alle 2 Wochen plus Cabozantinib-Kapseln (Cometriq) 40 mg p.o. 1-mal täglich nüchtern, da Kapseln und Tabletten gleichwertig sind",
+              "es": "Nivolumab 240 mg i.v. cada 2 semanas más cápsulas de cabozantinib (Cometriq) 40 mg v.o. una vez al día en ayunas, porque cápsulas y comprimidos son equivalentes"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: cabozantinib tablets (Cabometyx) and capsules (Cometriq) are not interchangeable because their bioavailability differs. In renal cell carcinoma only the tablets are used, at 40 mg in this combination.",
+              "de": "Falsch: Cabozantinib-Tabletten (Cabometyx) und -Kapseln (Cometriq) sind wegen unterschiedlicher Bioverfügbarkeit nicht austauschbar. Beim Nierenzellkarzinom werden nur die Tabletten eingesetzt, in dieser Kombination mit 40 mg.",
+              "es": "Incorrecto: los comprimidos (Cabometyx) y las cápsulas (Cometriq) de cabozantinib no son intercambiables porque su biodisponibilidad es distinta. En el carcinoma de células renales solo se usan los comprimidos, a 40 mg en esta combinación."
+            }
+          }
+        ],
+        "best": "c"
+      }
+    ],
+    "takeaway": {
+      "en": "The TKI dose depends on the partner: cabozantinib is 60 mg alone but 40 mg with nivolumab, lenvatinib is 20 mg with pembrolizumab but 18 mg with everolimus, and axitinib stays at 5 mg twice daily with pembrolizumab. With cabozantinib, nivolumab is a flat dose (240 mg every 2 weeks or 480 mg every 4 weeks) for up to 2 years, and cabozantinib tablets are taken fasting.",
+      "de": "Die TKI-Dosis hängt vom Partner ab: Cabozantinib allein 60 mg, mit Nivolumab 40 mg; Lenvatinib mit Pembrolizumab 20 mg, mit Everolimus 18 mg; Axitinib mit Pembrolizumab 5 mg 2-mal täglich. Nivolumab wird mit Cabozantinib als Fixdosis (240 mg alle 2 Wochen oder 480 mg alle 4 Wochen) für bis zu 2 Jahre gegeben, die Cabozantinib-Tabletten nüchtern eingenommen.",
+      "es": "La dosis del ITC depende del fármaco acompañante: cabozantinib 60 mg en monoterapia y 40 mg con nivolumab; lenvatinib 20 mg con pembrolizumab y 18 mg con everolimus; axitinib 5 mg dos veces al día con pembrolizumab. Con cabozantinib, el nivolumab se da a dosis fija (240 mg cada 2 semanas o 480 mg cada 4 semanas) durante un máximo de 2 años, y los comprimidos de cabozantinib se toman en ayunas."
+    },
+    "references": [
+      "bank-guide-nierenzellkarzinom",
+      "ema-medicines",
+      "fachinfo-de"
+    ]
+  },
+  {
+    "id": "sys-prot-bep-intermediate-cycle1-order",
+    "area": "clinic",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "dayclinic",
+    "patient": {
+      "name": "Lukas Brinkhaus",
+      "age": 28,
+      "sex": "male"
+    },
+    "title": {
+      "en": "BEP for intermediate prognosis: the order for cycle 1",
+      "de": "BEP bei intermediärer Prognose: Anordnung für Zyklus 1",
+      "es": "BEP en pronóstico intermedio: prescripción del ciclo 1"
+    },
+    "presenting": {
+      "en": "28-year-old man who underwent right inguinal orchiectomy 10 days ago for a mixed non-seminomatous germ cell tumour. Staging CT: retroperitoneal lymph node metastases up to 4 cm and four lung metastases, no non-pulmonary visceral metastases; markers before chemotherapy: AFP 2400 ng/mL, beta-hCG 3100 IU/L, LDH 1.2 times the upper limit of normal, i.e. intermediate prognosis according to IGCCCG. Height 185 cm, weight 86 kg, body surface area 2.10 m²; non-smoker, lung function including DLCO normal, creatinine clearance 118 mL/min, no hearing loss. Sperm cryopreservation has been done and the tumour board recommends BEP.",
+      "de": "28-jähriger Patient, vor 10 Tagen inguinale Ablatio testis rechts wegen eines gemischten nichtseminomatösen Keimzelltumors. Staging-CT: retroperitoneale Lymphknotenmetastasen bis 4 cm und vier Lungenmetastasen, keine nichtpulmonalen viszeralen Metastasen; Marker vor der Chemotherapie: AFP 2400 ng/ml, beta-hCG 3100 IU/l, LDH das 1,2-Fache des oberen Normwerts, damit intermediäre Prognose nach IGCCCG. Größe 185 cm, Gewicht 86 kg, Körperoberfläche 2,10 m²; Nichtraucher, Lungenfunktion einschließlich DLCO normal, Kreatinin-Clearance 118 ml/min, keine Hörminderung. Die Spermienkryokonservierung ist erfolgt, das Tumorboard empfiehlt BEP.",
+      "es": "Varón de 28 años al que hace 10 días se le practicó una orquiectomía inguinal derecha por un tumor de células germinales no seminomatoso mixto. TC de extensión: metástasis ganglionares retroperitoneales de hasta 4 cm y cuatro metástasis pulmonares, sin metástasis viscerales no pulmonares; marcadores antes de la quimioterapia: AFP 2400 ng/ml, beta-hCG 3100 UI/l, LDH 1,2 veces el límite superior de la normalidad, es decir, pronóstico intermedio según IGCCCG. Talla 185 cm, peso 86 kg, superficie corporal 2,10 m²; no fumador, función pulmonar con DLCO normal, aclaramiento de creatinina 118 ml/min, sin hipoacusia. Ya se ha realizado la criopreservación de semen y el comité de tumores recomienda BEP."
+    },
+    "vitals": {
+      "bp": "124/76",
+      "hr": 72,
+      "temp": 36.6,
+      "spo2": 98,
+      "rr": 14
+    },
+    "objectives": {
+      "en": [
+        "Derive the number of BEP cycles from the IGCCCG prognosis group",
+        "Order bleomycin as a flat dose on days 1, 8 and 15 and check the cumulative dose"
+      ],
+      "de": [
+        "Die Zyklenzahl von BEP aus der IGCCCG-Prognosegruppe ableiten",
+        "Bleomycin als absolute Dosis an Tag 1, 8 und 15 anordnen und die kumulative Dosis prüfen"
+      ],
+      "es": [
+        "Deducir el número de ciclos de BEP a partir del grupo pronóstico IGCCCG",
+        "Prescribir la bleomicina como dosis fija los días 1, 8 y 15 y comprobar la dosis acumulada"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which chemotherapy order is correct?",
+          "de": "Welche Anordnung der Chemotherapie ist korrekt?",
+          "es": "¿Qué prescripción de la quimioterapia es correcta?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Cisplatin 20 mg/m² (42 mg) and etoposide 100 mg/m² (210 mg) on days 1-5, bleomycin 30 mg/m² (63 mg) on days 1, 8 and 15; 4 cycles every 21 days",
+              "de": "Cisplatin 20 mg/m² (42 mg) und Etoposid 100 mg/m² (210 mg) an Tag 1–5, Bleomycin 30 mg/m² (63 mg) an Tag 1, 8 und 15; 4 Zyklen alle 21 Tage",
+              "es": "Cisplatino 20 mg/m² (42 mg) y etopósido 100 mg/m² (210 mg) los días 1-5, bleomicina 30 mg/m² (63 mg) los días 1, 8 y 15; 4 ciclos cada 21 días"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Wrong and harmful: bleomycin is given as a flat dose of 30 mg (30,000 IU), not per m². 63 mg per dose would mean 189 mg per cycle and 756 mg after 4 cycles, almost twice the cumulative maximum of 400 mg, with a high risk of fatal pulmonary fibrosis.",
+              "de": "Falsch und gefährlich: Bleomycin wird mit 30 mg (30.000 I.E.) als absolute Dosis gegeben, nicht pro m². 63 mg pro Gabe ergäben 189 mg pro Zyklus und 756 mg nach 4 Zyklen, fast das Doppelte der kumulativen Höchstdosis von 400 mg, mit hohem Risiko einer tödlichen Lungenfibrose.",
+              "es": "Incorrecto y peligroso: la bleomicina se administra como dosis fija de 30 mg (30.000 UI), no por m². 63 mg por dosis supondrían 189 mg por ciclo y 756 mg tras 4 ciclos, casi el doble de la dosis acumulada máxima de 400 mg, con un riesgo alto de fibrosis pulmonar mortal."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Cisplatin 42 mg and etoposide 210 mg on days 1-5, bleomycin 30 mg flat dose on day 1 only to save day-clinic visits; 4 cycles every 21 days",
+              "de": "Cisplatin 42 mg und Etoposid 210 mg an Tag 1–5, Bleomycin 30 mg absolut nur an Tag 1, um Termine in der Tagesklinik zu sparen; 4 Zyklen alle 21 Tage",
+              "es": "Cisplatino 42 mg y etopósido 210 mg los días 1-5, bleomicina 30 mg dosis fija solo el día 1 para ahorrar visitas al hospital de día; 4 ciclos cada 21 días"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: bleomycin belongs on days 1, 8 and 15 of every cycle. In the Australian-New Zealand randomised trial, 4 cycles with bleomycin on day 1 only were inferior to 3 cycles with bleomycin on days 1, 8 and 15; the weekly doses must not be dropped.",
+              "de": "Falsch: Bleomycin gehört an Tag 1, 8 und 15 jedes Zyklus. In der australisch-neuseeländischen randomisierten Studie waren 4 Zyklen mit Bleomycin nur an Tag 1 drei Zyklen mit Bleomycin an Tag 1, 8 und 15 unterlegen; die wöchentlichen Gaben dürfen nicht entfallen.",
+              "es": "Incorrecto: la bleomicina se administra los días 1, 8 y 15 de cada ciclo. En el ensayo aleatorizado australiano-neozelandés, 4 ciclos con bleomicina solo el día 1 fueron inferiores a 3 ciclos con bleomicina los días 1, 8 y 15; las dosis semanales no deben omitirse."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Cisplatin 20 mg/m² (42 mg) and etoposide 100 mg/m² (210 mg) on days 1-5, bleomycin 30 mg flat dose on days 1, 8 and 15; 4 cycles every 21 days (cumulative bleomycin 360 mg)",
+              "de": "Cisplatin 20 mg/m² (42 mg) und Etoposid 100 mg/m² (210 mg) an Tag 1–5, Bleomycin 30 mg absolut an Tag 1, 8 und 15; 4 Zyklen alle 21 Tage (kumulativ 360 mg Bleomycin)",
+              "es": "Cisplatino 20 mg/m² (42 mg) y etopósido 100 mg/m² (210 mg) los días 1-5, bleomicina 30 mg dosis fija los días 1, 8 y 15; 4 ciclos cada 21 días (bleomicina acumulada 360 mg)"
+            },
+            "score": 10,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Correct: intermediate prognosis requires 4 cycles of BEP with a cycle length of 21 days. Cisplatin and etoposide are dosed on the actual body surface area (20 × 2.10 = 42 mg and 100 × 2.10 = 210 mg daily on days 1-5), bleomycin as a flat 30 mg on days 1, 8 and 15. After 4 cycles the cumulative bleomycin dose is 360 mg, below the limit of 400 mg; examine the lungs clinically before every bleomycin dose and check the blood count before days 1, 8 and 15.",
+              "de": "Richtig: Bei intermediärer Prognose sind 4 Zyklen BEP mit einer Zykluslänge von 21 Tagen Standard. Cisplatin und Etoposid werden nach der tatsächlichen KOF dosiert (20 × 2,10 = 42 mg und 100 × 2,10 = 210 mg täglich an Tag 1–5), Bleomycin mit 30 mg absolut an Tag 1, 8 und 15. Nach 4 Zyklen beträgt die kumulative Bleomycin-Dosis 360 mg und liegt unter der Grenze von 400 mg; vor jeder Bleomycin-Gabe die Lunge klinisch kontrollieren, Blutbild vor Tag 1, 8 und 15.",
+              "es": "Correcto: el pronóstico intermedio requiere 4 ciclos de BEP con una duración de ciclo de 21 días. El cisplatino y el etopósido se dosifican según la superficie corporal real (20 × 2,10 = 42 mg y 100 × 2,10 = 210 mg diarios los días 1-5) y la bleomicina como dosis fija de 30 mg los días 1, 8 y 15. Tras 4 ciclos la dosis acumulada de bleomicina es de 360 mg, por debajo del límite de 400 mg; explorar clínicamente los pulmones antes de cada dosis de bleomicina y hacer hemograma antes de los días 1, 8 y 15."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Doses with the body surface area capped at 2.0 m²: cisplatin 40 mg and etoposide 200 mg on days 1-5, bleomycin 30 mg on days 1, 8 and 15; 4 cycles every 21 days",
+              "de": "Dosierung mit auf 2,0 m² gekappter KOF: Cisplatin 40 mg und Etoposid 200 mg an Tag 1–5, Bleomycin 30 mg an Tag 1, 8 und 15; 4 Zyklen alle 21 Tage",
+              "es": "Dosis con la superficie corporal limitada a 2,0 m²: cisplatino 40 mg y etopósido 200 mg los días 1-5, bleomicina 30 mg los días 1, 8 y 15; 4 ciclos cada 21 días"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: curative germ cell tumour chemotherapy is dosed on the actual body surface area without capping; dose reductions and treatment delays should be avoided because they lower the chance of cure.",
+              "de": "Falsch: Die kurative Chemotherapie des Keimzelltumors wird nach der tatsächlichen KOF ohne Kappung dosiert; Dosisreduktionen und Therapieverschiebungen sind zu vermeiden, weil sie die Heilungschance mindern.",
+              "es": "Incorrecto: la quimioterapia curativa del tumor de células germinales se dosifica según la superficie corporal real, sin limitarla; deben evitarse las reducciones de dosis y los retrasos porque disminuyen la probabilidad de curación."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Cisplatin 42 mg and etoposide 210 mg on days 1-5, bleomycin 30 mg on days 1, 8 and 15, but only 3 cycles because 4 cycles would exceed the cumulative bleomycin limit",
+              "de": "Cisplatin 42 mg und Etoposid 210 mg an Tag 1–5, Bleomycin 30 mg an Tag 1, 8 und 15, aber nur 3 Zyklen, weil 4 Zyklen die kumulative Bleomycin-Grenze überschreiten würden",
+              "es": "Cisplatino 42 mg y etopósido 210 mg los días 1-5, bleomicina 30 mg los días 1, 8 y 15, pero solo 3 ciclos porque 4 ciclos superarían el límite acumulado de bleomicina"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: 3 cycles of BEP are sufficient only for good prognosis. 4 cycles deliver 360 mg of bleomycin and stay below the maximum of 400 mg. If bleomycin were contraindicated, the alternative for intermediate prognosis would be VIP for 4 cycles, not a shortened course.",
+              "de": "Falsch: 3 Zyklen BEP reichen nur bei guter Prognose. 4 Zyklen entsprechen 360 mg Bleomycin und bleiben unter der Höchstdosis von 400 mg. Wäre Bleomycin kontraindiziert, wäre bei intermediärer Prognose VIP über 4 Zyklen die Alternative, nicht eine verkürzte Therapie.",
+              "es": "Incorrecto: 3 ciclos de BEP solo bastan en el pronóstico bueno. 4 ciclos suponen 360 mg de bleomicina y quedan por debajo del máximo de 400 mg. Si la bleomicina estuviera contraindicada, la alternativa en el pronóstico intermedio sería VIP durante 4 ciclos, no un tratamiento acortado."
+            }
+          }
+        ],
+        "best": "c"
+      }
+    ],
+    "takeaway": {
+      "en": "BEP: cisplatin 20 mg/m² and etoposide 100 mg/m² on days 1-5 on the actual body surface area without capping, bleomycin 30 mg flat dose on days 1, 8 and 15, every 21 days. 3 cycles for good and 4 cycles for intermediate and poor IGCCCG prognosis; 4 cycles deliver 360 mg of bleomycin, the cumulative limit is 400 mg.",
+      "de": "BEP: Cisplatin 20 mg/m² und Etoposid 100 mg/m² an Tag 1–5 nach tatsächlicher KOF ohne Kappung, Bleomycin 30 mg absolut an Tag 1, 8 und 15, alle 21 Tage. 3 Zyklen bei guter, 4 Zyklen bei intermediärer und schlechter Prognose nach IGCCCG; 4 Zyklen entsprechen 360 mg Bleomycin, die kumulative Grenze liegt bei 400 mg.",
+      "es": "BEP: cisplatino 20 mg/m² y etopósido 100 mg/m² los días 1-5 según la superficie corporal real sin limitarla, bleomicina 30 mg dosis fija los días 1, 8 y 15, cada 21 días. 3 ciclos en el pronóstico bueno y 4 ciclos en el intermedio y malo según IGCCCG; 4 ciclos suponen 360 mg de bleomicina, el límite acumulado es de 400 mg."
+    },
+    "references": [
+      "bank-guide-hodentumor",
+      "fachinfo-de",
+      "ema-medicines"
+    ]
+  },
+  {
+    "id": "sys-prot-seminoma-carboplatin-auc7-calvert",
+    "area": "clinic",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "dayclinic",
+    "patient": {
+      "name": "Sebastian Wollnik",
+      "age": 38,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Adjuvant carboplatin for stage I seminoma: calculating the dose",
+      "de": "Adjuvantes Carboplatin beim Seminom im Stadium I: Dosisberechnung",
+      "es": "Carboplatino adyuvante en el seminoma en estadio I: cálculo de la dosis"
+    },
+    "presenting": {
+      "en": "38-year-old man who underwent left inguinal orchiectomy 5 weeks ago: pure seminoma, 4.8 cm, invasion of the rete testis stroma, R0. Postoperative markers are normal and CT of the chest, abdomen and pelvis shows no metastases (clinical stage I). After counselling about surveillance, which is preferred, he chooses one adjuvant dose of carboplatin. Weight 82 kg, body surface area 2.02 m²; the GFR measured by 51Cr-EDTA clearance is 115 mL/min, the CKD-EPI estimate is 128 mL/min/1.73 m².",
+      "de": "38-jähriger Patient, vor 5 Wochen inguinale Ablatio testis links: reines Seminom, 4,8 cm, Invasion des Rete-testis-Stromas, R0. Die Marker sind postoperativ normal, das CT von Thorax, Abdomen und Becken zeigt keine Metastasen (klinisches Stadium I). Nach Aufklärung über die bevorzugte Surveillance entscheidet er sich für eine adjuvante Gabe Carboplatin. Gewicht 82 kg, Körperoberfläche 2,02 m²; die mit 51Cr-EDTA gemessene GFR beträgt 115 ml/min, die nach CKD-EPI geschätzte GFR 128 ml/min/1,73 m².",
+      "es": "Varón de 38 años al que hace 5 semanas se le practicó una orquiectomía inguinal izquierda: seminoma puro, 4,8 cm, invasión del estroma de la rete testis, R0. Los marcadores posoperatorios son normales y la TC de tórax, abdomen y pelvis no muestra metástasis (estadio clínico I). Tras informarle sobre la vigilancia, que es la opción preferida, elige una dosis adyuvante de carboplatino. Peso 82 kg, superficie corporal 2,02 m²; el FG medido por aclaramiento de 51Cr-EDTA es de 115 ml/min y el FG estimado por CKD-EPI, de 128 ml/min/1,73 m²."
+    },
+    "vitals": {
+      "bp": "128/80",
+      "hr": 64,
+      "temp": 36.5,
+      "spo2": 99,
+      "rr": 12
+    },
+    "objectives": {
+      "en": [
+        "Calculate the carboplatin dose with the Calvert formula and AUC 7",
+        "Use measured and estimated GFR correctly for the dose calculation"
+      ],
+      "de": [
+        "Die Carboplatin-Dosis mit der Calvert-Formel und AUC 7 berechnen",
+        "Gemessene und geschätzte GFR für die Dosisberechnung richtig einsetzen"
+      ],
+      "es": [
+        "Calcular la dosis de carboplatino con la fórmula de Calvert y AUC 7",
+        "Utilizar correctamente el FG medido y el estimado para el cálculo de la dosis"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which order is correct?",
+          "de": "Welche Anordnung ist korrekt?",
+          "es": "¿Qué prescripción es correcta?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Carboplatin 700 mg (5 × [115 + 25]) once",
+              "de": "Carboplatin 700 mg (5 × [115 + 25]) einmalig",
+              "es": "Carboplatino 700 mg (5 × [115 + 25]) en dosis única"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: stage I seminoma is treated with AUC 7, not AUC 5 or 6. 700 mg is only about 71% of the target dose; in TE19, patients who received less than 99% of the AUC 7 dose had numerically more relapses.",
+              "de": "Falsch: Beim Seminom im Stadium I wird mit AUC 7 dosiert, nicht mit AUC 5 oder 6. 700 mg entsprechen nur rund 71 % der Zieldosis; in TE19 hatten Patienten mit weniger als 99 % der AUC-7-Dosis numerisch mehr Rezidive.",
+              "es": "Incorrecto: el seminoma en estadio I se trata con AUC 7, no con AUC 5 o 6. 700 mg son solo un 71 % aproximadamente de la dosis objetivo; en TE19, los pacientes que recibieron menos del 99 % de la dosis AUC 7 tuvieron numéricamente más recaídas."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Carboplatin 1071 mg (7 × [128 + 25]) once, calculated with the CKD-EPI GFR",
+              "de": "Carboplatin 1071 mg (7 × [128 + 25]) einmalig, berechnet mit der CKD-EPI-GFR",
+              "es": "Carboplatino 1071 mg (7 × [128 + 25]) en dosis única, calculado con el FG de CKD-EPI"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: the Calvert formula needs a GFR that is as accurate as possible, and radionuclide clearance is the reference standard. Estimating equations such as CKD-EPI can lead to under- or overdosing; here the dose would be 91 mg too high. When a 51Cr-EDTA measurement is available, it is used. In addition, CKD-EPI is normalised to 1.73 m² and is not an absolute clearance in mL/min.",
+              "de": "Falsch: Die Calvert-Formel benötigt eine möglichst genaue GFR, die Radionuklid-Clearance ist Referenzstandard. Schätzformeln wie CKD-EPI können zu Unter- oder Überdosierung führen; hier läge die Dosis um 91 mg zu hoch. Liegt eine 51Cr-EDTA-Messung vor, wird diese verwendet. Zudem ist die CKD-EPI-GFR auf 1,73 m² normiert und keine absolute Clearance in ml/min.",
+              "es": "Incorrecto: la fórmula de Calvert necesita un FG lo más exacto posible, y el aclaramiento con radionúclidos es el patrón de referencia. Las ecuaciones de estimación como CKD-EPI pueden causar infra- o sobredosificación; aquí la dosis sería 91 mg demasiado alta. Si se dispone de una medición con 51Cr-EDTA, se utiliza esta. Además, el FG de CKD-EPI está normalizado a 1,73 m² y no es un aclaramiento absoluto en ml/min."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Carboplatin 882 mg (90% of 7 × [115 + 25]) once",
+              "de": "Carboplatin 882 mg (90 % von 7 × [115 + 25]) einmalig",
+              "es": "Carboplatino 882 mg (90 % de 7 × [115 + 25]) en dosis única"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: in TE19 the dose was reduced to 90% of the calculated dose only when creatinine clearance was used instead of a radionuclide measurement. With a measured EDTA clearance the full dose is given; underdosing (below 99%) was associated with more relapses.",
+              "de": "Falsch: Die Reduktion auf 90 % der errechneten Dosis wurde in TE19 nur angewandt, wenn statt einer Radionuklid-Messung die Kreatinin-Clearance verwendet wurde. Bei gemessener EDTA-Clearance wird die volle Dosis gegeben; eine Unterdosierung (unter 99 %) war mit mehr Rezidiven verbunden.",
+              "es": "Incorrecto: en TE19 la dosis se redujo al 90 % de la calculada solo cuando se usaba el aclaramiento de creatinina en lugar de una medición con radionúclidos. Con un aclaramiento de EDTA medido se administra la dosis completa; la infradosificación (por debajo del 99 %) se asoció a más recaídas."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Carboplatin 980 mg (7 × [115 + 25]) once on day 1; antiemesis with a 5-HT3 antagonist, dexamethasone and an NK1 antagonist; blood count on days 14-21",
+              "de": "Carboplatin 980 mg (7 × [115 + 25]) einmalig an Tag 1; Antiemese mit 5-HT3-Antagonist, Dexamethason und NK1-Antagonist; Blutbild an Tag 14–21",
+              "es": "Carboplatino 980 mg (7 × [115 + 25]) en dosis única el día 1; antiemesis con antagonista 5-HT3, dexametasona y antagonista NK1; hemograma los días 14-21"
+            },
+            "score": 10,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "en": "Correct: Calvert formula with AUC 7 and the measured GFR: 7 × (115 + 25) = 980 mg as a single dose. With carboplatin AUC 4 or higher, an NK1 antagonist is added to the 5-HT3 antagonist and dexamethasone; check the blood count for thrombocytopenia and neutropenia at the nadir (days 14-21).",
+              "de": "Richtig: Calvert-Formel mit AUC 7 und der gemessenen GFR: 7 × (115 + 25) = 980 mg als Einmalgabe. Bei Carboplatin ab AUC 4 gehört zusätzlich zu 5-HT3-Antagonist und Dexamethason ein NK1-Antagonist zur Antiemese; im Nadir (Tag 14–21) das Blutbild auf Thrombo- und Neutropenie kontrollieren.",
+              "es": "Correcto: fórmula de Calvert con AUC 7 y el FG medido: 7 × (115 + 25) = 980 mg en dosis única. Con carboplatino a partir de AUC 4 se añade un antagonista NK1 al antagonista 5-HT3 y la dexametasona; controlar el hemograma en el nadir (días 14-21) por trombocitopenia y neutropenia."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Carboplatin 980 mg (7 × [115 + 25]) on day 1, repeated after 21 days (2 cycles)",
+              "de": "Carboplatin 980 mg (7 × [115 + 25]) an Tag 1, Wiederholung nach 21 Tagen (2 Zyklen)",
+              "es": "Carboplatino 980 mg (7 × [115 + 25]) el día 1, repetido a los 21 días (2 ciclos)"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: adjuvant carboplatin AUC 7 for stage I seminoma is a single dose; in MRC TE19/EORTC 30982 one dose was non-inferior to adjuvant radiotherapy. A second cycle is not part of the protocol and only adds myelotoxicity.",
+              "de": "Falsch: Adjuvantes Carboplatin AUC 7 beim Seminom im Stadium I ist eine Einmalgabe; in MRC TE19/EORTC 30982 war eine Gabe der adjuvanten Radiotherapie nicht unterlegen. Ein zweiter Zyklus ist im Protokoll nicht vorgesehen und erhöht nur die Myelotoxizität.",
+              "es": "Incorrecto: el carboplatino AUC 7 adyuvante en el seminoma en estadio I es una dosis única; en MRC TE19/EORTC 30982 una dosis no fue inferior a la radioterapia adyuvante. Un segundo ciclo no forma parte del protocolo y solo añade mielotoxicidad."
+            }
+          }
+        ],
+        "best": "d"
+      }
+    ],
+    "takeaway": {
+      "en": "Carboplatin for stage I seminoma is one dose of AUC 7, calculated with the Calvert formula as 7 × (GFR + 25) mg, preferably with a measured GFR (radionuclide clearance). Do not use AUC 5 or 6, because underdosing raises the relapse risk; the 90% rule from TE19 applied only to creatinine clearance, not to an EDTA measurement.",
+      "de": "Carboplatin beim Seminom im Stadium I ist eine Gabe AUC 7, berechnet nach Calvert als 7 × (GFR + 25) mg, bevorzugt mit gemessener GFR (Radionuklid-Clearance). Keine AUC 5 oder 6, denn Unterdosierung erhöht das Rezidivrisiko; die 90-%-Regel aus TE19 galt nur für die Kreatinin-Clearance, nicht für eine EDTA-Messung.",
+      "es": "El carboplatino en el seminoma en estadio I es una dosis de AUC 7, calculada con la fórmula de Calvert como 7 × (FG + 25) mg, preferiblemente con un FG medido (aclaramiento con radionúclidos). No usar AUC 5 o 6, porque la infradosificación aumenta el riesgo de recaída; la regla del 90 % de TE19 solo se aplicaba al aclaramiento de creatinina, no a una medición con EDTA."
+    },
+    "references": [
+      "bank-guide-hodentumor",
+      "ema-medicines",
+      "fachinfo-de"
+    ]
+  },
+  {
     "id": "bank-uro-and-00001",
     "area": "clinic",
     "level": 3,
