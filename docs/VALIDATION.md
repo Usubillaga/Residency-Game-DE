@@ -1,5 +1,21 @@
 # Validation record
 
+## Only current regimens, standards first — 11 October 2026
+
+The user found the protocol page too full: in practice only today's regimens are used, for example durvalumab with gemcitabine/cisplatin in MIBC.
+
+- **Current or outdated.** Two independent reviewers per tumour group classified each of the 58 regimens: one strictly by the EAU 2026 recommendations and EU approvals, one by what German centres start today (S3, Onkopedia). A judge reconciled them and re-checked every disagreement with fresh searches. Five regimens were removed:
+  - GC in the 28-day schedule (an older variant of the 21-day schedule);
+  - dd-MVAC (since NIAGARA, cisplatin-fit patients get GC plus durvalumab; dd-MVAC with durvalumab exists only in a trial);
+  - axitinib monotherapy, tivozanib and lenvatinib + everolimus (approved only after drugs no longer used first line, or not recommended after today's immunotherapy combinations).
+- **Standard or alternative.** The other 53 regimens are all current, but many serve only a defined group. Two further reviewers per tumour group marked each one as the *standard* (the guideline's first choice for its setting, or the standard of a defined group such as cisplatin-ineligible MIBC) or an *alternative* (when the standard is not possible, or a later line); a judge settled the disagreements. The page shows the 28 standards first and the 25 alternatives on request. Validation requires a role for every regimen and at least one standard per tumour.
+- **Questions.** The dd-MVAC protocol question was removed; its point on pegfilgrastim timing moved into the VIP question. A judge searched all cases for keyed answers that teach a removed regimen. Three cases were updated:
+  - the cisplatin side-effect case now says why GC is given without durvalumab (active myasthenia gravis rules out checkpoint inhibitors);
+  - the renal cell carcinoma case names belzutifan after a PD-(L)1 inhibitor and at least two VEGF-targeted therapies;
+  - the cabozantinib case no longer teaches the lenvatinib + everolimus dose.
+
+  The GC card now reads as the regimen for cisplatin-eligible patients without concurrent immunotherapy. An independent uro-oncologist reviewed all of these texts.
+
 ## Questions on current guideline topics — 10 October 2026
 
 The user supplied photos of journal pages, slides and posters. They served only to pick topics; no figure, table or text was copied, and no author is named. One image, a treatment algorithm with garbled drug names and labels, was not used as a source; its topics were checked against the guidelines themselves.
