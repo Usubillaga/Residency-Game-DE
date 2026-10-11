@@ -112,9 +112,7 @@
               "url": "https://www.astrazeneca.com/media-centre/press-releases/2025/imfinzi-approved-in-the-eu-for-bladder-cancer.html"
             }
           ],
-          "questions": [
-            "sys-prot-niagara-split-dose-cisplatin"
-          ]
+          "questions": []
         },
         {
           "id": "uc-niagara-adjuvant-durvalumab",
@@ -183,7 +181,8 @@
               "label": "Imfinzi approved in the EU for MIBC, July 2025",
               "url": "https://www.astrazeneca.com/media-centre/press-releases/2025/imfinzi-approved-in-the-eu-for-bladder-cancer.html"
             }
-          ]
+          ],
+          "questions": []
         },
         {
           "id": "uc-ev303-neoadjuvant-ev-pembro",
@@ -274,7 +273,8 @@
               "label": "Padcev product information (EU annex)",
               "url": "https://ec.europa.eu/health/documents/community-register/2024/20240826163718/anx_163718_en.pdf"
             }
-          ]
+          ],
+          "questions": []
         },
         {
           "id": "uc-ev303-adjuvant-ev-pembro",
@@ -361,7 +361,8 @@
               "label": "Phase 3 KEYNOTE-905/EV-303 design (ASCO abstract)",
               "url": "https://www.asco.org/abstracts-presentations/ABSTRACT394916"
             }
-          ]
+          ],
+          "questions": []
         },
         {
           "id": "uc-ev-pembro-1l-metastatic",
@@ -654,7 +655,8 @@
               "label": "EAU Guidelines: Muscle-invasive and Metastatic Bladder Cancer",
               "url": "https://uroweb.org/guidelines/muscle-invasive-and-metastatic-bladder-cancer"
             }
-          ]
+          ],
+          "questions": []
         },
         {
           "id": "uc-gc-nivolumab-1l-metastatic",
@@ -760,9 +762,7 @@
               "url": "https://uroweb.org/guidelines/muscle-invasive-and-metastatic-bladder-cancer"
             }
           ],
-          "questions": [
-            "sys-prot-nivolumab-maintenance-duration"
-          ]
+          "questions": []
         },
         {
           "id": "uc-nivolumab-maintenance-after-gc-nivo",
@@ -828,9 +828,7 @@
               "url": "https://ascopost.com/issues/september-10-2024/nivolumab-in-combination-with-cisplatin-plus-gemcitabine-in-treatment-of-unresectable-or-metastatic-urothelial-carcinoma/"
             }
           ],
-          "questions": [
-            "sys-prot-nivolumab-maintenance-duration"
-          ]
+          "questions": []
         },
         {
           "id": "uc-gem-carbo-cis-ineligible",
@@ -917,7 +915,8 @@
               "label": "EAU Guidelines: Muscle-invasive and Metastatic Bladder Cancer",
               "url": "https://uroweb.org/guidelines/muscle-invasive-and-metastatic-bladder-cancer"
             }
-          ]
+          ],
+          "questions": []
         },
         {
           "id": "uc-avelumab-maintenance",
@@ -1058,7 +1057,8 @@
               "label": "Opdivo urothelial dosing schedules (240 mg q2w / 480 mg q4w, max. 1 year)",
               "url": "https://www.opdivohcp.com/dosing/uc"
             }
-          ]
+          ],
+          "questions": []
         },
         {
           "id": "uc-erdafitinib-fgfr3",
@@ -1131,7 +1131,8 @@
               "label": "FDA label Balversa 2024 (dose modification table)",
               "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/212018s007s008s009lbl.pdf"
             }
-          ]
+          ],
+          "questions": []
         }
       ]
     },
@@ -1341,9 +1342,7 @@
               "url": "https://www.fachinfo.de/fi/pdf/011175"
             }
           ],
-          "questions": [
-            "sys-prot-epirubicin-adjuvant-cystitis-dose"
-          ]
+          "questions": []
         },
         {
           "id": "bcg-induction-maintenance",
@@ -1485,9 +1484,7 @@
               "url": "https://www.medac.eu/fileadmin/user_upload/medac-eu/SPCs/Germany/spc-de-mito-extra.pdf"
             }
           ],
-          "questions": [
-            "sys-prot-mitomycin-after-nephroureterectomy-timing"
-          ]
+          "questions": []
         },
         {
           "id": "gemcitabine-docetaxel-sequential",
@@ -1578,7 +1575,8 @@
               "label": "Phase 2 trial of Gem/Doce in BCG-naive NMIBC: 3-year outcomes (J Urol)",
               "url": "https://www.auajournals.org/doi/10.1097/JU.0000000000005179"
             }
-          ]
+          ],
+          "questions": []
         }
       ]
     },
@@ -1695,7 +1693,6 @@
             }
           ],
           "questions": [
-            "sys-prot-arasens-docetaxel-darolutamide-order",
             "q-pca-mhspc-docetaxel-doublet-to-triplet"
           ]
         },
@@ -1798,7 +1795,8 @@
               "label": "NICE TA101: docetaxel for hormone-refractory prostate cancer (TAX 327 evidence)",
               "url": "https://www.nice.org.uk/guidance/ta101/chapter/evidence-and-interpretation"
             }
-          ]
+          ],
+          "questions": []
         },
         {
           "id": "pca-abiraterone-prednisone",
@@ -1922,10 +1920,7 @@
               "url": "https://www.medicines.org.uk/emc/product/2381/smpc"
             }
           ],
-          "questions": [
-            "sys-prot-abiraterone-mcrpc-steroid-dose-fasting",
-            "q-pca-mcrpc-after-docetaxel-arpi-naive-no-hrr"
-          ]
+          "questions": []
         },
         {
           "id": "pca-enzalutamide",
@@ -2009,10 +2004,7 @@
               "url": "https://www.urologytimes.com/view/enzalutamide-granted-approval-in-eu-for-nmhspc"
             }
           ],
-          "questions": [
-            "q-pca-mhspc-low-volume-low-risk-prostate-rt",
-            "q-pca-mcrpc-after-docetaxel-arpi-naive-no-hrr"
-          ]
+          "questions": []
         },
         {
           "id": "pca-apalutamide",
@@ -2096,9 +2088,7 @@
               "url": "https://www.jnjmedicalconnect.com/products/erleada/medical-content/erleada-dose-modifications"
             }
           ],
-          "questions": [
-            "q-pca-mhspc-low-volume-low-risk-prostate-rt"
-          ]
+          "questions": []
         },
         {
           "id": "pca-darolutamide",
@@ -2181,7 +2171,8 @@
               "label": "Bayer: Nubeqa EU approval in third indication (ARANOTE)",
               "url": "https://www.bayer.com/media/en-us/bayers-nubeqa-darolutamide-receives-eu-approval-in-third-indication-for-patients-with-advanced-prostate-cancer/"
             }
-          ]
+          ],
+          "questions": []
         },
         {
           "id": "pca-adt-gnrh-agonist-leuprorelin",
@@ -2273,9 +2264,7 @@
               "url": "https://www.ratiopharm.de/assets/products/de/label/Bicalutamid-ratiopharm%2050%20mg%20Filmtabletten%20-%203.pdf?pzn=3574397"
             }
           ],
-          "questions": [
-            "sys-prot-relugolix-restart-after-interruption"
-          ]
+          "questions": []
         },
         {
           "id": "pca-olaparib-monotherapy",
@@ -2363,9 +2352,7 @@
               "url": "https://www.ncbi.nlm.nih.gov/books/NBK604446/"
             }
           ],
-          "questions": [
-            "q-pca-mcrpc-brca2-parpi-partner-germline"
-          ]
+          "questions": []
         },
         {
           "id": "pca-bone-protection-metastatic",
@@ -2471,9 +2458,7 @@
               "url": "https://www.medicines.org.uk/emc/product/7205/smpc"
             }
           ],
-          "questions": [
-            "sys-prot-denosumab-prolia-to-xgeva-mcrpc"
-          ]
+          "questions": []
         },
         {
           "id": "pca-bone-protection-adt-bone-loss",
@@ -2557,9 +2542,7 @@
               "url": "https://www.medicines.org.uk/emc/product/568/smpc"
             }
           ],
-          "questions": [
-            "sys-prot-denosumab-prolia-to-xgeva-mcrpc"
-          ]
+          "questions": []
         },
         {
           "id": "pca-abiraterone-docetaxel-adt",
@@ -2795,10 +2778,7 @@
               "url": "https://medlibrary.org/lib/rx/meds/jevtana/page/7/"
             }
           ],
-          "questions": [
-            "sys-prot-cabazitaxel-premedication-primary-g-csf",
-            "q-pca-mcrpc-post-docetaxel-psma-negative-liver"
-          ]
+          "questions": []
         },
         {
           "id": "pca-adt-degarelix",
@@ -2881,7 +2861,8 @@
               "label": "Drugs.com: Firmagon dosing",
               "url": "https://www.drugs.com/firmagon.html"
             }
-          ]
+          ],
+          "questions": []
         },
         {
           "id": "pca-adt-relugolix",
@@ -2973,9 +2954,7 @@
               "url": "https://ec.europa.eu/health/documents/community-register/2024/20241118164179/anx_164179_en.pdf"
             }
           ],
-          "questions": [
-            "sys-prot-relugolix-restart-after-interruption"
-          ]
+          "questions": []
         },
         {
           "id": "pca-olaparib-abiraterone",
@@ -3099,9 +3078,7 @@
               "url": "https://hemonc.org/wiki/Olaparib_(Lynparza)"
             }
           ],
-          "questions": [
-            "q-pca-mcrpc-brca2-parpi-partner-germline"
-          ]
+          "questions": []
         },
         {
           "id": "pca-niraparib-abiraterone",
@@ -3211,9 +3188,7 @@
               "url": "https://ec.europa.eu/health/documents/community-register/2023/20230419158798/anx_158798_en.pdf"
             }
           ],
-          "questions": [
-            "q-pca-mcrpc-brca2-parpi-partner-germline"
-          ]
+          "questions": []
         },
         {
           "id": "pca-talazoparib-enzalutamide",
@@ -3319,10 +3294,7 @@
               "url": "https://www.ema.europa.eu/en/documents/product-information/talzenna-epar-product-information_pt.pdf"
             }
           ],
-          "questions": [
-            "q-pca-mcrpc-brca2-parpi-partner-germline",
-            "q-pca-talazoparib-anaemia-hb-below-8"
-          ]
+          "questions": []
         },
         {
           "id": "pca-lu177-psma-617",
@@ -3410,11 +3382,7 @@
               "url": "https://www.pluvicto-hcp.com/psma-positive-mcrpc/dosing-and-administration"
             }
           ],
-          "questions": [
-            "sys-prot-lu-psma-617-reduction-no-reescalation",
-            "q-pca-mcrpc-post-docetaxel-psma-negative-liver",
-            "q-pca-mcrpc-after-docetaxel-arpi-naive-no-hrr"
-          ]
+          "questions": []
         },
         {
           "id": "pca-radium-223",
@@ -3498,10 +3466,7 @@
               "url": "https://www.ema.europa.eu/en/documents/referral/xofigo-article-20-procedure-ema-restricts-use-prostate-cancer-medicine-xofigo_en.pdf"
             }
           ],
-          "questions": [
-            "q-pca-mcrpc-post-docetaxel-psma-negative-liver",
-            "q-pca-mcrpc-after-docetaxel-arpi-naive-no-hrr"
-          ]
+          "questions": []
         }
       ]
     },
@@ -3599,9 +3564,7 @@
               "url": "https://ascopost.com/news/april-2024/adjuvant-pembrolizumab-in-renal-cell-carcinoma-overall-survival-in-keynote-564/"
             }
           ],
-          "questions": [
-            "sys-prot-adjuvant-pembrolizumab-q6w-duration"
-          ]
+          "questions": []
         },
         {
           "id": "rcc-nivolumab-ipilimumab",
@@ -3729,9 +3692,7 @@
               "url": "https://www.drugs.com/dosage/nivolumab.html"
             }
           ],
-          "questions": [
-            "sys-prot-nivolumab-ipilimumab-induction-maintenance"
-          ]
+          "questions": []
         },
         {
           "id": "rcc-pembrolizumab-axitinib",
@@ -3836,7 +3797,8 @@
               "label": "Inlyta prescribing information (FDA) – titration and dose reduction",
               "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/202324s016lbl.pdf"
             }
-          ]
+          ],
+          "questions": []
         },
         {
           "id": "rcc-pembrolizumab-lenvatinib",
@@ -3941,7 +3903,8 @@
               "label": "CLEAR protocol (ClinicalTrials.gov)",
               "url": "https://cdn.clinicaltrials.gov/large-docs/61/NCT02811861/Prot_000.pdf"
             }
-          ]
+          ],
+          "questions": []
         },
         {
           "id": "rcc-nivolumab-cabozantinib",
@@ -4047,9 +4010,7 @@
               "url": "https://reference.medscape.com/drug/cometriq-cabometyx-cabozantinib-999791"
             }
           ],
-          "questions": [
-            "sys-prot-cabozantinib-dose-with-nivolumab"
-          ]
+          "questions": []
         },
         {
           "id": "rcc-cabozantinib-mono",
@@ -4119,9 +4080,7 @@
               "url": "https://ir.exelixis.com/news-releases/news-release-details/european-commission-approves-cabometyxtm-cabozantinib-tablets"
             }
           ],
-          "questions": [
-            "sys-prot-cabozantinib-dose-with-nivolumab"
-          ]
+          "questions": []
         },
         {
           "id": "rcc-sunitinib-4-2",
@@ -4191,9 +4150,7 @@
               "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7836283/"
             }
           ],
-          "questions": [
-            "sys-prot-sunitinib-4-2-first-order"
-          ]
+          "questions": []
         },
         {
           "id": "rcc-pazopanib",
@@ -4258,7 +4215,8 @@
               "label": "COMPARZ: pazopanib versus sunitinib (NEJM)",
               "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa1303989"
             }
-          ]
+          ],
+          "questions": []
         },
         {
           "id": "rcc-belzutifan",
@@ -4557,7 +4515,8 @@
               "label": "EAU Guidelines on Testicular Cancer – Disease Management (Uroweb)",
               "url": "https://uroweb.org/guidelines/testicular-cancer/chapter/disease-management"
             }
-          ]
+          ],
+          "questions": []
         },
         {
           "id": "gct-ep",
@@ -4644,7 +4603,8 @@
               "label": "Onkopedia – Keimzelltumoren des Mannes (Gonadale Keimzelltumoren)",
               "url": "https://www.onkopedia.com/de/onkopedia/guidelines/keimzelltumoren-des-mannes-gonadale-keimzelltumoren"
             }
-          ]
+          ],
+          "questions": []
         },
         {
           "id": "gct-vip",
@@ -4772,9 +4732,7 @@
               "url": "https://www.baxter.de/de_DE/assets/downloads/fachinformation/holoxan.pdf"
             }
           ],
-          "questions": [
-            "sys-prot-vip-mesna-gcsf-order"
-          ]
+          "questions": []
         },
         {
           "id": "seminoma-carboplatin-auc7",
@@ -4848,9 +4806,7 @@
               "url": "https://www.onkopedia.com/de/onkopedia/guidelines/keimzelltumoren-des-mannes-gonadale-keimzelltumoren"
             }
           ],
-          "questions": [
-            "sys-prot-seminoma-carboplatin-auc7-calvert"
-          ]
+          "questions": []
         },
         {
           "id": "gct-tip-salvage",
@@ -4959,7 +4915,8 @@
               "label": "EAU Guidelines on Testicular Cancer – Appendix 4: Chemotherapy Protocols",
               "url": "https://d56bochluxqnz.cloudfront.net/documents/guideline-appendices/testicular-cancer/Appendix-4.-Chemotherapy-Protocols.pdf"
             }
-          ]
+          ],
+          "questions": []
         }
       ]
     },
@@ -5079,9 +5036,7 @@
               "url": "https://reference.medscape.com/cc2/p10/eau-asco-guideline-penile-cancer-2025a1000hb9"
             }
           ],
-          "questions": [
-            "sys-prot-penile-tip-neoadjuvant-cn3"
-          ]
+          "questions": []
         }
       ]
     }

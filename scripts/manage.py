@@ -346,8 +346,8 @@ def apply_update(case: dict, update: dict, where: str, references: dict) -> None
         case["update"] = {"date": update["date"], "reason": update["reason"], "references": refs, "fields": list(dict.fromkeys(whole + sorted(passages)))}
 
 
-def load_and_validate(root: Path = ROOT, *, check_assets: bool = True):
-    """Return all cases and deduplicated references, after validating source data."""
+def load_and_validate(root: Path = ROOT, *, check_assets: bool = True, include_archive: bool = False):
+    """Validate active and historical cases; return only playable cases by default."""
     root = Path(root)
     references = {}
     for path in sorted((root / "data").glob("refs-*.json")):
@@ -373,9 +373,22 @@ def load_and_validate(root: Path = ROOT, *, check_assets: bool = True):
     cases = []
     case_ids = set()
     updates = load_updates(root)
+    sources = []
     for area, filename in zip(AREA_IDS, CASE_FILES):
         rows = read_json(root / "data" / filename)
         require(isinstance(rows, list) and bool(rows), f"{filename}: expected a nonempty array")
+        sources.append((area, filename, rows, False))
+    archive_path = root / "data" / "archive" / "supplemental-questions.json"
+    if archive_path.exists():
+        archive = read_json(archive_path)
+        require(isinstance(archive, dict) and isinstance(archive.get("cases"), list), "supplemental-questions.json: expected archived cases")
+        require(not archive.get("updates"), "supplemental-questions.json: archive corrected snapshots, not pending updates")
+        require(all(isinstance(case, dict) and case.get("area") in AREA_IDS for case in archive["cases"]),
+                "supplemental-questions.json: expected case objects with a known area")
+        for area in AREA_IDS:
+            sources.append((area, f"archive/supplemental-questions.json/{area}",
+                            [case for case in archive["cases"] if case["area"] == area], True))
+    for area, filename, rows, archived in sources:
         for index, case in enumerate(rows):
             where = f"{filename}[{index}]"
             require(isinstance(case, dict), f"{where}: expected an object")
@@ -409,7 +422,10 @@ def load_and_validate(root: Path = ROOT, *, check_assets: bool = True):
                 localised(patient["label"], f"{where}.patient.label")
             for key in ("title", "presenting", "takeaway"):
                 localised(case.get(key), f"{where}.{key}")
-            localised(case.get("objectives"), f"{where}.objectives", array=True)
+            # Older source snapshots retain their objectives for provenance only.
+            # New questions need no objectives; none are published in the game.
+            if "objectives" in case:
+                localised(case["objectives"], f"{where}.objectives", array=True)
             require("vitals" in case, f"{where}.vitals: expected vital signs or explicit null")
             vitals = case.get("vitals")
             if vitals is not None:
@@ -424,6 +440,11 @@ def load_and_validate(root: Path = ROOT, *, check_assets: bool = True):
                 validate_source(case["source"], f"{where}.source")
             if "topic" in case:
                 localised(case["topic"], f"{where}.topic")
+            if case.get("subject") == "anatomy":
+                context = case.get("clinicalContext")
+                require(isinstance(context, dict), f"{where}.clinicalContext: anatomy requires an operation or clinical case")
+                require(context.get("kind") in ("operation", "case"), f"{where}.clinicalContext.kind: expected operation or case")
+                localised(context.get("label"), f"{where}.clinicalContext.label")
             steps = case.get("steps")
             require(isinstance(steps, list) and 1 <= len(steps) <= 8, f"{where}.steps: expected 1..8 steps")
             step_ids = set()
@@ -462,11 +483,47 @@ def load_and_validate(root: Path = ROOT, *, check_assets: bool = True):
             require(all(isinstance(item, str) and item in references for item in source_ids), f"{where}.references: unknown reference id")
             require(len(source_ids) == len(set(source_ids)), f"{where}.references: duplicate reference id")
             find_extra_translations(case, where)
+            require("archived" not in case, f"{where}.archived: controlled by archive location")
+            if archived:
+                case["archived"] = True
             cases.append(case)
     require(not updates, f"case-updates.json: unknown case ids {sorted(updates)}")
+    active_cases = [case for case in cases if not case.get("archived")]
+    validate_question_contract(root, active_cases)
     if check_assets:
         validate_assets(root)
-    return cases, [references[key] for key in sorted(references)]
+    return (cases if include_archive else active_cases), [references[key] for key in sorted(references)]
+
+
+def validate_question_contract(root: Path, cases: list) -> None:
+    """Count scored decisions, rather than cases, bonus quizzes or atlas taps.
+
+    The contract is optional for small test fixtures and other installations.
+    In the shipped bank it prevents a later import silently changing the target.
+    """
+    path = Path(root) / "data" / "question-contract.json"
+    if not path.exists():
+        return
+    contract = read_json(path)
+    require(isinstance(contract, dict), "question-contract.json: expected an object")
+    target = contract.get("questions")
+    integer(target, "question-contract.json.questions", 1)
+    count = sum(len(case["steps"]) for case in cases)
+    require(count == target, f"question-contract.json: expected {target} playable questions, found {count}")
+    minimum = contract.get("minimumAnatomy", 0)
+    integer(minimum, "question-contract.json.minimumAnatomy")
+    anatomy = sum(len(case["steps"]) for case in cases if case.get("subject") == "anatomy")
+    require(anatomy >= minimum, f"question-contract.json: expected at least {minimum} anatomy questions, found {anatomy}")
+    # Same lead-in with a different clinical presentation is not a duplicate.
+    for language in LANGUAGES:
+        seen = set()
+        normalise = lambda value: " ".join(value.casefold().split())
+        for case in cases:
+            for step in case["steps"]:
+                signature = (normalise(case["presenting"][language]), normalise(step["prompt"][language]),
+                             tuple(sorted(normalise(option["text"][language]) for option in step["options"])))
+                require(signature not in seen, f"question-contract.json: duplicate question in {language}: {case['id']}/{step['id']}")
+                seen.add(signature)
 
 
 SCHEMA_ELEMENTS = {"g", "path", "rect", "circle", "ellipse", "line", "polyline", "polygon"}
@@ -743,11 +800,15 @@ def build(root: Path = ROOT) -> dict:
     """Generate the no-fetch browser catalog and a single-file offline edition."""
     root = Path(root)
     # catalog.js is an output of this command, so validate other assets first.
-    cases, references = load_and_validate(root, check_assets=False)
+    all_cases, references = load_and_validate(root, check_assets=False, include_archive=True)
+    cases = [case for case in all_cases if not case.get("archived")]
+    history_cases = [case for case in all_cases if case.get("archived")]
     schemas, links, media = load_visuals(root, cases)
     attach_hints(root, cases)
     protocols, radiotherapy = load_regimens(root, cases)
-    for case in cases:
+    for case in all_cases:
+        # Do not ship answer-revealing learning objectives in the browser payload.
+        case.pop("objectives", None)
         if case["id"] in links:
             case["schema"] = {"id": links[case["id"]]["schema"], "parts": links[case["id"]].get("parts", [])}
         # The game lists source titles only; the full citations with author names stay in the data files.
@@ -756,7 +817,22 @@ def build(root: Path = ROOT) -> dict:
                                                  for item in case["source"]["originalSources"]]
         if case["id"] in media:
             case["media"] = media[case["id"]]
-    catalog = {"version": 2, "languages": list(LANGUAGES), "areas": AREAS, "cases": cases, "references": references, "schemas": schemas, "protocols": protocols, "radiotherapy": radiotherapy}
+    # Historical answers remain reviewable when a supplementary question leaves
+    # the active bank. History cases never enter schedules, the library or quizzes.
+    archive_path = root / "data" / "archive" / "supplemental-questions.json"
+    if archive_path.exists():
+        archive = read_json(archive_path)
+        by_schema = {schema["id"]: schema for schema in schemas}
+        for case in history_cases:
+            link = archive.get("schemas", {}).get(case["id"])
+            if link:
+                require(link.get("schema") in by_schema, "supplemental-questions.json: unknown archived schema")
+                part_ids = {part["id"] for part in by_schema[link["schema"]]["parts"]}
+                require(set(link.get("parts", [])) <= part_ids, "supplemental-questions.json: unknown archived schema parts")
+                case["schema"] = {"id": link["schema"], "parts": link.get("parts", [])}
+    catalog = {"version": 2, "languages": list(LANGUAGES), "areas": AREAS, "cases": cases, "historyCases": history_cases,
+               "questionCount": sum(len(case["steps"]) for case in cases), "references": references, "schemas": schemas,
+               "protocols": protocols, "radiotherapy": radiotherapy}
     assets = root / "assets"
     assets.mkdir(parents=True, exist_ok=True)
     (assets / "catalog.js").write_text("/* Generated by scripts/manage.py build. Edit data/*.json, then rebuild. */\nwindow.NSA_CATALOG = " + json.dumps(catalog, ensure_ascii=False, separators=(",", ":")) + ";\n", encoding="utf-8")
@@ -883,7 +959,7 @@ def analyse(source: Path, output: Path, root: Path = ROOT) -> int:
             "Export must be a game file (version 3) or a logbook export (version 2)")
     history = data.get("history")
     require(isinstance(history, list), "Export.history must be an array")
-    cases, _ = load_and_validate(root, check_assets=False)
+    cases, _ = load_and_validate(root, check_assets=False, include_archive=True)
     by_id = {case["id"]: case for case in cases}
     fields = ("attempt", "case_id", "case_title_en", "area", "level", "score", "max_score", "score_percent", "elapsed_minutes", "critical_errors", "completed_at", "step_id", "option_id", "step_score", "step_minutes")
     rows = []
@@ -960,7 +1036,7 @@ def main(argv=None) -> int:
             print(f"Valid: {len(cases)} cases ({updated} updated), {len(references)} references, {len(schemas)} schemas ({len(links)} linked cases), {sum(map(len, media.values()))} images, attending hints for {hints} of {steps} decisions, {sum(len(e['regimens']) for e in protocols)} protocols, {sum(len(e['regimens']) for e in radiotherapy)} radiotherapy schemes, 3 languages, 5 areas.")
         elif args.command == "build":
             catalog = build()
-            print(f"Built catalog.js and standalone.html with {len(catalog['cases'])} cases.")
+            print(f"Built catalog.js and standalone.html with {catalog['questionCount']} questions in {len(catalog['cases'])} cases; {len(catalog['historyCases'])} cases are history-only.")
         elif args.command == "schedule":
             result = schedule(ROOT, args.date, args.seed, args.output, args.duty)
             print(f"Saved {len(result['caseIds'])} cases ({'duty ' + args.duty if args.duty else '2 per area'}) to {args.output}.")

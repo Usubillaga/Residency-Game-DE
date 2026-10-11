@@ -81,7 +81,6 @@
             }
           ],
           "questions": [
-            "rt-prostate-high-risk-long-term-adt",
             "rt-prostate-igrt-bladder-rectum-preparation"
           ]
         },
@@ -159,7 +158,6 @@
           ],
           "questions": [
             "rt-prostate-intermediate-60gy-short-adt",
-            "rt-prostate-luts-large-gland-no-sbrt-ldr",
             "rt-prostate-igrt-bladder-rectum-preparation"
           ]
         },
@@ -230,7 +228,8 @@
               "label": "EAU-EANM-ESTRO-ESUR-ISUP-SIOG Pocket Guidelines on Prostate Cancer 2026",
               "url": "https://d56bochluxqnz.cloudfront.net/documents/pocket-guidelines/EAU-EANM-ESTRO-ESUR-ISUP-SIOG-Pocket-on-Prostate-Cancer-2026_2026-03-14-103741_ikpf.pdf"
             }
-          ]
+          ],
+          "questions": []
         },
         {
           "id": "rt-prostate-sbrt-pace-b",
@@ -320,8 +319,7 @@
             }
           ],
           "questions": [
-            "rt-prostate-intermediate-60gy-short-adt",
-            "rt-prostate-luts-large-gland-no-sbrt-ldr"
+            "rt-prostate-intermediate-60gy-short-adt"
           ]
         },
         {
@@ -396,9 +394,7 @@
               "url": "https://d56bochluxqnz.cloudfront.net/documents/pocket-guidelines/EAU-EANM-ESTRO-ESUR-ISUP-SIOG-Pocket-on-Prostate-Cancer-2026_2026-03-14-103741_ikpf.pdf"
             }
           ],
-          "questions": [
-            "rt-prostate-luts-large-gland-no-sbrt-ldr"
-          ]
+          "questions": []
         },
         {
           "id": "rt-prostate-ldr-monotherapy",
@@ -468,9 +464,7 @@
               "url": "https://uroweb.org/guidelines/prostate-cancer/chapter/treatment"
             }
           ],
-          "questions": [
-            "rt-prostate-luts-large-gland-no-sbrt-ldr"
-          ]
+          "questions": []
         },
         {
           "id": "rt-prostate-ebrt-hdr-boost",
@@ -555,9 +549,7 @@
               "url": "https://uroweb.org/guidelines/prostate-cancer/chapter/treatment"
             }
           ],
-          "questions": [
-            "rt-prostate-luts-large-gland-no-sbrt-ldr"
-          ]
+          "questions": []
         },
         {
           "id": "rt-prostate-ebrt-ldr-boost",
@@ -645,7 +637,8 @@
               "label": "EAU-EANM-ESTRO-ESUR-ISUP-SIOG Pocket Guidelines on Prostate Cancer 2026",
               "url": "https://d56bochluxqnz.cloudfront.net/documents/pocket-guidelines/EAU-EANM-ESTRO-ESUR-ISUP-SIOG-Pocket-on-Prostate-Cancer-2026_2026-03-14-103741_ikpf.pdf"
             }
-          ]
+          ],
+          "questions": []
         },
         {
           "id": "rt-prostate-pelvic-nodal",
@@ -733,7 +726,8 @@
               "label": "EAU Guidelines on Prostate Cancer: Treatment chapter",
               "url": "https://uroweb.org/guidelines/prostate-cancer/chapter/treatment"
             }
-          ]
+          ],
+          "questions": []
         }
       ]
     },
@@ -819,7 +813,6 @@
           ],
           "questions": [
             "rt-prostate-salvage-early-start-66gy",
-            "rt-prostate-salvage-adt-24-months-high-risk",
             "rt-prostate-bed-acute-toxicity-week-four"
           ]
         },
@@ -894,7 +887,8 @@
               "label": "ESTRO-ACROP guideline on prostate bed delineation for postoperative radiotherapy",
               "url": "https://pubmed.ncbi.nlm.nih.gov/37251620/"
             }
-          ]
+          ],
+          "questions": []
         },
         {
           "id": "rt-prostate-post-salvage-pelvic-spport",
@@ -983,9 +977,7 @@
               "url": "https://uroweb.org/guidelines/prostate-cancer/chapter/treatment"
             }
           ],
-          "questions": [
-            "rt-prostate-salvage-adt-24-months-high-risk"
-          ]
+          "questions": []
         },
         {
           "id": "rt-prostate-post-mhspc-daily",
@@ -1060,8 +1052,7 @@
             }
           ],
           "questions": [
-            "rt-prostate-mhspc-low-volume-axial-55gy",
-            "q-pca-mhspc-low-volume-low-risk-prostate-rt"
+            "rt-prostate-mhspc-low-volume-axial-55gy"
           ]
         },
         {
@@ -1138,8 +1129,7 @@
           ],
           "questions": [
             "rt-prostate-mhspc-low-volume-axial-55gy",
-            "rt-prostate-salvage-early-start-66gy",
-            "q-pca-mhspc-low-volume-low-risk-prostate-rt"
+            "rt-prostate-salvage-early-start-66gy"
           ]
         },
         {
@@ -1301,9 +1291,7 @@
             }
           ],
           "questions": [
-            "rt-bladder-tmt-unsuitable-multifocal-cis",
-            "rt-bladder-tmt-55-20-mitomycin-5fu",
-            "rt-bladder-tmt-noninvasive-recurrence-bcg"
+            "rt-bladder-tmt-55-20-mitomycin-5fu"
           ]
         },
         {
@@ -1379,7 +1367,6 @@
             }
           ],
           "questions": [
-            "rt-bladder-tmt-unsuitable-multifocal-cis",
             "rt-bladder-tmt-55-20-mitomycin-5fu"
           ]
         },
@@ -1454,7 +1441,8 @@
               "label": "EAU Guidelines on Muscle-invasive and Metastatic Bladder Cancer - Disease management",
               "url": "https://uroweb.org/guidelines/muscle-invasive-and-metastatic-bladder-cancer/chapter/disease-management"
             }
-          ]
+          ],
+          "questions": []
         },
         {
           "id": "rt-bladder-palliative-21-3",
@@ -1524,9 +1512,7 @@
               "url": "https://apm.amegroups.org/article/view/55615/html"
             }
           ],
-          "questions": [
-            "rt-bladder-palliative-haematuria-21-gy"
-          ]
+          "questions": []
         },
         {
           "id": "rt-bladder-palliative-35-10",
@@ -1596,9 +1582,7 @@
               "url": "https://www.rcr.ac.uk/media/rgqkcmuf/02-bladder-cancer-radiotherapy-dose-fractionation-fourth-edition.pdf"
             }
           ],
-          "questions": [
-            "rt-bladder-palliative-haematuria-21-gy"
-          ]
+          "questions": []
         },
         {
           "id": "rt-bladder-weekly-36-6",
@@ -1667,7 +1651,8 @@
               "label": "RCR Bladder cancer consensus statements, May 2023 edition",
               "url": "https://www.rcr.ac.uk/media/00nfoiko/rcr-publications_bladder-cancer-rcr-consensus-statements_may-2023.pdf"
             }
-          ]
+          ],
+          "questions": []
         }
       ]
     },
@@ -1747,9 +1732,7 @@
               "url": "https://www.redjournal.org/article/S0360-3016(12)00096-X/fulltext"
             }
           ],
-          "questions": [
-            "rt-seminoma-stage1-paraaortic-20gy-selected"
-          ]
+          "questions": []
         },
         {
           "id": "rt-testis-stage2a-dogleg-30gy",
@@ -1823,9 +1806,7 @@
               "url": "https://www.sciencedirect.com/science/article/pii/S0923753419314413"
             }
           ],
-          "questions": [
-            "rt-seminoma-late-effects-hematuria-after-dogleg"
-          ]
+          "questions": []
         },
         {
           "id": "rt-testis-stage2b-dogleg-36gy",
@@ -1985,7 +1966,8 @@
               "label": "RCR Radiotherapy dose fractionation, 4th edition: seminoma",
               "url": "https://www.rcr.ac.uk/media/lo2lt1e0/17-seminoma-radiotherapy-dose-fractionation-fourth-edition.pdf"
             }
-          ]
+          ],
+          "questions": []
         }
       ]
     },
@@ -2065,9 +2047,7 @@
               "url": "https://d56bochluxqnz.cloudfront.net/documents/pocket-guidelines/EAU-ASCO-Pocket-on-Penile-Cancer-2026.pdf"
             }
           ],
-          "questions": [
-            "rt-penile-glans-brachytherapy-organ-sparing"
-          ]
+          "questions": []
         },
         {
           "id": "rt-penile-brachy-hdr-38gy",
@@ -2136,7 +2116,8 @@
               "label": "EAU-ASCO Pocket Guidelines on Penile Cancer 2026",
               "url": "https://d56bochluxqnz.cloudfront.net/documents/pocket-guidelines/EAU-ASCO-Pocket-on-Penile-Cancer-2026.pdf"
             }
-          ]
+          ],
+          "questions": []
         },
         {
           "id": "rt-penile-ebrt-primary-60gy",
@@ -2205,7 +2186,8 @@
               "label": "RCR Radiotherapy dose fractionation, 4th edition: penile cancer",
               "url": "https://www.rcr.ac.uk/media/xj1dvihx/12-penile-cancer-radiotherapy-dose-fractionation-fourth-edition.pdf"
             }
-          ]
+          ],
+          "questions": []
         },
         {
           "id": "rt-penile-inguinopelvic-adjuvant",
@@ -2308,7 +2290,8 @@
               "label": "EAU-ASCO Guidelines on Penile Cancer: Disease management chapter",
               "url": "https://uroweb.org/guidelines/penile-cancer/chapter/disease-management"
             }
-          ]
+          ],
+          "questions": []
         },
         {
           "id": "rt-penile-inguinopelvic-neoadjuvant-crt",
@@ -2381,7 +2364,8 @@
               "label": "EAU Guidelines on Primary Urethral Carcinoma: Disease management chapter",
               "url": "https://uroweb.org/guidelines/primary-urethral-carcinoma/chapter/disease-management"
             }
-          ]
+          ],
+          "questions": []
         }
       ]
     },
@@ -2466,8 +2450,7 @@
             }
           ],
           "questions": [
-            "rt-palliative-frail-spine-pain-8gy-single",
-            "rt-palliative-bone-counselling-flare-denosumab"
+            "rt-palliative-frail-spine-pain-8gy-single"
           ]
         },
         {
@@ -2542,9 +2525,7 @@
               "url": "https://www.sciencedirect.com/science/article/pii/S1879850024000997"
             }
           ],
-          "questions": [
-            "rt-palliative-bone-counselling-flare-denosumab"
-          ]
+          "questions": []
         },
         {
           "id": "rt-palliative-bone-30gy-10fx",
@@ -2917,7 +2898,8 @@
               "label": "SCORAD III randomised trial, JAMA 2019",
               "url": "https://jamanetwork.com/journals/jama/fullarticle/2756290"
             }
-          ]
+          ],
+          "questions": []
         },
         {
           "id": "rt-palliative-rcc-primary-sabr-26gy-1fx",
@@ -3142,7 +3124,8 @@
               "label": "EAU Guidelines on Renal Cell Carcinoma 2026 – Disease management",
               "url": "https://uroweb.org/guidelines/renal-cell-carcinoma/chapter/disease-management"
             }
-          ]
+          ],
+          "questions": []
         },
         {
           "id": "rt-palliative-rcc-brain-srs-1fx",
@@ -3230,7 +3213,8 @@
               "label": "EAU Guidelines on Renal Cell Carcinoma 2026 – Disease management",
               "url": "https://uroweb.org/guidelines/renal-cell-carcinoma/chapter/disease-management"
             }
-          ]
+          ],
+          "questions": []
         },
         {
           "id": "rt-palliative-rcc-brain-fsrs-27gy-3fx",
@@ -3299,7 +3283,8 @@
               "label": "EAU Guidelines on Renal Cell Carcinoma 2026 – Disease management",
               "url": "https://uroweb.org/guidelines/renal-cell-carcinoma/chapter/disease-management"
             }
-          ]
+          ],
+          "questions": []
         }
       ]
     }
