@@ -11250,5 +11250,3504 @@
       ],
       "evidenceNotes": []
     }
+  },
+  {
+    "id": "anat-renal-hilum-order",
+    "area": "theatre",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "elective",
+    "subject": "anatomy",
+    "anatomyGroup": "kidney",
+    "topic": {
+      "de": "Urologische Anatomie",
+      "en": "Urological anatomy",
+      "es": "Anatomía urológica"
+    },
+    "patient": {
+      "name": "Anatomy round 01",
+      "age": null,
+      "sex": null,
+      "label": {
+        "de": "Anatomievisite 01",
+        "en": "Anatomy round 01",
+        "es": "Pase de anatomía 01"
+      }
+    },
+    "title": {
+      "de": "Orientierung am Nierenstiel",
+      "en": "Orientation at the renal pedicle",
+      "es": "Orientación en el pedículo renal"
+    },
+    "presenting": {
+      "de": "Vor einer laparoskopischen Nephrektomie soll der Nierenstiel sicher orientiert werden. Du identifizierst die Hauptstrukturen vor der Gefäßkontrolle. Der Chef klappt das Anatomiemodell auf. Jana stellt den Kaffee sicherheitshalber außerhalb des Operationsfelds ab.",
+      "en": "Before laparoscopic nephrectomy, the team checks orientation at the renal pedicle. You identify the main structures before vascular control. The chief opens the anatomy model. Grace parks the coffee safely outside the operating field.",
+      "es": "Antes de una nefrectomía laparoscópica, el equipo se orienta en el pedículo renal. Identificas las estructuras principales antes del control vascular. El jefe abre el modelo anatómico. Lucía deja el café fuera del campo quirúrgico, por si acaso."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "Du blickst von ventral auf einen Nierenhilus mit regelrechter Anatomie. Welche Reihenfolge der Hauptstrukturen stimmt von ventral nach dorsal?",
+          "en": "You approach a renal hilum with usual anatomy from the front. What is the anterior-to-posterior order of the main structures?",
+          "es": "Abordas por delante un hilio renal de anatomía habitual. ¿Cuál es el orden de las estructuras principales de anterior a posterior?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "V. renalis → A. renalis → Pelvis renalis",
+              "de": "V. renalis → A. renalis → Pelvis renalis",
+              "es": "V. renalis → A. renalis → Pelvis renalis"
+            },
+            "feedback": {
+              "de": "Die Nierenvene liegt im Regelfall vor der Arterie; das Nierenbecken liegt dahinter. Gefäßvarianten müssen vor der Präparation erkannt werden.",
+              "en": "Usually the renal vein is anterior to the artery, with the renal pelvis behind it. Identify vascular variants before dissection.",
+              "es": "Habitualmente la vena renal queda delante de la arteria y la pelvis renal detrás. Hay que identificar las variantes vasculares antes de disecar."
+            },
+            "score": 10,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "A. renalis → V. renalis → Pelvis renalis",
+              "de": "A. renalis → V. renalis → Pelvis renalis",
+              "es": "A. renalis → V. renalis → Pelvis renalis"
+            },
+            "feedback": {
+              "de": "Hier sind Vene und Arterie vertauscht: Die Hauptvene ist üblicherweise die ventrale Struktur.",
+              "en": "This reverses the vein and artery: the main vein is usually anterior.",
+              "es": "Aquí se invierten vena y arteria: la vena principal suele ser anterior."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Pelvis renalis → A. renalis → V. renalis",
+              "de": "Pelvis renalis → A. renalis → V. renalis",
+              "es": "Pelvis renalis → A. renalis → V. renalis"
+            },
+            "feedback": {
+              "de": "Das Nierenbecken liegt üblicherweise dorsal und nicht vor den Hilusgefäßen.",
+              "en": "The renal pelvis is usually posterior, rather than in front of the hilar vessels.",
+              "es": "La pelvis renal suele ser posterior, no anterior a los vasos del hilio."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "V. renalis → Pelvis renalis → A. renalis",
+              "de": "V. renalis → Pelvis renalis → A. renalis",
+              "es": "V. renalis → Pelvis renalis → A. renalis"
+            },
+            "feedback": {
+              "de": "Das Nierenbecken liegt üblicherweise hinter der Hauptarterie, nicht zwischen Hauptvene und Hauptarterie.",
+              "en": "The pelvis usually lies behind the main artery, not between the main vein and artery.",
+              "es": "La pelvis suele quedar detrás de la arteria principal, no entre esta y la vena principal."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "de": "Die Nierenvene liegt im Regelfall vor der Arterie; das Nierenbecken liegt dahinter. Gefäßvarianten müssen vor der Präparation erkannt werden.",
+      "en": "Usually the renal vein is anterior to the artery, with the renal pelvis behind it. Identify vascular variants before dissection.",
+      "es": "Habitualmente la vena renal queda delante de la arteria y la pelvis renal detrás. Hay que identificar las variantes vasculares antes de disecar."
+    },
+    "references": [
+      "anatomy-kidney",
+      "anatomy-renal-artery"
+    ],
+    "evidence": {
+      "checked": "2026-10-11",
+      "type": "anatomical-reference",
+      "clinicalSignoffLanguages": []
+    },
+    "clinicalContext": {
+      "kind": "operation",
+      "label": {
+        "de": "Nephrektomie",
+        "en": "Nephrectomy",
+        "es": "Nefrectomía"
+      }
+    }
+  },
+  {
+    "id": "anat-right-renal-artery-ivc",
+    "area": "theatre",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "elective",
+    "subject": "anatomy",
+    "anatomyGroup": "kidney",
+    "topic": {
+      "de": "Urologische Anatomie",
+      "en": "Urological anatomy",
+      "es": "Anatomía urológica"
+    },
+    "patient": {
+      "name": "Anatomy round 02",
+      "age": null,
+      "sex": null,
+      "label": {
+        "de": "Anatomievisite 02",
+        "en": "Anatomy round 02",
+        "es": "Pase de anatomía 02"
+      }
+    },
+    "title": {
+      "de": "Der Weg zur rechten Niere",
+      "en": "The route to the right kidney",
+      "es": "El trayecto hacia el riñón derecho"
+    },
+    "presenting": {
+      "de": "Bei der OP-Planung eines rechtsseitigen Nierentumors verfolgst du die Hauptarterie im CT. Ihr Verlauf muss vor der Hiluspräparation mit den großen Venen abgeglichen werden. Anatomievisite: Der Marker funktioniert, der Pager schweigt. Das Team nutzt die seltene Gelegenheit für eine kurze Fallbesprechung.",
+      "en": "Planning surgery for a right renal tumour, you trace the main artery on CT. Its course must be related to the major veins before hilar dissection. Anatomy rounds: the marker works and the pager is quiet. The team uses this rare opportunity for a short case discussion.",
+      "es": "Al planificar la cirugía de un tumor renal derecho, sigues la arteria principal en la TC. Antes de disecar el hilio, revisas su relación con las venas grandes. Pase de anatomía: el rotulador funciona y el busca está callado. El equipo aprovecha para comentar un caso."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "Bei der Planung einer rechten Nephrektomie verfolgst du die rechte Hauptnierenarterie von der Aorta zum Hilus. Hinter welcher großen Vene zieht sie typischerweise vorbei?",
+          "en": "Planning a right nephrectomy, you trace the main right renal artery from the aorta to the hilum. Which major vein does it usually pass behind?",
+          "es": "Al planificar una nefrectomía derecha, sigues la arteria renal principal desde la aorta hasta el hilio. ¿Por detrás de qué vena grande pasa habitualmente?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "V. portae",
+              "de": "V. portae",
+              "es": "V. portae"
+            },
+            "feedback": {
+              "de": "Die Pfortader gehört zum splanchnischen Venensystem; diese retrokavale Beziehung betrifft die V. cava inferior.",
+              "en": "The portal vein belongs to the splanchnic venous system; this retrocaval relationship involves the inferior vena cava.",
+              "es": "La vena porta pertenece al sistema venoso esplácnico; la relación retrocava corresponde a la vena cava inferior."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "V. iliaca externa",
+              "de": "V. iliaca externa",
+              "es": "V. iliaca externa"
+            },
+            "feedback": {
+              "de": "Die äußere Beckenvene liegt weiter kaudal; die Nierenarterie entspringt im Oberbauch.",
+              "en": "The external iliac vein lies farther caudally; the renal artery originates in the upper abdomen.",
+              "es": "La vena ilíaca externa es más caudal; la arteria renal nace en el abdomen superior."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "V. mesenterica inferior",
+              "de": "V. mesenterica inferior",
+              "es": "V. mesenterica inferior"
+            },
+            "feedback": {
+              "de": "Die untere Mesenterialvene erklärt nicht den Verlauf der rechten Nierenarterie hinter dem großen Hohlvenenstamm.",
+              "en": "The inferior mesenteric vein does not explain the right renal artery passing behind the major caval trunk.",
+              "es": "La vena mesentérica inferior no explica el paso de la arteria renal derecha detrás del tronco de la cava."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "V. cava inferior",
+              "de": "V. cava inferior",
+              "es": "V. cava inferior"
+            },
+            "feedback": {
+              "de": "Die rechte Nierenarterie zieht gewöhnlich hinter der V. cava inferior zur rechten Niere. Varianten sind in der präoperativen Bildgebung zu prüfen.",
+              "en": "The right renal artery usually passes behind the inferior vena cava to reach the kidney. Check preoperative imaging for variants.",
+              "es": "La arteria renal derecha suele pasar detrás de la vena cava inferior. Las variantes se comprueban en la imagen preoperatoria."
+            },
+            "score": 10,
+            "minutes": 3,
+            "critical": false
+          }
+        ],
+        "best": "d"
+      }
+    ],
+    "takeaway": {
+      "de": "Die rechte Nierenarterie zieht gewöhnlich hinter der V. cava inferior zur rechten Niere. Varianten sind in der präoperativen Bildgebung zu prüfen.",
+      "en": "The right renal artery usually passes behind the inferior vena cava to reach the kidney. Check preoperative imaging for variants.",
+      "es": "La arteria renal derecha suele pasar detrás de la vena cava inferior. Las variantes se comprueban en la imagen preoperatoria."
+    },
+    "references": [
+      "anatomy-renal-artery"
+    ],
+    "evidence": {
+      "checked": "2026-10-11",
+      "type": "anatomical-reference",
+      "clinicalSignoffLanguages": []
+    },
+    "clinicalContext": {
+      "kind": "operation",
+      "label": {
+        "de": "Rechte Nephrektomie",
+        "en": "Right nephrectomy",
+        "es": "Nefrectomía derecha"
+      }
+    }
+  },
+  {
+    "id": "anat-renal-envelopes",
+    "area": "theatre",
+    "level": 1,
+    "acuity": "routine",
+    "duty": "elective",
+    "subject": "anatomy",
+    "anatomyGroup": "kidney",
+    "topic": {
+      "de": "Urologische Anatomie",
+      "en": "Urological anatomy",
+      "es": "Anatomía urológica"
+    },
+    "patient": {
+      "name": "Anatomy round 04",
+      "age": null,
+      "sex": null,
+      "label": {
+        "de": "Anatomievisite 04",
+        "en": "Anatomy round 04",
+        "es": "Pase de anatomía 04"
+      }
+    },
+    "title": {
+      "de": "Schichten statt Kaffeeflecken",
+      "en": "Layers instead of coffee stains",
+      "es": "Capas en vez de manchas de café"
+    },
+    "presenting": {
+      "de": "Bei einer offenen Nierenoperation wird die Niere schichtweise freigelegt. Vor der weiteren Präparation bespricht das Team die Hüllen unmittelbar um das Parenchym. Die Morgenbesprechung hat einen freien Platz auf der Tafel. Jana sagt: „Eine anatomische Runde, dann gehört die Tafel wieder dem Dienstplan.“",
+      "en": "During open renal surgery, the kidney is exposed layer by layer. The team reviews the coverings immediately around the parenchyma before further dissection. There is a spare corner of the morning-report board. Grace says: “One anatomy round, then the rota gets its board back.”",
+      "es": "En una cirugía renal abierta, se expone el riñón por capas. El equipo repasa las cubiertas inmediatas del parénquima antes de seguir disecando. Queda un rincón libre en la pizarra. Lucía dice: «Una ronda de anatomía y la pizarra vuelve al cuadrante de guardias»."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "Bei einer offenen Nierenoperation legst du die Niere schichtweise frei. Welche Reihenfolge beschreibt die direkten Nierenhüllen von innen nach außen?",
+          "en": "During open renal surgery you expose the kidney layer by layer. Which sequence describes its immediate coverings from inside out?",
+          "es": "En cirugía renal abierta expones el riñón por capas. ¿Qué secuencia describe sus cubiertas inmediatas de dentro hacia fuera?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Fettkapsel → Capsula fibrosa → Fascia renalis",
+              "en": "Perirenal fat → fibrous capsule → renal fascia",
+              "es": "Grasa perirrenal → cápsula fibrosa → fascia renal"
+            },
+            "feedback": {
+              "de": "Die fibröse Kapsel liegt direkt auf dem Parenchym; das perirenale Fett folgt außen.",
+              "en": "The fibrous capsule directly covers the parenchyma; perirenal fat is external to it.",
+              "es": "La cápsula fibrosa recubre directamente el parénquima; la grasa perirrenal queda por fuera."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Capsula fibrosa → Fettkapsel → Fascia renalis",
+              "en": "Fibrous capsule → perirenal fat → renal fascia",
+              "es": "Cápsula fibrosa → grasa perirrenal → fascia renal"
+            },
+            "feedback": {
+              "de": "Auf das Nierenparenchym folgen die fibröse Kapsel, das perirenale Fett und die Nierenfaszie. Pararenales Fett liegt außerhalb der Faszie.",
+              "en": "Renal parenchyma is covered by the fibrous capsule, perirenal fat and renal fascia. Pararenal fat is outside the fascia.",
+              "es": "El parénquima renal está cubierto por cápsula fibrosa, grasa perirrenal y fascia renal. La grasa pararrenal queda fuera de la fascia."
+            },
+            "score": 10,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Fascia renalis → Fettkapsel → Capsula fibrosa",
+              "en": "Renal fascia → perirenal fat → fibrous capsule",
+              "es": "Fascia renal → grasa perirrenal → cápsula fibrosa"
+            },
+            "feedback": {
+              "de": "Diese Reihenfolge ist von außen nach innen; gefragt wurde die Gegenrichtung.",
+              "en": "This is outside-to-inside order; the question asks the reverse.",
+              "es": "Este es el orden de fuera hacia dentro; se pregunta por el contrario."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Capsula fibrosa → Fascia renalis → Fettkapsel",
+              "en": "Fibrous capsule → renal fascia → perirenal fat",
+              "es": "Cápsula fibrosa → fascia renal → grasa perirrenal"
+            },
+            "feedback": {
+              "de": "Das perirenale Fett liegt zwischen fibröser Kapsel und Nierenfaszie, nicht erst außerhalb der Faszie.",
+              "en": "Perirenal fat lies between the fibrous capsule and renal fascia, not outside the fascia.",
+              "es": "La grasa perirrenal queda entre cápsula fibrosa y fascia renal, no fuera de la fascia."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          }
+        ],
+        "best": "b"
+      }
+    ],
+    "takeaway": {
+      "de": "Auf das Nierenparenchym folgen die fibröse Kapsel, das perirenale Fett und die Nierenfaszie. Pararenales Fett liegt außerhalb der Faszie.",
+      "en": "Renal parenchyma is covered by the fibrous capsule, perirenal fat and renal fascia. Pararenal fat is outside the fascia.",
+      "es": "El parénquima renal está cubierto por cápsula fibrosa, grasa perirrenal y fascia renal. La grasa pararrenal queda fuera de la fascia."
+    },
+    "references": [
+      "anatomy-kidney"
+    ],
+    "evidence": {
+      "checked": "2026-10-11",
+      "type": "anatomical-reference",
+      "clinicalSignoffLanguages": []
+    },
+    "clinicalContext": {
+      "kind": "operation",
+      "label": {
+        "de": "Nierenfreilegung",
+        "en": "Renal exposure",
+        "es": "Exposición renal"
+      }
+    }
+  },
+  {
+    "id": "anat-renal-segmental-end-arteries",
+    "area": "theatre",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "elective",
+    "subject": "anatomy",
+    "anatomyGroup": "kidney",
+    "topic": {
+      "de": "Urologische Anatomie",
+      "en": "Urological anatomy",
+      "es": "Anatomía urológica"
+    },
+    "patient": {
+      "name": "Anatomy round 05",
+      "age": null,
+      "sex": null,
+      "label": {
+        "de": "Anatomievisite 05",
+        "en": "Anatomy round 05",
+        "es": "Pase de anatomía 05"
+      }
+    },
+    "title": {
+      "de": "Gefäßplanung vor Teilresektion",
+      "en": "Vascular planning before partial resection",
+      "es": "Planificación vascular antes de resecar"
+    },
+    "presenting": {
+      "de": "Während einer Nierenteilresektion verändert sich nach Verschluss eines segmentalen Arterienasts die Perfusion eines umschriebenen Bezirks. Du sollst den anatomischen Grund erklären. Der Chef zeigt auf das Modell und wartet auf deine Entscheidung. Selbst der Pager scheint für einen Moment neugierig zu sein.",
+      "en": "During partial nephrectomy, occlusion of a segmental arterial branch changes perfusion of a defined region. You are asked to explain the anatomical reason. The chief points at the model and waits for your decision. Even the pager seems curious for a moment.",
+      "es": "Durante una nefrectomía parcial, la oclusión de una rama segmentaria cambia la perfusión de una región delimitada. Debes explicar la causa anatómica. El jefe señala el modelo y espera tu decisión. Hasta el busca parece tener curiosidad por un momento."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "Bei einer Nierenteilresektion wird ein segmentaler arterieller Ast versehentlich verschlossen. Warum kann ein umschriebenes Parenchymsegment ischämisch werden?",
+          "en": "During partial nephrectomy a segmental arterial branch is accidentally occluded. Why can a defined parenchymal segment become ischaemic?",
+          "es": "En una nefrectomía parcial se ocluye accidentalmente una rama arterial segmentaria. ¿Por qué puede quedar isquémico un segmento delimitado?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Funktionelle Endarterien",
+              "en": "Functional end arteries",
+              "es": "Arterias terminales funcionales"
+            },
+            "feedback": {
+              "de": "Segmentarterien haben keine ausreichend wirksame kollaterale Verbindung untereinander. Ein Verschluss kann deshalb ihr Versorgungsgebiet infarzieren.",
+              "en": "Segmental arteries lack sufficient collateral connections between territories. Occlusion can therefore infarct the supplied segment.",
+              "es": "Las arterias segmentarias carecen de conexiones colaterales suficientes entre territorios. Su oclusión puede infartar el segmento irrigado."
+            },
+            "score": 10,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Reiche intersegmentale Kollateralarkaden",
+              "en": "Abundant intersegmental collateral arcades",
+              "es": "Abundantes arcadas colaterales intersegmentarias"
+            },
+            "feedback": {
+              "de": "Wirksame Kollateralen würden einen Verschluss eher kompensieren; zwischen den Segmentterritorien reicht diese Absicherung nicht aus.",
+              "en": "Effective collaterals would compensate for occlusion; protection between segmental territories is insufficient.",
+              "es": "Las colaterales eficaces compensarían la oclusión; la protección entre territorios segmentarios es insuficiente."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Regelhafte Doppelversorgung jedes Segments aus zwei Hauptarterien",
+              "en": "Routine dual supply to every segment from two main arteries",
+              "es": "Irrigación doble habitual de cada segmento por dos arterias principales"
+            },
+            "feedback": {
+              "de": "Eine solche redundante Versorgung ist nicht der regelhafte Aufbau. Varianten sind möglich, ersetzen aber nicht die Planung der Segmentarterien.",
+              "en": "This redundant supply is not the usual arrangement. Variants exist but do not replace segmental arterial planning.",
+              "es": "Esa irrigación redundante no es la disposición habitual. Las variantes no sustituyen la planificación arterial segmentaria."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Regelhafte Ersatzversorgung aus Kapselarterien",
+              "en": "Routine replacement supply from capsular arteries",
+              "es": "Aporte sustitutorio habitual de arterias capsulares"
+            },
+            "feedback": {
+              "de": "Kleine kapsuläre Verbindungen gewährleisten keine ausreichende Ersatzperfusion eines verschlossenen Segmentterritoriums.",
+              "en": "Small capsular connections cannot ensure adequate replacement perfusion of an occluded segmental territory.",
+              "es": "Las pequeñas conexiones capsulares no garantizan perfusión sustituta suficiente de un territorio segmentario ocluido."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "de": "Segmentarterien haben keine ausreichend wirksame kollaterale Verbindung untereinander. Ein Verschluss kann deshalb ihr Versorgungsgebiet infarzieren.",
+      "en": "Segmental arteries lack sufficient collateral connections between territories. Occlusion can therefore infarct the supplied segment.",
+      "es": "Las arterias segmentarias carecen de conexiones colaterales suficientes entre territorios. Su oclusión puede infartar el segmento irrigado."
+    },
+    "references": [
+      "anatomy-kidney"
+    ],
+    "evidence": {
+      "checked": "2026-10-11",
+      "type": "anatomical-reference",
+      "clinicalSignoffLanguages": []
+    },
+    "clinicalContext": {
+      "kind": "operation",
+      "label": {
+        "de": "Partielle Nephrektomie",
+        "en": "Partial nephrectomy",
+        "es": "Nefrectomía parcial"
+      }
+    }
+  },
+  {
+    "id": "anat-pcnl-posterior-calyx",
+    "area": "theatre",
+    "level": 3,
+    "acuity": "routine",
+    "duty": "elective",
+    "subject": "anatomy",
+    "anatomyGroup": "kidney",
+    "topic": {
+      "de": "Urologische Anatomie",
+      "en": "Urological anatomy",
+      "es": "Anatomía urológica"
+    },
+    "patient": {
+      "name": "Anatomy round 06",
+      "age": null,
+      "sex": null,
+      "label": {
+        "de": "Anatomievisite 06",
+        "en": "Anatomy round 06",
+        "es": "Pase de anatomía 06"
+      }
+    },
+    "title": {
+      "de": "Zugang zum Kelchsystem",
+      "en": "Access to the collecting system",
+      "es": "Acceso al sistema colector"
+    },
+    "presenting": {
+      "de": "Für einen großen Nierenstein wird ein perkutaner Zugang geplant. Das Team prüft CT und Ultraschall auf Darm, Pleura und Gefäße, bevor es den Trakt festlegt. Der Chef klappt das Anatomiemodell auf. Jana stellt den Kaffee sicherheitshalber außerhalb des Operationsfelds ab.",
+      "en": "A percutaneous tract is planned for a large renal stone. The team checks CT and ultrasound for bowel, pleura and vessels before choosing the tract. The chief opens the anatomy model. Grace parks the coffee safely outside the operating field.",
+      "es": "Se planifica un acceso percutáneo para un cálculo renal grande. El equipo revisa intestino, pleura y vasos en TC y ecografía antes de elegir el trayecto. El jefe abre el modelo anatómico. Lucía deja el café fuera del campo quirúrgico, por si acaso."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "Ein perkutaner Nierenzugang wird nach Prüfung von Darm, Pleura und Gefäßverlauf geplant. Welche Zielstruktur wird typischerweise für einen geeigneten PCNL-Trakt gewählt?",
+          "en": "After checking bowel, pleura and vessels, a percutaneous renal access is planned. What target is typically chosen for a suitable PCNL tract?",
+          "es": "Tras revisar intestino, pleura y vasos, se planifica un acceso renal percutáneo. ¿Qué estructura se elige habitualmente para un trayecto de NLPC adecuado?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Infundibulum nahe den größeren Gefäßen",
+              "en": "Infundibulum near larger vessels",
+              "es": "Infundíbulo próximo a vasos mayores"
+            },
+            "feedback": {
+              "de": "Ein infundibulärer Stich kann größere Gefäße gefährden; der typische Zugang wird papillenorientiert geplant.",
+              "en": "An infundibular puncture can endanger larger vessels; the typical tract is planned towards the papilla.",
+              "es": "La punción infundibular puede poner en riesgo vasos mayores; el trayecto típico se orienta a la papila."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Nierenhilus als direkter Zugang zum Becken",
+              "en": "Renal hilum as direct access to the pelvis",
+              "es": "Hilio renal como acceso directo a la pelvis"
+            },
+            "feedback": {
+              "de": "Der Hilus enthält große Gefäße und ist kein üblicher sicherer Punktionsweg für einen PCNL-Trakt.",
+              "en": "The hilum contains major vessels and is not a usual safe PCNL puncture route.",
+              "es": "El hilio contiene vasos principales y no es una vía de punción PCNL segura habitual."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Tangentialer Parenchymweg ohne Kelchbezug",
+              "en": "Tangential parenchymal path without calyceal alignment",
+              "es": "Trayecto tangencial del parénquima sin alineación calicial"
+            },
+            "feedback": {
+              "de": "Ohne geeignete Kelch- und Papillenorientierung können unnötig viel Parenchym und Gefäße verletzt werden.",
+              "en": "Lack of suitable calyceal and papillary alignment can injure unnecessary parenchyma and vessels.",
+              "es": "Sin alineación calicial y papilar adecuada pueden lesionarse parénquima y vasos innecesariamente."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Papille eines geeigneten posterioren Kelchs",
+              "en": "Papilla of a suitable posterior calyx",
+              "es": "Papila de un cáliz posterior adecuado"
+            },
+            "feedback": {
+              "de": "Ein papillenorientierter Zugang in einen geeigneten posterioren Kelch ist ein übliches Prinzip. Die Bildgebung bestimmt den individuellen sicheren Verlauf; er ist nicht gefäßfrei garantiert.",
+              "en": "A papillary approach to a suitable posterior calyx is a usual principle. Imaging determines the individual safe route; it is not guaranteed avascular.",
+              "es": "El acceso papilar a un cáliz posterior adecuado es un principio habitual. La imagen define el trayecto seguro individual; no garantiza ausencia de vasos."
+            },
+            "score": 10,
+            "minutes": 3,
+            "critical": false
+          }
+        ],
+        "best": "d"
+      }
+    ],
+    "takeaway": {
+      "de": "Ein papillenorientierter Zugang in einen geeigneten posterioren Kelch ist ein übliches Prinzip. Die Bildgebung bestimmt den individuellen sicheren Verlauf; er ist nicht gefäßfrei garantiert.",
+      "en": "A papillary approach to a suitable posterior calyx is a usual principle. Imaging determines the individual safe route; it is not guaranteed avascular.",
+      "es": "El acceso papilar a un cáliz posterior adecuado es un principio habitual. La imagen define el trayecto seguro individual; no garantiza ausencia de vasos."
+    },
+    "references": [
+      "anatomy-kidney",
+      "stones"
+    ],
+    "evidence": {
+      "checked": "2026-10-11",
+      "type": "anatomical-reference",
+      "clinicalSignoffLanguages": []
+    },
+    "clinicalContext": {
+      "kind": "operation",
+      "label": {
+        "de": "PCNL-Zugangsplanung",
+        "en": "PCNL access planning",
+        "es": "Planificación del acceso PCNL"
+      }
+    }
+  },
+  {
+    "id": "anat-renal-posterior-rib-pleura",
+    "area": "theatre",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "elective",
+    "subject": "anatomy",
+    "anatomyGroup": "kidney",
+    "topic": {
+      "de": "Urologische Anatomie",
+      "en": "Urological anatomy",
+      "es": "Anatomía urológica"
+    },
+    "patient": {
+      "name": "Anatomy round 10",
+      "age": null,
+      "sex": null,
+      "label": {
+        "de": "Anatomievisite 10",
+        "en": "Anatomy round 10",
+        "es": "Pase de anatomía 10"
+      }
+    },
+    "title": {
+      "de": "Nachbarschaft am Oberpol",
+      "en": "Neighbours of the upper pole",
+      "es": "Vecinos del polo superior"
+    },
+    "presenting": {
+      "de": "Für eine Steinoperation wird ein Zugang oberhalb der zwölften Rippe erwogen. Vor der Punktion prüfst du insbesondere die Grenze zwischen Retroperitoneum und Thorax. Der Chef zeigt auf das Modell und wartet auf deine Entscheidung. Selbst der Pager scheint für einen Moment neugierig zu sein.",
+      "en": "For stone surgery, access above the twelfth rib is being considered. Before puncture you assess the boundary between retroperitoneum and thorax. The chief points at the model and waits for your decision. Even the pager seems curious for a moment.",
+      "es": "Para una cirugía de cálculos se valora un acceso sobre la duodécima costilla. Antes de puncionar, revisas el límite entre retroperitoneo y tórax. El jefe señala el modelo y espera tu decisión. Hasta el busca parece tener curiosidad por un momento."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "Vor einem suprakostalen perkutanen Nierenzugang prüfst du die Thoraxnähe. Welche Struktur kann durch einen zu kranialen Punktionsweg besonders gefährdet werden?",
+          "en": "Before supracostal percutaneous renal access, you assess proximity to the chest. Which structure is particularly at risk from an excessively cranial tract?",
+          "es": "Antes de un acceso renal percutáneo supracostal revisas la proximidad al tórax. ¿Qué estructura está especialmente en riesgo si el trayecto es demasiado craneal?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Vesicula seminalis",
+              "de": "Vesicula seminalis",
+              "es": "Vesicula seminalis"
+            },
+            "feedback": {
+              "de": "Die Samenblase liegt im kleinen Becken und nicht am kranialen Nierenzugang.",
+              "en": "The seminal vesicle lies in the pelvis, not near a cranial renal puncture.",
+              "es": "La vesícula seminal está en la pelvis, no cerca de una punción renal craneal."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Sphincter urethrae externus",
+              "de": "Sphincter urethrae externus",
+              "es": "Sphincter urethrae externus"
+            },
+            "feedback": {
+              "de": "Der äußere Harnröhrenschließmuskel ist eine Beckenstruktur und liegt weit entfernt vom Nierenoberpol.",
+              "en": "The external urethral sphincter is a pelvic structure far from the renal upper pole.",
+              "es": "El esfínter uretral externo es una estructura pélvica distante del polo renal superior."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Ligamentum inguinale",
+              "de": "Ligamentum inguinale",
+              "es": "Ligamentum inguinale"
+            },
+            "feedback": {
+              "de": "Das Leistenband liegt kaudal an der vorderen Bauchwand; es ist keine Nachbarstruktur des Nierenoberpols.",
+              "en": "The inguinal ligament is caudal in the anterior abdominal wall, not adjacent to the renal upper pole.",
+              "es": "El ligamento inguinal está caudal en la pared abdominal anterior, no junto al polo renal superior."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Pleura",
+              "de": "Pleura",
+              "es": "Pleura"
+            },
+            "feedback": {
+              "de": "Die Pleura kann nahe an einen suprakostalen Zugang reichen; eine Verletzung kann Pneumothorax oder Hydrothorax verursachen. Präoperative und intraoperative Bildgebung sind entscheidend.",
+              "en": "Pleura can approach a supracostal tract; injury can cause pneumothorax or hydrothorax. Preoperative and intraoperative imaging are crucial.",
+              "es": "La pleura puede quedar cerca del trayecto supracostal; una lesión puede causar neumotórax o hidrotórax. La imagen previa e intraoperatoria es crucial."
+            },
+            "score": 10,
+            "minutes": 3,
+            "critical": false
+          }
+        ],
+        "best": "d"
+      }
+    ],
+    "takeaway": {
+      "de": "Die Pleura kann nahe an einen suprakostalen Zugang reichen; eine Verletzung kann Pneumothorax oder Hydrothorax verursachen. Präoperative und intraoperative Bildgebung sind entscheidend.",
+      "en": "Pleura can approach a supracostal tract; injury can cause pneumothorax or hydrothorax. Preoperative and intraoperative imaging are crucial.",
+      "es": "La pleura puede quedar cerca del trayecto supracostal; una lesión puede causar neumotórax o hidrotórax. La imagen previa e intraoperatoria es crucial."
+    },
+    "references": [
+      "anatomy-kidney",
+      "stones"
+    ],
+    "evidence": {
+      "checked": "2026-10-11",
+      "type": "anatomical-reference",
+      "clinicalSignoffLanguages": []
+    },
+    "clinicalContext": {
+      "kind": "operation",
+      "label": {
+        "de": "Suprakostaler Nierenzugang",
+        "en": "Supracostal renal access",
+        "es": "Acceso renal supracostal"
+      }
+    }
+  },
+  {
+    "id": "anat-ureter-uterine-artery",
+    "area": "theatre",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "elective",
+    "subject": "anatomy",
+    "anatomyGroup": "ureter",
+    "topic": {
+      "de": "Urologische Anatomie",
+      "en": "Urological anatomy",
+      "es": "Anatomía urológica"
+    },
+    "patient": {
+      "name": "Anatomy round 11",
+      "age": null,
+      "sex": null,
+      "label": {
+        "de": "Anatomievisite 11",
+        "en": "Anatomy round 11",
+        "es": "Pase de anatomía 11"
+      }
+    },
+    "title": {
+      "de": "Orientierung bei Hysterektomie",
+      "en": "Orientation during hysterectomy",
+      "es": "Orientación en una histerectomía"
+    },
+    "presenting": {
+      "de": "Bei einer Hysterektomie wirst du vor dem Absetzen der Uterusgefäße hinzugezogen. Der distale Ureter soll in der Nähe der Zervix sicher identifiziert werden. Der Chef klappt das Anatomiemodell auf. Jana stellt den Kaffee sicherheitshalber außerhalb des Operationsfelds ab.",
+      "en": "During hysterectomy you are called before the uterine vessels are divided. The distal ureter must be identified safely near the cervix. The chief opens the anatomy model. Grace parks the coffee safely outside the operating field.",
+      "es": "En una histerectomía te llaman antes de seccionar los vasos uterinos. Debe identificarse con seguridad el uréter distal cerca del cérvix. El jefe abre el modelo anatómico. Lucía deja el café fuera del campo quirúrgico, por si acaso."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "Bei einer Hysterektomie soll der distale Ureter vor dem Absetzen der Uterusgefäße identifiziert werden. Welche Beziehung ist nahe der Zervix typisch?",
+          "en": "During hysterectomy, the distal ureter must be identified before dividing uterine vessels. What relationship is usual near the cervix?",
+          "es": "En una histerectomía se identifica el uréter distal antes de ligar los vasos uterinos. ¿Qué relación es habitual cerca del cérvix?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Ureter im Lumen der A. uterina",
+              "en": "Ureter inside the uterine artery",
+              "es": "Uréter dentro de la arteria uterina"
+            },
+            "feedback": {
+              "de": "Ureter und Arterie sind getrennte Organe; der Harnleiter verläuft nicht im Gefäßlumen.",
+              "en": "Ureter and artery are separate structures; the ureter is not inside a vessel.",
+              "es": "Uréter y arteria son estructuras separadas; el uréter no discurre dentro de un vaso."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Ureter innerhalb des Zervikalkanals",
+              "en": "Ureter within the cervical canal",
+              "es": "Uréter dentro del canal cervical"
+            },
+            "feedback": {
+              "de": "Der Ureter zieht seitlich an der Zervix vorbei; er verläuft nicht im Zervikalkanal.",
+              "en": "The ureter passes beside the cervix, not within the cervical canal.",
+              "es": "El uréter pasa al lado del cérvix, no dentro del canal cervical."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Ureter unter A. uterina",
+              "en": "Ureter beneath the uterine artery",
+              "es": "Uréter debajo de la arteria uterina"
+            },
+            "feedback": {
+              "de": "Nahe der Zervix zieht der Ureter unter der Uterusarterie hindurch. Diese enge Beziehung erklärt das Verletzungsrisiko bei Gefäßligaturen.",
+              "en": "Near the cervix the ureter passes beneath the uterine artery. Their proximity explains the risk of injury during vessel ligation.",
+              "es": "Cerca del cérvix el uréter pasa bajo la arteria uterina. Su proximidad explica el riesgo de lesión durante las ligaduras."
+            },
+            "score": 10,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Ureter über A. uterina",
+              "en": "Ureter above the uterine artery",
+              "es": "Uréter encima de la arteria uterina"
+            },
+            "feedback": {
+              "de": "Diese Antwort kehrt die typische Überkreuzung nahe der Zervix um.",
+              "en": "This reverses the usual crossing near the cervix.",
+              "es": "Esta respuesta invierte el cruce habitual cerca del cérvix."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          }
+        ],
+        "best": "c"
+      }
+    ],
+    "takeaway": {
+      "de": "Nahe der Zervix zieht der Ureter unter der Uterusarterie hindurch. Diese enge Beziehung erklärt das Verletzungsrisiko bei Gefäßligaturen.",
+      "en": "Near the cervix the ureter passes beneath the uterine artery. Their proximity explains the risk of injury during vessel ligation.",
+      "es": "Cerca del cérvix el uréter pasa bajo la arteria uterina. Su proximidad explica el riesgo de lesión durante las ligaduras."
+    },
+    "references": [
+      "anatomy-ureter"
+    ],
+    "evidence": {
+      "checked": "2026-10-11",
+      "type": "anatomical-reference",
+      "clinicalSignoffLanguages": []
+    },
+    "clinicalContext": {
+      "kind": "operation",
+      "label": {
+        "de": "Hysterektomie-Konsil",
+        "en": "Hysterectomy consultation",
+        "es": "Consulta durante histerectomía"
+      }
+    }
+  },
+  {
+    "id": "anat-ureter-vas-deferens",
+    "area": "theatre",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "elective",
+    "subject": "anatomy",
+    "anatomyGroup": "ureter",
+    "topic": {
+      "de": "Urologische Anatomie",
+      "en": "Urological anatomy",
+      "es": "Anatomía urológica"
+    },
+    "patient": {
+      "name": "Anatomy round 12",
+      "age": null,
+      "sex": null,
+      "label": {
+        "de": "Anatomievisite 12",
+        "en": "Anatomy round 12",
+        "es": "Pase de anatomía 12"
+      }
+    },
+    "title": {
+      "de": "Eine Kreuzung im männlichen Becken",
+      "en": "A crossing in the male pelvis",
+      "es": "Un cruce en la pelvis masculina"
+    },
+    "presenting": {
+      "de": "Bei einer männlichen Beckenoperation wird der distale Ureter bis zur Blase verfolgt. Vor einer Durchtrennung müssen sich kreuzende Strukturen unterschieden werden. Anatomievisite: Der Marker funktioniert, der Pager schweigt. Das Team nutzt die seltene Gelegenheit für eine kurze Fallbesprechung.",
+      "en": "During male pelvic surgery the distal ureter is followed to the bladder. Crossing structures must be distinguished before division. Anatomy rounds: the marker works and the pager is quiet. The team uses this rare opportunity for a short case discussion.",
+      "es": "En una cirugía pélvica masculina se sigue el uréter distal hasta la vejiga. Antes de seccionar, deben distinguirse las estructuras que se cruzan. Pase de anatomía: el rotulador funciona y el busca está callado. El equipo aprovecha para comentar un caso."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "Bei einer Beckenpräparation verfolgst du den männlichen distalen Ureter zur Blase. Welche Struktur überkreuzt ihn typischerweise nahe der Blase?",
+          "en": "During pelvic dissection you follow the male distal ureter toward the bladder. Which structure usually crosses over it near the bladder?",
+          "es": "Durante una disección pélvica sigues el uréter distal masculino hacia la vejiga. ¿Qué estructura suele cruzarlo por encima cerca de la vejiga?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "N. phrenicus",
+              "de": "N. phrenicus",
+              "es": "N. phrenicus"
+            },
+            "feedback": {
+              "de": "Der Zwerchfellnerv gehört nicht zu den lokalen Leitungsbahnen des distalen Ureters.",
+              "en": "The phrenic nerve is not a local structure at the distal ureter.",
+              "es": "El nervio frénico no es una estructura local del uréter distal."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Ductus deferens",
+              "de": "Ductus deferens",
+              "es": "Ductus deferens"
+            },
+            "feedback": {
+              "de": "Der Samenleiter überkreuzt den distalen Ureter nahe der Blase. Beide müssen vor der Durchtrennung einer Struktur sicher unterschieden werden.",
+              "en": "The vas deferens crosses over the distal ureter near the bladder. Identify both reliably before dividing a structure.",
+              "es": "El conducto deferente cruza por encima del uréter distal cerca de la vejiga. Hay que distinguir ambos antes de seccionar una estructura."
+            },
+            "score": 10,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Urethra spongiosa",
+              "de": "Urethra spongiosa",
+              "es": "Urethra spongiosa"
+            },
+            "feedback": {
+              "de": "Die spongiöse Harnröhre liegt weiter kaudal im Penis und kreuzt den distalen Ureter nicht.",
+              "en": "The spongy urethra lies farther caudally in the penis and does not cross the distal ureter.",
+              "es": "La uretra esponjosa está más caudal, en el pene, y no cruza el uréter distal."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "A. mesenterica superior",
+              "de": "A. mesenterica superior",
+              "es": "A. mesenterica superior"
+            },
+            "feedback": {
+              "de": "Die obere Mesenterialarterie liegt im Oberbauch, nicht an dieser perivesikalen Kreuzung.",
+              "en": "The superior mesenteric artery is in the upper abdomen, not at this perivesical crossing.",
+              "es": "La arteria mesentérica superior está en el abdomen superior, no en este cruce perivesical."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          }
+        ],
+        "best": "b"
+      }
+    ],
+    "takeaway": {
+      "de": "Der Samenleiter überkreuzt den distalen Ureter nahe der Blase. Beide müssen vor der Durchtrennung einer Struktur sicher unterschieden werden.",
+      "en": "The vas deferens crosses over the distal ureter near the bladder. Identify both reliably before dividing a structure.",
+      "es": "El conducto deferente cruza por encima del uréter distal cerca de la vejiga. Hay que distinguir ambos antes de seccionar una estructura."
+    },
+    "references": [
+      "anatomy-ureter"
+    ],
+    "evidence": {
+      "checked": "2026-10-11",
+      "type": "anatomical-reference",
+      "clinicalSignoffLanguages": []
+    },
+    "clinicalContext": {
+      "kind": "operation",
+      "label": {
+        "de": "Distale Ureterpräparation",
+        "en": "Distal ureteric dissection",
+        "es": "Disección ureteral distal"
+      }
+    }
+  },
+  {
+    "id": "anat-ureter-adventitial-blood-supply",
+    "area": "theatre",
+    "level": 3,
+    "acuity": "routine",
+    "duty": "elective",
+    "subject": "anatomy",
+    "anatomyGroup": "ureter",
+    "topic": {
+      "de": "Urologische Anatomie",
+      "en": "Urological anatomy",
+      "es": "Anatomía urológica"
+    },
+    "patient": {
+      "name": "Anatomy round 13",
+      "age": null,
+      "sex": null,
+      "label": {
+        "de": "Anatomievisite 13",
+        "en": "Anatomy round 13",
+        "es": "Pase de anatomía 13"
+      }
+    },
+    "title": {
+      "de": "Präparation ohne Ischämie",
+      "en": "Dissection without ischaemia",
+      "es": "Disección sin isquemia"
+    },
+    "presenting": {
+      "de": "Für eine Ureterrekonstruktion wird ein Harnleiterabschnitt mobilisiert. Die Operateurin bittet dich, unnötige Skelettierung zu vermeiden. Im OP wartet das Team auf die gemeinsame anatomische Orientierung. Der Chef verspricht, heute keine Kaffeetassen zu beschriften.",
+      "en": "During ureteric reconstruction a ureteric segment is mobilised. The surgeon asks you to avoid unnecessary skeletonisation. In theatre, the team waits for a shared anatomical orientation. The chief promises not to label any coffee cups today.",
+      "es": "Durante una reconstrucción ureteral se moviliza un segmento. La cirujana pide evitar una esqueletización innecesaria. En quirófano, el equipo espera una orientación anatómica conjunta. El jefe promete no etiquetar tazas de café hoy."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "Warum soll bei der Mobilisation des Ureters seine periureterale Adventitia möglichst geschont werden?",
+          "en": "Why should periureteral adventitial tissue be preserved as much as possible during ureter mobilisation?",
+          "es": "¿Por qué se debe conservar en lo posible el tejido adventicial periureteral al movilizar el uréter?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Erhalt der segmentalen Gefäßversorgung",
+              "en": "Preservation of segmental blood supply",
+              "es": "Conservación de la vascularización segmentaria"
+            },
+            "feedback": {
+              "de": "Die Ureterversorgung erfolgt über mehrere segmentale Zuflüsse mit adventitiellen Längsverbindungen. Ausgedehnte Skelettierung kann Ischämie und spätere Strikturen begünstigen.",
+              "en": "Ureteric supply comes from multiple segmental feeders with longitudinal adventitial connections. Extensive skeletonisation can promote ischaemia and later strictures.",
+              "es": "El uréter recibe aportes segmentarios conectados longitudinalmente en la adventicia. Una esqueletización extensa favorece isquemia y estenosis posteriores."
+            },
+            "score": 10,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Erhalt einer einzigen Längsarterie ohne segmentale Zuflüsse",
+              "en": "Preservation of one longitudinal artery without segmental inflow",
+              "es": "Preservar una única arteria longitudinal sin aportes segmentarios"
+            },
+            "feedback": {
+              "de": "Die Versorgung beruht auf mehreren segmentalen Zuflüssen mit adventitiellen Verbindungen, nicht auf einer einzigen isolierten Arterie.",
+              "en": "Supply depends on several segmental inflows with adventitial connections, not one isolated artery.",
+              "es": "La irrigación depende de varios aportes segmentarios con conexiones adventiciales, no de una sola arteria aislada."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Erhalt ausschließlich intraluminaler Gefäße",
+              "en": "Preservation of exclusively intraluminal vessels",
+              "es": "Preservar vasos exclusivamente intraluminales"
+            },
+            "feedback": {
+              "de": "Die wichtigen versorgenden Gefäße verlaufen in der Adventitia; das Ureterlumen enthält keine solche Gefäßbahn.",
+              "en": "Important supplying vessels run in the adventitia; the ureteric lumen has no such vascular route.",
+              "es": "Los vasos nutricios importantes discurren en la adventicia; la luz ureteral no contiene esa vía vascular."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Vermeidung eines sofortigen Ausfalls der Ureterfiltration",
+              "en": "Prevention of immediate loss of ureteric filtration",
+              "es": "Evitar la pérdida inmediata de filtración ureteral"
+            },
+            "feedback": {
+              "de": "Der Ureter transportiert Urin und filtriert ihn nicht. Entscheidend ist die Erhaltung seiner Wanddurchblutung.",
+              "en": "The ureter transports urine rather than filtering it; preservation of wall perfusion is the key issue.",
+              "es": "El uréter transporta orina, no la filtra; lo importante es conservar la perfusión de su pared."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "de": "Die Ureterversorgung erfolgt über mehrere segmentale Zuflüsse mit adventitiellen Längsverbindungen. Ausgedehnte Skelettierung kann Ischämie und spätere Strikturen begünstigen.",
+      "en": "Ureteric supply comes from multiple segmental feeders with longitudinal adventitial connections. Extensive skeletonisation can promote ischaemia and later strictures.",
+      "es": "El uréter recibe aportes segmentarios conectados longitudinalmente en la adventicia. Una esqueletización extensa favorece isquemia y estenosis posteriores."
+    },
+    "references": [
+      "anatomy-ureter",
+      "other-trauma"
+    ],
+    "evidence": {
+      "checked": "2026-10-11",
+      "type": "anatomical-reference",
+      "clinicalSignoffLanguages": []
+    },
+    "clinicalContext": {
+      "kind": "operation",
+      "label": {
+        "de": "Ureterrekonstruktion",
+        "en": "Ureteric reconstruction",
+        "es": "Reconstrucción ureteral"
+      }
+    }
+  },
+  {
+    "id": "anat-ureter-pelvic-brim",
+    "area": "theatre",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "elective",
+    "subject": "anatomy",
+    "anatomyGroup": "ureter",
+    "topic": {
+      "de": "Urologische Anatomie",
+      "en": "Urological anatomy",
+      "es": "Anatomía urológica"
+    },
+    "patient": {
+      "name": "Anatomy round 15",
+      "age": null,
+      "sex": null,
+      "label": {
+        "de": "Anatomievisite 15",
+        "en": "Anatomy round 15",
+        "es": "Pase de anatomía 15"
+      }
+    },
+    "title": {
+      "de": "Am Beckeneingang",
+      "en": "At the pelvic brim",
+      "es": "En el estrecho superior"
+    },
+    "presenting": {
+      "de": "Bei einer Beckenoperation suchst du den Ureter zunächst am Beckeneingang, bevor du ihn nach distal verfolgst. Die Gefäßlandmarken sollen die Orientierung erleichtern. Der Chef zeigt auf das Modell und wartet auf deine Entscheidung. Selbst der Pager scheint für einen Moment neugierig zu sein.",
+      "en": "During pelvic surgery you locate the ureter at the pelvic brim before tracing it distally. Vascular landmarks help orientation. The chief points at the model and waits for your decision. Even the pager seems curious for a moment.",
+      "es": "En una cirugía pélvica localizas primero el uréter en el estrecho superior antes de seguirlo distalmente. Los vasos sirven de referencias. El jefe señala el modelo y espera tu decisión. Hasta el busca parece tener curiosidad por un momento."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "Du suchst den Ureter beim Eintritt in das kleine Becken. Welche Gefäßregion dient typischerweise als Orientierung?",
+          "en": "You locate the ureter as it enters the true pelvis. Which vascular region usually provides a landmark?",
+          "es": "Localizas el uréter al entrar en la pelvis menor. ¿Qué región vascular suele servir de referencia?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Aufzweigung der A. iliaca interna tief im Becken",
+              "en": "Internal iliac division deep in the pelvis",
+              "es": "División de la ilíaca interna en la pelvis profunda"
+            },
+            "feedback": {
+              "de": "Die interne Aufzweigung liegt bereits weiter im Becken; der Eintrittslandmarke entspricht die Region der gemeinsamen Iliakalaufzweigung.",
+              "en": "The internal division is deeper in the pelvis; the entry landmark is the common iliac division region.",
+              "es": "La división interna está más profunda en la pelvis; la referencia de entrada es la región de división de la ilíaca común."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "A. iliaca externa unter dem Leistenband",
+              "en": "External iliac artery beneath the inguinal ligament",
+              "es": "Ilíaca externa bajo el ligamento inguinal"
+            },
+            "feedback": {
+              "de": "Unter dem Leistenband verläuft das Gefäß zum Bein; das ist nicht die typische Ureterkreuzung am Beckeneingang.",
+              "en": "Beneath the inguinal ligament the vessel heads towards the leg; this is not the typical ureteric crossing at the pelvic brim.",
+              "es": "Bajo el ligamento inguinal, el vaso va hacia la pierna; no es el cruce ureteral típico del estrecho superior."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Aufzweigung der A. iliaca communis",
+              "en": "Common iliac artery bifurcation",
+              "es": "Bifurcación de la arteria ilíaca común"
+            },
+            "feedback": {
+              "de": "Der Ureter überquert gewöhnlich die Region der gemeinsamen Iliakalaufzweigung, teils den proximalen äußeren Iliakalast. Der genaue Verlauf variiert.",
+              "en": "The ureter usually crosses the common iliac bifurcation region, sometimes the proximal external iliac artery. The precise course varies.",
+              "es": "El uréter suele cruzar la región de la bifurcación ilíaca común, a veces la ilíaca externa proximal. El trayecto exacto varía."
+            },
+            "score": 10,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Truncus coeliacus am Oberbauch",
+              "en": "Coeliac trunk in the upper abdomen",
+              "es": "Tronco celíaco en el abdomen superior"
+            },
+            "feedback": {
+              "de": "Der Truncus coeliacus liegt kranial im Oberbauch und nicht am Beckeneingang.",
+              "en": "The coeliac trunk is cranial in the upper abdomen, not at the pelvic brim.",
+              "es": "El tronco celíaco es craneal en el abdomen superior, no en el estrecho superior de la pelvis."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          }
+        ],
+        "best": "c"
+      }
+    ],
+    "takeaway": {
+      "de": "Der Ureter überquert gewöhnlich die Region der gemeinsamen Iliakalaufzweigung, teils den proximalen äußeren Iliakalast. Der genaue Verlauf variiert.",
+      "en": "The ureter usually crosses the common iliac bifurcation region, sometimes the proximal external iliac artery. The precise course varies.",
+      "es": "El uréter suele cruzar la región de la bifurcación ilíaca común, a veces la ilíaca externa proximal. El trayecto exacto varía."
+    },
+    "references": [
+      "anatomy-ureter"
+    ],
+    "evidence": {
+      "checked": "2026-10-11",
+      "type": "anatomical-reference",
+      "clinicalSignoffLanguages": []
+    },
+    "clinicalContext": {
+      "kind": "operation",
+      "label": {
+        "de": "Uretersuche bei Beckenoperation",
+        "en": "Locating the ureter in pelvic surgery",
+        "es": "Localización ureteral en cirugía pélvica"
+      }
+    }
+  },
+  {
+    "id": "anat-ureter-psoas-course",
+    "area": "theatre",
+    "level": 1,
+    "acuity": "routine",
+    "duty": "elective",
+    "subject": "anatomy",
+    "anatomyGroup": "ureter",
+    "topic": {
+      "de": "Urologische Anatomie",
+      "en": "Urological anatomy",
+      "es": "Anatomía urológica"
+    },
+    "patient": {
+      "name": "Anatomy round 16",
+      "age": null,
+      "sex": null,
+      "label": {
+        "de": "Anatomievisite 16",
+        "en": "Anatomy round 16",
+        "es": "Pase de anatomía 16"
+      }
+    },
+    "title": {
+      "de": "Eine Spur im Retroperitoneum",
+      "en": "A trail in the retroperitoneum",
+      "es": "Un trayecto en el retroperitoneo"
+    },
+    "presenting": {
+      "de": "Bei einer retroperitonealen Ureterolyse orientierst du dich an der hinteren Bauchwand. Du sollst den Muskel unter dem abdominalen Ureter benennen, ohne eine Muskelkante mit dem Harnleiter zu verwechseln. Der Chef klappt das Anatomiemodell auf. Jana stellt den Kaffee sicherheitshalber außerhalb des Operationsfelds ab.",
+      "en": "During retroperitoneal ureterolysis you orient yourself at the posterior abdominal wall. Identify the muscle beneath the abdominal ureter without mistaking a muscle edge for the ureter. The chief opens the anatomy model. Grace parks the coffee safely outside the operating field.",
+      "es": "En una ureterólisis retroperitoneal te orientas en la pared abdominal posterior. Identifica el músculo bajo el uréter abdominal sin confundir un borde muscular con el uréter. El jefe abre el modelo anatómico. Lucía deja el café fuera del campo quirúrgico, por si acaso."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "Auf welchem Muskel zieht der abdominale Ureter normalerweise nach kaudal?",
+          "en": "Along which muscle does the abdominal ureter normally descend?",
+          "es": "¿Sobre qué músculo desciende normalmente el uréter abdominal?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "M. quadratus lumborum",
+              "en": "Quadratus lumborum",
+              "es": "Cuadrado lumbar"
+            },
+            "feedback": {
+              "de": "Der Quadratus lumborum gehört zur hinteren Bauchwand, aber der Ureter zieht typischerweise auf der Vorderfläche des Psoas major.",
+              "en": "Quadratus lumborum is a posterior abdominal-wall muscle, but the ureter usually follows the anterior surface of psoas major.",
+              "es": "El cuadrado lumbar es de la pared posterior, pero el uréter suele seguir la superficie anterior del psoas mayor."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "M. psoas major",
+              "de": "M. psoas major",
+              "es": "M. psoas major"
+            },
+            "feedback": {
+              "de": "Der abdominale Ureter liegt retroperitoneal auf der Vorderfläche des M. psoas major. Seine Identifikation erfordert zusätzlich die sichere Verfolgung des Verlaufs.",
+              "en": "The abdominal ureter lies retroperitoneally on the anterior surface of psoas major. Reliable identification also requires tracing its course.",
+              "es": "El uréter abdominal discurre retroperitonealmente por la cara anterior del psoas mayor. Su identificación segura requiere seguir su trayecto."
+            },
+            "score": 10,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "M. iliacus",
+              "en": "Iliacus",
+              "es": "Ilíaco"
+            },
+            "feedback": {
+              "de": "Der Iliacus liegt in der Fossa iliaca; er ist nicht der typische Muskel unter dem abdominalen Ureter.",
+              "en": "Iliacus lies in the iliac fossa and is not the typical muscle beneath the abdominal ureter.",
+              "es": "El ilíaco está en la fosa ilíaca y no es el músculo habitual bajo el uréter abdominal."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "M. obturatorius internus",
+              "en": "Obturator internus",
+              "es": "Obturador interno"
+            },
+            "feedback": {
+              "de": "Der innere Obturator bildet einen Teil der seitlichen Beckenwand, nicht den typischen abdominalen Untergrund des Ureters.",
+              "en": "Obturator internus forms part of the lateral pelvic wall, not the typical abdominal bed of the ureter.",
+              "es": "El obturador interno forma parte de la pared pélvica lateral, no el lecho abdominal típico del uréter."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          }
+        ],
+        "best": "b"
+      }
+    ],
+    "takeaway": {
+      "de": "Der abdominale Ureter liegt retroperitoneal auf der Vorderfläche des M. psoas major. Seine Identifikation erfordert zusätzlich die sichere Verfolgung des Verlaufs.",
+      "en": "The abdominal ureter lies retroperitoneally on the anterior surface of psoas major. Reliable identification also requires tracing its course.",
+      "es": "El uréter abdominal discurre retroperitonealmente por la cara anterior del psoas mayor. Su identificación segura requiere seguir su trayecto."
+    },
+    "references": [
+      "anatomy-ureter"
+    ],
+    "evidence": {
+      "checked": "2026-10-11",
+      "type": "anatomical-reference",
+      "clinicalSignoffLanguages": []
+    },
+    "clinicalContext": {
+      "kind": "operation",
+      "label": {
+        "de": "Retroperitoneale Ureterolyse",
+        "en": "Retroperitoneal ureterolysis",
+        "es": "Ureterólisis retroperitoneal"
+      }
+    }
+  },
+  {
+    "id": "anat-retzius-prevesical-space",
+    "area": "theatre",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "elective",
+    "subject": "anatomy",
+    "anatomyGroup": "bladder",
+    "topic": {
+      "de": "Urologische Anatomie",
+      "en": "Urological anatomy",
+      "es": "Anatomía urológica"
+    },
+    "patient": {
+      "name": "Anatomy round 21",
+      "age": null,
+      "sex": null,
+      "label": {
+        "de": "Anatomievisite 21",
+        "en": "Anatomy round 21",
+        "es": "Pase de anatomía 21"
+      }
+    },
+    "title": {
+      "de": "Vor der Blase",
+      "en": "In front of the bladder",
+      "es": "Delante de la vejiga"
+    },
+    "presenting": {
+      "de": "Zu Beginn einer retropubischen Prostataoperation wird die Blasenvorderwand hinter der Symphyse freigelegt. Du benennst den erreichten extraperitonealen Präparationsraum. Der Chef klappt das Anatomiemodell auf. Jana stellt den Kaffee sicherheitshalber außerhalb des Operationsfelds ab.",
+      "en": "At the start of retropubic prostate surgery, the anterior bladder wall is exposed behind the symphysis. Identify the extraperitoneal dissection space. The chief opens the anatomy model. Grace parks the coffee safely outside the operating field.",
+      "es": "Al iniciar una cirugía prostática retropúbica, se expone la pared vesical anterior detrás de la sínfisis. Identifica el espacio extraperitoneal de disección. El jefe abre el modelo anatómico. Lucía deja el café fuera del campo quirúrgico, por si acaso."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "Bei einem retropubischen Zugang erreichst du den Raum zwischen Schambeinsymphyse und Vorderwand der Blase. Wie heißt dieser Raum?",
+          "en": "A retropubic approach reaches the space between the pubic symphysis and anterior bladder wall. What is this space called?",
+          "es": "En un acceso retropúbico llegas al espacio entre sínfisis púbica y pared anterior vesical. ¿Cómo se llama?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Spatium retropubicum (Retzius)",
+              "de": "Spatium retropubicum (Retzius)",
+              "es": "Spatium retropubicum (Retzius)"
+            },
+            "feedback": {
+              "de": "Der Retzius-Raum liegt extraperitoneal zwischen Symphyse und Blase. Er ist bei retropubischen Eingriffen eine wichtige Präparationsebene.",
+              "en": "The space of Retzius is extraperitoneal, between symphysis and bladder, and is an important plane in retropubic surgery.",
+              "es": "El espacio de Retzius es extraperitoneal, entre sínfisis y vejiga, y es un plano importante en cirugía retropúbica."
+            },
+            "score": 10,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Spatium rectovesicale",
+              "en": "Rectovesical space",
+              "es": "Espacio rectovesical"
+            },
+            "feedback": {
+              "de": "Dieser Raum liegt posterior zur Blase, nicht zwischen ihrer Vorderwand und der Symphyse.",
+              "en": "This space is posterior to the bladder, not between its anterior wall and the symphysis.",
+              "es": "Este espacio es posterior a la vejiga, no entre su pared anterior y la sínfisis."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Spatium paravesicale",
+              "en": "Paravesical space",
+              "es": "Espacio paravesical"
+            },
+            "feedback": {
+              "de": "Paravesikale Räume liegen seitlich der Blase; gesucht ist der anteriore retropubische Raum.",
+              "en": "Paravesical spaces are lateral to the bladder; the question asks for the anterior retropubic space.",
+              "es": "Los espacios paravesicales son laterales; se pregunta por el espacio retropúbico anterior."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Fossa ischioanalis",
+              "en": "Ischioanal fossa",
+              "es": "Fosa isquioanal"
+            },
+            "feedback": {
+              "de": "Die Fossa ischioanalis liegt im Perineum lateral des Analkanals und nicht unmittelbar hinter der Symphyse.",
+              "en": "The ischioanal fossa is in the perineum lateral to the anal canal, not directly behind the symphysis.",
+              "es": "La fosa isquioanal está en el periné lateral al canal anal, no justo detrás de la sínfisis."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "de": "Der Retzius-Raum liegt extraperitoneal zwischen Symphyse und Blase. Er ist bei retropubischen Eingriffen eine wichtige Präparationsebene.",
+      "en": "The space of Retzius is extraperitoneal, between symphysis and bladder, and is an important plane in retropubic surgery.",
+      "es": "El espacio de Retzius es extraperitoneal, entre sínfisis y vejiga, y es un plano importante en cirugía retropúbica."
+    },
+    "references": [
+      "anatomy-bladder"
+    ],
+    "evidence": {
+      "checked": "2026-10-11",
+      "type": "anatomical-reference",
+      "clinicalSignoffLanguages": []
+    },
+    "clinicalContext": {
+      "kind": "operation",
+      "label": {
+        "de": "Retropubischer OP-Zugang",
+        "en": "Retropubic surgical access",
+        "es": "Acceso quirúrgico retropúbico"
+      }
+    }
+  },
+  {
+    "id": "anat-bladder-dome-intraperitoneal",
+    "area": "theatre",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "elective",
+    "subject": "anatomy",
+    "anatomyGroup": "bladder",
+    "topic": {
+      "de": "Urologische Anatomie",
+      "en": "Urological anatomy",
+      "es": "Anatomía urológica"
+    },
+    "patient": {
+      "name": "Anatomy round 24",
+      "age": null,
+      "sex": null,
+      "label": {
+        "de": "Anatomievisite 24",
+        "en": "Anatomy round 24",
+        "es": "Pase de anatomía 24"
+      }
+    },
+    "title": {
+      "de": "Trauma an der gefüllten Blase",
+      "en": "Trauma to a full bladder",
+      "es": "Traumatismo en una vejiga llena"
+    },
+    "presenting": {
+      "de": "Nach einem Verkehrsunfall wird bei zuvor gefüllter Blase ein Riss der peritoneal bedeckten Kuppel nachgewiesen. Du erklärst, in welches Kompartiment Urin austreten kann. Die Morgenbesprechung hat einen freien Platz auf der Tafel. Jana sagt: „Eine anatomische Runde, dann gehört die Tafel wieder dem Dienstplan.“",
+      "en": "After a road accident with a previously full bladder, a tear of the peritoneum-covered dome is identified. Explain the compartment into which urine can escape. There is a spare corner of the morning-report board. Grace says: “One anatomy round, then the rota gets its board back.”",
+      "es": "Tras un accidente con vejiga previamente llena, se identifica una rotura de la cúpula cubierta por peritoneo. Explica a qué compartimento puede escapar la orina. Queda un rincón libre en la pizarra. Lucía dice: «Una ronda de anatomía y la pizarra vuelve al cuadrante de guardias»."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "Nach stumpfem Trauma einer gefüllten Blase liegt ein Riss an der peritoneal bedeckten Kuppel vor. Welche Rupturform ist anatomisch zu erwarten?",
+          "en": "After blunt trauma to a full bladder, a tear involves the peritoneal-covered dome. What type of rupture is anatomically expected?",
+          "es": "Tras un traumatismo contuso de una vejiga llena, hay un desgarro en la cúpula cubierta por peritoneo. ¿Qué tipo de rotura cabe esperar anatómicamente?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Isolierte bulbäre Urethraruptur",
+              "en": "Isolated bulbar urethral rupture",
+              "es": "Rotura aislada de uretra bulbar"
+            },
+            "feedback": {
+              "de": "Eine bulbäre Verletzung liegt im Perineum und erklärt keinen Riss der Blasenkuppel.",
+              "en": "Bulbar injury is perineal and does not explain a tear of the bladder dome.",
+              "es": "Una lesión bulbar es perineal y no explica un desgarro de la cúpula vesical."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Intraperitoneale Ruptur",
+              "en": "Intraperitoneal rupture",
+              "es": "Rotura intraperitoneal"
+            },
+            "feedback": {
+              "de": "Die peritoneal bedeckte Blasenkuppel kann bei Ruptur Urin in die freie Bauchhöhle freisetzen. Eine traumatische intraperitoneale Ruptur verlangt in der Regel operative Versorgung.",
+              "en": "Rupture of the peritoneal-covered dome can release urine into the peritoneal cavity. Traumatic intraperitoneal rupture generally requires surgical repair.",
+              "es": "La rotura de la cúpula peritoneal puede liberar orina a la cavidad peritoneal. La rotura intraperitoneal traumática suele requerir reparación quirúrgica."
+            },
+            "score": 10,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Rein extraperitoneale Ruptur",
+              "en": "Purely extraperitoneal rupture",
+              "es": "Rotura exclusivamente extraperitoneal"
+            },
+            "feedback": {
+              "de": "Die ausdrücklich peritoneal bedeckte Kuppel verbindet den Defekt hier mit der Bauchhöhle.",
+              "en": "The explicitly peritoneal-covered dome connects this defect with the peritoneal cavity.",
+              "es": "La cúpula expresamente cubierta por peritoneo comunica este defecto con la cavidad peritoneal."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Isolierte Nierenbeckenruptur",
+              "en": "Isolated renal-pelvis rupture",
+              "es": "Rotura aislada de pelvis renal"
+            },
+            "feedback": {
+              "de": "Der beschriebene Defekt liegt an der Blase und nicht am oberen Harntrakt.",
+              "en": "The described defect is in the bladder, not the upper urinary tract.",
+              "es": "El defecto descrito está en la vejiga, no en la vía urinaria superior."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          }
+        ],
+        "best": "b"
+      }
+    ],
+    "takeaway": {
+      "de": "Die peritoneal bedeckte Blasenkuppel kann bei Ruptur Urin in die freie Bauchhöhle freisetzen. Eine traumatische intraperitoneale Ruptur verlangt in der Regel operative Versorgung.",
+      "en": "Rupture of the peritoneal-covered dome can release urine into the peritoneal cavity. Traumatic intraperitoneal rupture generally requires surgical repair.",
+      "es": "La rotura de la cúpula peritoneal puede liberar orina a la cavidad peritoneal. La rotura intraperitoneal traumática suele requerir reparación quirúrgica."
+    },
+    "references": [
+      "anatomy-bladder",
+      "trauma"
+    ],
+    "evidence": {
+      "checked": "2026-10-11",
+      "type": "anatomical-reference",
+      "clinicalSignoffLanguages": []
+    },
+    "clinicalContext": {
+      "kind": "case",
+      "label": {
+        "de": "Blasenverletzung nach stumpfem Trauma",
+        "en": "Bladder injury after blunt trauma",
+        "es": "Lesión vesical tras traumatismo cerrado"
+      }
+    }
+  },
+  {
+    "id": "anat-prostate-central-zone-ducts",
+    "area": "theatre",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "elective",
+    "subject": "anatomy",
+    "anatomyGroup": "prostate",
+    "topic": {
+      "de": "Urologische Anatomie",
+      "en": "Urological anatomy",
+      "es": "Anatomía urológica"
+    },
+    "patient": {
+      "name": "Anatomy round 27",
+      "age": null,
+      "sex": null,
+      "label": {
+        "de": "Anatomievisite 27",
+        "en": "Anatomy round 27",
+        "es": "Pase de anatomía 27"
+      }
+    },
+    "title": {
+      "de": "Orientierung an den Ausführungsgängen",
+      "en": "Orientation around the ducts",
+      "es": "Orientación junto a los conductos"
+    },
+    "presenting": {
+      "de": "Bei der präoperativen MRT-Besprechung werden die Ejakulationsgänge durch die Prostata verfolgt. Du ordnest das sie umgebende Drüsengewebe einer Zone zu. Anatomievisite: Der Marker funktioniert, der Pager schweigt. Das Team nutzt die seltene Gelegenheit für eine kurze Fallbesprechung.",
+      "en": "During preoperative MRI review, the ejaculatory ducts are traced through the prostate. Identify the zone of glandular tissue surrounding them. Anatomy rounds: the marker works and the pager is quiet. The team uses this rare opportunity for a short case discussion.",
+      "es": "Al revisar la RM preoperatoria se siguen los conductos eyaculadores a través de la próstata. Identifica la zona glandular que los rodea. Pase de anatomía: el rotulador funciona y el busca está callado. El equipo aprovecha para comentar un caso."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "Im präoperativen Prostata-MRT verfolgst du die Ejakulationsgänge. Welche Prostatazone umgibt hauptsächlich die Ductus ejaculatorii?",
+          "en": "On preoperative prostate MRI you trace the ejaculatory ducts. Which prostate zone mainly surrounds these ducts?",
+          "es": "En la RM prostática preoperatoria sigues los conductos eyaculadores. ¿Qué zona prostática los rodea principalmente?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Periphere Zone",
+              "en": "Peripheral zone",
+              "es": "Zona periférica"
+            },
+            "feedback": {
+              "de": "Die zentrale Zone umgibt vor allem die Ejakulationsgänge; die periphere Zone liegt überwiegend weiter außen.",
+              "en": "The central zone mainly surrounds the ejaculatory ducts; the peripheral zone lies predominantly farther out.",
+              "es": "La zona central rodea principalmente los conductos eyaculadores; la periférica queda sobre todo más externa."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Transitionalzone",
+              "en": "Transition zone",
+              "es": "Zona de transición"
+            },
+            "feedback": {
+              "de": "Die Transitionalzone liegt vor allem um die proximale prostatische Urethra und ist der typische BPH-Ursprungsbereich.",
+              "en": "The transition zone mainly surrounds the proximal prostatic urethra and is the typical site of BPH.",
+              "es": "La zona de transición rodea principalmente la uretra prostática proximal y es el origen típico de la HBP."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Zentrale Zone",
+              "en": "Central zone",
+              "es": "Zona central"
+            },
+            "feedback": {
+              "de": "Die zentrale Zone umgibt die Ejakulationsgänge auf ihrem Weg durch die Prostata. Sie ist von der Transitionalzone an der proximalen Urethra zu unterscheiden.",
+              "en": "The central zone surrounds the ejaculatory ducts through the prostate. It differs from the transition zone around the proximal urethra.",
+              "es": "La zona central rodea los conductos eyaculadores al atravesar la próstata. Es distinta de la transicional alrededor de la uretra proximal."
+            },
+            "score": 10,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Vorderes fibromuskuläres Stroma",
+              "en": "Anterior fibromuscular stroma",
+              "es": "Estroma fibromuscular anterior"
+            },
+            "feedback": {
+              "de": "Das vordere Stroma ist kein drüsiges Kompartiment um die Ejakulationsgänge.",
+              "en": "The anterior stroma is not the glandular compartment surrounding the ejaculatory ducts.",
+              "es": "El estroma anterior no es el compartimento glandular que rodea los conductos eyaculadores."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          }
+        ],
+        "best": "c"
+      }
+    ],
+    "takeaway": {
+      "de": "Die zentrale Zone umgibt die Ejakulationsgänge auf ihrem Weg durch die Prostata. Sie ist von der Transitionalzone an der proximalen Urethra zu unterscheiden.",
+      "en": "The central zone surrounds the ejaculatory ducts through the prostate. It differs from the transition zone around the proximal urethra.",
+      "es": "La zona central rodea los conductos eyaculadores al atravesar la próstata. Es distinta de la transicional alrededor de la uretra proximal."
+    },
+    "references": [
+      "anatomy-prostate"
+    ],
+    "evidence": {
+      "checked": "2026-10-11",
+      "type": "anatomical-reference",
+      "clinicalSignoffLanguages": []
+    },
+    "clinicalContext": {
+      "kind": "case",
+      "label": {
+        "de": "Ejakulationsgänge im Prostata-MRT",
+        "en": "Ejaculatory ducts on prostate MRI",
+        "es": "Conductos eyaculadores en RM prostática"
+      }
+    }
+  },
+  {
+    "id": "anat-denonvilliers-rectal-plane",
+    "area": "theatre",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "elective",
+    "subject": "anatomy",
+    "anatomyGroup": "prostate",
+    "topic": {
+      "de": "Urologische Anatomie",
+      "en": "Urological anatomy",
+      "es": "Anatomía urológica"
+    },
+    "patient": {
+      "name": "Anatomy round 28",
+      "age": null,
+      "sex": null,
+      "label": {
+        "de": "Anatomievisite 28",
+        "en": "Anatomy round 28",
+        "es": "Pase de anatomía 28"
+      }
+    },
+    "title": {
+      "de": "Hinter der Prostata",
+      "en": "Behind the prostate",
+      "es": "Detrás de la próstata"
+    },
+    "presenting": {
+      "de": "Bei einer radikalen Prostatektomie wird die hintere Präparationsebene zwischen Prostata, Samenblasen und Rektum gesucht. Die Faszienorientierung soll eine Rektumverletzung vermeiden helfen. Im OP wartet das Team auf die gemeinsame anatomische Orientierung. Der Chef verspricht, heute keine Kaffeetassen zu beschriften.",
+      "en": "During radical prostatectomy, the posterior plane between prostate, seminal vesicles and rectum is identified. Fascial orientation helps avoid rectal injury. In theatre, the team checks its anatomical orientation together. The chief promises not to label any coffee cups today.",
+      "es": "En una prostatectomía radical se identifica el plano posterior entre próstata, vesículas seminales y recto. La orientación fascial ayuda a evitar lesión rectal. En quirófano, el equipo repasa la orientación anatómica. El jefe promete no poner etiquetas a las tazas de café."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "Bei einer radikalen Prostatektomie suchst du die posteriore Präparationsebene. Welche Faszienstruktur wird als Grenzschicht zwischen Prostata/Samenblasen und Rektum beschrieben?",
+          "en": "During radical prostatectomy you identify the posterior dissection plane. Which fascia is described as the boundary between the prostate/seminal vesicles and rectum?",
+          "es": "En una prostatectomía radical identificas el plano posterior de disección. ¿Qué fascia se describe como límite entre próstata/vesículas seminales y recto?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Lamina anterior vaginae musculi recti",
+              "de": "Lamina anterior vaginae musculi recti",
+              "es": "Lamina anterior vaginae musculi recti"
+            },
+            "feedback": {
+              "de": "Die vordere Rektusscheide liegt in der Bauchwand, nicht an der posterioren Prostatafläche.",
+              "en": "The anterior rectus sheath lies in the abdominal wall, not at the posterior prostate.",
+              "es": "La vaina anterior del recto abdominal está en la pared abdominal, no detrás de la próstata."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Fascia rectoprostatica (Denonvilliers)",
+              "de": "Fascia rectoprostatica (Denonvilliers)",
+              "es": "Fascia rectoprostatica (Denonvilliers)"
+            },
+            "feedback": {
+              "de": "Die Denonvilliers-Faszie liegt zwischen Prostata beziehungsweise Samenblasen und Rektum. Ihre anatomischen Schichten können variieren; die sichere Ebene richtet sich auch nach dem Tumorbefund.",
+              "en": "Denonvilliers fascia lies between prostate/seminal vesicles and rectum. Its layers vary; the safe plane also depends on tumour findings.",
+              "es": "La fascia de Denonvilliers queda entre próstata/vesículas seminales y recto. Sus capas varían; el plano seguro también depende del tumor."
+            },
+            "score": 10,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Fascia renalis",
+              "de": "Fascia renalis",
+              "es": "Fascia renalis"
+            },
+            "feedback": {
+              "de": "Die Nierenfaszie umhüllt das perirenale Kompartiment und liegt nicht zwischen Prostata und Rektum.",
+              "en": "Renal fascia encloses the perirenal compartment, not the plane between prostate and rectum.",
+              "es": "La fascia renal rodea el compartimento perirrenal, no el plano entre próstata y recto."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Fascia penis profunda (Buck)",
+              "de": "Fascia penis profunda (Buck)",
+              "es": "Fascia penis profunda (Buck)"
+            },
+            "feedback": {
+              "de": "Die Buck-Faszie umhüllt die Schwellkörper des Penis und ist keine rektoprostatische Trennschicht.",
+              "en": "Buck fascia surrounds penile erectile bodies, not the rectoprostatic plane.",
+              "es": "La fascia de Buck rodea los cuerpos eréctiles del pene, no el plano rectoprostático."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          }
+        ],
+        "best": "b"
+      }
+    ],
+    "takeaway": {
+      "de": "Die Denonvilliers-Faszie liegt zwischen Prostata beziehungsweise Samenblasen und Rektum. Ihre anatomischen Schichten können variieren; die sichere Ebene richtet sich auch nach dem Tumorbefund.",
+      "en": "Denonvilliers fascia lies between prostate/seminal vesicles and rectum. Its layers vary; the safe plane also depends on tumour findings.",
+      "es": "La fascia de Denonvilliers queda entre próstata/vesículas seminales y recto. Sus capas varían; el plano seguro también depende del tumor."
+    },
+    "references": [
+      "anatomy-prostate"
+    ],
+    "evidence": {
+      "checked": "2026-10-11",
+      "type": "anatomical-reference",
+      "clinicalSignoffLanguages": []
+    },
+    "clinicalContext": {
+      "kind": "operation",
+      "label": {
+        "de": "Posteriore Prostatektomiepräparation",
+        "en": "Posterior prostatectomy dissection",
+        "es": "Disección posterior de prostatectomía"
+      }
+    }
+  },
+  {
+    "id": "anat-cavernous-nerves-prostate",
+    "area": "theatre",
+    "level": 3,
+    "acuity": "routine",
+    "duty": "elective",
+    "subject": "anatomy",
+    "anatomyGroup": "prostate",
+    "topic": {
+      "de": "Urologische Anatomie",
+      "en": "Urological anatomy",
+      "es": "Anatomía urológica"
+    },
+    "patient": {
+      "name": "Anatomy round 29",
+      "age": null,
+      "sex": null,
+      "label": {
+        "de": "Anatomievisite 29",
+        "en": "Anatomy round 29",
+        "es": "Pase de anatomía 29"
+      }
+    },
+    "title": {
+      "de": "Nervenschonung bei Prostatektomie",
+      "en": "Nerve preservation at prostatectomy",
+      "es": "Preservación nerviosa en prostatectomía"
+    },
+    "presenting": {
+      "de": "Bei einer onkologisch geeigneten nervenschonenden Prostatektomie wird die Prostata lateral mobilisiert. Du sollst die klassische Lage der erektionsrelevanten neurovaskulären Bündel zeigen. Die Morgenbesprechung hat einen freien Platz auf der Tafel. Jana sagt: „Eine anatomische Runde, dann gehört die Tafel wieder dem Dienstplan.“",
+      "en": "During an oncologically appropriate nerve-sparing prostatectomy, the prostate is mobilised laterally. Identify the classical position of the erection-related neurovascular bundles. There is a spare corner of the morning-report board. Grace says: “One anatomy round, then the rota gets its board back.”",
+      "es": "En una prostatectomía con preservación nerviosa oncológicamente adecuada se moviliza lateralmente la próstata. Identifica la posición clásica de los haces neurovasculares de la erección. Queda un rincón libre en la pizarra. Lucía dice: «Una ronda de anatomía y la pizarra vuelve al cuadrante de guardias»."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "Bei einer nervenschonenden Prostatektomie müssen erektionsrelevante autonome Fasern geschützt werden. In welcher Region verlaufen die klassischen neurovaskulären Bündel?",
+          "en": "During nerve-sparing prostatectomy, autonomic fibres important for erection need protection. Where do the classical neurovascular bundles run?",
+          "es": "En una prostatectomía con preservación nerviosa se protegen fibras autónomas importantes para la erección. ¿Dónde discurren los haces neurovasculares clásicos?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Posterolateral zur Prostata",
+              "en": "Posterolateral to the prostate",
+              "es": "Posterolaterales a la próstata"
+            },
+            "feedback": {
+              "de": "Die klassischen neurovaskulären Bündel verlaufen posterolateral; zusätzliche Fasern können breiter verteilt sein. Eine Nervenschonung muss mit der onkologischen Sicherheit vereinbar sein.",
+              "en": "Classical neurovascular bundles run posterolaterally; additional fibres can be more widely distributed. Preservation must remain oncologically appropriate.",
+              "es": "Los haces clásicos discurren posterolateralmente; otras fibras pueden estar más dispersas. La preservación debe ser compatible con la seguridad oncológica."
+            },
+            "score": 10,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Anteromedial im periurethralen Stroma",
+              "en": "Anteromedially in periurethral stroma",
+              "es": "Anteromedialmente en el estroma periuretral"
+            },
+            "feedback": {
+              "de": "Das ist nicht die klassische Lage der neurovaskulären Bündel; ihre Hauptregion ist posterolateral.",
+              "en": "This is not the classical neurovascular bundle position; the main region is posterolateral.",
+              "es": "No es la posición clásica de los haces neurovasculares; su región principal es posterolateral."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "In der posterioren Mittellinie am Rektumlumen",
+              "en": "In the posterior midline at the rectal lumen",
+              "es": "En la línea media posterior junto a la luz rectal"
+            },
+            "feedback": {
+              "de": "Die erektionsrelevanten Bündel liegen nicht am Rektumlumen, sondern klassisch beidseits posterolateral der Prostata.",
+              "en": "Erection-related bundles are not at the rectal lumen; classically they lie bilaterally posterolateral to the prostate.",
+              "es": "Los haces relacionados con la erección no están en la luz rectal; se sitúan clásicamente a ambos lados posterolaterales de la próstata."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Ausschließlich kranial am Blasendach",
+              "en": "Exclusively cranially at the bladder dome",
+              "es": "Exclusivamente craneales en la cúpula vesical"
+            },
+            "feedback": {
+              "de": "Kavernöse Fasern ziehen zur Penisregion; die klassische Prostatabündellage ist posterolateral, nicht ausschließlich am Blasendach.",
+              "en": "Cavernous fibres pass towards the penis; the classical prostatic bundle location is posterolateral, not confined to the bladder dome.",
+              "es": "Las fibras cavernosas van hacia el pene; la posición prostática clásica es posterolateral, no solo en la cúpula vesical."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "de": "Die klassischen neurovaskulären Bündel verlaufen posterolateral; zusätzliche Fasern können breiter verteilt sein. Eine Nervenschonung muss mit der onkologischen Sicherheit vereinbar sein.",
+      "en": "Classical neurovascular bundles run posterolaterally; additional fibres can be more widely distributed. Preservation must remain oncologically appropriate.",
+      "es": "Los haces clásicos discurren posterolateralmente; otras fibras pueden estar más dispersas. La preservación debe ser compatible con la seguridad oncológica."
+    },
+    "references": [
+      "anatomy-prostate",
+      "anatomy-pelvic-plexus"
+    ],
+    "evidence": {
+      "checked": "2026-10-11",
+      "type": "anatomical-reference",
+      "clinicalSignoffLanguages": []
+    },
+    "clinicalContext": {
+      "kind": "operation",
+      "label": {
+        "de": "Nervenschonende Prostatektomie",
+        "en": "Nerve-sparing prostatectomy",
+        "es": "Prostatectomía con preservación nerviosa"
+      }
+    }
+  },
+  {
+    "id": "anat-prostate-apex-rhabdosphincter",
+    "area": "theatre",
+    "level": 3,
+    "acuity": "routine",
+    "duty": "elective",
+    "subject": "anatomy",
+    "anatomyGroup": "prostate",
+    "topic": {
+      "de": "Urologische Anatomie",
+      "en": "Urological anatomy",
+      "es": "Anatomía urológica"
+    },
+    "patient": {
+      "name": "Anatomy round 31",
+      "age": null,
+      "sex": null,
+      "label": {
+        "de": "Anatomievisite 31",
+        "en": "Anatomy round 31",
+        "es": "Pase de anatomía 31"
+      }
+    },
+    "title": {
+      "de": "Am apikalen Präparationsrand",
+      "en": "At the apical dissection plane",
+      "es": "En el plano de disección apical"
+    },
+    "presenting": {
+      "de": "Beim Absetzen der Urethra am Prostataapex soll möglichst viel funktionelles Kontinenzgewebe erhalten werden. Du benennst die unmittelbar distale Struktur. Der Chef klappt das Anatomiemodell auf. Jana stellt den Kaffee sicherheitshalber außerhalb des Operationsfelds ab.",
+      "en": "When dividing the urethra at the prostatic apex, the team aims to preserve functional continence tissue. Identify the immediately distal structure. The chief opens the anatomy model. Grace parks the coffee safely outside the operating field.",
+      "es": "Al seccionar la uretra en el ápex prostático se intenta conservar tejido funcional de continencia. Identifica la estructura inmediatamente distal. El jefe abre el modelo anatómico. Lucía deja el café fuera del campo quirúrgico, por si acaso."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "Bei der apikalen Präparation einer radikalen Prostatektomie wird die Urethra abgesetzt. Welche unmittelbar distale Struktur ist für die willkürliche Harnkontinenz besonders zu schonen?",
+          "en": "During apical dissection in radical prostatectomy the urethra is divided. Which immediately distal structure should be preserved for voluntary urinary continence?",
+          "es": "Durante la disección apical de una prostatectomía radical se secciona la uretra. ¿Qué estructura inmediatamente distal debe preservarse para la continencia urinaria voluntaria?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Glatter Blasenhalssphinkter allein",
+              "en": "Smooth bladder-neck sphincter alone",
+              "es": "Solo el esfínter liso del cuello vesical"
+            },
+            "feedback": {
+              "de": "Der Blasenhals liegt proximal der Prostata; die Frage betrifft den willkürlichen Sphinkter distal des Apex.",
+              "en": "The bladder neck is proximal to the prostate; this asks about the voluntary sphincter distal to the apex.",
+              "es": "El cuello vesical es proximal a la próstata; se pregunta por el esfínter voluntario distal al ápex."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "M. cremaster",
+              "de": "M. cremaster",
+              "es": "M. cremaster"
+            },
+            "feedback": {
+              "de": "Der Cremaster hebt den Hoden an und ist kein Harnröhrenschließmuskel.",
+              "en": "Cremaster elevates the testis and is not a urethral sphincter.",
+              "es": "El cremáster eleva el testículo y no es un esfínter uretral."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Äußerer quergestreifter Urethrasphinkter",
+              "en": "External striated urethral sphincter",
+              "es": "Esfínter uretral externo estriado"
+            },
+            "feedback": {
+              "de": "Der Rhabdosphinkter um die membranöse Urethra trägt wesentlich zur willkürlichen Kontinenz bei. Auch Länge, Stützstrukturen und Innervation sind wichtig.",
+              "en": "The rhabdosphincter around the membranous urethra is important for voluntary continence. Length, support and innervation also matter.",
+              "es": "El rabdoesfínter alrededor de la uretra membranosa es importante para la continencia voluntaria. También importan longitud, soporte e inervación."
+            },
+            "score": 10,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Detrusor am Blasendach",
+              "en": "Detrusor at the bladder dome",
+              "es": "Detrusor de la cúpula vesical"
+            },
+            "feedback": {
+              "de": "Der Detrusor entleert die Blase und liegt nicht unmittelbar distal des Prostataapex.",
+              "en": "Detrusor empties the bladder and is not immediately distal to the prostate apex.",
+              "es": "El detrusor vacía la vejiga y no queda inmediatamente distal al ápex prostático."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          }
+        ],
+        "best": "c"
+      }
+    ],
+    "takeaway": {
+      "de": "Der Rhabdosphinkter um die membranöse Urethra trägt wesentlich zur willkürlichen Kontinenz bei. Auch Länge, Stützstrukturen und Innervation sind wichtig.",
+      "en": "The rhabdosphincter around the membranous urethra is important for voluntary continence. Length, support and innervation also matter.",
+      "es": "El rabdoesfínter alrededor de la uretra membranosa es importante para la continencia voluntaria. También importan longitud, soporte e inervación."
+    },
+    "references": [
+      "anatomy-prostate",
+      "anatomy-male-tract"
+    ],
+    "evidence": {
+      "checked": "2026-10-11",
+      "type": "anatomical-reference",
+      "clinicalSignoffLanguages": []
+    },
+    "clinicalContext": {
+      "kind": "operation",
+      "label": {
+        "de": "Apikale Prostatektomiepräparation",
+        "en": "Apical prostatectomy dissection",
+        "es": "Disección apical de prostatectomía"
+      }
+    }
+  },
+  {
+    "id": "anat-penile-fracture-albuginea",
+    "area": "theatre",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "elective",
+    "subject": "anatomy",
+    "anatomyGroup": "penis",
+    "topic": {
+      "de": "Urologische Anatomie",
+      "en": "Urological anatomy",
+      "es": "Anatomía urológica"
+    },
+    "patient": {
+      "name": "Anatomy round 33",
+      "age": null,
+      "sex": null,
+      "label": {
+        "de": "Anatomievisite 33",
+        "en": "Anatomy round 33",
+        "es": "Pase de anatomía 33"
+      }
+    },
+    "title": {
+      "de": "Ein Knacken mit Hämatom",
+      "en": "A snap followed by bruising",
+      "es": "Un chasquido seguido de hematoma"
+    },
+    "presenting": {
+      "de": "Nach einem Knacken beim Geschlechtsverkehr treten sofortige Detumeszenz und Hämatom auf. Bei der Beurteilung einer möglichen Penisfraktur ordnest du die betroffene Gewebeschicht ein. Bei der Fallbesprechung wartet das Team auf die gemeinsame anatomische Orientierung. Der Chef verspricht, heute keine Kaffeetassen zu beschriften.",
+      "en": "A snap during intercourse is followed by immediate detumescence and a haematoma. In assessing possible penile fracture, identify the injured tissue layer. During the case discussion, the team checks its anatomical orientation together. The chief promises not to label any coffee cups today.",
+      "es": "Tras un chasquido durante el coito aparecen detumescencia inmediata y hematoma. Al valorar una posible fractura peneana, identifica la capa lesionada. En la discusión del caso, el equipo repasa la orientación anatómica. El jefe promete no poner etiquetas a las tazas de café."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "Beim erigierten Penis kommt es zu Knacken, sofortiger Detumeszenz und Hämatom. Welche Gewebeschicht ist bei einer eigentlichen Penisfraktur eingerissen?",
+          "en": "An erect penis develops a snap, immediate detumescence and bruising. Which tissue layer is torn in a true penile fracture?",
+          "es": "En un pene erecto aparece chasquido, detumescencia inmediata y hematoma. ¿Qué capa se rompe en una verdadera fractura de pene?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Tunica albuginea eines Corpus cavernosum",
+              "en": "Tunica albuginea of a corpus cavernosum",
+              "es": "Túnica albugínea de un cuerpo cavernoso"
+            },
+            "feedback": {
+              "de": "Eine Penisfraktur ist ein Riss der Tunica albuginea eines Schwellkörpers, meist des Corpus cavernosum. Eine zusätzliche Urethraverletzung ist möglich.",
+              "en": "Penile fracture is a tear of an erectile body’s tunica albuginea, usually a corpus cavernosum. Associated urethral injury is possible.",
+              "es": "La fractura de pene rompe la túnica albugínea de un cuerpo eréctil, normalmente cavernoso. Puede asociarse lesión uretral."
+            },
+            "score": 10,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Nur oberflächliche Dartosfaszie",
+              "en": "Only superficial dartos fascia",
+              "es": "Solo fascia superficial de Dartos"
+            },
+            "feedback": {
+              "de": "Eine oberflächliche Verletzung allein definiert keine eigentliche Penisfraktur der Tunica albuginea.",
+              "en": "Superficial injury alone does not define true tunical penile fracture.",
+              "es": "Una lesión superficial sola no define una verdadera fractura de la albugínea."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Nur Haut des Präputiums",
+              "en": "Only preputial skin",
+              "es": "Solo piel del prepucio"
+            },
+            "feedback": {
+              "de": "Ein Präputialriss erklärt keine typische Ruptur des unter Druck stehenden Schwellkörpers.",
+              "en": "A preputial tear does not explain rupture of the pressurised erectile body.",
+              "es": "Un desgarro prepucial no explica la rotura del cuerpo eréctil a presión."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Nur tiefe dorsale Vene",
+              "en": "Only the deep dorsal vein",
+              "es": "Solo vena dorsal profunda"
+            },
+            "feedback": {
+              "de": "Eine Venenverletzung kann eine Fraktur imitieren, ist aber ohne Tunicariss keine eigentliche Penisfraktur.",
+              "en": "Venous injury can mimic fracture but is not true penile fracture without a tunical tear.",
+              "es": "Una lesión venosa puede imitar la fractura, pero sin rotura de la túnica no es una verdadera fractura de pene."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "de": "Eine Penisfraktur ist ein Riss der Tunica albuginea eines Schwellkörpers, meist des Corpus cavernosum. Eine zusätzliche Urethraverletzung ist möglich.",
+      "en": "Penile fracture is a tear of an erectile body’s tunica albuginea, usually a corpus cavernosum. Associated urethral injury is possible.",
+      "es": "La fractura de pene rompe la túnica albugínea de un cuerpo eréctil, normalmente cavernoso. Puede asociarse lesión uretral."
+    },
+    "references": [
+      "anatomy-penis",
+      "trauma"
+    ],
+    "evidence": {
+      "checked": "2026-10-11",
+      "type": "anatomical-reference",
+      "clinicalSignoffLanguages": []
+    },
+    "clinicalContext": {
+      "kind": "case",
+      "label": {
+        "de": "Penistrauma mit Detumeszenz",
+        "en": "Penile trauma with detumescence",
+        "es": "Traumatismo peneano con detumescencia"
+      }
+    }
+  },
+  {
+    "id": "anat-buck-fascia-covering",
+    "area": "theatre",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "elective",
+    "subject": "anatomy",
+    "anatomyGroup": "penis",
+    "topic": {
+      "de": "Urologische Anatomie",
+      "en": "Urological anatomy",
+      "es": "Anatomía urológica"
+    },
+    "patient": {
+      "name": "Anatomy round 34",
+      "age": null,
+      "sex": null,
+      "label": {
+        "de": "Anatomievisite 34",
+        "en": "Anatomy round 34",
+        "es": "Pase de anatomía 34"
+      }
+    },
+    "title": {
+      "de": "Eine Faszie um die Schwellkörper",
+      "en": "A fascia around the erectile bodies",
+      "es": "Una fascia alrededor de los cuerpos eréctiles"
+    },
+    "presenting": {
+      "de": "Bei der operativen Versorgung einer Penisverletzung werden die Schwellkörper freigelegt. Das Team bespricht, welche tiefe Faszienhülle die Ausbreitung eines Hämatoms beeinflusst. Die Morgenbesprechung hat einen freien Platz auf der Tafel. Jana sagt: „Eine anatomische Runde, dann gehört die Tafel wieder dem Dienstplan.“",
+      "en": "During surgery for penile injury, the erectile bodies are exposed. The team reviews which deep fascial covering affects haematoma spread. There is a spare corner of the morning-report board. Grace says: “One anatomy round, then the rota gets its board back.”",
+      "es": "En la cirugía de una lesión peneana se exponen los cuerpos eréctiles. El equipo repasa qué cubierta fascial profunda influye en la extensión del hematoma. Queda un rincón libre en la pizarra. Lucía dice: «Una ronda de anatomía y la pizarra vuelve al cuadrante de guardias»."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "Bei der operativen Versorgung einer Penisverletzung ordnest du die Faszienschichten zu. Welche Faszie liegt oberflächlich der Tunica albuginea und umhüllt die Corpora cavernosa sowie das Corpus spongiosum?",
+          "en": "During surgery for penile injury you identify the fascial layers. Which fascia lies superficial to the tunica albuginea and surrounds both cavernous bodies and the spongy body?",
+          "es": "En cirugía de una lesión peneana identificas las capas fasciales. ¿Qué fascia está superficial a la túnica albugínea y envuelve los cuerpos cavernosos y el cuerpo esponjoso?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Fascia penis superficialis (Dartos)",
+              "en": "Superficial penile fascia (dartos)",
+              "es": "Fascia superficial del pene (dartos)"
+            },
+            "feedback": {
+              "de": "Dartos liegt oberflächlicher; die tiefe Umhüllung der Schwellkörper ist die Buck-Faszie.",
+              "en": "Dartos lies more superficially; Buck fascia is the deep covering of the erectile bodies.",
+              "es": "El dartos es más superficial; la fascia de Buck es la cubierta profunda de los cuerpos eréctiles."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Fascia perinei superficialis (Colles)",
+              "en": "Superficial perineal fascia (Colles)",
+              "es": "Fascia superficial perineal (Colles)"
+            },
+            "feedback": {
+              "de": "Die Colles-Faszie gehört zur oberflächlichen Perinealfaszie, nicht zur direkten tiefen Umhüllung der Penisschwellkörper.",
+              "en": "Colles fascia is superficial perineal fascia, not the direct deep covering of the penile erectile bodies.",
+              "es": "La fascia de Colles es perineal superficial, no la cubierta profunda directa de los cuerpos eréctiles."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Fascia transversalis",
+              "en": "Transversalis fascia",
+              "es": "Fascia transversalis"
+            },
+            "feedback": {
+              "de": "Diese Faszie gehört zur Bauchwand; die gesuchte tiefe Penisfaszie ist die Buck-Faszie.",
+              "en": "This fascia belongs to the abdominal wall; the deep penile fascia is Buck fascia.",
+              "es": "Esta fascia pertenece a la pared abdominal; la fascia profunda del pene es la de Buck."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Fascia penis profunda (Buck)",
+              "de": "Fascia penis profunda (Buck)",
+              "es": "Fascia penis profunda (Buck)"
+            },
+            "feedback": {
+              "de": "Die tiefe Penisfaszie umgibt die Schwellkörper oberhalb ihrer Tunica albuginea. Ihr Erhalt oder Riss beeinflusst die Ausbreitung von Blut und Urin.",
+              "en": "Deep penile fascia encloses erectile bodies outside their tunica albuginea. Intact or disrupted fascia affects blood and urine spread.",
+              "es": "La fascia profunda del pene envuelve los cuerpos eréctiles por fuera de su albugínea. Su integridad influye en la extensión de sangre y orina."
+            },
+            "score": 10,
+            "minutes": 3,
+            "critical": false
+          }
+        ],
+        "best": "d"
+      }
+    ],
+    "takeaway": {
+      "de": "Die tiefe Penisfaszie umgibt die Schwellkörper oberhalb ihrer Tunica albuginea. Ihr Erhalt oder Riss beeinflusst die Ausbreitung von Blut und Urin.",
+      "en": "Deep penile fascia encloses erectile bodies outside their tunica albuginea. Intact or disrupted fascia affects blood and urine spread.",
+      "es": "La fascia profunda del pene envuelve los cuerpos eréctiles por fuera de su albugínea. Su integridad influye en la extensión de sangre y orina."
+    },
+    "references": [
+      "anatomy-penis"
+    ],
+    "evidence": {
+      "checked": "2026-10-11",
+      "type": "anatomical-reference",
+      "clinicalSignoffLanguages": []
+    },
+    "clinicalContext": {
+      "kind": "operation",
+      "label": {
+        "de": "Faszienorientierung bei Penisverletzung",
+        "en": "Fascial orientation in penile injury",
+        "es": "Orientación fascial en lesión peneana"
+      }
+    }
+  },
+  {
+    "id": "anat-pelvic-fracture-posterior-urethra",
+    "area": "theatre",
+    "level": 3,
+    "acuity": "routine",
+    "duty": "elective",
+    "subject": "anatomy",
+    "anatomyGroup": "penis",
+    "topic": {
+      "de": "Urologische Anatomie",
+      "en": "Urological anatomy",
+      "es": "Anatomía urológica"
+    },
+    "patient": {
+      "name": "Anatomy round 37",
+      "age": null,
+      "sex": null,
+      "label": {
+        "de": "Anatomievisite 37",
+        "en": "Anatomy round 37",
+        "es": "Pase de anatomía 37"
+      }
+    },
+    "title": {
+      "de": "Beckenfraktur und Harnröhre",
+      "en": "Pelvic fracture and urethra",
+      "es": "Fractura pélvica y uretra"
+    },
+    "presenting": {
+      "de": "Ein Mann hat nach einem Hochenergietrauma eine Beckenfraktur und Verdacht auf Urethraverletzung. Das Team plant die gezielte urethrale Diagnostik und bespricht die typische Verletzungsregion. Anatomievisite: Der Marker funktioniert, der Pager schweigt. Das Team nutzt die seltene Gelegenheit für eine kurze Fallbesprechung.",
+      "en": "A man has a pelvic fracture after high-energy trauma with suspected urethral injury. The team plans urethral investigation and reviews the usual injury region. Anatomy rounds: the marker works and the pager is quiet. The team uses this rare opportunity for a short case discussion.",
+      "es": "Un varón tiene fractura pélvica tras un traumatismo de alta energía y sospecha de lesión uretral. El equipo planifica el estudio uretral y repasa la región habitual. Pase de anatomía: el rotulador funciona y el busca está callado. El equipo aprovecha para comentar un caso."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "Welche Harnröhrenregion ist bei einer beckenfrakturassoziierten Urethraverletzung beim Mann typischerweise betroffen?",
+          "en": "Which urethral region is typically involved in male pelvic-fracture urethral injury?",
+          "es": "¿Qué región uretral suele afectarse en una lesión uretral masculina asociada a fractura pélvica?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Membranöse beziehungsweise bulbomembranöse Übergangsregion",
+              "en": "Membranous or bulbomembranous junction region",
+              "es": "Región membranosa o unión bulbomembranosa"
+            },
+            "feedback": {
+              "de": "Beckenfrakturassoziierte Verletzungen betreffen typischerweise die membranöse beziehungsweise bulbomembranöse Region. Der konkrete Befund wird durch geeignete urethrale Diagnostik bestimmt.",
+              "en": "Pelvic-fracture injuries typically involve the membranous or bulbomembranous region. Appropriate urethral imaging establishes the individual injury.",
+              "es": "Estas lesiones afectan típicamente la región membranosa o bulbomembranosa. El estudio uretral adecuado define la lesión individual."
+            },
+            "score": 10,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Fossa navicularis",
+              "de": "Fossa navicularis",
+              "es": "Fossa navicularis"
+            },
+            "feedback": {
+              "de": "Die Fossa navicularis liegt distal in der Glans und ist nicht die typische Region der Beckenfrakturverletzung.",
+              "en": "The fossa navicularis lies in the distal glans and is not the usual pelvic-fracture injury site.",
+              "es": "La fosa navicular está en el glande distal y no es la localización habitual de esta lesión."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Nur äußerer Meatus",
+              "en": "Only the external meatus",
+              "es": "Solo el meato externo"
+            },
+            "feedback": {
+              "de": "Der äußere Meatus ist ein distaler Austritt und nicht die typische Stelle der beckenbedingten Distraktionsverletzung.",
+              "en": "The external meatus is a distal exit, not the usual site of pelvic-related distraction injury.",
+              "es": "El meato externo es una salida distal, no la zona típica de lesión por distracción pélvica."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Nur mittlere penile Urethra",
+              "en": "Only the mid-penile urethra",
+              "es": "Solo uretra peneana media"
+            },
+            "feedback": {
+              "de": "Die typische Beckenfrakturverletzung liegt weiter proximal als die mittlere penile Urethra.",
+              "en": "Typical pelvic-fracture injury lies more proximally than the mid-penile urethra.",
+              "es": "La lesión típica de fractura pélvica está más proximal que la uretra peneana media."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "de": "Beckenfrakturassoziierte Verletzungen betreffen typischerweise die membranöse beziehungsweise bulbomembranöse Region. Der konkrete Befund wird durch geeignete urethrale Diagnostik bestimmt.",
+      "en": "Pelvic-fracture injuries typically involve the membranous or bulbomembranous region. Appropriate urethral imaging establishes the individual injury.",
+      "es": "Estas lesiones afectan típicamente la región membranosa o bulbomembranosa. El estudio uretral adecuado define la lesión individual."
+    },
+    "references": [
+      "anatomy-male-tract",
+      "trauma"
+    ],
+    "evidence": {
+      "checked": "2026-10-11",
+      "type": "anatomical-reference",
+      "clinicalSignoffLanguages": []
+    },
+    "clinicalContext": {
+      "kind": "case",
+      "label": {
+        "de": "Beckenfraktur mit Urethraverletzung",
+        "en": "Pelvic fracture with urethral injury",
+        "es": "Fractura pélvica con lesión uretral"
+      }
+    }
+  },
+  {
+    "id": "anat-left-gonadal-vein-drainage",
+    "area": "theatre",
+    "level": 1,
+    "acuity": "routine",
+    "duty": "elective",
+    "subject": "anatomy",
+    "anatomyGroup": "testis",
+    "topic": {
+      "de": "Urologische Anatomie",
+      "en": "Urological anatomy",
+      "es": "Anatomía urológica"
+    },
+    "patient": {
+      "name": "Anatomy round 41",
+      "age": null,
+      "sex": null,
+      "label": {
+        "de": "Anatomievisite 41",
+        "en": "Anatomy round 41",
+        "es": "Pase de anatomía 41"
+      }
+    },
+    "title": {
+      "de": "Venöser Abfluss links",
+      "en": "Venous drainage on the left",
+      "es": "Drenaje venoso izquierdo"
+    },
+    "presenting": {
+      "de": "Bei der Planung einer linken Varikozelenoperation verfolgst du die Hodenvene nach kranial. Ihr regulärer Anschluss an das große Venensystem soll sicher bekannt sein. Der Chef klappt das Anatomiemodell auf. Jana stellt den Kaffee sicherheitshalber außerhalb des Operationsfelds ab.",
+      "en": "Planning left varicocele surgery, you trace the testicular vein cranially. Its usual connection to the major venous system must be identified. The chief opens the anatomy model. Grace parks the coffee safely outside the operating field.",
+      "es": "Al planificar una cirugía de varicocele izquierdo, sigues cranealmente la vena testicular. Debes identificar su conexión habitual con el sistema venoso principal. El jefe abre el modelo anatómico. Lucía deja el café fuera del campo quirúrgico, por si acaso."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "Vor einer linken Varikozelenoperation verfolgst du die Hodenvene nach kranial. In welches Gefäß mündet die linke V. testicularis bei der üblichen Anatomie?",
+          "en": "Before left varicocele surgery you trace the testicular vein cranially. Into which vessel does it normally drain?",
+          "es": "Antes de operar un varicocele izquierdo sigues la vena testicular cranealmente. ¿En qué vaso desemboca habitualmente?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "V. renalis sinistra",
+              "de": "V. renalis sinistra",
+              "es": "V. renalis sinistra"
+            },
+            "feedback": {
+              "de": "Die linke Hodenvene mündet gewöhnlich in die linke Nierenvene. Die rechte mündet üblicherweise direkt in die V. cava inferior.",
+              "en": "The left testicular vein usually drains into the left renal vein. The right usually drains directly into the inferior vena cava.",
+              "es": "La vena testicular izquierda suele desembocar en la renal izquierda. La derecha suele drenar directamente a la cava inferior."
+            },
+            "score": 10,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "V. cava inferior direkt",
+              "en": "Directly into the inferior vena cava",
+              "es": "Directamente en la vena cava inferior"
+            },
+            "feedback": {
+              "de": "Der direkte Hohlvenenanschluss ist typisch für die rechte Seite; links ist die Nierenvene die übliche erste große Sammelvene.",
+              "en": "Direct caval drainage is typical on the right; on the left, the renal vein is usually the first major recipient.",
+              "es": "El drenaje directo a la cava es típico a la derecha; a la izquierda suele recibirla primero la vena renal."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "V. iliaca externa",
+              "de": "V. iliaca externa",
+              "es": "V. iliaca externa"
+            },
+            "feedback": {
+              "de": "Die linke Hodenvene zieht kranial zum Nierenvenensystem, nicht regelhaft zur äußeren Beckenvene.",
+              "en": "The left testicular vein ascends to the renal venous system, not usually to the external iliac vein.",
+              "es": "La vena testicular izquierda asciende al sistema venoso renal, no habitualmente a la ilíaca externa."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "V. portae",
+              "de": "V. portae",
+              "es": "V. portae"
+            },
+            "feedback": {
+              "de": "Der gonadale venöse Abfluss gehört zum systemischen Venensystem, nicht zum Pfortadersystem.",
+              "en": "Gonadal venous drainage belongs to the systemic, not portal, venous system.",
+              "es": "El drenaje gonadal pertenece al sistema venoso sistémico, no al portal."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "de": "Die linke Hodenvene mündet gewöhnlich in die linke Nierenvene. Die rechte mündet üblicherweise direkt in die V. cava inferior.",
+      "en": "The left testicular vein usually drains into the left renal vein. The right usually drains directly into the inferior vena cava.",
+      "es": "La vena testicular izquierda suele desembocar en la renal izquierda. La derecha suele drenar directamente a la cava inferior."
+    },
+    "references": [
+      "anatomy-testis",
+      "anatomy-renal-veins"
+    ],
+    "evidence": {
+      "checked": "2026-10-11",
+      "type": "anatomical-reference",
+      "clinicalSignoffLanguages": []
+    },
+    "clinicalContext": {
+      "kind": "operation",
+      "label": {
+        "de": "Linke Varikozelenoperation",
+        "en": "Left varicocele surgery",
+        "es": "Cirugía de varicocele izquierdo"
+      }
+    }
+  },
+  {
+    "id": "anat-right-gonadal-vein-drainage",
+    "area": "theatre",
+    "level": 1,
+    "acuity": "routine",
+    "duty": "elective",
+    "subject": "anatomy",
+    "anatomyGroup": "testis",
+    "topic": {
+      "de": "Urologische Anatomie",
+      "en": "Urological anatomy",
+      "es": "Anatomía urológica"
+    },
+    "patient": {
+      "name": "Anatomy round 42",
+      "age": null,
+      "sex": null,
+      "label": {
+        "de": "Anatomievisite 42",
+        "en": "Anatomy round 42",
+        "es": "Pase de anatomía 42"
+      }
+    },
+    "title": {
+      "de": "Venöser Abfluss rechts",
+      "en": "Venous drainage on the right",
+      "es": "Drenaje venoso derecho"
+    },
+    "presenting": {
+      "de": "Bei einer rechten Nierenoperation wird die Gonadalvene im Retroperitoneum identifiziert. Vor der weiteren Präparation ordnest du ihre unmittelbare Einmündung zu. Anatomievisite: Der Marker funktioniert, der Pager schweigt. Das Team nutzt die seltene Gelegenheit für eine kurze Fallbesprechung.",
+      "en": "During right renal surgery, the gonadal vein is identified retroperitoneally. Before further dissection, identify its direct venous insertion. Anatomy rounds: the marker works and the pager is quiet. The team uses this rare opportunity for a short case discussion.",
+      "es": "En una cirugía renal derecha se identifica la vena gonadal retroperitoneal. Antes de continuar la disección, identifica su desembocadura directa. Pase de anatomía: el rotulador funciona y el busca está callado. El equipo aprovecha para comentar un caso."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "Bei einer rechten Nierenoperation identifizierst du die Gonadalvene. In welches Gefäß mündet die rechte V. testicularis bei der üblichen Anatomie unmittelbar?",
+          "en": "During right renal surgery you identify the gonadal vein. Into which vessel does the right testicular vein normally drain directly?",
+          "es": "En una cirugía renal derecha identificas la vena gonadal. ¿En qué vaso desemboca directamente la vena testicular derecha en la anatomía habitual?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "V. renalis sinistra",
+              "de": "V. renalis sinistra",
+              "es": "V. renalis sinistra"
+            },
+            "feedback": {
+              "de": "Das ist die übliche Sammelvene für die linke Hodenvene, nicht für die rechte.",
+              "en": "This is the usual recipient of the left testicular vein, not the right.",
+              "es": "Es la receptora habitual de la vena testicular izquierda, no de la derecha."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "V. renalis dextra",
+              "de": "V. renalis dextra",
+              "es": "V. renalis dextra"
+            },
+            "feedback": {
+              "de": "Eine rechte Nierenvenenmündung ist als Variante möglich; der typische direkte Abfluss erfolgt jedoch in die Hohlvene.",
+              "en": "Right renal-vein drainage can occur as a variant, but typical direct drainage is to the cava.",
+              "es": "La desembocadura en la renal derecha puede ser variante; el drenaje directo típico es a la cava."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "V. iliaca interna",
+              "de": "V. iliaca interna",
+              "es": "V. iliaca interna"
+            },
+            "feedback": {
+              "de": "Die innere Beckenvene drainiert Beckenorgane, ist aber nicht der gewöhnliche direkte Anschluss der rechten Hodenvene.",
+              "en": "The internal iliac vein drains pelvic organs but is not the usual direct connection of the right testicular vein.",
+              "es": "La ilíaca interna drena órganos pélvicos, pero no es la conexión directa habitual de la vena testicular derecha."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "V. cava inferior",
+              "de": "V. cava inferior",
+              "es": "V. cava inferior"
+            },
+            "feedback": {
+              "de": "Die rechte Hodenvene mündet gewöhnlich direkt in die untere Hohlvene. Links erfolgt der übliche Anschluss an die linke Nierenvene.",
+              "en": "The right testicular vein usually drains directly into the inferior vena cava. The left normally connects to the left renal vein.",
+              "es": "La vena testicular derecha suele desembocar directamente en la cava inferior. La izquierda conecta normalmente con la renal izquierda."
+            },
+            "score": 10,
+            "minutes": 3,
+            "critical": false
+          }
+        ],
+        "best": "d"
+      }
+    ],
+    "takeaway": {
+      "de": "Die rechte Hodenvene mündet gewöhnlich direkt in die untere Hohlvene. Links erfolgt der übliche Anschluss an die linke Nierenvene.",
+      "en": "The right testicular vein usually drains directly into the inferior vena cava. The left normally connects to the left renal vein.",
+      "es": "La vena testicular derecha suele desembocar directamente en la cava inferior. La izquierda conecta normalmente con la renal izquierda."
+    },
+    "references": [
+      "anatomy-testis",
+      "anatomy-renal-veins"
+    ],
+    "evidence": {
+      "checked": "2026-10-11",
+      "type": "anatomical-reference",
+      "clinicalSignoffLanguages": []
+    },
+    "clinicalContext": {
+      "kind": "operation",
+      "label": {
+        "de": "Venöse Orientierung bei rechter Nierenoperation",
+        "en": "Venous orientation in right renal surgery",
+        "es": "Orientación venosa en cirugía renal derecha"
+      }
+    }
+  },
+  {
+    "id": "anat-bell-clapper-torsion",
+    "area": "theatre",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "elective",
+    "subject": "anatomy",
+    "anatomyGroup": "testis",
+    "topic": {
+      "de": "Urologische Anatomie",
+      "en": "Urological anatomy",
+      "es": "Anatomía urológica"
+    },
+    "patient": {
+      "name": "Anatomy round 44",
+      "age": null,
+      "sex": null,
+      "label": {
+        "de": "Anatomievisite 44",
+        "en": "Anatomy round 44",
+        "es": "Pase de anatomía 44"
+      }
+    },
+    "title": {
+      "de": "Beweglichkeit des Hodens",
+      "en": "Mobility of the testis",
+      "es": "Movilidad testicular"
+    },
+    "presenting": {
+      "de": "Bei einer Notfalloperation wegen intravaginaler Hodentorsion fällt eine ungewöhnlich freie Beweglichkeit des Hodens auf. Du benennst die prädisponierende anatomische Anlage. Die Morgenbesprechung hat einen freien Platz auf der Tafel. Jana sagt: „Eine anatomische Runde, dann gehört die Tafel wieder dem Dienstplan.“",
+      "en": "During emergency surgery for intravaginal torsion, the testis is unusually mobile. Identify the predisposing anatomical arrangement. There is a spare corner of the morning-report board. Grace says: “One anatomy round, then the rota gets its board back.”",
+      "es": "En una cirugía urgente por torsión intravaginal, el testículo tiene movilidad inusual. Identifica la disposición anatómica predisponente. Queda un rincón libre en la pizarra. Lucía dice: «Una ronda de anatomía y la pizarra vuelve al cuadrante de guardias»."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "Bei einer Notfalloperation wegen intravaginaler Hodentorsion fällt ungewöhnliche Hodenbeweglichkeit auf. Welche anatomische Veränderung der Bell-clapper-Deformität begünstigt diese Torsion?",
+          "en": "During emergency surgery for intravaginal testicular torsion, the testis is unusually mobile. Which anatomical change in the bell-clapper deformity predisposes to this torsion?",
+          "es": "En una cirugía urgente por torsión testicular intravaginal se observa movilidad inusual. ¿Qué cambio anatómico de la deformidad en badajo de campana predispone a esta torsión?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Verstärkte posteriore Fixierung an der Skrotalwand",
+              "en": "Increased posterior fixation to the scrotal wall",
+              "es": "Mayor fijación posterior a la pared escrotal"
+            },
+            "feedback": {
+              "de": "Eine feste hintere Fixierung begrenzt die Rotation; bei Bell-clapper ist diese Fixierung vermindert.",
+              "en": "Firm posterior fixation limits rotation; bell-clapper anatomy reduces that fixation.",
+              "es": "Una fijación posterior firme limita la rotación; la anatomía bell-clapper la reduce."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Hohe Umschließung durch die Tunica vaginalis mit fehlender üblicher posteriorer Fixierung",
+              "en": "High tunica-vaginalis investment with loss of usual posterior fixation",
+              "es": "Cobertura alta por túnica vaginal con pérdida de fijación posterior habitual"
+            },
+            "feedback": {
+              "de": "Die hohe Umschließung und verminderte hintere Fixierung lassen Hoden und distalen Samenstrang freier rotieren. Die Variante kann beidseitig vorkommen.",
+              "en": "High investment and reduced posterior fixation allow the testis and distal cord to rotate more freely. The variant can be bilateral.",
+              "es": "La cobertura alta y menor fijación posterior permiten rotar más libremente testículo y cordón distal. La variante puede ser bilateral."
+            },
+            "score": 10,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Tiefer Ansatz der Tunica vaginalis mit fest fixiertem Nebenhoden",
+              "en": "Low tunica vaginalis attachment with a firmly fixed epididymis",
+              "es": "Inserción baja de la túnica vaginal con epidídimo firmemente fijado"
+            },
+            "feedback": {
+              "de": "Die prädisponierende Variante hat eine hohe Umschließung und freie Beweglichkeit, nicht einen tiefen fixierenden Ansatz.",
+              "en": "The predisposing variant has high investment and increased mobility, not a low fixing attachment.",
+              "es": "La variante predisponente tiene envoltura alta y mayor movilidad, no una inserción baja que fija."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Erworbener Riss der Tunica albuginea",
+              "en": "Acquired tear of the tunica albuginea",
+              "es": "Rotura adquirida de la túnica albugínea"
+            },
+            "feedback": {
+              "de": "Bell-clapper beschreibt die Anlage der Tunica vaginalis und fehlende Fixierung, nicht eine traumatische Albugineaverletzung.",
+              "en": "Bell-clapper describes tunica vaginalis investment and inadequate fixation, not traumatic albugineal injury.",
+              "es": "Bell-clapper describe la envoltura vaginal y fijación insuficiente, no una lesión traumática de la albugínea."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          }
+        ],
+        "best": "b"
+      }
+    ],
+    "takeaway": {
+      "de": "Die hohe Umschließung und verminderte hintere Fixierung lassen Hoden und distalen Samenstrang freier rotieren. Die Variante kann beidseitig vorkommen.",
+      "en": "High investment and reduced posterior fixation allow the testis and distal cord to rotate more freely. The variant can be bilateral.",
+      "es": "La cobertura alta y menor fijación posterior permiten rotar más libremente testículo y cordón distal. La variante puede ser bilateral."
+    },
+    "references": [
+      "anatomy-testicular-embryology",
+      "paediatric"
+    ],
+    "evidence": {
+      "checked": "2026-10-11",
+      "type": "anatomical-reference",
+      "clinicalSignoffLanguages": []
+    },
+    "clinicalContext": {
+      "kind": "operation",
+      "label": {
+        "de": "Exploration bei Hodentorsion",
+        "en": "Exploration for testicular torsion",
+        "es": "Exploración por torsión testicular"
+      }
+    }
+  },
+  {
+    "id": "anat-epididymal-tail-vas",
+    "area": "theatre",
+    "level": 1,
+    "acuity": "routine",
+    "duty": "elective",
+    "subject": "anatomy",
+    "anatomyGroup": "testis",
+    "topic": {
+      "de": "Urologische Anatomie",
+      "en": "Urological anatomy",
+      "es": "Anatomía urológica"
+    },
+    "patient": {
+      "name": "Anatomy round 45",
+      "age": null,
+      "sex": null,
+      "label": {
+        "de": "Anatomievisite 45",
+        "en": "Anatomy round 45",
+        "es": "Pase de anatomía 45"
+      }
+    },
+    "title": {
+      "de": "Der Anschluss an den Samenleiter",
+      "en": "Joining the vas deferens",
+      "es": "Conexión con el deferente"
+    },
+    "presenting": {
+      "de": "In der Besprechung vor einer Vasektomie wird der Samenleiter in seiner Verbindung zum Nebenhoden dargestellt. Du ordnest seinen unmittelbaren Ursprung zu. Der Chef zeigt auf das Modell und wartet auf deine Entscheidung. Selbst der Pager scheint für einen Moment neugierig zu sein.",
+      "en": "At the pre-vasectomy briefing, the vas deferens is shown in continuity with the epididymis. Identify its immediate origin. The chief points at the model and waits for your decision. Even the pager seems curious for a moment.",
+      "es": "En la reunión previa a vasectomía se muestra el conducto deferente en continuidad con el epidídimo. Identifica su origen inmediato. El jefe señala el modelo y espera tu decisión. Hasta el busca parece tener curiosidad por un momento."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "In der Besprechung vor einer Vasektomie verfolgst du den Samenleiter zum Nebenhoden. Aus welchem Abschnitt des Nebenhodens geht er unmittelbar hervor?",
+          "en": "At a pre-vasectomy briefing you trace the vas deferens back to the epididymis. From which epididymal segment does it arise directly?",
+          "es": "En la reunión previa a vasectomía sigues el conducto deferente hasta el epidídimo. ¿De qué segmento nace directamente?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Cauda epididymidis",
+              "de": "Cauda epididymidis",
+              "es": "Cauda epididymidis"
+            },
+            "feedback": {
+              "de": "Der Nebenhodenschwanz geht in den Samenleiter über. Spermien gelangen zuvor durch Kopf und Körper des Nebenhodens.",
+              "en": "The epididymal tail continues into the vas deferens. Sperm pass through epididymal head and body before it.",
+              "es": "La cola del epidídimo continúa en el deferente. Los espermatozoides pasan antes por cabeza y cuerpo del epidídimo."
+            },
+            "score": 10,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Caput epididymidis",
+              "de": "Caput epididymidis",
+              "es": "Caput epididymidis"
+            },
+            "feedback": {
+              "de": "Der Kopf nimmt die Ductuli efferentes aus dem Hoden auf und ist nicht der unmittelbare Samenleiteranschluss.",
+              "en": "The head receives testicular efferent ductules and is not the direct vas connection.",
+              "es": "La cabeza recibe los conductillos eferentes y no es la conexión directa con el deferente."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Rete testis",
+              "de": "Rete testis",
+              "es": "Rete testis"
+            },
+            "feedback": {
+              "de": "Das Rete testis liegt im Hoden und verbindet sich über Ductuli efferentes mit dem Nebenhodenkopf.",
+              "en": "Rete testis lies in the testis and connects to the epididymal head via efferent ductules.",
+              "es": "La rete testis está en el testículo y conecta con la cabeza epididimaria por conductillos eferentes."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Tubuli seminiferi",
+              "de": "Tubuli seminiferi",
+              "es": "Tubuli seminiferi"
+            },
+            "feedback": {
+              "de": "Samenkanälchen sind der Produktionsort im Hoden und gehen nicht direkt in den Samenleiter über.",
+              "en": "Seminiferous tubules are the production site in the testis and do not continue directly into the vas.",
+              "es": "Los túbulos seminíferos son el lugar de producción testicular y no continúan directamente en el deferente."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "de": "Der Nebenhodenschwanz geht in den Samenleiter über. Spermien gelangen zuvor durch Kopf und Körper des Nebenhodens.",
+      "en": "The epididymal tail continues into the vas deferens. Sperm pass through epididymal head and body before it.",
+      "es": "La cola del epidídimo continúa en el deferente. Los espermatozoides pasan antes por cabeza y cuerpo del epidídimo."
+    },
+    "references": [
+      "anatomy-testis",
+      "anatomy-male-tract"
+    ],
+    "evidence": {
+      "checked": "2026-10-11",
+      "type": "anatomical-reference",
+      "clinicalSignoffLanguages": []
+    },
+    "clinicalContext": {
+      "kind": "operation",
+      "label": {
+        "de": "Vasektomie-Anatomie",
+        "en": "Vasectomy anatomy",
+        "es": "Anatomía de vasectomía"
+      }
+    }
+  },
+  {
+    "id": "anat-rplnd-sympathetic-emission",
+    "area": "theatre",
+    "level": 3,
+    "acuity": "routine",
+    "duty": "elective",
+    "subject": "anatomy",
+    "anatomyGroup": "nerves",
+    "topic": {
+      "de": "Urologische Anatomie",
+      "en": "Urological anatomy",
+      "es": "Anatomía urológica"
+    },
+    "patient": {
+      "name": "Anatomy round 49",
+      "age": null,
+      "sex": null,
+      "label": {
+        "de": "Anatomievisite 49",
+        "en": "Anatomy round 49",
+        "es": "Pase de anatomía 49"
+      }
+    },
+    "title": {
+      "de": "Nervenschonung im Retroperitoneum",
+      "en": "Nerve preservation in the retroperitoneum",
+      "es": "Preservación nerviosa retroperitoneal"
+    },
+    "presenting": {
+      "de": "Bei einer nervenschonenden retroperitonealen Lymphadenektomie werden die emissionsrelevanten Fasern identifiziert. Der Patient wurde über mögliche Ejakulationsstörungen aufgeklärt. Die Morgenbesprechung hat einen freien Platz auf der Tafel. Jana sagt: „Eine anatomische Runde, dann gehört die Tafel wieder dem Dienstplan.“",
+      "en": "During nerve-sparing retroperitoneal lymph-node dissection, emission-related fibres are identified. The patient has been counselled about possible ejaculatory dysfunction. There is a spare corner of the morning-report board. Grace says: “One anatomy round, then the rota gets its board back.”",
+      "es": "En una linfadenectomía retroperitoneal con preservación nerviosa se identifican las fibras de emisión. Se ha informado al paciente sobre posibles alteraciones eyaculatorias. Queda un rincón libre en la pizarra. Lucía dice: «Una ronda de anatomía y la pizarra vuelve al cuadrante de guardias»."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "Welche Fasern werden bei nervenschonender retroperitonealer Lymphadenektomie besonders erhalten, um die Samenemission und antegrade Ejakulation zu unterstützen?",
+          "en": "Which fibres are especially preserved in nerve-sparing retroperitoneal lymph-node dissection to support seminal emission and antegrade ejaculation?",
+          "es": "¿Qué fibras se preservan especialmente en una linfadenectomía retroperitoneal con preservación nerviosa para favorecer emisión seminal y eyaculación anterógrada?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Lumbale sympathische postganglionäre Fasern zum hypogastrischen Plexus",
+              "en": "Lumbar sympathetic postganglionic fibres to the hypogastric plexus",
+              "es": "Fibras simpáticas lumbares posganglionares al plexo hipogástrico"
+            },
+            "feedback": {
+              "de": "Sympathische Fasern vom lumbalen Grenzstrang zum hypogastrischen Plexus sind für Emission und Blasenhalsfunktion wichtig. Ihre Schonung kann Ejakulationsstörungen vermindern.",
+              "en": "Sympathetic fibres from lumbar trunks to the hypogastric plexus support emission and bladder-neck function. Preservation can reduce ejaculatory dysfunction.",
+              "es": "Las fibras simpáticas de los troncos lumbares al plexo hipogástrico apoyan emisión y función del cuello vesical. Su preservación puede reducir disfunción eyaculadora."
+            },
+            "score": 10,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Nur somatische Fasern des N. femoralis",
+              "en": "Only somatic femoral-nerve fibres",
+              "es": "Solo fibras somáticas del nervio femoral"
+            },
+            "feedback": {
+              "de": "Der Femoralnerv ist für Beinmotorik wichtig, nicht der zentrale autonome Emissionsweg.",
+              "en": "The femoral nerve is important for leg movement, not the main autonomic emission pathway.",
+              "es": "El femoral es importante para movilidad de la pierna, no es la vía autónoma principal de emisión."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Nur der N. dorsalis penis im Penisschaft",
+              "en": "Only the dorsal penile nerve in the shaft",
+              "es": "Solo el nervio dorsal del pene en el cuerpo peneano"
+            },
+            "feedback": {
+              "de": "Der dorsale Penisnerv ist vor allem sensibel und liegt außerhalb des retroperitonealen Präparationsfelds.",
+              "en": "The dorsal penile nerve is mainly sensory and lies outside the retroperitoneal dissection field.",
+              "es": "El nervio dorsal del pene es principalmente sensitivo y queda fuera del campo de disección retroperitoneal."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Nur parasympathische Fasern für Detrusorkontraktion",
+              "en": "Only parasympathetic fibres for detrusor contraction",
+              "es": "Solo fibras parasimpáticas de contracción del detrusor"
+            },
+            "feedback": {
+              "de": "Der parasympathische Entleerungsweg ist nicht der hauptsächliche sympathische Samenemissionsweg.",
+              "en": "The parasympathetic voiding pathway is not the main sympathetic seminal-emission pathway.",
+              "es": "La vía parasimpática de vaciado no es la vía simpática principal de emisión seminal."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "de": "Sympathische Fasern vom lumbalen Grenzstrang zum hypogastrischen Plexus sind für Emission und Blasenhalsfunktion wichtig. Ihre Schonung kann Ejakulationsstörungen vermindern.",
+      "en": "Sympathetic fibres from lumbar trunks to the hypogastric plexus support emission and bladder-neck function. Preservation can reduce ejaculatory dysfunction.",
+      "es": "Las fibras simpáticas de los troncos lumbares al plexo hipogástrico apoyan emisión y función del cuello vesical. Su preservación puede reducir disfunción eyaculadora."
+    },
+    "references": [
+      "anatomy-male-tract",
+      "bank-guide-hodentumor"
+    ],
+    "evidence": {
+      "checked": "2026-10-11",
+      "type": "anatomical-reference",
+      "clinicalSignoffLanguages": []
+    },
+    "clinicalContext": {
+      "kind": "operation",
+      "label": {
+        "de": "Nervenschonende RLA",
+        "en": "Nerve-sparing RPLND",
+        "es": "RPLND con preservación nerviosa"
+      }
+    }
+  },
+  {
+    "id": "anat-dorsal-penile-nerve",
+    "area": "theatre",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "elective",
+    "subject": "anatomy",
+    "anatomyGroup": "nerves",
+    "topic": {
+      "de": "Urologische Anatomie",
+      "en": "Urological anatomy",
+      "es": "Anatomía urológica"
+    },
+    "patient": {
+      "name": "Anatomy round 50",
+      "age": null,
+      "sex": null,
+      "label": {
+        "de": "Anatomievisite 50",
+        "en": "Anatomy round 50",
+        "es": "Pase de anatomía 50"
+      }
+    },
+    "title": {
+      "de": "Sensible Innervation der Glans",
+      "en": "Sensory supply of the glans",
+      "es": "Inervación sensitiva del glande"
+    },
+    "presenting": {
+      "de": "Vor einer ambulanten Beschneidung wird ein dorsaler Penisblock vorbereitet. Du benennst den somatischen sensiblen Nervenweg zur Glans und unterscheidest ihn von autonomen Erektionsfasern. Der Chef zeigt auf das Modell und wartet auf deine Entscheidung. Selbst der Pager scheint für einen Moment neugierig zu sein.",
+      "en": "Before day-case circumcision, a dorsal penile block is prepared. Identify the somatic sensory pathway to the glans and distinguish it from autonomic erectile fibres. The chief points at the model and waits for your decision. Even the pager seems curious for a moment.",
+      "es": "Antes de una circuncisión ambulatoria se prepara un bloqueo dorsal del pene. Identifica la vía somática sensitiva del glande y distínguela de las fibras autónomas de la erección. El jefe señala el modelo y espera tu decisión. Hasta el busca parece tener curiosidad por un momento."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "Welcher Nerv ist ein wesentlicher somatischer sensibler Versorger der Glans penis und wird beim dorsalen Penisblock gezielt erreicht?",
+          "en": "Which nerve is a major somatic sensory supply of the glans and is targeted by a dorsal penile nerve block?",
+          "es": "¿Qué nervio es una fuente sensitiva somática importante del glande y se busca con el bloqueo dorsal del pene?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "N. genitofemoralis, Ramus genitalis",
+              "en": "Genitofemoral nerve, genital branch",
+              "es": "Nervio genitofemoral, rama genital"
+            },
+            "feedback": {
+              "de": "Der Genitalast versorgt unter anderem den Cremaster und Skrotalregionen, nicht die hauptsächliche Glanssensibilität.",
+              "en": "The genital branch supplies the cremaster and scrotal regions, not the main sensory supply of the glans.",
+              "es": "La rama genital inerva el cremáster y regiones escrotales, no la sensibilidad principal del glande."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "N. ilioinguinalis",
+              "en": "Ilioinguinal nerve",
+              "es": "Nervio ilioinguinal"
+            },
+            "feedback": {
+              "de": "Der Ilioinguinalis vermittelt Sensibilität in Leisten- und vorderen Genitalhautregionen; der gezielte Glansweg läuft über den dorsalen Penisnerv.",
+              "en": "The ilioinguinal nerve supplies groin and anterior genital skin; the targeted glans pathway is the dorsal penile nerve.",
+              "es": "El ilioinguinal aporta sensibilidad inguinal y genital anterior; la vía dirigida al glande es el nervio dorsal del pene."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Nn. cavernosi aus dem Beckenplexus",
+              "en": "Cavernous nerves from the pelvic plexus",
+              "es": "Nervios cavernosos del plexo pélvico"
+            },
+            "feedback": {
+              "de": "Kavernöse Nerven führen autonome erektionsrelevante Fasern; sie sind vom somatischen sensiblen dorsalen Penisnerv zu unterscheiden.",
+              "en": "Cavernous nerves carry autonomic erection-related fibres; distinguish them from the somatic sensory dorsal penile nerve.",
+              "es": "Los nervios cavernosos llevan fibras autónomas relacionadas con la erección; se distinguen del nervio dorsal somático sensitivo."
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "N. dorsalis penis aus dem N. pudendus",
+              "en": "Dorsal penile nerve from the pudendal nerve",
+              "es": "Nervio dorsal del pene, rama del pudendo"
+            },
+            "feedback": {
+              "de": "Der dorsale Penisnerv ist ein Pudendusast und vermittelt wichtige somatische Sensibilität. Er ist von autonomen kavernösen Nerven für die Erektionssteuerung zu unterscheiden.",
+              "en": "The dorsal penile nerve is a pudendal branch carrying important somatic sensation. It differs from autonomic cavernous nerves controlling erection.",
+              "es": "El nervio dorsal es rama del pudendo y conduce sensibilidad somática importante. Es distinto de los nervios cavernosos autónomos que controlan erección."
+            },
+            "score": 10,
+            "minutes": 3,
+            "critical": false
+          }
+        ],
+        "best": "d"
+      }
+    ],
+    "takeaway": {
+      "de": "Der dorsale Penisnerv ist ein Pudendusast und vermittelt wichtige somatische Sensibilität. Er ist von autonomen kavernösen Nerven für die Erektionssteuerung zu unterscheiden.",
+      "en": "The dorsal penile nerve is a pudendal branch carrying important somatic sensation. It differs from autonomic cavernous nerves controlling erection.",
+      "es": "El nervio dorsal es rama del pudendo y conduce sensibilidad somática importante. Es distinto de los nervios cavernosos autónomos que controlan erección."
+    },
+    "references": [
+      "anatomy-pudendal",
+      "anatomy-dorsal-nerve"
+    ],
+    "evidence": {
+      "checked": "2026-10-11",
+      "type": "anatomical-reference",
+      "clinicalSignoffLanguages": []
+    },
+    "clinicalContext": {
+      "kind": "operation",
+      "label": {
+        "de": "Penisblock vor ambulantem Eingriff",
+        "en": "Penile block before a day procedure",
+        "es": "Bloqueo peneano antes de un procedimiento ambulatorio"
+      }
+    }
   }
 ]

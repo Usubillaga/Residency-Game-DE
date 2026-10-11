@@ -1,0 +1,170 @@
+[
+  {
+    "id": "anatomy-kidney",
+    "title": "NCBI Bookshelf: Kidney anatomy",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK482385/",
+    "checked": "2026-10-11",
+    "scope": "Anatomical relationships, coverings, cortex, collecting system and pleural relations. Questions are independently worded; this is an anatomy reference, not a treatment guideline."
+  },
+  {
+    "id": "anatomy-renal-artery",
+    "title": "NCBI Bookshelf: Renal artery anatomy",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK459158/",
+    "checked": "2026-10-11",
+    "scope": "Renal hilar vein–artery–pelvis order, right retrocaval arterial course and segmental functional end arteries; vascular variants require individual imaging."
+  },
+  {
+    "id": "anatomy-renal-veins",
+    "title": "NCBI Bookshelf: Renal vein anatomy",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK538298/",
+    "checked": "2026-10-11",
+    "scope": "Anterior aortomesenteric relationship of the left renal vein and usual gonadal venous drainage."
+  },
+  {
+    "id": "anatomy-horseshoe",
+    "title": "NCBI Bookshelf: Horseshoe kidney",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK431105/",
+    "checked": "2026-10-11",
+    "scope": "Classical inferior mesenteric arterial relationship during ascent; fusion, position and vascular anatomy vary."
+  },
+  {
+    "id": "anatomy-ureter",
+    "title": "NCBI Bookshelf: Ureter anatomy",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK532980/",
+    "checked": "2026-10-11",
+    "scope": "Retroperitoneal course, pelvic relationships, adventitial blood supply and intramural antireflux mechanism. Crossing the iliac vessels is a landmark, not necessarily a true anatomical narrowing."
+  },
+  {
+    "id": "anatomy-duplex",
+    "title": "EAU Paediatric Urology 2026: Ureterocele and ectopic ureter",
+    "url": "https://uroweb.org/guidelines/paediatric-urology/chapter/ureterocele-and-ectopic-ureter",
+    "checked": "2026-10-11",
+    "scope": "Duplex collecting systems, typical upper-pole ureteric insertion and female infrasphincteric ectopic ureter presentation; describes typical relationships, not an exception-free rule."
+  },
+  {
+    "id": "anatomy-bladder",
+    "title": "NCBI Bookshelf: Bladder anatomy",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK531465/",
+    "checked": "2026-10-11",
+    "scope": "Trigone, urachal remnant, retropubic space, detrusor and peritoneal relationships."
+  },
+  {
+    "id": "anatomy-prostate",
+    "title": "NCBI Bookshelf: Prostate anatomy",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK540987/",
+    "checked": "2026-10-11",
+    "scope": "Prostatic zones, ejaculatory ducts, posterior fascial plane and apical sphincter relations."
+  },
+  {
+    "id": "anatomy-pelvic-plexus",
+    "title": "NCBI Bookshelf: Inferior hypogastric plexus anatomy",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK567711/",
+    "checked": "2026-10-11",
+    "scope": "Autonomic pelvic plexus and cavernous nerve pathways; neurovascular distribution is variable rather than one fixed bundle at every level."
+  },
+  {
+    "id": "anatomy-penis",
+    "title": "NCBI Bookshelf: Penis anatomy",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK482236/",
+    "checked": "2026-10-11",
+    "scope": "Corpora cavernosa and spongiosum, urethral position, tunica albuginea and deep penile fascia."
+  },
+  {
+    "id": "anatomy-male-tract",
+    "title": "NCBI Bookshelf: Male genitourinary tract anatomy",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK562291/",
+    "checked": "2026-10-11",
+    "scope": "Male urethral regions, bulbourethral duct opening and seminal tract relationships."
+  },
+  {
+    "id": "anatomy-testis",
+    "title": "NCBI Bookshelf: Testis anatomy",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK470201/",
+    "checked": "2026-10-11",
+    "scope": "Testicular lymphatics, venous drainage, pampiniform countercurrent exchange and epididymal continuity."
+  },
+  {
+    "id": "anatomy-scrotum",
+    "title": "NCBI Bookshelf: Scrotal anatomy",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK549893/",
+    "checked": "2026-10-11",
+    "scope": "Scrotal skin lymphatic drainage distinguished from testicular retroperitoneal drainage."
+  },
+  {
+    "id": "anatomy-testicular-embryology",
+    "title": "NCBI Bookshelf: Testicular embryology",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK557763/",
+    "checked": "2026-10-11",
+    "scope": "Developmental attachment and bell-clapper predisposition to intravaginal torsion."
+  },
+  {
+    "id": "anatomy-bladder-physiology",
+    "title": "NCBI Bookshelf: Physiology of the bladder",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK538533/",
+    "checked": "2026-10-11",
+    "scope": "Parasympathetic detrusor contraction and sympathetic storage-phase pathways; segmental levels are approximate physiological ranges."
+  },
+  {
+    "id": "anatomy-pudendal",
+    "title": "NCBI Bookshelf: Pudendal nerve anatomy",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK554736/",
+    "checked": "2026-10-11",
+    "scope": "Somatic S2–S4 supply to the external urethral sphincter and terminal sensory branches."
+  },
+  {
+    "id": "anatomy-dorsal-nerve",
+    "title": "NCBI Bookshelf: Dorsal penile nerve anatomy",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK525966/",
+    "checked": "2026-10-11",
+    "scope": "Dorsal penile nerve as a pudendal sensory branch, distinguished from autonomic cavernous nerves."
+  },
+  {
+    "id": "eau-priapism-2026",
+    "title": "EAU Sexual and Reproductive Health 2026: Priapism",
+    "url": "https://uroweb.org/guidelines/sexual-and-reproductive-health/chapter/priapism",
+    "checked": "2026-10-11",
+    "scope": "Sections 10.1.2–10.1.3 and Table 10.4: distinguish ischaemic from non-ischaemic priapism; optional early oral terbutaline after intracavernous injection must not delay definitive ischaemia treatment; refractory priapism and MRI evidence of necrosis support counselling about early prosthesis."
+  },
+  {
+    "id": "eau-rcc-diagnosis-2026",
+    "title": "EAU Renal Cell Carcinoma 2026: Diagnostic evaluation",
+    "url": "https://uroweb.org/guidelines/renal-cell-carcinoma/chapter/diagnostic-evaluation",
+    "checked": "2026-10-11",
+    "scope": "Sections 5.2.3 and 5.3: sestamibi remains an emerging technique with insufficient external validation; renal mass biopsy can guide selection for surveillance and is required before ablation."
+  },
+  {
+    "id": "eau-rcc-pathology-2026",
+    "title": "EAU Renal Cell Carcinoma 2026: Pathology and oncocytic tumours",
+    "url": "https://uroweb.org/guidelines/renal-cell-carcinoma/chapter/epidemiology-aetiology-and-pathology",
+    "checked": "2026-10-11",
+    "scope": "Sections 3.5.4–3.5.5: oncocytic biopsy findings are not automatic proof of oncocytoma or benignity; surveillance is an option for appropriately selected patients."
+  },
+  {
+    "id": "eau-rcc-management-2026",
+    "title": "EAU Renal Cell Carcinoma 2026: Disease management",
+    "url": "https://uroweb.org/guidelines/renal-cell-carcinoma/chapter/disease-management",
+    "checked": "2026-10-11",
+    "scope": "Sections 7.2.4.b–d: active surveillance of selected small renal masses, histological risk assessment and biopsy before ablation; surveillance is not limited to proven benign lesions."
+  },
+  {
+    "id": "eau-prostate-diagnostics-2026",
+    "title": "EAU Prostate Cancer 2026: Diagnostic evaluation",
+    "url": "https://uroweb.org/guidelines/prostate-cancer/chapter/diagnostic-evaluation",
+    "checked": "2026-10-11",
+    "scope": "Risk-adapted early detection for BRCA2 carriers and biopsy decisions incorporating MRI, PSA density and individual risk; negative MRI does not exclude clinically significant cancer."
+  },
+  {
+    "id": "s3-prostate-8-1-2026",
+    "title": "S3-Leitlinie Prostatakarzinom, Kurzversion 8.1: Früherkennung und Diagnostik",
+    "url": "https://www.leitlinienprogramm-onkologie.de/fileadmin/user_upload/Downloads/Leitlinien/Prostatatkarzinom/Version_8/22_05_2026_Prostatakarzinom_Kurzversion_8.1_final_KL.pdf",
+    "checked": "2026-10-11",
+    "scope": "Recommendations 4.4–4.10: PSA intervals, confirmation of raised PSA and the specific risk clinic/MRI/biopsy pathway for pathogenic BRCA2, MSH2 or MSH6 variants. Version 8.1, published 2025, checked at the current official programme page on 2026-10-11."
+  },
+  {
+    "id": "ema-belzutifan-2026",
+    "title": "EMA: Welireg (belzutifan), EU product information",
+    "url": "https://www.ema.europa.eu/en/documents/product-information/welireg-epar-product-information_en.pdf",
+    "checked": "2026-10-11",
+    "scope": "Current EU indication and dose modifications, including interruption and dose reduction after grade 3 hypoxia; not a substitute for a patient-specific prescription."
+  }
+]

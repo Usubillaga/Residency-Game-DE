@@ -3233,6 +3233,357 @@
           "replace": "la angiografía coronaria muestra una enfermedad estable de dos vasos aún no revascularizada"
         }
       ]
+    },
+    {
+      "case": "q-pri-prolonged-erection-after-ici-terbutaline-first",
+      "kind": "medical",
+      "date": "2026-10-11",
+      "reason": {
+        "de": "Die frühe orale Option wird von der Notfallbehandlung abgegrenzt; starre Zeit- und Diagnoseaussagen wurden präzisiert.",
+        "en": "The early oral option is distinguished from emergency management; rigid timing and diagnostic statements are clarified.",
+        "es": "Se distingue la opción oral precoz del tratamiento urgente y se matizan las afirmaciones rígidas sobre tiempo y diagnóstico."
+      },
+      "references": [
+        "eau-priapism-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.prompt",
+          "from": {
+            "en": "What is the most appropriate management now?",
+            "de": "Was ist jetzt das angemessene Vorgehen?",
+            "es": "¿Cuál es ahora el manejo más adecuado?"
+          },
+          "to": {
+            "de": "Welche Aussage zu der in der EAU genannten frühen oralen Option nach Schwellkörperinjektion trifft zu?",
+            "en": "Which statement about the early oral option listed by the EAU after intracavernous injection is correct?",
+            "es": "¿Qué afirmación sobre la opción oral precoz descrita por la EAU tras una inyección intracavernosa es correcta?"
+          }
+        },
+        {
+          "path": "steps.0.options.d.text",
+          "from": {
+            "en": "Oral terbutaline 5 mg now; if detumescence fails by the 4-hour mark, aspiration with cavernous blood gas and dilute intracavernous phenylephrine under blood pressure and heart rate monitoring",
+            "de": "Jetzt Terbutalin 5 mg p. o.; bei ausbleibender Detumeszenz bis zur 4-Stunden-Grenze Aspiration mit kavernöser Blutgasanalyse und verdünntes Phenylephrin intrakavernös unter Blutdruck- und Herzfrequenzmonitoring",
+            "es": "Terbutalina 5 mg por vía oral ahora; si no hay detumescencia al llegar a las 4 horas, aspiración con gasometría cavernosa y fenilefrina intracavernosa diluida con monitorización de presión arterial y frecuencia cardiaca"
+          },
+          "to": {
+            "de": "Terbutalin 5 mg p. o. kann als frühe Off-label-Option erwogen werden; es ersetzt weder die sofortige urologische Beurteilung noch die definitive Behandlung bei Ischämie.",
+            "en": "Oral terbutaline 5 mg may be considered as an early off-label option; it replaces neither prompt urological assessment nor definitive treatment for ischaemia.",
+            "es": "Puede valorarse terbutalina oral 5 mg como opción precoz fuera de ficha técnica; no sustituye la evaluación urológica inmediata ni el tratamiento definitivo de la isquemia."
+          }
+        },
+        {
+          "path": "steps.0.options.d.feedback",
+          "from": {
+            "en": "Correct: for an erection lasting more than about 2.5 hours after intracavernous injection, the EAU guideline lists oral terbutaline 5 mg; placebo-controlled trials showed detumescence in roughly 30-60% of these men, so it is a reasonable early attempt in a patient without cardiac contraindications (caution in coronary heart disease, hypokalaemia, fluid overload). It must not delay definitive treatment: if the erection persists towards 4 hours, aspirate (with cavernous blood gas to confirm ischaemia) and inject dilute phenylephrine in repeated small doses with cardiovascular monitoring. Oral terbutaline for this indication is off-label.",
+            "de": "Richtig: Bei einer Erektion von mehr als etwa 2,5 Stunden nach Schwellkörperinjektion nennt die EAU-Leitlinie Terbutalin 5 mg p. o.; in placebokontrollierten Studien kam es bei etwa 30–60 % dieser Patienten zur Detumeszenz, daher ist es bei fehlenden kardialen Kontraindikationen (Vorsicht bei koronarer Herzkrankheit, Hypokaliämie, Volumenüberladung) ein sinnvoller früher Versuch. Es darf die definitive Therapie nicht verzögern: Hält die Erektion bis gegen 4 Stunden an, folgen Aspiration (mit kavernöser Blutgasanalyse zur Bestätigung der Ischämie) und verdünntes Phenylephrin in wiederholten kleinen Dosen unter Kreislaufmonitoring. Terbutalin ist für diese Indikation off-label.",
+            "es": "Correcto: ante una erección de más de unas 2,5 horas tras inyección intracavernosa, la guía EAU recoge la terbutalina 5 mg por vía oral; en ensayos controlados con placebo se logró la detumescencia en aproximadamente el 30-60 % de estos pacientes, por lo que es un intento precoz razonable si no hay contraindicaciones cardiacas (precaución en cardiopatía isquémica, hipopotasemia, sobrecarga de volumen). No debe retrasar el tratamiento definitivo: si la erección persiste hacia las 4 horas, se realiza aspiración (con gasometría cavernosa para confirmar la isquemia) y fenilefrina diluida en dosis pequeñas repetidas con monitorización cardiovascular. El uso de terbutalina en esta indicación es fuera de ficha técnica."
+          },
+          "to": {
+            "de": "Die EAU führt Terbutalin 5 mg p. o. für eine prolongierte Erektion über 2,5 Stunden nach vasoaktiver intrakavernöser Injektion auf; die Wirksamkeit ist begrenzt und der Einsatz off-label. Es ist kein zwingender erster Schritt. Bei zunehmendem Schmerz, anhaltender Rigidität oder Verdacht auf Ischämie sofort urologisch beurteilen und die definitive Therapie nicht bis zu einer Zeitgrenze verzögern. Bei bestätigtem ischämischem Priapismus erfolgen Aspiration, gegebenenfalls NaCl-Spülung und verdünntes intrakavernöses Phenylephrin in kleinen Dosen unter Blutdruck- und Pulskontrolle. Die Erektionsdauer allein unterscheidet Ischämie und nichtischämischen Priapismus nicht.",
+            "en": "The EAU lists oral terbutaline 5 mg for a prolonged erection exceeding 2.5 hours after vasoactive intracavernous injection; efficacy is limited and use is off-label. It is not a mandatory first step. Increasing pain, persistent rigidity or suspected ischaemia requires prompt urological assessment without waiting for a time threshold. Confirmed ischaemic priapism is treated with aspiration, saline irrigation if appropriate and small doses of dilute intracavernous phenylephrine with blood pressure and pulse monitoring. Duration alone does not distinguish ischaemic from non-ischaemic priapism.",
+            "es": "La EAU recoge terbutalina oral 5 mg para una erección prolongada de más de 2,5 horas tras una inyección intracavernosa vasoactiva; su eficacia es limitada y su uso está fuera de ficha técnica. No es un primer paso obligatorio. El dolor creciente, la rigidez persistente o la sospecha de isquemia requieren evaluación urológica inmediata, sin esperar un umbral horario. El priapismo isquémico confirmado se trata con aspiración, irrigación salina si procede y pequeñas dosis de fenilefrina intracavernosa diluida con control de presión y pulso. La duración por sí sola no distingue el priapismo isquémico del no isquémico."
+          }
+        },
+        {
+          "path": "takeaway",
+          "from": {
+            "en": "Prolonged erection after intracavernous injection: from about 2.5 hours an attempt with oral terbutaline 5 mg is reasonable if there are no cardiac contraindications. From 4 hours it is ischaemic priapism: aspiration with cavernous blood gas, then dilute phenylephrine in small repeated doses with blood pressure and heart rate monitoring; surgery only if this fails.",
+            "de": "Verlängerte Erektion nach Schwellkörperinjektion: Ab etwa 2,5 Stunden ist bei fehlenden kardialen Kontraindikationen ein Versuch mit Terbutalin 5 mg p. o. sinnvoll. Ab 4 Stunden liegt ein ischämischer Priapismus vor: Aspiration mit kavernöser Blutgasanalyse, dann verdünntes Phenylephrin in kleinen wiederholten Dosen unter Blutdruck- und Herzfrequenzmonitoring; erst bei Versagen operativ.",
+            "es": "Erección prolongada tras inyección intracavernosa: a partir de unas 2,5 horas es razonable un intento con terbutalina 5 mg por vía oral si no hay contraindicaciones cardiacas. A partir de 4 horas es un priapismo isquémico: aspiración con gasometría cavernosa y después fenilefrina diluida en dosis pequeñas repetidas con monitorización de presión arterial y frecuencia cardiaca; cirugía solo si esto fracasa."
+          },
+          "to": {
+            "de": "Eine prolongierte Erektion nach Schwellkörperinjektion braucht eine rechtzeitige urologische Beurteilung. Die EAU nennt Terbutalin als mögliche frühe orale Option mit begrenzter Evidenz; dies darf die Behandlung einer Ischämie nicht verzögern. Ab vier Stunden ist eine anhaltende Erektion dringend abzuklären, aber die Dauer beweist keine Ischämie: Untersuchung, Doppler und kavernöse Blutgase unterscheiden die Formen.",
+            "en": "Prolonged erection after intracavernous injection requires timely urological assessment. The EAU lists terbutaline as a possible early oral option with limited evidence; it must not delay treatment for ischaemia. An erection persisting for four hours needs urgent assessment, but duration does not prove ischaemia: examination, Doppler and cavernous blood gases distinguish the forms.",
+            "es": "La erección prolongada tras una inyección intracavernosa requiere evaluación urológica oportuna. La EAU recoge terbutalina como posible opción oral precoz con evidencia limitada; no debe retrasar el tratamiento de la isquemia. Una erección persistente de cuatro horas requiere evaluación urgente, pero la duración no demuestra isquemia: exploración, Doppler y gasometría cavernosa distinguen las formas."
+          }
+        }
+      ]
+    },
+    {
+      "case": "q-pri-ischaemic-40h-mri-necrosis-early-prosthesis",
+      "kind": "medical",
+      "date": "2026-10-11",
+      "reason": {
+        "de": "Die Entscheidung bei refraktärem Verlauf wird an Gewebevitalität, Aufklärung und spezialisierte Versorgung geknüpft.",
+        "en": "Management of refractory priapism is tied to tissue viability, counselling and specialist care.",
+        "es": "La decisión en un caso refractario se vincula a viabilidad tisular, información al paciente y atención especializada."
+      },
+      "references": [
+        "eau-priapism-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.options.b.text",
+          "from": {
+            "en": "Early (immediate) penile prosthesis implantation after informed consent",
+            "de": "Frühe (sofortige) Implantation einer Penisprothese nach Aufklärung",
+            "es": "Implante precoz (inmediato) de prótesis de pene tras consentimiento informado"
+          },
+          "to": {
+            "de": "Im spezialisierten Zentrum eine frühe Penisprothese nach gemeinsamer Aufklärung und Entscheidung besprechen.",
+            "en": "Discuss early penile prosthesis implantation in a specialist centre after counselling and shared decision-making.",
+            "es": "Comentar la implantación precoz de una prótesis de pene en un centro especializado tras información y decisión compartida."
+          }
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "from": {
+            "en": "Correct: in prolonged ischaemic priapism refractory to aspiration and phenylephrine, the EAU guideline recommends penile MRI as an adjunct to predict smooth muscle viability; complete absence of corporal enhancement indicates necrosis. Erectile dysfunction is then inevitable, and early implantation (ideally in the same admission) relieves the priapism, avoids the dense fibrosis and penile shortening that make delayed surgery difficult, and in comparative series has had a lower complication rate than delayed implantation.",
+            "de": "Richtig: Beim protrahierten, auf Aspiration und Phenylephrin refraktären ischämischen Priapismus empfiehlt die EAU-Leitlinie das Penis-MRT als Zusatzuntersuchung zur Abschätzung der Vitalität der glatten Muskulatur; fehlende Anreicherung der Corpora spricht für eine Nekrose. Die erektile Dysfunktion ist dann unvermeidlich; die frühe Implantation (möglichst im selben Aufenthalt) beendet den Priapismus, vermeidet die ausgeprägte Fibrose und Penisverkürzung, die eine spätere Operation erschweren, und war in Vergleichsserien komplikationsärmer als die verzögerte Implantation.",
+            "es": "Correcto: en el priapismo isquémico prolongado y refractario a aspiración y fenilefrina, la guía EAU recomienda la RM de pene como prueba complementaria para predecir la viabilidad del músculo liso; la ausencia de captación de los cuerpos cavernosos indica necrosis. La disfunción eréctil es entonces inevitable, y el implante precoz (idealmente en el mismo ingreso) resuelve el priapismo, evita la fibrosis densa y el acortamiento que dificultan la cirugía tardía y en series comparativas ha tenido menos complicaciones que el implante diferido."
+          },
+          "to": {
+            "de": "Der refraktäre ischämische Verlauf und die fehlende Anreicherung beider Corpora im MRT sprechen hier für schwere Schädigung der glatten Muskulatur. Die EAU nennt MRT- oder Biopsiehinweise auf Nekrose als relative Indikation für eine frühe Penisprothese. Die Aussicht auf Erholung der erektilen Funktion ist sehr gering; Nutzen, Infektions- und Erosionsrisiko sowie Alternativen müssen mit dem Patienten im spezialisierten Zentrum besprochen werden. Es gibt keine automatische Implantationspflicht allein wegen 40 Stunden Dauer. Die Evidenz zum frühen gegenüber dem späten Eingriff stammt überwiegend aus retrospektiven Serien.",
+            "en": "Refractory ischaemic priapism and absent enhancement of both corpora on MRI suggest severe smooth-muscle damage here. The EAU lists MRI or biopsy evidence of necrosis as a relative indication for early penile prosthesis. Recovery of erectile function is very unlikely; benefits, infection and erosion risks, and alternatives require counselling in a specialist centre. Forty hours of duration alone does not mandate implantation. Evidence comparing early and delayed surgery is mainly retrospective.",
+            "es": "El priapismo isquémico refractario y la ausencia de realce de ambos cuerpos cavernosos en la RM sugieren daño grave del músculo liso. La EAU considera los indicios de necrosis en RM o biopsia una indicación relativa de prótesis precoz. La recuperación eréctil es muy improbable; deben comentarse beneficios, riesgos de infección y erosión y alternativas en un centro especializado. Una duración de 40 horas por sí sola no obliga a implantar. La evidencia comparativa procede sobre todo de series retrospectivas."
+          }
+        },
+        {
+          "path": "takeaway",
+          "from": {
+            "en": "In ischaemic priapism lasting about 24-48 hours and refractory to aspiration and phenylephrine, penile MRI helps to judge smooth muscle viability. Viable corpora: distal shunt, with tunnelling if needed. Non-enhancing, necrotic corpora (or presentation beyond about 36–48 hours): discuss early penile prosthesis implantation instead of a shunt, because later implantation into fibrotic corpora is harder and costs length.",
+            "de": "Beim ischämischen Priapismus von etwa 24–48 Stunden Dauer, der auf Aspiration und Phenylephrin nicht anspricht, hilft das Penis-MRT bei der Beurteilung der Muskelvitalität. Vitale Corpora: distaler Shunt, ggf. mit Tunnelung. Nicht anreichernde, nekrotische Corpora (oder Vorstellung nach mehr als etwa 36–48 Stunden): frühe Penisprothese statt Shunt besprechen, weil die spätere Implantation in fibrotische Corpora schwieriger ist und Länge kostet.",
+            "es": "En el priapismo isquémico de unas 24-48 horas refractario a aspiración y fenilefrina, la RM de pene ayuda a valorar la viabilidad muscular. Cuerpos viables: derivación distal, con tunelización si es necesario. Cuerpos sin captación y necróticos (o consulta pasadas unas 36–48 horas): plantear un implante precoz de prótesis en lugar de una derivación, porque el implante tardío en cuerpos fibróticos es más difícil y cuesta longitud."
+          },
+          "to": {
+            "de": "Bei refraktärem oder lange bestehendem ischämischem Priapismus kann ein Penis-MRT die Beurteilung der Gewebevitalität ergänzen. Hinweise auf Nekrose unterstützen die Beratung über eine frühe Penisprothese; eine feste Stundenzahl allein legt das Vorgehen nicht fest. Bei noch vitalem Gewebe und Versagen der Ersttherapie bleiben distaler Shunt und gegebenenfalls Tunnelung Teil des gestuften Vorgehens.",
+            "en": "In refractory or prolonged ischaemic priapism, penile MRI can support assessment of tissue viability. Evidence of necrosis supports counselling about early prosthesis; a fixed duration alone does not determine management. With viable tissue and failure of first-line therapy, distal shunting and, when appropriate, tunnelling remain part of stepwise management.",
+            "es": "En el priapismo isquémico refractario o prolongado, la RM puede complementar la valoración de viabilidad. Los indicios de necrosis apoyan la información sobre prótesis precoz; un número fijo de horas no determina por sí solo la conducta. Si el tejido es viable y fracasa el tratamiento inicial, la derivación distal y, cuando proceda, la tunelización siguen formando parte del manejo escalonado."
+          }
+        },
+        {
+          "path": "steps.0.options.a.feedback",
+          "from": {
+            "en": "A shunt with tunnelling is the right step when the cavernous smooth muscle is still viable. Here the MRI shows non-enhancing corpora, i.e. necrosis, so lasting erectile dysfunction is practically certain and the shunt cannot preserve function. Fibrosis then develops, making delayed implantation technically harder, with more intraoperative complications and loss of penile length; in addition, after a shunt implantation is usually deferred because of the higher risk of infection and erosion.",
+            "de": "Ein Shunt mit Tunnelung ist richtig, solange die Schwellkörpermuskulatur noch vital ist. Hier zeigt das MRT nicht anreichernde Corpora, also eine Nekrose; eine bleibende erektile Dysfunktion ist praktisch sicher, der Shunt kann die Funktion nicht erhalten. Danach entwickelt sich eine Fibrose: Die spätere Implantation ist technisch schwieriger, mit mehr intraoperativen Komplikationen und Längenverlust, und nach einem Shunt wird die Implantation wegen des höheren Infektions- und Erosionsrisikos ohnehin meist aufgeschoben.",
+            "es": "La derivación con tunelización es correcta mientras el músculo liso cavernoso siga siendo viable. Aquí la RM muestra cuerpos cavernosos sin captación, es decir, necrosis; la disfunción eréctil permanente es prácticamente segura y la derivación no puede preservar la función. Después se desarrolla fibrosis: el implante tardío es técnicamente más difícil, con más complicaciones intraoperatorias y pérdida de longitud, y tras una derivación el implante suele diferirse por el mayor riesgo de infección y erosión."
+          },
+          "to": {
+            "de": "Ein distaler Shunt mit gegebenenfalls Tunnelung ist bei noch vitalem Gewebe Teil des gestuften Vorgehens. Hier sprechen refraktärer Verlauf und fehlende MRT-Anreicherung für schwere Muskelschädigung; eine frühe Prothese sollte deshalb vor einem automatisch geplanten Shunt mit späterer Implantation besprochen werden. Ein vorausgegangener Shunt kann die Implantationsplanung und das Infektionsrisiko beeinflussen.",
+            "en": "Distal shunting, with tunnelling when appropriate, is part of stepwise management when tissue remains viable. Here, refractory priapism and absent MRI enhancement suggest severe muscle damage, so early prosthesis should be discussed rather than automatically scheduling a shunt followed by delayed implantation. Previous shunt surgery can affect implantation timing and infection risk.",
+            "es": "La derivación distal, con tunelización si procede, forma parte del manejo escalonado si el tejido sigue viable. Aquí la refractariedad y la ausencia de realce sugieren daño muscular grave; debe comentarse prótesis precoz antes de programar automáticamente una derivación seguida de implante tardío. Una derivación previa puede influir en el momento del implante y el riesgo infeccioso."
+          }
+        },
+        {
+          "path": "steps.0.options.d.feedback",
+          "from": {
+            "en": "Proximal shunts come after failed distal shunts and carry risks of urethral injury, fistula and cavernositis. With MRI-proven necrosis, no shunt can preserve erectile function, and the resulting fibrosis complicates later implantation.",
+            "de": "Proximale Shunts folgen erst auf versagende distale Shunts und sind mit Urethraverletzung, Fistelbildung und Kavernitis belastet. Bei im MRT nachgewiesener Nekrose kann kein Shunt die erektile Funktion erhalten, und die folgende Fibrose erschwert die spätere Implantation.",
+            "es": "Las derivaciones proximales se indican tras el fracaso de las distales y conllevan riesgo de lesión uretral, fístula y cavernositis. Con necrosis demostrada en la RM ninguna derivación puede preservar la función eréctil, y la fibrosis resultante dificulta el implante posterior."
+          },
+          "to": {
+            "de": "Ein proximaler Shunt ist hier keine bevorzugte Eskalation. Bei schweren Nekrosehinweisen ist eine funktionelle Erholung durch weitere Ableitung sehr unwahrscheinlich; Nutzen und Morbidität müssen im spezialisierten Zentrum gegen eine frühe Prothese abgewogen werden. Die MRT unterstützt diese Entscheidung, ersetzt aber nicht die Aufklärung.",
+            "en": "A proximal shunt is not the preferred escalation here. With strong evidence of necrosis, functional recovery through further drainage is very unlikely; benefit and morbidity require specialist assessment against early prosthesis. MRI supports that decision but does not replace counselling.",
+            "es": "Una derivación proximal no es la escalada preferida aquí. Con indicios fuertes de necrosis, la recuperación funcional mediante más drenaje es muy improbable; un centro especializado debe comparar beneficio y morbilidad con una prótesis precoz. La RM apoya esa decisión, pero no sustituye la información al paciente."
+          }
+        }
+      ]
+    },
+    {
+      "case": "q-pca-brca2-carrier-confirmed-psa-mri",
+      "kind": "medical",
+      "date": "2026-10-11",
+      "reason": {
+        "de": "Der spezielle diagnostische Pfad für pathogene Keimbahnvarianten wird von der allgemeinen Früherkennung unterschieden.",
+        "en": "The diagnostic pathway for pathogenic germline variants is distinguished from routine early detection.",
+        "es": "Se distingue el itinerario diagnóstico de las variantes germinales patogénicas del cribado habitual."
+      },
+      "references": [
+        "s3-prostate-8-1-2026",
+        "eau-prostate-diagnostics-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.prompt",
+          "from": {
+            "en": "What is the next step?",
+            "de": "Was ist der nächste Schritt?",
+            "es": "¿Cuál es el siguiente paso?"
+          },
+          "to": {
+            "de": "Was ist der nächste Schritt nach dem speziellen Risikopfad der S3-Leitlinie Version 8.1?",
+            "en": "What is the next step under the specific high-risk pathway in German S3 guideline version 8.1?",
+            "es": "¿Cuál es el siguiente paso según el itinerario específico de alto riesgo de la guía alemana S3 versión 8.1?"
+          }
+        },
+        {
+          "path": "steps.0.options.d.text",
+          "from": {
+            "en": "Multiparametric MRI of the prostate, with biopsy depending on the MRI result",
+            "de": "Multiparametrische MRT der Prostata, Biopsie abhängig vom MRT-Befund",
+            "es": "RM multiparamétrica de próstata, con biopsia según el resultado de la RM"
+          },
+          "to": {
+            "de": "MRT der Prostata und nach Beratung Biopsie im Risikopfad planen; bei bestätigtem PSA ≥3 ng/ml bleibt die Biopsieempfehlung auch bei unauffälliger MRT relevant.",
+            "en": "Obtain prostate MRI and plan biopsy after counselling under the high-risk pathway; confirmed PSA ≥3 ng/ml keeps the biopsy recommendation relevant even if MRI is negative.",
+            "es": "Realizar RM prostática y planificar biopsia tras asesoramiento en el itinerario de alto riesgo; un PSA confirmado ≥3 ng/ml mantiene la recomendación de biopsia incluso con RM negativa."
+          }
+        },
+        {
+          "path": "steps.0.options.d.feedback",
+          "from": {
+            "de": "Richtig. Als BRCA2-Träger wird er zu Recht vor dem 45. Lebensjahr untersucht. Der erhöhte Wert ist unter kontrollierten Bedingungen bestätigt, daher sieht die S3-Leitlinie die urologische Abklärung mit MRT der Prostata vor der Biopsieentscheidung vor. Bei suspektem Befund folgt die gezielte plus systematische Biopsie; bei unauffälliger MRT wird die Biopsie unter Einbeziehung weiterer Risikofaktoren individuell abgewogen statt routinemäßig durchgeführt.",
+            "en": "Correct. As a BRCA2 carrier he is rightly being screened before 45. The elevated value has been confirmed under controlled conditions, so the S3 guideline calls for urological assessment with prostate MRI before the biopsy decision. Targeted plus systematic biopsy follows a suspicious finding; with an unremarkable MRI, biopsy is weighed individually against further risk factors rather than done routinely.",
+            "es": "Correcto. Como portador de BRCA2 se le estudia, con razón, antes de los 45 años. El valor elevado se ha confirmado en condiciones controladas, por lo que la guía S3 prevé la valoración urológica con RM de próstata antes de decidir la biopsia. Ante un hallazgo sospechoso sigue la biopsia dirigida más sistemática; con una RM normal, la biopsia se valora de forma individual según otros factores de riesgo en lugar de realizarse de rutina."
+          },
+          "to": {
+            "de": "Die S3-Leitlinie 8.1 unterscheidet diesen BRCA2-Träger von der allgemeinen Früherkennung: Risikosprechstunde ab 40 Jahren, PSA und MRT bei pathogener Variante. Empfehlung 4.10 sieht bei pathogener Variante und PI-RADS 3–5 und/oder PSA ≥3 ng/ml das Angebot einer MRT-Ultraschall-Fusionsbiopsie vor. Sein kontrollierter PSA erfüllt das PSA-Kriterium unabhängig vom späteren MRT-Ergebnis. Ein unauffälliges MRT hebt den Hochrisikopfad deshalb nicht automatisch auf. Biopsie, Vorgehen bei fehlender MRT-Zielläsion und weitere Kontrollen werden nach Aufklärung gemeinsam geplant.",
+            "en": "S3 guideline 8.1 distinguishes this BRCA2 carrier from routine early detection: a risk clinic from age 40, with PSA and MRI for a pathogenic variant. Recommendation 4.10 recommends offering MRI–ultrasound fusion biopsy with a pathogenic variant and PI-RADS 3–5 and/or PSA ≥3 ng/ml. His confirmed PSA meets that criterion regardless of the later MRI result. A negative MRI therefore does not automatically cancel the high-risk pathway. Biopsy, sampling when no MRI target is present, and follow-up require counselling and shared planning.",
+            "es": "La guía S3 8.1 distingue a este portador de BRCA2 del cribado habitual: consulta de riesgo desde los 40 años y PSA y RM ante una variante patogénica. La recomendación 4.10 contempla ofrecer biopsia de fusión RM–ecografía con variante patogénica y PI-RADS 3–5 y/o PSA ≥3 ng/ml. Su PSA confirmado cumple el criterio, con independencia del resultado posterior de la RM. Una RM negativa no cancela automáticamente el itinerario de alto riesgo. La biopsia, el muestreo sin lesión diana y el seguimiento se planifican tras informar al paciente."
+          }
+        },
+        {
+          "path": "takeaway",
+          "from": {
+            "de": "Nach der S3-Leitlinie erhalten Träger einer pathogenen Variante in BRCA2, MSH2 oder MSH6 bereits ab 40 eine Risikosprechstunde, während die allgemeine Früherkennung mit 45 beginnt. Ein PSA von 3 ng/ml oder mehr wird kurzfristig kontrolliert; bestätigt er sich, folgen urologische Abklärung und MRT der Prostata vor jeder Biopsieentscheidung.",
+            "en": "Under the German S3 guideline, carriers of a pathogenic BRCA2, MSH2 or MSH6 variant are offered a risk consultation from 40, whereas general early detection starts at 45. A PSA of 3 ng/ml or more is rechecked at short notice; if confirmed, urological assessment and prostate MRI come before any biopsy decision.",
+            "es": "Según la guía alemana S3, a los portadores de una variante patogénica en BRCA2, MSH2 o MSH6 se les ofrece una consulta de riesgo desde los 40, mientras que la detección precoz general empieza a los 45. Un PSA de 3 ng/ml o más se repite a corto plazo; si se confirma, la valoración urológica y la RM de próstata preceden a cualquier decisión de biopsia."
+          },
+          "to": {
+            "de": "S3-Leitlinie 8.1, Empfehlungen 4.8–4.10: Bei pathogenen BRCA2-, MSH2- oder MSH6-Varianten ab 40 Jahren Risikosprechstunde anbieten und PSA plus MRT durchführen. PI-RADS 3–5 und/oder ein PSA ≥3 ng/ml begründen im speziellen Risikopfad eine Biopsieempfehlung. Die allgemeine Regel für ein unauffälliges MRT darf diesen Hochrisikopfad nicht ersetzen.",
+            "en": "S3 guideline 8.1, recommendations 4.8–4.10: offer a risk clinic from age 40 and obtain PSA plus MRI for pathogenic BRCA2, MSH2 or MSH6 variants. PI-RADS 3–5 and/or PSA ≥3 ng/ml supports offering biopsy in this specific pathway. The general rule for a negative MRI must not replace the high-risk pathway.",
+            "es": "Guía S3 8.1, recomendaciones 4.8–4.10: ofrecer consulta de riesgo desde los 40 años y realizar PSA y RM ante variantes patogénicas en BRCA2, MSH2 o MSH6. PI-RADS 3–5 y/o PSA ≥3 ng/ml justifican ofrecer biopsia en este itinerario específico. La regla general de una RM negativa no debe sustituir el itinerario de alto riesgo."
+          }
+        }
+      ]
+    },
+    {
+      "case": "q-rcc-sestamibi-positive-biopsy-before-surveillance",
+      "kind": "medical",
+      "date": "2026-10-11",
+      "reason": {
+        "de": "Die Aussagekraft der Bildgebung, Grenzen der Stanzbiopsie und Auswahl für eine Überwachung wurden präzisiert.",
+        "en": "Imaging accuracy, core-biopsy limitations and selection for surveillance are clarified.",
+        "es": "Se precisan la capacidad diagnóstica de la imagen, los límites de la biopsia y la selección para vigilancia."
+      },
+      "references": [
+        "eau-rcc-diagnosis-2026",
+        "eau-rcc-pathology-2026",
+        "eau-rcc-management-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.prompt",
+          "from": {
+            "en": "What should the tumour board recommend?",
+            "de": "Was sollte das Tumorboard empfehlen?",
+            "es": "¿Qué debería recomendar el comité de tumores?"
+          },
+          "to": {
+            "de": "Der Patient würde eine Ablation erwägen, falls das Tumorrisiko dies rechtfertigt; die Histologie würde seine Entscheidung beeinflussen. Was sollte das Tumorboard empfehlen?",
+            "en": "The patient would consider ablation if justified by tumour risk, and histology would affect his decision. What should the tumour board recommend?",
+            "es": "El paciente valoraría ablación si el riesgo tumoral la justifica y la histología influiría en su decisión. ¿Qué debe recomendar el comité?"
+          }
+        },
+        {
+          "path": "steps.0.options.a.text",
+          "from": {
+            "en": "Active surveillance on the basis of the positive scan, without histology",
+            "de": "Aktive Überwachung allein aufgrund des positiven Szintigramms, ohne Histologie",
+            "es": "Vigilancia activa basada solo en la gammagrafía positiva, sin histología"
+          },
+          "to": {
+            "de": "Den positiven Scan als sicheren Nachweis eines gutartigen Onkozytoms werten und deshalb ohne weitere Risikoprüfung überwachen.",
+            "en": "Treat the positive scan as definitive proof of a benign oncocytoma and therefore observe without further risk assessment.",
+            "es": "Considerar la captación prueba definitiva de un oncocitoma benigno y vigilar sin más valoración de riesgo."
+          }
+        },
+        {
+          "path": "steps.0.options.a.feedback",
+          "from": {
+            "en": "Uptake makes an oncocytoma or hybrid oncocytic tumour likely but does not prove it: the data come from small, heterogeneous series (pooled sensitivity and specificity about 89%), and some RCCs, notably chromophobe RCC, can also take up the tracer. The EAU recommendation on surveillance of oncocytic tumours applies to biopsy-proven tumours; the low-risk biopsy decides here between surveillance and ablation.",
+            "de": "Die Aufnahme macht ein Onkozytom oder einen hybriden onkozytären Tumor wahrscheinlich, beweist ihn aber nicht: Die Daten stammen aus kleinen, heterogenen Serien (gepoolte Sensitivität und Spezifität etwa 89 %), und auch manche NZK, insbesondere das chromophobe, können den Tracer aufnehmen. Die EAU-Empfehlung zur Überwachung onkozytärer Tumoren gilt für bioptisch gesicherte Tumoren; die risikoarme Biopsie entscheidet hier zwischen Überwachung und Ablation.",
+            "es": "La captación hace probable un oncocitoma o un tumor oncocítico híbrido, pero no lo demuestra: los datos proceden de series pequeñas y heterogéneas (sensibilidad y especificidad agrupadas de alrededor del 89 %), y algunos CCR, sobre todo el cromófobo, también pueden captar el trazador. La recomendación de la EAU sobre la vigilancia de los tumores oncocíticos se refiere a tumores confirmados por biopsia; la biopsia, de bajo riesgo, decide aquí entre vigilancia y ablación."
+          },
+          "to": {
+            "de": "Ein positiver Sestamibi-Befund beweist weder ein Onkozytom noch Gutartigkeit. Die EAU bewertet die Methode als noch unzureichend extern validiert. Überwachung kann auch bei ausgewählten kleinen malignen Nierentumoren sinnvoll sein, muss aber auf einer informierten Gesamtrisikoentscheidung beruhen. Hier kann eine Stanzbiopsie die Wahl zwischen Überwachung und Ablation beeinflussen.",
+            "en": "Positive sestamibi uptake proves neither oncocytoma nor benignity. The EAU considers external validation insufficient. Surveillance can also be appropriate for selected small malignant renal masses, but requires an informed overall risk assessment. Here, core biopsy can change the choice between surveillance and ablation.",
+            "es": "La captación de sestamibi no demuestra oncocitoma ni benignidad. La EAU considera insuficiente la validación externa. La vigilancia también puede ser apropiada en masas malignas pequeñas seleccionadas, pero exige una decisión informada sobre el riesgo global. Aquí la biopsia puede modificar la elección entre vigilancia y ablación."
+          }
+        },
+        {
+          "path": "steps.0.options.b.feedback",
+          "from": {
+            "en": "In a patient with severe COPD and heart failure, surgery for a lesion that is probably benign carries disproportionate risk. Histology from a biopsy should guide whether treatment is needed at all.",
+            "de": "Bei schwerer COPD und Herzinsuffizienz ist eine Operation wegen einer wahrscheinlich gutartigen Läsion mit unverhältnismäßigem Risiko verbunden. Die Histologie aus einer Biopsie sollte klären, ob überhaupt behandelt werden muss.",
+            "es": "En un paciente con EPOC grave e insuficiencia cardiaca, operar una lesión probablemente benigna conlleva un riesgo desproporcionado. La histología de una biopsia debe aclarar si es necesario tratar."
+          },
+          "to": {
+            "de": "Eine Nierenteilresektion ist bei geeigneten Patienten mit behandlungsbedürftigem cT1-Tumor eine wichtige Option. Hier sprechen erhebliche Begleiterkrankungen und die kleine Raumforderung dafür, zunächst das individuelle Risiko und den Nutzen einer Biopsie zu klären. Die Sestamibi-Aufnahme allein beweist weder Gutartigkeit noch die Notwendigkeit einer Operation.",
+            "en": "Partial nephrectomy is an important option for suitable patients with a cT1 tumour requiring treatment. Here, major comorbidities and the small mass favour assessing individual risk and the value of biopsy first. Sestamibi uptake alone proves neither benignity nor a need for surgery.",
+            "es": "La nefrectomía parcial es una opción importante en pacientes aptos con tumor cT1 que precise tratamiento. En este caso, las comorbilidades y el tamaño pequeño favorecen valorar primero el riesgo y la utilidad de la biopsia. La captación por sí sola no demuestra benignidad ni necesidad de operar."
+          }
+        },
+        {
+          "path": "steps.0.options.d.text",
+          "from": {
+            "en": "Percutaneous core biopsy; if an oncocytic tumour is confirmed, offer active surveillance",
+            "de": "Perkutane Stanzbiopsie; bei Bestätigung eines onkozytären Tumors aktive Überwachung anbieten",
+            "es": "Biopsia percutánea con aguja gruesa; si se confirma un tumor oncocítico, ofrecer vigilancia activa"
+          },
+          "to": {
+            "de": "Perkutane Stanzbiopsie zur Risikoeinordnung; Histologie, Begleiterkrankungen und Patientenwunsch gemeinsam für Überwachung oder Behandlung nutzen.",
+            "en": "Obtain percutaneous core biopsy for risk assessment; combine histology, comorbidities and preferences to choose surveillance or treatment.",
+            "es": "Obtener biopsia percutánea para valorar el riesgo y combinar histología, comorbilidades y preferencias para elegir vigilancia o tratamiento."
+          }
+        },
+        {
+          "path": "steps.0.options.d.feedback",
+          "from": {
+            "en": "Correct. Sestamibi uptake reflects the high mitochondrial content of oncocytoma and hybrid oncocytic tumours, but the method is still an emerging test with a low level of evidence. A positive scan is therefore confirmed by core biopsy; for a biopsy-proven oncocytoma or other oncocytic tumour, the EAU guideline considers active surveillance an acceptable alternative to surgery or ablation (weak recommendation) – fitting for this comorbid patient.",
+            "de": "Richtig. Die Sestamibi-Aufnahme spiegelt den hohen Mitochondriengehalt von Onkozytom und hybriden onkozytären Tumoren wider, das Verfahren gilt aber noch als neue Methode mit niedrigem Evidenzniveau. Ein positiver Befund wird daher bioptisch gesichert; bei bioptisch gesichertem Onkozytom oder anderem onkozytären Tumor hält die EAU-Leitlinie die aktive Überwachung für eine akzeptable Alternative zu Operation oder Ablation (schwache Empfehlung) – passend für diesen komorbiden Patienten.",
+            "es": "Correcto. La captación de sestamibi refleja el alto contenido mitocondrial del oncocitoma y de los tumores oncocíticos híbridos, pero la técnica sigue siendo emergente y con un nivel de evidencia bajo. Por ello, un resultado positivo se confirma con biopsia; ante un oncocitoma u otro tumor oncocítico confirmado por biopsia, la guía de la EAU considera la vigilancia activa una alternativa aceptable a la cirugía o la ablación (recomendación débil), adecuada para este paciente comórbido."
+          },
+          "to": {
+            "de": "Die Biopsie ist hier sinnvoll, weil sie die Entscheidung beeinflussen kann; vor einer Ablation ist sie erforderlich. Eine onkozytäre Neoplasie in der Stanzbiopsie ist kein sicherer Gutartigkeitsnachweis: Nach WHO 2022 lässt sich ein Onkozytom auf einer Stanzbiopsie nicht endgültig festlegen, und chromophobe oder andere Nierentumoren bleiben Differenzialdiagnosen. Bei indolentem Befund und geeigneter Gesamtsituation ist eine aktive Überwachung nach gemeinsamer Entscheidung eine Option. Sie umfasst geplante Verlaufskontrollen und Kriterien für einen späteren Eingriff.",
+            "en": "Biopsy is useful here because it can change management, and is required before ablation. An oncocytic neoplasm on core biopsy is not definite proof of benignity: WHO 2022 does not permit a definitive oncocytoma diagnosis on core biopsy, and chromophobe or other renal tumours remain possible. With an indolent finding and suitable overall circumstances, active surveillance is an option after shared decision-making, with planned follow-up and criteria for later intervention.",
+            "es": "La biopsia es útil porque puede cambiar la conducta y es necesaria antes de la ablación. Una neoplasia oncocítica en biopsia no demuestra benignidad: la OMS 2022 no permite un diagnóstico definitivo de oncocitoma en cilindros, y siguen siendo posibles tumores cromófobos u otros. Con hallazgos indolentes y una situación global adecuada puede elegirse vigilancia activa, con controles planificados y criterios de intervención posterior."
+          }
+        },
+        {
+          "path": "takeaway",
+          "from": {
+            "en": "99mTc-sestamibi uptake in an indeterminate small renal mass suggests an oncocytoma or hybrid oncocytic tumour, but the evidence is still limited and some RCCs also take up the tracer. Confirm with core biopsy; only a biopsy-proven oncocytic tumour qualifies for active surveillance as an alternative to surgery or ablation (EAU, weak recommendation).",
+            "de": "Merksatz: Eine 99mTc-Sestamibi-Aufnahme einer unklaren kleinen Nierenraumforderung spricht für ein Onkozytom oder einen hybriden onkozytären Tumor, die Evidenz ist aber noch begrenzt, und manche NZK nehmen den Tracer ebenfalls auf. Daher bioptisch sichern; erst ein bioptisch gesicherter onkozytärer Tumor eignet sich für die aktive Überwachung als Alternative zu Operation oder Ablation (EAU, schwache Empfehlung).",
+            "es": "Regla: la captación de 99mTc-sestamibi en una masa renal pequeña indeterminada sugiere un oncocitoma o un tumor oncocítico híbrido, pero la evidencia aún es limitada y algunos CCR también captan el trazador. Confírmalo con biopsia; solo un tumor oncocítico confirmado por biopsia es candidato a vigilancia activa como alternativa a la cirugía o la ablación (EAU, recomendación débil)."
+          },
+          "to": {
+            "de": "Sestamibi ist bei kleinen Nierenraumforderungen ein ergänzendes Verfahren mit noch begrenzter Evidenz, kein Gutartigkeitsbeweis. Wenn Histologie das Vorgehen verändert, kann eine Stanzbiopsie die Risikoeinordnung unterstützen; vor Ablation ist sie erforderlich. Ein onkozytärer Biopsiebefund ist nicht gleichbedeutend mit sicherem Onkozytom. Aktive Überwachung richtet sich nach Tumorrisiko, Begleiterkrankungen, Lebenserwartung und gemeinsamem Patientenentscheid, nicht allein nach Traceraufnahme.",
+            "en": "Sestamibi is an adjunct with limited evidence in small renal masses, not proof of benignity. Core biopsy can support risk assessment when histology changes management, and is required before ablation. An oncocytic biopsy finding is not a definitive oncocytoma diagnosis. Surveillance depends on tumour risk, comorbidity, life expectancy and shared preferences, rather than uptake alone.",
+            "es": "El sestamibi es una prueba complementaria con evidencia limitada, no una prueba de benignidad. La biopsia ayuda a valorar el riesgo si modifica la conducta y es necesaria antes de la ablación. Un hallazgo oncocítico no equivale a un diagnóstico definitivo de oncocitoma. La vigilancia depende del riesgo tumoral, comorbilidades, esperanza de vida y decisión compartida, no solo de la captación."
+          }
+        }
+      ]
+    },
+    {
+      "case": "q-pca-baseline-psa-intermediate-interval",
+      "kind": "medical",
+      "date": "2026-10-11",
+      "reason": {
+        "de": "Die Leitlinienversion und konkrete Empfehlung werden für die Intervallfrage ausdrücklich benannt.",
+        "en": "The guideline version and specific recommendation are stated for the screening-interval question.",
+        "es": "Se identifica la versión y la recomendación concreta de la guía para la pregunta sobre el intervalo."
+      },
+      "references": [
+        "s3-prostate-8-1-2026"
+      ],
+      "changes": [
+        {
+          "path": "steps.0.prompt",
+          "from": {
+            "en": "Which follow-up does the German S3 guideline recommend?",
+            "de": "Welches weitere Vorgehen empfiehlt die S3-Leitlinie?",
+            "es": "¿Qué seguimiento recomienda la guía alemana S3?"
+          },
+          "to": {
+            "de": "Welches Kontrollintervall empfiehlt die deutsche S3-Leitlinie Version 8.1, Empfehlung 4.4, für diesen Basis-PSA?",
+            "en": "What follow-up interval does German S3 guideline version 8.1, recommendation 4.4, specify for this baseline PSA?",
+            "es": "¿Qué intervalo de control indica la guía alemana S3 versión 8.1, recomendación 4.4, para este PSA basal?"
+          }
+        }
+      ]
     }
   ]
 }

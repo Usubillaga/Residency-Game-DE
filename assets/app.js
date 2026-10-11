@@ -9,7 +9,10 @@
   const SAVE_FORMAT='night-shift-academy-save',SAVE_LIMIT=5000000;
   const A=window.NSAArt;
   const comedy=()=>window.NSABanter[state.lang];
-  const getCase = id=>C.cases.find(c=>c.id===id);
+  const HISTORY_CASES=Array.isArray(C.historyCases)?C.historyCases:[];
+  const QUESTION_COUNT=C.cases.reduce((n,c)=>n+c.steps.length,0);
+  const getCase = id=>C.cases.find(c=>c.id===id)||HISTORY_CASES.find(c=>c.id===id);
+  const topicKey=c=>c.subject||c.source?.domain||'story';
   const getArea = id=>C.areas.find(a=>a.id===id);
   // Stickers are derived from the logbook and a few game counters; the icons are language-neutral.
   const BADGE_ICONS={firstCase:'📋',firstShift:'🌅',streak5:'📟',streak10:'🚀',perfectShift:'📘',bossPerfect:'🎓',coffee5:'☕',allAreas:'🗺️',comeback:'🔁',joker10:'🤝',specialist:'🔬',cases50:'🦉',nightOwl:'🌙',anatomist:'🦴'};
@@ -31,7 +34,7 @@
   } catch (_) { /* In-memory play stays available when browser storage is blocked. */ }
   let view=['intro','library','atlas','protocols','progress','sources','play','report'].includes(location.hash.slice(1))?location.hash.slice(1):'intro';
   let areaFilter='all',topicFilter='all',dutyFilter='all',pendingDuty='night',libraryPage=0,query='',savedOnly=false,pendingIds=null,customSchedule=null,dialogSequence=0,pendingSave=null,protocolEntity=null,protocolKind='systemic',protocolAll=false;
-  const t = key => {const value=typeof comedy()[key]==='string'?comedy()[key]:(strings[state.lang][key] || strings.en[key] || key);return value.replaceAll('{cases}',String(C.cases.length)).replaceAll('{areas}',String(C.areas.length));};
+  const t = key => {const value=typeof comedy()[key]==='string'?comedy()[key]:(strings[state.lang][key] || strings.en[key] || key);return value.replaceAll('{questions}',String(QUESTION_COUNT)).replaceAll('{cases}',String(C.cases.length)).replaceAll('{areas}',String(C.areas.length));};
   const loc = value => value[state.lang];
   const pct = r=>Math.round(r.score/r.maxScore*100);
   const nowSeed=()=>new Date().toLocaleDateString('sv-SE')+'-'+Date.now();
@@ -101,7 +104,7 @@
       name:typeof s.name==='string'?Array.from(s.name).slice(0,32).join(''):'',
       avatar:Number.isInteger(s.avatar)&&s.avatar>=0&&s.avatar<3?s.avatar:0,
       sound:s.sound===true,
-      bookmarks:Array.isArray(s.bookmarks)?[...new Set(s.bookmarks.filter(id=>typeof id==='string'&&C.cases.some(c=>c.id===id)))]:[],
+      bookmarks:Array.isArray(s.bookmarks)?[...new Set(s.bookmarks.filter(id=>typeof id==='string'&&!!getCase(id)))]:[],
       history:Array.isArray(s.history)?s.history.filter(validRecord).map(cleanRecord).slice(-1000):[],
       session:E.validSession(s.session,C)?cleanSession(s.session):null,
       stats:cleanStats(s.stats),
@@ -252,7 +255,7 @@
   }
   function missedCases() {
     const last=new Map();for(const r of state.history)last.set(r.caseId,r);
-    return [...last.values()].filter(r=>r.score<r.maxScore).sort((a,b)=>Date.parse(b.completedAt)-Date.parse(a.completedAt)).map(r=>r.caseId);
+    return [...last.values()].filter(r=>!getCase(r.caseId).archived&&r.score<r.maxScore).sort((a,b)=>Date.parse(b.completedAt)-Date.parse(a.completedAt)).map(r=>r.caseId);
   }
   function pickCases(pool,size,salt,missedFirst) {
     // Unplayed and imperfect cases come first; ties keep a fresh random order.
@@ -261,7 +264,7 @@
   }
   function topicGroups() {
     const groups=new Map();
-    for(const c of C.cases){const key=c.source?c.source.domain:'story';if(!groups.has(key))groups.set(key,{key,label:c.source?loc(c.topic):t('storyTopic'),cases:[]});groups.get(key).cases.push(c);}
+    for(const c of C.cases){const key=topicKey(c);if(!groups.has(key))groups.set(key,{key,label:c.topic?loc(c.topic):t('storyTopic'),cases:[]});groups.get(key).cases.push(c);}
     return [...groups.values()];
   }
   function persist() {
@@ -291,7 +294,7 @@
 
   function intro() {
     const has=!!state.session;
-    return '<section class="hero comic-intro"><div><p class="eyebrow">'+esc(t('eyebrow'))+'</p><h1>'+t('hero')+'</h1><p class="lede">'+esc(t('lede'))+'</p><div class="actions"><button class="btn primary" data-action="'+(has?'resume':'setup')+'">'+esc(t(has?'resume':'start'))+' <span class="arrow">▶</span></button><button class="btn blitz-button" data-action="blitz" title="'+esc(t('blitzText'))+'">⚡ '+esc(t('blitz'))+'</button><button class="btn quiet" data-view="library">'+esc(t('explore'))+' →</button></div>'+(state.history.length?'<button class="rank-chip" data-view="progress">🎖️ '+esc(rankName())+' · '+xp()+' '+esc(t('xpLabel'))+' · '+state.badges.length+' 🏅</button>':'')+'<p class="offline">'+esc(t('offline'))+'</p></div>'+hospital()+'</section><div class="stats-band">'+[[C.cases.length,'cases'],[C.areas.length,'areas'],[3,'languages']].map(([n,k])=>'<div class="stat"><strong>'+n+'</strong><span>'+esc(t(k))+'</span></div>').join('')+'</div>'+castStrip()+dutyCards()+'<section class="section"><div class="section-head"><div><h2>'+esc(t('map'))+'</h2><p>'+esc(t('mapSub'))+'</p></div></div><div class="area-grid">'+C.areas.map(a=>'<button class="area-card" data-area="'+a.id+'" aria-label="'+esc(loc(a.title))+': '+esc(t('mapHint'))+'"><span class="area-cartoon" aria-hidden="true">'+A.areaIcon(a.id)+'</span><h3>'+esc(loc(a.title))+'</h3><p>'+esc(loc(a.description))+'</p><footer><span>'+C.cases.filter(c=>c.area===a.id).length+' '+esc(t('cases'))+'</span><span>▶</span></footer></button>').join('')+'</div></section><section class="intro-bottom"><div><h2>'+esc(t('how'))+'</h2><p class="muted" style="font-size:.83rem;margin-top:12px">'+esc(t('howSub'))+'</p><div class="how-steps">'+[1,2,3].map(n=>'<div class="how-step"><span class="step-number">0'+n+'</span><div><h3>'+esc(t('how'+n))+'</h3><p>'+esc(t('how'+n+'Text'))+'</p></div></div>').join('')+'</div></div><div class="mode-card"><h2>'+esc(t('mode'))+'</h2>'+['learn','shift'].map(k=>'<div class="mode-detail"><h3>'+esc(t(k))+'</h3><p>'+esc(t(k+'Text'))+'</p></div>').join('')+'<div class="actions" style="margin-top:24px"><button class="btn small" data-action="setup">'+esc(t('start'))+' ▶</button></div></div></section><section class="classic-bar"><div><h3>'+esc(t('classic'))+'</h3><p>'+esc(t('classicText'))+'</p></div><a class="btn quiet" href="classic/'+({en:'urology-night-shift.html',de:'nachtdienst-urologie.html',es:'guardia-urologia.html'}[state.lang])+'" target="_blank" rel="noopener">'+esc(t('openClassic'))+' ↗</a></section>';
+    return '<section class="hero comic-intro"><div><p class="eyebrow">'+esc(t('eyebrow'))+'</p><h1>'+t('hero')+'</h1><p class="lede">'+esc(t('lede'))+'</p><div class="actions"><button class="btn primary" data-action="'+(has?'resume':'setup')+'">'+esc(t(has?'resume':'start'))+' <span class="arrow">▶</span></button><button class="btn blitz-button" data-action="blitz" title="'+esc(t('blitzText'))+'">⚡ '+esc(t('blitz'))+'</button><button class="btn quiet" data-view="library">'+esc(t('explore'))+' →</button></div>'+(state.history.length?'<button class="rank-chip" data-view="progress">🎖️ '+esc(rankName())+' · '+xp()+' '+esc(t('xpLabel'))+' · '+state.badges.length+' 🏅</button>':'')+'<p class="offline">'+esc(t('offline'))+'</p></div>'+hospital()+'</section><div class="stats-band">'+[[QUESTION_COUNT,'questions'],[C.areas.length,'areas'],[3,'languages']].map(([n,k])=>'<div class="stat"><strong>'+n+'</strong><span>'+esc(t(k))+'</span></div>').join('')+'</div>'+castStrip()+dutyCards()+'<section class="section"><div class="section-head"><div><h2>'+esc(t('map'))+'</h2><p>'+esc(t('mapSub'))+'</p></div></div><div class="area-grid">'+C.areas.map(a=>'<button class="area-card" data-area="'+a.id+'" aria-label="'+esc(loc(a.title))+': '+esc(t('mapHint'))+'"><span class="area-cartoon" aria-hidden="true">'+A.areaIcon(a.id)+'</span><h3>'+esc(loc(a.title))+'</h3><p>'+esc(loc(a.description))+'</p><footer><span>'+C.cases.filter(c=>c.area===a.id).length+' '+esc(t('cases'))+'</span><span>▶</span></footer></button>').join('')+'</div></section><section class="intro-bottom"><div><h2>'+esc(t('how'))+'</h2><p class="muted" style="font-size:.83rem;margin-top:12px">'+esc(t('howSub'))+'</p><div class="how-steps">'+[1,2,3].map(n=>'<div class="how-step"><span class="step-number">0'+n+'</span><div><h3>'+esc(t('how'+n))+'</h3><p>'+esc(t('how'+n+'Text'))+'</p></div></div>').join('')+'</div></div><div class="mode-card"><h2>'+esc(t('mode'))+'</h2>'+['learn','shift'].map(k=>'<div class="mode-detail"><h3>'+esc(t(k))+'</h3><p>'+esc(t(k+'Text'))+'</p></div>').join('')+'<div class="actions" style="margin-top:24px"><button class="btn small" data-action="setup">'+esc(t('start'))+' ▶</button></div></div></section><section class="classic-bar"><div><h3>'+esc(t('classic'))+'</h3><p>'+esc(t('classicText'))+'</p></div><a class="btn quiet" href="classic/'+({en:'urology-night-shift.html',de:'nachtdienst-urologie.html',es:'guardia-urologia.html'}[state.lang])+'" target="_blank" rel="noopener">'+esc(t('openClassic'))+' ↗</a></section>';
   }
 
   function dutyCards() {
@@ -299,14 +302,14 @@
   }
   function caseCard(c) {
     const attempts=state.history.filter(h=>h.caseId===c.id),best=attempts.length?Math.max(...attempts.map(pct)):null;
-    return '<article class="case-card"><div class="case-cartoon-portrait">'+casePortrait(c,'neutral',76)+'</div><div class="case-meta"><span>'+esc(loc(getArea(c.area).title))+'</span>'+badge(c.acuity)+'</div><h3>'+esc(loc(c.title))+'</h3><div class="case-duty duty-'+dutyOf(c)+'">'+esc(dutyName(dutyOf(c)))+'</div>'+caseOriginBadge(c)+'<p>'+esc(loc(c.presenting))+'</p><div class="case-meta"><span>'+esc(patientLabel(c))+'</span><span>'+esc(t('level'))+' '+c.level+'</span></div><div class="case-meta"><span>'+(best===null?esc(t('notPlayed')):esc(t('best'))+' '+best+'%')+'</span></div><div class="card-footer"><button class="btn small" data-practice="'+c.id+'">'+esc(t('practice'))+' →</button>'+bookmark(c.id)+'</div></article>';
+    return '<article class="case-card"><div class="case-cartoon-portrait">'+casePortrait(c,'neutral',76)+'</div><div class="case-meta"><span>'+esc(loc(getArea(c.area).title))+'</span>'+badge(c.acuity)+'</div><h3>'+esc(loc(c.title))+'</h3><div class="case-duty duty-'+dutyOf(c)+'">'+esc(dutyName(dutyOf(c)))+'</div>'+caseOriginBadge(c)+'<p>'+esc(loc(c.presenting))+'</p><div class="case-meta"><span>'+esc(patientLabel(c))+'</span><span>'+esc(t('level'))+' '+c.level+'</span></div><div class="case-meta"><span>'+(best===null?esc(t('notPlayed')):esc(t('best'))+' '+best+'%')+'</span></div><div class="card-footer">'+(c.archived?'<span class="badge routine">'+esc(t('archivedQuestion'))+'</span>':'<button class="btn small" data-practice="'+c.id+'">'+esc(t('practice'))+' →</button>')+bookmark(c.id)+'</div></article>';
   }
   function filteredCases() {
     const q=query.toLocaleLowerCase(state.lang).trim();
-    return C.cases.filter(c=>(areaFilter==='all'||c.area===areaFilter)&&(dutyFilter==='all'||dutyOf(c)===dutyFilter)&&(topicFilter==='all'||c.source?.domain===topicFilter)&&(!savedOnly||state.bookmarks.includes(c.id))&&(!q||[loc(c.title),loc(c.presenting),c.patient.name,patientName(c),c.id,c.source?.questionId||'',c.topic?loc(c.topic):''].some(x=>x.toLocaleLowerCase(state.lang).includes(q))));
+    return C.cases.filter(c=>(areaFilter==='all'||c.area===areaFilter)&&(dutyFilter==='all'||dutyOf(c)===dutyFilter)&&(topicFilter==='all'||topicKey(c)===topicFilter)&&(!savedOnly||state.bookmarks.includes(c.id))&&(!q||[loc(c.title),loc(c.presenting),c.patient.name,patientName(c),c.id,c.source?.questionId||'',c.topic?loc(c.topic):''].some(x=>x.toLocaleLowerCase(state.lang).includes(q))));
   }
   function library() {
-    const topics=[...new Map(C.cases.filter(c=>c.source&&c.topic).map(c=>[c.source.domain,c.topic])).entries()].sort((a,b)=>loc(a[1]).localeCompare(loc(b[1]),state.lang));
+    const topics=[...new Map(C.cases.filter(c=>c.topic).map(c=>[topicKey(c),c.topic])).entries()].sort((a,b)=>loc(a[1]).localeCompare(loc(b[1]),state.lang));
     return '<div class="page-head"><p class="eyebrow">02 / '+esc(t('mark'))+'</p><h1>'+esc(t('library'))+'</h1><p>'+esc(t('schematic'))+'</p></div><div class="toolbar"><input class="search" id="case-search" type="search" value="'+esc(query)+'" placeholder="'+esc(t('search'))+'" aria-label="'+esc(t('search'))+'"><label class="topic-select"><span>'+esc(t('dutyLabel'))+'</span><select id="duty-filter" aria-label="'+esc(t('dutyLabel'))+'">'+['all',...PLAYABLE].map(d=>'<option value="'+d+'" '+(dutyFilter===d?'selected':'')+'>'+esc(d==='all'?t('allDuties'):dutyName(d))+'</option>').join('')+'</select></label><label class="topic-select"><span>'+esc(t('topic'))+'</span><select id="topic-filter" aria-label="'+esc(t('topic'))+'"><option value="all">'+esc(t('allTopics'))+'</option>'+topics.map(([id,label])=>'<option value="'+esc(id)+'" '+(topicFilter===id?'selected':'')+'>'+esc(loc(label))+'</option>').join('')+'</select></label><button class="btn small quiet" data-action="saved-only" aria-pressed="'+savedOnly+'">'+esc(t(savedOnly?'showAll':'viewSaved'))+'</button></div><div class="chips" role="group" aria-label="'+esc(t('filter'))+'">'+[{id:'all',title:{en:t('all'),de:t('all'),es:t('all')}},...C.areas].map(a=>'<button class="chip '+(a.id===areaFilter?'active':'')+'" data-filter="'+a.id+'" aria-pressed="'+(a.id===areaFilter)+'">'+esc(loc(a.title))+'</button>').join('')+'</div><div id="case-results">'+libraryResults()+'</div>';
   }
   function libraryResults() {
@@ -322,7 +325,7 @@
     return '<aside class="update-note"><b>↻ '+esc(t('updatedBadge').replace('{date}',c.update.date))+'</b> '+esc(loc(c.update.reason))+(refs.length?'<br><span>'+esc(t('updatedSources'))+': '+refs.map(r=>'<a href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">'+esc(r.title)+' ↗</a>').join(' · ')+'</span>':'')+'</aside>';
   }
   function caseOriginBadge(c) {
-    if(!c.source)return '<div class="case-format">'+esc(t('storyCase'))+updatedBadge(c)+'</div>';
+    if(!c.source)return '<div class="case-format">'+esc(t(c.subject==='anatomy'?'anatomyQuestion':c.steps.length===1?'singleQuestion':'storyCase'))+updatedBadge(c)+'</div>';
     return '<div class="case-format">'+esc(loc(c.topic))+' · '+esc(t('bankCase'))+(c.source.status==='draft'?' <span class="badge urgent">'+esc(t('sourceDraft'))+'</span>':'')+(c.source.evidenceFlag?' <span class="badge urgent">'+esc(t('sourceEvidenceFlag'))+'</span>':'')+updatedBadge(c)+'</div>';
   }
   function vitalPanel(c) {
@@ -478,18 +481,16 @@
     else {
       const s=c.steps[p.index];
       body='<section class="story"><span class="label">'+esc(t('story'))+'</span><p>'+esc(loc(c.presenting))+'</p></section>'+vitalPanel(c);
-      if(state.session.mode==='learn')body+='<aside class="goals"><span class="label">'+esc(t('goals'))+'</span><ul>'+loc(c.objectives).map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul></aside>';
       body+='<section class="decision-panel"><div class="step-track" aria-hidden="true">'+c.steps.map((_,i)=>'<span class="'+(i<p.index?'past':i===p.index?'now':'')+'"></span>').join('')+'</div><div class="step-meta"><span>'+esc(t(c.source?'sourceQuestion':s.kind))+'</span><span>'+esc(t('decision'))+' '+(p.index+1)+' / '+c.steps.length+'</span></div><h3 id="decision-prompt">'+esc(loc(s.prompt))+'</h3><div class="options" role="group" aria-labelledby="decision-prompt">'+p.order[p.index].map((id,i)=>optionButton(s,o=>o.id===id,p,i)).join('')+'</div>';
       if(p.feedback){const o=s.options.find(o=>o.id===p.feedback),cls=o.score===10?'good':o.score>0||c.source?'partial':'unsafe';
         const streak=cls==='good'&&state.session.streakAt===p.id+':'+p.index?state.session.streak:0;
         body+=(o.critical?attendingWarning(c,s,p.id+':'+p.index):characterComment(cls,p.id,p.index,streak,!!c.source))+'<div class="feedback '+cls+'" role="status"><span class="label">'+esc(t('feedback'))+'</span><h3>'+esc(t(c.source&&o.score!==10?'sourceIncorrect':cls))+(o.critical?' · '+esc(t('safety')):'')+'</h3><p>'+esc(loc(o.feedback))+'</p>'+preferredAnswer(s,o.id)+(p.index===c.steps.length-1?caseVisuals(c):'')+optionsExplained(s,p.order[p.index],o.id)+'<div class="actions"><button class="btn primary" data-action="next">'+esc(t(p.index===c.steps.length-1?'finishCase':'next'))+' →</button></div></div>';
       } else {
         body+='<p class="keys-hint">⌨️ '+esc(t('keysHint'))+'</p>';
-        if(state.session.mode==='learn')body+='<details class="hint-box"><summary>'+esc(t('hint'))+'</summary><p>'+esc(t('hintText'))+'</p></details>';
       }
       body+='</section>';
     }
-    return '<article class="chart"><div class="chart-top"><span>'+esc(loc(a.title))+' / '+esc(t(p.finished?'debrief':'open'))+'</span><span class="mono">'+esc(c.id.toUpperCase())+'</span></div><div class="chart-body"><div class="patient-head"><div class="patient-identity"><div class="patient-cartoon" aria-hidden="true">'+casePortrait(c,p.finished?'relieved':c.acuity==='critical'?'worried':'neutral',100)+'</div><div class="patient-name"><h2>'+esc(patientName(c))+' <span class="muted">'+(c.patient.age===null?'':c.patient.age)+'</span></h2><p>'+esc(loc(c.title))+'</p></div></div>'+bookmark(c.id)+'</div>'+sourceOrigin(c)+updateNote(c)+body+'</div></article>';
+    return '<article class="chart"><div class="chart-top"><span>'+esc(loc(a.title))+' / '+esc(t(p.finished?'debrief':'open'))+'</span><span class="mono">'+esc(c.id.toUpperCase())+'</span></div><div class="chart-body"><div class="patient-head"><div class="patient-identity"><div class="patient-cartoon" aria-hidden="true">'+casePortrait(c,p.finished?'relieved':c.acuity==='critical'?'worried':'neutral',100)+'</div><div class="patient-name"><h2>'+esc(patientName(c))+' <span class="muted">'+(c.patient.age===null?'':c.patient.age)+'</span></h2><p>'+esc(loc(c.title))+'</p></div></div>'+bookmark(c.id)+'</div>'+(p.finished||(p.feedback&&p.index===c.steps.length-1)?sourceOrigin(c)+updateNote(c):caseOriginBadge(c))+body+'</div></article>';
   }
   function debrief(p,c) {
     const max=c.steps.reduce((n,s)=>n+Math.max(...s.options.map(o=>o.score)),0);
@@ -550,6 +551,7 @@
     return '<fieldset class="duty-field"><legend class="field">'+esc(t('dutyPick'))+'</legend><div class="duty-choices">'+PLAYABLE.map(d=>'<label class="duty-choice duty-'+d+'"><input type="radio" name="duty" value="'+d+'" '+(d===pendingDuty?'checked':'')+'><span class="duty-icon" aria-hidden="true">'+DUTY_ICON[d]+'</span><b>'+esc(t('duty_'+d))+'</b><small>'+esc(t('dutyTime_'+d))+' · '+esc(t('dutyCount').replace('{n}',String(C.cases.filter(c=>dutyOf(c)===d).length)))+'</small><span>'+esc(t('dutyText_'+d))+'</span></label>').join('')+'</div></fieldset>';
   }
   function setup(ids=null,duty=null) {
+    if(ids){ids=[...new Set(ids)].filter(id=>C.cases.some(c=>c.id===id));if(!ids.length)return;}
     pendingIds=ids;customSchedule=null;pendingDuty=PLAYABLE.includes(duty)?duty:PLAYABLE.includes(state.lastDuty)?state.lastDuty:PLAYABLE[0];
     openDialog('<form id="setup-form"><p class="eyebrow">'+esc(t('briefing'))+'</p><h2>'+esc(t('briefingTitle'))+'</h2><p>'+esc(t(ids?'learnText':'setupText'))+'</p>'+(state.session&&!state.session.finished?'<p class="warning-note">'+esc(t('newSession'))+'</p>':'')+avatarChoices()+'<label class="field" for="player-name">'+esc(t('player'))+'</label><input class="text-input" id="player-name" maxlength="32" autocomplete="nickname" value="'+esc(state.name)+'" placeholder="'+esc(t('namePlaceholder'))+'">'+(ids?'':dutyChoices())+'<fieldset style="border:0;margin:0;padding:0"><legend class="field">'+esc(t('modeLabel'))+'</legend><div class="radio-grid">'+(ids?['learn']:['learn','shift']).map(k=>'<label class="radio-card"><input type="radio" name="mode" value="'+k+'" '+(k===(ids?'learn':'shift')?'checked':'')+'>'+esc(t(k))+'</label>').join('')+'</div></fieldset>'+(ids?'':'<div style="margin-top:20px"><label class="file-label" for="schedule-file">'+esc(t('importSchedule'))+' ↑</label><input type="file" id="schedule-file" accept="application/json,.json" hidden><p class="small-note" id="schedule-status">'+esc(t('scheduleHelp'))+'</p></div>')+'<p class="small-note">'+esc(t('clockNote'))+'</p><div class="actions"><button class="btn primary" type="submit">'+esc(t('begin'))+' →</button><button class="btn quiet" type="button" data-action="close-dialog">'+esc(t('cancel'))+'</button></div></form>');
   }
@@ -712,7 +714,7 @@
     if(!p||session.finished){const role=session?.duty==='radiotherapy'?'radiotherapist':'attending';talk(role,quip(role==='radiotherapist'?'radioIdle':'attendingIdle',session?.seed||'idle'));return;}
     const c=getCase(p.id),index=Math.min(p.index,c.steps.length-1),key=p.id+':'+index,step=c.steps[index];
     const role=consultantOf(c),radio=role==='radiotherapist';
-    const hint=step.hint?loc(step.hint):loc(c.objectives)[0];
+    const hint=step.hint?loc(step.hint):t('noWrittenHint');
     if(p.finished||p.feedback){talk(role,quip(radio?'radioAfter':'attendingAfter',key)+'\n\n💡 '+hint);return;}
     session.called=session.called&&typeof session.called==='object'?session.called:{};
     if(!session.called[key]){
@@ -731,17 +733,17 @@
     // The nurse's joker crosses out one of the weakest wrong answers. It costs game time, never points.
     const session=state.session,p=session?.patients.find(p=>p.id===session.selected);
     if(!p){talk('nurse',comedy().castWelcome);return;}
-    const c=getCase(p.id),goals=c.source?'':'\n\n'+loc(c.objectives).map(goal=>'• '+goal).join('\n'),key=p.id+':'+p.index;
-    if(session.finished||p.finished||p.feedback){talk('nurse',quip('hint',key)+goals);return;}
+    const c=getCase(p.id),key=p.id+':'+p.index;
+    if(session.finished||p.finished||p.feedback){talk('nurse',quip('hint',key));return;}
     session.struck=session.struck&&typeof session.struck==='object'?session.struck:{};
-    if(session.struck[key]){talk('nurse',comedy().strikeUsed+goals);return;}
+    if(session.struck[key]){talk('nurse',comedy().strikeUsed);return;}
     const step=c.steps[p.index],wrong=step.options.filter(o=>o.id!==step.best),lowest=Math.min(...wrong.map(o=>o.score));
     const pool=wrong.filter(o=>o.score===lowest),pick=pool[Math.floor(E.random(session.seed+'-joker-'+key)()*pool.length)];
-    if(!pick){talk('nurse',quip('hint',key)+goals);return;}
+    if(!pick){talk('nurse',quip('hint',key));return;}
     session.struck[key]=pick.id;session.clock+=5;session.jokers=(Number.isInteger(session.jokers)?session.jokers:0)+1;
     if(state.stats)state.stats.jokers++;
     persist();render();
-    talk('nurse',quip('strike',key)+'\n\n'+t('jokerNote')+goals);
+    talk('nurse',quip('strike',key)+'\n\n'+t('jokerNote'));
   }
   function chiefResult(session,records) {
     const max=records.reduce((n,r)=>n+r.maxScore,0),sum=records.reduce((n,r)=>n+r.score,0),score=max?sum/max*100:0;

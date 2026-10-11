@@ -1,18 +1,4 @@
 {
-  "and-pri-high-flow-after-perineal-trauma": {
-    "schema": "male-urethra-penis",
-    "parts": [
-      "corpora-cavernosa"
-    ]
-  },
-  "and-pri-ischaemic-refractory-distal-shunt": {
-    "schema": "male-urethra-penis",
-    "parts": [
-      "corpora-cavernosa",
-      "glans-penis",
-      "tunica-albuginea"
-    ]
-  },
   "bank-uro-and-00001": {
     "schema": "hpg-axis",
     "parts": [
@@ -937,14 +923,6 @@
       "penile-urethra"
     ]
   },
-  "fun-inc-aus-after-salvage-radiotherapy": {
-    "schema": "male-urethra-penis",
-    "parts": [
-      "bulbar-urethra",
-      "corpus-spongiosum",
-      "external-sphincter"
-    ]
-  },
   "fun-inc-aus-catheter-deactivate-cuff": {
     "schema": "male-urethra-penis",
     "parts": [
@@ -952,97 +930,11 @@
       "corpus-spongiosum"
     ]
   },
-  "fun-inc-aus-cuff-erosion-explant": {
-    "schema": "male-urethra-penis",
-    "parts": [
-      "bulbar-urethra",
-      "corpus-spongiosum"
-    ]
-  },
-  "fun-inc-band-retention-lockerung": {
-    "schema": "female-pelvis",
-    "parts": [
-      "urethra",
-      "pubourethral-support",
-      "vagina"
-    ]
-  },
-  "fun-inc-band-vaginale-exposition": {
-    "schema": "female-pelvis",
-    "parts": [
-      "vagina",
-      "pubourethral-support",
-      "urethra"
-    ]
-  },
-  "fun-inc-bulking-agent-counselling": {
-    "schema": "female-pelvis",
-    "parts": [
-      "urethra",
-      "bladder-neck"
-    ]
-  },
-  "fun-inc-duloxetine-counselling": {
-    "schema": "micturition-control",
-    "parts": [
-      "onuf-nucleus",
-      "pudendal-nerve",
-      "external-sphincter"
-    ]
-  },
-  "fun-inc-mixed-urgency-predominant": {
-    "schema": "micturition-control",
-    "parts": [
-      "detrusor",
-      "prefrontal-cortex"
-    ]
-  },
-  "fun-inc-mus-tvt-tot-aufklaerung": {
-    "schema": "female-pelvis",
-    "parts": [
-      "pubourethral-support",
-      "urethra",
-      "bladder",
-      "symphysis"
-    ]
-  },
-  "fun-inc-pessary-family-planning": {
-    "schema": "female-pelvis",
-    "parts": [
-      "vagina",
-      "bladder-neck",
-      "urethra"
-    ]
-  },
   "fun-inc-pfmt-supervised-after-app": {
     "schema": "female-pelvis",
     "parts": [
       "levator-ani",
       "bladder-neck",
-      "urethra"
-    ]
-  },
-  "fun-inc-ppi-early-conservative": {
-    "schema": "male-urethra-penis",
-    "parts": [
-      "external-sphincter",
-      "membranous-urethra"
-    ]
-  },
-  "fun-inc-refractory-oab-tibial-stimulation": {
-    "schema": "micturition-control",
-    "parts": [
-      "detrusor",
-      "sacral-parasympathetic-nucleus",
-      "pelvic-nerve"
-    ]
-  },
-  "fun-inc-rezidiv-ohne-netz": {
-    "schema": "female-pelvis",
-    "parts": [
-      "bladder-neck",
-      "pubourethral-support",
-      "symphysis",
       "urethra"
     ]
   },
@@ -1179,6 +1071,373 @@
     "parts": [
       "ureteroileal-anastomoses-conduit",
       "bowel-anastomosis"
+    ]
+  },
+  "anat-renal-hilum-order": {
+    "schema": "kidney-section",
+    "parts": [
+      "renal-vein",
+      "renal-artery",
+      "renal-pelvis"
+    ]
+  },
+  "anat-right-renal-artery-ivc": {
+    "schema": "kidney-section",
+    "parts": [
+      "renal-artery",
+      "ivc"
+    ]
+  },
+  "anat-left-renal-vein-nutcracker": {
+    "schema": "retroperitoneum-nodes",
+    "parts": [
+      "aorta",
+      "left-renal-vein"
+    ]
+  },
+  "anat-renal-envelopes": {
+    "schema": "kidney-section",
+    "parts": [
+      "perirenal-fat",
+      "gerota-fascia"
+    ]
+  },
+  "anat-renal-segmental-end-arteries": {
+    "schema": "kidney-section",
+    "parts": [
+      "renal-artery"
+    ]
+  },
+  "anat-pcnl-posterior-calyx": {
+    "schema": "upper-tract-drainage",
+    "parts": [
+      "calyces",
+      "nephrostomy",
+      "rib-12"
+    ]
+  },
+  "anat-renal-papilla-drainage": {
+    "schema": "kidney-section",
+    "parts": [
+      "calyces",
+      "medulla",
+      "renal-pelvis"
+    ]
+  },
+  "anat-renal-corpuscles-cortex": {
+    "schema": "kidney-section",
+    "parts": [
+      "cortex",
+      "medulla",
+      "renal-pelvis"
+    ]
+  },
+  "anat-horseshoe-kidney-ascent": {
+    "schema": "urinary-tract-overview",
+    "parts": [
+      "aorta",
+      "right-kidney",
+      "left-kidney"
+    ]
+  },
+  "anat-renal-posterior-rib-pleura": {
+    "schema": "upper-tract-drainage",
+    "parts": [
+      "rib-12",
+      "kidney",
+      "nephrostomy"
+    ]
+  },
+  "anat-ureter-uterine-artery": {
+    "schema": "female-pelvis",
+    "parts": [
+      "ureter",
+      "uterine-artery",
+      "cervix"
+    ]
+  },
+  "anat-ureter-vas-deferens": {
+    "schema": "pelvic-sidewall",
+    "parts": [
+      "ureter",
+      "vas-deferens",
+      "bladder"
+    ]
+  },
+  "anat-ureter-adventitial-blood-supply": {
+    "schema": "urinary-tract-overview",
+    "parts": [
+      "ureters"
+    ]
+  },
+  "anat-ureter-intramural-antireflux": {
+    "schema": "vur-grades",
+    "parts": [
+      "vur-grade-1"
+    ]
+  },
+  "anat-ureter-pelvic-brim": {
+    "schema": "pelvic-sidewall",
+    "parts": [
+      "ureter",
+      "common-iliac-artery",
+      "external-iliac-artery"
+    ]
+  },
+  "anat-ureter-psoas-course": {
+    "schema": "pelvic-sidewall",
+    "parts": [
+      "ureter",
+      "psoas-major"
+    ]
+  },
+  "anat-duplex-upper-pole-orifice": {
+    "schema": "urinary-tract-overview",
+    "parts": [
+      "ureters",
+      "bladder"
+    ]
+  },
+  "anat-female-ectopic-ureter-continence": {
+    "schema": "female-pelvis",
+    "parts": [
+      "ureter",
+      "urethra",
+      "vagina"
+    ]
+  },
+  "anat-bladder-trigone-boundaries": {
+    "schema": "urinary-tract-overview",
+    "parts": [
+      "bladder",
+      "ureters",
+      "urethra"
+    ]
+  },
+  "anat-urachus-bladder-apex": {
+    "schema": "urinary-tract-overview",
+    "parts": [
+      "bladder"
+    ]
+  },
+  "anat-retzius-prevesical-space": {
+    "schema": "prostate-sagittal",
+    "parts": [
+      "symphysis",
+      "bladder-neck"
+    ]
+  },
+  "anat-turb-obturator-reflex": {
+    "schema": "pelvic-sidewall",
+    "parts": [
+      "obturator-nerve",
+      "bladder"
+    ]
+  },
+  "anat-bladder-detrusor-staging": {
+    "schema": "bladder-wall-staging",
+    "parts": [
+      "lamina-propria",
+      "muscle-inner",
+      "tumor-t2a"
+    ]
+  },
+  "anat-bladder-dome-intraperitoneal": {
+    "schema": "urinary-tract-overview",
+    "parts": [
+      "bladder"
+    ]
+  },
+  "anat-prostate-bph-transition-zone": {
+    "schema": "prostate-sagittal",
+    "parts": [
+      "transition-zone",
+      "prostatic-urethra"
+    ]
+  },
+  "anat-prostate-cancer-peripheral-zone": {
+    "schema": "prostate-sagittal",
+    "parts": [
+      "peripheral-zone",
+      "transition-zone"
+    ]
+  },
+  "anat-prostate-central-zone-ducts": {
+    "schema": "prostate-sagittal",
+    "parts": [
+      "central-zone",
+      "ejaculatory-duct"
+    ]
+  },
+  "anat-denonvilliers-rectal-plane": {
+    "schema": "prostate-sagittal",
+    "parts": [
+      "denonvilliers",
+      "rectum",
+      "seminal-vesicle"
+    ]
+  },
+  "anat-cavernous-nerves-prostate": {
+    "schema": "prostate-sagittal",
+    "parts": [
+      "peripheral-zone",
+      "rectum"
+    ]
+  },
+  "anat-verumontanum-ejaculatory-ducts": {
+    "schema": "prostate-sagittal",
+    "parts": [
+      "verumontanum",
+      "ejaculatory-duct",
+      "seminal-vesicle"
+    ]
+  },
+  "anat-prostate-apex-rhabdosphincter": {
+    "schema": "prostate-sagittal",
+    "parts": [
+      "external-sphincter",
+      "prostatic-urethra"
+    ]
+  },
+  "anat-spongiosum-urethra": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "corpus-spongiosum",
+      "corpora-cavernosa",
+      "penile-urethra"
+    ]
+  },
+  "anat-penile-fracture-albuginea": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "tunica-albuginea",
+      "corpora-cavernosa"
+    ]
+  },
+  "anat-buck-fascia-covering": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "buck-fascia",
+      "tunica-albuginea",
+      "corpus-spongiosum"
+    ]
+  },
+  "anat-priapism-soft-glans-anatomy": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "corpora-cavernosa",
+      "corpus-spongiosum",
+      "glans-penis"
+    ]
+  },
+  "anat-straddle-bulbar-urethra": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "bulbar-urethra",
+      "membranous-urethra"
+    ]
+  },
+  "anat-pelvic-fracture-posterior-urethra": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "membranous-urethra",
+      "external-sphincter"
+    ]
+  },
+  "anat-cowper-duct-opening": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "membranous-urethra",
+      "bulbar-urethra"
+    ]
+  },
+  "anat-testis-lymph-drainage": {
+    "schema": "retroperitoneum-nodes",
+    "parts": [
+      "para-aortic-nodes",
+      "left-gonadal-vein"
+    ]
+  },
+  "anat-scrotal-skin-lymph": {
+    "schema": "scrotum-testis",
+    "parts": [
+      "scrotal-wall",
+      "testis"
+    ]
+  },
+  "anat-left-gonadal-vein-drainage": {
+    "schema": "retroperitoneum-nodes",
+    "parts": [
+      "left-gonadal-vein",
+      "left-renal-vein"
+    ]
+  },
+  "anat-right-gonadal-vein-drainage": {
+    "schema": "retroperitoneum-nodes",
+    "parts": [
+      "right-gonadal-vein",
+      "ivc"
+    ]
+  },
+  "anat-pampiniform-countercurrent": {
+    "schema": "scrotum-testis",
+    "parts": [
+      "pampiniform-plexus",
+      "testicular-artery"
+    ]
+  },
+  "anat-bell-clapper-torsion": {
+    "schema": "scrotum-testis",
+    "parts": [
+      "tunica-vaginalis",
+      "testis",
+      "spermatic-cord"
+    ]
+  },
+  "anat-epididymal-tail-vas": {
+    "schema": "scrotum-testis",
+    "parts": [
+      "epididymis-head",
+      "epididymis-tail",
+      "vas-deferens"
+    ]
+  },
+  "anat-pelvic-parasympathetic-detrusor": {
+    "schema": "micturition-control",
+    "parts": [
+      "sacral-parasympathetic-nucleus",
+      "pelvic-nerve",
+      "detrusor"
+    ]
+  },
+  "anat-pudendal-external-sphincter": {
+    "schema": "micturition-control",
+    "parts": [
+      "onuf-nucleus",
+      "pudendal-nerve",
+      "external-sphincter"
+    ]
+  },
+  "anat-hypogastric-storage-phase": {
+    "schema": "micturition-control",
+    "parts": [
+      "sympathetic-centre",
+      "hypogastric-nerve",
+      "bladder-neck"
+    ]
+  },
+  "anat-rplnd-sympathetic-emission": {
+    "schema": "retroperitoneum-nodes",
+    "parts": [
+      "sympathetic-trunk",
+      "postganglionic-fibres"
+    ]
+  },
+  "anat-dorsal-penile-nerve": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "glans-penis",
+      "corpora-cavernosa"
     ]
   }
 }

@@ -1,5 +1,19 @@
 # Validation record
 
+## Curated 500-question bank and anatomy — 11 October 2026
+
+This revision contains **500 playable decisions in 402 cases**, including **50 newly authored anatomy questions** in DE/EN/ES. All 267 imported questions and all 50 multi-step stories remain. Seventy-one supplementary single questions are archived with verified historical logbook support. Details, selection and source scope: [FRAGENBANK_500.md](FRAGENBANK_500.md).
+
+- **Content work:** independently worded anatomy questions with individual rationales and 24 specific references; clinical correlations in every anatomy chart and stem (31 surgical contexts, 19 clinical cases); closer distractors in 18 questions; five source-linked clinical refinements (early oral terbutaline, refractory priapism/prosthesis counselling, BRCA2 high-risk biopsy pathway, sestamibi/core-biopsy limitations, explicit S3 PSA interval recommendation). The EU belzutifan label is linked directly. Existing source snapshots and clinical approval metadata are retained, without granting new approval.
+- **No automatic solution cues:** objectives are absent from active and historical browser payloads. The chart, nurse joker and missing-hint fallback do not show objectives. Correction explanations, evidence notes and highlighted case-wide drawings wait until the final decision. Explicit consultant and nurse jokers remain.
+- **Counts and compatibility:** validation enforces the 500-question target, at least 50 anatomy questions, translated clinical correlations and exact normalized duplicates. Archived cases use the same case validation but cannot be selected for new play. Browser-save and Python-analysis tests preserve verified old answers and reject modified scores.
+- **Executed checks:** 54 Python tests, 41 engine tests and 47 cartoon/interface tests passed. The interface tests bootstrap the actual application and verify the 500 counter, 50-case anatomy filter, all main views in EN/DE/ES, and review-only historical bookmarks. This is markup/functionality coverage, not a visual browser test.
+- **Build:** the no-fetch catalog and single-file offline edition were regenerated; all 500 decisions have written optional consultant hints. Fifteen existing schemas link to 198 active cases. Original artwork, dialogue assets, styles and the three classic games are unchanged.
+- **Visual QA limit:** no browser executable is installed in this environment. Installing the Playwright headless browser failed because the download was not a valid ZIP. No new screenshot or pixel-layout verification is claimed.
+- **Medical scope:** source checking is not an independent clinician sign-off. The new anatomy questions have `clinicalSignoffLanguages: []`. The 267 imported questions retain their existing draft/review notices and were not each newly certified against all current guidelines.
+
+The sections below are **historical project records** of earlier versions and workflows. Their counts and reviewer statements do not describe a new clinical approval of this revision.
+
 ## Only current regimens, standards first — 11 October 2026
 
 The user found the protocol page too full: in practice only today's regimens are used, for example durvalumab with gemcitabine/cisplatin in MIBC.

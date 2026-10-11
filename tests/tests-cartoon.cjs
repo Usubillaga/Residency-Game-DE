@@ -58,7 +58,7 @@ function appHarness(session = null, testCatalog = catalog) {
     window: data, C: testCatalog, E, A: data.NSAArt, state,
     document: dom, esc: escape,
     comedy: () => data.NSABanter[state.lang],
-    getCase: id => testCatalog.cases.find(c => c.id === id),
+    getCase: id => testCatalog.cases.find(c => c.id === id) || (testCatalog.historyCases || []).find(c => c.id === id),
     getArea: id => testCatalog.areas.find(a => a.id === id),
     t: key => data.NSABanter[state.lang][key] || data.NSA_TEXT[state.lang][key] || key,
     loc: value => value[state.lang],
@@ -533,7 +533,7 @@ test('calling the attending costs five minutes, gives the decision rule but neve
   for (const id of ids.slice(1, 3)) { session.selected = id; h.api.callAttending(); }
   assert.equal(session.calls, 3);
   const withoutHint = testCatalog.cases.find(c => c.id === ids[1]);
-  assert.ok(h.stats.dialogs.at(-2).includes(escape(withoutHint.objectives.en[0])), 'Without a written hint the case objective is the nudge');
+  assert.ok(h.stats.dialogs.at(-2).includes(escape(data.NSA_TEXT.en.noWrittenHint)), 'Without a written hint no answer-revealing objective is used');
   const beforeBusy = session.clock;
   session.selected = ids[3];
   h.api.callAttending();
@@ -949,7 +949,7 @@ function saveHarness(state) {
   const source = read('app.js');
   const constant = name => { const match = source.match(new RegExp('const ' + name + '=[^\\n]*;')); assert.ok(match, name + ' is declared in app.js'); return match[0]; };
   const section = (from, to) => { const start = source.indexOf(from), end = source.indexOf(to, start); assert.ok(start >= 0 && end > start, from + ' must be present'); return source.slice(start, end); };
-  const context = vm.createContext({ C: catalog, E, state, getCase: id => catalog.cases.find(c => c.id === id) });
+  const context = vm.createContext({ C: catalog, E, state, getCase: id => catalog.cases.find(c => c.id === id) || (catalog.historyCases || []).find(c => c.id === id) });
   vm.runInContext([constant('SAVE_FORMAT'), constant('BADGE_ICONS'), constant('STAT_KEYS'), constant('RANK_COUNT'), constant('ATTENDING_CALLS'), constant('DUTIES'), constant('count')].join('\n') + '\n' +
     section('  function validRecord(r)', '  // Career XP counts') + section('  function validBoss(boss)', '  function bossCorrect(boss)') +
     '\nglobalThis.helpers = { cleanSave, saveFile, readSaveFile, mergeSave, chooseShift, hasProgress };', context, { filename: 'app-save-helpers.js' });
@@ -1086,4 +1086,133 @@ test('a game file is untrusted: wrong formats, changed scores, unknown cases and
   assert.ok(!('junk' in session) && !('boss' in session), 'Unknown keys and an invalid morning report are dropped');
   assert.ok(!('extra' in session.patients[0]) && !('extra' in session.patients[0].answers[0]));
   assert.deepEqual(Object.keys(session.struck), [p0.id + ':0'], 'Only joker marks for real steps and options survive');
+});
+
+test('before answering, goals, correction explanations and highlighted anatomy cannot reveal the solution', () => {
+  const source = read('app.js');
+  const section = (start, end) => source.slice(source.indexOf(start), source.indexOf(end, source.indexOf(start)));
+  for (const lang of ['en', 'de', 'es']) {
+    for (const multiStep of [false, true]) {
+      const c = clone(catalog.cases.find(c => multiStep ? c.steps.length > 1 : c.subject === 'anatomy'));
+      c.objectives = Object.fromEntries(['en', 'de', 'es'].map(l => [l, ['OBJECTIVE_SPOILER']]));
+      c.update = { date: '2026-10-11', reason: { en: 'CORRECTION_SPOILER', de: 'CORRECTION_SPOILER', es: 'CORRECTION_SPOILER' }, references: [] };
+      const session = E.create({ ...catalog, cases: [c] }, [c.id], 'learn', 'spoiler-check');
+      const p = session.patients[0], state = { lang, session };
+      const context = vm.createContext({
+        C: catalog, state, esc: escape, loc: value => value[lang], getCase: () => c,
+        getArea: id => catalog.areas.find(a => a.id === id),
+        t: key => data.NSA_TEXT[lang][key] || key,
+        patientName: () => 'Anatomy round', casePortrait: () => '<svg></svg>', bookmark: () => '',
+        vitalPanel: () => '', sourceOrigin: () => 'PROVENANCE_SPOILER',
+        optionButton: () => '<button>answer choice</button>', debrief: () => 'debrief',
+        characterComment: () => '', attendingWarning: () => '', preferredAnswer: () => '',
+        caseVisuals: () => 'HIGHLIGHTED_SCHEMA', optionsExplained: () => 'POST_ANSWER_RATIONALES'
+      });
+      vm.runInContext(section('  const updatedBadge=', '  function vitalPanel(c)') +
+        section('  function chart(p)', '  function debrief(p,c)') + '\nglobalThis.chart = chart;', context);
+      const before = context.chart(p);
+      for (const spoiler of ['OBJECTIVE_SPOILER', 'CORRECTION_SPOILER', 'PROVENANCE_SPOILER', 'HIGHLIGHTED_SCHEMA', 'POST_ANSWER_RATIONALES'])
+        assert.ok(!before.includes(spoiler), lang + ': ' + spoiler + ' is hidden before answering');
+      p.feedback = c.steps[0].best;
+      const after = context.chart(p);
+      assert.ok(after.includes('POST_ANSWER_RATIONALES'), 'All answer explanations appear after making a choice');
+      assert.equal(after.includes('HIGHLIGHTED_SCHEMA'), !multiStep, 'Case-wide anatomy waits until the final decision');
+      assert.equal(after.includes('CORRECTION_SPOILER'), !multiStep, 'Case-wide corrections wait until the final decision');
+      assert.ok(!after.includes('OBJECTIVE_SPOILER'), 'Learning goals are never rendered');
+    }
+  }
+});
+
+test('archived answers retain verified progress but cannot enter an active shift or rematch', () => {
+  const archived = catalog.historyCases[0];
+  assert.ok(archived.archived);
+  const oldCatalog = { ...catalog, cases: [...catalog.cases, archived] };
+  const old = E.create(oldCatalog, [archived.id], 'learn', 'historical-shift');
+  const step = archived.steps[0], wrong = step.options.find(o => o.id !== step.best);
+  E.answer(old, oldCatalog, archived.id, wrong.id);
+  E.next(old, oldCatalog, archived.id);
+  const record = E.record(old, oldCatalog, archived.id);
+  assert.ok(!E.validSession(old, catalog), 'Historical content cannot become an active saved shift');
+  const state = { ...emptyState(), history: [record], bookmarks: [archived.id] };
+  const api = saveHarness(state), clean = clone(api.cleanSave(state));
+  assert.deepEqual(clean.history, [record], 'The original verified logbook entry survives');
+  assert.deepEqual(clean.bookmarks, [archived.id], 'A historical bookmark remains reviewable');
+  const loaded = clone(api.readSaveFile(fileOf(state)).save);
+  assert.deepEqual(loaded.history, [record], 'Export/import retains the historical entry');
+  const tampered = { ...state, history: [{ ...record, score: 999 }] };
+  assert.equal(api.cleanSave(tampered).history.length, 0, 'Archive compatibility does not bypass score verification');
+  const source = read('app.js'), getCase = id => catalog.cases.find(c => c.id === id) || catalog.historyCases.find(c => c.id === id);
+  const context = vm.createContext({ C: catalog, state, getCase, openDialog() { throw new Error('Archived cases must not open setup'); } });
+  const start = source.indexOf('  function setup(ids=null,duty=null)'), end = source.indexOf('\n  function ', start + 1);
+  vm.runInContext(source.slice(start, end) + source.slice(source.indexOf('  function missedCases()'), source.indexOf('  function pickCases(')) +
+    '\nglobalThis.helpers = { setup, missedCases };', context);
+  context.helpers.setup([archived.id]);
+  assert.deepEqual(clone(context.helpers.missedCases()), [], 'Historical misses never enter the active rematch pool');
+  assert.equal(catalog.cases.reduce((n, c) => n + c.steps.length, 0), 500);
+});
+
+// Bootstrap the full application with observable DOM boundaries. This checks
+// the actual rendered markup and handlers; it does not claim pixel/layout QA.
+function interfaceHarness(lang = 'en', initial = {}) {
+  const nodes = new Map(), events = new Map();
+  const node = id => {
+    if (!nodes.has(id)) nodes.set(id, { innerHTML: '', textContent: '', style: {}, classList: { add() {}, remove() {}, toggle() {} },
+      focus() {}, remove() {}, append() {}, setAttribute() {}, addEventListener() {}, querySelector() { return null; }, showModal() {} });
+    return nodes.get(id);
+  };
+  const document = { documentElement: {}, body: node('body'),
+    getElementById: node, querySelector: selector => selector === '.skip' ? node('skip') : null,
+    querySelectorAll: () => [], createElement: tag => node('created-' + tag),
+    addEventListener(type, fn) { if (!events.has(type)) events.set(type, []); events.get(type).push(fn); }
+  };
+  const storage = new Map([['night-shift-academy-v2', JSON.stringify({ ...emptyState(), ...initial, lang })]]);
+  const window = { ...data, NSAEngine: E, addEventListener() {}, scrollTo() {}, matchMedia: () => ({ matches: true }) };
+  const context = vm.createContext({ window, document, location: { hash: '#intro' },
+    localStorage: { getItem: key => storage.get(key) || null, setItem: (key, value) => storage.set(key, value) },
+    setTimeout: () => 1, clearTimeout() {} });
+  vm.runInContext(read('app.js'), context, { filename: 'app-full-interface.js' });
+  const go = view => {
+    const button = { dataset: { view }, disabled: false };
+    const event = { preventDefault() {}, target: { closest: selector => selector === 'button,a[data-view]' ? button : null } };
+    for (const handler of events.get('click')) handler(event);
+  };
+  return { go, html: () => node('app').innerHTML, results: () => node('case-results').innerHTML,
+    change: async (id, value) => { for (const handler of events.get('change')) await handler({ target: { id, value } }); },
+    profile: () => JSON.parse(storage.get('night-shift-academy-v2')) };
+}
+
+test('the full interface renders 500 questions, the anatomy filter and every page in all languages', async () => {
+  for (const lang of ['en', 'de', 'es']) {
+    const h = interfaceHarness(lang);
+    assert.match(h.html(), /<strong>500<\/strong>/, 'The introduction counts questions, not 402 cases');
+    assert.ok(h.html().includes(escape(data.NSA_TEXT[lang].questions)));
+    assert.ok(!h.html().includes('{questions}'), 'Count substitutions reach the actual interface');
+    h.go('library');
+    assert.ok(h.html().includes('<option value="anatomy"'));
+    assert.ok(h.html().includes(escape(catalog.cases.find(c => c.subject === 'anatomy').topic[lang])));
+    await h.change('topic-filter', 'anatomy');
+    assert.equal((h.results().match(/<article class="case-card"/g) || []).length, 18);
+    assert.ok(h.results().includes('/ 50 '), 'The anatomy filter contains all fifty cases');
+    for (const view of ['atlas', 'protocols', 'progress', 'sources', 'intro']) {
+      h.go(view);
+      assert.ok(h.html().includes('<main '), view + ' renders');
+      assert.doesNotMatch(h.html(), /\[object Object\]|undefined|\{questions\}/, view + ' contains no missing label');
+    }
+  }
+});
+
+test('full application startup keeps archived progress and renders its bookmark as review-only', () => {
+  const c = catalog.historyCases[0], oldCatalog = { ...catalog, cases: [...catalog.cases, c] };
+  const session = E.create(oldCatalog, [c.id], 'learn', 'old-bookmark');
+  E.answer(session, oldCatalog, c.id, c.steps[0].best);
+  E.next(session, oldCatalog, c.id);
+  const record = E.record(session, oldCatalog, c.id);
+  for (const lang of ['en', 'de', 'es']) {
+    const h = interfaceHarness(lang, { history: [record], bookmarks: [c.id] });
+    assert.deepEqual(h.profile().history, [record], 'Startup does not discard verified archived answers');
+    h.go('progress');
+    assert.ok(h.html().includes('data-review="' + c.id + '"'), 'The old logbook remains reviewable');
+    assert.ok(h.html().includes(escape(data.NSA_TEXT[lang].archivedQuestion)), 'The bookmark is explicitly labelled');
+    assert.ok(!h.html().includes('data-practice="' + c.id + '"'), 'Archived bookmarks cannot start a practice session');
+  }
 });
