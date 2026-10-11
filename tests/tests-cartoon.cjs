@@ -619,7 +619,7 @@ function protocolHarness(protocols, lang = 'en') {
   const start = source.indexOf('  function protocols()'), end = source.indexOf('  function atlas()', start);
   assert.ok(start >= 0 && end > start, 'The protocol page must be present');
   const context = vm.createContext({ C: { ...catalog, protocols }, esc: escape, getCase: id => catalog.cases.find(c => c.id === id),
-    t: key => data.NSA_TEXT[lang][key] || key, loc: value => value[lang], protocolEntity: null, protocolKind: 'systemic', state: { lang } });
+    t: key => data.NSA_TEXT[lang][key] || key, loc: value => value[lang], protocolEntity: null, protocolKind: 'systemic', protocolAll: false, state: { lang } });
   vm.runInContext(source.slice(start, end) + '\nglobalThis.page = { protocols, protocolCard, rtCard };', context, { filename: 'app-protocols.js' });
   return context;
 }
@@ -628,13 +628,13 @@ test('the protocol page shows cycles, doses, routes and sources per tumour and l
   const text = value => ({ en: value, de: value, es: value });
   const regimen = { id: 'fixture-regimen', name: text('Gem<Cis>'), setting: text('Metastatic'), cycleDays: 21, cycles: text('4–6'), support: text('Hydration'), cautions: text('GFR'), evidence: text('Standard'),
     drugs: [{ name: text('Gemcitabine'), dose: text('1000 mg/m²'), route: 'i.v.', schedule: text('Days 1 and 8') }, { name: text('Mitomycin C'), dose: text('40 mg'), route: 'intravesical', schedule: text('Weekly') }],
-    sources: [{ label: 'Guideline', url: 'https://example.org/g' }], questions: [catalog.cases[0].id, 'missing-case'] };
+    sources: [{ label: 'Guideline', url: 'https://example.org/g' }], questions: [catalog.cases[0].id, 'missing-case'], role: 'standard' };
   const continuous = { ...regimen, id: 'fixture-continuous', cycleDays: null, questions: [] };
   const h = protocolHarness([{ id: 'one', title: text('Bladder'), regimens: [regimen, continuous] }, { id: 'two', title: text('Kidney'), regimens: [continuous] }]);
   const page = h.page.protocols();
   assert.ok(page.includes('protocol-warning'), 'The page always carries the learning-overview warning');
   assert.equal((page.match(/data-protocol-entity=/g) || []).length, 2, 'One tab per tumour');
-  assert.equal((page.match(/class="protocol-card"/g) || []).length, 2, 'Only the regimens of the selected tumour');
+  assert.equal((page.match(/class="protocol-card role-standard"/g) || []).length, 2, 'Only the regimens of the selected tumour');
   assert.ok(page.includes('Gem&lt;Cis&gt;') && !page.includes('Gem<Cis>'), 'Protocol text is escaped');
   assert.ok(page.includes('1000 mg/m²') && page.includes(escape(data.NSA_TEXT.en.routeIntravesical)), 'Doses and routes are shown');
   assert.ok(page.includes(escape(data.NSA_TEXT.en.protocolCycleDays.replace('{n}', 21))) && page.includes(escape(data.NSA_TEXT.en.protocolContinuous)));
@@ -642,8 +642,25 @@ test('the protocol page shows cycles, doses, routes and sources per tumour and l
   assert.equal((page.match(/data-protocol-practice=/g) || []).length, 1, 'Only regimens with questions get a practice button');
   assert.ok(page.includes(escape(data.NSA_TEXT.en.protocolPractice.replace('{n}', 1))), 'Unknown question ids are not counted');
   h.protocolEntity = 'two';
-  assert.equal((h.page.protocols().match(/class="protocol-card"/g) || []).length, 1, 'Switching the tab shows the other tumour');
+  assert.equal((h.page.protocols().match(/class="protocol-card role-standard"/g) || []).length, 1, 'Switching the tab shows the other tumour');
   assert.ok(protocolHarness([]).page.protocols().includes('protocol-warning'), 'Without protocols the page still renders');
+});
+
+test('the protocol page shows today\'s standards first and the alternatives only on request', () => {
+  const text = value => ({ en: value, de: value, es: value });
+  const base = { setting: text('Setting'), cycleDays: 21, cycles: text('4'), support: text('S'), cautions: text('C'), evidence: text('E'),
+    drugs: [{ name: text('Drug'), dose: text('1 mg'), route: 'i.v.', schedule: text('Day 1') }], sources: [{ label: 'Guideline', url: 'https://example.org/g' }] };
+  const h = protocolHarness([{ id: 'one', title: text('Bladder'), regimens: [{ ...base, id: 'alt', name: text('Old backbone'), role: 'alternative' }, { ...base, id: 'std', name: text('Current standard'), role: 'standard' }] }], 'de');
+  let page = h.page.protocols();
+  assert.ok(page.includes('Current standard') && !page.includes('Old backbone'), 'Only the standard is shown at first');
+  assert.ok(page.includes(escape(data.NSA_TEXT.de.protocolRoleStandard)) && page.includes('data-protocol-alternatives="show"'), 'The card is marked and the switch offers the alternatives');
+  assert.ok(page.includes(escape(data.NSA_TEXT.de.protocolShowAlternatives.replace('{n}', 1))) && page.includes('<span class="mono" aria-hidden="true">1</span>'), 'The switch and the tab count only what is shown');
+  h.protocolAll = true;
+  page = h.page.protocols();
+  assert.ok(page.indexOf('Current standard') < page.indexOf('Old backbone'), 'Alternatives follow the standards');
+  assert.ok(page.includes('protocol-card role-alternative') && page.includes(escape(data.NSA_TEXT.de.protocolRoleAlternative)) && page.includes('data-protocol-alternatives="hide"'));
+  const onlyStandards = protocolHarness([{ id: 'two', title: text('Kidney'), regimens: [{ ...base, id: 'only', name: text('Only one'), role: 'standard' }] }]);
+  assert.ok(!onlyStandards.page.protocols().includes('data-protocol-alternatives'), 'No switch without alternatives');
 });
 
 test('the radiotherapy schemes show total dose, dose per fraction and fractions with the decimal comma of the language', () => {

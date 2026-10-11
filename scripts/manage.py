@@ -560,6 +560,7 @@ def attach_hints(root: Path, cases: list) -> int:
 
 PROTOCOL_ROUTES = ("i.v.", "p.o.", "s.c.", "i.m.", "intravesical")
 # The drug table shows the dose and the days; explanations belong in support or cautions.
+PROTOCOL_ROLES = ("standard", "alternative")
 PROTOCOL_CELL_LIMITS = {"name": 48, "dose": 48, "schedule": 80}
 
 
@@ -581,12 +582,15 @@ def load_protocols(root: Path, cases: list) -> list:
         localised(entity.get("title"), f"{where}.title")
         regimens = entity.get("regimens")
         require(isinstance(regimens, list) and bool(regimens), f"{where}.regimens: expected a nonempty list")
+        # The page shows the standards by default and the alternatives on request, so every tumour group needs a standard.
+        require(any(isinstance(r, dict) and r.get("role") == "standard" for r in regimens), f"{where}: at least one regimen must be the standard")
         for r_index, regimen in enumerate(regimens):
             r_where = f"{where}.regimens[{r_index}]"
             require(isinstance(regimen, dict), f"{r_where}: expected an object")
             require(isinstance(regimen.get("id"), str) and bool(re.fullmatch(r"[a-z0-9][a-z0-9-]*", regimen["id"])), f"{r_where}.id: expected a kebab-case id")
             require(regimen["id"] not in regimen_ids, f"{r_where}: duplicate regimen id {regimen['id']!r}")
             regimen_ids.add(regimen["id"])
+            require(regimen.get("role") in PROTOCOL_ROLES, f"{r_where}.role: expected one of {', '.join(PROTOCOL_ROLES)}")
             for key in ("name", "setting", "cycles", "support", "cautions", "evidence"):
                 localised(regimen.get(key), f"{r_where}.{key}")
             cycle = regimen.get("cycleDays")
