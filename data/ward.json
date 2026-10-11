@@ -1693,153 +1693,6 @@
     ]
   },
   {
-    "id": "sys-prot-ddmvac-gcsf-support",
-    "area": "ward",
-    "level": 2,
-    "acuity": "routine",
-    "duty": "dayclinic",
-    "patient": {
-      "name": "Lothar Eichhorn",
-      "age": 57,
-      "sex": "male"
-    },
-    "title": {
-      "en": "Dose-dense MVAC: supportive orders for cycle 1",
-      "de": "Dosisdichtes MVAC: Supportivanordnung für Zyklus 1",
-      "es": "MVAC de dosis densa: órdenes de soporte para el ciclo 1"
-    },
-    "presenting": {
-      "en": "57-year-old man with muscle-invasive urothelial carcinoma of the bladder, cT3b cN0 cM0, is admitted for neoadjuvant dose-dense MVAC (6 cycles every 14 days, then cystectomy). ECOG 0, body surface area 2.00 m², GFR 91 mL/min, LVEF 62%, no ascites, no pleural effusion. The plan is methotrexate 30 mg/m² on day 1 and vinblastine 3 mg/m², doxorubicin 30 mg/m² and cisplatin 70 mg/m² on day 2. Hydration and antiemetics (NK1 antagonist, 5-HT3 antagonist, dexamethasone) are already ordered.",
-      "de": "57-jähriger Patient mit muskelinvasivem Urothelkarzinom der Harnblase cT3b cN0 cM0 wird zur neoadjuvanten Chemotherapie mit dosisdichtem MVAC (6 Zyklen alle 14 Tage, danach Zystektomie) stationär aufgenommen. ECOG 0, Körperoberfläche 2,00 m², GFR 91 ml/min, LVEF 62 %, kein Aszites, kein Pleuraerguss. Geplant sind Methotrexat 30 mg/m² an Tag 1 sowie Vinblastin 3 mg/m², Doxorubicin 30 mg/m² und Cisplatin 70 mg/m² an Tag 2. Hydrierung und Antiemese (NK1-Antagonist, 5-HT3-Antagonist, Dexamethason) sind bereits angeordnet.",
-      "es": "Varón de 57 años con carcinoma urotelial vesical músculo-invasivo cT3b cN0 cM0 que ingresa para quimioterapia neoadyuvante con MVAC de dosis densa (6 ciclos cada 14 días y después cistectomía). ECOG 0, superficie corporal 2,00 m², FG 91 ml/min, FEVI 62 %, sin ascitis, sin derrame pleural. Se prevén metotrexato 30 mg/m² el día 1 y vinblastina 3 mg/m², doxorrubicina 30 mg/m² y cisplatino 70 mg/m² el día 2. La hidratación y la profilaxis antiemética (antagonista NK1, antagonista 5-HT3, dexametasona) ya están prescritas."
-    },
-    "vitals": {
-      "bp": "128/76",
-      "hr": 70,
-      "temp": 36.5,
-      "spo2": 98,
-      "rr": 14
-    },
-    "objectives": {
-      "en": [
-        "Order the mandatory G-CSF support for dose-dense MVAC",
-        "Time pegfilgrastim correctly after the end of chemotherapy"
-      ],
-      "de": [
-        "Die obligate G-CSF-Unterstützung bei dosisdichtem MVAC anordnen",
-        "Den korrekten Zeitpunkt der Pegfilgrastim-Gabe nach Ende der Chemotherapie festlegen"
-      ],
-      "es": [
-        "Prescribir el soporte obligatorio con G-CSF en el MVAC de dosis densa",
-        "Programar correctamente el pegfilgrastim tras el final de la quimioterapia"
-      ]
-    },
-    "steps": [
-      {
-        "id": "question",
-        "kind": "decision",
-        "prompt": {
-          "en": "Which additional order is mandatory for this regimen?",
-          "de": "Welche zusätzliche Anordnung ist für dieses Schema zwingend erforderlich?",
-          "es": "¿Qué prescripción adicional es obligatoria para este esquema?"
-        },
-        "options": [
-          {
-            "id": "a",
-            "text": {
-              "en": "Mesna i.v. at the start of cisplatin and again after 4 and 8 hours",
-              "de": "Mesna i.v. zu Beginn der Cisplatingabe sowie nach 4 und 8 Stunden",
-              "es": "Mesna i.v. al inicio del cisplatino y de nuevo a las 4 y 8 horas"
-            },
-            "score": 0,
-            "minutes": 5,
-            "critical": false,
-            "feedback": {
-              "en": "Wrong: mesna protects the bladder from the metabolites of ifosfamide and cyclophosphamide and is not part of MVAC. The support that dose-dense MVAC really needs, G-CSF, is missing.",
-              "de": "Falsch: Mesna schützt die Blase vor den Metaboliten von Ifosfamid und Cyclophosphamid und gehört nicht zu MVAC. Die Unterstützung, die dosisdichtes MVAC tatsächlich braucht, nämlich G-CSF, fehlt.",
-              "es": "Incorrecto: el mesna protege la vejiga de los metabolitos de la ifosfamida y la ciclofosfamida y no forma parte del MVAC. Falta el soporte que realmente necesita el MVAC de dosis densa: el G-CSF."
-            }
-          },
-          {
-            "id": "b",
-            "text": {
-              "en": "G-CSF only as secondary prophylaxis, if febrile neutropenia occurs in cycle 1",
-              "de": "G-CSF nur sekundärprophylaktisch, falls in Zyklus 1 eine febrile Neutropenie auftritt",
-              "es": "G-CSF solo como profilaxis secundaria, si aparece neutropenia febril en el ciclo 1"
-            },
-            "score": 0,
-            "minutes": 5,
-            "critical": true,
-            "feedback": {
-              "en": "Wrong and harmful: G-CSF support is mandatory from cycle 1 onwards in dose-dense MVAC. Without primary prophylaxis the 14-day interval leads to a high rate of febrile neutropenia and sepsis.",
-              "de": "Falsch und gefährlich: Bei dosisdichtem MVAC ist die G-CSF-Unterstützung ab Zyklus 1 obligat. Ohne Primärprophylaxe führt das 14-Tage-Intervall zu einer hohen Rate an febriler Neutropenie und Sepsis.",
-              "es": "Incorrecto y peligroso: en el MVAC de dosis densa el soporte con G-CSF es obligatorio desde el ciclo 1. Sin profilaxis primaria, el intervalo de 14 días provoca una alta tasa de neutropenia febril y sepsis."
-            }
-          },
-          {
-            "id": "c",
-            "text": {
-              "en": "Pegfilgrastim 6 mg s.c. on day 2 directly before cisplatin",
-              "de": "Pegfilgrastim 6 mg s.c. an Tag 2 unmittelbar vor der Cisplatingabe",
-              "es": "Pegfilgrastim 6 mg s.c. el día 2 justo antes del cisplatino"
-            },
-            "score": 0,
-            "minutes": 5,
-            "critical": false,
-            "feedback": {
-              "en": "Wrong: G-CSF is given at least 24 hours after the end of chemotherapy. Given together with the cytotoxic drugs it drives bone marrow precursors into division while they are exposed, which worsens myelotoxicity.",
-              "de": "Falsch: G-CSF wird frühestens 24 Stunden nach Ende der Chemotherapie gegeben. Zeitgleich mit den Zytostatika treibt es die Vorläuferzellen im Knochenmark in die Teilung, während sie exponiert sind, und verstärkt so die Myelotoxizität.",
-              "es": "Incorrecto: el G-CSF se administra como pronto 24 horas después del final de la quimioterapia. Administrado junto con los citostáticos, estimula la división de los precursores medulares mientras están expuestos y agrava la mielotoxicidad."
-            }
-          },
-          {
-            "id": "d",
-            "text": {
-              "en": "Pegfilgrastim 6 mg s.c. once per cycle at least 24 hours after the end of chemotherapy (e.g. day 3-4), alternatively filgrastim 5 µg/kg/day s.c. on days 3-10",
-              "de": "Pegfilgrastim 6 mg s.c. einmal pro Zyklus frühestens 24 Stunden nach Ende der Chemotherapie (z. B. Tag 3–4), alternativ Filgrastim 5 µg/kg/Tag s.c. an Tag 3–10",
-              "es": "Pegfilgrastim 6 mg s.c. una vez por ciclo como pronto 24 horas después del final de la quimioterapia (p. ej., días 3-4); alternativa: filgrastim 5 µg/kg/día s.c. los días 3-10"
-            },
-            "score": 10,
-            "minutes": 5,
-            "critical": false,
-            "feedback": {
-              "en": "Correct: the 14-day interval of dose-dense MVAC is only feasible with primary G-CSF support. Pegfilgrastim 6 mg is given once per cycle at least 24 hours after the last cytotoxic drug on day 2, i.e. on day 3-4; filgrastim on days 3-10 is the alternative.",
-              "de": "Richtig: Das 14-Tage-Intervall von dosisdichtem MVAC ist nur mit primärer G-CSF-Unterstützung durchführbar. Pegfilgrastim 6 mg wird einmal pro Zyklus frühestens 24 Stunden nach dem letzten Zytostatikum an Tag 2 gegeben, also an Tag 3–4; Filgrastim an Tag 3–10 ist die Alternative.",
-              "es": "Correcto: el intervalo de 14 días del MVAC de dosis densa solo es factible con soporte primario con G-CSF. Pegfilgrastim 6 mg se administra una vez por ciclo como pronto 24 horas después del último citostático del día 2, es decir, los días 3-4; el filgrastim los días 3-10 es la alternativa."
-            }
-          },
-          {
-            "id": "e",
-            "text": {
-              "en": "No G-CSF; instead lengthen the cycle interval to 21 days if the neutrophils are low on day 14",
-              "de": "Kein G-CSF; stattdessen das Zyklusintervall auf 21 Tage verlängern, falls die Neutrophilen an Tag 14 erniedrigt sind",
-              "es": "Sin G-CSF; en su lugar, alargar el intervalo del ciclo a 21 días si los neutrófilos están bajos el día 14"
-            },
-            "score": 0,
-            "minutes": 5,
-            "critical": true,
-            "feedback": {
-              "en": "Wrong and harmful: the benefit of dose-dense MVAC rests on the 14-day interval, and that interval needs G-CSF. Without G-CSF the risk of neutropenic fever in cycle 1 remains, and lengthening the interval turns the regimen into something that is no longer dose-dense.",
-              "de": "Falsch und gefährlich: Der Nutzen von dosisdichtem MVAC beruht auf dem 14-Tage-Intervall, und dieses Intervall braucht G-CSF. Ohne G-CSF bleibt das Risiko eines neutropenischen Fiebers in Zyklus 1 bestehen, und mit verlängertem Intervall ist das Schema nicht mehr dosisdicht.",
-              "es": "Incorrecto y peligroso: el beneficio del MVAC de dosis densa se basa en el intervalo de 14 días, y ese intervalo requiere G-CSF. Sin G-CSF persiste el riesgo de fiebre neutropénica en el ciclo 1, y al alargar el intervalo el esquema deja de ser de dosis densa."
-            }
-          }
-        ],
-        "best": "d"
-      }
-    ],
-    "takeaway": {
-      "en": "Dose-dense MVAC is given every 14 days and is only feasible with primary G-CSF support: pegfilgrastim 6 mg s.c. once per cycle at least 24 hours after chemotherapy (e.g. day 3-4) or filgrastim 5 µg/kg/day on days 3-10. Mesna is not part of the regimen.",
-      "de": "Dosisdichtes MVAC wird alle 14 Tage gegeben und ist nur mit primärer G-CSF-Unterstützung durchführbar: Pegfilgrastim 6 mg s.c. einmal pro Zyklus frühestens 24 Stunden nach der Chemotherapie (z. B. Tag 3–4) oder Filgrastim 5 µg/kg/Tag an Tag 3–10. Mesna gehört nicht zum Schema.",
-      "es": "El MVAC de dosis densa se administra cada 14 días y solo es factible con soporte primario con G-CSF: pegfilgrastim 6 mg s.c. una vez por ciclo como pronto 24 horas después de la quimioterapia (p. ej., días 3-4) o filgrastim 5 µg/kg/día los días 3-10. El mesna no forma parte del esquema."
-    },
-    "references": [
-      "bank-guide-mibc",
-      "ema-medicines",
-      "fachinfo-de"
-    ]
-  },
-  {
     "id": "sys-prot-sipi-mitomycin-order-after-turb",
     "area": "ward",
     "level": 1,
@@ -2199,9 +2052,9 @@
             "minutes": 5,
             "critical": false,
             "feedback": {
-              "en": "Correct: mesna binds the urotoxic ifosfamide metabolite acrolein in the bladder and is mandatory. The total mesna dose must be at least 60% (ideally 100%) of the ifosfamide dose: 3 × 456 mg = 1368 mg is 60% of 2280 mg. VIP is more haematotoxic than BEP, so primary G-CSF prophylaxis is recommended; check urine dipstick, electrolytes, creatinine and neurological status daily.",
-              "de": "Richtig: Mesna bindet den urotoxischen Ifosfamid-Metaboliten Acrolein in der Blase und ist obligat. Die Mesna-Gesamtdosis muss mindestens 60 % (idealerweise 100 %) der Ifosfamid-Dosis betragen: 3 × 456 mg = 1368 mg entsprechen 60 % von 2280 mg. VIP ist hämatotoxischer als BEP, deshalb wird eine primäre G-CSF-Prophylaxe empfohlen; täglich Urin-Stix, Elektrolyte, Kreatinin und neurologischen Status kontrollieren.",
-              "es": "Correcto: la mesna fija en la vejiga la acroleína, el metabolito urotóxico de la ifosfamida, y es obligatoria. La dosis total de mesna debe ser al menos el 60 % (idealmente el 100 %) de la dosis de ifosfamida: 3 × 456 mg = 1368 mg equivalen al 60 % de 2280 mg. VIP es más hematotóxico que BEP, por lo que se recomienda profilaxis primaria con G-CSF; controlar a diario la tira de orina, los electrolitos, la creatinina y el estado neurológico."
+              "en": "Correct: mesna binds the urotoxic ifosfamide metabolite acrolein in the bladder and is mandatory. The total mesna dose must be at least 60% (ideally 100%) of the ifosfamide dose: 3 × 456 mg = 1368 mg is 60% of 2280 mg. VIP is more haematotoxic than BEP, so primary G-CSF prophylaxis is recommended; check urine dipstick, electrolytes, creatinine and neurological status daily. Pegfilgrastim is given at least 24 hours after the last cytotoxic dose, never on the same day as chemotherapy.",
+              "de": "Richtig: Mesna bindet den urotoxischen Ifosfamid-Metaboliten Acrolein in der Blase und ist obligat. Die Mesna-Gesamtdosis muss mindestens 60 % (idealerweise 100 %) der Ifosfamid-Dosis betragen: 3 × 456 mg = 1368 mg entsprechen 60 % von 2280 mg. VIP ist hämatotoxischer als BEP, deshalb wird eine primäre G-CSF-Prophylaxe empfohlen; täglich Urin-Stix, Elektrolyte, Kreatinin und neurologischen Status kontrollieren. Pegfilgrastim frühestens 24 Stunden nach der letzten Zytostatikagabe, also nie am selben Tag wie die Chemotherapie.",
+              "es": "Correcto: la mesna fija en la vejiga la acroleína, el metabolito urotóxico de la ifosfamida, y es obligatoria. La dosis total de mesna debe ser al menos el 60 % (idealmente el 100 %) de la dosis de ifosfamida: 3 × 456 mg = 1368 mg equivalen al 60 % de 2280 mg. VIP es más hematotóxico que BEP, por lo que se recomienda profilaxis primaria con G-CSF; controlar a diario la tira de orina, los electrolitos, la creatinina y el estado neurológico. El pegfilgrastim se administra al menos 24 horas después de la última dosis citotóxica, nunca el mismo día que la quimioterapia."
             }
           },
           {

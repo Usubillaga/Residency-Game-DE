@@ -3141,13 +3141,6 @@
       "es": "La dosis del ITC depende del fármaco con el que se combina: los 60 mg de su marido son la dosis en monoterapia. Revisa además el intervalo de dosis fija de nivolumab, la toma respecto a las comidas y si cápsulas y comprimidos son intercambiables."
     }
   },
-  "sys-prot-ddmvac-gcsf-support": {
-    "question": {
-      "de": "Dosisdicht alle 14 Tage geht nur mit primärer Unterstützung der Neutrophilen. Entscheidend ist das Timing: Warum darf G-CSF nicht am Tag der Chemotherapie laufen, und wie lange musst du nach dem Ende der Chemo mindestens warten?",
-      "en": "Dose-dense every 14 days is only feasible with primary neutrophil support. Timing is what matters: why must G-CSF not be given on the day of chemotherapy, and how long must you wait at least after chemotherapy ends?",
-      "es": "La pauta de dosis densa cada 14 días solo es viable con soporte primario de neutrófilos. Lo decisivo es el momento: ¿por qué no se debe dar G-CSF el mismo día de la quimioterapia, y cuánto tienes que esperar como mínimo tras terminarla?"
-    }
-  },
   "sys-prot-denosumab-prolia-to-xgeva-mcrpc": {
     "question": {
       "de": "Jetzt geht es nicht mehr um Osteoporose unter ADT, sondern um die Prävention skelettbezogener Ereignisse beim mCRPC mit Knochenmetastasen. Welche Denosumab-Dosis und welches Intervall gelten dafür, darf man beide Präparate kombinieren, und spielt die Kreatinin-Clearance von 45 eine Rolle?",
