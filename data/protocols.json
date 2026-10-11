@@ -9,97 +9,8 @@
       },
       "regimens": [
         {
-          "id": "uc-gc-neoadjuvant-21d",
-          "name": {
-            "en": "Gemcitabine/cisplatin (GC) without immunotherapy, 21-day schedule",
-            "de": "Gemcitabin/Cisplatin (GC) ohne Immuntherapie, 21-Tage-Schema",
-            "es": "Gemcitabina/cisplatino (GC) sin inmunoterapia, esquema de 21 días"
-          },
-          "setting": {
-            "en": "Only for these groups: cisplatin-eligible MIBC when durvalumab is contraindicated or declined (neoadjuvant); adjuvant after upfront cystectomy for pT3/4 and/or pN+; metastatic disease when EV + pembrolizumab is not possible (followed by avelumab maintenance) or after progression on EV + pembrolizumab",
-            "de": "Nur noch für diese Gruppen: cisplatingeeignetes MIBC, wenn Durvalumab kontraindiziert ist oder abgelehnt wird (neoadjuvant); adjuvant nach primärer Zystektomie bei pT3/4 und/oder pN+; metastasiert, wenn EV + Pembrolizumab nicht möglich ist (danach Avelumab-Erhaltung) oder nach Progress unter EV + Pembrolizumab",
-            "es": "Solo para estos grupos: CVMI apto para cisplatino cuando durvalumab está contraindicado o se rechaza (neoadyuvante); adyuvante tras cistectomía de entrada en pT3/4 y/o pN+; enfermedad metastásica cuando EV + pembrolizumab no es posible (seguido de mantenimiento con avelumab) o tras progresión con EV + pembrolizumab"
-          },
-          "cycleDays": 21,
-          "cycles": {
-            "en": "Neoadjuvant 4 cycles, then cystectomy; adjuvant 4 cycles; metastatic up to 6 cycles",
-            "de": "Neoadjuvant 4 Zyklen, danach Zystektomie; adjuvant 4 Zyklen; metastasiert bis zu 6 Zyklen",
-            "es": "Neoadyuvante 4 ciclos y después cistectomía; adyuvante 4 ciclos; metastásico hasta 6 ciclos"
-          },
-          "drugs": [
-            {
-              "name": {
-                "en": "Gemcitabine",
-                "de": "Gemcitabin",
-                "es": "Gemcitabina"
-              },
-              "dose": {
-                "en": "1000 mg/m²",
-                "de": "1000 mg/m²",
-                "es": "1000 mg/m²"
-              },
-              "route": "i.v.",
-              "schedule": {
-                "en": "day 1 and 8",
-                "de": "Tag 1 und 8",
-                "es": "días 1 y 8"
-              }
-            },
-            {
-              "name": {
-                "en": "Cisplatin",
-                "de": "Cisplatin",
-                "es": "Cisplatino"
-              },
-              "dose": {
-                "en": "70 mg/m²",
-                "de": "70 mg/m²",
-                "es": "70 mg/m²"
-              },
-              "route": "i.v.",
-              "schedule": {
-                "en": "day 1",
-                "de": "Tag 1",
-                "es": "día 1"
-              }
-            }
-          ],
-          "support": {
-            "en": "Cisplatin pre- and post-hydration with isotonic saline plus magnesium/potassium replacement and urine-output monitoring; highly emetogenic: NK1 antagonist + 5-HT3 antagonist + dexamethasone (+/- olanzapine) and delayed-phase prophylaxis; blood count before each gemcitabine dose; creatinine/GFR, electrolytes and hearing check before every cycle.",
-            "de": "Cisplatin-Vor- und Nachhydrierung mit isotoner NaCl-Lösung inkl. Magnesium-/Kaliumsubstitution und Bilanzierung der Diurese; hoch emetogen: NK1-Antagonist + 5-HT3-Antagonist + Dexamethason (+/- Olanzapin) sowie Prophylaxe der verzögerten Emesis; Blutbild vor jeder Gemcitabin-Gabe; Kreatinin/GFR, Elektrolyte und Hörvermögen vor jedem Zyklus.",
-            "es": "Hidratación previa y posterior al cisplatino con suero salino isotónico más reposición de magnesio/potasio y control de diuresis; altamente emetógeno: antagonista NK1 + antagonista 5-HT3 + dexametasona (+/- olanzapina) y profilaxis de la fase tardía; hemograma antes de cada dosis de gemcitabina; creatinina/FG, electrolitos y audición antes de cada ciclo."
-          },
-          "cautions": {
-            "en": "Cisplatin eligibility: GFR/CrCl ≥ 60 mL/min, ECOG 0-1, no hearing loss or neuropathy grade ≥ 2, no heart failure NYHA ≥ III; below 60 mL/min do not give full-dose cisplatin (consider split-dose only within trial-type criteria, otherwise a cisplatin-free regimen). Hold gemcitabine day 8 for relevant neutropenia/thrombocytopenia. Avoid nephrotoxic co-medication (NSAIDs, aminoglycosides, contrast agents).",
-            "de": "Cisplatin-Eignung: GFR/CrCl ≥ 60 ml/min, ECOG 0-1, keine Hörminderung oder Neuropathie ≥ Grad 2, keine Herzinsuffizienz NYHA ≥ III; unter 60 ml/min kein volldosiertes Cisplatin (Split-Dose nur nach studienanalogen Kriterien, sonst cisplatinfreies Regime). Gemcitabin Tag 8 bei relevanter Neutro-/Thrombozytopenie aussetzen. Nephrotoxische Komedikation (NSAR, Aminoglykoside, Kontrastmittel) meiden.",
-            "es": "Elegibilidad para cisplatino: FG/ClCr ≥ 60 ml/min, ECOG 0-1, sin hipoacusia ni neuropatía de grado ≥ 2, sin insuficiencia cardiaca NYHA ≥ III; por debajo de 60 ml/min no administrar cisplatino a dosis plena (dosis fraccionada solo con criterios tipo ensayo; si no, régimen sin cisplatino). Suspender la gemcitabina del día 8 ante neutropenia/trombocitopenia relevante. Evitar comedicación nefrotóxica (AINE, aminoglucósidos, contraste)."
-          },
-          "evidence": {
-            "en": "EAU 2026: the standard for cisplatin-eligible MIBC is GC plus durvalumab (NIAGARA). GC alone remains the cisplatin-based chemotherapy when no checkpoint inhibitor can be given, after upfront cystectomy, and as the platinum backbone in metastatic disease. The 21-day schedule delivers higher gemcitabine dose intensity with less thrombocytopenia than the former 28-day schedule. Generic cytotoxics; the gemcitabine label covers locally advanced/metastatic bladder cancer with cisplatin.",
-            "de": "EAU 2026: Standard beim cisplatingeeigneten MIBC ist GC plus Durvalumab (NIAGARA). GC allein bleibt die cisplatinhaltige Chemotherapie, wenn kein Checkpoint-Inhibitor möglich ist, nach primärer Zystektomie und als Platin-Rückgrat in der metastasierten Situation. Das 21-Tage-Schema erreicht eine höhere Gemcitabin-Dosisintensität mit weniger Thrombozytopenien als das frühere 28-Tage-Schema. Generika; die Gemcitabin-Zulassung umfasst das lokal fortgeschrittene/metastasierte Harnblasenkarzinom in Kombination mit Cisplatin.",
-            "es": "EAU 2026: el estándar en el CVMI apto para cisplatino es GC más durvalumab (NIAGARA). GC solo sigue siendo la quimioterapia basada en cisplatino cuando no puede darse un inhibidor de puntos de control, tras una cistectomía de entrada y como base de platino en la enfermedad metastásica. El esquema de 21 días logra mayor intensidad de dosis de gemcitabina con menos trombocitopenia que el antiguo esquema de 28 días. Fármacos genéricos; la ficha técnica de gemcitabina incluye el cáncer de vejiga localmente avanzado/metastásico con cisplatino."
-          },
-          "sources": [
-            {
-              "label": "NIAGARA protocol (NCT03732677): GC doses incl. split-dose cisplatin",
-              "url": "https://cdn.clinicaltrials.gov/large-docs/77/NCT03732677/Prot_002.pdf"
-            },
-            {
-              "label": "Neoadjuvant GC: 3-week vs 4-week regimen (dose intensity)",
-              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11181847/"
-            },
-            {
-              "label": "eviQ 4036: neoadjuvant/adjuvant cisplatin and gemcitabine",
-              "url": "https://www.eviq.org.au/medical-oncology/urogenital/bladder-and-urothelial/4036-bladder-urothelial-neoadjuvant-adjuvant-cispl"
-            },
-            {
-              "label": "EAU Guidelines: Muscle-invasive and Metastatic Bladder Cancer",
-              "url": "https://uroweb.org/guidelines/muscle-invasive-and-metastatic-bladder-cancer"
-            }
-          ]
-        },
-        {
           "id": "uc-niagara-neoadjuvant-gc-durvalumab",
+          "role": "standard",
           "name": {
             "en": "NIAGARA neoadjuvant: gemcitabine/cisplatin + durvalumab",
             "de": "NIAGARA neoadjuvant: Gemcitabin/Cisplatin + Durvalumab",
@@ -207,6 +118,7 @@
         },
         {
           "id": "uc-niagara-adjuvant-durvalumab",
+          "role": "standard",
           "name": {
             "en": "NIAGARA adjuvant: durvalumab monotherapy",
             "de": "NIAGARA adjuvant: Durvalumab-Monotherapie",
@@ -275,6 +187,7 @@
         },
         {
           "id": "uc-ev303-neoadjuvant-ev-pembro",
+          "role": "standard",
           "name": {
             "en": "EV-303 neoadjuvant: enfortumab vedotin + pembrolizumab",
             "de": "EV-303 neoadjuvant: Enfortumab Vedotin + Pembrolizumab",
@@ -365,6 +278,7 @@
         },
         {
           "id": "uc-ev303-adjuvant-ev-pembro",
+          "role": "standard",
           "name": {
             "en": "EV-303 adjuvant: enfortumab vedotin + pembrolizumab, then pembrolizumab",
             "de": "EV-303 adjuvant: Enfortumab Vedotin + Pembrolizumab, danach Pembrolizumab",
@@ -451,6 +365,7 @@
         },
         {
           "id": "uc-ev-pembro-1l-metastatic",
+          "role": "standard",
           "name": {
             "en": "Enfortumab vedotin + pembrolizumab (EV+P)",
             "de": "Enfortumab Vedotin + Pembrolizumab (EV+P)",
@@ -543,7 +458,207 @@
           ]
         },
         {
+          "id": "uc-pout-adjuvant-platinum-gem",
+          "role": "standard",
+          "name": {
+            "en": "Adjuvant gemcitabine/cisplatin or carboplatin (POUT)",
+            "de": "Adjuvantes Gemcitabin/Cisplatin bzw. Carboplatin (POUT)",
+            "es": "Gemcitabina/cisplatino o carboplatino adyuvante (POUT)"
+          },
+          "setting": {
+            "en": "Upper tract urothelial carcinoma pT2-T4 and/or N+, M0 after radical nephroureterectomy",
+            "de": "Urothelkarzinom des oberen Harntrakts pT2-T4 und/oder N+, M0 nach radikaler Nephroureterektomie",
+            "es": "Carcinoma urotelial del tracto urinario superior pT2-T4 y/o N+, M0 tras nefroureterectomía radical"
+          },
+          "cycleDays": 21,
+          "cycles": {
+            "en": "4 cycles, start within 90 days after nephroureterectomy",
+            "de": "4 Zyklen, Beginn innerhalb von 90 Tagen nach Nephroureterektomie",
+            "es": "4 ciclos, inicio en los 90 días posteriores a la nefroureterectomía"
+          },
+          "drugs": [
+            {
+              "name": {
+                "en": "Gemcitabine",
+                "de": "Gemcitabin",
+                "es": "Gemcitabina"
+              },
+              "dose": {
+                "en": "1000 mg/m²",
+                "de": "1000 mg/m²",
+                "es": "1000 mg/m²"
+              },
+              "route": "i.v.",
+              "schedule": {
+                "en": "day 1 and 8",
+                "de": "Tag 1 und 8",
+                "es": "días 1 y 8"
+              }
+            },
+            {
+              "name": {
+                "en": "Cisplatin",
+                "de": "Cisplatin",
+                "es": "Cisplatino"
+              },
+              "dose": {
+                "en": "70 mg/m² (GFR ≥ 50 mL/min)",
+                "de": "70 mg/m² (GFR ≥ 50 ml/min)",
+                "es": "70 mg/m² (FG ≥ 50 ml/min)"
+              },
+              "route": "i.v.",
+              "schedule": {
+                "en": "day 1",
+                "de": "Tag 1",
+                "es": "día 1"
+              }
+            },
+            {
+              "name": {
+                "en": "Alternative: Carboplatin",
+                "de": "Alternativ: Carboplatin",
+                "es": "Alternativa: carboplatino"
+              },
+              "dose": {
+                "en": "AUC 4.5 or 5",
+                "de": "AUC 4,5 oder 5",
+                "es": "AUC 4,5 o 5"
+              },
+              "route": "i.v.",
+              "schedule": {
+                "en": "day 1",
+                "de": "Tag 1",
+                "es": "día 1"
+              }
+            }
+          ],
+          "support": {
+            "en": "Cisplatin pre- and post-hydration with isotonic saline plus magnesium/potassium replacement and urine-output monitoring; highly emetogenic: NK1 antagonist + 5-HT3 antagonist + dexamethasone (+/- olanzapine) and delayed-phase prophylaxis; blood count before each gemcitabine dose; creatinine/GFR, electrolytes and hearing check before every cycle.",
+            "de": "Cisplatin-Vor- und Nachhydrierung mit isotoner NaCl-Lösung inkl. Magnesium-/Kaliumsubstitution und Bilanzierung der Diurese; hoch emetogen: NK1-Antagonist + 5-HT3-Antagonist + Dexamethason (+/- Olanzapin) sowie Prophylaxe der verzögerten Emesis; Blutbild vor jeder Gemcitabin-Gabe; Kreatinin/GFR, Elektrolyte und Hörvermögen vor jedem Zyklus.",
+            "es": "Hidratación previa y posterior al cisplatino con suero salino isotónico más reposición de magnesio/potasio y control de diuresis; altamente emetógeno: antagonista NK1 + antagonista 5-HT3 + dexametasona (+/- olanzapina) y profilaxis de la fase tardía; hemograma antes de cada dosis de gemcitabina; creatinina/FG, electrolitos y audición antes de cada ciclo."
+          },
+          "cautions": {
+            "en": "Carboplatin AUC 4.5 or 5 instead of cisplatin if GFR 30-49 mL/min. After nephroureterectomy the solitary kidney often drops GFR below cisplatin threshold - measure GFR (ideally isotope or 24-h urine) before cycle 1. GFR < 30 mL/min: no platinum. In POUT, renal impairment (GFR 30-49) was the only allowed reason for carboplatin; the carboplatin subgroup benefit was not significant. Neoadjuvant chemotherapy before nephroureterectomy is preferred where kidney function would be lost.",
+            "de": "Carboplatin AUC 4,5 oder 5 statt Cisplatin bei GFR 30-49 ml/min. Nach Nephroureterektomie fällt die GFR der Einzelniere häufig unter die Cisplatin-Grenze - GFR vor Zyklus 1 messen (idealerweise Clearance/Sammelurin). GFR < 30 ml/min: kein Platin. In POUT war die Niereninsuffizienz (GFR 30-49) der einzige zulässige Grund für Carboplatin; der Vorteil in der Carboplatin-Subgruppe war nicht signifikant. Wo Nierenfunktion verloren geht, ist eine neoadjuvante Chemotherapie vor der Nephroureterektomie zu erwägen.",
+            "es": "Carboplatino AUC 4,5 o 5 en lugar de cisplatino si FG 30-49 ml/min. Tras la nefroureterectomía, la FG del riñón único suele caer por debajo del umbral del cisplatino: medir FG (idealmente aclaramiento/orina de 24 h) antes del ciclo 1. FG < 30 ml/min: sin platino. En POUT la insuficiencia renal (FG 30-49) era la única razón admitida para carboplatino; el beneficio en el subgrupo de carboplatino no fue significativo. Valorar quimioterapia neoadyuvante antes de la nefroureterectomía cuando se perderá función renal."
+          },
+          "evidence": {
+            "en": "POUT (phase III, n = 261): adjuvant platinum/gemcitabine improved disease-free survival vs surveillance; OS benefit not statistically robust (5-year 66% vs 57%). Guideline-recommended (EAU UTUC); carboplatin use is off-label in Germany.",
+            "de": "POUT (Phase III, n = 261): adjuvantes Platin/Gemcitabin verbesserte das krankheitsfreie Überleben gegenüber Überwachung; OS-Vorteil statistisch nicht robust (5 Jahre 66 % vs. 57 %). Leitlinienempfehlung (EAU UTUC); Carboplatin in Deutschland off-label.",
+            "es": "POUT (fase III, n = 261): platino/gemcitabina adyuvantes mejoraron la supervivencia libre de enfermedad frente a vigilancia; beneficio en SG no robusto (5 años 66 % frente a 57 %). Recomendado por las guías (EAU UTUC); el carboplatino es off-label en Alemania."
+          },
+          "sources": [
+            {
+              "label": "POUT trial, Lancet 2020",
+              "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30415-3/fulltext"
+            },
+            {
+              "label": "POUT final results (ASCO Post, 2024)",
+              "url": "https://ascopost.com/news/february-2024/final-results-of-the-pout-trial-adjuvant-chemotherapy-vs-surveillance-after-nephroureterectomy-for-upper-tract-urothelial-cancer/"
+            },
+            {
+              "label": "EAU Guidelines: Upper Urinary Tract Urothelial Carcinoma",
+              "url": "https://uroweb.org/guidelines/upper-urinary-tract-urothelial-cell-carcinoma"
+            }
+          ],
+          "questions": [
+            "sys-prot-pout-carboplatin-calvert"
+          ]
+        },
+        {
+          "id": "uc-gc-neoadjuvant-21d",
+          "role": "alternative",
+          "name": {
+            "en": "Gemcitabine/cisplatin (GC) without concurrent immunotherapy, 21-day schedule",
+            "de": "Gemcitabin/Cisplatin (GC) ohne begleitende Immuntherapie, 21-Tage-Schema",
+            "es": "Gemcitabina/cisplatino (GC) sin inmunoterapia concomitante, esquema de 21 días"
+          },
+          "setting": {
+            "en": "Cisplatin-eligible patients only. Neoadjuvant: MIBC cT2-T4a N0 M0 when perioperative checkpoint inhibitor therapy (durvalumab, NIAGARA) is contraindicated or declined. Adjuvant: after upfront radical cystectomy without neoadjuvant chemotherapy, pT3/4 and/or pN+. Metastatic first line: when EV + pembrolizumab is not possible and GC + nivolumab is not chosen; avelumab maintenance if there is no progression after 4-6 cycles. Also after progression on EV + pembrolizumab.",
+            "de": "Nur bei Cisplatin-Eignung. Neoadjuvant: MIBC cT2-T4a N0 M0, wenn eine perioperative Checkpoint-Inhibitor-Therapie (Durvalumab, NIAGARA) kontraindiziert ist oder abgelehnt wird. Adjuvant: nach primärer radikaler Zystektomie ohne neoadjuvante Chemotherapie bei pT3/4 und/oder pN+. Metastasiert in der Erstlinie: wenn EV + Pembrolizumab nicht möglich ist und kein GC + Nivolumab gewählt wird; bei fehlendem Progress nach 4-6 Zyklen Avelumab-Erhaltung. Außerdem nach Progress unter EV + Pembrolizumab.",
+            "es": "Solo en pacientes aptos para cisplatino. Neoadyuvante: CVMI cT2-T4a N0 M0 cuando el tratamiento perioperatorio con inhibidor de puntos de control (durvalumab, NIAGARA) está contraindicado o se rechaza. Adyuvante: tras cistectomía radical de entrada sin quimioterapia neoadyuvante, en pT3/4 y/o pN+. Primera línea metastásica: cuando EV + pembrolizumab no es posible y no se elige GC + nivolumab; mantenimiento con avelumab si no hay progresión tras 4-6 ciclos. También tras progresión con EV + pembrolizumab."
+          },
+          "cycleDays": 21,
+          "cycles": {
+            "en": "Neoadjuvant 4 cycles, then cystectomy; adjuvant 4 cycles; metastatic 4-6 cycles",
+            "de": "Neoadjuvant 4 Zyklen, danach Zystektomie; adjuvant 4 Zyklen; metastasiert 4-6 Zyklen",
+            "es": "Neoadyuvante: 4 ciclos y después cistectomía; adyuvante: 4 ciclos; metastásico: 4-6 ciclos"
+          },
+          "drugs": [
+            {
+              "name": {
+                "en": "Gemcitabine",
+                "de": "Gemcitabin",
+                "es": "Gemcitabina"
+              },
+              "dose": {
+                "en": "1000 mg/m²",
+                "de": "1000 mg/m²",
+                "es": "1000 mg/m²"
+              },
+              "route": "i.v.",
+              "schedule": {
+                "en": "day 1 and 8",
+                "de": "Tag 1 und 8",
+                "es": "días 1 y 8"
+              }
+            },
+            {
+              "name": {
+                "en": "Cisplatin",
+                "de": "Cisplatin",
+                "es": "Cisplatino"
+              },
+              "dose": {
+                "en": "70 mg/m²",
+                "de": "70 mg/m²",
+                "es": "70 mg/m²"
+              },
+              "route": "i.v.",
+              "schedule": {
+                "en": "day 1",
+                "de": "Tag 1",
+                "es": "día 1"
+              }
+            }
+          ],
+          "support": {
+            "en": "Cisplatin pre- and post-hydration with isotonic saline plus magnesium/potassium replacement and urine-output monitoring; highly emetogenic: NK1 antagonist + 5-HT3 antagonist + dexamethasone (+/- olanzapine) and delayed-phase prophylaxis; blood count before each gemcitabine dose; creatinine/GFR, electrolytes and hearing check before every cycle.",
+            "de": "Cisplatin-Vor- und Nachhydrierung mit isotoner NaCl-Lösung inkl. Magnesium-/Kaliumsubstitution und Bilanzierung der Diurese; hoch emetogen: NK1-Antagonist + 5-HT3-Antagonist + Dexamethason (+/- Olanzapin) sowie Prophylaxe der verzögerten Emesis; Blutbild vor jeder Gemcitabin-Gabe; Kreatinin/GFR, Elektrolyte und Hörvermögen vor jedem Zyklus.",
+            "es": "Hidratación previa y posterior al cisplatino con suero salino isotónico más reposición de magnesio/potasio y control de diuresis; altamente emetógeno: antagonista NK1 + antagonista 5-HT3 + dexametasona (+/- olanzapina) y profilaxis de la fase tardía; hemograma antes de cada dosis de gemcitabina; creatinina/FG, electrolitos y audición antes de cada ciclo."
+          },
+          "cautions": {
+            "en": "Cisplatin eligibility: GFR/CrCl ≥ 60 mL/min, ECOG 0-1, no hearing loss or neuropathy grade ≥ 2, no heart failure NYHA ≥ III; below 60 mL/min do not give full-dose cisplatin (consider split-dose only within trial-type criteria, otherwise a cisplatin-free regimen). Hold gemcitabine day 8 for relevant neutropenia/thrombocytopenia. Avoid nephrotoxic co-medication (NSAIDs, aminoglycosides, contrast agents).",
+            "de": "Cisplatin-Eignung: GFR/CrCl ≥ 60 ml/min, ECOG 0-1, keine Hörminderung oder Neuropathie ≥ Grad 2, keine Herzinsuffizienz NYHA ≥ III; unter 60 ml/min kein volldosiertes Cisplatin (Split-Dose nur nach studienanalogen Kriterien, sonst cisplatinfreies Regime). Gemcitabin Tag 8 bei relevanter Neutro-/Thrombozytopenie aussetzen. Nephrotoxische Komedikation (NSAR, Aminoglykoside, Kontrastmittel) meiden.",
+            "es": "Elegibilidad para cisplatino: FG/ClCr ≥ 60 ml/min, ECOG 0-1, sin hipoacusia ni neuropatía de grado ≥ 2, sin insuficiencia cardiaca NYHA ≥ III; por debajo de 60 ml/min no administrar cisplatino a dosis plena (dosis fraccionada solo con criterios tipo ensayo; si no, régimen sin cisplatino). Suspender la gemcitabina del día 8 ante neutropenia/trombocitopenia relevante. Evitar comedicación nefrotóxica (AINE, aminoglucósidos, contraste)."
+          },
+          "evidence": {
+            "en": "EAU 2026: for cisplatin-eligible MIBC the standard is GC plus perioperative durvalumab (NIAGARA). GC alone (alternatively dd-MVAC) remains the cisplatin-based option when no checkpoint inhibitor can be given and after upfront cystectomy; in metastatic disease it is the alternative to EV + pembrolizumab or GC + nivolumab and a later line after EV + pembrolizumab. The 21-day schedule delivers higher gemcitabine dose intensity with less thrombocytopenia than the 28-day schedule. Generic cytotoxics; the gemcitabine label covers locally advanced/metastatic bladder cancer with cisplatin.",
+            "de": "EAU 2026: Standard beim cisplatingeeigneten MIBC ist GC plus perioperatives Durvalumab (NIAGARA). GC allein (alternativ dd-MVAC) bleibt die cisplatinhaltige Option, wenn kein Checkpoint-Inhibitor möglich ist, und nach primärer Zystektomie; in der metastasierten Situation ist es die Alternative zu EV + Pembrolizumab bzw. GC + Nivolumab sowie eine Folgelinie nach EV + Pembrolizumab. Das 21-Tage-Schema erreicht eine höhere Gemcitabin-Dosisintensität mit weniger Thrombozytopenien als das 28-Tage-Schema. Generika; die Gemcitabin-Zulassung umfasst das lokal fortgeschrittene/metastasierte Harnblasenkarzinom in Kombination mit Cisplatin.",
+            "es": "EAU 2026: en el CVMI apto para cisplatino, el estándar es GC más durvalumab perioperatorio (NIAGARA). GC solo (o, como alternativa, dd-MVAC) sigue siendo la opción basada en cisplatino cuando no puede administrarse un inhibidor de puntos de control y tras una cistectomía de entrada; en la enfermedad metastásica es la alternativa a EV + pembrolizumab o a GC + nivolumab, y una línea posterior tras EV + pembrolizumab. El esquema de 21 días logra mayor intensidad de dosis de gemcitabina con menos trombocitopenia que el de 28 días. Fármacos genéricos; la ficha técnica de gemcitabina incluye el cáncer de vejiga localmente avanzado/metastásico en combinación con cisplatino."
+          },
+          "sources": [
+            {
+              "label": "NIAGARA protocol (NCT03732677): GC doses incl. split-dose cisplatin",
+              "url": "https://cdn.clinicaltrials.gov/large-docs/77/NCT03732677/Prot_002.pdf"
+            },
+            {
+              "label": "Neoadjuvant GC: 3-week vs 4-week regimen (dose intensity)",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11181847/"
+            },
+            {
+              "label": "eviQ 4036: neoadjuvant/adjuvant cisplatin and gemcitabine",
+              "url": "https://www.eviq.org.au/medical-oncology/urogenital/bladder-and-urothelial/4036-bladder-urothelial-neoadjuvant-adjuvant-cispl"
+            },
+            {
+              "label": "EAU Guidelines: Muscle-invasive and Metastatic Bladder Cancer",
+              "url": "https://uroweb.org/guidelines/muscle-invasive-and-metastatic-bladder-cancer"
+            }
+          ]
+        },
+        {
           "id": "uc-gc-nivolumab-1l-metastatic",
+          "role": "alternative",
           "name": {
             "en": "Gemcitabine/cisplatin + nivolumab (CheckMate 901 induction)",
             "de": "Gemcitabin/Cisplatin + Nivolumab (CheckMate-901-Induktion)",
@@ -651,6 +766,7 @@
         },
         {
           "id": "uc-nivolumab-maintenance-after-gc-nivo",
+          "role": "alternative",
           "name": {
             "en": "Nivolumab maintenance (after GC + nivolumab)",
             "de": "Nivolumab-Erhaltungstherapie (nach GC + Nivolumab)",
@@ -718,6 +834,7 @@
         },
         {
           "id": "uc-gem-carbo-cis-ineligible",
+          "role": "alternative",
           "name": {
             "en": "Gemcitabine/carboplatin (GCb)",
             "de": "Gemcitabin/Carboplatin (GCb)",
@@ -804,6 +921,7 @@
         },
         {
           "id": "uc-avelumab-maintenance",
+          "role": "alternative",
           "name": {
             "en": "Avelumab maintenance",
             "de": "Avelumab-Erhaltungstherapie",
@@ -875,6 +993,7 @@
         },
         {
           "id": "uc-nivolumab-adjuvant",
+          "role": "alternative",
           "name": {
             "en": "Adjuvant nivolumab",
             "de": "Adjuvantes Nivolumab",
@@ -943,6 +1062,7 @@
         },
         {
           "id": "uc-erdafitinib-fgfr3",
+          "role": "alternative",
           "name": {
             "en": "Erdafitinib",
             "de": "Erdafitinib",
@@ -1012,113 +1132,6 @@
               "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/212018s007s008s009lbl.pdf"
             }
           ]
-        },
-        {
-          "id": "uc-pout-adjuvant-platinum-gem",
-          "name": {
-            "en": "Adjuvant gemcitabine/cisplatin or carboplatin (POUT)",
-            "de": "Adjuvantes Gemcitabin/Cisplatin bzw. Carboplatin (POUT)",
-            "es": "Gemcitabina/cisplatino o carboplatino adyuvante (POUT)"
-          },
-          "setting": {
-            "en": "Upper tract urothelial carcinoma pT2-T4 and/or N+, M0 after radical nephroureterectomy",
-            "de": "Urothelkarzinom des oberen Harntrakts pT2-T4 und/oder N+, M0 nach radikaler Nephroureterektomie",
-            "es": "Carcinoma urotelial del tracto urinario superior pT2-T4 y/o N+, M0 tras nefroureterectomía radical"
-          },
-          "cycleDays": 21,
-          "cycles": {
-            "en": "4 cycles, start within 90 days after nephroureterectomy",
-            "de": "4 Zyklen, Beginn innerhalb von 90 Tagen nach Nephroureterektomie",
-            "es": "4 ciclos, inicio en los 90 días posteriores a la nefroureterectomía"
-          },
-          "drugs": [
-            {
-              "name": {
-                "en": "Gemcitabine",
-                "de": "Gemcitabin",
-                "es": "Gemcitabina"
-              },
-              "dose": {
-                "en": "1000 mg/m²",
-                "de": "1000 mg/m²",
-                "es": "1000 mg/m²"
-              },
-              "route": "i.v.",
-              "schedule": {
-                "en": "day 1 and 8",
-                "de": "Tag 1 und 8",
-                "es": "días 1 y 8"
-              }
-            },
-            {
-              "name": {
-                "en": "Cisplatin",
-                "de": "Cisplatin",
-                "es": "Cisplatino"
-              },
-              "dose": {
-                "en": "70 mg/m² (GFR ≥ 50 mL/min)",
-                "de": "70 mg/m² (GFR ≥ 50 ml/min)",
-                "es": "70 mg/m² (FG ≥ 50 ml/min)"
-              },
-              "route": "i.v.",
-              "schedule": {
-                "en": "day 1",
-                "de": "Tag 1",
-                "es": "día 1"
-              }
-            },
-            {
-              "name": {
-                "en": "Alternative: Carboplatin",
-                "de": "Alternativ: Carboplatin",
-                "es": "Alternativa: carboplatino"
-              },
-              "dose": {
-                "en": "AUC 4.5 or 5",
-                "de": "AUC 4,5 oder 5",
-                "es": "AUC 4,5 o 5"
-              },
-              "route": "i.v.",
-              "schedule": {
-                "en": "day 1",
-                "de": "Tag 1",
-                "es": "día 1"
-              }
-            }
-          ],
-          "support": {
-            "en": "Cisplatin pre- and post-hydration with isotonic saline plus magnesium/potassium replacement and urine-output monitoring; highly emetogenic: NK1 antagonist + 5-HT3 antagonist + dexamethasone (+/- olanzapine) and delayed-phase prophylaxis; blood count before each gemcitabine dose; creatinine/GFR, electrolytes and hearing check before every cycle.",
-            "de": "Cisplatin-Vor- und Nachhydrierung mit isotoner NaCl-Lösung inkl. Magnesium-/Kaliumsubstitution und Bilanzierung der Diurese; hoch emetogen: NK1-Antagonist + 5-HT3-Antagonist + Dexamethason (+/- Olanzapin) sowie Prophylaxe der verzögerten Emesis; Blutbild vor jeder Gemcitabin-Gabe; Kreatinin/GFR, Elektrolyte und Hörvermögen vor jedem Zyklus.",
-            "es": "Hidratación previa y posterior al cisplatino con suero salino isotónico más reposición de magnesio/potasio y control de diuresis; altamente emetógeno: antagonista NK1 + antagonista 5-HT3 + dexametasona (+/- olanzapina) y profilaxis de la fase tardía; hemograma antes de cada dosis de gemcitabina; creatinina/FG, electrolitos y audición antes de cada ciclo."
-          },
-          "cautions": {
-            "en": "Carboplatin AUC 4.5 or 5 instead of cisplatin if GFR 30-49 mL/min. After nephroureterectomy the solitary kidney often drops GFR below cisplatin threshold - measure GFR (ideally isotope or 24-h urine) before cycle 1. GFR < 30 mL/min: no platinum. In POUT, renal impairment (GFR 30-49) was the only allowed reason for carboplatin; the carboplatin subgroup benefit was not significant. Neoadjuvant chemotherapy before nephroureterectomy is preferred where kidney function would be lost.",
-            "de": "Carboplatin AUC 4,5 oder 5 statt Cisplatin bei GFR 30-49 ml/min. Nach Nephroureterektomie fällt die GFR der Einzelniere häufig unter die Cisplatin-Grenze - GFR vor Zyklus 1 messen (idealerweise Clearance/Sammelurin). GFR < 30 ml/min: kein Platin. In POUT war die Niereninsuffizienz (GFR 30-49) der einzige zulässige Grund für Carboplatin; der Vorteil in der Carboplatin-Subgruppe war nicht signifikant. Wo Nierenfunktion verloren geht, ist eine neoadjuvante Chemotherapie vor der Nephroureterektomie zu erwägen.",
-            "es": "Carboplatino AUC 4,5 o 5 en lugar de cisplatino si FG 30-49 ml/min. Tras la nefroureterectomía, la FG del riñón único suele caer por debajo del umbral del cisplatino: medir FG (idealmente aclaramiento/orina de 24 h) antes del ciclo 1. FG < 30 ml/min: sin platino. En POUT la insuficiencia renal (FG 30-49) era la única razón admitida para carboplatino; el beneficio en el subgrupo de carboplatino no fue significativo. Valorar quimioterapia neoadyuvante antes de la nefroureterectomía cuando se perderá función renal."
-          },
-          "evidence": {
-            "en": "POUT (phase III, n = 261): adjuvant platinum/gemcitabine improved disease-free survival vs surveillance; OS benefit not statistically robust (5-year 66% vs 57%). Guideline-recommended (EAU UTUC); carboplatin use is off-label in Germany.",
-            "de": "POUT (Phase III, n = 261): adjuvantes Platin/Gemcitabin verbesserte das krankheitsfreie Überleben gegenüber Überwachung; OS-Vorteil statistisch nicht robust (5 Jahre 66 % vs. 57 %). Leitlinienempfehlung (EAU UTUC); Carboplatin in Deutschland off-label.",
-            "es": "POUT (fase III, n = 261): platino/gemcitabina adyuvantes mejoraron la supervivencia libre de enfermedad frente a vigilancia; beneficio en SG no robusto (5 años 66 % frente a 57 %). Recomendado por las guías (EAU UTUC); el carboplatino es off-label en Alemania."
-          },
-          "sources": [
-            {
-              "label": "POUT trial, Lancet 2020",
-              "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30415-3/fulltext"
-            },
-            {
-              "label": "POUT final results (ASCO Post, 2024)",
-              "url": "https://ascopost.com/news/february-2024/final-results-of-the-pout-trial-adjuvant-chemotherapy-vs-surveillance-after-nephroureterectomy-for-upper-tract-urothelial-cancer/"
-            },
-            {
-              "label": "EAU Guidelines: Upper Urinary Tract Urothelial Carcinoma",
-              "url": "https://uroweb.org/guidelines/upper-urinary-tract-urothelial-cell-carcinoma"
-            }
-          ],
-          "questions": [
-            "sys-prot-pout-carboplatin-calvert"
-          ]
         }
       ]
     },
@@ -1132,6 +1145,7 @@
       "regimens": [
         {
           "id": "sipi-post-turb",
+          "role": "standard",
           "name": {
             "en": "Single immediate post-TURB chemotherapy instillation (mitomycin C)",
             "de": "Einmalige postoperative Frühinstillation nach TUR-B (Mitomycin C)",
@@ -1243,6 +1257,7 @@
         },
         {
           "id": "adjuvant-chemo-intermediate",
+          "role": "standard",
           "name": {
             "en": "Adjuvant intravesical chemotherapy (mitomycin C or epirubicin)",
             "de": "Adjuvante intravesikale Chemotherapie (Mitomycin C oder Epirubicin)",
@@ -1332,6 +1347,7 @@
         },
         {
           "id": "bcg-induction-maintenance",
+          "role": "standard",
           "name": {
             "en": "BCG induction and maintenance (SWOG schedule)",
             "de": "BCG-Induktion und -Erhaltungstherapie (SWOG-Schema)",
@@ -1403,6 +1419,7 @@
         },
         {
           "id": "post-rnu-mmc",
+          "role": "standard",
           "name": {
             "en": "Single bladder instillation after nephroureterectomy (mitomycin C)",
             "de": "Einmalige Blaseninstillation nach Nephroureterektomie (Mitomycin C)",
@@ -1474,6 +1491,7 @@
         },
         {
           "id": "gemcitabine-docetaxel-sequential",
+          "role": "alternative",
           "name": {
             "en": "Sequential gemcitabine/docetaxel (Gem/Doce)",
             "de": "Sequenzielles Gemcitabin/Docetaxel (Gem/Doce)",
@@ -1574,6 +1592,7 @@
       "regimens": [
         {
           "id": "pca-darolutamide-docetaxel-adt",
+          "role": "standard",
           "name": {
             "en": "Darolutamide + docetaxel + ADT (triplet, ARASENS)",
             "de": "Darolutamid + Docetaxel + ADT (Triplette, ARASENS)",
@@ -1681,7 +1700,870 @@
           ]
         },
         {
+          "id": "pca-docetaxel-prednisone-mcrpc",
+          "role": "standard",
+          "name": {
+            "en": "Docetaxel + prednisone (mCRPC)",
+            "de": "Docetaxel + Prednison (mCRPC)",
+            "es": "Docetaxel + prednisona (CPRCm)"
+          },
+          "setting": {
+            "en": "mCRPC, taxane-naive: first-line chemotherapy (ADT continued)",
+            "de": "mCRPC, Taxan-naiv: Erstlinien-Chemotherapie (ADT wird fortgeführt)",
+            "es": "CPRCm sin taxano previo: quimioterapia de primera línea (se mantiene la TDA)"
+          },
+          "cycleDays": 21,
+          "cycles": {
+            "en": "up to 10 cycles (TAX 327) or until progression or unacceptable toxicity",
+            "de": "bis zu 10 Zyklen (TAX 327) bzw. bis Progress oder inakzeptable Toxizität",
+            "es": "hasta 10 ciclos (TAX 327) o hasta progresión o toxicidad inaceptable"
+          },
+          "drugs": [
+            {
+              "name": {
+                "en": "Docetaxel",
+                "de": "Docetaxel",
+                "es": "Docetaxel"
+              },
+              "dose": {
+                "en": "75 mg/m²",
+                "de": "75 mg/m²",
+                "es": "75 mg/m²"
+              },
+              "route": "i.v.",
+              "schedule": {
+                "en": "day 1 every 3 weeks (1-h infusion)",
+                "de": "Tag 1 alle 3 Wochen (1-h-Infusion)",
+                "es": "día 1 cada 3 semanas (infusión de 1 h)"
+              }
+            },
+            {
+              "name": {
+                "en": "Prednisone or prednisolone",
+                "de": "Prednison oder Prednisolon",
+                "es": "Prednisona o prednisolona"
+              },
+              "dose": {
+                "en": "5 mg",
+                "de": "5 mg",
+                "es": "5 mg"
+              },
+              "route": "p.o.",
+              "schedule": {
+                "en": "twice daily, continuously",
+                "de": "2 x täglich, kontinuierlich",
+                "es": "dos veces al día, de forma continua"
+              }
+            },
+            {
+              "name": {
+                "en": "ADT (GnRH agonist/antagonist or orchiectomy)",
+                "de": "ADT (GnRH-Agonist/-Antagonist o. Orchiektomie)",
+                "es": "TDA (agonista/antagonista GnRH u orquiectomía)"
+              },
+              "dose": {
+                "en": "per product (target T < 50 ng/dl)",
+                "de": "gemäß Präparat (Ziel: T < 50 ng/dl)",
+                "es": "según preparado (objetivo: T < 50 ng/dl)"
+              },
+              "route": "s.c.",
+              "schedule": {
+                "en": "continuous",
+                "de": "kontinuierlich",
+                "es": "continua"
+              }
+            }
+          ],
+          "support": {
+            "en": "Premedication: dexamethasone 8 mg p.o. 12 h, 3 h and 1 h before docetaxel. Antiemesis for low/moderate emetogenic risk. Weekly blood count (nadir day 7-10); consider G-CSF in high-risk patients (age, prior febrile neutropenia). Nail and mucosal care. ADT: GnRH agonist or antagonist dosed per product (see ADT regimens), or prior orchiectomy; castration target testosterone < 50 ng/dl.",
+            "de": "Prämedikation: Dexamethason 8 mg p.o. 12 h, 3 h und 1 h vor Docetaxel. Antiemese für niedriges/moderates emetogenes Risiko. Wöchentliches Blutbild (Nadir Tag 7-10); G-CSF bei Hochrisikopatienten (Alter, frühere febrile Neutropenie) erwägen. Nagel- und Schleimhautpflege. ADT: GnRH-Agonist oder -Antagonist, Dosis gemäß Präparat (siehe ADT-Protokolle), bzw. Z. n. Orchiektomie; Ziel Kastrationsniveau Testosteron < 50 ng/dl.",
+            "es": "Premedicación: dexametasona 8 mg v.o. 12 h, 3 h y 1 h antes del docetaxel. Antiemesis para riesgo emetógeno bajo/moderado. Hemograma semanal (nadir día 7-10); considerar G-CSF en pacientes de alto riesgo (edad, neutropenia febril previa). Cuidado de uñas y mucosas. TDA: agonista o antagonista de GnRH, dosis según preparado (ver pautas de TDA), u orquiectomía previa; objetivo testosterona de castración < 50 ng/dl."
+          },
+          "cautions": {
+            "en": "Contraindicated if neutrophils < 1.5 x 10^9/l; not recommended if bilirubin > ULN or AST/ALT > 1.5 x ULN together with ALP > 2.5 x ULN. Check neutrophils before each cycle (≥ 1.5 x 10^9/l required). Dose reduction to 60 mg/m² after febrile neutropenia, neutrophils < 0.5 x 10^9/l for > 1 week or severe skin reactions/neuropathy. Watch fluid retention, peripheral neuropathy, hypersensitivity (first two infusions), nail changes.",
+            "de": "Kontraindiziert bei Neutrophilen < 1,5 x 10^9/l; nicht empfohlen bei Bilirubin > ONW oder GOT/GPT > 1,5 x ONW kombiniert mit AP > 2,5 x ONW. Neutrophile vor jedem Zyklus prüfen (≥ 1,5 x 10^9/l erforderlich). Dosisreduktion auf 60 mg/m² nach febriler Neutropenie, Neutrophilen < 0,5 x 10^9/l > 1 Woche oder schweren Haut-/Nervenreaktionen. Auf Flüssigkeitsretention, periphere Neuropathie, Überempfindlichkeitsreaktionen (erste zwei Infusionen) und Nagelveränderungen achten.",
+            "es": "Contraindicado si neutrófilos < 1,5 x 10^9/l; no recomendado si bilirrubina > LSN o AST/ALT > 1,5 x LSN junto con FA > 2,5 x LSN. Comprobar neutrófilos antes de cada ciclo (se requieren ≥ 1,5 x 10^9/l). Reducir a 60 mg/m² tras neutropenia febril, neutrófilos < 0,5 x 10^9/l > 1 semana o reacciones cutáneas/neuropatía graves. Vigilar retención hídrica, neuropatía periférica, hipersensibilidad (dos primeras infusiones) y alteraciones ungueales."
+          },
+          "evidence": {
+            "en": "TAX 327 (3-weekly docetaxel + prednisone vs mitoxantrone: overall survival benefit; up to 10 cycles planned). EU-approved (docetaxel with prednisone/prednisolone for mCRPC).",
+            "de": "TAX 327 (Docetaxel 3-wöchentlich + Prednison vs. Mitoxantron: Überlebensvorteil; bis zu 10 Zyklen geplant). In der EU zugelassen (Docetaxel mit Prednison/Prednisolon beim mCRPC).",
+            "es": "TAX 327 (docetaxel cada 3 semanas + prednisona frente a mitoxantrona: beneficio en supervivencia; hasta 10 ciclos previstos). Aprobado en la UE (docetaxel con prednisona/prednisolona en CPRCm)."
+          },
+          "sources": [
+            {
+              "label": "EMA: Taxotere (docetaxel) product information",
+              "url": "https://www.ema.europa.eu/en/documents/product-information/taxotere-epar-product-information_en.pdf"
+            },
+            {
+              "label": "NICE TA101: docetaxel for hormone-refractory prostate cancer (TAX 327 evidence)",
+              "url": "https://www.nice.org.uk/guidance/ta101/chapter/evidence-and-interpretation"
+            }
+          ]
+        },
+        {
+          "id": "pca-abiraterone-prednisone",
+          "role": "standard",
+          "name": {
+            "en": "Abiraterone acetate + prednisone/prednisolone",
+            "de": "Abirateronacetat + Prednison/Prednisolon",
+            "es": "Acetato de abiraterona + prednisona/prednisolona"
+          },
+          "setting": {
+            "en": "Newly diagnosed high-risk mHSPC with ADT (LATITUDE); mCRPC (chemo-naive asymptomatic/mildly symptomatic after ADT failure, or after docetaxel)",
+            "de": "Neu diagnostiziertes Hochrisiko-mHSPC mit ADT (LATITUDE); mCRPC (Chemo-naiv, asymptomatisch/gering symptomatisch nach ADT-Versagen, oder nach Docetaxel)",
+            "es": "CPHSm de alto riesgo de nuevo diagnóstico con TDA (LATITUDE); CPRCm (sin quimioterapia, asintomático/levemente sintomático tras fracaso de TDA, o tras docetaxel)"
+          },
+          "cycleDays": null,
+          "cycles": {
+            "en": "continuous until progression or unacceptable toxicity",
+            "de": "kontinuierlich bis Progress oder inakzeptable Toxizität",
+            "es": "continua hasta progresión o toxicidad inaceptable"
+          },
+          "drugs": [
+            {
+              "name": {
+                "en": "Abiraterone acetate",
+                "de": "Abirateronacetat",
+                "es": "Acetato de abiraterona"
+              },
+              "dose": {
+                "en": "1000 mg (2 x 500 mg or 4 x 250 mg)",
+                "de": "1000 mg (2 x 500 mg oder 4 x 250 mg)",
+                "es": "1000 mg (2 x 500 mg o 4 x 250 mg)"
+              },
+              "route": "p.o.",
+              "schedule": {
+                "en": "once daily, fasting: no food 2 h before and 1 h after",
+                "de": "1 x täglich nüchtern: 2 h vorher und 1 h danach nichts essen",
+                "es": "una vez al día en ayunas: sin comer 2 h antes ni 1 h después"
+              }
+            },
+            {
+              "name": {
+                "en": "Prednisone or prednisolone - mHSPC",
+                "de": "Prednison oder Prednisolon - mHSPC",
+                "es": "Prednisona o prednisolona - CPHSm"
+              },
+              "dose": {
+                "en": "5 mg",
+                "de": "5 mg",
+                "es": "5 mg"
+              },
+              "route": "p.o.",
+              "schedule": {
+                "en": "once daily",
+                "de": "1 x täglich",
+                "es": "una vez al día"
+              }
+            },
+            {
+              "name": {
+                "en": "Prednisone or prednisolone - mCRPC",
+                "de": "Prednison oder Prednisolon - mCRPC",
+                "es": "Prednisona o prednisolona - CPRCm"
+              },
+              "dose": {
+                "en": "10 mg",
+                "de": "10 mg",
+                "es": "10 mg"
+              },
+              "route": "p.o.",
+              "schedule": {
+                "en": "daily (EU label)",
+                "de": "täglich (EU-Fachinformation)",
+                "es": "diaria (ficha técnica UE)"
+              }
+            },
+            {
+              "name": {
+                "en": "ADT (GnRH agonist/antagonist or orchiectomy)",
+                "de": "ADT (GnRH-Agonist/-Antagonist o. Orchiektomie)",
+                "es": "TDA (agonista/antagonista GnRH u orquiectomía)"
+              },
+              "dose": {
+                "en": "per product (target T < 50 ng/dl)",
+                "de": "gemäß Präparat (Ziel: T < 50 ng/dl)",
+                "es": "según preparado (objetivo: T < 50 ng/dl)"
+              },
+              "route": "s.c.",
+              "schedule": {
+                "en": "continuous",
+                "de": "kontinuierlich",
+                "es": "continua"
+              }
+            }
+          ],
+          "support": {
+            "en": "Continue ADT. Monthly blood pressure, potassium (keep ≥ 4.0 mmol/l in cardiac patients) and fluid status; liver enzymes every 2 weeks for 3 months, then monthly. Bone protection and calcium/vitamin D as indicated. Do not stop the steroid abruptly. ADT: GnRH agonist or antagonist dosed per product (see ADT regimens), or prior orchiectomy; castration target testosterone < 50 ng/dl.",
+            "de": "ADT fortführen. Monatlich Blutdruck, Kalium (bei Herzpatienten ≥ 4,0 mmol/l halten) und Ödeme; Transaminasen 3 Monate lang alle 2 Wochen, dann monatlich. Knochenschutz und Calcium/Vitamin D nach Indikation. Steroid nicht abrupt absetzen. ADT: GnRH-Agonist oder -Antagonist, Dosis gemäß Präparat (siehe ADT-Protokolle), bzw. Z. n. Orchiektomie; Ziel Kastrationsniveau Testosteron < 50 ng/dl.",
+            "es": "Mantener TDA. Mensualmente presión arterial, potasio (≥ 4,0 mmol/l en cardiópatas) y edemas; transaminasas cada 2 semanas durante 3 meses y luego mensuales. Protección ósea y calcio/vitamina D según indicación. No suspender bruscamente el corticoide. TDA: agonista o antagonista de GnRH, dosis según preparado (ver pautas de TDA), u orquiectomía previa; objetivo testosterona de castración < 50 ng/dl."
+          },
+          "cautions": {
+            "en": "Food markedly increases absorption - always fasting. Mineralocorticoid excess: hypertension, hypokalaemia, oedema; caution in heart failure. Hepatotoxicity: interrupt immediately if ALT/AST > 5 x ULN; after return to baseline resume at 500 mg once daily; discontinue permanently if hepatotoxicity recurs at 500 mg or ALT/AST rise > 20 x ULN. Child-Pugh B only if benefit clearly outweighs risk; contraindicated in Child-Pugh C. Contraindicated with radium-223. High-risk M0 disease with radiotherapy (STAMPEDE) is off-label in Germany.",
+            "de": "Nahrung steigert die Resorption deutlich - immer nüchtern. Mineralokortikoid-Exzess: Hypertonie, Hypokaliämie, Ödeme; Vorsicht bei Herzinsuffizienz. Hepatotoxizität: bei GPT/GOT > 5 x ONW sofort pausieren; nach Normalisierung auf Ausgangswerte mit 500 mg 1 x täglich fortsetzen; endgültig absetzen bei erneuter Hepatotoxizität unter 500 mg oder GPT/GOT > 20 x ONW. Child-Pugh B nur bei klar überwiegendem Nutzen; Child-Pugh C kontraindiziert. Kontraindiziert mit Radium-223. Hochrisiko-M0 mit Strahlentherapie (STAMPEDE) ist in Deutschland off-label.",
+            "es": "Los alimentos aumentan mucho la absorción - siempre en ayunas. Exceso mineralocorticoide: hipertensión, hipopotasemia, edemas; precaución en insuficiencia cardíaca. Hepatotoxicidad: interrumpir de inmediato si ALT/AST > 5 x LSN; tras volver a los valores basales reanudar con 500 mg una vez al día; suspender definitivamente si recurre con 500 mg o si ALT/AST > 20 x LSN. Child-Pugh B solo si el beneficio supera claramente el riesgo; contraindicado en Child-Pugh C. Contraindicado con radio-223. El M0 de alto riesgo con radioterapia (STAMPEDE) está fuera de indicación en Alemania."
+          },
+          "evidence": {
+            "en": "LATITUDE (high-risk mHSPC), COU-AA-302 (chemo-naive mCRPC), COU-AA-301 (post-docetaxel). EU-approved in these indications; prednisone 5 mg daily in mHSPC and 10 mg daily in mCRPC per EU SmPC (US label: 5 mg twice daily in mCRPC).",
+            "de": "LATITUDE (Hochrisiko-mHSPC), COU-AA-302 (Chemo-naives mCRPC), COU-AA-301 (nach Docetaxel). In diesen Indikationen EU-zugelassen; Prednison 5 mg/Tag beim mHSPC und 10 mg/Tag beim mCRPC laut EU-Fachinformation (US-Label: 2 x 5 mg beim mCRPC).",
+            "es": "LATITUDE (CPHSm de alto riesgo), COU-AA-302 (CPRCm sin quimioterapia), COU-AA-301 (tras docetaxel). Aprobado en la UE en estas indicaciones; prednisona 5 mg/día en CPHSm y 10 mg/día en CPRCm según ficha técnica UE (ficha de EE. UU.: 5 mg dos veces al día en CPRCm)."
+          },
+          "sources": [
+            {
+              "label": "EMA: Abiraterone Krka product information (abiraterone posology)",
+              "url": "https://www.ema.europa.eu/en/documents/product-information/abiraterone-krka-epar-product-information_en.pdf"
+            },
+            {
+              "label": "EMA: Abiraterone Accord product information",
+              "url": "https://www.ema.europa.eu/en/documents/product-information/abiraterone-accord-epar-product-information_en.pdf"
+            },
+            {
+              "label": "eMC: Zytiga 500 mg SmPC",
+              "url": "https://www.medicines.org.uk/emc/product/2381/smpc"
+            }
+          ],
+          "questions": [
+            "sys-prot-abiraterone-mcrpc-steroid-dose-fasting",
+            "q-pca-mcrpc-after-docetaxel-arpi-naive-no-hrr"
+          ]
+        },
+        {
+          "id": "pca-enzalutamide",
+          "role": "standard",
+          "name": {
+            "en": "Enzalutamide",
+            "de": "Enzalutamid",
+            "es": "Enzalutamida"
+          },
+          "setting": {
+            "en": "mHSPC with ADT (ARCHES); high-risk nmCRPC (PROSPER); mCRPC before or after docetaxel (PREVAIL, AFFIRM); high-risk biochemically recurrent nmHSPC unsuitable for salvage radiotherapy, alone or with ADT (EMBARK)",
+            "de": "mHSPC mit ADT (ARCHES); Hochrisiko-nmCRPC (PROSPER); mCRPC vor oder nach Docetaxel (PREVAIL, AFFIRM); Hochrisiko-biochemisches Rezidiv (nmHSPC) ohne Option einer Salvage-Strahlentherapie, als Monotherapie oder mit ADT (EMBARK)",
+            "es": "CPHSm con TDA (ARCHES); CPRCnm de alto riesgo (PROSPER); CPRCm antes o después de docetaxel (PREVAIL, AFFIRM); recidiva bioquímica de alto riesgo (CPHSnm) no candidata a radioterapia de rescate, sola o con TDA (EMBARK)"
+          },
+          "cycleDays": null,
+          "cycles": {
+            "en": "continuous until progression or unacceptable toxicity (EMBARK: treatment pause allowed if PSA undetectable at week 37)",
+            "de": "kontinuierlich bis Progress oder inakzeptable Toxizität (EMBARK: Therapiepause möglich bei nicht nachweisbarem PSA in Woche 37)",
+            "es": "continua hasta progresión o toxicidad inaceptable (EMBARK: pausa posible si PSA indetectable en la semana 37)"
+          },
+          "drugs": [
+            {
+              "name": {
+                "en": "Enzalutamide",
+                "de": "Enzalutamid",
+                "es": "Enzalutamida"
+              },
+              "dose": {
+                "en": "160 mg (4 x 40 mg)",
+                "de": "160 mg (4 x 40 mg)",
+                "es": "160 mg (4 x 40 mg)"
+              },
+              "route": "p.o.",
+              "schedule": {
+                "en": "once daily, with or without food",
+                "de": "1 x täglich, unabhängig von den Mahlzeiten",
+                "es": "una vez al día, con o sin alimentos"
+              }
+            },
+            {
+              "name": {
+                "en": "ADT (GnRH agonist/antagonist or orchiectomy)",
+                "de": "ADT (GnRH-Agonist/-Antagonist o. Orchiektomie)",
+                "es": "TDA (agonista/antagonista GnRH u orquiectomía)"
+              },
+              "dose": {
+                "en": "per product (target T < 50 ng/dl)",
+                "de": "gemäß Präparat (Ziel: T < 50 ng/dl)",
+                "es": "según preparado (objetivo: T < 50 ng/dl)"
+              },
+              "route": "s.c.",
+              "schedule": {
+                "en": "continuous",
+                "de": "kontinuierlich",
+                "es": "continua"
+              }
+            }
+          ],
+          "support": {
+            "en": "Continue ADT (except enzalutamide monotherapy arm in EMBARK). Blood pressure, falls and fracture risk; bone health assessment. ADT: GnRH agonist or antagonist dosed per product (see ADT regimens), or prior orchiectomy; castration target testosterone < 50 ng/dl.",
+            "de": "ADT fortführen (außer Enzalutamid-Monotherapie gemäß EMBARK). Blutdruck, Sturz- und Frakturrisiko; Knochengesundheit prüfen. ADT: GnRH-Agonist oder -Antagonist, Dosis gemäß Präparat (siehe ADT-Protokolle), bzw. Z. n. Orchiektomie; Ziel Kastrationsniveau Testosteron < 50 ng/dl.",
+            "es": "Mantener TDA (salvo monoterapia con enzalutamida según EMBARK). Presión arterial, riesgo de caídas y fracturas; valorar salud ósea. TDA: agonista o antagonista de GnRH, dosis según preparado (ver pautas de TDA), u orquiectomía previa; objetivo testosterona de castración < 50 ng/dl."
+          },
+          "cautions": {
+            "en": "Seizure risk (caution with predisposing factors); fatigue, falls, hypertension, cognitive effects. Strong CYP3A4 inducer: check interactions (e.g. DOACs, statins, opioids). With strong CYP2C8 inhibitors (e.g. gemfibrozil) reduce to 80 mg once daily. For grade ≥ 3 toxicity interrupt 1 week, then resume at 160, 120 or 80 mg.",
+            "de": "Krampfanfallrisiko (Vorsicht bei prädisponierenden Faktoren); Fatigue, Stürze, Hypertonie, kognitive Effekte. Starker CYP3A4-Induktor: Interaktionen prüfen (z. B. DOAK, Statine, Opioide). Bei starken CYP2C8-Inhibitoren (z. B. Gemfibrozil) Reduktion auf 80 mg 1 x täglich. Bei Toxizität Grad ≥ 3 1 Woche pausieren, dann mit 160, 120 oder 80 mg fortsetzen.",
+            "es": "Riesgo de convulsiones (precaución con factores predisponentes); astenia, caídas, hipertensión, efectos cognitivos. Inductor potente de CYP3A4: revisar interacciones (p. ej. ACOD, estatinas, opioides). Con inhibidores potentes de CYP2C8 (p. ej. gemfibrozilo) reducir a 80 mg una vez al día. Con toxicidad grado ≥ 3 interrumpir 1 semana y reanudar con 160, 120 u 80 mg."
+          },
+          "evidence": {
+            "en": "ARCHES, ENZAMET (mHSPC), PROSPER (nmCRPC), PREVAIL, AFFIRM (mCRPC), EMBARK (high-risk BCR). All listed indications EU-approved (EMBARK extension April 2024).",
+            "de": "ARCHES, ENZAMET (mHSPC), PROSPER (nmCRPC), PREVAIL, AFFIRM (mCRPC), EMBARK (Hochrisiko-BCR). Alle genannten Indikationen EU-zugelassen (EMBARK-Erweiterung April 2024).",
+            "es": "ARCHES, ENZAMET (CPHSm), PROSPER (CPRCnm), PREVAIL, AFFIRM (CPRCm), EMBARK (RB de alto riesgo). Todas las indicaciones citadas aprobadas en la UE (ampliación EMBARK abril 2024)."
+          },
+          "sources": [
+            {
+              "label": "EMA: Xtandi (enzalutamide) product information",
+              "url": "https://www.ema.europa.eu/en/documents/product-information/xtandi-epar-product-information_en.pdf"
+            },
+            {
+              "label": "Urology Times: enzalutamide granted EU approval for nmHSPC (EMBARK)",
+              "url": "https://www.urologytimes.com/view/enzalutamide-granted-approval-in-eu-for-nmhspc"
+            }
+          ],
+          "questions": [
+            "q-pca-mhspc-low-volume-low-risk-prostate-rt",
+            "q-pca-mcrpc-after-docetaxel-arpi-naive-no-hrr"
+          ]
+        },
+        {
+          "id": "pca-apalutamide",
+          "role": "standard",
+          "name": {
+            "en": "Apalutamide",
+            "de": "Apalutamid",
+            "es": "Apalutamida"
+          },
+          "setting": {
+            "en": "mHSPC with ADT (TITAN); nmCRPC at high risk of metastasis (SPARTAN)",
+            "de": "mHSPC mit ADT (TITAN); nmCRPC mit hohem Metastasierungsrisiko (SPARTAN)",
+            "es": "CPHSm con TDA (TITAN); CPRCnm con alto riesgo de metástasis (SPARTAN)"
+          },
+          "cycleDays": null,
+          "cycles": {
+            "en": "continuous until progression or unacceptable toxicity",
+            "de": "kontinuierlich bis Progress oder inakzeptable Toxizität",
+            "es": "continua hasta progresión o toxicidad inaceptable"
+          },
+          "drugs": [
+            {
+              "name": {
+                "en": "Apalutamide",
+                "de": "Apalutamid",
+                "es": "Apalutamida"
+              },
+              "dose": {
+                "en": "240 mg (4 x 60 mg or 1 x 240 mg)",
+                "de": "240 mg (4 x 60 mg oder 1 x 240 mg)",
+                "es": "240 mg (4 x 60 mg o 1 x 240 mg)"
+              },
+              "route": "p.o.",
+              "schedule": {
+                "en": "once daily, with or without food",
+                "de": "1 x täglich, unabhängig von den Mahlzeiten",
+                "es": "una vez al día, con o sin alimentos"
+              }
+            },
+            {
+              "name": {
+                "en": "ADT (GnRH agonist/antagonist or orchiectomy)",
+                "de": "ADT (GnRH-Agonist/-Antagonist o. Orchiektomie)",
+                "es": "TDA (agonista/antagonista GnRH u orquiectomía)"
+              },
+              "dose": {
+                "en": "per product (target T < 50 ng/dl)",
+                "de": "gemäß Präparat (Ziel: T < 50 ng/dl)",
+                "es": "según preparado (objetivo: T < 50 ng/dl)"
+              },
+              "route": "s.c.",
+              "schedule": {
+                "en": "continuous",
+                "de": "kontinuierlich",
+                "es": "continua"
+              }
+            }
+          ],
+          "support": {
+            "en": "Continue ADT. TSH at baseline and periodically; skin checks; falls/fracture prevention, bone health assessment. ADT: GnRH agonist or antagonist dosed per product (see ADT regimens), or prior orchiectomy; castration target testosterone < 50 ng/dl.",
+            "de": "ADT fortführen. TSH vor Beginn und im Verlauf; Hautkontrollen; Sturz-/Frakturprophylaxe, Knochengesundheit prüfen. ADT: GnRH-Agonist oder -Antagonist, Dosis gemäß Präparat (siehe ADT-Protokolle), bzw. Z. n. Orchiektomie; Ziel Kastrationsniveau Testosteron < 50 ng/dl.",
+            "es": "Mantener TDA. TSH basal y periódica; revisión cutánea; prevención de caídas/fracturas, valorar salud ósea. TDA: agonista o antagonista de GnRH, dosis según preparado (ver pautas de TDA), u orquiectomía previa; objetivo testosterona de castración < 50 ng/dl."
+          },
+          "cautions": {
+            "en": "Rash (frequent; interrupt for grade ≥ 3, resume at reduced dose 180 mg or 120 mg), hypothyroidism, falls and fractures, seizures (rare), QT prolongation. Strong CYP3A4/2C19 inducer: check interactions.",
+            "de": "Exanthem (häufig; bei Grad ≥ 3 pausieren, dann reduziert mit 180 mg oder 120 mg fortsetzen), Hypothyreose, Stürze und Frakturen, Krampfanfälle (selten), QT-Verlängerung. Starker CYP3A4/2C19-Induktor: Interaktionen prüfen.",
+            "es": "Exantema (frecuente; interrumpir en grado ≥ 3 y reanudar a dosis reducida 180 mg o 120 mg), hipotiroidismo, caídas y fracturas, convulsiones (raras), prolongación del QT. Inductor potente de CYP3A4/2C19: revisar interacciones."
+          },
+          "evidence": {
+            "en": "TITAN (mHSPC), SPARTAN (nmCRPC). Both indications EU-approved.",
+            "de": "TITAN (mHSPC), SPARTAN (nmCRPC). Beide Indikationen EU-zugelassen.",
+            "es": "TITAN (CPHSm), SPARTAN (CPRCnm). Ambas indicaciones aprobadas en la UE."
+          },
+          "sources": [
+            {
+              "label": "EMA: Erleada (apalutamide) product information",
+              "url": "https://www.ema.europa.eu/en/documents/product-information/erleada-epar-product-information_en.pdf"
+            },
+            {
+              "label": "Erleada dose modifications (J&J Medical Connect)",
+              "url": "https://www.jnjmedicalconnect.com/products/erleada/medical-content/erleada-dose-modifications"
+            }
+          ],
+          "questions": [
+            "q-pca-mhspc-low-volume-low-risk-prostate-rt"
+          ]
+        },
+        {
+          "id": "pca-darolutamide",
+          "role": "standard",
+          "name": {
+            "en": "Darolutamide (+ ADT)",
+            "de": "Darolutamid (+ ADT)",
+            "es": "Darolutamida (+ TDA)"
+          },
+          "setting": {
+            "en": "nmCRPC at high risk of metastasis (ARAMIS); mHSPC with ADT without docetaxel (ARANOTE, EU 2025); with docetaxel see triplet (ARASENS)",
+            "de": "nmCRPC mit hohem Metastasierungsrisiko (ARAMIS); mHSPC mit ADT ohne Docetaxel (ARANOTE, EU 2025); mit Docetaxel siehe Triplette (ARASENS)",
+            "es": "CPRCnm con alto riesgo de metástasis (ARAMIS); CPHSm con TDA sin docetaxel (ARANOTE, UE 2025); con docetaxel ver triplete (ARASENS)"
+          },
+          "cycleDays": null,
+          "cycles": {
+            "en": "continuous until progression or unacceptable toxicity",
+            "de": "kontinuierlich bis Progress oder inakzeptable Toxizität",
+            "es": "continua hasta progresión o toxicidad inaceptable"
+          },
+          "drugs": [
+            {
+              "name": {
+                "en": "Darolutamide",
+                "de": "Darolutamid",
+                "es": "Darolutamida"
+              },
+              "dose": {
+                "en": "600 mg (2 x 300 mg)",
+                "de": "600 mg (2 x 300 mg)",
+                "es": "600 mg (2 x 300 mg)"
+              },
+              "route": "p.o.",
+              "schedule": {
+                "en": "twice daily with food (1200 mg/day)",
+                "de": "2 x täglich zu einer Mahlzeit (1200 mg/Tag)",
+                "es": "dos veces al día con alimentos (1200 mg/día)"
+              }
+            },
+            {
+              "name": {
+                "en": "ADT (GnRH agonist/antagonist or orchiectomy)",
+                "de": "ADT (GnRH-Agonist/-Antagonist o. Orchiektomie)",
+                "es": "TDA (agonista/antagonista GnRH u orquiectomía)"
+              },
+              "dose": {
+                "en": "per product (target T < 50 ng/dl)",
+                "de": "gemäß Präparat (Ziel: T < 50 ng/dl)",
+                "es": "según preparado (objetivo: T < 50 ng/dl)"
+              },
+              "route": "s.c.",
+              "schedule": {
+                "en": "continuous",
+                "de": "kontinuierlich",
+                "es": "continua"
+              }
+            }
+          ],
+          "support": {
+            "en": "Continue ADT. Bone health assessment; take with food. ADT: GnRH agonist or antagonist dosed per product (see ADT regimens), or prior orchiectomy; castration target testosterone < 50 ng/dl.",
+            "de": "ADT fortführen. Knochengesundheit prüfen; Einnahme mit dem Essen. ADT: GnRH-Agonist oder -Antagonist, Dosis gemäß Präparat (siehe ADT-Protokolle), bzw. Z. n. Orchiektomie; Ziel Kastrationsniveau Testosteron < 50 ng/dl.",
+            "es": "Mantener TDA. Valorar salud ósea; tomar con alimentos. TDA: agonista o antagonista de GnRH, dosis según preparado (ver pautas de TDA), u orquiectomía previa; objetivo testosterona de castración < 50 ng/dl."
+          },
+          "cautions": {
+            "en": "Low blood-brain barrier penetration - fewer CNS effects/falls than other ARPIs. Grade ≥ 3 toxicity: interrupt or 300 mg twice daily. Severe renal impairment (eGFR 15-29 ml/min/1.73 m², no dialysis) and Child-Pugh B/C: start 300 mg twice daily. BCRP/OATP inhibitor - rosuvastatin exposure increases.",
+            "de": "Geringe ZNS-Gängigkeit - weniger ZNS-Nebenwirkungen/Stürze als andere ARPI. Toxizität Grad ≥ 3: pausieren oder 2 x 300 mg. Schwere Niereninsuffizienz (eGFR 15-29 ml/min/1,73 m², ohne Dialyse) und Child-Pugh B/C: Start mit 2 x 300 mg. BCRP/OATP-Hemmung - Rosuvastatin-Exposition steigt.",
+            "es": "Escaso paso de la barrera hematoencefálica - menos efectos sobre SNC/caídas que otros ARPI. Toxicidad grado ≥ 3: interrumpir o 300 mg dos veces al día. Insuficiencia renal grave (FGe 15-29 ml/min/1,73 m², sin diálisis) y Child-Pugh B/C: iniciar con 300 mg dos veces al día. Inhibe BCRP/OATP - aumenta la exposición a rosuvastatina."
+          },
+          "evidence": {
+            "en": "ARAMIS (nmCRPC), ARANOTE (mHSPC with ADT, EU approval July 2025), ARASENS (with docetaxel). All EU-approved.",
+            "de": "ARAMIS (nmCRPC), ARANOTE (mHSPC mit ADT, EU-Zulassung Juli 2025), ARASENS (mit Docetaxel). Alle EU-zugelassen.",
+            "es": "ARAMIS (CPRCnm), ARANOTE (CPHSm con TDA, aprobación UE julio 2025), ARASENS (con docetaxel). Todas aprobadas en la UE."
+          },
+          "sources": [
+            {
+              "label": "Nubeqa (darolutamide) SmPC, July 2025",
+              "url": "https://www.bayer.com/sites/default/files/nubeqa-smpc-jul-2025-2.pdf"
+            },
+            {
+              "label": "Bayer: Nubeqa EU approval in third indication (ARANOTE)",
+              "url": "https://www.bayer.com/media/en-us/bayers-nubeqa-darolutamide-receives-eu-approval-in-third-indication-for-patients-with-advanced-prostate-cancer/"
+            }
+          ]
+        },
+        {
+          "id": "pca-adt-gnrh-agonist-leuprorelin",
+          "role": "standard",
+          "name": {
+            "en": "ADT: GnRH agonist depot (leuprorelin 3-month) with antiandrogen flare protection",
+            "de": "ADT: GnRH-Agonist-Depot (Leuprorelin 3-Monats-Depot) mit Antiandrogen-Flare-Schutz",
+            "es": "TDA: agonista de GnRH depot (leuprorelina trimestral) con protección antiandrogénica del flare"
+          },
+          "setting": {
+            "en": "Any indication for ADT: metastatic HSPC (backbone for all combinations), locally advanced disease with radiotherapy, nmCRPC/mCRPC (ADT continued)",
+            "de": "Jede ADT-Indikation: metastasiertes HSPC (Basis aller Kombinationen), lokal fortgeschritten mit Strahlentherapie, nmCRPC/mCRPC (ADT wird fortgeführt)",
+            "es": "Cualquier indicación de TDA: CPHS metastásico (base de todas las combinaciones), localmente avanzado con radioterapia, CPRCnm/CPRCm (se mantiene la TDA)"
+          },
+          "cycleDays": null,
+          "cycles": {
+            "en": "every 3 months, continuous (duration depends on indication)",
+            "de": "alle 3 Monate, kontinuierlich (Dauer je nach Indikation)",
+            "es": "cada 3 meses, continua (duración según indicación)"
+          },
+          "drugs": [
+            {
+              "name": {
+                "en": "Leuprorelin acetate 3-month depot",
+                "de": "Leuprorelinacetat 3-Monats-Depot",
+                "es": "Acetato de leuprorelina depot trimestral"
+              },
+              "dose": {
+                "en": "11.25 mg",
+                "de": "11,25 mg",
+                "es": "11,25 mg"
+              },
+              "route": "s.c.",
+              "schedule": {
+                "en": "once every 3 months; rotate injection site",
+                "de": "1 x alle 3 Monate; Injektionsstelle wechseln",
+                "es": "una vez cada 3 meses; rotar el lugar de inyección"
+              }
+            },
+            {
+              "name": {
+                "en": "Bicalutamide (flare protection)",
+                "de": "Bicalutamid (Flare-Schutz)",
+                "es": "Bicalutamida (protección del flare)"
+              },
+              "dose": {
+                "en": "50 mg",
+                "de": "50 mg",
+                "es": "50 mg"
+              },
+              "route": "p.o.",
+              "schedule": {
+                "en": "once daily for 2-4 weeks in total",
+                "de": "1 x täglich, insgesamt 2-4 Wochen",
+                "es": "una vez al día, durante 2-4 semanas en total"
+              }
+            }
+          ],
+          "support": {
+            "en": "Leuprorelin 3-month depot, e.g. Trenantone. Start bicalutamide at least 3 days before the first depot injection. Baseline testosterone, PSA, HbA1c/lipids, blood pressure; bone density (DXA) and fracture risk; calcium/vitamin D and exercise; manage hot flushes. Target castration testosterone < 50 ng/dl (ideally < 20 ng/dl).",
+            "de": "Leuprorelin-3-Monats-Depot z. B. Trenantone. Bicalutamid mindestens 3 Tage vor der ersten Depotinjektion beginnen. Ausgangswerte Testosteron, PSA, HbA1c/Lipide, Blutdruck; Knochendichte (DXA) und Frakturrisiko; Calcium/Vitamin D und Bewegung; Hitzewallungen behandeln. Ziel: Kastrationsniveau Testosteron < 50 ng/dl (idealerweise < 20 ng/dl).",
+            "es": "Depot trimestral de leuprorelina, p. ej. Trenantone. Iniciar bicalutamida al menos 3 días antes de la primera inyección depot. Basal: testosterona, PSA, HbA1c/lípidos, presión arterial; densitometría (DXA) y riesgo de fractura; calcio/vitamina D y ejercicio; tratar sofocos. Objetivo: testosterona de castración < 50 ng/dl (idealmente < 20 ng/dl)."
+          },
+          "cautions": {
+            "en": "Testosterone flare in the first 1-2 weeks: risk of spinal cord compression, urinary retention or bone pain in high-volume/symptomatic disease - antiandrogen cover mandatory, or prefer a GnRH antagonist (degarelix/relugolix) or orchiectomy in impending cord compression. Not as monotherapy in hormone-independent (castration-resistant) disease. Cardiovascular and metabolic risk, osteoporosis.",
+            "de": "Testosteron-Flare in den ersten 1-2 Wochen: Gefahr von Querschnitt, Harnverhalt oder Knochenschmerzen bei High-Volume/symptomatischer Erkrankung - Antiandrogen-Schutz obligat, bei drohender Myelonkompression besser GnRH-Antagonist (Degarelix/Relugolix) oder Orchiektomie. Nicht als Monotherapie beim hormonunabhängigen (kastrationsresistenten) Karzinom. Kardiovaskuläres und metabolisches Risiko, Osteoporose.",
+            "es": "Flare de testosterona en las 1-2 primeras semanas: riesgo de compresión medular, retención urinaria o dolor óseo en enfermedad de alto volumen/sintomática - cobertura antiandrogénica obligatoria, o preferir antagonista de GnRH (degarelix/relugolix) u orquiectomía si hay compresión medular inminente. No en monoterapia en el carcinoma hormonoindependiente (resistente a la castración). Riesgo cardiovascular y metabólico, osteoporosis."
+          },
+          "evidence": {
+            "en": "Standard ADT; leuprorelin 3-month depot EU/German-approved for advanced hormone-dependent prostate cancer and in combination with ARPIs. Short-term first-generation antiandrogen flare protection (bicalutamide/flutamide for 2-4 weeks) per German S3 guideline practice; continuous combined androgen blockade gives no benefit.",
+            "de": "Standard-ADT; Leuprorelin-3-Monats-Depot in Deutschland zugelassen beim fortgeschrittenen hormonabhängigen Prostatakarzinom und in Kombination mit ARPI. Kurzzeitiger Flare-Schutz mit Antiandrogen der 1. Generation (Bicalutamid/Flutamid für 2-4 Wochen) gemäß S3-Leitlinien-Praxis; dauerhafte maximale Androgenblockade bringt keinen Vorteil.",
+            "es": "TDA estándar; leuprorelina depot trimestral aprobada en Alemania para el cáncer de próstata hormonodependiente avanzado y en combinación con ARPI. Protección breve del flare con antiandrógeno de 1.ª generación (bicalutamida/flutamida 2-4 semanas) según la práctica de la guía S3 alemana; el bloqueo androgénico combinado continuo no aporta beneficio."
+          },
+          "sources": [
+            {
+              "label": "Trenantone 11,25 mg Fachinformation",
+              "url": "https://www.apogepha.de/fileadmin/apogepha/fachinformation/fachinformation-trenantone.pdf"
+            },
+            {
+              "label": "Urologielehrbuch: ADT beim mHSPC (Flare-Prophylaxe 2-4 Wochen)",
+              "url": "https://www.urologielehrbuch.de/prostatakarzinom-kastrationssensibel-hormontherapie.html"
+            },
+            {
+              "label": "Urologie 2026: Therapie des metastasierten hormonsensitiven Prostatakarzinoms",
+              "url": "https://link.springer.com/article/10.1007/s00120-026-02798-4"
+            },
+            {
+              "label": "Fachinformation Bicalutamid-ratiopharm 50 mg",
+              "url": "https://www.ratiopharm.de/assets/products/de/label/Bicalutamid-ratiopharm%2050%20mg%20Filmtabletten%20-%203.pdf?pzn=3574397"
+            }
+          ],
+          "questions": [
+            "sys-prot-relugolix-restart-after-interruption"
+          ]
+        },
+        {
+          "id": "pca-olaparib-monotherapy",
+          "role": "standard",
+          "name": {
+            "en": "Olaparib monotherapy",
+            "de": "Olaparib-Monotherapie",
+            "es": "Olaparib en monoterapia"
+          },
+          "setting": {
+            "en": "mCRPC with BRCA1/2 mutation (germline and/or somatic) progressing after prior therapy including a new hormonal agent (ARPI)",
+            "de": "mCRPC mit BRCA1/2-Mutation (Keimbahn und/oder somatisch) mit Progress nach Vortherapie mit einem neuen hormonellen Wirkstoff (ARPI)",
+            "es": "CPRCm con mutación BRCA1/2 (germinal y/o somática) en progresión tras tratamiento previo con un nuevo agente hormonal (ARPI)"
+          },
+          "cycleDays": null,
+          "cycles": {
+            "en": "continuous until progression or unacceptable toxicity",
+            "de": "kontinuierlich bis Progress oder inakzeptable Toxizität",
+            "es": "continua hasta progresión o toxicidad inaceptable"
+          },
+          "drugs": [
+            {
+              "name": {
+                "en": "Olaparib (tablets)",
+                "de": "Olaparib (Tabletten)",
+                "es": "Olaparib (comprimidos)"
+              },
+              "dose": {
+                "en": "300 mg (2 x 150 mg tablets)",
+                "de": "300 mg (2 Tbl. à 150 mg)",
+                "es": "300 mg (2 comprimidos de 150 mg)"
+              },
+              "route": "p.o.",
+              "schedule": {
+                "en": "twice daily (600 mg/day)",
+                "de": "2 x täglich (600 mg/Tag)",
+                "es": "dos veces al día (600 mg/día)"
+              }
+            },
+            {
+              "name": {
+                "en": "ADT (GnRH agonist/antagonist or orchiectomy)",
+                "de": "ADT (GnRH-Agonist/-Antagonist o. Orchiektomie)",
+                "es": "TDA (agonista/antagonista GnRH u orquiectomía)"
+              },
+              "dose": {
+                "en": "per product (target T < 50 ng/dl)",
+                "de": "gemäß Präparat (Ziel: T < 50 ng/dl)",
+                "es": "según preparado (objetivo: T < 50 ng/dl)"
+              },
+              "route": "s.c.",
+              "schedule": {
+                "en": "continuous",
+                "de": "kontinuierlich",
+                "es": "continua"
+              }
+            }
+          ],
+          "support": {
+            "en": "Continue ADT. Blood count at baseline, then monthly for the first 12 months; antiemetic as needed (nausea common). ADT: GnRH agonist or antagonist dosed per product (see ADT regimens), or prior orchiectomy; castration target testosterone < 50 ng/dl.",
+            "de": "ADT fortführen. Blutbild vor Beginn, dann in den ersten 12 Monaten monatlich; Antiemetika bei Bedarf (Übelkeit häufig). ADT: GnRH-Agonist oder -Antagonist, Dosis gemäß Präparat (siehe ADT-Protokolle), bzw. Z. n. Orchiektomie; Ziel Kastrationsniveau Testosteron < 50 ng/dl.",
+            "es": "Mantener TDA. Hemograma basal y luego mensual durante los 12 primeros meses; antieméticos si precisa (náuseas frecuentes). TDA: agonista o antagonista de GnRH, dosis según preparado (ver pautas de TDA), u orquiectomía previa; objetivo testosterona de castración < 50 ng/dl."
+          },
+          "cautions": {
+            "en": "Anaemia (most frequent; check blood count before start and monthly; transfuse/interrupt as needed), MDS/AML (rare; stop if confirmed), pneumonitis, VTE (higher with abiraterone). Moderate renal impairment (CrCl 31-50 ml/min): 200 mg twice daily; not recommended if CrCl ≤ 30 ml/min. Strong CYP3A inhibitors: 100 mg twice daily; moderate: 150 mg twice daily; avoid strong inducers. Tablets and capsules are not interchangeable.",
+            "de": "Anämie (am häufigsten; Blutbild vor Beginn und monatlich; Transfusion/Pause nach Bedarf), MDS/AML (selten; bei Bestätigung absetzen), Pneumonitis, VTE (unter Abirateron häufiger). Mittelgradige Niereninsuffizienz (CrCl 31-50 ml/min): 2 x 200 mg; bei CrCl ≤ 30 ml/min nicht empfohlen. Starke CYP3A-Inhibitoren: 2 x 100 mg; moderate: 2 x 150 mg; starke Induktoren meiden. Tabletten und Kapseln nicht austauschbar.",
+            "es": "Anemia (la más frecuente; hemograma basal y mensual; transfundir/interrumpir según necesidad), SMD/LMA (rara; suspender si se confirma), neumonitis, TEV (más con abiraterona). Insuficiencia renal moderada (CrCl 31-50 ml/min): 200 mg dos veces al día; no recomendado si CrCl ≤ 30 ml/min. Inhibidores potentes de CYP3A: 100 mg dos veces al día; moderados: 150 mg dos veces al día; evitar inductores potentes. Comprimidos y cápsulas no son intercambiables."
+          },
+          "evidence": {
+            "en": "PROfound (BRCA1/2 subgroup: rPFS and OS benefit vs switch of ARPI). EU-approved since November 2020 for BRCA1/2-mutated mCRPC after an NHA (EU label narrower than US: BRCA only).",
+            "de": "PROfound (BRCA1/2-Subgruppe: rPFS- und OS-Vorteil vs. ARPI-Wechsel). EU-zugelassen seit November 2020 beim BRCA1/2-mutierten mCRPC nach NHA (EU-Zulassung enger als in den USA: nur BRCA).",
+            "es": "PROfound (subgrupo BRCA1/2: beneficio en SLPr y SG frente a cambio de ARPI). Aprobado en la UE desde noviembre de 2020 en CPRCm con mutación BRCA1/2 tras NHA (más restrictivo que en EE. UU.: solo BRCA)."
+          },
+          "sources": [
+            {
+              "label": "EMA CHMP positive opinion: Lynparza II-53",
+              "url": "https://www.ema.europa.eu/documents/smop/chmp-post-authorisation-summary-positive-opinion-lynparza-ii-53_en.pdf"
+            },
+            {
+              "label": "Merck: Lynparza approved in the EU for BRCA1/2-mutated mCRPC",
+              "url": "https://www.merck.com/news/lynparza-olaparib-approved-in-the-eu-for-treatment-of-brca1-2-mutated-metastatic-castration-resistant-prostate-cancer-mcrpc"
+            },
+            {
+              "label": "NCBI Bookshelf: Olaparib clinical review (dose)",
+              "url": "https://www.ncbi.nlm.nih.gov/books/NBK604446/"
+            }
+          ],
+          "questions": [
+            "q-pca-mcrpc-brca2-parpi-partner-germline"
+          ]
+        },
+        {
+          "id": "pca-bone-protection-metastatic",
+          "role": "standard",
+          "name": {
+            "en": "Bone protection in bone metastases: denosumab 120 mg or zoledronic acid 4 mg",
+            "de": "Knochenprotektion bei Knochenmetastasen: Denosumab 120 mg oder Zoledronsäure 4 mg",
+            "es": "Protección ósea en metástasis óseas: denosumab 120 mg o ácido zoledrónico 4 mg"
+          },
+          "setting": {
+            "en": "mCRPC with bone metastases: prevention of skeletal-related events (in mHSPC not recommended by guidelines for SRE prevention - there only for osteoporosis/fracture risk)",
+            "de": "mCRPC mit Knochenmetastasen: Prävention skelettbezogener Ereignisse (beim mHSPC leitliniengemäß nicht zur SRE-Prävention empfohlen - dort nur bei Osteoporose/Frakturrisiko)",
+            "es": "CPRCm con metástasis óseas: prevención de eventos óseos (en CPHSm las guías no lo recomiendan para prevenir EO - solo por osteoporosis/riesgo de fractura)"
+          },
+          "cycleDays": 28,
+          "cycles": {
+            "en": "continuous while bone metastases persist (zoledronic acid every 3-4 weeks)",
+            "de": "kontinuierlich, solange Knochenmetastasen bestehen (Zoledronsäure alle 3-4 Wochen)",
+            "es": "continuo mientras persistan las metástasis óseas (ácido zoledrónico cada 3-4 semanas)"
+          },
+          "drugs": [
+            {
+              "name": {
+                "en": "Denosumab (Xgeva)",
+                "de": "Denosumab (Xgeva)",
+                "es": "Denosumab (Xgeva)"
+              },
+              "dose": {
+                "en": "120 mg",
+                "de": "120 mg",
+                "es": "120 mg"
+              },
+              "route": "s.c.",
+              "schedule": {
+                "en": "every 4 weeks",
+                "de": "alle 4 Wochen",
+                "es": "cada 4 semanas"
+              }
+            },
+            {
+              "name": {
+                "en": "or zoledronic acid (Zometa) - CrCl > 60 ml/min",
+                "de": "oder Zoledronsäure (Zometa) - CrCl > 60 ml/min",
+                "es": "o ácido zoledrónico (Zometa) - CrCl > 60 ml/min"
+              },
+              "dose": {
+                "en": "4 mg",
+                "de": "4 mg",
+                "es": "4 mg"
+              },
+              "route": "i.v.",
+              "schedule": {
+                "en": "infusion over ≥ 15 min every 3-4 weeks",
+                "de": "Infusion über ≥ 15 min alle 3-4 Wochen",
+                "es": "infusión en ≥ 15 min cada 3-4 semanas"
+              }
+            },
+            {
+              "name": {
+                "en": "Calcium + vitamin D",
+                "de": "Calcium + Vitamin D",
+                "es": "Calcio + vitamina D"
+              },
+              "dose": {
+                "en": "at least 500 mg calcium + 400 IU vitamin D",
+                "de": "mindestens 500 mg Calcium + 400 I.E. Vitamin D",
+                "es": "al menos 500 mg de calcio + 400 UI de vitamina D"
+              },
+              "route": "p.o.",
+              "schedule": {
+                "en": "daily, unless hypercalcaemia",
+                "de": "täglich, außer bei Hyperkalzämie",
+                "es": "diario, salvo hipercalcemia"
+              }
+            }
+          ],
+          "support": {
+            "en": "Dental examination before start and good oral hygiene (osteonecrosis of the jaw); check calcium (and magnesium) before each dose, especially in the first weeks of denosumab; creatinine before each zoledronic acid dose (Cockcroft-Gault).",
+            "de": "Zahnärztliche Untersuchung vor Beginn und gute Mundhygiene (Kieferosteonekrose); Calcium (und Magnesium) vor jeder Gabe kontrollieren, besonders in den ersten Wochen unter Denosumab; Kreatinin vor jeder Zoledronsäure-Gabe (Cockcroft-Gault).",
+            "es": "Revisión odontológica previa y buena higiene oral (osteonecrosis maxilar); controlar calcio (y magnesio) antes de cada dosis, sobre todo en las primeras semanas de denosumab; creatinina antes de cada dosis de ácido zoledrónico (Cockcroft-Gault)."
+          },
+          "cautions": {
+            "en": "Zoledronic acid renal dosing: CrCl 50-60 ml/min 3.5 mg; 40-49: 3.3 mg; 30-39: 3.0 mg; < 30 ml/min not recommended. Denosumab: severe (even fatal) hypocalcaemia, highest risk with CrCl < 30 ml/min/dialysis; rebound vertebral fractures after stopping; no renal dose adjustment. Do not combine Xgeva with Prolia. Zoledronic acid: withhold if renal function deteriorates; acute-phase reaction. Both: osteonecrosis of the jaw (avoid invasive dental procedures), atypical femoral fractures.",
+            "de": "Zoledronsäure renal angepasst: CrCl 50-60 ml/min 3,5 mg; 40-49: 3,3 mg; 30-39: 3,0 mg; < 30 ml/min nicht empfohlen. Denosumab: schwere (auch tödliche) Hypokalzämie, höchstes Risiko bei CrCl < 30 ml/min/Dialyse; Rebound-Wirbelkörperfrakturen nach Absetzen; keine renale Dosisanpassung. Xgeva nicht mit Prolia kombinieren. Zoledronsäure: bei Verschlechterung der Nierenfunktion pausieren; Akute-Phase-Reaktion. Beide: Kieferosteonekrose (invasive Zahneingriffe vermeiden), atypische Femurfrakturen.",
+            "es": "Ácido zoledrónico según función renal: CrCl 50-60 ml/min 3,5 mg; 40-49: 3,3 mg; 30-39: 3,0 mg; < 30 ml/min no recomendado. Denosumab: hipocalcemia grave (incluso mortal), mayor riesgo con CrCl < 30 ml/min/diálisis; fracturas vertebrales de rebote al suspender; sin ajuste renal. No combinar Xgeva con Prolia. Ácido zoledrónico: suspender si empeora la función renal; reacción de fase aguda. Ambos: osteonecrosis maxilar (evitar procedimientos dentales invasivos), fracturas femorales atípicas."
+          },
+          "evidence": {
+            "en": "Denosumab vs zoledronic acid phase 3 in CRPC (denosumab delayed first SRE); zoledronic acid trial in CRPC. Both EU-approved for prevention of skeletal-related events in adults with bone metastases from solid tumours.",
+            "de": "Phase-3-Studie Denosumab vs. Zoledronsäure beim CRPC (Denosumab verzögerte das erste SRE); Zoledronsäure-Zulassungsstudie beim CRPC. Beide EU-zugelassen zur Prävention skelettbezogener Komplikationen bei Knochenmetastasen solider Tumoren.",
+            "es": "Fase 3 denosumab frente a ácido zoledrónico en CPRC (denosumab retrasó el primer EO); ensayo de ácido zoledrónico en CPRC. Ambos aprobados en la UE para prevenir eventos óseos en adultos con metástasis óseas de tumores sólidos."
+          },
+          "sources": [
+            {
+              "label": "EMA: Xgeva product information",
+              "url": "https://www.ema.europa.eu/en/documents/product-information/xgeva-epar-product-information_en.pdf"
+            },
+            {
+              "label": "EMA: Zometa product information",
+              "url": "https://www.ema.europa.eu/en/documents/product-information/zometa-epar-product-information_en.pdf"
+            },
+            {
+              "label": "eMC: Zoledronic acid 4 mg/100 ml SmPC (renal dose table)",
+              "url": "https://www.medicines.org.uk/emc/product/7205/smpc"
+            }
+          ],
+          "questions": [
+            "sys-prot-denosumab-prolia-to-xgeva-mcrpc"
+          ]
+        },
+        {
+          "id": "pca-bone-protection-adt-bone-loss",
+          "role": "standard",
+          "name": {
+            "en": "Denosumab 60 mg for ADT-associated bone loss",
+            "de": "Denosumab 60 mg bei ADT-assoziiertem Knochenverlust",
+            "es": "Denosumab 60 mg en la pérdida ósea asociada a TDA"
+          },
+          "setting": {
+            "en": "Men on ADT (any stage, incl. mHSPC/M0) at increased fracture risk (osteoporosis on DXA, prior fragility fracture)",
+            "de": "Männer unter ADT (jedes Stadium, auch mHSPC/M0) mit erhöhtem Frakturrisiko (Osteoporose in der DXA, frühere Fragilitätsfraktur)",
+            "es": "Varones con TDA (cualquier estadio, incl. CPHSm/M0) con riesgo aumentado de fractura (osteoporosis en DXA, fractura por fragilidad previa)"
+          },
+          "cycleDays": null,
+          "cycles": {
+            "en": "every 6 months, for the duration of ADT and fracture risk; do not stop without follow-on bisphosphonate",
+            "de": "alle 6 Monate, für die Dauer von ADT und Frakturrisiko; nicht ohne anschließendes Bisphosphonat absetzen",
+            "es": "cada 6 meses, mientras duren la TDA y el riesgo de fractura; no suspender sin bisfosfonato posterior"
+          },
+          "drugs": [
+            {
+              "name": {
+                "en": "Denosumab (Prolia)",
+                "de": "Denosumab (Prolia)",
+                "es": "Denosumab (Prolia)"
+              },
+              "dose": {
+                "en": "60 mg",
+                "de": "60 mg",
+                "es": "60 mg"
+              },
+              "route": "s.c.",
+              "schedule": {
+                "en": "once every 6 months",
+                "de": "1 x alle 6 Monate",
+                "es": "una vez cada 6 meses"
+              }
+            },
+            {
+              "name": {
+                "en": "Calcium + vitamin D",
+                "de": "Calcium + Vitamin D",
+                "es": "Calcio + vitamina D"
+              },
+              "dose": {
+                "en": "adequate; per diet and 25-OH vitamin D level",
+                "de": "ausreichend; nach Zufuhr und 25-OH-D-Spiegel",
+                "es": "adecuada; según ingesta y nivel de 25-OH-D"
+              },
+              "route": "p.o.",
+              "schedule": {
+                "en": "daily",
+                "de": "täglich",
+                "es": "diario"
+              }
+            }
+          ],
+          "support": {
+            "en": "Calcium + vitamin D supplementation is required with denosumab (SmPC: 'adequately supplemented'); dose according to dietary intake and 25-OH vitamin D level. DXA at start of ADT and every 1-2 years; exercise, fall prevention; calcium and 25-OH vitamin D levels; dental check.",
+            "de": "Calcium + Vitamin D: ausreichende Supplementierung laut Fachinformation obligat; Dosis nach Nahrungszufuhr und 25-OH-Vitamin-D-Spiegel. DXA zu Beginn der ADT und alle 1-2 Jahre; Bewegung, Sturzprophylaxe; Calcium- und 25-OH-Vitamin-D-Spiegel; Zahnstatus.",
+            "es": "Calcio + vitamina D: suplementación adecuada obligatoria según ficha técnica; dosis según ingesta y nivel de 25-OH-vitamina D. DXA al iniciar la TDA y cada 1-2 años; ejercicio, prevención de caídas; calcio y 25-OH-vitamina D; revisión dental."
+          },
+          "cautions": {
+            "en": "Not to be confused with Xgeva 120 mg every 4 weeks (metastatic SRE dose); never give both. Hypocalcaemia (correct before start), osteonecrosis of the jaw (rare at this dose), rebound vertebral fractures after stopping. Alternative: oral/i.v. bisphosphonate per osteoporosis guideline.",
+            "de": "Nicht mit Xgeva 120 mg alle 4 Wochen (SRE-Dosis bei Metastasen) verwechseln; nie beides geben. Hypokalzämie (vor Beginn ausgleichen), Kieferosteonekrose (selten in dieser Dosis), Rebound-Wirbelkörperfrakturen nach Absetzen. Alternative: orales/i.v. Bisphosphonat gemäß Osteoporose-Leitlinie.",
+            "es": "No confundir con Xgeva 120 mg cada 4 semanas (dosis para EO metastásicos); nunca administrar ambos. Hipocalcemia (corregir antes de iniciar), osteonecrosis maxilar (rara a esta dosis), fracturas vertebrales de rebote al suspender. Alternativa: bisfosfonato oral/i.v. según guía de osteoporosis."
+          },
+          "evidence": {
+            "en": "HALT 138 (denosumab 60 mg reduced new vertebral fractures in men on ADT). EU-approved: bone loss associated with hormone ablation in men with prostate cancer at increased risk of fractures.",
+            "de": "HALT 138 (Denosumab 60 mg senkte neue Wirbelkörperfrakturen unter ADT). EU-zugelassen: Knochenschwund im Zusammenhang mit Hormonablation bei Männern mit Prostatakarzinom und erhöhtem Frakturrisiko.",
+            "es": "HALT 138 (denosumab 60 mg redujo nuevas fracturas vertebrales en varones con TDA). Aprobado en la UE: pérdida ósea asociada a la ablación hormonal en varones con cáncer de próstata con riesgo aumentado de fracturas."
+          },
+          "sources": [
+            {
+              "label": "EMA: Prolia EPAR",
+              "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/prolia"
+            },
+            {
+              "label": "eMC: Prolia 60 mg SmPC",
+              "url": "https://www.medicines.org.uk/emc/product/568/smpc"
+            }
+          ],
+          "questions": [
+            "sys-prot-denosumab-prolia-to-xgeva-mcrpc"
+          ]
+        },
+        {
           "id": "pca-abiraterone-docetaxel-adt",
+          "role": "alternative",
           "name": {
             "en": "Abiraterone/prednisone + docetaxel + ADT (triplet, PEACE-1)",
             "de": "Abirateron/Prednison + Docetaxel + ADT (Triplette, PEACE-1)",
@@ -1810,107 +2692,8 @@
           ]
         },
         {
-          "id": "pca-docetaxel-prednisone-mcrpc",
-          "name": {
-            "en": "Docetaxel + prednisone (mCRPC)",
-            "de": "Docetaxel + Prednison (mCRPC)",
-            "es": "Docetaxel + prednisona (CPRCm)"
-          },
-          "setting": {
-            "en": "mCRPC, taxane-naive: first-line chemotherapy (ADT continued)",
-            "de": "mCRPC, Taxan-naiv: Erstlinien-Chemotherapie (ADT wird fortgeführt)",
-            "es": "CPRCm sin taxano previo: quimioterapia de primera línea (se mantiene la TDA)"
-          },
-          "cycleDays": 21,
-          "cycles": {
-            "en": "up to 10 cycles (TAX 327) or until progression or unacceptable toxicity",
-            "de": "bis zu 10 Zyklen (TAX 327) bzw. bis Progress oder inakzeptable Toxizität",
-            "es": "hasta 10 ciclos (TAX 327) o hasta progresión o toxicidad inaceptable"
-          },
-          "drugs": [
-            {
-              "name": {
-                "en": "Docetaxel",
-                "de": "Docetaxel",
-                "es": "Docetaxel"
-              },
-              "dose": {
-                "en": "75 mg/m²",
-                "de": "75 mg/m²",
-                "es": "75 mg/m²"
-              },
-              "route": "i.v.",
-              "schedule": {
-                "en": "day 1 every 3 weeks (1-h infusion)",
-                "de": "Tag 1 alle 3 Wochen (1-h-Infusion)",
-                "es": "día 1 cada 3 semanas (infusión de 1 h)"
-              }
-            },
-            {
-              "name": {
-                "en": "Prednisone or prednisolone",
-                "de": "Prednison oder Prednisolon",
-                "es": "Prednisona o prednisolona"
-              },
-              "dose": {
-                "en": "5 mg",
-                "de": "5 mg",
-                "es": "5 mg"
-              },
-              "route": "p.o.",
-              "schedule": {
-                "en": "twice daily, continuously",
-                "de": "2 x täglich, kontinuierlich",
-                "es": "dos veces al día, de forma continua"
-              }
-            },
-            {
-              "name": {
-                "en": "ADT (GnRH agonist/antagonist or orchiectomy)",
-                "de": "ADT (GnRH-Agonist/-Antagonist o. Orchiektomie)",
-                "es": "TDA (agonista/antagonista GnRH u orquiectomía)"
-              },
-              "dose": {
-                "en": "per product (target T < 50 ng/dl)",
-                "de": "gemäß Präparat (Ziel: T < 50 ng/dl)",
-                "es": "según preparado (objetivo: T < 50 ng/dl)"
-              },
-              "route": "s.c.",
-              "schedule": {
-                "en": "continuous",
-                "de": "kontinuierlich",
-                "es": "continua"
-              }
-            }
-          ],
-          "support": {
-            "en": "Premedication: dexamethasone 8 mg p.o. 12 h, 3 h and 1 h before docetaxel. Antiemesis for low/moderate emetogenic risk. Weekly blood count (nadir day 7-10); consider G-CSF in high-risk patients (age, prior febrile neutropenia). Nail and mucosal care. ADT: GnRH agonist or antagonist dosed per product (see ADT regimens), or prior orchiectomy; castration target testosterone < 50 ng/dl.",
-            "de": "Prämedikation: Dexamethason 8 mg p.o. 12 h, 3 h und 1 h vor Docetaxel. Antiemese für niedriges/moderates emetogenes Risiko. Wöchentliches Blutbild (Nadir Tag 7-10); G-CSF bei Hochrisikopatienten (Alter, frühere febrile Neutropenie) erwägen. Nagel- und Schleimhautpflege. ADT: GnRH-Agonist oder -Antagonist, Dosis gemäß Präparat (siehe ADT-Protokolle), bzw. Z. n. Orchiektomie; Ziel Kastrationsniveau Testosteron < 50 ng/dl.",
-            "es": "Premedicación: dexametasona 8 mg v.o. 12 h, 3 h y 1 h antes del docetaxel. Antiemesis para riesgo emetógeno bajo/moderado. Hemograma semanal (nadir día 7-10); considerar G-CSF en pacientes de alto riesgo (edad, neutropenia febril previa). Cuidado de uñas y mucosas. TDA: agonista o antagonista de GnRH, dosis según preparado (ver pautas de TDA), u orquiectomía previa; objetivo testosterona de castración < 50 ng/dl."
-          },
-          "cautions": {
-            "en": "Contraindicated if neutrophils < 1.5 x 10^9/l; not recommended if bilirubin > ULN or AST/ALT > 1.5 x ULN together with ALP > 2.5 x ULN. Check neutrophils before each cycle (≥ 1.5 x 10^9/l required). Dose reduction to 60 mg/m² after febrile neutropenia, neutrophils < 0.5 x 10^9/l for > 1 week or severe skin reactions/neuropathy. Watch fluid retention, peripheral neuropathy, hypersensitivity (first two infusions), nail changes.",
-            "de": "Kontraindiziert bei Neutrophilen < 1,5 x 10^9/l; nicht empfohlen bei Bilirubin > ONW oder GOT/GPT > 1,5 x ONW kombiniert mit AP > 2,5 x ONW. Neutrophile vor jedem Zyklus prüfen (≥ 1,5 x 10^9/l erforderlich). Dosisreduktion auf 60 mg/m² nach febriler Neutropenie, Neutrophilen < 0,5 x 10^9/l > 1 Woche oder schweren Haut-/Nervenreaktionen. Auf Flüssigkeitsretention, periphere Neuropathie, Überempfindlichkeitsreaktionen (erste zwei Infusionen) und Nagelveränderungen achten.",
-            "es": "Contraindicado si neutrófilos < 1,5 x 10^9/l; no recomendado si bilirrubina > LSN o AST/ALT > 1,5 x LSN junto con FA > 2,5 x LSN. Comprobar neutrófilos antes de cada ciclo (se requieren ≥ 1,5 x 10^9/l). Reducir a 60 mg/m² tras neutropenia febril, neutrófilos < 0,5 x 10^9/l > 1 semana o reacciones cutáneas/neuropatía graves. Vigilar retención hídrica, neuropatía periférica, hipersensibilidad (dos primeras infusiones) y alteraciones ungueales."
-          },
-          "evidence": {
-            "en": "TAX 327 (3-weekly docetaxel + prednisone vs mitoxantrone: overall survival benefit; up to 10 cycles planned). EU-approved (docetaxel with prednisone/prednisolone for mCRPC).",
-            "de": "TAX 327 (Docetaxel 3-wöchentlich + Prednison vs. Mitoxantron: Überlebensvorteil; bis zu 10 Zyklen geplant). In der EU zugelassen (Docetaxel mit Prednison/Prednisolon beim mCRPC).",
-            "es": "TAX 327 (docetaxel cada 3 semanas + prednisona frente a mitoxantrona: beneficio en supervivencia; hasta 10 ciclos previstos). Aprobado en la UE (docetaxel con prednisona/prednisolona en CPRCm)."
-          },
-          "sources": [
-            {
-              "label": "EMA: Taxotere (docetaxel) product information",
-              "url": "https://www.ema.europa.eu/en/documents/product-information/taxotere-epar-product-information_en.pdf"
-            },
-            {
-              "label": "NICE TA101: docetaxel for hormone-refractory prostate cancer (TAX 327 evidence)",
-              "url": "https://www.nice.org.uk/guidance/ta101/chapter/evidence-and-interpretation"
-            }
-          ]
-        },
-        {
           "id": "pca-cabazitaxel-prednisone",
+          "role": "alternative",
           "name": {
             "en": "Cabazitaxel + prednisone",
             "de": "Cabazitaxel + Prednison",
@@ -2018,479 +2801,8 @@
           ]
         },
         {
-          "id": "pca-abiraterone-prednisone",
-          "name": {
-            "en": "Abiraterone acetate + prednisone/prednisolone",
-            "de": "Abirateronacetat + Prednison/Prednisolon",
-            "es": "Acetato de abiraterona + prednisona/prednisolona"
-          },
-          "setting": {
-            "en": "Newly diagnosed high-risk mHSPC with ADT (LATITUDE); mCRPC (chemo-naive asymptomatic/mildly symptomatic after ADT failure, or after docetaxel)",
-            "de": "Neu diagnostiziertes Hochrisiko-mHSPC mit ADT (LATITUDE); mCRPC (Chemo-naiv, asymptomatisch/gering symptomatisch nach ADT-Versagen, oder nach Docetaxel)",
-            "es": "CPHSm de alto riesgo de nuevo diagnóstico con TDA (LATITUDE); CPRCm (sin quimioterapia, asintomático/levemente sintomático tras fracaso de TDA, o tras docetaxel)"
-          },
-          "cycleDays": null,
-          "cycles": {
-            "en": "continuous until progression or unacceptable toxicity",
-            "de": "kontinuierlich bis Progress oder inakzeptable Toxizität",
-            "es": "continua hasta progresión o toxicidad inaceptable"
-          },
-          "drugs": [
-            {
-              "name": {
-                "en": "Abiraterone acetate",
-                "de": "Abirateronacetat",
-                "es": "Acetato de abiraterona"
-              },
-              "dose": {
-                "en": "1000 mg (2 x 500 mg or 4 x 250 mg)",
-                "de": "1000 mg (2 x 500 mg oder 4 x 250 mg)",
-                "es": "1000 mg (2 x 500 mg o 4 x 250 mg)"
-              },
-              "route": "p.o.",
-              "schedule": {
-                "en": "once daily, fasting: no food 2 h before and 1 h after",
-                "de": "1 x täglich nüchtern: 2 h vorher und 1 h danach nichts essen",
-                "es": "una vez al día en ayunas: sin comer 2 h antes ni 1 h después"
-              }
-            },
-            {
-              "name": {
-                "en": "Prednisone or prednisolone - mHSPC",
-                "de": "Prednison oder Prednisolon - mHSPC",
-                "es": "Prednisona o prednisolona - CPHSm"
-              },
-              "dose": {
-                "en": "5 mg",
-                "de": "5 mg",
-                "es": "5 mg"
-              },
-              "route": "p.o.",
-              "schedule": {
-                "en": "once daily",
-                "de": "1 x täglich",
-                "es": "una vez al día"
-              }
-            },
-            {
-              "name": {
-                "en": "Prednisone or prednisolone - mCRPC",
-                "de": "Prednison oder Prednisolon - mCRPC",
-                "es": "Prednisona o prednisolona - CPRCm"
-              },
-              "dose": {
-                "en": "10 mg",
-                "de": "10 mg",
-                "es": "10 mg"
-              },
-              "route": "p.o.",
-              "schedule": {
-                "en": "daily (EU label)",
-                "de": "täglich (EU-Fachinformation)",
-                "es": "diaria (ficha técnica UE)"
-              }
-            },
-            {
-              "name": {
-                "en": "ADT (GnRH agonist/antagonist or orchiectomy)",
-                "de": "ADT (GnRH-Agonist/-Antagonist o. Orchiektomie)",
-                "es": "TDA (agonista/antagonista GnRH u orquiectomía)"
-              },
-              "dose": {
-                "en": "per product (target T < 50 ng/dl)",
-                "de": "gemäß Präparat (Ziel: T < 50 ng/dl)",
-                "es": "según preparado (objetivo: T < 50 ng/dl)"
-              },
-              "route": "s.c.",
-              "schedule": {
-                "en": "continuous",
-                "de": "kontinuierlich",
-                "es": "continua"
-              }
-            }
-          ],
-          "support": {
-            "en": "Continue ADT. Monthly blood pressure, potassium (keep ≥ 4.0 mmol/l in cardiac patients) and fluid status; liver enzymes every 2 weeks for 3 months, then monthly. Bone protection and calcium/vitamin D as indicated. Do not stop the steroid abruptly. ADT: GnRH agonist or antagonist dosed per product (see ADT regimens), or prior orchiectomy; castration target testosterone < 50 ng/dl.",
-            "de": "ADT fortführen. Monatlich Blutdruck, Kalium (bei Herzpatienten ≥ 4,0 mmol/l halten) und Ödeme; Transaminasen 3 Monate lang alle 2 Wochen, dann monatlich. Knochenschutz und Calcium/Vitamin D nach Indikation. Steroid nicht abrupt absetzen. ADT: GnRH-Agonist oder -Antagonist, Dosis gemäß Präparat (siehe ADT-Protokolle), bzw. Z. n. Orchiektomie; Ziel Kastrationsniveau Testosteron < 50 ng/dl.",
-            "es": "Mantener TDA. Mensualmente presión arterial, potasio (≥ 4,0 mmol/l en cardiópatas) y edemas; transaminasas cada 2 semanas durante 3 meses y luego mensuales. Protección ósea y calcio/vitamina D según indicación. No suspender bruscamente el corticoide. TDA: agonista o antagonista de GnRH, dosis según preparado (ver pautas de TDA), u orquiectomía previa; objetivo testosterona de castración < 50 ng/dl."
-          },
-          "cautions": {
-            "en": "Food markedly increases absorption - always fasting. Mineralocorticoid excess: hypertension, hypokalaemia, oedema; caution in heart failure. Hepatotoxicity: interrupt immediately if ALT/AST > 5 x ULN; after return to baseline resume at 500 mg once daily; discontinue permanently if hepatotoxicity recurs at 500 mg or ALT/AST rise > 20 x ULN. Child-Pugh B only if benefit clearly outweighs risk; contraindicated in Child-Pugh C. Contraindicated with radium-223. High-risk M0 disease with radiotherapy (STAMPEDE) is off-label in Germany.",
-            "de": "Nahrung steigert die Resorption deutlich - immer nüchtern. Mineralokortikoid-Exzess: Hypertonie, Hypokaliämie, Ödeme; Vorsicht bei Herzinsuffizienz. Hepatotoxizität: bei GPT/GOT > 5 x ONW sofort pausieren; nach Normalisierung auf Ausgangswerte mit 500 mg 1 x täglich fortsetzen; endgültig absetzen bei erneuter Hepatotoxizität unter 500 mg oder GPT/GOT > 20 x ONW. Child-Pugh B nur bei klar überwiegendem Nutzen; Child-Pugh C kontraindiziert. Kontraindiziert mit Radium-223. Hochrisiko-M0 mit Strahlentherapie (STAMPEDE) ist in Deutschland off-label.",
-            "es": "Los alimentos aumentan mucho la absorción - siempre en ayunas. Exceso mineralocorticoide: hipertensión, hipopotasemia, edemas; precaución en insuficiencia cardíaca. Hepatotoxicidad: interrumpir de inmediato si ALT/AST > 5 x LSN; tras volver a los valores basales reanudar con 500 mg una vez al día; suspender definitivamente si recurre con 500 mg o si ALT/AST > 20 x LSN. Child-Pugh B solo si el beneficio supera claramente el riesgo; contraindicado en Child-Pugh C. Contraindicado con radio-223. El M0 de alto riesgo con radioterapia (STAMPEDE) está fuera de indicación en Alemania."
-          },
-          "evidence": {
-            "en": "LATITUDE (high-risk mHSPC), COU-AA-302 (chemo-naive mCRPC), COU-AA-301 (post-docetaxel). EU-approved in these indications; prednisone 5 mg daily in mHSPC and 10 mg daily in mCRPC per EU SmPC (US label: 5 mg twice daily in mCRPC).",
-            "de": "LATITUDE (Hochrisiko-mHSPC), COU-AA-302 (Chemo-naives mCRPC), COU-AA-301 (nach Docetaxel). In diesen Indikationen EU-zugelassen; Prednison 5 mg/Tag beim mHSPC und 10 mg/Tag beim mCRPC laut EU-Fachinformation (US-Label: 2 x 5 mg beim mCRPC).",
-            "es": "LATITUDE (CPHSm de alto riesgo), COU-AA-302 (CPRCm sin quimioterapia), COU-AA-301 (tras docetaxel). Aprobado en la UE en estas indicaciones; prednisona 5 mg/día en CPHSm y 10 mg/día en CPRCm según ficha técnica UE (ficha de EE. UU.: 5 mg dos veces al día en CPRCm)."
-          },
-          "sources": [
-            {
-              "label": "EMA: Abiraterone Krka product information (abiraterone posology)",
-              "url": "https://www.ema.europa.eu/en/documents/product-information/abiraterone-krka-epar-product-information_en.pdf"
-            },
-            {
-              "label": "EMA: Abiraterone Accord product information",
-              "url": "https://www.ema.europa.eu/en/documents/product-information/abiraterone-accord-epar-product-information_en.pdf"
-            },
-            {
-              "label": "eMC: Zytiga 500 mg SmPC",
-              "url": "https://www.medicines.org.uk/emc/product/2381/smpc"
-            }
-          ],
-          "questions": [
-            "sys-prot-abiraterone-mcrpc-steroid-dose-fasting",
-            "q-pca-mcrpc-after-docetaxel-arpi-naive-no-hrr"
-          ]
-        },
-        {
-          "id": "pca-enzalutamide",
-          "name": {
-            "en": "Enzalutamide",
-            "de": "Enzalutamid",
-            "es": "Enzalutamida"
-          },
-          "setting": {
-            "en": "mHSPC with ADT (ARCHES); high-risk nmCRPC (PROSPER); mCRPC before or after docetaxel (PREVAIL, AFFIRM); high-risk biochemically recurrent nmHSPC unsuitable for salvage radiotherapy, alone or with ADT (EMBARK)",
-            "de": "mHSPC mit ADT (ARCHES); Hochrisiko-nmCRPC (PROSPER); mCRPC vor oder nach Docetaxel (PREVAIL, AFFIRM); Hochrisiko-biochemisches Rezidiv (nmHSPC) ohne Option einer Salvage-Strahlentherapie, als Monotherapie oder mit ADT (EMBARK)",
-            "es": "CPHSm con TDA (ARCHES); CPRCnm de alto riesgo (PROSPER); CPRCm antes o después de docetaxel (PREVAIL, AFFIRM); recidiva bioquímica de alto riesgo (CPHSnm) no candidata a radioterapia de rescate, sola o con TDA (EMBARK)"
-          },
-          "cycleDays": null,
-          "cycles": {
-            "en": "continuous until progression or unacceptable toxicity (EMBARK: treatment pause allowed if PSA undetectable at week 37)",
-            "de": "kontinuierlich bis Progress oder inakzeptable Toxizität (EMBARK: Therapiepause möglich bei nicht nachweisbarem PSA in Woche 37)",
-            "es": "continua hasta progresión o toxicidad inaceptable (EMBARK: pausa posible si PSA indetectable en la semana 37)"
-          },
-          "drugs": [
-            {
-              "name": {
-                "en": "Enzalutamide",
-                "de": "Enzalutamid",
-                "es": "Enzalutamida"
-              },
-              "dose": {
-                "en": "160 mg (4 x 40 mg)",
-                "de": "160 mg (4 x 40 mg)",
-                "es": "160 mg (4 x 40 mg)"
-              },
-              "route": "p.o.",
-              "schedule": {
-                "en": "once daily, with or without food",
-                "de": "1 x täglich, unabhängig von den Mahlzeiten",
-                "es": "una vez al día, con o sin alimentos"
-              }
-            },
-            {
-              "name": {
-                "en": "ADT (GnRH agonist/antagonist or orchiectomy)",
-                "de": "ADT (GnRH-Agonist/-Antagonist o. Orchiektomie)",
-                "es": "TDA (agonista/antagonista GnRH u orquiectomía)"
-              },
-              "dose": {
-                "en": "per product (target T < 50 ng/dl)",
-                "de": "gemäß Präparat (Ziel: T < 50 ng/dl)",
-                "es": "según preparado (objetivo: T < 50 ng/dl)"
-              },
-              "route": "s.c.",
-              "schedule": {
-                "en": "continuous",
-                "de": "kontinuierlich",
-                "es": "continua"
-              }
-            }
-          ],
-          "support": {
-            "en": "Continue ADT (except enzalutamide monotherapy arm in EMBARK). Blood pressure, falls and fracture risk; bone health assessment. ADT: GnRH agonist or antagonist dosed per product (see ADT regimens), or prior orchiectomy; castration target testosterone < 50 ng/dl.",
-            "de": "ADT fortführen (außer Enzalutamid-Monotherapie gemäß EMBARK). Blutdruck, Sturz- und Frakturrisiko; Knochengesundheit prüfen. ADT: GnRH-Agonist oder -Antagonist, Dosis gemäß Präparat (siehe ADT-Protokolle), bzw. Z. n. Orchiektomie; Ziel Kastrationsniveau Testosteron < 50 ng/dl.",
-            "es": "Mantener TDA (salvo monoterapia con enzalutamida según EMBARK). Presión arterial, riesgo de caídas y fracturas; valorar salud ósea. TDA: agonista o antagonista de GnRH, dosis según preparado (ver pautas de TDA), u orquiectomía previa; objetivo testosterona de castración < 50 ng/dl."
-          },
-          "cautions": {
-            "en": "Seizure risk (caution with predisposing factors); fatigue, falls, hypertension, cognitive effects. Strong CYP3A4 inducer: check interactions (e.g. DOACs, statins, opioids). With strong CYP2C8 inhibitors (e.g. gemfibrozil) reduce to 80 mg once daily. For grade ≥ 3 toxicity interrupt 1 week, then resume at 160, 120 or 80 mg.",
-            "de": "Krampfanfallrisiko (Vorsicht bei prädisponierenden Faktoren); Fatigue, Stürze, Hypertonie, kognitive Effekte. Starker CYP3A4-Induktor: Interaktionen prüfen (z. B. DOAK, Statine, Opioide). Bei starken CYP2C8-Inhibitoren (z. B. Gemfibrozil) Reduktion auf 80 mg 1 x täglich. Bei Toxizität Grad ≥ 3 1 Woche pausieren, dann mit 160, 120 oder 80 mg fortsetzen.",
-            "es": "Riesgo de convulsiones (precaución con factores predisponentes); astenia, caídas, hipertensión, efectos cognitivos. Inductor potente de CYP3A4: revisar interacciones (p. ej. ACOD, estatinas, opioides). Con inhibidores potentes de CYP2C8 (p. ej. gemfibrozilo) reducir a 80 mg una vez al día. Con toxicidad grado ≥ 3 interrumpir 1 semana y reanudar con 160, 120 u 80 mg."
-          },
-          "evidence": {
-            "en": "ARCHES, ENZAMET (mHSPC), PROSPER (nmCRPC), PREVAIL, AFFIRM (mCRPC), EMBARK (high-risk BCR). All listed indications EU-approved (EMBARK extension April 2024).",
-            "de": "ARCHES, ENZAMET (mHSPC), PROSPER (nmCRPC), PREVAIL, AFFIRM (mCRPC), EMBARK (Hochrisiko-BCR). Alle genannten Indikationen EU-zugelassen (EMBARK-Erweiterung April 2024).",
-            "es": "ARCHES, ENZAMET (CPHSm), PROSPER (CPRCnm), PREVAIL, AFFIRM (CPRCm), EMBARK (RB de alto riesgo). Todas las indicaciones citadas aprobadas en la UE (ampliación EMBARK abril 2024)."
-          },
-          "sources": [
-            {
-              "label": "EMA: Xtandi (enzalutamide) product information",
-              "url": "https://www.ema.europa.eu/en/documents/product-information/xtandi-epar-product-information_en.pdf"
-            },
-            {
-              "label": "Urology Times: enzalutamide granted EU approval for nmHSPC (EMBARK)",
-              "url": "https://www.urologytimes.com/view/enzalutamide-granted-approval-in-eu-for-nmhspc"
-            }
-          ],
-          "questions": [
-            "q-pca-mhspc-low-volume-low-risk-prostate-rt",
-            "q-pca-mcrpc-after-docetaxel-arpi-naive-no-hrr"
-          ]
-        },
-        {
-          "id": "pca-apalutamide",
-          "name": {
-            "en": "Apalutamide",
-            "de": "Apalutamid",
-            "es": "Apalutamida"
-          },
-          "setting": {
-            "en": "mHSPC with ADT (TITAN); nmCRPC at high risk of metastasis (SPARTAN)",
-            "de": "mHSPC mit ADT (TITAN); nmCRPC mit hohem Metastasierungsrisiko (SPARTAN)",
-            "es": "CPHSm con TDA (TITAN); CPRCnm con alto riesgo de metástasis (SPARTAN)"
-          },
-          "cycleDays": null,
-          "cycles": {
-            "en": "continuous until progression or unacceptable toxicity",
-            "de": "kontinuierlich bis Progress oder inakzeptable Toxizität",
-            "es": "continua hasta progresión o toxicidad inaceptable"
-          },
-          "drugs": [
-            {
-              "name": {
-                "en": "Apalutamide",
-                "de": "Apalutamid",
-                "es": "Apalutamida"
-              },
-              "dose": {
-                "en": "240 mg (4 x 60 mg or 1 x 240 mg)",
-                "de": "240 mg (4 x 60 mg oder 1 x 240 mg)",
-                "es": "240 mg (4 x 60 mg o 1 x 240 mg)"
-              },
-              "route": "p.o.",
-              "schedule": {
-                "en": "once daily, with or without food",
-                "de": "1 x täglich, unabhängig von den Mahlzeiten",
-                "es": "una vez al día, con o sin alimentos"
-              }
-            },
-            {
-              "name": {
-                "en": "ADT (GnRH agonist/antagonist or orchiectomy)",
-                "de": "ADT (GnRH-Agonist/-Antagonist o. Orchiektomie)",
-                "es": "TDA (agonista/antagonista GnRH u orquiectomía)"
-              },
-              "dose": {
-                "en": "per product (target T < 50 ng/dl)",
-                "de": "gemäß Präparat (Ziel: T < 50 ng/dl)",
-                "es": "según preparado (objetivo: T < 50 ng/dl)"
-              },
-              "route": "s.c.",
-              "schedule": {
-                "en": "continuous",
-                "de": "kontinuierlich",
-                "es": "continua"
-              }
-            }
-          ],
-          "support": {
-            "en": "Continue ADT. TSH at baseline and periodically; skin checks; falls/fracture prevention, bone health assessment. ADT: GnRH agonist or antagonist dosed per product (see ADT regimens), or prior orchiectomy; castration target testosterone < 50 ng/dl.",
-            "de": "ADT fortführen. TSH vor Beginn und im Verlauf; Hautkontrollen; Sturz-/Frakturprophylaxe, Knochengesundheit prüfen. ADT: GnRH-Agonist oder -Antagonist, Dosis gemäß Präparat (siehe ADT-Protokolle), bzw. Z. n. Orchiektomie; Ziel Kastrationsniveau Testosteron < 50 ng/dl.",
-            "es": "Mantener TDA. TSH basal y periódica; revisión cutánea; prevención de caídas/fracturas, valorar salud ósea. TDA: agonista o antagonista de GnRH, dosis según preparado (ver pautas de TDA), u orquiectomía previa; objetivo testosterona de castración < 50 ng/dl."
-          },
-          "cautions": {
-            "en": "Rash (frequent; interrupt for grade ≥ 3, resume at reduced dose 180 mg or 120 mg), hypothyroidism, falls and fractures, seizures (rare), QT prolongation. Strong CYP3A4/2C19 inducer: check interactions.",
-            "de": "Exanthem (häufig; bei Grad ≥ 3 pausieren, dann reduziert mit 180 mg oder 120 mg fortsetzen), Hypothyreose, Stürze und Frakturen, Krampfanfälle (selten), QT-Verlängerung. Starker CYP3A4/2C19-Induktor: Interaktionen prüfen.",
-            "es": "Exantema (frecuente; interrumpir en grado ≥ 3 y reanudar a dosis reducida 180 mg o 120 mg), hipotiroidismo, caídas y fracturas, convulsiones (raras), prolongación del QT. Inductor potente de CYP3A4/2C19: revisar interacciones."
-          },
-          "evidence": {
-            "en": "TITAN (mHSPC), SPARTAN (nmCRPC). Both indications EU-approved.",
-            "de": "TITAN (mHSPC), SPARTAN (nmCRPC). Beide Indikationen EU-zugelassen.",
-            "es": "TITAN (CPHSm), SPARTAN (CPRCnm). Ambas indicaciones aprobadas en la UE."
-          },
-          "sources": [
-            {
-              "label": "EMA: Erleada (apalutamide) product information",
-              "url": "https://www.ema.europa.eu/en/documents/product-information/erleada-epar-product-information_en.pdf"
-            },
-            {
-              "label": "Erleada dose modifications (J&J Medical Connect)",
-              "url": "https://www.jnjmedicalconnect.com/products/erleada/medical-content/erleada-dose-modifications"
-            }
-          ],
-          "questions": [
-            "q-pca-mhspc-low-volume-low-risk-prostate-rt"
-          ]
-        },
-        {
-          "id": "pca-darolutamide",
-          "name": {
-            "en": "Darolutamide (+ ADT)",
-            "de": "Darolutamid (+ ADT)",
-            "es": "Darolutamida (+ TDA)"
-          },
-          "setting": {
-            "en": "nmCRPC at high risk of metastasis (ARAMIS); mHSPC with ADT without docetaxel (ARANOTE, EU 2025); with docetaxel see triplet (ARASENS)",
-            "de": "nmCRPC mit hohem Metastasierungsrisiko (ARAMIS); mHSPC mit ADT ohne Docetaxel (ARANOTE, EU 2025); mit Docetaxel siehe Triplette (ARASENS)",
-            "es": "CPRCnm con alto riesgo de metástasis (ARAMIS); CPHSm con TDA sin docetaxel (ARANOTE, UE 2025); con docetaxel ver triplete (ARASENS)"
-          },
-          "cycleDays": null,
-          "cycles": {
-            "en": "continuous until progression or unacceptable toxicity",
-            "de": "kontinuierlich bis Progress oder inakzeptable Toxizität",
-            "es": "continua hasta progresión o toxicidad inaceptable"
-          },
-          "drugs": [
-            {
-              "name": {
-                "en": "Darolutamide",
-                "de": "Darolutamid",
-                "es": "Darolutamida"
-              },
-              "dose": {
-                "en": "600 mg (2 x 300 mg)",
-                "de": "600 mg (2 x 300 mg)",
-                "es": "600 mg (2 x 300 mg)"
-              },
-              "route": "p.o.",
-              "schedule": {
-                "en": "twice daily with food (1200 mg/day)",
-                "de": "2 x täglich zu einer Mahlzeit (1200 mg/Tag)",
-                "es": "dos veces al día con alimentos (1200 mg/día)"
-              }
-            },
-            {
-              "name": {
-                "en": "ADT (GnRH agonist/antagonist or orchiectomy)",
-                "de": "ADT (GnRH-Agonist/-Antagonist o. Orchiektomie)",
-                "es": "TDA (agonista/antagonista GnRH u orquiectomía)"
-              },
-              "dose": {
-                "en": "per product (target T < 50 ng/dl)",
-                "de": "gemäß Präparat (Ziel: T < 50 ng/dl)",
-                "es": "según preparado (objetivo: T < 50 ng/dl)"
-              },
-              "route": "s.c.",
-              "schedule": {
-                "en": "continuous",
-                "de": "kontinuierlich",
-                "es": "continua"
-              }
-            }
-          ],
-          "support": {
-            "en": "Continue ADT. Bone health assessment; take with food. ADT: GnRH agonist or antagonist dosed per product (see ADT regimens), or prior orchiectomy; castration target testosterone < 50 ng/dl.",
-            "de": "ADT fortführen. Knochengesundheit prüfen; Einnahme mit dem Essen. ADT: GnRH-Agonist oder -Antagonist, Dosis gemäß Präparat (siehe ADT-Protokolle), bzw. Z. n. Orchiektomie; Ziel Kastrationsniveau Testosteron < 50 ng/dl.",
-            "es": "Mantener TDA. Valorar salud ósea; tomar con alimentos. TDA: agonista o antagonista de GnRH, dosis según preparado (ver pautas de TDA), u orquiectomía previa; objetivo testosterona de castración < 50 ng/dl."
-          },
-          "cautions": {
-            "en": "Low blood-brain barrier penetration - fewer CNS effects/falls than other ARPIs. Grade ≥ 3 toxicity: interrupt or 300 mg twice daily. Severe renal impairment (eGFR 15-29 ml/min/1.73 m², no dialysis) and Child-Pugh B/C: start 300 mg twice daily. BCRP/OATP inhibitor - rosuvastatin exposure increases.",
-            "de": "Geringe ZNS-Gängigkeit - weniger ZNS-Nebenwirkungen/Stürze als andere ARPI. Toxizität Grad ≥ 3: pausieren oder 2 x 300 mg. Schwere Niereninsuffizienz (eGFR 15-29 ml/min/1,73 m², ohne Dialyse) und Child-Pugh B/C: Start mit 2 x 300 mg. BCRP/OATP-Hemmung - Rosuvastatin-Exposition steigt.",
-            "es": "Escaso paso de la barrera hematoencefálica - menos efectos sobre SNC/caídas que otros ARPI. Toxicidad grado ≥ 3: interrumpir o 300 mg dos veces al día. Insuficiencia renal grave (FGe 15-29 ml/min/1,73 m², sin diálisis) y Child-Pugh B/C: iniciar con 300 mg dos veces al día. Inhibe BCRP/OATP - aumenta la exposición a rosuvastatina."
-          },
-          "evidence": {
-            "en": "ARAMIS (nmCRPC), ARANOTE (mHSPC with ADT, EU approval July 2025), ARASENS (with docetaxel). All EU-approved.",
-            "de": "ARAMIS (nmCRPC), ARANOTE (mHSPC mit ADT, EU-Zulassung Juli 2025), ARASENS (mit Docetaxel). Alle EU-zugelassen.",
-            "es": "ARAMIS (CPRCnm), ARANOTE (CPHSm con TDA, aprobación UE julio 2025), ARASENS (con docetaxel). Todas aprobadas en la UE."
-          },
-          "sources": [
-            {
-              "label": "Nubeqa (darolutamide) SmPC, July 2025",
-              "url": "https://www.bayer.com/sites/default/files/nubeqa-smpc-jul-2025-2.pdf"
-            },
-            {
-              "label": "Bayer: Nubeqa EU approval in third indication (ARANOTE)",
-              "url": "https://www.bayer.com/media/en-us/bayers-nubeqa-darolutamide-receives-eu-approval-in-third-indication-for-patients-with-advanced-prostate-cancer/"
-            }
-          ]
-        },
-        {
-          "id": "pca-adt-gnrh-agonist-leuprorelin",
-          "name": {
-            "en": "ADT: GnRH agonist depot (leuprorelin 3-month) with antiandrogen flare protection",
-            "de": "ADT: GnRH-Agonist-Depot (Leuprorelin 3-Monats-Depot) mit Antiandrogen-Flare-Schutz",
-            "es": "TDA: agonista de GnRH depot (leuprorelina trimestral) con protección antiandrogénica del flare"
-          },
-          "setting": {
-            "en": "Any indication for ADT: metastatic HSPC (backbone for all combinations), locally advanced disease with radiotherapy, nmCRPC/mCRPC (ADT continued)",
-            "de": "Jede ADT-Indikation: metastasiertes HSPC (Basis aller Kombinationen), lokal fortgeschritten mit Strahlentherapie, nmCRPC/mCRPC (ADT wird fortgeführt)",
-            "es": "Cualquier indicación de TDA: CPHS metastásico (base de todas las combinaciones), localmente avanzado con radioterapia, CPRCnm/CPRCm (se mantiene la TDA)"
-          },
-          "cycleDays": null,
-          "cycles": {
-            "en": "every 3 months, continuous (duration depends on indication)",
-            "de": "alle 3 Monate, kontinuierlich (Dauer je nach Indikation)",
-            "es": "cada 3 meses, continua (duración según indicación)"
-          },
-          "drugs": [
-            {
-              "name": {
-                "en": "Leuprorelin acetate 3-month depot",
-                "de": "Leuprorelinacetat 3-Monats-Depot",
-                "es": "Acetato de leuprorelina depot trimestral"
-              },
-              "dose": {
-                "en": "11.25 mg",
-                "de": "11,25 mg",
-                "es": "11,25 mg"
-              },
-              "route": "s.c.",
-              "schedule": {
-                "en": "once every 3 months; rotate injection site",
-                "de": "1 x alle 3 Monate; Injektionsstelle wechseln",
-                "es": "una vez cada 3 meses; rotar el lugar de inyección"
-              }
-            },
-            {
-              "name": {
-                "en": "Bicalutamide (flare protection)",
-                "de": "Bicalutamid (Flare-Schutz)",
-                "es": "Bicalutamida (protección del flare)"
-              },
-              "dose": {
-                "en": "50 mg",
-                "de": "50 mg",
-                "es": "50 mg"
-              },
-              "route": "p.o.",
-              "schedule": {
-                "en": "once daily for 2-4 weeks in total",
-                "de": "1 x täglich, insgesamt 2-4 Wochen",
-                "es": "una vez al día, durante 2-4 semanas en total"
-              }
-            }
-          ],
-          "support": {
-            "en": "Leuprorelin 3-month depot, e.g. Trenantone. Start bicalutamide at least 3 days before the first depot injection. Baseline testosterone, PSA, HbA1c/lipids, blood pressure; bone density (DXA) and fracture risk; calcium/vitamin D and exercise; manage hot flushes. Target castration testosterone < 50 ng/dl (ideally < 20 ng/dl).",
-            "de": "Leuprorelin-3-Monats-Depot z. B. Trenantone. Bicalutamid mindestens 3 Tage vor der ersten Depotinjektion beginnen. Ausgangswerte Testosteron, PSA, HbA1c/Lipide, Blutdruck; Knochendichte (DXA) und Frakturrisiko; Calcium/Vitamin D und Bewegung; Hitzewallungen behandeln. Ziel: Kastrationsniveau Testosteron < 50 ng/dl (idealerweise < 20 ng/dl).",
-            "es": "Depot trimestral de leuprorelina, p. ej. Trenantone. Iniciar bicalutamida al menos 3 días antes de la primera inyección depot. Basal: testosterona, PSA, HbA1c/lípidos, presión arterial; densitometría (DXA) y riesgo de fractura; calcio/vitamina D y ejercicio; tratar sofocos. Objetivo: testosterona de castración < 50 ng/dl (idealmente < 20 ng/dl)."
-          },
-          "cautions": {
-            "en": "Testosterone flare in the first 1-2 weeks: risk of spinal cord compression, urinary retention or bone pain in high-volume/symptomatic disease - antiandrogen cover mandatory, or prefer a GnRH antagonist (degarelix/relugolix) or orchiectomy in impending cord compression. Not as monotherapy in hormone-independent (castration-resistant) disease. Cardiovascular and metabolic risk, osteoporosis.",
-            "de": "Testosteron-Flare in den ersten 1-2 Wochen: Gefahr von Querschnitt, Harnverhalt oder Knochenschmerzen bei High-Volume/symptomatischer Erkrankung - Antiandrogen-Schutz obligat, bei drohender Myelonkompression besser GnRH-Antagonist (Degarelix/Relugolix) oder Orchiektomie. Nicht als Monotherapie beim hormonunabhängigen (kastrationsresistenten) Karzinom. Kardiovaskuläres und metabolisches Risiko, Osteoporose.",
-            "es": "Flare de testosterona en las 1-2 primeras semanas: riesgo de compresión medular, retención urinaria o dolor óseo en enfermedad de alto volumen/sintomática - cobertura antiandrogénica obligatoria, o preferir antagonista de GnRH (degarelix/relugolix) u orquiectomía si hay compresión medular inminente. No en monoterapia en el carcinoma hormonoindependiente (resistente a la castración). Riesgo cardiovascular y metabólico, osteoporosis."
-          },
-          "evidence": {
-            "en": "Standard ADT; leuprorelin 3-month depot EU/German-approved for advanced hormone-dependent prostate cancer and in combination with ARPIs. Short-term first-generation antiandrogen flare protection (bicalutamide/flutamide for 2-4 weeks) per German S3 guideline practice; continuous combined androgen blockade gives no benefit.",
-            "de": "Standard-ADT; Leuprorelin-3-Monats-Depot in Deutschland zugelassen beim fortgeschrittenen hormonabhängigen Prostatakarzinom und in Kombination mit ARPI. Kurzzeitiger Flare-Schutz mit Antiandrogen der 1. Generation (Bicalutamid/Flutamid für 2-4 Wochen) gemäß S3-Leitlinien-Praxis; dauerhafte maximale Androgenblockade bringt keinen Vorteil.",
-            "es": "TDA estándar; leuprorelina depot trimestral aprobada en Alemania para el cáncer de próstata hormonodependiente avanzado y en combinación con ARPI. Protección breve del flare con antiandrógeno de 1.ª generación (bicalutamida/flutamida 2-4 semanas) según la práctica de la guía S3 alemana; el bloqueo androgénico combinado continuo no aporta beneficio."
-          },
-          "sources": [
-            {
-              "label": "Trenantone 11,25 mg Fachinformation",
-              "url": "https://www.apogepha.de/fileadmin/apogepha/fachinformation/fachinformation-trenantone.pdf"
-            },
-            {
-              "label": "Urologielehrbuch: ADT beim mHSPC (Flare-Prophylaxe 2-4 Wochen)",
-              "url": "https://www.urologielehrbuch.de/prostatakarzinom-kastrationssensibel-hormontherapie.html"
-            },
-            {
-              "label": "Urologie 2026: Therapie des metastasierten hormonsensitiven Prostatakarzinoms",
-              "url": "https://link.springer.com/article/10.1007/s00120-026-02798-4"
-            },
-            {
-              "label": "Fachinformation Bicalutamid-ratiopharm 50 mg",
-              "url": "https://www.ratiopharm.de/assets/products/de/label/Bicalutamid-ratiopharm%2050%20mg%20Filmtabletten%20-%203.pdf?pzn=3574397"
-            }
-          ],
-          "questions": [
-            "sys-prot-relugolix-restart-after-interruption"
-          ]
-        },
-        {
           "id": "pca-adt-degarelix",
+          "role": "alternative",
           "name": {
             "en": "ADT: degarelix (GnRH antagonist)",
             "de": "ADT: Degarelix (GnRH-Antagonist)",
@@ -2573,6 +2885,7 @@
         },
         {
           "id": "pca-adt-relugolix",
+          "role": "alternative",
           "name": {
             "en": "ADT: relugolix (oral GnRH antagonist)",
             "de": "ADT: Relugolix (oraler GnRH-Antagonist)",
@@ -2665,96 +2978,8 @@
           ]
         },
         {
-          "id": "pca-olaparib-monotherapy",
-          "name": {
-            "en": "Olaparib monotherapy",
-            "de": "Olaparib-Monotherapie",
-            "es": "Olaparib en monoterapia"
-          },
-          "setting": {
-            "en": "mCRPC with BRCA1/2 mutation (germline and/or somatic) progressing after prior therapy including a new hormonal agent (ARPI)",
-            "de": "mCRPC mit BRCA1/2-Mutation (Keimbahn und/oder somatisch) mit Progress nach Vortherapie mit einem neuen hormonellen Wirkstoff (ARPI)",
-            "es": "CPRCm con mutación BRCA1/2 (germinal y/o somática) en progresión tras tratamiento previo con un nuevo agente hormonal (ARPI)"
-          },
-          "cycleDays": null,
-          "cycles": {
-            "en": "continuous until progression or unacceptable toxicity",
-            "de": "kontinuierlich bis Progress oder inakzeptable Toxizität",
-            "es": "continua hasta progresión o toxicidad inaceptable"
-          },
-          "drugs": [
-            {
-              "name": {
-                "en": "Olaparib (tablets)",
-                "de": "Olaparib (Tabletten)",
-                "es": "Olaparib (comprimidos)"
-              },
-              "dose": {
-                "en": "300 mg (2 x 150 mg tablets)",
-                "de": "300 mg (2 Tbl. à 150 mg)",
-                "es": "300 mg (2 comprimidos de 150 mg)"
-              },
-              "route": "p.o.",
-              "schedule": {
-                "en": "twice daily (600 mg/day)",
-                "de": "2 x täglich (600 mg/Tag)",
-                "es": "dos veces al día (600 mg/día)"
-              }
-            },
-            {
-              "name": {
-                "en": "ADT (GnRH agonist/antagonist or orchiectomy)",
-                "de": "ADT (GnRH-Agonist/-Antagonist o. Orchiektomie)",
-                "es": "TDA (agonista/antagonista GnRH u orquiectomía)"
-              },
-              "dose": {
-                "en": "per product (target T < 50 ng/dl)",
-                "de": "gemäß Präparat (Ziel: T < 50 ng/dl)",
-                "es": "según preparado (objetivo: T < 50 ng/dl)"
-              },
-              "route": "s.c.",
-              "schedule": {
-                "en": "continuous",
-                "de": "kontinuierlich",
-                "es": "continua"
-              }
-            }
-          ],
-          "support": {
-            "en": "Continue ADT. Blood count at baseline, then monthly for the first 12 months; antiemetic as needed (nausea common). ADT: GnRH agonist or antagonist dosed per product (see ADT regimens), or prior orchiectomy; castration target testosterone < 50 ng/dl.",
-            "de": "ADT fortführen. Blutbild vor Beginn, dann in den ersten 12 Monaten monatlich; Antiemetika bei Bedarf (Übelkeit häufig). ADT: GnRH-Agonist oder -Antagonist, Dosis gemäß Präparat (siehe ADT-Protokolle), bzw. Z. n. Orchiektomie; Ziel Kastrationsniveau Testosteron < 50 ng/dl.",
-            "es": "Mantener TDA. Hemograma basal y luego mensual durante los 12 primeros meses; antieméticos si precisa (náuseas frecuentes). TDA: agonista o antagonista de GnRH, dosis según preparado (ver pautas de TDA), u orquiectomía previa; objetivo testosterona de castración < 50 ng/dl."
-          },
-          "cautions": {
-            "en": "Anaemia (most frequent; check blood count before start and monthly; transfuse/interrupt as needed), MDS/AML (rare; stop if confirmed), pneumonitis, VTE (higher with abiraterone). Moderate renal impairment (CrCl 31-50 ml/min): 200 mg twice daily; not recommended if CrCl ≤ 30 ml/min. Strong CYP3A inhibitors: 100 mg twice daily; moderate: 150 mg twice daily; avoid strong inducers. Tablets and capsules are not interchangeable.",
-            "de": "Anämie (am häufigsten; Blutbild vor Beginn und monatlich; Transfusion/Pause nach Bedarf), MDS/AML (selten; bei Bestätigung absetzen), Pneumonitis, VTE (unter Abirateron häufiger). Mittelgradige Niereninsuffizienz (CrCl 31-50 ml/min): 2 x 200 mg; bei CrCl ≤ 30 ml/min nicht empfohlen. Starke CYP3A-Inhibitoren: 2 x 100 mg; moderate: 2 x 150 mg; starke Induktoren meiden. Tabletten und Kapseln nicht austauschbar.",
-            "es": "Anemia (la más frecuente; hemograma basal y mensual; transfundir/interrumpir según necesidad), SMD/LMA (rara; suspender si se confirma), neumonitis, TEV (más con abiraterona). Insuficiencia renal moderada (CrCl 31-50 ml/min): 200 mg dos veces al día; no recomendado si CrCl ≤ 30 ml/min. Inhibidores potentes de CYP3A: 100 mg dos veces al día; moderados: 150 mg dos veces al día; evitar inductores potentes. Comprimidos y cápsulas no son intercambiables."
-          },
-          "evidence": {
-            "en": "PROfound (BRCA1/2 subgroup: rPFS and OS benefit vs switch of ARPI). EU-approved since November 2020 for BRCA1/2-mutated mCRPC after an NHA (EU label narrower than US: BRCA only).",
-            "de": "PROfound (BRCA1/2-Subgruppe: rPFS- und OS-Vorteil vs. ARPI-Wechsel). EU-zugelassen seit November 2020 beim BRCA1/2-mutierten mCRPC nach NHA (EU-Zulassung enger als in den USA: nur BRCA).",
-            "es": "PROfound (subgrupo BRCA1/2: beneficio en SLPr y SG frente a cambio de ARPI). Aprobado en la UE desde noviembre de 2020 en CPRCm con mutación BRCA1/2 tras NHA (más restrictivo que en EE. UU.: solo BRCA)."
-          },
-          "sources": [
-            {
-              "label": "EMA CHMP positive opinion: Lynparza II-53",
-              "url": "https://www.ema.europa.eu/documents/smop/chmp-post-authorisation-summary-positive-opinion-lynparza-ii-53_en.pdf"
-            },
-            {
-              "label": "Merck: Lynparza approved in the EU for BRCA1/2-mutated mCRPC",
-              "url": "https://www.merck.com/news/lynparza-olaparib-approved-in-the-eu-for-treatment-of-brca1-2-mutated-metastatic-castration-resistant-prostate-cancer-mcrpc"
-            },
-            {
-              "label": "NCBI Bookshelf: Olaparib clinical review (dose)",
-              "url": "https://www.ncbi.nlm.nih.gov/books/NBK604446/"
-            }
-          ],
-          "questions": [
-            "q-pca-mcrpc-brca2-parpi-partner-germline"
-          ]
-        },
-        {
           "id": "pca-olaparib-abiraterone",
+          "role": "alternative",
           "name": {
             "en": "Olaparib + abiraterone/prednisone (PROpel)",
             "de": "Olaparib + Abirateron/Prednison (PROpel)",
@@ -2880,6 +3105,7 @@
         },
         {
           "id": "pca-niraparib-abiraterone",
+          "role": "alternative",
           "name": {
             "en": "Niraparib/abiraterone acetate (fixed-dose tablet) + prednisone",
             "de": "Niraparib/Abirateronacetat (Fixkombination) + Prednison",
@@ -2991,6 +3217,7 @@
         },
         {
           "id": "pca-talazoparib-enzalutamide",
+          "role": "alternative",
           "name": {
             "en": "Talazoparib + enzalutamide (TALAPRO-2)",
             "de": "Talazoparib + Enzalutamid (TALAPRO-2)",
@@ -3099,6 +3326,7 @@
         },
         {
           "id": "pca-lu177-psma-617",
+          "role": "alternative",
           "name": {
             "en": "177Lu-PSMA-617 (lutetium vipivotide tetraxetan)",
             "de": "177Lu-PSMA-617 (Lutetium-Vipivotid-Tetraxetan)",
@@ -3190,6 +3418,7 @@
         },
         {
           "id": "pca-radium-223",
+          "role": "alternative",
           "name": {
             "en": "Radium-223 dichloride",
             "de": "Radium-223-dichlorid",
@@ -3273,198 +3502,6 @@
             "q-pca-mcrpc-post-docetaxel-psma-negative-liver",
             "q-pca-mcrpc-after-docetaxel-arpi-naive-no-hrr"
           ]
-        },
-        {
-          "id": "pca-bone-protection-metastatic",
-          "name": {
-            "en": "Bone protection in bone metastases: denosumab 120 mg or zoledronic acid 4 mg",
-            "de": "Knochenprotektion bei Knochenmetastasen: Denosumab 120 mg oder Zoledronsäure 4 mg",
-            "es": "Protección ósea en metástasis óseas: denosumab 120 mg o ácido zoledrónico 4 mg"
-          },
-          "setting": {
-            "en": "mCRPC with bone metastases: prevention of skeletal-related events (in mHSPC not recommended by guidelines for SRE prevention - there only for osteoporosis/fracture risk)",
-            "de": "mCRPC mit Knochenmetastasen: Prävention skelettbezogener Ereignisse (beim mHSPC leitliniengemäß nicht zur SRE-Prävention empfohlen - dort nur bei Osteoporose/Frakturrisiko)",
-            "es": "CPRCm con metástasis óseas: prevención de eventos óseos (en CPHSm las guías no lo recomiendan para prevenir EO - solo por osteoporosis/riesgo de fractura)"
-          },
-          "cycleDays": 28,
-          "cycles": {
-            "en": "continuous while bone metastases persist (zoledronic acid every 3-4 weeks)",
-            "de": "kontinuierlich, solange Knochenmetastasen bestehen (Zoledronsäure alle 3-4 Wochen)",
-            "es": "continuo mientras persistan las metástasis óseas (ácido zoledrónico cada 3-4 semanas)"
-          },
-          "drugs": [
-            {
-              "name": {
-                "en": "Denosumab (Xgeva)",
-                "de": "Denosumab (Xgeva)",
-                "es": "Denosumab (Xgeva)"
-              },
-              "dose": {
-                "en": "120 mg",
-                "de": "120 mg",
-                "es": "120 mg"
-              },
-              "route": "s.c.",
-              "schedule": {
-                "en": "every 4 weeks",
-                "de": "alle 4 Wochen",
-                "es": "cada 4 semanas"
-              }
-            },
-            {
-              "name": {
-                "en": "or zoledronic acid (Zometa) - CrCl > 60 ml/min",
-                "de": "oder Zoledronsäure (Zometa) - CrCl > 60 ml/min",
-                "es": "o ácido zoledrónico (Zometa) - CrCl > 60 ml/min"
-              },
-              "dose": {
-                "en": "4 mg",
-                "de": "4 mg",
-                "es": "4 mg"
-              },
-              "route": "i.v.",
-              "schedule": {
-                "en": "infusion over ≥ 15 min every 3-4 weeks",
-                "de": "Infusion über ≥ 15 min alle 3-4 Wochen",
-                "es": "infusión en ≥ 15 min cada 3-4 semanas"
-              }
-            },
-            {
-              "name": {
-                "en": "Calcium + vitamin D",
-                "de": "Calcium + Vitamin D",
-                "es": "Calcio + vitamina D"
-              },
-              "dose": {
-                "en": "at least 500 mg calcium + 400 IU vitamin D",
-                "de": "mindestens 500 mg Calcium + 400 I.E. Vitamin D",
-                "es": "al menos 500 mg de calcio + 400 UI de vitamina D"
-              },
-              "route": "p.o.",
-              "schedule": {
-                "en": "daily, unless hypercalcaemia",
-                "de": "täglich, außer bei Hyperkalzämie",
-                "es": "diario, salvo hipercalcemia"
-              }
-            }
-          ],
-          "support": {
-            "en": "Dental examination before start and good oral hygiene (osteonecrosis of the jaw); check calcium (and magnesium) before each dose, especially in the first weeks of denosumab; creatinine before each zoledronic acid dose (Cockcroft-Gault).",
-            "de": "Zahnärztliche Untersuchung vor Beginn und gute Mundhygiene (Kieferosteonekrose); Calcium (und Magnesium) vor jeder Gabe kontrollieren, besonders in den ersten Wochen unter Denosumab; Kreatinin vor jeder Zoledronsäure-Gabe (Cockcroft-Gault).",
-            "es": "Revisión odontológica previa y buena higiene oral (osteonecrosis maxilar); controlar calcio (y magnesio) antes de cada dosis, sobre todo en las primeras semanas de denosumab; creatinina antes de cada dosis de ácido zoledrónico (Cockcroft-Gault)."
-          },
-          "cautions": {
-            "en": "Zoledronic acid renal dosing: CrCl 50-60 ml/min 3.5 mg; 40-49: 3.3 mg; 30-39: 3.0 mg; < 30 ml/min not recommended. Denosumab: severe (even fatal) hypocalcaemia, highest risk with CrCl < 30 ml/min/dialysis; rebound vertebral fractures after stopping; no renal dose adjustment. Do not combine Xgeva with Prolia. Zoledronic acid: withhold if renal function deteriorates; acute-phase reaction. Both: osteonecrosis of the jaw (avoid invasive dental procedures), atypical femoral fractures.",
-            "de": "Zoledronsäure renal angepasst: CrCl 50-60 ml/min 3,5 mg; 40-49: 3,3 mg; 30-39: 3,0 mg; < 30 ml/min nicht empfohlen. Denosumab: schwere (auch tödliche) Hypokalzämie, höchstes Risiko bei CrCl < 30 ml/min/Dialyse; Rebound-Wirbelkörperfrakturen nach Absetzen; keine renale Dosisanpassung. Xgeva nicht mit Prolia kombinieren. Zoledronsäure: bei Verschlechterung der Nierenfunktion pausieren; Akute-Phase-Reaktion. Beide: Kieferosteonekrose (invasive Zahneingriffe vermeiden), atypische Femurfrakturen.",
-            "es": "Ácido zoledrónico según función renal: CrCl 50-60 ml/min 3,5 mg; 40-49: 3,3 mg; 30-39: 3,0 mg; < 30 ml/min no recomendado. Denosumab: hipocalcemia grave (incluso mortal), mayor riesgo con CrCl < 30 ml/min/diálisis; fracturas vertebrales de rebote al suspender; sin ajuste renal. No combinar Xgeva con Prolia. Ácido zoledrónico: suspender si empeora la función renal; reacción de fase aguda. Ambos: osteonecrosis maxilar (evitar procedimientos dentales invasivos), fracturas femorales atípicas."
-          },
-          "evidence": {
-            "en": "Denosumab vs zoledronic acid phase 3 in CRPC (denosumab delayed first SRE); zoledronic acid trial in CRPC. Both EU-approved for prevention of skeletal-related events in adults with bone metastases from solid tumours.",
-            "de": "Phase-3-Studie Denosumab vs. Zoledronsäure beim CRPC (Denosumab verzögerte das erste SRE); Zoledronsäure-Zulassungsstudie beim CRPC. Beide EU-zugelassen zur Prävention skelettbezogener Komplikationen bei Knochenmetastasen solider Tumoren.",
-            "es": "Fase 3 denosumab frente a ácido zoledrónico en CPRC (denosumab retrasó el primer EO); ensayo de ácido zoledrónico en CPRC. Ambos aprobados en la UE para prevenir eventos óseos en adultos con metástasis óseas de tumores sólidos."
-          },
-          "sources": [
-            {
-              "label": "EMA: Xgeva product information",
-              "url": "https://www.ema.europa.eu/en/documents/product-information/xgeva-epar-product-information_en.pdf"
-            },
-            {
-              "label": "EMA: Zometa product information",
-              "url": "https://www.ema.europa.eu/en/documents/product-information/zometa-epar-product-information_en.pdf"
-            },
-            {
-              "label": "eMC: Zoledronic acid 4 mg/100 ml SmPC (renal dose table)",
-              "url": "https://www.medicines.org.uk/emc/product/7205/smpc"
-            }
-          ],
-          "questions": [
-            "sys-prot-denosumab-prolia-to-xgeva-mcrpc"
-          ]
-        },
-        {
-          "id": "pca-bone-protection-adt-bone-loss",
-          "name": {
-            "en": "Denosumab 60 mg for ADT-associated bone loss",
-            "de": "Denosumab 60 mg bei ADT-assoziiertem Knochenverlust",
-            "es": "Denosumab 60 mg en la pérdida ósea asociada a TDA"
-          },
-          "setting": {
-            "en": "Men on ADT (any stage, incl. mHSPC/M0) at increased fracture risk (osteoporosis on DXA, prior fragility fracture)",
-            "de": "Männer unter ADT (jedes Stadium, auch mHSPC/M0) mit erhöhtem Frakturrisiko (Osteoporose in der DXA, frühere Fragilitätsfraktur)",
-            "es": "Varones con TDA (cualquier estadio, incl. CPHSm/M0) con riesgo aumentado de fractura (osteoporosis en DXA, fractura por fragilidad previa)"
-          },
-          "cycleDays": null,
-          "cycles": {
-            "en": "every 6 months, for the duration of ADT and fracture risk; do not stop without follow-on bisphosphonate",
-            "de": "alle 6 Monate, für die Dauer von ADT und Frakturrisiko; nicht ohne anschließendes Bisphosphonat absetzen",
-            "es": "cada 6 meses, mientras duren la TDA y el riesgo de fractura; no suspender sin bisfosfonato posterior"
-          },
-          "drugs": [
-            {
-              "name": {
-                "en": "Denosumab (Prolia)",
-                "de": "Denosumab (Prolia)",
-                "es": "Denosumab (Prolia)"
-              },
-              "dose": {
-                "en": "60 mg",
-                "de": "60 mg",
-                "es": "60 mg"
-              },
-              "route": "s.c.",
-              "schedule": {
-                "en": "once every 6 months",
-                "de": "1 x alle 6 Monate",
-                "es": "una vez cada 6 meses"
-              }
-            },
-            {
-              "name": {
-                "en": "Calcium + vitamin D",
-                "de": "Calcium + Vitamin D",
-                "es": "Calcio + vitamina D"
-              },
-              "dose": {
-                "en": "adequate; per diet and 25-OH vitamin D level",
-                "de": "ausreichend; nach Zufuhr und 25-OH-D-Spiegel",
-                "es": "adecuada; según ingesta y nivel de 25-OH-D"
-              },
-              "route": "p.o.",
-              "schedule": {
-                "en": "daily",
-                "de": "täglich",
-                "es": "diario"
-              }
-            }
-          ],
-          "support": {
-            "en": "Calcium + vitamin D supplementation is required with denosumab (SmPC: 'adequately supplemented'); dose according to dietary intake and 25-OH vitamin D level. DXA at start of ADT and every 1-2 years; exercise, fall prevention; calcium and 25-OH vitamin D levels; dental check.",
-            "de": "Calcium + Vitamin D: ausreichende Supplementierung laut Fachinformation obligat; Dosis nach Nahrungszufuhr und 25-OH-Vitamin-D-Spiegel. DXA zu Beginn der ADT und alle 1-2 Jahre; Bewegung, Sturzprophylaxe; Calcium- und 25-OH-Vitamin-D-Spiegel; Zahnstatus.",
-            "es": "Calcio + vitamina D: suplementación adecuada obligatoria según ficha técnica; dosis según ingesta y nivel de 25-OH-vitamina D. DXA al iniciar la TDA y cada 1-2 años; ejercicio, prevención de caídas; calcio y 25-OH-vitamina D; revisión dental."
-          },
-          "cautions": {
-            "en": "Not to be confused with Xgeva 120 mg every 4 weeks (metastatic SRE dose); never give both. Hypocalcaemia (correct before start), osteonecrosis of the jaw (rare at this dose), rebound vertebral fractures after stopping. Alternative: oral/i.v. bisphosphonate per osteoporosis guideline.",
-            "de": "Nicht mit Xgeva 120 mg alle 4 Wochen (SRE-Dosis bei Metastasen) verwechseln; nie beides geben. Hypokalzämie (vor Beginn ausgleichen), Kieferosteonekrose (selten in dieser Dosis), Rebound-Wirbelkörperfrakturen nach Absetzen. Alternative: orales/i.v. Bisphosphonat gemäß Osteoporose-Leitlinie.",
-            "es": "No confundir con Xgeva 120 mg cada 4 semanas (dosis para EO metastásicos); nunca administrar ambos. Hipocalcemia (corregir antes de iniciar), osteonecrosis maxilar (rara a esta dosis), fracturas vertebrales de rebote al suspender. Alternativa: bisfosfonato oral/i.v. según guía de osteoporosis."
-          },
-          "evidence": {
-            "en": "HALT 138 (denosumab 60 mg reduced new vertebral fractures in men on ADT). EU-approved: bone loss associated with hormone ablation in men with prostate cancer at increased risk of fractures.",
-            "de": "HALT 138 (Denosumab 60 mg senkte neue Wirbelkörperfrakturen unter ADT). EU-zugelassen: Knochenschwund im Zusammenhang mit Hormonablation bei Männern mit Prostatakarzinom und erhöhtem Frakturrisiko.",
-            "es": "HALT 138 (denosumab 60 mg redujo nuevas fracturas vertebrales en varones con TDA). Aprobado en la UE: pérdida ósea asociada a la ablación hormonal en varones con cáncer de próstata con riesgo aumentado de fracturas."
-          },
-          "sources": [
-            {
-              "label": "EMA: Prolia EPAR",
-              "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/prolia"
-            },
-            {
-              "label": "eMC: Prolia 60 mg SmPC",
-              "url": "https://www.medicines.org.uk/emc/product/568/smpc"
-            }
-          ],
-          "questions": [
-            "sys-prot-denosumab-prolia-to-xgeva-mcrpc"
-          ]
         }
       ]
     },
@@ -3478,6 +3515,7 @@
       "regimens": [
         {
           "id": "rcc-adjuvant-pembrolizumab",
+          "role": "standard",
           "name": {
             "en": "Adjuvant pembrolizumab",
             "de": "Adjuvantes Pembrolizumab",
@@ -3567,6 +3605,7 @@
         },
         {
           "id": "rcc-nivolumab-ipilimumab",
+          "role": "standard",
           "name": {
             "en": "Nivolumab + ipilimumab, then nivolumab maintenance",
             "de": "Nivolumab + Ipilimumab, anschließend Nivolumab-Erhaltung",
@@ -3696,6 +3735,7 @@
         },
         {
           "id": "rcc-pembrolizumab-axitinib",
+          "role": "standard",
           "name": {
             "en": "Pembrolizumab + axitinib",
             "de": "Pembrolizumab + Axitinib",
@@ -3800,6 +3840,7 @@
         },
         {
           "id": "rcc-pembrolizumab-lenvatinib",
+          "role": "standard",
           "name": {
             "en": "Pembrolizumab + lenvatinib",
             "de": "Pembrolizumab + Lenvatinib",
@@ -3904,6 +3945,7 @@
         },
         {
           "id": "rcc-nivolumab-cabozantinib",
+          "role": "standard",
           "name": {
             "en": "Nivolumab + cabozantinib",
             "de": "Nivolumab + Cabozantinib",
@@ -4011,6 +4053,7 @@
         },
         {
           "id": "rcc-cabozantinib-mono",
+          "role": "alternative",
           "name": {
             "en": "Cabozantinib monotherapy",
             "de": "Cabozantinib-Monotherapie",
@@ -4082,6 +4125,7 @@
         },
         {
           "id": "rcc-sunitinib-4-2",
+          "role": "alternative",
           "name": {
             "en": "Sunitinib (4/2 schedule)",
             "de": "Sunitinib (Schema 4/2)",
@@ -4153,6 +4197,7 @@
         },
         {
           "id": "rcc-pazopanib",
+          "role": "alternative",
           "name": {
             "en": "Pazopanib",
             "de": "Pazopanib",
@@ -4217,6 +4262,7 @@
         },
         {
           "id": "rcc-belzutifan",
+          "role": "alternative",
           "name": {
             "en": "Belzutifan",
             "de": "Belzutifan",
@@ -4302,6 +4348,7 @@
       "regimens": [
         {
           "id": "gct-bep",
+          "role": "standard",
           "name": {
             "en": "BEP (bleomycin, etoposide, cisplatin)",
             "de": "PEB/BEP (Cisplatin, Etoposid, Bleomycin)",
@@ -4413,6 +4460,7 @@
         },
         {
           "id": "gct-bep-1-adjuvant",
+          "role": "standard",
           "name": {
             "en": "BEP x1 adjuvant",
             "de": "PEB/BEP x1 adjuvant",
@@ -4513,6 +4561,7 @@
         },
         {
           "id": "gct-ep",
+          "role": "alternative",
           "name": {
             "en": "EP (etoposide, cisplatin)",
             "de": "PE/EP (Cisplatin, Etoposid)",
@@ -4599,6 +4648,7 @@
         },
         {
           "id": "gct-vip",
+          "role": "alternative",
           "name": {
             "en": "VIP (etoposide, ifosfamide, cisplatin) with mesna",
             "de": "PEI/VIP (Cisplatin, Etoposid, Ifosfamid) mit Mesna",
@@ -4728,6 +4778,7 @@
         },
         {
           "id": "seminoma-carboplatin-auc7",
+          "role": "alternative",
           "name": {
             "en": "Carboplatin AUC 7 single dose",
             "de": "Carboplatin AUC 7 (Einzeldosis)",
@@ -4803,6 +4854,7 @@
         },
         {
           "id": "gct-tip-salvage",
+          "role": "alternative",
           "name": {
             "en": "TIP (paclitaxel, ifosfamide, cisplatin) salvage",
             "de": "TIP (Paclitaxel, Ifosfamid, Cisplatin) Salvage",
@@ -4921,6 +4973,7 @@
       "regimens": [
         {
           "id": "penile-tip-neoadjuvant",
+          "role": "standard",
           "name": {
             "en": "TIP neoadjuvant (paclitaxel, ifosfamide, cisplatin)",
             "de": "TIP neoadjuvant (Paclitaxel, Ifosfamid, Cisplatin)",

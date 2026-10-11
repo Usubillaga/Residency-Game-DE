@@ -558,7 +558,7 @@ class AutomationTests(unittest.TestCase):
         regimen = {"id": "fixture-regimen", "name": translated("Fixture regimen"), "setting": translated("Metastatic disease"), "cycleDays": 21,
                    "cycles": translated("Up to 6 cycles"), "drugs": [drug], "support": translated("Hydration"), "cautions": translated("Renal function"),
                    "evidence": translated("Guideline standard"), "sources": [{"label": "Fixture guideline", "url": "https://example.org/guideline"}],
-                   "questions": ["emergency-fixture-1"]}
+                   "questions": ["emergency-fixture-1"], "role": "standard"}
         regimen.update(changes)
         return {"entities": [{"id": "fixture-entity", "title": translated("Fixture tumour"), "regimens": [regimen]}]}
 
@@ -570,6 +570,11 @@ class AutomationTests(unittest.TestCase):
         manage.write_json(self.root / "data" / "protocols.json", self.protocol(cycleDays=None))
         self.assertIsNone(manage.build(self.root)["protocols"][0]["regimens"][0]["cycleDays"])
         drug = self.protocol()["entities"][0]["regimens"][0]["drugs"][0]
+
+        def with_second(regimen):
+            data = self.protocol()
+            data["entities"][0]["regimens"].append(regimen)
+            return data
         twice = self.protocol()
         twice["entities"][0]["regimens"].append(copy.deepcopy(twice["entities"][0]["regimens"][0]))
         for bad, message in ((self.protocol(id="Not Kebab"), "kebab-case"), (twice, "duplicate regimen id"), (self.protocol(cycleDays=0), "cycleDays"),
@@ -580,6 +585,8 @@ class AutomationTests(unittest.TestCase):
                              (self.protocol(sources=[{"label": "Smith et al. trial", "url": "https://example.org"}]), "no authors"),
                              (self.protocol(questions=["missing-case"]), "unknown case id"),
                              (self.protocol(questions=["emergency-fixture-1", "emergency-fixture-1"]), "duplicate case id"),
+                             (with_second(dict(self.protocol()["entities"][0]["regimens"][0], id="second-regimen", role="preferred")), "role: expected one of standard, alternative"),
+                             (self.protocol(role="alternative"), "at least one regimen must be the standard"),
                              (self.protocol(id=5), "kebab-case"),
                              (self.protocol(evidence=translated("The authors report longer survival.")), "no authors"),
                              (self.protocol(support={"en": "Hydration"}), "de")):

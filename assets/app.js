@@ -30,7 +30,7 @@
     if (s && typeof s==='object' && !Array.isArray(s)) Object.assign(state,cleanSave(s));
   } catch (_) { /* In-memory play stays available when browser storage is blocked. */ }
   let view=['intro','library','atlas','protocols','progress','sources','play','report'].includes(location.hash.slice(1))?location.hash.slice(1):'intro';
-  let areaFilter='all',topicFilter='all',dutyFilter='all',pendingDuty='night',libraryPage=0,query='',savedOnly=false,pendingIds=null,customSchedule=null,dialogSequence=0,pendingSave=null,protocolEntity=null,protocolKind='systemic';
+  let areaFilter='all',topicFilter='all',dutyFilter='all',pendingDuty='night',libraryPage=0,query='',savedOnly=false,pendingIds=null,customSchedule=null,dialogSequence=0,pendingSave=null,protocolEntity=null,protocolKind='systemic',protocolAll=false;
   const t = key => {const value=typeof comedy()[key]==='string'?comedy()[key]:(strings[state.lang][key] || strings.en[key] || key);return value.replaceAll('{cases}',String(C.cases.length)).replaceAll('{areas}',String(C.areas.length));};
   const loc = value => value[state.lang];
   const pct = r=>Math.round(r.score/r.maxScore*100);
@@ -395,8 +395,13 @@
     const kinds=(C.radiotherapy||[]).length?'<div class="protocol-kinds" role="group" aria-label="'+esc(t('protocols'))+'">'+[['systemic','💊'],['radiotherapy','☢️']].map(([k,icon])=>'<button class="protocol-kind'+((k==='radiotherapy')===rt?' active':'')+'" aria-pressed="'+((k==='radiotherapy')===rt)+'" data-protocol-kind="'+k+'">'+icon+' '+esc(t(k==='radiotherapy'?'protocolKindRadiotherapy':'protocolKindSystemic'))+'</button>').join('')+'</div>':'';
     const head='<div class="page-head"><p class="eyebrow">'+esc(t('protocols'))+'</p><h1>'+esc(t(rt?'rtTitle':'protocolsTitle'))+'</h1><p>'+esc(t(rt?'rtSub':'protocolsSub'))+'</p></div>'+kinds+'<p class="warning-note protocol-warning" role="note">⚠️ '+esc(t(rt?'rtWarning':'protocolsWarning'))+'</p>';
     if(!current)return head;
-    return head+'<div class="protocol-tabs" role="group" aria-label="'+esc(t('protocols'))+'">'+entities.map(e=>'<button class="protocol-tab'+(e===current?' active':'')+'" aria-pressed="'+(e===current)+'" data-protocol-entity="'+esc(e.id)+'">'+esc(loc(e.title))+' <span class="mono" aria-hidden="true">'+e.regimens.length+'</span></button>').join('')+'</div>'+
-      '<div class="protocol-grid">'+current.regimens.map(rt?rtCard:protocolCard).join('')+'</div>';
+    // Systemic regimens are marked standard or alternative; by default only today's standards are shown.
+    const standard=r=>rt||r.role!=='alternative',shown=e=>protocolAll?e.regimens:e.regimens.filter(standard);
+    const alternatives=current.regimens.filter(r=>!standard(r)).length;
+    const regimens=[...current.regimens.filter(standard),...(protocolAll?current.regimens.filter(r=>!standard(r)):[])];
+    const toggle=alternatives?'<div class="protocol-alternatives"><button class="btn" aria-pressed="'+protocolAll+'" data-protocol-alternatives="'+(protocolAll?'hide':'show')+'">'+esc(protocolAll?t('protocolHideAlternatives'):t('protocolShowAlternatives').replace('{n}',alternatives))+'</button><span>'+esc(t('protocolAlternativesNote'))+'</span></div>':'';
+    return head+'<div class="protocol-tabs" role="group" aria-label="'+esc(t('protocols'))+'">'+entities.map(e=>'<button class="protocol-tab'+(e===current?' active':'')+'" aria-pressed="'+(e===current)+'" data-protocol-entity="'+esc(e.id)+'">'+esc(loc(e.title))+' <span class="mono" aria-hidden="true">'+shown(e).length+'</span></button>').join('')+'</div>'+
+      toggle+'<div class="protocol-grid">'+regimens.map(rt?rtCard:protocolCard).join('')+'</div>';
   }
   const gy=value=>(state.lang==='en'?String(value):String(value).replace('.',','))+' Gy';
   function practiceButton(r) {
@@ -415,7 +420,8 @@
   }
   function protocolCard(r) {
     const route=d=>d.route==='intravesical'?t('routeIntravesical'):d.route;
-    return '<article class="protocol-card" id="protocol-'+esc(r.id)+'"><h2>'+esc(loc(r.name))+'</h2><p class="protocol-setting"><b>'+esc(t('protocolSetting'))+':</b> '+esc(loc(r.setting))+'</p>'+
+    const role=r.role==='alternative'?'alternative':'standard';
+    return '<article class="protocol-card role-'+role+'" id="protocol-'+esc(r.id)+'"><p class="protocol-role">'+esc(t(role==='alternative'?'protocolRoleAlternative':'protocolRoleStandard'))+'</p><h2>'+esc(loc(r.name))+'</h2><p class="protocol-setting"><b>'+esc(t('protocolSetting'))+':</b> '+esc(loc(r.setting))+'</p>'+
       '<p class="protocol-cycle"><b>'+esc(t('protocolCycle'))+':</b> '+esc(r.cycleDays?t('protocolCycleDays').replace('{n}',r.cycleDays):t('protocolContinuous'))+' · <b>'+esc(t('protocolCycles'))+':</b> '+esc(loc(r.cycles))+'</p>'+
       '<div class="protocol-table-wrap"><table class="protocol-table"><thead><tr><th scope="col">'+esc(t('protocolDrug'))+'</th><th scope="col">'+esc(t('protocolDose'))+'</th><th scope="col">'+esc(t('protocolRoute'))+'</th><th scope="col">'+esc(t('protocolSchedule'))+'</th></tr></thead><tbody>'+
       r.drugs.map(d=>'<tr><th scope="row">'+esc(loc(d.name))+'</th><td class="mono" data-label="'+esc(t('protocolDose'))+'">'+esc(loc(d.dose))+'</td><td data-label="'+esc(t('protocolRoute'))+'">'+esc(route(d))+'</td><td data-label="'+esc(t('protocolSchedule'))+'">'+esc(loc(d.schedule))+'</td></tr>').join('')+'</tbody></table></div>'+
@@ -812,6 +818,7 @@
     if(b.dataset.bookmark){const id=b.dataset.bookmark;state.bookmarks=state.bookmarks.includes(id)?state.bookmarks.filter(x=>x!==id):[...state.bookmarks,id];persist();render();document.querySelector('[data-bookmark="'+id+'"]')?.focus({preventScroll:true});return;}
     if(b.dataset.practice){setup([b.dataset.practice]);return;}
     if(b.dataset.protocolKind){protocolKind=b.dataset.protocolKind==='radiotherapy'?'radiotherapy':'systemic';protocolEntity=null;render();document.querySelector('[data-protocol-kind="'+protocolKind+'"]')?.focus({preventScroll:true});return;}
+    if(b.dataset.protocolAlternatives){protocolAll=b.dataset.protocolAlternatives==='show';render();document.querySelector('[data-protocol-alternatives]')?.focus({preventScroll:true});return;}
     if(b.dataset.protocolEntity){protocolEntity=b.dataset.protocolEntity;render();document.querySelector('[data-protocol-entity="'+protocolEntity+'"]')?.focus({preventScroll:true});return;}
     if(b.dataset.protocolPractice){const r=((protocolKind==='radiotherapy'&&(C.radiotherapy||[]).length?C.radiotherapy:C.protocols)||[]).flatMap(e=>e.regimens).find(r=>String(r.id)===b.dataset.protocolPractice),ids=[...new Set((r?.questions||[]).filter(id=>getCase(id)))];if(ids.length)setup(pickCases(ids.map(getCase),10,'protocol-'+r.id,false));return;}
     if(b.dataset.dutyStart){setup(null,b.dataset.dutyStart);return;}
