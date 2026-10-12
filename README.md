@@ -1,5 +1,9 @@
 # Night Shift Academy
 
+## Wöchentliche Studien und Repository-Prüfung
+
+[Berichte und Ablauf](weekly-reports/README.md): Freitags erscheinen neue urologische Studien und Updates sowie eine Prüfung dieses Repositorys mit gegebenenfalls getesteten Korrekturen als Pull Requests. Erste geplante Ausgabe: 16.10.2026.
+
 > **Residency-Game-DE – Rollenspiel als Assistenzärztin oder Assistenzarzt der Urologie.** Öffne `standalone.html` im Browser, wähle **DE** und tritt deinen ersten Nachtdienst an.
 
 A cartoon hospital comedy and urology decision game in **English, German and Spanish**, with **exactly 500 scored questions in 402 playable cases**: 30 original three-decision stories (90 questions), 20 oncology stories (58 questions), all 267 imported main-bank questions, 5 retained supplementary clinical questions, **30 new TNM/trauma cases** and **50 new urological anatomy questions**. Choose an avatar, meet the cast, navigate illustrated departments, collect coffee quips and face the chief's morning-report quiz.
