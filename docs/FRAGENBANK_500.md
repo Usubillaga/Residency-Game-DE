@@ -1,6 +1,6 @@
 # Fragenbank: 500 bewertete Fragen
 
-Stand des Quellenabgleichs: **11. Oktober 2026**. Die aktive Bank enthält **500 Entscheidungen in 402 Fällen** und **1.927 Antwortoptionen**, vollständig in Deutsch, Englisch und Spanisch. Eine Entscheidung zählt als eine Frage. Wiederholungen im Chefquiz, Atlas-Tipps und Übersetzungen zählen nicht zusätzlich.
+Stand des Quellenabgleichs: **12. Oktober 2026**. Die aktive Bank enthält **500 Entscheidungen in 402 Fällen** und **1.900 Antwortoptionen**, vollständig in Deutsch, Englisch und Spanisch. Eine Entscheidung zählt als eine Frage. Wiederholungen im Chefquiz, Atlas-Tipps und Übersetzungen zählen nicht zusätzlich.
 
 ## Zusammensetzung
 
@@ -9,13 +9,22 @@ Stand des Quellenabgleichs: **11. Oktober 2026**. Die aktive Bank enthält **500
 | Ursprüngliche Schichtgeschichten | 30 | 90 |
 | Onkologische Geschichten | 20 | 58 |
 | Importierte Hauptbank | 267 | 267 |
-| Ausgewählte klinische Zusatzfragen | 35 | 35 |
+| Verbliebene klinische Zusatzfragen | 5 | 5 |
+| Neue TNM-/Trauma-Fälle | 30 | 30 |
 | Neue urologische Anatomiefragen | 50 | 50 |
 | **Aktive Bank** | **402** | **500** |
 
-Vor dieser Überarbeitung waren 423 Fälle mit 521 Entscheidungen aktiv. Alle 30 ursprünglichen Geschichten, 20 Onkologie-Geschichten und 267 importierten Fragen bleiben erhalten. Von 106 klinischen Zusatzfragen bleiben 35 aktiv: 12 aktuelle Leitlinienthemen, 10 Systemtherapie-/Nebenwirkungsfragen, 10 Bestrahlungsfragen und 3 funktionelle Fragen. Die Auswahl ergänzt die vorhandenen Themen und hält jeden der sechs Dienste mit mindestens zehn Fällen spielbar.
+Alle 30 ursprünglichen Geschichten, 20 Onkologie-Geschichten, 267 importierten Fragen und 50 klinischen Anatomiefragen bleiben unverändert. Die Erweiterung ersetzt 30 der zuvor 35 Zusatzfragen durch 21 Staging- und 9 Trauma-Fälle. Die fünf verbleibenden Zusatzfragen betreffen PSA-Kontrollintervall, BRCA2, Sestamibi und zwei Priapismus-Situationen. Jeder der sechs Dienste bleibt mit mindestens zehn Fällen spielbar.
 
-**71 Zusatzfragen liegen im Archiv**, `data/archive/supplemental-questions.json`. Das ist eine redaktionelle Auswahl für die feste Bankgröße, keine pauschale Aussage, dass jede archivierte Frage medizinisch falsch sei. Das Archiv bewahrt Frage, Antworten, Erklärungen, Hinweise und Zeichnungszuordnung. Alte abgeschlossene Antworten und Lesezeichen bleiben prüfbar und im Logbuch sichtbar; auch die Python-Auswertung kennt sie. Archivfragen gelangen nicht in Bibliothek, Dienstpläne, Revanche oder Protokolltraining. Ein alter unvollendeter Dienst mit einer Archivfrage kann in dieser Version nicht fortgesetzt werden; abgeschlossene Einträge bleiben erhalten.
+**101 Zusatzfragen liegen im Archiv**, `data/archive/supplemental-questions.json`: die bisherigen 71 bleiben unverändert, 30 weitere bewahren korrigierte Schnappschüsse. Das ist eine redaktionelle Auswahl für die feste Bankgröße. Abgeschlossene Antworten, Lesezeichen und Frage-Markierungen bleiben prüfbar; die Python-Auswertung kennt historische Fälle. Archivfragen gelangen nicht in neue Bibliotheksauswahlen, Dienste oder Revanche. Ein alter unvollendeter Dienst mit einer Archivfrage kann nicht fortgesetzt werden; abgeschlossene Einträge bleiben erhalten.
+
+## TNM und Trauma
+
+14 Übersichten mit detaillierten Kategorien, klarer c-/p-Trennung, Testis-S-Kategorien, Editionsangaben, Quellen und anklickbaren Zeichnungen. Die 30 neuen Fragen haben jeweils einen klinischen/OP-Kontext, vier Antwortmöglichkeiten und begründete Erklärungen in DE/EN/ES. Sie sind eigenständig formuliert; `clinicalSignoffLanguages: []` erfindet keine ärztliche Freigabe.
+
+TNM-Editionen werden pro Organ nach der angegebenen Primärquelle dargestellt. Insbesondere ist Prostata-pT2 ohne a/b/c, mikroskopischer Blasenhalsbefall pT3a; beim Penis wird Spongiosum/Cavernosum unterschieden; beim Hodentumor werden cN/pN und Markerzeitpunkt getrennt. Trauma hat kein TNM. Nierentrauma nutzt ausdrücklich AAST 2018 aus EAU 2026; die vorhandene AAST-Revision 2025 wird nicht als identische Tabelle ausgegeben. Die Tabellen sind keine automatische Therapieentscheidung.
+
+Jede Frage hat **„Zur Verbesserung markieren“** mit optionalem Kommentar. Unter **Fortschritt → Markierte Fragen exportieren** entsteht eine separate JSON-Datei mit den markierten Entscheidungen, vollständigen Frage-/Antworttexten und Quellen. Diese Datei hier im ChatGPT-Chat anhängen. Spielerprofil, Logbuch und laufender Dienst werden nicht exportiert. Markierungen reisen zusätzlich im normalen Spielstand mit.
 
 ## Neue Anatomie
 

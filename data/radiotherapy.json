@@ -80,9 +80,7 @@
               "url": "https://register.awmf.org/assets/guidelines/043-022OLl_S3_Prostatakarzinom_2025-08.pdf"
             }
           ],
-          "questions": [
-            "rt-prostate-igrt-bladder-rectum-preparation"
-          ]
+          "questions": []
         },
         {
           "id": "rt-prostate-chhip-60gy-20fx",
@@ -156,10 +154,7 @@
               "url": "https://d56bochluxqnz.cloudfront.net/documents/pocket-guidelines/EAU-EANM-ESTRO-ESUR-ISUP-SIOG-Pocket-on-Prostate-Cancer-2026_2026-03-14-103741_ikpf.pdf"
             }
           ],
-          "questions": [
-            "rt-prostate-intermediate-60gy-short-adt",
-            "rt-prostate-igrt-bladder-rectum-preparation"
-          ]
+          "questions": []
         },
         {
           "id": "rt-prostate-70gy-28fx",
@@ -318,9 +313,7 @@
               "url": "https://d56bochluxqnz.cloudfront.net/documents/pocket-guidelines/EAU-EANM-ESTRO-ESUR-ISUP-SIOG-Pocket-on-Prostate-Cancer-2026_2026-03-14-103741_ikpf.pdf"
             }
           ],
-          "questions": [
-            "rt-prostate-intermediate-60gy-short-adt"
-          ]
+          "questions": []
         },
         {
           "id": "rt-prostate-uhf-hypo-rt-pc",
@@ -811,10 +804,7 @@
               "url": "https://www.sciencedirect.com/science/article/abs/pii/S0360301623004352"
             }
           ],
-          "questions": [
-            "rt-prostate-salvage-early-start-66gy",
-            "rt-prostate-bed-acute-toxicity-week-four"
-          ]
+          "questions": []
         },
         {
           "id": "rt-prostate-post-adjuvant",
@@ -1051,9 +1041,7 @@
               "url": "https://d56bochluxqnz.cloudfront.net/documents/pocket-guidelines/EAU-EANM-ESTRO-ESUR-ISUP-SIOG-Pocket-on-Prostate-Cancer-2026_2026-03-14-103741_ikpf.pdf"
             }
           ],
-          "questions": [
-            "rt-prostate-mhspc-low-volume-axial-55gy"
-          ]
+          "questions": []
         },
         {
           "id": "rt-prostate-post-mhspc-weekly",
@@ -1127,10 +1115,7 @@
               "url": "https://d56bochluxqnz.cloudfront.net/documents/pocket-guidelines/EAU-EANM-ESTRO-ESUR-ISUP-SIOG-Pocket-on-Prostate-Cancer-2026_2026-03-14-103741_ikpf.pdf"
             }
           ],
-          "questions": [
-            "rt-prostate-mhspc-low-volume-axial-55gy",
-            "rt-prostate-salvage-early-start-66gy"
-          ]
+          "questions": []
         },
         {
           "id": "rt-prostate-post-oligo-sbrt",
@@ -1204,9 +1189,7 @@
               "url": "https://d56bochluxqnz.cloudfront.net/documents/pocket-guidelines/EAU-EANM-ESTRO-ESUR-ISUP-SIOG-Pocket-on-Prostate-Cancer-2026_2026-03-14-103741_ikpf.pdf"
             }
           ],
-          "questions": [
-            "rt-prostate-mhspc-low-volume-axial-55gy"
-          ]
+          "questions": []
         }
       ]
     },
@@ -1290,9 +1273,7 @@
               "url": "https://www.rcr.ac.uk/media/rgqkcmuf/02-bladder-cancer-radiotherapy-dose-fractionation-fourth-edition.pdf"
             }
           ],
-          "questions": [
-            "rt-bladder-tmt-55-20-mitomycin-5fu"
-          ]
+          "questions": []
         },
         {
           "id": "rt-bladder-tmt-64-32",
@@ -1366,9 +1347,7 @@
               "url": "https://pubmed.ncbi.nlm.nih.gov/22512481/"
             }
           ],
-          "questions": [
-            "rt-bladder-tmt-55-20-mitomycin-5fu"
-          ]
+          "questions": []
         },
         {
           "id": "rt-bladder-bcon",
@@ -1895,9 +1874,7 @@
               "url": "https://www.redjournal.org/article/S0360-3016(12)00096-X/fulltext"
             }
           ],
-          "questions": [
-            "rt-seminoma-stage2b-dogleg-boost-36gy"
-          ]
+          "questions": []
         },
         {
           "id": "rt-testis-carbo-involved-node-sakk",
@@ -2449,9 +2426,7 @@
               "url": "https://www.sciencedirect.com/science/article/pii/S1879850024000997"
             }
           ],
-          "questions": [
-            "rt-palliative-frail-spine-pain-8gy-single"
-          ]
+          "questions": []
         },
         {
           "id": "rt-palliative-bone-20gy-5fx",
@@ -2595,9 +2570,7 @@
               "url": "https://www.sciencedirect.com/science/article/pii/S1879850024000997"
             }
           ],
-          "questions": [
-            "rt-palliative-frail-spine-pain-8gy-single"
-          ]
+          "questions": []
         },
         {
           "id": "rt-palliative-spine-sbrt-24gy-2fx",
@@ -2671,9 +2644,7 @@
               "url": "https://uroweb.org/guidelines/renal-cell-carcinoma/chapter/disease-management"
             }
           ],
-          "questions": [
-            "rt-palliative-frail-spine-pain-8gy-single"
-          ]
+          "questions": []
         },
         {
           "id": "rt-palliative-mscc-8gy-1fx",
@@ -2747,9 +2718,7 @@
               "url": "https://www.researchgate.net/publication/7649024_Direct_decompressive_surgical_resection_in_the_treatment_of_spinal_cord_compression_caused_by_metastatic_cancer_A_randomised_trial"
             }
           ],
-          "questions": [
-            "rt-palliative-mscc-ward-first-hours"
-          ]
+          "questions": []
         },
         {
           "id": "rt-palliative-mscc-20gy-5fx",
@@ -2823,9 +2792,7 @@
               "url": "https://www.researchgate.net/publication/7649024_Direct_decompressive_surgical_resection_in_the_treatment_of_spinal_cord_compression_caused_by_metastatic_cancer_A_randomised_trial"
             }
           ],
-          "questions": [
-            "rt-palliative-mscc-ward-first-hours"
-          ]
+          "questions": []
         },
         {
           "id": "rt-palliative-mscc-postop-30gy-10fx",
@@ -2973,9 +2940,7 @@
               "url": "https://uroweb.org/guidelines/renal-cell-carcinoma/chapter/disease-management"
             }
           ],
-          "questions": [
-            "rt-rcc-primary-sabr-small-inoperable"
-          ]
+          "questions": []
         },
         {
           "id": "rt-palliative-rcc-primary-sabr-42gy-3fx",
@@ -3049,9 +3014,7 @@
               "url": "https://uroweb.org/guidelines/renal-cell-carcinoma/chapter/disease-management"
             }
           ],
-          "questions": [
-            "rt-rcc-primary-sabr-small-inoperable"
-          ]
+          "questions": []
         },
         {
           "id": "rt-palliative-rcc-oligomet-sabr",

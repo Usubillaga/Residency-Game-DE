@@ -56,7 +56,7 @@ function appHarness(session = null, testCatalog = catalog) {
   };
   const context = vm.createContext({
     window: data, C: testCatalog, E, A: data.NSAArt, state,
-    document: dom, esc: escape,
+    document: dom, esc: escape, reviewControls: () => '',
     comedy: () => data.NSABanter[state.lang],
     getCase: id => testCatalog.cases.find(c => c.id === id) || (testCatalog.historyCases || []).find(c => c.id === id),
     getArea: id => testCatalog.areas.find(a => a.id === id),
@@ -844,7 +844,7 @@ test('teaching schemas are safe, every drawn structure is explained, and linked 
     const ids = s.parts.map(p => p.id);
     assert.equal(new Set(ids).size, ids.length, s.id + ' part ids are unique');
     assert.deepEqual([...new Set(partIdsInSvg(s.svg))].sort(), [...ids].sort(), s.id + ' draws exactly the structures it explains');
-    assert.ok(ids.length >= 5 && ids.length <= 16, s.id + ' has a playable number of structures');
+    assert.ok(ids.length >= 4 && ids.length <= 16, s.id + ' has a playable number of structures');
   }
   const linked = catalog.cases.filter(c => c.schema);
   // Drug, dose and protocol questions (sys-*) deliberately have no anatomy schema.
@@ -1102,7 +1102,7 @@ test('before answering, goals, correction explanations and highlighted anatomy c
         C: catalog, state, esc: escape, loc: value => value[lang], getCase: () => c,
         getArea: id => catalog.areas.find(a => a.id === id),
         t: key => data.NSA_TEXT[lang][key] || key,
-        patientName: () => 'Anatomy round', casePortrait: () => '<svg></svg>', bookmark: () => '',
+        patientName: () => 'Anatomy round', casePortrait: () => '<svg></svg>', bookmark: () => '', reviewControls: () => '',
         vitalPanel: () => '', sourceOrigin: () => 'PROVENANCE_SPOILER',
         optionButton: () => '<button>answer choice</button>', debrief: () => 'debrief',
         characterComment: () => '', attendingWarning: () => '', preferredAnswer: () => '',
@@ -1154,10 +1154,11 @@ test('archived answers retain verified progress but cannot enter an active shift
 // Bootstrap the full application with observable DOM boundaries. This checks
 // the actual rendered markup and handlers; it does not claim pixel/layout QA.
 function interfaceHarness(lang = 'en', initial = {}) {
-  const nodes = new Map(), events = new Map();
+  const nodes = new Map(), events = new Map(), downloads = [], blobs = [];
   const node = id => {
     if (!nodes.has(id)) nodes.set(id, { innerHTML: '', textContent: '', style: {}, classList: { add() {}, remove() {}, toggle() {} },
-      focus() {}, remove() {}, append() {}, setAttribute() {}, addEventListener() {}, querySelector() { return null; }, showModal() {} });
+      focus() {}, remove() {}, append() {}, setAttribute() {}, addEventListener() {}, querySelector() { return null; }, showModal() {},
+      click() { downloads.push({ href: this.href, filename: this.download }); } });
     return nodes.get(id);
   };
   const document = { documentElement: {}, body: node('body'),
@@ -1169,8 +1170,16 @@ function interfaceHarness(lang = 'en', initial = {}) {
   const window = { ...data, NSAEngine: E, addEventListener() {}, scrollTo() {}, matchMedia: () => ({ matches: true }) };
   const context = vm.createContext({ window, document, location: { hash: '#intro' },
     localStorage: { getItem: key => storage.get(key) || null, setItem: (key, value) => storage.set(key, value) },
-    setTimeout: () => 1, clearTimeout() {} });
-  vm.runInContext(read('app.js'), context, { filename: 'app-full-interface.js' });
+    setTimeout: () => 1, clearTimeout() {},
+    Blob: class { constructor(parts, options) { this.parts = parts; this.type = options.type; blobs.push(this); } },
+    URL: { createObjectURL: () => 'blob:test-review', revokeObjectURL() {} } });
+  const app = read('app.js').replace('\n})();', `
+    globalThis.reviewApi = { reviewControls, toggleReview, reviewNote, reviewExportFile, exportReview,
+      cleanReviewFlags, cleanSave, saveFile, readSaveFile, mergeSave, classificationPage, showBoss,
+      selectClassification(id) { classificationEntity = id; },
+      profile() { return state; } };
+  })();`);
+  vm.runInContext(app, context, { filename: 'app-full-interface.js' });
   const go = view => {
     const button = { dataset: { view }, disabled: false };
     const event = { preventDefault() {}, target: { closest: selector => selector === 'button,a[data-view]' ? button : null } };
@@ -1178,8 +1187,138 @@ function interfaceHarness(lang = 'en', initial = {}) {
   };
   return { go, html: () => node('app').innerHTML, results: () => node('case-results').innerHTML,
     change: async (id, value) => { for (const handler of events.get('change')) await handler({ target: { id, value } }); },
-    profile: () => JSON.parse(storage.get('night-shift-academy-v2')) };
+    profile: () => JSON.parse(storage.get('night-shift-academy-v2')), review: context.reviewApi, downloads, blobs,
+    dialog: () => node('created-dialog').innerHTML };
 }
+
+test('every one of the 500 decisions has its own improvement button in every language', () => {
+  for (const lang of ['en', 'de', 'es']) {
+    const h = interfaceHarness(lang);
+    let decisions = 0;
+    for (const c of catalog.cases) for (const s of c.steps) {
+      const html = h.review.reviewControls(c, s);
+      assert.ok(html.includes('data-review-case="' + c.id + '"'));
+      assert.ok(html.includes('data-review-step="' + s.id + '"'));
+      assert.match(html, /data-review-toggle="true" aria-pressed="false"/);
+      assert.doesNotMatch(html, /undefined|OBJECTIVE_SPOILER/);
+      decisions++;
+    }
+    assert.equal(decisions, 500);
+  }
+});
+
+test('marking a question preserves the active answer, selected patient, clock and chief question', () => {
+  const session = completedSession('question-review-chief');
+  const game = appHarness(session); game.api.startBoss();
+  const h = interfaceHarness('de', { session });
+  const c = catalog.cases.find(c => c.id === session.patients[0].id), s = c.steps[0];
+  const before = clone(h.review.profile().session);
+  const box = { dataset: { reviewCase: c.id, reviewStep: s.id }, querySelector() { return null; } };
+  h.review.toggleReview(box);
+  assert.deepEqual(clone(h.review.profile().session), before);
+  assert.equal(h.profile().reviewFlags.length, 1);
+  assert.match(h.review.reviewControls(c, s), /aria-pressed="true"/);
+  h.review.showBoss();
+  const item = before.boss.items[before.boss.index], bossCase = catalog.cases.find(c => c.id === item.caseId);
+  assert.ok(h.dialog().includes(escape(bossCase.presenting.de)), 'Chief quiz supplies the clinical context');
+  assert.ok(h.dialog().includes('data-review-step="' + bossCase.steps[item.stepIndex].id + '"'));
+  h.review.toggleReview(box);
+  assert.equal(h.profile().reviewFlags.length, 0);
+  assert.deepEqual(clone(h.review.profile().session), before);
+});
+
+test('comments survive edits, escape markup and cap Unicode characters without breaking emoji', () => {
+  const h = interfaceHarness('es'), c = catalog.cases[0], s = c.steps[0];
+  const box = { dataset: { reviewCase: c.id, reviewStep: s.id }, querySelector() { return null; } };
+  h.review.toggleReview(box);
+  const input = { value: '<script>alert(1)</script> ¿Profundidad?', closest() { return box; } };
+  h.review.reviewNote(input);
+  assert.equal(h.profile().reviewFlags[0].note, input.value);
+  assert.ok(h.review.reviewControls(c, s).includes('&lt;script&gt;'));
+  assert.ok(!h.review.reviewControls(c, s).includes('<script>'));
+  input.value = '🦉'.repeat(2100); h.review.reviewNote(input);
+  assert.equal(Array.from(h.profile().reviewFlags[0].note).length, 2000);
+  assert.ok(!h.profile().reviewFlags[0].note.includes('�'));
+});
+
+test('question-review download contains exact marks and full trilingual cases once, with no player data', () => {
+  const h = interfaceHarness('de', { name: 'PRIVATE_PLAYER', history: playedState().history });
+  const c = catalog.cases.find(c => c.steps.length > 1);
+  for (const s of c.steps.slice(0, 2)) h.review.toggleReview({ dataset: { reviewCase: c.id, reviewStep: s.id }, querySelector() { return null; } });
+  h.review.exportReview();
+  assert.equal(h.downloads.length, 1);
+  assert.match(h.downloads[0].filename, /^night-shift-question-review-\d{4}-\d{2}-\d{2}\.json$/);
+  const payload = JSON.parse(h.blobs[0].parts.join(''));
+  assert.equal(payload.format, 'night-shift-academy-question-review');
+  assert.equal(payload.version, 1);
+  assert.equal(payload.marks.length, 2);
+  assert.equal(payload.cases.length, 1, 'A multistep case is included once');
+  assert.deepEqual(payload.marks.map(m => [m.caseId, m.stepId, m.stepIndex]), clone(c.steps.slice(0, 2).map((s, i) => [c.id, s.id, i])));
+  assert.deepEqual(payload.cases[0], clone(c));
+  assert.deepEqual(Object.keys(payload.cases[0].steps[0].prompt).sort(), ['de', 'en', 'es']);
+  assert.ok(payload.references.length > 0);
+  for (const key of ['history', 'name', 'avatar', 'session', 'stats', 'bookmarks']) assert.ok(!(key in payload));
+  assert.ok(!JSON.stringify(payload).includes('PRIVATE_PLAYER'));
+});
+
+test('review marks travel in v3 saves, old saves load, and merges keep the newest note per exact decision', () => {
+  const h = interfaceHarness(), c = catalog.cases[0], s = c.steps[0];
+  const flag = { caseId: c.id, stepId: s.id, note: 'old', markedAt: '2026-10-11T12:00:00Z', updatedAt: '2026-10-11T12:00:00Z', language: 'de' };
+  const file = { format: 'night-shift-academy-save', version: 3, reviewFlags: [flag] };
+  const parsed = h.review.readSaveFile(file);
+  assert.ok(parsed, 'A save holding review marks alone is useful progress');
+  const newer = { ...flag, note: 'new', updatedAt: '2026-10-12T12:00:00Z' };
+  const merged = h.review.mergeSave({ ...emptyState(), reviewFlags: [newer] }, parsed);
+  assert.deepEqual(clone(merged.reviewFlags), clone(h.review.cleanReviewFlags([newer])));
+  assert.deepEqual(clone(h.review.cleanReviewFlags([flag, { ...flag, caseId: 'unknown' }, { ...flag, stepId: 'unknown' }, { ...flag, updatedAt: 7 }, { ...flag, updatedAt: 'invalid' }])), clone(h.review.cleanReviewFlags([flag])));
+  assert.ok(h.review.readSaveFile(fileOf(playedState())), 'Old v3 saves without marks load');
+});
+
+test('all 14 source-labelled classification guides render tables and clickable drawings in all languages', () => {
+  assert.equal(catalog.classifications.length, 14);
+  for (const lang of ['en', 'de', 'es']) {
+    const h = interfaceHarness(lang); h.go('classifications');
+    assert.ok(h.html().includes('data-classification-entity'));
+    for (const g of catalog.classifications) {
+      h.review.selectClassification(g.id);
+      const html = h.review.classificationPage();
+      assert.ok(html.includes(escape(g.title[lang])));
+      assert.ok(html.includes(escape(g.edition)));
+      assert.ok(html.includes('<table'));
+      assert.ok(html.includes('data-part='));
+      assert.ok(html.includes('data-classification-practice="' + g.id + '"'));
+      assert.doesNotMatch(html, /undefined|NaN/);
+    }
+  }
+});
+
+test('marks for historical cases remain reviewable and export the preserved historical snapshot', () => {
+  const c = catalog.historyCases[0], s = c.steps[0], h = interfaceHarness('de');
+  h.review.toggleReview({ dataset: { reviewCase: c.id, reviewStep: s.id }, querySelector() { return null; } });
+  const payload = clone(h.review.reviewExportFile());
+  assert.deepEqual(payload.cases[0], clone(c));
+  assert.equal(payload.marks[0].caseId, c.id);
+  h.go('progress'); assert.ok(h.html().includes('data-review-open-case="' + c.id + '"'));
+});
+
+test('new four-structure drawings finish their quiz after four valid answers', () => {
+  for (const id of ['tnm-bladder', 'trauma-kidney-map', 'trauma-bladder-map']) {
+    const { api } = schemaHarness(); api.startQuiz(id);
+    assert.equal(api.quiz().rounds.length, 4);
+    for (const target of [...api.quiz().rounds]) { api.answerQuiz(fakeFigure(), target, {}); api.next(); }
+    assert.equal(api.quiz().index, 4);
+    assert.equal(api.quiz().score, 4);
+  }
+});
+
+test('a marked classification case exports its exact guide and primary source links', () => {
+  const c = catalog.cases.find(c => c.classification === 'rcc'), s = c.steps[0], h = interfaceHarness('de');
+  h.review.toggleReview({ dataset: { reviewCase: c.id, reviewStep: s.id }, querySelector() { return null; } });
+  const file = clone(h.review.reviewExportFile());
+  assert.deepEqual(file.classifications, clone(catalog.classifications.filter(g => g.id === 'rcc')));
+  assert.ok(file.references.some(r => r.url.includes('renal-cell-carcinoma/chapter/staging')));
+  assert.equal(file.cases[0].clinicalContext.kind, 'operation');
+});
 
 test('the full interface renders 500 questions, the anatomy filter and every page in all languages', async () => {
   for (const lang of ['en', 'de', 'es']) {

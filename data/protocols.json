@@ -454,9 +454,7 @@
               "url": "https://uroweb.org/guidelines/muscle-invasive-and-metastatic-bladder-cancer"
             }
           ],
-          "questions": [
-            "sys-prot-ev-pembro-dose-cap"
-          ]
+          "questions": []
         },
         {
           "id": "uc-pout-adjuvant-platinum-gem",
@@ -562,9 +560,7 @@
               "url": "https://uroweb.org/guidelines/upper-urinary-tract-urothelial-cell-carcinoma"
             }
           ],
-          "questions": [
-            "sys-prot-pout-carboplatin-calvert"
-          ]
+          "questions": []
         },
         {
           "id": "uc-gc-neoadjuvant-21d",
@@ -986,9 +982,7 @@
               "url": "https://www.urotoday.com/conference-highlights/aua-2021-program/aua-2021-bladder-cancer/132048-aua-2021-avelumab-first-line-maintenance-for-advanced-urothelial-carcinoma-in-the-javelin-bladder-100-trial-subgroup-analysis-by-duration-of-treatment-free-interval-from-end-of-chemotherapy-to-start-of-maintenance.html"
             }
           ],
-          "questions": [
-            "sys-prot-avelumab-maintenance-order"
-          ]
+          "questions": []
         },
         {
           "id": "uc-nivolumab-adjuvant",
@@ -1252,9 +1246,7 @@
               "url": "https://www.sciencedirect.com/science/article/abs/pii/S030228381500456X"
             }
           ],
-          "questions": [
-            "sys-prot-sipi-mitomycin-order-after-turb"
-          ]
+          "questions": []
         },
         {
           "id": "adjuvant-chemo-intermediate",
@@ -1412,9 +1404,7 @@
               "url": "https://www.medac.eu/fileadmin/user_upload/medac-eu/SPCs/Germany/pil-de-BCG-medac.pdf"
             }
           ],
-          "questions": [
-            "sys-prot-bcg-maintenance-schedule-high-risk"
-          ]
+          "questions": []
         },
         {
           "id": "post-rnu-mmc",
@@ -1692,9 +1682,7 @@
               "url": "https://clinicaltrials.gov/study/NCT05676203"
             }
           ],
-          "questions": [
-            "q-pca-mhspc-docetaxel-doublet-to-triplet"
-          ]
+          "questions": []
         },
         {
           "id": "pca-docetaxel-prednisone-mcrpc",
@@ -2670,9 +2658,7 @@
               "url": "https://www.ema.europa.eu/en/documents/product-information/taxotere-epar-product-information_en.pdf"
             }
           ],
-          "questions": [
-            "q-pca-mhspc-docetaxel-doublet-to-triplet"
-          ]
+          "questions": []
         },
         {
           "id": "pca-cabazitaxel-prednisone",
@@ -4290,9 +4276,7 @@
               "url": "https://www.cancernetwork.com/view/belzutifan-receives-european-approval-in-localized-advanced-rcc-indications"
             }
           ],
-          "questions": [
-            "q-rcc-belzutifan-grade3-hypoxia-withhold-reduce"
-          ]
+          "questions": []
         }
       ]
     },
@@ -4412,9 +4396,7 @@
               "url": "https://www.onkopedia.com/de/onkopedia/guidelines/keimzelltumoren-des-mannes-gonadale-keimzelltumoren"
             }
           ],
-          "questions": [
-            "sys-prot-bep-intermediate-cycle1-order"
-          ]
+          "questions": []
         },
         {
           "id": "gct-bep-1-adjuvant",

@@ -514,6 +514,11 @@ def validate_question_contract(root: Path, cases: list) -> None:
     integer(minimum, "question-contract.json.minimumAnatomy")
     anatomy = sum(len(case["steps"]) for case in cases if case.get("subject") == "anatomy")
     require(anatomy >= minimum, f"question-contract.json: expected at least {minimum} anatomy questions, found {anatomy}")
+    if "stagingTraumaQuestions" in contract:
+        expected = contract["stagingTraumaQuestions"]
+        integer(expected, "question-contract.json.stagingTraumaQuestions", 1)
+        found = sum(len(case["steps"]) for case in cases if case.get("classification"))
+        require(found == expected, f"question-contract.json: expected {expected} TNM/trauma questions, found {found}")
     # Same lead-in with a different clinical presentation is not a duplicate.
     for language in LANGUAGES:
         seen = set()
@@ -796,6 +801,58 @@ def load_visuals(root: Path, cases: list) -> tuple[list, dict, dict]:
     return schemas, links, media
 
 
+def load_classifications(root: Path, cases: list, references: list, schemas: list) -> list:
+    """Edition-labelled tables are sourced content, validated like the question bank."""
+    path = Path(root) / "data/classifications.json"
+    if not path.exists():
+        return []
+    data = read_json(path)
+    require(isinstance(data, dict) and data.get("version") == 1, "classifications.json: expected version 1")
+    guides = data.get("guides")
+    require(isinstance(guides, list) and bool(guides), "classifications.json: expected nonempty guides")
+    ids, linked = set(), set()
+    by_case = {case["id"]: case for case in cases}
+    ref_ids = {ref["id"] for ref in references}
+    schema_ids = {schema["id"] for schema in schemas}
+    for index, guide in enumerate(guides):
+        where = f"classifications.json.guides[{index}]"
+        require(isinstance(guide, dict), f"{where}: expected object")
+        nonempty(guide.get("id"), f"{where}.id")
+        require(guide["id"] not in ids, f"{where}: duplicate guide id")
+        ids.add(guide["id"])
+        require(guide.get("kind") in ("tumour", "trauma"), f"{where}.kind: invalid classification kind")
+        localised(guide.get("title"), f"{where}.title")
+        localised(guide.get("cautions"), f"{where}.cautions")
+        nonempty(guide.get("edition"), f"{where}.edition")
+        require(guide.get("schema") in schema_ids, f"{where}.schema: unknown schema")
+        require(isinstance(guide.get("references"), list) and bool(guide["references"]) and
+                all(ref in ref_ids for ref in guide["references"]), f"{where}.references: unknown or missing source")
+        signoff = guide.get("clinicalSignoffLanguages")
+        require(isinstance(signoff, list) and all(language in LANGUAGES for language in signoff) and len(signoff) == len(set(signoff)),
+                f"{where}.clinicalSignoffLanguages: expected distinct known languages")
+        sections = guide.get("sections")
+        require(isinstance(sections, list) and bool(sections), f"{where}.sections: expected rows")
+        for si, section in enumerate(sections):
+            require(isinstance(section, dict), f"{where}.sections[{si}]: expected object")
+            localised(section.get("title"), f"{where}.sections[{si}].title")
+            require(isinstance(section.get("rows"), list) and bool(section["rows"]), f"{where}: empty table")
+            codes = set()
+            for row in section["rows"]:
+                require(isinstance(row, dict), f"{where}.row: expected object")
+                nonempty(row.get("code"), f"{where}.row.code")
+                require(row["code"] not in codes, f"{where}: duplicate row code")
+                codes.add(row["code"])
+                localised(row.get("description"), f"{where}.row.description")
+        require(isinstance(guide.get("cases"), list), f"{where}.cases: expected list")
+        for case_id in guide["cases"]:
+            require(case_id in by_case and by_case[case_id].get("classification") == guide["id"], f"{where}.cases: unknown or mismatched case")
+            require(case_id not in linked, f"{where}.cases: duplicate case link")
+            linked.add(case_id)
+        find_extra_translations(guide, where)
+    require(linked == {case["id"] for case in cases if case.get("classification")}, "classifications.json: unlinked classification case")
+    return guides
+
+
 def build(root: Path = ROOT) -> dict:
     """Generate the no-fetch browser catalog and a single-file offline edition."""
     root = Path(root)
@@ -806,6 +863,7 @@ def build(root: Path = ROOT) -> dict:
     schemas, links, media = load_visuals(root, cases)
     attach_hints(root, cases)
     protocols, radiotherapy = load_regimens(root, cases)
+    classifications = load_classifications(root, cases, references, schemas)
     for case in all_cases:
         # Do not ship answer-revealing learning objectives in the browser payload.
         case.pop("objectives", None)
@@ -832,7 +890,7 @@ def build(root: Path = ROOT) -> dict:
                 case["schema"] = {"id": link["schema"], "parts": link.get("parts", [])}
     catalog = {"version": 2, "languages": list(LANGUAGES), "areas": AREAS, "cases": cases, "historyCases": history_cases,
                "questionCount": sum(len(case["steps"]) for case in cases), "references": references, "schemas": schemas,
-               "protocols": protocols, "radiotherapy": radiotherapy}
+               "protocols": protocols, "radiotherapy": radiotherapy, "classifications": classifications}
     assets = root / "assets"
     assets.mkdir(parents=True, exist_ok=True)
     (assets / "catalog.js").write_text("/* Generated by scripts/manage.py build. Edit data/*.json, then rebuild. */\nwindow.NSA_CATALOG = " + json.dumps(catalog, ensure_ascii=False, separators=(",", ":")) + ";\n", encoding="utf-8")
@@ -1031,9 +1089,10 @@ def main(argv=None) -> int:
             cases, references = load_and_validate()
             schemas, links, media = load_visuals(ROOT, cases)
             hints, (protocols, radiotherapy) = attach_hints(ROOT, cases), load_regimens(ROOT, cases)
+            classifications = load_classifications(ROOT, cases, references, schemas)
             steps = sum(len(case["steps"]) for case in cases)
             updated = sum("update" in case for case in cases)
-            print(f"Valid: {len(cases)} cases ({updated} updated), {len(references)} references, {len(schemas)} schemas ({len(links)} linked cases), {sum(map(len, media.values()))} images, attending hints for {hints} of {steps} decisions, {sum(len(e['regimens']) for e in protocols)} protocols, {sum(len(e['regimens']) for e in radiotherapy)} radiotherapy schemes, 3 languages, 5 areas.")
+            print(f"Valid: {len(cases)} cases ({updated} updated), {len(references)} references, {len(schemas)} schemas ({len(links)} linked cases), {sum(map(len, media.values()))} images, attending hints for {hints} of {steps} decisions, {sum(len(e['regimens']) for e in protocols)} protocols, {sum(len(e['regimens']) for e in radiotherapy)} radiotherapy schemes, {len(classifications)} classification guides, 3 languages, 5 areas.")
         elif args.command == "build":
             catalog = build()
             print(f"Built catalog.js and standalone.html with {catalog['questionCount']} questions in {len(catalog['cases'])} cases; {len(catalog['historyCases'])} cases are history-only.")

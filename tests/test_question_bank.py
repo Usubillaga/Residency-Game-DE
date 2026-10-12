@@ -73,11 +73,45 @@ class QuestionBankTests(unittest.TestCase):
     def test_archived_cases_are_validated_but_not_playable(self):
         active_ids = {c['id'] for c in self.cases}
         historical = [c for c in self.all_cases if c.get('archived')]
-        self.assertEqual(len(historical), 71)
+        self.assertEqual(len(historical), 101)
         self.assertFalse(active_ids & {c['id'] for c in historical})
-        self.assertEqual(sum(len(c['steps']) for c in historical), 71)
+        self.assertEqual(sum(len(c['steps']) for c in historical), 101)
         self.assertTrue(all(c['steps'][0]['best'] in [o['id'] for o in c['steps'][0]['options']] for c in historical))
         self.assertTrue(all(not c.get('archived') for c in self.cases))
+
+    def test_30_source_linked_staging_trauma_cases_and_14_edition_labelled_guides(self):
+        schemas, _, _ = manage.load_visuals(ROOT, self.cases)
+        guides = manage.load_classifications(ROOT, self.cases, self.references, schemas)
+        self.assertEqual(Counter(g['kind'] for g in guides), dict(tumour=9, trauma=5))
+        new = [c for c in self.cases if c.get('classification')]
+        self.assertEqual(len(new), 30)
+        self.assertEqual(Counter(c['subject'] for c in new), dict(staging=21, trauma=9))
+        self.assertEqual(sum(len(g['cases']) for g in guides), 30)
+        self.assertTrue(all(len(c['steps']) == 1 and len(c['steps'][0]['options']) == 4 for c in new))
+        self.assertTrue(all(c['clinicalContext']['kind'] in ('operation', 'case') and
+                            not c.get('objectives') and c['clinicalSignoffLanguages'] == [] for c in new))
+        self.assertTrue(all(g['edition'] and g['references'] and g['clinicalSignoffLanguages'] == [] for g in guides))
+
+    def test_classification_validation_rejects_missing_sources_schemas_and_case_links(self):
+        schemas, _, _ = manage.load_visuals(ROOT, self.cases)
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            data = manage.read_json(ROOT / 'data/classifications.json')
+            for field, bad in (('references', ['unknown']), ('schema', 'unknown'), ('cases', ['unknown'])):
+                with self.subTest(field=field):
+                    broken = copy.deepcopy(data)
+                    broken['guides'][0][field] = bad
+                    manage.write_json(root / 'data/classifications.json', broken)
+                    with self.assertRaises(manage.ValidationError):
+                        manage.load_classifications(root, self.cases, self.references, schemas)
+
+    def test_original_imported_story_and_anatomy_counts_remain_unchanged_and_all_duties_playable(self):
+        self.assertEqual(len(self.cases), 402)
+        self.assertEqual(sum('source' in c for c in self.cases), 267)
+        self.assertEqual(sum(c.get('subject') == 'anatomy' for c in self.cases), 50)
+        duties = Counter(manage.case_duty(c) for c in self.cases) if hasattr(manage, 'case_duty') else Counter(c.get('duty') for c in self.cases)
+        for duty in ('night', 'board', 'clinic', 'elective', 'dayclinic', 'radiotherapy'):
+            self.assertGreaterEqual(duties[duty], 10, duty)
 
     def test_old_archived_logbook_entry_still_exports_to_analysis(self):
         case = next(c for c in self.all_cases if c.get('archived'))
@@ -101,7 +135,7 @@ class QuestionBankTests(unittest.TestCase):
         text = (ROOT / 'assets/catalog.js').read_text()
         catalog = json.loads(text.split('window.NSA_CATALOG = ', 1)[1].removesuffix(';\n'))
         self.assertEqual(catalog['questionCount'], 500)
-        self.assertEqual(len(catalog['historyCases']), 71)
+        self.assertEqual(len(catalog['historyCases']), 101)
         self.assertTrue(all('objectives' not in c for c in catalog['cases'] + catalog['historyCases']))
         self.assertNotIn('"objectives"', text)
 

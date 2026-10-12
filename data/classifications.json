@@ -209,7 +209,12 @@
       "references": [
         "classification-rcc"
       ],
-      "cases": [],
+      "cases": [
+        "staging-trauma-01",
+        "staging-trauma-02",
+        "staging-trauma-03",
+        "staging-trauma-04"
+      ],
       "clinicalSignoffLanguages": [],
       "schema": "tnm-rcc"
     },
@@ -411,7 +416,11 @@
       "references": [
         "classification-bladder"
       ],
-      "cases": [],
+      "cases": [
+        "staging-trauma-05",
+        "staging-trauma-06",
+        "staging-trauma-07"
+      ],
       "clinicalSignoffLanguages": [],
       "schema": "tnm-bladder"
     },
@@ -646,7 +655,11 @@
       "references": [
         "classification-prostate"
       ],
-      "cases": [],
+      "cases": [
+        "staging-trauma-08",
+        "staging-trauma-09",
+        "staging-trauma-10"
+      ],
       "clinicalSignoffLanguages": [],
       "schema": "tnm-prostate"
     },
@@ -816,7 +829,10 @@
       "references": [
         "classification-utuc"
       ],
-      "cases": [],
+      "cases": [
+        "staging-trauma-11",
+        "staging-trauma-12"
+      ],
       "clinicalSignoffLanguages": [],
       "schema": "tnm-urogenital"
     },
@@ -1092,7 +1108,12 @@
       "references": [
         "classification-testis"
       ],
-      "cases": [],
+      "cases": [
+        "staging-trauma-13",
+        "staging-trauma-14",
+        "staging-trauma-15",
+        "staging-trauma-16"
+      ],
       "clinicalSignoffLanguages": [],
       "schema": "tnm-testis"
     },
@@ -1303,9 +1324,12 @@
       "references": [
         "classification-penile"
       ],
-      "cases": [],
+      "cases": [
+        "staging-trauma-17",
+        "staging-trauma-18"
+      ],
       "clinicalSignoffLanguages": [],
-      "schema": "tnm-urogenital"
+      "schema": "male-urethra-penis"
     },
     {
       "id": "urethral",
@@ -1490,9 +1514,11 @@
       "references": [
         "classification-urethral"
       ],
-      "cases": [],
+      "cases": [
+        "staging-trauma-19"
+      ],
       "clinicalSignoffLanguages": [],
-      "schema": "tnm-urogenital"
+      "schema": "prostate-sagittal"
     },
     {
       "id": "acc",
@@ -1661,7 +1687,9 @@
       "references": [
         "classification-acc"
       ],
-      "cases": [],
+      "cases": [
+        "staging-trauma-20"
+      ],
       "clinicalSignoffLanguages": [],
       "schema": "tnm-urogenital"
     },
@@ -1832,7 +1860,9 @@
       "references": [
         "classification-ppgl"
       ],
-      "cases": [],
+      "cases": [
+        "staging-trauma-21"
+      ],
       "clinicalSignoffLanguages": [],
       "schema": "tnm-urogenital"
     },
@@ -1905,7 +1935,11 @@
         "classification-trauma-kidney",
         "classification-aast-revisions"
       ],
-      "cases": [],
+      "cases": [
+        "staging-trauma-22",
+        "staging-trauma-23",
+        "staging-trauma-24"
+      ],
       "clinicalSignoffLanguages": [],
       "schema": "trauma-kidney-map"
     },
@@ -1978,7 +2012,9 @@
         "classification-trauma-ureter",
         "classification-aast-original"
       ],
-      "cases": [],
+      "cases": [
+        "staging-trauma-25"
+      ],
       "clinicalSignoffLanguages": [],
       "schema": "urinary-tract-overview"
     },
@@ -2051,7 +2087,10 @@
         "classification-trauma-bladder",
         "classification-aast-original"
       ],
-      "cases": [],
+      "cases": [
+        "staging-trauma-26",
+        "staging-trauma-27"
+      ],
       "clinicalSignoffLanguages": [],
       "schema": "trauma-bladder-map"
     },
@@ -2115,9 +2154,11 @@
       "references": [
         "classification-trauma-urethra"
       ],
-      "cases": [],
+      "cases": [
+        "staging-trauma-28"
+      ],
       "clinicalSignoffLanguages": [],
-      "schema": "male-urethra"
+      "schema": "male-urethra-penis"
     },
     {
       "id": "trauma-genital",
@@ -2213,7 +2254,10 @@
         "classification-trauma-genital",
         "classification-aast-original"
       ],
-      "cases": [],
+      "cases": [
+        "staging-trauma-29",
+        "staging-trauma-30"
+      ],
       "clinicalSignoffLanguages": [],
       "schema": "tnm-testis"
     }

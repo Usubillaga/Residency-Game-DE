@@ -5823,5 +5823,512 @@
       ],
       "evidenceNotes": []
     }
+  },
+  {
+    "id": "staging-trauma-22",
+    "area": "emergency",
+    "level": 2,
+    "acuity": "urgent",
+    "duty": "night",
+    "consultant": "attending",
+    "patient": {
+      "name": "Robin Nachthain",
+      "age": 24,
+      "sex": "male"
+    },
+    "title": {
+      "de": "Flankentreffer beim Radfahren",
+      "en": "A cycling flank impact",
+      "es": "Golpe en flanco en bicicleta"
+    },
+    "presenting": {
+      "de": "Nach stumpfem Flankentrauma kreislaufstabil. CT: 0,8 cm tiefe Parenchymlazeration, nicht expandierendes perirenales Hämatom innerhalb Gerota; keine aktive Blutung, kein Urinleck. Verwende die AAST-2018-Tabelle aus EAU 2026.",
+      "en": "Stable after blunt flank trauma. CT: 0.8-cm-deep parenchymal laceration, non-expanding perirenal haematoma within Gerota; no active bleeding or urine leak. Use the AAST-2018 table in EAU 2026.",
+      "es": "Estable tras golpe en flanco. TC: laceración de 0,8 cm de profundidad, hematoma perirrenal no expansivo dentro de Gerota, sin sangrado activo ni fuga. Usar tabla AAST-2018 de EAU 2026."
+    },
+    "vitals": null,
+    "subject": "trauma",
+    "classification": "trauma-kidney",
+    "clinicalContext": {
+      "kind": "case",
+      "label": {
+        "de": "Klinischer Fall",
+        "en": "Clinical case",
+        "es": "Caso clínico"
+      }
+    },
+    "clinicalSignoffLanguages": [],
+    "takeaway": {
+      "de": "Eine Lazeration <1 cm ohne Urinleck ist AAST II (2018). Grad und Kreislaufstabilität getrennt beurteilen.",
+      "en": "A laceration <1 cm without urine leak is AAST II (2018). Assess grade and haemodynamic stability separately.",
+      "es": "Laceración <1 cm sin fuga es AAST II (2018). Valorar grado y estabilidad hemodinámica por separado."
+    },
+    "steps": [
+      {
+        "id": "classification-decision",
+        "kind": "decision",
+        "prompt": {
+          "de": "Welche Kategorie passt zum beschriebenen Befund?",
+          "en": "Which category fits the described findings?",
+          "es": "¿Qué categoría corresponde a los hallazgos descritos?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "I",
+              "en": "I",
+              "es": "I"
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "de": "Diese Alternative passt hier nicht. Kontusion oder nicht expandierendes subkapsuläres Hämatom, keine Parenchymlazeration. Eine Lazeration <1 cm ohne Urinleck ist AAST II (2018). Grad und Kreislaufstabilität getrennt beurteilen.",
+              "en": "This alternative does not fit here. Contusion or non-expanding subcapsular haematoma, no parenchymal laceration. A laceration <1 cm without urine leak is AAST II (2018). Assess grade and haemodynamic stability separately.",
+              "es": "Esta alternativa no corresponde aquí. Contusión o hematoma subcapsular no expansivo, sin laceración del parénquima. Laceración <1 cm sin fuga es AAST II (2018). Valorar grado y estabilidad hemodinámica por separado."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "II",
+              "en": "II",
+              "es": "II"
+            },
+            "score": 10,
+            "minutes": 2,
+            "feedback": {
+              "de": "Richtig. Eine Lazeration <1 cm ohne Urinleck ist AAST II (2018). Grad und Kreislaufstabilität getrennt beurteilen.",
+              "en": "Correct. A laceration <1 cm without urine leak is AAST II (2018). Assess grade and haemodynamic stability separately.",
+              "es": "Correcto. Laceración <1 cm sin fuga es AAST II (2018). Valorar grado y estabilidad hemodinámica por separado."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "III",
+              "en": "III",
+              "es": "III"
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "de": "Diese Alternative passt hier nicht. Lazeration >1 cm ohne Sammelsystemverletzung/Urinleck; Gefäßverletzung/aktive Blutung innerhalb Gerota. Eine Lazeration <1 cm ohne Urinleck ist AAST II (2018). Grad und Kreislaufstabilität getrennt beurteilen.",
+              "en": "This alternative does not fit here. Laceration >1 cm without collecting-system injury/urine leak; vascular injury/active bleeding contained within Gerota. A laceration <1 cm without urine leak is AAST II (2018). Assess grade and haemodynamic stability separately.",
+              "es": "Esta alternativa no corresponde aquí. Laceración >1 cm sin lesión del sistema colector/fuga; lesión vascular/sangrado activo contenido en Gerota. Laceración <1 cm sin fuga es AAST II (2018). Valorar grado y estabilidad hemodinámica por separado."
+            },
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "IV",
+              "en": "IV",
+              "es": "IV"
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "de": "Diese Alternative passt hier nicht. Sammelsystemleck, Nierenbecken-/UPJ-Verletzung; segmentale Gefäßverletzung; aktive Blutung außerhalb Gerota; Infarkt durch Thrombose ohne aktive Blutung. Eine Lazeration <1 cm ohne Urinleck ist AAST II (2018). Grad und Kreislaufstabilität getrennt beurteilen.",
+              "en": "This alternative does not fit here. Collecting-system leak, pelvis/UPJ injury; segmental vessel injury; bleeding beyond Gerota; infarction from thrombosis without active bleeding. A laceration <1 cm without urine leak is AAST II (2018). Assess grade and haemodynamic stability separately.",
+              "es": "Esta alternativa no corresponde aquí. Fuga del colector, lesión piélica/UPJ; vasos segmentarios; sangrado fuera de Gerota; infarto por trombosis sin sangrado activo. Laceración <1 cm sin fuga es AAST II (2018). Valorar grado y estabilidad hemodinámica por separado."
+            },
+            "critical": false
+          }
+        ],
+        "best": "b"
+      }
+    ],
+    "references": [
+      "classification-trauma-kidney",
+      "classification-aast-revisions"
+    ],
+    "topic": {
+      "de": "Trauma",
+      "en": "Trauma",
+      "es": "Trauma"
+    }
+  },
+  {
+    "id": "staging-trauma-23",
+    "area": "emergency",
+    "level": 2,
+    "acuity": "urgent",
+    "duty": "night",
+    "consultant": "attending",
+    "patient": {
+      "name": "Stefan Morgenfels",
+      "age": 37,
+      "sex": "male"
+    },
+    "title": {
+      "de": "Das CT mit Spätphase",
+      "en": "The delayed-phase CT",
+      "es": "La TC con fase tardía"
+    },
+    "presenting": {
+      "de": "Stabiler Patient nach Sturz: 1,8-cm-Nierenlazeration mit gesicherter Extravasation von kontrastiertem Urin aus dem Sammelsystem in der Spätphase. Keine Hilusverletzung. Gefragt ist AAST 2018.",
+      "en": "Stable after a fall: 1.8-cm renal laceration with confirmed collecting-system urinary contrast extravasation on delayed images, no hilar injury. Assign AAST 2018.",
+      "es": "Estable tras caída: laceración renal de 1,8 cm con extravasación urinaria confirmada del colector en fase tardía, sin lesión hiliar. Clasificar AAST 2018."
+    },
+    "vitals": null,
+    "subject": "trauma",
+    "classification": "trauma-kidney",
+    "clinicalContext": {
+      "kind": "case",
+      "label": {
+        "de": "Klinischer Fall",
+        "en": "Clinical case",
+        "es": "Caso clínico"
+      }
+    },
+    "clinicalSignoffLanguages": [],
+    "takeaway": {
+      "de": "Sammelsystemverletzung mit Urinleck ist AAST IV (2018). Die Tiefe allein würde das Leck übersehen.",
+      "en": "Collecting-system injury with urine leak is AAST IV (2018). Depth alone would miss the leak.",
+      "es": "Lesión del colector con fuga es AAST IV (2018). La profundidad sola omitiría la fuga."
+    },
+    "steps": [
+      {
+        "id": "classification-decision",
+        "kind": "decision",
+        "prompt": {
+          "de": "Welche Kategorie passt zum beschriebenen Befund?",
+          "en": "Which category fits the described findings?",
+          "es": "¿Qué categoría corresponde a los hallazgos descritos?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "II",
+              "en": "II",
+              "es": "II"
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "de": "Diese Alternative passt hier nicht. Nicht expandierendes perirenales Hämatom innerhalb Gerota oder Lazeration <1 cm tief, ohne Urinleck. Sammelsystemverletzung mit Urinleck ist AAST IV (2018). Die Tiefe allein würde das Leck übersehen.",
+              "en": "This alternative does not fit here. Non-expanding perirenal haematoma within Gerota or laceration <1 cm deep without urine leak. Collecting-system injury with urine leak is AAST IV (2018). Depth alone would miss the leak.",
+              "es": "Esta alternativa no corresponde aquí. Hematoma perirrenal no expansivo dentro de Gerota o laceración <1 cm de profundidad sin fuga urinaria. Lesión del colector con fuga es AAST IV (2018). La profundidad sola omitiría la fuga."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "III",
+              "en": "III",
+              "es": "III"
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "de": "Diese Alternative passt hier nicht. Lazeration >1 cm ohne Sammelsystemverletzung/Urinleck; Gefäßverletzung/aktive Blutung innerhalb Gerota. Sammelsystemverletzung mit Urinleck ist AAST IV (2018). Die Tiefe allein würde das Leck übersehen.",
+              "en": "This alternative does not fit here. Laceration >1 cm without collecting-system injury/urine leak; vascular injury/active bleeding contained within Gerota. Collecting-system injury with urine leak is AAST IV (2018). Depth alone would miss the leak.",
+              "es": "Esta alternativa no corresponde aquí. Laceración >1 cm sin lesión del sistema colector/fuga; lesión vascular/sangrado activo contenido en Gerota. Lesión del colector con fuga es AAST IV (2018). La profundidad sola omitiría la fuga."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "IV",
+              "en": "IV",
+              "es": "IV"
+            },
+            "score": 10,
+            "minutes": 2,
+            "feedback": {
+              "de": "Richtig. Sammelsystemverletzung mit Urinleck ist AAST IV (2018). Die Tiefe allein würde das Leck übersehen.",
+              "en": "Correct. Collecting-system injury with urine leak is AAST IV (2018). Depth alone would miss the leak.",
+              "es": "Correcto. Lesión del colector con fuga es AAST IV (2018). La profundidad sola omitiría la fuga."
+            },
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "V",
+              "en": "V",
+              "es": "V"
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "de": "Diese Alternative passt hier nicht. Zertrümmerte Niere; Hauptgefäß-/Hilusabriss; devaskularisierte Niere mit aktiver Blutung. Sammelsystemverletzung mit Urinleck ist AAST IV (2018). Die Tiefe allein würde das Leck übersehen.",
+              "en": "This alternative does not fit here. Shattered kidney; main-vessel/hilar avulsion; devascularised kidney with active bleeding. Collecting-system injury with urine leak is AAST IV (2018). Depth alone would miss the leak.",
+              "es": "Esta alternativa no corresponde aquí. Riñón estallado; avulsión de vasos principales/hilio; riñón desvascularizado con sangrado activo. Lesión del colector con fuga es AAST IV (2018). La profundidad sola omitiría la fuga."
+            },
+            "critical": false
+          }
+        ],
+        "best": "c"
+      }
+    ],
+    "references": [
+      "classification-trauma-kidney",
+      "classification-aast-revisions"
+    ],
+    "topic": {
+      "de": "Trauma",
+      "en": "Trauma",
+      "es": "Trauma"
+    }
+  },
+  {
+    "id": "staging-trauma-24",
+    "area": "emergency",
+    "level": 2,
+    "acuity": "urgent",
+    "duty": "night",
+    "consultant": "attending",
+    "patient": {
+      "name": "Timo Wolkenau",
+      "age": 45,
+      "sex": "male"
+    },
+    "title": {
+      "de": "Die Niere ohne Kontrastaufnahme",
+      "en": "The non-enhancing kidney",
+      "es": "El riñón sin realce"
+    },
+    "presenting": {
+      "de": "Nach stumpfem Trauma zeigt CT eine vollständig infarzier­te Niere durch Thrombose der Hauptnierenarterie, ohne aktive Blutung. Kreislauf stabil. Welche Kategorie der ausdrücklich angegebenen AAST-2018-Tabelle passt?",
+      "en": "After blunt trauma CT shows complete renal infarction from main renal-artery thrombosis, without active bleeding. Haemodynamics stable. Which category of the explicitly stated AAST-2018 table fits?",
+      "es": "Tras trauma contuso, TC muestra infarto renal completo por trombosis de arteria principal, sin sangrado activo. Estable. ¿Qué grado corresponde a la tabla AAST-2018 indicada?"
+    },
+    "vitals": null,
+    "subject": "trauma",
+    "classification": "trauma-kidney",
+    "clinicalContext": {
+      "kind": "case",
+      "label": {
+        "de": "Klinischer Fall",
+        "en": "Clinical case",
+        "es": "Caso clínico"
+      }
+    },
+    "clinicalSignoffLanguages": [],
+    "takeaway": {
+      "de": "In AAST 2018 fällt kompletter Infarkt durch Gefäßthrombose ohne aktive Blutung unter IV; devaskularisierte Niere mit aktiver Blutung ist V.",
+      "en": "In AAST 2018 complete infarction from vessel thrombosis without active bleeding is IV; a devascularised kidney with active bleeding is V.",
+      "es": "En AAST 2018 infarto completo por trombosis sin sangrado activo es IV; riñón desvascularizado con sangrado activo es V."
+    },
+    "steps": [
+      {
+        "id": "classification-decision",
+        "kind": "decision",
+        "prompt": {
+          "de": "Welche Kategorie passt zum beschriebenen Befund?",
+          "en": "Which category fits the described findings?",
+          "es": "¿Qué categoría corresponde a los hallazgos descritos?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "II",
+              "en": "II",
+              "es": "II"
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "de": "Diese Alternative passt hier nicht. Nicht expandierendes perirenales Hämatom innerhalb Gerota oder Lazeration <1 cm tief, ohne Urinleck. In AAST 2018 fällt kompletter Infarkt durch Gefäßthrombose ohne aktive Blutung unter IV; devaskularisierte Niere mit aktiver Blutung ist V.",
+              "en": "This alternative does not fit here. Non-expanding perirenal haematoma within Gerota or laceration <1 cm deep without urine leak. In AAST 2018 complete infarction from vessel thrombosis without active bleeding is IV; a devascularised kidney with active bleeding is V.",
+              "es": "Esta alternativa no corresponde aquí. Hematoma perirrenal no expansivo dentro de Gerota o laceración <1 cm de profundidad sin fuga urinaria. En AAST 2018 infarto completo por trombosis sin sangrado activo es IV; riñón desvascularizado con sangrado activo es V."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "III",
+              "en": "III",
+              "es": "III"
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "de": "Diese Alternative passt hier nicht. Lazeration >1 cm ohne Sammelsystemverletzung/Urinleck; Gefäßverletzung/aktive Blutung innerhalb Gerota. In AAST 2018 fällt kompletter Infarkt durch Gefäßthrombose ohne aktive Blutung unter IV; devaskularisierte Niere mit aktiver Blutung ist V.",
+              "en": "This alternative does not fit here. Laceration >1 cm without collecting-system injury/urine leak; vascular injury/active bleeding contained within Gerota. In AAST 2018 complete infarction from vessel thrombosis without active bleeding is IV; a devascularised kidney with active bleeding is V.",
+              "es": "Esta alternativa no corresponde aquí. Laceración >1 cm sin lesión del sistema colector/fuga; lesión vascular/sangrado activo contenido en Gerota. En AAST 2018 infarto completo por trombosis sin sangrado activo es IV; riñón desvascularizado con sangrado activo es V."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "IV",
+              "en": "IV",
+              "es": "IV"
+            },
+            "score": 10,
+            "minutes": 2,
+            "feedback": {
+              "de": "Richtig. In AAST 2018 fällt kompletter Infarkt durch Gefäßthrombose ohne aktive Blutung unter IV; devaskularisierte Niere mit aktiver Blutung ist V.",
+              "en": "Correct. In AAST 2018 complete infarction from vessel thrombosis without active bleeding is IV; a devascularised kidney with active bleeding is V.",
+              "es": "Correcto. En AAST 2018 infarto completo por trombosis sin sangrado activo es IV; riñón desvascularizado con sangrado activo es V."
+            },
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "V",
+              "en": "V",
+              "es": "V"
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "de": "Diese Alternative passt hier nicht. Zertrümmerte Niere; Hauptgefäß-/Hilusabriss; devaskularisierte Niere mit aktiver Blutung. In AAST 2018 fällt kompletter Infarkt durch Gefäßthrombose ohne aktive Blutung unter IV; devaskularisierte Niere mit aktiver Blutung ist V.",
+              "en": "This alternative does not fit here. Shattered kidney; main-vessel/hilar avulsion; devascularised kidney with active bleeding. In AAST 2018 complete infarction from vessel thrombosis without active bleeding is IV; a devascularised kidney with active bleeding is V.",
+              "es": "Esta alternativa no corresponde aquí. Riñón estallado; avulsión de vasos principales/hilio; riñón desvascularizado con sangrado activo. En AAST 2018 infarto completo por trombosis sin sangrado activo es IV; riñón desvascularizado con sangrado activo es V."
+            },
+            "critical": false
+          }
+        ],
+        "best": "c"
+      }
+    ],
+    "references": [
+      "classification-trauma-kidney",
+      "classification-aast-revisions"
+    ],
+    "topic": {
+      "de": "Trauma",
+      "en": "Trauma",
+      "es": "Trauma"
+    }
+  },
+  {
+    "id": "staging-trauma-28",
+    "area": "emergency",
+    "level": 2,
+    "acuity": "urgent",
+    "duty": "elective",
+    "consultant": "attending",
+    "patient": {
+      "name": "Wenzel Kirschenhain",
+      "age": 22,
+      "sex": "male"
+    },
+    "title": {
+      "de": "Blut am Meatus",
+      "en": "Blood at the meatus",
+      "es": "Sangre en el meato"
+    },
+    "presenting": {
+      "de": "Nach Straddle-Trauma Blut am Meatus. RUG zeigt bulbäre Extravasation; die flexible Endoskopie bestätigt erhaltene Schleimhautbrücke und Restkontinuität.",
+      "en": "After straddle injury there is meatal blood. RUG shows bulbar extravasation; flexible endoscopy confirms a mucosal bridge and residual continuity.",
+      "es": "Tras trauma a horcajadas hay sangre en meato. Uretrografía: extravasación bulbar; endoscopia confirma puente mucoso y continuidad residual."
+    },
+    "vitals": null,
+    "subject": "trauma",
+    "classification": "trauma-urethra",
+    "clinicalContext": {
+      "kind": "case",
+      "label": {
+        "de": "Klinischer Fall",
+        "en": "Clinical case",
+        "es": "Caso clínico"
+      }
+    },
+    "clinicalSignoffLanguages": [],
+    "takeaway": {
+      "de": "Bulbäre Verletzung mit endoskopisch gesicherter Restkontinuität ist anterior und partiell. RUG-Extravasation allein trennt partiell/komplett nicht immer sicher.",
+      "en": "Bulbar injury with endoscopically confirmed residual continuity is anterior and partial. RUG extravasation alone does not always reliably separate partial from complete.",
+      "es": "Lesión bulbar con continuidad residual confirmada endoscópicamente es anterior y parcial. Extravasación en uretrografía sola no siempre distingue parcial de completa."
+    },
+    "steps": [
+      {
+        "id": "classification-decision",
+        "kind": "decision",
+        "prompt": {
+          "de": "Welche Kategorie passt zum beschriebenen Befund?",
+          "en": "Which category fits the described findings?",
+          "es": "¿Qué categoría corresponde a los hallazgos descritos?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Anteriore partielle Urethraverletzung",
+              "en": "Anterior partial urethral injury",
+              "es": "Lesión uretral anterior parcial"
+            },
+            "score": 10,
+            "minutes": 2,
+            "feedback": {
+              "de": "Richtig. Bulbäre Verletzung mit endoskopisch gesicherter Restkontinuität ist anterior und partiell. RUG-Extravasation allein trennt partiell/komplett nicht immer sicher.",
+              "en": "Correct. Bulbar injury with endoscopically confirmed residual continuity is anterior and partial. RUG extravasation alone does not always reliably separate partial from complete.",
+              "es": "Correcto. Lesión bulbar con continuidad residual confirmada endoscópicamente es anterior y parcial. Extravasación en uretrografía sola no siempre distingue parcial de completa."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Komplette posteriore Ruptur",
+              "en": "Complete posterior rupture",
+              "es": "Rotura posterior completa"
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "de": "Diese Alternative passt hier nicht. Ort und Restkontinuität passen nicht. Bulbäre Verletzung mit endoskopisch gesicherter Restkontinuität ist anterior und partiell. RUG-Extravasation allein trennt partiell/komplett nicht immer sicher.",
+              "en": "This alternative does not fit here. Neither location nor continuity fits. Bulbar injury with endoscopically confirmed residual continuity is anterior and partial. RUG extravasation alone does not always reliably separate partial from complete.",
+              "es": "Esta alternativa no corresponde aquí. Ni localización ni continuidad coinciden. Lesión bulbar con continuidad residual confirmada endoscópicamente es anterior y parcial. Extravasación en uretrografía sola no siempre distingue parcial de completa."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Blasenkontusion",
+              "en": "Bladder contusion",
+              "es": "Contusión vesical"
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "de": "Diese Alternative passt hier nicht. Der Nachweis liegt in der Urethra. Bulbäre Verletzung mit endoskopisch gesicherter Restkontinuität ist anterior und partiell. RUG-Extravasation allein trennt partiell/komplett nicht immer sicher.",
+              "en": "This alternative does not fit here. The demonstrated injury is urethral. Bulbar injury with endoscopically confirmed residual continuity is anterior and partial. RUG extravasation alone does not always reliably separate partial from complete.",
+              "es": "Esta alternativa no corresponde aquí. La lesión demostrada es uretral. Lesión bulbar con continuidad residual confirmada endoscópicamente es anterior y parcial. Extravasación en uretrografía sola no siempre distingue parcial de completa."
+            },
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Keine Verletzung, weil Kontrast weiterläuft",
+              "en": "No injury because contrast passes onward",
+              "es": "Sin lesión porque pasa contraste"
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "de": "Diese Alternative passt hier nicht. Extravasation belegt eine Verletzung. Bulbäre Verletzung mit endoskopisch gesicherter Restkontinuität ist anterior und partiell. RUG-Extravasation allein trennt partiell/komplett nicht immer sicher.",
+              "en": "This alternative does not fit here. Extravasation demonstrates injury. Bulbar injury with endoscopically confirmed residual continuity is anterior and partial. RUG extravasation alone does not always reliably separate partial from complete.",
+              "es": "Esta alternativa no corresponde aquí. Extravasación demuestra lesión. Lesión bulbar con continuidad residual confirmada endoscópicamente es anterior y parcial. Extravasación en uretrografía sola no siempre distingue parcial de completa."
+            },
+            "critical": false
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "references": [
+      "classification-trauma-urethra"
+    ],
+    "topic": {
+      "de": "Trauma",
+      "en": "Trauma",
+      "es": "Trauma"
+    }
   }
 ]
