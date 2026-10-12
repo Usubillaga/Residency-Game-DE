@@ -1,0 +1,37 @@
+name: Build verified illustrated TNM lessons
+on:
+  push:
+    branches: [codex/illustrated-tnm-trauma-lessons]
+    paths: [.codex-transfer/checkpoint.json]
+permissions:
+  contents: write
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: codex/illustrated-tnm-trauma-lessons
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Restore verified source and remove temporary transport
+        run: python .codex-transfer/restore.py
+      - name: Reproduce and verify illustrated learning data
+        run: |
+          python scripts/illustrate_classifications.py
+          python scripts/manage.py build
+          python scripts/manage.py validate
+          python -m unittest discover -s tests
+          node --test tests/tests-engine.cjs tests/tests-cartoon.cjs
+          python scripts/manage.py package --output /tmp/illustrated-release.zip
+          python -c "import zipfile; from pathlib import Path; z=zipfile.ZipFile('/tmp/illustrated-release.zip'); Path('SHA256.json').write_bytes(z.read('night-shift-academy/SHA256.json'))"
+      - name: Verify tree and commit only to the work branch
+        run: |
+          git add -A
+          test "$(git write-tree)" = 002091a83fc33eb9a1a79ea868848d28e37999e3
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Publish verified illustrated TNM and trauma lessons'
+          git push origin HEAD:refs/heads/codex/illustrated-tnm-trauma-lessons
