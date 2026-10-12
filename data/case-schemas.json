@@ -923,29 +923,6 @@
       "penile-urethra"
     ]
   },
-  "fun-inc-aus-catheter-deactivate-cuff": {
-    "schema": "male-urethra-penis",
-    "parts": [
-      "bulbar-urethra",
-      "corpus-spongiosum"
-    ]
-  },
-  "fun-inc-pfmt-supervised-after-app": {
-    "schema": "female-pelvis",
-    "parts": [
-      "levator-ani",
-      "bladder-neck",
-      "urethra"
-    ]
-  },
-  "fun-inc-tvt-blasenperforation": {
-    "schema": "female-pelvis",
-    "parts": [
-      "bladder",
-      "symphysis",
-      "pubourethral-support"
-    ]
-  },
   "onc-bladder-adjuvant-after-cystectomy": {
     "schema": "bladder-wall-staging",
     "parts": [
@@ -1438,6 +1415,191 @@
     "parts": [
       "glans-penis",
       "corpora-cavernosa"
+    ]
+  },
+  "staging-trauma-01": {
+    "schema": "tnm-rcc",
+    "parts": [
+      "kidney"
+    ]
+  },
+  "staging-trauma-02": {
+    "schema": "tnm-rcc",
+    "parts": [
+      "sinus"
+    ]
+  },
+  "staging-trauma-03": {
+    "schema": "tnm-rcc",
+    "parts": [
+      "cava"
+    ]
+  },
+  "staging-trauma-04": {
+    "schema": "tnm-rcc",
+    "parts": [
+      "adrenal"
+    ]
+  },
+  "staging-trauma-05": {
+    "schema": "tnm-bladder",
+    "parts": [
+      "lamina"
+    ]
+  },
+  "staging-trauma-06": {
+    "schema": "tnm-bladder",
+    "parts": [
+      "fat"
+    ]
+  },
+  "staging-trauma-07": {
+    "schema": "urinary-tract-overview",
+    "parts": [
+      "iliac-vessels"
+    ]
+  },
+  "staging-trauma-08": {
+    "schema": "tnm-prostate",
+    "parts": [
+      "prostate"
+    ]
+  },
+  "staging-trauma-09": {
+    "schema": "tnm-prostate",
+    "parts": [
+      "prostate"
+    ]
+  },
+  "staging-trauma-10": {
+    "schema": "tnm-prostate",
+    "parts": [
+      "neck"
+    ]
+  },
+  "staging-trauma-11": {
+    "schema": "tnm-urogenital",
+    "parts": [
+      "kidney"
+    ]
+  },
+  "staging-trauma-12": {
+    "schema": "retroperitoneum-nodes",
+    "parts": [
+      "para-aortic-nodes"
+    ]
+  },
+  "staging-trauma-13": {
+    "schema": "tnm-testis",
+    "parts": [
+      "testis"
+    ]
+  },
+  "staging-trauma-14": {
+    "schema": "retroperitoneum-nodes",
+    "parts": [
+      "para-aortic-nodes",
+      "interaortocaval-nodes",
+      "paracaval-nodes"
+    ]
+  },
+  "staging-trauma-15": {
+    "schema": "tnm-testis",
+    "parts": [
+      "testis"
+    ]
+  },
+  "staging-trauma-16": {
+    "schema": "tnm-testis",
+    "parts": [
+      "testis"
+    ]
+  },
+  "staging-trauma-17": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "corpus-spongiosum",
+      "penile-urethra"
+    ]
+  },
+  "staging-trauma-18": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "glans-penis"
+    ]
+  },
+  "staging-trauma-19": {
+    "schema": "prostate-sagittal",
+    "parts": [
+      "prostatic-urethra"
+    ]
+  },
+  "staging-trauma-20": {
+    "schema": "tnm-urogenital",
+    "parts": [
+      "adrenal"
+    ]
+  },
+  "staging-trauma-21": {
+    "schema": "tnm-urogenital",
+    "parts": [
+      "sympathetic"
+    ]
+  },
+  "staging-trauma-22": {
+    "schema": "trauma-kidney-map",
+    "parts": [
+      "parenchyma"
+    ]
+  },
+  "staging-trauma-23": {
+    "schema": "trauma-kidney-map",
+    "parts": [
+      "collecting"
+    ]
+  },
+  "staging-trauma-24": {
+    "schema": "trauma-kidney-map",
+    "parts": [
+      "vessels"
+    ]
+  },
+  "staging-trauma-25": {
+    "schema": "urinary-tract-overview",
+    "parts": [
+      "ureters"
+    ]
+  },
+  "staging-trauma-26": {
+    "schema": "trauma-bladder-map",
+    "parts": [
+      "bladder"
+    ]
+  },
+  "staging-trauma-27": {
+    "schema": "trauma-bladder-map",
+    "parts": [
+      "neck"
+    ]
+  },
+  "staging-trauma-28": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "bulbar-urethra"
+    ]
+  },
+  "staging-trauma-29": {
+    "schema": "tnm-testis",
+    "parts": [
+      "albuginea"
+    ]
+  },
+  "staging-trauma-30": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "tunica-albuginea",
+      "external-meatus",
+      "penile-urethra"
     ]
   }
 }

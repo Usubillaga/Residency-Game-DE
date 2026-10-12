@@ -1,5 +1,13 @@
 # Validation record
 
+## TNM, trauma and review export — 12 October 2026
+
+- **Content:** 14 trilingual guides, 30 new independently worded clinical/operative cases (21 tumour staging, 9 trauma) and seven new inert clickable SVG schematics. Source editions are explicit; cT/pT, cN/pN and marker timing are distinguished. Primary EAU/NCI/AAST pages were rechecked on 12 October. Clinical sign-off fields remain empty; software tests and source checking are not a clinician certification.
+- **Bank compatibility:** exactly 500 decisions, 402 cases and 1,900 answer options. All 267 imported raw cases, all 50 multistep stories, all 50 anatomy cases and the prior 71 archived snapshots compare unchanged by ID/JSON. Thirty additional corrected historical snapshots are archived (101 total). Completed progress is retained; retired cases do not enter new schedules.
+- **Interface:** per-decision review marking, optional 2,000-character Unicode comments, separate JSON download, all 14 guide views in DE/EN/ES, question context in the chief quiz, and backwards-compatible v3 save/merge handling. Review export includes complete trilingual case content and sources, with no profile/logbook/session.
+- **Checks:** 57 Python, 41 engine and 56 cartoon/interface tests passed (154 total), plus content validation, JS syntax, build and ZIP/hash checks. Full-app tests exercise all 500 decision controls, exact IDs, comments, exported payloads, historical marks and guides; four-part atlas quizzes complete without missing rounds. Every duty retains at least ten playable cases.
+- **Visual scope:** all seven new SVGs were rendered with Sharp and inspected together. This is schematic-image QA and functional/markup testing; no new browser pixel-layout screenshot is claimed. Existing character art and dialogue assets remain unchanged.
+
 ## Curated 500-question bank and anatomy — 11 October 2026
 
 This revision contains **500 playable decisions in 402 cases**, including **50 newly authored anatomy questions** in DE/EN/ES. All 267 imported questions and all 50 multi-step stories remain. Seventy-one supplementary single questions are archived with verified historical logbook support. Details, selection and source scope: [FRAGENBANK_500.md](FRAGENBANK_500.md).

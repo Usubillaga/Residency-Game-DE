@@ -4,6 +4,8 @@
   const root = document.getElementById('app');
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   if (!C || !E) { root.innerHTML='<main class="container page-head"><h1>Night Shift Academy</h1><p>'+esc(strings.en.dataError)+'</p></main>'; return; }
+  const REVIEW_TEXT={"de":{"classifications":"TNM & Trauma","classificationIntro":"14 Übersichten, 30 klinische/OP-Fälle. c = klinisch, p = pathologisch nach Histologie; beide Zeitpunkte getrennt dokumentieren. Trauma wird nach Verletzungssystemen eingeteilt und hat kein TNM.","classificationJoke":"Der Chef hat das Lineal gefunden. Jetzt zählen die Grenzen, nicht die Kaffeetassen.","classificationTumour":"Tumoren","classificationTrauma":"Trauma","classificationPractice":"Diese Fälle spielen","classificationAll":"Runde aus den 30 Fällen starten","reviewMark":"Zur Verbesserung markieren","reviewMarked":"Zur Verbesserung markiert","reviewNote":"Kommentar zur Frage (optional)","reviewPlaceholder":"Was ist unklar oder sollte verbessert werden?","reviewTitle":"Markierte Fragen","reviewHelp":"Markieren, kurz kommentieren und als JSON exportieren. Die Datei anschließend hier im ChatGPT-Chat anhängen, damit die Fragen überarbeitet werden können.","reviewExport":"Markierte Fragen exportieren","reviewEmpty":"Noch keine Frage zur Verbesserung markiert.","reviewOpen":"Frage ansehen","reviewDetails":"Fragen ansehen und markieren","reviewPrivacy":"Der separate Fragenexport enthält Fragen und Kommentare; Spielerprofil, Logbuch und Spielstand gehören nicht dazu.","topic_staging":"TNM & Staging","topic_trauma":"Trauma","classificationCode":"Kategorie","classificationDescription":"Bedeutung"},"en":{"classifications":"TNM & Trauma","classificationIntro":"14 guides, 30 clinical/operative cases. c = clinical, p = pathological after histology; document the two assessment phases separately. Trauma uses injury classifications, not TNM.","classificationJoke":"The chief found the ruler. Now boundaries count more than coffee cups.","classificationTumour":"Tumours","classificationTrauma":"Trauma","classificationPractice":"Play these cases","classificationAll":"Start a round from the 30 cases","reviewMark":"Mark for improvement","reviewMarked":"Marked for improvement","reviewNote":"Question comment (optional)","reviewPlaceholder":"What is unclear or needs improvement?","reviewTitle":"Marked questions","reviewHelp":"Mark, add a short comment and export JSON. Attach the file in this ChatGPT chat to have the questions revised.","reviewExport":"Export marked questions","reviewEmpty":"No questions marked for improvement yet.","reviewOpen":"View question","reviewDetails":"View and mark questions","reviewPrivacy":"The separate question export contains questions and comments; no player profile, logbook or game session.","topic_staging":"TNM & staging","topic_trauma":"Trauma","classificationCode":"Category","classificationDescription":"Meaning"},"es":{"classifications":"TNM y Trauma","classificationIntro":"14 guías, 30 casos clínicos/operatorios. c = clínico, p = patológico tras histología; documentar por separado las fases de evaluación. Trauma usa clasificaciones de lesiones, no TNM.","classificationJoke":"El jefe encontró la regla. Ahora cuentan los límites más que las tazas de café.","classificationTumour":"Tumores","classificationTrauma":"Trauma","classificationPractice":"Jugar estos casos","classificationAll":"Iniciar ronda de los 30 casos","reviewMark":"Marcar para mejorar","reviewMarked":"Marcada para mejorar","reviewNote":"Comentario sobre la pregunta (opcional)","reviewPlaceholder":"¿Qué no está claro o debe mejorarse?","reviewTitle":"Preguntas marcadas","reviewHelp":"Marca, comenta brevemente y exporta JSON. Adjunta el archivo en este chat de ChatGPT para revisar las preguntas.","reviewExport":"Exportar preguntas marcadas","reviewEmpty":"Aún no hay preguntas marcadas para mejorar.","reviewOpen":"Ver pregunta","reviewDetails":"Ver y marcar preguntas","reviewPrivacy":"La exportación separada contiene preguntas y comentarios; no incluye perfil, registro ni sesión de juego.","topic_staging":"TNM y estadificación","topic_trauma":"Trauma","classificationCode":"Categoría","classificationDescription":"Significado"}};
+  for(const lang of ['en','de','es'])Object.assign(strings[lang],REVIEW_TEXT[lang]);
   const STORAGE='night-shift-academy-v2';
   // A downloaded game file can be loaded again to carry on, on this or another device.
   const SAVE_FORMAT='night-shift-academy-save',SAVE_LIMIT=5000000;
@@ -27,13 +29,13 @@
   // Radiotherapy questions are answered by the radiation oncologist; every other case by the attending.
   const consultantOf=c=>c&&c.consultant==='radiotherapist'?'radiotherapist':'attending';
   const count=v=>Number.isInteger(v)&&v>=0?v:0;
-  let storageFailed=false, state={lang:'en',name:'',avatar:0,sound:false,history:[],bookmarks:[],session:null,stats:cleanStats(null),badges:[],lastDuty:'night',countedShifts:[]};
+  let storageFailed=false, state={lang:'en',name:'',avatar:0,sound:false,history:[],bookmarks:[],reviewFlags:[],session:null,stats:cleanStats(null),badges:[],lastDuty:'night',countedShifts:[]};
   try {
     const s=JSON.parse(localStorage.getItem(STORAGE)||'null');
     if (s && typeof s==='object' && !Array.isArray(s)) Object.assign(state,cleanSave(s));
   } catch (_) { /* In-memory play stays available when browser storage is blocked. */ }
-  let view=['intro','library','atlas','protocols','progress','sources','play','report'].includes(location.hash.slice(1))?location.hash.slice(1):'intro';
-  let areaFilter='all',topicFilter='all',dutyFilter='all',pendingDuty='night',libraryPage=0,query='',savedOnly=false,pendingIds=null,customSchedule=null,dialogSequence=0,pendingSave=null,protocolEntity=null,protocolKind='systemic',protocolAll=false;
+  let view=['intro','library','atlas','protocols','classifications','progress','sources','play','report'].includes(location.hash.slice(1))?location.hash.slice(1):'intro';
+  let areaFilter='all',topicFilter='all',dutyFilter='all',pendingDuty='night',libraryPage=0,query='',savedOnly=false,pendingIds=null,customSchedule=null,dialogSequence=0,pendingSave=null,protocolEntity=null,protocolKind='systemic',protocolAll=false,classificationEntity=null;
   const t = key => {const value=typeof comedy()[key]==='string'?comedy()[key]:(strings[state.lang][key] || strings.en[key] || key);return value.replaceAll('{questions}',String(QUESTION_COUNT)).replaceAll('{cases}',String(C.cases.length)).replaceAll('{areas}',String(C.areas.length));};
   const loc = value => value[state.lang];
   const pct = r=>Math.round(r.score/r.maxScore*100);
@@ -97,7 +99,24 @@
       answers:r.answers.map(a=>({stepId:a.stepId,optionId:a.optionId,score:a.score,minutes:a.minutes})),...(typeof r.shift==='string'&&r.shift.length<=120?{shift:r.shift}:{})};
   }
   // Any progress worth saving: a logbook entry, a shift, a sticker, a bookmark or a counter.
-  function hasProgress(s) { return s.history.length>0||!!s.session||s.badges.length>0||s.bookmarks.length>0||STAT_KEYS.some(key=>s.stats[key]>0); }
+  function hasProgress(s) { return s.history.length>0||!!s.session||s.badges.length>0||s.bookmarks.length>0||(s.reviewFlags||[]).length>0||STAT_KEYS.some(key=>s.stats[key]>0); }
+  // A mark identifies one exact decision, including decisions in historical cases.
+  function cleanReviewFlags(raw) {
+    const marks=new Map();
+    if(!Array.isArray(raw))return [];
+    for(const item of raw){
+      if(!item||typeof item!=='object'||Array.isArray(item))continue;
+      const c=getCase(item.caseId),step=c?.steps.find(s=>s.id===item.stepId);
+      if(!step||typeof item.updatedAt!=='string'||!Number.isFinite(Date.parse(item.updatedAt)))continue;
+      const updatedAt=new Date(item.updatedAt).toISOString();
+      const markedAt=typeof item.markedAt==='string'&&Number.isFinite(Date.parse(item.markedAt))?new Date(item.markedAt).toISOString():updatedAt;
+      const flag={caseId:c.id,stepId:step.id,note:typeof item.note==='string'?Array.from(item.note).slice(0,2000).join(''):'',markedAt,updatedAt,language:['en','de','es'].includes(item.language)?item.language:'en'};
+      const key=JSON.stringify([c.id,step.id]),old=marks.get(key);
+      if(!old||Date.parse(flag.updatedAt)>=Date.parse(old.updatedAt))marks.set(key,flag);
+    }
+    return [...marks.values()];
+  }
+  function mergeReviewFlags(a,b) { return cleanReviewFlags([...(a||[]),...(b||[])]); }
   function cleanSave(s) {
     return {
       lang:['en','de','es'].includes(s.lang)?s.lang:'en',
@@ -105,6 +124,7 @@
       avatar:Number.isInteger(s.avatar)&&s.avatar>=0&&s.avatar<3?s.avatar:0,
       sound:s.sound===true,
       bookmarks:Array.isArray(s.bookmarks)?[...new Set(s.bookmarks.filter(id=>typeof id==='string'&&!!getCase(id)))]:[],
+      reviewFlags:cleanReviewFlags(s.reviewFlags),
       history:Array.isArray(s.history)?s.history.filter(validRecord).map(cleanRecord).slice(-1000):[],
       session:E.validSession(s.session,C)?cleanSession(s.session):null,
       stats:cleanStats(s.stats),
@@ -117,7 +137,7 @@
   // The game file holds everything needed to carry on; the interface language and sound stay as they are on the device.
   function saveFile() {
     return {format:SAVE_FORMAT,version:3,exportedAt:new Date().toISOString(),name:state.name,avatar:state.avatar,lastDuty:state.lastDuty,
-      history:state.history,stats:state.stats,badges:state.badges,bookmarks:state.bookmarks,session:state.session,countedShifts:state.countedShifts};
+      history:state.history,stats:state.stats,badges:state.badges,bookmarks:state.bookmarks,reviewFlags:state.reviewFlags,session:state.session,countedShifts:state.countedShifts};
   }
   // Reads a downloaded game file. Logbooks exported before version 3 held the history only and still load.
   function readSaveFile(data) {
@@ -151,7 +171,7 @@
     }
     const stats={};for (const key of STAT_KEYS) stats[key]=key==='rank'?count(current.stats.rank):Math.max(count(current.stats[key]),count(incoming.stats[key]));
     const takeProfile=found.named||(found.full&&!current.name.trim());
-    return {history:history.slice(-1000),stats,badges:[...new Set([...current.badges,...incoming.badges])],bookmarks:[...new Set([...current.bookmarks,...incoming.bookmarks])],
+    return {reviewFlags:mergeReviewFlags(current.reviewFlags,incoming.reviewFlags),history:history.slice(-1000),stats,badges:[...new Set([...current.badges,...incoming.badges])],bookmarks:[...new Set([...current.bookmarks,...incoming.bookmarks])],
       session:chooseShift(current.session,incoming.session).session,name:found.named?incoming.name:current.name,avatar:takeProfile?incoming.avatar:current.avatar,
       lastDuty:found.full?incoming.lastDuty:current.lastDuty,countedShifts:[...new Set([...(current.countedShifts||[]),...incoming.countedShifts])].slice(-300)};
   }
@@ -281,8 +301,67 @@
   }
   function badge(acuity) { return '<span class="badge '+acuity+'">'+esc(t(acuity))+'</span>'; }
   function bookmark(id) { return '<button class="bookmark '+(state.bookmarks.includes(id)?'on':'')+'" data-bookmark="'+esc(id)+'" aria-label="'+esc(t(state.bookmarks.includes(id)?'unsaveCase':'saveCase'))+'" aria-pressed="'+state.bookmarks.includes(id)+'">'+(state.bookmarks.includes(id)?'★':'☆')+'</button>'; }
+
+  const reviewFlag=(caseId,stepId)=>(state.reviewFlags||[]).find(f=>f.caseId===caseId&&f.stepId===stepId);
+  function reviewControlContents(c,s) {
+    const flag=reviewFlag(c.id,s.id);
+    return '<button type="button" class="btn small review-toggle '+(flag?'on':'')+'" data-review-toggle="true" aria-pressed="'+!!flag+'">🚩 '+esc(t(flag?'reviewMarked':'reviewMark'))+'</button>'+
+      (flag?'<label class="review-note-label">'+esc(t('reviewNote'))+'<textarea class="text-input review-note" data-review-note="true" rows="2" maxlength="4000" placeholder="'+esc(t('reviewPlaceholder'))+'">'+esc(flag.note)+'</textarea></label>':'');
+  }
+  function reviewControls(c,s) {
+    return '<section class="question-review" data-review-case="'+esc(c.id)+'" data-review-step="'+esc(s.id)+'">'+reviewControlContents(c,s)+'</section>';
+  }
+  function reviewCard(c) {
+    if(c.steps.length===1)return reviewControls(c,c.steps[0]);
+    return '<details class="review-card-details"><summary>'+esc(t('reviewDetails'))+' · '+c.steps.length+'</summary>'+c.steps.map((s,i)=>'<p><b>'+(i+1)+'. '+esc(loc(s.prompt))+'</b></p>'+reviewControls(c,s)).join('')+'</details>';
+  }
+  // Toggle only the matching review controls: answering state, open chief quiz and game clock stay intact.
+  function toggleReview(box) {
+    const c=getCase(box.dataset.reviewCase),s=c?.steps.find(s=>s.id===box.dataset.reviewStep);if(!s)return;
+    const old=reviewFlag(c.id,s.id),stamp=new Date().toISOString();
+    state.reviewFlags=old?state.reviewFlags.filter(f=>f!==old):[...(state.reviewFlags||[]),{caseId:c.id,stepId:s.id,note:'',markedAt:stamp,updatedAt:stamp,language:state.lang}];
+    persist();
+    document.querySelectorAll('.question-review').forEach(el=>{if(el.dataset.reviewCase===c.id&&el.dataset.reviewStep===s.id)el.innerHTML=reviewControlContents(c,s);});
+    box.querySelector('[data-review-toggle]')?.focus({preventScroll:true});
+    const countNode=document.querySelector('[data-review-count]');if(countNode)countNode.textContent=state.reviewFlags.length;
+    const exportButton=document.querySelector('[data-action="export-review"]');if(exportButton)exportButton.disabled=!state.reviewFlags.length;
+    const panel=document.querySelector('.marked-panel');if(panel)panel.outerHTML=markedPanel();
+  }
+  function reviewNote(input) {
+    const box=input.closest('.question-review'),flag=box&&reviewFlag(box.dataset.reviewCase,box.dataset.reviewStep);if(!flag)return;
+    flag.note=Array.from(input.value).slice(0,2000).join('');if(input.value!==flag.note)input.value=flag.note;
+    flag.updatedAt=new Date().toISOString();persist();
+    document.querySelectorAll('.question-review').forEach(el=>{if(el!==box&&el.dataset.reviewCase===flag.caseId&&el.dataset.reviewStep===flag.stepId){const other=el.querySelector('[data-review-note]');if(other)other.value=flag.note;}});
+  }
+  function reviewExportFile() {
+    const flags=cleanReviewFlags(state.reviewFlags),caseIds=new Set(flags.map(f=>f.caseId));
+    const cases=[...caseIds].map(getCase),guides=(C.classifications||[]).filter(g=>cases.some(c=>c.classification===g.id));
+    const refIds=new Set([...cases.flatMap(c=>c.references),...guides.flatMap(g=>g.references)]);
+    return {format:'night-shift-academy-question-review',version:1,exportedAt:new Date().toISOString(),language:state.lang,
+      marks:flags.map(f=>({...f,stepIndex:getCase(f.caseId).steps.findIndex(s=>s.id===f.stepId)})),
+      cases:JSON.parse(JSON.stringify(cases)),classifications:JSON.parse(JSON.stringify(guides)),references:C.references.filter(r=>refIds.has(r.id))};
+  }
+  function exportReview() {
+    if(!(state.reviewFlags||[]).length)return;
+    const blob=new Blob([JSON.stringify(reviewExportFile(),null,2)],{type:'application/json'});
+    const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='night-shift-question-review-'+new Date().toLocaleDateString('sv-SE')+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+  }
+  function markedPanel() {
+    const flags=cleanReviewFlags(state.reviewFlags);
+    return '<section class="progress-panel marked-panel"><h2>🚩 '+esc(t('reviewTitle'))+' · <span data-review-count>'+flags.length+'</span></h2><p>'+esc(t('reviewHelp'))+'</p><p class="small-note">'+esc(t('reviewPrivacy'))+'</p><button class="btn" data-action="export-review" '+(flags.length?'':'disabled')+'>'+esc(t('reviewExport'))+' ↓</button>'+
+      (flags.length?'<div class="marked-list">'+flags.map(f=>{const c=getCase(f.caseId),s=c.steps.find(s=>s.id===f.stepId);return '<article><h3>'+esc(loc(c.title))+'</h3><p>'+esc(loc(s.prompt))+'</p><button class="btn small quiet" data-review-open-case="'+esc(c.id)+'" data-review-open-step="'+esc(s.id)+'">'+esc(t('reviewOpen'))+'</button>'+reviewControls(c,s)+'</article>';}).join('')+'</div>':'<p>'+esc(t('reviewEmpty'))+'</p>')+'</section>';
+  }
+  function openReviewQuestion(caseId,stepId) {
+    const c=getCase(caseId),s=c?.steps.find(s=>s.id===stepId);if(!s)return;
+    openDialog('<h2>'+esc(loc(c.title))+'</h2><p>'+esc(loc(c.presenting))+'</p><h3>'+esc(loc(s.prompt))+'</h3>'+reviewControls(c,s)+optionsExplained(s,s.options.map(o=>o.id),null)+sourceLinks(c)+'<button class="btn" data-action="close-dialog">'+esc(t('close'))+'</button>');
+  }
+  function classificationPage() {
+    const guides=C.classifications||[],g=guides.find(g=>g.id===classificationEntity)||guides[0];if(!g)return '';
+    return '<div class="page-head"><p class="eyebrow">📏 '+esc(t('classifications'))+'</p><h1>'+esc(t('classifications'))+'</h1><p>'+esc(t('classificationIntro'))+'</p><p class="classification-joke">'+esc(t('classificationJoke'))+'</p><button class="btn primary" data-classification-practice="all">'+esc(t('classificationAll'))+' ▶</button></div><nav class="classification-tabs" aria-label="'+esc(t('classifications'))+'">'+['tumour','trauma'].map(kind=>'<div><b>'+esc(t(kind==='tumour'?'classificationTumour':'classificationTrauma'))+'</b><div class="actions">'+guides.filter(g=>g.kind===kind).map(item=>'<button class="protocol-tab '+(item.id===g.id?'active':'')+'" data-classification-entity="'+esc(item.id)+'" aria-pressed="'+(item.id===g.id)+'">'+esc(loc(item.title))+'</button>').join('')+'</div></div>').join('')+'</nav><article class="classification-guide"><div><h2>'+esc(loc(g.title))+'</h2><p class="classification-edition">'+esc(g.edition)+'</p><p class="classification-cautions">'+esc(loc(g.cautions))+'</p>'+g.sections.map(s=>'<section><h3>'+esc(loc(s.title))+'</h3><div class="protocol-table-wrap"><table class="protocol-table"><thead><tr><th>'+esc(t('classificationCode'))+'</th><th>'+esc(t('classificationDescription'))+'</th></tr></thead><tbody>'+s.rows.map(r=>'<tr><th scope="row">'+esc(r.code)+'</th><td data-label="'+esc(t('classificationDescription'))+'">'+esc(loc(r.description))+'</td></tr>').join('')+'</tbody></table></div></section>').join('')+sourceLinks(g)+'<button class="btn primary" data-classification-practice="'+esc(g.id)+'">'+esc(t('classificationPractice'))+' · '+g.cases.length+' ▶</button></div><aside>'+schemaFigure(g.schema,[],'learn')+'</aside></article>';
+  }
+
   function header() {
-    return '<header class="topbar"><div class="container top-inner"><a href="#intro" class="brand" data-view="intro"><span class="brand-icon" aria-hidden="true">✚</span><div><strong>Night Shift Academy</strong><small>'+esc(t('tagline'))+'</small></div></a><nav class="nav" aria-label="'+esc(t('intro'))+'">'+['intro','library','atlas','protocols','progress','sources'].map(v=>'<button class="nav-btn '+(view===v?'active':'')+'" data-view="'+v+'" '+(view===v?'aria-current="page"':'')+'>'+esc(t(v))+'</button>').join('')+'</nav><div class="lang" role="group" aria-label="Language / Sprache / Idioma">'+['en','de','es'].map(l=>'<button data-lang="'+l+'" class="'+(state.lang===l?'active':'')+'" aria-pressed="'+(state.lang===l)+'" aria-label="'+({en:'English',de:'Deutsch',es:'Español'}[l])+'">'+l.toUpperCase()+'</button>').join('')+'</div></div></header>';
+    return '<header class="topbar"><div class="container top-inner"><a href="#intro" class="brand" data-view="intro"><span class="brand-icon" aria-hidden="true">✚</span><div><strong>Night Shift Academy</strong><small>'+esc(t('tagline'))+'</small></div></a><nav class="nav" aria-label="'+esc(t('intro'))+'">'+['intro','library','atlas','protocols','classifications','progress','sources'].map(v=>'<button class="nav-btn '+(view===v?'active':'')+'" data-view="'+v+'" '+(view===v?'aria-current="page"':'')+'>'+esc(t(v))+'</button>').join('')+'</nav><div class="lang" role="group" aria-label="Language / Sprache / Idioma">'+['en','de','es'].map(l=>'<button data-lang="'+l+'" class="'+(state.lang===l?'active':'')+'" aria-pressed="'+(state.lang===l)+'" aria-label="'+({en:'English',de:'Deutsch',es:'Español'}[l])+'">'+l.toUpperCase()+'</button>').join('')+'</div></div></header>';
   }
   function footer() { return '<footer class="footer"><div class="container footer-inner"><p>'+esc(t('education'))+'<br>'+esc(t('clockNote'))+'</p><button data-view="sources">'+esc(t('sources'))+' ↗</button></div></footer>'; }
   function hospital() {
@@ -302,7 +381,7 @@
   }
   function caseCard(c) {
     const attempts=state.history.filter(h=>h.caseId===c.id),best=attempts.length?Math.max(...attempts.map(pct)):null;
-    return '<article class="case-card"><div class="case-cartoon-portrait">'+casePortrait(c,'neutral',76)+'</div><div class="case-meta"><span>'+esc(loc(getArea(c.area).title))+'</span>'+badge(c.acuity)+'</div><h3>'+esc(loc(c.title))+'</h3><div class="case-duty duty-'+dutyOf(c)+'">'+esc(dutyName(dutyOf(c)))+'</div>'+caseOriginBadge(c)+'<p>'+esc(loc(c.presenting))+'</p><div class="case-meta"><span>'+esc(patientLabel(c))+'</span><span>'+esc(t('level'))+' '+c.level+'</span></div><div class="case-meta"><span>'+(best===null?esc(t('notPlayed')):esc(t('best'))+' '+best+'%')+'</span></div><div class="card-footer">'+(c.archived?'<span class="badge routine">'+esc(t('archivedQuestion'))+'</span>':'<button class="btn small" data-practice="'+c.id+'">'+esc(t('practice'))+' →</button>')+bookmark(c.id)+'</div></article>';
+    return '<article class="case-card"><div class="case-cartoon-portrait">'+casePortrait(c,'neutral',76)+'</div><div class="case-meta"><span>'+esc(loc(getArea(c.area).title))+'</span>'+badge(c.acuity)+'</div><h3>'+esc(loc(c.title))+'</h3><div class="case-duty duty-'+dutyOf(c)+'">'+esc(dutyName(dutyOf(c)))+'</div>'+caseOriginBadge(c)+'<p>'+esc(loc(c.presenting))+'</p><div class="case-meta"><span>'+esc(patientLabel(c))+'</span><span>'+esc(t('level'))+' '+c.level+'</span></div><div class="case-meta"><span>'+(best===null?esc(t('notPlayed')):esc(t('best'))+' '+best+'%')+'</span></div><div class="card-footer">'+(c.archived?'<span class="badge routine">'+esc(t('archivedQuestion'))+'</span>':'<button class="btn small" data-practice="'+c.id+'">'+esc(t('practice'))+' →</button>')+bookmark(c.id)+'</div>'+reviewCard(c)+'</article>';
   }
   function filteredCases() {
     const q=query.toLocaleLowerCase(state.lang).trim();
@@ -481,7 +560,7 @@
     else {
       const s=c.steps[p.index];
       body='<section class="story"><span class="label">'+esc(t('story'))+'</span><p>'+esc(loc(c.presenting))+'</p></section>'+vitalPanel(c);
-      body+='<section class="decision-panel"><div class="step-track" aria-hidden="true">'+c.steps.map((_,i)=>'<span class="'+(i<p.index?'past':i===p.index?'now':'')+'"></span>').join('')+'</div><div class="step-meta"><span>'+esc(t(c.source?'sourceQuestion':s.kind))+'</span><span>'+esc(t('decision'))+' '+(p.index+1)+' / '+c.steps.length+'</span></div><h3 id="decision-prompt">'+esc(loc(s.prompt))+'</h3><div class="options" role="group" aria-labelledby="decision-prompt">'+p.order[p.index].map((id,i)=>optionButton(s,o=>o.id===id,p,i)).join('')+'</div>';
+      body+='<section class="decision-panel"><div class="step-track" aria-hidden="true">'+c.steps.map((_,i)=>'<span class="'+(i<p.index?'past':i===p.index?'now':'')+'"></span>').join('')+'</div><div class="step-meta"><span>'+esc(t(c.source?'sourceQuestion':s.kind))+'</span><span>'+esc(t('decision'))+' '+(p.index+1)+' / '+c.steps.length+'</span></div><h3 id="decision-prompt">'+esc(loc(s.prompt))+'</h3>'+reviewControls(c,s)+'<div class="options" role="group" aria-labelledby="decision-prompt">'+p.order[p.index].map((id,i)=>optionButton(s,o=>o.id===id,p,i)).join('')+'</div>';
       if(p.feedback){const o=s.options.find(o=>o.id===p.feedback),cls=o.score===10?'good':o.score>0||c.source?'partial':'unsafe';
         const streak=cls==='good'&&state.session.streakAt===p.id+':'+p.index?state.session.streak:0;
         body+=(o.critical?attendingWarning(c,s,p.id+':'+p.index):characterComment(cls,p.id,p.index,streak,!!c.source))+'<div class="feedback '+cls+'" role="status"><span class="label">'+esc(t('feedback'))+'</span><h3>'+esc(t(c.source&&o.score!==10?'sourceIncorrect':cls))+(o.critical?' · '+esc(t('safety')):'')+'</h3><p>'+esc(loc(o.feedback))+'</p>'+preferredAnswer(s,o.id)+(p.index===c.steps.length-1?caseVisuals(c):'')+optionsExplained(s,p.order[p.index],o.id)+'<div class="actions"><button class="btn primary" data-action="next">'+esc(t(p.index===c.steps.length-1?'finishCase':'next'))+' →</button></div></div>';
@@ -494,7 +573,7 @@
   }
   function debrief(p,c) {
     const max=c.steps.reduce((n,s)=>n+Math.max(...s.options.map(o=>o.score)),0);
-    return '<div class="debrief-score">'+Math.round(p.score/max*100)+'<small> / 100</small></div><p class="muted" style="font-size:.76rem">'+esc(t('elapsed'))+': '+p.elapsed+' '+esc(t('minute'))+' · '+esc(t('safetyConcerns'))+': '+p.criticalErrors+'</p><section class="takeaway" style="margin-top:22px"><span class="label">'+esc(t('takeaway'))+'</span><p>'+esc(loc(c.takeaway))+'</p></section>'+caseVisuals(c)+p.answers.map((ans,i)=>{const s=c.steps[i],o=s.options.find(o=>o.id===ans.optionId);return '<div class="answer-review"><h3>'+esc(loc(s.prompt))+'</h3><p><b>'+esc(t('yourChoice'))+':</b> '+esc(loc(o.text))+'</p><p>'+esc(loc(o.feedback))+'</p>'+preferredAnswer(s,o.id)+'<span class="badge '+(o.score===10?'done':'urgent')+'">'+o.score+' / 10</span>'+optionsExplained(s,p.order[i],o.id)+'</div>';}).join('')+sourceLinks(c)+'<div class="actions"><button class="btn primary" data-action="'+(state.session.finished?'report':'next-patient')+'">'+esc(t(state.session.finished?'report':'nextPatient'))+' →</button></div>';
+    return '<div class="debrief-score">'+Math.round(p.score/max*100)+'<small> / 100</small></div><p class="muted" style="font-size:.76rem">'+esc(t('elapsed'))+': '+p.elapsed+' '+esc(t('minute'))+' · '+esc(t('safetyConcerns'))+': '+p.criticalErrors+'</p><section class="takeaway" style="margin-top:22px"><span class="label">'+esc(t('takeaway'))+'</span><p>'+esc(loc(c.takeaway))+'</p></section>'+caseVisuals(c)+p.answers.map((ans,i)=>{const s=c.steps[i],o=s.options.find(o=>o.id===ans.optionId);return '<div class="answer-review"><h3>'+esc(loc(s.prompt))+'</h3>'+reviewControls(c,s)+'<p><b>'+esc(t('yourChoice'))+':</b> '+esc(loc(o.text))+'</p><p>'+esc(loc(o.feedback))+'</p>'+preferredAnswer(s,o.id)+'<span class="badge '+(o.score===10?'done':'urgent')+'">'+o.score+' / 10</span>'+optionsExplained(s,p.order[i],o.id)+'</div>';}).join('')+sourceLinks(c)+'<div class="actions"><button class="btn primary" data-action="'+(state.session.finished?'report':'next-patient')+'">'+esc(t(state.session.finished?'report':'nextPatient'))+' →</button></div>';
   }
   function play() {
     const s=state.session;
@@ -508,7 +587,7 @@
     return '<div class="metric-grid">'+[[items.length,'attempts'],[max?Math.round(sum/max*100)+'%':'—','average'],[mastered,'mastered'],[items.reduce((n,r)=>n+r.criticalErrors,0),'safetyConcerns']].map(([v,k])=>'<div class="metric-card"><span>'+esc(t(k))+'</span><strong>'+v+'</strong></div>').join('')+'</div>';
   }
   function progress() {
-    return '<div class="page-head"><p class="eyebrow">03 / '+esc(t('progress'))+'</p><h1>'+esc(t('progressTitle'))+'</h1><p>'+esc(t('progressSub'))+'</p></div>'+careerPanel()+metrics(state.history)+'<div class="actions" style="margin-bottom:25px"><button class="btn primary" data-action="revenge">🔁 '+esc(t('revenge'))+' ('+missedCases().length+')</button><button class="btn quiet" data-action="export" '+(!hasProgress(state)?'disabled':'')+'>'+esc(t('export'))+' ↓</button><button class="btn quiet" data-action="import">'+esc(t('importSave'))+' ↑</button><input type="file" id="save-file" accept=".json,application/json" hidden><button class="btn quiet danger" data-action="reset-dialog">'+esc(t('reset'))+'</button>'+(state.session?'<button class="btn" data-action="resume">'+esc(t('resume'))+' →</button>':'')+'</div><p class="small-note save-note">'+esc(t('saveHelp'))+'</p><div class="progress-grid"><section class="progress-panel"><h2>'+esc(t('byDuty'))+'</h2>'+PLAYABLE.map(d=>({id:d,title:dutyName(d)})).map(a=>{const h=state.history.filter(r=>dutyOf(getCase(r.caseId))===a.id);const average=h.length?Math.round(h.reduce((n,r)=>n+pct(r),0)/h.length):0;return '<div class="bar-row"><div class="bar-label"><span>'+esc(a.title)+'</span><span>'+h.length+' · '+(h.length?average+'%':'—')+'</span></div><div class="bar-track" role="meter" aria-label="'+esc(a.title)+'" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+average+'"><div class="bar-fill" style="width:'+average+'%"></div></div></div>';}).join('')+'</section><section class="progress-panel"><h2>'+esc(t('recent'))+'</h2>'+(state.history.length?state.history.slice(-8).reverse().map(r=>historyRow(r)).join(''):'<p class="muted" style="font-size:.8rem">'+esc(t('noHistory'))+'</p>')+'</section></div>'+topicPanel()+stickerAlbum()+'<div class="section-head"><h2>'+esc(t('bookmarks'))+'</h2></div><div class="case-grid">'+(state.bookmarks.length?state.bookmarks.map(id=>caseCard(getCase(id))).join(''):'<p class="empty">'+esc(t('noBookmarks'))+'</p>')+'</div>';
+    return '<div class="page-head"><p class="eyebrow">03 / '+esc(t('progress'))+'</p><h1>'+esc(t('progressTitle'))+'</h1><p>'+esc(t('progressSub'))+'</p></div>'+careerPanel()+metrics(state.history)+'<div class="actions" style="margin-bottom:25px"><button class="btn primary" data-action="revenge">🔁 '+esc(t('revenge'))+' ('+missedCases().length+')</button><button class="btn quiet" data-action="export" '+(!hasProgress(state)?'disabled':'')+'>'+esc(t('export'))+' ↓</button><button class="btn quiet" data-action="import">'+esc(t('importSave'))+' ↑</button><input type="file" id="save-file" accept=".json,application/json" hidden><button class="btn quiet danger" data-action="reset-dialog">'+esc(t('reset'))+'</button>'+(state.session?'<button class="btn" data-action="resume">'+esc(t('resume'))+' →</button>':'')+'</div><p class="small-note save-note">'+esc(t('saveHelp'))+'</p><div class="progress-grid"><section class="progress-panel"><h2>'+esc(t('byDuty'))+'</h2>'+PLAYABLE.map(d=>({id:d,title:dutyName(d)})).map(a=>{const h=state.history.filter(r=>dutyOf(getCase(r.caseId))===a.id);const average=h.length?Math.round(h.reduce((n,r)=>n+pct(r),0)/h.length):0;return '<div class="bar-row"><div class="bar-label"><span>'+esc(a.title)+'</span><span>'+h.length+' · '+(h.length?average+'%':'—')+'</span></div><div class="bar-track" role="meter" aria-label="'+esc(a.title)+'" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+average+'"><div class="bar-fill" style="width:'+average+'%"></div></div></div>';}).join('')+'</section><section class="progress-panel"><h2>'+esc(t('recent'))+'</h2>'+(state.history.length?state.history.slice(-8).reverse().map(r=>historyRow(r)).join(''):'<p class="muted" style="font-size:.8rem">'+esc(t('noHistory'))+'</p>')+'</section></div>'+markedPanel()+topicPanel()+stickerAlbum()+'<div class="section-head"><h2>'+esc(t('bookmarks'))+'</h2></div><div class="case-grid">'+(state.bookmarks.length?state.bookmarks.map(id=>caseCard(getCase(id))).join(''):'<p class="empty">'+esc(t('noBookmarks'))+'</p>')+'</div>';
   }
   function careerPanel() {
     const points=xp(),rank=rankIndex(points),ranks=comedy().careerRanks,next=RANK_XP[rank+1];
@@ -539,7 +618,7 @@
   function render() {
     document.documentElement.lang=state.lang;document.title='Night Shift Academy · '+({en:'Urology',de:'Urologie',es:'Urología'}[state.lang]);
     document.querySelector('.skip').textContent=t('skip');
-    root.innerHTML=header()+'<main class="container" id="main" tabindex="-1">'+(storageFailed?'<div class="storage-banner" role="status">'+esc(t('storageError'))+'</div>':'')+({intro,library,atlas,protocols,progress,sources,play,report}[view]||intro)()+'</main>'+footer();
+    root.innerHTML=header()+'<main class="container" id="main" tabindex="-1">'+(storageFailed?'<div class="storage-banner" role="status">'+esc(t('storageError'))+'</div>':'')+({intro,library,atlas,protocols,classifications:classificationPage,progress,sources,play,report}[view]||intro)()+'</main>'+footer();
   }
   function openDialog(content) {
     document.querySelector('dialog')?.remove();
@@ -603,7 +682,7 @@
   }
   function reviewHistory(id,time) {
     const r=state.history.find(r=>r.caseId===id&&r.completedAt===time),c=getCase(id);if(!r)return;
-    openDialog('<p class="eyebrow">'+esc(t('debrief'))+'</p><h2>'+esc(loc(c.title))+'</h2><div class="debrief-score">'+pct(r)+'<small> / 100</small></div><section class="takeaway"><p>'+esc(loc(c.takeaway))+'</p></section>'+caseVisuals(c)+r.answers.map((ans,i)=>{const step=c.steps[i],option=step.options.find(o=>o.id===ans.optionId);return '<div class="answer-review"><h3>'+esc(loc(step.prompt))+'</h3><p><b>'+esc(t('yourChoice'))+':</b> '+esc(loc(option.text))+'</p><p>'+esc(loc(option.feedback))+'</p>'+preferredAnswer(step,option.id)+optionsExplained(step,step.options.map(o=>o.id),option.id)+'</div>';}).join('')+sourceLinks(c)+'<button class="btn" data-action="close-dialog">'+esc(t('close'))+'</button>');
+    openDialog('<p class="eyebrow">'+esc(t('debrief'))+'</p><h2>'+esc(loc(c.title))+'</h2><div class="debrief-score">'+pct(r)+'<small> / 100</small></div><section class="takeaway"><p>'+esc(loc(c.takeaway))+'</p></section>'+caseVisuals(c)+r.answers.map((ans,i)=>{const step=c.steps[i],option=step.options.find(o=>o.id===ans.optionId);return '<div class="answer-review"><h3>'+esc(loc(step.prompt))+'</h3>'+reviewControls(c,step)+'<p><b>'+esc(t('yourChoice'))+':</b> '+esc(loc(option.text))+'</p><p>'+esc(loc(option.feedback))+'</p>'+preferredAnswer(step,option.id)+optionsExplained(step,step.options.map(o=>o.id),option.id)+'</div>';}).join('')+sourceLinks(c)+'<button class="btn" data-action="close-dialog">'+esc(t('close'))+'</button>');
   }
   function avatarChoices() {
     return '<fieldset class="avatar-field"><legend>'+esc(t('playerAvatar'))+'</legend><div class="avatar-choices">'+[0,1,2].map(i=>'<button class="avatar-choice '+(state.avatar===i?'selected':'')+'" type="button" data-avatar="'+i+'" aria-pressed="'+(state.avatar===i)+'" aria-label="'+esc(t('playerAvatar'))+' '+(i+1)+'">'+A.avatar(i,92)+'</button>').join('')+'</div></fieldset>';
@@ -787,7 +866,7 @@
       const dlg=openDialog('<div class="boss-finish">'+A.portrait('chief',bossCorrect(boss)>=boss.items.length*.8?'smile':'stern',156,state.avatar)+'<h2>'+esc(t('challengeDone'))+'</h2><div class="debrief-score">'+bossCorrect(boss)+'<small> / '+boss.items.length+'</small></div><button class="btn primary" data-action="close-dialog">'+esc(t('dialogNext'))+' ▶</button></div>');dlg.classList.add('boss-modal');return;
     }
     const item=boss.items[boss.index],c=getCase(item.caseId),step=c.steps[item.stepIndex],answer=boss.answers[boss.index],choice=step.options.find(o=>o.id===answer),best=step.options.find(o=>o.id===step.best);
-    const dlg=openDialog('<div class="boss-header">'+A.portrait('chief',answer?(answer===step.best?'smile':'stern'):'stern',106,state.avatar)+'<div><p class="eyebrow">'+esc(t('round'))+' '+(boss.index+1)+' / '+boss.items.length+'</p><h2>'+esc(comedy().staff.chief.name)+'</h2></div></div><p class="boss-intro">'+esc(boss.index===0&&!answer?comedy().chiefQuizIntro:t('challengeExplanation'))+'</p><div class="boss-case"><small>'+esc(loc(getArea(c.area).title))+' · '+esc(c.patient.label?loc(c.patient.label):c.patient.name)+'</small><h3>'+esc(loc(step.prompt))+'</h3></div><div class="options">'+item.order.map((id,i)=>{const option=step.options.find(o=>o.id===id);return '<button class="option '+(answer===id?'chosen':'')+'" data-boss-option="'+id+'" '+(answer?'disabled':'')+'><span class="option-letter">'+String.fromCharCode(65+i)+'</span><span class="option-text">'+esc(loc(option.text))+'</span></button>';}).join('')+'</div>'+(choice?'<div class="feedback '+(answer===step.best?'good':'partial')+'" role="status"><h3>'+esc(t(answer===step.best?'challengeCorrect':'challengeRetry'))+'</h3><p>'+esc(loc(choice.feedback))+'</p>'+(answer!==step.best?'<p class="preferred"><b>'+esc(t('recommended'))+':</b> '+esc(loc(best.text))+'</p>':'')+'<button class="btn primary" data-action="boss-next">'+esc(t('dialogNext'))+' ▶</button></div>':'')+'<p class="small-note">'+esc(t('clockNote'))+'</p>');
+    const dlg=openDialog('<div class="boss-header">'+A.portrait('chief',answer?(answer===step.best?'smile':'stern'):'stern',106,state.avatar)+'<div><p class="eyebrow">'+esc(t('round'))+' '+(boss.index+1)+' / '+boss.items.length+'</p><h2>'+esc(comedy().staff.chief.name)+'</h2></div></div><p class="boss-intro">'+esc(boss.index===0&&!answer?comedy().chiefQuizIntro:t('challengeExplanation'))+'</p><div class="boss-case"><small>'+esc(loc(getArea(c.area).title))+' · '+esc(c.patient.label?loc(c.patient.label):c.patient.name)+'</small><p>'+esc(loc(c.presenting))+'</p><h3>'+esc(loc(step.prompt))+'</h3>'+reviewControls(c,step)+'</div><div class="options">'+item.order.map((id,i)=>{const option=step.options.find(o=>o.id===id);return '<button class="option '+(answer===id?'chosen':'')+'" data-boss-option="'+id+'" '+(answer?'disabled':'')+'><span class="option-letter">'+String.fromCharCode(65+i)+'</span><span class="option-text">'+esc(loc(option.text))+'</span></button>';}).join('')+'</div>'+(choice?'<div class="feedback '+(answer===step.best?'good':'partial')+'" role="status"><h3>'+esc(t(answer===step.best?'challengeCorrect':'challengeRetry'))+'</h3><p>'+esc(loc(choice.feedback))+'</p>'+(answer!==step.best?'<p class="preferred"><b>'+esc(t('recommended'))+':</b> '+esc(loc(best.text))+'</p>':'')+'<button class="btn primary" data-action="boss-next">'+esc(t('dialogNext'))+' ▶</button></div>':'')+'<p class="small-note">'+esc(t('clockNote'))+'</p>');
     dlg.classList.add('boss-modal');
   }
   function answerBoss(id) {
@@ -806,6 +885,10 @@
     if(schemaHit){const figure=schemaHit.closest('.schema'),id=schemaHit.dataset.part||schemaHit.dataset.legendPart;if(figure.dataset.mode==='quiz')answerQuiz(figure,id,schemaHit);else selectPart(figure,id,!!schemaHit.dataset.legendPart);return;}
     const scene=e.target.closest('[data-scene-area],[data-scene-patient],[data-scene-coffee]');if(scene){handleScene(scene);if(scene.dataset.sceneCoffee)checkRewards();return;}
     const b=e.target.closest('button,a[data-view]');if(!b||b.disabled)return;
+    if(b.dataset.reviewToggle){toggleReview(b.closest('.question-review'));return;}
+    if(b.dataset.reviewOpenCase){openReviewQuestion(b.dataset.reviewOpenCase,b.dataset.reviewOpenStep);return;}
+    if(b.dataset.classificationEntity){classificationEntity=b.dataset.classificationEntity;render();document.querySelector('[data-classification-entity="'+classificationEntity+'"]')?.focus({preventScroll:true});return;}
+    if(b.dataset.classificationPractice){const ids=(C.classifications||[]).filter(g=>b.dataset.classificationPractice==='all'||g.id===b.dataset.classificationPractice).flatMap(g=>g.cases);if(ids.length)setup(pickCases(ids.map(getCase),10,'classification-'+b.dataset.classificationPractice,false));return;}
     if(b.dataset.avatar!==undefined){state.avatar=Number(b.dataset.avatar);persist();document.querySelectorAll('[data-avatar]').forEach(el=>{el.classList.toggle('selected',Number(el.dataset.avatar)===state.avatar);el.setAttribute('aria-pressed',String(Number(el.dataset.avatar)===state.avatar));});return;}
     if(b.dataset.talk){talk(b.dataset.talk,castLine(b.dataset.talk));return;}
     if(b.dataset.bossOption){
@@ -855,14 +938,16 @@
       case'wait':E.wait(state.session);persist();render();break;
       case'report':navigate('report');break;
       case'export':exportHistory();break;
+      case'export-review':exportReview();break;
       case'import':document.getElementById('save-file')?.click();break;
       case'load-save':loadSave();break;
       case'saved-only':savedOnly=!savedOnly;libraryPage=0;render();document.querySelector('[data-action="saved-only"]')?.focus({preventScroll:true});break;
       case'close-dialog':document.querySelector('dialog')?.close();break;
       case'reset-dialog':openDialog('<h2>'+esc(t('resetTitle'))+'</h2><p>'+esc(t('resetText'))+'</p><div class="actions"><button class="btn danger" data-action="reset">'+esc(t('resetConfirm'))+'</button><button class="btn quiet" data-action="close-dialog">'+esc(t('cancel'))+'</button></div>');break;
-      case'reset':state.history=[];state.bookmarks=[];state.session=null;state.stats=cleanStats(null);state.badges=[];state.countedShifts=[];persist();document.querySelector('dialog')?.close();render();break;
+      case'reset':state.history=[];state.bookmarks=[];state.reviewFlags=[];state.session=null;state.stats=cleanStats(null);state.badges=[];state.countedShifts=[];persist();document.querySelector('dialog')?.close();render();break;
     }
   });
+  document.addEventListener('input',e=>{if(e.target.dataset?.reviewNote)reviewNote(e.target);});
   document.addEventListener('keydown',e=>{
     if((e.key==='Enter'||e.key===' ')&&e.target.matches('.schema [data-part]')){e.preventDefault();e.target.dispatchEvent(new MouseEvent('click',{bubbles:true}));return;}
     if((e.key==='Enter'||e.key===' ')&&e.target.matches('[data-scene-area],[data-scene-patient],[data-scene-coffee]')){e.preventDefault();handleScene(e.target);}
@@ -905,7 +990,7 @@
     if(chosen&&!customSchedule)state.lastDuty=chosen;
     state.session=cleanSession(Object.assign(session,{duty}));persist();document.querySelector('dialog').close();navigate('play');startOpening();
   });
-  window.addEventListener('hashchange',()=>{const v=location.hash.slice(1);if(v!==view&&['intro','library','atlas','protocols','progress','sources','play','report'].includes(v)){view=v;render();}});
+  window.addEventListener('hashchange',()=>{const v=location.hash.slice(1);if(v!==view&&['intro','library','atlas','protocols','classifications','progress','sources','play','report'].includes(v)){view=v;render();}});
   syncRewards();
   render();
 })();

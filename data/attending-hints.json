@@ -2174,27 +2174,6 @@
       "es": "Pregúntate: ¿qué debe saber Thomas sobre la exploración de hoy, quién va a estudiar el estrechamiento y qué síntomas no pueden esperar a la próxima cita?"
     }
   },
-  "fun-inc-aus-catheter-deactivate-cuff": {
-    "question": {
-      "de": "Der feste Widerstand nach etwa 12 cm ist die geschlossene Manschette in der bulbären Harnröhre. Was musst du am Implantat tun, bevor irgendein Instrument transurethral passiert, und welches Kaliber schont die Harnröhre?",
-      "en": "The firm resistance at about 12 cm is the closed cuff in the bulbar urethra. What must you do to the device before any instrument passes transurethrally, and which calibre spares the urethra?",
-      "es": "La resistencia firme a unos 12 cm es el manguito cerrado en la uretra bulbar. ¿Qué tienes que hacer con el dispositivo antes de que pase cualquier instrumento por vía transuretral, y qué calibre protege la uretra?"
-    }
-  },
-  "fun-inc-pfmt-supervised-after-app": {
-    "question": {
-      "de": "Sechs Wochen App-Training ohne Anleitung bei einer Willkürkontraktion von Oxford 2/5: Zählt das schon als gescheiterte Erstlinientherapie? Überleg, wie lange und in welcher Form das Beckenbodentraining laut Leitlinie erfolgen muss.",
-      "en": "Six weeks of unsupervised app training with a voluntary contraction of Oxford 2/5: does that count as failed first-line therapy? Consider how long and in what form pelvic floor training must be done according to the guidelines.",
-      "es": "Seis semanas de entrenamiento con una app sin supervisión y una contracción voluntaria de Oxford 2/5: ¿cuenta eso como fracaso del tratamiento de primera línea? Piensa cuánto tiempo y de qué forma debe hacerse el entrenamiento del suelo pélvico según las guías."
-    }
-  },
-  "fun-inc-tvt-blasenperforation": {
-    "question": {
-      "de": "Eine intraoperativ erkannte Trokarperforation bei klarem Urin und stabilem Kreislauf ist häufig und heilt mit kurzer Ableitung. Gefährlich ist nur ein Band, das am Ende durch die Blase verläuft: Wie stellst du sicher und belegst, dass es außerhalb der Blase liegt, ohne den Eingriff unnötig zu eskalieren?",
-      "en": "A trocar perforation recognised intraoperatively with clear urine and stable haemodynamics is common and heals with brief drainage. The only danger is a tape that ends up running through the bladder: how do you make sure, and document, that it lies outside the bladder without escalating the procedure unnecessarily?",
-      "es": "Una perforación por el trocar detectada durante la cirugía, con orina clara y hemodinámica estable, es frecuente y cura con un drenaje breve. Lo único peligroso es una banda que acabe atravesando la vejiga: ¿cómo te aseguras, y lo compruebas, de que queda fuera de la vejiga sin escalar innecesariamente la intervención?"
-    }
-  },
   "onc-bladder-adjuvant-after-cystectomy": {
     "adjuvant-choice": {
       "en": "pT3a pN1 without neoadjuvant chemotherapy meets the criteria for adjuvant treatment. Check cisplatin eligibility (eGFR, hearing, neuropathy, heart, ECOG): it sets the ranking of the adjuvant options, not PD-L1 status alone.",
@@ -2525,13 +2504,6 @@
       "es": "Respuesta parcial tras platino con metástasis hepáticas: ¿qué estrategia prolongó la supervivencia global tras respuesta o estabilización con platino, y qué aporta la cirugía con metástasis viscerales?"
     }
   },
-  "q-nmibc-ibcg-intermediate-risk-factor-count": {
-    "question": {
-      "en": "Go through the five IBCG factors one by one against his findings: number of tumours, size, time to recurrence, recurrence frequency and earlier instillation failure. The count decides how intensive and how long the adjuvant therapy has to be.",
-      "de": "Geh die fünf IBCG-Faktoren einzeln an seinen Befunden durch: Tumoranzahl, Größe, Zeit bis zum Rezidiv, Rezidivhäufigkeit und Versagen einer früheren Instillation. Die Zahl entscheidet, wie intensiv und wie lange die adjuvante Therapie sein muss.",
-      "es": "Repasa uno a uno los cinco factores del IBCG con sus hallazgos: número de tumores, tamaño, tiempo hasta la recidiva, frecuencia de recidivas y fracaso de una instilación previa. El recuento decide la intensidad y la duración de la terapia adyuvante."
-    }
-  },
   "q-pca-baseline-psa-intermediate-interval": {
     "question": {
       "en": "The risk-adapted scheme splits baseline PSA at 1.5 and at 3 ng/ml, and each band has its own interval. Where does 2.1 fall, and what happened to the rectal exam in the update?",
@@ -2544,20 +2516,6 @@
       "de": "Zwei Dinge entscheiden: Seine Keimbahnvariante erlaubt den Beginn vor 45, und der erhöhte Wert ist bereits unter sauberen Bedingungen bestätigt. Welche Untersuchung entscheidet im S3-Pfad, ob überhaupt biopsiert wird?",
       "en": "Two things decide here: his germline variant allows a start before 45, and the raised value has already been confirmed under clean conditions. In the S3 pathway, which test decides whether a biopsy is taken at all?",
       "es": "Aquí deciden dos cosas: su variante germinal permite empezar antes de los 45 y el valor elevado ya se ha confirmado en condiciones adecuadas. En la vía de la S3, ¿qué prueba decide si se hace biopsia o no?"
-    }
-  },
-  "q-pca-mhspc-docetaxel-doublet-to-triplet": {
-    "question": {
-      "de": "Beim mHSPC läuft Docetaxel nicht mehr allein mit der ADT. Frag dich, welche Hormonpartner in der Dreierkombination tatsächlich randomisiert gegen ADT plus Docetaxel geprüft wurden.",
-      "en": "In mHSPC, docetaxel no longer runs with ADT alone. Ask yourself which hormonal partners in the three-drug combination were actually tested in randomised trials against ADT plus docetaxel.",
-      "es": "En el CPHSm el docetaxel ya no va solo con la TDA. Pregúntate qué compañeros hormonales de la combinación de tres se compararon realmente en ensayos aleatorizados frente a TDA más docetaxel."
-    }
-  },
-  "q-ped-duplex-ureterocele-vcug-lower-pole-reflux": {
-    "question": {
-      "en": "Think Weigert-Meyer: one ureter of the duplex opens low and medial and obstructs, the other opens high and lateral with a short tunnel. Which problem of the second moiety must you actively look for after a febrile infection?",
-      "de": "Denk an Weigert-Meyer: Ein Harnleiter der Doppelanlage mündet tief und medial und staut, der andere hoch und lateral mit kurzem Tunnel. Welches Problem der zweiten Anlage musst du nach einem fieberhaften Infekt aktiv suchen?",
-      "es": "Piensa en Weigert-Meyer: un uréter del sistema doble desemboca bajo y medial y se obstruye; el otro, alto y lateral con un túnel corto. ¿Qué problema del segundo hemirriñón debes buscar activamente tras una infección febril?"
     }
   },
   "q-pri-ischaemic-40h-mri-necrosis-early-prosthesis": {
@@ -2574,179 +2532,11 @@
       "es": "El límite de 4 horas define el priapismo, pero tras una inyección intracavernosa el tratamiento escalonado empieza antes. ¿Qué encaja en este intervalo y qué debe confirmarse y monitorizarse antes de inyectar un vasoconstrictor en los cuerpos cavernosos?"
     }
   },
-  "q-rcc-belzutifan-grade3-hypoxia-withhold-reduce": {
-    "question": {
-      "en": "Grade the hypoxia by the resting value and check whether imaging shows another cause. The HIF-2α inhibitor itself lowers saturation, and the SmPC links each severity grade to its own reaction.",
-      "de": "Stufe die Hypoxie nach dem Ruhewert ein und prüf, ob die Bildgebung eine andere Ursache zeigt. Der HIF-2α-Hemmer senkt die Sättigung selbst, und die Fachinformation ordnet jedem Schweregrad eine eigene Reaktion zu.",
-      "es": "Gradúa la hipoxia según el valor en reposo y comprueba si la imagen muestra otra causa. El inhibidor de HIF-2α baja la saturación por sí mismo, y la ficha técnica asigna a cada grado de gravedad su propia respuesta."
-    }
-  },
   "q-rcc-sestamibi-positive-biopsy-before-surveillance": {
     "question": {
       "en": "The uptake points to an oncocytic tumour but is not histology, and the data come from small series. Ask yourself what the guideline requires before it accepts watching an oncocytic tumour instead of treating it.",
       "de": "Die Aufnahme deutet auf einen onkozytären Tumor hin, ist aber keine Histologie, und die Daten stammen aus kleinen Serien. Frag dich, was die Leitlinie verlangt, bevor sie das Beobachten statt Behandeln eines onkozytären Tumors akzeptiert.",
       "es": "La captación apunta a un tumor oncocítico, pero no es histología, y los datos proceden de series pequeñas. Pregúntate qué exige la guía antes de aceptar vigilar un tumor oncocítico en lugar de tratarlo."
-    }
-  },
-  "q-stone-cystinuria-tiopronin-after-alkalinisation": {
-    "question": {
-      "en": "Check which steps of the ladder he has already climbed: volume and pH are on target, yet cystine excretion stays above 3 mmol/d and stones recur. What changes the cystine molecule itself?",
-      "de": "Prüfe, welche Stufen er schon genommen hat: Volumen und pH sind im Ziel, trotzdem bleibt die Zystinausscheidung über 3 mmol/d und die Steine kommen wieder. Was verändert das Zystinmolekül selbst?",
-      "es": "Comprueba qué peldaños ya ha subido: volumen y pH están en objetivo, pero la excreción de cistina sigue por encima de 3 mmol/d y los cálculos recidivan. ¿Qué modifica la propia molécula de cistina?"
-    }
-  },
-  "q-stone-uric-acid-alkali-citrate-allopurinol": {
-    "question": {
-      "en": "Two levers decide uric acid prevention: how acidic the urine is and how much uric acid is excreted. Check both against his numbers, keep the pH band below dissolution levels, and remember his heart history when choosing the drug.",
-      "de": "Zwei Stellschrauben entscheiden bei Harnsäuresteinen: wie sauer der Urin ist und wie viel Harnsäure ausgeschieden wird. Prüfe beides an seinen Werten, bleib mit dem pH unter dem Bereich der Chemolyse und denk bei der Medikamentenwahl an sein Herz.",
-      "es": "Dos palancas deciden la prevención de la litiasis úrica: cuán ácida es la orina y cuánto ácido úrico se excreta. Revisa ambas con sus valores, mantén el pH por debajo del rango de disolución y recuerda su historia cardiaca al elegir el fármaco."
-    }
-  },
-  "q-utuc-weak-criterion-size-kidney-sparing": {
-    "question": {
-      "en": "In UTUC, grade is the strongest surrogate; size, multifocality and hydronephrosis carry far less weight. Decide which group of criteria she actually meets and what that means for organ preservation versus radical surgery.",
-      "de": "Beim UTUC ist das Grading der stärkste Surrogatparameter; Größe, Multifokalität und Hydronephrose wiegen deutlich weniger. Überleg, welche Kriteriengruppe sie tatsächlich erfüllt und was das für Organerhalt gegenüber Radikaloperation bedeutet.",
-      "es": "En el CTUS el grado es el subrogado más fuerte; el tamaño, la multifocalidad y la hidronefrosis pesan mucho menos. Piensa qué grupo de criterios cumple realmente y qué implica para la conservación renal frente a la cirugía radical."
-    }
-  },
-  "rt-bladder-tmt-55-20-mitomycin-5fu": {
-    "question": {
-      "en": "With ECOG 1 she can have full trimodal therapy, but look at the creatinine clearance of 42 ml/min and the hearing aids: what does that mean for cisplatin? Which radiosensitiser works without cisplatin (DPD is tested), and which fractionation is shorter with at least equal local control?",
-      "de": "Mit ECOG 1 bekommt sie die volle trimodale Therapie, aber schau auf die Kreatinin-Clearance von 42 ml/min und die Hörgeräte: Was heißt das für Cisplatin? Welche Radiosensibilisierung geht ohne Cisplatin (DPD ist getestet), und welche Fraktionierung ist kürzer und lokal mindestens gleich gut?",
-      "es": "Con ECOG 1 puede recibir la terapia trimodal completa, pero fíjate en el aclaramiento de 42 ml/min y los audífonos: ¿qué implica para el cisplatino? ¿Qué radiosensibilización funciona sin cisplatino (DPD testado) y qué fraccionamiento es más corto con control local al menos igual?"
-    }
-  },
-  "rt-palliative-frail-spine-pain-8gy-single": {
-    "question": {
-      "en": "The metastasis is uncomplicated (SINS 5, no epidural extension, no fracture), and he is ECOG 3 with a prognosis of weeks to months. All conventional schedules relieve pain equally: what burdens him least, and who is stereotactic treatment reserved for?",
-      "de": "Die Metastase ist unkompliziert (SINS 5, keine epidurale Ausdehnung, keine Fraktur), und er hat ECOG 3 mit einer Prognose von Wochen bis Monaten. Alle konventionellen Schemata lindern gleich gut: Was belastet ihn am wenigsten, und wem bleibt die Stereotaxie vorbehalten?",
-      "es": "La metástasis no es complicada (SINS 5, sin extensión epidural, sin fractura) y tiene ECOG 3 con un pronóstico de semanas a meses. Todos los esquemas convencionales alivian igual: ¿qué le supone menos carga y para quién se reserva la estereotaxia?"
-    }
-  },
-  "rt-palliative-mscc-ward-first-hours": {
-    "question": {
-      "en": "Band-like pain, bilateral leg weakness, a sensory level and new residual urine: cord compression until proven otherwise, and walking ability at treatment start decides the outcome. What do you give on suspicion alone, how fast and how far do you image, and who decides with you?",
-      "de": "Gürtelschmerz, beidseitige Beinschwäche, sensibles Niveau und neuer Restharn: Myelonkompression bis zum Beweis des Gegenteils, und die Gehfähigkeit bei Therapiebeginn bestimmt das Ergebnis. Was gibst du schon beim Verdacht, wie schnell und wie weit bildest du ab, wer entscheidet mit?",
-      "es": "Dolor en cinturón, debilidad de ambas piernas, nivel sensitivo y residuo nuevo: compresión medular hasta que se demuestre lo contrario, y la marcha al iniciar el tratamiento decide el pronóstico. ¿Qué das ya ante la sospecha, con qué rapidez y extensión haces la imagen y quién decide contigo?"
-    }
-  },
-  "rt-prostate-bed-acute-toxicity-week-four": {
-    "question": {
-      "en": "Frequency, burning and loose stools in week four are typical acute reactions. Look for red flags: fever, haematuria, rectal bleeding, retention? If they are absent, what do you still rule out, and what do unplanned breaks or stopping below 64 Gy mean for tumour control?",
-      "de": "Pollakisurie, Brennen und weiche Stühle in Woche vier sind typische Akutreaktionen. Such die Alarmzeichen: Fieber, Hämaturie, rektale Blutung, Harnverhalt? Fehlen sie, was schließt du noch aus, und was bedeuten ungeplante Pausen oder ein Abbruch unter 64 Gy für die Tumorkontrolle?",
-      "es": "Polaquiuria, escozor y heces blandas en la cuarta semana son reacciones agudas típicas. Busca signos de alarma: ¿fiebre, hematuria, rectorragia, retención? Si faltan, ¿qué descartas aún y qué suponen las pausas no planificadas o interrumpir por debajo de 64 Gy para el control tumoral?"
-    }
-  },
-  "rt-prostate-igrt-bladder-rectum-preparation": {
-    "question": {
-      "en": "He arrived with an empty bladder and bloating, exactly what should not happen at planning or treatment. Which bladder and rectal filling keeps the prostate stable and the bowel out of the high-dose region, how often must it be reproduced, and what can daily image guidance not correct?",
-      "de": "Er kam mit leerer Blase und Blähungen, genau das soll bei Planung und Bestrahlung nicht sein. Welche Füllung von Blase und Rektum hält die Prostata stabil und den Darm aus dem Hochdosisbereich, wie oft muss sie reproduziert werden, und was gleicht die tägliche Bildführung nicht aus?",
-      "es": "Llegó con la vejiga vacía y gases, justo lo que no debe ocurrir en la planificación ni en el tratamiento. ¿Qué llenado de vejiga y recto mantiene estable la próstata y el intestino fuera de la zona de dosis alta, con qué frecuencia debe reproducirse y qué no puede corregir la imagen diaria?"
-    }
-  },
-  "rt-prostate-intermediate-60gy-short-adt": {
-    "question": {
-      "en": "ISUP 3 means unfavourable intermediate risk. Which moderate hypofractionation was non-inferior in CHHiP (not every arm managed that), which risk groups is 5-fraction SBRT validated for, and how long an ADT course belongs to this risk group?",
-      "de": "ISUP 3 heißt ungünstiges intermediäres Risiko. Welche moderate Hypofraktionierung war in CHHiP nicht unterlegen (nicht jeder Arm hat das geschafft), für welche Risikogruppen ist die SBRT in 5 Fraktionen validiert, und wie lange ADT gehört zu dieser Risikogruppe?",
-      "es": "ISUP 3 significa riesgo intermedio desfavorable. ¿Qué hipofraccionamiento moderado fue no inferior en CHHiP (no todos los brazos lo lograron), para qué grupos de riesgo está validada la SBRT en 5 fracciones y cuánto tiempo de ADT corresponde a este grupo de riesgo?"
-    }
-  },
-  "rt-prostate-mhspc-low-volume-axial-55gy": {
-    "question": {
-      "en": "Work out the metastatic volume by CHAARTED exactly: high volume means visceral disease or at least 4 bone metastases with at least one outside the spine and pelvis. Where are his five lesions, and which target volume was irradiated in STAMPEDE on top of systemic therapy?",
-      "de": "Bestimm die Metastasenlast nach CHAARTED genau: Hohe Last heißt viszeral oder mindestens 4 Knochenmetastasen mit mindestens einer außerhalb von Wirbelsäule und Becken. Wo liegen seine fünf Herde, und welches Zielvolumen wurde in STAMPEDE zusätzlich zur Systemtherapie bestrahlt?",
-      "es": "Determina con precisión la carga metastásica según CHAARTED: alta carga significa metástasis viscerales o al menos 4 óseas con al menos una fuera de columna y pelvis. ¿Dónde están sus cinco lesiones y qué volumen diana se irradió en STAMPEDE además del tratamiento sistémico?"
-    }
-  },
-  "rt-prostate-salvage-early-start-66gy": {
-    "question": {
-      "en": "Two consecutive PSA rises after RP, PSMA PET negative: does EAU 2026 want you to wait for a PSA threshold? And which dose range applies to the prostate bed in 2 Gy fractions, given that escalating beyond it in SAKK 09/10 only added bowel toxicity?",
-      "de": "Zwei konsekutive PSA-Anstiege nach RP, PSMA-PET ohne Befund: Muss man nach EAU 2026 einen PSA-Schwellenwert abwarten? Und welche Dosisspanne gilt für die Prostataloge in 2-Gy-Fraktionen, wenn eine Eskalation darüber in SAKK 09/10 nur mehr Darmtoxizität brachte?",
-      "es": "Dos ascensos consecutivos del PSA tras la PR, PET-PSMA negativo: ¿pide la EAU 2026 esperar a un umbral de PSA? ¿Y qué rango de dosis se aplica al lecho prostático en fracciones de 2 Gy, si escalar por encima en SAKK 09/10 solo añadió toxicidad intestinal?"
-    }
-  },
-  "rt-rcc-primary-sabr-small-inoperable": {
-    "question": {
-      "en": "In SABR for primary RCC, tumour size decides the schedule, with 4 cm as the cut-off. Also remember that the kidney moves with breathing and renal function declines modestly after SABR: what do you need for planning and as baseline work-up?",
-      "de": "Bei der SABR des primären NZK entscheidet die Tumorgröße über das Schema, mit 4 cm als Grenze. Bedenk außerdem, dass die Niere atemverschieblich ist und die Nierenfunktion nach SABR mäßig abnimmt: Was brauchst du für die Planung und vorab an Diagnostik?",
-      "es": "En la SABR del carcinoma renal primario, el tamaño tumoral decide el esquema, con 4 cm como límite. Recuerda además que el riñón se mueve con la respiración y que la función renal disminuye moderadamente tras la SABR: ¿qué necesitas para la planificación y como estudio previo?"
-    }
-  },
-  "rt-seminoma-stage2b-dogleg-boost-36gy": {
-    "question": {
-      "en": "A 3.8 cm node makes this stage IIB. Which drainage regions of a left testis without prior surgery belong electively in the field, does the macroscopic node need more dose than in stage IIA, and under what condition has irradiating only the node actually been studied?",
-      "de": "Ein Knoten von 3,8 cm macht Stadium IIB. Welche Lymphabflussregionen eines linken Hodens ohne Voroperation gehören elektiv ins Feld, braucht die Makrometastase mehr Dosis als im Stadium IIA, und unter welcher Voraussetzung wäre eine Bestrahlung nur des Knotens überhaupt geprüft?",
-      "es": "Un ganglio de 3,8 cm lo convierte en estadio IIB. ¿Qué regiones de drenaje de un testículo izquierdo sin cirugía previa entran de forma electiva en el campo, necesita la metástasis macroscópica más dosis que en el estadio IIA y en qué condición se ha estudiado irradiar solo el ganglio?"
-    }
-  },
-  "sys-ae-abiraterone-mineralocorticoid-excess": {
-    "question": {
-      "de": "Er hat das Prednisolon vor drei Wochen selbst abgesetzt, seitdem Hypokaliämie, Hypertonie und Ödeme. Warum gehört zu Abirateron immer ein Steroid, und erreicht eine ALT knapp unter dem Doppelten schon die Pausenschwelle von mehr als dem Fünffachen der Norm?",
-      "en": "He stopped prednisolone himself three weeks ago, and since then he has hypokalaemia, hypertension and oedema. Why is abiraterone always paired with a steroid, and does an ALT just under twice normal reach the hold threshold of more than five times the upper limit?",
-      "es": "Dejó la prednisolona por su cuenta hace tres semanas y desde entonces tiene hipopotasemia, hipertensión y edemas. ¿Por qué la abiraterona va siempre con un corticoide, y una ALT de casi el doble alcanza ya el umbral de suspensión de más de cinco veces el límite superior?"
-    }
-  },
-  "sys-ae-bleomycin-pneumonitis-dlco": {
-    "question": {
-      "de": "DLCO von 94 auf 62 %, basale Rasselgeräusche und neue Milchglas- und Retikulärzeichnung: Das ist eine Bleomycin-Pneumonitis. Darf Bleomycin danach je wieder gegeben werden, wie komplettierst du die Chemo ohne diese Substanz, und was gilt für die Sauerstoffgabe?",
-      "en": "DLCO down from 94 to 62%, basal crackles and new ground-glass and reticular changes: this is bleomycin pneumonitis. Can bleomycin ever be given again after this, how do you complete chemotherapy without it, and what applies to oxygen?",
-      "es": "DLCO de 94 a 62 %, crepitantes basales y nuevas opacidades en vidrio deslustrado y reticulares: es una neumonitis por bleomicina. ¿Se puede volver a dar bleomicina después de esto, cómo completas la quimioterapia sin ella y qué hay que tener en cuenta con el oxígeno?"
-    }
-  },
-  "sys-ae-enfortumab-vedotin-sjs-ten": {
-    "question": {
-      "de": "Schießscheibenläsionen, schlaffe Blasen, positives Nikolski-Zeichen und Befall von Mund und Augen: Verdacht auf SJS/TEN, ein lebensbedrohliches Bild. Beide Substanzen können es auslösen – welches Setting braucht sie, und ist eine Dosisreduktion hier überhaupt eine Option?",
-      "en": "Target lesions, flaccid blisters, a positive Nikolsky sign and oral and ocular involvement: suspected SJS/TEN, a life-threatening picture. Both drugs can cause it; what setting does she need, and is a dose reduction an option at all here?",
-      "es": "Lesiones en diana, ampollas flácidas, signo de Nikolsky positivo y afectación oral y ocular: sospecha de SSJ/NET, un cuadro potencialmente mortal. Ambos fármacos pueden causarlo; ¿qué entorno asistencial necesita, y es siquiera una opción reducir la dosis?"
-    }
-  },
-  "sys-ae-ifosfamide-encephalopathy-mesna": {
-    "question": {
-      "de": "Somnolenz, Halluzinationen und Myoklonien unter laufender Ifosfamid-Infusion bei Albumin 2,7 g/dl und ohne metabolische Ursache: typische Ifosfamid-Enzephalopathie. Was machst du mit der Infusion, welches Antidot gibt es, und wovor schützt Mesna weiterhin?",
-      "en": "Somnolence, hallucinations and myoclonus during the ifosfamide infusion with albumin 2.7 g/dl and no metabolic cause: classic ifosfamide encephalopathy. What do you do with the infusion, which antidote exists, and what does mesna still protect against?",
-      "es": "Somnolencia, alucinaciones y mioclonías durante la infusión de ifosfamida con albúmina de 2,7 g/dl y sin causa metabólica: encefalopatía típica por ifosfamida. ¿Qué haces con la infusión, qué antídoto existe y de qué sigue protegiendo el mesna?"
-    }
-  },
-  "sys-prot-avelumab-maintenance-order": {
-    "question": {
-      "de": "Partielle Remission nach Platin, letzte Chemo vor fünf Wochen: Liegt sie im Startfenster der Erhaltung von 4–10 Wochen? Prüf außerdem Fixdosis gegen kg-Dosis, das Intervall und vor welchen Infusionen die Prämedikation gegen Infusionsreaktionen vorgeschrieben ist.",
-      "en": "Partial response after platinum, last chemotherapy five weeks ago: is she within the 4–10-week start window for maintenance? Also check fixed versus weight-based dosing, the interval, and before which infusions premedication against infusion reactions is mandatory.",
-      "es": "Respuesta parcial tras platino, última quimioterapia hace cinco semanas: ¿está dentro de la ventana de inicio del mantenimiento de 4–10 semanas? Comprueba además dosis fija frente a dosis por kg, el intervalo y antes de qué infusiones es obligatoria la premedicación contra reacciones infusionales."
-    }
-  },
-  "sys-prot-bcg-maintenance-schedule-high-risk": {
-    "question": {
-      "de": "Hohes Risiko und gute Verträglichkeit: Wie lange soll die BCG-Erhaltung nach dem SWOG-Schema laufen, in welchem Rhythmus folgen die Dreierserien nach Monat 6, und wie viele Instillationen sind es insgesamt höchstens?",
-      "en": "High risk and good tolerance: how long should BCG maintenance run on the SWOG schedule, at what rhythm do the three-instillation series follow after month 6, and what is the maximum total number of instillations?",
-      "es": "Riesgo alto y buena tolerancia: ¿cuánto debe durar el mantenimiento con BCG según el esquema SWOG, con qué ritmo siguen las series de tres instilaciones después del mes 6, y cuántas instilaciones son como máximo en total?"
-    }
-  },
-  "sys-prot-bep-intermediate-cycle1-order": {
-    "question": {
-      "de": "Die intermediäre Prognose nach IGCCCG bestimmt die Zyklenzahl. Prüf dann jede Substanz einzeln: Dosierst du nach tatsächlicher KOF ohne Kappung, ist Bleomycin eine m²- oder eine Absolutdosis, an welchen Tagen, und bleibt die kumulative Dosis unter 400 mg?",
-      "en": "Intermediate IGCCCG prognosis determines the number of cycles. Then check each drug: do you dose on actual BSA without capping, is bleomycin a per-m² or a flat dose, on which days, and does the cumulative dose stay below 400 mg?",
-      "es": "El pronóstico intermedio según IGCCCG determina el número de ciclos. Luego revisa cada fármaco: ¿dosificas según la superficie corporal real sin tope, la bleomicina es una dosis por m² o fija, en qué días, y la dosis acumulada queda por debajo de 400 mg?"
-    }
-  },
-  "sys-prot-ev-pembro-dose-cap": {
-    "question": {
-      "de": "112 kg: Enfortumab Vedotin wird nach tatsächlichem Körpergewicht dosiert, hat aber ab 100 kg eine Obergrenze. Prüf außerdem die Gabetage im 21-Tage-Zyklus und die Reihenfolge der beiden Substanzen an Tag 1.",
-      "en": "112 kg: enfortumab vedotin is dosed on actual body weight but has a cap from 100 kg. Also check the dosing days in the 21-day cycle and the order of the two drugs on day 1.",
-      "es": "112 kg: el enfortumab vedotina se dosifica por peso real, pero tiene un tope a partir de 100 kg. Revisa además los días de administración en el ciclo de 21 días y el orden de los dos fármacos el día 1."
-    }
-  },
-  "sys-prot-pout-carboplatin-calvert": {
-    "question": {
-      "de": "GFR der Einzelniere 42 ml/min, also unter der Cisplatin-Schwelle von 50, aber über 30. Welches Platin ist dann vorgesehen, und rechne die Calvert-Formel genau nach: Was wird zur GFR addiert, bevor du mit der AUC multiplizierst?",
-      "en": "GFR of the solitary kidney is 42 ml/min, below the cisplatin threshold of 50 but above 30. Which platinum is then indicated, and work through the Calvert formula carefully: what is added to the GFR before you multiply by the AUC?",
-      "es": "El FG del riñón único es de 42 ml/min, por debajo del umbral de 50 para cisplatino pero por encima de 30. ¿Qué platino está indicado entonces? Calcula con cuidado la fórmula de Calvert: ¿qué se suma al FG antes de multiplicar por el AUC?"
-    }
-  },
-  "sys-prot-sipi-mitomycin-order-after-turb": {
-    "question": {
-      "de": "Komplette TUR-B, keine Perforation, keine spülpflichtige Blutung, 45 Minuten nach OP-Ende: Alle Voraussetzungen für die Frühinstillation sind erfüllt. Welches Zeitfenster zählt für die Wirksamkeit, und welche Dosis und Verweildauer sind für die Einmalgabe Standard?",
-      "en": "Complete TURBT, no perforation, no bleeding requiring irrigation, 45 minutes after the end of surgery: all requirements for early instillation are met. Which time window matters for efficacy, and what dose and dwell time are standard for the single dose?",
-      "es": "RTU completa, sin perforación ni sangrado que requiera lavado, 45 minutos tras terminar la cirugía: se cumplen todos los requisitos para la instilación precoz. ¿Qué ventana temporal importa para la eficacia, y qué dosis y tiempo de permanencia son estándar para la dosis única?"
     }
   },
   "theatre-checklist": {
@@ -3301,6 +3091,216 @@
       "de": "Unterscheide den sensiblen Weg für Berührung und Schmerz von den autonomen Wegen zur Erektion.",
       "en": "Distinguish touch-and-pain sensation from autonomic pathways controlling erection.",
       "es": "Distingue sensibilidad de tacto y dolor de las vías autónomas que controlan erección."
+    }
+  },
+  "staging-trauma-01": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
+    }
+  },
+  "staging-trauma-02": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
+    }
+  },
+  "staging-trauma-03": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
+    }
+  },
+  "staging-trauma-04": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
+    }
+  },
+  "staging-trauma-05": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
+    }
+  },
+  "staging-trauma-06": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
+    }
+  },
+  "staging-trauma-07": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
+    }
+  },
+  "staging-trauma-08": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
+    }
+  },
+  "staging-trauma-09": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
+    }
+  },
+  "staging-trauma-10": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
+    }
+  },
+  "staging-trauma-11": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
+    }
+  },
+  "staging-trauma-12": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
+    }
+  },
+  "staging-trauma-13": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
+    }
+  },
+  "staging-trauma-14": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
+    }
+  },
+  "staging-trauma-15": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
+    }
+  },
+  "staging-trauma-16": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
+    }
+  },
+  "staging-trauma-17": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
+    }
+  },
+  "staging-trauma-18": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
+    }
+  },
+  "staging-trauma-19": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
+    }
+  },
+  "staging-trauma-20": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
+    }
+  },
+  "staging-trauma-21": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
+    }
+  },
+  "staging-trauma-22": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
+    }
+  },
+  "staging-trauma-23": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
+    }
+  },
+  "staging-trauma-24": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
+    }
+  },
+  "staging-trauma-25": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
+    }
+  },
+  "staging-trauma-26": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
+    }
+  },
+  "staging-trauma-27": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
+    }
+  },
+  "staging-trauma-28": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
+    }
+  },
+  "staging-trauma-29": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
+    }
+  },
+  "staging-trauma-30": {
+    "classification-decision": {
+      "de": "Prüfe den Untersuchungszeitpunkt und die anatomische Struktur. Entscheidend ist das höchste sicher belegte Kriterium der ausdrücklich genannten Tabelle.",
+      "en": "Check assessment timing and the anatomical structure. Use the highest securely demonstrated criterion in the explicitly stated table.",
+      "es": "Revisa momento de evaluación y estructura anatómica. Usa el criterio más alto demostrado con certeza de la tabla indicada."
     }
   }
 }

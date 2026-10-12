@@ -1,0 +1,2265 @@
+{
+  "version": 1,
+  "checked": "2026-10-12",
+  "guides": [
+    {
+      "id": "rcc",
+      "kind": "tumour",
+      "title": {
+        "de": "Nierenzellkarzinom",
+        "en": "Renal cell carcinoma",
+        "es": "Carcinoma renal"
+      },
+      "edition": "EAU 2026 · TNM 8 (2017)",
+      "sections": [
+        {
+          "title": {
+            "de": "T: Primärtumor",
+            "en": "T: primary tumour",
+            "es": "T: tumor primario"
+          },
+          "rows": [
+            {
+              "code": "TX",
+              "description": {
+                "de": "Primärtumor nicht beurteilbar.",
+                "en": "Primary tumour cannot be assessed.",
+                "es": "Tumor primario no evaluable."
+              }
+            },
+            {
+              "code": "T0",
+              "description": {
+                "de": "Kein Primärtumor nachweisbar.",
+                "en": "No primary tumour identified.",
+                "es": "Sin tumor primario detectable."
+              }
+            },
+            {
+              "code": "T1a",
+              "description": {
+                "de": "≤4 cm, auf die Niere begrenzt.",
+                "en": "≤4 cm, confined to kidney.",
+                "es": "≤4 cm, limitado al riñón."
+              }
+            },
+            {
+              "code": "T1b",
+              "description": {
+                "de": ">4 bis ≤7 cm, auf die Niere begrenzt.",
+                "en": ">4 to ≤7 cm, confined to kidney.",
+                "es": ">4 a ≤7 cm, limitado al riñón."
+              }
+            },
+            {
+              "code": "T2a",
+              "description": {
+                "de": ">7 bis ≤10 cm, auf die Niere begrenzt.",
+                "en": ">7 to ≤10 cm, confined to kidney.",
+                "es": ">7 a ≤10 cm, limitado al riñón."
+              }
+            },
+            {
+              "code": "T2b",
+              "description": {
+                "de": ">10 cm, auf die Niere begrenzt.",
+                "en": ">10 cm, confined to kidney.",
+                "es": ">10 cm, limitado al riñón."
+              }
+            },
+            {
+              "code": "T3a",
+              "description": {
+                "de": "Invasion der Nierenvene/segmentalen Äste, des Kelch-Becken-Systems oder des Sinus-/perirenalen Fetts; innerhalb der Gerota-Faszie.",
+                "en": "Invasion of renal vein/segmental branches, collecting system or sinus/perirenal fat; within Gerota fascia.",
+                "es": "Invasión de vena renal/ramas segmentarias, sistema pielocalicial o grasa sinusal/perirrenal; dentro de Gerota."
+              }
+            },
+            {
+              "code": "T3b",
+              "description": {
+                "de": "Tumorthrombus in der V. cava unterhalb des Zwerchfells, ohne Cava-Wandinvasion.",
+                "en": "Caval tumour thrombus below diaphragm without caval wall invasion.",
+                "es": "Trombo tumoral en cava por debajo del diafragma, sin invasión de su pared."
+              }
+            },
+            {
+              "code": "T3c",
+              "description": {
+                "de": "Cava-Tumorthrombus oberhalb des Zwerchfells oder Invasion der Cava-Wand.",
+                "en": "Caval thrombus above diaphragm or invasion of caval wall.",
+                "es": "Trombo en cava por encima del diafragma o invasión de la pared de la cava."
+              }
+            },
+            {
+              "code": "T4",
+              "description": {
+                "de": "Jenseits der Gerota-Faszie; auch direkte zusammenhängende Invasion der ipsilateralen Nebenniere.",
+                "en": "Beyond Gerota fascia, including direct contiguous invasion of ipsilateral adrenal.",
+                "es": "Más allá de Gerota, incluida invasión directa contigua de la suprarrenal ipsilateral."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "de": "N: regionale Lymphknoten",
+            "en": "N: regional nodes",
+            "es": "N: ganglios regionales"
+          },
+          "rows": [
+            {
+              "code": "NX",
+              "description": {
+                "de": "Regionale Lymphknoten nicht beurteilbar.",
+                "en": "Regional nodes cannot be assessed.",
+                "es": "Ganglios regionales no evaluables."
+              }
+            },
+            {
+              "code": "N0",
+              "description": {
+                "de": "Keine regionalen Lymphknotenmetastasen.",
+                "en": "No regional nodal metastases.",
+                "es": "Sin metástasis ganglionares regionales."
+              }
+            },
+            {
+              "code": "N1",
+              "description": {
+                "de": "Metastase in einem oder mehreren regionalen Lymphknoten.",
+                "en": "One or more regional nodal metastases.",
+                "es": "Metástasis en uno o más ganglios regionales."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "de": "M: Fernmetastasen",
+            "en": "M: distant metastasis",
+            "es": "M: metástasis a distancia"
+          },
+          "rows": [
+            {
+              "code": "M0",
+              "description": {
+                "de": "Keine Fernmetastasen im klinischen Staging. Kein pM0 vergeben.",
+                "en": "No distant metastases on clinical staging. Do not assign pM0.",
+                "es": "Sin metástasis a distancia en la evaluación clínica. No asignar pM0."
+              }
+            },
+            {
+              "code": "M1",
+              "description": {
+                "de": "Fernmetastasen vorhanden.",
+                "en": "Distant metastases present.",
+                "es": "Metástasis a distancia presentes."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "de": "Stadiengruppen",
+            "en": "Stage groups",
+            "es": "Grupos de estadio"
+          },
+          "rows": [
+            {
+              "code": "I",
+              "description": {
+                "de": "T1 N0 M0",
+                "en": "T1 N0 M0",
+                "es": "T1 N0 M0"
+              }
+            },
+            {
+              "code": "II",
+              "description": {
+                "de": "T2 N0 M0",
+                "en": "T2 N0 M0",
+                "es": "T2 N0 M0"
+              }
+            },
+            {
+              "code": "III",
+              "description": {
+                "de": "T3 N0 M0 oder T1–3 N1 M0.",
+                "en": "T3 N0 M0 or T1–3 N1 M0.",
+                "es": "T3 N0 M0 o T1–3 N1 M0."
+              }
+            },
+            {
+              "code": "IV",
+              "description": {
+                "de": "T4 jedes N M0 oder jedes T/N mit M1.",
+                "en": "T4 any N M0 or any T/N with M1.",
+                "es": "T4 cualquier N M0 o cualquier T/N con M1."
+              }
+            }
+          ]
+        }
+      ],
+      "cautions": {
+        "de": "cT stammt aus klinischer Untersuchung/Bildgebung; pT aus Histologie nach Resektion. Kleine Tumoren können durch Invasion T3a sein. Eine getrennte Nebennierenmetastase ist M1, keine direkte T4-Invasion.",
+        "en": "cT comes from clinical/imaging assessment; pT from resection histology. A small invasive tumour may be T3a. A separate adrenal metastasis is M1, not contiguous T4 invasion.",
+        "es": "cT procede de la evaluación clínica/radiológica; pT de histología tras resección. Un tumor pequeño invasivo puede ser T3a. Una metástasis suprarrenal separada es M1, no invasión contigua T4."
+      },
+      "references": [
+        "classification-rcc"
+      ],
+      "cases": [
+        "staging-trauma-01",
+        "staging-trauma-02",
+        "staging-trauma-03",
+        "staging-trauma-04"
+      ],
+      "clinicalSignoffLanguages": [],
+      "schema": "tnm-rcc"
+    },
+    {
+      "id": "bladder",
+      "kind": "tumour",
+      "title": {
+        "de": "Harnblasenkarzinom",
+        "en": "Bladder carcinoma",
+        "es": "Carcinoma vesical"
+      },
+      "edition": "EAU 2026 · TNM 9 (2025)",
+      "sections": [
+        {
+          "title": {
+            "de": "T: Primärtumor",
+            "en": "T: primary tumour",
+            "es": "T: tumor primario"
+          },
+          "rows": [
+            {
+              "code": "TX",
+              "description": {
+                "de": "Primärtumor nicht beurteilbar.",
+                "en": "Primary tumour cannot be assessed.",
+                "es": "Tumor primario no evaluable."
+              }
+            },
+            {
+              "code": "T0",
+              "description": {
+                "de": "Kein Primärtumor nachweisbar.",
+                "en": "No primary tumour identified.",
+                "es": "Sin tumor primario detectable."
+              }
+            },
+            {
+              "code": "Ta",
+              "description": {
+                "de": "Nichtinvasives papilläres Karzinom.",
+                "en": "Non-invasive papillary carcinoma.",
+                "es": "Carcinoma papilar no invasivo."
+              }
+            },
+            {
+              "code": "Tis",
+              "description": {
+                "de": "Flaches Carcinoma in situ.",
+                "en": "Flat carcinoma in situ.",
+                "es": "Carcinoma in situ plano."
+              }
+            },
+            {
+              "code": "T1",
+              "description": {
+                "de": "Subepitheliales Bindegewebe (Lamina propria) infiltriert.",
+                "en": "Invades subepithelial connective tissue (lamina propria).",
+                "es": "Invade tejido conectivo subepitelial (lámina propia)."
+              }
+            },
+            {
+              "code": "T2a",
+              "description": {
+                "de": "Innere Hälfte der Muscularis propria infiltriert.",
+                "en": "Invades inner half of muscularis propria.",
+                "es": "Invade mitad interna de muscular propia."
+              }
+            },
+            {
+              "code": "T2b",
+              "description": {
+                "de": "Äußere Hälfte der Muscularis propria infiltriert.",
+                "en": "Invades outer half of muscularis propria.",
+                "es": "Invade mitad externa de muscular propia."
+              }
+            },
+            {
+              "code": "T3a",
+              "description": {
+                "de": "Perivesikales Gewebe nur mikroskopisch infiltriert.",
+                "en": "Microscopic invasion of perivesical tissue.",
+                "es": "Invasión microscópica del tejido perivesical."
+              }
+            },
+            {
+              "code": "T3b",
+              "description": {
+                "de": "Makroskopisch erkennbare extravesikale Masse.",
+                "en": "Gross extravesical tumour mass.",
+                "es": "Masa extravesical macroscópica."
+              }
+            },
+            {
+              "code": "T4a",
+              "description": {
+                "de": "Invasion von Prostatastroma, Samenblase, Uterus oder Vagina.",
+                "en": "Invades prostatic stroma, seminal vesicle, uterus or vagina.",
+                "es": "Invade estroma prostático, vesícula seminal, útero o vagina."
+              }
+            },
+            {
+              "code": "T4b",
+              "description": {
+                "de": "Becken- oder Bauchwand infiltriert.",
+                "en": "Invades pelvic or abdominal wall.",
+                "es": "Invade pared pélvica o abdominal."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "de": "N: regionale Lymphknoten",
+            "en": "N: regional nodes",
+            "es": "N: ganglios regionales"
+          },
+          "rows": [
+            {
+              "code": "NX",
+              "description": {
+                "de": "Regionale Lymphknoten nicht beurteilbar.",
+                "en": "Regional nodes cannot be assessed.",
+                "es": "Ganglios regionales no evaluables."
+              }
+            },
+            {
+              "code": "N0",
+              "description": {
+                "de": "Keine regionalen Lymphknotenmetastasen.",
+                "en": "No regional nodal metastases.",
+                "es": "Sin metástasis ganglionares regionales."
+              }
+            },
+            {
+              "code": "N1",
+              "description": {
+                "de": "Ein regionaler Lymphknoten im kleinen Becken.",
+                "en": "One regional node in true pelvis.",
+                "es": "Un ganglio regional en pelvis menor."
+              }
+            },
+            {
+              "code": "N2",
+              "description": {
+                "de": "Mehrere regionale Lymphknoten im kleinen Becken.",
+                "en": "Multiple regional nodes in true pelvis.",
+                "es": "Varios ganglios regionales en pelvis menor."
+              }
+            },
+            {
+              "code": "N3",
+              "description": {
+                "de": "Lymphknoten an der A. iliaca communis.",
+                "en": "Common iliac nodes involved.",
+                "es": "Ganglios ilíacos comunes afectados."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "de": "M: Fernmetastasen",
+            "en": "M: distant metastasis",
+            "es": "M: metástasis a distancia"
+          },
+          "rows": [
+            {
+              "code": "M0",
+              "description": {
+                "de": "Keine Fernmetastasen im klinischen Staging. Kein pM0 vergeben.",
+                "en": "No distant metastases on clinical staging. Do not assign pM0.",
+                "es": "Sin metástasis a distancia en la evaluación clínica. No asignar pM0."
+              }
+            },
+            {
+              "code": "M1a",
+              "description": {
+                "de": "Nichtregionale Lymphknotenmetastasen.",
+                "en": "Nonregional nodal metastases.",
+                "es": "Metástasis ganglionares no regionales."
+              }
+            },
+            {
+              "code": "M1b",
+              "description": {
+                "de": "Andere Fernmetastasen, z. B. Leber, Lunge oder Knochen.",
+                "en": "Other distant metastases, e.g. liver, lung or bone.",
+                "es": "Otras metástasis a distancia, p. ej. hígado, pulmón o hueso."
+              }
+            }
+          ]
+        }
+      ],
+      "cautions": {
+        "de": "Muscularis mucosae ist nicht Muscularis propria. T2a/b verlangt verlässliche Schichtzuordnung; TUR-B kann diese nicht immer liefern. Urotheliales CIS der prostatischen Urethra/Drüsen ist nicht allein ein Blasen-pT4a.",
+        "en": "Muscularis mucosae is not muscularis propria. T2a/b requires reliable depth assessment, not always available from TURBT. Prostatic urethral/ductal CIS alone is not bladder pT4a.",
+        "es": "Muscular de la mucosa no es muscular propia. T2a/b requiere profundidad fiable, no siempre evaluable en RTU. CIS de uretra/conductos prostáticos por sí solo no es pT4a vesical."
+      },
+      "references": [
+        "classification-bladder"
+      ],
+      "cases": [
+        "staging-trauma-05",
+        "staging-trauma-06",
+        "staging-trauma-07"
+      ],
+      "clinicalSignoffLanguages": [],
+      "schema": "tnm-bladder"
+    },
+    {
+      "id": "prostate",
+      "kind": "tumour",
+      "title": {
+        "de": "Prostatakarzinom",
+        "en": "Prostate carcinoma",
+        "es": "Carcinoma prostático"
+      },
+      "edition": "EAU 2026 · UICC TNM 8",
+      "sections": [
+        {
+          "title": {
+            "de": "cT: klinisch, nach DRU",
+            "en": "cT: clinical, based on DRE",
+            "es": "cT: clínico, según tacto rectal"
+          },
+          "rows": [
+            {
+              "code": "TX",
+              "description": {
+                "de": "Primärtumor nicht beurteilbar.",
+                "en": "Primary tumour cannot be assessed.",
+                "es": "Tumor primario no evaluable."
+              }
+            },
+            {
+              "code": "T0",
+              "description": {
+                "de": "Kein Primärtumor nachweisbar.",
+                "en": "No primary tumour identified.",
+                "es": "Sin tumor primario detectable."
+              }
+            },
+            {
+              "code": "cT1a",
+              "description": {
+                "de": "Nicht tastbarer Zufallsbefund in ≤5 % des resezierten Gewebes.",
+                "en": "Nonpalpable incidental tumour in ≤5% of resected tissue.",
+                "es": "Hallazgo incidental no palpable en ≤5% del tejido resecado."
+              }
+            },
+            {
+              "code": "cT1b",
+              "description": {
+                "de": "Nicht tastbarer Zufallsbefund in >5 % des resezierten Gewebes.",
+                "en": "Nonpalpable incidental tumour in >5% of resected tissue.",
+                "es": "Hallazgo incidental no palpable en >5% del tejido resecado."
+              }
+            },
+            {
+              "code": "cT1c",
+              "description": {
+                "de": "Nicht tastbar, durch Nadelbiopsie diagnostiziert.",
+                "en": "Nonpalpable, diagnosed by needle biopsy.",
+                "es": "No palpable, diagnosticado por biopsia con aguja."
+              }
+            },
+            {
+              "code": "cT2a",
+              "description": {
+                "de": "Tastbarer Tumor in höchstens der Hälfte eines Lappens.",
+                "en": "Palpable tumour in at most half of one lobe.",
+                "es": "Tumor palpable en como máximo la mitad de un lóbulo."
+              }
+            },
+            {
+              "code": "cT2b",
+              "description": {
+                "de": "Mehr als die Hälfte eines Lappens, aber nicht beide Lappen.",
+                "en": "More than half of one lobe, not both lobes.",
+                "es": "Más de la mitad de un lóbulo, no ambos."
+              }
+            },
+            {
+              "code": "cT2c",
+              "description": {
+                "de": "Beide Lappen betroffen.",
+                "en": "Both lobes involved.",
+                "es": "Afecta ambos lóbulos."
+              }
+            },
+            {
+              "code": "cT3a",
+              "description": {
+                "de": "Extraprostatische Ausbreitung, ohne Samenblaseninvasion.",
+                "en": "Extraprostatic extension without seminal-vesicle invasion.",
+                "es": "Extensión extraprostática sin invasión de vesículas seminales."
+              }
+            },
+            {
+              "code": "cT3b",
+              "description": {
+                "de": "Samenblaseninvasion.",
+                "en": "Seminal-vesicle invasion.",
+                "es": "Invasión de vesículas seminales."
+              }
+            },
+            {
+              "code": "cT4",
+              "description": {
+                "de": "Fixiert oder andere Nachbarstrukturen außer Samenblasen infiltriert, z. B. äußerer Sphinkter, Rektum oder Beckenwand.",
+                "en": "Fixed or invades adjacent structures other than seminal vesicles, e.g. external sphincter, rectum or pelvic wall.",
+                "es": "Fijo o invade estructuras vecinas distintas de vesículas seminales, p. ej. esfínter externo, recto o pared pélvica."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "de": "pT: nach Prostatektomie",
+            "en": "pT: after prostatectomy",
+            "es": "pT: tras prostatectomía"
+          },
+          "rows": [
+            {
+              "code": "pT2",
+              "description": {
+                "de": "Organbegrenzt; keine Unterteilung a/b/c.",
+                "en": "Organ-confined; no a/b/c subdivision.",
+                "es": "Limitado al órgano; sin subdivisión a/b/c."
+              }
+            },
+            {
+              "code": "pT3a",
+              "description": {
+                "de": "Extraprostatische Ausbreitung oder mikroskopische Blasenhalsinvasion.",
+                "en": "Extraprostatic extension or microscopic bladder-neck invasion.",
+                "es": "Extensión extraprostática o invasión microscópica del cuello vesical."
+              }
+            },
+            {
+              "code": "pT3b",
+              "description": {
+                "de": "Samenblaseninvasion.",
+                "en": "Seminal-vesicle invasion.",
+                "es": "Invasión de vesículas seminales."
+              }
+            },
+            {
+              "code": "pT4",
+              "description": {
+                "de": "Invasion anderer Nachbarstrukturen gemäß TNM.",
+                "en": "Invasion of other adjacent structures as defined in TNM.",
+                "es": "Invasión de otras estructuras vecinas según TNM."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "de": "N: regionale Lymphknoten",
+            "en": "N: regional nodes",
+            "es": "N: ganglios regionales"
+          },
+          "rows": [
+            {
+              "code": "NX",
+              "description": {
+                "de": "Regionale Lymphknoten nicht beurteilbar.",
+                "en": "Regional nodes cannot be assessed.",
+                "es": "Ganglios regionales no evaluables."
+              }
+            },
+            {
+              "code": "N0",
+              "description": {
+                "de": "Keine regionalen Lymphknotenmetastasen.",
+                "en": "No regional nodal metastases.",
+                "es": "Sin metástasis ganglionares regionales."
+              }
+            },
+            {
+              "code": "N1",
+              "description": {
+                "de": "Regionale Lymphknoten im kleinen Becken.",
+                "en": "Regional nodes in true pelvis.",
+                "es": "Ganglios regionales en pelvis menor."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "de": "M: Fernmetastasen",
+            "en": "M: distant metastasis",
+            "es": "M: metástasis a distancia"
+          },
+          "rows": [
+            {
+              "code": "M0",
+              "description": {
+                "de": "Keine Fernmetastasen im klinischen Staging. Kein pM0 vergeben.",
+                "en": "No distant metastases on clinical staging. Do not assign pM0.",
+                "es": "Sin metástasis a distancia en la evaluación clínica. No asignar pM0."
+              }
+            },
+            {
+              "code": "M1a",
+              "description": {
+                "de": "Nichtregionale Lymphknoten.",
+                "en": "Nonregional nodes.",
+                "es": "Ganglios no regionales."
+              }
+            },
+            {
+              "code": "M1b",
+              "description": {
+                "de": "Knochenmetastasen.",
+                "en": "Bone metastases.",
+                "es": "Metástasis óseas."
+              }
+            },
+            {
+              "code": "M1c",
+              "description": {
+                "de": "Andere Fernmetastasen mit oder ohne Knochenbefall.",
+                "en": "Other distant sites, with or without bone metastases.",
+                "es": "Otros sitios a distancia con o sin afectación ósea."
+              }
+            }
+          ]
+        }
+      ],
+      "cautions": {
+        "de": "Für EAU-Risikogruppen cT nach DRU angeben, MRT-Stadium zusätzlich dokumentieren. Nach radikaler Prostatektomie kein pT1 vergeben. ISUP-Gruppe, PSA und Risikogruppe getrennt von TNM halten; R1 ist Resektionsstatus, kein T-Stadium.",
+        "en": "For EAU risk groups report DRE-based cT and record MRI extent separately. No pT1 after radical prostatectomy. Keep ISUP, PSA and risk group separate from TNM; R1 describes margins, not T stage.",
+        "es": "Para grupos EAU, registrar cT basado en tacto y extensión por RM aparte. No asignar pT1 tras prostatectomía radical. Separar ISUP, PSA y riesgo de TNM; R1 describe márgenes, no estadio T."
+      },
+      "references": [
+        "classification-prostate"
+      ],
+      "cases": [
+        "staging-trauma-08",
+        "staging-trauma-09",
+        "staging-trauma-10"
+      ],
+      "clinicalSignoffLanguages": [],
+      "schema": "tnm-prostate"
+    },
+    {
+      "id": "utuc",
+      "kind": "tumour",
+      "title": {
+        "de": "Urothelkarzinom des oberen Harntrakts",
+        "en": "Upper tract urothelial carcinoma",
+        "es": "Carcinoma urotelial del tracto superior"
+      },
+      "edition": "EAU 2026 · TNM 2025",
+      "sections": [
+        {
+          "title": {
+            "de": "T: Primärtumor",
+            "en": "T: primary tumour",
+            "es": "T: tumor primario"
+          },
+          "rows": [
+            {
+              "code": "TX",
+              "description": {
+                "de": "Primärtumor nicht beurteilbar.",
+                "en": "Primary tumour cannot be assessed.",
+                "es": "Tumor primario no evaluable."
+              }
+            },
+            {
+              "code": "T0",
+              "description": {
+                "de": "Kein Primärtumor nachweisbar.",
+                "en": "No primary tumour identified.",
+                "es": "Sin tumor primario detectable."
+              }
+            },
+            {
+              "code": "Ta",
+              "description": {
+                "de": "Nichtinvasives papilläres Karzinom.",
+                "en": "Non-invasive papillary carcinoma.",
+                "es": "Carcinoma papilar no invasivo."
+              }
+            },
+            {
+              "code": "Tis",
+              "description": {
+                "de": "Carcinoma in situ.",
+                "en": "Carcinoma in situ.",
+                "es": "Carcinoma in situ."
+              }
+            },
+            {
+              "code": "T1",
+              "description": {
+                "de": "Subepitheliales Bindegewebe infiltriert.",
+                "en": "Subepithelial connective tissue invaded.",
+                "es": "Invade tejido conectivo subepitelial."
+              }
+            },
+            {
+              "code": "T2",
+              "description": {
+                "de": "Muskelschicht infiltriert.",
+                "en": "Muscle layer invaded.",
+                "es": "Invade capa muscular."
+              }
+            },
+            {
+              "code": "T3 – Nierenbecken",
+              "description": {
+                "de": "Über die Muskelschicht hinaus in peripelvines Fett oder Nierenparenchym.",
+                "en": "Beyond muscle into peripelvic fat or renal parenchyma.",
+                "es": "Más allá del músculo a grasa peripiélica o parénquima renal."
+              }
+            },
+            {
+              "code": "T3 – Ureter",
+              "description": {
+                "de": "Über die Muskelschicht hinaus in periureterales Fett.",
+                "en": "Beyond muscle into periureteric fat.",
+                "es": "Más allá del músculo a grasa periureteral."
+              }
+            },
+            {
+              "code": "T4",
+              "description": {
+                "de": "Nachbarorgane oder durch die Niere bis ins perirenale Fett infiltriert.",
+                "en": "Adjacent organs or through kidney into perirenal fat.",
+                "es": "Invade órganos vecinos o atraviesa el riñón hasta grasa perirrenal."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "de": "N: regionale Lymphknoten",
+            "en": "N: regional nodes",
+            "es": "N: ganglios regionales"
+          },
+          "rows": [
+            {
+              "code": "NX",
+              "description": {
+                "de": "Regionale Lymphknoten nicht beurteilbar.",
+                "en": "Regional nodes cannot be assessed.",
+                "es": "Ganglios regionales no evaluables."
+              }
+            },
+            {
+              "code": "N0",
+              "description": {
+                "de": "Keine regionalen Lymphknotenmetastasen.",
+                "en": "No regional nodal metastases.",
+                "es": "Sin metástasis ganglionares regionales."
+              }
+            },
+            {
+              "code": "N1",
+              "description": {
+                "de": "Ein regionaler Lymphknoten, ≤2 cm.",
+                "en": "One regional node, ≤2 cm.",
+                "es": "Un ganglio regional, ≤2 cm."
+              }
+            },
+            {
+              "code": "N2",
+              "description": {
+                "de": "Ein regionaler Lymphknoten >2 cm oder mehrere regionale Lymphknoten.",
+                "en": "One regional node >2 cm or multiple regional nodes.",
+                "es": "Un ganglio regional >2 cm o varios ganglios regionales."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "de": "M: Fernmetastasen",
+            "en": "M: distant metastasis",
+            "es": "M: metástasis a distancia"
+          },
+          "rows": [
+            {
+              "code": "M0",
+              "description": {
+                "de": "Keine Fernmetastasen im klinischen Staging. Kein pM0 vergeben.",
+                "en": "No distant metastases on clinical staging. Do not assign pM0.",
+                "es": "Sin metástasis a distancia en la evaluación clínica. No asignar pM0."
+              }
+            },
+            {
+              "code": "M1",
+              "description": {
+                "de": "Fernmetastasen vorhanden.",
+                "en": "Distant metastases present.",
+                "es": "Metástasis a distancia presentes."
+              }
+            }
+          ]
+        }
+      ],
+      "cautions": {
+        "de": "Regionale Knoten liegen abhängig vom Primärort u. a. am Nierenhilus/retroperitoneal; beim mittleren/distalen Ureter gehören auch Beckenknoten dazu. Invasion des Nierenparenchyms bei Nierenbecken-UC ist T3, nicht automatisch T4.",
+        "en": "Regional drainage depends on primary site, including hilar/retroperitoneal nodes and pelvic nodes for middle/distal ureter. Renal-parenchymal invasion from renal-pelvis UC is T3, not automatically T4.",
+        "es": "Los ganglios regionales dependen del sitio primario: hiliares/retroperitoneales y también pélvicos en uréter medio/distal. Invasión del parénquima por UC piélico es T3, no automáticamente T4."
+      },
+      "references": [
+        "classification-utuc"
+      ],
+      "cases": [
+        "staging-trauma-11",
+        "staging-trauma-12"
+      ],
+      "clinicalSignoffLanguages": [],
+      "schema": "tnm-urogenital"
+    },
+    {
+      "id": "testis",
+      "kind": "tumour",
+      "title": {
+        "de": "Hodentumor: Seminom und Nichtseminom",
+        "en": "Testicular germ-cell tumour: seminoma and nonseminoma",
+        "es": "Tumor germinal testicular: seminoma y no seminoma"
+      },
+      "edition": "EAU 2026 · UICC TNM 9 (2025)",
+      "sections": [
+        {
+          "title": {
+            "de": "T: Primärtumor",
+            "en": "T: primary tumour",
+            "es": "T: tumor primario"
+          },
+          "rows": [
+            {
+              "code": "pTX / pT0",
+              "description": {
+                "de": "Nicht beurteilbar / kein Primärtumor nachweisbar (z. B. Narbe).",
+                "en": "Not assessable / no primary tumour identified (e.g. scar).",
+                "es": "No evaluable / sin tumor primario detectable (p. ej. cicatriz)."
+              }
+            },
+            {
+              "code": "pTis",
+              "description": {
+                "de": "Keimzellneoplasie in situ (GCNIS).",
+                "en": "Germ-cell neoplasia in situ (GCNIS).",
+                "es": "Neoplasia germinal in situ (GCNIS)."
+              }
+            },
+            {
+              "code": "pT1",
+              "description": {
+                "de": "Auf den Hoden begrenzt, ohne lymphovaskuläre Invasion; Albuginea möglich, Tunica vaginalis nicht infiltriert.",
+                "en": "Confined to testis without lymphovascular invasion; albuginea may be involved, vaginalis not invaded.",
+                "es": "Limitado al testículo sin invasión linfovascular; puede afectar albugínea, no invade vaginal."
+              }
+            },
+            {
+              "code": "pT2",
+              "description": {
+                "de": "Lymphovaskuläre Invasion oder Hilusweichgewebe, Epididymis oder Tunica vaginalis infiltriert.",
+                "en": "Lymphovascular invasion or invasion of hilar soft tissue, epididymis or tunica vaginalis.",
+                "es": "Invasión linfovascular o del tejido hiliar, epidídimo o túnica vaginal."
+              }
+            },
+            {
+              "code": "pT3",
+              "description": {
+                "de": "Samenstrang direkt infiltriert.",
+                "en": "Direct invasion of spermatic cord.",
+                "es": "Invasión directa del cordón espermático."
+              }
+            },
+            {
+              "code": "pT4",
+              "description": {
+                "de": "Skrotum infiltriert.",
+                "en": "Scrotum invaded.",
+                "es": "Invade escroto."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "de": "cN / pN: getrennt berichten",
+            "en": "cN / pN: report separately",
+            "es": "cN / pN: informar por separado"
+          },
+          "rows": [
+            {
+              "code": "NX",
+              "description": {
+                "de": "Regionale Lymphknoten nicht beurteilbar.",
+                "en": "Regional nodes cannot be assessed.",
+                "es": "Ganglios regionales no evaluables."
+              }
+            },
+            {
+              "code": "N0",
+              "description": {
+                "de": "Keine regionalen Lymphknotenmetastasen.",
+                "en": "No regional nodal metastases.",
+                "es": "Sin metástasis ganglionares regionales."
+              }
+            },
+            {
+              "code": "cN1",
+              "description": {
+                "de": "Lymphknotenmasse(n) ≤2 cm.",
+                "en": "Nodal mass(es) ≤2 cm.",
+                "es": "Masa(s) ganglionares ≤2 cm."
+              }
+            },
+            {
+              "code": "cN2",
+              "description": {
+                "de": "Masse >2 bis ≤5 cm; EAU-Tabelle nennt auch >5 positive Knoten (keiner >5 cm) oder extranodale Ausbreitung.",
+                "en": "Mass >2 to ≤5 cm; EAU table also lists >5 positive nodes (none >5 cm) or extranodal extension.",
+                "es": "Masa >2 a ≤5 cm; tabla EAU también incluye >5 ganglios positivos (ninguno >5 cm) o extensión extranodal."
+              }
+            },
+            {
+              "code": "cN3 / pN3",
+              "description": {
+                "de": "Lymphknotenmasse >5 cm.",
+                "en": "Nodal mass >5 cm.",
+                "es": "Masa ganglionar >5 cm."
+              }
+            },
+            {
+              "code": "pN1",
+              "description": {
+                "de": "≤5 positive Knoten, keiner >2 cm, ohne extranodale Ausbreitung.",
+                "en": "≤5 positive nodes, none >2 cm, no extranodal extension.",
+                "es": "≤5 ganglios positivos, ninguno >2 cm, sin extensión extranodal."
+              }
+            },
+            {
+              "code": "pN2",
+              "description": {
+                "de": "Masse >2 bis ≤5 cm oder >5 positive Knoten (keiner >5 cm) oder extranodale Ausbreitung.",
+                "en": "Mass >2 to ≤5 cm or >5 positive nodes (none >5 cm) or extranodal extension.",
+                "es": "Masa >2 a ≤5 cm o >5 ganglios positivos (ninguno >5 cm) o extensión extranodal."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "de": "M: Fernmetastasen",
+            "en": "M: distant metastasis",
+            "es": "M: metástasis a distancia"
+          },
+          "rows": [
+            {
+              "code": "M0",
+              "description": {
+                "de": "Keine Fernmetastasen im klinischen Staging. Kein pM0 vergeben.",
+                "en": "No distant metastases on clinical staging. Do not assign pM0.",
+                "es": "Sin metástasis a distancia en la evaluación clínica. No asignar pM0."
+              }
+            },
+            {
+              "code": "M1a",
+              "description": {
+                "de": "Nichtregionale Lymphknoten oder Lungenmetastasen.",
+                "en": "Nonregional nodes or lung metastases.",
+                "es": "Ganglios no regionales o metástasis pulmonares."
+              }
+            },
+            {
+              "code": "M1b",
+              "description": {
+                "de": "Andere Fernmetastasen, z. B. Leber/Knochen/Gehirn.",
+                "en": "Other distant sites, e.g. liver/bone/brain.",
+                "es": "Otros sitios a distancia, p. ej. hígado/hueso/cerebro."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "de": "S: Serum-Tumormarker",
+            "en": "S: serum tumour markers",
+            "es": "S: marcadores séricos"
+          },
+          "rows": [
+            {
+              "code": "SX / S0",
+              "description": {
+                "de": "Nicht verfügbar / alle Marker normal.",
+                "en": "Unavailable / all markers normal.",
+                "es": "No disponibles / todos normales."
+              }
+            },
+            {
+              "code": "S1",
+              "description": {
+                "de": "Mindestens ein Marker erhöht; alle: LDH <1,5×ULN, hCG <5.000 mIU/ml, AFP <1.000 ng/ml.",
+                "en": "At least one elevated; all: LDH <1.5×ULN, hCG <5,000 mIU/mL, AFP <1,000 ng/mL.",
+                "es": "Al menos uno elevado; todos: LDH <1,5×LSN, hCG <5.000 mUI/ml, AFP <1.000 ng/ml."
+              }
+            },
+            {
+              "code": "S2",
+              "description": {
+                "de": "Mindestens einer: LDH 1,5–10×ULN, hCG 5.000–50.000, AFP 1.000–10.000; kein S3-Marker.",
+                "en": "At least one: LDH 1.5–10×ULN, hCG 5,000–50,000, AFP 1,000–10,000; no S3 marker.",
+                "es": "Al menos uno: LDH 1,5–10×LSN, hCG 5.000–50.000, AFP 1.000–10.000; ninguno S3."
+              }
+            },
+            {
+              "code": "S3",
+              "description": {
+                "de": "Mindestens einer: LDH >10×ULN, hCG >50.000 oder AFP >10.000.",
+                "en": "At least one: LDH >10×ULN, hCG >50,000 or AFP >10,000.",
+                "es": "Al menos uno: LDH >10×LSN, hCG >50.000 o AFP >10.000."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "de": "Stadiengruppen",
+            "en": "Stage groups",
+            "es": "Grupos de estadio"
+          },
+          "rows": [
+            {
+              "code": "0 / IA / IB",
+              "description": {
+                "de": "0: pTis N0 M0 S0; IA: pT1 N0 M0 S0; IB: pT2–4 N0 M0 S0.",
+                "en": "0: pTis N0 M0 S0; IA: pT1 N0 M0 S0; IB: pT2–4 N0 M0 S0.",
+                "es": "0: pTis N0 M0 S0; IA: pT1 N0 M0 S0; IB: pT2–4 N0 M0 S0."
+              }
+            },
+            {
+              "code": "IS",
+              "description": {
+                "de": "N0 M0 mit nach Orchiektomie persistierend erhöhten/steigenden Markern, S1–3.",
+                "en": "N0 M0 with persistently elevated/rising markers after orchiectomy, S1–3.",
+                "es": "N0 M0 con marcadores persistentemente elevados/ascendentes tras orquiectomía, S1–3."
+              }
+            },
+            {
+              "code": "IIA / IIB / IIC",
+              "description": {
+                "de": "M0 S0–1: N1 / N2 / N3.",
+                "en": "M0 S0–1: N1 / N2 / N3.",
+                "es": "M0 S0–1: N1 / N2 / N3."
+              }
+            },
+            {
+              "code": "IIIA",
+              "description": {
+                "de": "M1a S0–1, jedes N.",
+                "en": "M1a S0–1, any N.",
+                "es": "M1a S0–1, cualquier N."
+              }
+            },
+            {
+              "code": "IIIB",
+              "description": {
+                "de": "N1–3 M0 S2 oder M1a S2.",
+                "en": "N1–3 M0 S2 or M1a S2.",
+                "es": "N1–3 M0 S2 o M1a S2."
+              }
+            },
+            {
+              "code": "IIIC",
+              "description": {
+                "de": "N1–3 M0 S3, M1a S3 oder M1b mit jedem S.",
+                "en": "N1–3 M0 S3, M1a S3 or M1b with any S.",
+                "es": "N1–3 M0 S3, M1a S3 o M1b con cualquier S."
+              }
+            }
+          ]
+        }
+      ],
+      "cautions": {
+        "de": "Marker seriell nach Orchiektomie unter Beachtung der Halbwertszeiten beurteilen; für metastasierte Erkrankung Prächemotherapie-Werte. Höchster Einzelmarker bestimmt S. TNM ist nicht IGCCCG. Die AJCC-8-Seminom-Unterteilung T1a/b wird hier nicht mit UICC vermischt.",
+        "en": "Assess serial post-orchiectomy markers with their half-lives; use prechemotherapy values in metastatic disease. Highest individual marker sets S. TNM is not IGCCCG. Do not mix AJCC-8 seminoma T1a/b into this UICC guide.",
+        "es": "Valorar marcadores seriados tras orquiectomía según semividas; usar valores prequimioterapia en enfermedad metastásica. El marcador más alto determina S. TNM no es IGCCCG. No mezclar subdivisión AJCC-8 del seminoma T1a/b con esta guía UICC."
+      },
+      "references": [
+        "classification-testis"
+      ],
+      "cases": [
+        "staging-trauma-13",
+        "staging-trauma-14",
+        "staging-trauma-15",
+        "staging-trauma-16"
+      ],
+      "clinicalSignoffLanguages": [],
+      "schema": "tnm-testis"
+    },
+    {
+      "id": "penile",
+      "kind": "tumour",
+      "title": {
+        "de": "Peniskarzinom",
+        "en": "Penile carcinoma",
+        "es": "Carcinoma de pene"
+      },
+      "edition": "EAU 2026 · TNM 8/9 (T/N unverändert)",
+      "sections": [
+        {
+          "title": {
+            "de": "T: Primärtumor",
+            "en": "T: primary tumour",
+            "es": "T: tumor primario"
+          },
+          "rows": [
+            {
+              "code": "TX",
+              "description": {
+                "de": "Primärtumor nicht beurteilbar.",
+                "en": "Primary tumour cannot be assessed.",
+                "es": "Tumor primario no evaluable."
+              }
+            },
+            {
+              "code": "T0",
+              "description": {
+                "de": "Kein Primärtumor nachweisbar.",
+                "en": "No primary tumour identified.",
+                "es": "Sin tumor primario detectable."
+              }
+            },
+            {
+              "code": "Tis / Ta",
+              "description": {
+                "de": "CIS / nichtinvasives lokalisiertes Plattenepithelkarzinom.",
+                "en": "CIS / non-invasive localised squamous carcinoma.",
+                "es": "CIS / carcinoma escamoso localizado no invasivo."
+              }
+            },
+            {
+              "code": "T1a",
+              "description": {
+                "de": "Subepitheliales Bindegewebe; keine LVI/PNI, nicht schlecht differenziert.",
+                "en": "Subepithelial connective tissue; no LVI/PNI, not poorly differentiated.",
+                "es": "Tejido conectivo subepitelial; sin ILV/IPN, no pobremente diferenciado."
+              }
+            },
+            {
+              "code": "T1b",
+              "description": {
+                "de": "Subepitheliales Bindegewebe mit LVI, PNI oder schlechter Differenzierung.",
+                "en": "Subepithelial connective tissue with LVI, PNI or poor differentiation.",
+                "es": "Tejido conectivo subepitelial con ILV, IPN o pobre diferenciación."
+              }
+            },
+            {
+              "code": "T2",
+              "description": {
+                "de": "Corpus spongiosum infiltriert, mit oder ohne Urethrabefall.",
+                "en": "Corpus spongiosum invaded, with or without urethral invasion.",
+                "es": "Invade cuerpo esponjoso, con o sin invasión uretral."
+              }
+            },
+            {
+              "code": "T3",
+              "description": {
+                "de": "Corpus cavernosum infiltriert, mit oder ohne Urethrabefall.",
+                "en": "Corpus cavernosum invaded, with or without urethral invasion.",
+                "es": "Invade cuerpo cavernoso, con o sin invasión uretral."
+              }
+            },
+            {
+              "code": "T4",
+              "description": {
+                "de": "Weitere Nachbarstrukturen infiltriert.",
+                "en": "Other adjacent structures invaded.",
+                "es": "Invade otras estructuras vecinas."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "de": "cN: Untersuchung/Bildgebung",
+            "en": "cN: examination/imaging",
+            "es": "cN: exploración/imagen"
+          },
+          "rows": [
+            {
+              "code": "NX",
+              "description": {
+                "de": "Regionale Lymphknoten nicht beurteilbar.",
+                "en": "Regional nodes cannot be assessed.",
+                "es": "Ganglios regionales no evaluables."
+              }
+            },
+            {
+              "code": "N0",
+              "description": {
+                "de": "Keine regionalen Lymphknotenmetastasen.",
+                "en": "No regional nodal metastases.",
+                "es": "Sin metástasis ganglionares regionales."
+              }
+            },
+            {
+              "code": "cN1",
+              "description": {
+                "de": "Ein mobiler einseitiger inguinaler Knoten.",
+                "en": "One mobile unilateral inguinal node.",
+                "es": "Un ganglio inguinal móvil unilateral."
+              }
+            },
+            {
+              "code": "cN2",
+              "description": {
+                "de": "Mehrere mobile einseitige oder beidseitige inguinale Knoten.",
+                "en": "Multiple mobile unilateral or bilateral inguinal nodes.",
+                "es": "Varios ganglios inguinales móviles unilaterales o bilaterales."
+              }
+            },
+            {
+              "code": "cN3",
+              "description": {
+                "de": "Fixierte inguinale Masse oder Beckenknoten.",
+                "en": "Fixed inguinal mass or pelvic nodes.",
+                "es": "Masa inguinal fija o ganglios pélvicos."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "de": "pN: nach Histologie",
+            "en": "pN: after histology",
+            "es": "pN: tras histología"
+          },
+          "rows": [
+            {
+              "code": "pN0",
+              "description": {
+                "de": "Keine Metastasen.",
+                "en": "No metastases.",
+                "es": "Sin metástasis."
+              }
+            },
+            {
+              "code": "pN1",
+              "description": {
+                "de": "1–2 einseitige inguinale Knoten, keine extranodale Ausbreitung.",
+                "en": "1–2 unilateral inguinal nodes, no extranodal extension.",
+                "es": "1–2 ganglios inguinales unilaterales, sin extensión extranodal."
+              }
+            },
+            {
+              "code": "pN2",
+              "description": {
+                "de": "≥3 einseitige oder beidseitige inguinale Knoten, keine extranodale Ausbreitung.",
+                "en": "≥3 unilateral or bilateral inguinal nodes, no extranodal extension.",
+                "es": "≥3 ganglios inguinales unilaterales o bilaterales, sin extensión extranodal."
+              }
+            },
+            {
+              "code": "pN3",
+              "description": {
+                "de": "Beckenknoten oder extranodale Ausbreitung.",
+                "en": "Pelvic nodes or extranodal extension.",
+                "es": "Ganglios pélvicos o extensión extranodal."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "de": "M: Fernmetastasen",
+            "en": "M: distant metastasis",
+            "es": "M: metástasis a distancia"
+          },
+          "rows": [
+            {
+              "code": "M0",
+              "description": {
+                "de": "Keine Fernmetastasen im klinischen Staging. Kein pM0 vergeben.",
+                "en": "No distant metastases on clinical staging. Do not assign pM0.",
+                "es": "Sin metástasis a distancia en la evaluación clínica. No asignar pM0."
+              }
+            },
+            {
+              "code": "M1",
+              "description": {
+                "de": "Fernmetastasen vorhanden.",
+                "en": "Distant metastases present.",
+                "es": "Metástasis a distancia presentes."
+              }
+            }
+          ]
+        }
+      ],
+      "cautions": {
+        "de": "Urethrabefall allein macht T2 nicht zu T3. Klinisches cN1 und pathologisches pN1 haben unterschiedliche Kriterien. LVI = lymphovaskuläre, PNI = perineurale Invasion.",
+        "en": "Urethral invasion alone does not turn T2 into T3. Clinical cN1 and pathological pN1 have different criteria. LVI means lymphovascular and PNI perineural invasion.",
+        "es": "Invasión uretral por sí sola no convierte T2 en T3. cN1 y pN1 tienen criterios distintos. ILV es invasión linfovascular e IPN perineural."
+      },
+      "references": [
+        "classification-penile"
+      ],
+      "cases": [
+        "staging-trauma-17",
+        "staging-trauma-18"
+      ],
+      "clinicalSignoffLanguages": [],
+      "schema": "male-urethra-penis"
+    },
+    {
+      "id": "urethral",
+      "kind": "tumour",
+      "title": {
+        "de": "Primäres Urethrakarzinom",
+        "en": "Primary urethral carcinoma",
+        "es": "Carcinoma uretral primario"
+      },
+      "edition": "EAU 2026 · TNM 8; prostatic UC separately",
+      "sections": [
+        {
+          "title": {
+            "de": "T: Primärtumor",
+            "en": "T: primary tumour",
+            "es": "T: tumor primario"
+          },
+          "rows": [
+            {
+              "code": "TX",
+              "description": {
+                "de": "Primärtumor nicht beurteilbar.",
+                "en": "Primary tumour cannot be assessed.",
+                "es": "Tumor primario no evaluable."
+              }
+            },
+            {
+              "code": "T0",
+              "description": {
+                "de": "Kein Primärtumor nachweisbar.",
+                "en": "No primary tumour identified.",
+                "es": "Sin tumor primario detectable."
+              }
+            },
+            {
+              "code": "Ta / Tis",
+              "description": {
+                "de": "Nichtinvasives papilläres/verruköses Karzinom / CIS.",
+                "en": "Non-invasive papillary/verrucous carcinoma / CIS.",
+                "es": "Carcinoma papilar/verrugoso no invasivo / CIS."
+              }
+            },
+            {
+              "code": "T1",
+              "description": {
+                "de": "Subepitheliales Bindegewebe infiltriert.",
+                "en": "Invades subepithelial connective tissue.",
+                "es": "Invade tejido conectivo subepitelial."
+              }
+            },
+            {
+              "code": "T2",
+              "description": {
+                "de": "Corpus spongiosum, Prostata oder periurethrale Muskulatur infiltriert.",
+                "en": "Invades corpus spongiosum, prostate or periurethral muscle.",
+                "es": "Invade cuerpo esponjoso, próstata o músculo periuretral."
+              }
+            },
+            {
+              "code": "T3",
+              "description": {
+                "de": "Corpus cavernosum, jenseits der Prostatakapsel, vordere Vaginalwand oder Blasenhals infiltriert.",
+                "en": "Invades corpus cavernosum, beyond prostatic capsule, anterior vagina or bladder neck.",
+                "es": "Invade cuerpo cavernoso, más allá de cápsula prostática, vagina anterior o cuello vesical."
+              }
+            },
+            {
+              "code": "T4",
+              "description": {
+                "de": "Weitere Nachbarorgane, z. B. übrige Blase, infiltriert.",
+                "en": "Other adjacent organs, e.g. remaining bladder, invaded.",
+                "es": "Invade otros órganos vecinos, p. ej. resto de vejiga."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "de": "UC der prostatischen Urethra",
+            "en": "UC of prostatic urethra",
+            "es": "UC de uretra prostática"
+          },
+          "rows": [
+            {
+              "code": "Tis pu",
+              "description": {
+                "de": "CIS der prostatischen Urethra.",
+                "en": "CIS of prostatic urethra.",
+                "es": "CIS de uretra prostática."
+              }
+            },
+            {
+              "code": "Tis pd",
+              "description": {
+                "de": "CIS der prostatischen Drüsengänge.",
+                "en": "CIS of prostatic ducts.",
+                "es": "CIS de conductos prostáticos."
+              }
+            },
+            {
+              "code": "T1 / T2",
+              "description": {
+                "de": "Subepitheliales Bindegewebe / Prostatastroma infiltriert.",
+                "en": "Subepithelial connective tissue / prostatic stroma invaded.",
+                "es": "Invade tejido conectivo subepitelial / estroma prostático."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "de": "N: regionale Lymphknoten",
+            "en": "N: regional nodes",
+            "es": "N: ganglios regionales"
+          },
+          "rows": [
+            {
+              "code": "NX",
+              "description": {
+                "de": "Regionale Lymphknoten nicht beurteilbar.",
+                "en": "Regional nodes cannot be assessed.",
+                "es": "Ganglios regionales no evaluables."
+              }
+            },
+            {
+              "code": "N0",
+              "description": {
+                "de": "Keine regionalen Lymphknotenmetastasen.",
+                "en": "No regional nodal metastases.",
+                "es": "Sin metástasis ganglionares regionales."
+              }
+            },
+            {
+              "code": "N1",
+              "description": {
+                "de": "Ein regionaler Lymphknoten.",
+                "en": "One regional node.",
+                "es": "Un ganglio regional."
+              }
+            },
+            {
+              "code": "N2",
+              "description": {
+                "de": "Mehrere regionale Lymphknoten.",
+                "en": "Multiple regional nodes.",
+                "es": "Varios ganglios regionales."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "de": "M: Fernmetastasen",
+            "en": "M: distant metastasis",
+            "es": "M: metástasis a distancia"
+          },
+          "rows": [
+            {
+              "code": "M0",
+              "description": {
+                "de": "Keine Fernmetastasen im klinischen Staging. Kein pM0 vergeben.",
+                "en": "No distant metastases on clinical staging. Do not assign pM0.",
+                "es": "Sin metástasis a distancia en la evaluación clínica. No asignar pM0."
+              }
+            },
+            {
+              "code": "M1",
+              "description": {
+                "de": "Fernmetastasen vorhanden.",
+                "en": "Distant metastases present.",
+                "es": "Metástasis a distancia presentes."
+              }
+            }
+          ]
+        }
+      ],
+      "cautions": {
+        "de": "Primärort und Histologie dokumentieren; nicht mit Prostata-Adenokarzinom oder direkt aus der Blase einwachsendem UC verwechseln. Bei Karzinom im Urethraldivertikel ist T2 wegen fehlender periurethraler Muskelschicht nicht anwendbar.",
+        "en": "Document primary site and histology; distinguish prostate adenocarcinoma and bladder UC growing directly into prostate. T2 is not applicable to urethral-diverticulum carcinoma due to absent periurethral muscle.",
+        "es": "Documentar sitio primario e histología; distinguir adenocarcinoma prostático y UC vesical con crecimiento directo a próstata. T2 no es aplicable al carcinoma de divertículo uretral por ausencia de músculo periuretral."
+      },
+      "references": [
+        "classification-urethral"
+      ],
+      "cases": [
+        "staging-trauma-19"
+      ],
+      "clinicalSignoffLanguages": [],
+      "schema": "prostate-sagittal"
+    },
+    {
+      "id": "acc",
+      "kind": "tumour",
+      "title": {
+        "de": "Nebennierenrindenkarzinom",
+        "en": "Adrenocortical carcinoma",
+        "es": "Carcinoma adrenocortical"
+      },
+      "edition": "NCI PDQ · AJCC TNM 8",
+      "sections": [
+        {
+          "title": {
+            "de": "T: Primärtumor",
+            "en": "T: primary tumour",
+            "es": "T: tumor primario"
+          },
+          "rows": [
+            {
+              "code": "TX",
+              "description": {
+                "de": "Primärtumor nicht beurteilbar.",
+                "en": "Primary tumour cannot be assessed.",
+                "es": "Tumor primario no evaluable."
+              }
+            },
+            {
+              "code": "T0",
+              "description": {
+                "de": "Kein Primärtumor nachweisbar.",
+                "en": "No primary tumour identified.",
+                "es": "Sin tumor primario detectable."
+              }
+            },
+            {
+              "code": "T1",
+              "description": {
+                "de": "≤5 cm, auf Nebenniere begrenzt.",
+                "en": "≤5 cm, confined to adrenal.",
+                "es": "≤5 cm, limitado a suprarrenal."
+              }
+            },
+            {
+              "code": "T2",
+              "description": {
+                "de": ">5 cm, auf Nebenniere begrenzt.",
+                "en": ">5 cm, confined to adrenal.",
+                "es": ">5 cm, limitado a suprarrenal."
+              }
+            },
+            {
+              "code": "T3",
+              "description": {
+                "de": "Lokale extraadrenale Invasion, keine Nachbarorganinvasion.",
+                "en": "Local extra-adrenal invasion without adjacent-organ invasion.",
+                "es": "Invasión extraadrenal local sin invadir órganos vecinos."
+              }
+            },
+            {
+              "code": "T4",
+              "description": {
+                "de": "Nachbarorgane oder große Gefäße (Nierenvene/Cava) infiltriert.",
+                "en": "Invades adjacent organs or major vessels (renal vein/cava).",
+                "es": "Invade órganos vecinos o grandes vasos (vena renal/cava)."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "de": "N: regionale Lymphknoten",
+            "en": "N: regional nodes",
+            "es": "N: ganglios regionales"
+          },
+          "rows": [
+            {
+              "code": "NX",
+              "description": {
+                "de": "Regionale Lymphknoten nicht beurteilbar.",
+                "en": "Regional nodes cannot be assessed.",
+                "es": "Ganglios regionales no evaluables."
+              }
+            },
+            {
+              "code": "N0",
+              "description": {
+                "de": "Keine regionalen Lymphknotenmetastasen.",
+                "en": "No regional nodal metastases.",
+                "es": "Sin metástasis ganglionares regionales."
+              }
+            },
+            {
+              "code": "N1",
+              "description": {
+                "de": "Regionale Lymphknotenmetastasen.",
+                "en": "Regional nodal metastases.",
+                "es": "Metástasis ganglionares regionales."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "de": "M: Fernmetastasen",
+            "en": "M: distant metastasis",
+            "es": "M: metástasis a distancia"
+          },
+          "rows": [
+            {
+              "code": "M0",
+              "description": {
+                "de": "Keine Fernmetastasen im klinischen Staging. Kein pM0 vergeben.",
+                "en": "No distant metastases on clinical staging. Do not assign pM0.",
+                "es": "Sin metástasis a distancia en la evaluación clínica. No asignar pM0."
+              }
+            },
+            {
+              "code": "M1",
+              "description": {
+                "de": "Fernmetastasen vorhanden.",
+                "en": "Distant metastases present.",
+                "es": "Metástasis a distancia presentes."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "de": "Stadiengruppen",
+            "en": "Stage groups",
+            "es": "Grupos de estadio"
+          },
+          "rows": [
+            {
+              "code": "I / II",
+              "description": {
+                "de": "T1 N0 M0 / T2 N0 M0.",
+                "en": "T1 N0 M0 / T2 N0 M0.",
+                "es": "T1 N0 M0 / T2 N0 M0."
+              }
+            },
+            {
+              "code": "III",
+              "description": {
+                "de": "T1–2 N1 M0 oder T3–4 jedes N M0.",
+                "en": "T1–2 N1 M0 or T3–4 any N M0.",
+                "es": "T1–2 N1 M0 o T3–4 cualquier N M0."
+              }
+            },
+            {
+              "code": "IV",
+              "description": {
+                "de": "Jedes T/N, M1.",
+                "en": "Any T/N, M1.",
+                "es": "Cualquier T/N, M1."
+              }
+            }
+          ]
+        }
+      ],
+      "cautions": {
+        "de": "Diese AJCC-8-Tabelle gilt für Rindenkarzinom, nicht Phäochromozytom. T4 ohne Fernmetastasen liegt in Stadium III; Größe allein darf Invasion nicht überstimmen.",
+        "en": "This AJCC-8 table is for cortical carcinoma, not pheochromocytoma. T4 without distant metastases is stage III; size alone must not override invasion.",
+        "es": "Esta tabla AJCC-8 es para carcinoma cortical, no feocromocitoma. T4 sin metástasis a distancia es estadio III; tamaño no prevalece sobre invasión."
+      },
+      "references": [
+        "classification-acc"
+      ],
+      "cases": [
+        "staging-trauma-20"
+      ],
+      "clinicalSignoffLanguages": [],
+      "schema": "tnm-urogenital"
+    },
+    {
+      "id": "ppgl",
+      "kind": "tumour",
+      "title": {
+        "de": "Phäochromozytom / sympathisches Paragangliom",
+        "en": "Pheochromocytoma / sympathetic paraganglioma",
+        "es": "Feocromocitoma / paraganglioma simpático"
+      },
+      "edition": "NCI PDQ · AJCC TNM 8",
+      "sections": [
+        {
+          "title": {
+            "de": "T: Primärtumor",
+            "en": "T: primary tumour",
+            "es": "T: tumor primario"
+          },
+          "rows": [
+            {
+              "code": "TX",
+              "description": {
+                "de": "Primärtumor nicht beurteilbar.",
+                "en": "Primary tumour cannot be assessed.",
+                "es": "Tumor primario no evaluable."
+              }
+            },
+            {
+              "code": "T1",
+              "description": {
+                "de": "Phäochromozytom <5 cm, keine extraadrenale Invasion.",
+                "en": "Pheochromocytoma <5 cm, no extra-adrenal invasion.",
+                "es": "Feocromocitoma <5 cm, sin invasión extraadrenal."
+              }
+            },
+            {
+              "code": "T2",
+              "description": {
+                "de": "Phäochromozytom ≥5 cm oder sympathisches Paragangliom jeder Größe, ohne Nachbarinvasion.",
+                "en": "Pheochromocytoma ≥5 cm or sympathetic paraganglioma of any size, without adjacent invasion.",
+                "es": "Feocromocitoma ≥5 cm o paraganglioma simpático de cualquier tamaño, sin invasión vecina."
+              }
+            },
+            {
+              "code": "T3",
+              "description": {
+                "de": "Invasion benachbarter Gewebe/Organe.",
+                "en": "Invasion of adjacent tissues/organs.",
+                "es": "Invasión de tejidos/órganos vecinos."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "de": "N: regionale Lymphknoten",
+            "en": "N: regional nodes",
+            "es": "N: ganglios regionales"
+          },
+          "rows": [
+            {
+              "code": "NX",
+              "description": {
+                "de": "Regionale Lymphknoten nicht beurteilbar.",
+                "en": "Regional nodes cannot be assessed.",
+                "es": "Ganglios regionales no evaluables."
+              }
+            },
+            {
+              "code": "N0",
+              "description": {
+                "de": "Keine regionalen Lymphknotenmetastasen.",
+                "en": "No regional nodal metastases.",
+                "es": "Sin metástasis ganglionares regionales."
+              }
+            },
+            {
+              "code": "N1",
+              "description": {
+                "de": "Regionale Lymphknotenmetastasen.",
+                "en": "Regional nodal metastases.",
+                "es": "Metástasis ganglionares regionales."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "de": "M: Fernmetastasen",
+            "en": "M: distant metastasis",
+            "es": "M: metástasis a distancia"
+          },
+          "rows": [
+            {
+              "code": "M0",
+              "description": {
+                "de": "Keine Fernmetastasen im klinischen Staging. Kein pM0 vergeben.",
+                "en": "No distant metastases on clinical staging. Do not assign pM0.",
+                "es": "Sin metástasis a distancia en la evaluación clínica. No asignar pM0."
+              }
+            },
+            {
+              "code": "M1a",
+              "description": {
+                "de": "Nur Knochenmetastasen.",
+                "en": "Bone metastases only.",
+                "es": "Solo metástasis óseas."
+              }
+            },
+            {
+              "code": "M1b",
+              "description": {
+                "de": "Nur Fernlymphknoten, Leber oder Lunge.",
+                "en": "Distant nodes, liver or lung only.",
+                "es": "Solo ganglios distantes, hígado o pulmón."
+              }
+            },
+            {
+              "code": "M1c",
+              "description": {
+                "de": "Knochen plus weitere Fernmetastasen.",
+                "en": "Bone plus other distant metastases.",
+                "es": "Hueso más otras metástasis a distancia."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "de": "Stadiengruppen",
+            "en": "Stage groups",
+            "es": "Grupos de estadio"
+          },
+          "rows": [
+            {
+              "code": "I / II",
+              "description": {
+                "de": "T1 N0 M0 / T2 N0 M0.",
+                "en": "T1 N0 M0 / T2 N0 M0.",
+                "es": "T1 N0 M0 / T2 N0 M0."
+              }
+            },
+            {
+              "code": "III",
+              "description": {
+                "de": "T1–2 N1 M0 oder T3 jedes N M0.",
+                "en": "T1–2 N1 M0 or T3 any N M0.",
+                "es": "T1–2 N1 M0 o T3 cualquier N M0."
+              }
+            },
+            {
+              "code": "IV",
+              "description": {
+                "de": "Jedes T/N, M1.",
+                "en": "Any T/N, M1.",
+                "es": "Cualquier T/N, M1."
+              }
+            }
+          ]
+        }
+      ],
+      "cautions": {
+        "de": "Kein T4 in diesem System. Parasympathische Kopf-Hals-Paragangliome sind nicht enthalten. Alle PPGL haben Metastasierungspotenzial; unauffällige Histologie beweist keine dauerhafte Gutartigkeit.",
+        "en": "No T4 in this system. Parasympathetic head/neck paragangliomas are outside its scope. All PPGL have metastatic potential; bland histology does not prove permanent benignity.",
+        "es": "No hay T4 en este sistema. Excluye paragangliomas parasimpáticos de cabeza/cuello. Todos tienen potencial metastásico; histología anodina no demuestra benignidad permanente."
+      },
+      "references": [
+        "classification-ppgl"
+      ],
+      "cases": [
+        "staging-trauma-21"
+      ],
+      "clinicalSignoffLanguages": [],
+      "schema": "tnm-urogenital"
+    },
+    {
+      "id": "trauma-kidney",
+      "kind": "trauma",
+      "title": {
+        "de": "Nierentrauma",
+        "en": "Renal trauma",
+        "es": "Trauma renal"
+      },
+      "edition": "EAU 2026 table · AAST 2018 (not 2025)",
+      "sections": [
+        {
+          "title": {
+            "de": "AAST-Nierenverletzung",
+            "en": "AAST renal injury",
+            "es": "Lesión renal AAST"
+          },
+          "rows": [
+            {
+              "code": "I",
+              "description": {
+                "de": "Kontusion oder nicht expandierendes subkapsuläres Hämatom, keine Parenchymlazeration.",
+                "en": "Contusion or non-expanding subcapsular haematoma, no parenchymal laceration.",
+                "es": "Contusión o hematoma subcapsular no expansivo, sin laceración del parénquima."
+              }
+            },
+            {
+              "code": "II",
+              "description": {
+                "de": "Nicht expandierendes perirenales Hämatom innerhalb Gerota oder Lazeration <1 cm tief, ohne Urinleck.",
+                "en": "Non-expanding perirenal haematoma within Gerota or laceration <1 cm deep without urine leak.",
+                "es": "Hematoma perirrenal no expansivo dentro de Gerota o laceración <1 cm de profundidad sin fuga urinaria."
+              }
+            },
+            {
+              "code": "III",
+              "description": {
+                "de": "Lazeration >1 cm ohne Sammelsystemverletzung/Urinleck; Gefäßverletzung/aktive Blutung innerhalb Gerota.",
+                "en": "Laceration >1 cm without collecting-system injury/urine leak; vascular injury/active bleeding contained within Gerota.",
+                "es": "Laceración >1 cm sin lesión del sistema colector/fuga; lesión vascular/sangrado activo contenido en Gerota."
+              }
+            },
+            {
+              "code": "IV",
+              "description": {
+                "de": "Sammelsystemleck, Nierenbecken-/UPJ-Verletzung; segmentale Gefäßverletzung; aktive Blutung außerhalb Gerota; Infarkt durch Thrombose ohne aktive Blutung.",
+                "en": "Collecting-system leak, pelvis/UPJ injury; segmental vessel injury; bleeding beyond Gerota; infarction from thrombosis without active bleeding.",
+                "es": "Fuga del colector, lesión piélica/UPJ; vasos segmentarios; sangrado fuera de Gerota; infarto por trombosis sin sangrado activo."
+              }
+            },
+            {
+              "code": "V",
+              "description": {
+                "de": "Zertrümmerte Niere; Hauptgefäß-/Hilusabriss; devaskularisierte Niere mit aktiver Blutung.",
+                "en": "Shattered kidney; main-vessel/hilar avulsion; devascularised kidney with active bleeding.",
+                "es": "Riñón estallado; avulsión de vasos principales/hilio; riñón desvascularizado con sangrado activo."
+              }
+            }
+          ]
+        }
+      ],
+      "cautions": {
+        "de": "Explizit die AAST-2018-Tabelle aus EAU 2026. AAST führt bereits eine Revision 2025; diese wird hier nicht als identische Tabelle ausgegeben. Bei beidseitiger Verletzung Grad um einen erhöhen, nur bis Grad III. Kreislaufstabilität, Mechanismus und Verlauf bestimmen die Behandlung; Grad allein bedeutet keine Nephrektomie.",
+        "en": "Explicitly the AAST-2018 table reproduced in EAU 2026. AAST lists a 2025 revision; this guide does not present it as the same table. Bilateral injury advances one grade, only up to III. Haemodynamic status, mechanism and course guide treatment; grade alone does not mandate nephrectomy.",
+        "es": "Se usa explícitamente la tabla AAST-2018 de EAU 2026. AAST ya lista revisión 2025; no se presenta aquí como idéntica. Lesión bilateral aumenta un grado, solo hasta III. Estado hemodinámico, mecanismo y evolución guían tratamiento; grado solo no exige nefrectomía."
+      },
+      "references": [
+        "classification-trauma-kidney",
+        "classification-aast-revisions"
+      ],
+      "cases": [
+        "staging-trauma-22",
+        "staging-trauma-23",
+        "staging-trauma-24"
+      ],
+      "clinicalSignoffLanguages": [],
+      "schema": "trauma-kidney-map"
+    },
+    {
+      "id": "trauma-ureter",
+      "kind": "trauma",
+      "title": {
+        "de": "Uretertrauma",
+        "en": "Ureteric trauma",
+        "es": "Trauma ureteral"
+      },
+      "edition": "AAST original OIS · EAU 2026 clinical guidance",
+      "sections": [
+        {
+          "title": {
+            "de": "AAST-Ureterverletzung",
+            "en": "AAST ureter injury",
+            "es": "Lesión ureteral AAST"
+          },
+          "rows": [
+            {
+              "code": "I",
+              "description": {
+                "de": "Hämatom/Kontusion ohne Devaskularisation.",
+                "en": "Haematoma/contusion without devascularisation.",
+                "es": "Hematoma/contusión sin desvascularización."
+              }
+            },
+            {
+              "code": "II",
+              "description": {
+                "de": "Lazeration <50 % des Umfangs.",
+                "en": "Laceration <50% of circumference.",
+                "es": "Laceración <50% de circunferencia."
+              }
+            },
+            {
+              "code": "III",
+              "description": {
+                "de": "Lazeration >50 % des Umfangs, unvollständige Durchtrennung.",
+                "en": "Laceration >50% of circumference, incomplete transection.",
+                "es": "Laceración >50% de circunferencia, sección incompleta."
+              }
+            },
+            {
+              "code": "IV",
+              "description": {
+                "de": "Komplette Durchtrennung mit <2 cm Devaskularisation.",
+                "en": "Complete transection with <2 cm devascularisation.",
+                "es": "Sección completa con <2 cm de desvascularización."
+              }
+            },
+            {
+              "code": "V",
+              "description": {
+                "de": "Abriss mit >2 cm Devaskularisation.",
+                "en": "Avulsion with >2 cm devascularisation.",
+                "es": "Avulsión con >2 cm de desvascularización."
+              }
+            }
+          ]
+        }
+      ],
+      "cautions": {
+        "de": "Originalgrenzen < und > nicht zu ≤ umdeuten. CT-Urographie mit Spätphase; bei Unsicherheit retro-/antegrade Darstellung. Reparatur nach Höhe, Vitalität und Stabilität; distaler Ureter häufig Reimplantation, ggf. Psoas-Hitch/Boari.",
+        "en": "Do not turn original < and > boundaries into ≤. Delayed-phase CT urography; retro/antegrade study if unclear. Repair depends on level, viability and stability; distal injury often needs reimplantation, with psoas hitch/Boari if required.",
+        "es": "No cambiar límites originales < y > por ≤. Uro-TC con fase tardía; estudio retrógrado/anterógrado si hay duda. Reparación según nivel, viabilidad y estabilidad; lesión distal suele requerir reimplante con psoas hitch/Boari si precisa."
+      },
+      "references": [
+        "classification-trauma-ureter",
+        "classification-aast-original"
+      ],
+      "cases": [
+        "staging-trauma-25"
+      ],
+      "clinicalSignoffLanguages": [],
+      "schema": "urinary-tract-overview"
+    },
+    {
+      "id": "trauma-bladder",
+      "kind": "trauma",
+      "title": {
+        "de": "Blasentrauma",
+        "en": "Bladder trauma",
+        "es": "Trauma vesical"
+      },
+      "edition": "AAST original OIS · EAU 2026 clinical guidance",
+      "sections": [
+        {
+          "title": {
+            "de": "AAST-Blasenverletzung",
+            "en": "AAST bladder injury",
+            "es": "Lesión vesical AAST"
+          },
+          "rows": [
+            {
+              "code": "I",
+              "description": {
+                "de": "Kontusion, intramurales Hämatom oder partielle Wandverletzung.",
+                "en": "Contusion, intramural haematoma or partial-thickness injury.",
+                "es": "Contusión, hematoma intramural o lesión de espesor parcial."
+              }
+            },
+            {
+              "code": "II",
+              "description": {
+                "de": "Extraperitoneale Ruptur <2 cm.",
+                "en": "Extraperitoneal rupture <2 cm.",
+                "es": "Rotura extraperitoneal <2 cm."
+              }
+            },
+            {
+              "code": "III",
+              "description": {
+                "de": "Extraperitoneale Ruptur >2 cm oder intraperitoneale Ruptur <2 cm.",
+                "en": "Extraperitoneal rupture >2 cm or intraperitoneal rupture <2 cm.",
+                "es": "Rotura extraperitoneal >2 cm o intraperitoneal <2 cm."
+              }
+            },
+            {
+              "code": "IV",
+              "description": {
+                "de": "Intraperitoneale Ruptur >2 cm.",
+                "en": "Intraperitoneal rupture >2 cm.",
+                "es": "Rotura intraperitoneal >2 cm."
+              }
+            },
+            {
+              "code": "V",
+              "description": {
+                "de": "Ruptur bis Blasenhals, Trigonum oder Ureterostium.",
+                "en": "Rupture involving bladder neck, trigone or ureteric orifice.",
+                "es": "Rotura que afecta cuello vesical, trígono u orificio ureteral."
+              }
+            }
+          ]
+        }
+      ],
+      "cautions": {
+        "de": "EP, IP oder kombiniert zusätzlich angeben. Aktive retrograde Zystographie mit ausreichender Füllung; passive Ausscheidungs-CT schließt Ruptur nicht sicher aus. Stumpfe IP-Ruptur operativ versorgen; unkomplizierte EP-Ruptur oft Katheter. Blasenhalsbefall, Knochenfragmente oder Rektum-/Vaginalverletzung sind kompliziert.",
+        "en": "Also record EP, IP or combined. Use active retrograde cystography with adequate filling; passive excretory CT does not reliably exclude rupture. Repair blunt IP rupture; uncomplicated EP often catheter drainage. Neck injury, bone fragments or rectal/vaginal injury indicate complexity.",
+        "es": "Indicar además EP, IP o combinada. Cistografía retrógrada activa con llenado adecuado; TC excretora pasiva no excluye rotura con fiabilidad. Reparar IP contusa; EP no complicada suele drenarse con sonda. Cuello, fragmentos óseos o lesión rectal/vaginal implican complejidad."
+      },
+      "references": [
+        "classification-trauma-bladder",
+        "classification-aast-original"
+      ],
+      "cases": [
+        "staging-trauma-26",
+        "staging-trauma-27"
+      ],
+      "clinicalSignoffLanguages": [],
+      "schema": "trauma-bladder-map"
+    },
+    {
+      "id": "trauma-urethra",
+      "kind": "trauma",
+      "title": {
+        "de": "Urethratrauma",
+        "en": "Urethral trauma",
+        "es": "Trauma uretral"
+      },
+      "edition": "EAU 2026 · clinical injury categories",
+      "sections": [
+        {
+          "title": {
+            "de": "Anatomie und Kontinuität",
+            "en": "Anatomy and continuity",
+            "es": "Anatomía y continuidad"
+          },
+          "rows": [
+            {
+              "code": "Anterior",
+              "description": {
+                "de": "Penile/bulbäre Urethra, z. B. Straddle-Trauma.",
+                "en": "Penile/bulbar urethra, e.g. straddle trauma.",
+                "es": "Uretra peneana/bulbar, p. ej. trauma a horcajadas."
+              }
+            },
+            {
+              "code": "Posterior / PFUI",
+              "description": {
+                "de": "Membranöse/prostatische Urethra, oft Beckenfraktur.",
+                "en": "Membranous/prostatic urethra, often pelvic fracture.",
+                "es": "Uretra membranosa/prostática, a menudo fractura pélvica."
+              }
+            },
+            {
+              "code": "Partial",
+              "description": {
+                "de": "Restkontinuität; Extravasation möglich.",
+                "en": "Continuity remains; extravasation may occur.",
+                "es": "Persiste continuidad; puede haber extravasación."
+              }
+            },
+            {
+              "code": "Complete",
+              "description": {
+                "de": "Vollständige Kontinuitätsunterbrechung.",
+                "en": "Complete disruption of continuity.",
+                "es": "Interrupción completa de continuidad."
+              }
+            }
+          ]
+        }
+      ],
+      "cautions": {
+        "de": "Blut am Meatus oder fehlende Miktion: Verletzung vermuten. Retrogrades Urethrogramm ist Standard beim Mann; Extravasation beweist Verletzung, trennt aber nicht immer partiell/komplett. Flexible Endoskopie kann klären. Wiederholte blinde Katheterversuche vermeiden; Harnableitung nach Stabilität und erfahrener Beurteilung.",
+        "en": "Meatal blood or inability to void raises suspicion. Male retrograde urethrography is standard; extravasation proves injury but does not always distinguish partial/complete. Flexible endoscopy may clarify. Avoid repeated blind catheter attempts; diversion follows stability and experienced assessment.",
+        "es": "Sangre en meato o imposibilidad de orinar sugieren lesión. Uretrografía retrógrada estándar en varón; extravasación demuestra lesión pero no siempre distingue parcial/completa. Endoscopia flexible puede aclarar. Evitar sondajes ciegos repetidos; derivar según estabilidad y evaluación experta."
+      },
+      "references": [
+        "classification-trauma-urethra"
+      ],
+      "cases": [
+        "staging-trauma-28"
+      ],
+      "clinicalSignoffLanguages": [],
+      "schema": "male-urethra-penis"
+    },
+    {
+      "id": "trauma-genital",
+      "kind": "trauma",
+      "title": {
+        "de": "Genitaltrauma: Hoden und Penis",
+        "en": "Genital trauma: testis and penis",
+        "es": "Trauma genital: testículo y pene"
+      },
+      "edition": "AAST original testis OIS · EAU 2026",
+      "sections": [
+        {
+          "title": {
+            "de": "AAST-Hodenverletzung",
+            "en": "AAST testis injury",
+            "es": "Lesión testicular AAST"
+          },
+          "rows": [
+            {
+              "code": "I",
+              "description": {
+                "de": "Kontusion/Hämatom.",
+                "en": "Contusion/haematoma.",
+                "es": "Contusión/hematoma."
+              }
+            },
+            {
+              "code": "II",
+              "description": {
+                "de": "Subklinische Lazeration der Tunica albuginea.",
+                "en": "Subclinical tunica-albuginea laceration.",
+                "es": "Laceración subclínica de túnica albugínea."
+              }
+            },
+            {
+              "code": "III",
+              "description": {
+                "de": "Albuginea-Lazeration mit <50 % Parenchymverlust.",
+                "en": "Albuginea laceration with <50% parenchymal loss.",
+                "es": "Laceración albugínea con <50% de pérdida parenquimatosa."
+              }
+            },
+            {
+              "code": "IV",
+              "description": {
+                "de": "Schwere Lazeration mit >50 % Parenchymverlust.",
+                "en": "Major laceration with >50% parenchymal loss.",
+                "es": "Laceración mayor con >50% de pérdida parenquimatosa."
+              }
+            },
+            {
+              "code": "V",
+              "description": {
+                "de": "Komplette Zerstörung oder Abriss.",
+                "en": "Complete destruction or avulsion.",
+                "es": "Destrucción completa o avulsión."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "de": "Klinische Verletzungen",
+            "en": "Clinical injuries",
+            "es": "Lesiones clínicas"
+          },
+          "rows": [
+            {
+              "code": "Hodenruptur",
+              "description": {
+                "de": "Albuginea-Unterbrechung/heterogenes Parenchym; operative Exploration, vitales Gewebe erhalten.",
+                "en": "Disrupted albuginea/heterogeneous parenchyma; surgical exploration with preservation of viable tissue.",
+                "es": "Albugínea discontinua/parénquima heterogéneo; exploración quirúrgica preservando tejido viable."
+              }
+            },
+            {
+              "code": "Penisfraktur",
+              "description": {
+                "de": "Ruptur der kavernösen Tunica albuginea bei Erektion; operative Reparatur, Urethrabeteiligung prüfen.",
+                "en": "Rupture of cavernosal albuginea during erection; surgical repair and assessment for urethral injury.",
+                "es": "Rotura de albugínea cavernosa durante erección; reparación quirúrgica y valoración uretral."
+              }
+            }
+          ]
+        }
+      ],
+      "cautions": {
+        "de": "Kein TNM für Trauma. Klinischer Rupturverdacht und unklarer Ultraschall können Exploration verlangen. AAST-Grad ersetzt die Beurteilung von Perfusion und Erhaltungsfähigkeit nicht.",
+        "en": "Trauma has no TNM. Suspected rupture with inconclusive ultrasound may require exploration. AAST grade does not replace perfusion and salvageability assessment.",
+        "es": "Trauma no usa TNM. Sospecha de rotura con ecografía inconcluyente puede requerir exploración. Grado AAST no sustituye valorar perfusión y viabilidad."
+      },
+      "references": [
+        "classification-trauma-genital",
+        "classification-aast-original"
+      ],
+      "cases": [
+        "staging-trauma-29",
+        "staging-trauma-30"
+      ],
+      "clinicalSignoffLanguages": [],
+      "schema": "tnm-testis"
+    }
+  ]
+}

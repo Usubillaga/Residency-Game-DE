@@ -1403,151 +1403,6 @@
     ]
   },
   {
-    "id": "fun-inc-tvt-blasenperforation",
-    "area": "theatre",
-    "level": 2,
-    "acuity": "urgent",
-    "duty": "elective",
-    "patient": {
-      "name": "Margot Wilmsen",
-      "age": 57,
-      "sex": "female"
-    },
-    "title": {
-      "en": "Trocar in the bladder during TVT insertion",
-      "de": "Trokar in der Blase bei TVT-Einlage",
-      "es": "Trócar en la vejiga durante la colocación de una TVT"
-    },
-    "presenting": {
-      "en": "A 57-year-old woman undergoes a planned retropubic tape insertion (TVT) for stress incontinence under spinal anaesthesia. After both trocars have been passed, check cystoscopy with a 70° lens at a filling of 300 ml shows the trocar perforating the right anterolateral bladder wall; the left side and the urethra are intact. The urine is clear, there is no bleeding, and she is haemodynamically stable.",
-      "de": "57-jährige Patientin, geplante retropubische Bandeinlage (TVT) wegen Belastungsinkontinenz in Spinalanästhesie. Nach Passage beider Trokare erfolgt die Kontrollzystoskopie mit 70°-Optik bei 300 ml Füllung: Rechts anterolateral durchstößt der Trokar die Blasenwand, die linke Seite und die Urethra sind unverletzt. Der Urin ist klar, keine Blutung, Kreislauf stabil.",
-      "es": "Mujer de 57 años, colocación programada de banda retropúbica (TVT) por incontinencia de esfuerzo bajo anestesia raquídea. Tras pasar ambos trócares se realiza la cistoscopia de control con óptica de 70° y 300 ml de llenado: en la pared anterolateral derecha el trócar atraviesa la pared vesical; el lado izquierdo y la uretra están indemnes. La orina es clara, no hay sangrado y está hemodinámicamente estable."
-    },
-    "vitals": {
-      "bp": "128/76",
-      "hr": 72,
-      "temp": 36.6,
-      "spo2": 98,
-      "rr": 14
-    },
-    "objectives": {
-      "en": [
-        "Recognise and manage an intraoperative bladder perforation during TVT",
-        "Explain why cystoscopy is mandatory with a retropubic tape"
-      ],
-      "de": [
-        "Eine intraoperative Blasenperforation beim TVT erkennen und korrekt behandeln",
-        "Die Bedeutung der obligaten Zystoskopie beim retropubischen Band begründen"
-      ],
-      "es": [
-        "Reconocer y tratar una perforación vesical intraoperatoria durante una TVT",
-        "Justificar la cistoscopia obligatoria en la banda retropúbica"
-      ]
-    },
-    "steps": [
-      {
-        "id": "question",
-        "kind": "decision",
-        "prompt": {
-          "en": "How do you proceed?",
-          "de": "Wie gehen Sie vor?",
-          "es": "¿Cómo procede?"
-        },
-        "options": [
-          {
-            "id": "a",
-            "text": {
-              "en": "Abort the procedure and close the bladder through an open laparotomy",
-              "de": "Eingriff abbrechen und die Blase über eine Laparotomie offen übernähen",
-              "es": "Suspender la intervención y suturar la vejiga mediante laparotomía abierta"
-            },
-            "score": 0,
-            "minutes": 20,
-            "critical": false,
-            "feedback": {
-              "en": "Wrong. An extraperitoneal trocar perforation of the bladder is small and heals spontaneously with catheter drainage. Open repair is unnecessary overtreatment with its own morbidity.",
-              "de": "Falsch. Eine extraperitoneale Trokarperforation der Blase ist klein und heilt unter Katheterableitung spontan. Eine offene Übernähung ist eine unnötige Übertherapie mit eigener Morbidität.",
-              "es": "Incorrecto. La perforación vesical extraperitoneal por trócar es pequeña y cicatriza espontáneamente con drenaje vesical. La sutura abierta es un sobretratamiento innecesario con morbilidad propia."
-            }
-          },
-          {
-            "id": "b",
-            "text": {
-              "en": "Leave the tape as it is because it will epithelialise in the bladder wall; catheter for 24 hours",
-              "de": "Band so belassen, da es in der Blasenwand epithelialisiert; Katheter für 24 Stunden",
-              "es": "Dejar la banda tal cual porque se epitelizará en la pared vesical; sonda durante 24 horas"
-            },
-            "score": 0,
-            "minutes": 5,
-            "critical": true,
-            "feedback": {
-              "en": "Dangerous. Mesh running through the bladder does not reliably epithelialise; it causes stones, recurrent infections, pain and haematuria and later needs complex removal. A trocar lying inside the bladder must always be withdrawn.",
-              "de": "Gefährlich. Ein durch die Blase verlaufendes Netz epithelialisiert nicht zuverlässig, sondern führt zu Steinbildung, rezidivierenden Infekten, Schmerzen und Hämaturie und muss später aufwendig entfernt werden. Ein intravesikal liegender Trokar muss immer zurückgezogen werden.",
-              "es": "Peligroso. Una malla que atraviesa la vejiga no se epiteliza de forma fiable, sino que provoca litiasis, infecciones recurrentes, dolor y hematuria, y después requiere una extracción compleja. Un trócar intravesical siempre debe retirarse."
-            }
-          },
-          {
-            "id": "c",
-            "text": {
-              "en": "Withdraw, re-pass the trocar laterally, repeat cystoscopy, catheter 1–2 days",
-              "de": "Trokar zurückziehen, lateral neu führen, erneut zystoskopieren, Katheter 1–2 Tage",
-              "es": "Retirar y repasar el trócar más lateral, repetir cistoscopia, sonda 1–2 días"
-            },
-            "score": 10,
-            "minutes": 10,
-            "critical": false,
-            "feedback": {
-              "en": "Correct. After a perforation the trocar is withdrawn and re-passed more laterally, hugging the back of the pubic bone; repeat cystoscopy must show an intact bladder. The procedure can be completed and the bladder is drained briefly with a catheter.",
-              "de": "Richtig. Bei Perforation wird der Trokar zurückgezogen und weiter lateral, hinter der Symphyse anliegend, erneut geführt; die anschließende Zystoskopie muss die Blase intakt zeigen. Der Eingriff kann beendet werden, die Blase wird kurzzeitig über einen Katheter entlastet.",
-              "es": "Correcto. Ante una perforación se retira el trócar y se vuelve a pasar más lateral, pegado a la cara posterior del pubis; la cistoscopia posterior debe mostrar la vejiga intacta. La intervención puede completarse y la vejiga se drena brevemente con una sonda."
-            }
-          },
-          {
-            "id": "d",
-            "text": {
-              "en": "Remove the trocar, abort the procedure and repeat the tape insertion in six months",
-              "de": "Trokar entfernen, Eingriff abbrechen und die Bandeinlage in sechs Monaten wiederholen",
-              "es": "Retirar el trócar, suspender la intervención y repetir la colocación de la banda en seis meses"
-            },
-            "score": 0,
-            "minutes": 5,
-            "critical": false,
-            "feedback": {
-              "en": "Wrong. A recognised trocar perforation is no reason to abort. After correct re-passage and a normal check cystoscopy the outcome is no worse; a second operation would be avoidable.",
-              "de": "Falsch. Eine erkannte Trokarperforation ist kein Grund zum Abbruch. Nach korrekter Neuplatzierung und unauffälliger Kontrollzystoskopie ist das Ergebnis nicht schlechter; ein Zweiteingriff wäre vermeidbar.",
-              "es": "Incorrecto. Una perforación por trócar detectada no obliga a suspender. Tras recolocarlo correctamente y con una cistoscopia de control normal, el resultado no es peor; una segunda intervención sería evitable."
-            }
-          },
-          {
-            "id": "e",
-            "text": {
-              "en": "Leave the tape and insert a suprapubic catheter for three weeks",
-              "de": "Band belassen und für drei Wochen einen suprapubischen Katheter einlegen",
-              "es": "Dejar la banda y colocar una sonda suprapúbica durante tres semanas"
-            },
-            "score": 0,
-            "minutes": 5,
-            "critical": false,
-            "feedback": {
-              "en": "Wrong. Prolonged drainage does not change the fact that the mesh runs through the bladder. Moreover, a suprapubic catheter should not be placed next to a fresh retropubic tape without need.",
-              "de": "Falsch. Längere Ableitung ändert nichts daran, dass das Netz durch die Blase verläuft. Zudem wird ein suprapubischer Katheter neben einem retropubischen Band nicht ohne Not punktiert.",
-              "es": "Incorrecto. Un drenaje prolongado no cambia que la malla atraviese la vejiga. Además, no se debe colocar sin necesidad una sonda suprapúbica junto a una banda retropúbica recién implantada."
-            }
-          }
-        ],
-        "best": "c"
-      }
-    ],
-    "takeaway": {
-      "en": "Rule: with a retropubic tape, cystoscopy after each trocar passage is mandatory. Perforation: withdraw the trocar, re-pass laterally, repeat cystoscopy, catheter for 1–2 days. Mesh must never run through the bladder.",
-      "de": "Merksatz: Beim retropubischen Band ist die Zystoskopie nach jeder Trokarpassage Pflicht. Perforation: Trokar zurückziehen, lateral neu führen, erneut zystoskopieren, Katheter für 1–2 Tage. Ein Netz darf nie durch die Blase verlaufen.",
-      "es": "Regla: en la banda retropúbica la cistoscopia tras cada paso de trócar es obligatoria. Perforación: retirar el trócar, volver a pasarlo más lateral, repetir la cistoscopia, sonda durante 1–2 días. La malla nunca debe atravesar la vejiga."
-    },
-    "references": [
-      "eau-female-luts"
-    ]
-  },
-  {
     "id": "bank-uro-fun-00012",
     "area": "theatre",
     "level": 3,
@@ -14748,6 +14603,641 @@
         "en": "Penile block before a day procedure",
         "es": "Bloqueo peneano antes de un procedimiento ambulatorio"
       }
+    }
+  },
+  {
+    "id": "staging-trauma-25",
+    "area": "theatre",
+    "level": 2,
+    "acuity": "urgent",
+    "duty": "elective",
+    "consultant": "attending",
+    "patient": {
+      "name": "Tessa Waldhorn",
+      "age": 62,
+      "sex": "female"
+    },
+    "title": {
+      "de": "Der Ureter im OP-Feld",
+      "en": "The ureter in the operative field",
+      "es": "El uréter en el campo quirúrgico"
+    },
+    "presenting": {
+      "de": "Bei einer Beckenoperation wird eine frische Ureterlazeration erkannt: 70 % des Umfangs verletzt, Restkontinuität erhalten, kein Abriss oder devaskularisiertes Segment.",
+      "en": "At pelvic surgery a fresh ureter laceration is seen: 70% of circumference injured, residual continuity preserved, no avulsion or devascularised segment.",
+      "es": "Durante cirugía pélvica se ve laceración ureteral reciente: 70% de circunferencia, continuidad residual conservada, sin avulsión ni segmento desvascularizado."
+    },
+    "vitals": null,
+    "subject": "trauma",
+    "classification": "trauma-ureter",
+    "clinicalContext": {
+      "kind": "operation",
+      "label": {
+        "de": "OP-/Befundbesprechung",
+        "en": "Operative/report review",
+        "es": "Revisión operatoria/informe"
+      }
+    },
+    "clinicalSignoffLanguages": [],
+    "takeaway": {
+      "de": "Unvollständige Lazeration >50 % ist AAST III. IV verlangt komplette Durchtrennung mit kurzer Devaskularisation.",
+      "en": "Incomplete laceration >50% is AAST III. IV requires complete transection with short devascularisation.",
+      "es": "Laceración incompleta >50% es AAST III. IV exige sección completa con desvascularización corta."
+    },
+    "steps": [
+      {
+        "id": "classification-decision",
+        "kind": "decision",
+        "prompt": {
+          "de": "Welche Kategorie passt zum beschriebenen Befund?",
+          "en": "Which category fits the described findings?",
+          "es": "¿Qué categoría corresponde a los hallazgos descritos?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "I",
+              "en": "I",
+              "es": "I"
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "de": "Diese Alternative passt hier nicht. Hämatom/Kontusion ohne Devaskularisation. Unvollständige Lazeration >50 % ist AAST III. IV verlangt komplette Durchtrennung mit kurzer Devaskularisation.",
+              "en": "This alternative does not fit here. Haematoma/contusion without devascularisation. Incomplete laceration >50% is AAST III. IV requires complete transection with short devascularisation.",
+              "es": "Esta alternativa no corresponde aquí. Hematoma/contusión sin desvascularización. Laceración incompleta >50% es AAST III. IV exige sección completa con desvascularización corta."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "II",
+              "en": "II",
+              "es": "II"
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "de": "Diese Alternative passt hier nicht. Lazeration <50 % des Umfangs. Unvollständige Lazeration >50 % ist AAST III. IV verlangt komplette Durchtrennung mit kurzer Devaskularisation.",
+              "en": "This alternative does not fit here. Laceration <50% of circumference. Incomplete laceration >50% is AAST III. IV requires complete transection with short devascularisation.",
+              "es": "Esta alternativa no corresponde aquí. Laceración <50% de circunferencia. Laceración incompleta >50% es AAST III. IV exige sección completa con desvascularización corta."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "III",
+              "en": "III",
+              "es": "III"
+            },
+            "score": 10,
+            "minutes": 2,
+            "feedback": {
+              "de": "Richtig. Unvollständige Lazeration >50 % ist AAST III. IV verlangt komplette Durchtrennung mit kurzer Devaskularisation.",
+              "en": "Correct. Incomplete laceration >50% is AAST III. IV requires complete transection with short devascularisation.",
+              "es": "Correcto. Laceración incompleta >50% es AAST III. IV exige sección completa con desvascularización corta."
+            },
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "IV",
+              "en": "IV",
+              "es": "IV"
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "de": "Diese Alternative passt hier nicht. Komplette Durchtrennung mit <2 cm Devaskularisation. Unvollständige Lazeration >50 % ist AAST III. IV verlangt komplette Durchtrennung mit kurzer Devaskularisation.",
+              "en": "This alternative does not fit here. Complete transection with <2 cm devascularisation. Incomplete laceration >50% is AAST III. IV requires complete transection with short devascularisation.",
+              "es": "Esta alternativa no corresponde aquí. Sección completa con <2 cm de desvascularización. Laceración incompleta >50% es AAST III. IV exige sección completa con desvascularización corta."
+            },
+            "critical": false
+          }
+        ],
+        "best": "c"
+      }
+    ],
+    "references": [
+      "classification-trauma-ureter",
+      "classification-aast-original"
+    ],
+    "topic": {
+      "de": "Trauma",
+      "en": "Trauma",
+      "es": "Trauma"
+    }
+  },
+  {
+    "id": "staging-trauma-26",
+    "area": "theatre",
+    "level": 2,
+    "acuity": "urgent",
+    "duty": "elective",
+    "consultant": "attending",
+    "patient": {
+      "name": "Ulrich Federbach",
+      "age": 40,
+      "sex": "male"
+    },
+    "title": {
+      "de": "Die Blasenkuppel nach dem Unfall",
+      "en": "The bladder dome after the accident",
+      "es": "La cúpula vesical tras el accidente"
+    },
+    "presenting": {
+      "de": "Aktive CT-Zystographie nach stumpfem Trauma: 3 cm große intraperitoneale Ruptur an der Blasenkuppel. Blasenhals, Trigonum und Ostien unbeteiligt.",
+      "en": "Active CT cystography after blunt trauma: 3-cm intraperitoneal bladder-dome rupture, with neck, trigone and orifices uninvolved.",
+      "es": "Cistografía-TC activa tras trauma contuso: rotura intraperitoneal de cúpula de 3 cm; cuello, trígono y orificios indemnes."
+    },
+    "vitals": null,
+    "subject": "trauma",
+    "classification": "trauma-bladder",
+    "clinicalContext": {
+      "kind": "case",
+      "label": {
+        "de": "Klinischer Fall",
+        "en": "Clinical case",
+        "es": "Caso clínico"
+      }
+    },
+    "clinicalSignoffLanguages": [],
+    "takeaway": {
+      "de": "Intraperitoneale Ruptur >2 cm ist AAST IV. Nach stumpfem Trauma wird IP-Ruptur grundsätzlich operativ versorgt.",
+      "en": "Intraperitoneal rupture >2 cm is AAST IV. Blunt IP rupture is generally repaired surgically.",
+      "es": "Rotura intraperitoneal >2 cm es AAST IV. Rotura IP contusa se repara por lo general quirúrgicamente."
+    },
+    "steps": [
+      {
+        "id": "classification-decision",
+        "kind": "decision",
+        "prompt": {
+          "de": "Welche Kategorie passt zum beschriebenen Befund?",
+          "en": "Which category fits the described findings?",
+          "es": "¿Qué categoría corresponde a los hallazgos descritos?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "II",
+              "en": "II",
+              "es": "II"
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "de": "Diese Alternative passt hier nicht. Extraperitoneale Ruptur <2 cm. Intraperitoneale Ruptur >2 cm ist AAST IV. Nach stumpfem Trauma wird IP-Ruptur grundsätzlich operativ versorgt.",
+              "en": "This alternative does not fit here. Extraperitoneal rupture <2 cm. Intraperitoneal rupture >2 cm is AAST IV. Blunt IP rupture is generally repaired surgically.",
+              "es": "Esta alternativa no corresponde aquí. Rotura extraperitoneal <2 cm. Rotura intraperitoneal >2 cm es AAST IV. Rotura IP contusa se repara por lo general quirúrgicamente."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "III",
+              "en": "III",
+              "es": "III"
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "de": "Diese Alternative passt hier nicht. Extraperitoneale Ruptur >2 cm oder intraperitoneale Ruptur <2 cm. Intraperitoneale Ruptur >2 cm ist AAST IV. Nach stumpfem Trauma wird IP-Ruptur grundsätzlich operativ versorgt.",
+              "en": "This alternative does not fit here. Extraperitoneal rupture >2 cm or intraperitoneal rupture <2 cm. Intraperitoneal rupture >2 cm is AAST IV. Blunt IP rupture is generally repaired surgically.",
+              "es": "Esta alternativa no corresponde aquí. Rotura extraperitoneal >2 cm o intraperitoneal <2 cm. Rotura intraperitoneal >2 cm es AAST IV. Rotura IP contusa se repara por lo general quirúrgicamente."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "IV",
+              "en": "IV",
+              "es": "IV"
+            },
+            "score": 10,
+            "minutes": 2,
+            "feedback": {
+              "de": "Richtig. Intraperitoneale Ruptur >2 cm ist AAST IV. Nach stumpfem Trauma wird IP-Ruptur grundsätzlich operativ versorgt.",
+              "en": "Correct. Intraperitoneal rupture >2 cm is AAST IV. Blunt IP rupture is generally repaired surgically.",
+              "es": "Correcto. Rotura intraperitoneal >2 cm es AAST IV. Rotura IP contusa se repara por lo general quirúrgicamente."
+            },
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "V",
+              "en": "V",
+              "es": "V"
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "de": "Diese Alternative passt hier nicht. Ruptur bis Blasenhals, Trigonum oder Ureterostium. Intraperitoneale Ruptur >2 cm ist AAST IV. Nach stumpfem Trauma wird IP-Ruptur grundsätzlich operativ versorgt.",
+              "en": "This alternative does not fit here. Rupture involving bladder neck, trigone or ureteric orifice. Intraperitoneal rupture >2 cm is AAST IV. Blunt IP rupture is generally repaired surgically.",
+              "es": "Esta alternativa no corresponde aquí. Rotura que afecta cuello vesical, trígono u orificio ureteral. Rotura intraperitoneal >2 cm es AAST IV. Rotura IP contusa se repara por lo general quirúrgicamente."
+            },
+            "critical": false
+          }
+        ],
+        "best": "c"
+      }
+    ],
+    "references": [
+      "classification-trauma-bladder",
+      "classification-aast-original"
+    ],
+    "topic": {
+      "de": "Trauma",
+      "en": "Trauma",
+      "es": "Trauma"
+    }
+  },
+  {
+    "id": "staging-trauma-27",
+    "area": "theatre",
+    "level": 2,
+    "acuity": "urgent",
+    "duty": "elective",
+    "consultant": "attending",
+    "patient": {
+      "name": "Viktor Buchenau",
+      "age": 35,
+      "sex": "male"
+    },
+    "title": {
+      "de": "Der Knochen an der Blasenwand",
+      "en": "The bone at the bladder wall",
+      "es": "El hueso en la pared vesical"
+    },
+    "presenting": {
+      "de": "Beckenfraktur, kreislaufstabil. Zystographie zeigt extraperitoneale Blasenruptur mit Blasenhalsbeteiligung; ein Knochenfragment ragt in die Blasenwand.",
+      "en": "Stable pelvic-fracture patient. Cystography shows extraperitoneal bladder rupture involving the neck; a bone fragment protrudes into the bladder wall.",
+      "es": "Fractura pélvica, estable. Cistografía: rotura extraperitoneal con afectación del cuello; fragmento óseo sobresale en pared vesical."
+    },
+    "vitals": null,
+    "subject": "trauma",
+    "classification": "trauma-bladder",
+    "clinicalContext": {
+      "kind": "case",
+      "label": {
+        "de": "Klinischer Fall",
+        "en": "Clinical case",
+        "es": "Caso clínico"
+      }
+    },
+    "clinicalSignoffLanguages": [],
+    "takeaway": {
+      "de": "Blasenhalsbeteiligung oder intravesikale Knochenfragmente machen EP-Ruptur kompliziert und sprechen für operative Reparatur.",
+      "en": "Neck involvement or intravesical bone fragments make EP rupture complex and support surgical repair.",
+      "es": "Afectación del cuello o fragmentos óseos intravesicales hacen EP compleja y favorecen reparación quirúrgica."
+    },
+    "steps": [
+      {
+        "id": "classification-decision",
+        "kind": "decision",
+        "prompt": {
+          "de": "Welche Versorgung passt am besten?",
+          "en": "Which management fits best?",
+          "es": "¿Qué manejo corresponde mejor?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Nur kurze Katheterdrainage ohne weitere Beurteilung",
+              "en": "Brief catheter drainage without further assessment",
+              "es": "Solo sonda breve sin más evaluación"
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "de": "Diese Alternative passt hier nicht. Nicht jede EP-Verletzung ist unkompliziert. Blasenhalsbeteiligung oder intravesikale Knochenfragmente machen EP-Ruptur kompliziert und sprechen für operative Reparatur.",
+              "en": "This alternative does not fit here. Not every EP injury is uncomplicated. Neck involvement or intravesical bone fragments make EP rupture complex and support surgical repair.",
+              "es": "Esta alternativa no corresponde aquí. No toda lesión EP es simple. Afectación del cuello o fragmentos óseos intravesicales hacen EP compleja y favorecen reparación quirúrgica."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Operative Beurteilung und Reparatur vorbereiten",
+              "en": "Arrange operative assessment and repair",
+              "es": "Preparar valoración operatoria y reparación"
+            },
+            "score": 10,
+            "minutes": 2,
+            "feedback": {
+              "de": "Richtig. Blasenhalsbeteiligung oder intravesikale Knochenfragmente machen EP-Ruptur kompliziert und sprechen für operative Reparatur.",
+              "en": "Correct. Neck involvement or intravesical bone fragments make EP rupture complex and support surgical repair.",
+              "es": "Correcto. Afectación del cuello o fragmentos óseos intravesicales hacen EP compleja y favorecen reparación quirúrgica."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Als reine Kontusion Grad I dokumentieren",
+              "en": "Record as grade-I contusion only",
+              "es": "Registrar solo contusión grado I"
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "de": "Diese Alternative passt hier nicht. Nachgewiesene Wandruptur ist keine Kontusion. Blasenhalsbeteiligung oder intravesikale Knochenfragmente machen EP-Ruptur kompliziert und sprechen für operative Reparatur.",
+              "en": "This alternative does not fit here. A proven full-thickness rupture is not a contusion. Neck involvement or intravesical bone fragments make EP rupture complex and support surgical repair.",
+              "es": "Esta alternativa no corresponde aquí. Rotura demostrada no es contusión. Afectación del cuello o fragmentos óseos intravesicales hacen EP compleja y favorecen reparación quirúrgica."
+            },
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Passive Ausscheidungs-CT als einzige Kontrolle",
+              "en": "Use passive excretory CT as sole assessment",
+              "es": "Usar TC excretora pasiva como única evaluación"
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "de": "Diese Alternative passt hier nicht. Aktive Zystographie und OP-Beurteilung sind hier entscheidend. Blasenhalsbeteiligung oder intravesikale Knochenfragmente machen EP-Ruptur kompliziert und sprechen für operative Reparatur.",
+              "en": "This alternative does not fit here. Active cystography and operative assessment matter here. Neck involvement or intravesical bone fragments make EP rupture complex and support surgical repair.",
+              "es": "Esta alternativa no corresponde aquí. Cistografía activa y valoración operatoria son esenciales. Afectación del cuello o fragmentos óseos intravesicales hacen EP compleja y favorecen reparación quirúrgica."
+            },
+            "critical": false
+          }
+        ],
+        "best": "b"
+      }
+    ],
+    "references": [
+      "classification-trauma-bladder",
+      "classification-aast-original"
+    ],
+    "topic": {
+      "de": "Trauma",
+      "en": "Trauma",
+      "es": "Trauma"
+    }
+  },
+  {
+    "id": "staging-trauma-29",
+    "area": "theatre",
+    "level": 2,
+    "acuity": "urgent",
+    "duty": "elective",
+    "consultant": "attending",
+    "patient": {
+      "name": "Yannick Sonnenhain",
+      "age": 26,
+      "sex": "male"
+    },
+    "title": {
+      "de": "Der Hoden bei der Exploration",
+      "en": "The testis at exploration",
+      "es": "El testículo durante exploración"
+    },
+    "presenting": {
+      "de": "Nach stumpfem Skrotaltrauma zeigt die Exploration eine Albuginea-Lazeration mit 35 % Parenchymverlust. Das übrige Hodengewebe ist durchblutet und erhaltungsfähig.",
+      "en": "After blunt scrotal trauma exploration shows an albuginea laceration with 35% parenchymal loss. Remaining tissue is perfused and salvageable.",
+      "es": "Tras trauma escrotal contuso, exploración: laceración albugínea con pérdida de 35% del parénquima. Resto perfundido y viable."
+    },
+    "vitals": null,
+    "subject": "trauma",
+    "classification": "trauma-genital",
+    "clinicalContext": {
+      "kind": "operation",
+      "label": {
+        "de": "OP-/Befundbesprechung",
+        "en": "Operative/report review",
+        "es": "Revisión operatoria/informe"
+      }
+    },
+    "clinicalSignoffLanguages": [],
+    "takeaway": {
+      "de": "Albuginea-Lazeration mit <50 % Parenchymverlust ist AAST III. Vitales Restgewebe möglichst erhalten; Grad allein erzwingt keine Orchiektomie.",
+      "en": "Albuginea laceration with <50% parenchymal loss is AAST III. Preserve viable tissue where possible; grade alone does not mandate orchiectomy.",
+      "es": "Laceración albugínea con pérdida <50% es AAST III. Preservar tejido viable si posible; grado solo no exige orquiectomía."
+    },
+    "steps": [
+      {
+        "id": "classification-decision",
+        "kind": "decision",
+        "prompt": {
+          "de": "Welche Kategorie passt zum beschriebenen Befund?",
+          "en": "Which category fits the described findings?",
+          "es": "¿Qué categoría corresponde a los hallazgos descritos?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "I",
+              "en": "I",
+              "es": "I"
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "de": "Diese Alternative passt hier nicht. Kontusion/Hämatom. Albuginea-Lazeration mit <50 % Parenchymverlust ist AAST III. Vitales Restgewebe möglichst erhalten; Grad allein erzwingt keine Orchiektomie.",
+              "en": "This alternative does not fit here. Contusion/haematoma. Albuginea laceration with <50% parenchymal loss is AAST III. Preserve viable tissue where possible; grade alone does not mandate orchiectomy.",
+              "es": "Esta alternativa no corresponde aquí. Contusión/hematoma. Laceración albugínea con pérdida <50% es AAST III. Preservar tejido viable si posible; grado solo no exige orquiectomía."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "III",
+              "en": "III",
+              "es": "III"
+            },
+            "score": 10,
+            "minutes": 2,
+            "feedback": {
+              "de": "Richtig. Albuginea-Lazeration mit <50 % Parenchymverlust ist AAST III. Vitales Restgewebe möglichst erhalten; Grad allein erzwingt keine Orchiektomie.",
+              "en": "Correct. Albuginea laceration with <50% parenchymal loss is AAST III. Preserve viable tissue where possible; grade alone does not mandate orchiectomy.",
+              "es": "Correcto. Laceración albugínea con pérdida <50% es AAST III. Preservar tejido viable si posible; grado solo no exige orquiectomía."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "IV",
+              "en": "IV",
+              "es": "IV"
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "de": "Diese Alternative passt hier nicht. Schwere Lazeration mit >50 % Parenchymverlust. Albuginea-Lazeration mit <50 % Parenchymverlust ist AAST III. Vitales Restgewebe möglichst erhalten; Grad allein erzwingt keine Orchiektomie.",
+              "en": "This alternative does not fit here. Major laceration with >50% parenchymal loss. Albuginea laceration with <50% parenchymal loss is AAST III. Preserve viable tissue where possible; grade alone does not mandate orchiectomy.",
+              "es": "Esta alternativa no corresponde aquí. Laceración mayor con >50% de pérdida parenquimatosa. Laceración albugínea con pérdida <50% es AAST III. Preservar tejido viable si posible; grado solo no exige orquiectomía."
+            },
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "V",
+              "en": "V",
+              "es": "V"
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "de": "Diese Alternative passt hier nicht. Komplette Zerstörung oder Abriss. Albuginea-Lazeration mit <50 % Parenchymverlust ist AAST III. Vitales Restgewebe möglichst erhalten; Grad allein erzwingt keine Orchiektomie.",
+              "en": "This alternative does not fit here. Complete destruction or avulsion. Albuginea laceration with <50% parenchymal loss is AAST III. Preserve viable tissue where possible; grade alone does not mandate orchiectomy.",
+              "es": "Esta alternativa no corresponde aquí. Destrucción completa o avulsión. Laceración albugínea con pérdida <50% es AAST III. Preservar tejido viable si posible; grado solo no exige orquiectomía."
+            },
+            "critical": false
+          }
+        ],
+        "best": "b"
+      }
+    ],
+    "references": [
+      "classification-trauma-genital",
+      "classification-aast-original"
+    ],
+    "topic": {
+      "de": "Trauma",
+      "en": "Trauma",
+      "es": "Trauma"
+    }
+  },
+  {
+    "id": "staging-trauma-30",
+    "area": "theatre",
+    "level": 2,
+    "acuity": "urgent",
+    "duty": "elective",
+    "consultant": "attending",
+    "patient": {
+      "name": "Zeno Fliederbach",
+      "age": 32,
+      "sex": "male"
+    },
+    "title": {
+      "de": "Ein Knacken und die Notaufnahme",
+      "en": "A snap and the emergency room",
+      "es": "Un chasquido y urgencias"
+    },
+    "presenting": {
+      "de": "Beim Geschlechtsverkehr hörbares Knacken, sofortige Detumeszenz und rasches Hämatom. Der Patient berichtet zusätzlich Blut am Meatus.",
+      "en": "During intercourse there is a snap, immediate detumescence and rapid haematoma. The patient also reports blood at the meatus.",
+      "es": "Durante relaciones hay chasquido, detumescencia inmediata y hematoma rápido. Además sangre en meato."
+    },
+    "vitals": null,
+    "subject": "trauma",
+    "classification": "trauma-genital",
+    "clinicalContext": {
+      "kind": "case",
+      "label": {
+        "de": "Klinischer Fall",
+        "en": "Clinical case",
+        "es": "Caso clínico"
+      }
+    },
+    "clinicalSignoffLanguages": [],
+    "takeaway": {
+      "de": "Klassische Penisfrakturzeichen sprechen für operative Reparatur. Blut am Meatus verlangt zusätzliche Abklärung einer Urethraverletzung, ohne wiederholte blinde Katheterversuche.",
+      "en": "Classic penile-fracture signs support surgical repair. Meatal blood requires additional urethral-injury assessment without repeated blind catheter attempts.",
+      "es": "Signos clásicos de fractura de pene favorecen reparación quirúrgica. Sangre en meato exige evaluar lesión uretral sin sondajes ciegos repetidos."
+    },
+    "steps": [
+      {
+        "id": "classification-decision",
+        "kind": "decision",
+        "prompt": {
+          "de": "Was ist die passende nächste Versorgung?",
+          "en": "What is the appropriate next management?",
+          "es": "¿Cuál es el siguiente manejo apropiado?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Zeitnahe operative Reparatur und Urethrabeurteilung",
+              "en": "Prompt surgical repair and urethral assessment",
+              "es": "Reparación quirúrgica pronta y valoración uretral"
+            },
+            "score": 10,
+            "minutes": 2,
+            "feedback": {
+              "de": "Richtig. Klassische Penisfrakturzeichen sprechen für operative Reparatur. Blut am Meatus verlangt zusätzliche Abklärung einer Urethraverletzung, ohne wiederholte blinde Katheterversuche.",
+              "en": "Correct. Classic penile-fracture signs support surgical repair. Meatal blood requires additional urethral-injury assessment without repeated blind catheter attempts.",
+              "es": "Correcto. Signos clásicos de fractura de pene favorecen reparación quirúrgica. Sangre en meato exige evaluar lesión uretral sin sondajes ciegos repetidos."
+            },
+            "critical": false
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Nur Kühlung, ohne Urethrabklärung",
+              "en": "Cooling only, without urethral assessment",
+              "es": "Solo frío, sin valorar uretra"
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "de": "Diese Alternative passt hier nicht. Das genügt bei Frakturverdacht nicht. Klassische Penisfrakturzeichen sprechen für operative Reparatur. Blut am Meatus verlangt zusätzliche Abklärung einer Urethraverletzung, ohne wiederholte blinde Katheterversuche.",
+              "en": "This alternative does not fit here. Insufficient for suspected fracture. Classic penile-fracture signs support surgical repair. Meatal blood requires additional urethral-injury assessment without repeated blind catheter attempts.",
+              "es": "Esta alternativa no corresponde aquí. Insuficiente ante sospecha de fractura. Signos clásicos de fractura de pene favorecen reparación quirúrgica. Sangre en meato exige evaluar lesión uretral sin sondajes ciegos repetidos."
+            },
+            "critical": false
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "TNM T3 anhand des Hämatoms vergeben",
+              "en": "Assign TNM T3 from the haematoma",
+              "es": "Asignar TNM T3 por hematoma"
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "de": "Diese Alternative passt hier nicht. Trauma wird nicht per TNM klassifiziert. Klassische Penisfrakturzeichen sprechen für operative Reparatur. Blut am Meatus verlangt zusätzliche Abklärung einer Urethraverletzung, ohne wiederholte blinde Katheterversuche.",
+              "en": "This alternative does not fit here. Trauma does not use TNM. Classic penile-fracture signs support surgical repair. Meatal blood requires additional urethral-injury assessment without repeated blind catheter attempts.",
+              "es": "Esta alternativa no corresponde aquí. Trauma no usa TNM. Signos clásicos de fractura de pene favorecen reparación quirúrgica. Sangre en meato exige evaluar lesión uretral sin sondajes ciegos repetidos."
+            },
+            "critical": false
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Mehrfach blind einen Katheter versuchen",
+              "en": "Make repeated blind catheter attempts",
+              "es": "Intentar sondaje ciego repetidamente"
+            },
+            "score": 0,
+            "minutes": 5,
+            "feedback": {
+              "de": "Diese Alternative passt hier nicht. Meatusblut erfordert gezielte Urethrabeurteilung. Klassische Penisfrakturzeichen sprechen für operative Reparatur. Blut am Meatus verlangt zusätzliche Abklärung einer Urethraverletzung, ohne wiederholte blinde Katheterversuche.",
+              "en": "This alternative does not fit here. Meatal blood requires targeted urethral assessment. Classic penile-fracture signs support surgical repair. Meatal blood requires additional urethral-injury assessment without repeated blind catheter attempts.",
+              "es": "Esta alternativa no corresponde aquí. Sangre en meato exige valoración uretral dirigida. Signos clásicos de fractura de pene favorecen reparación quirúrgica. Sangre en meato exige evaluar lesión uretral sin sondajes ciegos repetidos."
+            },
+            "critical": false
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "references": [
+      "classification-trauma-genital",
+      "classification-aast-original"
+    ],
+    "topic": {
+      "de": "Trauma",
+      "en": "Trauma",
+      "es": "Trauma"
     }
   }
 ]

@@ -2780,5 +2780,633 @@
         }
       }
     ]
+  },
+  {
+    "id": "tnm-rcc",
+    "title": {
+      "de": "Niere, Faszie und venöser Weg",
+      "en": "Kidney, fascia and venous route",
+      "es": "Riñón, fascia y vía venosa"
+    },
+    "caption": {
+      "de": "Eigene vereinfachte Zeichnung anatomischer Landmarken; keine maßstabsgetreue Darstellung eines konkreten Tumors oder Traumas. Strukturen antippen.",
+      "en": "Original simplified drawing of anatomical landmarks; not a scale depiction of a specific tumour or injury. Tap structures.",
+      "es": "Dibujo original simplificado de referencias anatómicas; no representa a escala un tumor o trauma concreto. Toca estructuras."
+    },
+    "domains": [
+      "staging",
+      "trauma"
+    ],
+    "viewBox": "0 0 600 420",
+    "svg": "<rect x=\"12\" y=\"12\" width=\"576\" height=\"396\" rx=\"24\" fill=\"#f3ead2\" stroke=\"#2a2442\" stroke-width=\"3\"/><g data-part=\"gerota\"><ellipse cx=\"180\" cy=\"220\" rx=\"135\" ry=\"175\" fill=\"#ffdf85\" stroke=\"#2a2442\" stroke-width=\"4\"/></g><g data-part=\"kidney\"><path d=\"M128 138C66 156 76 300 142 326C198 350 254 300 240 264C210 246 210 216 242 194C264 168 206 116 128 138Z\" fill=\"#ee9a9a\" stroke=\"#2a2442\" stroke-width=\"4\"/></g><g data-part=\"sinus\"><ellipse cx=\"205\" cy=\"233\" rx=\"33\" ry=\"47\" fill=\"#ffcf5a\" stroke=\"#2a2442\" stroke-width=\"4\"/></g><g data-part=\"renal-vein\"><path d=\"M242 230H388V253H242Z\" fill=\"#7fb4ff\" stroke=\"#2a2442\" stroke-width=\"4\"/></g><g data-part=\"cava\"><rect x=\"390\" y=\"44\" width=\"55\" height=\"332\" rx=\"12\" fill=\"#7fb4ff\" stroke=\"#2a2442\" stroke-width=\"4\"/></g><g data-part=\"diaphragm\"><path d=\"M50 99Q190 42 328 96Q446 136 554 91\" fill=\"none\" stroke=\"#8b6db7\" stroke-width=\"12\"/></g><g data-part=\"adrenal\"><path d=\"M119 122L183 81L235 122Z\" fill=\"#91dfcd\" stroke=\"#2a2442\" stroke-width=\"4\"/></g>",
+    "parts": [
+      {
+        "id": "gerota",
+        "label": {
+          "de": "Gerota-Faszie",
+          "en": "Gerota fascia",
+          "es": "Fascia de Gerota"
+        },
+        "note": {
+          "de": "Grenze zum Gewebe außerhalb des Nierenkompartiments.",
+          "en": "Boundary of the renal compartment.",
+          "es": "Límite del compartimento renal."
+        }
+      },
+      {
+        "id": "kidney",
+        "label": {
+          "de": "Nierenparenchym",
+          "en": "Renal parenchyma",
+          "es": "Parénquima renal"
+        },
+        "note": {
+          "de": "Die Größe allein reicht bei Invasion nicht zum T-Stadium.",
+          "en": "Size alone cannot determine T when invasion is present.",
+          "es": "Tamaño solo no determina T si existe invasión."
+        }
+      },
+      {
+        "id": "sinus",
+        "label": {
+          "de": "Nierensinus",
+          "en": "Renal sinus",
+          "es": "Seno renal"
+        },
+        "note": {
+          "de": "Sinusfett und segmentale Venen sind relevante Invasionsorte.",
+          "en": "Sinus fat and segmental veins are relevant invasion sites.",
+          "es": "Grasa sinusal y venas segmentarias son sitios de invasión relevantes."
+        }
+      },
+      {
+        "id": "renal-vein",
+        "label": {
+          "de": "Nierenvene",
+          "en": "Renal vein",
+          "es": "Vena renal"
+        },
+        "note": {
+          "de": "Verbindet den Nierenhilus mit der Cava.",
+          "en": "Connects renal hilum to cava.",
+          "es": "Conecta hilio renal con cava."
+        }
+      },
+      {
+        "id": "cava",
+        "label": {
+          "de": "V. cava inferior",
+          "en": "Inferior vena cava",
+          "es": "Vena cava inferior"
+        },
+        "note": {
+          "de": "Thrombushöhe und Wandinvasion getrennt beurteilen.",
+          "en": "Assess thrombus height and wall invasion separately.",
+          "es": "Valorar altura de trombo e invasión parietal por separado."
+        }
+      },
+      {
+        "id": "diaphragm",
+        "label": {
+          "de": "Zwerchfell",
+          "en": "Diaphragm",
+          "es": "Diafragma"
+        },
+        "note": {
+          "de": "Anatomische Grenze für infra-/supradiaphragmalen Thrombus.",
+          "en": "Landmark for infra-/supradiaphragmatic thrombus.",
+          "es": "Referencia para trombo infra/supradiafragmático."
+        }
+      },
+      {
+        "id": "adrenal",
+        "label": {
+          "de": "Nebenniere",
+          "en": "Adrenal",
+          "es": "Suprarrenal"
+        },
+        "note": {
+          "de": "Direkte Invasion und separater Metastasenherd unterscheiden.",
+          "en": "Distinguish contiguous invasion from a separate metastatic deposit.",
+          "es": "Distinguir invasión contigua de metástasis separada."
+        }
+      }
+    ]
+  },
+  {
+    "id": "tnm-bladder",
+    "title": {
+      "de": "Blasenwand: Schichten zählen",
+      "en": "Bladder wall: count the layers",
+      "es": "Pared vesical: contar capas"
+    },
+    "caption": {
+      "de": "Eigene vereinfachte Zeichnung anatomischer Landmarken; keine maßstabsgetreue Darstellung eines konkreten Tumors oder Traumas. Strukturen antippen.",
+      "en": "Original simplified drawing of anatomical landmarks; not a scale depiction of a specific tumour or injury. Tap structures.",
+      "es": "Dibujo original simplificado de referencias anatómicas; no representa a escala un tumor o trauma concreto. Toca estructuras."
+    },
+    "domains": [
+      "staging",
+      "trauma"
+    ],
+    "viewBox": "0 0 600 420",
+    "svg": "<rect x=\"12\" y=\"12\" width=\"576\" height=\"396\" rx=\"24\" fill=\"#f3ead2\" stroke=\"#2a2442\" stroke-width=\"3\"/><g data-part=\"urothelium\"><rect x=\"66\" y=\"78\" width=\"468\" height=\"38\" rx=\"12\" fill=\"#c4b5f0\" stroke=\"#2a2442\" stroke-width=\"4\"/></g><g data-part=\"lamina\"><rect x=\"66\" y=\"120\" width=\"468\" height=\"69\" rx=\"12\" fill=\"#91dfcd\" stroke=\"#2a2442\" stroke-width=\"4\"/></g><g data-part=\"muscle\"><rect x=\"66\" y=\"193\" width=\"468\" height=\"96\" rx=\"12\" fill=\"#ee9a9a\" stroke=\"#2a2442\" stroke-width=\"4\"/><path d=\"M112 241H514\" stroke=\"#2a2442\" stroke-width=\"2\" stroke-dasharray=\"8 8\"/></g><g data-part=\"fat\"><rect x=\"66\" y=\"293\" width=\"468\" height=\"63\" rx=\"12\" fill=\"#ffcf5a\" stroke=\"#2a2442\" stroke-width=\"4\"/></g>",
+    "parts": [
+      {
+        "id": "urothelium",
+        "label": {
+          "de": "Urothel",
+          "en": "Urothelium",
+          "es": "Urotelio"
+        },
+        "note": {
+          "de": "Grenze zum Lumen; Ta/Tis bleiben nichtinvasiv.",
+          "en": "Borders lumen; Ta/Tis remain non-invasive.",
+          "es": "Borde luminal; Ta/Tis son no invasivos."
+        }
+      },
+      {
+        "id": "lamina",
+        "label": {
+          "de": "Lamina propria",
+          "en": "Lamina propria",
+          "es": "Lámina propia"
+        },
+        "note": {
+          "de": "Subepitheliales Bindegewebe.",
+          "en": "Subepithelial connective tissue.",
+          "es": "Tejido conectivo subepitelial."
+        }
+      },
+      {
+        "id": "muscle",
+        "label": {
+          "de": "Muscularis propria",
+          "en": "Muscularis propria",
+          "es": "Muscular propia"
+        },
+        "note": {
+          "de": "Detrusor mit innerer und äußerer Hälfte; nicht Muscularis mucosae.",
+          "en": "Detrusor inner/outer halves; not muscularis mucosae.",
+          "es": "Detrusor en mitades interna/externa; no muscular de mucosa."
+        }
+      },
+      {
+        "id": "fat",
+        "label": {
+          "de": "Perivesikales Gewebe",
+          "en": "Perivesical tissue",
+          "es": "Tejido perivesical"
+        },
+        "note": {
+          "de": "Außerhalb der Muscularis propria.",
+          "en": "Outside muscularis propria.",
+          "es": "Fuera de muscular propia."
+        }
+      }
+    ]
+  },
+  {
+    "id": "tnm-prostate",
+    "title": {
+      "de": "Prostata: Grenzen und Nachbarn",
+      "en": "Prostate: boundaries and neighbours",
+      "es": "Próstata: límites y vecinos"
+    },
+    "caption": {
+      "de": "Eigene vereinfachte Zeichnung anatomischer Landmarken; keine maßstabsgetreue Darstellung eines konkreten Tumors oder Traumas. Strukturen antippen.",
+      "en": "Original simplified drawing of anatomical landmarks; not a scale depiction of a specific tumour or injury. Tap structures.",
+      "es": "Dibujo original simplificado de referencias anatómicas; no representa a escala un tumor o trauma concreto. Toca estructuras."
+    },
+    "domains": [
+      "staging",
+      "trauma"
+    ],
+    "viewBox": "0 0 600 420",
+    "svg": "<rect x=\"12\" y=\"12\" width=\"576\" height=\"396\" rx=\"24\" fill=\"#f3ead2\" stroke=\"#2a2442\" stroke-width=\"3\"/><g data-part=\"bladder\"><ellipse cx=\"244\" cy=\"100\" rx=\"115\" ry=\"60\" fill=\"#91dfcd\" stroke=\"#2a2442\" stroke-width=\"4\"/></g><g data-part=\"neck\"><rect x=\"220\" y=\"145\" width=\"48\" height=\"58\" rx=\"12\" fill=\"#c4b5f0\" stroke=\"#2a2442\" stroke-width=\"4\"/></g><g data-part=\"prostate\"><ellipse cx=\"244\" cy=\"249\" rx=\"90\" ry=\"69\" fill=\"#ee9a9a\" stroke=\"#2a2442\" stroke-width=\"4\"/></g><g data-part=\"seminal\"><ellipse cx=\"178\" cy=\"169\" rx=\"28\" ry=\"53\" fill=\"#ffcf5a\" stroke=\"#2a2442\" stroke-width=\"4\"/><ellipse cx=\"310\" cy=\"169\" rx=\"28\" ry=\"53\" fill=\"#ffcf5a\" stroke=\"#2a2442\" stroke-width=\"4\"/></g><g data-part=\"extraprostatic\"><path d=\"M122 223L144 238L124 252L143 269L124 287M363 224L343 240L363 255L343 270L363 287\" fill=\"none\" stroke=\"#8b6db7\" stroke-width=\"12\"/></g><g data-part=\"urethra\"><rect x=\"228\" y=\"300\" width=\"32\" height=\"77\" rx=\"12\" fill=\"#7fb4ff\" stroke=\"#2a2442\" stroke-width=\"4\"/></g>",
+    "parts": [
+      {
+        "id": "bladder",
+        "label": {
+          "de": "Harnblase",
+          "en": "Bladder",
+          "es": "Vejiga"
+        },
+        "note": {
+          "de": "Blasenhals und übrige Wand anatomisch unterscheiden.",
+          "en": "Distinguish bladder neck from remaining wall.",
+          "es": "Distinguir cuello de resto de pared."
+        }
+      },
+      {
+        "id": "neck",
+        "label": {
+          "de": "Blasenhals",
+          "en": "Bladder neck",
+          "es": "Cuello vesical"
+        },
+        "note": {
+          "de": "Mikroskopische Invasion nach Prostatektomie hat eine eigene pT-Regel.",
+          "en": "Microscopic post-prostatectomy invasion has a specific pT rule.",
+          "es": "Invasión microscópica tras prostatectomía tiene regla pT propia."
+        }
+      },
+      {
+        "id": "prostate",
+        "label": {
+          "de": "Prostata",
+          "en": "Prostate",
+          "es": "Próstata"
+        },
+        "note": {
+          "de": "Organbegrenzte Histologie nach OP wird ohne pT2a/b/c beschrieben.",
+          "en": "Organ-confined post-operative histology has no pT2a/b/c.",
+          "es": "Histología limitada al órgano tras cirugía no usa pT2a/b/c."
+        }
+      },
+      {
+        "id": "seminal",
+        "label": {
+          "de": "Samenblasen",
+          "en": "Seminal vesicles",
+          "es": "Vesículas seminales"
+        },
+        "note": {
+          "de": "Paarige Nachbarn oberhalb/hinter der Prostata.",
+          "en": "Paired structures superior/posterior to prostate.",
+          "es": "Estructuras pares superiores/posteriores a próstata."
+        }
+      },
+      {
+        "id": "extraprostatic",
+        "label": {
+          "de": "Extraprostatisches Gewebe",
+          "en": "Extraprostatic tissue",
+          "es": "Tejido extraprostático"
+        },
+        "note": {
+          "de": "Gewebe außerhalb der Prostatagrenze.",
+          "en": "Tissue beyond the prostate boundary.",
+          "es": "Tejido fuera del límite prostático."
+        }
+      },
+      {
+        "id": "urethra",
+        "label": {
+          "de": "Urethra",
+          "en": "Urethra",
+          "es": "Uretra"
+        },
+        "note": {
+          "de": "Verläuft durch Prostata und weiter zum Sphinkter.",
+          "en": "Passes through prostate toward sphincter.",
+          "es": "Cruza próstata hacia esfínter."
+        }
+      }
+    ]
+  },
+  {
+    "id": "tnm-testis",
+    "title": {
+      "de": "Hodenhüllen und Samenstrang",
+      "en": "Testicular coverings and spermatic cord",
+      "es": "Cubiertas testiculares y cordón"
+    },
+    "caption": {
+      "de": "Eigene vereinfachte Zeichnung anatomischer Landmarken; keine maßstabsgetreue Darstellung eines konkreten Tumors oder Traumas. Strukturen antippen.",
+      "en": "Original simplified drawing of anatomical landmarks; not a scale depiction of a specific tumour or injury. Tap structures.",
+      "es": "Dibujo original simplificado de referencias anatómicas; no representa a escala un tumor o trauma concreto. Toca estructuras."
+    },
+    "domains": [
+      "staging",
+      "trauma"
+    ],
+    "viewBox": "0 0 600 420",
+    "svg": "<rect x=\"12\" y=\"12\" width=\"576\" height=\"396\" rx=\"24\" fill=\"#f3ead2\" stroke=\"#2a2442\" stroke-width=\"3\"/><g data-part=\"scrotum\"><ellipse cx=\"273\" cy=\"270\" rx=\"147\" ry=\"114\" fill=\"#91dfcd\" stroke=\"#2a2442\" stroke-width=\"4\"/></g><g data-part=\"vaginalis\"><ellipse cx=\"273\" cy=\"270\" rx=\"112\" ry=\"90\" fill=\"#c4b5f0\" stroke=\"#2a2442\" stroke-width=\"4\"/></g><g data-part=\"albuginea\"><ellipse cx=\"273\" cy=\"270\" rx=\"90\" ry=\"71\" fill=\"#fffbed\" stroke=\"#2a2442\" stroke-width=\"4\"/></g><g data-part=\"testis\"><ellipse cx=\"273\" cy=\"270\" rx=\"77\" ry=\"58\" fill=\"#ee9a9a\" stroke=\"#2a2442\" stroke-width=\"4\"/></g><g data-part=\"epididymis\"><path d=\"M359 210Q400 267 351 323\" fill=\"none\" stroke=\"#ffb45a\" stroke-width=\"20\"/></g><g data-part=\"cord\"><rect x=\"251\" y=\"49\" width=\"48\" height=\"133\" rx=\"12\" fill=\"#ffcf5a\" stroke=\"#2a2442\" stroke-width=\"4\"/></g>",
+    "parts": [
+      {
+        "id": "scrotum",
+        "label": {
+          "de": "Skrotum",
+          "en": "Scrotum",
+          "es": "Escroto"
+        },
+        "note": {
+          "de": "Äußere Hülle; getrennt von den Hodenhüllen.",
+          "en": "Outer covering, distinct from testicular tunics.",
+          "es": "Cubierta externa, distinta de túnicas testiculares."
+        }
+      },
+      {
+        "id": "vaginalis",
+        "label": {
+          "de": "Tunica vaginalis",
+          "en": "Tunica vaginalis",
+          "es": "Túnica vaginal"
+        },
+        "note": {
+          "de": "Seröse Hülle außerhalb der Albuginea.",
+          "en": "Serous covering outside albuginea.",
+          "es": "Cubierta serosa exterior a albugínea."
+        }
+      },
+      {
+        "id": "albuginea",
+        "label": {
+          "de": "Tunica albuginea",
+          "en": "Tunica albuginea",
+          "es": "Túnica albugínea"
+        },
+        "note": {
+          "de": "Feste Hodenhülle; bei Trauma auf Kontinuität achten.",
+          "en": "Firm covering; assess continuity in trauma.",
+          "es": "Cubierta firme; valorar continuidad en trauma."
+        }
+      },
+      {
+        "id": "testis",
+        "label": {
+          "de": "Hodenparenchym",
+          "en": "Testicular parenchyma",
+          "es": "Parénquima testicular"
+        },
+        "note": {
+          "de": "Keimzelltumor und vitales Gewebe werden histologisch beurteilt.",
+          "en": "Germ-cell tumour and viable tissue are assessed histologically.",
+          "es": "Tumor germinal y tejido viable se valoran histológicamente."
+        }
+      },
+      {
+        "id": "epididymis",
+        "label": {
+          "de": "Nebenhoden",
+          "en": "Epididymis",
+          "es": "Epidídimo"
+        },
+        "note": {
+          "de": "Hinter dem Hoden; Invasion getrennt dokumentieren.",
+          "en": "Posterior to testis; document invasion separately.",
+          "es": "Posterior al testículo; documentar invasión aparte."
+        }
+      },
+      {
+        "id": "cord",
+        "label": {
+          "de": "Samenstrang",
+          "en": "Spermatic cord",
+          "es": "Cordón espermático"
+        },
+        "note": {
+          "de": "Enthält Samenleiter, Gefäße und Nerven.",
+          "en": "Contains vas deferens, vessels and nerves.",
+          "es": "Contiene deferente, vasos y nervios."
+        }
+      }
+    ]
+  },
+  {
+    "id": "tnm-urogenital",
+    "title": {
+      "de": "Primärorte im Urogenitaltrakt",
+      "en": "Primary sites in the urogenital tract",
+      "es": "Sitios primarios urogenitales"
+    },
+    "caption": {
+      "de": "Eigene vereinfachte Zeichnung anatomischer Landmarken; keine maßstabsgetreue Darstellung eines konkreten Tumors oder Traumas. Strukturen antippen.",
+      "en": "Original simplified drawing of anatomical landmarks; not a scale depiction of a specific tumour or injury. Tap structures.",
+      "es": "Dibujo original simplificado de referencias anatómicas; no representa a escala un tumor o trauma concreto. Toca estructuras."
+    },
+    "domains": [
+      "staging",
+      "trauma"
+    ],
+    "viewBox": "0 0 600 420",
+    "svg": "<rect x=\"12\" y=\"12\" width=\"576\" height=\"396\" rx=\"24\" fill=\"#f3ead2\" stroke=\"#2a2442\" stroke-width=\"3\"/><g data-part=\"adrenal\"><path d=\"M155 76L204 40L246 76Z\" fill=\"#ffcf5a\" stroke=\"#2a2442\" stroke-width=\"4\"/></g><g data-part=\"kidney\"><ellipse cx=\"199\" cy=\"123\" rx=\"62\" ry=\"45\" fill=\"#ee9a9a\" stroke=\"#2a2442\" stroke-width=\"4\"/><ellipse cx=\"237\" cy=\"128\" rx=\"22\" ry=\"25\" fill=\"#fffbed\" stroke=\"#2a2442\" stroke-width=\"4\"/></g><g data-part=\"ureter\"><path d=\"M242 151Q235 208 300 232\" fill=\"none\" stroke=\"#7fb4ff\" stroke-width=\"18\"/></g><g data-part=\"bladder\"><ellipse cx=\"326\" cy=\"260\" rx=\"75\" ry=\"46\" fill=\"#91dfcd\" stroke=\"#2a2442\" stroke-width=\"4\"/></g><g data-part=\"urethra\"><rect x=\"311\" y=\"302\" width=\"30\" height=\"78\" rx=\"12\" fill=\"#c4b5f0\" stroke=\"#2a2442\" stroke-width=\"4\"/></g><g data-part=\"sympathetic\"><path d=\"M420 81V202\" stroke=\"#8b6db7\" stroke-width=\"7\"/><ellipse cx=\"420\" cy=\"127\" rx=\"17\" ry=\"13\" fill=\"#ffcf5a\" stroke=\"#2a2442\" stroke-width=\"4\"/><ellipse cx=\"420\" cy=\"175\" rx=\"17\" ry=\"13\" fill=\"#ffcf5a\" stroke=\"#2a2442\" stroke-width=\"4\"/></g>",
+    "parts": [
+      {
+        "id": "adrenal",
+        "label": {
+          "de": "Nebenniere",
+          "en": "Adrenal",
+          "es": "Suprarrenal"
+        },
+        "note": {
+          "de": "Rindenkarzinom und PPGL haben verschiedene TNM-Systeme.",
+          "en": "Cortical carcinoma and PPGL use different TNM systems.",
+          "es": "Carcinoma cortical y PPGL usan TNM distintos."
+        }
+      },
+      {
+        "id": "kidney",
+        "label": {
+          "de": "Niere / Nierenbecken",
+          "en": "Kidney / renal pelvis",
+          "es": "Riñón / pelvis renal"
+        },
+        "note": {
+          "de": "RCC und Nierenbecken-UC nicht verwechseln.",
+          "en": "Distinguish RCC from renal-pelvis UC.",
+          "es": "Distinguir RCC de UC piélico."
+        }
+      },
+      {
+        "id": "ureter",
+        "label": {
+          "de": "Ureter",
+          "en": "Ureter",
+          "es": "Uréter"
+        },
+        "note": {
+          "de": "Nierenbecken und Ureter gehören zum oberen Harntrakt.",
+          "en": "Renal pelvis and ureter form the upper tract.",
+          "es": "Pelvis renal y uréter forman tracto superior."
+        }
+      },
+      {
+        "id": "bladder",
+        "label": {
+          "de": "Blase",
+          "en": "Bladder",
+          "es": "Vejiga"
+        },
+        "note": {
+          "de": "Regionaler Lymphabfluss unterscheidet sich von anderen Primärorten.",
+          "en": "Regional drainage differs from other primary sites.",
+          "es": "Drenaje regional difiere de otros primarios."
+        }
+      },
+      {
+        "id": "urethra",
+        "label": {
+          "de": "Urethra",
+          "en": "Urethra",
+          "es": "Uretra"
+        },
+        "note": {
+          "de": "Primäres Urethrakarzinom hat eigene Kategorien.",
+          "en": "Primary urethral carcinoma has its own categories.",
+          "es": "Carcinoma uretral primario tiene categorías propias."
+        }
+      },
+      {
+        "id": "sympathetic",
+        "label": {
+          "de": "Sympathische Paraganglien",
+          "en": "Sympathetic paraganglia",
+          "es": "Paraganglios simpáticos"
+        },
+        "note": {
+          "de": "Schematisch neben der Wirbelsäule; mögliche retroperitoneale Primärorte.",
+          "en": "Schematic alongside spine; possible retroperitoneal primary sites.",
+          "es": "Esquemáticos junto a columna; posibles primarios retroperitoneales."
+        }
+      }
+    ]
+  },
+  {
+    "id": "trauma-kidney-map",
+    "title": {
+      "de": "Nierentrauma: Parenchym, Abfluss, Gefäße",
+      "en": "Renal trauma: tissue, drainage and vessels",
+      "es": "Trauma renal: tejido, drenaje y vasos"
+    },
+    "caption": {
+      "de": "Eigene vereinfachte Zeichnung anatomischer Landmarken; keine maßstabsgetreue Darstellung eines konkreten Tumors oder Traumas. Strukturen antippen.",
+      "en": "Original simplified drawing of anatomical landmarks; not a scale depiction of a specific tumour or injury. Tap structures.",
+      "es": "Dibujo original simplificado de referencias anatómicas; no representa a escala un tumor o trauma concreto. Toca estructuras."
+    },
+    "domains": [
+      "staging",
+      "trauma"
+    ],
+    "viewBox": "0 0 600 420",
+    "svg": "<rect x=\"12\" y=\"12\" width=\"576\" height=\"396\" rx=\"24\" fill=\"#f3ead2\" stroke=\"#2a2442\" stroke-width=\"3\"/><g data-part=\"parenchyma\"><path d=\"M177 81C69 69 52 304 164 351C247 384 319 311 284 273C245 249 247 182 290 157C307 125 240 70 177 81Z\" fill=\"#ee9a9a\" stroke=\"#2a2442\" stroke-width=\"4\"/></g><g data-part=\"collecting\"><path d=\"M251 214L166 124M251 214L138 211M251 214L178 310M251 214L297 242\" fill=\"none\" stroke=\"#ffcf5a\" stroke-width=\"15\"/></g><g data-part=\"upj\"><path d=\"M296 243Q377 298 354 364\" fill=\"none\" stroke=\"#ffcf5a\" stroke-width=\"17\"/></g><g data-part=\"vessels\"><path d=\"M290 182H450\" stroke=\"#ee9a9a\" stroke-width=\"13\"/><path d=\"M290 202H450\" stroke=\"#7fb4ff\" stroke-width=\"13\"/></g>",
+    "parts": [
+      {
+        "id": "parenchyma",
+        "label": {
+          "de": "Parenchym",
+          "en": "Parenchyma",
+          "es": "Parénquima"
+        },
+        "note": {
+          "de": "Lazerationstiefe und Perfusion beurteilen.",
+          "en": "Assess laceration depth and perfusion.",
+          "es": "Valorar profundidad de laceración y perfusión."
+        }
+      },
+      {
+        "id": "collecting",
+        "label": {
+          "de": "Kelch-Becken-System",
+          "en": "Collecting system",
+          "es": "Sistema pielocalicial"
+        },
+        "note": {
+          "de": "Urinextravasation in der Spätphase suchen.",
+          "en": "Look for delayed urinary extravasation.",
+          "es": "Buscar extravasación urinaria en fase tardía."
+        }
+      },
+      {
+        "id": "upj",
+        "label": {
+          "de": "UPJ / Ureter",
+          "en": "UPJ / ureter",
+          "es": "UPJ / uréter"
+        },
+        "note": {
+          "de": "Übergang von Nierenbecken in Ureter.",
+          "en": "Pelvis-to-ureter junction.",
+          "es": "Unión de pelvis con uréter."
+        }
+      },
+      {
+        "id": "vessels",
+        "label": {
+          "de": "Hilusgefäße",
+          "en": "Hilar vessels",
+          "es": "Vasos hiliares"
+        },
+        "note": {
+          "de": "Gefäßverletzung, Thrombose und aktive Blutung unterscheiden.",
+          "en": "Distinguish vessel injury, thrombosis and active bleeding.",
+          "es": "Distinguir lesión vascular, trombosis y sangrado activo."
+        }
+      }
+    ]
+  },
+  {
+    "id": "trauma-bladder-map",
+    "title": {
+      "de": "Blasentrauma: Räume und Blasenhals",
+      "en": "Bladder trauma: spaces and neck",
+      "es": "Trauma vesical: espacios y cuello"
+    },
+    "caption": {
+      "de": "Eigene vereinfachte Zeichnung anatomischer Landmarken; keine maßstabsgetreue Darstellung eines konkreten Tumors oder Traumas. Strukturen antippen.",
+      "en": "Original simplified drawing of anatomical landmarks; not a scale depiction of a specific tumour or injury. Tap structures.",
+      "es": "Dibujo original simplificado de referencias anatómicas; no representa a escala un tumor o trauma concreto. Toca estructuras."
+    },
+    "domains": [
+      "staging",
+      "trauma"
+    ],
+    "viewBox": "0 0 600 420",
+    "svg": "<rect x=\"12\" y=\"12\" width=\"576\" height=\"396\" rx=\"24\" fill=\"#f3ead2\" stroke=\"#2a2442\" stroke-width=\"3\"/><g data-part=\"intraperitoneal\"><rect x=\"62\" y=\"51\" width=\"476\" height=\"100\" rx=\"12\" fill=\"#c4b5f0\" stroke=\"#2a2442\" stroke-width=\"4\"/></g><g data-part=\"extraperitoneal\"><rect x=\"62\" y=\"163\" width=\"476\" height=\"202\" rx=\"12\" fill=\"#ffcf5a\" stroke=\"#2a2442\" stroke-width=\"4\"/></g><g data-part=\"bladder\"><ellipse cx=\"300\" cy=\"232\" rx=\"127\" ry=\"97\" fill=\"#91dfcd\" stroke=\"#2a2442\" stroke-width=\"4\"/><path d=\"M66 153H209Q299 76 390 153H535\" fill=\"none\" stroke=\"#8b6db7\" stroke-width=\"8\"/></g><g data-part=\"neck\"><path d=\"M246 260L355 260L309 322L309 382H286V322Z\" fill=\"#ee9a9a\" stroke=\"#2a2442\" stroke-width=\"4\"/></g>",
+    "parts": [
+      {
+        "id": "intraperitoneal",
+        "label": {
+          "de": "Intraperitonealer Raum",
+          "en": "Intraperitoneal space",
+          "es": "Espacio intraperitoneal"
+        },
+        "note": {
+          "de": "Ruptur der peritonealbedeckten Kuppel kann hierhin kommunizieren.",
+          "en": "A rupture of the peritoneal-covered dome may communicate here.",
+          "es": "Rotura de cúpula cubierta por peritoneo puede comunicar aquí."
+        }
+      },
+      {
+        "id": "extraperitoneal",
+        "label": {
+          "de": "Extraperitonealer Raum",
+          "en": "Extraperitoneal space",
+          "es": "Espacio extraperitoneal"
+        },
+        "note": {
+          "de": "Liegt außerhalb des Peritoneums um die tiefere Blase.",
+          "en": "Outside the peritoneum around the lower bladder.",
+          "es": "Fuera del peritoneo alrededor de vejiga inferior."
+        }
+      },
+      {
+        "id": "bladder",
+        "label": {
+          "de": "Blasenwand / Kuppel",
+          "en": "Bladder wall / dome",
+          "es": "Pared vesical / cúpula"
+        },
+        "note": {
+          "de": "Schematische Kuppel am Übergang der Räume.",
+          "en": "Schematic dome at the boundary between spaces.",
+          "es": "Cúpula esquemática en límite entre espacios."
+        }
+      },
+      {
+        "id": "neck",
+        "label": {
+          "de": "Blasenhals / Trigonum",
+          "en": "Bladder neck / trigone",
+          "es": "Cuello vesical / trígono"
+        },
+        "note": {
+          "de": "Beteiligung macht die Verletzung komplex; Ostien mitbeurteilen.",
+          "en": "Involvement makes injury complex; assess orifices too.",
+          "es": "Afectación hace lesión compleja; valorar también orificios."
+        }
+      }
+    ]
   }
 ]
