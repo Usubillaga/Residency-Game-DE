@@ -1,6 +1,6 @@
 # Wöchentliche Urologie-Berichte
 
-Hier werden die angeforderten Studienberichte und Repository-Prüfungen archiviert. Die erste geplante Ausgabe ist am **16. Oktober 2026**. Die Aufgaben laufen freitags in der Zeitzone **Europe/Berlin**: Studienbericht morgens, Repository-Prüfung nachmittags. Die Terminierung erfolgt über ChatGPT-Aufgaben; sie ist kein GitHub-Actions-Cronjob.
+Hier werden die angeforderten Studienberichte und Repository-Prüfungen archiviert. Die erste geplante Ausgabe ist am **16. Oktober 2026**. Studienbericht und Repository-Prüfung sind für Freitagmorgen in der Zeitzone **Europe/Berlin** geplant. Sie werden im selben Freitagslauf als getrennte Berichte erzeugt. Die Terminierung erfolgt über eine ChatGPT-Aufgabe; sie ist kein GitHub-Actions-Cronjob.
 
 ## Studien und Updates
 
