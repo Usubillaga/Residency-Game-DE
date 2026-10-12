@@ -1,0 +1,34 @@
+name: Restore tested TNM and review files
+on:
+  push:
+    branches: [codex/staging-trauma-review-export]
+    paths: [.codex-transfer/manifest.json]
+permissions:
+  contents: write
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: codex/staging-trauma-review-export
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Restore exact checked files and remove temporary transport
+        run: python .codex-transfer/restore.py
+      - name: Validate restored content and interface
+        run: |
+          python scripts/manage.py validate
+          python -m unittest discover -s tests
+          node --test tests/tests-engine.cjs tests/tests-cartoon.cjs
+          python scripts/manage.py build
+      - name: Verify tree and commit only to the work branch
+        run: |
+          git add -A
+          test "$(git write-tree)" = a2f1eb8625a6bd47829020b6b371badb8c42e8df
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Restore tested TNM and trauma cases with exportable review marks'
+          git push origin HEAD:refs/heads/codex/staging-trauma-review-export
