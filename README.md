@@ -2,11 +2,21 @@
 
 > **Residency-Game-DE – Rollenspiel als Assistenzärztin oder Assistenzarzt der Urologie.** Öffne `standalone.html` im Browser, wähle **DE** und tritt deinen ersten Nachtdienst an.
 
-A cartoon hospital comedy and urology decision game in **English, German and Spanish**, with **exactly 500 scored questions in 402 playable cases**: 30 original three-decision stories (90 questions), 20 oncology stories (58 questions), all 267 imported main-bank questions, 35 selected supplementary clinical questions and **50 new urological anatomy questions**. Choose an avatar, meet the cast, navigate illustrated departments, collect coffee quips and face the chief's morning-report quiz.
+A cartoon hospital comedy and urology decision game in **English, German and Spanish**, with **exactly 500 scored questions in 402 playable cases**: 30 original three-decision stories (90 questions), 20 oncology stories (58 questions), all 267 imported main-bank questions, 5 retained supplementary clinical questions, **30 new TNM/trauma cases** and **50 new urological anatomy questions**. Choose an avatar, meet the cast, navigate illustrated departments, collect coffee quips and face the chief's morning-report quiz.
 
 All 267 imported source questions remain present, with their original snapshots and the existing correction layer. The 30 original stories and 20 oncology stories remain present. It covers **16 source specialties** across five game departments. The supplied classic HTML games remain unchanged in `classic/`.
 
 ![Introduction preview](docs/preview.jpg)
+
+## TNM, trauma and question improvements
+
+The **TNM & Trauma** navigation opens **14 edition-labelled guides**: RCC, bladder, prostate, UTUC, testicular germ-cell tumours (seminoma and nonseminoma), penile, primary urethral, adrenocortical and pheochromocytoma/sympathetic paraganglioma systems; plus renal, ureteric, bladder, urethral and genital trauma. T/N/M, testicular S and relevant stage groups are translated into DE/EN/ES and linked to EAU, NCI and AAST primary sources. Clinical and pathological assessment are kept separate. Renal trauma explicitly uses the **AAST 2018 table in EAU 2026**; it is not mislabelled as the newer 2025 revision.
+
+**30 new clinical/operative cases** replace 30 older supplementary single questions. The bank remains **500 scored decisions in 402 cases**; all 267 imports, 50 multistep stories and 50 OP/case anatomy questions remain. Ten staging-review cases retain day-clinic duty and ten retain radiation-oncology duty; their presence does not prescribe treatment. The archive now preserves 101 cases and old completed progress. Seven new original clickable SVG schematics bring the atlas to 22 drawings.
+
+Every question has a separate **🚩 Mark for improvement / Zur Verbesserung markieren** control: in the active chart, explanations, library (expand multistep cards), chief quiz and historical review. Add an optional comment of up to 2,000 Unicode characters. Marking changes neither clinical points nor time; it is independent of the star bookmark. Marks persist locally and travel in version-3 game saves; older saves still load and merges keep the newest comment for each exact case/step pair.
+
+On **Progress**, select **Export marked questions**. The JSON file includes exact question IDs, comments, complete trilingual case snapshots, answer explanations and linked classification/source metadata. It excludes the player profile, logbook and active session. **Attach this JSON in the ChatGPT chat** to request question improvements; nothing is sent automatically.
 
 ## Start playing
 
@@ -85,7 +95,7 @@ Every case's duty is stored as `duty` in `data/*.json`; imported questions take 
 
 ## Schemas, anatomy atlas and own images
 
-- **Teaching schemas:** 15 cartoon schematic drawings made for this game (`data/schemas.json`) with 189 tappable structures, from the urinary tract overview, kidney envelopes, prostate zones and bladder-wall T stages to urinary diversion, micturition control, the retroperitoneal lymph-node landing zones and VUR grades. 198 of the 402 active cases link to one; questions about drugs, laboratory values, counselling or guidelines deliberately have none. After the last decision of a case, the explanation shows the matching schema with the case's key structures glowing (★). Every structure is tappable and shows its name and one key fact. The debrief and the logbook review show it too. The links between cases and schemas are in `data/case-schemas.json`.
+- **Teaching schemas:** 22 cartoon schematic drawings made for this game (`data/schemas.json`) with 226 tappable structures, from the urinary tract overview, kidney envelopes, prostate zones and bladder-wall T stages to urinary diversion, micturition control, the retroperitoneal lymph-node landing zones and VUR grades. 225 of the 402 active cases link to one; questions about drugs, laboratory values, counselling or guidelines deliberately have none. After the last decision of a case, the explanation shows the matching schema with the case's key structures glowing (★). Every structure is tappable and shows its name and one key fact. The debrief and the logbook review show it too. The links between cases and schemas are in `data/case-schemas.json`.
 - **Anatomy atlas:** a new *Atlas* page lists all schemas. *Find the structure* is a five-round tap quiz on a schema. A right tap gives confetti, a wrong one the splash, and 5 of 5 earns the *Anatomy ace* sticker. Quiz results never change case scores.
 - **Own images:** put licensed PNG, JPEG or WebP files in `media/` and list them in `data/case-media.json`, with alt text and caption in EN/DE/ES, `credit` and `license`. The build embeds them and refuses a file without credit or licence, a file outside `media/` or an SVG. See [media/README.md](media/README.md). Do not add identifiable patient images.
 
@@ -189,11 +199,11 @@ assets/art.js                Original-style character and department artwork
 assets/engine.js             Game and progress logic
 assets/app.js                Interface, filters and pagination
 assets/catalog.js            Generated case/reference library
-data/emergency.json          35 active emergency cases
-data/ward.json               33 active ward cases
-data/clinic.json             201 active clinic cases
+data/emergency.json          39 active emergency cases
+data/ward.json               29 active ward cases
+data/clinic.json             197 active clinic cases
 data/endoscopy.json          37 active endoscopy cases
-data/theatre.json            96 active theatre cases
+data/theatre.json            100 active theatre cases
 data/imported-source.json    Original question snapshot and provenance
 data/import-selection.json   Source-to-case mapping
 data/import-manifest.json    Import counts and hashes
@@ -202,7 +212,8 @@ data/protocols.json          Systemic and intravesical therapy protocols (protoc
 data/radiotherapy.json       Radiotherapy schemes (protocol page)
 data/attending-hints.json    The attending's hint for every decision
 data/refs-*.json             Reference metadata and related-source links
-data/question-contract.json  Exact 500-question target and minimum anatomy coverage
+data/classifications.json    TNM/trauma guides, source editions and linked cases
+data/question-contract.json  Exact 500-question target, anatomy minimum and 30 TNM/trauma cases
 data/archive/               Historical supplementary questions for old logbook entries
 scripts/import_urofragen.py  JSON-only source importer and comparison
 scripts/manage.py            Build, validation, scheduling, analysis and packaging

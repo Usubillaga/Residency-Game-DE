@@ -472,6 +472,28 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{o
 .protocol-more p{margin:6px 0}
 .protocol-sources a{color:#91dfcd}
 .protocol-card .actions{margin-top:4px}
+
+/* Per-question improvement notes are distinct from the star bookmark. */
+.question-review{border:2px dashed #9b89a6;border-radius:14px;padding:10px;margin:12px 0;min-width:0}
+.review-toggle{background:#f3ead2;color:#2a2442;border:2px solid #2a2442;white-space:normal;text-align:left}
+.review-toggle.on{background:#ffcf5a;color:#2a2442}
+.review-note-label{display:grid;gap:6px;margin-top:10px;font-size:.75rem;font-weight:700}
+.review-note{box-sizing:border-box;width:100%;min-height:72px;resize:vertical;background:#fffbed;color:#302944;border:2px solid #9b89a6;font-size:.83rem}
+.review-card-details{padding:8px 0;font-size:.8rem}.review-card-details summary{cursor:pointer;font-weight:700}
+.case-card>.question-review,.case-card>.review-card-details{width:100%;box-sizing:border-box}
+.marked-panel{margin:18px 0 30px}.marked-panel>p{font-size:.84rem;line-height:1.6}
+.marked-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px;margin-top:18px}
+.marked-list article{background:#232d4a;border:2px solid #574e72;border-radius:16px;padding:14px;min-width:0}
+.marked-list h3{font-size:.94rem;margin:0 0 8px}.marked-list p{font-size:.82rem}
+.classification-tabs{display:grid;gap:16px;margin:0 0 24px}.classification-tabs b{display:block;color:#ffcf5a;margin-bottom:8px}
+.classification-tabs .actions{gap:8px;flex-wrap:wrap}
+.classification-guide{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,.85fr);gap:24px;margin-bottom:36px}
+.classification-guide>div{min-width:0}.classification-guide aside{align-self:start;position:sticky;top:100px;min-width:0}
+.classification-guide h3{font-size:1rem;margin-top:22px}
+.classification-edition{font-size:.8rem;color:#91dfcd}.classification-cautions{padding:14px;border-left:4px solid #ffcf5a;background:#232d4a;font-size:.85rem;line-height:1.65}
+.classification-joke{font-size:.83rem;color:#ffcf5a}.classification-guide .protocol-table td{line-height:1.6}
+.boss-case>p{font-size:.88rem;line-height:1.6;white-space:pre-line}
+@media(max-width:980px){.classification-guide{grid-template-columns:1fr}.classification-guide aside{position:static;max-width:620px}.top-inner{flex-wrap:wrap}.nav{overflow-x:auto;max-width:100%;flex-wrap:nowrap}}
 .attending-warning .comic-speech{border-color:#b6505d}
 .attending-warning .comic-speech:before{border-color:#b6505d}
 .attending-hint{margin-top:6px}
