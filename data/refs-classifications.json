@@ -1,0 +1,114 @@
+[
+  {
+    "id": "classification-rcc",
+    "title": "EAU / NCI / AAST: Renal cell carcinoma — EAU 2026 · TNM 8 (2017)",
+    "url": "https://uroweb.org/guidelines/renal-cell-carcinoma/chapter/staging-and-classification-systems",
+    "checked": "2026-10-12",
+    "scope": "TNM or organ injury classification; source edition stated explicitly"
+  },
+  {
+    "id": "classification-bladder",
+    "title": "EAU / NCI / AAST: Bladder carcinoma — EAU 2026 · TNM 9 (2025)",
+    "url": "https://uroweb.org/guidelines/non-muscle-invasive-bladder-cancer/chapter/pathological-staging-and-classification-systems",
+    "checked": "2026-10-12",
+    "scope": "TNM or organ injury classification; source edition stated explicitly"
+  },
+  {
+    "id": "classification-prostate",
+    "title": "EAU / NCI / AAST: Prostate carcinoma — EAU 2026 · UICC TNM 8",
+    "url": "https://uroweb.org/guidelines/prostate-cancer/chapter/classification-and-staging-systems",
+    "checked": "2026-10-12",
+    "scope": "TNM or organ injury classification; source edition stated explicitly"
+  },
+  {
+    "id": "classification-utuc",
+    "title": "EAU / NCI / AAST: Upper tract urothelial carcinoma — EAU 2026 · TNM 2025",
+    "url": "https://uroweb.org/guidelines/upper-urinary-tract-urothelial-cell-carcinoma/chapter/staging-and-classification-systems",
+    "checked": "2026-10-12",
+    "scope": "TNM or organ injury classification; source edition stated explicitly"
+  },
+  {
+    "id": "classification-testis",
+    "title": "EAU / NCI / AAST: Testicular germ-cell tumour: seminoma and nonseminoma — EAU 2026 · UICC TNM 9 (2025)",
+    "url": "https://uroweb.org/guidelines/testicular-cancer/chapter/staging-amp-classification-systems",
+    "checked": "2026-10-12",
+    "scope": "TNM or organ injury classification; source edition stated explicitly"
+  },
+  {
+    "id": "classification-penile",
+    "title": "EAU / NCI / AAST: Penile carcinoma — EAU 2026 · TNM 8/9 (T/N unverändert)",
+    "url": "https://uroweb.org/guidelines/penile-cancer/chapter/staging-and-classification-systems",
+    "checked": "2026-10-12",
+    "scope": "TNM or organ injury classification; source edition stated explicitly"
+  },
+  {
+    "id": "classification-urethral",
+    "title": "EAU / NCI / AAST: Primary urethral carcinoma — EAU 2026 · TNM 8; prostatic UC separately",
+    "url": "https://uroweb.org/guidelines/primary-urethral-carcinoma/chapter/staging-and-classification-systems",
+    "checked": "2026-10-12",
+    "scope": "TNM or organ injury classification; source edition stated explicitly"
+  },
+  {
+    "id": "classification-acc",
+    "title": "EAU / NCI / AAST: Adrenocortical carcinoma — NCI PDQ · AJCC TNM 8",
+    "url": "https://www.cancer.gov/types/adrenocortical/hp/adrenocortical-treatment-pdq",
+    "checked": "2026-10-12",
+    "scope": "TNM or organ injury classification; source edition stated explicitly"
+  },
+  {
+    "id": "classification-ppgl",
+    "title": "EAU / NCI / AAST: Pheochromocytoma / sympathetic paraganglioma — NCI PDQ · AJCC TNM 8",
+    "url": "https://www.cancer.gov/types/pheochromocytoma/hp/pheochromocytoma-treatment-pdq",
+    "checked": "2026-10-12",
+    "scope": "TNM or organ injury classification; source edition stated explicitly"
+  },
+  {
+    "id": "classification-aast-original",
+    "title": "AAST Organ Injury Scales — original urogenital tables",
+    "url": "https://www.aast.org/asset/1F4DADD1-4370-4465-B93235CCE352A7F5/",
+    "checked": "2026-10-12",
+    "scope": "Original ureter, bladder, urethra and testis OIS definitions"
+  },
+  {
+    "id": "classification-aast-revisions",
+    "title": "AAST Organ Injury Scale revisions — kidney 2018 and 2025",
+    "url": "https://www.aast.org/resources/trauma-tools/organ-injury-scale.html",
+    "checked": "2026-10-12",
+    "scope": "Edition inventory; no unsupported claim that the EAU 2018 table is the latest AAST revision"
+  },
+  {
+    "id": "classification-trauma-kidney",
+    "title": "EAU / NCI / AAST: Renal trauma — EAU 2026 table · AAST 2018 (not 2025)",
+    "url": "https://uroweb.org/guidelines/urological-trauma/chapter/urogenital-trauma-guidelines",
+    "checked": "2026-10-12",
+    "scope": "TNM or organ injury classification; source edition stated explicitly"
+  },
+  {
+    "id": "classification-trauma-ureter",
+    "title": "EAU / NCI / AAST: Ureteric trauma — AAST original OIS · EAU 2026 clinical guidance",
+    "url": "https://uroweb.org/guidelines/urological-trauma/chapter/urogenital-trauma-guidelines",
+    "checked": "2026-10-12",
+    "scope": "TNM or organ injury classification; source edition stated explicitly"
+  },
+  {
+    "id": "classification-trauma-bladder",
+    "title": "EAU / NCI / AAST: Bladder trauma — AAST original OIS · EAU 2026 clinical guidance",
+    "url": "https://uroweb.org/guidelines/urological-trauma/chapter/urogenital-trauma-guidelines",
+    "checked": "2026-10-12",
+    "scope": "TNM or organ injury classification; source edition stated explicitly"
+  },
+  {
+    "id": "classification-trauma-urethra",
+    "title": "EAU / NCI / AAST: Urethral trauma — EAU 2026 · clinical injury categories",
+    "url": "https://uroweb.org/guidelines/urological-trauma/chapter/urogenital-trauma-guidelines",
+    "checked": "2026-10-12",
+    "scope": "TNM or organ injury classification; source edition stated explicitly"
+  },
+  {
+    "id": "classification-trauma-genital",
+    "title": "EAU / NCI / AAST: Genital trauma: testis and penis — AAST original testis OIS · EAU 2026",
+    "url": "https://uroweb.org/guidelines/urological-trauma/chapter/urogenital-trauma-guidelines",
+    "checked": "2026-10-12",
+    "scope": "TNM or organ injury classification; source edition stated explicitly"
+  }
+]
