@@ -811,26 +811,26 @@ function fakeFigure() {
 const partIdsInSvg = svg => [...svg.matchAll(/data-part="([^"]+)"/g)].map(match => match[1]);
 // The whole SVG must consist of tags made only of whitelisted elements and double-quoted, whitelisted attributes
 // whose values contain no angle brackets, so no attribute or tag can hide after a stray ">".
-const SVG_ELEMENTS = new Set(['g', 'path', 'rect', 'circle', 'ellipse', 'line', 'polyline', 'polygon']);
-const SVG_ATTRIBUTES = new Set(['d', 'x', 'y', 'width', 'height', 'rx', 'ry', 'cx', 'cy', 'r', 'x1', 'y1', 'x2', 'y2', 'points', 'fill', 'stroke',
-  'stroke-width', 'stroke-dasharray', 'stroke-linecap', 'stroke-linejoin', 'opacity', 'fill-opacity', 'stroke-opacity', 'transform', 'data-part']);
+const SVG_ELEMENTS = new Set(['g','path','rect','circle','ellipse','line','polyline','polygon','defs','linearGradient','radialGradient','stop','text','tspan']);
+const SVG_ATTRIBUTES = new Set(['d','x','y','width','height','rx','ry','cx','cy','r','x1','y1','x2','y2','points','fill','stroke','stroke-width','stroke-dasharray','stroke-linecap','stroke-linejoin','opacity','fill-opacity','stroke-opacity','transform','data-part','data-label','id','offset','stop-color','stop-opacity','gradientUnits','gradientTransform','fx','fy','font-size','font-family','font-weight','text-anchor','dominant-baseline','dx','dy']);
 function strictSvgProblems(svg) {
-  const tag = /<(\/?)([a-z]+)((?:\s+[a-z][a-z0-9-]*="[^"<>]*")*)\s*(\/?)>/y;
-  const problems = [];
-  let at = 0;
-  while (at < svg.length) {
-    if (/\s/.test(svg[at])) { at++; continue; }
-    tag.lastIndex = at;
-    const match = tag.exec(svg);
-    if (!match) { problems.push('unparsable markup at ' + at + ': ' + svg.slice(at, at + 40)); break; }
-    if (!SVG_ELEMENTS.has(match[2])) problems.push('element <' + match[2] + '>');
-    for (const attribute of match[3].matchAll(/([a-z][a-z0-9-]*)="([^"]*)"/g)) {
-      if (!SVG_ATTRIBUTES.has(attribute[1])) problems.push('attribute ' + attribute[1]);
-      if (/url\(|javascript:/i.test(attribute[2])) problems.push('unsafe value in ' + attribute[1]);
+  const tag=/<(\/?)([a-zA-Z]+)((?:\s+[a-zA-Z][a-zA-Z0-9-]*="[^"<>]*")*)\s*(\/?)>/y;
+  const ids=new Set([...svg.matchAll(/<(?:linearGradient|radialGradient) id="([a-z][a-z0-9-]*)"/g)].map(m=>m[1]));
+  const stack=[],problems=[];let at=0;
+  while(at<svg.length) {
+    if(/\s/.test(svg[at])){at++;continue;}
+    if(svg[at]!=='<'&&['text','tspan'].includes(stack.at(-1))){const next=svg.indexOf('<',at);if(next<0){problems.push('unterminated text');break;}at=next;continue;}
+    tag.lastIndex=at;const m=tag.exec(svg);if(!m){problems.push('unparsable markup at '+at);break;}
+    if(!SVG_ELEMENTS.has(m[2]))problems.push('element '+m[2]);
+    for(const a of m[3].matchAll(/([a-zA-Z][a-zA-Z0-9-]*)="([^"]*)"/g)){
+      if(!SVG_ATTRIBUTES.has(a[1]))problems.push('attribute '+a[1]);
+      if(/javascript:/i.test(a[2]))problems.push('unsafe value');
+      if(/url\(/i.test(a[2])){const local=/^url\(#([a-z][a-z0-9-]*)\)$/.exec(a[2]);if(!['fill','stroke'].includes(a[1])||!local||!ids.has(local[1]))problems.push('unsafe paint server');}
     }
-    at = tag.lastIndex;
+    if(m[1]){if(stack.pop()!==m[2])problems.push('unbalanced tags');}else if(!m[4])stack.push(m[2]);
+    at=tag.lastIndex;
   }
-  return problems;
+  if(stack.length)problems.push('unclosed tags');return problems;
 }
 
 test('teaching schemas are safe, every drawn structure is explained, and linked cases highlight real structures', () => {
@@ -1177,6 +1177,7 @@ function interfaceHarness(lang = 'en', initial = {}) {
     globalThis.reviewApi = { reviewControls, toggleReview, reviewNote, reviewExportFile, exportReview,
       cleanReviewFlags, cleanSave, saveFile, readSaveFile, mergeSave, classificationPage, showBoss,
       selectClassification(id) { classificationEntity = id; },
+      learningFigure, selectLearningStage,
       profile() { return state; } };
   })();`);
   vm.runInContext(app, context, { filename: 'app-full-interface.js' });
@@ -1354,4 +1355,19 @@ test('full application startup keeps archived progress and renders its bookmark 
     assert.ok(h.html().includes(escape(data.NSA_TEXT[lang].archivedQuestion)), 'The bookmark is explicitly labelled');
     assert.ok(!h.html().includes('data-practice="' + c.id + '"'), 'Archived bookmarks cannot start a practice session');
   }
+});
+
+test('stage selection explains the selected finding in all languages', () => {
+ for(const lang of ['de','en','es']){
+  const h=interfaceHarness(lang);
+  for(const g of catalog.classifications){h.review.selectClassification(g.id);
+   for(const s of g.visual.stages){assert.equal(h.review.selectLearningStage(g.id,s.id),true);const html=h.review.classificationPage();assert.ok(html.includes('data-learning-selected="'+s.id+'"'));assert.ok(html.includes(escape(s.boundary[lang])));assert.ok(html.includes(escape(s.explanation[lang])));assert.ok(html.includes('data-learning-zoom="'+g.id+'"'));assert.doesNotMatch(html,/undefined|NaN|OBJECTIVE_SPOILER/);}
+   h.review.selectLearningStage(g.id,'anatomy');assert.equal(h.review.selectLearningStage(g.id,'unknown'),false);assert.ok(h.review.classificationPage().includes('data-learning-selected="anatomy"'));
+  }
+ }
+});
+test('detailed drawings isolate gradients and hide embedded labels in quiz mode', () => {
+ const {api}=schemaHarness();
+ const ids=html=>[...html.matchAll(/<linearGradient id="([^"]+)"/g)].map(m=>m[1]);
+ for(const id of ['tnm-rcc','tnm-bladder','tnm-prostate','tnm-testis']){const a=api.schemaFigure(id),b=api.schemaFigure(id);assert.ok(ids(a).length);assert.ok(ids(a).every(x=>!ids(b).includes(x)));assert.doesNotMatch(api.schemaFigure(id,[],'quiz'),/<text|<tspan|schema-legend/);}
 });

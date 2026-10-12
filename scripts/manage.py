@@ -531,10 +531,11 @@ def validate_question_contract(root: Path, cases: list) -> None:
                 seen.add(signature)
 
 
-SCHEMA_ELEMENTS = {"g", "path", "rect", "circle", "ellipse", "line", "polyline", "polygon"}
+SCHEMA_ELEMENTS = {"g", "path", "rect", "circle", "ellipse", "line", "polyline", "polygon", "defs", "linearGradient", "radialGradient", "stop", "text", "tspan"}
 SCHEMA_ATTRIBUTES = {"d", "x", "y", "width", "height", "rx", "ry", "cx", "cy", "r", "x1", "y1", "x2", "y2", "points", "fill", "stroke",
                      "stroke-width", "stroke-dasharray", "stroke-linecap", "stroke-linejoin", "opacity", "fill-opacity", "stroke-opacity",
-                     "transform", "data-part"}
+                     "transform", "data-part", "data-label", "id", "offset", "stop-color", "stop-opacity", "gradientUnits", "gradientTransform", "fx", "fy",
+                     "font-size", "font-family", "font-weight", "text-anchor", "dominant-baseline", "dx", "dy"}
 MEDIA_TYPES = {".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".webp": "image/webp"}
 MEDIA_MAX_BYTES = 400_000
 
@@ -547,13 +548,23 @@ def svg_tree(svg: str, where: str):
         root = ElementTree.fromstring("<svg>" + svg + "</svg>")
     except ElementTree.ParseError as error:
         raise ValidationError(f"{where}.svg: not well-formed ({error})") from None
+    paint_ids = set()
+    for element in root.iter():
+        if "id" in element.attrib:
+            id = element.get("id")
+            require(element.tag in ("linearGradient", "radialGradient") and bool(re.fullmatch(r"[a-z][a-z0-9-]*", id)), f"{where}.svg: only inert gradients may have ids")
+            require(id not in paint_ids, f"{where}.svg: duplicate gradient id")
+            paint_ids.add(id)
     for element in root.iter():
         if element is not root:
             require(element.tag in SCHEMA_ELEMENTS, f"{where}.svg: element <{element.tag}> is not allowed")
-        require(not (element.text or "").strip() and not (element.tail or "").strip(), f"{where}.svg: text is not allowed")
+        require((element.tag in ("text", "tspan") or not (element.text or "").strip()) and not (element.tail or "").strip(), f"{where}.svg: text belongs in a text element")
         for name, value in element.attrib.items():
             require(name in SCHEMA_ATTRIBUTES, f"{where}.svg: attribute {name} is not allowed")
-            require(not re.search(r"[<>]|url\(|javascript:", value, re.I), f"{where}.svg: attribute {name} has an unsafe value")
+            require(not re.search(r"[<>]|javascript:", value, re.I), f"{where}.svg: attribute {name} has an unsafe value")
+            if re.search(r"url\(", value, re.I):
+                match = re.fullmatch(r"url\(#([a-z][a-z0-9-]*)\)", value)
+                require(name in ("fill", "stroke") and match is not None and match[1] in paint_ids, f"{where}.svg: unsafe value: only existing local gradients are allowed")
     return root
 
 
@@ -848,9 +859,46 @@ def load_classifications(root: Path, cases: list, references: list, schemas: lis
             require(case_id in by_case and by_case[case_id].get("classification") == guide["id"], f"{where}.cases: unknown or mismatched case")
             require(case_id not in linked, f"{where}.cases: duplicate case link")
             linked.add(case_id)
+        if "visual" in guide:
+            validate_classification_visual(guide["visual"], guide["cases"], where + ".visual")
         find_extra_translations(guide, where)
     require(linked == {case["id"] for case in cases if case.get("classification")}, "classifications.json: unlinked classification case")
     return guides
+
+
+def validate_classification_visual(visual, cases, where):
+    require(isinstance(visual, dict), f"{where}: expected visual object")
+    require(visual.get("viewBox") == "0 0 960 640", f"{where}.viewBox: unexpected drawing size")
+    localised(visual.get("orientation"), f"{where}.orientation")
+    def drawing(svg, labels, drawing_where, minimum=0):
+        nonempty(svg, drawing_where + ".svg")
+        require(len(svg) <= 60000, f"{drawing_where}.svg: too long")
+        tree = svg_tree(svg, drawing_where)
+        require(isinstance(labels, list) and len(labels) >= minimum, f"{drawing_where}.labels: missing anatomy legend")
+        ids = set()
+        for label in labels:
+            require(isinstance(label, dict), f"{drawing_where}.labels: expected object")
+            id = label.get("id")
+            require(isinstance(id, str) and bool(re.fullmatch(r"[a-z0-9-]+", id)) and id not in ids, f"{drawing_where}.labels: invalid or repeated id")
+            ids.add(id)
+            localised(label.get("text"), drawing_where + ".label.text")
+            require(type(label.get("number")) is int and 1 <= label["number"] <= 16, f"{drawing_where}.label.number: invalid legend number")
+        require({e.get("data-label") for e in tree.iter() if e.get("data-label")} <= ids, f"{drawing_where}.labels: unexplained drawing labels")
+    drawing(visual.get("anatomy"), visual.get("labels"), where + ".anatomy", 4)
+    stages = visual.get("stages")
+    require(isinstance(stages, list) and len(stages) >= 4, f"{where}.stages: expected at least four lessons")
+    ids = set()
+    for stage in stages:
+        require(isinstance(stage, dict), f"{where}.stage: expected object")
+        id = stage.get("id")
+        require(isinstance(id, str) and bool(re.fullmatch(r"[a-z0-9-]+", id)) and id not in ids, f"{where}.stage.id: invalid or repeated id")
+        ids.add(id)
+        nonempty(stage.get("code"), where + ".stage.code")
+        require(stage.get("dimension") in ("T", "cT", "pT", "N", "cN", "pN", "M", "S", "UC", "injury"), f"{where}.stage.dimension: invalid category")
+        for key in ("title", "explanation", "boundary", "orientation"):localised(stage.get(key), where + ".stage." + key)
+        require(stage.get("svg") != visual["anatomy"], f"{where}.stage.svg: missing actual finding")
+        drawing(stage.get("svg"), stage.get("labels"), where + ".stage[" + id + "]")
+        require(isinstance(stage.get("cases"), list) and set(stage["cases"]) <= set(cases), f"{where}.stage.cases: unknown practice case")
 
 
 def build(root: Path = ROOT) -> dict:
