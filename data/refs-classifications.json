@@ -110,5 +110,12 @@
     "url": "https://uroweb.org/guidelines/urological-trauma/chapter/urogenital-trauma-guidelines",
     "checked": "2026-10-12",
     "scope": "TNM or organ injury classification; source edition stated explicitly"
+  },
+  {
+    "id": "classification-urethral-nodes",
+    "title": "EAU 2026: Primary urethral carcinoma — diagnostic staging and regional lymph nodes",
+    "url": "https://uroweb.org/guidelines/primary-urethral-carcinoma/chapter/diagnostic-evaluation-and-staging",
+    "checked": "2026-10-12",
+    "scope": "Site-specific inguinal and pelvic lymphatic drainage"
   }
 ]

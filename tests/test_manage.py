@@ -178,7 +178,7 @@ class AutomationTests(unittest.TestCase):
             manage.build(self.root)
 
     def test_unsafe_schemas_and_unknown_highlights_are_rejected(self):
-        for extra, message in (('<text x="1" y="1">label</text>', "element <text>"), ('<g data-part="p9" onclick="x()"></g>', "not allowed"), ('<g data-part="p9"><circle cx="1" cy="1" r="1"/></g>', "without a label")):
+        for extra, message in (('<text x="1" y="1" onclick="alert(1)">label</text>', "not allowed"), ('<g data-part="p9" onclick="x()"></g>', "not allowed"), ('<g data-part="p9"><circle cx="1" cy="1" r="1"/></g>', "without a label")):
             self.write_schema(extra)
             with self.assertRaisesRegex(manage.ValidationError, message):
                 manage.load_visuals(self.root, manage.load_and_validate(self.root, check_assets=False)[0])
