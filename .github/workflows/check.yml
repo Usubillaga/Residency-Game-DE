@@ -10,7 +10,6 @@ permissions:
 
 jobs:
   verify:
-    if: ${{ github.ref != 'refs/heads/fix/eau-male-citrate-threshold-20261017' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -35,19 +34,3 @@ jobs:
           name: night-shift-academy
           path: dist/night-shift-academy.zip
           if-no-files-found: error
-
-  publish_reviewed_outputs:
-    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/fix/eau-male-citrate-threshold-20261017' }}
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: fix/eau-male-citrate-threshold-20261017
-          fetch-depth: 0
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Build exact reviewed tree and remove publication helper
-        run: python scripts/_publish_reviewed_20261017.py
