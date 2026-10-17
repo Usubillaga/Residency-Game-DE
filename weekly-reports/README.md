@@ -39,3 +39,5 @@ Die aktuellen Prüfungen stehen in `.github/workflows/check.yml`: `python script
 Noch keine Ausgabe; erster geplanter Termin: 16.10.2026.
 
 - 17.10.2026: [Studien und Updates](research/2026-10-17.md)
+
+- 17.10.2026: [Repository-Prüfung](maintenance/2026-10-17.md)
