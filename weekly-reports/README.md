@@ -6,7 +6,7 @@ Hier werden die angeforderten Studienberichte und Repository-Prüfungen archivie
 
 Ablage: `weekly-reports/research/YYYY-MM-DD.md`.
 
-Der deutschsprachige Bericht wird aus derselben recherchierten Evidenz in **Usubillaga/Urofragen** und **Usubillaga/Residency-Game-DE** veröffentlicht. Er enthält nur relevante neue Studien, Leitlinien- und Zulassungsänderungen seit der vorherigen Ausgabe, beim ersten Lauf aus den letzten sieben Tagen. Eine ruhige Woche wird ausdrücklich als solche dokumentiert.
+Der Studienbericht wird vollständig in Spanisch, Englisch und Deutsch aus derselben recherchierten Evidenz in **Usubillaga/Urofragen** und **Usubillaga/Residency-Game-DE** veröffentlicht. Er enthält nur relevante neue Studien, Leitlinien- und Zulassungsänderungen seit der vorherigen Ausgabe, beim ersten Lauf aus den letzten sieben Tagen. Eine ruhige Woche wird ausdrücklich als solche dokumentiert.
 
 Je Beitrag: Originalquelle und Veröffentlichungsdatum, Fragestellung und Studiendesign, Population, Vergleich, wichtigste Ergebnisse und Grenzen sowie konkrete Bedeutung für Fragen, Erklärungen, Klassifikationen oder Lernfälle. Neue Evidenz, geltende Leitlinien und Zulassungsstatus werden getrennt dargestellt. Auswirkungen auf die beiden Projekte werden anhand tatsächlich gelesener Inhalte beschrieben.
 
@@ -34,6 +34,23 @@ Medizinische Änderungen erhalten eine überprüfbare Quelle. Eine technische Pr
 
 Die aktuellen Prüfungen stehen in `.github/workflows/check.yml`: `python scripts/manage.py validate`, `python -m unittest discover -s tests -v`, `node tests/tests-engine.cjs`, `node tests/tests-cartoon.cjs` sowie Build und Paketierung. Vor jeder Ausführung die aktuelle Workflowfassung lesen.
 
+## Sprachfassungen und Relevanznoten
+
+Studien- und Wartungsberichte erscheinen vollständig in **Spanisch, Englisch und Deutsch**, in dieser Reihenfolge. Die bestehende deutsche Datei `YYYY-MM-DD.md` bleibt gültig; Begleitfassungen heißen `YYYY-MM-DD-es.md` und `YYYY-MM-DD-en.md`. Jede Fassung enthält dieselben Befunde, Zahlen, Daten, Quellen, Projektbezüge, IDs, Entscheidungen und Grenzen, vollständig übersetzt, mit gegenseitigen Sprachlinks. Die Studienfassungen sind in beiden Repositories identisch; Wartungsberichte bleiben projektspezifisch.
+
+Jeder ausgewählte Studien-/Updatebeitrag und jeder Wartungsbefund erhält eine **Relevanznote** mit kurzer Begründung:
+
+| Note | Deutsch | English | Español |
+|---|---|---|---|
+| 1 | sehr relevant | very relevant | muy relevante |
+| 2 | relevant | relevant | relevante |
+| 3 | etwas relevant | somewhat relevant | algo relevante |
+| 4 | wenig relevant | low relevance | poco relevante |
+
+Die Note bewertet redaktionell die praktische Bedeutung für Lerninhalte, Erklärungen oder die verlässliche Projektfunktion. Sie wird in allen Sprachfassungen gleich vergeben und getrennt von **P1/P2/P3, klinischer Tragweite, Evidenzstärke, Zulassungsstatus, Konfidenz und Änderungsentscheidung** ausgewiesen. Eine hohe Relevanz ist keine medizinische Freigabe und keine neue Leitlinienempfehlung. Methoden, reine Testprotokolle und Stichprobenlisten zählen nicht als zusätzliche neue Befunde.
+
+Der einzige Wartungscursor bleibt der JSON-Abschnitt `monitoring_state` in der deutschen Basisdatei `maintenance/YYYY-MM-DD.md`. Frühere Ausgaben für die Cursor-/Abdeckungswahl nur anhand dieses Basismusters auswählen, nicht anhand der Sprachsuffixe. Ergänze dort in jedem `reported_findings`-Eintrag `relevance_grade` (Ganzzahl 1–4) und `relevance_reason`; die Übersetzungen verlinken diesen gemeinsamen Zustand. Eine reine Sprach-/Notenergänzung schreibt weder Prüfcursor noch Freigaben fort und gilt nicht als erneute Recherche oder neue Ausgabe.
+
 ## Ausgaben
 
 Noch keine Ausgabe; erster geplanter Termin: 16.10.2026.
@@ -41,3 +58,10 @@ Noch keine Ausgabe; erster geplanter Termin: 16.10.2026.
 - 17.10.2026: [Studien und Updates](research/2026-10-17.md)
 
 - 17.10.2026: [Repository-Prüfung](maintenance/2026-10-17.md)
+
+<!-- urology-report-languages:2026-10-17 -->
+### Sprachfassungen der Ausgabe vom 17.10.2026
+
+- Studien: [Español](research/2026-10-17-es.md) · [English](research/2026-10-17-en.md) · [Deutsch](research/2026-10-17.md)
+- Wartung: [Español](maintenance/2026-10-17-es.md) · [English](maintenance/2026-10-17-en.md) · [Deutsch](maintenance/2026-10-17.md)
+
