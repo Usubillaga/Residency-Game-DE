@@ -1,9 +1,7 @@
 {
-  "questions": 500,
+  "questions": 601,
   "minimumAnatomy": 50,
   "counting": "One scored case step is one question. Repeated chief questions and atlas taps are not additional bank entries.",
-  "date": "2026-10-12",
-  "archivedQuestions": 101,
-  "archive": "data/archive/supplemental-questions.json",
+  "date": "2026-10-17",
   "stagingTraumaQuestions": 30
 }

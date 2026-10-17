@@ -1865,6 +1865,145 @@
     ]
   },
   {
+    "id": "q-nmibc-active-surveillance-exit-positive-cytology",
+    "area": "endoscopy",
+    "level": 2,
+    "acuity": "urgent",
+    "duty": "clinic",
+    "patient": {
+      "name": "Reinhold Spengler",
+      "age": 73,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Small low-grade recurrences under active surveillance",
+      "de": "Kleine Low-Grade-Rezidive unter aktiver Überwachung",
+      "es": "Pequeñas recidivas de bajo grado en vigilancia activa"
+    },
+    "presenting": {
+      "en": "A 73-year-old man with a history of only pTa low-grade bladder tumours (last resection 3 years ago, never high grade or CIS) has been on active surveillance for 8 months. Surveillance was started for two asymptomatic papillary lesions of 4 and 6 mm with negative urine cytology; he attends every visit reliably. Today flexible cystoscopy shows the same two lesions, now 5 and 7 mm, with no new tumours; he reports no haematuria. The voided urine cytology taken today is reported as suspicious for high-grade urothelial carcinoma.",
+      "de": "73-jähriger Patient mit ausschließlich pTa-Low-Grade-Blasentumoren in der Vorgeschichte (letzte Resektion vor 3 Jahren, nie High Grade oder CIS) befindet sich seit 8 Monaten in aktiver Überwachung. Diese wurde bei zwei asymptomatischen papillären Läsionen von 4 und 6 mm mit negativer Urinzytologie begonnen; er nimmt alle Termine zuverlässig wahr. Heute zeigt die flexible Zystoskopie dieselben beiden Läsionen mit jetzt 5 und 7 mm, keine neuen Tumoren; eine Hämaturie verneint er. Die heute entnommene Spontanurinzytologie wird als verdächtig auf ein High-Grade-Urothelkarzinom befundet.",
+      "es": "Varón de 73 años con antecedentes exclusivamente de tumores vesicales pTa de bajo grado (última resección hace 3 años, nunca alto grado ni CIS) que lleva 8 meses en vigilancia activa. Esta se inició por dos lesiones papilares asintomáticas de 4 y 6 mm con citología urinaria negativa; acude puntualmente a todas las citas. Hoy la cistoscopia flexible muestra las mismas dos lesiones, ahora de 5 y 7 mm, sin tumores nuevos; niega hematuria. La citología de orina espontánea obtenida hoy se informa como sospechosa de carcinoma urotelial de alto grado."
+    },
+    "vitals": null,
+    "objectives": {
+      "en": [
+        "Name the selection criteria for active surveillance of small recurrent low-grade Ta tumours.",
+        "Recognise the findings that end active surveillance and require resection."
+      ],
+      "de": [
+        "Die Auswahlkriterien für die aktive Überwachung kleiner rezidivierender Low-Grade-Ta-Tumoren nennen.",
+        "Befunde erkennen, die die aktive Überwachung beenden und eine Resektion erfordern."
+      ],
+      "es": [
+        "Enumerar los criterios de selección para la vigilancia activa de pequeños tumores Ta de bajo grado recidivantes.",
+        "Reconocer los hallazgos que ponen fin a la vigilancia activa y obligan a resecar."
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "How do you proceed?",
+          "de": "Wie gehen Sie vor?",
+          "es": "¿Cómo procede?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Continue surveillance, since both lesions are still under 10 mm and few in number",
+              "de": "Überwachung fortsetzen, da beide Läsionen weiterhin unter 10 mm und wenige sind",
+              "es": "Continuar la vigilancia, ya que ambas lesiones siguen midiendo menos de 10 mm y son pocas"
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": true,
+            "feedback": {
+              "en": "Size and number are only two of the entry conditions. A cytology suspicious for high grade means a low-grade tumour can no longer be assumed, so the basis for watching is gone.",
+              "de": "Größe und Anzahl sind nur zwei der Eingangsbedingungen. Eine auf High Grade verdächtige Zytologie bedeutet, dass ein Low-Grade-Tumor nicht mehr unterstellt werden kann; damit entfällt die Grundlage der Überwachung.",
+              "es": "El tamaño y el número son solo dos de las condiciones de entrada. Una citología sospechosa de alto grado impide seguir presuponiendo un tumor de bajo grado, de modo que desaparece la base de la vigilancia."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "End surveillance and perform TURBT for histology, looking for flat lesions and CIS",
+              "de": "Überwachung beenden und TUR-B zur histologischen Sicherung, mit gezielter Suche nach flachen Läsionen und CIS",
+              "es": "Finalizar la vigilancia y realizar RTU vesical para obtener histología, buscando lesiones planas y CIS"
+            },
+            "score": 10,
+            "minutes": 15,
+            "critical": false,
+            "feedback": {
+              "en": "Correct. Positive cytology is an exit criterion: high-grade disease or CIS must be excluded histologically, so the lesions are resected and the bladder mucosa is inspected for flat suspicious areas.",
+              "de": "Richtig. Eine positive Zytologie ist ein Abbruchkriterium: High-Grade-Tumor oder CIS müssen histologisch ausgeschlossen werden, daher werden die Läsionen reseziert und die Schleimhaut gezielt auf flache suspekte Areale untersucht.",
+              "es": "Correcto. Una citología positiva es criterio de salida: hay que descartar histológicamente enfermedad de alto grado o CIS, por lo que se resecan las lesiones y se revisa la mucosa en busca de áreas planas sospechosas."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Office laser fulguration of both lesions under local anaesthesia",
+              "de": "Laserfulguration beider Läsionen ambulant in Lokalanästhesie",
+              "es": "Fulguración láser ambulatoria de ambas lesiones con anestesia local"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": false,
+            "feedback": {
+              "en": "Office fulguration suits small recurrences that are presumed low grade. It destroys the tissue without histology, which is exactly what is now needed to rule out high-grade disease.",
+              "de": "Die ambulante Fulguration eignet sich für kleine, mutmaßlich Low-Grade-Rezidive. Sie zerstört das Gewebe ohne Histologie, die jetzt aber zum Ausschluss eines High-Grade-Tumors gebraucht wird.",
+              "es": "La fulguración ambulatoria es adecuada para recidivas pequeñas presumiblemente de bajo grado. Destruye el tejido sin histología, que es justo lo que ahora se necesita para descartar alto grado."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Repeat urine cytology and cystoscopy in 6 months",
+              "de": "Zytologie und Zystoskopie in 6 Monaten wiederholen",
+              "es": "Repetir la citología y la cistoscopia a los 6 meses"
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": true,
+            "feedback": {
+              "en": "Delaying by half a year risks missing high-grade disease or CIS. A suspicious cytology calls for prompt clarification, not a longer interval.",
+              "de": "Ein halbes Jahr Abwarten riskiert, einen High-Grade-Tumor oder ein CIS zu übersehen. Eine verdächtige Zytologie verlangt rasche Abklärung, kein längeres Intervall.",
+              "es": "Esperar medio año supone el riesgo de pasar por alto un tumor de alto grado o un CIS. Una citología sospechosa exige aclaración rápida, no un intervalo más largo."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Start BCG induction straight away without resection",
+              "de": "Sofort BCG-Induktion ohne Resektion beginnen",
+              "es": "Iniciar inducción con BCG de inmediato sin resección"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "BCG is not started without histological staging. Resection is needed first to define grade and stage and to remove visible tumour; the further treatment depends on that result.",
+              "de": "BCG wird nicht ohne histologisches Staging begonnen. Zuerst muss reseziert werden, um Grading und Stadium festzulegen und sichtbaren Tumor zu entfernen; die weitere Therapie richtet sich danach.",
+              "es": "No se inicia BCG sin estadificación histológica. Primero hay que resecar para definir grado y estadio y extirpar el tumor visible; el tratamiento posterior depende de ese resultado."
+            }
+          }
+        ],
+        "best": "b"
+      }
+    ],
+    "takeaway": {
+      "en": "Active surveillance is an option for selected patients with small recurrent low-grade Ta tumours: no history of high grade or CIS, lesions under about 10 mm, only a few tumours (up to about five in common protocols), negative cytology, no haematuria and a reliable patient. Growth, new tumours, haematuria, a changed appearance or positive cytology end surveillance and lead to TURBT.",
+      "de": "Aktive Überwachung kommt für ausgewählte Patienten mit kleinen rezidivierenden Low-Grade-Ta-Tumoren infrage: kein High Grade oder CIS in der Vorgeschichte, Läsionen unter etwa 10 mm, nur wenige Tumoren (in gängigen Protokollen bis etwa fünf), negative Zytologie, keine Hämaturie und ein zuverlässiger Patient. Wachstum, neue Tumoren, Hämaturie, verändertes Aussehen oder eine positive Zytologie beenden die Überwachung und führen zur TUR-B.",
+      "es": "La vigilancia activa es una opción para pacientes seleccionados con pequeños tumores Ta de bajo grado recidivantes: sin antecedentes de alto grado ni CIS, lesiones de menos de unos 10 mm, pocos tumores (hasta unos cinco en los protocolos habituales), citología negativa, sin hematuria y paciente cumplidor. El crecimiento, los tumores nuevos, la hematuria, un cambio de aspecto o una citología positiva ponen fin a la vigilancia y llevan a la RTU vesical."
+    },
+    "references": [
+      "bank-guide-nmibc"
+    ]
+  },
+  {
     "id": "bank-uro-fun-00001",
     "area": "endoscopy",
     "level": 3,
