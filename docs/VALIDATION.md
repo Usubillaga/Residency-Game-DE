@@ -1,5 +1,12 @@
 # Validation record
 
+## The correct answer no longer stands out by its length — 17 October 2026
+
+- **Problem:** in the questions written for the game, the correct option was often the longest one, because it carried the qualifiers and the distractors did not. A player could score by picking the longest text.
+- **Rule:** in every written question and in each language, the correct option may be at most 15 % longer than the longest distractor and at least 70 % as long as the median distractor; differences of up to 15 characters are ignored, so short labels such as T2 / T3a do not count. Across all written questions, the correct option may be the strict longest and the strict shortest in at most 35 % of decisions each. The 267 imported questions keep their source wording.
+- **Rewrite:** 50 story and oncology cases (623 option texts and explanations in DE/EN/ES) were rewritten in reviewed batches: distractors received the same clinical detail as the keyed answers, and overlong keyed answers were shortened without changing their content. Each batch was checked as by a urologist for unchanged correctness, plausible distractors and matching explanations: nine of ten by an independent reviewer, the last by the writer after its reviewer stopped. Seven anatomy questions and four complementary questions were then adjusted by hand, three of them through the corrected text in the correction layer. In the explanation for later-line therapy after adjuvant immunotherapy for kidney cancer, belzutifan is now mentioned as an option approved in the EU.
+- **Result:** the correct option is the longest in 57 (DE), 60 (EN) and 56 (ES) of 233 written decisions, which is about one in four and close to chance for four or five options. It is the shortest in 33–36. Option order is still shuffled for every shift. A new cartoon test enforces the rule.
+
 ## TNM, trauma and review export — 12 October 2026
 
 - **Content:** 14 trilingual guides, 30 new independently worded clinical/operative cases (21 tumour staging, 9 trauma) and seven new inert clickable SVG schematics. Source editions are explicit; cT/pT, cN/pN and marker timing are distinguished. Primary EAU/NCI/AAST pages were rechecked on 12 October. Clinical sign-off fields remain empty; software tests and source checking are not a clinician certification.

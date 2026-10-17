@@ -54,41 +54,41 @@
           {
             "id": "a",
             "text": {
-              "en": "Check observations, examine the abdomen, ask about fever, solitary kidney and pregnancy possibility, and assess urine and renal function.",
-              "de": "Vitalwerte erheben, Abdomen untersuchen, nach Fieber, Einzelniere und möglicher Schwangerschaft fragen sowie Urin und Nierenfunktion beurteilen.",
-              "es": "Revisar constantes, explorar el abdomen, preguntar por fiebre, riñón único y posible embarazo, y valorar orina y función renal."
+              "en": "Check vital signs, abdomen and urine, measure creatinine; ask about fever, solitary kidney and pregnancy.",
+              "de": "Vitalwerte, Abdomen und Urin prüfen, Kreatinin bestimmen; nach Fieber, Einzelniere und Schwangerschaft fragen.",
+              "es": "Revisar constantes, abdomen y orina, determinar la creatinina; preguntar por fiebre, riñón único y embarazo."
             },
             "score": 10,
             "minutes": 4,
             "feedback": {
-              "en": "A focused assessment identifies reasons for urgent escalation and avoids anchoring on stones.",
-              "de": "Eine gezielte Beurteilung erkennt Gründe für dringliche Eskalation und verhindert eine vorschnelle Festlegung auf Steine.",
-              "es": "La valoración dirigida detecta motivos de escalada urgente y evita centrarse prematuramente en los cálculos."
+              "en": "A focused assessment identifies reasons for urgent escalation (fever, solitary kidney, impaired renal function) and avoids anchoring on stones; possible pregnancy also changes the choice of imaging.",
+              "de": "Eine gezielte Beurteilung erkennt Gründe für dringliche Eskalation (Fieber, Einzelniere, eingeschränkte Nierenfunktion) und verhindert eine vorschnelle Festlegung auf Steine; eine mögliche Schwangerschaft verändert zudem die Wahl der Bildgebung.",
+              "es": "La valoración dirigida detecta motivos de escalada urgente (fiebre, riñón único, función renal alterada) y evita centrarse prematuramente en los cálculos; un posible embarazo cambia además la elección de la imagen."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Order imaging for a stone and defer the rest of the history until it returns.",
-              "de": "Bildgebung wegen eines Steins anfordern und die restliche Anamnese bis zum Ergebnis verschieben.",
-              "es": "Solicitar imagen para un cálculo y aplazar el resto de la historia hasta recibirla."
+              "en": "Order a non-contrast low-dose CT for a suspected stone straight away and defer history and examination until it is reported.",
+              "de": "Sofort eine native Low-Dose-CT bei Steinverdacht anfordern und Anamnese sowie Untersuchung bis zum Befund verschieben.",
+              "es": "Solicitar ya una TC sin contraste de baja dosis por sospecha de cálculo y aplazar anamnesis y exploración hasta el informe."
             },
             "score": 3,
             "minutes": 8,
             "feedback": {
-              "en": "Imaging helps, but red flags and physiology need assessment now.",
-              "de": "Bildgebung hilft, doch Warnzeichen und Vitalwerte müssen jetzt beurteilt werden.",
-              "es": "La imagen ayuda, pero las señales de alarma y las constantes deben valorarse ahora."
+              "en": "Imaging helps, but red flags, physiology and possible pregnancy need assessment now, before the CT.",
+              "de": "Bildgebung hilft, doch Warnzeichen, Vitalwerte und eine mögliche Schwangerschaft müssen jetzt und vor der CT beurteilt werden.",
+              "es": "La imagen ayuda, pero las señales de alarma, las constantes y un posible embarazo deben valorarse ahora, antes de la TC."
             },
             "critical": false
           },
           {
             "id": "c",
             "text": {
-              "en": "Treat the pain as proof of a stone and skip examination.",
-              "de": "Den Schmerz als Beweis für einen Stein werten und die Untersuchung auslassen.",
-              "es": "Considerar el dolor prueba de un cálculo y omitir la exploración."
+              "en": "Take the pain radiating to the groin as proof of a stone and skip the physical examination.",
+              "de": "Das Schmerzbild mit Ausstrahlung in die Leiste als Steinbeweis werten und auf die körperliche Untersuchung verzichten.",
+              "es": "Tomar el dolor irradiado a la ingle como prueba de un cálculo y omitir la exploración física."
             },
             "score": 0,
             "minutes": 15,
@@ -114,48 +114,48 @@
           {
             "id": "a",
             "text": {
-              "en": "Arrange prompt pain relief under the local protocol, appropriate imaging and repeated pain and vital-sign checks.",
-              "de": "Zeitnahe Analgesie nach lokalem Standard, geeignete Bildgebung und erneute Kontrolle von Schmerzen und Vitalwerten veranlassen.",
-              "es": "Organizar analgesia pronta según el protocolo local, imagen adecuada y controles repetidos de dolor y constantes."
+              "en": "Give prompt NSAID-based analgesia, arrange imaging and recheck pain and vital signs.",
+              "de": "Zeitnah NSAR-basierte Analgesie geben, Bildgebung veranlassen und Schmerzen sowie Vitalwerte erneut kontrollieren.",
+              "es": "Administrar sin demora analgesia basada en AINE, solicitar imagen y reevaluar el dolor y las constantes."
             },
             "score": 10,
             "minutes": 4,
             "feedback": {
-              "en": "Relief and diagnostic assessment can proceed together; reassessment shows whether the plan is working.",
-              "de": "Schmerzlinderung und Diagnostik können parallel erfolgen; die erneute Beurteilung zeigt die Wirkung.",
-              "es": "El alivio y la valoración diagnóstica pueden avanzar a la vez; reevaluar permite comprobar la respuesta."
+              "en": "Relief and diagnostic assessment can proceed together; with normal renal function NSAIDs are first choice, and reassessment shows whether the plan is working.",
+              "de": "Schmerzlinderung und Diagnostik können parallel erfolgen; bei normaler Nierenfunktion sind NSAR Mittel der ersten Wahl, und die erneute Beurteilung zeigt die Wirkung.",
+              "es": "El alivio y la valoración diagnóstica pueden avanzar a la vez; con función renal normal los AINE son de primera elección, y reevaluar permite comprobar la respuesta."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Complete imaging first, then arrange analgesia if a stone is confirmed.",
-              "de": "Zuerst die Bildgebung abschließen; Analgesie erst bei bestätigtem Stein veranlassen.",
-              "es": "Completar primero la imagen y organizar analgesia solo si se confirma un cálculo."
+              "en": "Complete the CT first and give analgesia only once a stone is confirmed, so the findings are not masked.",
+              "de": "Zuerst die CT abschließen und Analgesie erst bei bestätigtem Stein geben, damit der Befund nicht verschleiert wird.",
+              "es": "Completar primero la TC y dar analgesia solo si se confirma el cálculo, para no enmascarar los hallazgos."
             },
             "score": 3,
             "minutes": 10,
             "feedback": {
-              "en": "Diagnostic work should not create an avoidable delay in pain relief.",
-              "de": "Die Diagnostik sollte die Schmerzlinderung nicht unnötig verzögern.",
-              "es": "El estudio diagnóstico no debe retrasar innecesariamente el alivio del dolor."
+              "en": "Analgesia does not mask the diagnosis; diagnostic work should not create an avoidable delay in pain relief.",
+              "de": "Analgesie verschleiert die Diagnose nicht; die Diagnostik sollte die Schmerzlinderung nicht unnötig verzögern.",
+              "es": "La analgesia no enmascara el diagnóstico; el estudio diagnóstico no debe retrasar innecesariamente el alivio del dolor."
             },
             "critical": false
           },
           {
             "id": "c",
             "text": {
-              "en": "Encourage a large amount of oral fluid despite ongoing vomiting and send Alex home immediately.",
-              "de": "Trotz anhaltenden Erbrechens viel Trinken empfehlen und Alex sofort entlassen.",
-              "es": "Recomendar abundante líquido oral pese a los vómitos persistentes y dar el alta de inmediato."
+              "en": "Advise three litres of oral fluid to flush the stone despite ongoing vomiting and discharge Alex immediately.",
+              "de": "Trotz anhaltenden Erbrechens drei Liter Trinkmenge zum Ausschwemmen des Steins empfehlen und Alex sofort entlassen.",
+              "es": "Recomendar tres litros de líquido oral para expulsar el cálculo pese a los vómitos persistentes y dar el alta de inmediato."
             },
             "score": 0,
             "minutes": 15,
             "feedback": {
-              "en": "Persistent vomiting and unresolved pain require review before a safe discharge decision.",
-              "de": "Anhaltendes Erbrechen und nicht beherrschte Schmerzen erfordern eine erneute Beurteilung vor der Entlassung.",
-              "es": "Los vómitos persistentes y el dolor no controlado requieren revisión antes de decidir un alta segura."
+              "en": "Forced fluids do not speed stone passage; persistent vomiting and unresolved pain require review before a safe discharge decision.",
+              "de": "Forcierte Flüssigkeitszufuhr beschleunigt den Steinabgang nicht; anhaltendes Erbrechen und nicht beherrschte Schmerzen erfordern eine erneute Beurteilung vor der Entlassung.",
+              "es": "La hidratación forzada no acelera la expulsión; los vómitos persistentes y el dolor no controlado requieren revisión antes de decidir un alta segura."
             },
             "critical": false
           }
@@ -174,41 +174,41 @@
           {
             "id": "a",
             "text": {
-              "en": "Agree local follow-up, explain the results and advise urgent return for fever, reduced urine, uncontrolled pain or vomiting.",
-              "de": "Lokale Nachkontrolle vereinbaren, Befunde erklären und bei Fieber, weniger Urin, nicht beherrschten Schmerzen oder Erbrechen zur dringlichen Wiedervorstellung raten.",
-              "es": "Acordar seguimiento local, explicar los resultados e indicar retorno urgente por fiebre, menor diuresis, dolor no controlado o vómitos."
+              "en": "Arrange urology follow-up and advise urgent return for fever, vomiting, less urine or uncontrolled pain.",
+              "de": "Urologische Nachkontrolle vereinbaren; bei Fieber, Erbrechen, weniger Urin oder starken Schmerzen rasche Wiedervorstellung anraten.",
+              "es": "Acordar seguimiento urológico e indicar volver con urgencia si hay fiebre, vómitos, menos orina o dolor no controlado."
             },
             "score": 10,
             "minutes": 3,
             "feedback": {
-              "en": "The discharge plan must cover new infection or obstruction signs and how follow-up will happen.",
-              "de": "Der Entlassungsplan muss neue Infektions- oder Obstruktionszeichen und den Ablauf der Nachkontrolle abdecken.",
-              "es": "El plan de alta debe cubrir nuevos signos de infección u obstrucción y cómo se hará el seguimiento."
+              "en": "The discharge plan must cover new infection or obstruction signs and how follow-up will happen, including a clear explanation of the results to Alex.",
+              "de": "Der Entlassungsplan muss neue Infektions- oder Obstruktionszeichen und den Ablauf der Nachkontrolle abdecken; dazu gehört, Alex die Befunde verständlich zu erklären.",
+              "es": "El plan de alta debe cubrir nuevos signos de infección u obstrucción y cómo se hará el seguimiento, incluida una explicación clara de los resultados a Alex."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Arrange follow-up but say only to return if the stone has not passed.",
-              "de": "Nachkontrolle vereinbaren, aber nur bei ausbleibendem Steinabgang zur Rückkehr raten.",
-              "es": "Organizar seguimiento, pero recomendar volver solo si no expulsa el cálculo."
+              "en": "Provide a urine strainer, book follow-up in four weeks and advise return only if the stone has not passed.",
+              "de": "Ein Urinsieb mitgeben, eine Nachkontrolle in vier Wochen vereinbaren und nur bei ausbleibendem Steinabgang zur Wiedervorstellung raten.",
+              "es": "Entregar un colador de orina, citar seguimiento en cuatro semanas y aconsejar volver solo si no expulsa el cálculo."
             },
             "score": 3,
             "minutes": 5,
             "feedback": {
-              "en": "Follow-up is useful, but return advice must include symptoms of deterioration.",
-              "de": "Nachkontrolle ist sinnvoll, doch die Rückkehrhinweise müssen Verschlechterungszeichen enthalten.",
-              "es": "El seguimiento es útil, pero las instrucciones de retorno deben incluir signos de empeoramiento."
+              "en": "A strainer and follow-up are useful, but return advice must include signs of infection and obstruction.",
+              "de": "Steinsieb und Nachkontrolle sind sinnvoll, doch die Rückkehrhinweise müssen Infekt- und Obstruktionszeichen enthalten.",
+              "es": "El colador y el seguimiento son útiles, pero las instrucciones de retorno deben incluir signos de infección y obstrucción."
             },
             "critical": false
           },
           {
             "id": "c",
             "text": {
-              "en": "Guarantee spontaneous passage and omit follow-up because the stone is small.",
-              "de": "Spontanen Steinabgang garantieren und wegen der geringen Größe auf Nachkontrolle verzichten.",
-              "es": "Garantizar la expulsión espontánea y omitir seguimiento porque el cálculo es pequeño."
+              "en": "Promise certain spontaneous passage because the stone is small and dispense with any follow-up.",
+              "de": "Wegen der geringen Steingröße einen sicheren Spontanabgang zusagen und auf jede Nachkontrolle verzichten.",
+              "es": "Asegurar la expulsión espontánea por el pequeño tamaño del cálculo y prescindir de todo seguimiento."
             },
             "score": 0,
             "minutes": 10,
@@ -287,48 +287,48 @@
           {
             "id": "a",
             "text": {
-              "en": "Assess observations and the lower abdomen, confirm retention with bladder assessment, and review medications, neurological symptoms and previous catheter problems.",
-              "de": "Vitalwerte und Unterbauch beurteilen, Harnverhalt durch Blasenbeurteilung bestätigen sowie Medikamente, neurologische Symptome und frühere Katheterprobleme erfragen.",
-              "es": "Valorar constantes y abdomen inferior, confirmar la retención mediante valoración vesical y revisar medicamentos, síntomas neurológicos y problemas previos con sondas."
+              "en": "Check vital signs and abdomen, confirm retention by bladder scan; ask about drugs, neurological symptoms and catheter history.",
+              "de": "Vitalwerte und Unterbauch prüfen, Verhalt per Blasenscan sichern; Medikation, neurologische Symptome und Katheteranamnese erfragen.",
+              "es": "Revisar constantes y abdomen, confirmar la retención por ecografía; preguntar por fármacos, clínica neurológica y sondajes previos."
             },
             "score": 10,
             "minutes": 4,
             "feedback": {
-              "en": "The assessment confirms the problem and identifies factors that affect safe drainage or require additional escalation.",
-              "de": "Die Beurteilung bestätigt das Problem und erkennt Faktoren für eine sichere Ableitung oder weitere Eskalation.",
-              "es": "La valoración confirma el problema e identifica factores que influyen en el drenaje seguro o exigen mayor escalada."
+              "en": "The assessment confirms the problem and identifies factors that affect safe drainage or require escalation, such as a triggering drug, a neurological cause or difficult catheterisation.",
+              "de": "Die Beurteilung bestätigt das Problem und erkennt Faktoren für eine sichere Ableitung oder weitere Eskalation, etwa ein auslösendes Medikament, neurologische Ursachen oder eine schwierige Katheteranlage.",
+              "es": "La valoración confirma el problema e identifica factores que influyen en el drenaje seguro o exigen escalada, como un fármaco desencadenante, una causa neurológica o un sondaje difícil."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Use a bladder scan alone and assume prostate enlargement is the only possible cause.",
-              "de": "Nur einen Blasenscan durchführen und Prostatavergrößerung als einzige Ursache annehmen.",
-              "es": "Usar solo una ecografía vesical y asumir que la única causa es el aumento de la próstata."
+              "en": "Perform a bladder scan only and, with over 800 ml in the bladder, assume prostate enlargement is the sole cause.",
+              "de": "Nur einen Blasenscan durchführen und bei über 800 ml Blaseninhalt die vergrößerte Prostata als alleinige Ursache annehmen.",
+              "es": "Realizar solo una ecografía vesical y, con más de 800 ml en la vejiga, asumir el aumento prostático como única causa."
             },
             "score": 3,
             "minutes": 6,
             "feedback": {
-              "en": "A scan helps confirm retention, but medication effects and other causes still need review.",
-              "de": "Ein Blasenscan hilft bei der Bestätigung, doch Medikamenteneffekte und andere Ursachen müssen geprüft werden.",
-              "es": "La ecografía ayuda a confirmar la retención, pero aún deben revisarse los efectos de medicamentos y otras causas."
+              "en": "A scan helps confirm retention, but the volume says nothing about the cause; medication effects and other causes still need review.",
+              "de": "Ein Blasenscan hilft bei der Bestätigung, doch das Volumen sagt nichts über die Ursache; Medikamenteneffekte und andere Ursachen müssen geprüft werden.",
+              "es": "La ecografía ayuda a confirmar la retención, pero el volumen no indica la causa; aún deben revisarse los efectos de medicamentos y otras causas."
             },
             "critical": false
           },
           {
             "id": "c",
             "text": {
-              "en": "Advise more water and wait until the morning ward round.",
-              "de": "Mehr Trinken empfehlen und bis zur morgendlichen Visite warten.",
-              "es": "Recomendar beber más agua y esperar a la visita de la mañana."
+              "en": "Give an anti-inflammatory, advise drinking more and wait for spontaneous voiding until the morning ward round.",
+              "de": "Ein Antiphlogistikum geben, mehr Trinken empfehlen und bis zur morgendlichen Visite auf spontane Miktion warten.",
+              "es": "Dar un antiinflamatorio, recomendar beber más y esperar la micción espontánea hasta la visita de la mañana."
             },
             "score": 0,
             "minutes": 20,
             "feedback": {
-              "en": "Painful acute retention requires prompt clinical assessment and relief.",
-              "de": "Schmerzhafter akuter Harnverhalt erfordert eine zeitnahe klinische Beurteilung und Entlastung.",
-              "es": "La retención aguda dolorosa requiere valoración clínica y alivio sin demora."
+              "en": "Painful acute retention requires prompt clinical assessment and relief; extra fluid only fills the bladder further.",
+              "de": "Schmerzhafter akuter Harnverhalt erfordert eine zeitnahe klinische Beurteilung und Entlastung; zusätzliche Flüssigkeit füllt die Blase nur weiter.",
+              "es": "La retención aguda dolorosa requiere valoración clínica y alivio sin demora; más líquido solo llena más la vejiga."
             },
             "critical": true
           }
@@ -347,48 +347,48 @@
           {
             "id": "a",
             "text": {
-              "en": "Explain the plan and arrange prompt catheter drainage by a trained clinician, with senior help for difficulty or concerns.",
-              "de": "Den Plan erklären und zeitnahe Katheterableitung durch eine geschulte Fachperson veranlassen; bei Schwierigkeiten oder Bedenken erfahrene Hilfe holen.",
-              "es": "Explicar el plan y organizar drenaje mediante sonda por personal capacitado; pedir ayuda sénior si hay dificultad o dudas."
+              "en": "Explain the procedure and arrange prompt urethral catheterisation; call experienced urology help if resistance is met.",
+              "de": "Vorgehen erklären und zeitnah transurethral katheterisieren lassen; bei Widerstand erfahrene urologische Hilfe holen.",
+              "es": "Explicar el procedimiento y organizar sondaje uretral sin demora; pedir ayuda urológica experta si hay resistencia."
             },
             "score": 10,
             "minutes": 3,
             "feedback": {
-              "en": "Timely drainage addresses the retention; consent, competence and escalation keep the procedure safe.",
-              "de": "Zeitnahe Ableitung behandelt den Harnverhalt; Einwilligung, Kompetenz und Eskalation sichern das Vorgehen.",
-              "es": "El drenaje oportuno trata la retención; consentimiento, competencia y escalada mantienen la seguridad."
+              "en": "Timely drainage addresses the retention; consent, a trained clinician and early escalation when it is difficult (for example a coudé catheter or suprapubic drainage by urology) keep the procedure safe.",
+              "de": "Zeitnahe Ableitung behandelt den Harnverhalt; Einwilligung, eine geschulte Fachperson und frühe Eskalation bei Schwierigkeiten (etwa Tiemann-Katheter oder suprapubische Ableitung durch die Urologie) sichern das Vorgehen.",
+              "es": "El drenaje oportuno trata la retención; el consentimiento, personal capacitado y la escalada precoz si hay dificultad (por ejemplo sonda acodada o drenaje suprapúbico por urología) mantienen la seguridad."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Seek a routine appointment for catheterisation later in the day.",
-              "de": "Einen regulären Termin zur Katheterisierung später am Tag organisieren.",
-              "es": "Buscar una cita ordinaria para sondaje más tarde."
+              "en": "Book a routine catheterisation slot later in the day and give metamizole for the pain in the meantime.",
+              "de": "Einen regulären Termin zur Katheterisierung später am Tag organisieren und bis dahin Metamizol gegen die Schmerzen geben.",
+              "es": "Programar un sondaje ordinario para más tarde y administrar metamizol para el dolor mientras tanto."
             },
             "score": 3,
             "minutes": 12,
             "feedback": {
-              "en": "The need for drainage is identified, but an unnecessary delay prolongs pain and obstruction.",
-              "de": "Die notwendige Ableitung ist erkannt, doch unnötige Verzögerung verlängert Schmerzen und Obstruktion.",
-              "es": "Se reconoce la necesidad de drenaje, pero la demora innecesaria prolonga el dolor y la obstrucción."
+              "en": "The need for drainage is identified, but analgesia does not replace relief; an unnecessary delay prolongs pain and obstruction.",
+              "de": "Die notwendige Ableitung ist erkannt, doch Analgesie ersetzt keine Entlastung; unnötige Verzögerung verlängert Schmerzen und Obstruktion.",
+              "es": "Se reconoce la necesidad de drenaje, pero la analgesia no sustituye al alivio; la demora innecesaria prolonga el dolor y la obstrucción."
             },
             "critical": false
           },
           {
             "id": "c",
             "text": {
-              "en": "Persist with repeated forceful catheter attempts if the first attempt fails.",
-              "de": "Bei erfolglosem Erstversuch wiederholt mit Kraft katheterisieren.",
-              "es": "Insistir con intentos repetidos y forzados si falla el primero."
+              "en": "If the first attempt fails, keep retrying with a larger-bore catheter and more force until it finally passes into the bladder.",
+              "de": "Bei erfolglosem Erstversuch mit großlumigerem Katheter und mehr Kraft wiederholt katheterisieren, bis er in die Blase gleitet.",
+              "es": "Si falla el primer intento, insistir con una sonda de mayor calibre y aplicando más fuerza hasta que por fin pase a la vejiga."
             },
             "score": 0,
             "minutes": 20,
             "feedback": {
-              "en": "Difficult catheterisation requires help, not repeated traumatic attempts.",
-              "de": "Schwierige Katheterisierung erfordert Hilfe statt wiederholter traumatischer Versuche.",
-              "es": "El sondaje difícil requiere ayuda, no intentos repetidos que puedan causar traumatismo."
+              "en": "Difficult catheterisation requires help, not repeated traumatic attempts; force causes false passages and urethral injury.",
+              "de": "Schwierige Katheterisierung erfordert Hilfe statt wiederholter traumatischer Versuche; Gewalt erzeugt Via falsa und Harnröhrenverletzungen.",
+              "es": "El sondaje difícil requiere ayuda, no intentos repetidos traumáticos; la fuerza provoca falsas vías y lesión uretral."
             },
             "critical": true
           }
@@ -407,48 +407,48 @@
           {
             "id": "a",
             "text": {
-              "en": "Document drained volume, urine appearance, renal function and subsequent output; agree catheter review, cause assessment and warning signs.",
-              "de": "Abgeleitete Menge, Urinfarbe, Nierenfunktion und weitere Ausscheidung dokumentieren; Katheterkontrolle, Ursachenklärung und Warnzeichen vereinbaren.",
-              "es": "Documentar volumen drenado, aspecto de la orina, función renal y diuresis posterior; acordar revisión de la sonda, estudio de la causa y señales de alarma."
+              "en": "Record drained volume, renal function and urine output; set a plan for catheter review, cause and warning signs.",
+              "de": "Drainagemenge, Nierenwerte und Diurese dokumentieren; Plan für Katheterkontrolle, Ursachenklärung und Warnzeichen festlegen.",
+              "es": "Registrar volumen drenado, función renal y diuresis; fijar un plan de revisión de la sonda, causa y señales de alarma."
             },
             "score": 10,
             "minutes": 3,
             "feedback": {
-              "en": "Relief is the beginning of the plan; monitoring and a clear review owner prevent unresolved retention from being lost.",
-              "de": "Die Entlastung ist der Anfang des Plans; Überwachung und klare Zuständigkeit verhindern, dass der ungelöste Harnverhalt übersehen wird.",
-              "es": "El alivio inicia el plan; la vigilancia y un responsable claro de revisión evitan perder de vista una retención aún no resuelta."
+              "en": "Relief is the beginning of the plan: post-obstructive diuresis and haematuria can follow a large volume, and a clear owner for the trial without catheter, the cause and the cold remedy prevents unresolved retention from being lost.",
+              "de": "Die Entlastung ist der Anfang des Plans: Nach großem Volumen sind Entlastungspolyurie und Hämaturie möglich, und klare Zuständigkeit für Auslassversuch, Ursachenklärung und das Erkältungsmittel verhindert, dass der ungelöste Harnverhalt übersehen wird.",
+              "es": "El alivio inicia el plan: tras un gran volumen pueden aparecer poliuria posobstructiva y hematuria, y un responsable claro de la retirada de sonda, la causa y el antigripal evita perder de vista una retención no resuelta."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Record that pain has improved and leave catheter follow-up unspecified.",
-              "de": "Nur die Schmerzverbesserung dokumentieren und die Katheternachkontrolle offenlassen.",
-              "es": "Registrar que el dolor ha mejorado y dejar sin definir la revisión de la sonda."
+              "en": "Record pain relief and catheter position, start tamsulosin and leave catheter follow-up unspecified.",
+              "de": "Schmerzbesserung und Katheterlage dokumentieren, Tamsulosin ansetzen und die Katheternachkontrolle offenlassen.",
+              "es": "Registrar la mejoría del dolor y la posición de la sonda, iniciar tamsulosina y dejar sin definir la revisión de la sonda."
             },
             "score": 3,
             "minutes": 6,
             "feedback": {
-              "en": "The clinical response matters, but the catheter and underlying cause also need an explicit plan.",
-              "de": "Die klinische Besserung zählt, doch Katheter und Ursache benötigen ebenfalls einen konkreten Plan.",
-              "es": "La respuesta clínica importa, pero la sonda y la causa subyacente también necesitan un plan explícito."
+              "en": "The clinical response and an alpha-blocker before a trial without catheter make sense, but the catheter and underlying cause need an explicit plan.",
+              "de": "Klinische Besserung und ein Alphablocker vor dem Auslassversuch sind sinnvoll, doch Katheter und Ursache benötigen einen konkreten Plan.",
+              "es": "La respuesta clínica y un alfabloqueante antes de retirar la sonda son razonables, pero la sonda y la causa necesitan un plan explícito."
             },
             "critical": false
           },
           {
             "id": "c",
             "text": {
-              "en": "Remove the catheter immediately without a review plan because Martin now feels better.",
-              "de": "Den Katheter ohne Kontrollplan sofort entfernen, da Martin sich besser fühlt.",
-              "es": "Retirar la sonda inmediatamente sin un plan de revisión porque Martin ya se encuentra mejor."
+              "en": "Remove the catheter now because Martin feels better and discharge him without a post-void residual check or appointment.",
+              "de": "Den Katheter sofort entfernen, da Martin sich besser fühlt, und ihn ohne Restharnkontrolle oder Folgetermin nach Hause entlassen.",
+              "es": "Retirar la sonda ya porque Martin se encuentra mejor y darle el alta sin control del residuo posmiccional ni cita."
             },
             "score": 0,
             "minutes": 10,
             "feedback": {
-              "en": "Feeling better after drainage does not establish that retention has resolved.",
-              "de": "Besseres Befinden nach Ableitung beweist keine Aufhebung des Harnverhalts.",
-              "es": "Sentirse mejor tras el drenaje no demuestra que la retención esté resuelta."
+              "en": "Feeling better after drainage does not establish that retention has resolved; without a residual check, recurrent retention goes unnoticed.",
+              "de": "Besseres Befinden nach Ableitung beweist keine Aufhebung des Harnverhalts; ohne Restharnkontrolle bleibt ein erneuter Verhalt unbemerkt.",
+              "es": "Sentirse mejor tras el drenaje no demuestra que la retención esté resuelta; sin control del residuo, una nueva retención pasa inadvertida."
             },
             "critical": false
           }
@@ -521,9 +521,9 @@
           {
             "id": "a",
             "text": {
-              "en": "Treat this as a urological emergency with suspected sepsis and shock; call senior urology and the emergency/critical care response now.",
-              "de": "Dies als urologischen Notfall mit Verdacht auf Sepsis und Schock behandeln; erfahrene Urologie und Notfall-/Intensivteam jetzt rufen.",
-              "es": "Tratarlo como urgencia urológica con sospecha de sepsis y shock; avisar ahora a urología sénior y al equipo de urgencias/cuidados críticos."
+              "en": "Treat as a urological emergency with suspected sepsis and shock; call senior urology and critical care now.",
+              "de": "Als urologischen Notfall mit Verdacht auf Sepsis und Schock behandeln; erfahrene Urologie und Intensivteam sofort rufen.",
+              "es": "Tratar como urgencia urológica con sospecha de sepsis y shock; avisar ya a urología sénior y a cuidados críticos."
             },
             "score": 10,
             "minutes": 2,
@@ -537,32 +537,32 @@
           {
             "id": "b",
             "text": {
-              "en": "Recognise infection and ask for a routine urology review after blood results.",
-              "de": "Infektion erkennen und nach den Blutbefunden eine reguläre urologische Beurteilung anfordern.",
-              "es": "Reconocer infección y pedir revisión urológica ordinaria tras los análisis."
+              "en": "Recognise a urinary infection, start ceftriaxone 2 g IV and request a routine urology review once blood results are back.",
+              "de": "Harnwegsinfekt erkennen, Ceftriaxon 2 g i. v. beginnen und nach den Laborwerten eine reguläre urologische Beurteilung anfordern.",
+              "es": "Reconocer la infección urinaria, iniciar ceftriaxona 2 g i.v. y pedir revisión urológica ordinaria tras los análisis de sangre."
             },
             "score": 3,
             "minutes": 12,
             "feedback": {
-              "en": "Infection is recognised, but this physiology and obstruction demand immediate escalation.",
-              "de": "Die Infektion ist erkannt, doch diese Vitalwerte und die Obstruktion verlangen sofortige Eskalation.",
-              "es": "Se reconoce la infección, pero estas constantes y la obstrucción exigen escalada inmediata."
+              "en": "Infection is recognised and antibiotics started, but this physiology and obstruction demand immediate escalation, not a routine review.",
+              "de": "Infektion erkannt und Antibiose begonnen, doch diese Vitalwerte und die Obstruktion verlangen sofortige Eskalation statt einer Routinebeurteilung.",
+              "es": "Se reconoce la infección y se inician antibióticos, pero estas constantes y la obstrucción exigen escalada inmediata, no una revisión ordinaria."
             },
             "critical": true
           },
           {
             "id": "c",
             "text": {
-              "en": "Call it uncomplicated pyelonephritis and plan outpatient treatment.",
-              "de": "Dies als unkomplizierte Pyelonephritis einordnen und ambulante Behandlung planen.",
-              "es": "Clasificarlo como pielonefritis no complicada y planear tratamiento ambulatorio."
+              "en": "Classify as uncomplicated pyelonephritis and plan outpatient treatment with oral ciprofloxacin.",
+              "de": "Als unkomplizierte Pyelonephritis einordnen und eine ambulante Behandlung mit oralem Ciprofloxacin planen.",
+              "es": "Clasificar como pielonefritis no complicada y planear tratamiento ambulatorio con ciprofloxacino oral."
             },
             "score": 0,
             "minutes": 20,
             "feedback": {
-              "en": "The patient is unstable and the infected obstructed system may need urgent drainage.",
-              "de": "Die Patientin ist instabil; das infizierte obstruierte System kann dringliche Ableitung benötigen.",
-              "es": "La paciente está inestable y el sistema obstruido e infectado puede necesitar drenaje urgente."
+              "en": "The patient is unstable; pyelonephritis with obstruction is complicated by definition, and the infected obstructed system may need urgent drainage.",
+              "de": "Die Patientin ist instabil; eine Pyelonephritis mit Obstruktion ist per Definition kompliziert, und das infizierte gestaute System kann dringliche Ableitung benötigen.",
+              "es": "La paciente está inestable; una pielonefritis con obstrucción es complicada por definición, y el sistema obstruido e infectado puede necesitar drenaje urgente."
             },
             "critical": true
           }
@@ -581,48 +581,48 @@
           {
             "id": "a",
             "text": {
-              "en": "Start the local sepsis and resuscitation pathway, obtain indicated cultures and blood tests without delaying treatment, and coordinate urgent decompression assessment.",
-              "de": "Lokalen Sepsis- und Stabilisierungsablauf beginnen, indizierte Kulturen und Blutuntersuchungen ohne Therapieverzögerung abnehmen und die dringliche Entlastungsbeurteilung koordinieren.",
-              "es": "Activar el protocolo local de sepsis y estabilización, obtener cultivos y análisis indicados sin retrasar el tratamiento y coordinar la valoración de descompresión urgente."
+              "en": "Start the sepsis bundle with cultures, antibiotics and fluids and organise emergency drainage by stent or nephrostomy.",
+              "de": "Sepsisbündel mit Kulturen, Antibiose und Volumen starten und die dringliche Entlastung per DJ-Schiene oder Nephrostomie organisieren.",
+              "es": "Iniciar el paquete de sepsis con cultivos, antibióticos y fluidos, y organizar el drenaje urgente con doble J o nefrostomía."
             },
             "score": 10,
             "minutes": 3,
             "feedback": {
-              "en": "Resuscitation, antimicrobial decisions and source control need coordinated senior-led action.",
-              "de": "Stabilisierung, antimikrobielle Entscheidungen und Herdsanierung brauchen koordiniertes Handeln unter erfahrener Leitung.",
-              "es": "La estabilización, las decisiones antimicrobianas y el control del foco requieren coordinación dirigida por personal sénior."
+              "en": "Resuscitation, antibiotics after cultures without delaying treatment, and source control by decompressing the obstructed kidney need coordinated senior-led action; definitive stone treatment waits until the infection has settled.",
+              "de": "Stabilisierung, Antibiose nach Kulturabnahme ohne Therapieverzögerung und Herdsanierung durch Entlastung der gestauten Niere brauchen koordiniertes Handeln unter erfahrener Leitung; die Steinbehandlung folgt erst nach Abklingen der Infektion.",
+              "es": "La estabilización, los antibióticos tras los cultivos sin retrasar el tratamiento y el control del foco descomprimiendo el riñón obstruido requieren coordinación dirigida por personal sénior; el tratamiento del cálculo espera a que ceda la infección."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Request more imaging before starting the sepsis pathway.",
-              "de": "Vor Beginn des Sepsisablaufs weitere Bildgebung anfordern.",
-              "es": "Solicitar más imagen antes de iniciar el protocolo de sepsis."
+              "en": "Request a contrast-enhanced CT to locate the stone precisely before starting antibiotics and fluids.",
+              "de": "Vor Beginn von Antibiose und Volumengabe eine kontrastmittelverstärkte CT zur genauen Steinlokalisation anfordern.",
+              "es": "Solicitar una TC con contraste para localizar con precisión el cálculo antes de iniciar antibióticos y fluidos."
             },
             "score": 3,
             "minutes": 12,
             "feedback": {
-              "en": "Further imaging may help planning, but it must not delay care of an unstable patient.",
-              "de": "Weitere Bildgebung kann die Planung unterstützen, darf aber die Versorgung einer instabilen Patientin nicht verzögern.",
-              "es": "Más imagen puede ayudar a planificar, pero no debe retrasar la atención de una paciente inestable."
+              "en": "Further imaging may help planning, but it must not delay antibiotics and resuscitation in an unstable patient; the stone and obstruction are already known.",
+              "de": "Weitere Bildgebung kann die Planung unterstützen, darf aber Antibiose und Stabilisierung einer instabilen Patientin nicht verzögern; Stein und Stauung sind bereits bekannt.",
+              "es": "Más imagen puede ayudar a planificar, pero no debe retrasar antibióticos ni estabilización en una paciente inestable; el cálculo y la obstrucción ya se conocen."
             },
             "critical": true
           },
           {
             "id": "c",
             "text": {
-              "en": "Use antibiotics as the complete plan and defer obstruction review until tomorrow.",
-              "de": "Antibiotika als vollständigen Plan verwenden und die Obstruktionsbeurteilung auf morgen verschieben.",
-              "es": "Usar antibióticos como único plan y aplazar la revisión de la obstrucción hasta mañana."
+              "en": "Use IV piperacillin/tazobactam as the complete plan and defer review of the obstruction until tomorrow morning.",
+              "de": "Piperacillin/Tazobactam i. v. als vollständigen Plan verwenden und die Obstruktionsbeurteilung auf morgen früh verschieben.",
+              "es": "Usar piperacilina/tazobactam i.v. como plan completo y aplazar la revisión de la obstrucción hasta mañana."
             },
             "score": 0,
             "minutes": 20,
             "feedback": {
-              "en": "Antimicrobials alone may be insufficient when infection is trapped behind an obstruction.",
-              "de": "Antimikrobielle Therapie allein kann bei Infektion hinter einer Obstruktion unzureichend sein.",
-              "es": "Los antimicrobianos por sí solos pueden ser insuficientes cuando la infección está detrás de una obstrucción."
+              "en": "Even broad antimicrobials alone may be insufficient when infection is trapped behind an obstruction; source control cannot wait.",
+              "de": "Auch eine breite antimikrobielle Therapie allein kann bei Infektion hinter einer Obstruktion unzureichend sein; die Herdsanierung duldet keinen Aufschub.",
+              "es": "Incluso antimicrobianos de amplio espectro pueden ser insuficientes cuando la infección está detrás de una obstrucción; el control del foco no puede esperar."
             },
             "critical": true
           }
@@ -641,41 +641,41 @@
           {
             "id": "a",
             "text": {
-              "en": "State suspected infected obstruction, current and trending observations, renal function and urine output, treatments and response, and the request for urgent source-control and critical-care decisions.",
-              "de": "Verdacht auf infizierte Obstruktion, aktuelle und verlaufsbezogene Vitalwerte, Nierenfunktion und Urinmenge, Maßnahmen und Reaktion sowie die Bitte um dringliche Herdsanierungs- und Intensiventscheidungen nennen.",
-              "es": "Comunicar sospecha de obstrucción infectada, constantes actuales y tendencia, función renal y diuresis, tratamientos y respuesta, y solicitar decisiones urgentes sobre control del foco y cuidados críticos."
+              "en": "State infected obstruction, vital-sign trend, urine output and treatment response; request drainage and critical-care review.",
+              "de": "Infizierte Obstruktion, Vitalwerteverlauf, Diurese und Therapieansprechen nennen; Entlastung und Intensivbeurteilung anfordern.",
+              "es": "Comunicar obstrucción infectada, evolución de constantes, diuresis y respuesta al tratamiento; pedir drenaje y valoración por UCI."
             },
             "score": 10,
             "minutes": 3,
             "feedback": {
-              "en": "A clear request and physiological trend help the receiving team prioritise and act.",
-              "de": "Eine klare Bitte und der Vitalwerteverlauf helfen dem übernehmenden Team, Prioritäten zu setzen und zu handeln.",
-              "es": "Una petición clara y la evolución de las constantes ayudan al equipo receptor a priorizar y actuar."
+              "en": "A clear request and physiological trend, together with renal function and treatment given so far, help the receiving team prioritise and act.",
+              "de": "Eine klare Bitte und der Vitalwerteverlauf, ergänzt um Nierenfunktion und bisherige Maßnahmen, helfen dem übernehmenden Team, Prioritäten zu setzen und zu handeln.",
+              "es": "Una petición clara y la evolución de las constantes, junto con la función renal y lo realizado hasta ahora, ayudan al equipo receptor a priorizar y actuar."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Report the stone size and fever, leaving out hypotension and drowsiness.",
-              "de": "Steingröße und Fieber melden; Hypotonie und Schläfrigkeit weglassen.",
-              "es": "Informar del tamaño del cálculo y la fiebre, omitiendo la hipotensión y la somnolencia."
+              "en": "Report stone size, position and peak temperature, but leave out hypotension and drowsiness so as not to overdramatise.",
+              "de": "Steingröße, Steinlage und Fieberhöhe melden, Hypotonie und Schläfrigkeit aber weglassen, um die Lage nicht zu dramatisieren.",
+              "es": "Informar del tamaño y la posición del cálculo y de la fiebre máxima, omitiendo hipotensión y somnolencia para no dramatizar la situación."
             },
             "score": 3,
             "minutes": 7,
             "feedback": {
-              "en": "Stone details matter, but omitting deterioration hides the urgency.",
-              "de": "Steindetails sind relevant, doch das Weglassen der Verschlechterung verschleiert die Dringlichkeit.",
-              "es": "Los detalles del cálculo importan, pero omitir el deterioro oculta la urgencia."
+              "en": "Stone details matter, but omitting deterioration is not restraint; it hides the urgency.",
+              "de": "Steindetails sind relevant, doch das Weglassen der Verschlechterung ist keine Sachlichkeit, sondern verschleiert die Dringlichkeit.",
+              "es": "Los detalles del cálculo importan, pero omitir el deterioro no es prudencia: oculta la urgencia."
             },
             "critical": false
           },
           {
             "id": "c",
             "text": {
-              "en": "Leave a message that Sofia needs review when the team is free.",
-              "de": "Eine Nachricht hinterlassen, dass Sofia beurteilt werden soll, sobald das Team Zeit hat.",
-              "es": "Dejar un mensaje para que revisen a Sofia cuando el equipo esté libre."
+              "en": "Leave a message on the ward asking for Sofia to be reviewed once the team is back from theatre.",
+              "de": "Eine Nachricht auf Station hinterlassen, dass Sofia beurteilt werden soll, sobald das Team aus dem OP zurück ist.",
+              "es": "Dejar un mensaje en planta para que revisen a Sofia cuando el equipo vuelva de quirófano."
             },
             "score": 0,
             "minutes": 20,
@@ -756,48 +756,48 @@
           {
             "id": "a",
             "text": {
-              "en": "Explain the need for prompt examination with privacy and a chaperone, establish onset time and alert urology to suspected torsion.",
-              "de": "Die notwendige zeitnahe Untersuchung mit Privatsphäre und Begleitperson erklären, Beginn erheben und die Urologie über Torsionsverdacht informieren.",
-              "es": "Explicar la necesidad de exploración rápida con privacidad y acompañante profesional, precisar el inicio y avisar a urología de la sospecha de torsión."
+              "en": "Explain the examination with privacy and a chaperone, ask the onset time and alert urology to suspected torsion.",
+              "de": "Untersuchung mit Privatsphäre und Begleitperson erklären, Beginnzeit erfragen, Urologie über Torsionsverdacht informieren.",
+              "es": "Explicar la exploración con privacidad y acompañante, precisar la hora de inicio y avisar a urología de sospecha de torsión."
             },
             "score": 10,
             "minutes": 2,
             "feedback": {
-              "en": "Respectful communication and immediate escalation address both distress and a time-sensitive diagnosis.",
-              "de": "Respektvolle Kommunikation und sofortige Eskalation berücksichtigen Belastung und zeitkritische Diagnose.",
-              "es": "La comunicación respetuosa y la escalada inmediata atienden tanto la angustia como el diagnóstico urgente."
+              "en": "Respectful communication and immediate escalation address both distress and a time-sensitive diagnosis; the onset time determines the remaining ischaemia window.",
+              "de": "Respektvolle Kommunikation und sofortige Eskalation berücksichtigen Belastung und zeitkritische Diagnose; die Beginnzeit bestimmt die verbleibende Ischämiezeit.",
+              "es": "La comunicación respetuosa y la escalada inmediata atienden tanto la angustia como el diagnóstico urgente; la hora de inicio determina el tiempo de isquemia restante."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Collect a urine sample first and discuss examination afterwards.",
-              "de": "Zuerst eine Urinprobe sammeln und danach die Untersuchung besprechen.",
-              "es": "Recoger primero una muestra de orina y hablar después de la exploración."
+              "en": "First obtain a midstream sample for urinalysis and culture to rule out epididymitis, and only then discuss the examination.",
+              "de": "Zuerst Mittelstrahlurin für Urinstatus und Kultur gewinnen, um eine Epididymitis auszuschließen, und erst danach die Untersuchung besprechen.",
+              "es": "Obtener primero orina de micción media para análisis y cultivo, a fin de descartar epididimitis, y solo después hablar de la exploración."
             },
             "score": 3,
             "minutes": 10,
             "feedback": {
-              "en": "Urine testing may add information, but it should not delay examination and torsion assessment.",
-              "de": "Eine Urinuntersuchung kann helfen, darf aber Untersuchung und Torsionsbeurteilung nicht verzögern.",
-              "es": "El análisis de orina puede aportar información, pero no debe retrasar la exploración y valoración de torsión."
+              "en": "Urine testing may add information, but it cannot exclude torsion and should not delay examination and torsion assessment.",
+              "de": "Eine Urinuntersuchung kann helfen, schließt eine Torsion aber nicht aus und darf Untersuchung und Torsionsbeurteilung nicht verzögern.",
+              "es": "El análisis de orina puede aportar información, pero no descarta una torsión y no debe retrasar la exploración ni la valoración de torsión."
             },
             "critical": true
           },
           {
             "id": "c",
             "text": {
-              "en": "Assume epididymitis because Leo is an adolescent.",
-              "de": "Wegen Leos Jugendalter eine Epididymitis annehmen.",
-              "es": "Asumir epididimitis porque Leo es adolescente."
+              "en": "Assume epididymitis given Leo's age and possible sexual activity, and prescribe doxycycline.",
+              "de": "Wegen Leos Jugendalter und möglicher sexueller Aktivität eine Epididymitis annehmen und Doxycyclin verordnen.",
+              "es": "Asumir epididimitis por la edad de Leo y su posible actividad sexual, y prescribir doxiciclina."
             },
             "score": 0,
             "minutes": 20,
             "feedback": {
-              "en": "Sudden pain with vomiting is concerning for torsion and needs urgent specialist assessment.",
-              "de": "Plötzlicher Schmerz mit Erbrechen ist torsionsverdächtig und braucht dringliche fachärztliche Beurteilung.",
-              "es": "El dolor súbito con vómitos sugiere torsión y necesita valoración especialista urgente."
+              "en": "Sudden pain with vomiting is concerning for torsion; empirical antibiotics delay urgent specialist assessment.",
+              "de": "Plötzlicher Schmerz mit Erbrechen ist torsionsverdächtig; eine empirische Antibiose verzögert die dringliche fachärztliche Beurteilung.",
+              "es": "El dolor súbito con vómitos sugiere torsión; un antibiótico empírico retrasa la valoración especialista urgente."
             },
             "critical": true
           }
@@ -816,16 +816,16 @@
           {
             "id": "a",
             "text": {
-              "en": "Continue immediate urological/surgical assessment; imaging must not delay the urgent treatment decision.",
-              "de": "Sofortige urologisch-chirurgische Beurteilung fortsetzen; Bildgebung darf die dringliche Therapieentscheidung nicht verzögern.",
-              "es": "Continuar la valoración urológica/quirúrgica inmediata; la imagen no debe retrasar la decisión de tratamiento urgente."
+              "en": "Arrange immediate surgical exploration by urology without waiting for imaging.",
+              "de": "Ohne Bildgebung umgehend die operative Freilegung durch die Urologie veranlassen.",
+              "es": "Organizar exploración quirúrgica inmediata por urología sin esperar a la imagen."
             },
             "score": 10,
             "minutes": 2,
             "feedback": {
-              "en": "High clinical suspicion needs immediate specialist action; ultrasound is an adjunct, not a reason to wait.",
-              "de": "Hoher klinischer Verdacht verlangt sofortiges fachärztliches Handeln; Ultraschall ergänzt, rechtfertigt aber kein Warten.",
-              "es": "La alta sospecha clínica exige actuación especialista inmediata; la ecografía es complementaria y no justifica esperar."
+              "en": "High clinical suspicion needs immediate exploration with detorsion and orchidopexy; ultrasound is an adjunct, not a reason to wait.",
+              "de": "Hoher klinischer Verdacht verlangt sofortige Freilegung mit Detorsion und Orchidopexie; Ultraschall ergänzt, rechtfertigt aber kein Warten.",
+              "es": "La alta sospecha clínica exige exploración inmediata con destorsión y orquidopexia; la ecografía es complementaria y no justifica esperar."
             },
             "critical": false
           },
@@ -848,16 +848,16 @@
           {
             "id": "c",
             "text": {
-              "en": "Delay review until morning because there is no fever.",
-              "de": "Die Beurteilung bis morgens verschieben, weil kein Fieber vorliegt.",
-              "es": "Aplazar la revisión hasta la mañana porque no hay fiebre."
+              "en": "Give analgesia and defer review until morning because there is no fever or redness.",
+              "de": "Analgesie geben und die Beurteilung bis morgens verschieben, weil Fieber und Rötung fehlen.",
+              "es": "Dar analgesia y aplazar la revisión hasta la mañana porque no hay fiebre ni enrojecimiento."
             },
             "score": 0,
             "minutes": 20,
             "feedback": {
-              "en": "Absence of fever does not reduce the urgency of suspected torsion.",
-              "de": "Fehlendes Fieber mindert die Dringlichkeit des Torsionsverdachts nicht.",
-              "es": "La ausencia de fiebre no reduce la urgencia de la sospecha de torsión."
+              "en": "Absence of fever or redness does not reduce the urgency of suspected torsion; analgesia is appropriate but does not replace immediate exploration.",
+              "de": "Fehlendes Fieber oder fehlende Rötung mindern die Dringlichkeit des Torsionsverdachts nicht; Analgesie ist richtig, ersetzt aber nicht die sofortige Freilegung.",
+              "es": "La ausencia de fiebre o enrojecimiento no reduce la urgencia de la sospecha de torsión; la analgesia es adecuada, pero no sustituye a la exploración inmediata."
             },
             "critical": true
           }
@@ -876,41 +876,41 @@
           {
             "id": "a",
             "text": {
-              "en": "Give exact onset time, symptoms, examination findings, last oral intake and current observations; confirm the receiving clinician and immediate next step.",
-              "de": "Genauen Beginn, Beschwerden, Untersuchungsbefunde, letzte Nahrungsaufnahme und aktuelle Vitalwerte übergeben; übernehmende Fachperson und sofortigen nächsten Schritt bestätigen.",
-              "es": "Transmitir hora exacta de inicio, síntomas, hallazgos, última ingesta y constantes; confirmar quién recibe el caso y el siguiente paso inmediato."
+              "en": "Give onset time, findings, last oral intake and vital signs; confirm the receiving clinician and the next step.",
+              "de": "Beginnzeit, Befunde, Nüchternzeit und Vitalwerte übergeben; übernehmende Person und nächsten Schritt bestätigen.",
+              "es": "Transmitir hora de inicio, hallazgos, última ingesta y constantes; confirmar quién recibe el caso y el siguiente paso."
             },
             "score": 10,
             "minutes": 3,
             "feedback": {
-              "en": "Time and a confirmed action owner prevent the referral from becoming an untracked delay.",
-              "de": "Zeitangabe und bestätigte Zuständigkeit verhindern eine unbemerkte Verzögerung der Überweisung.",
-              "es": "La hora y un responsable confirmado evitan que la derivación se convierta en una demora sin seguimiento."
+              "en": "Time and a confirmed action owner prevent the referral from becoming an untracked delay; last oral intake allows direct theatre planning.",
+              "de": "Zeitangabe und bestätigte Zuständigkeit verhindern eine unbemerkte Verzögerung der Überweisung; die Nüchternzeit erlaubt die direkte OP-Planung.",
+              "es": "La hora y un responsable confirmado evitan que la derivación se convierta en una demora sin seguimiento; la última ingesta permite planificar el quirófano."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Send a referral saying 'scrotal pain' with no onset time.",
-              "de": "Eine Überweisung mit „Skrotalschmerz“ ohne Beginn senden.",
-              "es": "Enviar una derivación de «dolor escrotal» sin hora de inicio."
+              "en": "Fax a written referral saying 'left scrotal pain, vomiting, abnormal examination' without the onset time.",
+              "de": "Eine schriftliche Überweisung mit „Skrotalschmerz links, Erbrechen, Untersuchung auffällig“ ohne Beginnzeit per Fax senden.",
+              "es": "Enviar por fax una derivación escrita de «dolor escrotal izquierdo, vómitos, exploración alterada» sin hora de inicio."
             },
             "score": 3,
             "minutes": 6,
             "feedback": {
-              "en": "This identifies the symptom, but not the time-sensitive concern or the action needed.",
-              "de": "Das benennt die Beschwerde, aber nicht die zeitkritische Sorge oder erforderliche Handlung.",
-              "es": "Identifica el síntoma, pero no el problema dependiente del tiempo ni la actuación necesaria."
+              "en": "This identifies the symptoms, but not the time-sensitive concern or the action needed, and a fax has no confirmed recipient.",
+              "de": "Das benennt die Beschwerden, aber nicht die zeitkritische Sorge oder erforderliche Handlung, und ein Fax hat keinen bestätigten Empfänger.",
+              "es": "Identifica los síntomas, pero no el problema dependiente del tiempo ni la actuación necesaria, y un fax no tiene receptor confirmado."
             },
             "critical": false
           },
           {
             "id": "c",
             "text": {
-              "en": "Tell Leo to attend another hospital on his own without clinician-to-clinician contact.",
-              "de": "Leo ohne direkten ärztlichen Kontakt selbstständig in ein anderes Krankenhaus schicken.",
-              "es": "Indicar a Leo que vaya por su cuenta a otro hospital sin contacto entre profesionales."
+              "en": "Send Leo on his own to the nearest paediatric urology unit with a letter but without any clinician-to-clinician call.",
+              "de": "Leo mit Befundbrief ohne ärztlichen Direktkontakt selbstständig in die nächste Kinderurologie schicken.",
+              "es": "Enviar a Leo por su cuenta a la urología pediátrica más cercana con un informe, pero sin ningún contacto entre profesionales."
             },
             "score": 0,
             "minutes": 20,
@@ -989,9 +989,9 @@
           {
             "id": "a",
             "text": {
-              "en": "Possible Fournier gangrene with systemic deterioration; trigger emergency senior urological/surgical and critical-care assessment.",
-              "de": "Mögliche Fournier-Gangrän mit systemischer Verschlechterung; sofortige erfahrene urologisch-chirurgische und intensivmedizinische Beurteilung auslösen.",
-              "es": "Posible gangrena de Fournier con deterioro sistémico; activar valoración urgente de urología/cirugía sénior y cuidados críticos."
+              "en": "Suspect Fournier gangrene with sepsis and involve senior urology/surgery and critical care at once.",
+              "de": "Fournier-Gangrän mit Sepsis vermuten und sofort erfahrene Urologie/Chirurgie und Intensivmedizin hinzuziehen.",
+              "es": "Sospechar gangrena de Fournier con sepsis e implicar de inmediato a urología/cirugía sénior y cuidados críticos."
             },
             "score": 10,
             "minutes": 2,
@@ -1005,25 +1005,25 @@
           {
             "id": "b",
             "text": {
-              "en": "Suspect a local skin infection and seek review after routine tests.",
-              "de": "Eine lokale Hautinfektion vermuten und nach Routinebefunden beurteilen lassen.",
-              "es": "Sospechar infección cutánea local y solicitar revisión después de pruebas ordinarias."
+              "en": "Suspect perineal cellulitis, give cefazolin and arrange review after routine bloods and ultrasound.",
+              "de": "Eine perineale Phlegmone vermuten, Cefazolin geben und nach Routinelabor und Ultraschall beurteilen lassen.",
+              "es": "Sospechar celulitis perineal, administrar cefazolina y pedir revisión tras analítica ordinaria y ecografía."
             },
             "score": 3,
             "minutes": 12,
             "feedback": {
-              "en": "Infection is recognised, but the systemic signs require immediate escalation.",
-              "de": "Die Infektion ist erkannt, doch die systemischen Zeichen erfordern sofortige Eskalation.",
-              "es": "Se reconoce la infección, pero los signos sistémicos exigen escalada inmediata."
+              "en": "Infection is recognised, but cefazolin does not cover a polymicrobial necrotising infection, and the systemic signs require immediate escalation.",
+              "de": "Die Infektion ist erkannt, doch Cefazolin deckt eine polymikrobielle nekrotisierende Infektion nicht ab, und die systemischen Zeichen erfordern sofortige Eskalation.",
+              "es": "Se reconoce la infección, pero la cefazolina no cubre una infección necrosante polimicrobiana, y los signos sistémicos exigen escalada inmediata."
             },
             "critical": true
           },
           {
             "id": "c",
             "text": {
-              "en": "Reassure him because the visible skin area is small.",
-              "de": "Wegen der kleinen sichtbaren Hautfläche beruhigen.",
-              "es": "Tranquilizarlo porque la superficie cutánea visible es pequeña."
+              "en": "Reassure him because the discoloured area is small and recommend cooling and ibuprofen 600 mg for the pain.",
+              "de": "Wegen der kleinen verfärbten Hautfläche beruhigen und Kühlung sowie Ibuprofen 600 mg gegen die Schmerzen empfehlen.",
+              "es": "Tranquilizarlo porque la zona cutánea afectada es pequeña y recomendar frío local e ibuprofeno 600 mg para el dolor."
             },
             "score": 0,
             "minutes": 20,
@@ -1049,25 +1049,25 @@
           {
             "id": "a",
             "text": {
-              "en": "Begin the local sepsis/resuscitation pathway and urgent antimicrobial planning while the surgical team assesses source control; do not make care wait for imaging.",
-              "de": "Lokalen Sepsis-/Stabilisierungsablauf und dringliche antimikrobielle Planung beginnen, während das chirurgische Team die Herdsanierung beurteilt; Versorgung nicht von Bildgebung abhängig machen.",
-              "es": "Iniciar el protocolo local de sepsis/estabilización y la planificación antimicrobiana urgente mientras cirugía valora el control del foco; no hacer que la atención espere a la imagen."
+              "en": "Start sepsis treatment with broad-spectrum antibiotics while surgery plans debridement; do not wait for CT.",
+              "de": "Sepsistherapie mit Breitspektrum-Antibiose beginnen, während die Chirurgie das Débridement plant; nicht auf CT warten.",
+              "es": "Tratar la sepsis con antibióticos de amplio espectro mientras cirugía planea el desbridamiento; no esperar a la TC."
             },
             "score": 10,
             "minutes": 3,
             "feedback": {
-              "en": "Supportive care and urgent source-control decisions must proceed together.",
-              "de": "Unterstützende Versorgung und dringliche Entscheidungen zur Herdsanierung müssen gemeinsam erfolgen.",
-              "es": "La atención de soporte y las decisiones urgentes sobre control del foco deben avanzar juntas."
+              "en": "Supportive care under the local sepsis pathway and urgent source control by radical debridement must proceed together; imaging must not hold up care.",
+              "de": "Unterstützende Versorgung nach lokalem Sepsisablauf und dringliche Herdsanierung durch radikales Débridement müssen gemeinsam erfolgen; Bildgebung darf die Versorgung nicht aufhalten.",
+              "es": "La atención de soporte según el protocolo local de sepsis y el control urgente del foco mediante desbridamiento radical deben avanzar juntos; la imagen no debe frenar la atención."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Arrange CT first and pause all other decisions until the report is available.",
-              "de": "Zuerst CT organisieren und alle weiteren Entscheidungen bis zum Befund pausieren.",
-              "es": "Organizar primero una TC y suspender las demás decisiones hasta recibir el informe."
+              "en": "Arrange pelvic CT first and hold antibiotics and the surgical decision until it is reported.",
+              "de": "Zuerst eine CT des Beckens organisieren und Antibiose sowie OP-Entscheidung bis zum Befund zurückstellen.",
+              "es": "Organizar primero una TC pélvica y aplazar antibióticos y decisión quirúrgica hasta el informe."
             },
             "score": 3,
             "minutes": 15,
@@ -1081,9 +1081,9 @@
           {
             "id": "c",
             "text": {
-              "en": "Offer an outpatient antibiotic prescription and review in two days.",
-              "de": "Ambulante Antibiotikaverordnung anbieten und nach zwei Tagen kontrollieren.",
-              "es": "Ofrecer una receta antibiótica ambulatoria y revisión en dos días."
+              "en": "Prescribe oral amoxicillin/clavulanate, adjust glucose control and ask Jamal back to the outpatient clinic in two days.",
+              "de": "Amoxicillin/Clavulansäure oral verordnen, den Blutzucker einstellen und Jamal nach zwei Tagen in die Ambulanz einbestellen.",
+              "es": "Prescribir amoxicilina/clavulánico oral, ajustar la glucemia y citar de nuevo a Jamal en consulta externa en dos días."
             },
             "score": 0,
             "minutes": 20,
@@ -1109,25 +1109,25 @@
           {
             "id": "a",
             "text": {
-              "en": "State concern for necrotising infection, speed of progression, physiology, diabetes, treatments and response; request immediate review and confirm attendance.",
-              "de": "Verdacht auf nekrotisierende Infektion, Progressionsgeschwindigkeit, Vitalwerte, Diabetes, Maßnahmen und Reaktion nennen; sofortige Beurteilung verlangen und Eintreffen bestätigen.",
-              "es": "Comunicar sospecha de infección necrosante, rapidez de progresión, constantes, diabetes, tratamientos y respuesta; solicitar revisión inmediata y confirmar asistencia."
+              "en": "Name necrotising infection, rapid progression, vital signs and diabetes; request immediate attendance and confirm it.",
+              "de": "Nekrotisierende Infektion, rasche Progression, Vitalwerte und Diabetes nennen; sofortiges Erscheinen verlangen und bestätigen lassen.",
+              "es": "Nombrar infección necrosante de progresión rápida, constantes y diabetes; pedir presencia inmediata y obtener confirmación."
             },
             "score": 10,
             "minutes": 3,
             "feedback": {
-              "en": "Naming the suspected emergency and the required response prevents under-triage.",
-              "de": "Das Benennen des vermuteten Notfalls und der erforderlichen Reaktion verhindert eine zu niedrige Dringlichkeitseinstufung.",
-              "es": "Nombrar la urgencia sospechada y la respuesta requerida evita infravalorar la prioridad."
+              "en": "Naming the suspected emergency and the required response, together with treatment given and its effect, prevents under-triage.",
+              "de": "Das Benennen des vermuteten Notfalls und der erforderlichen Reaktion, ergänzt um bisherige Maßnahmen und deren Wirkung, verhindert eine zu niedrige Dringlichkeitseinstufung.",
+              "es": "Nombrar la urgencia sospechada y la respuesta requerida, junto con lo realizado y su efecto, evita infravalorar la prioridad."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Describe perineal redness and request review at the next available slot.",
-              "de": "Perineale Rötung beschreiben und Beurteilung beim nächsten freien Termin anfordern.",
-              "es": "Describir enrojecimiento perineal y pedir revisión en el siguiente hueco disponible."
+              "en": "Describe perineal redness and swelling with a photo and request a review at the next available clinic slot.",
+              "de": "Perineale Rötung und Schwellung mit Foto beschreiben und eine Beurteilung beim nächsten freien Termin anfordern.",
+              "es": "Describir enrojecimiento e hinchazón perineal con una foto y pedir revisión en el siguiente hueco disponible."
             },
             "score": 3,
             "minutes": 10,
@@ -1141,9 +1141,9 @@
           {
             "id": "c",
             "text": {
-              "en": "Send an unconfirmed routine message and leave the patient without reassessment.",
-              "de": "Eine unbestätigte Routine-Nachricht senden und den Patienten ohne erneute Beurteilung verlassen.",
-              "es": "Enviar un mensaje ordinario sin confirmación y dejar al paciente sin reevaluación."
+              "en": "Send an unconfirmed routine message via the hospital messaging system and leave the patient without reassessment.",
+              "de": "Eine unbestätigte Routine-Nachricht über das Kliniksystem senden und den Patienten ohne erneute Beurteilung verlassen.",
+              "es": "Enviar un mensaje ordinario sin confirmación por el sistema del hospital y dejar al paciente sin reevaluación."
             },
             "score": 0,
             "minutes": 20,
@@ -1223,25 +1223,25 @@
           {
             "id": "a",
             "text": {
-              "en": "Assess circulation and bladder distension, quantify bleeding and urine output, review the procedure and anticoagulant, and obtain indicated blood tests.",
-              "de": "Kreislauf und Blasendistension beurteilen, Blutung und Urinmenge erfassen, Eingriff und Antikoagulans prüfen sowie indizierte Blutuntersuchungen veranlassen.",
-              "es": "Valorar circulación y distensión vesical, cuantificar sangrado y diuresis, revisar el procedimiento y el anticoagulante y obtener análisis indicados."
+              "en": "Assess circulation and bladder distension, quantify bleeding and urine output, and review the procedure and anticoagulant.",
+              "de": "Kreislauf und Blasenfüllung beurteilen, Blutung und Urinmenge erfassen sowie Eingriff und Antikoagulans prüfen.",
+              "es": "Valorar circulación y distensión vesical, cuantificar sangrado y diuresis y revisar el procedimiento y el anticoagulante."
             },
             "score": 10,
             "minutes": 4,
             "feedback": {
-              "en": "Both blood loss and blocked drainage matter; the recent procedure and medication inform escalation.",
-              "de": "Blutverlust und blockierter Abfluss sind relevant; jüngster Eingriff und Medikation beeinflussen die Eskalation.",
-              "es": "Importan tanto la pérdida de sangre como el drenaje bloqueado; el procedimiento reciente y la medicación orientan la escalada."
+              "en": "Both blood loss and blocked drainage matter; the recent procedure and the anticoagulant set the pace of escalation. Blood count, coagulation and renal function belong to the initial assessment.",
+              "de": "Blutverlust und blockierter Abfluss sind beide relevant; jüngster Eingriff und Antikoagulans bestimmen das Eskalationstempo. Blutbild, Gerinnung und Nierenwerte gehören zur Erstbeurteilung.",
+              "es": "Importan tanto la pérdida de sangre como el drenaje bloqueado; el procedimiento reciente y el anticoagulante marcan el ritmo de la escalada. Hemograma, coagulación y función renal forman parte de la valoración inicial."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Check the urine colour and assume circulation is stable because Elena can talk.",
-              "de": "Urinfarbe prüfen und den Kreislauf als stabil annehmen, weil Elena sprechen kann.",
-              "es": "Revisar el color de la orina y asumir estabilidad circulatoria porque Elena puede hablar."
+              "en": "Grade the urine colour on a haematuria colour chart and assume circulation is stable because Elena can talk clearly.",
+              "de": "Die Urinfarbe nach einer Hämaturie-Farbskala einstufen und den Kreislauf als stabil annehmen, weil Elena klar sprechen kann.",
+              "es": "Clasificar el color de la orina con una escala de hematuria y asumir estabilidad circulatoria porque Elena habla con claridad."
             },
             "score": 3,
             "minutes": 6,
@@ -1255,16 +1255,16 @@
           {
             "id": "c",
             "text": {
-              "en": "Treat this as harmless haematuria and advise home observation.",
-              "de": "Dies als harmlose Hämaturie behandeln und häusliche Beobachtung empfehlen.",
-              "es": "Tratarlo como hematuria inofensiva y recomendar observación en casa."
+              "en": "Treat this as harmless haematuria after the bladder procedure, advise drinking 3 litres a day and send her home for observation.",
+              "de": "Dies als harmlose Hämaturie nach dem Blaseneingriff werten, eine Trinkmenge von 3 l empfehlen und häuslich beobachten lassen.",
+              "es": "Tratarlo como hematuria inofensiva tras el procedimiento vesical, recomendar beber 3 litros al día y observación en casa."
             },
             "score": 0,
             "minutes": 20,
             "feedback": {
-              "en": "Painful inability to void with clots is a urological emergency, even before major blood loss is evident.",
-              "de": "Schmerzhafte Unfähigkeit zur Miktion mit Koageln ist ein urologischer Notfall, auch ohne erkennbaren großen Blutverlust.",
-              "es": "La incapacidad dolorosa para orinar con coágulos es una urgencia urológica, incluso sin pérdida de sangre importante evidente."
+              "en": "Painful inability to void with clots is a urological emergency, even before major blood loss is evident; drinking more does not relieve clot retention.",
+              "de": "Schmerzhafte Unfähigkeit zur Miktion mit Koageln ist ein urologischer Notfall, auch ohne erkennbaren großen Blutverlust; mehr Trinken löst keinen Koagelverhalt.",
+              "es": "La incapacidad dolorosa para orinar con coágulos es una urgencia urológica, incluso sin pérdida de sangre importante evidente; beber más no resuelve la retención por coágulos."
             },
             "critical": true
           }
@@ -1283,48 +1283,48 @@
           {
             "id": "a",
             "text": {
-              "en": "Request prompt urological assessment and skilled relief of clot obstruction under the local protocol, with continued circulation and output monitoring.",
-              "de": "Zeitnahe urologische Beurteilung und fachgerechte Entlastung der Koagelobstruktion nach lokalem Standard anfordern; Kreislauf und Ausscheidung weiter überwachen.",
-              "es": "Solicitar valoración urológica rápida y alivio de la obstrucción por personal capacitado según el protocolo local, manteniendo vigilancia de circulación y diuresis."
+              "en": "Request urgent urological assessment and skilled clot evacuation; keep monitoring circulation and urine output.",
+              "de": "Dringliche urologische Beurteilung und fachgerechte Koagelausräumung anfordern; Kreislauf und Ausscheidung weiter überwachen.",
+              "es": "Solicitar valoración urológica urgente y evacuación de coágulos por personal capacitado; seguir vigilando circulación y diuresis."
             },
             "score": 10,
             "minutes": 3,
             "feedback": {
-              "en": "Clot retention needs a supervised drainage plan and monitoring for further bleeding or deterioration.",
-              "de": "Koagelverhalt braucht einen überwachten Ableitungsplan und Kontrolle auf weitere Blutung oder Verschlechterung.",
-              "es": "La retención por coágulos necesita un plan de drenaje supervisado y vigilancia de nuevo sangrado o deterioro."
+              "en": "Clot retention needs a supervised drainage plan under the local protocol, usually via a large-bore irrigation catheter, and monitoring for further bleeding or deterioration.",
+              "de": "Koagelverhalt braucht einen überwachten Ableitungsplan nach lokalem Standard, meist über einen großlumigen Spülkatheter, und Kontrolle auf weitere Blutung oder Verschlechterung.",
+              "es": "La retención por coágulos necesita un plan de drenaje supervisado según el protocolo local, habitualmente con una sonda de lavado de gran calibre, y vigilancia de nuevo sangrado o deterioro."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Ask for urology review but wait for the next routine round before addressing obstruction.",
-              "de": "Urologische Beurteilung anfragen, aber die Obstruktion erst bei der nächsten Routinevisite angehen.",
-              "es": "Pedir revisión urológica, pero esperar a la siguiente visita ordinaria para tratar la obstrucción."
+              "en": "Book a urology consult for the morning round and bridge the pain with intravenous metamizole 1 g until then.",
+              "de": "Ein urologisches Konsil für die Morgenvisite anmelden und die Schmerzen bis dahin mit Metamizol 1 g i.v. überbrücken.",
+              "es": "Pedir interconsulta urológica para la visita de la mañana y cubrir el dolor hasta entonces con metamizol 1 g i.v."
             },
             "score": 3,
             "minutes": 12,
             "feedback": {
-              "en": "The referral is appropriate, but painful blocked drainage should not wait for a routine round.",
-              "de": "Die Anfrage ist angemessen, doch schmerzhafter blockierter Abfluss sollte nicht bis zur Routinevisite warten.",
-              "es": "La derivación es adecuada, pero el drenaje bloqueado y doloroso no debe esperar a una visita ordinaria."
+              "en": "The referral is appropriate, but painful blocked drainage should not wait for a routine round; analgesia does not relieve the retention.",
+              "de": "Die Anfrage ist angemessen, doch schmerzhafter blockierter Abfluss sollte nicht bis zur Routinevisite warten; Analgesie beseitigt den Verhalt nicht.",
+              "es": "La derivación es adecuada, pero el drenaje bloqueado y doloroso no debe esperar a una visita ordinaria; la analgesia no resuelve la retención."
             },
             "critical": false
           },
           {
             "id": "c",
             "text": {
-              "en": "Carry out unfamiliar catheter or irrigation manoeuvres without trained assistance.",
-              "de": "Unvertraute Katheter- oder Spülmanöver ohne geschulte Hilfe durchführen.",
-              "es": "Realizar maniobras de sondaje o irrigación desconocidas sin ayuda capacitada."
+              "en": "Insert a 12 Fr catheter yourself without trained help and flush hard with a bladder syringe, although the technique is unfamiliar to you.",
+              "de": "Ohne geschulte Hilfe selbst einen 12-Ch-Katheter legen und mit der Blasenspritze kräftig anspülen, obwohl dir das Verfahren fremd ist.",
+              "es": "Colocar tú mismo una sonda de 12 Ch sin ayuda capacitada y lavar con fuerza con jeringa vesical, aunque no conoces la técnica."
             },
             "score": 0,
             "minutes": 20,
             "feedback": {
-              "en": "Procedural decisions require appropriate competence and supervision, particularly after a recent bladder procedure.",
-              "de": "Prozedurale Entscheidungen brauchen Kompetenz und Anleitung, besonders nach einem kürzlichen Blaseneingriff.",
-              "es": "Las decisiones sobre procedimientos requieren competencia y supervisión, especialmente tras una intervención vesical reciente."
+              "en": "Procedural decisions require appropriate competence and supervision, particularly after a recent bladder procedure; a small catheter also blocks quickly with clots.",
+              "de": "Prozedurale Entscheidungen brauchen Kompetenz und Anleitung, besonders nach einem kürzlichen Blaseneingriff; ein dünner Katheter verstopft zudem rasch mit Koageln.",
+              "es": "Las decisiones sobre procedimientos requieren competencia y supervisión, especialmente tras una intervención vesical reciente; además, una sonda fina se obstruye rápidamente con coágulos."
             },
             "critical": true
           }
@@ -1343,25 +1343,25 @@
           {
             "id": "a",
             "text": {
-              "en": "Report bleeding and haemoglobin trends, drainage/output, observations, the procedure and anticoagulant; confirm senior medication review and re-escalation triggers.",
-              "de": "Blutungs- und Hämoglobinverlauf, Ableitung/Ausscheidung, Vitalwerte, Eingriff und Antikoagulans übergeben; erfahrene Medikamentenprüfung und erneute Eskalationsauslöser bestätigen.",
-              "es": "Comunicar evolución del sangrado y hemoglobina, drenaje/diuresis, constantes, procedimiento y anticoagulante; confirmar revisión sénior de medicación y criterios de nueva escalada."
+              "en": "Hand over haemoglobin and bleeding trends, output, observations and the procedure; agree anticoagulant review and escalation criteria.",
+              "de": "Hb- und Blutungsverlauf, Ausscheidung, Vitalwerte und Eingriff übergeben; Prüfung des Antikoagulans und Eskalationskriterien vereinbaren.",
+              "es": "Transmitir evolución de hemoglobina y sangrado, diuresis, constantes y procedimiento; acordar revisión del anticoagulante y criterios de escalada."
             },
             "score": 10,
             "minutes": 3,
             "feedback": {
-              "en": "Restored drainage does not explain the bleeding; the ongoing plan must cover cause, recurrence and medication risk.",
-              "de": "Wiederhergestellte Ableitung erklärt die Blutung nicht; der weitere Plan muss Ursache, Wiederkehr und Medikationsrisiko abdecken.",
-              "es": "Restaurar el drenaje no explica el sangrado; el plan debe cubrir causa, recurrencia y riesgo de la medicación."
+              "en": "Restored drainage does not explain the bleeding; the ongoing plan must cover cause, recurrence and medication risk. A senior clinician decides on the anticoagulation after weighing bleeding against thrombotic risk.",
+              "de": "Wiederhergestellte Ableitung erklärt die Blutung nicht; der weitere Plan muss Ursache, Wiederkehr und Medikationsrisiko abdecken. Über die Antikoagulation entscheidet eine erfahrene Fachperson nach Abwägung von Blutungs- und Thromboserisiko.",
+              "es": "Restaurar el drenaje no explica el sangrado; el plan debe cubrir causa, recurrencia y riesgo de la medicación. Un profesional sénior decide sobre la anticoagulación tras sopesar el riesgo hemorrágico frente al trombótico."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Report only that the catheter is working.",
-              "de": "Nur melden, dass der Katheter funktioniert.",
-              "es": "Informar solo de que la sonda funciona."
+              "en": "Report that the irrigation catheter is draining freely and the urine is now only pink, and leave the next check to the morning round.",
+              "de": "Melden, dass der Spülkatheter frei läuft und der Urin nur noch rosé ist, und die nächste Kontrolle der Frühvisite überlassen.",
+              "es": "Informar de que la sonda de lavado drena bien y la orina ya solo es rosada, y dejar el siguiente control para la visita de la mañana."
             },
             "score": 3,
             "minutes": 6,
@@ -1375,9 +1375,9 @@
           {
             "id": "c",
             "text": {
-              "en": "Tell Elena to permanently stop anticoagulation without consulting the responsible clinician.",
-              "de": "Elena ohne Rücksprache mit der zuständigen Fachperson dauerhaftes Absetzen der Antikoagulation empfehlen.",
-              "es": "Indicar a Elena que suspenda de forma permanente la anticoagulación sin consultar al profesional responsable."
+              "en": "Advise Elena to stop her anticoagulant permanently because of the bleeding, without consulting the responsible clinician.",
+              "de": "Elena ohne Rücksprache mit der zuständigen Fachperson raten, das Antikoagulans wegen der Blutung dauerhaft abzusetzen.",
+              "es": "Aconsejar a Elena que suspenda de forma permanente el anticoagulante por el sangrado, sin consultar al profesional responsable."
             },
             "score": 0,
             "minutes": 15,
@@ -1456,9 +1456,9 @@
           {
             "id": "a",
             "text": {
-              "en": "Inguinal orchiectomy tomorrow morning; start chemotherapy only once histology is available.",
-              "de": "Inguinale Ablatio testis am nächsten Morgen; Chemotherapie erst nach Vorliegen der Histologie.",
-              "es": "Orquiectomía inguinal mañana por la mañana; iniciar la quimioterapia solo cuando se disponga de la histología."
+              "en": "Inguinal orchiectomy tomorrow morning; start chemotherapy only once the final histology is available.",
+              "de": "Inguinale Ablatio testis am nächsten Morgen; Chemotherapie erst nach Vorliegen der endgültigen Histologie.",
+              "es": "Orquiectomía inguinal mañana por la mañana; iniciar la quimioterapia solo con la histología definitiva disponible."
             },
             "score": 3,
             "minutes": 10,
@@ -1472,25 +1472,25 @@
           {
             "id": "b",
             "text": {
-              "en": "With markers drawn, involve a specialised centre and start cisplatin-based chemotherapy without delay; perform orchiectomy after chemotherapy is complete and offer sperm banking only if it does not delay treatment.",
-              "de": "Nach Markerabnahme ein spezialisiertes Zentrum einbinden und die cisplatinbasierte Chemotherapie ohne Verzögerung beginnen; Ablatio testis nach Abschluss der Chemotherapie, Kryokonservierung nur anbieten, wenn sie den Therapiebeginn nicht verzögert.",
-              "es": "Con los marcadores extraídos, implicar a un centro especializado e iniciar sin demora la quimioterapia basada en cisplatino; orquiectomía al completar la quimioterapia y ofrecer criopreservación de semen solo si no retrasa el tratamiento."
+              "en": "With markers drawn, start cisplatin-based chemotherapy promptly at a specialist centre; orchiectomy only once it is complete.",
+              "de": "Nach Markerabnahme umgehend cisplatinbasierte Chemotherapie in einem Zentrum beginnen; Ablatio testis erst nach deren Abschluss.",
+              "es": "Con los marcadores extraídos, iniciar de inmediato quimioterapia con cisplatino en un centro especializado; orquiectomía al completarla."
             },
             "score": 10,
             "minutes": 12,
             "feedback": {
-              "en": "With advanced, symptomatic metastatic disease and very high markers, clinical picture, imaging and markers establish the diagnosis. EAU guidance allows chemotherapy to start at once according to the IGCCCG group (here poor prognosis; with extensive lung metastases and hypoxia, consider a dose-reduced first induction cycle) and orchiectomy after it is complete.",
-              "de": "Bei fortgeschrittener, symptomatischer Metastasierung mit sehr hohen Markern sichern Klinik, Bildgebung und Marker die Diagnose. Die EAU-Leitlinie erlaubt hier den sofortigen Beginn der Chemotherapie nach IGCCCG-Gruppe (hier ungünstige Prognose; bei ausgedehnter Lungenmetastasierung mit Hypoxie ist ein dosisreduzierter erster Induktionszyklus zu erwägen) und die Ablatio nach deren Abschluss.",
-              "es": "En la enfermedad metastásica avanzada y sintomática con marcadores muy elevados, la clínica, la imagen y los marcadores establecen el diagnóstico. La guía de la EAU permite iniciar de inmediato la quimioterapia según el grupo IGCCCG (aquí, pronóstico desfavorable; con metástasis pulmonares extensas e hipoxemia, debe valorarse un primer ciclo de inducción a dosis reducida) y realizar la orquiectomía al terminarla."
+              "en": "With advanced, symptomatic metastatic disease and very high markers, clinical picture, imaging and markers establish the diagnosis. EAU guidance allows chemotherapy to start at once according to the IGCCCG group (here poor prognosis; with extensive lung metastases and hypoxia, consider a dose-reduced first induction cycle) and orchiectomy after it is complete. A specialised centre is involved early; sperm banking is offered only if it does not delay the start of treatment.",
+              "de": "Bei fortgeschrittener, symptomatischer Metastasierung mit sehr hohen Markern sichern Klinik, Bildgebung und Marker die Diagnose. Die EAU-Leitlinie erlaubt hier den sofortigen Beginn der Chemotherapie nach IGCCCG-Gruppe (hier ungünstige Prognose; bei ausgedehnter Lungenmetastasierung mit Hypoxie ist ein dosisreduzierter erster Induktionszyklus zu erwägen) und die Ablatio nach deren Abschluss. Ein spezialisiertes Zentrum wird früh eingebunden; eine Kryokonservierung wird nur angeboten, wenn sie den Therapiebeginn nicht verzögert.",
+              "es": "En la enfermedad metastásica avanzada y sintomática con marcadores muy elevados, la clínica, la imagen y los marcadores establecen el diagnóstico. La guía de la EAU permite iniciar de inmediato la quimioterapia según el grupo IGCCCG (aquí, pronóstico desfavorable; con metástasis pulmonares extensas e hipoxemia, debe valorarse un primer ciclo de inducción a dosis reducida) y realizar la orquiectomía al terminarla. Se implica pronto a un centro especializado; la criopreservación de semen solo se ofrece si no retrasa el inicio del tratamiento."
             },
             "critical": false
           },
           {
             "id": "c",
             "text": {
-              "en": "CT-guided lung biopsy for histological confirmation before any treatment.",
-              "de": "CT-gesteuerte Lungenbiopsie zur histologischen Sicherung vor jeder Therapie.",
-              "es": "Biopsia pulmonar guiada por TC para confirmación histológica antes de cualquier tratamiento."
+              "en": "CT-guided biopsy of the largest lung metastasis for histological confirmation; chemotherapy only after the result.",
+              "de": "CT-gesteuerte Biopsie der größten Lungenmetastase zur histologischen Sicherung; Chemotherapie erst nach dem Befund.",
+              "es": "Biopsia guiada por TC de la metástasis pulmonar mayor para confirmación histológica; quimioterapia solo tras el resultado."
             },
             "score": 0,
             "minutes": 15,
@@ -1516,9 +1516,9 @@
           {
             "id": "a",
             "text": {
-              "en": "Brain MRI only if neurological symptoms develop.",
-              "de": "Schädel-MRT nur, falls neurologische Symptome auftreten.",
-              "es": "RM craneal solo si aparecen síntomas neurológicos."
+              "en": "Brain MRI only if neurological symptoms such as headache or a seizure develop.",
+              "de": "Schädel-MRT nur, wenn neurologische Symptome wie Kopfschmerz oder Krampfanfall auftreten.",
+              "es": "RM craneal solo si aparecen síntomas neurológicos como cefalea o una crisis comicial."
             },
             "score": 3,
             "minutes": 3,
@@ -1532,9 +1532,9 @@
           {
             "id": "b",
             "text": {
-              "en": "FDG-PET/CT instead of brain MRI and further staging.",
-              "de": "FDG-PET/CT anstelle der Schädel-MRT und als weiteres Staging.",
-              "es": "PET-TC con FDG en lugar de la RM craneal y como estadificación adicional."
+              "en": "FDG-PET/CT as whole-body staging including the brain, in place of brain MRI.",
+              "de": "FDG-PET/CT als Ganzkörper-Staging einschließlich Gehirn, das die Schädel-MRT ersetzt.",
+              "es": "PET-TC con FDG como estadificación de cuerpo entero, incluido el cerebro, en lugar de la RM craneal."
             },
             "score": 0,
             "minutes": 8,
@@ -1548,16 +1548,16 @@
           {
             "id": "c",
             "text": {
-              "en": "Brain MRI promptly, ideally before or at the start of chemotherapy: poor-prognosis disease, very high hCG and multiple lung metastases are indications even without symptoms.",
-              "de": "Schädel-MRT zeitnah, möglichst vor oder zu Beginn der Chemotherapie: ungünstige Prognose, sehr hohes hCG und multiple Lungenmetastasen sind auch ohne Symptome Indikationen.",
-              "es": "RM craneal sin demora, idealmente antes o al inicio de la quimioterapia: el pronóstico desfavorable, la hCG muy elevada y las múltiples metástasis pulmonares son indicaciones aunque no haya síntomas."
+              "en": "Brain MRI now as part of staging, even without neurological symptoms.",
+              "de": "Schädel-MRT bereits im Staging, auch ohne neurologische Symptome.",
+              "es": "RM craneal ya en la estadificación, aunque no haya síntomas neurológicos."
             },
             "score": 10,
             "minutes": 6,
             "feedback": {
-              "en": "EAU guidance recommends brain MRI for neurological symptoms, poor-prognosis or high-risk disease, high hCG and multiple lung metastases. All of these apart from symptoms apply here.",
-              "de": "Die EAU-Leitlinie empfiehlt die Schädel-MRT bei neurologischen Symptomen, ungünstiger Prognose bzw. Hochrisikokonstellation, hohem hCG und multiplen Lungenmetastasen. Bis auf Symptome trifft hier alles zu.",
-              "es": "La guía de la EAU recomienda RM craneal ante síntomas neurológicos, pronóstico desfavorable o enfermedad de alto riesgo, hCG elevada y múltiples metástasis pulmonares. Aquí se cumplen todas salvo los síntomas."
+              "en": "EAU guidance recommends brain MRI for neurological symptoms, poor-prognosis or high-risk disease, high hCG and multiple lung metastases. All of these apart from symptoms apply here. The MRI is done promptly, ideally before or at the start of chemotherapy.",
+              "de": "Die EAU-Leitlinie empfiehlt die Schädel-MRT bei neurologischen Symptomen, ungünstiger Prognose bzw. Hochrisikokonstellation, hohem hCG und multiplen Lungenmetastasen. Bis auf Symptome trifft hier alles zu. Die MRT erfolgt zeitnah, möglichst vor oder zu Beginn der Chemotherapie.",
+              "es": "La guía de la EAU recomienda RM craneal ante síntomas neurológicos, pronóstico desfavorable o enfermedad de alto riesgo, hCG elevada y múltiples metástasis pulmonares. Aquí se cumplen todas salvo los síntomas. La RM se realiza sin demora, idealmente antes o al inicio de la quimioterapia."
             },
             "critical": false
           }
@@ -1576,25 +1576,25 @@
           {
             "id": "a",
             "text": {
-              "en": "Inguinal orchiectomy after completion of chemotherapy, coordinated with planning of any residual tumour resection.",
-              "de": "Inguinale Ablatio testis nach Abschluss der Chemotherapie, abgestimmt mit der Planung einer eventuellen Residualtumorresektion.",
-              "es": "Orquiectomía inguinal tras completar la quimioterapia, coordinada con la planificación de una posible resección de masas residuales."
+              "en": "Inguinal orchiectomy once chemotherapy is complete, even though the markers are normal.",
+              "de": "Inguinale Ablatio testis nach Abschluss der Chemotherapie, trotz normaler Marker.",
+              "es": "Orquiectomía inguinal tras completar la quimioterapia, pese a los marcadores normales."
             },
             "score": 10,
             "minutes": 8,
             "feedback": {
-              "en": "Because of the blood-testis barrier, the testis is a sanctuary site; viable tumour or teratoma is not rarely found there despite normal markers. The postponed orchiectomy is therefore mandatory.",
-              "de": "Wegen der Blut-Hoden-Schranke gilt der Hoden als Sanktuarium; trotz normaler Marker finden sich dort nicht selten vitaler Tumor oder Teratom. Die verschobene Ablatio ist daher obligat.",
-              "es": "Por la barrera hematotesticular, el testículo es un santuario; pese a marcadores normales no es raro encontrar tumor viable o teratoma. Por eso la orquiectomía diferida es obligada."
+              "en": "Because of the blood-testis barrier, the testis is a sanctuary site; viable tumour or teratoma is not rarely found there despite normal markers. The postponed orchiectomy is therefore mandatory. Its timing is coordinated with planning of any residual tumour resection.",
+              "de": "Wegen der Blut-Hoden-Schranke gilt der Hoden als Sanktuarium; trotz normaler Marker finden sich dort nicht selten vitaler Tumor oder Teratom. Die verschobene Ablatio ist daher obligat. Der Zeitpunkt wird mit der Planung einer eventuellen Residualtumorresektion abgestimmt.",
+              "es": "Por la barrera hematotesticular, el testículo es un santuario; pese a marcadores normales no es raro encontrar tumor viable o teratoma. Por eso la orquiectomía diferida es obligada. Su momento se coordina con la planificación de una posible resección de masas residuales."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Testicular biopsy only; orchiectomy only if viable tumour is found.",
-              "de": "Nur eine Hodenbiopsie; Ablatio nur bei Nachweis von vitalem Tumor.",
-              "es": "Solo biopsia testicular; orquiectomía únicamente si se demuestra tumor viable."
+              "en": "Ultrasound-guided testicular biopsy; orchiectomy only if histology shows viable tumour.",
+              "de": "Ultraschallgesteuerte Hodenbiopsie; Ablatio testis nur bei histologischem Nachweis von vitalem Tumor.",
+              "es": "Biopsia testicular ecoguiada; orquiectomía solo si la histología muestra tumor viable."
             },
             "score": 3,
             "minutes": 6,
@@ -1608,9 +1608,9 @@
           {
             "id": "c",
             "text": {
-              "en": "Leave the testis in place because the markers are normal and chemotherapy has clearly worked.",
-              "de": "Hoden belassen, da die Marker normal sind und die Chemotherapie offensichtlich gewirkt hat.",
-              "es": "Conservar el testículo porque los marcadores son normales y la quimioterapia ha funcionado claramente."
+              "en": "Leave the testis in place because the markers are normal and chemotherapy has worked.",
+              "de": "Hoden belassen, da die Marker normal sind und die Chemotherapie gewirkt hat.",
+              "es": "Conservar el testículo porque los marcadores son normales y la quimioterapia ha funcionado."
             },
             "score": 0,
             "minutes": 2,
@@ -1706,25 +1706,25 @@
           {
             "id": "b",
             "text": {
-              "en": "Two large-bore cannulas, crossmatch and transfuse, pause apixaban, three-way catheter with clot evacuation and continuous irrigation.",
-              "de": "Zwei großlumige Zugänge, Kreuzblut und Transfusion, Apixaban pausieren, Spülkatheter mit Koagelausräumung und Dauerspülung.",
-              "es": "Dos vías de gran calibre, pruebas cruzadas y transfusión, suspender apixabán, sonda de tres vías con evacuación de coágulos e irrigación continua."
+              "en": "Two large-bore cannulas, crossmatch and transfuse, pause apixaban, three-way catheter with clot evacuation.",
+              "de": "Zwei großlumige Zugänge, Kreuzblut und Transfusion, Apixaban pausieren, Spülkatheter mit Koagelausräumung.",
+              "es": "Dos vías de gran calibre, pruebas cruzadas y transfusión, suspender apixabán, sonda de tres vías y evacuar coágulos."
             },
             "score": 10,
             "minutes": 15,
             "feedback": {
-              "en": "Correct: circulatory stabilisation, transfusion, pausing the anticoagulant and clearing the clot retention come first; fluids must be given carefully because of her heart failure.",
-              "de": "Richtig: Kreislaufstabilisierung, Transfusion, Pausieren der Antikoagulation und Ausräumen der Tamponade stehen am Anfang; Volumen wegen der Herzinsuffizienz vorsichtig dosieren.",
-              "es": "Correcto: lo primero es estabilizar la hemodinámica, transfundir, suspender el anticoagulante y resolver la retención de coágulos; los líquidos deben dosificarse con cuidado por la insuficiencia cardiaca."
+              "en": "Correct: circulatory stabilisation, transfusion, pausing the anticoagulant and clearing the clot retention come first; fluids must be given carefully because of her heart failure. After clot evacuation, continuous irrigation keeps a new clot retention from forming.",
+              "de": "Richtig: Kreislaufstabilisierung, Transfusion, Pausieren der Antikoagulation und Ausräumen der Tamponade stehen am Anfang; Volumen wegen der Herzinsuffizienz vorsichtig dosieren. Nach der Koagelausräumung läuft eine Dauerspülung, damit sich keine neue Tamponade bildet.",
+              "es": "Correcto: lo primero es estabilizar la hemodinámica, transfundir, suspender el anticoagulante y resolver la retención de coágulos; los líquidos deben dosificarse con cuidado por la insuficiencia cardiaca. Tras evacuar los coágulos, la irrigación continua evita que se forme una nueva retención."
             },
             "critical": false
           },
           {
             "id": "c",
             "text": {
-              "en": "Inform theatre and prepare an emergency nephrectomy tonight.",
-              "de": "Den OP informieren und noch heute Nacht eine Notfall-Nephrektomie vorbereiten.",
-              "es": "Avisar a quirófano y preparar una nefrectomía urgente esta noche."
+              "en": "Call theatre and anaesthesia, have crossmatched blood ready and prepare an emergency nephrectomy for tonight.",
+              "de": "OP und Anästhesie informieren, Blutkonserven bereitstellen und noch heute Nacht eine Notfall-Nephrektomie vorbereiten.",
+              "es": "Avisar a quirófano y anestesia, tener sangre cruzada preparada y programar una nefrectomía urgente esta misma noche."
             },
             "score": 0,
             "minutes": 5,
@@ -1750,9 +1750,9 @@
           {
             "id": "a",
             "text": {
-              "en": "CT angiography with arterial and venous phases to locate the bleeding and plan an intervention.",
-              "de": "CT-Angiographie mit arterieller und venöser Phase zur Lokalisation der Blutung und Planung einer Intervention.",
-              "es": "Angio-TC con fases arterial y venosa para localizar el sangrado y planificar una intervención."
+              "en": "CT angiography with arterial and venous phases to locate the bleeding source.",
+              "de": "CT-Angiographie mit arterieller und venöser Phase zur Lokalisation der Blutung.",
+              "es": "Angio-TC con fases arterial y venosa para localizar el punto de sangrado."
             },
             "score": 10,
             "minutes": 12,
@@ -1810,9 +1810,9 @@
           {
             "id": "a",
             "text": {
-              "en": "Palliative haemostatic radiotherapy of the kidney, starting the next working day.",
-              "de": "Palliative hämostyptische Bestrahlung der Niere ab dem nächsten Werktag.",
-              "es": "Radioterapia hemostática paliativa del riñón a partir del siguiente día laborable."
+              "en": "Palliative haemostatic radiotherapy of the kidney, 20 Gy in 5 fractions, from the next working day.",
+              "de": "Palliative hämostyptische Bestrahlung der Niere mit 5 × 4 Gy ab dem nächsten Werktag.",
+              "es": "Radioterapia hemostática paliativa del riñón, 20 Gy en 5 fracciones, desde el siguiente día laborable."
             },
             "score": 3,
             "minutes": 6,
@@ -1826,9 +1826,9 @@
           {
             "id": "b",
             "text": {
-              "en": "Emergency open nephrectomy now that she is circulatory stable.",
-              "de": "Offene Notfall-Nephrektomie, da sie jetzt kreislaufstabil ist.",
-              "es": "Nefrectomía abierta urgente ahora que está estable hemodinámicamente."
+              "en": "Emergency open nephrectomy via a flank incision now that she is haemodynamically stable.",
+              "de": "Offene Notfall-Nephrektomie über einen Flankenschnitt, da sie jetzt kreislaufstabil ist.",
+              "es": "Nefrectomía abierta urgente por lumbotomía, ahora que está estable hemodinámicamente."
             },
             "score": 0,
             "minutes": 10,
@@ -1842,9 +1842,9 @@
           {
             "id": "c",
             "text": {
-              "en": "Palliative selective embolisation of the bleeding segmental artery by interventional radiology.",
-              "de": "Palliative selektive Embolisation der blutenden Segmentarterie durch die interventionelle Radiologie.",
-              "es": "Embolización selectiva paliativa de la arteria segmentaria sangrante por radiología intervencionista."
+              "en": "Selective embolisation of the bleeding segmental artery by interventional radiology.",
+              "de": "Selektive Embolisation der blutenden Segmentarterie durch die interventionelle Radiologie.",
+              "es": "Embolización selectiva de la arteria segmentaria sangrante por radiología intervencionista."
             },
             "score": 10,
             "minutes": 15,

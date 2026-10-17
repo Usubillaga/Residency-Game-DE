@@ -598,6 +598,29 @@ test('radiotherapy questions are answered by the radiation oncologist, on the ph
   assert.notEqual(data.NSAArt.portrait('radiotherapist', 'smile', 96), data.NSAArt.portrait('attending', 'smile', 96), 'She has her own portrait');
 });
 
+test('the correct answer of an authored question is not given away by its length', () => {
+  // Imported bank questions keep their source wording; every case written for the game must pass.
+  // Differences of up to 15 characters are ignored, so short labels such as T2 / T3a do not count.
+  const steps = catalog.cases.filter(c => !c.source).flatMap(c => c.steps.map(s => [c.id, s]));
+  assert.ok(steps.length > 200, 'authored decisions found');
+  for (const lang of ['en', 'de', 'es']) {
+    let longest = 0, shortest = 0;
+    for (const [id, s] of steps) {
+      const len = o => o.text[lang].trim().length;
+      const keyed = len(s.options.find(o => o.id === s.best));
+      const others = s.options.filter(o => o.id !== s.best).map(len).sort((a, b) => a - b);
+      const median = others.length % 2 ? others[(others.length - 1) / 2] : (others[others.length / 2 - 1] + others[others.length / 2]) / 2;
+      const max = others[others.length - 1];
+      assert.ok(keyed <= 1.15 * max || keyed - max <= 15, id + '/' + s.id + ' ' + lang + ': the correct answer is much longer than every other option');
+      assert.ok(keyed >= 0.7 * median || median - keyed <= 15, id + '/' + s.id + ' ' + lang + ': the correct answer is much shorter than the other options');
+      longest += keyed > max;
+      shortest += keyed < others[0];
+    }
+    assert.ok(longest <= 0.35 * steps.length, lang + ': the correct answer is the longest option in ' + longest + ' of ' + steps.length + ' decisions');
+    assert.ok(shortest <= 0.35 * steps.length, lang + ': the correct answer is the shortest option in ' + shortest + ' of ' + steps.length + ' decisions');
+  }
+});
+
 test('every decision has a written hint in all three languages that never quotes an answer option', () => {
   const letter = /\b(?:option|Option|answer|Antwort|respuesta|opción)\s*\(?[A-Ea-e]\)?\b|\([A-Ea-e]\)/;
   for (const c of catalog.cases) for (const s of c.steps) {
