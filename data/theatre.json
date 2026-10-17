@@ -54,48 +54,48 @@
           {
             "id": "a",
             "text": {
-              "en": "Pause progression, verify and document the allergy, inform the team and ensure the planned environment is safe before proceeding.",
-              "de": "Fortschritt pausieren, Allergie prüfen und dokumentieren, Team informieren und vor Fortsetzung ein sicheres Umfeld sicherstellen.",
-              "es": "Pausar el avance, verificar y documentar la alergia, informar al equipo y asegurar un entorno seguro antes de continuar."
+              "en": "Halt the process, verify and document the allergy, inform the team and ensure a latex-free theatre.",
+              "de": "Ablauf anhalten, Allergie prüfen und dokumentieren, Team informieren und einen latexfreien Saal sicherstellen.",
+              "es": "Detener el proceso, verificar y documentar la alergia, informar al equipo y asegurar un quirófano sin látex."
             },
             "score": 10,
             "minutes": 5,
             "feedback": {
-              "en": "A discrepancy discovered at sign-in must be resolved and shared.",
-              "de": "Ein beim Sign-in entdeckter Widerspruch muss geklärt und mitgeteilt werden.",
-              "es": "Una discrepancia detectada al inicio debe resolverse y compartirse."
+              "en": "A discrepancy discovered at sign-in must be resolved and shared. Only when everyone, including the new team member, is aware and equipment and theatre are prepared latex-free does the process continue.",
+              "de": "Ein beim Sign-in entdeckter Widerspruch muss geklärt und mitgeteilt werden. Erst wenn alle, auch das neue Teammitglied, Bescheid wissen und Material und Saal latexfrei vorbereitet sind, geht es weiter.",
+              "es": "Una discrepancia detectada al inicio debe resolverse y compartirse. Solo se continúa cuando todos, incluido el nuevo miembro del equipo, lo saben y el material y el quirófano están preparados sin látex."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Write the allergy on one sheet but do not confirm the team knows.",
-              "de": "Die Allergie auf ein Blatt schreiben, aber Teamkenntnis nicht bestätigen.",
-              "es": "Anotar la alergia en una hoja sin confirmar que el equipo la conoce."
+              "en": "Add the latex allergy to the theatre form without checking that the whole team knows.",
+              "de": "Die Latexallergie auf dem OP-Blatt nachtragen, ohne zu prüfen, ob das ganze Team davon weiß.",
+              "es": "Añadir la alergia al látex en la hoja quirúrgica sin comprobar que todo el equipo la conoce."
             },
             "score": 3,
             "minutes": 3,
             "feedback": {
-              "en": "Documentation helps only if the people preparing care act on it.",
-              "de": "Dokumentation hilft nur, wenn die vorbereitenden Personen danach handeln.",
-              "es": "Documentar solo ayuda si quienes preparan la atención actúan con esa información."
+              "en": "Documentation is right but helps only if the people preparing care act on it.",
+              "de": "Die Dokumentation ist richtig, hilft aber nur, wenn die vorbereitenden Personen danach handeln.",
+              "es": "Documentar es correcto, pero solo ayuda si quienes preparan la atención actúan con esa información."
             },
             "critical": false
           },
           {
             "id": "c",
             "text": {
-              "en": "Ignore the report because the original form has no allergy recorded.",
-              "de": "Den Bericht ignorieren, weil das ursprüngliche Formular keine Allergie enthält.",
-              "es": "Ignorar el relato porque el formulario original no registra alergias."
+              "en": "Disregard her report because the anaesthetic assessment and theatre form both record no allergy.",
+              "de": "Die Angabe übergehen, weil Prämedikationsbogen und OP-Blatt übereinstimmend keine Allergie vermerken.",
+              "es": "No tener en cuenta su relato porque la valoración preanestésica y la hoja quirúrgica no registran alergias."
             },
             "score": 0,
             "minutes": 2,
             "feedback": {
-              "en": "A blank record is not evidence that the patient's report is false.",
-              "de": "Ein leeres Feld beweist nicht, dass die Patientenaussage falsch ist.",
-              "es": "Un registro en blanco no demuestra que el relato sea falso."
+              "en": "A blank record is not evidence that the patient's report is false, even if it is missing from two documents.",
+              "de": "Ein leeres Feld beweist nicht, dass die Patientenaussage falsch ist, auch wenn es in zwei Dokumenten fehlt.",
+              "es": "Un registro en blanco no demuestra que el relato sea falso, aunque falte en dos documentos."
             },
             "critical": true
           }
@@ -114,48 +114,48 @@
           {
             "id": "a",
             "text": {
-              "en": "Introduce roles and actively confirm patient, procedure and site; share critical concerns, equipment readiness and antimicrobial plan when relevant.",
-              "de": "Rollen vorstellen, Patientin, Eingriff und Ort aktiv bestätigen; kritische Bedenken, Gerätebereitschaft und gegebenenfalls Antibiotikaplan teilen.",
-              "es": "Presentar funciones y confirmar activamente paciente, procedimiento y sitio; compartir riesgos, preparación de equipos y plan antimicrobiano cuando corresponda."
+              "en": "Together confirm roles, patient, procedure and site and raise critical points such as the latex allergy.",
+              "de": "Gemeinsam Rollen, Patientin, Eingriff und Seite bestätigen und kritische Punkte wie die Latexallergie ansprechen.",
+              "es": "Confirmar en conjunto funciones, paciente, procedimiento y lado y comentar puntos críticos como la alergia al látex."
             },
             "score": 10,
             "minutes": 5,
             "feedback": {
-              "en": "A spoken, shared pause gives each discipline a chance to identify a safety issue.",
-              "de": "Eine gemeinsame gesprochene Pause gibt jedem Fachbereich Raum für Sicherheitsbedenken.",
-              "es": "Una pausa compartida y verbal permite a cada disciplina señalar problemas de seguridad."
+              "en": "A spoken, shared pause gives each discipline a chance to identify a safety issue. This also covers equipment readiness and, where relevant, antimicrobial prophylaxis.",
+              "de": "Eine gemeinsame gesprochene Pause gibt jedem Fachbereich Raum für Sicherheitsbedenken. Dazu gehören auch Gerätebereitschaft und, wo relevant, die Antibiotikaprophylaxe.",
+              "es": "Una pausa compartida y verbal permite a cada disciplina señalar problemas de seguridad. Incluye también la preparación de equipos y, cuando corresponda, la profilaxis antibiótica."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Ask one person to tick the checklist while the team continues other tasks.",
-              "de": "Eine Person die Liste abhaken lassen, während das Team andere Aufgaben fortsetzt.",
-              "es": "Pedir a una persona que marque la lista mientras el equipo sigue con otras tareas."
+              "en": "Have the circulating nurse tick the full checklist while anaesthesia and the surgical team carry on working.",
+              "de": "Die Springerin die Checkliste vollständig abhaken lassen, während Anästhesie und OP-Team parallel weiterarbeiten.",
+              "es": "Pedir a la enfermera circulante que marque toda la lista mientras anestesia y el equipo quirúrgico siguen trabajando."
             },
             "score": 3,
             "minutes": 3,
             "feedback": {
-              "en": "A private tick-box exercise does not establish shared confirmation.",
-              "de": "Privates Abhaken schafft keine gemeinsame Bestätigung.",
-              "es": "Marcar casillas en privado no establece confirmación compartida."
+              "en": "The list is completed, but a private tick-box exercise does not establish shared confirmation.",
+              "de": "Die Liste wird vollständig bearbeitet, aber privates Abhaken schafft keine gemeinsame Bestätigung.",
+              "es": "La lista se completa, pero marcar casillas en privado no establece confirmación compartida."
             },
             "critical": false
           },
           {
             "id": "c",
             "text": {
-              "en": "Skip time-out to recover the lost schedule time.",
-              "de": "Time-out auslassen, um verlorene Zeit aufzuholen.",
-              "es": "Omitir la pausa para recuperar el retraso."
+              "en": "Skip the time-out because the latex allergy was settled at sign-in and the delay has to be made up.",
+              "de": "Den Time-out auslassen, weil die Latexallergie beim Sign-in geklärt ist und die Verspätung aufgeholt werden muss.",
+              "es": "Omitir la pausa quirúrgica porque la alergia al látex ya se aclaró en la entrada y hay que recuperar el retraso."
             },
             "score": 0,
             "minutes": 2,
             "feedback": {
-              "en": "Schedule pressure is not a reason to bypass essential safety checks.",
-              "de": "Zeitdruck ist kein Grund, wesentliche Sicherheitsprüfungen auszulassen.",
-              "es": "El retraso no justifica omitir verificaciones esenciales."
+              "en": "Schedule pressure is not a reason to bypass essential safety checks; sign-in does not replace the time-out, and the allergy must be confirmed again aloud for everyone at the time-out.",
+              "de": "Zeitdruck ist kein Grund, wesentliche Sicherheitsprüfungen auszulassen; der Sign-in ersetzt den Time-out nicht, und die Allergie muss im Time-out erneut für alle hörbar bestätigt werden.",
+              "es": "El retraso no justifica omitir verificaciones esenciales; la entrada no sustituye a la pausa quirúrgica, y la alergia debe confirmarse de nuevo en voz alta para todos en la pausa."
             },
             "critical": true
           }
@@ -174,25 +174,25 @@
           {
             "id": "a",
             "text": {
-              "en": "Confirm the recorded procedure, counts as applicable, specimen labels, equipment issues and key recovery concerns with the receiving plan.",
-              "de": "Dokumentierten Eingriff, zutreffende Zählkontrollen, Probenetiketten, Geräteprobleme und wichtige Nachsorgebedenken samt Aufnahmeplan bestätigen.",
-              "es": "Confirmar procedimiento registrado, recuentos aplicables, etiquetas de muestras, problemas de equipos y preocupaciones de recuperación con el plan receptor."
+              "en": "Confirm the procedure, counts, specimen labels, equipment issues and the key risks for recovery.",
+              "de": "Eingriff, Zählkontrolle, Präparatbeschriftung, Geräteprobleme und Hauptrisiken für den Aufwachraum bestätigen.",
+              "es": "Confirmar procedimiento, recuentos, etiquetado de muestras, problemas de equipos y los riesgos clave para recuperación."
             },
             "score": 10,
             "minutes": 6,
             "feedback": {
-              "en": "Sign-out makes unresolved issues and postoperative priorities explicit.",
-              "de": "Sign-out macht offene Punkte und postoperative Prioritäten ausdrücklich klar.",
-              "es": "La verificación final hace explícitos los asuntos pendientes y las prioridades posoperatorias."
+              "en": "Sign-out makes unresolved issues and postoperative priorities explicit. The risks still include Laura's latex allergy, as well as the plan for the receiving ward.",
+              "de": "Sign-out macht offene Punkte und postoperative Prioritäten ausdrücklich klar. Zu den Risiken gehört weiterhin Lauras Latexallergie, ebenso der Plan für die aufnehmende Station.",
+              "es": "La verificación final hace explícitos los asuntos pendientes y las prioridades posoperatorias. Entre los riesgos sigue estando la alergia al látex de Laura, además del plan de la planta receptora."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Complete the note later and tell recovery only the procedure name.",
-              "de": "Den Bericht später ergänzen und dem Aufwachraum nur den Eingriffsnamen nennen.",
-              "es": "Completar la nota después y comunicar a recuperación solo el nombre del procedimiento."
+              "en": "Dictate the operation note after the next case and give recovery only the procedure name for now.",
+              "de": "Den OP-Bericht erst nach der nächsten Operation diktieren und dem Aufwachraum vorerst nur den Eingriffsnamen nennen.",
+              "es": "Dictar el informe tras la siguiente intervención y comunicar de momento a recuperación solo el nombre del procedimiento."
             },
             "score": 3,
             "minutes": 3,
@@ -206,16 +206,16 @@
           {
             "id": "c",
             "text": {
-              "en": "Move Laura without mentioning the allergy because the procedure is over.",
-              "de": "Laura ohne Allergiehinweis verlegen, weil der Eingriff beendet ist.",
-              "es": "Trasladar a Laura sin mencionar la alergia porque el procedimiento terminó."
+              "en": "Transfer Laura without repeating the allergy warning because latex exposure ended with the procedure.",
+              "de": "Laura ohne erneuten Allergiehinweis verlegen, weil die Latexexposition mit Ende des Eingriffs vorbei ist.",
+              "es": "Trasladar a Laura sin repetir el aviso de alergia porque la exposición al látex terminó con la intervención."
             },
             "score": 0,
             "minutes": 2,
             "feedback": {
-              "en": "Allergy risks remain relevant during recovery and subsequent care.",
-              "de": "Allergierisiken bleiben im Aufwachraum und der weiteren Versorgung relevant.",
-              "es": "El riesgo alérgico sigue siendo relevante en recuperación y atención posterior."
+              "en": "Allergy risks remain relevant during recovery and subsequent care, for example with catheters, gloves or further procedures.",
+              "de": "Allergierisiken bleiben im Aufwachraum und der weiteren Versorgung relevant, etwa bei Kathetern, Handschuhen oder weiteren Eingriffen.",
+              "es": "El riesgo alérgico sigue siendo relevante en recuperación y atención posterior, por ejemplo con sondas, guantes u otros procedimientos."
             },
             "critical": true
           }
@@ -287,9 +287,9 @@
           {
             "id": "a",
             "text": {
-              "en": "Stop progression and state the side discrepancy clearly to the whole team.",
-              "de": "Ablauf stoppen und den Seitenwiderspruch dem gesamten Team klar mitteilen.",
-              "es": "Detener el avance y comunicar claramente la discrepancia de lado a todo el equipo."
+              "en": "Stop progression and state the side discrepancy clearly to the whole theatre team, including anaesthesia.",
+              "de": "Ablauf stoppen und den Seitenwiderspruch dem gesamten OP-Team einschließlich Anästhesie klar mitteilen.",
+              "es": "Detener el avance y comunicar claramente la discrepancia de lado a todo el equipo quirúrgico, incluida anestesia."
             },
             "score": 10,
             "minutes": 3,
@@ -319,16 +319,16 @@
           {
             "id": "c",
             "text": {
-              "en": "Choose the side from whichever document was printed most recently.",
-              "de": "Die Seite nach dem zuletzt gedruckten Dokument wählen.",
-              "es": "Elegir el lado del documento impreso más recientemente."
+              "en": "Choose the side from whichever document was printed most recently, as it probably reflects the latest plan.",
+              "de": "Die Seite nach dem zuletzt gedruckten Dokument wählen, weil es vermutlich den neuesten Planungsstand zeigt.",
+              "es": "Elegir el lado del documento impreso más recientemente, porque probablemente refleja la planificación más reciente."
             },
             "score": 0,
             "minutes": 2,
             "feedback": {
-              "en": "Document recency cannot establish the correct patient-specific indication.",
-              "de": "Das Druckdatum bestimmt nicht die richtige patientenbezogene Indikation.",
-              "es": "La fecha de impresión no establece la indicación correcta del paciente."
+              "en": "Document recency cannot establish the correct patient-specific indication; a new printout can still carry an old transcription error.",
+              "de": "Das Druckdatum bestimmt nicht die richtige patientenbezogene Indikation; auch ein neuer Ausdruck kann einen alten Übertragungsfehler enthalten.",
+              "es": "La fecha de impresión no establece la indicación correcta del paciente; un documento reciente también puede arrastrar un error de transcripción antiguo."
             },
             "critical": true
           }
@@ -347,41 +347,41 @@
           {
             "id": "a",
             "text": {
-              "en": "Have the responsible surgeon verify patient identity, actual imaging, indication and consent with the patient and team; correct the record through the local process.",
-              "de": "Die verantwortliche operierende Person soll Identität, tatsächliche Bilder, Indikation und Einwilligung mit Patient und Team prüfen; Unterlagen nach lokalem Verfahren korrigieren.",
-              "es": "El cirujano responsable debe verificar identidad, imágenes reales, indicación y consentimiento con paciente y equipo; corregir el registro por el proceso local."
+              "en": "Have the responsible surgeon reconcile identity, actual images, indication and consent with the patient and team.",
+              "de": "Identität, Originalbilder, Indikation und Einwilligung durch die verantwortliche operierende Person mit Patient und Team abgleichen.",
+              "es": "Que el cirujano responsable concilie identidad, imágenes reales, indicación y consentimiento con paciente y equipo."
             },
             "score": 10,
             "minutes": 10,
             "feedback": {
-              "en": "Reconciliation uses the full evidence rather than a vote or a symptom guess.",
-              "de": "Der Abgleich nutzt alle Belege statt Abstimmung oder Symptomvermutung.",
-              "es": "La conciliación usa todas las pruebas en lugar de una votación o una suposición por síntomas."
+              "en": "Reconciliation uses the full evidence rather than a vote or a symptom guess. The responsible surgeon owns the side decision; the record is then corrected through the local process.",
+              "de": "Der Abgleich nutzt alle Belege statt Abstimmung oder Symptomvermutung. Die verantwortliche operierende Person trägt die Seitenentscheidung; danach werden die Unterlagen nach lokalem Verfahren korrigiert.",
+              "es": "La conciliación usa todas las pruebas en lugar de una votación o una suposición por síntomas. El cirujano responsable asume la decisión del lado; después se corrige el registro por el proceso local."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Use the scan report alone, without checking image identity or discussing consent.",
-              "de": "Nur den Bildbericht nutzen, ohne Bildidentität oder Einwilligung zu prüfen.",
-              "es": "Usar solo el informe, sin comprobar identidad de la imagen ni discutir el consentimiento."
+              "en": "Rely on the written scan report alone, without viewing the images or checking their patient identity or the consent.",
+              "de": "Nur den schriftlichen Bildbefund heranziehen, ohne die Bilder selbst, ihre Patientenzuordnung oder die Einwilligung nochmals zu prüfen.",
+              "es": "Basarse solo en el informe escrito, sin ver las imágenes, comprobar a qué paciente pertenecen ni revisar el consentimiento."
             },
             "score": 3,
             "minutes": 5,
             "feedback": {
-              "en": "The report is important, but identity, indication and valid consent must also align.",
-              "de": "Der Bericht ist wichtig; Identität, Indikation und gültige Einwilligung müssen ebenfalls stimmen.",
-              "es": "El informe importa, pero también deben concordar identidad, indicación y consentimiento válido."
+              "en": "The report is important, but the images, identity, indication and valid consent must also align.",
+              "de": "Der Bericht ist wichtig; Bilder, Identität, Indikation und gültige Einwilligung müssen ebenfalls stimmen.",
+              "es": "El informe importa, pero también deben concordar las imágenes, la identidad, la indicación y un consentimiento válido."
             },
             "critical": false
           },
           {
             "id": "c",
             "text": {
-              "en": "Ask the team to vote for a side and proceed.",
-              "de": "Das Team über die Seite abstimmen lassen und fortfahren.",
-              "es": "Pedir al equipo que vote el lado y continuar."
+              "en": "Ask the team for a quick vote on the most likely side and proceed with the majority decision.",
+              "de": "Das Team kurz über die wahrscheinlichste Seite abstimmen lassen und mit der Mehrheitsentscheidung fortfahren.",
+              "es": "Pedir al equipo una votación rápida sobre el lado más probable y continuar con la decisión de la mayoría."
             },
             "score": 0,
             "minutes": 2,
@@ -407,25 +407,25 @@
           {
             "id": "a",
             "text": {
-              "en": "The verified patient, procedure and side, amended documents and readiness checks; repeat the shared confirmation before proceeding.",
-              "de": "Verifizierter Patient, Eingriff und Seite, korrigierte Unterlagen und Bereitschaftsprüfungen; gemeinsame Bestätigung vor Fortsetzung wiederholen.",
-              "es": "Paciente, procedimiento y lado verificados, documentos corregidos y preparación; repetir la confirmación compartida antes de continuar."
+              "en": "State the verified patient, procedure, side and amended documents, and repeat the team time-out.",
+              "de": "Verifizierten Patienten, Eingriff, Seite und korrigierte Unterlagen nennen und das Team-Time-out wiederholen.",
+              "es": "Comunicar paciente, procedimiento y lado verificados y documentos corregidos, y repetir la pausa quirúrgica."
             },
             "score": 10,
             "minutes": 5,
             "feedback": {
-              "en": "A corrected record must become a corrected shared team understanding.",
-              "de": "Eine korrigierte Dokumentation muss zum gemeinsamen korrigierten Verständnis werden.",
-              "es": "Un registro corregido debe convertirse en una comprensión corregida compartida."
+              "en": "A corrected record must become a corrected shared team understanding, including the readiness checks before proceeding.",
+              "de": "Eine korrigierte Dokumentation muss zum gemeinsamen korrigierten Verständnis werden. Dazu gehören auch die Bereitschaftsprüfungen, bevor der Ablauf fortgesetzt wird.",
+              "es": "Un registro corregido debe convertirse en una comprensión corregida compartida, incluidas las comprobaciones de preparación antes de continuar."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Tell only the surgeon; other staff can infer the correction.",
-              "de": "Nur die operierende Person informieren; andere sollen die Korrektur ableiten.",
-              "es": "Informar solo al cirujano; los demás pueden deducir la corrección."
+              "en": "Tell only the surgeon; anaesthesia and nursing staff can infer the correction from the amended record.",
+              "de": "Nur die operierende Person informieren; Anästhesie und Pflege sollen die Korrektur aus der geänderten Akte ableiten.",
+              "es": "Informar solo al cirujano; anestesia y enfermería pueden deducir la corrección a partir del registro modificado."
             },
             "score": 3,
             "minutes": 3,
@@ -439,9 +439,9 @@
           {
             "id": "c",
             "text": {
-              "en": "Leave conflicting copies in use and rely on memory.",
-              "de": "Widersprüchliche Kopien weiter verwenden und auf Erinnerung vertrauen.",
-              "es": "Mantener copias contradictorias y confiar en la memoria."
+              "en": "Leave conflicting copies in circulation and trust that everyone will remember the verbal clarification.",
+              "de": "Widersprüchliche Kopien im Umlauf lassen und darauf vertrauen, dass sich alle an die mündliche Klärung erinnern.",
+              "es": "Mantener copias contradictorias en circulación y confiar en que todos recuerden la aclaración verbal."
             },
             "score": 0,
             "minutes": 2,
@@ -520,41 +520,41 @@
           {
             "id": "a",
             "text": {
-              "en": "Pause the elective plan, review current observations and symptoms, culture details, allergies, renal function and obstruction with the senior team.",
-              "de": "Elektiven Plan pausieren; aktuelle Vitalzeichen und Beschwerden, Kulturdetails, Allergien, Nierenfunktion und Obstruktion mit dem Fachteam prüfen.",
-              "es": "Pausar el plan electivo; revisar constantes, síntomas, cultivo, alergias, función renal y obstrucción con el equipo sénior."
+              "en": "Pause the elective procedure; review observations, symptoms, culture, renal function and obstruction with the senior team.",
+              "de": "Elektiven Eingriff pausieren; Vitalzeichen, Beschwerden, Kultur, Nierenfunktion und Obstruktion mit dem Fachteam prüfen.",
+              "es": "Pausar el procedimiento electivo; revisar constantes, síntomas, cultivo, función renal y obstrucción con el equipo sénior."
             },
             "score": 10,
             "minutes": 7,
             "feedback": {
-              "en": "A culture and new symptoms need assessment before definitive stone treatment.",
-              "de": "Eine Kultur und neue Beschwerden müssen vor definitiver Steintherapie beurteilt werden.",
-              "es": "Un cultivo y nuevos síntomas requieren evaluación antes del tratamiento definitivo."
+              "en": "A culture and new symptoms need assessment before definitive stone treatment. The review also covers the organism and sensitivities from the culture and allergies, so that appropriate treatment can be chosen.",
+              "de": "Eine Kultur und neue Beschwerden müssen vor definitiver Steintherapie beurteilt werden. Zur Prüfung gehören auch Erreger und Resistenzen aus der Kultur sowie Allergien, damit eine passende Therapie gewählt werden kann.",
+              "es": "Un cultivo y nuevos síntomas requieren evaluación antes del tratamiento definitivo. La revisión incluye también germen y antibiograma del cultivo y las alergias, para poder elegir un tratamiento adecuado."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Look at the culture but assume the absence of high fever makes surgery safe.",
-              "de": "Kultur ansehen, aber ohne hohes Fieber die Operation als sicher einstufen.",
-              "es": "Revisar el cultivo y suponer que sin fiebre alta la cirugía es segura."
+              "en": "Review the culture but, in the absence of fever above 38.5 °C, class surgery as safe under perioperative antibiotic prophylaxis.",
+              "de": "Kultur ansehen, aber ohne Fieber über 38,5 °C die Operation unter perioperativer Antibiotikaprophylaxe als sicher einstufen.",
+              "es": "Revisar el cultivo pero, sin fiebre superior a 38,5 °C, considerar segura la cirugía con profilaxis antibiótica perioperatoria."
             },
             "score": 3,
             "minutes": 4,
             "feedback": {
-              "en": "Lack of high fever does not establish that infection or procedural risk is controlled.",
-              "de": "Fehlendes hohes Fieber beweist keine kontrollierte Infektion oder Eingriffssicherheit.",
-              "es": "La ausencia de fiebre alta no demuestra control de la infección ni del riesgo."
+              "en": "Lack of high fever does not establish that infection or procedural risk is controlled, and prophylaxis does not treat an established urinary infection.",
+              "de": "Fehlendes hohes Fieber beweist keine kontrollierte Infektion oder Eingriffssicherheit, und eine Prophylaxe behandelt keine bestehende Harnwegsinfektion.",
+              "es": "La ausencia de fiebre alta no demuestra control de la infección ni del riesgo, y la profilaxis no trata una infección urinaria establecida."
             },
             "critical": false
           },
           {
             "id": "c",
             "text": {
-              "en": "Ignore the positive culture because the slot is already booked.",
-              "de": "Die positive Kultur ignorieren, weil der OP-Termin gebucht ist.",
-              "es": "Ignorar el cultivo positivo porque la sesión ya está reservada."
+              "en": "Ignore the positive culture because the slot is booked and Jonas is already fasted and on the list.",
+              "de": "Die positive Kultur ignorieren, weil der OP-Termin gebucht ist und Jonas bereits nüchtern auf der Liste steht.",
+              "es": "Ignorar el cultivo positivo porque la sesión está reservada y Jonas ya está en ayunas y en la lista."
             },
             "score": 0,
             "minutes": 2,
@@ -580,25 +580,25 @@
           {
             "id": "a",
             "text": {
-              "en": "Treat or exclude infection before definitive removal; if infected obstruction or systemic illness is present, prioritise urgent source-control and sepsis assessment.",
-              "de": "Infektion vor definitiver Entfernung behandeln oder ausschließen; bei infizierter Obstruktion oder systemischem Krankheitsbild dringliche Herdsanierung und Sepsisbeurteilung priorisieren.",
-              "es": "Tratar o excluir infección antes de la retirada definitiva; si hay obstrucción infectada o enfermedad sistémica, priorizar control urgente del foco y valoración de sepsis."
+              "en": "Treat or exclude infection before definitive stone removal; decompress urgently if there is infected obstruction or sepsis.",
+              "de": "Infektion vor definitiver Steinentfernung behandeln oder ausschließen; bei infizierter Obstruktion oder Sepsis dringlich entlasten.",
+              "es": "Tratar o descartar la infección antes de la extracción definitiva; drenar con urgencia si hay obstrucción infectada o sepsis."
             },
             "score": 10,
             "minutes": 8,
             "feedback": {
-              "en": "The senior team chooses timing and drainage approach from the clinical condition and local resources.",
-              "de": "Das Fachteam wählt Zeitpunkt und Entlastungsweg nach Zustand und lokalen Ressourcen.",
-              "es": "El equipo sénior decide momento y vía de drenaje según el estado y los recursos locales."
+              "en": "An established infection is treated or excluded before definitive stone treatment. With infected obstruction or systemic illness, sepsis assessment and urgent decompression by ureteric stent or nephrostomy take priority; the senior team chooses timing and drainage approach from the clinical condition and local resources.",
+              "de": "Eine bestehende Infektion wird vor definitiver Steintherapie behandelt oder ausgeschlossen. Bei infizierter Obstruktion oder systemischem Krankheitsbild haben Sepsisbeurteilung und dringliche Entlastung per Harnleiterschiene oder Nephrostomie Vorrang; das Fachteam wählt Zeitpunkt und Entlastungsweg nach Zustand und lokalen Ressourcen.",
+              "es": "Una infección establecida se trata o se descarta antes del tratamiento definitivo del cálculo. Con obstrucción infectada o enfermedad sistémica, la valoración de sepsis y el drenaje urgente con catéter ureteral o nefrostomía tienen prioridad; el equipo sénior decide momento y vía de drenaje según el estado y los recursos locales."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Give routine prophylaxis and proceed without reviewing infection treatment or source control.",
-              "de": "Routineprophylaxe geben und ohne Prüfung von Infektionsbehandlung oder Herdsanierung fortfahren.",
-              "es": "Dar profilaxis habitual y continuar sin revisar tratamiento de infección ni control del foco."
+              "en": "Give single-dose antibiotic prophylaxis at induction and operate as planned without treating infection or decompressing.",
+              "de": "Einmalige Antibiotikaprophylaxe zur Narkoseeinleitung geben und ohne Infektionsbehandlung oder Entlastung wie geplant operieren.",
+              "es": "Dar una dosis única de profilaxis antibiótica en la inducción y operar según lo previsto sin tratar la infección ni drenar."
             },
             "score": 3,
             "minutes": 5,
@@ -612,9 +612,9 @@
           {
             "id": "c",
             "text": {
-              "en": "Discharge him with no review because the planned procedure is postponed.",
-              "de": "Ohne Kontrolle entlassen, weil der geplante Eingriff verschoben ist.",
-              "es": "Darle el alta sin revisión porque se pospone el procedimiento."
+              "en": "Discharge him without further review and rebook the procedure in a few weeks, since it is postponed anyway.",
+              "de": "Ohne weitere Kontrolle nach Hause entlassen und den Eingriff in einigen Wochen neu terminieren, da er ohnehin verschoben ist.",
+              "es": "Darle el alta sin más revisión y reprogramar el procedimiento en unas semanas, ya que se pospone de todos modos."
             },
             "score": 0,
             "minutes": 2,
@@ -640,9 +640,9 @@
           {
             "id": "a",
             "text": {
-              "en": "Document why definitive treatment is paused, current infection concern, culture and treatment status, source-control decision owner and the reassessment plan.",
-              "de": "Grund der Pause, aktuelle Infektionssorge, Kultur- und Behandlungsstatus, Zuständigkeit für Herdsanierung und Neubewertungsplan dokumentieren.",
-              "es": "Documentar motivo de pausa, preocupación infecciosa, cultivo y tratamiento, responsable del control del foco y plan de reevaluación."
+              "en": "Document pause reason, infection concern, culture and treatment status, source-control owner and review plan.",
+              "de": "Pausengrund, Infektionssorge, Kultur- und Therapiestatus, Zuständigkeit für Herdsanierung und Neubewertungsplan dokumentieren.",
+              "es": "Documentar motivo de la pausa, sospecha infecciosa, cultivo y tratamiento, responsable del foco y plan de revisión."
             },
             "score": 10,
             "minutes": 6,
@@ -656,9 +656,9 @@
           {
             "id": "b",
             "text": {
-              "en": "Mark the list as cancelled and leave the reason out of the clinical handover.",
-              "de": "OP-Liste als abgesagt markieren und den Grund bei der Übergabe weglassen.",
-              "es": "Marcar la lista como cancelada y omitir el motivo en el traspaso clínico."
+              "en": "Mark the case as cancelled in the theatre scheduling system and leave the reason out of the verbal ward handover.",
+              "de": "OP-Liste im Planungssystem als abgesagt markieren und den Grund bei der mündlichen Stationsübergabe weglassen.",
+              "es": "Marcar el caso como cancelado en el sistema de programación y omitir el motivo en el traspaso verbal a planta."
             },
             "score": 3,
             "minutes": 3,
@@ -672,9 +672,9 @@
           {
             "id": "c",
             "text": {
-              "en": "Assume another team will notice the culture without notifying them.",
-              "de": "Annehmen, ein anderes Team werde die Kultur ohne Mitteilung bemerken.",
-              "es": "Suponer que otro equipo verá el cultivo sin avisarle."
+              "en": "Assume the ward team will spot the positive culture at their next routine lab review without being told.",
+              "de": "Annehmen, das Stationsteam werde die positive Kultur bei der nächsten routinemäßigen Laborsichtung ohne eigene Mitteilung bemerken.",
+              "es": "Suponer que el equipo de planta verá el cultivo positivo en su próxima revisión rutinaria de laboratorio sin que se le avise."
             },
             "score": 0,
             "minutes": 2,
@@ -755,8 +755,8 @@
           {
             "id": "a",
             "text": {
-              "en": "Hold the specimen dispatch and inform the responsible surgeon and circulating staff about the discrepancy.",
-              "de": "Probenversand anhalten und verantwortliche operierende Person sowie Saalpersonal über den Widerspruch informieren.",
+              "en": "Hold specimen dispatch and tell the responsible surgeon and circulating staff about the discrepancy.",
+              "de": "Probenversand anhalten und operierende Person sowie Saalpersonal über den Widerspruch informieren.",
               "es": "Detener el envío y avisar al cirujano responsable y al personal circulante de la discrepancia."
             },
             "score": 10,
@@ -771,9 +771,9 @@
           {
             "id": "b",
             "text": {
-              "en": "Send the containers and phone pathology later when there is time.",
-              "de": "Behälter versenden und später bei Gelegenheit die Pathologie anrufen.",
-              "es": "Enviar los recipientes y llamar a anatomía patológica cuando haya tiempo."
+              "en": "Send the containers as labelled and ring pathology later in the day to warn them of a possible mix-up.",
+              "de": "Behälter wie etikettiert versenden und die Pathologie später telefonisch über die mögliche Verwechslung informieren.",
+              "es": "Enviar los recipientes como están etiquetados y llamar más tarde a patología por la posible confusión."
             },
             "score": 3,
             "minutes": 4,
@@ -787,16 +787,16 @@
           {
             "id": "c",
             "text": {
-              "en": "Guess the sites from the container order and relabel them.",
-              "de": "Orte nach Behälterreihenfolge erraten und neu etikettieren.",
-              "es": "Adivinar los sitios por el orden de los recipientes y reetiquetarlos."
+              "en": "Assign the sites from the order of the containers on the instrument table and relabel them.",
+              "de": "Orte nach der Reihenfolge der Behälter auf dem Instrumentiertisch zuordnen und neu etikettieren.",
+              "es": "Asignar los sitios según el orden de los recipientes en la mesa y reetiquetarlos."
             },
             "score": 0,
             "minutes": 2,
             "feedback": {
-              "en": "A guessed label creates false certainty and may misdirect treatment.",
-              "de": "Ein geratenes Etikett schafft falsche Sicherheit und kann Therapie fehlleiten.",
-              "es": "Una etiqueta adivinada crea falsa certeza y puede orientar mal el tratamiento."
+              "en": "Assigning sites from container order is a guess; it creates false certainty and may misdirect treatment.",
+              "de": "Eine Zuordnung nach Behälterreihenfolge ist geraten; sie schafft falsche Sicherheit und kann Therapie fehlleiten.",
+              "es": "Asignar sitios por el orden de los recipientes es adivinar; crea falsa certeza y puede orientar mal el tratamiento."
             },
             "critical": true
           }
@@ -815,25 +815,25 @@
           {
             "id": "a",
             "text": {
-              "en": "Reconcile verified records with the sampling team using the local specimen process; if unresolved, document uncertainty and obtain pathology guidance rather than inventing a site.",
-              "de": "Bestätigte Unterlagen mit dem Entnahmeteam nach lokalem Probenverfahren abgleichen; bei Unklarheit Unsicherheit dokumentieren und Pathologie beraten lassen statt einen Ort zu erfinden.",
-              "es": "Conciliar registros verificados con el equipo que obtuvo las muestras por el proceso local; si no se resuelve, registrar incertidumbre y consultar a patología en vez de inventar un sitio."
+              "en": "Reconcile with the sampling team against verified records; if the site stays unclear, document this and involve pathology.",
+              "de": "Mit dem Entnahmeteam gegen gesicherte Unterlagen abgleichen; bleibt der Ort unklar, dies dokumentieren und Pathologie einbeziehen.",
+              "es": "Conciliar registros verificados con el equipo de la toma; si el sitio sigue dudoso, documentarlo y consultar a patología."
             },
             "score": 10,
             "minutes": 8,
             "feedback": {
-              "en": "Corrections must be evidence-based, traceable and honest about what is unknown.",
-              "de": "Korrekturen müssen belegbar, nachverfolgbar und ehrlich hinsichtlich Unbekanntem sein.",
-              "es": "Las correcciones deben basarse en pruebas, ser trazables y reconocer lo desconocido."
+              "en": "Corrections must be evidence-based, traceable and honest about what is unknown. Reconciliation follows the local specimen process; an unresolved site is documented as unknown rather than invented.",
+              "de": "Korrekturen müssen belegbar, nachverfolgbar und ehrlich hinsichtlich Unbekanntem sein. Der Abgleich folgt dem lokalen Probenverfahren; ein Ort wird dokumentiert offengelassen statt erfunden.",
+              "es": "Las correcciones deben basarse en pruebas, ser trazables y reconocer lo desconocido. La conciliación sigue el proceso local de muestras; un sitio no aclarado se documenta como desconocido en vez de inventarlo."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Ask one staff member to remember the sites without checking the records.",
-              "de": "Eine Person nach den erinnerten Orten fragen, ohne Unterlagen abzugleichen.",
-              "es": "Pedir a un miembro que recuerde los sitios sin revisar registros."
+              "en": "Ask the scrub nurse which sites they remember from the procedure and relabel accordingly, without checking the records.",
+              "de": "Die instrumentierende Pflegekraft nach den erinnerten Entnahmeorten fragen und neu etikettieren, ohne Unterlagen abzugleichen.",
+              "es": "Preguntar a la enfermera instrumentista qué sitios recuerda y reetiquetar según ello, sin revisar los registros."
             },
             "score": 3,
             "minutes": 5,
@@ -847,9 +847,9 @@
           {
             "id": "c",
             "text": {
-              "en": "Merge both specimens and remove all mention of the original sites.",
-              "de": "Beide Proben zusammenführen und jeden Hinweis auf ursprüngliche Orte löschen.",
-              "es": "Mezclar ambas muestras y eliminar toda referencia a los sitios originales."
+              "en": "Combine both specimens in one container labelled 'bladder, multiple sites' and discard the original site labels.",
+              "de": "Beide Proben in einem Behälter als „Blase, multiple Orte“ zusammenführen und die ursprünglichen Ortsangaben verwerfen.",
+              "es": "Juntar ambas muestras en un recipiente como «vejiga, varios sitios» y descartar las etiquetas de sitio originales."
             },
             "score": 0,
             "minutes": 2,
@@ -875,25 +875,25 @@
           {
             "id": "a",
             "text": {
-              "en": "Read back patient identifiers, specimen description and verified site or documented uncertainty; confirm receipt pathway and who follows the result.",
-              "de": "Patientenkennzeichen, Probenbeschreibung und bestätigten Ort oder dokumentierte Unsicherheit vorlesen; Empfangsweg und Befundzuständigkeit bestätigen.",
-              "es": "Leer identificadores, descripción y sitio verificado o incertidumbre documentada; confirmar recepción y responsable del resultado."
+              "en": "Read back identifiers, description and site or documented uncertainty; confirm who owns the result.",
+              "de": "Kennung, Probenbeschreibung und Ort oder dokumentierte Unsicherheit vorlesen; befundverantwortliche Person bestätigen.",
+              "es": "Releer identificadores, descripción y sitio o duda documentada; confirmar el responsable del resultado."
             },
             "score": 10,
             "minutes": 6,
             "feedback": {
-              "en": "Read-back and ownership close the specimen chain safely.",
-              "de": "Vorlesen und klare Zuständigkeit schließen die Probenkette sicher.",
-              "es": "La lectura de confirmación y la responsabilidad completan la cadena de muestras."
+              "en": "Read-back and ownership close the specimen chain safely, including confirmation of the receipt pathway in pathology.",
+              "de": "Vorlesen und klare Zuständigkeit schließen die Probenkette sicher. Dazu gehört auch, den Empfangsweg in der Pathologie zu bestätigen.",
+              "es": "La lectura de confirmación y la responsabilidad completan la cadena de muestras, incluida la confirmación de la vía de recepción en patología."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Check the number of containers only.",
-              "de": "Nur die Anzahl der Behälter prüfen.",
-              "es": "Comprobar solo el número de recipientes."
+              "en": "Match the number of containers against the number of biopsies in the operative note, then dispatch.",
+              "de": "Anzahl der Behälter mit der Zahl der Entnahmen im OP-Bericht abgleichen und die Proben dann versenden.",
+              "es": "Cotejar el número de recipientes con el número de biopsias del informe quirúrgico y después enviarlos."
             },
             "score": 3,
             "minutes": 3,
@@ -907,9 +907,9 @@
           {
             "id": "c",
             "text": {
-              "en": "Hide the uncertainty so the report appears complete.",
-              "de": "Unsicherheit verbergen, damit der Bericht vollständig wirkt.",
-              "es": "Ocultar la incertidumbre para que el informe parezca completo."
+              "en": "Leave the uncertainty off the request form so the pathology report looks complete and is not held up.",
+              "de": "Die Unsicherheit im Begleitschein weglassen, damit der Pathologiebefund vollständig und eindeutig wirkt und nicht verzögert wird.",
+              "es": "Omitir la incertidumbre en la solicitud para que el informe de patología parezca completo y no se retrase."
             },
             "score": 0,
             "minutes": 2,
@@ -989,9 +989,9 @@
           {
             "id": "a",
             "text": {
-              "en": "Possible ureteric injury requires immediate senior assessment; absence of haematuria does not exclude it.",
-              "de": "Mögliche Harnleiterverletzung erfordert sofortige fachärztliche Beurteilung; fehlende Hämaturie schließt sie nicht aus.",
-              "es": "Una posible lesión ureteral exige valoración sénior inmediata; la ausencia de hematuria no la descarta."
+              "en": "Treat it as a possible ureteric injury needing immediate senior assessment, even without haematuria.",
+              "de": "Als mögliche Harnleiterverletzung werten und sofort fachärztlich beurteilen lassen, auch ohne sichtbare Hämaturie.",
+              "es": "Tratarlo como posible lesión ureteral que requiere valoración sénior inmediata, aunque no haya hematuria."
             },
             "score": 10,
             "minutes": 4,
@@ -1005,9 +1005,9 @@
           {
             "id": "b",
             "text": {
-              "en": "Document a possible leak but wait until recovery to tell the surgeon.",
-              "de": "Mögliches Leck dokumentieren, aber erst im Aufwachraum der operierenden Person melden.",
-              "es": "Documentar una posible fuga y esperar hasta recuperación para avisar al cirujano."
+              "en": "Record a possible leak in the operative note but wait until recovery to tell the surgeon.",
+              "de": "Mögliches Leck im OP-Bericht dokumentieren, aber erst im Aufwachraum der operierenden Person melden.",
+              "es": "Registrar una posible fuga en el informe quirúrgico y esperar a la recuperación para avisar al cirujano."
             },
             "score": 3,
             "minutes": 5,
@@ -1021,9 +1021,9 @@
           {
             "id": "c",
             "text": {
-              "en": "Exclude ureteric injury because the catheter urine is clear.",
-              "de": "Harnleiterverletzung ausschließen, weil der Katheterurin klar ist.",
-              "es": "Descartar lesión ureteral porque la orina del catéter es clara."
+              "en": "Dismiss ureteric injury as unlikely because the catheter urine remains clear and free of blood.",
+              "de": "Eine Harnleiterverletzung als unwahrscheinlich verwerfen, weil der Katheterurin klar und blutfrei bleibt.",
+              "es": "Descartar la lesión ureteral como improbable porque la orina del catéter sigue clara y sin sangre."
             },
             "score": 0,
             "minutes": 2,
@@ -1049,25 +1049,25 @@
           {
             "id": "a",
             "text": {
-              "en": "State the concern, pause unsafe progression, involve the responsible surgeon and urological expertise, and share the concern with anaesthesia.",
-              "de": "Bedenken äußern, unsicheren Fortgang pausieren, verantwortliche operierende Person und urologische Expertise einbeziehen und Anästhesie informieren.",
-              "es": "Expresar la preocupación, pausar el avance inseguro, implicar al cirujano responsable y a expertos urológicos e informar a anestesia."
+              "en": "Voice the concern, pause progression, involve the responsible surgeon and urology, and inform anaesthesia.",
+              "de": "Bedenken aussprechen, Fortgang pausieren, operierende Person und Urologie hinzuziehen, Anästhesie informieren.",
+              "es": "Expresar la preocupación, pausar el avance, implicar al cirujano responsable y a urología e informar a anestesia."
             },
             "score": 10,
             "minutes": 5,
             "feedback": {
-              "en": "The appropriate specialist assesses the injury and selects a patient-specific management plan.",
-              "de": "Die zuständige Expertise beurteilt die Verletzung und wählt einen individuellen Versorgungsplan.",
-              "es": "El especialista adecuado evalúa la lesión y elige un manejo específico para la paciente."
+              "en": "The appropriate specialist assesses the injury and selects a patient-specific management plan. Until then, any unsafe further step is paused so the finding can be assessed undisturbed.",
+              "de": "Die zuständige Expertise beurteilt die Verletzung und wählt einen individuellen Versorgungsplan. Bis dahin wird jeder unsichere weitere Schritt pausiert, damit der Befund unverändert beurteilt werden kann.",
+              "es": "El especialista adecuado evalúa la lesión y elige un manejo específico para la paciente. Hasta entonces se pausa cualquier paso inseguro para que el hallazgo pueda valorarse sin alteraciones."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Call a senior colleague but allow unrelated steps to obscure the suspected area.",
+              "en": "Call a senior colleague but let the team continue unrelated steps that obscure the suspected area meanwhile.",
               "de": "Eine erfahrene Person rufen, aber durch andere Schritte den verdächtigen Bereich unübersichtlich machen lassen.",
-              "es": "Llamar a un sénior, pero permitir que otros pasos oculten la zona sospechosa."
+              "es": "Llamar a un sénior, pero dejar que el equipo continúe con otros pasos que ocultan la zona sospechosa mientras tanto."
             },
             "score": 3,
             "minutes": 5,
@@ -1081,9 +1081,9 @@
           {
             "id": "c",
             "text": {
-              "en": "Attempt an unfamiliar repair without specialist assessment or agreement.",
-              "de": "Ohne fachärztliche Beurteilung oder Abstimmung eine unvertraute Reparatur versuchen.",
-              "es": "Intentar una reparación desconocida sin evaluación ni acuerdo especializado."
+              "en": "Attempt to oversew the defect yourself without urological assessment and without experience of the technique.",
+              "de": "Selbst eine Übernähung des Defekts versuchen, ohne urologische Beurteilung und ohne Erfahrung mit dieser Technik.",
+              "es": "Intentar suturar el defecto por cuenta propia sin valoración urológica y sin experiencia en esa técnica."
             },
             "score": 0,
             "minutes": 2,
@@ -1109,25 +1109,25 @@
           {
             "id": "a",
             "text": {
-              "en": "The suspected or confirmed injury, specialist assessment and plan, devices and monitoring instructions, pending investigations and named escalation contact.",
-              "de": "Vermutete oder bestätigte Verletzung, fachärztliche Beurteilung und Plan, Hilfsmittel und Überwachungsanweisungen, offene Tests und benannte Eskalationsperson.",
-              "es": "Lesión sospechada o confirmada, valoración y plan especializados, dispositivos e instrucciones de vigilancia, pruebas pendientes y contacto de escalada."
+              "en": "Hand over the suspected injury, urological plan, devices in place, monitoring orders, pending tests and escalation contact.",
+              "de": "Verletzungsverdacht, urologischen Plan, Ableitungen, Überwachungsauftrag, offene Tests und Eskalationskontakt übergeben.",
+              "es": "Transmitir lesión sospechada, plan urológico, dispositivos, vigilancia, pruebas pendientes y contacto de escalada."
             },
             "score": 10,
             "minutes": 7,
             "feedback": {
-              "en": "A recognised injury needs continuity of monitoring and clear ownership beyond theatre.",
-              "de": "Eine erkannte Verletzung braucht kontinuierliche Überwachung und klare Zuständigkeit außerhalb des OPs.",
-              "es": "Una lesión reconocida necesita continuidad de vigilancia y responsabilidad fuera del quirófano."
+              "en": "A recognised injury needs continuity of monitoring and clear ownership beyond theatre. Whether suspected or confirmed, the assessment, plan and any stents and drains must be stated explicitly.",
+              "de": "Eine erkannte Verletzung braucht kontinuierliche Überwachung und klare Zuständigkeit außerhalb des OPs. Ob vermutet oder bestätigt: Beurteilung, Plan sowie liegende Schienen und Drainagen müssen ausdrücklich genannt werden.",
+              "es": "Una lesión reconocida necesita continuidad de vigilancia y responsabilidad fuera del quirófano. Sospechada o confirmada, la valoración, el plan y los catéteres y drenajes colocados deben mencionarse explícitamente."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Mention 'difficult surgery' but omit the possible ureteric injury.",
-              "de": "„Schwierige Operation“ nennen, mögliche Harnleiterverletzung aber weglassen.",
-              "es": "Mencionar «cirugía difícil» y omitir la posible lesión ureteral."
+              "en": "Mention 'difficult surgery with extensive adhesiolysis' but leave out the possible ureteric injury to avoid alarming anyone.",
+              "de": "„Schwierige Operation mit Adhäsiolyse“ nennen und die mögliche Harnleiterverletzung weglassen, um nicht zu beunruhigen.",
+              "es": "Mencionar «cirugía difícil con adhesiólisis extensa» pero omitir la posible lesión ureteral para no alarmar al equipo."
             },
             "score": 3,
             "minutes": 3,
@@ -1141,16 +1141,16 @@
           {
             "id": "c",
             "text": {
-              "en": "Omit the event because observations are currently normal.",
-              "de": "Das Ereignis weglassen, weil die Vitalzeichen aktuell normal sind.",
-              "es": "Omitir el incidente porque las constantes son normales ahora."
+              "en": "Leave out the intraoperative event because observations and urine output in recovery are currently normal and stable.",
+              "de": "Das intraoperative Ereignis weglassen, weil Vitalzeichen und Urinmenge im Aufwachraum aktuell unauffällig und stabil sind.",
+              "es": "Omitir el incidente intraoperatorio porque las constantes y la diuresis en recuperación son normales y estables ahora."
             },
             "score": 0,
             "minutes": 2,
             "feedback": {
-              "en": "Normal current observations do not remove the risk of delayed complications.",
-              "de": "Aktuell normale Vitalzeichen beseitigen kein Risiko verzögerter Komplikationen.",
-              "es": "Las constantes normales actuales no eliminan el riesgo de complicaciones tardías."
+              "en": "Normal current observations and urine output do not remove the risk of delayed complications such as urine leak or obstruction.",
+              "de": "Aktuell normale Vitalzeichen und Urinmengen beseitigen kein Risiko verzögerter Komplikationen wie Urinleck oder Harnstauung.",
+              "es": "Las constantes y la diuresis normales actuales no eliminan el riesgo de complicaciones tardías como fuga de orina u obstrucción."
             },
             "critical": true
           }
@@ -1223,9 +1223,9 @@
           {
             "id": "a",
             "text": {
-              "en": "Patient and procedure, key events, allergies, catheter and urine plan, current observations, pending pathology and explicit escalation instructions.",
-              "de": "Patient und Eingriff, wichtige Ereignisse, Allergien, Katheter- und Urinplan, aktuelle Vitalzeichen, offene Histologie und klare Eskalationshinweise.",
-              "es": "Paciente y procedimiento, eventos clave, alergias, plan de sonda y orina, constantes, histología pendiente e instrucciones explícitas de escalada."
+              "en": "State patient, procedure, events, allergies, catheter plan, observations, outstanding histology and escalation criteria.",
+              "de": "Patient, Eingriff, Ereignisse, Allergien, Katheterplan, Vitalwerte, ausstehende Histologie und Eskalationskriterien nennen.",
+              "es": "Indicar paciente, procedimiento, incidencias, alergias, plan de sonda, constantes, histología y criterios de escalada."
             },
             "score": 10,
             "minutes": 6,
@@ -1239,9 +1239,9 @@
           {
             "id": "b",
             "text": {
-              "en": "Give only the procedure name and say the written note will follow.",
-              "de": "Nur den Eingriffsnamen nennen und den Bericht später ankündigen.",
-              "es": "Dar solo el nombre del procedimiento y decir que la nota llegará después."
+              "en": "Give only patient, procedure and anaesthetic course; the catheter plan and escalation advice will follow in the operative note.",
+              "de": "Nur Patient, Eingriff und Narkoseverlauf nennen; Katheterplan und Eskalationshinweise folgen später im OP-Bericht.",
+              "es": "Indicar solo paciente, procedimiento y curso anestésico; el plan de sonda y los criterios de escalada llegarán en el informe quirúrgico."
             },
             "score": 3,
             "minutes": 3,
@@ -1255,16 +1255,16 @@
           {
             "id": "c",
             "text": {
-              "en": "Leave without a handover because the patient appears awake.",
-              "de": "Ohne Übergabe gehen, weil der Patient wach wirkt.",
-              "es": "Irse sin traspaso porque el paciente parece despierto."
+              "en": "Leave without a verbal handover because the patient seems awake and the operative note is in the system.",
+              "de": "Ohne mündliche Übergabe gehen, weil der Patient wach und ansprechbar wirkt und der Bericht im System steht.",
+              "es": "Irse sin traspaso verbal porque el paciente parece despierto y el informe quirúrgico ya está en el sistema."
             },
             "score": 0,
             "minutes": 2,
             "feedback": {
-              "en": "Wakefulness does not replace transfer of clinical information and responsibility.",
-              "de": "Wachheit ersetzt keine Übergabe klinischer Informationen und Verantwortung.",
-              "es": "Estar despierto no sustituye transmitir información y responsabilidad."
+              "en": "Wakefulness and a note in the system do not replace transfer of clinical information and responsibility.",
+              "de": "Wachheit und ein Bericht im System ersetzen keine Übergabe klinischer Informationen und Verantwortung.",
+              "es": "Estar despierto y tener el informe en el sistema no sustituye transmitir información y responsabilidad."
             },
             "critical": true
           }
@@ -1283,48 +1283,48 @@
           {
             "id": "a",
             "text": {
-              "en": "Assess the patient and observations promptly, check the drainage system for external problems and request urological review for possible obstruction or bleeding.",
-              "de": "Patient und Vitalzeichen zügig beurteilen, Drainagesystem auf äußere Probleme prüfen und bei möglicher Obstruktion oder Blutung urologische Kontrolle anfordern.",
-              "es": "Valorar pronto al paciente y constantes, revisar problemas externos del drenaje y pedir revisión urológica por posible obstrucción o sangrado."
+              "en": "Assess the patient and observations now, check catheter and bag for anything blocking flow and request urological review.",
+              "de": "Patient und Vitalzeichen sofort beurteilen, Katheter und Beutel auf Abflusshindernisse prüfen und urologische Kontrolle anfordern.",
+              "es": "Valorar ya al paciente y las constantes, revisar sonda y bolsa por si algo obstruye el flujo y pedir revisión urológica."
             },
             "score": 10,
             "minutes": 5,
             "feedback": {
-              "en": "Low output with discomfort may reflect blocked drainage or another complication; it needs assessment.",
-              "de": "Wenig Urin mit Beschwerden kann blockierte Drainage oder andere Komplikationen bedeuten und muss beurteilt werden.",
-              "es": "Poca salida con molestias puede indicar drenaje bloqueado u otra complicación y necesita valoración."
+              "en": "Low output with discomfort may reflect blocked drainage, bleeding or another complication; it needs assessment. With possible obstruction or bleeding, urology must see the patient promptly.",
+              "de": "Wenig Urin mit Beschwerden kann blockierte Drainage, Blutung oder andere Komplikationen bedeuten und muss beurteilt werden. Bei möglicher Obstruktion oder Blutung muss die Urologie den Patienten zeitnah sehen.",
+              "es": "Poca salida con molestias puede indicar drenaje bloqueado, sangrado u otra complicación y necesita valoración. Ante posible obstrucción o sangrado, urología debe ver pronto al paciente."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Record the output and wait an hour without reassessing the discomfort.",
-              "de": "Urinmenge notieren und ohne erneute Schmerzbeurteilung eine Stunde warten.",
-              "es": "Registrar la salida y esperar una hora sin reevaluar la molestia."
+              "en": "Record the output, give an antispasmodic and wait an hour until the next fluid balance without reassessing the discomfort.",
+              "de": "Urinmenge notieren, ein Spasmolytikum geben und ohne erneute Schmerzbeurteilung eine Stunde bis zur nächsten Bilanz abwarten.",
+              "es": "Registrar la diuresis, administrar un espasmolítico y esperar una hora hasta el siguiente balance sin reevaluar la molestia."
             },
             "score": 3,
             "minutes": 5,
             "feedback": {
-              "en": "An evolving symptom needs a timely response rather than observation alone.",
-              "de": "Ein zunehmendes Symptom braucht zeitnahe Reaktion statt bloßer Beobachtung.",
-              "es": "Un síntoma progresivo necesita respuesta oportuna, no solo observación."
+              "en": "An antispasmodic does not clear blocked drainage; an evolving symptom needs a timely response rather than observation alone.",
+              "de": "Ein Spasmolytikum löst keine blockierte Ableitung; ein zunehmendes Symptom braucht zeitnahe Reaktion statt bloßer Beobachtung.",
+              "es": "Un espasmolítico no resuelve un drenaje bloqueado; un síntoma progresivo necesita respuesta oportuna, no solo observación."
             },
             "critical": false
           },
           {
             "id": "c",
             "text": {
-              "en": "Assume it is normal and remove the catheter without authorisation.",
-              "de": "Als normal einstufen und den Katheter ohne Anordnung entfernen.",
-              "es": "Suponer que es normal y retirar la sonda sin autorización."
+              "en": "Class it as normal postoperative oliguria after fasting and remove the catheter without a urological order.",
+              "de": "Als normale postoperative Oligurie nach Flüssigkeitskarenz einstufen und den Katheter ohne urologische Anordnung entfernen.",
+              "es": "Considerarlo oliguria posoperatoria normal por el ayuno y retirar la sonda sin indicación urológica."
             },
             "score": 0,
             "minutes": 2,
             "feedback": {
-              "en": "Unplanned catheter changes can worsen the problem; follow the assessed specialist plan.",
-              "de": "Ungeplante Katheteränderungen können verschlimmern; dem geprüften Fachplan folgen.",
-              "es": "Cambiar la sonda sin plan puede empeorar el problema; sigue el plan especializado evaluado."
+              "en": "Red urine with increasing pain and scant output does not suggest harmless oliguria. Unplanned catheter changes can worsen the problem; follow the assessed specialist plan.",
+              "de": "Roter Urin mit zunehmenden Schmerzen und kaum Ausfuhr spricht nicht für eine harmlose Oligurie. Ungeplante Katheteränderungen können verschlimmern; dem geprüften Fachplan folgen.",
+              "es": "Orina roja con dolor creciente y escasa salida no sugiere una oliguria banal. Cambiar la sonda sin plan puede empeorar el problema; hay que seguir el plan especializado evaluado."
             },
             "critical": true
           }
@@ -1343,9 +1343,9 @@
           {
             "id": "a",
             "text": {
-              "en": "Ask for read-back of immediate concerns and escalation thresholds, confirm the named contact and assign follow-up of pathology and outstanding tasks.",
-              "de": "Unmittelbare Sorgen und Eskalationsgrenzen zurücklesen lassen, benannten Kontakt bestätigen und Histologie sowie offene Aufgaben zuordnen.",
-              "es": "Pedir confirmación verbal de riesgos y umbrales de escalada, confirmar contacto responsable y asignar histología y tareas pendientes."
+              "en": "Have concerns and escalation criteria read back, confirm the named contact, assign histology and remaining tasks.",
+              "de": "Sorgen und Eskalationskriterien zurücklesen lassen, Ansprechpartner bestätigen, Histologie und übrige Aufgaben zuordnen.",
+              "es": "Pedir que repitan preocupaciones y criterios de escalada, confirmar el contacto y asignar histología y pendientes."
             },
             "score": 10,
             "minutes": 6,
@@ -1359,9 +1359,9 @@
           {
             "id": "b",
             "text": {
-              "en": "Leave a detailed note without confirming anyone received it.",
-              "de": "Eine ausführliche Notiz hinterlassen, ohne Empfang zu bestätigen.",
-              "es": "Dejar una nota detallada sin confirmar que alguien la recibió."
+              "en": "Leave a detailed handover note in the electronic record without verbally confirming that anyone has read it.",
+              "de": "Eine ausführliche Übergabenotiz in der elektronischen Akte hinterlassen, ohne mündlich zu bestätigen, dass sie gelesen wurde.",
+              "es": "Dejar una nota de traspaso detallada en la historia electrónica sin confirmar verbalmente que alguien la ha leído."
             },
             "score": 3,
             "minutes": 3,
@@ -1375,9 +1375,9 @@
           {
             "id": "c",
             "text": {
-              "en": "Let every team assume another team owns the pending result.",
-              "de": "Alle Teams annehmen lassen, ein anderes sei für den offenen Befund zuständig.",
-              "es": "Dejar que cada equipo suponga que otro se encargará del resultado pendiente."
+              "en": "Let each involved team assume that another team will chase the outstanding histology and remaining requests.",
+              "de": "Alle beteiligten Teams annehmen lassen, ein anderes sei für den Histologiebefund und noch offene Anforderungen zuständig.",
+              "es": "Dejar que cada equipo implicado suponga que otro reclamará la histología y las peticiones que faltan."
             },
             "score": 0,
             "minutes": 2,
@@ -11556,9 +11556,9 @@
           {
             "id": "a",
             "text": {
-              "de": "Funktionelle Endarterien",
-              "en": "Functional end arteries",
-              "es": "Arterias terminales funcionales"
+              "de": "Segmentarterien als funktionelle Endarterien",
+              "en": "Segmental arteries act as functional end arteries",
+              "es": "Las arterias segmentarias son terminales funcionales"
             },
             "feedback": {
               "de": "Segmentarterien haben keine ausreichend wirksame kollaterale Verbindung untereinander. Ein Verschluss kann deshalb ihr Versorgungsgebiet infarzieren.",
@@ -12228,9 +12228,9 @@
           {
             "id": "a",
             "text": {
-              "de": "Erhalt der segmentalen Gefäßversorgung",
-              "en": "Preservation of segmental blood supply",
-              "es": "Conservación de la vascularización segmentaria"
+              "de": "Erhalt des Längsgefäßplexus mit segmentalen Zuflüssen",
+              "en": "Preservation of the longitudinal plexus fed by segmental branches",
+              "es": "Conservar el plexo longitudinal nutrido por ramas segmentarias"
             },
             "feedback": {
               "de": "Die Ureterversorgung erfolgt über mehrere segmentale Zuflüsse mit adventitiellen Längsverbindungen. Ausgedehnte Skelettierung kann Ischämie und spätere Strikturen begünstigen.",
@@ -13707,9 +13707,9 @@
           {
             "id": "a",
             "text": {
-              "de": "Membranöse beziehungsweise bulbomembranöse Übergangsregion",
-              "en": "Membranous or bulbomembranous junction region",
-              "es": "Región membranosa o unión bulbomembranosa"
+              "de": "Membranöse oder bulbomembranöse Urethra",
+              "en": "Membranous or bulbomembranous urethra",
+              "es": "Uretra membranosa o unión bulbomembranosa"
             },
             "feedback": {
               "de": "Beckenfrakturassoziierte Verletzungen betreffen typischerweise die membranöse beziehungsweise bulbomembranöse Region. Der konkrete Befund wird durch geeignete urethrale Diagnostik bestimmt.",
@@ -13723,9 +13723,9 @@
           {
             "id": "b",
             "text": {
-              "en": "Fossa navicularis",
-              "de": "Fossa navicularis",
-              "es": "Fossa navicularis"
+              "en": "Fossa navicularis in the glans penis",
+              "de": "Fossa navicularis in der Glans penis",
+              "es": "Fosa navicular, dentro del glande del pene"
             },
             "feedback": {
               "de": "Die Fossa navicularis liegt distal in der Glans und ist nicht die typische Region der Beckenfrakturverletzung.",
@@ -13739,9 +13739,9 @@
           {
             "id": "c",
             "text": {
-              "de": "Nur äußerer Meatus",
-              "en": "Only the external meatus",
-              "es": "Solo el meato externo"
+              "de": "Nur der äußere Harnröhrenmeatus",
+              "en": "Only the external urethral meatus",
+              "es": "Solo el meato uretral externo"
             },
             "feedback": {
               "de": "Der äußere Meatus ist ein distaler Austritt und nicht die typische Stelle der beckenbedingten Distraktionsverletzung.",
@@ -13755,7 +13755,7 @@
           {
             "id": "d",
             "text": {
-              "de": "Nur mittlere penile Urethra",
+              "de": "Nur die mittlere penile Urethra",
               "en": "Only the mid-penile urethra",
               "es": "Solo uretra peneana media"
             },
@@ -14128,7 +14128,7 @@
           {
             "id": "b",
             "text": {
-              "de": "Hohe Umschließung durch die Tunica vaginalis mit fehlender üblicher posteriorer Fixierung",
+              "de": "Hohe Tunica-vaginalis-Umschlagfalte ohne übliche posteriore Fixierung",
               "en": "High tunica-vaginalis investment with loss of usual posterior fixation",
               "es": "Cobertura alta por túnica vaginal con pérdida de fijación posterior habitual"
             },
@@ -14382,7 +14382,7 @@
           {
             "id": "a",
             "text": {
-              "de": "Lumbale sympathische postganglionäre Fasern zum hypogastrischen Plexus",
+              "de": "Postganglionäre lumbale Sympathikusfasern zum Plexus hypogastricus",
               "en": "Lumbar sympathetic postganglionic fibres to the hypogastric plexus",
               "es": "Fibras simpáticas lumbares posganglionares al plexo hipogástrico"
             },
@@ -14430,9 +14430,9 @@
           {
             "id": "d",
             "text": {
-              "de": "Nur parasympathische Fasern für Detrusorkontraktion",
-              "en": "Only parasympathetic fibres for detrusor contraction",
-              "es": "Solo fibras parasimpáticas de contracción del detrusor"
+              "de": "Nur parasympathische Beckenfasern für die Detrusorkontraktion",
+              "en": "Only parasympathetic pelvic fibres for detrusor contraction",
+              "es": "Solo fibras parasimpáticas pélvicas de contracción del detrusor"
             },
             "feedback": {
               "de": "Der parasympathische Entleerungsweg ist nicht der hauptsächliche sympathische Samenemissionsweg.",

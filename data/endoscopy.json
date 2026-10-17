@@ -54,9 +54,9 @@
           {
             "id": "a",
             "text": {
-              "en": "A papillary lesion suspicious for a urothelial tumour; grade and stage need histological assessment.",
-              "de": "Eine für einen Urotheltumor verdächtige papilläre Läsion; Grad und Stadium erfordern histologische Beurteilung.",
-              "es": "Una lesión papilar sospechosa de tumor urotelial; grado y estadio requieren evaluación histológica."
+              "en": "A papillary lesion suspicious for urothelial tumour; only histology can establish grade and stage.",
+              "de": "Papilläre, auf einen Urotheltumor verdächtige Läsion; Grad und Stadium klärt erst die Histologie.",
+              "es": "Lesión papilar sospechosa de tumor urotelial; grado y estadio solo los establece la histología."
             },
             "score": 10,
             "minutes": 5,
@@ -70,9 +70,9 @@
           {
             "id": "b",
             "text": {
-              "en": "Possibly a tumour; record only that the bladder looks abnormal.",
-              "de": "Möglicherweise ein Tumor; nur eine auffällige Blase dokumentieren.",
-              "es": "Posible tumor; registrar solo que la vejiga es anormal."
+              "en": "Possible tumour; record only an abnormal bladder wall in the report, without size, shape or exact site.",
+              "de": "Möglicher Tumor; im Befund nur eine auffällige Blasenwand vermerken, ohne Größe, Form oder Lage festzulegen.",
+              "es": "Posible tumor; anotar solo una pared vesical anormal en el informe, sin tamaño, forma ni localización."
             },
             "score": 3,
             "minutes": 3,
@@ -86,9 +86,9 @@
           {
             "id": "c",
             "text": {
-              "en": "Confirm low-grade, non-invasive cancer from appearance alone.",
-              "de": "Allein nach Aussehen niedriggradigen, nichtinvasiven Krebs bestätigen.",
-              "es": "Confirmar cáncer no invasivo de bajo grado solo por el aspecto."
+              "en": "Confirm a low-grade, non-invasive Ta tumour based on the frond-like appearance.",
+              "de": "Nach dem fransenartigen Aussehen einen niedriggradigen, nichtinvasiven Ta-Tumor bestätigen.",
+              "es": "Confirmar un tumor Ta de bajo grado y no invasivo por su aspecto en fronda."
             },
             "score": 0,
             "minutes": 2,
@@ -114,48 +114,48 @@
           {
             "id": "a",
             "text": {
-              "en": "Document lesion number, size, location and appearance; discuss tissue assessment and the senior-led tumour pathway.",
-              "de": "Zahl, Größe, Ort und Aussehen dokumentieren; Gewebeabklärung und den fachärztlich geleiteten Tumorpfad besprechen.",
-              "es": "Documentar número, tamaño, ubicación y aspecto; plantear evaluación de tejido y el circuito tumoral dirigido por el especialista."
+              "en": "Record lesion number, size, site and appearance, and plan TURBT within the senior-led tumour pathway.",
+              "de": "Zahl, Größe, Lage und Aussehen der Läsion festhalten und die TURBT im fachärztlich geleiteten Tumorpfad planen.",
+              "es": "Registrar número, tamaño, localización y aspecto, y planificar la RTU-V dentro del circuito tumoral especializado."
             },
             "score": 10,
             "minutes": 8,
             "feedback": {
-              "en": "A clear record supports planning and correlation with later pathology.",
-              "de": "Eine klare Dokumentation unterstützt Planung und Abgleich mit späterer Histologie.",
-              "es": "Un registro claro facilita la planificación y la correlación con la histología posterior."
+              "en": "A clear record supports planning and correlation with later pathology. Tissue diagnosis is by TURBT with detrusor muscle in the specimen; visible haematuria also calls for upper-tract imaging.",
+              "de": "Eine klare Dokumentation unterstützt Planung und Abgleich mit späterer Histologie. Die Gewebeabklärung erfolgt per TURBT mit Detrusor im Präparat; bei sichtbarer Hämaturie gehört die Bildgebung des oberen Harntrakts dazu.",
+              "es": "Un registro claro facilita la planificación y la correlación con la histología posterior. El diagnóstico tisular se hace mediante RTU-V con músculo detrusor en la muestra; la hematuria visible exige además imagen del tracto urinario superior."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Arrange follow-up but omit the location and size.",
-              "de": "Kontrolle planen, aber Ort und Größe weglassen.",
-              "es": "Programar seguimiento sin registrar ubicación ni tamaño."
+              "en": "Arrange a tumour clinic appointment, but leave the site and size of the lesion out of the report.",
+              "de": "Eine Vorstellung in der Tumorsprechstunde planen, Lage und Größe der Läsion im Befund aber nicht festhalten.",
+              "es": "Programar una cita en la consulta de tumores, pero sin anotar en el informe la localización ni el tamaño."
             },
             "score": 3,
             "minutes": 4,
             "feedback": {
-              "en": "The next team needs enough detail to match the finding to the treatment and specimens.",
-              "de": "Das nächste Team braucht Details für den Abgleich mit Behandlung und Proben.",
-              "es": "El siguiente equipo necesita detalles para relacionar el hallazgo con tratamiento y muestras."
+              "en": "Onward referral is right, but the next team needs enough detail to match the finding to the treatment and specimens.",
+              "de": "Die Weiterleitung ist richtig, aber das nächste Team braucht Details für den Abgleich mit Behandlung und Proben.",
+              "es": "Derivar es correcto, pero el siguiente equipo necesita detalles para relacionar el hallazgo con tratamiento y muestras."
             },
             "critical": false
           },
           {
             "id": "c",
             "text": {
-              "en": "Discharge without further assessment because the lesion is small.",
-              "de": "Ohne weitere Abklärung entlassen, weil die Läsion klein ist.",
-              "es": "Dar el alta sin estudio adicional porque la lesión es pequeña."
+              "en": "Discharge her without further assessment because the lesion is only 1.2 cm, with GP follow-up.",
+              "de": "Bei nur 1,2 cm Größe ohne weitere Abklärung entlassen und eine Kontrolle beim Hausarzt empfehlen.",
+              "es": "Dar el alta sin más estudio porque la lesión mide solo 1,2 cm, con seguimiento por su médico de familia."
             },
             "score": 0,
             "minutes": 2,
             "feedback": {
-              "en": "Small size does not remove the need for appropriate tumour evaluation.",
-              "de": "Geringe Größe ersetzt keine angemessene Tumorabklärung.",
-              "es": "El tamaño pequeño no elimina la necesidad de un estudio adecuado."
+              "en": "Small size does not remove the need for appropriate tumour evaluation; small papillary lesions also need resection and histology.",
+              "de": "Geringe Größe ersetzt keine angemessene Tumorabklärung; auch kleine papilläre Läsionen müssen reseziert und histologisch eingeordnet werden.",
+              "es": "El tamaño pequeño no elimina la necesidad de un estudio adecuado; también las lesiones papilares pequeñas requieren resección e histología."
             },
             "critical": true
           }
@@ -174,9 +174,9 @@
           {
             "id": "a",
             "text": {
-              "en": "Explain suspicion and uncertainty, the planned tissue diagnosis, who reviews pathology and how Elena receives the result.",
-              "de": "Verdacht und Unsicherheit, geplante Gewebediagnostik, Zuständigkeit für die Histologie und den Befundkontakt erklären.",
-              "es": "Explicar la sospecha y la incertidumbre, la histología prevista, quién la revisa y cómo Elena recibirá el resultado."
+              "en": "Explain the suspicion, uncertainty, planned histology, who owns the result and how Elena gets it.",
+              "de": "Verdacht und Unsicherheit, geplante Histologie, Zuständigkeit für den Befund und den Weg zum Befundgespräch erklären.",
+              "es": "Explicar sospecha e incertidumbre, histología prevista, quién es responsable del resultado y cómo le llegará."
             },
             "score": 10,
             "minutes": 6,
@@ -190,9 +190,9 @@
           {
             "id": "b",
             "text": {
-              "en": "Say the next team will explain everything, without providing a contact or date.",
-              "de": "Sagen, das nächste Team werde alles erklären, ohne Kontakt oder Termin.",
-              "es": "Decir que el siguiente equipo lo explicará todo, sin contacto ni fecha."
+              "en": "Say the tumour clinic team will explain everything after resection, without giving a contact or date.",
+              "de": "Sagen, das Team der Tumorsprechstunde werde nach der Resektion alles erklären, ohne Kontakt oder Termin zu nennen.",
+              "es": "Decir que el equipo de la consulta de tumores lo explicará todo tras la resección, sin dar contacto ni fecha."
             },
             "score": 3,
             "minutes": 3,
@@ -206,16 +206,16 @@
           {
             "id": "c",
             "text": {
-              "en": "Promise that no further treatment will ever be necessary.",
-              "de": "Versprechen, dass niemals weitere Behandlung erforderlich sein wird.",
-              "es": "Prometer que nunca necesitará otro tratamiento."
+              "en": "Assure Elena that a papillary tumour this small will certainly need no further treatment after resection.",
+              "de": "Elena versichern, dass ein so kleiner papillärer Tumor nach der Resektion sicher keine weitere Behandlung brauchen wird.",
+              "es": "Asegurar a Elena que un tumor papilar tan pequeño no necesitará ningún otro tratamiento tras la resección."
             },
             "score": 0,
             "minutes": 2,
             "feedback": {
-              "en": "A final treatment plan cannot be promised before pathology and risk assessment.",
-              "de": "Vor Histologie und Risikobewertung lässt sich kein endgültiger Plan versprechen.",
-              "es": "No puede prometerse un plan definitivo antes de la histología y valoración del riesgo."
+              "en": "A final treatment plan cannot be promised before pathology and risk assessment; even after resection of a low-risk tumour, surveillance cystoscopy follows, with instillations depending on the risk group.",
+              "de": "Vor Histologie und Risikobewertung lässt sich kein endgültiger Plan versprechen; auch nach Resektion eines Niedrigrisikotumors folgen Kontrollzystoskopien, je nach Risikogruppe auch Instillationen.",
+              "es": "No puede prometerse un plan definitivo antes de la histología y la valoración del riesgo; incluso tras resecar un tumor de bajo riesgo siguen cistoscopias de control y, según el grupo de riesgo, instilaciones."
             },
             "critical": false
           }
@@ -287,9 +287,9 @@
           {
             "id": "a",
             "text": {
-              "en": "Possible carcinoma in situ or inflammation; concerning cytology makes targeted specialist evaluation important.",
-              "de": "Mögliches Carcinoma in situ oder Entzündung; die verdächtige Zytologie macht gezielte fachärztliche Abklärung wichtig.",
-              "es": "Posible carcinoma in situ o inflamación; la citología preocupante hace importante una evaluación especializada dirigida."
+              "en": "Suspected carcinoma in situ, inflammation possible; the cytology calls for targeted specialist evaluation.",
+              "de": "Verdacht auf Carcinoma in situ, Entzündung möglich; die Zytologie verlangt eine gezielte fachärztliche Abklärung.",
+              "es": "Sospecha de carcinoma in situ, posible inflamación; la citología exige una evaluación especializada dirigida."
             },
             "score": 10,
             "minutes": 7,
@@ -303,9 +303,9 @@
           {
             "id": "b",
             "text": {
-              "en": "Call it inflammation but keep a routine review because cytology is abnormal.",
-              "de": "Als Entzündung einstufen, wegen auffälliger Zytologie aber Routinekontrolle beibehalten.",
-              "es": "Llamarlo inflamación y mantener revisión habitual por la citología anormal."
+              "en": "Assume cystitis given the urgency and book a routine review in six months because the cytology is abnormal.",
+              "de": "Wegen des Harndrangs eher eine Zystitis annehmen und bei auffälliger Zytologie eine Routinekontrolle in sechs Monaten planen.",
+              "es": "Suponer una cistitis por la urgencia y programar una revisión habitual a los seis meses por la citología anormal."
             },
             "score": 3,
             "minutes": 4,
@@ -319,9 +319,9 @@
           {
             "id": "c",
             "text": {
-              "en": "Exclude bladder malignancy because no papillary lesion is visible.",
-              "de": "Blasenmalignom ausschließen, weil keine papilläre Läsion sichtbar ist.",
-              "es": "Descartar malignidad vesical porque no hay lesión papilar."
+              "en": "Exclude bladder malignancy because cystoscopy shows neither a papillary nor a solid tumour.",
+              "de": "Ein Blasenmalignom ausschließen, weil sich zystoskopisch weder ein papillärer noch ein solider Tumor zeigt.",
+              "es": "Descartar malignidad vesical porque la cistoscopia no muestra tumor papilar ni sólido."
             },
             "score": 0,
             "minutes": 2,
@@ -347,25 +347,25 @@
           {
             "id": "a",
             "text": {
-              "en": "Review cytology and infection testing, document the mucosa and arrange senior-led histological assessment through the bladder pathway.",
-              "de": "Zytologie und Infektionsdiagnostik prüfen, Schleimhaut dokumentieren und fachärztlich geleitete Histologieabklärung über den Blasenpfad organisieren.",
-              "es": "Revisar citología y estudio infeccioso, documentar la mucosa y organizar evaluación histológica especializada por el circuito vesical."
+              "en": "Arrange infection testing, document the cytology and mucosal finding, and plan biopsies through the specialist bladder pathway.",
+              "de": "Infektdiagnostik veranlassen, Zytologie und Schleimhautbefund dokumentieren und Biopsien im fachärztlichen Blasenpfad planen.",
+              "es": "Solicitar estudio de infección, registrar la citología y el hallazgo mucoso y planificar biopsias por el circuito vesical especializado."
             },
             "score": 10,
             "minutes": 10,
             "feedback": {
-              "en": "Histology resolves an endoscopic suspicion; further investigation is tailored to the complete findings.",
-              "de": "Histologie klärt einen endoskopischen Verdacht; weitere Diagnostik richtet sich nach dem Gesamtbild.",
-              "es": "La histología aclara una sospecha endoscópica; el estudio adicional depende del conjunto de hallazgos."
+              "en": "Histology resolves an endoscopic suspicion; infection should be excluded first because it can distort cytology and the mucosal appearance. Suspected CIS calls for targeted and mapping biopsies, ideally with photodynamic diagnosis, plus assessment of the upper tract and prostatic urethra.",
+              "de": "Histologie klärt einen endoskopischen Verdacht; eine Infektion sollte vorher ausgeschlossen sein, weil sie Zytologie und Schleimhautbild verfälschen kann. Bei CIS-Verdacht folgen gezielte und Mapping-Biopsien, möglichst mit photodynamischer Diagnostik, sowie die Abklärung von oberem Harntrakt und prostatischer Harnröhre.",
+              "es": "La histología aclara una sospecha endoscópica; antes debe descartarse infección, porque puede alterar la citología y el aspecto mucoso. La sospecha de CIS requiere biopsias dirigidas y aleatorias, idealmente con diagnóstico fotodinámico, y estudio del tracto superior y de la uretra prostática."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Repeat cytology alone and leave the mucosal finding undocumented.",
-              "de": "Nur Zytologie wiederholen und den Schleimhautbefund nicht dokumentieren.",
-              "es": "Repetir solo la citología y no registrar el hallazgo mucoso."
+              "en": "Repeat urine cytology in four weeks and leave the reddened mucosa undescribed in the cystoscopy report until then.",
+              "de": "Die Urinzytologie in vier Wochen wiederholen und die gerötete Schleimhaut bis dahin im Befund nicht beschreiben.",
+              "es": "Repetir la citología urinaria en cuatro semanas y no describir hasta entonces la mucosa enrojecida en el informe de cistoscopia."
             },
             "score": 3,
             "minutes": 5,
@@ -379,16 +379,16 @@
           {
             "id": "c",
             "text": {
-              "en": "Start cancer-specific treatment based only on this written appearance.",
-              "de": "Krebsspezifische Therapie allein aufgrund dieses schriftlichen Aussehens beginnen.",
-              "es": "Iniciar tratamiento específico de cáncer solo por este aspecto escrito."
+              "en": "Start intravesical BCG for carcinoma in situ based only on the written description.",
+              "de": "Allein aufgrund des schriftlichen Befunds eine BCG-Instillationstherapie wegen Carcinoma in situ einleiten.",
+              "es": "Iniciar BCG intravesical por carcinoma in situ basándose solo en la descripción escrita."
             },
             "score": 0,
             "minutes": 2,
             "feedback": {
-              "en": "This case has not established the histological diagnosis or treatment risk group.",
-              "de": "Hier sind weder histologische Diagnose noch Behandlungsrisikogruppe gesichert.",
-              "es": "Este caso no ha confirmado histología ni grupo de riesgo terapéutico."
+              "en": "This case has not established the histological diagnosis or treatment risk group; BCG requires both and has relevant adverse effects.",
+              "de": "Hier sind weder histologische Diagnose noch Behandlungsrisikogruppe gesichert; BCG setzt beides voraus und hat relevante Nebenwirkungen.",
+              "es": "Este caso no ha confirmado histología ni grupo de riesgo terapéutico; la BCG requiere ambos y tiene efectos adversos relevantes."
             },
             "critical": true
           }
@@ -407,9 +407,9 @@
           {
             "id": "a",
             "text": {
-              "en": "Persistent urgency, exact mucosal location, cytology wording, infection status, pending tissue assessment and a named results owner.",
-              "de": "Anhaltender Harndrang, genauer Schleimhautort, Zytologiewortlaut, Infektionsstatus, ausstehende Gewebeabklärung und zuständige Person für Befunde.",
-              "es": "Urgencia persistente, ubicación mucosa exacta, texto de la citología, estado infeccioso, histología pendiente y responsable de resultados."
+              "en": "Urgency, exact site of the redness, cytology wording, infection status, planned biopsy and the named results owner.",
+              "de": "Harndrang, genaue Lage der Rötung, Zytologie im Wortlaut, Infektstatus, geplante Biopsie und Befundverantwortlicher.",
+              "es": "Urgencia, zona exacta enrojecida, texto de la citología, estado infeccioso, biopsia prevista y responsable de resultados."
             },
             "score": 10,
             "minutes": 6,
@@ -423,25 +423,25 @@
           {
             "id": "b",
             "text": {
-              "en": "Send only the phrase 'red patch in bladder'.",
-              "de": "Nur den Satz „roter Fleck in der Blase“ senden.",
-              "es": "Enviar solo «zona roja en vejiga»."
+              "en": "Send only 'red patch on bladder dome, please review' and forward the cytology and symptoms later in the discharge letter.",
+              "de": "Nur „roter Fleck am Blasendach, bitte Kontrolle“ senden und Zytologie sowie Beschwerden später im Arztbrief nachreichen.",
+              "es": "Enviar solo «zona roja en la cúpula vesical, revisar» y remitir la citología y los síntomas más tarde en el informe de alta."
             },
             "score": 3,
             "minutes": 3,
             "feedback": {
-              "en": "This omits the cytology and clinical context that determine concern.",
-              "de": "Dies lässt Zytologie und klinischen Kontext weg, die den Verdacht bestimmen.",
-              "es": "Omite la citología y el contexto clínico que determinan la preocupación."
+              "en": "This omits the cytology and clinical context that determine concern and urgency.",
+              "de": "Dies lässt Zytologie und klinischen Kontext weg, die den Verdacht und die Dringlichkeit bestimmen.",
+              "es": "Omite la citología y el contexto clínico que determinan la preocupación y la urgencia."
             },
             "critical": false
           },
           {
             "id": "c",
             "text": {
-              "en": "Tell Javier that a normal-looking area elsewhere makes follow-up unnecessary.",
-              "de": "Javier sagen, ein anderer normaler Bereich mache Kontrollen unnötig.",
-              "es": "Decir a Javier que otra zona normal hace innecesario el seguimiento."
+              "en": "Tell Javier the rest of the bladder looks normal, so further checks are not needed.",
+              "de": "Javier sagen, die übrige Blase sei unauffällig und deshalb seien weitere Kontrollen nicht notwendig.",
+              "es": "Decir a Javier que el resto de la vejiga es normal y que por eso no necesita más controles."
             },
             "score": 0,
             "minutes": 2,
@@ -520,48 +520,48 @@
           {
             "id": "a",
             "text": {
-              "en": "Pause advancement, reassess discomfort and request appropriate senior help before any further instrumentation.",
-              "de": "Vorschub stoppen, Beschwerden neu beurteilen und vor weiterer Instrumentierung geeignete fachärztliche Hilfe holen.",
-              "es": "Detener el avance, reevaluar molestias y pedir ayuda especializada antes de más instrumentación."
+              "en": "Stop advancing, ask about discomfort and call the senior before any further attempt to pass.",
+              "de": "Vorschub stoppen, Beschwerden erfragen und vor jedem weiteren Passageversuch den Oberarzt hinzuziehen.",
+              "es": "Detener el avance, preguntar por molestias y avisar al adjunto antes de otro intento de paso."
             },
             "score": 10,
             "minutes": 4,
             "feedback": {
-              "en": "Forcing an instrument through a narrowing risks trauma.",
-              "de": "Ein Instrument durch eine Engstelle zu zwingen kann Verletzungen verursachen.",
-              "es": "Forzar un instrumento a través de una estrechez puede causar lesión."
+              "en": "Forcing an instrument through a narrowing risks trauma. Resistance is a stop signal: false passage, bleeding and a worse stricture are the risks. Whether and how instrumentation continues is decided by an experienced colleague after assessing the narrowing.",
+              "de": "Ein Instrument durch eine Engstelle zu zwingen kann Verletzungen verursachen. Widerstand ist ein Stoppsignal: Es drohen Via falsa, Blutung und eine Verschlechterung der Striktur. Ob und wie weiter instrumentiert wird, entscheidet die erfahrene Fachperson nach Beurteilung der Engstelle.",
+              "es": "Forzar un instrumento a través de una estrechez puede causar lesión. La resistencia es una señal de parada: hay riesgo de falsa vía, sangrado y empeoramiento de la estenosis. Si se sigue instrumentando y cómo lo decide un especialista con experiencia tras valorar la estrechez."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Pause briefly, then continue without discussing the narrowing.",
-              "de": "Kurz pausieren und ohne Besprechung der Engstelle fortfahren.",
-              "es": "Pausar brevemente y continuar sin comentar la estrechez."
+              "en": "Pause briefly, instil more lubricant gel and try advancing again without discussing the narrowing.",
+              "de": "Kurz pausieren, mehr Gleitgel instillieren und den Vorschub ohne Rücksprache zur Engstelle erneut versuchen.",
+              "es": "Pausar brevemente, instilar más gel lubricante y reintentar el avance sin comentar la estrechez."
             },
             "score": 3,
             "minutes": 3,
             "feedback": {
-              "en": "A pause is helpful only if it changes the safety assessment and plan.",
-              "de": "Eine Pause hilft nur, wenn Sicherheit und Vorgehen neu bewertet werden.",
-              "es": "Una pausa solo ayuda si modifica la valoración de seguridad y el plan."
+              "en": "A pause is helpful only if it changes the safety assessment and plan. More gel does not change a true narrowing, and another attempt without discussion risks a false passage.",
+              "de": "Eine Pause hilft nur, wenn Sicherheit und Vorgehen neu bewertet werden. Mehr Gleitgel ändert nichts an einer echten Engstelle, und ein erneuter Versuch ohne Rücksprache riskiert eine Via falsa.",
+              "es": "Una pausa solo ayuda si modifica la valoración de seguridad y el plan. Más gel no cambia una estrechez real, y otro intento sin comentarlo arriesga una falsa vía."
             },
             "critical": false
           },
           {
             "id": "c",
             "text": {
-              "en": "Push harder until the scope passes.",
-              "de": "Stärker drücken, bis das Instrument passiert.",
-              "es": "Empujar con más fuerza hasta pasar."
+              "en": "Push harder with steady force under pressurised irrigation until the scope passes the narrowing.",
+              "de": "Unter kräftiger Druckspülung gleichmäßig stärker schieben, bis das Instrument die Engstelle passiert.",
+              "es": "Empujar con más fuerza y de forma constante con irrigación a presión hasta superar la estrechez."
             },
             "score": 0,
             "minutes": 2,
             "feedback": {
-              "en": "Force can create urethral injury; stop and escalate.",
-              "de": "Gewalt kann die Harnröhre verletzen; stoppen und eskalieren.",
-              "es": "La fuerza puede lesionar la uretra; detén y escala."
+              "en": "Force can create urethral injury, pressurised irrigation included; false passage and bleeding are the risks. Stop and escalate.",
+              "de": "Gewalt kann die Harnröhre verletzen, auch mit Druckspülung; es drohen Via falsa und Blutung. Stoppen und eskalieren.",
+              "es": "La fuerza puede lesionar la uretra, también con irrigación a presión; hay riesgo de falsa vía y sangrado. Detén y escala."
             },
             "critical": true
           }
@@ -580,48 +580,48 @@
           {
             "id": "a",
             "text": {
-              "en": "Document symptoms, prior procedures, location and passage limitation; assess urinalysis, uroflow and residual urine, with further imaging as appropriate.",
-              "de": "Beschwerden, frühere Eingriffe, Ort und Passagegrenze dokumentieren; Urinstatus, Uroflow und Restharn beurteilen, weitere Bildgebung nach Indikation.",
-              "es": "Documentar síntomas, procedimientos previos, ubicación y límite del paso; valorar orina, flujo y residuo, con imagen adicional según indicación."
+              "en": "Document site and passage limit, ask about prior procedures and check urinalysis, uroflow and residual urine.",
+              "de": "Lage und Passagegrenze dokumentieren, Voreingriffe erfragen sowie Urinstatus, Uroflow und Restharn bestimmen.",
+              "es": "Documentar ubicación y límite del paso, preguntar por cirugías previas y valorar orina, flujometría y residuo."
             },
             "score": 10,
             "minutes": 9,
             "feedback": {
-              "en": "Flow and residual urine help assess functional impact; anatomy and management need specialist judgement.",
-              "de": "Fluss und Restharn zeigen funktionelle Auswirkungen; Anatomie und Behandlung brauchen fachärztliche Beurteilung.",
-              "es": "Flujo y residuo ayudan a valorar el impacto; la anatomía y el manejo requieren juicio especializado."
+              "en": "Flow and residual urine show the functional impact; site, passage limit and prior procedures make the narrowing traceable for the next examination. Further imaging, such as retrograde urethrography, follows on specialist indication; anatomy and management need specialist judgement.",
+              "de": "Fluss und Restharn zeigen die funktionellen Auswirkungen; Lage, Passagegrenze und Voreingriffe machen die Engstelle für die nächste Untersuchung nachvollziehbar. Weitere Bildgebung, etwa eine retrograde Urethrographie, folgt nach fachärztlicher Indikation; Anatomie und Behandlung brauchen fachärztliche Beurteilung.",
+              "es": "El flujo y el residuo muestran el impacto funcional; ubicación, límite del paso y cirugías previas hacen la estrechez reproducible para la siguiente exploración. Más imagen, como una uretrografía retrógrada, se indica por el especialista; la anatomía y el manejo requieren juicio especializado."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Record 'difficult scope' without symptoms or residual urine.",
-              "de": "„Schwierige Zystoskopie“ ohne Beschwerden oder Restharn dokumentieren.",
-              "es": "Registrar «endoscopia difícil» sin síntomas ni residuo."
+              "en": "Write 'difficult cystoscopy, abandoned' in the operation note without recording symptoms or post-void residual.",
+              "de": "Im OP-Bericht „schwierige Zystoskopie, abgebrochen“ vermerken, ohne Beschwerden oder Restharn zu erfassen.",
+              "es": "Anotar «cistoscopia difícil, interrumpida» en el informe quirúrgico sin registrar síntomas ni residuo posmiccional."
             },
             "score": 3,
             "minutes": 4,
             "feedback": {
-              "en": "This does not communicate the suspected lesion or obstruction burden.",
-              "de": "Dies vermittelt weder die vermutete Läsion noch die Obstruktionsbelastung.",
-              "es": "No comunica la lesión sospechada ni el grado de obstrucción."
+              "en": "The abandoned procedure is recorded, but this does not communicate the suspected lesion or obstruction burden.",
+              "de": "Der Abbruch ist dokumentiert, aber dies vermittelt weder die vermutete Läsion noch die Obstruktionsbelastung.",
+              "es": "La interrupción queda registrada, pero no comunica la lesión sospechada ni el grado de obstrucción."
             },
             "critical": false
           },
           {
             "id": "c",
             "text": {
-              "en": "Conclude the prostate must be the sole cause of the weak stream.",
-              "de": "Schließen, dass allein die Prostata den schwachen Harnstrahl verursacht.",
-              "es": "Concluir que la próstata es la única causa del chorro débil."
+              "en": "Attribute the weak stream solely to an enlarged prostate and start tamsulosin 0.4 mg once daily.",
+              "de": "Den schwachen Strahl allein der vergrößerten Prostata zuschreiben und Tamsulosin 0,4 mg täglich beginnen.",
+              "es": "Atribuir el chorro débil solo a una próstata aumentada e iniciar tamsulosina 0,4 mg una vez al día."
             },
             "score": 0,
             "minutes": 2,
             "feedback": {
-              "en": "The visible narrowing and procedural history suggest a urethral cause.",
-              "de": "Die Engstelle und Eingriffsanamnese sprechen für eine urethrale Ursache.",
-              "es": "La estrechez y la historia de instrumentación sugieren una causa uretral."
+              "en": "The visible narrowing and procedural history suggest a urethral cause; an alpha-blocker does not treat a urethral stricture and delays the work-up.",
+              "de": "Die Engstelle und Eingriffsanamnese sprechen für eine urethrale Ursache; ein Alphablocker behandelt keine Harnröhrenstriktur und verzögert die Abklärung.",
+              "es": "La estrechez y la historia de instrumentación sugieren una causa uretral; un alfabloqueante no trata una estenosis uretral y retrasa el estudio."
             },
             "critical": false
           }
@@ -640,41 +640,41 @@
           {
             "id": "a",
             "text": {
-              "en": "Explain the incomplete examination, arrange specialist review and give urgent instructions for new retention, fever or marked bleeding.",
-              "de": "Unvollständige Untersuchung erklären, fachärztliche Kontrolle organisieren und bei neuem Harnverhalt, Fieber oder starker Blutung dringliche Hilfe empfehlen.",
-              "es": "Explicar la exploración incompleta, organizar revisión especializada e indicar atención urgente por nueva retención, fiebre o sangrado importante."
+              "en": "Explain the stopped examination, book urology follow-up and name warning signs such as retention or fever.",
+              "de": "Abbruch der Untersuchung erklären, urologische Weiterabklärung terminieren und Warnzeichen wie Harnverhalt oder Fieber benennen.",
+              "es": "Explicar la interrupción de la exploración, citar para estudio urológico y señalar alarmas como retención o fiebre."
             },
             "score": 10,
             "minutes": 6,
             "feedback": {
-              "en": "A stopped examination still needs a clear diagnostic plan and safety net.",
-              "de": "Eine abgebrochene Untersuchung braucht weiterhin einen klaren Plan und Warnhinweise.",
-              "es": "Una exploración detenida aún necesita un plan diagnóstico y señales de alarma."
+              "en": "A stopped examination still needs a clear diagnostic plan and safety net. With new retention, fever or marked bleeding Thomas should seek urgent care rather than wait for the review.",
+              "de": "Eine abgebrochene Untersuchung braucht weiterhin einen klaren Plan und Warnhinweise. Bei neuem Harnverhalt, Fieber oder starker Blutung soll Thomas sich sofort vorstellen und nicht bis zum Kontrolltermin warten.",
+              "es": "Una exploración detenida aún necesita un plan diagnóstico y señales de alarma. Ante nueva retención, fiebre o sangrado importante, Thomas debe acudir de urgencia y no esperar a la revisión."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Arrange review but do not tell Thomas the examination was incomplete.",
-              "de": "Kontrolle vereinbaren, Thomas aber die unvollständige Untersuchung nicht mitteilen.",
-              "es": "Programar revisión sin decir a Thomas que la exploración fue incompleta."
+              "en": "Book a urology review in three months but do not tell Thomas that today's examination was incomplete.",
+              "de": "Urologische Kontrolle in drei Monaten vereinbaren, Thomas aber nicht sagen, dass die Untersuchung unvollständig war.",
+              "es": "Programar revisión urológica en tres meses sin explicar a Thomas que la exploración de hoy fue incompleta."
             },
             "score": 3,
             "minutes": 3,
             "feedback": {
-              "en": "The patient needs to understand what remains unassessed.",
-              "de": "Der Patient muss wissen, was noch nicht untersucht wurde.",
-              "es": "El paciente debe comprender qué sigue sin evaluar."
+              "en": "A review is right, but the patient needs to understand what remains unassessed and which warning signs cannot wait.",
+              "de": "Eine Kontrolle ist richtig, aber der Patient muss wissen, was noch nicht untersucht wurde, und welche Warnzeichen nicht warten dürfen.",
+              "es": "La revisión es correcta, pero el paciente debe comprender qué sigue sin evaluar y qué señales de alarma no pueden esperar."
             },
             "critical": false
           },
           {
             "id": "c",
             "text": {
-              "en": "Provide no follow-up because he can still void today.",
-              "de": "Keine Kontrolle planen, weil er heute noch Wasser lassen kann.",
-              "es": "No organizar seguimiento porque hoy todavía puede orinar."
+              "en": "Discharge without follow-up because he can still void spontaneously today.",
+              "de": "Ohne Kontrolle entlassen, weil er heute spontan Wasser lassen kann.",
+              "es": "Dar el alta sin seguimiento porque hoy todavía orina de forma espontánea."
             },
             "score": 0,
             "minutes": 2,
@@ -753,48 +753,48 @@
           {
             "id": "a",
             "text": {
-              "en": "Review severity, temperature, urine output, bleeding and procedure details before considering expected stent irritation.",
-              "de": "Schwere, Temperatur, Urinmenge, Blutung und Eingriffsdetails prüfen, bevor typische Stentreizung erwogen wird.",
-              "es": "Revisar intensidad, temperatura, diuresis, sangrado y detalles del procedimiento antes de considerar irritación esperable del catéter."
+              "en": "Ask about fever, pain severity, urine output, bleeding and procedure details before assuming stent irritation.",
+              "de": "Fieber, Schmerzstärke, Urinmenge, Blutung und Eingriffsdaten erfragen, bevor eine Stentreizung angenommen wird.",
+              "es": "Preguntar por fiebre, dolor, diuresis, sangrado y datos del procedimiento antes de asumir irritación por catéter."
             },
             "score": 10,
             "minutes": 7,
             "feedback": {
-              "en": "Common symptoms can occur with stents, but deterioration must be assessed separately.",
-              "de": "Typische Beschwerden kommen bei Stents vor; Verschlechterung muss gesondert beurteilt werden.",
-              "es": "Puede haber síntomas frecuentes con el catéter, pero el empeoramiento requiere valoración aparte."
+              "en": "Common symptoms can occur with stents, but deterioration must be assessed separately. Only once fever, severe pain, reduced urine output and significant bleeding are excluded is stent irritation the likely explanation.",
+              "de": "Typische Beschwerden kommen bei Stents vor; Verschlechterung muss gesondert beurteilt werden. Erst wenn Fieber, starke Schmerzen, verminderte Urinmenge und relevante Blutung verneint sind, ist Stentreizung die wahrscheinliche Erklärung.",
+              "es": "Puede haber síntomas frecuentes con el catéter, pero el empeoramiento requiere valoración aparte. Solo cuando se descartan fiebre, dolor intenso, menor diuresis y sangrado relevante, la irritación por catéter es la explicación probable."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Say all symptoms are normal without checking fever or urine output.",
-              "de": "Ohne Prüfung von Fieber oder Urinmenge alles als normal erklären.",
-              "es": "Decir que todo es normal sin comprobar fiebre ni diuresis."
+              "en": "Explain the symptoms as stent irritation and offer tamsulosin without asking about fever or urine output.",
+              "de": "Die Beschwerden als Stentreizung erklären und Tamsulosin anbieten, ohne nach Fieber oder Urinmenge zu fragen.",
+              "es": "Atribuir los síntomas al catéter y ofrecer tamsulosina sin preguntar por fiebre ni diuresis."
             },
             "score": 3,
             "minutes": 3,
             "feedback": {
-              "en": "A general reassurance can miss infection, obstruction or significant bleeding.",
-              "de": "Pauschale Beruhigung kann Infektion, Obstruktion oder starke Blutung übersehen.",
-              "es": "La tranquilidad general puede omitir infección, obstrucción o sangrado importante."
+              "en": "An alpha-blocker can ease stent symptoms, but general reassurance without checking warning signs can miss infection, obstruction or significant bleeding.",
+              "de": "Ein Alphablocker kann Stentbeschwerden lindern, aber pauschale Beruhigung ohne Warnzeichenabfrage kann Infektion, Obstruktion oder starke Blutung übersehen.",
+              "es": "Un alfabloqueante puede aliviar las molestias del catéter, pero tranquilizar sin preguntar por signos de alarma puede omitir infección, obstrucción o sangrado importante."
             },
             "critical": false
           },
           {
             "id": "c",
             "text": {
-              "en": "Diagnose infection solely because a stent causes urgency.",
-              "de": "Allein wegen stentbedingten Harndrangs eine Infektion diagnostizieren.",
-              "es": "Diagnosticar infección solo porque el catéter causa urgencia."
+              "en": "Diagnose a urinary tract infection because of urgency and pink urine and prescribe a single 3 g dose of fosfomycin.",
+              "de": "Wegen Harndrang und rosafarbenem Urin eine Harnwegsinfektion diagnostizieren und Fosfomycin 3 g einmalig verordnen.",
+              "es": "Diagnosticar infección urinaria por la urgencia y la orina rosada y pautar fosfomicina 3 g en dosis única."
             },
             "score": 0,
             "minutes": 2,
             "feedback": {
-              "en": "Urgency alone does not distinguish irritation from infection.",
-              "de": "Harndrang allein unterscheidet Reizung nicht von Infektion.",
-              "es": "La urgencia por sí sola no distingue irritación e infección."
+              "en": "Urgency and mild haematuria are common with stents and do not distinguish irritation from infection; antibiotics without urinalysis and culture are not justified.",
+              "de": "Harndrang und leichte Hämaturie sind bei Stents häufig und unterscheiden Reizung nicht von Infektion; eine Antibiose ohne Urinbefund und Kultur ist nicht begründet.",
+              "es": "La urgencia y la hematuria leve son frecuentes con catéter y no distinguen irritación de infección; un antibiótico sin análisis de orina ni cultivo no está justificado."
             },
             "critical": false
           }
@@ -813,48 +813,48 @@
           {
             "id": "a",
             "text": {
-              "en": "Confirm why and when the stent was inserted, contact the responsible team and record a removal or exchange plan in the tracking system.",
-              "de": "Grund und Datum der Stenteinlage klären, zuständiges Team kontaktieren und Entfernung oder Wechsel im Nachverfolgungssystem festhalten.",
-              "es": "Confirmar motivo y fecha de colocación, contactar al equipo responsable y registrar un plan de retirada o recambio en el sistema de seguimiento."
+              "en": "Confirm the indication and insertion date and set a removal date with the responsible team in the stent register.",
+              "de": "Indikation und Einlagedatum klären und mit dem zuständigen Team einen Entfernungstermin im Stentregister festlegen.",
+              "es": "Confirmar indicación y fecha de colocación y fijar con el equipo responsable una fecha de retirada en el registro."
             },
             "score": 10,
             "minutes": 8,
             "feedback": {
-              "en": "A stent needs an explicit owner and time-bound plan to avoid being forgotten.",
-              "de": "Ein Stent braucht klare Zuständigkeit und einen zeitlich festgelegten Plan, damit er nicht vergessen wird.",
-              "es": "El catéter necesita responsable y plazo explícitos para evitar que se olvide."
+              "en": "A stent needs an explicit owner and a time-bound plan to avoid being forgotten. An entry in the tracking system makes removal or exchange independent of Sofia's memory.",
+              "de": "Ein Stent braucht klare Zuständigkeit und einen zeitlich festgelegten Plan, damit er nicht vergessen wird. Ein Eintrag im Nachverfolgungssystem macht Entfernung oder Wechsel unabhängig von Sofias Erinnerung.",
+              "es": "El catéter necesita responsable y plazo explícitos para evitar que se olvide. Un registro en el sistema de seguimiento hace que la retirada o el recambio no dependan de la memoria de Sofia."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Ask Sofia to call if symptoms last another month.",
-              "de": "Sofia bitten, sich nach einem weiteren Beschwerdemonat zu melden.",
-              "es": "Pedir a Sofia que llame si los síntomas duran otro mes."
+              "en": "Give Sofia a stent card and ask her to call the urology ward if her symptoms last another month.",
+              "de": "Sofia einen Stentpass mitgeben und sie bitten, sich zu melden, falls die Beschwerden noch einen Monat anhalten.",
+              "es": "Entregar a Sofia una tarjeta del catéter y pedirle que llame a la planta de urología si los síntomas duran otro mes."
             },
             "score": 3,
             "minutes": 3,
             "feedback": {
-              "en": "A symptom-based call does not establish the required stent plan.",
-              "de": "Ein beschwerdeabhängiger Anruf ersetzt keinen Stentplan.",
-              "es": "Una llamada basada en síntomas no establece el plan necesario del catéter."
+              "en": "A stent card helps, but a symptom-based call does not establish a scheduled stent plan with clear ownership.",
+              "de": "Ein Stentpass hilft, aber ein beschwerdeabhängiger Anruf ersetzt keinen terminierten Stentplan mit klarer Zuständigkeit.",
+              "es": "La tarjeta ayuda, pero una llamada basada en síntomas no establece un plan del catéter con fecha y responsable."
             },
             "critical": false
           },
           {
             "id": "c",
             "text": {
-              "en": "Assume the stent can stay indefinitely without review.",
-              "de": "Annehmen, dass der Stent ohne Kontrolle unbegrenzt bleiben kann.",
-              "es": "Suponer que el catéter puede permanecer indefinidamente sin revisión."
+              "en": "Assume a well-tolerated double-J stent can safely stay in for many months without a fixed removal date.",
+              "de": "Annehmen, dass ein beschwerdearmer Doppel-J-Stent ohne festen Entfernungstermin problemlos über viele Monate liegen bleiben kann.",
+              "es": "Suponer que un catéter doble J bien tolerado puede quedarse sin problema muchos meses sin fecha fija de retirada."
             },
             "score": 0,
             "minutes": 2,
             "feedback": {
-              "en": "Indwelling stents require planned removal or exchange and follow-up.",
-              "de": "Liegende Stents erfordern geplante Entfernung oder Wechsel und Nachsorge.",
-              "es": "Los catéteres colocados requieren retirada o recambio planificados y seguimiento."
+              "en": "Indwelling stents require planned removal or exchange and follow-up; forgotten stents can encrust, obstruct and become infected.",
+              "de": "Liegende Stents erfordern geplante Entfernung oder Wechsel und Nachsorge; vergessene Stents können inkrustieren, obstruieren und sich infizieren.",
+              "es": "Los catéteres colocados requieren retirada o recambio planificados y seguimiento; un catéter olvidado puede incrustarse, obstruirse e infectarse."
             },
             "critical": true
           }
@@ -873,25 +873,25 @@
           {
             "id": "a",
             "text": {
-              "en": "Arrange urgent clinical assessment, communicate the stent and stone history and check she can access immediate care.",
-              "de": "Dringliche klinische Beurteilung organisieren, Stent- und Steinanamnese übermitteln und Zugang zu sofortiger Hilfe prüfen.",
-              "es": "Organizar valoración urgente, comunicar antecedentes del catéter y cálculo y comprobar acceso a atención inmediata."
+              "en": "Arrange immediate assessment in the emergency department and pass on the stent and stone history.",
+              "de": "Sofortige Vorstellung in der Notaufnahme veranlassen und Stent- und Steinanamnese dorthin übermitteln.",
+              "es": "Organizar valoración inmediata en urgencias y transmitir allí los antecedentes del catéter y del cálculo."
             },
             "score": 10,
             "minutes": 4,
             "feedback": {
-              "en": "Systemic symptoms after instrumentation are not routine stent irritation.",
-              "de": "Systemische Beschwerden nach Instrumentierung sind keine gewöhnliche Stentreizung.",
-              "es": "Los síntomas sistémicos tras instrumentación no son una irritación habitual."
+              "en": "Systemic symptoms after instrumentation are not routine stent irritation; obstructive pyelonephritis up to urosepsis must be excluded. Also check that Sofia can reach hospital without delay.",
+              "de": "Systemische Beschwerden nach Instrumentierung sind keine gewöhnliche Stentreizung; eine obstruktive Pyelonephritis bis zur Urosepsis muss ausgeschlossen werden. Prüfen Sie auch, dass Sofia die Klinik ohne Verzögerung erreichen kann.",
+              "es": "Los síntomas sistémicos tras instrumentación no son una irritación habitual; hay que descartar una pielonefritis obstructiva hasta la urosepsis. Comprueba también que Sofia puede llegar al hospital sin demora."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Offer a routine next-week visit without assessing how unwell she is.",
-              "de": "Eine Routinekontrolle nächste Woche anbieten, ohne den Zustand zu beurteilen.",
-              "es": "Ofrecer visita la próxima semana sin valorar su estado general."
+              "en": "Offer a stent clinic appointment next week without asking about vital signs or how unwell she is.",
+              "de": "Einen Termin in der Stentsprechstunde nächste Woche anbieten, ohne nach Vitalzeichen oder Allgemeinzustand zu fragen.",
+              "es": "Ofrecer cita en la consulta de catéteres la próxima semana sin preguntar por constantes ni estado general."
             },
             "score": 3,
             "minutes": 6,
@@ -905,16 +905,16 @@
           {
             "id": "c",
             "text": {
-              "en": "Tell her fever is expected until the stent is removed.",
-              "de": "Sagen, Fieber sei bis zur Stententfernung zu erwarten.",
-              "es": "Decirle que la fiebre es esperable hasta retirar el catéter."
+              "en": "Tell her mild fever is expected until the stent is removed and advise paracetamol and plenty of fluids.",
+              "de": "Erklären, leichtes Fieber sei bis zur Stententfernung zu erwarten, und Paracetamol sowie viel Trinken empfehlen.",
+              "es": "Decirle que la fiebre leve es esperable hasta retirar el catéter y recomendar paracetamol y beber mucho."
             },
             "score": 0,
             "minutes": 2,
             "feedback": {
-              "en": "Fever and chills require urgent assessment for infection and possible obstruction.",
-              "de": "Fieber und Schüttelfrost brauchen dringliche Abklärung von Infektion und möglicher Obstruktion.",
-              "es": "La fiebre y los escalofríos requieren valoración urgente de infección y posible obstrucción."
+              "en": "Fever and chills require urgent assessment for infection and possible obstruction; paracetamol only masks the warning sign.",
+              "de": "Fieber und Schüttelfrost brauchen dringliche Abklärung von Infektion und möglicher Obstruktion; Paracetamol verschleiert nur das Warnzeichen.",
+              "es": "La fiebre y los escalofríos requieren valoración urgente de infección y posible obstrucción; el paracetamol solo enmascara la señal de alarma."
             },
             "critical": true
           }
@@ -988,48 +988,48 @@
           {
             "id": "a",
             "text": {
-              "en": "Lamina propria involvement is reported, but absent detrusor limits assessment of muscle invasion.",
-              "de": "Beteiligung der Lamina propria ist beschrieben; fehlender Detrusor begrenzt die Beurteilung einer Muskelinvasion.",
-              "es": "Se informa afectación de lámina propia, pero la ausencia de detrusor limita valorar invasión muscular."
+              "en": "Lamina propria invasion is established; whether the tumour is muscle-invasive is unknown without detrusor.",
+              "de": "Eine Infiltration der Lamina propria ist belegt; ob der Tumor muskelinvasiv ist, bleibt ohne Detrusor ungeklärt.",
+              "es": "Hay infiltración de la lámina propia; sin detrusor no se sabe si el tumor invade el músculo."
             },
             "score": 10,
             "minutes": 7,
             "feedback": {
-              "en": "A tissue component that was not sampled cannot be called negative.",
-              "de": "Ein nicht enthaltenes Gewebekompartiment kann nicht als negativ bewertet werden.",
-              "es": "Un tejido no incluido en la muestra no puede declararse negativo."
+              "en": "A tissue component that was not sampled cannot be called negative. What is established is high-grade carcinoma with lamina propria involvement; muscle invasion is neither proven nor excluded.",
+              "de": "Ein nicht enthaltenes Gewebekompartiment kann nicht als negativ bewertet werden. Gesichert ist ein hochgradiges Karzinom mit Lamina-propria-Beteiligung; eine Muskelinvasion ist damit weder bewiesen noch ausgeschlossen.",
+              "es": "Un tejido no incluido en la muestra no puede declararse negativo. Lo establecido es un carcinoma de alto grado con afectación de lámina propia; la invasión muscular no está demostrada ni descartada."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Recognise high grade but ignore the missing detrusor detail.",
-              "de": "Hohen Grad erkennen, fehlenden Detrusor aber ignorieren.",
-              "es": "Reconocer el alto grado, pero ignorar que falta detrusor."
+              "en": "Record a high-grade carcinoma invading the lamina propria but make no mention of the missing detrusor.",
+              "de": "Ein hochgradiges, die Lamina propria infiltrierendes Karzinom notieren, den fehlenden Detrusor aber übergehen.",
+              "es": "Anotar un carcinoma de alto grado que infiltra la lámina propia, pero pasar por alto la falta de detrusor."
             },
             "score": 3,
             "minutes": 4,
             "feedback": {
-              "en": "Both grade and specimen adequacy inform the next specialist decision.",
-              "de": "Grad und Probenqualität beeinflussen die nächste fachärztliche Entscheidung.",
-              "es": "El grado y la calidad de la muestra orientan la siguiente decisión especializada."
+              "en": "The positive finding is captured correctly, but grade and specimen adequacy together inform the next specialist decision.",
+              "de": "Der positive Befund ist richtig erfasst, aber Grad und Probenqualität beeinflussen gemeinsam die nächste fachärztliche Entscheidung.",
+              "es": "El hallazgo positivo está bien recogido, pero el grado y la calidad de la muestra orientan juntos la siguiente decisión especializada."
             },
             "critical": false
           },
           {
             "id": "c",
             "text": {
-              "en": "Confirm that there is no muscle-invasive disease because muscle is absent.",
-              "de": "Fehlende Muskelinvasion bestätigen, weil kein Muskel vorhanden ist.",
-              "es": "Confirmar ausencia de enfermedad músculo-invasiva porque falta músculo."
+              "en": "Confirm non-muscle-invasive disease because no detrusor with tumour invasion is described.",
+              "de": "Ein nicht muskelinvasives Stadium bestätigen, da kein Detrusor mit Tumorinfiltration beschrieben ist.",
+              "es": "Confirmar enfermedad no músculo-invasiva porque no se describe detrusor infiltrado por tumor."
             },
             "score": 0,
             "minutes": 2,
             "feedback": {
-              "en": "Absence from the specimen is not evidence of absence of invasion.",
-              "de": "Fehlen in der Probe beweist kein Fehlen von Invasion.",
-              "es": "Ausencia en la muestra no demuestra ausencia de invasión."
+              "en": "Absence from the specimen is not evidence of absence of invasion: where no detrusor was examined, no invasion can be described.",
+              "de": "Fehlen in der Probe beweist kein Fehlen von Invasion: Wo kein Detrusor untersucht wurde, kann auch keine Infiltration beschrieben werden.",
+              "es": "Ausencia en la muestra no demuestra ausencia de invasión: si no se examinó detrusor, tampoco puede describirse infiltración."
             },
             "critical": true
           }
@@ -1048,41 +1048,41 @@
           {
             "id": "a",
             "text": {
-              "en": "Bring the full report and procedural record to the specialist team for staging review and further tissue assessment according to the pathway.",
-              "de": "Vollständigen Befund und Eingriffsbericht dem Fachteam zur Stadienprüfung und weiteren Gewebeabklärung nach Versorgungspfad vorlegen.",
-              "es": "Presentar informe completo y registro del procedimiento al equipo especialista para revisar el estadio y más evaluación de tejido según el circuito."
+              "en": "Review report and operation note with the senior and plan a repeat resection within six weeks.",
+              "de": "Befund und OP-Bericht oberärztlich besprechen und eine Nachresektion innerhalb von sechs Wochen planen.",
+              "es": "Revisar informe y hoja operatoria con el adjunto y programar una nueva resección en un plazo de seis semanas."
             },
             "score": 10,
             "minutes": 10,
             "feedback": {
-              "en": "The combination of high-grade disease, lamina propria involvement and specimen limitation requires senior planning.",
-              "de": "Hochgradiger Befund, Lamina-propria-Beteiligung und Probenlimitierung erfordern fachärztliche Planung.",
-              "es": "La combinación de alto grado, lámina propia afectada y limitación de muestra requiere planificación especializada."
+              "en": "High-grade disease, lamina propria involvement and absent detrusor require senior planning. A repeat resection after two to six weeks completes staging and prevents muscle invasion from being missed.",
+              "de": "Hochgradiger Befund, Lamina-propria-Beteiligung und fehlender Detrusor erfordern fachärztliche Planung. Die Nachresektion nach zwei bis sechs Wochen klärt das Stadium und verhindert, dass eine Muskelinvasion übersehen wird.",
+              "es": "El alto grado, la afectación de lámina propia y la falta de detrusor requieren planificación especializada. Una nueva resección a las dos a seis semanas completa el estadio y evita pasar por alto una invasión muscular."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Book routine cystoscopy only, without flagging the pathology limitation.",
-              "de": "Nur eine Routinezystoskopie planen, ohne auf die Histologiegrenze hinzuweisen.",
-              "es": "Programar solo cistoscopia habitual sin señalar la limitación histológica."
+              "en": "Book a check cystoscopy in three months without flagging the missing detrusor muscle in the clinic letter.",
+              "de": "Eine Kontrollzystoskopie nach drei Monaten planen, ohne im Arztbrief auf den fehlenden Detrusor hinzuweisen.",
+              "es": "Programar una cistoscopia de control a los tres meses sin señalar en el informe la falta de detrusor."
             },
             "score": 3,
             "minutes": 5,
             "feedback": {
-              "en": "The staging concern needs explicit review rather than an unqualified routine plan.",
-              "de": "Die Stadienfrage braucht ausdrückliche Prüfung statt eines unkritischen Routineplans.",
-              "es": "La duda de estadio exige revisión explícita, no un plan rutinario sin matices."
+              "en": "Follow-up is planned, but the staging concern needs explicit review rather than an unqualified routine plan.",
+              "de": "Eine Nachsorge ist geplant, aber die Stadienfrage braucht ausdrückliche Prüfung statt eines unkritischen Routineplans.",
+              "es": "Hay seguimiento previsto, pero la duda de estadio exige revisión explícita, no un plan rutinario sin matices."
             },
             "critical": false
           },
           {
             "id": "c",
             "text": {
-              "en": "Close the case as fully staged and reassure Peter that no further assessment is needed.",
-              "de": "Den Fall als vollständig stadienbestimmt schließen und weitere Abklärung verneinen.",
-              "es": "Cerrar el caso como completamente estadificado y decir que no necesita más estudio."
+              "en": "Close the case as fully staged and tell Peter that no further assessment is needed.",
+              "de": "Den Fall als vollständig stadiert abschließen und Peter sagen, dass keine weitere Abklärung nötig ist.",
+              "es": "Cerrar el caso como completamente estadificado y decir a Peter que no necesita más estudio."
             },
             "score": 0,
             "minutes": 2,
@@ -1108,48 +1108,48 @@
           {
             "id": "a",
             "text": {
-              "en": "Explain what is known and unassessed, provide a named results contact and confirm the review appointment and outstanding tasks.",
-              "de": "Bekanntes und Unbeurteiltes erklären, eine zuständige Kontaktperson nennen und Besprechungstermin sowie offene Aufgaben bestätigen.",
-              "es": "Explicar lo conocido y lo no evaluado, dar contacto responsable y confirmar cita de revisión y tareas pendientes."
+              "en": "Explain clearly what is known and what is not, give a named contact and confirm the next appointment.",
+              "de": "Belegtes und Unklares verständlich erklären, eine feste Ansprechperson nennen und den Folgetermin bestätigen.",
+              "es": "Explicar con claridad lo conocido y lo no evaluado, dar un contacto responsable y confirmar la cita."
             },
             "score": 10,
             "minutes": 6,
             "feedback": {
-              "en": "Accurate language and ownership prevent false reassurance and lost follow-up.",
-              "de": "Präzise Sprache und Zuständigkeit verhindern falsche Beruhigung und verlorene Nachsorge.",
-              "es": "El lenguaje preciso y la responsabilidad evitan falsa tranquilidad y pérdida de seguimiento."
+              "en": "Accurate language and ownership prevent false reassurance and lost follow-up. Peter must understand that missing muscle is not reassurance and know whom to contact if the appointment does not arrive.",
+              "de": "Präzise Sprache und Zuständigkeit verhindern falsche Beruhigung und verlorene Nachsorge. Peter muss verstehen, dass fehlender Muskel keine Entwarnung ist, und wissen, an wen er sich wendet, wenn der Termin ausbleibt.",
+              "es": "El lenguaje preciso y la responsabilidad evitan falsa tranquilidad y pérdida de seguimiento. Peter debe entender que la falta de músculo no es una buena noticia y saber a quién acudir si la cita no llega."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Send the report electronically and assume someone will discuss it.",
-              "de": "Den Befund elektronisch senden und annehmen, dass ihn jemand bespricht.",
-              "es": "Enviar el informe y asumir que alguien lo comentará."
+              "en": "Release the report on the patient portal and trust that the GP will discuss it with Peter.",
+              "de": "Den Befund im Patientenportal freigeben und darauf vertrauen, dass der Hausarzt ihn mit Peter bespricht.",
+              "es": "Publicar el informe en el portal del paciente y confiar en que su médico de cabecera lo comente con Peter."
             },
             "score": 3,
             "minutes": 3,
             "feedback": {
-              "en": "Sending information is not the same as confirming review and patient understanding.",
-              "de": "Versand ist nicht gleich bestätigte Kontrolle und Patientenverständnis.",
-              "es": "Enviar información no equivale a confirmar revisión y comprensión del paciente."
+              "en": "Sending information is not the same as confirming review and patient understanding; without an owner the result can be left unread.",
+              "de": "Versand ist nicht gleich bestätigte Kontrolle und Patientenverständnis; ohne Zuständigkeit kann der Befund liegen bleiben.",
+              "es": "Enviar información no equivale a confirmar revisión y comprensión del paciente; sin responsable, el informe puede quedar sin comentar."
             },
             "critical": false
           },
           {
             "id": "c",
             "text": {
-              "en": "Tell Peter the high-grade finding can be ignored if his bleeding has stopped.",
-              "de": "Peter sagen, den hochgradigen Befund könne man bei Blutungsende ignorieren.",
-              "es": "Decir a Peter que puede ignorar el alto grado si ya no sangra."
+              "en": "Tell Peter the high-grade finding no longer matters because the bleeding has stopped since the resection.",
+              "de": "Peter sagen, der hochgradige Befund sei nicht mehr bedeutsam, weil die Blutung seit der Resektion vollständig sistiert.",
+              "es": "Decir a Peter que el alto grado ya no importa porque no ha vuelto a sangrar desde la resección."
             },
             "score": 0,
             "minutes": 2,
             "feedback": {
-              "en": "Symptom improvement does not remove pathological risk.",
-              "de": "Bessere Beschwerden beseitigen das histologische Risiko nicht.",
-              "es": "La mejoría de síntomas no elimina el riesgo histológico."
+              "en": "Symptom improvement does not remove pathological risk; the bleeding stopping says nothing about stage or grade.",
+              "de": "Bessere Beschwerden beseitigen das histologische Risiko nicht; das Sistieren der Blutung sagt nichts über Stadium oder Grad.",
+              "es": "La mejoría de síntomas no elimina el riesgo histológico; que deje de sangrar no dice nada del estadio ni del grado."
             },
             "critical": true
           }
@@ -1238,32 +1238,32 @@
           {
             "id": "b",
             "text": {
-              "en": "Assume an infection but wait for all cultures before escalating.",
-              "de": "Eine Infektion annehmen, aber vor Eskalation sämtliche Kulturen abwarten.",
-              "es": "Suponer infección y esperar todos los cultivos antes de escalar."
+              "en": "Assume an infection, take urine and blood cultures and wait for the results before escalating.",
+              "de": "Eine Infektion annehmen, Urin- und Blutkulturen abnehmen und vor jeder Eskalation die Ergebnisse abwarten.",
+              "es": "Suponer infección, extraer urocultivo y hemocultivos y esperar los resultados antes de escalar."
             },
             "score": 3,
             "minutes": 5,
             "feedback": {
-              "en": "Cultures are useful, but unstable physiology cannot wait for results.",
-              "de": "Kulturen sind nützlich, aber instabile Vitalzeichen können nicht auf Ergebnisse warten.",
-              "es": "Los cultivos ayudan, pero la inestabilidad no puede esperar resultados."
+              "en": "Cultures are useful and belong before antibiotics, but unstable physiology cannot wait for results.",
+              "de": "Kulturen sind nützlich und gehören vor die Antibiose, aber instabile Vitalzeichen können nicht auf Ergebnisse warten.",
+              "es": "Los cultivos ayudan y deben extraerse antes del antibiótico, pero la inestabilidad no puede esperar resultados."
             },
             "critical": true
           },
           {
             "id": "c",
             "text": {
-              "en": "Attribute confusion and rigors to routine pre-procedure anxiety.",
-              "de": "Verwirrtheit und Schüttelfrost als normale Eingriffsangst einordnen.",
-              "es": "Atribuir confusión y escalofríos a ansiedad habitual antes del procedimiento."
+              "en": "Put rigors and confusion down to pre-procedure anxiety and give lorazepam 1 mg to settle her.",
+              "de": "Schüttelfrost und Verwirrtheit als Angst vor dem Eingriff deuten und Lorazepam 1 mg zur Beruhigung geben.",
+              "es": "Atribuir escalofríos y confusión a ansiedad previa al procedimiento y dar lorazepam 1 mg para calmarla."
             },
             "score": 0,
             "minutes": 2,
             "feedback": {
-              "en": "These warning signs must not be explained away in an obstructed patient.",
-              "de": "Diese Warnzeichen dürfen bei Obstruktion nicht weginterpretiert werden.",
-              "es": "Estas señales no deben minimizarse en una paciente con obstrucción."
+              "en": "These warning signs must not be explained away in an obstructed patient; a benzodiazepine also masks confusion as a sign of sepsis.",
+              "de": "Diese Warnzeichen dürfen bei Obstruktion nicht weginterpretiert werden; ein Benzodiazepin verschleiert zudem die Verwirrtheit als Sepsiszeichen.",
+              "es": "Estas señales no deben minimizarse en una paciente con obstrucción; una benzodiacepina además enmascara la confusión como signo de sepsis."
             },
             "critical": true
           }
@@ -1282,48 +1282,48 @@
           {
             "id": "a",
             "text": {
-              "en": "Pause definitive stone treatment, call senior urology and anaesthesia support, assess ABCs and start the local sepsis pathway with urgent drainage planning.",
-              "de": "Definitive Steintherapie pausieren, urologische und anästhesiologische Hilfe rufen, ABC beurteilen und lokalen Sepsispfad mit dringlicher Drainageplanung beginnen.",
-              "es": "Detener tratamiento definitivo, avisar a urología y anestesia sénior, valorar ABC e iniciar el circuito local de sepsis con planificación urgente de drenaje."
+              "en": "Postpone stone treatment, call the senior and anaesthesia, start sepsis treatment and plan urgent drainage.",
+              "de": "Steintherapie verschieben, Oberarzt und Anästhesie rufen, Sepsisbehandlung beginnen und dringliche Harnableitung planen.",
+              "es": "Aplazar el tratamiento del cálculo, llamar al adjunto y a anestesia, tratar la sepsis y planificar drenaje urgente."
             },
             "score": 10,
             "minutes": 4,
             "feedback": {
-              "en": "Stabilisation, infection treatment and relieving obstruction take priority; definitive stone treatment is deferred.",
-              "de": "Stabilisierung, Infektionsbehandlung und Entlastung der Obstruktion haben Vorrang; definitive Steintherapie wird verschoben.",
-              "es": "Estabilizar, tratar la infección y aliviar la obstrucción son prioritarios; se aplaza el tratamiento definitivo."
+              "en": "Stabilisation, infection treatment and relieving obstruction take priority; definitive stone treatment is deferred. This includes an ABC assessment, cultures and antibiotics along the local sepsis pathway and decompression by ureteric stent or nephrostomy.",
+              "de": "Stabilisierung, Infektionsbehandlung und Entlastung der Obstruktion haben Vorrang; definitive Steintherapie wird verschoben. Dazu gehören ABC-Beurteilung, Kulturen und Antibiose nach lokalem Sepsispfad sowie eine Entlastung per Harnleiterschiene oder Nephrostomie.",
+              "es": "Estabilizar, tratar la infección y aliviar la obstrucción son prioritarios; se aplaza el tratamiento definitivo. Incluye valorar el ABC, cultivos y antibiótico según el circuito local de sepsis y descompresión con catéter ureteral o nefrostomía."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Call for antibiotics but continue the planned definitive procedure.",
-              "de": "Antibiotika anfordern, die definitive Behandlung aber fortsetzen.",
-              "es": "Pedir antibióticos, pero continuar el procedimiento definitivo previsto."
+              "en": "Give intravenous piperacillin/tazobactam and still go ahead with the planned ureteroscopy and stone extraction.",
+              "de": "Piperacillin/Tazobactam i. v. geben und die geplante Ureterorenoskopie mit Steinbergung trotzdem durchführen.",
+              "es": "Administrar piperacilina/tazobactam i. v. y realizar igualmente la ureteroscopia prevista con extracción del cálculo."
             },
             "score": 3,
             "minutes": 6,
             "feedback": {
-              "en": "Antimicrobials alone do not resolve the need for source control, and the plan must change.",
-              "de": "Antibiotika allein lösen die Herdsanierungsfrage nicht; der Plan muss geändert werden.",
-              "es": "Los antimicrobianos solos no resuelven el control del foco y debe cambiarse el plan."
+              "en": "Antibiotics are right, but alone they do not resolve the need for source control; definitive stone treatment in an infected, obstructed system can worsen sepsis. The plan must change.",
+              "de": "Antibiotika sind richtig, lösen aber die Herdsanierungsfrage nicht; eine definitive Steinbehandlung im infizierten, gestauten System kann die Sepsis verschlimmern. Der Plan muss geändert werden.",
+              "es": "El antibiótico es correcto, pero no resuelve el control del foco; tratar el cálculo en un sistema infectado y obstruido puede empeorar la sepsis. Debe cambiarse el plan."
             },
             "critical": true
           },
           {
             "id": "c",
             "text": {
-              "en": "Proceed quickly with stone treatment to keep the operating list on time.",
-              "de": "Steintherapie zügig fortsetzen, damit der OP-Plan pünktlich bleibt.",
-              "es": "Continuar rápido el tratamiento para cumplir el horario del quirófano."
+              "en": "Proceed quickly with stone treatment to keep the list on time and remove the source of infection at once.",
+              "de": "Die Steintherapie zügig durchführen, damit der OP-Plan pünktlich bleibt und die Infektionsursache gleich entfernt ist.",
+              "es": "Realizar rápido el tratamiento del cálculo para cumplir el horario del quirófano y eliminar ya la causa de la infección."
             },
             "score": 0,
             "minutes": 2,
             "feedback": {
-              "en": "Schedule pressure must not override unstable physiology and infection risk.",
-              "de": "Zeitdruck darf instabile Vitalzeichen und Infektionsrisiko nicht übergehen.",
-              "es": "La presión del horario no debe imponerse a la inestabilidad ni al riesgo infeccioso."
+              "en": "Schedule pressure must not override unstable physiology and infection risk; in a septic, obstructed system drainage comes first and the stone is treated later.",
+              "de": "Zeitdruck darf instabile Vitalzeichen und Infektionsrisiko nicht übergehen; im septischen, gestauten System wird zuerst entlastet und der Stein später behandelt.",
+              "es": "La presión del horario no debe imponerse a la inestabilidad ni al riesgo infeccioso; en un sistema séptico y obstruido primero se drena y el cálculo se trata después."
             },
             "critical": true
           }
@@ -1342,41 +1342,41 @@
           {
             "id": "a",
             "text": {
-              "en": "Report deterioration, vital trends, side and obstruction, allergies, cultures and treatment status, pending drainage decision and the responsible senior.",
-              "de": "Verschlechterung, Vitalverlauf, Seite und Obstruktion, Allergien, Kultur- und Behandlungsstatus, offene Drainageentscheidung und zuständige Fachperson übergeben.",
-              "es": "Comunicar deterioro, tendencia de constantes, lado y obstrucción, alergias, cultivos y tratamiento, decisión de drenaje pendiente y especialista responsable."
+              "en": "Hand over vital-sign trends, side of obstruction, allergies, cultures, antibiotics and the pending drainage.",
+              "de": "Verlauf mit Vitalwerten, Stauungsseite, Allergien, Kulturen und Antibiose sowie die anstehende Drainage übergeben.",
+              "es": "Transmitir la evolución con constantes, lado obstruido, alergias, cultivos, antibiótico y el drenaje pendiente."
             },
             "score": 10,
             "minutes": 5,
             "feedback": {
-              "en": "Urgent handover must name the immediate risk, actions already taken and unresolved decisions.",
-              "de": "Dringliche Übergabe benennt Risiko, bereits erfolgte Maßnahmen und offene Entscheidungen.",
-              "es": "El traspaso urgente debe indicar riesgo, acciones realizadas y decisiones pendientes."
+              "en": "Urgent handover must name the immediate risk, actions already taken and unresolved decisions, including the senior responsible for the drainage decision.",
+              "de": "Dringliche Übergabe benennt Risiko, bereits erfolgte Maßnahmen und offene Entscheidungen. Dazu gehört auch, wer als zuständige Fachperson die Drainageentscheidung trifft.",
+              "es": "El traspaso urgente debe indicar riesgo, acciones realizadas y decisiones pendientes, incluido el especialista responsable de decidir el drenaje."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Send only the scan report and assume observations are visible elsewhere.",
-              "de": "Nur den Bildbefund senden und Vitalwerte anderswo voraussetzen.",
-              "es": "Enviar solo el informe de imagen y asumir que las constantes se ven en otro lugar."
+              "en": "Send the imaging report with stone position and degree of hydronephrosis and assume the vital signs are on the system.",
+              "de": "Den Bildbefund mit Steinlage und Stauungsgrad schicken und voraussetzen, dass die Vitalwerte im System stehen.",
+              "es": "Enviar el informe de imagen con la posición del cálculo y el grado de dilatación y suponer que las constantes están en el sistema."
             },
             "score": 3,
             "minutes": 3,
             "feedback": {
-              "en": "The receiving team needs current instability and treatment progress, not imaging alone.",
-              "de": "Das empfangende Team braucht aktuelle Instabilität und Behandlungsstand zusätzlich zur Bildgebung.",
-              "es": "El equipo receptor necesita la inestabilidad actual y el avance terapéutico, además de imagen."
+              "en": "Imaging matters, but the receiving team also needs current instability and treatment progress.",
+              "de": "Die Bildgebung ist wichtig, aber das empfangende Team braucht zusätzlich aktuelle Instabilität und Behandlungsstand.",
+              "es": "La imagen es importante, pero el equipo receptor necesita además la inestabilidad actual y el avance terapéutico."
             },
             "critical": false
           },
           {
             "id": "c",
             "text": {
-              "en": "Transfer her without warning that she is deteriorating.",
-              "de": "Ohne Hinweis auf ihre Verschlechterung verlegen.",
-              "es": "Trasladarla sin advertir que empeora."
+              "en": "Transfer Nadia promptly to the high-dependency unit without warning the team there that she is deteriorating.",
+              "de": "Nadia zügig auf die Intermediate-Care-Station verlegen, ohne das Team dort vorab über ihre Verschlechterung zu informieren.",
+              "es": "Trasladar a Nadia rápido a cuidados intermedios sin avisar antes al equipo de que está empeorando."
             },
             "score": 0,
             "minutes": 2,
@@ -1457,9 +1457,9 @@
           {
             "id": "a",
             "text": {
-              "en": "Immediate BCG instillation in the recovery room.",
-              "de": "Sofortige BCG-Instillation im Aufwachraum.",
-              "es": "Instilación inmediata de BCG en la sala de recuperación."
+              "en": "Immediate BCG instillation in the recovery room as the earliest possible prophylaxis.",
+              "de": "Sofortige BCG-Instillation im Aufwachraum als frühestmögliche Rezidivprophylaxe.",
+              "es": "Instilación inmediata de BCG en la sala de recuperación como profilaxis lo más precoz posible."
             },
             "score": 0,
             "minutes": 5,
@@ -1473,25 +1473,25 @@
           {
             "id": "b",
             "text": {
-              "en": "A single early instillation of chemotherapy (e.g. mitomycin C) within 24 hours.",
-              "de": "Einmalige Frühinstillation eines Chemotherapeutikums (z. B. Mitomycin C) innerhalb von 24 Stunden.",
-              "es": "Una única instilación precoz de quimioterapia (p. ej., mitomicina C) en las primeras 24 horas."
+              "en": "A single early instillation of mitomycin C within 24 hours.",
+              "de": "Einmalige Frühinstillation von Mitomycin C innerhalb von 24 Stunden.",
+              "es": "Una única instilación precoz de mitomicina C en las primeras 24 horas."
             },
             "score": 10,
             "minutes": 6,
             "feedback": {
-              "en": "With presumed low risk, or presumed intermediate risk with a low recurrence rate (here a primary tumour, EORTC recurrence score below 5), and no contraindication, the single instillation lowers the recurrence risk. Do not give it after perforation, extensive resection or bleeding that needs irrigation.",
-              "de": "Bei vermutlich niedrigem Risiko und bei vermutlich intermediärem Risiko mit niedriger Rezidivrate (hier Primärtumor, EORTC-Rezidiv-Score unter 5) senkt die Frühinstillation ohne Kontraindikation das Rezidivrisiko. Nicht geben bei Perforation, ausgedehnter Resektion oder Blutung mit Spülpflicht.",
-              "es": "Con riesgo presumiblemente bajo, o intermedio con baja tasa de recidiva (aquí un tumor primario, puntuación de recidiva EORTC inferior a 5), y sin contraindicación, la instilación precoz reduce el riesgo de recidiva. No se administra tras perforación, resección extensa o sangrado que requiera lavado."
+              "en": "With presumed low risk, or presumed intermediate risk with a low recurrence rate (here a primary tumour, EORTC recurrence score below 5), and no contraindication, the single instillation lowers the recurrence risk. Do not give it after perforation, extensive resection or bleeding that needs irrigation. Besides mitomycin C, epirubicin or gemcitabine are suitable, for example.",
+              "de": "Bei vermutlich niedrigem Risiko und bei vermutlich intermediärem Risiko mit niedriger Rezidivrate (hier Primärtumor, EORTC-Rezidiv-Score unter 5) senkt die Frühinstillation ohne Kontraindikation das Rezidivrisiko. Nicht geben bei Perforation, ausgedehnter Resektion oder Blutung mit Spülpflicht. Neben Mitomycin C eignen sich z. B. Epirubicin oder Gemcitabin.",
+              "es": "Con riesgo presumiblemente bajo, o intermedio con baja tasa de recidiva (aquí un tumor primario, puntuación de recidiva EORTC inferior a 5), y sin contraindicación, la instilación precoz reduce el riesgo de recidiva. No se administra tras perforación, resección extensa o sangrado que requiera lavado. Además de la mitomicina C, sirven por ejemplo la epirrubicina o la gemcitabina."
             },
             "critical": false
           },
           {
             "id": "c",
             "text": {
-              "en": "Postpone the instillation until the histology is available.",
-              "de": "Die Instillation zurückstellen, bis die Histologie vorliegt.",
-              "es": "Aplazar la instilación hasta tener la histología."
+              "en": "Postpone the instillation until the histology has defined the risk group.",
+              "de": "Die Instillation zurückstellen, bis die Histologie die Risikogruppe sicher festlegt.",
+              "es": "Aplazar la instilación hasta que la histología defina el grupo de riesgo."
             },
             "score": 3,
             "minutes": 3,
@@ -1517,9 +1517,9 @@
           {
             "id": "a",
             "text": {
-              "en": "Intermediate risk: intravesical chemotherapy for up to 1 year or full-dose BCG for 1 year.",
-              "de": "Intermediäres Risiko: intravesikale Chemotherapie für bis zu 1 Jahr oder BCG in voller Dosis für 1 Jahr.",
-              "es": "Riesgo intermedio: quimioterapia intravesical hasta 1 año o BCG a dosis completa durante 1 año."
+              "en": "Intravesical chemotherapy for up to 1 year or full-dose BCG for 1 year.",
+              "de": "Intravesikale Chemotherapie bis zu 1 Jahr oder BCG in voller Dosis über 1 Jahr.",
+              "es": "Quimioterapia intravesical hasta 1 año o BCG a dosis completa durante 1 año."
             },
             "score": 10,
             "minutes": 8,
@@ -1533,9 +1533,9 @@
           {
             "id": "b",
             "text": {
-              "en": "No further therapy; next cystoscopy in 12 months.",
-              "de": "Keine weitere Therapie; nächste Zystoskopie in 12 Monaten.",
-              "es": "Ningún tratamiento adicional; próxima cistoscopia en 12 meses."
+              "en": "No adjuvant instillation for pTa low grade; first check cystoscopy at 12 months.",
+              "de": "Keine adjuvante Instillation bei pTa Low Grade; erste Kontrollzystoskopie nach 12 Monaten.",
+              "es": "Sin instilación adyuvante en pTa de bajo grado; primera cistoscopia de control a los 12 meses."
             },
             "score": 0,
             "minutes": 3,
@@ -1549,9 +1549,9 @@
           {
             "id": "c",
             "text": {
-              "en": "BCG with maintenance for 3 years.",
-              "de": "BCG mit Erhaltung über 3 Jahre.",
-              "es": "BCG con mantenimiento durante 3 años."
+              "en": "Full-dose BCG with induction and maintenance for a total of 3 years.",
+              "de": "BCG in voller Dosis mit Induktion und Erhaltung über insgesamt 3 Jahre.",
+              "es": "BCG a dosis completa con inducción y mantenimiento durante 3 años en total."
             },
             "score": 3,
             "minutes": 6,
@@ -1577,25 +1577,25 @@
           {
             "id": "a",
             "text": {
-              "en": "Continue mitomycin C for another year.",
-              "de": "Mitomycin C für ein weiteres Jahr fortsetzen.",
-              "es": "Continuar con mitomicina C un año más."
+              "en": "Continue mitomycin C and extend maintenance to a total of 2 years.",
+              "de": "Mitomycin C fortsetzen und die Erhaltung auf insgesamt 2 Jahre verlängern.",
+              "es": "Continuar con mitomicina C y prolongar el mantenimiento hasta 2 años en total."
             },
             "score": 3,
             "minutes": 4,
             "feedback": {
-              "en": "This repeats a strategy that is already failing; the guideline step is a switch to BCG.",
-              "de": "Damit wird eine bereits versagende Strategie wiederholt; leitliniengerecht ist der Wechsel auf BCG.",
-              "es": "Esto repite una estrategia que ya está fracasando; lo indicado por la guía es cambiar a BCG."
+              "en": "This merely prolongs a strategy that is already failing; the guideline step is a switch to BCG.",
+              "de": "Damit wird eine bereits versagende Strategie nur verlängert; leitliniengerecht ist der Wechsel auf BCG.",
+              "es": "Esto solo prolonga una estrategia que ya está fracasando; lo indicado por la guía es cambiar a BCG."
             },
             "critical": false
           },
           {
             "id": "b",
             "text": {
-              "en": "Radical cystectomy because of the early recurrence.",
-              "de": "Radikale Zystektomie wegen des frühen Rezidivs.",
-              "es": "Cistectomía radical por la recidiva precoz."
+              "en": "Radical cystectomy, as the early recurrence on instillations shows treatment failure.",
+              "de": "Radikale Zystektomie, da das frühe Rezidiv unter Instillation ein Therapieversagen zeigt.",
+              "es": "Cistectomía radical, ya que la recidiva precoz bajo instilaciones indica fracaso terapéutico."
             },
             "score": 0,
             "minutes": 5,
@@ -1685,9 +1685,9 @@
           {
             "id": "a",
             "text": {
-              "en": "CT urography to exclude an upper tract tumour.",
-              "de": "CT-Urographie zum Ausschluss eines Tumors im oberen Harntrakt.",
-              "es": "Urografía por TC para descartar un tumor del tracto urinario superior."
+              "en": "CT urography to rule out a urothelial carcinoma of the upper urinary tract.",
+              "de": "CT-Urographie zum Ausschluss eines Urothelkarzinoms des oberen Harntrakts.",
+              "es": "Urografía por TC para descartar un carcinoma urotelial del tracto urinario superior."
             },
             "score": 10,
             "minutes": 6,
@@ -1745,9 +1745,9 @@
           {
             "id": "a",
             "text": {
-              "en": "Start empirical BCG induction without histological confirmation.",
-              "de": "Ohne histologische Sicherung empirisch eine BCG-Induktion beginnen.",
-              "es": "Iniciar una inducción empírica con BCG sin confirmación histológica."
+              "en": "Start empirical BCG induction with six weekly instillations without histological confirmation.",
+              "de": "Ohne histologische Sicherung empirisch eine BCG-Induktion mit sechs wöchentlichen Instillationen beginnen.",
+              "es": "Iniciar una inducción empírica con BCG de seis instilaciones semanales sin confirmación histológica."
             },
             "score": 0,
             "minutes": 4,
@@ -1761,25 +1761,25 @@
           {
             "id": "b",
             "text": {
-              "en": "Cystoscopy under anaesthesia with photodynamic diagnosis (PDD): biopsy of all fluorescent areas, mapping biopsies of normal-looking mucosa and biopsy of the prostatic urethra.",
-              "de": "Zystoskopie in Narkose mit photodynamischer Diagnostik (PDD): Biopsien aller fluoreszierenden Areale, Mapping-Biopsien der unauffälligen Schleimhaut und Biopsie der prostatischen Harnröhre.",
-              "es": "Cistoscopia bajo anestesia con diagnóstico fotodinámico (PDD): biopsia de todas las áreas fluorescentes, biopsias de mapeo de la mucosa de aspecto normal y biopsia de la uretra prostática."
+              "en": "PDD-guided cystoscopy under anaesthesia with targeted and mapping biopsies plus prostatic urethral biopsy.",
+              "de": "PDD-gestützte Zystoskopie in Narkose mit gezielten und Mapping-Biopsien sowie Biopsie der prostatischen Harnröhre.",
+              "es": "Cistoscopia con PDD bajo anestesia con biopsias dirigidas y de mapeo, además de biopsia de la uretra prostática."
             },
             "score": 10,
             "minutes": 15,
             "feedback": {
-              "en": "CIS is often invisible in white light, and PDD increases detection. In men the prostatic urethra must be included, because CIS there changes the risk group and treatment.",
-              "de": "CIS ist im Weißlicht oft unsichtbar, die PDD erhöht die Detektionsrate. Beim Mann gehört die prostatische Harnröhre dazu, da ein CIS dort Risikogruppe und Therapie verändert.",
-              "es": "El CIS suele ser invisible con luz blanca y el PDD aumenta la detección. En el varón debe incluirse la uretra prostática, porque un CIS allí cambia el grupo de riesgo y el tratamiento."
+              "en": "CIS is often invisible in white light, and photodynamic diagnosis (PDD) increases detection. All fluorescent areas are biopsied, plus normal-looking mucosa (mapping). In men the prostatic urethra must be included, because CIS there changes the risk group and treatment.",
+              "de": "CIS ist im Weißlicht oft unsichtbar; die photodynamische Diagnostik (PDD) erhöht die Detektionsrate. Biopsiert werden alle fluoreszierenden Areale und zusätzlich die unauffällige Schleimhaut (Mapping). Beim Mann gehört die prostatische Harnröhre dazu, da ein CIS dort Risikogruppe und Therapie verändert.",
+              "es": "El CIS suele ser invisible con luz blanca y el diagnóstico fotodinámico (PDD) aumenta la detección. Se biopsian todas las áreas fluorescentes y además la mucosa de aspecto normal (mapeo). En el varón debe incluirse la uretra prostática, porque un CIS allí cambia el grupo de riesgo y el tratamiento."
             },
             "critical": false
           },
           {
             "id": "c",
             "text": {
-              "en": "White-light mapping biopsies of the bladder, without prostatic urethral biopsy.",
-              "de": "Mapping-Biopsien der Blase im Weißlicht, ohne Biopsie der prostatischen Harnröhre.",
-              "es": "Biopsias de mapeo vesical con luz blanca, sin biopsia de la uretra prostática."
+              "en": "White-light mapping biopsies of the bladder (trigone, dome, posterior and lateral walls), without prostatic urethral biopsy.",
+              "de": "Mapping-Biopsien der Blase im Weißlicht (Trigonum, Dach, Hinter- und Seitenwände), ohne Biopsie der prostatischen Harnröhre.",
+              "es": "Biopsias de mapeo vesical con luz blanca (trígono, cúpula, paredes posterior y laterales), sin biopsia de la uretra prostática."
             },
             "score": 3,
             "minutes": 12,
@@ -1805,9 +1805,9 @@
           {
             "id": "a",
             "text": {
-              "en": "Intravesical mitomycin C chemotherapy for 1 year.",
-              "de": "Intravesikale Chemotherapie mit Mitomycin C über 1 Jahr.",
-              "es": "Quimioterapia intravesical con mitomicina C durante 1 año."
+              "en": "Intravesical mitomycin C: 6 weekly induction instillations, then monthly up to 1 year.",
+              "de": "Intravesikale Mitomycin-C-Instillationen: 6 Wochen Induktion, danach monatlich bis 1 Jahr.",
+              "es": "Instilaciones intravesicales de mitomicina C: inducción de 6 semanas y después mensuales hasta 1 año."
             },
             "score": 3,
             "minutes": 6,
@@ -1821,9 +1821,9 @@
           {
             "id": "b",
             "text": {
-              "en": "No adjuvant therapy; check cystoscopy in 3 months.",
-              "de": "Keine adjuvante Therapie; Kontrollzystoskopie in 3 Monaten.",
-              "es": "Sin tratamiento adyuvante; cistoscopia de control en 3 meses."
+              "en": "No adjuvant therapy; check cystoscopy with cytology in 3 months.",
+              "de": "Keine adjuvante Therapie; Kontrollzystoskopie mit Zytologie in 3 Monaten.",
+              "es": "Sin tratamiento adyuvante; cistoscopia y citología de control en 3 meses."
             },
             "score": 0,
             "minutes": 3,
@@ -1837,16 +1837,16 @@
           {
             "id": "c",
             "text": {
-              "en": "Full-dose BCG with induction and 1–3 years of maintenance; follow-up with cystoscopy and cytology.",
-              "de": "BCG in voller Dosis mit Induktion und Erhaltung über 1–3 Jahre; Kontrollen mit Zystoskopie und Zytologie.",
-              "es": "BCG a dosis completa con inducción y mantenimiento de 1–3 años; seguimiento con cistoscopia y citología."
+              "en": "Full-dose BCG with induction followed by maintenance therapy for 1–3 years.",
+              "de": "BCG in voller Dosis mit Induktion und anschließender Erhaltung über 1–3 Jahre.",
+              "es": "BCG a dosis completa con inducción seguida de mantenimiento durante 1–3 años."
             },
             "score": 10,
             "minutes": 8,
             "feedback": {
-              "en": "Primary CIS belongs to the high-risk group, and BCG with maintenance is the standard. If it persists or recurs, the type of BCG failure determines the next step.",
-              "de": "Primäres CIS gehört zur Hochrisikogruppe; BCG mit Erhaltung ist der Standard. Bei Persistenz oder Rezidiv entscheidet die Klassifikation des BCG-Versagens über das weitere Vorgehen.",
-              "es": "El CIS primario pertenece al grupo de alto riesgo y la BCG con mantenimiento es el estándar. Si persiste o recidiva, el tipo de fracaso de la BCG decide el siguiente paso."
+              "en": "Primary CIS belongs to the high-risk group, and BCG with maintenance is the standard. If it persists or recurs, the type of BCG failure determines the next step. Follow-up uses cystoscopy and cytology.",
+              "de": "Primäres CIS gehört zur Hochrisikogruppe; BCG mit Erhaltung ist der Standard. Bei Persistenz oder Rezidiv entscheidet die Klassifikation des BCG-Versagens über das weitere Vorgehen. Kontrolliert wird mit Zystoskopie und Zytologie.",
+              "es": "El CIS primario pertenece al grupo de alto riesgo y la BCG con mantenimiento es el estándar. Si persiste o recidiva, el tipo de fracaso de la BCG decide el siguiente paso. El seguimiento se hace con cistoscopia y citología."
             },
             "critical": false
           }

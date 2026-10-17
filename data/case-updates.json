@@ -3269,9 +3269,9 @@
             "es": "Terbutalina 5 mg por vía oral ahora; si no hay detumescencia al llegar a las 4 horas, aspiración con gasometría cavernosa y fenilefrina intracavernosa diluida con monitorización de presión arterial y frecuencia cardiaca"
           },
           "to": {
-            "de": "Terbutalin 5 mg p. o. kann als frühe Off-label-Option erwogen werden; es ersetzt weder die sofortige urologische Beurteilung noch die definitive Behandlung bei Ischämie.",
-            "en": "Oral terbutaline 5 mg may be considered as an early off-label option; it replaces neither prompt urological assessment nor definitive treatment for ischaemia.",
-            "es": "Puede valorarse terbutalina oral 5 mg como opción precoz fuera de ficha técnica; no sustituye la evaluación urológica inmediata ni el tratamiento definitivo de la isquemia."
+            "de": "Terbutalin 5 mg p. o. als frühe Off-label-Option; ersetzt weder rasche urologische Abklärung noch Ischämietherapie",
+            "en": "Oral terbutaline 5 mg as an early off-label option; it replaces neither prompt urological assessment nor ischaemia treatment",
+            "es": "Terbutalina oral 5 mg, opción precoz fuera de indicación; no sustituye la valoración urológica ni el tratamiento de la isquemia"
           }
         },
         {
@@ -3417,9 +3417,9 @@
             "es": "RM multiparamétrica de próstata, con biopsia según el resultado de la RM"
           },
           "to": {
-            "de": "MRT der Prostata und nach Beratung Biopsie im Risikopfad planen; bei bestätigtem PSA ≥3 ng/ml bleibt die Biopsieempfehlung auch bei unauffälliger MRT relevant.",
-            "en": "Obtain prostate MRI and plan biopsy after counselling under the high-risk pathway; confirmed PSA ≥3 ng/ml keeps the biopsy recommendation relevant even if MRI is negative.",
-            "es": "Realizar RM prostática y planificar biopsia tras asesoramiento en el itinerario de alto riesgo; un PSA confirmado ≥3 ng/ml mantiene la recomendación de biopsia incluso con RM negativa."
+            "de": "MRT der Prostata; bei bestätigtem PSA ≥3 ng/ml Biopsie auch bei unauffälliger MRT",
+            "en": "Prostate MRI, then biopsy at confirmed PSA ≥3 ng/ml even if the MRI is negative",
+            "es": "RM de próstata y, con PSA confirmado ≥3 ng/ml, biopsia aunque la RM sea negativa"
           }
         },
         {
@@ -3525,9 +3525,9 @@
             "es": "Biopsia percutánea con aguja gruesa; si se confirma un tumor oncocítico, ofrecer vigilancia activa"
           },
           "to": {
-            "de": "Perkutane Stanzbiopsie zur Risikoeinordnung; Histologie, Begleiterkrankungen und Patientenwunsch gemeinsam für Überwachung oder Behandlung nutzen.",
-            "en": "Obtain percutaneous core biopsy for risk assessment; combine histology, comorbidities and preferences to choose surveillance or treatment.",
-            "es": "Obtener biopsia percutánea para valorar el riesgo y combinar histología, comorbilidades y preferencias para elegir vigilancia o tratamiento."
+            "de": "Perkutane Stanzbiopsie; Histologie, Begleiterkrankungen und Patientenwunsch gemeinsam für Überwachung oder Behandlung nutzen",
+            "en": "Percutaneous core biopsy; combine histology, comorbidities and preferences to choose surveillance or treatment",
+            "es": "Biopsia percutánea y combinar histología, comorbilidades y preferencias para elegir vigilancia o tratamiento"
           }
         },
         {
