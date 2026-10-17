@@ -1,0 +1,47 @@
+name: Build Pluvicto repair outputs
+on:
+  push:
+    branches: [fix/pluvicto-toxicity-delay-20261017]
+    paths:
+      - .github/workflows/build-pluvicto-repair.yml
+      - data/protocols.json
+      - tests/test_protocol_content.py
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Exclude the temporary build helper from the release package
+        run: rm .github/workflows/build-pluvicto-repair.yml
+      - name: Run the existing project checks and regenerate outputs
+        run: |
+          python scripts/manage.py validate
+          python -m unittest discover -s tests -v
+          node tests/tests-engine.cjs
+          node tests/tests-cartoon.cjs
+          python scripts/manage.py build
+          python scripts/manage.py package --output dist/night-shift-academy.zip
+      - name: Restore the generated manifest and verify the tested output identities
+        run: |
+          python - <<'PY'
+          import zipfile
+          from pathlib import Path
+          with zipfile.ZipFile("dist/night-shift-academy.zip") as archive:
+              Path("SHA256.json").write_bytes(archive.read("night-shift-academy/SHA256.json"))
+          PY
+          test "$(git hash-object assets/catalog.js)" = 85d09422f8bb0ca3352d86339332ce032c30eb0d
+          test "$(git hash-object standalone.html)" = bc3d7be363dae4ae312d0271ce38d3ea2443b5aa
+          test "$(git hash-object SHA256.json)" = b4a9a2ff4fd650b5dbfff0a96fccba2a3dd58ec9
+      - name: Commit only the generated outputs to the repair branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- assets/catalog.js standalone.html SHA256.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Regenerate tested Pluvicto repair outputs"
+          git push origin HEAD:refs/heads/fix/pluvicto-toxicity-delay-20261017
