@@ -30,6 +30,19 @@ class QuestionBankTests(unittest.TestCase):
         self.assertEqual(sum('source' in c for c in self.cases), 267)
         self.assertEqual(sum(not c.get('source') and len(c['steps']) > 1 for c in self.cases), 50)
 
+    def test_male_citrate_threshold_matches_eau_not_a_generic_2_5_cutoff(self):
+        case = next(c for c in self.cases if c['id'] == 'bank-uro-lit-00003')
+        answer = next(o for o in case['steps'][0]['options'] if o['id'] == 'd')
+        for language, threshold in [('de', '1,7 mmol/d'), ('en', '1.7 mmol/day'), ('es', '1,7 mmol/día')]:
+            with self.subTest(language=language):
+                self.assertIn(threshold, answer['feedback'][language])
+                self.assertNotRegex(answer['feedback'][language], r'2[,.]5')
+        self.assertEqual(case['steps'][0]['best'], 'd')
+        sources = {r['id']: r for r in self.references}
+        self.assertIn('eau-urolithiasis-metabolic-2026', sources)
+        source = sources['eau-urolithiasis-metabolic-2026']
+        self.assertEqual(source['url'], 'https://uroweb.org/guidelines/urolithiasis/chapter/metabolic-evaluation-and-recurrence-prevention')
+
     def test_anatomy_requires_translated_clinical_correlation(self):
         anatomy = [c for c in self.cases if c.get('subject') == 'anatomy']
         self.assertEqual(Counter(c['clinicalContext']['kind'] for c in anatomy),

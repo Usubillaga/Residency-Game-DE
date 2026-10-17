@@ -3173,33 +3173,34 @@
     {
       "case": "bank-uro-lit-00003",
       "kind": "medical",
-      "date": "2026-10-10",
+      "date": "2026-10-17",
       "reason": {
-        "de": "Citrat 2,2 mmol/d liegt unter dem EAU-Grenzwert von 2,5 mmol/d; die Erklärung nennt jetzt die Kontrollmessung statt „nicht belegt“.",
-        "en": "Citrate of 2.2 mmol/d is below the EAU threshold of 2.5 mmol/d; the explanation now asks for a repeat collection instead of calling it “not demonstrated”.",
-        "es": "El citrato de 2,2 mmol/d está por debajo del umbral EAU de 2,5 mmol/d; la explicación pide ahora repetir la recogida en lugar de decir «no demostrada»."
+        "de": "Geschlechtsspezifischen EAU-Grenzwert berichtigt: bei Männern Citrat <1,7 mmol/d, nicht pauschal <2,5 mmol/d. 2,2 mmol/d erfüllt das Kriterium nicht; zwei 24-Stunden-Sammlungen zur Stoffwechselbeurteilung.",
+        "en": "Correct the sex-specific EAU threshold: in men citrate <1.7 mmol/day, not a generic <2.5 mmol/day. A result of 2.2 mmol/day does not meet it; use two 24-hour collections for metabolic assessment.",
+        "es": "Corregido el umbral EAU según sexo: en varones citrato <1,7 mmol/día, no un límite general <2,5 mmol/día. 2,2 mmol/día no cumple el criterio; dos recogidas de 24 horas para el estudio metabólico."
       },
       "references": [
-        "bank-guide-urolithiasis"
+        "bank-guide-urolithiasis",
+        "eau-urolithiasis-metabolic-2026"
       ],
       "changes": [
         {
           "path": "steps.0.options.d.feedback",
           "lang": "de",
           "find": "Eine Hyperkalziurie oder Hypozitraturie ist hier nicht belegt. Daher zunächst die allgemeinen Maßnahmen verbessern und den 24-Stunden-Urin kontrollieren; weder Thiazid noch Kaliumzitrat automatisch ansetzen.",
-          "replace": "Eine Hyperkalziurie liegt nicht vor, und das Citrat liegt mit 2,2 mmol/d in einer einzelnen Sammlung nur knapp unter 2,5 mmol/d. Daher zunächst Trinkmenge und Ernährung verbessern und den 24-Stunden-Urin wiederholen; Kaliumcitrat erst bei bestätigter Hypozitraturie, kein Thiazid."
+          "replace": "Eine Hyperkalziurie liegt bei 4,1 mmol/d nicht vor. Für Männer nennt die EAU eine Hypozitraturie unter 1,7 mmol/d; 2,2 mmol/d erfüllt diesen Grenzwert nicht. Trinkmenge und Ernährung optimieren und die Stoffwechselbeurteilung mit zwei aufeinanderfolgenden 24-Stunden-Sammlungen vervollständigen. Ein Thiazid oder Kaliumcitrat ist aus diesen Einzelwerten nicht automatisch abzuleiten."
         },
         {
           "path": "steps.0.options.d.feedback",
           "lang": "en",
           "find": "Neither hypercalciuria nor hypocitraturia is demonstrated. Improve general preventive measures and reassess 24-hour urine; prescribe neither a thiazide nor potassium citrate automatically.",
-          "replace": "There is no hypercalciuria, and citrate is only just below 2.5 mmol/d in a single collection. Improve fluid intake and diet first and repeat the 24-hour urine; potassium citrate only if hypocitraturia is confirmed, and no thiazide."
+          "replace": "Calcium 4.1 mmol/day does not show hypercalciuria. The EAU defines hypocitraturia in men as below 1.7 mmol/day; 2.2 mmol/day does not meet that threshold. Optimise fluid intake and diet and complete metabolic assessment with two consecutive 24-hour collections. These single values do not automatically justify a thiazide or potassium citrate."
         },
         {
           "path": "steps.0.options.d.feedback",
           "lang": "es",
           "find": "No se demuestra ni hipercalciuria ni hipocitraturia. Mejorar las medidas preventivas generales y reevaluar la orina de 24 horas; No prescriba automáticamente tiazidas ni citrato de potasio.",
-          "replace": "No hay hipercalciuria y el citrato está apenas por debajo de 2,5 mmol/d en una sola recogida. Primero mejorar la ingesta de líquidos y la dieta y repetir la orina de 24 horas; citrato de potasio solo si se confirma la hipocitraturia, y sin tiazida."
+          "replace": "Un calcio de 4,1 mmol/día no indica hipercalciuria. La EAU define hipocitraturia en varones por debajo de 1,7 mmol/día; 2,2 mmol/día no cumple ese umbral. Optimizar líquidos y dieta y completar el estudio con dos recogidas consecutivas de orina de 24 horas. Estos valores aislados no justifican automáticamente tiazida ni citrato potásico."
         }
       ]
     },
