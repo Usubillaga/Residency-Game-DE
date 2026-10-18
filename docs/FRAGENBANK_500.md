@@ -1,6 +1,6 @@
-# Fragenbank: 500 bewertete Fragen
+# Fragenbank: 631 bewertete Fragen
 
-Stand des Quellenabgleichs: **12. Oktober 2026**. Die aktive Bank enthält **500 Entscheidungen in 402 Fällen** und **1.900 Antwortoptionen**, vollständig in Deutsch, Englisch und Spanisch. Eine Entscheidung zählt als eine Frage. Wiederholungen im Chefquiz, Atlas-Tipps und Übersetzungen zählen nicht zusätzlich.
+Stand: **18. Oktober 2026**. Die aktive Bank enthält **631 Entscheidungen in 533 Fällen** und **2.539 Antwortoptionen**, vollständig in Deutsch, Englisch und Spanisch. Eine Entscheidung zählt als eine Frage. Wiederholungen im Chefquiz, Atlas-Tipps und Übersetzungen zählen nicht zusätzlich. (Der Dateiname stammt aus der Zeit der festen Bankgröße von 500 Fragen.)
 
 ## Zusammensetzung
 
@@ -9,14 +9,15 @@ Stand des Quellenabgleichs: **12. Oktober 2026**. Die aktive Bank enthält **500
 | Ursprüngliche Schichtgeschichten | 30 | 90 |
 | Onkologische Geschichten | 20 | 58 |
 | Importierte Hauptbank | 267 | 267 |
-| Verbliebene klinische Zusatzfragen | 5 | 5 |
-| Neue TNM-/Trauma-Fälle | 30 | 30 |
-| Neue urologische Anatomiefragen | 50 | 50 |
-| **Aktive Bank** | **402** | **500** |
+| Klinische Zusatzfragen (Protokolle 23, Nebenwirkungen 20, Inkontinenz 15, Priapismus 3, Strahlentherapie 20, Leitlinienthemen 25) | 106 | 106 |
+| Neue Fragen: Notfälle 10, Onkologie 10, Medikamente 10 | 30 | 30 |
+| TNM-/Trauma-Fälle | 30 | 30 |
+| Urologische Anatomiefragen | 50 | 50 |
+| **Aktive Bank** | **533** | **631** |
 
-Alle 30 ursprünglichen Geschichten, 20 Onkologie-Geschichten, 267 importierten Fragen und 50 klinischen Anatomiefragen bleiben unverändert. Die Erweiterung ersetzt 30 der zuvor 35 Zusatzfragen durch 21 Staging- und 9 Trauma-Fälle. Die fünf verbleibenden Zusatzfragen betreffen PSA-Kontrollintervall, BRCA2, Sestamibi und zwei Priapismus-Situationen. Jeder der sechs Dienste bleibt mit mindestens zehn Fällen spielbar.
+**Keine Frage ist archiviert.** Eine frühere Version hatte 101 Zusatzfragen ins Archiv verschoben, nur um die Bank bei genau 500 Fragen zu halten. Diese Fragen zu Protokollen, Nebenwirkungen, Inkontinenz, Priapismus, Strahlentherapie und Leitlinienthemen sind wieder spielbar, mit ihren Oberarzt-Hinweisen, Zeichnungen und den Links *Fragen üben* auf der Protokollseite (36 Protokolle, 27 Bestrahlungsschemata). Der Archivmechanismus bleibt erhalten: Eine nach `data/archive/supplemental-questions.json` verschobene Frage bleibt für abgeschlossene Logbucheinträge, Lesezeichen und Markierungen prüfbar, gelangt aber nicht mehr in Bibliothek, Dienste oder Revanche.
 
-**101 Zusatzfragen liegen im Archiv**, `data/archive/supplemental-questions.json`: die bisherigen 71 bleiben unverändert, 30 weitere bewahren korrigierte Schnappschüsse. Das ist eine redaktionelle Auswahl für die feste Bankgröße. Abgeschlossene Antworten, Lesezeichen und Frage-Markierungen bleiben prüfbar; die Python-Auswertung kennt historische Fälle. Archivfragen gelangen nicht in neue Bibliotheksauswahlen, Dienste oder Revanche. Ein alter unvollendeter Dienst mit einer Archivfrage kann nicht fortgesetzt werden; abgeschlossene Einträge bleiben erhalten.
+**Die richtige Antwort verrät sich nicht mehr durch ihre Länge.** In jeder für das Spiel geschriebenen Frage ist die richtige Option höchstens 15 % länger als die längste falsche und mindestens 70 % so lang wie die mittlere; sie ist in etwa jeder fünften Frage die längste (72 von 364, DE). Ein Test prüft das bei jedem Build; Einzelheiten in [VALIDATION.md](VALIDATION.md).
 
 ## TNM und Trauma
 
@@ -84,7 +85,7 @@ Cartoon-Artwork, Figuren, Dialogbibliothek, Konfetti, Spritzer, Kaffeepausen, St
 
 ## Technische Prüfung
 
-Der Vertrag `data/question-contract.json` prüft genau 500 aktive Entscheidungen, mindestens 50 Anatomiefragen und normalisierte identische Fragen samt Antworttexten in jeder Sprache. Eine absichtlich ergänzte 501. Frage und ein duplizierter Fragetext werden in Regressionstests abgelehnt. Anatomiefragen benötigen zusätzlich einen dokumentierten OP- oder Fallbezug (`clinicalContext`); fehlende, ungültige oder unvollständig übersetzte Angaben werden zurückgewiesen.
+Der Vertrag `data/question-contract.json` prüft die genaue Zahl aktiver Entscheidungen (631), mindestens 50 Anatomiefragen und normalisierte identische Fragen samt Antworttexten in jeder Sprache. Eine Frage über die Vertragszahl hinaus und ein duplizierter Fragetext werden in Regressionstests abgelehnt. Anatomiefragen benötigen zusätzlich einen dokumentierten OP- oder Fallbezug (`clinicalContext`); fehlende, ungültige oder unvollständig übersetzte Angaben werden zurückgewiesen.
 
 Die historischen Fälle durchlaufen dieselbe Struktur-, Sprach-, Antwort- und Quellenvalidierung wie aktive Fälle. Zusätzliche Tests prüfen alte Logbücher, manipulierte Punktwerte, Export/Import, Ausschluss archivierter Fragen aus neuen Diensten und die Anzeige vor beziehungsweise nach der Antwort. Die Softwareprüfungen sind in [VALIDATION.md](VALIDATION.md) protokolliert.
 

@@ -20,6 +20,13 @@ function loadAssets() {
 }
 const data = loadAssets();
 const catalog = data.NSA_CATALOG;
+const CONTRACT = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'question-contract.json'), 'utf8'));
+// No question is archived at the moment. A copy of one supplementary question stands in as an archived one, so the rules
+// for old logbook entries stay tested; it only joins historyCases, never the playable cases.
+if (!catalog.historyCases.length) {
+  const stand = clone(catalog.cases.find(c => c.id === 'fun-inc-duloxetine-counselling'));
+  catalog.historyCases.push({ ...stand, id: 'archived-' + stand.id, archived: true });
+}
 
 function shape(value, label) {
   if (Array.isArray(value)) return value.map((item, index) => shape(item, label + '[' + index + ']'));
@@ -1171,7 +1178,7 @@ test('archived answers retain verified progress but cannot enter an active shift
     '\nglobalThis.helpers = { setup, missedCases };', context);
   context.helpers.setup([archived.id]);
   assert.deepEqual(clone(context.helpers.missedCases()), [], 'Historical misses never enter the active rematch pool');
-  assert.equal(catalog.cases.reduce((n, c) => n + c.steps.length, 0), 500);
+  assert.equal(catalog.cases.reduce((n, c) => n + c.steps.length, 0), CONTRACT.questions);
 });
 
 // Bootstrap the full application with observable DOM boundaries. This checks
@@ -1215,7 +1222,7 @@ function interfaceHarness(lang = 'en', initial = {}) {
     dialog: () => node('created-dialog').innerHTML };
 }
 
-test('every one of the 500 decisions has its own improvement button in every language', () => {
+test('every playable decision has its own improvement button in every language', () => {
   for (const lang of ['en', 'de', 'es']) {
     const h = interfaceHarness(lang);
     let decisions = 0;
@@ -1227,7 +1234,7 @@ test('every one of the 500 decisions has its own improvement button in every lan
       assert.doesNotMatch(html, /undefined|OBJECTIVE_SPOILER/);
       decisions++;
     }
-    assert.equal(decisions, 500);
+    assert.equal(decisions, CONTRACT.questions);
   }
 });
 
@@ -1344,10 +1351,10 @@ test('a marked classification case exports its exact guide and primary source li
   assert.equal(file.cases[0].clinicalContext.kind, 'operation');
 });
 
-test('the full interface renders 500 questions, the anatomy filter and every page in all languages', async () => {
+test('the full interface renders the question count, the anatomy filter and every page in all languages', async () => {
   for (const lang of ['en', 'de', 'es']) {
     const h = interfaceHarness(lang);
-    assert.match(h.html(), /<strong>500<\/strong>/, 'The introduction counts questions, not 402 cases');
+    assert.ok(h.html().includes('<strong>' + CONTRACT.questions + '</strong>'), 'The introduction counts questions, not cases');
     assert.ok(h.html().includes(escape(data.NSA_TEXT[lang].questions)));
     assert.ok(!h.html().includes('{questions}'), 'Count substitutions reach the actual interface');
     h.go('library');
