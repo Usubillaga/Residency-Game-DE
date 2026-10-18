@@ -4009,5 +4009,215 @@
       "en": "A trocar perforation recognised intraoperatively with clear urine and stable haemodynamics is common and heals with brief drainage. The only danger is a tape that ends up running through the bladder: how do you make sure, and document, that it lies outside the bladder without escalating the procedure unnecessarily?",
       "es": "Una perforación por el trocar detectada durante la cirugía, con orina clara y hemodinámica estable, es frecuente y cura con un drenaje breve. Lo único peligroso es una banda que acabe atravesando la vejiga: ¿cómo te aseguras, y lo compruebas, de que queda fuera de la vejiga sin escalar innecesariamente la intervención?"
     }
+  },
+  "q-emg-ed-anuria-bilateral-obstruction-hyperkalaemia-first": {
+    "question": {
+      "en": "Potassium above 6.5 mmol/l with a broad QRS can stop the heart sooner than any drainage can work. Think about what protects the myocardium in the next minutes, what removes the cause, and in which order.",
+      "de": "Kalium über 6,5 mmol/l mit breitem QRS kann das Herz schneller stoppen, als jede Ableitung wirkt. Überleg, was das Myokard in den nächsten Minuten schützt, was die Ursache beseitigt und in welcher Reihenfolge.",
+      "es": "Un potasio superior a 6,5 mmol/l con QRS ancho puede parar el corazón antes de que funcione cualquier drenaje. Piensa qué protege el miocardio en los próximos minutos, qué elimina la causa y en qué orden."
+    }
+  },
+  "q-emg-ward-tur-syndrome-severe-hyponatraemia-hypertonic-saline": {
+    "question": {
+      "en": "A seizure makes this hyponatraemia an emergency: a small, fast rise of a few mmol/l is enough to relieve the brain oedema. At the same time, keep the ceiling for the first 24 hours in mind because of osmotic demyelination.",
+      "de": "Ein Krampfanfall macht diese Hyponatriämie zum Notfall: Ein kleiner, rascher Anstieg um wenige mmol/l reicht, um das Hirnödem zu entlasten. Behalte zugleich die Obergrenze für die ersten 24 Stunden im Blick, wegen der osmotischen Demyelinisierung.",
+      "es": "Una crisis convulsiva convierte esta hiponatremia en una urgencia: basta una subida pequeña y rápida de unos pocos mmol/l para aliviar el edema cerebral. Ten presente a la vez el techo de las primeras 24 horas por la desmielinización osmótica."
+    }
+  },
+  "q-emg-ed-renal-trauma-active-extravasation-angioembolisation": {
+    "question": {
+      "en": "The CT shows more than a deep laceration: there is an active arterial source of bleeding in a patient who has stayed stable. Ask yourself which measure stops that bleeding and still keeps as much kidney as possible.",
+      "de": "Die CT zeigt mehr als eine tiefe Lazeration: eine aktive arterielle Blutungsquelle bei einem Patienten, der stabil geblieben ist. Frag dich, welche Maßnahme diese Blutung stoppt und trotzdem möglichst viel Niere erhält.",
+      "es": "La TC muestra algo más que una laceración profunda: un foco arterial activo de sangrado en un paciente que se ha mantenido estable. Pregúntate qué medida detiene ese sangrado y aun así conserva el máximo de riñón."
+    }
+  },
+  "q-emg-ward-postobstructive-diuresis-replacement": {
+    "question": {
+      "en": "More than 200 ml per hour for two hours after relief: the kidney is clearing water and salt that built up during the obstruction. Think about how much of that really has to be given back, and remember that he is hardly drinking.",
+      "de": "Mehr als 200 ml pro Stunde über zwei Stunden nach Entlastung: Die Niere scheidet Wasser und Salz aus, die sich während der Obstruktion angesammelt haben. Überleg, wie viel davon wirklich zurückgegeben werden muss, und denk daran, dass er kaum trinkt.",
+      "es": "Más de 200 ml por hora durante dos horas tras la descompresión: el riñón elimina el agua y la sal acumuladas durante la obstrucción. Piensa cuánto de eso hay que devolver realmente y recuerda que apenas bebe."
+    }
+  },
+  "q-emg-ed-colic-pregnancy-analgesia-no-nsaid": {
+    "question": {
+      "en": "At 30 weeks, imaging and pain relief follow different rules from the usual colic: think about radiation protection and about which analgesics endanger the fetal ductus arteriosus in the third trimester.",
+      "de": "In der 30. Woche gelten für Bildgebung und Schmerztherapie andere Regeln als bei der üblichen Kolik: Denk an den Strahlenschutz und daran, welche Analgetika im dritten Trimenon den fetalen Ductus arteriosus gefährden.",
+      "es": "En la semana 30, la imagen y la analgesia siguen reglas distintas a las del cólico habitual: piensa en la protección radiológica y en qué analgésicos ponen en peligro el conducto arterioso fetal en el tercer trimestre."
+    }
+  },
+  "q-emg-ward-paraphimosis-after-catheterisation-manual-reduction": {
+    "question": {
+      "en": "Look at the glans first: it is pink and refills well. With intact perfusion, the gentlest technique that removes the ring comes first, and anything with a scalpel waits until that has failed.",
+      "de": "Schau zuerst auf die Glans: rosig und gut rekapillarisierend. Solange die Durchblutung erhalten ist, kommt zuerst die schonendste Technik, die den Ring löst, und alles mit Skalpell wartet, bis das gescheitert ist.",
+      "es": "Mira primero el glande: rosado y con buen relleno capilar. Mientras la perfusión se mantenga, va primero la técnica más suave que libera el anillo, y todo lo que lleve bisturí espera a que esta fracase."
+    }
+  },
+  "q-emg-ed-retention-alpha-blocker-before-twoc": {
+    "question": {
+      "en": "Ask yourself which drug acts within days at the bladder neck and which needs months on the gland, and whether waiting longer with a catheter ever helps a man without kidney damage.",
+      "de": "Frag dich, welches Medikament innerhalb von Tagen am Blasenhals wirkt und welches Monate an der Drüse braucht, und ob längeres Warten mit Katheter einem Mann ohne Nierenschaden je hilft.",
+      "es": "Pregúntate qué fármaco actúa en días sobre el cuello vesical y cuál necesita meses sobre la glándula, y si esperar más con sonda ayuda alguna vez a un varón sin daño renal."
+    }
+  },
+  "q-emg-ed-suprapubic-catheter-previous-laparotomy-ultrasound": {
+    "question": {
+      "en": "The scar matters more than the full bladder: after a lower midline laparotomy, think about what may lie between the abdominal wall and the bladder, and what you must be able to exclude before any needle goes in.",
+      "de": "Die Narbe zählt mehr als die volle Blase: Überleg, was nach einer Unterbauch-Medianlaparotomie zwischen Bauchwand und Blase liegen kann und was du ausschließen musst, bevor eine Nadel hineingeht.",
+      "es": "La cicatriz importa más que la vejiga llena: piensa qué puede haber entre la pared abdominal y la vejiga tras una laparotomía media infraumbilical y qué debes poder descartar antes de introducir cualquier aguja."
+    }
+  },
+  "q-emg-ward-catheter-balloon-will-not-deflate": {
+    "question": {
+      "en": "Think about where the fault usually sits: at the outer end of the catheter rather than in the balloon. Start with the least invasive step that deals with that spot, before anything reaches the bladder.",
+      "de": "Überleg, wo der Fehler meist sitzt: am äußeren Ende des Katheters, nicht im Ballon. Fang mit dem am wenigsten invasiven Schritt an, der genau dort ansetzt, bevor irgendetwas die Blase erreicht.",
+      "es": "Piensa dónde suele estar el fallo: en el extremo externo de la sonda, no en el balón. Empieza por el paso menos invasivo que actúe justo ahí, antes de que nada llegue a la vejiga."
+    }
+  },
+  "q-emg-theatre-torsion-nonviable-testis-orchiectomy-contralateral-fixation": {
+    "question": {
+      "en": "Two separate questions: is the left testis still alive after 30 hours, colour unchanged and a dry cut surface? And is the anatomy that let it twist usually present on only one side?",
+      "de": "Zwei getrennte Fragen: Lebt der linke Hoden nach 30 Stunden noch, bei unveränderter Farbe und trockener Schnittfläche? Und besteht die Anatomie, die die Torsion erlaubt hat, meist nur auf einer Seite?",
+      "es": "Dos preguntas distintas: ¿sigue vivo el testículo izquierdo tras 30 horas, con el color sin cambios y la superficie de corte seca? ¿Y la anatomía que permitió la torsión suele estar en un solo lado?"
+    }
+  },
+  "q-onc-ici-myocarditis-nivo-ipi-rcc": {
+    "question": {
+      "de": "Neuer Leitungsblock, Myalgien und ein deutlicher Troponin- und CK-Anstieg wenige Wochen nach Start der Doppelblockade: Bei dieser seltenen Toxizität entscheidet die Zeit bis zur Immunsuppression über die Prognose.",
+      "en": "New conduction block, myalgia and a marked rise in troponin and CK a few weeks after starting dual blockade: with this rare toxicity, the time to immunosuppression decides the outcome.",
+      "es": "Bloqueo de conducción nuevo, mialgias y una clara elevación de troponina y CK pocas semanas después de iniciar el doble bloqueo: en esta toxicidad poco frecuente, el tiempo hasta la inmunosupresión decide el pronóstico."
+    }
+  },
+  "q-onc-ici-colitis-grade3-adjuvant-nivolumab": {
+    "question": {
+      "en": "Count the stools above his baseline and grade the colitis by CTCAE. The grade decides whether nivolumab may continue, how high and by which route the steroids are dosed, and whether the infection work-up may hold them up.",
+      "de": "Zähl die Stühle über seinem Ausgangswert und ordne die Kolitis nach CTCAE ein. Der Grad entscheidet, ob Nivolumab weiterlaufen darf, wie hoch und auf welchem Weg die Steroide dosiert werden und ob die Infektdiagnostik sie aufhalten darf.",
+      "es": "Cuenta las deposiciones por encima de su basal y gradúa la colitis según CTCAE. El grado decide si nivolumab puede continuar, a qué dosis y por qué vía se dan los corticoides y si el estudio de infección puede retrasarlos."
+    }
+  },
+  "q-onc-ev-pembro-neuropathy-grade2-hold": {
+    "question": {
+      "de": "Grad 2 heißt: Die instrumentellen Alltagsaktivitäten sind eingeschränkt, die Selbstversorgung nicht. Die Fachinformation unterscheidet beim Enfortumab Vedotin zwischen dem ersten Auftreten und dem Rezidiv einer Neuropathie.",
+      "en": "Grade 2 means instrumental activities of daily living are limited but self-care is not. The enfortumab vedotin SmPC distinguishes between the first occurrence and a recurrence of neuropathy.",
+      "es": "Grado 2 significa que las actividades instrumentales de la vida diaria están limitadas, pero el autocuidado no. La ficha técnica de enfortumab vedotina distingue entre la primera aparición y la recurrencia de la neuropatía."
+    }
+  },
+  "q-onc-prostate-psa-persistence-after-rp": {
+    "question": {
+      "de": "Mit einer Halbwertszeit von wenigen Tagen sollte das PSA 4–8 Wochen nach einer RP nicht mehr messbar sein. Ein nie unter die Nachweisgrenze gefallener, steigender Wert ist eine eigene Entität – und ohne Fernmetastasen bleibt eine kurative Chance.",
+      "en": "With a half-life of a few days, PSA should be undetectable 4–8 weeks after RP. A value that never became undetectable and is rising is a distinct entity – and without distant metastases a curative chance remains.",
+      "es": "Con una semivida de pocos días, el PSA debería ser indetectable 4–8 semanas después de la PR. Un valor que nunca fue indetectable y sube es una entidad propia, y sin metástasis a distancia queda una opción curativa."
+    }
+  },
+  "q-onc-prostate-adjuvant-rt-two-of-three-risk": {
+    "question": {
+      "de": "Geh die Histologie Merkmal für Merkmal durch: ISUP-Gruppe, pT-Stadium, Schnittrand, Nodalstatus. Für welche kleine Gruppe empfiehlt die EAU die Bestrahlung schon vor einem PSA-Anstieg?",
+      "en": "Go through the histology feature by feature: ISUP group, pT stage, margin, nodal status. For which small group does the EAU recommend radiotherapy even before a PSA rise?",
+      "es": "Repasa la histología rasgo por rasgo: grupo ISUP, estadio pT, margen y estado ganglionar. ¿En qué pequeño grupo recomienda la EAU irradiar incluso antes de que suba el PSA?"
+    }
+  },
+  "q-onc-prostate-bcr-after-rt-phoenix-biopsy": {
+    "question": {
+      "en": "After radiotherapy, what counts is the distance from the nadir, not a fixed cut-off. And before anyone treats an irradiated pelvis: what must be proven, and how do you exclude metastases with enough sensitivity?",
+      "de": "Nach Bestrahlung zählt der Abstand zum Nadir, nicht ein fester Grenzwert. Und bevor jemand in einem bestrahlten Becken behandelt: Was muss gesichert sein, und wie schließt du Metastasen mit ausreichender Empfindlichkeit aus?",
+      "es": "Tras la radioterapia cuenta la distancia al nadir, no un valor fijo. Y antes de que nadie trate una pelvis irradiada: ¿qué debe estar confirmado y cómo descartas metástasis con suficiente sensibilidad?"
+    }
+  },
+  "q-onc-prostate-no-neoadjuvant-adt-before-rp": {
+    "question": {
+      "en": "Better margins are not the same as longer survival. Think about which primary treatment ADT has a proven place with and which one it does not.",
+      "de": "Bessere Schnittränder sind nicht dasselbe wie längeres Überleben. Überleg dir, bei welcher Primärtherapie die ADT ihren belegten Platz hat und bei welcher nicht.",
+      "es": "Unos márgenes mejores no equivalen a una supervivencia más larga. Piensa con qué tratamiento primario tiene la ADT un papel demostrado y con cuál no."
+    }
+  },
+  "q-onc-muc-second-line-after-ev-pembro": {
+    "question": {
+      "en": "List the drug classes she has already received and on which she is progressing. Then check what each remaining option presupposes: maintenance needs a specific preceding first line, a targeted agent needs its target.",
+      "de": "Zähl auf, welche Substanzklassen sie schon bekommen hat und unter welchen sie fortschreitet. Prüf dann, was jede verbleibende Option voraussetzt: Eine Erhaltung braucht eine bestimmte vorausgegangene Erstlinie, eine zielgerichtete Substanz ihre Zielstruktur.",
+      "es": "Enumera las familias de fármacos que ya ha recibido y con cuáles progresa. Después comprueba qué presupone cada opción restante: el mantenimiento requiere una primera línea previa concreta y un fármaco dirigido, su diana."
+    }
+  },
+  "q-onc-rcc-axitinib-pembro-hepatotoxicity": {
+    "question": {
+      "en": "Both drugs can hit the liver and you do not know which one did. The label has its own thresholds for the combination: 3 times, 10 times and bilirubin of 2 times or more. Where does he fall?",
+      "de": "Beide Substanzen können die Leber treffen, und du weißt nicht, welche es war. Die Fachinformation hat für die Kombination eigene Schwellen: das 3-Fache, das 10-Fache und Bilirubin ab dem 2-Fachen. Wo liegt er?",
+      "es": "Ambos fármacos pueden dañar el hígado y no sabes cuál ha sido. La ficha técnica tiene umbrales propios para la combinación: 3 veces, 10 veces y bilirrubina de 2 o más veces. ¿Dónde se sitúa él?"
+    }
+  },
+  "q-onc-rcc-vhl-3cm-surveillance": {
+    "question": {
+      "en": "In a tumour syndrome new lesions keep coming for life, and every operation costs renal tissue. The EAU gives a size threshold for the largest solid lesion in VHL disease. Has she reached it?",
+      "de": "Bei einem Tumorsyndrom kommen lebenslang neue Herde nach, jede Operation kostet Nierengewebe. Die EAU nennt für das VHL-Syndrom eine Größenschwelle des größten soliden Herdes. Hat sie die erreicht?",
+      "es": "En un síndrome tumoral aparecen nuevas lesiones toda la vida y cada operación cuesta tejido renal. La EAU da un umbral de tamaño de la lesión sólida mayor en la enfermedad de VHL. ¿Lo ha alcanzado?"
+    }
+  },
+  "q-drug-mirabegron-flecainide-cyp2d6": {
+    "question": {
+      "de": "Prüf, über welches Enzym Flecainid und Metoprolol abgebaut werden und was Mirabegron mit genau diesem Enzym macht. Bei Substraten mit geringer therapeutischer Breite zählt dann, wer die Wirkung überwacht und wie schnell sich die Hemmung aufbaut.",
+      "en": "Check which enzyme clears flecainide and metoprolol and what mirabegron does to exactly that enzyme. With substrates of narrow therapeutic index, what then counts is who monitors the effect and how quickly the inhibition builds up.",
+      "es": "Comprueba qué enzima elimina la flecainida y el metoprolol y qué hace el mirabegrón precisamente con esa enzima. Con sustratos de estrecho margen terapéutico importa entonces quién vigila el efecto y con qué rapidez se instaura la inhibición."
+    }
+  },
+  "q-drug-cotrimoxazole-prostatitis-hyperkalaemia-monitoring": {
+    "question": {
+      "de": "Drei Fragen entscheiden: Welches orale Mittel ist hier sensibel und erreicht im Prostatagewebe wirksame Spiegel? Ab welcher Kreatinin-Clearance wird es reduziert? Und was macht Trimethoprim am distalen Tubulus, das zu Ramipril und Spironolacton nicht gut passt?",
+      "en": "Three questions decide it: which oral drug is susceptible here and reaches effective levels in prostatic tissue? At what creatinine clearance is it reduced? And what does trimethoprim do at the distal tubule that does not sit well with ramipril and spironolactone?",
+      "es": "Tres preguntas lo deciden: ¿qué fármaco oral es sensible aquí y alcanza niveles eficaces en el tejido prostático? ¿Con qué aclaramiento de creatinina se reduce? ¿Y qué hace la trimetoprima en el túbulo distal que no casa bien con ramipril y espironolactona?"
+    }
+  },
+  "q-drug-nmcrpc-arpi-choice-on-rivaroxaban": {
+    "question": {
+      "de": "Beim Hochrisiko-nmCRPC verlängern alle drei zugelassenen AR-Inhibitoren das Überleben – entschieden wird hier über die Leberenzyme. Überleg, welche davon CYP3A4 stark induzieren, über welches Enzym Rivaroxaban abgebaut wird und warum eine pauschale Dosiserhöhung keine Lösung ist.",
+      "en": "In high-risk nmCRPC all three approved androgen receptor inhibitors prolong survival – here the liver enzymes decide. Think about which of them strongly induce CYP3A4, which enzyme clears rivaroxaban and why a blanket dose increase is no solution.",
+      "es": "En el CPRCnm de alto riesgo, los tres inhibidores del receptor androgénico autorizados prolongan la supervivencia: aquí deciden las enzimas hepáticas. Piensa cuáles inducen potentemente CYP3A4, qué enzima elimina el rivaroxabán y por qué subir la dosis sin más no es una solución."
+    }
+  },
+  "q-drug-premature-ejaculation-triptan-topical-spray": {
+    "question": {
+      "de": "Er braucht sein Migränemittel weiter. Prüf, welche Optionen in den Serotoninstoffwechsel eingreifen und welche Abstände die Fachinformation dafür verlangt. Bei topischen Mitteln entscheidet die korrekte Anwendung über Wirkung und Nebenwirkungen beim Paar.",
+      "en": "He still needs his migraine drug. Check which options act on serotonin and what time gaps the SmPC requires for them. With topical products, correct application decides about the effect and about side effects in the couple.",
+      "es": "Sigue necesitando su fármaco para la migraña. Comprueba qué opciones actúan sobre la serotonina y qué intervalos exige la ficha técnica. Con los productos tópicos, la aplicación correcta decide el efecto y los efectos adversos en la pareja."
+    }
+  },
+  "q-drug-oab-angle-closure-glaucoma-mirabegron-renal-dose": {
+    "question": {
+      "de": "Zwei Hürden: Prüf zuerst, welche Substanzklasse die Pupille erweitert und deshalb beim engen Kammerwinkel tabu ist – egal, wie gut sie sonst passt. Danach entscheidet die Nierenfunktion über die Dosis des verbleibenden Wirkprinzips.",
+      "en": "Two hurdles: first check which drug class dilates the pupil and is therefore off limits with a narrow chamber angle – however well it fits otherwise. Then renal function decides the dose of the remaining mode of action.",
+      "es": "Dos obstáculos: comprueba primero qué grupo de fármacos dilata la pupila y por eso está vetado con un ángulo camerular estrecho, por bien que encaje en lo demás. Después, la función renal decide la dosis del mecanismo que queda."
+    }
+  },
+  "q-drug-testosterone-gel-azoospermia-fertility-wish": {
+    "question": {
+      "de": "Schau auf das FSH: Bei einem Hodenversagen wäre es hoch. Hier ist die Achse durch eine Substanz von außen gedrosselt – und die Spermatogenese braucht nach dem Wegfall des Auslösers Monate, nicht Wochen.",
+      "en": "Look at the FSH: with testicular failure it would be high. Here the axis is throttled by something given from outside – and once the trigger is gone, spermatogenesis needs months, not weeks.",
+      "es": "Fíjate en la FSH: en un fallo testicular estaría alta. Aquí el eje está frenado por algo administrado desde fuera, y una vez retirado el desencadenante la espermatogénesis necesita meses, no semanas."
+    }
+  },
+  "q-drug-metamizole-agranulocytosis-febrile-neutropenia": {
+    "question": {
+      "de": "Schau zuerst auf die neutrophilen Granulozyten und such in seiner Medikamentenliste den typischen Auslöser. Dann zählt die Uhr: Was braucht ein fiebernder Patient fast ohne Abwehrzellen in der ersten Stunde – und was darf er nie wieder bekommen?",
+      "en": "Look at the neutrophil count first and find the typical culprit on his medication list. Then the clock matters: what does a febrile patient with almost no neutrophils need within the first hour – and what must he never receive again?",
+      "es": "Mira primero los neutrófilos y busca en su lista de medicamentos el desencadenante típico. Después cuenta el reloj: ¿qué necesita en la primera hora un paciente febril casi sin neutrófilos y qué no debe volver a recibir nunca?"
+    }
+  },
+  "q-drug-extended-lmwh-after-radical-cystectomy": {
+    "question": {
+      "de": "Dass er wieder läuft, schützt nach großer Tumorchirurgie im kleinen Becken nicht ausreichend: Das Thromboserisiko bleibt noch Wochen nach der Entlassung erhöht. Denk an Substanz, Dosis und vor allem an die Gesamtdauer ab dem OP-Tag.",
+      "en": "Walking again does not protect him enough after major pelvic cancer surgery: the thrombosis risk stays raised for weeks after discharge. Think about the drug, the dose and above all the total duration counted from the day of surgery.",
+      "es": "Que vuelva a caminar no le protege lo suficiente tras una cirugía oncológica pélvica mayor: el riesgo trombótico sigue elevado semanas después del alta. Piensa en el fármaco, la dosis y, sobre todo, la duración total contada desde el día de la cirugía."
+    }
+  },
+  "q-drug-onabotulinumtoxina-oab-cystitis-on-injection-day": {
+    "question": {
+      "de": "Bevor die Nadel in den Detrusor geht, schau auf den Urin: Die Fachinformation nennt hier eine klare Gegenanzeige. Und denk daran, dass die Dosis bei idiopathischer und bei neurogener Überaktivität nicht dieselbe ist.",
+      "en": "Before the needle goes into the detrusor, look at the urine: the SmPC names a clear contraindication here. And remember that the dose for idiopathic and for neurogenic overactivity is not the same.",
+      "es": "Antes de que la aguja entre en el detrusor, mira la orina: la ficha técnica señala aquí una contraindicación clara. Y recuerda que la dosis no es la misma en la hiperactividad idiopática y en la neurógena."
+    }
+  },
+  "q-drug-cystitis-egfr-38-pivmecillinam-not-nitrofurantoin": {
+    "question": {
+      "de": "Ein Harnwegsantibiotikum muss im Urin ankommen. Prüf für jede Substanz die eGFR-Grenze in der Fachinformation, das alte Antibiogramm und die übrige Medikation mit Blick auf das Kalium.",
+      "en": "A urinary antibiotic has to reach the urine. For each drug, check the eGFR limit in the SmPC, the old antibiogram and the other medication with an eye on potassium.",
+      "es": "Un antibiótico urinario tiene que llegar a la orina. Para cada fármaco, revisa el límite de FGe de la ficha técnica, el antibiograma previo y el resto de la medicación pensando en el potasio."
+    }
   }
 }

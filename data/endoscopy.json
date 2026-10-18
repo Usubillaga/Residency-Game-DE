@@ -2004,6 +2004,138 @@
     ]
   },
   {
+    "id": "q-drug-onabotulinumtoxina-oab-cystitis-on-injection-day",
+    "area": "endoscopy",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "elective",
+    "patient": {
+      "name": "Ursula Dreesmann",
+      "age": 64,
+      "sex": "female"
+    },
+    "title": {
+      "de": "Botulinumtoxin-Termin mit positivem Urinstreifen",
+      "en": "Botulinum toxin appointment with a positive urine dipstick",
+      "es": "Cita para toxina botulínica con tira reactiva de orina positiva"
+    },
+    "presenting": {
+      "de": "64-jährige Patientin mit idiopathischer überaktiver Blase und Dranginkontinenz (8–10 Vorlagen pro Tag; Miktionstagebuch mit 14 Miktionen am Tag und 3 in der Nacht). Beckenbodentraining, Solifenacin und anschließend Mirabegron 50 mg haben jeweils über mehr als drei Monate nicht ausreichend geholfen. Keine neurologische Erkrankung. Restharn wiederholt unter 30 ml; sie hat den intermittierenden Selbstkatheterismus in der Kontinenzsprechstunde geübt und ist bereit, ihn bei Bedarf anzuwenden. Heute ist die ambulante intradetrusorale Injektion von OnabotulinumtoxinA geplant. Bei der Aufnahme berichtet sie über seit zwei Tagen zunehmendes Brennen beim Wasserlassen; kein Fieber, keine Flankenschmerzen. Urinstreifen: Leukozyten 3+, Nitrit positiv. Sie nimmt keine Gerinnungs- oder Thrombozytenaggregationshemmer.",
+      "en": "A 64-year-old woman with idiopathic overactive bladder and urgency incontinence (8–10 pads a day; bladder diary with 14 voids by day and 3 at night). Pelvic floor training, solifenacin and then mirabegron 50 mg, each for more than three months, have not helped enough. No neurological disease. Post-void residual repeatedly below 30 ml; she has practised clean intermittent self-catheterisation in the continence clinic and is willing to use it if needed. Outpatient intradetrusor injection of onabotulinumtoxinA is planned for today. On admission she reports burning on urination, increasing for two days; no fever, no flank pain. Urine dipstick: leucocytes 3+, nitrite positive. She takes no anticoagulant or antiplatelet drugs.",
+      "es": "Mujer de 64 años con vejiga hiperactiva idiopática e incontinencia de urgencia (8–10 compresas al día; diario miccional con 14 micciones diurnas y 3 nocturnas). El entrenamiento del suelo pélvico, la solifenacina y después el mirabegrón 50 mg, cada uno durante más de tres meses, no han ayudado lo suficiente. Sin enfermedad neurológica. Residuo posmiccional repetidamente inferior a 30 ml; ha practicado el autocateterismo intermitente limpio en la consulta de continencia y está dispuesta a usarlo si hace falta. Hoy está prevista la inyección intradetrusor ambulatoria de onabotulinumtoxinA. Al ingreso refiere ardor miccional creciente desde hace dos días; sin fiebre ni dolor en el flanco. Tira reactiva: leucocitos 3+, nitritos positivos. No toma anticoagulantes ni antiagregantes."
+    },
+    "vitals": {
+      "bp": "138/82",
+      "hr": 78,
+      "temp": 36.9,
+      "spo2": 98,
+      "rr": 14
+    },
+    "objectives": {
+      "de": [
+        "Einen Harnwegsinfekt am Behandlungstag als Kontraindikation für die intradetrusorale Botulinumtoxin-Injektion erkennen",
+        "Die zugelassene Dosis bei idiopathischer OAB (100 Einheiten an 20 Stellen) von der Dosis bei neurogener Detrusorüberaktivität unterscheiden"
+      ],
+      "en": [
+        "Recognise a urinary tract infection on the day of treatment as a contraindication to intradetrusor botulinum toxin injection",
+        "Distinguish the licensed dose for idiopathic OAB (100 units at 20 sites) from the dose for neurogenic detrusor overactivity"
+      ],
+      "es": [
+        "Reconocer una infección urinaria el día del tratamiento como contraindicación de la inyección intradetrusor de toxina botulínica",
+        "Distinguir la dosis autorizada en la vejiga hiperactiva idiopática (100 unidades en 20 puntos) de la dosis en la hiperactividad neurógena del detrusor"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "Wie gehen Sie heute vor?",
+          "en": "How do you proceed today?",
+          "es": "¿Cómo procede hoy?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Inject 100 units today as planned; the scheduled perioperative antibiotic prophylaxis will treat the cystitis as well",
+              "de": "Heute wie geplant 100 Einheiten injizieren; die vorgesehene perioperative Antibiotikaprophylaxe behandelt die Zystitis mit",
+              "es": "Inyectar hoy 100 unidades según lo previsto; la profilaxis antibiótica perioperatoria programada tratará también la cistitis"
+            },
+            "score": 0,
+            "minutes": 15,
+            "critical": true,
+            "feedback": {
+              "en": "Dangerous: per the SmPC, a urinary tract infection at the time of treatment is a contraindication to intradetrusor injection. The injections create mucosal defects in an infected bladder, raising the risk of febrile urinary tract infection up to urosepsis. Perioperative prophylaxis does not replace culture-guided treatment.",
+              "de": "Gefährlich: Ein Harnwegsinfekt zum Zeitpunkt der Behandlung ist laut Fachinformation eine Kontraindikation für die intradetrusorale Injektion. Die Injektionen setzen Schleimhautdefekte in einer infizierten Blase; das Risiko eines fieberhaften Harnwegsinfekts bis zur Urosepsis steigt. Eine perioperative Prophylaxe ersetzt keine kulturgerechte Therapie.",
+              "es": "Peligroso: según la ficha técnica, una infección urinaria en el momento del tratamiento contraindica la inyección intradetrusor. Las inyecciones producen defectos mucosos en una vejiga infectada y aumentan el riesgo de infección urinaria febril e incluso urosepsis. La profilaxis perioperatoria no sustituye a un tratamiento guiado por cultivo."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Postpone the injection, treat the cystitis, then give 200 units at 30 sites, as two drugs have already failed",
+              "de": "Injektion verschieben, die Zystitis behandeln, danach 200 Einheiten an 30 Stellen, da schon zwei Medikamente versagt haben",
+              "es": "Aplazar la inyección, tratar la cistitis y después administrar 200 unidades en 30 puntos, ya que dos fármacos han fracasado"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: treating the infection first is right, but 200 units at 30 sites is the regimen for neurogenic detrusor overactivity. For idiopathic overactive bladder 100 units is licensed, even after several drugs have failed; a higher dose mainly raises the risk of residual urine, self-catheterisation and urinary tract infection.",
+              "de": "Falsch: Den Infekt zuerst zu behandeln ist richtig, doch 200 Einheiten an 30 Stellen sind das Schema bei neurogener Detrusorüberaktivität. Für die idiopathische überaktive Blase sind 100 Einheiten zugelassen, auch nach Versagen mehrerer Medikamente; eine höhere Dosis erhöht vor allem das Risiko für Restharn, Selbstkatheterismus und Harnwegsinfekte.",
+              "es": "Incorrecto: tratar primero la infección es correcto, pero 200 unidades en 30 puntos es la pauta de la hiperactividad neurógena del detrusor. Para la vejiga hiperactiva idiopática están autorizadas 100 unidades, también tras el fracaso de varios fármacos; una dosis mayor aumenta sobre todo el riesgo de residuo, autocateterismo e infección urinaria."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Postpone the injection, culture and treat the infection; once cured, 100 units at 20 sites with antibiotic prophylaxis",
+              "de": "Injektion verschieben, Urinkultur und gezielte Therapie; nach Ausheilung 100 Einheiten an 20 Stellen mit Antibiotikaprophylaxe",
+              "es": "Aplazar la inyección, urocultivo y tratamiento dirigido; ya curada, 100 unidades en 20 puntos con profilaxis antibiótica"
+            },
+            "score": 10,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Correct: per the SmPC, a urinary tract infection at the time of treatment is a contraindication. So postpone, send a urine culture, treat in a targeted way and reschedule once it has cleared. For idiopathic overactive bladder the dose is 100 units, given as 20 injections of 0.5 ml (5 units) into the detrusor, with antibiotic prophylaxis. The other prerequisites are met: failure of pelvic floor training and drugs, low residual urine and willingness to self-catheterise; residual urine is checked within two weeks after the injection.",
+              "de": "Richtig: Ein Harnwegsinfekt zum Zeitpunkt der Behandlung ist laut Fachinformation eine Kontraindikation. Also verschieben, Urinkultur anlegen, gezielt behandeln und nach Ausheilung neu terminieren. Bei idiopathischer überaktiver Blase beträgt die Dosis 100 Einheiten, verteilt auf 20 Injektionen à 0,5 ml (5 Einheiten) in den Detrusor, mit Antibiotikaprophylaxe. Die übrigen Voraussetzungen sind erfüllt: Versagen von Beckenbodentraining und Medikamenten, niedriger Restharn und die Bereitschaft zum Selbstkatheterismus; der Restharn wird innerhalb von zwei Wochen nach der Injektion kontrolliert.",
+              "es": "Correcto: según la ficha técnica, una infección urinaria en el momento del tratamiento es una contraindicación. Por tanto, aplazar, enviar un urocultivo, tratar de forma dirigida y reprogramar tras la curación. En la vejiga hiperactiva idiopática la dosis es de 100 unidades, repartidas en 20 inyecciones de 0,5 ml (5 unidades) en el detrusor, con profilaxis antibiótica. Los demás requisitos se cumplen: fracaso del suelo pélvico y de los fármacos, residuo bajo y disposición al autocateterismo; el residuo se controla en las dos semanas siguientes a la inyección."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Inject 100 units at 20 sites today, after a bladder washout with gentamicin and a single IV dose of gentamicin",
+              "de": "Heute 100 Einheiten an 20 Stellen injizieren, vorher die Blase mit Gentamicin spülen und eine Einzeldosis Gentamicin i.v. geben",
+              "es": "Inyectar hoy 100 unidades en 20 puntos, tras un lavado vesical con gentamicina y una dosis única de gentamicina i.v."
+            },
+            "score": 0,
+            "minutes": 15,
+            "critical": true,
+            "feedback": {
+              "en": "Dangerous: a washout does not turn an infected bladder into a sterile one; the contraindication remains. Moreover, aminoglycosides such as gentamicin can theoretically potentiate the effect of botulinum toxin – the SmPC lists this interaction – so they are unsuitable as prophylaxis on the day of injection.",
+              "de": "Gefährlich: Auch eine Spülung macht aus der infizierten Blase keine sterile; die Kontraindikation bleibt bestehen. Zudem können Aminoglykoside wie Gentamicin die Wirkung von Botulinumtoxin theoretisch verstärken – die Fachinformation nennt diese Wechselwirkung; als Prophylaxe am Injektionstag sind sie deshalb ungeeignet.",
+              "es": "Peligroso: un lavado no convierte una vejiga infectada en estéril; la contraindicación persiste. Además, los aminoglucósidos como la gentamicina pueden, en teoría, potenciar el efecto de la toxina botulínica (la ficha técnica recoge esta interacción), por lo que no son adecuados como profilaxis el día de la inyección."
+            }
+          }
+        ],
+        "best": "c"
+      }
+    ],
+    "takeaway": {
+      "de": "Vor der intradetrusoralen Injektion von OnabotulinumtoxinA müssen Bereitschaft zum Selbstkatheterismus, Restharn und Urinbefund geklärt sein; ein Harnwegsinfekt am Behandlungstag ist eine Kontraindikation – verschieben, kulturgerecht behandeln, dann injizieren. Bei idiopathischer OAB 100 Einheiten an 20 Stellen mit Antibiotikaprophylaxe (200 Einheiten an 30 Stellen bei neurogener Detrusorüberaktivität), Restharnkontrolle innerhalb von zwei Wochen.",
+      "en": "Before intradetrusor onabotulinumtoxinA, willingness to self-catheterise, residual urine and urinalysis must be clarified; a urinary tract infection on the day of treatment is a contraindication – postpone, treat according to culture, then inject. For idiopathic OAB, 100 units at 20 sites with antibiotic prophylaxis (200 units at 30 sites for neurogenic detrusor overactivity), residual urine check within two weeks.",
+      "es": "Antes de la inyección intradetrusor de onabotulinumtoxinA hay que aclarar la disposición al autocateterismo, el residuo y el análisis de orina; una infección urinaria el día del tratamiento es una contraindicación: aplazar, tratar según cultivo y después inyectar. En la vejiga hiperactiva idiopática, 100 unidades en 20 puntos con profilaxis antibiótica (200 unidades en 30 puntos en la hiperactividad neurógena del detrusor) y control del residuo en dos semanas."
+    },
+    "references": [
+      "eau-female-luts",
+      "bank-guide-infektiologie",
+      "ema-medicines",
+      "fachinfo-de"
+    ]
+  },
+  {
     "id": "bank-uro-fun-00001",
     "area": "endoscopy",
     "level": 3,

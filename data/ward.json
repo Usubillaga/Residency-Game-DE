@@ -1596,9 +1596,9 @@
           {
             "id": "a",
             "text": {
-              "en": "Mitomycin C 40 mg today through the catheter, dwell time 1-2 h, because the effect is only established within 24 hours.",
-              "de": "Mitomycin C 40 mg heute über den Katheter, Verweildauer 1-2 Stunden, da die Wirkung nur innerhalb von 24 Stunden gesichert ist.",
-              "es": "Mitomicina C 40 mg hoy por la sonda, permanencia de 1-2 h, porque el efecto solo está demostrado dentro de las 24 h."
+              "en": "Mitomycin C 40 mg today through the catheter, dwell time 1-2 h, because the effect is only established within 24 hours of surgery.",
+              "de": "Mitomycin C 40 mg heute über den Katheter, Verweildauer 1-2 Stunden, weil die Wirkung nur innerhalb von 24 Stunden nach der Operation gesichert ist.",
+              "es": "Mitomicina C 40 mg hoy por la sonda, permanencia de 1-2 h, porque el efecto solo está demostrado dentro de las 24 h siguientes a la cirugía."
             },
             "score": 0,
             "minutes": 5,
@@ -1612,9 +1612,9 @@
           {
             "id": "b",
             "text": {
-              "en": "Mitomycin C 40 mg once at catheter removal, provided a watertight bladder closure is assumed or confirmed (cystogram if in doubt); dwell time 1-2 h, then drain and remove the catheter.",
-              "de": "Mitomycin C 40 mg einmalig bei Katheterentfernung, sofern ein dichter Blasenverschluss angenommen bzw. gesichert ist (im Zweifel Zystogramm); Verweildauer 1-2 Stunden, danach ablassen und Katheter entfernen.",
-              "es": "Mitomicina C 40 mg en dosis única al retirar la sonda, siempre que se asuma o confirme un cierre vesical estanco (cistografía si hay dudas); permanencia de 1-2 h, después vaciar y retirar la sonda."
+              "en": "Mitomycin C 40 mg once at catheter removal, provided the bladder closure is watertight (cystogram if in doubt); dwell time 1-2 h.",
+              "de": "Mitomycin C 40 mg einmalig bei Katheterentfernung, wenn die Blasennaht dicht ist (im Zweifel Zystogramm); Verweildauer 1-2 Stunden.",
+              "es": "Mitomicina C 40 mg en dosis única al retirar la sonda, si el cierre vesical es estanco (cistografía si hay dudas); permanencia de 1-2 h."
             },
             "score": 10,
             "minutes": 5,
@@ -1628,25 +1628,25 @@
           {
             "id": "c",
             "text": {
-              "en": "No instillation: bladder recurrence after nephroureterectomy is rare without a history of bladder cancer.",
-              "de": "Keine Instillation: Blasenrezidive nach Nephroureterektomie sind ohne Blasenkarzinom in der Anamnese selten.",
-              "es": "No instilar: las recidivas vesicales tras nefroureterectomía son raras sin antecedentes de cáncer vesical."
+              "en": "No instillation: without a history of bladder cancer and with a normal preoperative cystoscopy, bladder recurrence is rare.",
+              "de": "Keine Instillation: Ohne Blasenkarzinom in der Anamnese und bei unauffälliger präoperativer Zystoskopie sind Blasenrezidive selten.",
+              "es": "No instilar: sin antecedentes de cáncer vesical y con una cistoscopia preoperatoria normal, las recidivas vesicales son raras."
             },
             "score": 0,
             "minutes": 3,
             "critical": false,
             "feedback": {
-              "en": "Wrong. Intravesical recurrence after nephroureterectomy is common; even in ODMIT-C, which included only patients without bladder cancer history, 27% recurred in the first year without instillation. That is exactly the group in which the single instillation is indicated.",
-              "de": "Falsch. Intravesikale Rezidive nach Nephroureterektomie sind häufig; selbst in ODMIT-C, das nur Patienten ohne Blasenkarzinom in der Anamnese einschloss, traten ohne Instillation im ersten Jahr 27 % Rezidive auf. Genau in dieser Gruppe ist die Einmalinstillation indiziert.",
-              "es": "Incorrecto. Las recidivas intravesicales tras nefroureterectomía son frecuentes; incluso en ODMIT-C, que solo incluyó pacientes sin antecedentes de cáncer vesical, recidivó un 27 % el primer año sin instilación. Precisamente en este grupo está indicada la instilación única."
+              "en": "Wrong. Intravesical recurrence after nephroureterectomy is common; even in ODMIT-C, which included only patients without bladder cancer history, 27% recurred in the first year without instillation. A normal preoperative cystoscopy does not change this; this is exactly the group in which the single instillation is indicated.",
+              "de": "Falsch. Intravesikale Rezidive nach Nephroureterektomie sind häufig; selbst in ODMIT-C, das nur Patienten ohne Blasenkarzinom in der Anamnese einschloss, traten ohne Instillation im ersten Jahr 27 % Rezidive auf. Eine unauffällige präoperative Zystoskopie ändert daran nichts; genau in dieser Gruppe ist die Einmalinstillation indiziert.",
+              "es": "Incorrecto. Las recidivas intravesicales tras nefroureterectomía son frecuentes; incluso en ODMIT-C, que solo incluyó pacientes sin antecedentes de cáncer vesical, recidivó un 27 % el primer año sin instilación. Una cistoscopia preoperatoria normal no cambia esto; precisamente en este grupo está indicada la instilación única."
             }
           },
           {
             "id": "d",
             "text": {
-              "en": "BCG induction with 6 weekly instillations from the third postoperative week.",
-              "de": "BCG-Induktion mit 6 wöchentlichen Instillationen ab der 3. postoperativen Woche.",
-              "es": "Inducción con BCG, 6 instilaciones semanales, a partir de la tercera semana posoperatoria."
+              "en": "BCG induction with 6 weekly instillations from the third postoperative week, dwell time 2 h each.",
+              "de": "BCG-Induktion mit 6 wöchentlichen Instillationen ab der 3. postoperativen Woche, Verweildauer jeweils 2 Stunden.",
+              "es": "Inducción con BCG, 6 instilaciones semanales a partir de la tercera semana posoperatoria, con 2 h de permanencia cada una."
             },
             "score": 0,
             "minutes": 5,
@@ -1660,9 +1660,9 @@
           {
             "id": "e",
             "text": {
-              "en": "Mitomycin C 40 mg weekly for 6 weeks from catheter removal, then monthly up to 12 months.",
-              "de": "Mitomycin C 40 mg wöchentlich über 6 Wochen ab Katheterentfernung, dann monatlich bis 12 Monate.",
-              "es": "Mitomicina C 40 mg semanal durante 6 semanas desde la retirada de la sonda y después mensual hasta 12 meses."
+              "en": "Mitomycin C 40 mg weekly for 6 weeks from catheter removal if the bladder closure is watertight, then monthly up to month 12, dwell time 1-2 h each.",
+              "de": "Mitomycin C 40 mg ab Katheterentfernung bei dichter Blasennaht wöchentlich über 6 Wochen, dann monatlich bis Monat 12, Verweildauer je 1-2 Stunden.",
+              "es": "Mitomicina C 40 mg semanal durante 6 semanas desde la retirada de la sonda si el cierre vesical es estanco y después mensual hasta el mes 12, con 1-2 h de permanencia."
             },
             "score": 0,
             "minutes": 5,
@@ -1743,25 +1743,25 @@
           {
             "id": "a",
             "text": {
-              "en": "Mesna 456 mg (240 mg/m²) once daily immediately before ifosfamide on days 1-5; G-CSF only in case of febrile neutropenia",
-              "de": "Mesna 456 mg (240 mg/m²) einmal täglich unmittelbar vor Ifosfamid an Tag 1–5; G-CSF nur bei febriler Neutropenie",
-              "es": "Mesna 456 mg (240 mg/m²) una vez al día justo antes de la ifosfamida los días 1-5; G-CSF solo en caso de neutropenia febril"
+              "en": "Mesna 456 mg (240 mg/m²) i.v. once daily immediately before ifosfamide on days 1-5, generous hydration; G-CSF only in case of febrile neutropenia",
+              "de": "Mesna 456 mg (240 mg/m²) i.v. einmal täglich unmittelbar vor Ifosfamid an Tag 1–5, großzügige Hydrierung; G-CSF nur bei febriler Neutropenie",
+              "es": "Mesna 456 mg (240 mg/m²) i.v. una vez al día justo antes de la ifosfamida los días 1-5, hidratación abundante; G-CSF solo en caso de neutropenia febril"
             },
             "score": 0,
             "minutes": 5,
             "critical": true,
             "feedback": {
-              "en": "Wrong and harmful: a single mesna dose equals only 20% of the ifosfamide dose. Acrolein is formed for hours after the infusion; without the doses at 4 and 8 hours, haemorrhagic cystitis is likely. At least 60% of the ifosfamide dose is required, and primary G-CSF prophylaxis is recommended with VIP.",
-              "de": "Falsch und gefährlich: Eine einzelne Mesna-Gabe entspricht nur 20 % der Ifosfamid-Dosis. Acrolein entsteht noch Stunden nach der Infusion; ohne die Gaben nach 4 und 8 Stunden droht eine hämorrhagische Zystitis. Gefordert sind mindestens 60 % der Ifosfamid-Dosis, zudem wird bei VIP eine primäre G-CSF-Prophylaxe empfohlen.",
-              "es": "Incorrecto y peligroso: una sola dosis de mesna equivale solo al 20 % de la dosis de ifosfamida. La acroleína se sigue formando durante horas tras la infusión; sin las dosis a las 4 y 8 horas es probable una cistitis hemorrágica. Se requiere al menos el 60 % de la dosis de ifosfamida y, además, con VIP se recomienda profilaxis primaria con G-CSF."
+              "en": "Wrong and harmful: a single mesna dose equals only 20% of the ifosfamide dose, and hydration does not make up for it. Acrolein is formed for hours after the infusion; without the doses at 4 and 8 hours, haemorrhagic cystitis is likely. At least 60% of the ifosfamide dose is required, and primary G-CSF prophylaxis is recommended with VIP.",
+              "de": "Falsch und gefährlich: Eine einzelne Mesna-Gabe entspricht nur 20 % der Ifosfamid-Dosis, und Hydrierung gleicht das nicht aus. Acrolein entsteht noch Stunden nach der Infusion; ohne die Gaben nach 4 und 8 Stunden droht eine hämorrhagische Zystitis. Gefordert sind mindestens 60 % der Ifosfamid-Dosis, zudem wird bei VIP eine primäre G-CSF-Prophylaxe empfohlen.",
+              "es": "Incorrecto y peligroso: una sola dosis de mesna equivale solo al 20 % de la dosis de ifosfamida, y la hidratación no lo compensa. La acroleína se sigue formando durante horas tras la infusión; sin las dosis a las 4 y 8 horas es probable una cistitis hemorrágica. Se requiere al menos el 60 % de la dosis de ifosfamida y, además, con VIP se recomienda profilaxis primaria con G-CSF."
             }
           },
           {
             "id": "b",
             "text": {
-              "en": "Mesna 456 mg (240 mg/m²) i.v. before ifosfamide and 4 and 8 hours after it on days 1-5 (1368 mg/day = 60% of the ifosfamide dose), primary G-CSF prophylaxis, generous hydration and a daily urine dipstick for haematuria",
-              "de": "Mesna 456 mg (240 mg/m²) i.v. vor Ifosfamid sowie 4 und 8 Stunden danach an Tag 1–5 (1368 mg/Tag = 60 % der Ifosfamid-Dosis), primäre G-CSF-Prophylaxe, großzügige Hydrierung und täglich Urin-Stix auf Hämaturie",
-              "es": "Mesna 456 mg (240 mg/m²) i.v. antes de la ifosfamida y a las 4 y 8 horas los días 1-5 (1368 mg/día = 60 % de la dosis de ifosfamida), profilaxis primaria con G-CSF, hidratación abundante y tira reactiva de orina diaria para detectar hematuria"
+              "en": "Mesna 456 mg (240 mg/m²) i.v. before ifosfamide and 4 and 8 hours after it on days 1-5, primary G-CSF prophylaxis, hydration and a daily urine dipstick",
+              "de": "Mesna 456 mg (240 mg/m²) i.v. vor Ifosfamid sowie 4 und 8 Stunden danach an Tag 1–5, primäre G-CSF-Prophylaxe, Hydrierung und täglich Urin-Stix",
+              "es": "Mesna 456 mg (240 mg/m²) i.v. antes de la ifosfamida y a las 4 y 8 horas los días 1-5, profilaxis primaria con G-CSF, hidratación y tira de orina diaria"
             },
             "score": 10,
             "minutes": 5,
@@ -1775,25 +1775,25 @@
           {
             "id": "c",
             "text": {
-              "en": "No mesna, because generous hydration with forced diuresis protects the bladder adequately; primary G-CSF prophylaxis",
-              "de": "Kein Mesna, da großzügige Hydrierung mit forcierter Diurese die Blase ausreichend schützt; primäre G-CSF-Prophylaxe",
-              "es": "Sin mesna, porque la hidratación abundante con diuresis forzada protege suficientemente la vejiga; profilaxis primaria con G-CSF"
+              "en": "No mesna, because generous hydration (at least 3 L/day) with forced diuresis protects the bladder adequately; primary G-CSF prophylaxis and a daily urine dipstick",
+              "de": "Kein Mesna, da großzügige Hydrierung (mindestens 3 l/Tag) mit forcierter Diurese die Blase ausreichend schützt; primäre G-CSF-Prophylaxe und täglich Urin-Stix",
+              "es": "Sin mesna, porque la hidratación abundante (al menos 3 l/día) con diuresis forzada protege suficientemente la vejiga; profilaxis primaria con G-CSF y tira de orina diaria"
             },
             "score": 0,
             "minutes": 5,
             "critical": true,
             "feedback": {
-              "en": "Wrong and harmful: hydration does not replace uroprotection. Without mesna, acrolein from ifosfamide at these daily doses frequently causes haemorrhagic cystitis; mesna is mandatory with every ifosfamide dose.",
-              "de": "Falsch und gefährlich: Hydrierung ersetzt die Uroprotektion nicht. Ohne Mesna führt Acrolein bei Ifosfamid-Tagesdosen dieser Höhe häufig zu einer hämorrhagischen Zystitis; Mesna ist zu jeder Ifosfamid-Gabe obligat.",
-              "es": "Incorrecto y peligroso: la hidratación no sustituye a la uroprotección. Sin mesna, la acroleína de la ifosfamida a estas dosis diarias produce con frecuencia cistitis hemorrágica; la mesna es obligatoria con cada dosis de ifosfamida."
+              "en": "Wrong and harmful: even generous hydration does not replace uroprotection, and the dipstick only detects haematuria once the damage is done. Without mesna, acrolein from ifosfamide at these daily doses frequently causes haemorrhagic cystitis; mesna is mandatory with every ifosfamide dose.",
+              "de": "Falsch und gefährlich: Auch reichliche Hydrierung ersetzt die Uroprotektion nicht, und der Urin-Stix erkennt die Hämaturie erst, wenn der Schaden eingetreten ist. Ohne Mesna führt Acrolein bei Ifosfamid-Tagesdosen dieser Höhe häufig zu einer hämorrhagischen Zystitis; Mesna ist zu jeder Ifosfamid-Gabe obligat.",
+              "es": "Incorrecto y peligroso: ni siquiera una hidratación abundante sustituye a la uroprotección, y la tira de orina solo detecta la hematuria cuando el daño ya se ha producido. Sin mesna, la acroleína de la ifosfamida a estas dosis diarias produce con frecuencia cistitis hemorrágica; la mesna es obligatoria con cada dosis de ifosfamida."
             }
           },
           {
             "id": "d",
             "text": {
-              "en": "Mesna 456 mg before ifosfamide and 4 and 8 hours after it on days 1-5; G-CSF only as secondary prophylaxis after febrile neutropenia in cycle 1",
-              "de": "Mesna 456 mg vor Ifosfamid sowie 4 und 8 Stunden danach an Tag 1–5; G-CSF erst sekundär nach einer febrilen Neutropenie im ersten Zyklus",
-              "es": "Mesna 456 mg antes de la ifosfamida y a las 4 y 8 horas los días 1-5; G-CSF solo como profilaxis secundaria tras una neutropenia febril en el ciclo 1"
+              "en": "Mesna 456 mg (240 mg/m²) i.v. before ifosfamide and 4 and 8 hours after it on days 1-5, hydration; G-CSF only as secondary prophylaxis after febrile neutropenia in cycle 1",
+              "de": "Mesna 456 mg (240 mg/m²) i.v. vor Ifosfamid sowie 4 und 8 Stunden danach an Tag 1–5, Hydrierung; G-CSF erst sekundär nach febriler Neutropenie in Zyklus 1",
+              "es": "Mesna 456 mg (240 mg/m²) i.v. antes de la ifosfamida y a las 4 y 8 horas los días 1-5, hidratación; G-CSF solo como profilaxis secundaria tras neutropenia febril en el ciclo 1"
             },
             "score": 0,
             "minutes": 5,
@@ -1807,9 +1807,9 @@
           {
             "id": "e",
             "text": {
-              "en": "4 cycles of EP (cisplatin/etoposide) instead of VIP, which avoids ifosfamide, mesna and G-CSF",
-              "de": "Statt VIP 4 Zyklen EP (Cisplatin/Etoposid), weil damit Ifosfamid, Mesna und G-CSF entfallen",
-              "es": "4 ciclos de EP (cisplatino/etopósido) en lugar de VIP, con lo que se evitan la ifosfamida, la mesna y el G-CSF"
+              "en": "4 cycles of EP (cisplatin 20 mg/m² and etoposide 100 mg/m² on days 1-5, every 21 days) instead of VIP, which avoids ifosfamide, mesna and G-CSF",
+              "de": "Statt VIP 4 Zyklen EP (Cisplatin 20 mg/m² und Etoposid 100 mg/m² an Tag 1–5, alle 21 Tage), weil damit Ifosfamid, Mesna und G-CSF entfallen",
+              "es": "4 ciclos de EP (cisplatino 20 mg/m² y etopósido 100 mg/m² los días 1-5, cada 21 días) en lugar de VIP, con lo que se evitan la ifosfamida, la mesna y el G-CSF"
             },
             "score": 0,
             "minutes": 5,
@@ -1890,25 +1890,25 @@
           {
             "id": "a",
             "text": {
-              "en": "Paclitaxel 175 mg/m² over 3 hours on day 1 (premedication with dexamethasone and H1/H2 blockers), ifosfamide 1200 mg/m² with mesna and cisplatin 25 mg/m², each on days 1-3; 4 cycles every 3-4 weeks, CT restaging and inguinal and pelvic lymphadenectomy if there is a response",
-              "de": "Paclitaxel 175 mg/m² über 3 h an Tag 1 (Prämedikation mit Dexamethason und H1-/H2-Blocker), Ifosfamid 1200 mg/m² mit Mesna und Cisplatin 25 mg/m² jeweils an Tag 1–3; 4 Zyklen alle 3–4 Wochen, CT-Restaging und bei Ansprechen inguinale und pelvine Lymphadenektomie",
-              "es": "Paclitaxel 175 mg/m² en 3 h el día 1 (premedicación con dexametasona y antihistamínicos H1/H2), ifosfamida 1200 mg/m² con mesna y cisplatino 25 mg/m², ambos los días 1-3; 4 ciclos cada 3-4 semanas, TC de reestadificación y linfadenectomía inguinal y pélvica si hay respuesta"
+              "en": "Paclitaxel 175 mg/m² over 3 h on day 1 after premedication, ifosfamide 1200 mg/m² with mesna and cisplatin 25 mg/m² on days 1-3; 4 cycles every 3-4 weeks, restaging, lymphadenectomy if responding",
+              "de": "Paclitaxel 175 mg/m² über 3 h an Tag 1 nach Prämedikation, Ifosfamid 1200 mg/m² mit Mesna und Cisplatin 25 mg/m² an Tag 1–3; 4 Zyklen alle 3–4 Wochen, Restaging, bei Ansprechen Lymphadenektomie",
+              "es": "Paclitaxel 175 mg/m² en 3 h el día 1 tras premedicación, ifosfamida 1200 mg/m² con mesna y cisplatino 25 mg/m² los días 1-3; 4 ciclos cada 3-4 semanas, reestadificación y linfadenectomía si hay respuesta"
             },
             "score": 10,
             "minutes": 8,
             "critical": false,
             "feedback": {
-              "en": "Correct: this is the neoadjuvant TIP regimen for penile cancer with cN3 nodes. Paclitaxel requires premedication against hypersensitivity reactions and ifosfamide requires mesna with every dose. After 4 cycles, CT restaging follows; surgery is done for response or stable resectable disease, because non-responders have a poor prognosis. Check cisplatin fitness (renal function, hearing, neuropathy) before every cycle.",
-              "de": "Richtig: Dies ist das neoadjuvante TIP-Schema beim Peniskarzinom mit cN3. Paclitaxel erfordert eine Prämedikation gegen Überempfindlichkeitsreaktionen, Ifosfamid eine Mesna-Uroprotektion zu jeder Gabe. Nach 4 Zyklen folgt das CT-Restaging; operiert wird bei Ansprechen oder stabiler resektabler Erkrankung, weil Non-Responder eine schlechte Prognose haben. Die Cisplatin-Eignung (Nierenfunktion, Gehör, Neuropathie) vor jedem Zyklus prüfen.",
-              "es": "Correcto: es el esquema TIP neoadyuvante del cáncer de pene con cN3. El paclitaxel requiere premedicación frente a las reacciones de hipersensibilidad y la ifosfamida, uroprotección con mesna en cada dosis. Tras 4 ciclos se realiza la TC de reestadificación; se opera si hay respuesta o enfermedad estable resecable, porque los no respondedores tienen mal pronóstico. Comprobar la aptitud para cisplatino (función renal, audición, neuropatía) antes de cada ciclo."
+              "en": "Correct: this is the neoadjuvant TIP regimen for penile cancer with cN3 nodes. Paclitaxel requires premedication with dexamethasone and H1/H2 blockers against hypersensitivity reactions, and ifosfamide requires mesna with every dose. After 4 cycles, CT restaging follows; inguinal and pelvic lymphadenectomy is done for response or stable resectable disease, because non-responders have a poor prognosis. Check cisplatin fitness (renal function, hearing, neuropathy) before every cycle.",
+              "de": "Richtig: Dies ist das neoadjuvante TIP-Schema beim Peniskarzinom mit cN3. Paclitaxel erfordert eine Prämedikation mit Dexamethason und H1-/H2-Blockern gegen Überempfindlichkeitsreaktionen, Ifosfamid eine Mesna-Uroprotektion zu jeder Gabe. Nach 4 Zyklen folgt das CT-Restaging; die inguinale und pelvine Lymphadenektomie erfolgt bei Ansprechen oder stabiler resektabler Erkrankung, weil Non-Responder eine schlechte Prognose haben. Die Cisplatin-Eignung (Nierenfunktion, Gehör, Neuropathie) vor jedem Zyklus prüfen.",
+              "es": "Correcto: es el esquema TIP neoadyuvante del cáncer de pene con cN3. El paclitaxel requiere premedicación con dexametasona y antihistamínicos H1/H2 frente a las reacciones de hipersensibilidad y la ifosfamida, uroprotección con mesna en cada dosis. Tras 4 ciclos se realiza la TC de reestadificación; la linfadenectomía inguinal y pélvica se hace si hay respuesta o enfermedad estable resecable, porque los no respondedores tienen mal pronóstico. Comprobar la aptitud para cisplatino (función renal, audición, neuropatía) antes de cada ciclo."
             }
           },
           {
             "id": "b",
             "text": {
-              "en": "Paclitaxel 250 mg/m² as a 24-hour infusion on day 1, ifosfamide 1500 mg/m² and cisplatin 25 mg/m² on days 2-5 with mesna; 4 cycles every 21 days, then surgery",
-              "de": "Paclitaxel 250 mg/m² als 24-h-Infusion an Tag 1, Ifosfamid 1500 mg/m² und Cisplatin 25 mg/m² an Tag 2–5 mit Mesna; 4 Zyklen alle 21 Tage, danach Operation",
-              "es": "Paclitaxel 250 mg/m² en infusión de 24 h el día 1, ifosfamida 1500 mg/m² y cisplatino 25 mg/m² los días 2-5 con mesna; 4 ciclos cada 21 días y después cirugía"
+              "en": "Paclitaxel 250 mg/m² as a 24-hour infusion on day 1 after premedication, ifosfamide 1500 mg/m² with mesna and cisplatin 25 mg/m² on days 2-5; 4 cycles every 21 days, then lymphadenectomy",
+              "de": "Paclitaxel 250 mg/m² als 24-h-Infusion an Tag 1 nach Prämedikation, Ifosfamid 1500 mg/m² mit Mesna und Cisplatin 25 mg/m² an Tag 2–5; 4 Zyklen alle 21 Tage, danach Lymphadenektomie",
+              "es": "Paclitaxel 250 mg/m² en infusión de 24 h el día 1 tras premedicación, ifosfamida 1500 mg/m² con mesna y cisplatino 25 mg/m² los días 2-5; 4 ciclos cada 21 días y después linfadenectomía"
             },
             "score": 0,
             "minutes": 8,
@@ -1922,9 +1922,9 @@
           {
             "id": "c",
             "text": {
-              "en": "Paclitaxel 175 mg/m², ifosfamide 1200 mg/m² with mesna and cisplatin 25 mg/m² as above, but only 2 cycles followed by surgery regardless of response",
-              "de": "Paclitaxel 175 mg/m², Ifosfamid 1200 mg/m² mit Mesna und Cisplatin 25 mg/m² wie oben, aber nur 2 Zyklen und anschließend Operation unabhängig vom Ansprechen",
-              "es": "Paclitaxel 175 mg/m², ifosfamida 1200 mg/m² con mesna y cisplatino 25 mg/m² como arriba, pero solo 2 ciclos y después cirugía con independencia de la respuesta"
+              "en": "Paclitaxel 175 mg/m² over 3 h on day 1 after premedication, ifosfamide 1200 mg/m² with mesna and cisplatin 25 mg/m² on days 1-3; only 2 cycles, then inguinal and pelvic lymphadenectomy regardless of response",
+              "de": "Paclitaxel 175 mg/m² über 3 h an Tag 1 nach Prämedikation, Ifosfamid 1200 mg/m² mit Mesna und Cisplatin 25 mg/m² an Tag 1–3; nur 2 Zyklen, dann inguinale und pelvine Lymphadenektomie unabhängig vom Ansprechen",
+              "es": "Paclitaxel 175 mg/m² en 3 h el día 1 tras premedicación, ifosfamida 1200 mg/m² con mesna y cisplatino 25 mg/m² los días 1-3; solo 2 ciclos y después linfadenectomía inguinal y pélvica con independencia de la respuesta"
             },
             "score": 0,
             "minutes": 8,
@@ -1938,9 +1938,9 @@
           {
             "id": "d",
             "text": {
-              "en": "Paclitaxel 175 mg/m² on day 1, ifosfamide 1200 mg/m² with mesna on days 1-3 and cisplatin 75 mg/m² on days 1-3; 4 cycles every 3-4 weeks",
-              "de": "Paclitaxel 175 mg/m² an Tag 1, Ifosfamid 1200 mg/m² mit Mesna an Tag 1–3 und Cisplatin 75 mg/m² an Tag 1–3; 4 Zyklen alle 3–4 Wochen",
-              "es": "Paclitaxel 175 mg/m² el día 1, ifosfamida 1200 mg/m² con mesna los días 1-3 y cisplatino 75 mg/m² los días 1-3; 4 ciclos cada 3-4 semanas"
+              "en": "Paclitaxel 175 mg/m² over 3 h on day 1 after premedication, ifosfamide 1200 mg/m² with mesna and cisplatin 75 mg/m² on days 1-3; 4 cycles every 3-4 weeks, then restaging and surgical planning",
+              "de": "Paclitaxel 175 mg/m² über 3 h an Tag 1 nach Prämedikation, Ifosfamid 1200 mg/m² mit Mesna und Cisplatin 75 mg/m² an Tag 1–3; 4 Zyklen alle 3–4 Wochen, danach Restaging und OP-Planung",
+              "es": "Paclitaxel 175 mg/m² en 3 h el día 1 tras premedicación, ifosfamida 1200 mg/m² con mesna y cisplatino 75 mg/m² los días 1-3; 4 ciclos cada 3-4 semanas y después reestadificación y planificación quirúrgica"
             },
             "score": 0,
             "minutes": 8,
@@ -1954,9 +1954,9 @@
           {
             "id": "e",
             "text": {
-              "en": "Immediate right inguinal and pelvic lymphadenectomy, with TIP given only as adjuvant treatment after histology",
-              "de": "Sofortige inguinale und pelvine Lymphadenektomie rechts, TIP erst adjuvant nach Vorliegen der Histologie",
-              "es": "Linfadenectomía inguinal y pélvica derecha inmediata, con TIP solo como tratamiento adyuvante tras la histología"
+              "en": "Immediate right inguinal and pelvic lymphadenectomy, then 4 cycles of adjuvant TIP after histology (paclitaxel 175 mg/m², ifosfamide 1200 mg/m², cisplatin 25 mg/m²)",
+              "de": "Sofortige inguinale und pelvine Lymphadenektomie rechts, danach nach Histologie adjuvant 4 Zyklen TIP (Paclitaxel 175 mg/m², Ifosfamid 1200 mg/m², Cisplatin 25 mg/m²)",
+              "es": "Linfadenectomía inguinal y pélvica derecha inmediata y después, tras la histología, 4 ciclos de TIP adyuvante (paclitaxel 175 mg/m², ifosfamida 1200 mg/m², cisplatino 25 mg/m²)"
             },
             "score": 0,
             "minutes": 8,
@@ -2321,9 +2321,9 @@
           {
             "id": "a",
             "text": {
-              "en": "Mitomycin C 20 mg with a dwell time of 30 minutes to avoid chemical cystitis.",
-              "de": "Mitomycin C 20 mg mit einer Verweildauer von 30 Minuten, um eine chemische Zystitis zu vermeiden.",
-              "es": "Mitomicina C 20 mg con un tiempo de permanencia de 30 minutos para evitar la cistitis química."
+              "en": "Mitomycin C 20 mg now through the catheter, clamp it and drain after 30 minutes to avoid chemical cystitis.",
+              "de": "Mitomycin C 20 mg jetzt über den Katheter, Katheter abklemmen und nach 30 Minuten ablassen, um eine chemische Zystitis zu vermeiden.",
+              "es": "Mitomicina C 20 mg ahora por la sonda, pinzarla y vaciar a los 30 minutos para evitar la cistitis química."
             },
             "score": 0,
             "minutes": 5,
@@ -2353,9 +2353,9 @@
           {
             "id": "c",
             "text": {
-              "en": "One vial of BCG now in the recovery room, dwell time 2 h.",
-              "de": "BCG, 1 Durchstechflasche, jetzt im Aufwachraum, Verweildauer 2 Stunden.",
-              "es": "BCG, 1 vial, ahora en la sala de recuperación, permanencia de 2 h."
+              "en": "One vial of BCG now in the recovery room through the catheter, clamp it, drain after 2 h.",
+              "de": "BCG, 1 Durchstechflasche, jetzt im Aufwachraum über den Katheter, Katheter abklemmen, nach 2 Stunden ablassen.",
+              "es": "BCG, 1 vial, ahora en la sala de recuperación por la sonda, pinzarla y vaciar tras 2 h."
             },
             "score": 0,
             "minutes": 5,
@@ -2369,9 +2369,9 @@
           {
             "id": "d",
             "text": {
-              "en": "Mitomycin C 40 mg now through the catheter, clamp the catheter, drain after 1-2 h; restricted fluid intake until the end of the dwell time.",
-              "de": "Mitomycin C 40 mg jetzt über den Katheter instillieren, Katheter abklemmen, nach 1-2 Stunden ablassen; reduzierte Trinkmenge bis zum Ende der Verweildauer.",
-              "es": "Mitomicina C 40 mg ahora a través de la sonda, pinzar la sonda y vaciar tras 1-2 h; restringir la ingesta de líquidos hasta el final de la permanencia."
+              "en": "Mitomycin C 40 mg now through the catheter, clamp it, drain after 1-2 h; restrict fluid intake until then.",
+              "de": "Mitomycin C 40 mg jetzt über den Katheter, Katheter abklemmen, nach 1-2 Stunden ablassen; Trinkmenge bis dahin reduzieren.",
+              "es": "Mitomicina C 40 mg ahora por la sonda, pinzarla y vaciar tras 1-2 h; restringir los líquidos hasta entonces."
             },
             "score": 10,
             "minutes": 5,
@@ -2385,17 +2385,17 @@
           {
             "id": "e",
             "text": {
-              "en": "Mitomycin C 40 mg once weekly for 6 weeks, first dose now.",
-              "de": "Mitomycin C 40 mg einmal wöchentlich über 6 Wochen, erste Gabe jetzt.",
-              "es": "Mitomicina C 40 mg una vez a la semana durante 6 semanas, primera dosis ahora."
+              "en": "Mitomycin C 40 mg now through the catheter with a 1-2 h dwell time, then once weekly up to 6 doses in total.",
+              "de": "Mitomycin C 40 mg jetzt über den Katheter mit 1-2 Stunden Verweildauer, danach einmal wöchentlich bis insgesamt 6 Gaben.",
+              "es": "Mitomicina C 40 mg ahora por la sonda con 1-2 h de permanencia y después una vez a la semana hasta 6 dosis en total."
             },
             "score": 0,
             "minutes": 5,
             "critical": false,
             "feedback": {
-              "en": "Not the protocol. The immediate post-TURB instillation is a single dose. Whether further instillations follow depends on the final histology and risk group, which are not known yet.",
-              "de": "Nicht protokollgerecht. Die Frühinstillation nach TUR-B ist eine Einmalgabe. Ob weitere Instillationen folgen, hängt von der endgültigen Histologie und der Risikogruppe ab, die noch nicht bekannt sind.",
-              "es": "No se ajusta al protocolo. La instilación inmediata tras RTU-V es una dosis única. Que sigan más instilaciones depende de la histología definitiva y del grupo de riesgo, que aún no se conocen."
+              "en": "Not the protocol. The first dose matches the single immediate instillation, but that is a single dose. Whether further instillations follow depends on the final histology and risk group, which are not known yet.",
+              "de": "Nicht protokollgerecht. Die erste Gabe entspricht der Frühinstillation, doch diese ist eine Einmalgabe. Ob weitere Instillationen folgen, hängt von der endgültigen Histologie und der Risikogruppe ab, die noch nicht bekannt sind.",
+              "es": "No se ajusta al protocolo. La primera dosis corresponde a la instilación inmediata, pero esta es una dosis única. Que sigan más instilaciones depende de la histología definitiva y del grupo de riesgo, que aún no se conocen."
             }
           }
         ],
@@ -2686,6 +2686,882 @@
     },
     "references": [
       "bank-guide-kinderurologie"
+    ]
+  },
+  {
+    "id": "q-emg-ward-tur-syndrome-severe-hyponatraemia-hypertonic-saline",
+    "area": "ward",
+    "level": 3,
+    "acuity": "critical",
+    "duty": "night",
+    "patient": {
+      "name": "Hartwig Wollenweber",
+      "age": 74,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Seizure on the evening after TURP",
+      "de": "Krampfanfall am Abend nach TURP",
+      "es": "Crisis convulsiva la noche tras una RTU de próstata"
+    },
+    "presenting": {
+      "en": "A 74-year-old man had a monopolar TURP in the afternoon (resection time 95 minutes, irrigation with 1.5% glycine). At 11 pm the nurse reports increasing confusion and nausea; during the examination he has a generalised seizure lasting one minute and is drowsy afterwards. Sodium 117 mmol/l (139 mmol/l before surgery), potassium 4.1 mmol/l, glucose normal. Blood pressure 162/94 mmHg, heart rate 58/min, SpO2 95% on 2 l oxygen; the irrigation catheter drains slightly pink fluid.",
+      "de": "74-jähriger Patient, am Nachmittag monopolare TURP (Resektionsdauer 95 Minuten, Spülung mit Glycin 1,5 %). Gegen 23 Uhr meldet die Pflege zunehmende Verwirrtheit und Übelkeit; während der Untersuchung erleidet er einen generalisierten Krampfanfall von einer Minute Dauer und ist danach somnolent. Natrium 117 mmol/l (präoperativ 139 mmol/l), Kalium 4,1 mmol/l, Glukose normal. Blutdruck 162/94 mmHg, Herzfrequenz 58/min, SpO2 95 % unter 2 l O2; der Spülkatheter fördert leicht rosafarbene Flüssigkeit.",
+      "es": "Varón de 74 años sometido por la tarde a una RTU de próstata monopolar (95 minutos de resección, irrigación con glicina al 1,5 %). Hacia las 23 h, enfermería avisa de confusión creciente y náuseas; durante la exploración sufre una crisis convulsiva generalizada de un minuto y después queda somnoliento. Sodio 117 mmol/l (139 mmol/l antes de la cirugía), potasio 4,1 mmol/l, glucosa normal. Presión arterial 162/94 mmHg, frecuencia cardiaca 58/min, SpO2 95 % con 2 l de O2; la sonda de lavado drena líquido ligeramente rosado."
+    },
+    "vitals": {
+      "bp": "162/94",
+      "hr": 58,
+      "temp": 36.4,
+      "spo2": 95,
+      "rr": 20
+    },
+    "objectives": {
+      "en": [
+        "Recognise severely symptomatic hyponatraemia after TURP as an emergency for hypertonic saline boluses",
+        "Know the target of the first correction and the 24-hour limit that protects against osmotic demyelination"
+      ],
+      "de": [
+        "Schwer symptomatische Hyponatriämie nach TURP als Notfall für hypertone Kochsalzboli erkennen",
+        "Das Ziel der ersten Korrektur und die 24-Stunden-Grenze zum Schutz vor osmotischer Demyelinisierung kennen"
+      ],
+      "es": [
+        "Reconocer la hiponatremia gravemente sintomática tras una RTU de próstata como una urgencia para bolos de suero salino hipertónico",
+        "Conocer el objetivo de la primera corrección y el límite de 24 horas que protege de la desmielinización osmótica"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which treatment of the hyponatraemia is appropriate?",
+          "de": "Welche Behandlung der Hyponatriämie ist angemessen?",
+          "es": "¿Qué tratamiento de la hiponatremia es el adecuado?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Fluid restriction to 800 ml per day and a sodium check in six hours on the ward",
+              "de": "Flüssigkeitsrestriktion auf 800 ml pro Tag und Natriumkontrolle in sechs Stunden auf Station",
+              "es": "Restricción hídrica a 800 ml al día y control del sodio en seis horas en planta"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": true,
+            "feedback": {
+              "en": "Fluid restriction raises sodium only slowly over days. After a seizure, cerebral oedema is the immediate threat, and waiting six hours risks further seizures and herniation.",
+              "de": "Eine Flüssigkeitsrestriktion hebt das Natrium nur langsam über Tage an. Nach einem Krampfanfall droht unmittelbar das Hirnödem; sechs Stunden Abwarten riskieren weitere Anfälle und eine Einklemmung.",
+              "es": "La restricción hídrica eleva el sodio solo lentamente a lo largo de días. Tras una crisis convulsiva, el edema cerebral es la amenaza inmediata, y esperar seis horas expone a nuevas crisis y a herniación."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Furosemide 40 mg IV and a sodium check in four hours, without giving hypertonic saline",
+              "de": "Furosemid 40 mg i.v. und Natriumkontrolle in vier Stunden, ohne hypertone Lösung",
+              "es": "Furosemida 40 mg i.v. y control del sodio en cuatro horas, sin suero hipertónico"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": true,
+            "feedback": {
+              "en": "A loop diuretic can help with fluid overload but does not raise sodium quickly enough on its own. The seizure needs an immediate rise of a few mmol/l, which only hypertonic saline achieves.",
+              "de": "Ein Schleifendiuretikum kann bei Volumenüberladung helfen, hebt das Natrium allein aber nicht rasch genug an. Der Krampfanfall verlangt einen sofortigen Anstieg um wenige mmol/l, den nur hypertone Kochsalzlösung erreicht.",
+              "es": "Un diurético de asa puede ayudar en la sobrecarga de volumen, pero por sí solo no eleva el sodio con la rapidez necesaria. La crisis exige una subida inmediata de unos pocos mmol/l, que solo consigue el suero salino hipertónico."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Continuous 3% saline infusion until sodium is back at 135 mmol/l within the next six hours",
+              "de": "NaCl 3 % als Dauerinfusion, bis das Natrium innerhalb von sechs Stunden wieder 135 mmol/l erreicht hat",
+              "es": "Infusión continua de NaCl al 3 % hasta que el sodio vuelva a 135 mmol/l en las próximas seis horas"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": true,
+            "feedback": {
+              "en": "A rise of 18 mmol/l in six hours far exceeds the limit of 10 mmol/l in the first 24 hours and risks osmotic demyelination. The goal is to relieve symptoms, not to normalise the value.",
+              "de": "Ein Anstieg um 18 mmol/l in sechs Stunden überschreitet die Grenze von 10 mmol/l in den ersten 24 Stunden deutlich und riskiert eine osmotische Demyelinisierung. Ziel ist die Symptomkontrolle, nicht die Normalisierung des Werts.",
+              "es": "Una subida de 18 mmol/l en seis horas supera con creces el límite de 10 mmol/l en las primeras 24 horas y expone a desmielinización osmótica. El objetivo es controlar los síntomas, no normalizar la cifra."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "150 ml 3% saline over 20 min, up to two repeats until +5 mmol/l, at most +10 mmol/l in 24 h",
+              "de": "NaCl 3 % 150 ml über 20 min, bis zu zweimal wiederholen bis +5 mmol/l, in 24 h höchstens +10 mmol/l",
+              "es": "150 ml de NaCl al 3 % en 20 min, hasta dos repeticiones hasta +5 mmol/l, máximo +10 mmol/l en 24 h"
+            },
+            "score": 10,
+            "minutes": 20,
+            "critical": false,
+            "feedback": {
+              "en": "Correct. Severely symptomatic hyponatraemia (seizure, somnolence) is treated with a 150 ml bolus of 3% saline over 20 minutes, sodium checked after each bolus and repeated up to twice until a rise of about 5 mmol/l; this usually stops the symptoms. The rise is limited to 10 mmol/l in the first 24 hours and 8 mmol/l in each further 24 hours, with close sodium checks and transfer to intermediate or intensive care.",
+              "de": "Richtig. Schwer symptomatische Hyponatriämie (Krampfanfall, Somnolenz) wird mit einem Bolus von 150 ml NaCl 3 % über 20 Minuten behandelt, das Natrium nach jedem Bolus kontrolliert und bis zu zweimal wiederholt, bis es um etwa 5 mmol/l gestiegen ist; das beendet meist die Symptome. Der Anstieg ist in den ersten 24 Stunden auf 10 mmol/l und danach auf 8 mmol/l pro 24 Stunden begrenzt, mit engmaschigen Kontrollen und Verlegung auf IMC oder Intensivstation.",
+              "es": "Correcto. La hiponatremia gravemente sintomática (crisis, somnolencia) se trata con un bolo de 150 ml de NaCl al 3 % en 20 minutos, controlando el sodio tras cada bolo y repitiendo hasta dos veces hasta una subida de unos 5 mmol/l, lo que suele resolver los síntomas. La subida se limita a 10 mmol/l en las primeras 24 horas y a 8 mmol/l por cada 24 horas siguientes, con controles estrechos y traslado a cuidados intermedios o intensivos."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Run in 2 l of 0.9% saline quickly and check sodium when the infusion has finished",
+              "de": "NaCl 0,9 % 2 l zügig infundieren und das Natrium nach Ende der Infusion kontrollieren",
+              "es": "Infundir rápidamente 2 l de NaCl al 0,9 % y controlar el sodio al terminar la infusión"
+            },
+            "score": 0,
+            "minutes": 20,
+            "critical": true,
+            "feedback": {
+              "en": "Isotonic saline raises sodium only minimally in dilutional hyponatraemia and adds two litres to a patient who has already absorbed irrigation fluid (hypertension, bradycardia), with the risk of pulmonary oedema.",
+              "de": "Isotone Kochsalzlösung hebt das Natrium bei Verdünnungshyponatriämie kaum an und belastet einen Patienten, der bereits Spülflüssigkeit eingeschwemmt hat (Hypertonie, Bradykardie), mit weiteren zwei Litern; es droht ein Lungenödem.",
+              "es": "El suero fisiológico apenas eleva el sodio en la hiponatremia dilucional y añade dos litros a un paciente que ya ha absorbido líquido de irrigación (hipertensión, bradicardia), con riesgo de edema pulmonar."
+            }
+          }
+        ],
+        "best": "d"
+      }
+    ],
+    "takeaway": {
+      "en": "Seizure or coma with hyponatraemia after TURP: 150 ml of 3% saline over 20 minutes, repeated up to twice until sodium has risen by about 5 mmol/l. Do not exceed a rise of 10 mmol/l in the first 24 hours; the aim is to stop the symptoms, not to normalise sodium quickly.",
+      "de": "Krampfanfall oder Koma bei Hyponatriämie nach TURP: 150 ml NaCl 3 % über 20 Minuten, bis zu zweimal wiederholen, bis das Natrium um etwa 5 mmol/l gestiegen ist. Ein Anstieg über 10 mmol/l in den ersten 24 Stunden ist zu vermeiden; Ziel ist die Symptomkontrolle, nicht die rasche Normalisierung.",
+      "es": "Crisis convulsiva o coma con hiponatremia tras una RTU de próstata: 150 ml de NaCl al 3 % en 20 minutos, repetidos hasta dos veces hasta que el sodio haya subido unos 5 mmol/l. No superar una subida de 10 mmol/l en las primeras 24 horas; el objetivo es controlar los síntomas, no normalizar el sodio con rapidez."
+    },
+    "references": [
+      "bank-guide-funktionell",
+      "bank-guide-operativ",
+      "fachinfo-de"
+    ]
+  },
+  {
+    "id": "q-emg-ward-postobstructive-diuresis-replacement",
+    "area": "ward",
+    "level": 2,
+    "acuity": "urgent",
+    "duty": "night",
+    "patient": {
+      "name": "Wilfried Hasselbach",
+      "age": 79,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Polyuria after catheterisation for chronic retention",
+      "de": "Polyurie nach Katheteranlage bei chronischer Harnverhaltung",
+      "es": "Poliuria tras sondaje por retención crónica"
+    },
+    "presenting": {
+      "en": "A 79-year-old man was admitted to the ward in the evening with chronic urinary retention (1.8 l residual urine, grade II hydronephrosis on both sides, creatinine 310 µmol/l, sodium 138 mmol/l, potassium 5.1 mmol/l). After an indwelling catheter was placed, urine output was 420 ml and 380 ml in two consecutive hours. He is awake and oriented but is hardly drinking because of nausea. Blood pressure 128/74 mmHg lying down, heart rate 88/min, no oedema.",
+      "de": "79-jähriger Patient, am Abend mit chronischer Harnverhaltung auf Station aufgenommen (Restharn 1,8 l, beidseits Harnstauung II. Grades, Kreatinin 310 µmol/l, Natrium 138 mmol/l, Kalium 5,1 mmol/l). Nach Anlage eines Dauerkatheters beträgt die Urinausscheidung in zwei aufeinanderfolgenden Stunden 420 und 380 ml. Er ist wach und orientiert, trinkt wegen Übelkeit aber kaum. Blutdruck 128/74 mmHg im Liegen, Herzfrequenz 88/min, keine Ödeme.",
+      "es": "Varón de 79 años ingresado por la tarde en planta por retención urinaria crónica (residuo de 1,8 l, hidronefrosis bilateral de grado II, creatinina 310 µmol/l, sodio 138 mmol/l, potasio 5,1 mmol/l). Tras colocar una sonda permanente, la diuresis es de 420 y 380 ml en dos horas consecutivas. Está despierto y orientado, pero apenas bebe por las náuseas. Presión arterial 128/74 mmHg en decúbito, frecuencia cardiaca 88/min, sin edemas."
+    },
+    "vitals": {
+      "bp": "128/74",
+      "hr": 88,
+      "temp": 36.8,
+      "spo2": 96,
+      "rr": 16
+    },
+    "objectives": {
+      "en": [
+        "Recognise post-obstructive diuresis by its definition (more than 200 ml/h for 2 hours or more than 3 l in 24 hours)",
+        "Monitor and replace fluid so that hypovolaemia is avoided without perpetuating the diuresis"
+      ],
+      "de": [
+        "Die postobstruktive Diurese an ihrer Definition erkennen (mehr als 200 ml/h über 2 Stunden oder mehr als 3 l in 24 Stunden)",
+        "Überwachen und Flüssigkeit so ersetzen, dass eine Hypovolämie vermieden wird, ohne die Diurese zu unterhalten"
+      ],
+      "es": [
+        "Reconocer la diuresis posobstructiva por su definición (más de 200 ml/h durante 2 horas o más de 3 l en 24 horas)",
+        "Vigilar y reponer líquidos de forma que se evite la hipovolemia sin perpetuar la diuresis"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which approach is appropriate for the night?",
+          "de": "Welches Vorgehen ist für die Nacht angemessen?",
+          "es": "¿Qué actitud es la adecuada para la noche?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Replace the urine loss 1:1 every hour with a balanced crystalloid IV so that no deficit develops",
+              "de": "Urinverlust stündlich 1:1 mit Vollelektrolytlösung i.v. ersetzen, damit kein Volumendefizit entsteht",
+              "es": "Reponer cada hora la pérdida de orina 1:1 con una solución cristaloide balanceada i.v. para evitar un déficit"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": false,
+            "feedback": {
+              "en": "Full replacement keeps the tubules flooded with volume and sodium and perpetuates the diuresis; the patient can be kept polyuric iatrogenically for days. Part of the output is the excretion of retained water and salt and does not need to be returned.",
+              "de": "Ein vollständiger Ersatz hält die Tubuli mit Volumen und Natrium geflutet und unterhält die Diurese; der Patient kann so iatrogen über Tage polyurisch bleiben. Ein Teil der Urinmenge dient der Ausscheidung von zurückgehaltenem Wasser und Salz und muss nicht ersetzt werden.",
+              "es": "La reposición completa mantiene los túbulos inundados de volumen y sodio y perpetúa la diuresis; el paciente puede seguir poliúrico durante días por causa iatrogénica. Parte de la diuresis corresponde a la eliminación de agua y sal retenidas y no hace falta devolverla."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Clamp the catheter for two hours to slow the diuresis and avoid bladder bleeding",
+              "de": "Katheter für zwei Stunden abklemmen, um die Diurese zu bremsen und eine Blutung zu vermeiden",
+              "es": "Pinzar la sonda durante dos horas para frenar la diuresis y evitar el sangrado vesical"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": false,
+            "feedback": {
+              "en": "Clamping does not reduce kidney output; it only rebuilds the obstruction. Intermittent clamping is an outdated practice that does not prevent haematuria or hypotension.",
+              "de": "Das Abklemmen verringert die Nierenausscheidung nicht, sondern baut die Obstruktion wieder auf. Intermittierendes Abklemmen ist eine überholte Praxis, die weder Hämaturie noch Hypotonie verhindert.",
+              "es": "Pinzar la sonda no reduce la producción renal, solo vuelve a crear la obstrucción. El pinzamiento intermitente es una práctica superada que no previene la hematuria ni la hipotensión."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "No infusion, encourage oral fluids and check creatinine on the morning ward round",
+              "de": "Keine Infusion, Trinkmenge freigeben und das Kreatinin bei der Morgenvisite kontrollieren",
+              "es": "Sin sueroterapia, permitir la ingesta oral libre y controlar la creatinina en el pase de la mañana"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "At about 400 ml/h and with almost no oral intake, he loses several litres overnight; hypovolaemia, hypokalaemia or hyponatraemia and a renewed rise in creatinine can develop before the morning check.",
+              "de": "Bei etwa 400 ml/h und kaum oraler Aufnahme verliert er über Nacht mehrere Liter; Hypovolämie, Hypokaliämie oder Hyponatriämie und ein erneuter Kreatininanstieg können sich vor der Morgenkontrolle entwickeln.",
+              "es": "Con unos 400 ml/h y casi sin ingesta oral, perderá varios litros durante la noche; antes del control de la mañana pueden aparecer hipovolemia, hipopotasemia o hiponatremia y una nueva subida de la creatinina."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Transfer to intensive care for a central venous catheter and central venous pressure monitoring",
+              "de": "Verlegung auf die Intensivstation zur Anlage eines ZVK und zur Messung des zentralen Venendrucks",
+              "es": "Traslado a la UCI para colocar un catéter venoso central y medir la presión venosa central"
+            },
+            "score": 0,
+            "minutes": 20,
+            "critical": false,
+            "feedback": {
+              "en": "He is alert and haemodynamically stable. Intensive care is needed for hypotension, confusion or severe electrolyte disturbances; CVP measurement does not guide fluid replacement reliably and adds the risks of a central line.",
+              "de": "Er ist wach und kreislaufstabil. Eine Intensivverlegung ist bei Hypotonie, Bewusstseinsstörung oder schweren Elektrolytstörungen nötig; die ZVD-Messung steuert den Flüssigkeitsersatz nicht zuverlässig und fügt die Risiken eines ZVK hinzu.",
+              "es": "Está consciente y hemodinámicamente estable. La UCI está indicada ante hipotensión, alteración de la conciencia o trastornos electrolíticos graves; la PVC no guía de forma fiable la reposición y añade los riesgos de un catéter central."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Hourly balance, replace 50–75% of the hourly output IV, electrolytes and creatinine every 8–12 h",
+              "de": "Stündliche Bilanz, 50–75 % der Stundenmenge i.v. ersetzen, Elektrolyte und Kreatinin alle 8–12 h",
+              "es": "Balance horario, reponer i.v. el 50–75 % de la diuresis horaria, electrolitos y creatinina cada 8–12 h"
+            },
+            "score": 10,
+            "minutes": 15,
+            "critical": false,
+            "feedback": {
+              "en": "Correct. More than 200 ml/h for two consecutive hours defines post-obstructive diuresis. Replacing only part of the loss (roughly half to three quarters of the hourly volume, for example with 0.45% saline or a balanced solution) prevents hypovolaemia without perpetuating the diuresis; sodium, potassium, magnesium, phosphate and creatinine are checked every 8 to 12 hours, and orthostatic blood pressure and mental state are reassessed.",
+              "de": "Richtig. Mehr als 200 ml/h in zwei aufeinanderfolgenden Stunden definiert die postobstruktive Diurese. Der Ersatz nur eines Teils (etwa die Hälfte bis drei Viertel der Stundenmenge, z. B. mit NaCl 0,45 % oder einer balancierten Lösung) verhindert eine Hypovolämie, ohne die Diurese zu unterhalten; Natrium, Kalium, Magnesium, Phosphat und Kreatinin werden alle 8 bis 12 Stunden kontrolliert, orthostatischer Blutdruck und Bewusstseinslage werden wiederholt beurteilt.",
+              "es": "Correcto. Más de 200 ml/h durante dos horas consecutivas define la diuresis posobstructiva. Reponer solo una parte (aproximadamente la mitad a tres cuartas partes del volumen horario, por ejemplo con NaCl al 0,45 % o una solución balanceada) evita la hipovolemia sin perpetuar la diuresis; sodio, potasio, magnesio, fosfato y creatinina se controlan cada 8 a 12 horas, y se reevalúan la presión arterial ortostática y el estado mental."
+            }
+          }
+        ],
+        "best": "e"
+      }
+    ],
+    "takeaway": {
+      "en": "More than 200 ml/h for two hours after relief of obstruction is post-obstructive diuresis: hourly balance, replace only part of the hourly output (about half to three quarters) and check electrolytes and creatinine every 8 to 12 hours. Full replacement perpetuates the diuresis, and no replacement risks hypovolaemia.",
+      "de": "Mehr als 200 ml/h über zwei Stunden nach Entlastung ist eine postobstruktive Diurese: stündlich bilanzieren, nur einen Teil der Stundenmenge ersetzen (etwa die Hälfte bis drei Viertel) und Elektrolyte sowie Kreatinin alle 8 bis 12 Stunden kontrollieren. Voller Ersatz unterhält die Diurese, kein Ersatz riskiert eine Hypovolämie.",
+      "es": "Más de 200 ml/h durante dos horas tras aliviar la obstrucción es una diuresis posobstructiva: balance horario, reponer solo una parte de la diuresis horaria (aproximadamente la mitad a tres cuartas partes) y controlar electrolitos y creatinina cada 8 a 12 horas. La reposición completa perpetúa la diuresis y no reponer expone a hipovolemia."
+    },
+    "references": [
+      "bank-guide-funktionell",
+      "nice-retention",
+      "nice-aki"
+    ]
+  },
+  {
+    "id": "q-emg-ward-paraphimosis-after-catheterisation-manual-reduction",
+    "area": "ward",
+    "level": 1,
+    "acuity": "urgent",
+    "duty": "night",
+    "patient": {
+      "name": "Wigbert Abendroth",
+      "age": 78,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Swollen foreskin after catheterisation",
+      "de": "Geschwollene Vorhaut nach Katheteranlage",
+      "es": "Prepucio tumefacto tras el sondaje"
+    },
+    "presenting": {
+      "en": "A 78-year-old man on the trauma ward, one day after a hip hemiarthroplasty, had a 14 Ch transurethral catheter placed in the afternoon for urinary retention. At 23:00 the nurse calls because of a painful swelling at the penis. The foreskin is retracted behind the glans and forms a tense, oedematous ring at the coronal sulcus. The glans is pink, warm and blanches with normal capillary refill; there is no necrosis and no skin defect. The catheter drains clear urine.",
+      "de": "78-jähriger Patient auf der unfallchirurgischen Station, einen Tag nach Hüft-Hemiendoprothese; am Nachmittag wurde wegen Harnverhalts ein transurethraler Katheter 14 Ch gelegt. Um 23:00 Uhr ruft die Pflege wegen einer schmerzhaften Schwellung am Penis. Die Vorhaut ist hinter die Glans retrahiert und bildet im Sulcus coronarius einen prallen, ödematösen Schnürring. Die Glans ist rosig, warm und gut rekapillarisierend; keine Nekrose, kein Hautdefekt. Der Katheter fördert klaren Urin.",
+      "es": "Varón de 78 años en la planta de traumatología, un día después de una hemiartroplastia de cadera; por la tarde se le colocó una sonda transuretral de 14 Ch por retención urinaria. A las 23:00 la enfermera llama por una tumefacción dolorosa en el pene. El prepucio está retraído por detrás del glande y forma un anillo de constricción tenso y edematoso en el surco balanoprepucial. El glande está rosado, caliente y con buen relleno capilar; no hay necrosis ni defecto cutáneo. La sonda drena orina clara."
+    },
+    "vitals": {
+      "bp": "142/78",
+      "hr": 88,
+      "temp": 36.8,
+      "spo2": 96,
+      "rr": 16
+    },
+    "objectives": {
+      "en": [
+        "Recognise iatrogenic paraphimosis after catheterisation as a time-critical emergency",
+        "Apply the stepwise treatment: analgesia, compression and manual reduction before any incision"
+      ],
+      "de": [
+        "Die iatrogene Paraphimose nach Katheteranlage als zeitkritischen Notfall erkennen",
+        "Das Stufenvorgehen anwenden: Analgesie, Kompression und manuelle Reposition vor jeder Inzision"
+      ],
+      "es": [
+        "Reconocer la parafimosis yatrógena tras el sondaje como una urgencia que no admite demora",
+        "Aplicar el tratamiento escalonado: analgesia, compresión y reducción manual antes de cualquier incisión"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "What is the most appropriate next step?",
+          "de": "Was ist das angemessene weitere Vorgehen?",
+          "es": "¿Cuál es el siguiente paso más adecuado?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Cool with ice packs, elevate the penis and reassess on the morning ward round",
+              "de": "Mit Eispackungen kühlen, Penis hochlagern und bei der Morgenvisite erneut beurteilen",
+              "es": "Enfriar con bolsas de hielo, elevar el pene y reevaluar en el pase de visita de la mañana"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Cooling may reduce the oedema a little, but leaving the constricting ring for hours risks venous congestion progressing to arterial compromise and glans necrosis. Paraphimosis is reduced now, not on the ward round.",
+              "de": "Kühlung kann das Ödem etwas mindern, doch der stundenlang belassene Schnürring droht über die venöse Stauung zur arteriellen Minderperfusion und Glansnekrose zu führen. Die Paraphimose wird jetzt reponiert, nicht bei der Visite.",
+              "es": "El frío puede reducir algo el edema, pero dejar el anillo de constricción durante horas expone a que la congestión venosa progrese a compromiso arterial y necrosis del glande. La parafimosis se reduce ahora, no en el pase de visita."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Remove the catheter and apply a corticosteroid cream so that the oedema can subside",
+              "de": "Katheter entfernen und eine Kortisoncreme auftragen, damit das Ödem abschwellen kann",
+              "es": "Retirar la sonda y aplicar una crema de corticoide para que el edema pueda remitir"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "The catheter is not the cause of the persisting constriction and is needed for the retention; removing it does not reduce the foreskin. Topical steroids are used for phimosis, not for an acute constricting ring.",
+              "de": "Der Katheter unterhält die Einschnürung nicht und wird wegen des Harnverhalts gebraucht; sein Entfernen reponiert die Vorhaut nicht. Topische Steroide sind eine Therapie der Phimose, nicht des akuten Schnürrings.",
+              "es": "La sonda no mantiene la constricción y es necesaria por la retención; retirarla no reduce el prepucio. Los corticoides tópicos son un tratamiento de la fimosis, no del anillo de constricción agudo."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Penile block or anaesthetic gel, compress the oedema for several minutes, then reduce manually",
+              "de": "Peniswurzelblock oder Lidocain-Gel, das Ödem einige Minuten komprimieren, dann manuell reponieren",
+              "es": "Bloqueo peneano o gel anestésico, comprimir el edema varios minutos y después reducir manualmente"
+            },
+            "score": 10,
+            "minutes": 15,
+            "critical": false,
+            "feedback": {
+              "en": "Correct. With a vital glans the first step is manual reduction under adequate analgesia: steady circumferential compression of the oedema for several minutes, then pushing the glans back with the thumbs while the fingers pull the foreskin forward. The catheter can stay in place. Document the reduction and advise the patient never to leave the foreskin retracted.",
+              "de": "Richtig. Bei vitaler Glans steht die manuelle Reposition unter ausreichender Analgesie am Anfang: das Ödem einige Minuten gleichmäßig zirkulär komprimieren, dann die Glans mit den Daumen zurückdrücken, während die Finger die Vorhaut nach vorn ziehen. Der Katheter kann liegen bleiben. Reposition dokumentieren und den Patienten anleiten, die Vorhaut nie zurückgezogen zu lassen.",
+              "es": "Correcto. Con el glande viable, el primer paso es la reducción manual con analgesia adecuada: comprimir el edema de forma circular y constante durante varios minutos y después empujar el glande con los pulgares mientras los dedos traccionan el prepucio hacia delante. La sonda puede quedarse. Documentar la reducción y enseñar al paciente a no dejar nunca el prepucio retraído."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Dorsal incision of the constricting ring under local anaesthesia, before any attempt at reduction",
+              "de": "Dorsale Inzision des Schnürrings in Lokalanästhesie, noch vor einem Repositionsversuch",
+              "es": "Incisión dorsal del anillo de constricción con anestesia local, antes de intentar la reducción"
+            },
+            "score": 0,
+            "minutes": 20,
+            "critical": false,
+            "feedback": {
+              "en": "A dorsal incision is the next step when manual reduction fails or the glans is already ischaemic. With a well-perfused glans it is not the first measure, because compression and reduction usually succeed without a wound.",
+              "de": "Die dorsale Inzision ist der nächste Schritt, wenn die manuelle Reposition scheitert oder die Glans bereits ischämisch ist. Bei gut durchbluteter Glans ist sie nicht die erste Maßnahme, weil Kompression und Reposition meist ohne Wunde gelingen.",
+              "es": "La incisión dorsal es el siguiente paso si fracasa la reducción manual o el glande ya está isquémico. Con un glande bien perfundido no es la primera medida, porque la compresión y la reducción suelen tener éxito sin herida."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Arrange an emergency circumcision in theatre tonight to treat the constriction definitively",
+              "de": "Noch heute Nacht eine Notfall-Zirkumzision im OP anmelden, um die Einschnürung definitiv zu beheben",
+              "es": "Programar esta noche una circuncisión urgente en quirófano para resolver la constricción de forma definitiva"
+            },
+            "score": 0,
+            "minutes": 20,
+            "critical": false,
+            "feedback": {
+              "en": "Circumcision in an oedematous, inflamed foreskin is technically harder and is not needed acutely. It is offered electively once the swelling has resolved, if the phimotic ring persists or paraphimosis recurs.",
+              "de": "Eine Zirkumzision im ödematösen, entzündeten Gewebe ist technisch schwieriger und akut nicht nötig. Sie wird nach Abschwellen elektiv angeboten, wenn der Phimosering bestehen bleibt oder die Paraphimose rezidiviert.",
+              "es": "Una circuncisión en un prepucio edematoso e inflamado es técnicamente más difícil y no es necesaria de forma aguda. Se ofrece de forma programada una vez resuelta la tumefacción, si persiste el anillo fimótico o la parafimosis recidiva."
+            }
+          }
+        ],
+        "best": "c"
+      }
+    ],
+    "takeaway": {
+      "en": "Paraphimosis after catheterisation with a vital glans is reduced at once: analgesia, several minutes of compression of the oedema, then manual reduction. A dorsal incision is reserved for failed reduction or an ischaemic glans, and circumcision is planned electively later. Always pull the foreskin forward again after catheterisation.",
+      "de": "Eine Paraphimose nach Katheteranlage mit vitaler Glans wird sofort reponiert: Analgesie, einige Minuten Kompression des Ödems, dann manuelle Reposition. Die dorsale Inzision bleibt der gescheiterten Reposition oder der ischämischen Glans vorbehalten, die Zirkumzision wird später elektiv geplant. Nach jeder Katheteranlage die Vorhaut wieder vorziehen.",
+      "es": "La parafimosis tras el sondaje con el glande viable se reduce de inmediato: analgesia, compresión del edema durante varios minutos y después reducción manual. La incisión dorsal se reserva para la reducción fallida o el glande isquémico, y la circuncisión se programa más adelante. Tras cada sondaje, volver a colocar el prepucio en su sitio."
+    },
+    "references": [
+      "bank-guide-kinderurologie",
+      "aua-emergencies"
+    ]
+  },
+  {
+    "id": "q-emg-ward-catheter-balloon-will-not-deflate",
+    "area": "ward",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "night",
+    "patient": {
+      "name": "Hiltrud Stolzenburg",
+      "age": 82,
+      "sex": "female"
+    },
+    "title": {
+      "en": "The catheter balloon will not deflate",
+      "de": "Der Katheterballon lässt sich nicht entblocken",
+      "es": "El balón de la sonda no se desinfla"
+    },
+    "presenting": {
+      "en": "An 82-year-old woman on the geriatric ward has had a 14 Ch silicone transurethral catheter for 4 weeks. Because it is blocked with sediment, the night nurse wants to change it, but the 10 ml balloon cannot be deflated. A syringe attached to the valve and left to fill passively for several minutes, followed by gentle aspiration, yields no fluid. The catheter has been advanced slightly and rotated; it lies freely in the bladder, and there is no traction or kinking. She is otherwise well and afebrile.",
+      "de": "82-jährige Patientin auf der geriatrischen Station mit transurethralem Silikonkatheter 14 Ch seit 4 Wochen. Weil er durch Sediment verstopft ist, will die Nachtpflege ihn wechseln, doch der mit 10 ml geblockte Ballon lässt sich nicht entblocken. Eine auf das Ventil gesetzte Spritze, die sich mehrere Minuten passiv füllen sollte, und eine anschließende vorsichtige Aspiration fördern keine Flüssigkeit. Der Katheter wurde etwas vorgeschoben und gedreht; er liegt frei in der Blase, ohne Zug oder Knick. Sonst ist sie wohlauf und fieberfrei.",
+      "es": "Mujer de 82 años en la planta de geriatría con una sonda transuretral de silicona de 14 Ch desde hace 4 semanas. Como está obstruida por sedimento, la enfermera de noche quiere cambiarla, pero el balón inflado con 10 ml no se desinfla. Una jeringa colocada en la válvula y dejada llenarse de forma pasiva durante varios minutos, seguida de una aspiración suave, no obtiene líquido. La sonda se ha avanzado un poco y girado; está libre en la vejiga, sin tracción ni acodamiento. Por lo demás se encuentra bien y está afebril."
+    },
+    "vitals": null,
+    "objectives": {
+      "en": [
+        "Follow the stepwise approach to a catheter balloon that will not deflate",
+        "Avoid harmful methods such as forced traction, overinflation and solvents"
+      ],
+      "de": [
+        "Das Stufenvorgehen bei einem nicht entblockbaren Katheterballon anwenden",
+        "Schädliche Methoden wie forcierten Zug, Überblockung und Lösungsmittel vermeiden"
+      ],
+      "es": [
+        "Seguir el abordaje escalonado ante un balón de sonda que no se desinfla",
+        "Evitar métodos dañinos como la tracción forzada, la sobredistensión y los disolventes"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "What is the most appropriate next step?",
+          "de": "Was ist das angemessene weitere Vorgehen?",
+          "es": "¿Cuál es el siguiente paso más adecuado?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Inflate the balloon with further saline until it bursts, then remove the catheter",
+              "de": "Den Ballon mit weiterer Kochsalzlösung füllen, bis er platzt, dann den Katheter ziehen",
+              "es": "Llenar el balón con más suero salino hasta que estalle y después retirar la sonda"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": true,
+            "feedback": {
+              "en": "Overinflation to rupture is painful, can injure the bladder and, especially with latex balloons, leaves fragments that need cystoscopic removal. It is not one of the early steps and is best avoided.",
+              "de": "Die Überblockung bis zum Platzen ist schmerzhaft, kann die Blase verletzen und hinterlässt besonders bei Latexballons Fragmente, die zystoskopisch geborgen werden müssen. Sie gehört nicht zu den frühen Schritten und wird besser vermieden.",
+              "es": "Sobredistender el balón hasta romperlo es doloroso, puede lesionar la vejiga y, sobre todo con balones de látex, deja fragmentos que hay que extraer por cistoscopia. No es uno de los primeros pasos y conviene evitarlo."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Cut off the inflation channel just proximal to the valve and let the balloon drain",
+              "de": "Den Blockungskanal proximal des Ventils abschneiden und den Ballon auslaufen lassen",
+              "es": "Cortar el canal de inflado proximal a la válvula y dejar que el balón se vacíe"
+            },
+            "score": 10,
+            "minutes": 10,
+            "critical": false,
+            "feedback": {
+              "en": "Correct. The most common cause is a faulty or blocked valve. Cutting the inflation channel proximal to the valve bypasses it and often lets the fluid drain. If that fails, a fine guidewire is passed through the channel, and only then is the balloon punctured under ultrasound guidance.",
+              "de": "Richtig. Häufigste Ursache ist ein defektes oder verlegtes Ventil. Das Abschneiden des Blockungskanals proximal des Ventils umgeht es, und die Flüssigkeit läuft oft ab. Gelingt das nicht, wird ein dünner Führungsdraht durch den Kanal geschoben, erst danach der Ballon ultraschallgesteuert punktiert.",
+              "es": "Correcto. La causa más frecuente es una válvula defectuosa u obstruida. Cortar el canal de inflado proximal a la válvula la evita y a menudo deja salir el líquido. Si no funciona, se introduce una guía fina por el canal y solo después se punciona el balón bajo control ecográfico."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Pull the catheter out with steady, firm traction while the patient is sedated",
+              "de": "Den Katheter unter Sedierung mit gleichmäßigem, kräftigem Zug herausziehen",
+              "es": "Extraer la sonda con una tracción firme y constante con la paciente sedada"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": true,
+            "feedback": {
+              "en": "Pulling an inflated balloon through the bladder neck and urethra causes tearing, bleeding and later stricture, even in women. Sedation hides the pain but not the injury.",
+              "de": "Ein geblockter Ballon, der durch Blasenhals und Harnröhre gezogen wird, verursacht Einrisse, Blutung und später Strikturen, auch bei Frauen. Die Sedierung verdeckt den Schmerz, nicht die Verletzung.",
+              "es": "Arrastrar un balón inflado a través del cuello vesical y la uretra provoca desgarros, sangrado y estenosis posterior, también en mujeres. La sedación oculta el dolor, pero no la lesión."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Instil a few millilitres of ether into the inflation channel to dissolve the balloon wall",
+              "de": "Einige Milliliter Äther in den Blockungskanal geben, um die Ballonwand aufzulösen",
+              "es": "Instilar unos mililitros de éter por el canal de inflado para disolver la pared del balón"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": true,
+            "feedback": {
+              "en": "Ether, acetone and chloroform are toxic to the urothelium and can cause severe chemical cystitis; they are no longer recommended. They also have little effect on a silicone balloon.",
+              "de": "Äther, Aceton und Chloroform sind urotheltoxisch und können eine schwere chemische Zystitis auslösen; sie werden nicht mehr empfohlen. Auf einen Silikonballon wirken sie zudem kaum.",
+              "es": "El éter, la acetona y el cloroformo son tóxicos para el urotelio y pueden causar una cistitis química grave; ya no se recomiendan. Además apenas actúan sobre un balón de silicona."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Puncture the balloon at once through the abdominal wall with a needle under ultrasound guidance",
+              "de": "Den Ballon sofort ultraschallgesteuert mit einer Nadel durch die Bauchdecke punktieren",
+              "es": "Puncionar de inmediato el balón con una aguja a través de la pared abdominal bajo control ecográfico"
+            },
+            "score": 0,
+            "minutes": 15,
+            "critical": false,
+            "feedback": {
+              "en": "Ultrasound-guided puncture of the balloon is an established rescue step, but it is invasive and comes only after the simple measures at the catheter itself, cutting the channel and passing a guidewire, have failed.",
+              "de": "Die ultraschallgesteuerte Ballonpunktion ist ein etablierter Rettungsschritt, aber invasiv und folgt erst, wenn die einfachen Maßnahmen am Katheter selbst, also Abschneiden des Kanals und Führungsdraht, gescheitert sind.",
+              "es": "La punción ecoguiada del balón es un paso de rescate establecido, pero es invasiva y solo se realiza cuando han fracasado las medidas sencillas sobre la propia sonda: cortar el canal y pasar una guía."
+            }
+          }
+        ],
+        "best": "b"
+      }
+    ],
+    "takeaway": {
+      "en": "If a catheter balloon will not deflate, confirm its position, then cut the inflation channel proximal to the valve; next pass a guidewire through the channel, and only then puncture the balloon under ultrasound. Forced traction, overinflation to rupture and solvents such as ether are avoided.",
+      "de": "Lässt sich ein Katheterballon nicht entblocken, zuerst die Lage sichern, dann den Blockungskanal proximal des Ventils abschneiden; danach einen Führungsdraht durch den Kanal schieben und erst dann den Ballon ultraschallgesteuert punktieren. Forcierter Zug, Überblocken bis zum Platzen und Lösungsmittel wie Äther sind zu vermeiden.",
+      "es": "Si el balón de una sonda no se desinfla, confirmar primero su posición y después cortar el canal de inflado proximal a la válvula; a continuación pasar una guía por el canal y solo entonces puncionar el balón bajo ecografía. Deben evitarse la tracción forzada, la sobredistensión hasta la rotura y los disolventes como el éter."
+    },
+    "references": [
+      "bank-guide-infektiologie",
+      "bank-guide-operativ"
+    ]
+  },
+  {
+    "id": "q-drug-cotrimoxazole-prostatitis-hyperkalaemia-monitoring",
+    "area": "ward",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "clinic",
+    "patient": {
+      "name": "Bernfried Sackmann",
+      "age": 79,
+      "sex": "male"
+    },
+    "title": {
+      "de": "Orale Fortführung bei Prostatitis unter Ramipril und Spironolacton",
+      "en": "Oral step-down for prostatitis on ramipril and spironolactone",
+      "es": "Paso a vía oral en una prostatitis con ramipril y espironolactona"
+    },
+    "presenting": {
+      "de": "79-jähriger Patient, vor vier Tagen mit akuter bakterieller Prostatitis aufgenommen (Fieber 39,2 °C, Dysurie, druckdolente Prostata). Unter Ceftriaxon 2 g i.v. einmal täglich ist er seit 48 Stunden fieberfrei, das CRP ist von 186 auf 54 mg/l gefallen. Blut- und Urinkultur: Escherichia coli, resistent gegen Ampicillin, Ciprofloxacin und Levofloxacin; sensibel gegen Ceftriaxon, Piperacillin/Tazobactam, Cotrimoxazol, Nitrofurantoin und Fosfomycin. Transrektaler Ultraschall ohne Abszess, Restharn 60 ml. Wegen Herzinsuffizienz mit reduzierter Ejektionsfraktion (35 %) nimmt er Ramipril 10 mg, Spironolacton 25 mg, Bisoprolol 5 mg und Torasemid 10 mg täglich. Heute Kreatinin 1,5 mg/dl, eGFR 47 ml/min/1,73 m² (Kreatinin-Clearance nach Cockcroft-Gault bei 78 kg: 44 ml/min), Kalium 4,6 mmol/l. Die Antibiotikatherapie soll oral fortgeführt werden.",
+      "en": "A 79-year-old man was admitted four days ago with acute bacterial prostatitis (fever 39.2 °C, dysuria, tender prostate). On ceftriaxone 2 g IV once daily he has been afebrile for 48 hours, and CRP has fallen from 186 to 54 mg/l. Blood and urine cultures: Escherichia coli, resistant to ampicillin, ciprofloxacin and levofloxacin; susceptible to ceftriaxone, piperacillin/tazobactam, co-trimoxazole, nitrofurantoin and fosfomycin. Transrectal ultrasound shows no abscess, post-void residual 60 ml. For heart failure with reduced ejection fraction (35 %) he takes ramipril 10 mg, spironolactone 25 mg, bisoprolol 5 mg and torasemide 10 mg daily. Today creatinine is 1.5 mg/dl, eGFR 47 ml/min/1.73 m² (Cockcroft-Gault creatinine clearance at 78 kg: 44 ml/min), potassium 4.6 mmol/l. Antibiotic treatment is to be continued orally.",
+      "es": "Varón de 79 años ingresado hace cuatro días por prostatitis bacteriana aguda (fiebre de 39,2 °C, disuria, próstata dolorosa). Con ceftriaxona 2 g i.v. una vez al día lleva 48 horas afebril y la PCR ha bajado de 186 a 54 mg/l. Hemocultivo y urocultivo: Escherichia coli resistente a ampicilina, ciprofloxacino y levofloxacino; sensible a ceftriaxona, piperacilina/tazobactam, cotrimoxazol, nitrofurantoína y fosfomicina. La ecografía transrectal no muestra absceso, residuo posmiccional 60 ml. Por insuficiencia cardiaca con fracción de eyección reducida (35 %) toma ramipril 10 mg, espironolactona 25 mg, bisoprolol 5 mg y torasemida 10 mg al día. Hoy creatinina 1,5 mg/dl, FGe 47 ml/min/1,73 m² (aclaramiento de creatinina por Cockcroft-Gault con 78 kg: 44 ml/min), potasio 4,6 mmol/l. El tratamiento antibiótico debe continuarse por vía oral."
+    },
+    "vitals": {
+      "bp": "118/70",
+      "hr": 64,
+      "temp": 36.8,
+      "spo2": 96,
+      "rr": 16
+    },
+    "objectives": {
+      "de": [
+        "Den Mechanismus der Trimethoprim-Hyperkaliämie (amiloridartige Blockade des epithelialen Natriumkanals) und die Risikokonstellation aus Alter, Niereninsuffizienz, ACE-Hemmer oder Sartan und Spironolacton kennen",
+        "Cotrimoxazol bei Prostatitis nach der Kreatinin-Clearance dosieren und Kalium sowie Kreatinin früh und regelmäßig kontrollieren"
+      ],
+      "en": [
+        "Know the mechanism of trimethoprim-induced hyperkalaemia (amiloride-like block of the epithelial sodium channel) and the risk constellation of old age, renal impairment, ACE inhibitor or ARB and spironolactone",
+        "Dose co-trimoxazole for prostatitis by creatinine clearance and check potassium and creatinine early and regularly"
+      ],
+      "es": [
+        "Conocer el mecanismo de la hiperpotasemia por trimetoprima (bloqueo del canal epitelial de sodio similar al de la amilorida) y la combinación de riesgo de edad avanzada, insuficiencia renal, IECA o ARA II y espironolactona",
+        "Dosificar el cotrimoxazol en la prostatitis según el aclaramiento de creatinina y controlar potasio y creatinina pronto y de forma periódica"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "Welche orale Fortführung ordnen Sie an?",
+          "en": "Which oral continuation do you prescribe?",
+          "es": "¿Qué tratamiento oral de continuación prescribe?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Co-trimoxazole 960 mg twice daily to a total of 2–4 weeks; potassium and creatinine after 2–3 days, then weekly",
+              "de": "Cotrimoxazol 960 mg zweimal täglich bis insgesamt 2–4 Wochen; Kalium und Kreatinin nach 2–3 Tagen, dann wöchentlich",
+              "es": "Cotrimoxazol 960 mg dos veces al día hasta completar 2–4 semanas; potasio y creatinina a los 2–3 días y luego cada semana"
+            },
+            "score": 10,
+            "minutes": 10,
+            "critical": false,
+            "feedback": {
+              "en": "Correct: the EAU treats acute bacterial prostatitis like a systemic urinary tract infection; after clinical improvement, treatment continues orally for a total of 2–4 weeks. With fluoroquinolone resistance, co-trimoxazole is the susceptibility-guided oral drug that reaches effective levels in prostatic tissue. With a creatinine clearance above 30 ml/min it is given at full dose and halved only at 15–30 ml/min. Like amiloride, trimethoprim blocks the epithelial sodium channel in the distal nephron and reduces potassium excretion; with old age, impaired renal function, ramipril and spironolactone the risk of hyperkalaemia is high, and the SmPC requires close potassium monitoring. If potassium rises, a pause of spironolactone is decided together with cardiology.",
+              "de": "Richtig: Die EAU behandelt die akute bakterielle Prostatitis wie einen systemischen Harnwegsinfekt; nach klinischer Besserung wird oral fortgeführt, insgesamt 2–4 Wochen. Bei Fluorchinolonresistenz ist Cotrimoxazol das testgerechte orale Mittel, das im Prostatagewebe wirksame Spiegel erreicht. Bei einer Kreatinin-Clearance über 30 ml/min wird es voll dosiert, halbiert erst bei 15–30 ml/min. Trimethoprim hemmt wie Amilorid den epithelialen Natriumkanal im distalen Nephron und senkt die Kaliumausscheidung; mit Alter, eingeschränkter Nierenfunktion, Ramipril und Spironolacton ist das Hyperkaliämierisiko hoch, die Fachinformation verlangt engmaschige Kaliumkontrollen. Steigt das Kalium, wird mit der Kardiologie über eine Pause von Spironolacton entschieden.",
+              "es": "Correcto: la EAU trata la prostatitis bacteriana aguda como una infección urinaria sistémica; tras la mejoría clínica se continúa por vía oral hasta un total de 2–4 semanas. Con resistencia a fluoroquinolonas, el cotrimoxazol es el fármaco oral adecuado al antibiograma que alcanza niveles eficaces en el tejido prostático. Con un aclaramiento de creatinina superior a 30 ml/min se da a dosis plena y solo se reduce a la mitad con 15–30 ml/min. Como la amilorida, la trimetoprima bloquea el canal epitelial de sodio de la nefrona distal y reduce la excreción de potasio; con edad avanzada, función renal reducida, ramipril y espironolactona el riesgo de hiperpotasemia es alto, y la ficha técnica exige controles estrechos del potasio. Si el potasio sube, se decide con cardiología si pausar la espironolactona."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Co-trimoxazole 480 mg twice daily, because the eGFR of 47 and the hyperkalaemia risk require halving the dose",
+              "de": "Cotrimoxazol 480 mg zweimal täglich, weil die eGFR von 47 und das Hyperkaliämierisiko eine Halbierung der Dosis verlangen",
+              "es": "Cotrimoxazol 480 mg dos veces al día, porque el FGe de 47 y el riesgo de hiperpotasemia obligan a reducir la dosis a la mitad"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: the SmPC provides for halving the dose only at a creatinine clearance of 15–30 ml/min; below 15 ml/min co-trimoxazole is not used. At 44 ml/min, half the dose means underdosing with a risk of relapse, abscess or chronic prostatitis – and it does not make potassium checks unnecessary.",
+              "de": "Falsch: Eine Halbierung sieht die Fachinformation erst bei einer Kreatinin-Clearance von 15–30 ml/min vor; unter 15 ml/min wird Cotrimoxazol nicht angewendet. Bei 44 ml/min führt die halbe Dosis zu einer Unterdosierung mit dem Risiko von Rückfall, Abszess oder chronischer Prostatitis – und sie macht die Kaliumkontrollen nicht überflüssig.",
+              "es": "Incorrecto: la ficha técnica solo prevé reducir la dosis a la mitad con un aclaramiento de creatinina de 15–30 ml/min; por debajo de 15 ml/min el cotrimoxazol no se usa. Con 44 ml/min, la mitad de la dosis supone infradosificar, con riesgo de recaída, absceso o prostatitis crónica, y no hace innecesarios los controles de potasio."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Nitrofurantoin 100 mg twice daily for four weeks, because the isolate is susceptible and potassium does not rise",
+              "de": "Nitrofurantoin 100 mg zweimal täglich für vier Wochen, weil der Erreger sensibel ist und das Kalium nicht ansteigt",
+              "es": "Nitrofurantoína 100 mg dos veces al día durante cuatro semanas, porque la cepa es sensible y el potasio no sube"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: nitrofurantoin reaches effective concentrations only in urine, not in prostatic tissue or blood, and is therefore unsuitable for prostatitis or systemic infections. A four-week course in old age also carries a risk of lung and liver damage, and its efficacy declines with impaired renal function.",
+              "de": "Falsch: Nitrofurantoin erreicht wirksame Konzentrationen nur im Urin, nicht im Prostatagewebe oder im Blut, und eignet sich daher nicht für eine Prostatitis oder systemische Infektionen. Eine vierwöchige Gabe im hohen Alter birgt zudem das Risiko von Lungen- und Leberschäden, und bei eingeschränkter Nierenfunktion lässt die Wirkung nach.",
+              "es": "Incorrecto: la nitrofurantoína solo alcanza concentraciones eficaces en la orina, no en el tejido prostático ni en sangre, por lo que no sirve para una prostatitis ni para infecciones sistémicas. Una pauta de cuatro semanas a edad avanzada conlleva además riesgo de daño pulmonar y hepático, y su eficacia disminuye con la función renal reducida."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Co-trimoxazole 960 mg twice daily without laboratory checks, as the creatinine rise on trimethoprim is due to blocked tubular secretion",
+              "de": "Cotrimoxazol 960 mg zweimal täglich ohne Laborkontrollen, da der Kreatininanstieg unter Trimethoprim auf gehemmter tubulärer Sekretion beruht",
+              "es": "Cotrimoxazol 960 mg dos veces al día sin controles analíticos, ya que la subida de creatinina con trimetoprima se debe a la secreción tubular bloqueada"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Dangerous: the creatinine rise from blocked tubular secretion exists, but it is not the main problem. Like amiloride, trimethoprim blocks the epithelial sodium channel and retains potassium; together with ramipril, spironolactone, old age and impaired renal function, life-threatening hyperkalaemia can develop within a few days. Population studies in older patients on spironolactone or ACE inhibitors showed more hospital admissions for hyperkalaemia and more sudden deaths with co-trimoxazole than with other antibiotics.",
+              "de": "Gefährlich: Den Kreatininanstieg durch gehemmte tubuläre Sekretion gibt es, er ist aber nicht das Hauptproblem. Trimethoprim blockiert wie Amilorid den epithelialen Natriumkanal und hält Kalium zurück; zusammen mit Ramipril, Spironolacton, Alter und eingeschränkter Nierenfunktion kann sich innerhalb weniger Tage eine lebensbedrohliche Hyperkaliämie entwickeln. Populationsstudien bei älteren Patienten unter Spironolacton oder ACE-Hemmern zeigten unter Cotrimoxazol mehr Krankenhausaufnahmen wegen Hyperkaliämie und mehr plötzliche Todesfälle als unter anderen Antibiotika.",
+              "es": "Peligroso: la subida de creatinina por bloqueo de la secreción tubular existe, pero no es el problema principal. Como la amilorida, la trimetoprima bloquea el canal epitelial de sodio y retiene potasio; junto con ramipril, espironolactona, edad avanzada y función renal reducida puede aparecer en pocos días una hiperpotasemia potencialmente mortal. Estudios poblacionales en pacientes mayores con espironolactona o IECA mostraron con cotrimoxazol más ingresos por hiperpotasemia y más muertes súbitas que con otros antibióticos."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Ciprofloxacin 750 mg twice daily, as prostatic concentrations exceed the inhibitory concentration despite in-vitro resistance",
+              "de": "Ciprofloxacin 750 mg zweimal täglich, da die Prostatakonzentration die Hemmkonzentration trotz In-vitro-Resistenz überschreitet",
+              "es": "Ciprofloxacino 750 mg dos veces al día, ya que la concentración prostática supera la concentración inhibitoria pese a la resistencia in vitro"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: susceptibility categories based on EUCAST breakpoints already take achievable concentrations into account; a resistant isolate predicts treatment failure with relapse, abscess or chronic prostatitis. In addition, the EMA has restricted fluoroquinolones because of damage to tendons, nerves and the aorta – a risk that weighs especially in old age.",
+              "de": "Falsch: Die Resistenzbewertung nach EUCAST-Grenzwerten berücksichtigt bereits die erreichbaren Konzentrationen; ein resistentes Isolat sagt ein Therapieversagen mit Rückfall, Abszess oder chronischer Prostatitis voraus. Zudem hat die EMA Fluorchinolone wegen Schäden an Sehnen, Nerven und Aorta eingeschränkt – ein Risiko, das im hohen Alter besonders zählt.",
+              "es": "Incorrecto: la categoría de sensibilidad según los puntos de corte de EUCAST ya tiene en cuenta las concentraciones alcanzables; una cepa resistente predice el fracaso con recaída, absceso o prostatitis crónica. Además, la EMA ha restringido las fluoroquinolonas por daños en tendones, nervios y aorta, un riesgo que pesa especialmente a edad avanzada."
+            }
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "de": "Trimethoprim, auch in Cotrimoxazol, hemmt wie Amilorid den epithelialen Natriumkanal und senkt die Kaliumausscheidung. Bei älteren Patienten mit eingeschränkter Nierenfunktion unter ACE-Hemmer, Sartan oder Spironolacton droht eine relevante Hyperkaliämie. Ist Cotrimoxazol trotzdem die richtige Wahl – etwa zur oralen Fortführung bei fluorchinolonresistenter Prostatitis –, nach Kreatinin-Clearance dosieren (Halbierung erst bei 15–30 ml/min) und Kalium sowie Kreatinin nach wenigen Tagen und dann regelmäßig kontrollieren.",
+      "en": "Trimethoprim, also as part of co-trimoxazole, blocks the epithelial sodium channel like amiloride and reduces potassium excretion. In older patients with impaired renal function on an ACE inhibitor, ARB or spironolactone, relevant hyperkalaemia is a real risk. If co-trimoxazole is nonetheless the right choice – for example as oral step-down in fluoroquinolone-resistant prostatitis – dose it by creatinine clearance (halved only at 15–30 ml/min) and check potassium and creatinine after a few days and then regularly.",
+      "es": "La trimetoprima, también dentro del cotrimoxazol, bloquea como la amilorida el canal epitelial de sodio y reduce la excreción de potasio. En pacientes mayores con función renal reducida que toman IECA, ARA II o espironolactona existe riesgo de hiperpotasemia relevante. Si aun así el cotrimoxazol es la elección correcta – por ejemplo, como paso a vía oral en una prostatitis resistente a fluoroquinolonas –, dosificarlo según el aclaramiento de creatinina (a la mitad solo con 15–30 ml/min) y controlar potasio y creatinina a los pocos días y después de forma periódica."
+    },
+    "references": [
+      "bank-guide-infektiologie",
+      "infections",
+      "fachinfo-de"
+    ]
+  },
+  {
+    "id": "q-drug-extended-lmwh-after-radical-cystectomy",
+    "area": "ward",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "elective",
+    "patient": {
+      "name": "Rainer Tiedgen",
+      "age": 68,
+      "sex": "male"
+    },
+    "title": {
+      "de": "Entlassung nach Zystektomie: Wie lange Heparin?",
+      "en": "Discharge after cystectomy: how long to continue heparin?",
+      "es": "Alta tras cistectomía: ¿cuánto tiempo mantener la heparina?"
+    },
+    "presenting": {
+      "de": "68-jähriger Patient am siebten Tag nach offener radikaler Zystektomie mit pelviner Lymphadenektomie und Ileum-Conduit wegen eines muskelinvasiven Urothelkarzinoms (pT2b pN0) nach neoadjuvanter Chemotherapie. Seit dem ersten postoperativen Tag erhält er Enoxaparin 40 mg s.c. einmal täglich und trägt Kompressionsstrümpfe. Er ist voll mobil, isst normal, das Conduit fördert gut, die Drainagen sind entfernt. BMI 29 kg/m², keine Thrombose oder Lungenembolie in der Vorgeschichte, keine Antikoagulation oder Thrombozytenaggregationshemmung. Hb 11,2 g/dl (stabil), Thrombozyten 268/nl, Kreatinin 1,0 mg/dl, eGFR 74 ml/min/1,73 m². Morgen soll er nach Hause entlassen werden; er fragt, ob die Spritzen in den Bauch jetzt aufhören können.",
+      "en": "A 68-year-old man on day 7 after open radical cystectomy with pelvic lymph node dissection and an ileal conduit for muscle-invasive urothelial carcinoma (pT2b pN0) after neoadjuvant chemotherapy. Since the first postoperative day he has received enoxaparin 40 mg SC once daily and wears compression stockings. He is fully mobile, eating normally, the conduit drains well and the drains have been removed. BMI 29 kg/m², no history of deep vein thrombosis or pulmonary embolism, no anticoagulant or antiplatelet therapy. Hb 11.2 g/dl (stable), platelets 268/nl, creatinine 1.0 mg/dl, eGFR 74 ml/min/1.73 m². He is to be discharged home tomorrow and asks whether the injections into his abdomen can stop now.",
+      "es": "Varón de 68 años en el séptimo día tras una cistectomía radical abierta con linfadenectomía pélvica y conducto ileal por un carcinoma urotelial músculo-invasivo (pT2b pN0) tras quimioterapia neoadyuvante. Desde el primer día postoperatorio recibe enoxaparina 40 mg s.c. una vez al día y lleva medias de compresión. Camina sin limitaciones, come con normalidad, el conducto drena bien y se han retirado los drenajes. IMC 29 kg/m², sin antecedentes de trombosis venosa profunda ni embolia pulmonar, sin anticoagulantes ni antiagregantes. Hb 11,2 g/dl (estable), plaquetas 268/nl, creatinina 1,0 mg/dl, FGe 74 ml/min/1,73 m². Mañana se va de alta a casa y pregunta si ya pueden terminar las inyecciones en el abdomen."
+    },
+    "vitals": {
+      "bp": "132/78",
+      "hr": 76,
+      "temp": 36.8,
+      "spo2": 97,
+      "rr": 14
+    },
+    "objectives": {
+      "de": [
+        "Wissen, dass das Thromboserisiko nach radikaler Zystektomie über die Entlassung hinaus anhält",
+        "Die verlängerte medikamentöse Prophylaxe mit niedermolekularem Heparin in prophylaktischer Dosis über 4 Wochen ab der Operation anordnen"
+      ],
+      "en": [
+        "Know that the thrombosis risk after radical cystectomy persists beyond discharge",
+        "Prescribe extended pharmacological prophylaxis with low-molecular-weight heparin at a prophylactic dose for 4 weeks from surgery"
+      ],
+      "es": [
+        "Saber que el riesgo trombótico tras la cistectomía radical persiste más allá del alta",
+        "Pautar una profilaxis farmacológica prolongada con heparina de bajo peso molecular a dosis profiláctica durante 4 semanas desde la cirugía"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "Welche Thromboseprophylaxe ordnen Sie für die Entlassung an?",
+          "en": "Which thromboprophylaxis do you prescribe for discharge?",
+          "es": "¿Qué tromboprofilaxis pauta para el alta?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Continue enoxaparin 40 mg SC once daily until 4 weeks after surgery and teach him to self-inject",
+              "de": "Enoxaparin 40 mg s.c. einmal täglich bis 4 Wochen nach der Operation fortführen und die Selbstinjektion anleiten",
+              "es": "Mantener enoxaparina 40 mg s.c. una vez al día hasta que se cumplan 4 semanas de la cirugía y enseñarle a autoinyectársela"
+            },
+            "score": 10,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Correct: after radical cystectomy, the EAU recommends pharmacological thromboprophylaxis with low-molecular-weight heparin from the first postoperative day for 4 weeks (strong recommendation). The risk of venous thromboembolism after major pelvic cancer surgery persists beyond discharge. The enoxaparin SmPC recommends extended prophylaxis of up to 4 weeks after abdominal or pelvic cancer surgery in patients at high thrombosis risk; the prophylactic dose is 40 mg once daily, or 20 mg with a creatinine clearance of 15–30 ml/min.",
+              "de": "Richtig: Nach radikaler Zystektomie empfiehlt die EAU eine medikamentöse Thromboseprophylaxe mit niedermolekularem Heparin ab dem ersten postoperativen Tag über 4 Wochen (starke Empfehlung). Das Risiko venöser Thromboembolien nach großer Tumorchirurgie im Becken hält über die Entlassung hinaus an. Die Fachinformation von Enoxaparin empfiehlt nach abdominaler oder pelviner Tumorchirurgie bei hohem Thromboserisiko eine verlängerte Prophylaxe bis zu 4 Wochen; die prophylaktische Dosis ist 40 mg einmal täglich, bei einer Kreatinin-Clearance von 15–30 ml/min 20 mg.",
+              "es": "Correcto: tras la cistectomía radical, la EAU recomienda tromboprofilaxis farmacológica con heparina de bajo peso molecular desde el primer día postoperatorio durante 4 semanas (recomendación fuerte). El riesgo de tromboembolia venosa tras cirugía oncológica pélvica mayor persiste más allá del alta. La ficha técnica de la enoxaparina recomienda una profilaxis prolongada de hasta 4 semanas tras cirugía oncológica abdominal o pélvica en pacientes con alto riesgo trombótico; la dosis profiláctica es 40 mg una vez al día, o 20 mg con un aclaramiento de creatinina de 15–30 ml/min."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Stop enoxaparin at discharge because he is fully mobile, and keep the compression stockings on for 4 more weeks",
+              "de": "Enoxaparin bei Entlassung beenden, da er voll mobil ist, und die Kompressionsstrümpfe noch 4 Wochen tragen lassen",
+              "es": "Suspender la enoxaparina al alta porque camina sin limitaciones y mantener las medias de compresión 4 semanas más"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: mobility lowers the risk but does not remove it; after cystectomy a substantial share of thromboembolic events occurs only after discharge. Compression stockings alone do not replace the pharmacological prophylaxis that the EAU recommends for 4 weeks after radical cystectomy.",
+              "de": "Falsch: Mobilität senkt das Risiko, beseitigt es aber nicht; nach Zystektomie tritt ein erheblicher Teil der Thromboembolien erst nach der Entlassung auf. Kompressionsstrümpfe allein ersetzen die medikamentöse Prophylaxe nicht, die die EAU nach radikaler Zystektomie über 4 Wochen empfiehlt.",
+              "es": "Incorrecto: la movilidad reduce el riesgo, pero no lo elimina; tras la cistectomía, una parte considerable de las tromboembolias aparece después del alta. Las medias de compresión solas no sustituyen a la profilaxis farmacológica que la EAU recomienda durante 4 semanas tras la cistectomía radical."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Switch to aspirin 100 mg once daily for 4 weeks, because tablets are easier to take at home",
+              "de": "Auf ASS 100 mg einmal täglich für 4 Wochen umstellen, weil Tabletten zu Hause einfacher einzunehmen sind",
+              "es": "Cambiar a AAS 100 mg una vez al día durante 4 semanas, porque los comprimidos son más fáciles de tomar en casa"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: the duration is right, the drug is not. Aspirin is neither licensed nor recommended by the EAU for thromboprophylaxis after cystectomy; the EAU recommends low-molecular-weight heparin. Easier intake does not justify switching to a drug without robust evidence in this setting.",
+              "de": "Falsch: Die Dauer stimmt, die Substanz nicht. ASS ist für die Thromboseprophylaxe nach Zystektomie weder zugelassen noch von der EAU vorgesehen; sie empfiehlt niedermolekulares Heparin. Die bequemere Einnahme rechtfertigt keinen Wechsel auf eine Substanz ohne belastbare Evidenz in dieser Situation.",
+              "es": "Incorrecto: la duración es correcta, el fármaco no. El AAS no está autorizado ni lo recomienda la EAU para la tromboprofilaxis tras la cistectomía; la EAU recomienda heparina de bajo peso molecular. Una toma más cómoda no justifica cambiar a un fármaco sin evidencia sólida en esta situación."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Enoxaparin 1 mg/kg SC twice daily for 3 months, as cancer patients receive therapeutic anticoagulation",
+              "de": "Enoxaparin 1 mg/kg s.c. zweimal täglich für 3 Monate, da Tumorpatienten therapeutisch antikoaguliert werden",
+              "es": "Enoxaparina 1 mg/kg s.c. cada 12 horas durante 3 meses, ya que los pacientes oncológicos se anticoagulan a dosis plenas"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Dangerous: 1 mg/kg twice daily is the therapeutic dose for treating established thrombosis or pulmonary embolism. Without thromboembolism, shortly after major surgery it mainly increases the risk of bleeding. Prophylaxis means the prophylactic dose, for 4 weeks.",
+              "de": "Gefährlich: 1 mg/kg zweimal täglich ist die therapeutische Dosis zur Behandlung einer manifesten Thrombose oder Lungenembolie. Ohne Thromboembolie erhöht sie kurz nach einer großen Operation vor allem das Blutungsrisiko. Zur Prophylaxe gehört die prophylaktische Dosis, und zwar über 4 Wochen.",
+              "es": "Peligroso: 1 mg/kg cada 12 horas es la dosis terapéutica para tratar una trombosis o una embolia pulmonar establecidas. Sin tromboembolia, poco después de una cirugía mayor aumenta sobre todo el riesgo de sangrado. La profilaxis requiere la dosis profiláctica, durante 4 semanas."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Enoxaparin 40 mg once daily until postoperative day 14, as no benefit beyond that has been shown",
+              "de": "Enoxaparin 40 mg einmal täglich bis zum 14. postoperativen Tag, da ein Nutzen darüber hinaus nicht belegt ist",
+              "es": "Enoxaparina 40 mg una vez al día hasta el 14.º día postoperatorio, ya que no se ha demostrado beneficio más allá"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: the usual 7–10 days in the SmPC apply to most operations; after abdominal or pelvic cancer surgery with a high thrombosis risk it recommends extended prophylaxis of up to 4 weeks, and the EAU recommends 4 weeks after cystectomy. The extension has been shown to lower the rate of venous thromboembolism; stopping on day 14 leaves half of this period unprotected.",
+              "de": "Falsch: Die übliche Dauer von 7–10 Tagen aus der Fachinformation gilt für die meisten Eingriffe; nach abdominaler oder pelviner Tumorchirurgie mit hohem Thromboserisiko empfiehlt sie eine verlängerte Prophylaxe bis zu 4 Wochen, und die EAU empfiehlt nach Zystektomie 4 Wochen. Die Verlängerung senkt nachweislich die Rate venöser Thromboembolien; ein Ende am 14. Tag lässt die Hälfte dieser Phase ungeschützt.",
+              "es": "Incorrecto: la duración habitual de 7–10 días de la ficha técnica se aplica a la mayoría de las intervenciones; tras cirugía oncológica abdominal o pélvica con alto riesgo trombótico recomienda una profilaxis prolongada de hasta 4 semanas, y la EAU recomienda 4 semanas tras la cistectomía. Se ha demostrado que la prolongación reduce la tasa de tromboembolia venosa; terminar el día 14 deja sin protección la mitad de ese periodo."
+            }
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "de": "Nach radikaler Zystektomie und anderer großer Tumorchirurgie im Becken bleibt das Thromboserisiko über Wochen erhöht. Die EAU empfiehlt eine medikamentöse Prophylaxe mit niedermolekularem Heparin in prophylaktischer Dosis (z. B. Enoxaparin 40 mg einmal täglich) ab dem ersten postoperativen Tag über 4 Wochen – auch wenn der Patient bei Entlassung voll mobil ist.",
+      "en": "After radical cystectomy and other major pelvic cancer surgery, the thrombosis risk remains raised for weeks. The EAU recommends pharmacological prophylaxis with low-molecular-weight heparin at a prophylactic dose (e.g. enoxaparin 40 mg once daily) from the first postoperative day for 4 weeks – even if the patient is fully mobile at discharge.",
+      "es": "Tras la cistectomía radical y otras cirugías oncológicas pélvicas mayores, el riesgo trombótico sigue elevado durante semanas. La EAU recomienda profilaxis farmacológica con heparina de bajo peso molecular a dosis profiláctica (p. ej. enoxaparina 40 mg una vez al día) desde el primer día postoperatorio durante 4 semanas, aunque el paciente camine sin limitaciones al alta."
+    },
+    "references": [
+      "bank-guide-mibc",
+      "cystectomy",
+      "thromboprophylaxis",
+      "ema-medicines",
+      "fachinfo-de"
     ]
   },
   {

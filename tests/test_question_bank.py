@@ -151,8 +151,11 @@ class QuestionBankTests(unittest.TestCase):
         groups = Counter('imported' if 'source' in c else 'anatomy' if c.get('subject') == 'anatomy' else
                          'classification' if c.get('classification') else 'story' if len(c['steps']) > 1 else 'single'
                          for c in self.cases)
-        # 30 + 20 stories, 106 supplementary questions (protocols, side effects, continence, radiotherapy, guideline topics).
-        self.assertEqual(groups, dict(imported=267, anatomy=50, classification=30, story=50, single=106))
+        # 30 + 20 stories; 136 single questions: 106 supplementary (protocols, side effects, continence, radiotherapy,
+        # guideline topics) and 30 new ones on emergencies, oncology and drugs.
+        self.assertEqual(groups, dict(imported=267, anatomy=50, classification=30, story=50, single=136))
+        self.assertEqual(Counter(c['id'].split('-')[1] for c in self.cases if c['id'].startswith(('q-emg-', 'q-onc-', 'q-drug-'))),
+                         dict(emg=10, onc=10, drug=10))
         self.assertEqual(sum('source' in c for c in self.cases), 267)
         self.assertEqual(sum(c.get('subject') == 'anatomy' for c in self.cases), 50)
         duties = Counter(manage.case_duty(c) for c in self.cases) if hasattr(manage, 'case_duty') else Counter(c.get('duty') for c in self.cases)

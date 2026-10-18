@@ -1548,6 +1548,152 @@
     ]
   },
   {
+    "id": "q-emg-theatre-torsion-nonviable-testis-orchiectomy-contralateral-fixation",
+    "area": "theatre",
+    "level": 2,
+    "acuity": "critical",
+    "duty": "night",
+    "patient": {
+      "name": "Jonas Wilmsmeier",
+      "age": 15,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Black testis after detorsion",
+      "de": "Schwarzer Hoden nach Detorsion",
+      "es": "Testículo negro tras la detorsión"
+    },
+    "presenting": {
+      "en": "A 15-year-old boy has had severe left scrotal pain since the previous evening and presents only now, 30 hours after onset. Scrotal exploration at 01:00 shows a 720° intravaginal torsion of the left spermatic cord. After detorsion and 15 minutes of warm, moist compresses, the testis remains blue-black. After incision of the tunica albuginea there is still no fresh arterial bleeding after 10 minutes. The scrotal contents show no pus or signs of infection; the right side has not yet been explored.",
+      "de": "15-jähriger Junge mit starken linksseitigen Skrotalschmerzen seit dem Vorabend, der sich erst jetzt, 30 Stunden nach Beginn, vorstellt. Die Skrotalexploration um 01:00 Uhr zeigt eine intravaginale Torsion des linken Samenstrangs um 720°. Nach Detorsion und 15 Minuten warmen, feuchten Kompressen bleibt der Hoden blauschwarz. Nach Inzision der Tunica albuginea tritt auch nach 10 Minuten keine frische arterielle Blutung auf. Kein Eiter, keine Infektzeichen im Skrotalfach; die rechte Seite ist noch nicht exploriert.",
+      "es": "Adolescente de 15 años con dolor escrotal izquierdo intenso desde la tarde anterior, que consulta solo ahora, 30 horas después del inicio. La exploración escrotal a la 01:00 muestra una torsión intravaginal de 720° del cordón espermático izquierdo. Tras la detorsión y 15 minutos de compresas húmedas y calientes, el testículo sigue azul negruzco. Tras incidir la túnica albugínea no aparece sangrado arterial fresco ni siquiera a los 10 minutos. No hay pus ni signos de infección en la bolsa escrotal; el lado derecho aún no se ha explorado."
+    },
+    "vitals": {
+      "bp": "124/72",
+      "hr": 92,
+      "temp": 37.2,
+      "spo2": 99,
+      "rr": 16
+    },
+    "objectives": {
+      "en": [
+        "Judge testicular viability during exploration for late torsion",
+        "Combine orchiectomy of a non-viable testis with fixation of the contralateral testis in the same session"
+      ],
+      "de": [
+        "Die Vitalität des Hodens bei der Exploration einer späten Torsion beurteilen",
+        "Die Orchiektomie eines avitalen Hodens mit der Fixation des Gegenhodens in derselben Sitzung verbinden"
+      ],
+      "es": [
+        "Valorar la viabilidad testicular durante la exploración de una torsión tardía",
+        "Combinar la orquiectomía de un testículo no viable con la fijación del contralateral en el mismo acto"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "How do you complete the operation?",
+          "de": "Wie beenden Sie die Operation?",
+          "es": "¿Cómo termina la intervención?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Fix the left testis in the scrotum and check its perfusion by Doppler ultrasound at follow-up",
+              "de": "Den linken Hoden im Skrotum fixieren und die Perfusion in der Nachsorge dopplersonografisch kontrollieren",
+              "es": "Fijar el testículo izquierdo en el escroto y controlar su perfusión con Doppler en el seguimiento"
+            },
+            "score": 0,
+            "minutes": 20,
+            "critical": false,
+            "feedback": {
+              "en": "A testis that stays black after detorsion and warming and does not bleed from the tunica incision is not viable. Leaving it risks infection and abscess and gives no hormonal or fertility benefit; it will atrophy.",
+              "de": "Ein Hoden, der nach Detorsion und Erwärmung schwarz bleibt und aus der Tunica-Inzision nicht blutet, ist avital. Ihn zu belassen birgt Infektions- und Abszessrisiko ohne hormonellen oder Fertilitätsnutzen; er atrophiert.",
+              "es": "Un testículo que sigue negro tras la detorsión y el calentamiento y no sangra en la incisión de la albugínea no es viable. Dejarlo expone a infección y absceso sin beneficio hormonal ni para la fertilidad; acabará atrofiándose."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Left orchiectomy; fix the right testis electively in a few weeks once the wound has healed",
+              "de": "Linksseitige Orchiektomie; den rechten Hoden nach Wundheilung in einigen Wochen elektiv fixieren",
+              "es": "Orquiectomía izquierda; fijar el testículo derecho de forma programada en unas semanas, tras la cicatrización"
+            },
+            "score": 0,
+            "minutes": 20,
+            "critical": false,
+            "feedback": {
+              "en": "The anatomical predisposition (bell-clapper deformity) is usually bilateral. Deferring fixation leaves the only remaining testis at risk of torsion in the interval and requires a second anaesthetic. Without infection, it is fixed in the same session.",
+              "de": "Die anatomische Prädisposition (Glockenschwengel-Deformität) ist meist beidseitig. Eine aufgeschobene Fixation lässt den einzigen verbliebenen Hoden in der Zwischenzeit torsionsgefährdet und erfordert eine zweite Narkose. Ohne Infektion wird er in derselben Sitzung fixiert.",
+              "es": "La predisposición anatómica (deformidad en badajo de campana) suele ser bilateral. Aplazar la fijación deja el único testículo restante expuesto a torsión en el intervalo y exige una segunda anestesia. Sin infección, se fija en el mismo acto."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Left orchiectomy; explore the right side and fix that testis if it proves to be abnormally mobile",
+              "de": "Linksseitige Orchiektomie; die rechte Seite explorieren und den Hoden fixieren, falls er abnorm beweglich ist",
+              "es": "Orquiectomía izquierda; explorar el lado derecho y fijar ese testículo si resulta anormalmente móvil"
+            },
+            "score": 0,
+            "minutes": 20,
+            "critical": true,
+            "feedback": {
+              "en": "Contralateral fixation does not depend on a demonstrated abnormality: an attachment that looks normal on inspection does not reliably exclude the predisposition, and loss of the second testis would mean anorchia. It is part of the operation.",
+              "de": "Die Fixation der Gegenseite hängt nicht von einem nachgewiesenen Befund ab: Eine bei der Inspektion unauffällig wirkende Aufhängung schließt die Prädisposition nicht sicher aus, und der Verlust des zweiten Hodens würde Anorchie bedeuten. Sie gehört zur Operation.",
+              "es": "La fijación contralateral no depende de demostrar una anomalía: una sujeción de aspecto normal en la inspección no descarta de forma fiable la predisposición, y la pérdida del segundo testículo supondría anorquia. Forma parte de la intervención."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Return the detorted testis without fixation and plan a second-look exploration in 48 hours",
+              "de": "Den detorquierten Hoden unfixiert zurückverlagern, Second-Look-Exploration nach 48 Stunden",
+              "es": "Recolocar el testículo detorsionado sin fijarlo y programar una reexploración en 48 horas"
+            },
+            "score": 0,
+            "minutes": 20,
+            "critical": false,
+            "feedback": {
+              "en": "After 30 hours of torsion with no bleeding from the tunica the chance of recovery is close to zero, and waiting only delays the inevitable orchiectomy, adds an anaesthetic and leaves both testes unfixed.",
+              "de": "Nach 30 Stunden Torsion ohne Blutung aus der Tunica ist die Erholungschance nahezu null; Abwarten verschiebt nur die unvermeidliche Orchiektomie, kostet eine weitere Narkose und lässt beide Hoden unfixiert.",
+              "es": "Tras 30 horas de torsión sin sangrado de la albugínea, la probabilidad de recuperación es casi nula; esperar solo retrasa la orquiectomía inevitable, añade otra anestesia y deja ambos testículos sin fijar."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Left orchiectomy and, in the same session, fixation of the right testis via a separate incision",
+              "de": "Linksseitige Orchiektomie und in derselben Sitzung Fixation des rechten Hodens über eigene Inzision",
+              "es": "Orquiectomía izquierda y, en el mismo acto, fijación del testículo derecho por una incisión aparte"
+            },
+            "score": 10,
+            "minutes": 20,
+            "critical": false,
+            "feedback": {
+              "en": "Correct. A testis that remains black after detorsion and warming and shows no arterial bleeding within 10 minutes of tunica incision is non-viable and is removed. Because the predisposition is usually bilateral, the contralateral testis is fixed in the same operation. A testicular prosthesis can be discussed later.",
+              "de": "Richtig. Ein Hoden, der nach Detorsion und Erwärmung schwarz bleibt und innerhalb von 10 Minuten nach Tunica-Inzision keine arterielle Blutung zeigt, ist avital und wird entfernt. Da die Prädisposition meist beidseitig ist, wird der Gegenhoden in derselben Operation fixiert. Eine Hodenprothese kann später besprochen werden.",
+              "es": "Correcto. Un testículo que sigue negro tras la detorsión y el calentamiento y no muestra sangrado arterial en los 10 minutos siguientes a la incisión de la albugínea no es viable y se extirpa. Como la predisposición suele ser bilateral, el testículo contralateral se fija en la misma intervención. Más adelante puede hablarse de una prótesis testicular."
+            }
+          }
+        ],
+        "best": "e"
+      }
+    ],
+    "takeaway": {
+      "en": "If the testis stays black after detorsion and warming and does not bleed from a tunica incision, it is removed. The contralateral testis is fixed in the same session, because the predisposition to torsion is usually bilateral.",
+      "de": "Bleibt der Hoden nach Detorsion und Erwärmung schwarz und blutet er nach Inzision der Tunica albuginea nicht, wird er entfernt. Der Gegenhoden wird in derselben Sitzung fixiert, weil die Torsionsneigung meist beidseitig besteht.",
+      "es": "Si el testículo sigue negro tras la detorsión y el calentamiento y no sangra tras incidir la albugínea, se extirpa. El testículo contralateral se fija en el mismo acto, porque la predisposición a la torsión suele ser bilateral."
+    },
+    "references": [
+      "bank-guide-kinderurologie",
+      "paediatric"
+    ]
+  },
+  {
     "id": "bank-uro-fun-00012",
     "area": "theatre",
     "level": 3,

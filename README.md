@@ -6,7 +6,7 @@
 
 > **Residency-Game-DE – Rollenspiel als Assistenzärztin oder Assistenzarzt der Urologie.** Öffne `standalone.html` im Browser, wähle **DE** und tritt deinen ersten Nachtdienst an.
 
-A cartoon hospital comedy and urology decision game in **English, German and Spanish**, with **exactly 500 scored questions in 402 playable cases**: 30 original three-decision stories (90 questions), 20 oncology stories (58 questions), all 267 imported main-bank questions, 5 retained supplementary clinical questions, **30 new TNM/trauma cases** and **50 new urological anatomy questions**. Choose an avatar, meet the cast, navigate illustrated departments, collect coffee quips and face the chief's morning-report quiz.
+A cartoon hospital comedy and urology decision game in **English, German and Spanish**, with **631 scored questions in 533 playable cases**: 30 original three-decision stories (90 questions), 20 oncology stories (58 questions), all 267 imported main-bank questions, 106 supplementary clinical questions (protocols, drug side effects, continence, priapism, radiotherapy and guideline topics), **30 new questions on emergencies, oncology and drugs**, **30 TNM/trauma cases** and **50 urological anatomy questions**. Choose an avatar, meet the cast, navigate illustrated departments, collect coffee quips and face the chief's morning-report quiz.
 
 All 267 imported source questions remain present, with their original snapshots and the existing correction layer. The 30 original stories and 20 oncology stories remain present. It covers **16 source specialties** across five game departments. The supplied classic HTML games remain unchanged in `classic/`.
 
@@ -16,7 +16,7 @@ All 267 imported source questions remain present, with their original snapshots 
 
 The **TNM & Trauma** navigation opens **14 edition-labelled guides**: RCC, bladder, prostate, UTUC, testicular germ-cell tumours (seminoma and nonseminoma), penile, primary urethral, adrenocortical and pheochromocytoma/sympathetic paraganglioma systems; plus renal, ureteric, bladder, urethral and genital trauma. T/N/M, testicular S and relevant stage groups are translated into DE/EN/ES and linked to EAU, NCI and AAST primary sources. Clinical and pathological assessment are kept separate. Renal trauma explicitly uses the **AAST 2018 table in EAU 2026**; it is not mislabelled as the newer 2025 revision.
 
-**30 new clinical/operative cases** replace 30 older supplementary single questions. The bank remains **500 scored decisions in 402 cases**; all 267 imports, 50 multistep stories and 50 OP/case anatomy questions remain. Ten staging-review cases retain day-clinic duty and ten retain radiation-oncology duty; their presence does not prescribe treatment. The archive now preserves 101 cases and old completed progress. Seven new original clickable SVG schematics bring the atlas to 22 drawings.
+**30 clinical/operative TNM/trauma cases** joined the bank alongside all 267 imports, 50 multistep stories, 50 OP/case anatomy questions and the 106 supplementary questions. Ten staging-review cases retain day-clinic duty and ten retain radiation-oncology duty; their presence does not prescribe treatment. Seven new original clickable SVG schematics bring the atlas to 22 drawings.
 
 Every question has a separate **🚩 Mark for improvement / Zur Verbesserung markieren** control: in the active chart, explanations, library (expand multistep cards), chief quiz and historical review. Add an optional comment of up to 2,000 Unicode characters. Marking changes neither clinical points nor time; it is independent of the star bookmark. Marks persist locally and travel in version-3 game saves; older saves still load and merges keep the newest comment for each exact case/step pair.
 
@@ -38,28 +38,28 @@ Open `standalone.html`, choose **English**, meet the cast and start a shift. Sto
 
 ### Deutsch – Schnellstart
 
-Öffne `standalone.html`, wähle **Deutsch** und starte eine Schicht. Die aktive Bank enthält **genau 500 bewertete Fragen in 402 Fällen**: 30 ursprüngliche Geschichten mit 90 Entscheidungen, 20 Onkologie-Geschichten mit 58 Entscheidungen, sämtliche 267 importierten Fragen, 5 beibehaltene klinische Zusatzfragen, **30 neue TNM-/Traumafälle** und **50 neue urologische Anatomiefragen**. Alle 50 Anatomiefragen sind mit einem Eingriff (31) oder klinischen Fall (19) verbunden, etwa PCNL, HoLEP, Prostatektomie oder Hodentorsion. In der Bibliothek kannst du das Fachgebiet *Urologische Anatomie* auswählen. Entscheide selbst; Erklärungen und markierte Zeichnungen erscheinen nach der Antwort. Janas Joker bleibt auf ausdrücklichen Wunsch verfügbar. Cartoonstil, Dialoge, Kaffeepausen und Abschlussquiz bleiben erhalten. Speichere deinen Spielstand als Datei, um später oder auf einem anderen Gerät weiterzuspielen.
+Öffne `standalone.html`, wähle **Deutsch** und starte eine Schicht. Die aktive Bank enthält **631 bewertete Fragen in 533 Fällen**: 30 ursprüngliche Geschichten mit 90 Entscheidungen, 20 Onkologie-Geschichten mit 58 Entscheidungen, sämtliche 267 importierten Fragen, 106 klinische Zusatzfragen (Protokolle, Nebenwirkungen, Inkontinenz, Priapismus, Strahlentherapie und Leitlinienthemen), **30 neue Fragen zu Notfällen, Onkologie und Medikamenten**, **30 TNM-/Traumafälle** und **50 urologische Anatomiefragen**. Alle 50 Anatomiefragen sind mit einem Eingriff (31) oder klinischen Fall (19) verbunden, etwa PCNL, HoLEP, Prostatektomie oder Hodentorsion. In der Bibliothek kannst du das Fachgebiet *Urologische Anatomie* auswählen. Entscheide selbst; Erklärungen und markierte Zeichnungen erscheinen nach der Antwort. Janas Joker bleibt auf ausdrücklichen Wunsch verfügbar. Cartoonstil, Dialoge, Kaffeepausen und Abschlussquiz bleiben erhalten. Speichere deinen Spielstand als Datei, um später oder auf einem anderen Gerät weiterzuspielen.
 
 **Neu in diesem Update:** Nach jeder Antwort siehst du, welche Option richtig war und warum. „Alle Antworten erklärt“ begründet jede Option. Janas Joker streicht eine falsche Antwort. Richtige Serien bringen Sprüche und Konfetti. Eine Karriereleiter führt von Famulant:in bis zur Legende des Nachtdienstes, und ein Sticker-Album macht Fortschritt sichtbar. *Revanche* wiederholt deine Fehler, *Fachgebiete* zeigen deine Schwachstellen mit Trainingsknopf, und die *Blitzrunde* bietet fünf schnelle Fragen. Tastatur: A–E oder 1–5 wählt, Enter geht weiter.
 
 ### Español – Inicio rápido
 
-Abre `standalone.html`, elige **Español** e inicia una guardia. Hay **exactamente 500 preguntas puntuables en 402 casos**: 30 historias originales con 90 decisiones, 20 historias oncológicas con 58 decisiones, las 267 preguntas importadas, 5 preguntas clínicas complementarias conservadas, **30 casos nuevos de TNM/trauma** y **50 preguntas nuevas de anatomía urológica**. Las 50 preguntas anatómicas tienen contexto quirúrgico (31) o clínico (19). Filtra por *Anatomía urológica*, decide por ti mismo y consulta después las explicaciones y los dibujos. El comodín de enfermería sigue disponible si lo pides. Se conservan los dibujos, el humor y las pausas de café. Guarda tu partida para continuar más tarde o en otro dispositivo.
+Abre `standalone.html`, elige **Español** e inicia una guardia. Hay **631 preguntas puntuables en 533 casos**: 30 historias originales con 90 decisiones, 20 historias oncológicas con 58 decisiones, las 267 preguntas importadas, 106 preguntas clínicas complementarias (protocolos, efectos adversos, incontinencia, priapismo, radioterapia y temas de guías), **30 preguntas nuevas sobre urgencias, oncología y fármacos**, **30 casos de TNM/trauma** y **50 preguntas de anatomía urológica**. Las 50 preguntas anatómicas tienen contexto quirúrgico (31) o clínico (19). Filtra por *Anatomía urológica*, decide por ti mismo y consulta después las explicaciones y los dibujos. El comodín de enfermería sigue disponible si lo pides. Se conservan los dibujos, el humor y las pausas de café. Guarda tu partida para continuar más tarde o en otro dispositivo.
 
 ## Case library
 
 | Department | Authored cases | Imported cases | Total | Scored questions |
 | --- | ---: | ---: | ---: | ---: |
-| Emergency | 9 | 26 | 35 | 51 |
-| Ward | 10 | 23 | 33 | 45 |
-| Clinic | 68 | 133 | 201 | 243 |
-| Endoscopy | 15 | 22 | 37 | 53 |
-| Theatre | 33 | 63 | 96 | 108 |
-| **All departments** | **135** | **267** | **402** | **500** |
+| Emergency | 27 | 26 | 53 | 69 |
+| Ward | 21 | 23 | 44 | 56 |
+| Clinic | 162 | 133 | 295 | 337 |
+| Endoscopy | 17 | 22 | 39 | 55 |
+| Theatre | 39 | 63 | 102 | 114 |
+| **All departments** | **266** | **267** | **533** | **631** |
 
-The active bank contains **500 scored decisions and 1,927 answer options**. One decision step counts as one question; a three-step story counts as three. The chief's quiz repeats bank questions, and atlas taps are separate game mechanics, so neither adds to the total. `data/question-contract.json` enforces the count at validation and build time and rejects exact duplicate question content in each language.
+The active bank contains **631 scored decisions and 2,539 answer options**. One decision step counts as one question; a three-step story counts as three. The chief's quiz repeats bank questions, and atlas taps are separate game mechanics, so neither adds to the total. `data/question-contract.json` enforces the count at validation and build time and rejects exact duplicate question content in each language.
 
-**101 supplementary questions are archived**, rather than deleted, in `data/archive/supplemental-questions.json`. Their completed logbook entries, XP, bookmarks and explanations remain reviewable and exportable. They do not enter the library, schedules, rematches or protocol practice. An unfinished old shift that includes archived questions cannot be resumed in this version; completed entries are retained. Keep the previous version to finish that old shift.
+**No question is archived.** The 101 supplementary questions that a previous version archived to keep the bank at exactly 500 (protocols, drug side effects, continence, priapism, radiotherapy and guideline topics) are playable again, with their attending hints, drawings and *Practise questions* links on the protocol page. The archive mechanism remains: a question moved to `data/archive/supplemental-questions.json` keeps its completed logbook entries, XP, bookmarks and explanations reviewable, but no longer enters the library, schedules, rematches or protocol practice. **The correct answer no longer stands out by its length** in any question written for the game; a test enforces this (see [docs/VALIDATION.md](docs/VALIDATION.md)).
 
 **No learning objectives are shown or shipped in the browser catalog.** Original source objectives remain only in the editable provenance data. There is no automatic goal-based hint; the nurse and consultant jokers must be requested. Case-wide correction notes, evidence notes and highlighted schemas wait until the final answer. See [docs/FRAGENBANK_500.md](docs/FRAGENBANK_500.md) for the source-backed content review and anatomy coverage.
 
@@ -91,15 +91,15 @@ Every case's duty is stored as `duty` in `data/*.json`; imported questions take 
   - *Radiotherapy:* 42 schemes in 6 groups (primary prostate radiotherapy, after prostatectomy and metastatic prostate cancer, bladder, seminoma, penile and urethral cancer, palliative and stereotactic), each with target volume, total dose, dose per fraction, number of fractions and schedule, plus technique, combined systemic therapy (for example ADT and its duration), planning, toxicity and evidence.
   - Every regimen or scheme with questions has a *Practise questions* button. On phones each table row becomes a small card, so doses never hide behind sideways scrolling.
   - The page always says it is a learning overview, not a prescription or treatment plan. `manage.py` refuses doses without a number, table cells longer than the table allows, radiotherapy phases whose total dose is not dose per fraction × fractions, sources that are not HTTPS, and any author mention.
-- **Oncology day clinic (*Onkologische Tagesklinik*, from 08:30):** 11 active cases on selected protocols and systemic treatment toxicity.
-- **Radiation oncology (*Radioonkologie*, from 08:15):** 10 selected active questions. The radiation oncologist briefs the duty, answers the phone and stands at the station instead of the attending.
-- **5 retained clinical single questions:** These complement the complete imported bank and multi-step stories. The other 30 supplementary questions were replaced by the 30 TNM/trauma cases described above; the bank remains at 500 scored decisions.
+- **Oncology day clinic (*Onkologische Tagesklinik*, from 08:30):** 46 active cases on protocols, systemic treatment toxicity and staging.
+- **Radiation oncology (*Radioonkologie*, from 08:15):** 27 active questions. The radiation oncologist briefs the duty, answers the phone and stands at the station instead of the attending.
+- **136 clinical single questions:** 106 supplementary questions (23 on protocols, 20 on drug side effects, 15 on continence, 3 on priapism, 20 on radiotherapy, 25 on current guideline topics) and 30 new ones (10 emergencies, 10 oncology, 10 drugs). They complement the complete imported bank and the multi-step stories.
 - **Content refinements on 11 October 2026:** early terbutaline after injection therapy without delaying ischaemia treatment; individual counselling about early penile prosthesis; the specific S3 BRCA2 biopsy pathway; limitations of sestamibi and oncocytic biopsy findings; and an explicit S3 version for PSA screening intervals. Each correction records the old and new wording and precise sources in `data/case-updates.json`.
 - **50 new anatomy questions:** kidney (10), ureter (8), bladder (6), prostate (7), penis/urethra (7), testis/scrotum (7), nerves and micturition (5). All have four shuffled options and a rationale for each in DE/EN/ES. Anatomy has its own library filter and mastery group.
 
 ## Schemas, anatomy atlas and own images
 
-- **Teaching schemas:** 22 cartoon schematic drawings made for this game (`data/schemas.json`) with 226 tappable structures, from the urinary tract overview, kidney envelopes, prostate zones and bladder-wall T stages to urinary diversion, micturition control, the retroperitoneal lymph-node landing zones and VUR grades. 225 of the 402 active cases link to one; questions about drugs, laboratory values, counselling or guidelines deliberately have none. After the last decision of a case, the explanation shows the matching schema with the case's key structures glowing (★). Every structure is tappable and shows its name and one key fact. The debrief and the logbook review show it too. The links between cases and schemas are in `data/case-schemas.json`.
+- **Teaching schemas:** 22 cartoon schematic drawings made for this game (`data/schemas.json`) with 226 tappable structures, from the urinary tract overview, kidney envelopes, prostate zones and bladder-wall T stages to urinary diversion, micturition control, the retroperitoneal lymph-node landing zones and VUR grades. 242 of the 533 active cases link to one; questions about drugs, laboratory values, counselling or guidelines deliberately have none. After the last decision of a case, the explanation shows the matching schema with the case's key structures glowing (★). Every structure is tappable and shows its name and one key fact. The debrief and the logbook review show it too. The links between cases and schemas are in `data/case-schemas.json`.
 - **Illustrated TNM/trauma lessons:** all 14 guides have original organ sections, 135 selectable stage/injury findings, numbered labels, boundary explanations and mobile enlargement. cT/pT and cN/pN stay separate. Complete edition-labelled tables and the 30 cases remain accessible. See [the lesson review](docs/ILLUSTRATED_CLASSIFICATIONS.md).
 - **Anatomy atlas:** a new *Atlas* page lists all schemas. *Find the structure* is a five-round tap quiz on a schema. A right tap gives confetti, a wrong one the splash, and 5 of 5 earns the *Anatomy ace* sticker. Quiz results never change case scores.
 - **Own images:** put licensed PNG, JPEG or WebP files in `media/` and list them in `data/case-media.json`, with alt text and caption in EN/DE/ES, `credit` and `license`. The build embeds them and refuses a file without credit or licence, a file outside `media/` or an SVG. See [media/README.md](media/README.md). Do not add identifiable patient images.
@@ -173,7 +173,7 @@ Use **Python 3.10 or newer**. The tools use the standard library, with no packag
 
 | Task | Command | Result |
 | --- | --- | --- |
-| Validate | `python scripts/manage.py validate` | Checks the 500-question contract, languages, answer markers, provenance, references, archived cases and local assets |
+| Validate | `python scripts/manage.py validate` | Checks the question contract (631), languages, answer markers, provenance, references, archived cases and local assets |
 | Build | `python scripts/manage.py build` | Recreates `assets/catalog.js` and `standalone.html` |
 | Serve locally | `python scripts/manage.py serve --port 8000` | Opens a local-only service at `http://127.0.0.1:8000/`; stop with Ctrl+C |
 | Daily shift | `python scripts/manage.py schedule --date 2026-10-05 --seed team-a --duty night` | Creates 10 distinct cases of one duty (`night`, `board`, `clinic`, `elective`, `dayclinic` or `radiotherapy`), rotating through topics, in `outputs/daily-shift.json`; without `--duty`, two per department as before |
@@ -218,8 +218,8 @@ data/radiotherapy.json       Radiotherapy schemes (protocol page)
 data/attending-hints.json    The attending's hint for every decision
 data/refs-*.json             Reference metadata and related-source links
 data/classifications.json    TNM/trauma guides, source editions and linked cases
-data/question-contract.json  Exact 500-question target, anatomy minimum and 30 TNM/trauma cases
-data/archive/               Historical supplementary questions for old logbook entries
+data/question-contract.json  Exact question count (631), anatomy minimum and 30 TNM/trauma cases
+data/archive/               Optional: archived questions kept for old logbook entries (none at present)
 scripts/import_urofragen.py  JSON-only source importer and comparison
 scripts/manage.py            Build, validation, scheduling, analysis and packaging
 tests/                      Regression checks

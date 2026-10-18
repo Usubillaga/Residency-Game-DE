@@ -3024,6 +3024,1000 @@
     ]
   },
   {
+    "id": "q-emg-ed-anuria-bilateral-obstruction-hyperkalaemia-first",
+    "area": "emergency",
+    "level": 2,
+    "acuity": "critical",
+    "duty": "night",
+    "patient": {
+      "name": "Roswitha Kettler",
+      "age": 66,
+      "sex": "female"
+    },
+    "title": {
+      "en": "Anuria and hyperkalaemia with bilateral hydronephrosis",
+      "de": "Anurie und Hyperkaliämie bei beidseitiger Harnstauung",
+      "es": "Anuria e hiperpotasemia con hidronefrosis bilateral"
+    },
+    "presenting": {
+      "en": "A 66-year-old woman with known locally advanced cervical cancer presents to the emergency department at night with increasing weakness; she has passed no urine for about 24 hours. Potassium 7.2 mmol/l (non-haemolysed), creatinine 640 µmol/l, venous pH 7.28. The ECG shows peaked T waves and a QRS complex widened to 140 ms at a heart rate of 52/min. Ultrasound shows grade III hydronephrosis on both sides with an empty bladder. Blood pressure 150/88 mmHg; she is awake and oriented.",
+      "de": "66-jährige Patientin mit bekanntem lokal fortgeschrittenem Zervixkarzinom, nachts in der Notaufnahme wegen zunehmender Schwäche; seit etwa 24 Stunden kein Urin mehr. Kalium 7,2 mmol/l (nicht hämolytisch), Kreatinin 640 µmol/l, venöser pH 7,28. Das EKG zeigt zeltförmige T-Wellen und einen auf 140 ms verbreiterten QRS-Komplex bei einer Herzfrequenz von 52/min. Sonographisch beidseits Harnstauung III. Grades, die Harnblase ist leer. Blutdruck 150/88 mmHg; die Patientin ist wach und orientiert.",
+      "es": "Mujer de 66 años con cáncer de cuello uterino localmente avanzado conocido, que acude de noche a urgencias por debilidad creciente; no orina desde hace unas 24 horas. Potasio 7,2 mmol/l (sin hemólisis), creatinina 640 µmol/l, pH venoso 7,28. El ECG muestra ondas T picudas y un QRS ensanchado a 140 ms con una frecuencia cardiaca de 52/min. La ecografía muestra hidronefrosis de grado III bilateral con la vejiga vacía. Presión arterial 150/88 mmHg; está despierta y orientada."
+    },
+    "vitals": {
+      "bp": "150/88",
+      "hr": 52,
+      "temp": 36.6,
+      "spo2": 97,
+      "rr": 18
+    },
+    "objectives": {
+      "en": [
+        "Treat hyperkalaemia with ECG changes before any intervention: membrane stabilisation and potassium shift first",
+        "Arrange urgent decompression of the postrenal obstruction in parallel as the causal treatment"
+      ],
+      "de": [
+        "Hyperkaliämie mit EKG-Veränderungen vor jeder Intervention behandeln: zuerst Membranstabilisierung und Kaliumverschiebung",
+        "Die dringliche Entlastung der postrenalen Obstruktion parallel als kausale Therapie organisieren"
+      ],
+      "es": [
+        "Tratar la hiperpotasemia con cambios en el ECG antes de cualquier intervención: primero estabilización de membrana y desplazamiento del potasio",
+        "Organizar en paralelo la descompresión urgente de la obstrucción posrenal como tratamiento causal"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "What is the first step?",
+          "de": "Was ist der erste Schritt?",
+          "es": "¿Cuál es el primer paso?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Immediate transfer to radiology for bilateral percutaneous nephrostomy, treating potassium afterwards",
+              "de": "Sofortiger Transport in die Radiologie zur beidseitigen perkutanen Nephrostomie, Kalium erst danach behandeln",
+              "es": "Traslado inmediato a radiología para nefrostomía percutánea bilateral y tratar el potasio después"
+            },
+            "score": 0,
+            "minutes": 20,
+            "critical": true,
+            "feedback": {
+              "en": "Decompression is the causal treatment, but it takes time and the diuresis only starts afterwards. With potassium above 6.5 mmol/l, a widened QRS and bradycardia, the patient can go into cardiac arrest during transport or positioning; calcium and insulin-glucose come first.",
+              "de": "Die Entlastung ist die kausale Therapie, braucht aber Zeit, und die Diurese setzt erst danach ein. Bei Kalium über 6,5 mmol/l, verbreitertem QRS und Bradykardie kann die Patientin während Transport oder Lagerung reanimationspflichtig werden; Calcium und Insulin-Glukose kommen zuerst.",
+              "es": "La descompresión es el tratamiento causal, pero requiere tiempo y la diuresis solo comienza después. Con un potasio superior a 6,5 mmol/l, QRS ancho y bradicardia, la paciente puede entrar en parada durante el traslado o la colocación; primero van el calcio y la insulina con glucosa."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "IV calcium gluconate 10% 30 ml and insulin-glucose on the monitor, arranging decompression in parallel",
+              "de": "Calciumgluconat 10 % 30 ml i.v. und Insulin-Glukose unter Monitor, parallel die Entlastung organisieren",
+              "es": "Gluconato cálcico 10 % 30 ml i.v. e insulina-glucosa con monitor, y organizar en paralelo la descompresión"
+            },
+            "score": 10,
+            "minutes": 10,
+            "critical": false,
+            "feedback": {
+              "en": "Correct. Severe hyperkalaemia (≥ 6.5 mmol/l) with ECG changes: 30 ml calcium gluconate 10% over 10 min stabilises the myocardium (ECG before and after), 10 IU soluble insulin with 25 g glucose shifts potassium into the cells, with glucose checks. Because the cause is postrenal, decompression by nephrostomy or ureteric stents is organised at the same time; dialysis remains the option if potassium cannot be controlled.",
+              "de": "Richtig. Schwere Hyperkaliämie (≥ 6,5 mmol/l) mit EKG-Veränderungen: Calciumgluconat 10 % 30 ml über 10 min stabilisiert das Myokard (EKG vorher und nachher), 10 IE Normalinsulin mit 25 g Glukose verschiebt Kalium nach intrazellulär, mit Blutzuckerkontrollen. Da die Ursache postrenal ist, wird gleichzeitig die Entlastung per Nephrostomie oder Harnleiterschienen organisiert; bleibt das Kalium nicht beherrschbar, ist die Dialyse die Option.",
+              "es": "Correcto. Hiperpotasemia grave (≥ 6,5 mmol/l) con cambios en el ECG: 30 ml de gluconato cálcico al 10 % en 10 min estabilizan el miocardio (ECG antes y después) y 10 UI de insulina rápida con 25 g de glucosa desplazan el potasio al interior celular, con controles de glucemia. Como la causa es posrenal, se organiza al mismo tiempo la descompresión mediante nefrostomía o catéteres ureterales; si el potasio no se controla, la diálisis es la opción."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Furosemide 80 mg IV to increase renal potassium excretion, rechecking potassium after one hour",
+              "de": "Furosemid 80 mg i.v. zur Steigerung der renalen Kaliumausscheidung, Kaliumkontrolle nach einer Stunde",
+              "es": "Furosemida 80 mg i.v. para aumentar la excreción renal de potasio, control del potasio a la hora"
+            },
+            "score": 0,
+            "minutes": 20,
+            "critical": true,
+            "feedback": {
+              "en": "A loop diuretic needs urine flow. With bilateral obstruction and anuria it cannot excrete potassium, and the hour of waiting leaves the life-threatening ECG changes untreated.",
+              "de": "Ein Schleifendiuretikum braucht Urinfluss. Bei beidseitiger Obstruktion und Anurie kann es kein Kalium ausscheiden, und die Stunde des Abwartens lässt die lebensbedrohlichen EKG-Veränderungen unbehandelt.",
+              "es": "Un diurético de asa necesita flujo de orina. Con obstrucción bilateral y anuria no puede eliminar potasio, y la hora de espera deja sin tratar los cambios del ECG que ponen en riesgo la vida."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Sodium polystyrene sulfonate 30 g orally, potassium check in four hours and nephrostomy in the morning",
+              "de": "Natriumpolystyrolsulfonat 30 g oral, Kaliumkontrolle in vier Stunden und Nephrostomie am Morgen",
+              "es": "Poliestirenosulfonato sódico 30 g por vía oral, control del potasio a las cuatro horas y nefrostomía por la mañana"
+            },
+            "score": 0,
+            "minutes": 20,
+            "critical": true,
+            "feedback": {
+              "en": "Cation exchange resins act only after hours and play no role in the acute emergency. Without membrane stabilisation and with decompression postponed until morning, the risk of an arrhythmia remains.",
+              "de": "Kationenaustauscher wirken erst nach Stunden und spielen in der Akutsituation keine Rolle. Ohne Membranstabilisierung und mit auf den Morgen verschobener Entlastung bleibt das Rhythmusrisiko bestehen.",
+              "es": "Las resinas de intercambio catiónico actúan solo al cabo de horas y no tienen papel en la urgencia aguda. Sin estabilización de membrana y con la descompresión aplazada hasta la mañana, persiste el riesgo de arritmia."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Insert a transurethral catheter and wait two hours for the urine output",
+              "de": "Transurethralen Dauerkatheter legen und die Urinausscheidung über zwei Stunden abwarten",
+              "es": "Colocar una sonda vesical y esperar dos horas a ver la diuresis"
+            },
+            "score": 0,
+            "minutes": 20,
+            "critical": true,
+            "feedback": {
+              "en": "The bladder is empty and the obstruction lies above it at the ureters. A catheter neither relieves it nor lowers potassium, and waiting delays both the emergency treatment and the decompression.",
+              "de": "Die Blase ist leer, die Obstruktion liegt supravesikal an den Harnleitern. Ein Katheter entlastet nicht und senkt das Kalium nicht; das Abwarten verzögert Notfalltherapie und Entlastung.",
+              "es": "La vejiga está vacía y la obstrucción es supravesical, en los uréteres. La sonda no descomprime ni reduce el potasio, y la espera retrasa tanto el tratamiento urgente como la descompresión."
+            }
+          }
+        ],
+        "best": "b"
+      }
+    ],
+    "takeaway": {
+      "en": "In hyperkalaemia with ECG changes, membrane stabilisation with IV calcium and the potassium shift with insulin-glucose come before any intervention; decompression of the obstruction is organised in parallel as the causal treatment. Furosemide and cation exchangers do not work, or work too slowly, in postrenal anuria.",
+      "de": "Bei Hyperkaliämie mit EKG-Veränderungen kommen Membranstabilisierung mit Calcium i.v. und Kaliumverschiebung mit Insulin-Glukose vor jeder Intervention; die Entlastung der Obstruktion wird parallel als kausale Therapie organisiert. Furosemid und Kationenaustauscher wirken bei postrenaler Anurie nicht oder zu langsam.",
+      "es": "En la hiperpotasemia con cambios en el ECG, la estabilización de membrana con calcio i.v. y el desplazamiento del potasio con insulina y glucosa van antes de cualquier intervención; la descompresión de la obstrucción se organiza en paralelo como tratamiento causal. La furosemida y las resinas de intercambio no actúan o lo hacen demasiado tarde en la anuria posrenal."
+    },
+    "references": [
+      "bank-guide-urolithiasis",
+      "nice-aki",
+      "ema-medicines",
+      "fachinfo-de"
+    ]
+  },
+  {
+    "id": "q-emg-ed-renal-trauma-active-extravasation-angioembolisation",
+    "area": "emergency",
+    "level": 2,
+    "acuity": "urgent",
+    "duty": "night",
+    "patient": {
+      "name": "Malte Pfannenstiel",
+      "age": 23,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Flank trauma with a contrast blush",
+      "de": "Flankentrauma mit Kontrastmittelblush",
+      "es": "Traumatismo en el flanco con extravasación de contraste"
+    },
+    "presenting": {
+      "en": "A 23-year-old man fell from his mountain bike onto his left flank; the trauma bay work-up found no other relevant injuries. After 1 l of crystalloid his blood pressure is 122/76 mmHg and heart rate 94/min, and he stays stable without further fluids; Hb 11.9 g/dl, visible haematuria. Contrast CT with a delayed phase shows a deep left parenchymal laceration into the collecting system with urinary extravasation in the delayed phase (AAST grade IV), a 3 cm perirenal haematoma and arterial contrast extravasation (blush) from a segmental branch; the renal pedicle is intact and the other kidney is normal. Angiography is available around the clock.",
+      "de": "23-jähriger Patient nach Sturz mit dem Mountainbike auf die linke Flanke; die Schockraumdiagnostik zeigt keine weiteren relevanten Verletzungen. Nach 1 l kristalloider Infusion Blutdruck 122/76 mmHg und Herzfrequenz 94/min, ohne weitere Volumengabe stabil; Hb 11,9 g/dl, Makrohämaturie. Die Kontrastmittel-CT mit Spätphase zeigt links eine tiefe Parenchymlazeration bis ins Hohlsystem mit Urinextravasation in der Spätphase (AAST-Grad IV), ein perirenales Hämatom von 3 cm und einen arteriellen Kontrastmittelaustritt (Blush) aus einem Segmentast; der Nierenstiel ist intakt, die Gegenseite unauffällig. Eine Angiographie ist rund um die Uhr verfügbar.",
+      "es": "Varón de 23 años que se cae de la bicicleta de montaña sobre el flanco izquierdo; el estudio en la sala de trauma no muestra otras lesiones relevantes. Tras 1 l de cristaloides, presión arterial 122/76 mmHg y frecuencia cardiaca 94/min, estable sin más volumen; Hb 11,9 g/dl, hematuria macroscópica. La TC con contraste y fase tardía muestra a la izquierda una laceración parenquimatosa profunda hasta el sistema colector con extravasación urinaria en la fase tardía (grado IV de la AAST), un hematoma perirrenal de 3 cm y extravasación arterial de contraste (blush) desde una rama segmentaria; el pedículo renal está íntegro y el riñón contralateral es normal. La angiografía está disponible las 24 horas."
+    },
+    "vitals": {
+      "bp": "122/76",
+      "hr": 94,
+      "temp": 36.5,
+      "spo2": 98,
+      "rr": 18
+    },
+    "objectives": {
+      "en": [
+        "Recognise active contrast extravasation as the indication for intervention in a stable patient with renal trauma",
+        "Choose selective angioembolisation over open exploration when the patient is haemodynamically stable"
+      ],
+      "de": [
+        "Aktiven Kontrastmittelaustritt beim stabilen Patienten mit Nierentrauma als Interventionsindikation erkennen",
+        "Beim hämodynamisch stabilen Patienten die selektive Angioembolisation der offenen Exploration vorziehen"
+      ],
+      "es": [
+        "Reconocer la extravasación activa de contraste como indicación de intervención en el paciente estable con traumatismo renal",
+        "Preferir la angioembolización selectiva a la exploración abierta cuando el paciente está hemodinámicamente estable"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which approach is appropriate?",
+          "de": "Welches Vorgehen ist angemessen?",
+          "es": "¿Qué actitud es la adecuada?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Angiography with superselective embolisation of the bleeding segmental branch",
+              "de": "Angiographie mit superselektiver Embolisation des blutenden Segmentasts",
+              "es": "Angiografía con embolización superselectiva de la rama segmentaria sangrante"
+            },
+            "score": 10,
+            "minutes": 20,
+            "critical": false,
+            "feedback": {
+              "en": "Correct. In a haemodynamically stable patient with active renal bleeding and no other indication for immediate surgery, the EAU recommends selective angioembolisation (strong recommendation). It stops the bleeding while preserving as much parenchyma as possible; if it fails it can be repeated, and exploration is reserved for persistent instability.",
+              "de": "Richtig. Beim hämodynamisch stabilen Patienten mit aktiver Nierenblutung und ohne andere Indikation zur Sofortoperation empfiehlt die EAU die selektive Angioembolisation (starke Empfehlung). Sie stillt die Blutung und erhält möglichst viel Parenchym; bei Misserfolg kann sie wiederholt werden, die Exploration bleibt der persistierenden Instabilität vorbehalten.",
+              "es": "Correcto. En el paciente hemodinámicamente estable con sangrado renal activo y sin otra indicación de cirugía inmediata, la EAU recomienda la angioembolización selectiva (recomendación fuerte). Detiene el sangrado conservando el máximo parénquima; si fracasa puede repetirse, y la exploración se reserva para la inestabilidad persistente."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Conservative management with bed rest, close Hb checks and a repeat CT after 48 hours",
+              "de": "Konservativ mit Bettruhe, engmaschigen Hb-Kontrollen und Kontroll-CT nach 48 Stunden",
+              "es": "Tratamiento conservador con reposo, controles estrechos de Hb y TC de control a las 48 horas"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": false,
+            "feedback": {
+              "en": "Non-operative management is the standard for stable blunt renal trauma, but an arterial blush shows active bleeding that will often not stop on its own. Waiting 48 hours risks secondary haemodynamic deterioration and transfusion.",
+              "de": "Das konservative Vorgehen ist beim stabilen stumpfen Nierentrauma Standard, ein arterieller Blush zeigt aber eine aktive Blutung, die oft nicht spontan sistiert. 48 Stunden Abwarten riskieren eine sekundäre Kreislaufverschlechterung und Transfusionen.",
+              "es": "El tratamiento no quirúrgico es el estándar en el traumatismo renal cerrado estable, pero un blush arterial indica un sangrado activo que a menudo no cesa por sí solo. Esperar 48 horas expone a un deterioro hemodinámico secundario y a transfusiones."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Immediate operative renal exploration through a laparotomy",
+              "de": "Sofortige operative Nierenexploration über eine Laparotomie",
+              "es": "Exploración renal quirúrgica inmediata mediante laparotomía"
+            },
+            "score": 0,
+            "minutes": 20,
+            "critical": false,
+            "feedback": {
+              "en": "Open exploration is indicated for persistent haemodynamic instability or a pulsatile, expanding haematoma. In a stable patient it carries a high risk of nephrectomy, while embolisation achieves haemostasis less invasively.",
+              "de": "Die offene Exploration ist bei persistierender hämodynamischer Instabilität oder pulsierendem, expandierendem Hämatom indiziert. Beim stabilen Patienten birgt sie ein hohes Nephrektomierisiko, während die Embolisation die Blutstillung weniger invasiv erreicht.",
+              "es": "La exploración abierta está indicada en la inestabilidad hemodinámica persistente o en un hematoma pulsátil y expansivo. En el paciente estable conlleva un alto riesgo de nefrectomía, mientras que la embolización consigue la hemostasia de forma menos invasiva."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Retrograde left ureteric stent to drain the collecting system and an Hb check",
+              "de": "Retrograde Harnleiterschiene links zur Ableitung des Hohlsystems und Hb-Kontrolle",
+              "es": "Catéter ureteral izquierdo retrógrado para drenar el sistema colector y control de Hb"
+            },
+            "score": 0,
+            "minutes": 20,
+            "critical": false,
+            "feedback": {
+              "en": "Urinary extravasation after blunt trauma usually resolves without intervention; a stent is reserved for persistent extravasation or a urinoma, which is a later problem. It does nothing against the arterial bleeding shown by the blush.",
+              "de": "Eine Urinextravasation beim stumpfen Trauma heilt meist ohne Intervention aus; eine Harnleiterschiene ist der persistierenden Extravasation oder dem Urinom vorbehalten, also einem späteren Problem. Gegen die arterielle Blutung, die der Blush zeigt, bewirkt sie nichts.",
+              "es": "La extravasación urinaria en el traumatismo cerrado suele resolverse sin intervención; el catéter ureteral se reserva para la extravasación persistente o el urinoma, que son problemas posteriores. No actúa sobre el sangrado arterial que muestra el blush."
+            }
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "en": "Stable blunt renal trauma is managed non-operatively, but active arterial contrast extravasation calls for selective angioembolisation. Open exploration is reserved for persistent haemodynamic instability.",
+      "de": "Das stabile stumpfe Nierentrauma wird konservativ behandelt, ein aktiver arterieller Kontrastmittelaustritt verlangt jedoch die selektive Angioembolisation. Die offene Exploration bleibt der persistierenden hämodynamischen Instabilität vorbehalten.",
+      "es": "El traumatismo renal cerrado estable se trata de forma conservadora, pero la extravasación arterial activa de contraste requiere angioembolización selectiva. La exploración abierta se reserva para la inestabilidad hemodinámica persistente."
+    },
+    "references": [
+      "bank-guide-trauma",
+      "trauma"
+    ]
+  },
+  {
+    "id": "q-emg-ed-colic-pregnancy-analgesia-no-nsaid",
+    "area": "emergency",
+    "level": 1,
+    "acuity": "urgent",
+    "duty": "night",
+    "patient": {
+      "name": "Melina Dombrowski",
+      "age": 31,
+      "sex": "female"
+    },
+    "title": {
+      "en": "Flank colic at 30 weeks of pregnancy",
+      "de": "Flankenkolik in der 30. Schwangerschaftswoche",
+      "es": "Cólico en el flanco en la semana 30 de embarazo"
+    },
+    "presenting": {
+      "en": "A 31-year-old woman at 30+2 weeks of pregnancy presents at night with colicky right flank pain (NRS 8/10) and nausea. Temperature 37.1 °C, blood pressure 118/70 mmHg, heart rate 96/min; urine dipstick positive for blood, negative for nitrite and leukocytes. CRP 6 mg/l, creatinine 52 µmol/l. The obstetric team has recorded a normal CTG and found no obstetric cause. No known allergies.",
+      "de": "31-jährige Patientin in der 30. Schwangerschaftswoche (30+2 SSW), nachts mit kolikartigen rechtsseitigen Flankenschmerzen (NRS 8/10) und Übelkeit. Temperatur 37,1 °C, Blutdruck 118/70 mmHg, Herzfrequenz 96/min; Urinstix: Blut positiv, Nitrit und Leukozyten negativ. CRP 6 mg/l, Kreatinin 52 µmol/l. Die Gynäkologie hat ein unauffälliges CTG abgeleitet und keine geburtshilfliche Ursache gefunden. Keine bekannten Allergien.",
+      "es": "Mujer de 31 años en la semana 30+2 de embarazo que acude de noche por dolor cólico en el flanco derecho (EVN 8/10) y náuseas. Temperatura 37,1 °C, presión arterial 118/70 mmHg, frecuencia cardiaca 96/min; tira reactiva: sangre positiva, nitritos y leucocitos negativos. PCR 6 mg/l, creatinina 52 µmol/l. Ginecología ha realizado un registro cardiotocográfico normal y no ha encontrado causa obstétrica. Sin alergias conocidas."
+    },
+    "vitals": {
+      "bp": "118/70",
+      "hr": 96,
+      "temp": 37.1,
+      "spo2": 99,
+      "rr": 18
+    },
+    "objectives": {
+      "en": [
+        "Choose ultrasound as first-line imaging for suspected renal colic in pregnancy",
+        "Avoid NSAIDs and metamizole in the third trimester and treat pain with paracetamol, adding an opioid if needed"
+      ],
+      "de": [
+        "Bei Verdacht auf Nierenkolik in der Schwangerschaft die Sonographie als erste Bildgebung wählen",
+        "Im dritten Trimenon NSAR und Metamizol meiden und mit Paracetamol, bei Bedarf ergänzt durch ein Opioid, analgesieren"
+      ],
+      "es": [
+        "Elegir la ecografía como primera prueba de imagen ante sospecha de cólico renal en el embarazo",
+        "Evitar AINE y metamizol en el tercer trimestre y tratar el dolor con paracetamol, añadiendo un opioide si es necesario"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which imaging and analgesia are appropriate?",
+          "de": "Welche Bildgebung und Analgesie sind angemessen?",
+          "es": "¿Qué prueba de imagen y qué analgesia son adecuadas?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Unenhanced low-dose CT and diclofenac 75 mg IV as standard analgesia",
+              "de": "Low-Dose-CT ohne Kontrastmittel und Diclofenac 75 mg i.v. als Standardanalgesie",
+              "es": "TC de baja dosis sin contraste y diclofenaco 75 mg i.v. como analgesia estándar"
+            },
+            "score": 0,
+            "minutes": 20,
+            "critical": true,
+            "feedback": {
+              "en": "Low-dose CT is the last-line imaging test in pregnancy, after ultrasound and MRI. Diclofenac is contraindicated in the third trimester because of the risk of premature closure of the ductus arteriosus and oligohydramnios.",
+              "de": "Die Low-Dose-CT ist in der Schwangerschaft die letzte Stufe der Bildgebung, nach Sonographie und MRT. Diclofenac ist im dritten Trimenon kontraindiziert, wegen des Risikos eines vorzeitigen Verschlusses des Ductus arteriosus und eines Oligohydramnions.",
+              "es": "La TC de baja dosis es la última prueba de imagen en el embarazo, después de la ecografía y la RM. El diclofenaco está contraindicado en el tercer trimestre por el riesgo de cierre prematuro del conducto arterioso y de oligohidramnios."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Ultrasound and diclofenac 50 mg rectally, as NSAIDs are first-line for renal colic",
+              "de": "Sonographie und Diclofenac 50 mg rektal, da NSAR bei Nierenkolik erste Wahl sind",
+              "es": "Ecografía y diclofenaco 50 mg por vía rectal, ya que los AINE son de primera línea en el cólico renal"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": true,
+            "feedback": {
+              "en": "The imaging is right, but the standard rule does not apply here: from week 28 NSAIDs are contraindicated regardless of route, because they can close the fetal ductus arteriosus prematurely and impair fetal kidney function.",
+              "de": "Die Bildgebung stimmt, aber die Standardregel gilt hier nicht: Ab der 28. Woche sind NSAR unabhängig vom Applikationsweg kontraindiziert, weil sie den fetalen Ductus arteriosus vorzeitig verschließen und die fetale Nierenfunktion beeinträchtigen können.",
+              "es": "La imagen es correcta, pero aquí no vale la regla habitual: desde la semana 28 los AINE están contraindicados sea cual sea la vía, porque pueden cerrar prematuramente el conducto arterioso fetal y alterar la función renal fetal."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Ultrasound and paracetamol 1 g IV, adding an opioid if pain relief is insufficient",
+              "de": "Sonographie und Paracetamol 1 g i.v., bei unzureichender Wirkung zusätzlich ein Opioid",
+              "es": "Ecografía y paracetamol 1 g i.v., añadiendo un opioide si el alivio es insuficiente"
+            },
+            "score": 10,
+            "minutes": 10,
+            "critical": false,
+            "feedback": {
+              "en": "Correct. Ultrasound is the first-line imaging in pregnancy (MRI second-line, low-dose CT last-line). Paracetamol is the analgesic of choice throughout pregnancy; if it is not enough, a short course of an opioid is added, in agreement with obstetrics. NSAIDs and metamizole are contraindicated in the third trimester.",
+              "de": "Richtig. Die Sonographie ist in der Schwangerschaft die erste Bildgebung (MRT als zweite, Low-Dose-CT als letzte Stufe). Paracetamol ist während der gesamten Schwangerschaft das Analgetikum der Wahl; reicht es nicht, wird kurzzeitig ein Opioid ergänzt, in Absprache mit der Geburtshilfe. NSAR und Metamizol sind im dritten Trimenon kontraindiziert.",
+              "es": "Correcto. La ecografía es la primera prueba de imagen en el embarazo (la RM en segundo lugar y la TC de baja dosis en último). El paracetamol es el analgésico de elección durante todo el embarazo; si no basta, se añade un opioide durante poco tiempo, de acuerdo con obstetricia. Los AINE y el metamizol están contraindicados en el tercer trimestre."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "MR urography as first imaging and metamizole 1 g IV as a short infusion",
+              "de": "MR-Urographie als erste Bildgebung und Metamizol 1 g i.v. als Kurzinfusion",
+              "es": "Urografía por RM como primera prueba y metamizol 1 g i.v. en infusión corta"
+            },
+            "score": 0,
+            "minutes": 20,
+            "critical": true,
+            "feedback": {
+              "en": "MRI is the second-line test when ultrasound is inconclusive and symptoms persist. According to the EU-harmonised product information, metamizole is contraindicated in the third trimester; like NSAIDs it can cause premature constriction of the ductus arteriosus.",
+              "de": "Die MRT ist die zweite Stufe, wenn die Sonographie unklar bleibt und die Beschwerden anhalten. Metamizol ist laut EU-weit harmonisierter Fachinformation im dritten Trimenon kontraindiziert; wie NSAR kann es eine vorzeitige Konstriktion des Ductus arteriosus auslösen.",
+              "es": "La RM es la segunda prueba cuando la ecografía no es concluyente y los síntomas persisten. Según la ficha técnica armonizada en la UE, el metamizol está contraindicado en el tercer trimestre; como los AINE, puede provocar una constricción prematura del conducto arterioso."
+            }
+          }
+        ],
+        "best": "c"
+      }
+    ],
+    "takeaway": {
+      "en": "Renal colic in pregnancy: ultrasound first, MRI second, low-dose CT only last. From week 28, NSAIDs such as diclofenac and metamizole are contraindicated; paracetamol is the analgesic of choice, supplemented with an opioid if needed.",
+      "de": "Nierenkolik in der Schwangerschaft: zuerst Sonographie, dann MRT, Low-Dose-CT erst zuletzt. Ab der 28. Woche sind NSAR wie Diclofenac sowie Metamizol kontraindiziert; Paracetamol ist das Analgetikum der Wahl, bei Bedarf ergänzt durch ein Opioid.",
+      "es": "Cólico renal en el embarazo: primero ecografía, después RM y la TC de baja dosis solo en último lugar. Desde la semana 28 están contraindicados los AINE como el diclofenaco y el metamizol; el paracetamol es el analgésico de elección, completado con un opioide si es necesario."
+    },
+    "references": [
+      "bank-guide-urolithiasis",
+      "stones",
+      "ema-medicines",
+      "fachinfo-de"
+    ]
+  },
+  {
+    "id": "q-emg-ed-retention-alpha-blocker-before-twoc",
+    "area": "emergency",
+    "level": 1,
+    "acuity": "routine",
+    "duty": "night",
+    "patient": {
+      "name": "Gotthard Kleinschmidt",
+      "age": 71,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Discharge plan after first urinary retention",
+      "de": "Entlassplan nach erstem Harnverhalt",
+      "es": "Plan de alta tras una primera retención urinaria"
+    },
+    "presenting": {
+      "en": "A 71-year-old man presents at 01:00 with painful inability to pass urine for 8 hours, after a year of increasing weak stream and nocturia. A 16 Ch transurethral catheter drains 1,100 ml of clear urine; urine dipstick is negative. Creatinine is 0.9 mg/dl, he takes no anticholinergic or sedating drugs, and constipation is excluded. Ultrasound shows a prostate volume of about 45 ml and normal kidneys without hydronephrosis. He is well and would like to go home with the catheter.",
+      "de": "71-jähriger Patient stellt sich um 01:00 Uhr mit schmerzhaftem Harnverhalt seit 8 Stunden vor; seit einem Jahr zunehmend abgeschwächter Strahl und Nykturie. Über einen transurethralen Katheter 16 Ch entleeren sich 1.100 ml klarer Urin; Urinstix unauffällig. Kreatinin 0,9 mg/dl, keine Anticholinergika oder sedierenden Medikamente, Obstipation ausgeschlossen. Sonografisch Prostatavolumen etwa 45 ml, Nieren ohne Harnstauung. Er ist beschwerdefrei und möchte mit dem Katheter nach Hause.",
+      "es": "Varón de 71 años que acude a la 01:00 por retención urinaria dolorosa de 8 horas, tras un año de chorro cada vez más débil y nicturia. Una sonda transuretral de 16 Ch drena 1.100 ml de orina clara; tira reactiva negativa. Creatinina 0,9 mg/dl, no toma anticolinérgicos ni fármacos sedantes y se descarta estreñimiento. En la ecografía, volumen prostático de unos 45 ml y riñones sin hidronefrosis. Está asintomático y desea irse a casa con la sonda."
+    },
+    "vitals": {
+      "bp": "148/86",
+      "hr": 82,
+      "temp": 36.7,
+      "spo2": 97,
+      "rr": 16
+    },
+    "objectives": {
+      "en": [
+        "Plan the follow-up after a first episode of acute urinary retention due to benign prostatic obstruction",
+        "Use an alpha-blocker before the trial without catheter to raise the chance of voiding"
+      ],
+      "de": [
+        "Das weitere Vorgehen nach einem ersten akuten Harnverhalt bei benigner Prostataobstruktion planen",
+        "Vor dem Auslassversuch einen Alphablocker einsetzen, um die Chance auf Spontanmiktion zu erhöhen"
+      ],
+      "es": [
+        "Planificar el seguimiento tras un primer episodio de retención urinaria aguda por obstrucción prostática benigna",
+        "Usar un alfabloqueante antes de la prueba sin sonda para aumentar la probabilidad de micción espontánea"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "Which plan do you give him on discharge?",
+          "de": "Mit welchem Plan entlassen Sie ihn?",
+          "es": "¿Con qué plan le da el alta?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Alfuzosin 10 mg once daily after a meal from today, trial without catheter in 2 to 3 days",
+              "de": "Alfuzosin 10 mg einmal täglich nach einer Mahlzeit ab heute, Auslassversuch in 2 bis 3 Tagen",
+              "es": "Alfuzosina 10 mg una vez al día después de una comida desde hoy, prueba sin sonda en 2 a 3 días"
+            },
+            "score": 10,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Correct. Alpha-blockers started before catheter removal raise the success rate of the trial without catheter (about 60% versus 38% with placebo in the Cochrane analysis). Alfuzosin 10 mg is licensed in Germany for men aged 65 and over with acute retention from BPH: from the first day of catheterisation for 2 to 3 days, and one further day after removal.",
+              "de": "Richtig. Ein vor der Katheterentfernung begonnener Alphablocker erhöht die Erfolgsrate des Auslassversuchs (in der Cochrane-Analyse etwa 60 % gegenüber 38 % unter Placebo). Alfuzosin 10 mg ist in Deutschland für Männer ab 65 Jahren mit akutem Harnverhalt bei BPH zugelassen: ab dem ersten Katheterisierungstag für 2 bis 3 Tage und einen weiteren Tag nach der Entfernung.",
+              "es": "Correcto. Un alfabloqueante iniciado antes de retirar la sonda aumenta el éxito de la prueba sin sonda (en el análisis Cochrane, alrededor del 60 % frente al 38 % con placebo). La alfuzosina 10 mg está autorizada en Alemania para varones de 65 años o más con retención aguda por HBP: desde el primer día de sondaje durante 2 a 3 días y un día más tras la retirada."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Remove the catheter tomorrow without medication, starting an alpha-blocker if retention recurs",
+              "de": "Katheter morgen ohne Medikation entfernen, Alphablocker bei erneutem Harnverhalt beginnen",
+              "es": "Retirar la sonda mañana sin medicación e iniciar un alfabloqueante si recidiva la retención"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Without an alpha-blocker the trial without catheter fails more often, which means recatheterisation, a further emergency visit and a higher risk of infection. The drug is started before removal, not after failure.",
+              "de": "Ohne Alphablocker scheitert der Auslassversuch häufiger: erneute Katheterisierung, weitere Notfallvorstellung und mehr Infektrisiko. Das Medikament wird vor der Entfernung begonnen, nicht erst nach dem Scheitern.",
+              "es": "Sin alfabloqueante la prueba sin sonda fracasa con más frecuencia, lo que supone un nuevo sondaje, otra visita a urgencias y más riesgo de infección. El fármaco se inicia antes de la retirada, no tras el fracaso."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Keep the catheter and book a transurethral resection of the prostate in the coming days",
+              "de": "Katheter belassen und eine transurethrale Prostataresektion in den nächsten Tagen planen",
+              "es": "Mantener la sonda y programar una resección transuretral de próstata en los próximos días"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "A first episode of retention is not by itself an indication for early surgery; a medically supported trial without catheter comes first and succeeds in many men. Surgery soon after retention, with an infected catheterised bladder, carries more bleeding and infection. TURP is planned if the trial fails or retention recurs.",
+              "de": "Ein erster Harnverhalt allein ist keine Indikation zur frühen Operation; zunächst kommt der medikamentös unterstützte Auslassversuch, der bei vielen Männern gelingt. Eine OP kurz nach dem Verhalt bei katheterisierter Blase geht mit mehr Blutungen und Infekten einher. Die TURP wird geplant, wenn der Auslassversuch scheitert oder der Verhalt rezidiviert.",
+              "es": "Un primer episodio de retención no es por sí solo indicación de cirugía precoz; primero se hace la prueba sin sonda con apoyo farmacológico, que tiene éxito en muchos varones. Operar poco después de la retención, con la vejiga sondada, conlleva más hemorragia e infección. La RTUP se programa si la prueba fracasa o la retención recidiva."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Finasteride 5 mg once daily from today, trial without catheter in 3 days",
+              "de": "Finasterid 5 mg einmal täglich ab heute, Auslassversuch in 3 Tagen",
+              "es": "Finasterida 5 mg una vez al día desde hoy, prueba sin sonda en 3 días"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "A 5-alpha-reductase inhibitor shrinks the prostate only over months and has no effect on a trial without catheter in 3 days. It may be added later for long-term risk reduction in a large prostate, but it does not replace the alpha-blocker now.",
+              "de": "Ein 5-Alpha-Reduktasehemmer verkleinert die Prostata erst über Monate und beeinflusst einen Auslassversuch nach 3 Tagen nicht. Er kann später zur langfristigen Risikosenkung bei großer Prostata ergänzt werden, ersetzt aber jetzt nicht den Alphablocker.",
+              "es": "Un inhibidor de la 5-alfa-reductasa reduce la próstata solo a lo largo de meses y no influye en una prueba sin sonda a los 3 días. Puede añadirse más adelante para reducir el riesgo a largo plazo en una próstata grande, pero ahora no sustituye al alfabloqueante."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Leave the catheter for 3 weeks so the detrusor recovers, then a trial without medication",
+              "de": "Katheter 3 Wochen belassen, damit sich der Detrusor erholt, danach Auslassversuch ohne Medikation",
+              "es": "Mantener la sonda 3 semanas para que se recupere el detrusor y después una prueba sin medicación"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Longer catheterisation does not improve the outcome of the trial but increases catheter-associated infection and other complications. After a retention volume of 1,100 ml with normal renal function, a trial after a few days on an alpha-blocker is the standard.",
+              "de": "Eine längere Katheterliegedauer verbessert das Ergebnis des Auslassversuchs nicht, erhöht aber katheterassoziierte Infekte und andere Komplikationen. Bei 1.100 ml Restharn und normaler Nierenfunktion ist der Auslassversuch nach wenigen Tagen unter Alphablocker der Standard.",
+              "es": "Prolongar el sondaje no mejora el resultado de la prueba, pero aumenta las infecciones asociadas a sonda y otras complicaciones. Con una retención de 1.100 ml y función renal normal, lo estándar es la prueba sin sonda tras pocos días con alfabloqueante."
+            }
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "en": "After a first episode of acute urinary retention from BPO, start an alpha-blocker while the catheter is in place and perform the trial without catheter after 2 to 3 days. Surgery is planned if the trial fails or retention recurs, not straight away.",
+      "de": "Nach einem ersten akuten Harnverhalt bei benigner Prostataobstruktion wird bei liegendem Katheter ein Alphablocker begonnen und der Auslassversuch nach 2 bis 3 Tagen durchgeführt. Eine Operation wird geplant, wenn der Auslassversuch scheitert oder der Verhalt wiederkehrt, nicht sofort.",
+      "es": "Tras un primer episodio de retención urinaria aguda por obstrucción prostática benigna, se inicia un alfabloqueante con la sonda colocada y se realiza la prueba sin sonda a los 2 a 3 días. La cirugía se programa si la prueba fracasa o la retención recidiva, no de entrada."
+    },
+    "references": [
+      "bank-guide-funktionell",
+      "nice-retention",
+      "ema-medicines",
+      "fachinfo-de"
+    ]
+  },
+  {
+    "id": "q-emg-ed-suprapubic-catheter-previous-laparotomy-ultrasound",
+    "area": "emergency",
+    "level": 2,
+    "acuity": "urgent",
+    "duty": "night",
+    "patient": {
+      "name": "Ansgar Leutheusser",
+      "age": 68,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Retention, failed catheter and an old laparotomy scar",
+      "de": "Harnverhalt, frustraner Katheter und alte Laparotomienarbe",
+      "es": "Retención, sondaje fallido y una antigua cicatriz de laparotomía"
+    },
+    "presenting": {
+      "en": "A 68-year-old man presents at 02:30 with painful urinary retention. Two attempts at urethral catheterisation, including one with a 14 Ch Tiemann catheter by the on-call attending, fail at the bulbar urethra; there is slight urethral bleeding. Two years ago he had an open sigmoid resection through a lower midline laparotomy; the scar runs down to 3 cm above the symphysis. The bladder is palpable to about two fingerbreadths below the umbilicus, and the bladder scanner measures about 950 ml.",
+      "de": "68-jähriger Patient stellt sich um 02:30 Uhr mit schmerzhaftem Harnverhalt vor. Zwei transurethrale Katheterversuche, darunter einer mit Tiemann-Katheter 14 Ch durch den diensthabenden Oberarzt, scheitern in der bulbären Harnröhre; leichte Urethrorrhagie. Vor zwei Jahren offene Sigmaresektion über eine Unterbauch-Medianlaparotomie; die Narbe reicht bis 3 cm oberhalb der Symphyse. Die Blase ist bis etwa zwei Querfinger unterhalb des Nabels tastbar, der Blasenscanner misst etwa 950 ml.",
+      "es": "Varón de 68 años que acude a las 02:30 por retención urinaria dolorosa. Dos intentos de sondaje uretral, uno de ellos con sonda Tiemann de 14 Ch por el adjunto de guardia, fracasan en la uretra bulbar; hay uretrorragia leve. Hace dos años se le realizó una sigmoidectomía abierta por laparotomía media infraumbilical; la cicatriz llega hasta 3 cm por encima de la sínfisis. La vejiga se palpa hasta unos dos traveses de dedo por debajo del ombligo y el ecógrafo vesical portátil mide unos 950 ml."
+    },
+    "vitals": {
+      "bp": "162/94",
+      "hr": 98,
+      "temp": 36.9,
+      "spo2": 97,
+      "rr": 18
+    },
+    "objectives": {
+      "en": [
+        "Name previous lower abdominal surgery as a risk factor for bowel injury during suprapubic catheter placement",
+        "Set the safety conditions for percutaneous suprapubic catheterisation and the alternatives when they are not met"
+      ],
+      "de": [
+        "Voroperationen im Unterbauch als Risikofaktor für eine Darmverletzung bei der suprapubischen Punktion benennen",
+        "Die Sicherheitsvoraussetzungen der perkutanen suprapubischen Katheteranlage und die Alternativen bei deren Fehlen festlegen"
+      ],
+      "es": [
+        "Identificar la cirugía abdominal inferior previa como factor de riesgo de lesión intestinal en la cistostomía suprapúbica",
+        "Establecer las condiciones de seguridad de la cistostomía percutánea y las alternativas cuando no se cumplen"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "What is the most appropriate next step?",
+          "de": "Was ist das angemessene weitere Vorgehen?",
+          "es": "¿Cuál es el siguiente paso más adecuado?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Blind percutaneous puncture two fingerbreadths above the symphysis, as the bladder scanner shows 950 ml",
+              "de": "Blinde perkutane Punktion zwei Querfinger oberhalb der Symphyse, da der Blasenscanner 950 ml misst",
+              "es": "Punción percutánea a ciegas dos traveses de dedo por encima de la sínfisis, ya que el ecógrafo vesical mide 950 ml"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": true,
+            "feedback": {
+              "en": "A full bladder, whether palpated or measured by the bladder scanner, does not exclude adhesions and bowel loops between the abdominal wall and the bladder after a lower midline laparotomy; the scanner measures volume but does not show the needle track. Blind trocar insertion is the classic route to bowel perforation, a rare but potentially fatal complication.",
+              "de": "Eine volle Blase, ob getastet oder per Blasenscanner gemessen, schließt nach Unterbauch-Medianlaparotomie Adhäsionen und Darmschlingen zwischen Bauchwand und Blase nicht aus; der Scanner misst das Volumen, zeigt aber nicht den Stichkanal. Die blinde Trokarpunktion ist der typische Weg zur Darmperforation, einer seltenen, aber potenziell tödlichen Komplikation.",
+              "es": "Una vejiga llena, palpable o medida con el ecógrafo vesical, no descarta adherencias ni asas intestinales entre la pared abdominal y la vejiga tras una laparotomía media infraumbilical; el ecógrafo vesical mide el volumen, pero no muestra el trayecto de la punción. La punción a ciegas con trocar es la vía típica de la perforación intestinal, una complicación rara pero potencialmente mortal."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Further urethral attempts with a 20 Ch catheter and firm pressure to pass the obstruction",
+              "de": "Weitere transurethrale Versuche mit einem 20-Ch-Katheter und kräftigem Druck über das Hindernis",
+              "es": "Nuevos intentos uretrales con una sonda de 20 Ch y presión firme para superar el obstáculo"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": true,
+            "feedback": {
+              "en": "After two failed attempts and fresh bleeding, further forceful passes risk a false passage and urethral injury, which makes later endoscopy and reconstruction harder. Suprapubic drainage is now the appropriate route.",
+              "de": "Nach zwei frustranen Versuchen und frischer Blutung drohen weitere forcierte Passagen eine Via falsa und eine Harnröhrenverletzung, die spätere Endoskopie und Rekonstruktion erschweren. Jetzt ist die suprapubische Ableitung der richtige Weg.",
+              "es": "Tras dos intentos fallidos y sangrado reciente, nuevos pases forzados exponen a una falsa vía y a una lesión uretral que dificultan la endoscopia y la reconstrucción posteriores. Ahora la derivación suprapúbica es la vía adecuada."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Repeated needle aspiration of the bladder above the symphysis overnight and an elective catheter in the morning",
+              "de": "Nachts wiederholte Nadelaspiration der Blase oberhalb der Symphyse und elektiver Katheter am Morgen",
+              "es": "Aspiraciones vesicales repetidas con aguja por encima de la sínfisis durante la noche y sonda programada por la mañana"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": true,
+            "feedback": {
+              "en": "Repeated blind needle punctures carry the same risk of bowel injury, now several times over, and only postpone the drainage. The bladder needs a safe, lasting drainage tonight.",
+              "de": "Wiederholte blinde Nadelpunktionen tragen dasselbe Risiko der Darmverletzung, nur mehrfach, und verschieben die Ableitung lediglich. Die Blase braucht heute Nacht eine sichere, dauerhafte Ableitung.",
+              "es": "Las punciones repetidas a ciegas con aguja conllevan el mismo riesgo de lesión intestinal, pero varias veces, y solo aplazan la derivación. La vejiga necesita esta noche un drenaje seguro y duradero."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Ultrasound-guided puncture of the full bladder with no bowel in the track, otherwise open placement",
+              "de": "Ultraschallgesteuerte Punktion der vollen Blase ohne Darm im Stichkanal, sonst offene Anlage",
+              "es": "Punción ecoguiada de la vejiga llena sin intestino en el trayecto; si no, colocación abierta"
+            },
+            "score": 10,
+            "minutes": 20,
+            "critical": false,
+            "feedback": {
+              "en": "Correct. After previous lower abdominal surgery, percutaneous placement is done only under real-time ultrasound with a well-filled bladder and a track free of bowel, by someone trained to judge this. If bowel cannot be excluded, the catheter is placed open or under cystoscopic control.",
+              "de": "Richtig. Nach Voroperation im Unterbauch erfolgt die perkutane Anlage nur unter Ultraschallsicht bei gut gefüllter Blase und darmfreiem Stichkanal, durch jemanden, der das beurteilen kann. Lässt sich Darm nicht ausschließen, wird der Katheter offen oder unter zystoskopischer Kontrolle angelegt.",
+              "es": "Correcto. Tras cirugía abdominal inferior previa, la colocación percutánea se hace solo bajo ecografía en tiempo real, con la vejiga bien llena y un trayecto libre de intestino, por alguien formado para valorarlo. Si no puede descartarse intestino, la sonda se coloca de forma abierta o con control cistoscópico."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Puncture through the lower end of the laparotomy scar, where the abdominal wall is thinnest",
+              "de": "Punktion durch das untere Ende der Laparotomienarbe, wo die Bauchwand am dünnsten ist",
+              "es": "Punción a través del extremo inferior de la cicatriz de laparotomía, donde la pared abdominal es más fina"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": true,
+            "feedback": {
+              "en": "Adhesions of bowel to the abdominal wall are most likely directly beneath a laparotomy scar. Choosing the scar as the puncture site increases, rather than reduces, the risk of bowel perforation.",
+              "de": "Darmadhäsionen an der Bauchwand sind gerade unter einer Laparotomienarbe am wahrscheinlichsten. Die Narbe als Punktionsort erhöht das Risiko einer Darmperforation, statt es zu senken.",
+              "es": "Las adherencias intestinales a la pared abdominal son más probables justo debajo de una cicatriz de laparotomía. Elegir la cicatriz como punto de punción aumenta el riesgo de perforación intestinal en lugar de reducirlo."
+            }
+          }
+        ],
+        "best": "d"
+      }
+    ],
+    "takeaway": {
+      "en": "A suprapubic catheter is never placed blind after lower abdominal surgery: the bladder must be clearly distended and the track free of bowel on ultrasound. If this cannot be shown, the catheter is placed open or under cystoscopic control.",
+      "de": "Nach Voroperationen im Unterbauch wird ein suprapubischer Katheter nie blind gelegt: Die Blase muss sicher gefüllt und der Stichkanal sonografisch darmfrei sein. Gelingt dieser Nachweis nicht, erfolgt die Anlage offen oder unter zystoskopischer Kontrolle.",
+      "es": "Tras cirugía abdominal inferior previa, una sonda suprapúbica nunca se coloca a ciegas: la vejiga debe estar claramente distendida y el trayecto libre de intestino en la ecografía. Si no puede demostrarse, la sonda se coloca de forma abierta o con control cistoscópico."
+    },
+    "references": [
+      "bank-guide-funktionell",
+      "aua-emergencies"
+    ]
+  },
+  {
+    "id": "q-drug-metamizole-agranulocytosis-febrile-neutropenia",
+    "area": "emergency",
+    "level": 2,
+    "acuity": "urgent",
+    "duty": "night",
+    "patient": {
+      "name": "Hartmut Strothkamp",
+      "age": 57,
+      "sex": "male"
+    },
+    "title": {
+      "en": "Fever and sore throat with a ureteric stent in place",
+      "de": "Fieber und Halsschmerzen mit liegender Harnleiterschiene",
+      "es": "Fiebre y dolor de garganta con un catéter doble J"
+    },
+    "presenting": {
+      "en": "A 57-year-old man presents to the emergency department at night. Twelve days ago he underwent ureteroscopy with laser lithotripsy of an 8 mm left ureteric stone and placement of a ureteric stent; since then he has been taking metamizole 1 g four times daily for stent discomfort and tamsulosin 0.4 mg once daily. For two days he has had a sore throat, painful swallowing and painful ulcers of the oral mucosa, and since this evening chills and fever up to 39.4 °C. The stent symptoms (urgency, a slight pull in the left flank on voiding) are unchanged. Blood pressure 116/70 mmHg, pulse 106/min, respiratory rate 20/min, SpO₂ 97 % on room air; alert and oriented. Reddened tonsils with fibrin-coated ulcers, no renal angle tenderness. Ultrasound: stent correctly placed, no hydronephrosis. Urine dipstick: leucocytes negative, erythrocytes 2+, nitrite negative. Laboratory: leucocytes 0.9/nl, neutrophils 0.05/nl, haemoglobin 14.1 g/dl, platelets 231/nl, CRP 118 mg/l, creatinine 0.9 mg/dl, lactate 1.5 mmol/l. No other medication, no known allergies.",
+      "de": "57-jähriger Patient, der sich nachts in der Notaufnahme vorstellt. Vor 12 Tagen erfolgten eine Ureterorenoskopie mit Laserlithotripsie eines 8-mm-Harnleitersteins links und die Einlage einer Harnleiterschiene; seither nimmt er wegen Schienenbeschwerden Metamizol 1 g viermal täglich und Tamsulosin 0,4 mg einmal täglich. Seit zwei Tagen hat er Halsschmerzen, Schluckbeschwerden und schmerzhafte Ulzera der Mundschleimhaut, seit dem Abend Schüttelfrost und Fieber bis 39,4 °C. Die Schienenbeschwerden (Harndrang, leichtes Ziehen in der linken Flanke beim Wasserlassen) sind unverändert. Blutdruck 116/70 mmHg, Puls 106/min, Atemfrequenz 20/min, SpO₂ 97 % unter Raumluft; wach und orientiert. Tonsillen gerötet mit fibrinbelegten Ulzerationen, Nierenlager nicht klopfschmerzhaft. Sonographie: Schiene regelrecht, keine Harnstauung. Urinstreifen: Leukozyten negativ, Erythrozyten 2+, Nitrit negativ. Labor: Leukozyten 0,9/nl, neutrophile Granulozyten 0,05/nl, Hämoglobin 14,1 g/dl, Thrombozyten 231/nl, CRP 118 mg/l, Kreatinin 0,9 mg/dl, Laktat 1,5 mmol/l. Keine weiteren Medikamente, keine bekannten Allergien.",
+      "es": "Varón de 57 años que acude de noche a urgencias. Hace 12 días se le realizó una ureteroscopia con litotricia láser de un cálculo ureteral izquierdo de 8 mm y se le colocó un catéter doble J; desde entonces toma metamizol 1 g cuatro veces al día por las molestias del catéter y tamsulosina 0,4 mg una vez al día. Desde hace dos días tiene dolor de garganta, odinofagia y úlceras dolorosas en la mucosa oral, y desde esta tarde escalofríos y fiebre de hasta 39,4 °C. Las molestias del catéter (urgencia, leve tirantez en el flanco izquierdo al orinar) no han cambiado. Presión arterial 116/70 mmHg, pulso 106/min, frecuencia respiratoria 20/min, SpO₂ 97 % con aire ambiente; consciente y orientado. Amígdalas enrojecidas con úlceras cubiertas de fibrina, puñopercusión renal negativa. Ecografía: catéter bien colocado, sin hidronefrosis. Tira reactiva: leucocitos negativos, hematíes 2+, nitritos negativos. Analítica: leucocitos 0,9/nl, neutrófilos 0,05/nl, hemoglobina 14,1 g/dl, plaquetas 231/nl, PCR 118 mg/l, creatinina 0,9 mg/dl, lactato 1,5 mmol/l. Sin otros medicamentos ni alergias conocidas."
+    },
+    "vitals": null,
+    "objectives": {
+      "en": [
+        "Recognise fever, sore throat and painful mucosal lesions on metamizole as warning signs of agranulocytosis and stop metamizole at once and for good, without waiting for laboratory results",
+        "Treat fever with severe neutropenia as an emergency: cultures and an antipseudomonal beta-lactam IV within one hour, protective isolation, involve haematology"
+      ],
+      "de": [
+        "Fieber, Halsschmerzen und schmerzhafte Schleimhautläsionen unter Metamizol als Warnzeichen einer Agranulozytose erkennen und Metamizol sofort und dauerhaft absetzen, ohne auf Laborwerte zu warten",
+        "Fieber bei schwerer Neutropenie als Notfall behandeln: Kulturen und innerhalb einer Stunde ein pseudomonaswirksames Betalaktam i.v., schützende Isolation, Hämatologie einbinden"
+      ],
+      "es": [
+        "Reconocer la fiebre, el dolor de garganta y las lesiones mucosas dolorosas con metamizol como signos de alarma de agranulocitosis y suspender el metamizol de inmediato y para siempre, sin esperar a los resultados de laboratorio",
+        "Tratar la fiebre con neutropenia grave como una urgencia: cultivos y un betalactámico antipseudomónico i.v. en la primera hora, aislamiento protector e implicar a hematología"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "en": "What is the right course of action now?",
+          "de": "Welches Vorgehen ist jetzt richtig?",
+          "es": "¿Cuál es la actuación correcta ahora?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Metamizole 1 g IV for the fever, oral amoxicillin 1 g three times daily for the tonsillitis and a blood count by the GP in three days",
+              "de": "Metamizol 1 g i.v. gegen das Fieber, Amoxicillin 1 g dreimal täglich oral gegen die Tonsillitis, Blutbildkontrolle beim Hausarzt in drei Tagen",
+              "es": "Metamizol 1 g i.v. para la fiebre, amoxicilina oral 1 g tres veces al día para la amigdalitis y hemograma con su médico de familia en tres días"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Dangerous: fever, sore throat and mouth ulcers on metamizole with a neutrophil count of 0.05/nl are agranulocytosis until proven otherwise. Per the SmPC, metamizole is then stopped at once; every further dose sustains the damage, and as an antipyretic it masks the course. Fever with severe neutropenia requires admission and intravenous broad-spectrum treatment – oral treatment of a tonsillitis with a check in three days can end in fatal sepsis.",
+              "de": "Gefährlich: Fieber, Halsschmerzen und Mundulzera unter Metamizol mit neutrophilen Granulozyten von 0,05/nl sind eine Agranulozytose, bis das Gegenteil bewiesen ist. Laut Fachinformation wird Metamizol dann sofort abgesetzt; jede weitere Dosis unterhält die Schädigung, und als Fiebersenker verschleiert es den Verlauf. Fieber bei schwerer Neutropenie verlangt die stationäre Aufnahme und eine intravenöse Breitspektrumtherapie – eine orale Tonsillitisbehandlung mit Kontrolle in drei Tagen kann in eine tödliche Sepsis münden.",
+              "es": "Peligroso: fiebre, dolor de garganta y úlceras bucales con metamizol y unos neutrófilos de 0,05/nl son una agranulocitosis mientras no se demuestre lo contrario. Según la ficha técnica, el metamizol se suspende entonces de inmediato; cada dosis adicional mantiene el daño y, como antipirético, enmascara la evolución. La fiebre con neutropenia grave exige ingreso y tratamiento intravenoso de amplio espectro: tratar por vía oral una amigdalitis y controlar a los tres días puede acabar en una sepsis mortal."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Stop metamizole at once, blood and urine cultures, piperacillin/tazobactam 4.5 g IV within the hour; protective isolation, call haematology",
+              "de": "Metamizol sofort absetzen, Blut- und Urinkulturen, binnen einer Stunde Piperacillin/Tazobactam 4,5 g i.v.; Umkehrisolation, Hämatologie rufen",
+              "es": "Suspender ya el metamizol, hemocultivos y urocultivo, piperacilina/tazobactam 4,5 g i.v. en la primera hora; aislamiento protector, hematología"
+            },
+            "score": 10,
+            "minutes": 10,
+            "critical": false,
+            "feedback": {
+              "en": "Correct: fever, sore throat and painful mucosal ulcers on metamizole are the typical signs of agranulocytosis; a neutrophil count of 0.05/nl confirms it. Per the SmPC, metamizole is stopped at once as soon as agranulocytosis is suspected, without waiting for laboratory results, and is never given again once it is confirmed; other pyrazolones are avoided as well. Fever with severe neutropenia is an emergency: take cultures and give an antipseudomonal beta-lactam such as piperacillin/tazobactam IV within one hour, isolate the patient protectively and involve haematology. The agranulocytosis is documented and reported as an adverse reaction.",
+              "de": "Richtig: Fieber, Halsschmerzen und schmerzhafte Schleimhautulzera unter Metamizol sind die typischen Zeichen einer Agranulozytose; neutrophile Granulozyten von 0,05/nl bestätigen sie. Laut Fachinformation wird Metamizol schon bei Verdacht sofort abgesetzt, ohne auf Laborwerte zu warten, und nach bestätigter Agranulozytose nie wieder gegeben; auch andere Pyrazolone werden gemieden. Fieber bei schwerer Neutropenie ist ein Notfall: Kulturen abnehmen und innerhalb einer Stunde ein pseudomonaswirksames Betalaktam wie Piperacillin/Tazobactam i.v. geben, den Patienten schützend isolieren und die Hämatologie einbinden. Die Agranulozytose wird dokumentiert und als Nebenwirkung gemeldet.",
+              "es": "Correcto: fiebre, dolor de garganta y úlceras mucosas dolorosas durante el tratamiento con metamizol son los signos típicos de una agranulocitosis; unos neutrófilos de 0,05/nl la confirman. Según la ficha técnica, el metamizol se suspende de inmediato en cuanto se sospecha, sin esperar a los resultados de laboratorio, y no vuelve a darse nunca si se confirma; también se evitan otras pirazolonas. La fiebre con neutropenia grave es una urgencia: extraer cultivos y administrar en la primera hora un betalactámico antipseudomónico como piperacilina/tazobactam i.v., aislar al paciente de forma protectora e implicar a hematología. La agranulocitosis se documenta y se notifica como reacción adversa."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Pause metamizole and hold antibiotics until a blood smear and bone marrow aspiration tomorrow morning have established the cause of the neutropenia",
+              "de": "Metamizol pausieren und mit Antibiotika warten, bis Blutausstrich und Knochenmarkpunktion morgen früh die Ursache der Neutropenie gesichert haben",
+              "es": "Pausar el metamizol y esperar con los antibióticos hasta que el frotis y el aspirado medular de mañana hayan aclarado la causa de la neutropenia"
+            },
+            "score": 0,
+            "minutes": 15,
+            "critical": true,
+            "feedback": {
+              "en": "Dangerous: stopping is right, but fever with severe neutropenia allows no delay. Without neutrophils, a bacterial infection can progress to sepsis within hours; empirical intravenous broad-spectrum treatment therefore belongs in the first hour, straight after the cultures. Haematology arranges the smear and, if needed, bone marrow studies in parallel – they are not a precondition for giving antibiotics.",
+              "de": "Gefährlich: Das Absetzen ist richtig, doch Fieber bei schwerer Neutropenie duldet keinen Aufschub. Ohne neutrophile Granulozyten kann eine bakterielle Infektion binnen Stunden in eine Sepsis übergehen; die empirische intravenöse Breitspektrumtherapie gehört deshalb in die erste Stunde, direkt nach den Kulturen. Ausstrich und gegebenenfalls Knochenmarkdiagnostik veranlasst die Hämatologie parallel – sie sind keine Voraussetzung für die Antibiotikagabe.",
+              "es": "Peligroso: suspender es correcto, pero la fiebre con neutropenia grave no admite demora. Sin neutrófilos, una infección bacteriana puede evolucionar a sepsis en pocas horas; por eso, el tratamiento empírico intravenoso de amplio espectro corresponde a la primera hora, justo después de los cultivos. Hematología organiza en paralelo el frotis y, si hace falta, el estudio de médula ósea; no son un requisito para administrar antibióticos."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Exchange the ureteric stent under anaesthesia tonight, ceftriaxone 2 g IV for urosepsis, and continue metamizole for the pain",
+              "de": "Harnleiterschiene heute Nacht in Narkose wechseln, Ceftriaxon 2 g i.v. gegen die Urosepsis und Metamizol als Schmerzmittel weitergeben",
+              "es": "Cambiar el catéter doble J esta noche bajo anestesia, ceftriaxona 2 g i.v. para la urosepsis y mantener el metamizol como analgésico"
+            },
+            "score": 0,
+            "minutes": 20,
+            "critical": true,
+            "feedback": {
+              "en": "Dangerous: the stent is in place, the kidneys are not obstructed and the stent symptoms are unchanged; fever, sore throat and mouth ulcers with a neutrophil count of 0.05/nl point to metamizole-induced agranulocytosis. Continuing metamizole sustains it, a procedure under anaesthesia adds risk in severe neutropenia, and ceftriaxone does not cover Pseudomonas aeruginosa, which must be covered in febrile neutropenia.",
+              "de": "Gefährlich: Die Schiene liegt regelrecht, die Nieren sind nicht gestaut und die Schienenbeschwerden unverändert; Fieber, Halsschmerzen und Mundulzera bei neutrophilen Granulozyten von 0,05/nl sprechen für eine Agranulozytose durch Metamizol. Metamizol weiterzugeben unterhält sie, ein Eingriff in Narkose ist bei schwerer Neutropenie ein zusätzliches Risiko, und Ceftriaxon erfasst Pseudomonas aeruginosa nicht, das bei Fieber in der Neutropenie abgedeckt werden muss.",
+              "es": "Peligroso: el catéter está bien colocado, no hay hidronefrosis y las molestias del catéter no han cambiado; fiebre, dolor de garganta y úlceras bucales con unos neutrófilos de 0,05/nl apuntan a una agranulocitosis por metamizol. Seguir con el metamizol la mantiene, una intervención bajo anestesia añade riesgo en la neutropenia grave y la ceftriaxona no cubre Pseudomonas aeruginosa, que debe cubrirse en la neutropenia febril."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Replace metamizole with ibuprofen 600 mg three times daily, filgrastim 5 µg/kg SC daily; start antibiotics once the circulation becomes unstable",
+              "de": "Metamizol durch Ibuprofen 600 mg dreimal täglich ersetzen, Filgrastim 5 µg/kg s.c. täglich; Antibiotika erst bei Kreislaufinstabilität",
+              "es": "Sustituir el metamizol por ibuprofeno 600 mg tres veces al día, filgrastim 5 µg/kg s.c. al día; antibióticos cuando aparezca inestabilidad hemodinámica"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Dangerous: stopping metamizole is right, but fever with severe neutropenia requires intravenous broad-spectrum treatment at once; waiting for circulatory instability loses the decisive hours in sepsis. G-CSF can speed up neutrophil recovery but does not replace antibiotics. A regularly dosed antipyretic such as ibuprofen also masks fever as a sign of the course.",
+              "de": "Gefährlich: Das Absetzen von Metamizol ist richtig, doch Fieber bei schwerer Neutropenie verlangt sofort eine intravenöse Breitspektrumtherapie; wer auf Kreislaufinstabilität wartet, verliert bei einer Sepsis die entscheidenden Stunden. G-CSF kann die Erholung der Granulozyten beschleunigen, ersetzt aber keine Antibiotika. Ein regelmäßig gegebenes Antipyretikum wie Ibuprofen verschleiert zudem das Fieber als Verlaufszeichen.",
+              "es": "Peligroso: suspender el metamizol es correcto, pero la fiebre con neutropenia grave exige tratamiento intravenoso de amplio espectro de inmediato; esperar a la inestabilidad hemodinámica hace perder las horas decisivas en una sepsis. El G-CSF puede acelerar la recuperación de los neutrófilos, pero no sustituye a los antibióticos. Un antipirético pautado como el ibuprofeno enmascara además la fiebre como signo evolutivo."
+            }
+          }
+        ],
+        "best": "b"
+      }
+    ],
+    "takeaway": {
+      "en": "Metamizole can cause agranulocytosis at any time during treatment or shortly after it – regardless of dose and even after earlier uneventful use; routine blood counts do not detect it reliably. With fever, chills, sore throat or painful mucosal lesions, stop it at once without waiting for laboratory results and check a differential blood count. Fever with severe neutropenia: cultures and an antipseudomonal beta-lactam IV within one hour, protective isolation, haematology. After agranulocytosis, never give metamizole again.",
+      "de": "Metamizol kann jederzeit während der Behandlung oder kurz danach eine Agranulozytose auslösen – unabhängig von der Dosis und auch nach früher problemloser Einnahme; routinemäßige Blutbildkontrollen erkennen sie nicht zuverlässig. Bei Fieber, Schüttelfrost, Halsschmerzen oder schmerzhaften Schleimhautläsionen sofort absetzen, ohne auf Laborwerte zu warten, und ein Differenzialblutbild bestimmen. Fieber bei schwerer Neutropenie: Kulturen und innerhalb einer Stunde ein pseudomonaswirksames Betalaktam i.v., schützende Isolation, Hämatologie. Nach einer Agranulozytose nie wieder Metamizol.",
+      "es": "El metamizol puede causar agranulocitosis en cualquier momento del tratamiento o poco después de terminarlo, con independencia de la dosis e incluso tras un uso previo sin problemas; los hemogramas rutinarios no la detectan de forma fiable. Ante fiebre, escalofríos, dolor de garganta o lesiones mucosas dolorosas, suspenderlo de inmediato sin esperar a los resultados y pedir un hemograma con fórmula. Fiebre con neutropenia grave: cultivos y un betalactámico antipseudomónico i.v. en la primera hora, aislamiento protector y hematología. Tras una agranulocitosis, no volver a dar nunca metamizol."
+    },
+    "references": [
+      "bank-guide-urolithiasis",
+      "ssc",
+      "ema-medicines",
+      "fachinfo-de"
+    ]
+  },
+  {
+    "id": "q-drug-cystitis-egfr-38-pivmecillinam-not-nitrofurantoin",
+    "area": "emergency",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "night",
+    "patient": {
+      "name": "Liselotte Brauckmann",
+      "age": 82,
+      "sex": "female"
+    },
+    "title": {
+      "de": "Brennen beim Wasserlassen bei eingeschränkter Nierenfunktion",
+      "en": "Burning on urination with impaired renal function",
+      "es": "Ardor miccional con función renal reducida"
+    },
+    "presenting": {
+      "de": "82-jährige Patientin, die nachts in die Notaufnahme kommt: seit gestern Brennen beim Wasserlassen, Pollakisurie und imperativer Harndrang; kein Fieber, keine Flankenschmerzen, kein Erbrechen, kein Fluor. Sie lebt selbstständig, hat keinen Katheter; Restharn sonographisch 30 ml, Nieren nicht gestaut. Bekannte chronische Nierenerkrankung bei Hypertonie: Kreatinin 1,3 mg/dl, eGFR 38 ml/min/1,73 m², seit einem Jahr stabil. Medikation: Ramipril 5 mg, Spironolacton 25 mg, Amlodipin 5 mg; Kalium 5,1 mmol/l. Urinstreifen: Leukozyten 3+, Nitrit positiv, Erythrozyten 1+. Bei einer Zystitis vor vier Monaten wuchs E. coli, resistent gegen Trimethoprim und Ciprofloxacin, sensibel gegen Fosfomycin, Mecillinam und Nitrofurantoin. Keine Allergien. Eine Urinkultur ist abgenommen.",
+      "en": "An 82-year-old woman comes to the emergency department at night: since yesterday, burning on urination, frequency and urgency; no fever, no flank pain, no vomiting, no vaginal discharge. She lives independently and has no catheter; post-void residual on ultrasound 30 ml, no hydronephrosis. Known chronic kidney disease due to hypertension: creatinine 1.3 mg/dl, eGFR 38 ml/min/1.73 m², stable for a year. Medication: ramipril 5 mg, spironolactone 25 mg, amlodipine 5 mg; potassium 5.1 mmol/l. Urine dipstick: leucocytes 3+, nitrite positive, erythrocytes 1+. During a cystitis four months ago, E. coli grew, resistant to trimethoprim and ciprofloxacin, susceptible to fosfomycin, mecillinam and nitrofurantoin. No allergies. A urine culture has been taken.",
+      "es": "Mujer de 82 años que acude de noche a urgencias: desde ayer, ardor miccional, polaquiuria y urgencia; sin fiebre, dolor en el flanco, vómitos ni flujo vaginal. Vive de forma independiente y no lleva sonda; residuo posmiccional ecográfico de 30 ml, sin hidronefrosis. Enfermedad renal crónica conocida por hipertensión: creatinina 1,3 mg/dl, FGe 38 ml/min/1,73 m², estable desde hace un año. Medicación: ramipril 5 mg, espironolactona 25 mg, amlodipino 5 mg; potasio 5,1 mmol/l. Tira reactiva: leucocitos 3+, nitritos positivos, hematíes 1+. En una cistitis hace cuatro meses creció E. coli resistente a trimetoprima y ciprofloxacino y sensible a fosfomicina, mecilinam y nitrofurantoína. Sin alergias. Se ha recogido un urocultivo."
+    },
+    "vitals": {
+      "bp": "146/84",
+      "hr": 82,
+      "temp": 37.1,
+      "spo2": 96,
+      "rr": 16
+    },
+    "objectives": {
+      "de": [
+        "Wissen, dass Nitrofurantoin laut Fachinformation unterhalb einer eGFR von 45 ml/min kontraindiziert ist und eine Dosisreduktion das Problem nicht löst",
+        "Für die Zystitis bei eingeschränkter Nierenfunktion eine Erstlinienoption ohne Dosisanpassung wählen (Pivmecillinam oder Fosfomycin) und Resistenzen sowie Wechselwirkungen beachten"
+      ],
+      "en": [
+        "Know that, per the SmPC, nitrofurantoin is contraindicated below an eGFR of 45 ml/min and that dose reduction does not solve the problem",
+        "Choose a first-line option without dose adjustment for cystitis with impaired renal function (pivmecillinam or fosfomycin), taking resistance and interactions into account"
+      ],
+      "es": [
+        "Saber que, según la ficha técnica, la nitrofurantoína está contraindicada con un FGe inferior a 45 ml/min y que reducir la dosis no resuelve el problema",
+        "Elegir para la cistitis con función renal reducida una opción de primera línea sin ajuste de dosis (pivmecilinam o fosfomicina), teniendo en cuenta resistencias e interacciones"
+      ]
+    },
+    "steps": [
+      {
+        "id": "question",
+        "kind": "decision",
+        "prompt": {
+          "de": "Welche Therapie verordnen Sie?",
+          "en": "Which treatment do you prescribe?",
+          "es": "¿Qué tratamiento prescribe?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Prolonged-release nitrofurantoin 100 mg twice daily for 5 days, as the last isolate was susceptible",
+              "de": "Nitrofurantoin retard 100 mg zweimal täglich für 5 Tage, da der letzte Keim darauf sensibel war",
+              "es": "Nitrofurantoína de liberación prolongada 100 mg cada 12 h durante 5 días, ya que el último aislado era sensible"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: per the SmPC, nitrofurantoin is contraindicated with an eGFR below 45 ml/min. As filtration falls, it no longer reaches adequate urinary concentrations, while blood levels and thus the risk of neuropathy and lung and liver toxicity rise. Susceptibility on the antibiogram is of little use if the drug does not reach the bladder in sufficient amounts.",
+              "de": "Falsch: Laut Fachinformation ist Nitrofurantoin bei einer eGFR unter 45 ml/min kontraindiziert. Mit sinkender Filtration erreicht es im Urin keine ausreichende Konzentration, während die Blutspiegel und damit das Risiko von Neuropathie sowie Lungen- und Lebertoxizität steigen. Die Sensibilität im Antibiogramm hilft wenig, wenn das Medikament die Blase nicht ausreichend erreicht.",
+              "es": "Incorrecto: según la ficha técnica, la nitrofurantoína está contraindicada con un FGe inferior a 45 ml/min. Al disminuir el filtrado no alcanza concentraciones urinarias suficientes, mientras aumentan los niveles en sangre y, con ellos, el riesgo de neuropatía y de toxicidad pulmonar y hepática. La sensibilidad en el antibiograma sirve de poco si el fármaco no llega a la vejiga en cantidad suficiente."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Prolonged-release nitrofurantoin 100 mg once daily for 7 days, halving the daily dose because of the eGFR",
+              "de": "Nitrofurantoin retard 100 mg einmal täglich für 7 Tage, wegen der eGFR auf die halbe Tagesdosis reduziert",
+              "es": "Nitrofurantoína de liberación prolongada 100 mg una vez al día durante 7 días, a mitad de dosis por el FGe"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: reducing the dose makes things worse: the urinary concentration is already too low with impaired renal function and falls further with half the dose, while accumulation remains. The contraindication below an eGFR of 45 ml/min applies regardless of the dose.",
+              "de": "Falsch: Eine Dosisreduktion verschärft das Problem: Die Urinkonzentration ist bei eingeschränkter Nierenfunktion ohnehin zu niedrig und sinkt mit halber Dosis weiter, während die Kumulation bleibt. Die Kontraindikation unterhalb einer eGFR von 45 ml/min gilt unabhängig von der Dosis.",
+              "es": "Incorrecto: reducir la dosis empeora el problema: con la función renal reducida la concentración urinaria ya es demasiado baja y con media dosis baja aún más, mientras persiste la acumulación. La contraindicación por debajo de un FGe de 45 ml/min se aplica con independencia de la dosis."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Trimethoprim 200 mg twice daily for 5 days, as no dose adjustment is needed at this eGFR",
+              "de": "Trimethoprim 200 mg zweimal täglich für 5 Tage, da es bei dieser eGFR nicht angepasst werden muss",
+              "es": "Trimetoprima 200 mg cada 12 h durante 5 días, ya que con este FGe no requiere ajuste de dosis"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": true,
+            "feedback": {
+              "en": "Dangerous: the last E. coli strain was resistant to trimethoprim. In addition, trimethoprim reduces renal potassium excretion; with ramipril, spironolactone, impaired renal function and a potassium already at 5.1 mmol/l, dangerous hyperkalaemia may follow.",
+              "de": "Gefährlich: Der letzte E.-coli-Stamm war gegen Trimethoprim resistent. Zudem hemmt Trimethoprim die Kaliumausscheidung in der Niere; mit Ramipril, Spironolacton, eingeschränkter Nierenfunktion und einem Kalium von bereits 5,1 mmol/l droht eine gefährliche Hyperkaliämie.",
+              "es": "Peligroso: la última cepa de E. coli era resistente a trimetoprima. Además, la trimetoprima reduce la excreción renal de potasio; con ramipril, espironolactona, función renal reducida y un potasio ya de 5,1 mmol/l, puede producirse una hiperpotasemia peligrosa."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Ciprofloxacin 250 mg twice daily for 3 days, adjusted to the impaired renal function",
+              "de": "Ciprofloxacin 250 mg zweimal täglich für 3 Tage, an die eingeschränkte Nierenfunktion angepasst",
+              "es": "Ciprofloxacino 250 mg cada 12 h durante 3 días, ajustado a la función renal reducida"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Wrong: according to the EMA, fluoroquinolones should be used for cystitis only when other recommended antibiotics are unsuitable, and the EAU advises against them for cystitis. Moreover, the last isolate was resistant, and in older age the risk of tendon rupture and other serious adverse effects rises.",
+              "de": "Falsch: Laut EMA sollen Fluorchinolone bei einer Zystitis nur eingesetzt werden, wenn andere empfohlene Antibiotika nicht infrage kommen, und die EAU rät bei der Zystitis davon ab. Der letzte Keim war zudem resistent, und im höheren Alter steigt das Risiko für Sehnenrupturen und weitere schwere Nebenwirkungen.",
+              "es": "Incorrecto: según la EMA, las fluoroquinolonas solo deben usarse en la cistitis cuando no son adecuados otros antibióticos recomendados, y la EAU desaconseja su uso en la cistitis. Además, el último aislado era resistente y con la edad aumenta el riesgo de rotura tendinosa y de otros efectos adversos graves."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Pivmecillinam 400 mg three times daily for 3–5 days, without dose adjustment for this renal function",
+              "de": "Pivmecillinam 400 mg dreimal täglich für 3–5 Tage, bei dieser Nierenfunktion ohne Dosisanpassung",
+              "es": "Pivmecilinam 400 mg tres veces al día durante 3–5 días, sin ajustar la dosis a esta función renal"
+            },
+            "score": 10,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "en": "Correct: pivmecillinam 400 mg three times daily for 3–5 days is an EAU first-line option for acute cystitis in women (the SmPC gives 3 days); per the SmPC no dose adjustment is needed in renal impairment. The last isolate was susceptible to mecillinam. Fosfomycin trometamol 3 g as a single dose would be equivalent; it is not recommended only below a creatinine clearance of 10 ml/min. The urine culture taken allows the choice to be checked and adjusted if needed.",
+              "de": "Richtig: Pivmecillinam 400 mg dreimal täglich über 3–5 Tage ist eine Erstlinienoption der EAU für die akute Zystitis der Frau (die Fachinformation nennt 3 Tage); laut Fachinformation ist bei eingeschränkter Nierenfunktion keine Dosisanpassung nötig. Der letzte Keim war gegen Mecillinam sensibel. Gleichwertig wäre Fosfomycin-Trometamol 3 g als Einmalgabe, das erst unterhalb einer Kreatinin-Clearance von 10 ml/min nicht empfohlen wird. Mit der abgenommenen Urinkultur lässt sich die Wahl überprüfen und bei Bedarf anpassen.",
+              "es": "Correcto: pivmecilinam 400 mg tres veces al día durante 3–5 días es una opción de primera línea de la EAU para la cistitis aguda de la mujer (la ficha técnica indica 3 días); según la ficha técnica, no requiere ajuste de dosis en la insuficiencia renal. El último aislado era sensible a mecilinam. Sería equivalente la fosfomicina trometamol 3 g en dosis única, que solo se desaconseja con un aclaramiento de creatinina inferior a 10 ml/min. El urocultivo recogido permite comprobar la elección y ajustarla si hace falta."
+            }
+          }
+        ],
+        "best": "e"
+      }
+    ],
+    "takeaway": {
+      "de": "Bei einer Zystitis mit eingeschränkter Nierenfunktion zuerst die eGFR prüfen: Nitrofurantoin ist laut Fachinformation unter 45 ml/min kontraindiziert, weil es dann im Urin nicht ausreichend wirkt und systemisch kumuliert – eine Dosisreduktion hilft nicht. Pivmecillinam (400 mg dreimal täglich, 3–5 Tage) und Fosfomycin-Trometamol (3 g einmalig, bis zu einer Kreatinin-Clearance von 10 ml/min) brauchen keine Anpassung; Fluorchinolone und Trimethoprim bei Resistenz oder Hyperkaliämierisiko meiden.",
+      "en": "In cystitis with impaired renal function, check the eGFR first: per the SmPC, nitrofurantoin is contraindicated below 45 ml/min because it then lacks urinary efficacy and accumulates systemically – dose reduction does not help. Pivmecillinam (400 mg three times daily, 3–5 days) and fosfomycin trometamol (3 g once, down to a creatinine clearance of 10 ml/min) need no adjustment; avoid fluoroquinolones, and trimethoprim with resistance or a risk of hyperkalaemia.",
+      "es": "En la cistitis con función renal reducida, comprobar primero el FGe: según la ficha técnica, la nitrofurantoína está contraindicada por debajo de 45 ml/min porque pierde eficacia urinaria y se acumula sistémicamente; reducir la dosis no ayuda. El pivmecilinam (400 mg tres veces al día, 3–5 días) y la fosfomicina trometamol (3 g en dosis única, hasta un aclaramiento de creatinina de 10 ml/min) no requieren ajuste; evitar las fluoroquinolonas, y la trimetoprima si hay resistencia o riesgo de hiperpotasemia."
+    },
+    "references": [
+      "bank-guide-infektiologie",
+      "infections",
+      "ema-medicines",
+      "fachinfo-de"
+    ]
+  },
+  {
     "id": "bank-uro-and-00008",
     "area": "emergency",
     "level": 3,
