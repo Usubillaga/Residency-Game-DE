@@ -1473,17 +1473,17 @@
           {
             "id": "b",
             "text": {
-              "en": "Tamsulosin 0.4 mg and review in four weeks",
-              "de": "Tamsulosin 0,4 mg und Kontrolle in vier Wochen",
-              "es": "Tamsulosina 0,4 mg y control en cuatro semanas"
+              "en": "Tamsulosin 0.4 mg daily to relax the bladder neck, review in four weeks",
+              "de": "Tamsulosin 0,4 mg täglich zur Relaxierung des Blasenhalses, Kontrolle in vier Wochen",
+              "es": "Tamsulosina 0,4 mg al día para relajar el cuello vesical y control en cuatro semanas"
             },
             "score": 0,
             "minutes": 5,
             "critical": false,
             "feedback": {
-              "en": "Wrong. The cause is mechanical compression of the urethra by a tape that is too tight. An alpha-blocker is not licensed for this in women, has little effect and only delays causal treatment.",
-              "de": "Falsch. Die Ursache ist eine mechanische Kompression der Urethra durch ein zu straff liegendes Band. Ein Alphablocker ist bei Frauen dafür nicht zugelassen, wirkt kaum und verzögert nur die kausale Therapie.",
-              "es": "Incorrecto. La causa es una compresión mecánica de la uretra por una banda demasiado tensa. Un alfabloqueante no está autorizado para ello en mujeres, apenas actúa y solo retrasa el tratamiento causal."
+              "en": "Wrong. The cause is mechanical compression of the urethra by a tape that is too tight, not the bladder neck. An alpha-blocker is not licensed for this in women, has little effect and only delays causal treatment.",
+              "de": "Falsch. Die Ursache ist eine mechanische Kompression der Urethra durch ein zu straff liegendes Band, nicht der Blasenhals. Ein Alphablocker ist bei Frauen dafür nicht zugelassen, wirkt kaum und verzögert nur die kausale Therapie.",
+              "es": "Incorrecto. La causa es una compresión mecánica de la uretra por una banda demasiado tensa, no el cuello vesical. Un alfabloqueante no está autorizado para ello en mujeres, apenas actúa y solo retrasa el tratamiento causal."
             }
           },
           {
@@ -1505,17 +1505,17 @@
           {
             "id": "d",
             "text": {
-              "en": "Early tape loosening through the vaginal incision, division of the tape if needed",
-              "de": "Frühe Bandlockerung über die vaginale Inzision, bei Bedarf Banddurchtrennung",
-              "es": "Aflojamiento precoz de la banda por la incisión vaginal y, si hace falta, sección de la banda"
+              "en": "Early revision through the colpotomy, loosening or dividing the tape",
+              "de": "Frühe Revision über die Kolpotomie mit Lockerung oder Durchtrennung des Bandes",
+              "es": "Revisión precoz por la colpotomía, con aflojamiento o sección de la banda"
             },
             "score": 10,
             "minutes": 15,
             "critical": false,
             "feedback": {
-              "en": "Correct. In relevant retention during the first one to two postoperative weeks the tape is mobilised through the reopened vaginal incision and pulled down; if it is already fixed, it is divided in the midline. Continence is usually preserved.",
-              "de": "Richtig. Bei relevanter Retention in der ersten bis zweiten postoperativen Woche wird das Band über die eröffnete Kolpotomie mobilisiert und nach kaudal gezogen; ist es bereits fixiert, wird es mittig durchtrennt. Die Kontinenz bleibt dabei meist erhalten.",
-              "es": "Correcto. Ante una retención relevante en la primera o segunda semana posoperatoria se moviliza la banda a través de la colpotomía reabierta y se tracciona hacia abajo; si ya está fijada, se secciona en la línea media. La continencia suele mantenerse."
+              "en": "Correct. In relevant retention during the first one to two postoperative weeks the vaginal incision is reopened, the tape is mobilised and pulled down; if it is already fixed, it is divided in the midline. Continence is usually preserved.",
+              "de": "Richtig. Bei relevanter Retention in der ersten bis zweiten postoperativen Woche wird die vaginale Inzision wiedereröffnet, das Band mobilisiert und nach kaudal gezogen; ist es bereits fixiert, wird es mittig durchtrennt. Die Kontinenz bleibt dabei meist erhalten.",
+              "es": "Correcto. Ante una retención relevante en la primera o segunda semana posoperatoria se reabre la incisión vaginal, se moviliza la banda y se tracciona hacia abajo; si ya está fijada, se secciona en la línea media. La continencia suele mantenerse."
             }
           },
           {
@@ -2053,9 +2053,9 @@
           {
             "id": "b",
             "text": {
-              "en": "35 Gy in 10 fractions of 3.5 Gy over 2 weeks",
-              "de": "35 Gy in 10 Fraktionen à 3,5 Gy über 2 Wochen",
-              "es": "35 Gy en 10 fracciones de 3,5 Gy en 2 semanas"
+              "en": "35 Gy in 10 daily fractions of 3.5 Gy over 2 weeks",
+              "de": "35 Gy in 10 Fraktionen à 3,5 Gy werktäglich über 2 Wochen",
+              "es": "35 Gy en 10 fracciones diarias de 3,5 Gy en 2 semanas"
             },
             "score": 0,
             "minutes": 5,
@@ -2069,17 +2069,17 @@
           {
             "id": "c",
             "text": {
-              "en": "21 Gy in 3 fractions of 7 Gy on alternate days within 1 week to the bladder ± gross extravesical tumour",
-              "de": "21 Gy in 3 Fraktionen à 7 Gy jeden zweiten Tag innerhalb einer Woche auf die Harnblase ± makroskopischen extravesikalen Tumor",
-              "es": "21 Gy en 3 fracciones de 7 Gy en días alternos en 1 semana sobre la vejiga ± tumor extravesical macroscópico"
+              "en": "21 Gy in 3 fractions of 7 Gy on alternate days within 1 week",
+              "de": "21 Gy in 3 Fraktionen à 7 Gy jeden zweiten Tag innerhalb einer Woche",
+              "es": "21 Gy en 3 fracciones de 7 Gy en días alternos en 1 semana"
             },
             "score": 10,
             "minutes": 5,
             "critical": false,
             "feedback": {
-              "en": "Correct. Radiotherapy can stop tumour bleeding when transurethral measures fail. 21 Gy in 3 fractions on alternate days is the palliative regimen of choice: as effective as 35 Gy in 10 fractions in BA09, with only three visits, and the haemostatic effect usually starts within days to weeks.",
-              "de": "Richtig. Die Bestrahlung kann eine Tumorblutung stillen, wenn transurethrale Maßnahmen versagen. 21 Gy in 3 Fraktionen jeden zweiten Tag ist das palliative Schema der Wahl: in BA09 so wirksam wie 35 Gy in 10 Fraktionen, mit nur drei Terminen, und die blutstillende Wirkung setzt meist innerhalb von Tagen bis Wochen ein.",
-              "es": "Correcto. La radioterapia puede detener el sangrado tumoral cuando fracasan las medidas transuretrales. 21 Gy en 3 fracciones en días alternos es el esquema paliativo de elección: tan eficaz como 35 Gy en 10 fracciones en BA09, con solo tres sesiones, y el efecto hemostático suele aparecer en días o semanas."
+              "en": "Correct. Radiotherapy can stop tumour bleeding when transurethral measures fail. 21 Gy in 3 fractions on alternate days is the palliative regimen of choice: as effective as 35 Gy in 10 fractions in BA09, with only three visits, and the haemostatic effect usually starts within days to weeks. The target is the bladder ± gross extravesical tumour.",
+              "de": "Richtig. Die Bestrahlung kann eine Tumorblutung stillen, wenn transurethrale Maßnahmen versagen. 21 Gy in 3 Fraktionen jeden zweiten Tag ist das palliative Schema der Wahl: in BA09 so wirksam wie 35 Gy in 10 Fraktionen, mit nur drei Terminen, und die blutstillende Wirkung setzt meist innerhalb von Tagen bis Wochen ein. Bestrahlt wird die Harnblase ± makroskopischer extravesikaler Tumor.",
+              "es": "Correcto. La radioterapia puede detener el sangrado tumoral cuando fracasan las medidas transuretrales. 21 Gy en 3 fracciones en días alternos es el esquema paliativo de elección: tan eficaz como 35 Gy en 10 fracciones en BA09, con solo tres sesiones, y el efecto hemostático suele aparecer en días o semanas. Se irradia la vejiga ± el tumor extravesical macroscópico."
             }
           },
           {
@@ -2198,17 +2198,17 @@
           {
             "id": "b",
             "text": {
-              "en": "Squeeze the scrotal pump repeatedly until the cuff is empty, lock the sphincter open with the deactivation button, then pass a 12–14 Ch catheter and leave it in only briefly",
-              "de": "Pumpe im Skrotum mehrfach drücken, bis die Manschette entleert ist, Sphinkter mit dem Deaktivierungsknopf in offener Stellung sperren, dann 12–14-Ch-Katheter einlegen und nur kurz belassen",
-              "es": "Comprimir varias veces la bomba escrotal hasta vaciar el manguito, bloquear el esfínter abierto con el botón de desactivación y después colocar una sonda de 12–14 Ch, que se mantiene poco tiempo"
+              "en": "Open the cuff by pumping, deactivate the device and briefly place a 12–14 Ch catheter",
+              "de": "Manschette durch Pumpen öffnen, System deaktivieren und 12–14-Ch-Katheter kurzzeitig einlegen",
+              "es": "Abrir el manguito con la bomba, desactivar el dispositivo y colocar brevemente una sonda de 12–14 Ch"
             },
             "score": 10,
             "minutes": 5,
             "critical": false,
             "feedback": {
-              "en": "Correct. Before any transurethral catheter or cystoscopy, the cuff is opened by pumping and the device is deactivated. A thin catheter is left in as briefly as possible to avoid pressure damage to the urethra under the cuff; the device is reactivated only after the catheter is removed.",
-              "de": "Richtig. Vor jedem transurethralen Katheter und jeder Zystoskopie wird die Manschette durch Pumpen geöffnet und das System deaktiviert. Ein dünner Katheter wird so kurz wie möglich belassen, um Druckschäden der Harnröhre unter der Manschette zu vermeiden; reaktiviert wird erst nach Entfernung des Katheters.",
-              "es": "Correcto. Antes de cualquier sonda transuretral o cistoscopia, el manguito se abre con la bomba y el dispositivo se desactiva. Se deja una sonda fina el menor tiempo posible para evitar lesiones por presión de la uretra bajo el manguito; el dispositivo se reactiva solo tras retirar la sonda."
+              "en": "Correct. Before any transurethral catheter or cystoscopy, the scrotal pump is squeezed repeatedly until the cuff is empty and the sphincter is locked open with the deactivation button. A thin catheter is left in as briefly as possible to avoid pressure damage to the urethra under the cuff; the device is reactivated only after the catheter is removed.",
+              "de": "Richtig. Vor jedem transurethralen Katheter und jeder Zystoskopie wird die Pumpe im Skrotum mehrfach gedrückt, bis die Manschette leer ist, und der Sphinkter mit dem Deaktivierungsknopf in offener Stellung gesperrt. Ein dünner Katheter wird so kurz wie möglich belassen, um Druckschäden der Harnröhre unter der Manschette zu vermeiden; reaktiviert wird erst nach Entfernung des Katheters.",
+              "es": "Correcto. Antes de cualquier sonda transuretral o cistoscopia, se comprime varias veces la bomba escrotal hasta vaciar el manguito y se bloquea el esfínter abierto con el botón de desactivación. Se deja una sonda fina el menor tiempo posible para evitar lesiones por presión de la uretra bajo el manguito; el dispositivo se reactiva solo tras retirar la sonda."
             }
           },
           {
@@ -2246,9 +2246,9 @@
           {
             "id": "e",
             "text": {
-              "en": "Place a suprapubic catheter first, without operating the pump",
-              "de": "Primär suprapubischen Katheter anlegen, ohne die Pumpe zu betätigen",
-              "es": "Colocar primero una sonda suprapúbica sin accionar la bomba"
+              "en": "Place a suprapubic catheter under local anaesthesia first, without operating the pump",
+              "de": "Primär suprapubischen Katheter in Lokalanästhesie anlegen, ohne die Pumpe zu betätigen",
+              "es": "Colocar primero una sonda suprapúbica con anestesia local, sin accionar la bomba"
             },
             "score": 0,
             "minutes": 10,
@@ -2484,9 +2484,9 @@
           {
             "id": "b",
             "text": {
-              "en": "Dexamethasone 16 mg now, emergency MRI of the whole spine today, immediate assessment by spinal surgery and radiation oncology; surgery or radiotherapy without delay",
-              "de": "Dexamethason 16 mg sofort, Notfall-MRT der gesamten Wirbelsäule noch heute, umgehende wirbelsäulenchirurgische und strahlentherapeutische Beurteilung; OP bzw. RT ohne Verzögerung",
-              "es": "Dexametasona 16 mg ya, RM urgente de toda la columna hoy mismo, valoración inmediata por cirugía de columna y oncología radioterápica; cirugía o RT sin demora"
+              "en": "Dexamethasone 16 mg now, emergency whole-spine MRI today, and immediate assessment by spinal surgery and radiation oncology",
+              "de": "Dexamethason 16 mg sofort, Notfall-MRT der gesamten Wirbelsäule noch heute, umgehend Wirbelsäulenchirurgie und Strahlentherapie hinzuziehen",
+              "es": "Dexametasona 16 mg ya, RM urgente de toda la columna hoy mismo y valoración inmediata por cirugía de columna y oncología radioterápica"
             },
             "score": 10,
             "minutes": 10,
@@ -2598,9 +2598,9 @@
           {
             "id": "a",
             "text": {
-              "en": "Voiding cystourethrography (VCUG)",
-              "de": "Miktionszysturethrographie (MCU)",
-              "es": "Cistouretrografía miccional seriada (CUMS)"
+              "en": "Voiding cystourethrography (VCUG) via a urethral catheter",
+              "de": "Miktionszysturethrographie (MCU) über einen transurethralen Katheter",
+              "es": "Cistouretrografía miccional seriada (CUMS) mediante sonda uretral"
             },
             "score": 10,
             "minutes": 10,
@@ -2614,9 +2614,9 @@
           {
             "id": "b",
             "text": {
-              "en": "MAG3 diuretic renography as the only further test, because an obstructed upper pole cannot reflux",
-              "de": "MAG3-Diureseszintigraphie als einzige weitere Untersuchung, da eine obstruierte obere Anlage nicht refluxiert",
-              "es": "Renograma diurético con MAG3 como única prueba adicional, ya que un polo superior obstruido no puede refluir"
+              "en": "MAG3 renography alone, because an obstructed upper pole cannot reflux",
+              "de": "MAG3-Szintigraphie allein, da eine obstruierte obere Anlage nicht refluxiert",
+              "es": "Renograma con MAG3 solo, ya que un polo superior obstruido no puede refluir"
             },
             "score": 0,
             "minutes": 10,
@@ -2646,9 +2646,9 @@
           {
             "id": "d",
             "text": {
-              "en": "Diagnostic cystoscopy with retrograde pyelography of the upper-pole ureter",
-              "de": "Diagnostische Zystoskopie mit retrograder Darstellung des Harnleiters der oberen Anlage",
-              "es": "Cistoscopia diagnóstica con pielografía retrógrada del uréter del polo superior"
+              "en": "Cystoscopy with retrograde pyelography of the upper-pole ureter",
+              "de": "Zystoskopie mit retrograder Darstellung des Harnleiters der oberen Anlage",
+              "es": "Cistoscopia con pielografía retrógrada del uréter del polo superior"
             },
             "score": 0,
             "minutes": 20,

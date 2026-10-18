@@ -1929,9 +1929,9 @@
           {
             "id": "b",
             "text": {
-              "en": "End surveillance and perform TURBT for histology, looking for flat lesions and CIS",
-              "de": "Überwachung beenden und TUR-B zur histologischen Sicherung, mit gezielter Suche nach flachen Läsionen und CIS",
-              "es": "Finalizar la vigilancia y realizar RTU vesical para obtener histología, buscando lesiones planas y CIS"
+              "en": "End surveillance and perform TURBT for histology, including a search for CIS",
+              "de": "Überwachung beenden und TUR-B zur histologischen Sicherung, einschließlich Suche nach CIS",
+              "es": "Finalizar la vigilancia y realizar RTU vesical para histología, incluida la búsqueda de CIS"
             },
             "score": 10,
             "minutes": 15,
@@ -1945,9 +1945,9 @@
           {
             "id": "c",
             "text": {
-              "en": "Office laser fulguration of both lesions under local anaesthesia",
-              "de": "Laserfulguration beider Läsionen ambulant in Lokalanästhesie",
-              "es": "Fulguración láser ambulatoria de ambas lesiones con anestesia local"
+              "en": "Office laser fulguration of both lesions via flexible cystoscope under local anaesthesia",
+              "de": "Ambulante Laserfulguration beider Läsionen über das flexible Zystoskop in Lokalanästhesie",
+              "es": "Fulguración láser ambulatoria de ambas lesiones con cistoscopio flexible y anestesia local"
             },
             "score": 0,
             "minutes": 10,
@@ -1961,25 +1961,25 @@
           {
             "id": "d",
             "text": {
-              "en": "Repeat urine cytology and cystoscopy in 6 months",
-              "de": "Zytologie und Zystoskopie in 6 Monaten wiederholen",
-              "es": "Repetir la citología y la cistoscopia a los 6 meses"
+              "en": "Repeat urine cytology and cystoscopy in 6 months, as the lesions have barely grown",
+              "de": "Zytologie und Zystoskopie in 6 Monaten wiederholen, da die Läsionen kaum gewachsen sind",
+              "es": "Repetir la citología y la cistoscopia a los 6 meses, ya que las lesiones apenas han crecido"
             },
             "score": 0,
             "minutes": 3,
             "critical": true,
             "feedback": {
-              "en": "Delaying by half a year risks missing high-grade disease or CIS. A suspicious cytology calls for prompt clarification, not a longer interval.",
-              "de": "Ein halbes Jahr Abwarten riskiert, einen High-Grade-Tumor oder ein CIS zu übersehen. Eine verdächtige Zytologie verlangt rasche Abklärung, kein längeres Intervall.",
-              "es": "Esperar medio año supone el riesgo de pasar por alto un tumor de alto grado o un CIS. Una citología sospechosa exige aclaración rápida, no un intervalo más largo."
+              "en": "Delaying by half a year risks missing high-grade disease or CIS. A suspicious cytology calls for prompt clarification, not a longer interval. That the lesions have grown only slightly does not change this.",
+              "de": "Ein halbes Jahr Abwarten riskiert, einen High-Grade-Tumor oder ein CIS zu übersehen. Eine verdächtige Zytologie verlangt rasche Abklärung, kein längeres Intervall. Dass die Läsionen nur wenig gewachsen sind, ändert daran nichts.",
+              "es": "Esperar medio año supone el riesgo de pasar por alto un tumor de alto grado o un CIS. Una citología sospechosa exige aclaración rápida, no un intervalo más largo. Que las lesiones apenas hayan crecido no cambia esto."
             }
           },
           {
             "id": "e",
             "text": {
-              "en": "Start BCG induction straight away without resection",
-              "de": "Sofort BCG-Induktion ohne Resektion beginnen",
-              "es": "Iniciar inducción con BCG de inmediato sin resección"
+              "en": "Start BCG induction with 6 weekly instillations without resecting the lesions",
+              "de": "BCG-Induktion mit 6 wöchentlichen Instillationen beginnen, ohne die Läsionen zu resezieren",
+              "es": "Iniciar inducción con BCG con 6 instilaciones semanales sin resecar las lesiones"
             },
             "score": 0,
             "minutes": 5,
