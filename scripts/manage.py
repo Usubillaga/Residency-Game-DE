@@ -519,6 +519,11 @@ def validate_question_contract(root: Path, cases: list) -> None:
         integer(expected, "question-contract.json.stagingTraumaQuestions", 1)
         found = sum(len(case["steps"]) for case in cases if case.get("classification"))
         require(found == expected, f"question-contract.json: expected {expected} TNM/trauma questions, found {found}")
+    if "urodynamicsQuestions" in contract:
+        expected = contract["urodynamicsQuestions"]
+        integer(expected, "question-contract.json.urodynamicsQuestions", 1)
+        found = sum(len(case["steps"]) for case in cases if case.get("subject") == "urodynamics")
+        require(found == expected, f"question-contract.json: expected {expected} urodynamics questions, found {found}")
     # Same lead-in with a different clinical presentation is not a duplicate.
     for language in LANGUAGES:
         seen = set()

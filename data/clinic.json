@@ -44934,5 +44934,2160 @@
       "en": "TNM & staging",
       "es": "TNM y estadificación"
     }
+  },
+  {
+    "id": "udy-bpo-pressure-flow-indices",
+    "area": "clinic",
+    "level": 3,
+    "acuity": "routine",
+    "duty": "clinic",
+    "subject": "urodynamics",
+    "topic": {
+      "de": "Urodynamik",
+      "en": "Urodynamics",
+      "es": "Urodinámica"
+    },
+    "patient": {
+      "name": "Gerd Hollmann",
+      "age": 61,
+      "sex": "male"
+    },
+    "title": {
+      "de": "Qmax 12 ml/s und der Wunsch nach einer HoLEP",
+      "en": "Qmax 12 ml/s and a request for HoLEP",
+      "es": "Qmax de 12 ml/s y el deseo de una HoLEP"
+    },
+    "presenting": {
+      "de": "Herr Hollmann, 61 Jahre, kommt mit belastenden, überwiegend entleerungsbetonten Beschwerden (IPSS 21, Lebensqualitätsindex 5) trotz sechs Monaten Tamsulosin in die Sprechstunde. Prostatavolumen 45 ml, PSA 1,9 ng/ml, Urinstatus unauffällig. Freie Uroflowmetrie: Qmax 12 ml/s bei 310 ml Miktionsvolumen, Restharn 60 ml. Er hat von der HoLEP gelesen und möchte gleich einen Operationstermin.",
+      "en": "Mr Hollmann, 61, comes to clinic with bothersome, predominantly voiding symptoms (IPSS 21, quality-of-life score 5) despite six months of tamsulosin. Prostate volume 45 ml, PSA 1.9 ng/ml, urinalysis normal. Free uroflowmetry: Qmax 12 ml/s at a voided volume of 310 ml, post-void residual 60 ml. He has read about HoLEP and wants a surgery date straight away.",
+      "es": "El Sr. Hollmann, de 61 años, acude a consulta con síntomas molestos de predominio miccional (IPSS 21, índice de calidad de vida 5) pese a seis meses de tamsulosina. Volumen prostático 45 ml, PSA 1,9 ng/ml, sedimento normal. Flujometría libre: Qmax 12 ml/s con un volumen miccional de 310 ml, residuo posmiccional 60 ml. Ha leído sobre la HoLEP y quiere fecha de cirugía cuanto antes."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "indication",
+        "kind": "decision",
+        "prompt": {
+          "de": "Was ist vor der Operationsentscheidung sinnvoll?",
+          "en": "What makes sense before deciding on surgery?",
+          "es": "¿Qué conviene hacer antes de decidir la cirugía?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Druck-Fluss-Messung, weil der Qmax über 10 ml/s liegt",
+              "en": "Pressure-flow study, because Qmax is above 10 ml/s",
+              "es": "Estudio presión-flujo, porque el Qmax supera 10 ml/s"
+            },
+            "score": 10,
+            "minutes": 12,
+            "critical": false,
+            "feedback": {
+              "de": "Richtig: Die EAU empfiehlt die Urodynamik vor einer Operation bei belastenden Entleerungsbeschwerden und Qmax über 10 ml/s (schwache Empfehlung). Ein kräftiger Detrusor kann eine Obstruktion maskieren; nur die Druck-Fluss-Messung trennt Obstruktion und Detrusorschwäche.",
+              "en": "Correct: the EAU recommends urodynamics before surgery for bothersome voiding symptoms with Qmax above 10 ml/s (weak recommendation). A strong detrusor can mask obstruction; only a pressure-flow study separates obstruction from detrusor weakness.",
+              "es": "Correcto: la EAU recomienda la urodinámica antes de operar en síntomas miccionales molestos con Qmax superior a 10 ml/s (recomendación débil). Un detrusor potente puede enmascarar la obstrucción; solo el estudio presión-flujo distingue obstrucción y debilidad del detrusor."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "HoLEP direkt planen; die Symptomlast genügt als Indikation",
+              "en": "Plan HoLEP directly; the symptom burden is indication enough",
+              "es": "Programar la HoLEP ya; la carga de síntomas basta como indicación"
+            },
+            "score": 3,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "de": "Vertretbar, aber nicht optimal: Bei Qmax 12 ml/s bleibt offen, ob die Beschwerden vom Auslass oder vom Detrusor stammen. Genau für diese Konstellation sieht die EAU die Druck-Fluss-Messung vor.",
+              "en": "Defensible but not optimal: with Qmax 12 ml/s it remains open whether the symptoms come from the outlet or the detrusor. This is precisely the situation in which the EAU suggests a pressure-flow study.",
+              "es": "Defendible, pero no óptimo: con un Qmax de 12 ml/s queda abierto si los síntomas proceden de la salida o del detrusor. Precisamente para esta situación la EAU prevé el estudio presión-flujo."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Uroflowmetrie in drei Monaten wiederholen und abwarten",
+              "en": "Repeat uroflowmetry in three months and wait",
+              "es": "Repetir la flujometría en tres meses y esperar"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Eine weitere freie Uroflowmetrie liefert wieder keine Druckinformation. Sie beantwortet die entscheidende Frage – Obstruktion oder schwacher Detrusor – nicht.",
+              "en": "Another free uroflowmetry again provides no pressure information. It does not answer the decisive question – obstruction or weak detrusor.",
+              "es": "Otra flujometría libre tampoco aporta información de presión. No responde a la pregunta decisiva: ¿obstrucción o detrusor débil?"
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Zystoskopie: Trabekulierung beweist die Obstruktion",
+              "en": "Cystoscopy: trabeculation proves obstruction",
+              "es": "Cistoscopia: la trabeculación demuestra la obstrucción"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": false,
+            "feedback": {
+              "de": "Trabekulierung ist unspezifisch und kommt auch bei Detrusorüberaktivität oder neurogener Blase vor. Sie ersetzt keine Druck-Fluss-Messung.",
+              "en": "Trabeculation is non-specific and also occurs with detrusor overactivity or a neurogenic bladder. It does not replace a pressure-flow study.",
+              "es": "La trabeculación es inespecífica y aparece también en la hiperactividad del detrusor o en la vejiga neurógena. No sustituye al estudio presión-flujo."
+            }
+          }
+        ],
+        "best": "a"
+      },
+      {
+        "id": "classify",
+        "kind": "assessment",
+        "prompt": {
+          "de": "Die Druck-Fluss-Messung zeigt PdetQmax 82 cmH2O bei Qmax 9 ml/s. Wie ordnen Sie den Befund ein?",
+          "en": "The pressure-flow study shows PdetQmax 82 cmH2O at Qmax 9 ml/s. How do you classify the finding?",
+          "es": "El estudio presión-flujo muestra PdetQmax 82 cmH2O con Qmax 9 ml/s. ¿Cómo clasifica el hallazgo?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "BOOI 64, BCI 127: obstruiert bei normaler Kontraktilität",
+              "en": "BOOI 64, BCI 127: obstructed, normal contractility",
+              "es": "BOOI 64, BCI 127: obstruido con contractilidad normal"
+            },
+            "score": 10,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Richtig: BOOI = 82 − 2 × 9 = 64 (über 40: obstruiert), BCI = 82 + 5 × 9 = 127 (100–150: normal). Diese Konstellation spricht für einen guten Erfolg der Desobstruktion.",
+              "en": "Correct: BOOI = 82 − 2 × 9 = 64 (above 40: obstructed), BCI = 82 + 5 × 9 = 127 (100–150: normal). This pattern predicts a good result from deobstruction.",
+              "es": "Correcto: BOOI = 82 − 2 × 9 = 64 (por encima de 40: obstruido), BCI = 82 + 5 × 9 = 127 (100–150: normal). Esta constelación predice un buen resultado de la desobstrucción."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "BOOI 64: equivocal, eine Operation ist deshalb nicht begründet",
+              "en": "BOOI 64: equivocal, so surgery is not justified yet",
+              "es": "BOOI 64: equívoco, así que la cirugía aún no está justificada"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Equivocal ist der Bereich von 20 bis 40. Ein BOOI von 64 ist eindeutig obstruktiv.",
+              "en": "Equivocal is the range from 20 to 40. A BOOI of 64 is clearly obstructive.",
+              "es": "El rango equívoco va de 20 a 40. Un BOOI de 64 es claramente obstructivo."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "BCI 127: schwacher Detrusor, Katheterismus erwägen",
+              "en": "BCI 127: weak detrusor, consider catheterisation",
+              "es": "BCI 127: detrusor débil, considerar el cateterismo"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Als schwach gilt ein BCI unter 100. Mit 127 kontrahiert der Detrusor normal.",
+              "en": "A weak detrusor means a BCI below 100. At 127 the detrusor contracts normally.",
+              "es": "Se considera débil un BCI inferior a 100. Con 127 el detrusor contrae con normalidad."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "BOOI 100, BCI 37: obstruiert mit schwachem Detrusor",
+              "en": "BOOI 100, BCI 37: obstructed with a weak detrusor",
+              "es": "BOOI 100, BCI 37: obstruido con detrusor débil"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Die Rechenzeichen sind vertauscht: Der BOOI zieht 2 × Qmax ab, der BCI addiert 5 × Qmax.",
+              "en": "The signs are swapped: the BOOI subtracts 2 × Qmax, the BCI adds 5 × Qmax.",
+              "es": "Los signos están invertidos: el BOOI resta 2 × Qmax y el BCI suma 5 × Qmax."
+            }
+          }
+        ],
+        "best": "a"
+      },
+      {
+        "id": "counsel",
+        "kind": "handover",
+        "prompt": {
+          "de": "Er fragt, ob ihm die Untersuchung eine Operation erspart hätte. Welche Antwort ist am besten belegt?",
+          "en": "He asks whether the test might have spared him an operation. Which answer is best supported?",
+          "es": "Pregunta si la prueba le habría evitado una operación. ¿Qué respuesta está mejor fundamentada?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Als Routine nicht; gezielt eingesetzt klärt sie wie bei ihm die Indikation",
+              "en": "Not as a routine; used selectively it clarifies the indication, as for him",
+              "es": "Como rutina no; usada de forma selectiva aclara la indicación, como en su caso"
+            },
+            "score": 10,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "de": "Richtig: In der randomisierten UPSTREAM-Studie wurden 38 % mit und 36 % ohne Urodynamik operiert; bei den Symptomen war die Urodynamik nicht unterlegen. Ihr Wert liegt in gezielten Situationen wie dieser, nicht als Routine vor jeder Operation.",
+              "en": "Correct: in the randomised UPSTREAM trial 38% of men with and 36% without urodynamics had surgery; for symptoms urodynamics was non-inferior. Its value lies in selected situations like this one, not as a routine before every operation.",
+              "es": "Correcto: en el ensayo aleatorizado UPSTREAM se operó el 38 % con urodinámica y el 36 % sin ella; en síntomas la urodinámica fue no inferior. Su valor está en situaciones seleccionadas como esta, no como rutina antes de cada operación."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Ja, die Urodynamik verhindert regelhaft unnötige Prostataoperationen bei Männern",
+              "en": "Yes, urodynamics routinely prevents unnecessary prostate operations in men",
+              "es": "Sí, la urodinámica evita de forma sistemática operaciones de próstata innecesarias"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Das hat UPSTREAM nicht gezeigt: Die Operationsrate unterschied sich nicht signifikant (38 % gegenüber 36 %).",
+              "en": "UPSTREAM did not show this: the surgery rate did not differ significantly (38% versus 36%).",
+              "es": "UPSTREAM no lo demostró: la tasa de cirugía no difirió de forma significativa (38 % frente a 36 %)."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Sie ist vor jeder Prostataoperation vorgeschrieben, unabhängig vom Flow",
+              "en": "It is mandatory before every prostate operation, regardless of the flow",
+              "es": "Es obligatoria antes de toda cirugía prostática, sea cual sea el flujo"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Die EAU empfiehlt die Urodynamik nicht routinemäßig, sondern nur bei bestimmten Indikationen wie Qmax über 10 ml/s.",
+              "en": "The EAU does not recommend urodynamics routinely, only for specific indications such as Qmax above 10 ml/s.",
+              "es": "La EAU no recomienda la urodinámica de rutina, solo en indicaciones concretas como un Qmax superior a 10 ml/s."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Nein, aber ein BOOI über 40 garantiert jetzt den vollen Operationserfolg",
+              "en": "No, but a BOOI above 40 now guarantees a complete surgical success",
+              "es": "No, pero un BOOI por encima de 40 garantiza ahora el éxito completo de la cirugía"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Ein hoher BOOI macht einen Erfolg wahrscheinlicher, garantiert ihn aber nicht; Speicherbeschwerden können fortbestehen.",
+              "en": "A high BOOI makes success more likely but does not guarantee it; storage symptoms may persist.",
+              "es": "Un BOOI alto hace más probable el éxito, pero no lo garantiza; los síntomas de llenado pueden persistir."
+            }
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "de": "Bei Qmax über 10 ml/s trennt erst die Druck-Fluss-Messung Obstruktion von Detrusorschwäche: BOOI = PdetQmax − 2 × Qmax (über 40 obstruiert), BCI = PdetQmax + 5 × Qmax (100–150 normal). Als Routine vor jeder Operation senkt sie die Operationsrate nicht.",
+      "en": "With Qmax above 10 ml/s only a pressure-flow study separates obstruction from detrusor weakness: BOOI = PdetQmax − 2 × Qmax (above 40 obstructed), BCI = PdetQmax + 5 × Qmax (100–150 normal). As a routine before every operation it does not lower the surgery rate.",
+      "es": "Con un Qmax superior a 10 ml/s, solo el estudio presión-flujo distingue la obstrucción de la debilidad del detrusor: BOOI = PdetQmax − 2 × Qmax (por encima de 40, obstruido), BCI = PdetQmax + 5 × Qmax (100–150, normal). Como rutina antes de cada operación no reduce la tasa de cirugía."
+    },
+    "references": [
+      "udy-eau-male-luts-diagnostic",
+      "udy-bladder-indices",
+      "udy-upstream-trial"
+    ]
+  },
+  {
+    "id": "udy-dhic-elderly-man-no-turp",
+    "area": "clinic",
+    "level": 3,
+    "acuity": "routine",
+    "duty": "clinic",
+    "subject": "urodynamics",
+    "topic": {
+      "de": "Urodynamik",
+      "en": "Urodynamics",
+      "es": "Urodinámica"
+    },
+    "patient": {
+      "name": "Heinrich Albers",
+      "age": 79,
+      "sex": "male"
+    },
+    "title": {
+      "de": "Zur Resektion überwiesen – aber ist es die Prostata?",
+      "en": "Referred for resection – but is it the prostate?",
+      "es": "Remitido para resección, pero ¿es la próstata?"
+    },
+    "presenting": {
+      "de": "Herr Albers, 79 Jahre, wird vom Hausarzt zur transurethralen Resektion überwiesen: imperativer Harndrang mit Dranginkontinenz, dreimal Nykturie, schwacher Strahl. Der Restharn lag wiederholt bei 240–280 ml; vor zwei Monaten hatte er einen fieberhaften Harnwegsinfekt. Prostatavolumen 35 ml, keine neurologische Erkrankung, kognitiv fit, gute Handfunktion. Sie veranlassen eine Urodynamik.",
+      "en": "Mr Albers, 79, is referred by his GP for transurethral resection: urgency with urgency incontinence, nocturia three times a night, weak stream. His post-void residual has repeatedly been 240–280 ml, and two months ago he had a febrile urinary tract infection. Prostate volume 35 ml, no neurological disease, cognitively fit, good hand function. You arrange urodynamics.",
+      "es": "El Sr. Albers, de 79 años, es remitido por su médico de familia para una resección transuretral: urgencia con incontinencia de urgencia, nicturia tres veces por noche, chorro débil. El residuo posmiccional ha sido repetidamente de 240–280 ml y hace dos meses tuvo una infección urinaria febril. Volumen prostático 35 ml, sin enfermedad neurológica, cognitivamente en forma, buena función manual. Solicita una urodinámica."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "pattern",
+        "kind": "assessment",
+        "prompt": {
+          "de": "Füllung: ab 210 ml phasische Detrusorüberaktivität bis 30 cmH2O mit imperativem Drang. Entleerung: PdetQmax 24 cmH2O bei Qmax 5 ml/s, Restharn 260 ml. Welches Muster liegt vor?",
+          "en": "Filling: from 210 ml phasic detrusor overactivity up to 30 cmH2O with urgency. Voiding: PdetQmax 24 cmH2O at Qmax 5 ml/s, post-void residual 260 ml. Which pattern is this?",
+          "es": "Llenado: desde 210 ml hiperactividad fásica del detrusor de hasta 30 cmH2O con urgencia. Vaciado: PdetQmax 24 cmH2O con Qmax 5 ml/s, residuo posmiccional 260 ml. ¿Qué patrón es?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Überaktivität mit schwacher Kontraktion, keine Obstruktion (DHIC)",
+              "en": "Overactivity with a weak contraction, no obstruction (DHIC)",
+              "es": "Hiperactividad con contracción débil, sin obstrucción (DHIC)"
+            },
+            "score": 10,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "de": "Richtig: BOOI = 24 − 10 = 14 (unter 20: unobstruiert), BCI = 24 + 25 = 49 (unter 100: schwach). Überaktivität in der Füllung plus schwache Entleerung ohne Obstruktion entspricht der DHIC, die im Alter häufig ist.",
+              "en": "Correct: BOOI = 24 − 10 = 14 (below 20: unobstructed), BCI = 24 + 25 = 49 (below 100: weak). Overactivity during filling plus weak voiding without obstruction is DHIC, a common pattern in older age.",
+              "es": "Correcto: BOOI = 24 − 10 = 14 (inferior a 20: sin obstrucción), BCI = 24 + 25 = 49 (inferior a 100: débil). Hiperactividad en el llenado más vaciado débil sin obstrucción corresponde a la DHIC, frecuente en la edad avanzada."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Prostataobstruktion mit einer sekundären Überaktivität des Detrusors",
+              "en": "Prostatic obstruction with secondary detrusor overactivity",
+              "es": "Obstrucción prostática con hiperactividad secundaria del detrusor"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "de": "Dafür müsste der BOOI über 40 liegen. Mit 14 ist der Auslass nicht obstruiert.",
+              "en": "That would require a BOOI above 40. At 14 the outlet is not obstructed.",
+              "es": "Para ello el BOOI debería superar 40. Con 14 la salida no está obstruida."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Reine überaktive Blase ohne relevante Entleerungsstörung",
+              "en": "Pure overactive bladder without a relevant emptying problem",
+              "es": "Vejiga hiperactiva pura sin trastorno relevante del vaciado"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Ein Restharn von 260 ml und ein BCI von 49 zeigen eine relevante Entleerungsstörung.",
+              "en": "A residual of 260 ml and a BCI of 49 show a relevant emptying problem.",
+              "es": "Un residuo de 260 ml y un BCI de 49 muestran un trastorno relevante del vaciado."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Akontraktiler Detrusor ohne jede messbare Kontraktion",
+              "en": "Acontractile detrusor without any measurable contraction",
+              "es": "Detrusor acontráctil sin ninguna contracción medible"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Der Detrusor kontrahiert, nur zu schwach: PdetQmax 24 cmH2O bei messbarem Fluss.",
+              "en": "The detrusor does contract, only too weakly: PdetQmax 24 cmH2O with measurable flow.",
+              "es": "El detrusor sí contrae, solo que demasiado débil: PdetQmax 24 cmH2O con flujo medible."
+            }
+          }
+        ],
+        "best": "a"
+      },
+      {
+        "id": "turp",
+        "kind": "decision",
+        "prompt": {
+          "de": "Der Hausarzt fragt, ob die Resektion trotzdem sinnvoll ist. Was antworten Sie?",
+          "en": "The GP asks whether resection still makes sense. What do you answer?",
+          "es": "El médico de familia pregunta si la resección sigue teniendo sentido. ¿Qué responde?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Nein: Ohne Obstruktion fehlt der Desobstruktion der Angriffspunkt",
+              "en": "No: without obstruction, deobstruction has nothing to act on",
+              "es": "No: sin obstrucción, la desobstrucción no tiene sobre qué actuar"
+            },
+            "score": 10,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Richtig: Ohne Obstruktion beseitigt die Resektion keine Ursache. Eine Metaanalyse zeigte bei präoperativer Detrusorunteraktivität geringere Verbesserungen von Symptomen und Harnfluss nach transurethraler Chirurgie.",
+              "en": "Correct: without obstruction, resection removes no cause. A meta-analysis showed smaller improvements in symptoms and flow after transurethral surgery when detrusor underactivity was present before surgery.",
+              "es": "Correcto: sin obstrucción, la resección no elimina ninguna causa. Un metaanálisis mostró menores mejorías de síntomas y flujo tras la cirugía transuretral cuando existía hipoactividad del detrusor antes de operar."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Ja: Nach einer Resektion verschwindet die Überaktivität meist",
+              "en": "Yes: the overactivity usually disappears after resection",
+              "es": "Sí: la hiperactividad suele desaparecer tras la resección"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Die Überaktivität ist hier nicht Folge einer Obstruktion; es gibt keinen Grund anzunehmen, dass sie nach der Resektion verschwindet.",
+              "en": "Here the overactivity is not a consequence of obstruction; there is no reason to expect it to disappear after resection.",
+              "es": "Aquí la hiperactividad no es consecuencia de una obstrucción; no hay motivo para esperar que desaparezca tras la resección."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Ja, denn ein Restharn über 200 ml ist für sich allein eine OP-Indikation",
+              "en": "Yes, because a residual above 200 ml alone indicates surgery",
+              "es": "Sí, porque un residuo superior a 200 ml ya es por sí solo indicación quirúrgica"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Restharn allein ist keine Operationsindikation; entscheidend ist, ob ihm eine Obstruktion zugrunde liegt.",
+              "en": "Residual urine alone is not an indication for surgery; what matters is whether obstruction causes it.",
+              "es": "El residuo por sí solo no es indicación quirúrgica; lo decisivo es si lo causa una obstrucción."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Ja, aber als Prostata-Urethralift statt Resektion",
+              "en": "Yes, but as a prostatic urethral lift instead",
+              "es": "Sí, pero con un lifting uretral prostático"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Auch minimalinvasive Desobstruktion setzt eine Obstruktion voraus.",
+              "en": "Minimally invasive deobstruction also requires an obstruction to treat.",
+              "es": "También la desobstrucción mínimamente invasiva requiere una obstrucción que tratar."
+            }
+          }
+        ],
+        "best": "a"
+      },
+      {
+        "id": "plan",
+        "kind": "decision",
+        "prompt": {
+          "de": "Wie behandeln Sie Entleerung und Drang?",
+          "en": "How do you treat emptying and urgency?",
+          "es": "¿Cómo trata el vaciado y la urgencia?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Selbstkatheterismus und ein Beta-3-Agonist gegen den Drang",
+              "en": "Self-catheterisation and a beta-3 agonist for urgency",
+              "es": "Autocateterismo y un agonista beta-3 para la urgencia"
+            },
+            "score": 10,
+            "minutes": 6,
+            "critical": false,
+            "feedback": {
+              "de": "Richtig: Der Katheterismus behebt die Entleerungsstörung und senkt das Infektrisiko. Mirabegron verschlechterte in einer zwölfwöchigen Studie bei Männern mit Obstruktion die Miktionsparameter gegenüber Placebo nicht; für die DHIC ist das eine Extrapolation. Anders als Antimuskarinika wirkt es nicht anticholinerg.",
+              "en": "Correct: catheterisation corrects the emptying problem and lowers the infection risk. In a twelve-week trial in men with obstruction, mirabegron did not worsen voiding parameters versus placebo; applying this to DHIC is an extrapolation. Unlike antimuscarinics it has no anticholinergic effect.",
+              "es": "Correcto: el cateterismo corrige el vaciado y reduce el riesgo de infección. En un ensayo de doce semanas en varones con obstrucción, el mirabegrón no empeoró los parámetros miccionales frente a placebo; aplicarlo a la DHIC es una extrapolación. A diferencia de los antimuscarínicos, no es anticolinérgico."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Antimuskarinikum in Standarddosis, Restharn in vier Wochen",
+              "en": "Standard-dose antimuscarinic, residual check in four weeks",
+              "es": "Antimuscarínico a dosis estándar, residuo en cuatro semanas"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": true,
+            "feedback": {
+              "de": "Gefährlich: Bei einem Restharn über 150 ml rät die EAU von Antimuskarinika ab; sie dämpfen die schwache Kontraktion weiter und können einen Harnverhalt auslösen.",
+              "en": "Dangerous: with a residual above 150 ml the EAU advises against antimuscarinics; they dampen the weak contraction further and may precipitate retention.",
+              "es": "Peligroso: con un residuo superior a 150 ml la EAU desaconseja los antimuscarínicos; atenúan aún más la contracción débil y pueden provocar una retención."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Transurethraler Dauerkatheter, weil er am einfachsten ist",
+              "en": "Indwelling urethral catheter, because it is simplest",
+              "es": "Sonda uretral permanente, porque es lo más sencillo"
+            },
+            "score": 3,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "de": "Möglich, wenn der Selbstkatheterismus scheitert, bei guter Handfunktion aber zweite Wahl: mehr Infektionen und Harnröhrenschäden.",
+              "en": "Possible if self-catheterisation fails, but second choice with good hand function: more infections and urethral damage.",
+              "es": "Posible si fracasa el autocateterismo, pero con buena función manual es segunda opción: más infecciones y lesiones uretrales."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Botulinumtoxin A in den Detrusor als nächster Schritt",
+              "en": "Botulinum toxin A into the detrusor as the next step",
+              "es": "Toxina botulínica A en el detrusor como siguiente paso"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "de": "Botulinumtoxin schwächt die Kontraktion zusätzlich und kommt frühestens nach Versagen der oralen Therapie bei etabliertem Katheterismus infrage.",
+              "en": "Botulinum toxin weakens the contraction further and is only an option after oral therapy has failed and catheterisation is established.",
+              "es": "La toxina botulínica debilita aún más la contracción y solo es una opción tras fracasar el tratamiento oral y con el cateterismo ya establecido."
+            }
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "de": "Drang mit hohem Restharn im Alter kann eine DHIC sein – erst die Druck-Fluss-Messung trennt sie von der Prostataobstruktion: Überaktivität in der Füllung, schwache Kontraktion in der Entleerung, keine Obstruktion. Dann keine Resektion und keine Antimuskarinika bei Restharn über 150 ml, sondern Katheterismus und eine Drangtherapie, die die Entleerung nicht weiter schwächt.",
+      "en": "Urgency with a high residual in older age can be DHIC – only the pressure-flow study separates it from prostatic obstruction: overactivity during filling, weak contraction during voiding, no obstruction. Then no resection and no antimuscarinics with a residual above 150 ml, but catheterisation and urgency treatment that does not weaken emptying further.",
+      "es": "La urgencia con residuo elevado en la edad avanzada puede ser una DHIC; solo el estudio presión-flujo la distingue de la obstrucción prostática: hiperactividad en el llenado, contracción débil en el vaciado, sin obstrucción. Entonces ni resección ni antimuscarínicos con un residuo superior a 150 ml, sino cateterismo y un tratamiento de la urgencia que no debilite más el vaciado."
+    },
+    "references": [
+      "udy-eau-male-luts-diagnostic",
+      "udy-eau-male-luts-management",
+      "udy-du-turp-meta",
+      "udy-mirabegron-boo"
+    ]
+  },
+  {
+    "id": "udy-pbno-young-man-vuds",
+    "area": "clinic",
+    "level": 3,
+    "acuity": "routine",
+    "duty": "clinic",
+    "subject": "urodynamics",
+    "topic": {
+      "de": "Urodynamik",
+      "en": "Urodynamics",
+      "es": "Urodinámica"
+    },
+    "patient": {
+      "name": "Jonas Wendel",
+      "age": 34,
+      "sex": "male"
+    },
+    "title": {
+      "de": "34 Jahre, schwacher Strahl – und keine Prostata im Weg",
+      "en": "34 years old, a weak stream – and no prostate in the way",
+      "es": "34 años, chorro débil y ninguna próstata que estorbe"
+    },
+    "presenting": {
+      "de": "Herr Wendel, 34 Jahre, berichtet über seit Jahren abgeschwächten Strahl, verzögerten Miktionsbeginn und häufiges Wasserlassen (IPSS 19). Keine neurologische Erkrankung, keine Voroperation. Uroflowmetrie: Qmax 8 ml/s bei 280 ml, flach verlängerte Kurve, Restharn 70 ml. Urethrozystoskopie ohne Striktur, Prostata 18 ml. Er möchte in etwa zwei Jahren eine Familie gründen.",
+      "en": "Mr Wendel, 34, has had a weak stream, hesitancy and frequent voiding for years (IPSS 19). No neurological disease, no previous surgery. Uroflowmetry: Qmax 8 ml/s at 280 ml, flattened prolonged curve, post-void residual 70 ml. Urethrocystoscopy shows no stricture, prostate 18 ml. He would like to start a family in about two years.",
+      "es": "El Sr. Wendel, de 34 años, refiere desde hace años chorro débil, retraso en el inicio de la micción y micciones frecuentes (IPSS 19). Sin enfermedad neurológica ni cirugías previas. Flujometría: Qmax 8 ml/s con 280 ml, curva aplanada y prolongada, residuo posmiccional 70 ml. Uretrocistoscopia sin estenosis, próstata de 18 ml. Quiere formar una familia en unos dos años."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "workup",
+        "kind": "decision",
+        "prompt": {
+          "de": "Wie klären Sie die Ursache weiter ab?",
+          "en": "How do you investigate the cause further?",
+          "es": "¿Cómo sigue estudiando la causa?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Videourodynamik mit Beckenboden-EMG",
+              "en": "Video-urodynamics with pelvic floor EMG",
+              "es": "Videourodinámica con EMG del suelo pélvico"
+            },
+            "score": 10,
+            "minutes": 15,
+            "critical": false,
+            "feedback": {
+              "de": "Richtig: Die Videourodynamik zeigt Druck, Fluss, Sphinkteraktivität und den Ort der Obstruktion gleichzeitig. Die EAU empfiehlt die Urodynamik vor invasiver Therapie bei Männern unter 50 Jahren.",
+              "en": "Correct: video-urodynamics shows pressure, flow, sphincter activity and the site of obstruction at the same time. The EAU recommends urodynamics before invasive treatment in men under 50 years.",
+              "es": "Correcto: la videourodinámica muestra a la vez presión, flujo, actividad esfinteriana y lugar de la obstrucción. La EAU recomienda la urodinámica antes de un tratamiento invasivo en varones menores de 50 años."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Alphablocker ohne weitere Diagnostik beginnen",
+              "en": "Start an alpha-blocker without further tests",
+              "es": "Iniciar un alfabloqueante sin más estudios"
+            },
+            "score": 3,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Ein Therapieversuch ist vertretbar, lässt aber die Ursache offen. Spätestens vor einer invasiven Behandlung braucht er die Videourodynamik.",
+              "en": "A treatment trial is defensible but leaves the cause open. Before any invasive treatment he needs video-urodynamics at the latest.",
+              "es": "Un ensayo terapéutico es defendible, pero deja abierta la causa. Como muy tarde antes de un tratamiento invasivo necesita la videourodinámica."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "MRT der Wirbelsäule zum Ausschluss einer Myelopathie",
+              "en": "MRI of the spine to exclude a myelopathy",
+              "es": "RM de columna para descartar una mielopatía"
+            },
+            "score": 0,
+            "minutes": 8,
+            "critical": false,
+            "feedback": {
+              "de": "Ohne neurologische Symptome oder Befunde ist eine Bildgebung der Wirbelsäule nicht der nächste Schritt.",
+              "en": "Without neurological symptoms or signs, spinal imaging is not the next step.",
+              "es": "Sin síntomas ni signos neurológicos, la imagen de la columna no es el siguiente paso."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "PSA-Bestimmung und Prostatabiopsie",
+              "en": "PSA test and prostate biopsy",
+              "es": "PSA y biopsia de próstata"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "de": "Bei 34 Jahren und unauffälliger kleiner Prostata erklärt ein Karzinom die Beschwerden nicht.",
+              "en": "At 34 with a small, unremarkable prostate, cancer does not explain the symptoms.",
+              "es": "A los 34 años y con una próstata pequeña y normal, un cáncer no explica los síntomas."
+            }
+          }
+        ],
+        "best": "a"
+      },
+      {
+        "id": "localise",
+        "kind": "assessment",
+        "prompt": {
+          "de": "Videourodynamik: PdetQmax 96 cmH2O bei Qmax 6 ml/s, Beckenboden-EMG während der Miktion stumm, der Blasenhals öffnet sich nicht, die distale Harnröhre ist unauffällig. Welche Diagnose stellen Sie?",
+          "en": "Video-urodynamics: PdetQmax 96 cmH2O at Qmax 6 ml/s, pelvic floor EMG silent during voiding, the bladder neck does not open, the distal urethra is unremarkable. What is your diagnosis?",
+          "es": "Videourodinámica: PdetQmax 96 cmH2O con Qmax 6 ml/s, EMG del suelo pélvico silente durante la micción, el cuello vesical no se abre y la uretra distal es normal. ¿Cuál es su diagnóstico?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Primäre Blasenhalsobstruktion bei stummem EMG",
+              "en": "Primary bladder neck obstruction, silent EMG",
+              "es": "Obstrucción primaria del cuello vesical, EMG silente"
+            },
+            "score": 10,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Richtig: Hoher Druck, wenig Fluss und ein geschlossener Blasenhals bei relaxiertem Beckenboden sind das typische Bild.",
+              "en": "Correct: high pressure, low flow and a closed bladder neck with a relaxed pelvic floor are the typical picture.",
+              "es": "Correcto: presión alta, flujo bajo y un cuello vesical cerrado con el suelo pélvico relajado son la imagen típica."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Dysfunktionelle Miktion mit Beckenbodenkontraktion",
+              "en": "Dysfunctional voiding with pelvic floor contraction",
+              "es": "Micción disfuncional con contracción del suelo pélvico"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Dann wäre das EMG während der Miktion aktiv, und die Engstelle läge am äußeren Sphinkter.",
+              "en": "Then the EMG would be active during voiding and the narrowing would lie at the external sphincter.",
+              "es": "Entonces el EMG estaría activo durante la micción y el estrechamiento estaría en el esfínter externo."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Detrusor-Sphinkter-Dyssynergie bei Myelopathie",
+              "en": "Detrusor-sphincter dyssynergia from a myelopathy",
+              "es": "Disinergia detrusor-esfínter por mielopatía"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Eine Dyssynergie setzt eine neurologische Läsion voraus und zeigt EMG-Aktivität am äußeren Sphinkter.",
+              "en": "Dyssynergia requires a neurological lesion and shows EMG activity at the external sphincter.",
+              "es": "La disinergia requiere una lesión neurológica y muestra actividad en el EMG del esfínter externo."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Detrusorunteraktivität mit Restharn",
+              "en": "Detrusor underactivity with residual urine",
+              "es": "Hipoactividad del detrusor con residuo"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Ein PdetQmax von 96 cmH2O ist das Gegenteil einer Detrusorschwäche.",
+              "en": "A PdetQmax of 96 cmH2O is the opposite of detrusor weakness.",
+              "es": "Una PdetQmax de 96 cmH2O es lo contrario de la debilidad del detrusor."
+            }
+          }
+        ],
+        "best": "a"
+      },
+      {
+        "id": "treat",
+        "kind": "decision",
+        "prompt": {
+          "de": "Welches Vorgehen schlagen Sie vor?",
+          "en": "What do you suggest?",
+          "es": "¿Qué propone?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Alphablocker; bei Versagen Inzision nach Beratung zur Ejakulation",
+              "en": "Alpha-blocker; if it fails, incision after counselling on ejaculation",
+              "es": "Alfabloqueante; si fracasa, incisión tras informar sobre la eyaculación"
+            },
+            "score": 10,
+            "minutes": 6,
+            "critical": false,
+            "feedback": {
+              "de": "Richtig: Alphablocker sind Erstlinientherapie und verbessern IPSS und Qmax, verursachen aber häufig eine Ejakulationsstörung (in Studien 47–50 %), die nach dem Absetzen meist reversibel ist – bei Kinderwunsch kann eine Therapiepause nötig werden. Die Blasenhalsinzision wirkt langfristig stärker, kann die antegrade Ejakulation jedoch dauerhaft beeinträchtigen.",
+              "en": "Correct: alpha-blockers are first-line and improve IPSS and Qmax, but they often cause ejaculatory dysfunction (47–50% in studies), which is usually reversible after stopping – a treatment pause may be needed while he tries to conceive. Bladder neck incision works better in the long term but may permanently impair antegrade ejaculation.",
+              "es": "Correcto: los alfabloqueantes son la primera línea y mejoran el IPSS y el Qmax, pero causan a menudo alteraciones de la eyaculación (47–50 % en los estudios), por lo general reversibles al suspenderlos; mientras busque un embarazo puede ser necesaria una pausa. La incisión del cuello actúa mejor a largo plazo, pero puede afectar de forma permanente a la eyaculación anterógrada."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Sofort beidseitige Blasenhalsinzision als rasche, definitive Lösung",
+              "en": "Immediate bilateral bladder neck incision as the quick, definitive solution",
+              "es": "Incisión bilateral inmediata del cuello vesical como solución definitiva"
+            },
+            "score": 3,
+            "minutes": 8,
+            "critical": false,
+            "feedback": {
+              "de": "Wirksam, aber bei Kinderwunsch ohne vorherigen medikamentösen Versuch voreilig, weil eine möglicherweise bleibende Ejakulationsstörung droht.",
+              "en": "Effective, but premature without a prior drug trial when he wants children, because ejaculatory dysfunction may be permanent.",
+              "es": "Eficaz, pero precipitada sin un ensayo farmacológico previo si desea tener hijos, porque la alteración de la eyaculación puede ser permanente."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Transurethrale Resektion der kleinen Prostata",
+              "en": "Transurethral resection of the small prostate",
+              "es": "Resección transuretral de la próstata pequeña"
+            },
+            "score": 0,
+            "minutes": 8,
+            "critical": false,
+            "feedback": {
+              "de": "Die Prostata ist nicht die Ursache; eine Resektion behandelt den Blasenhals nicht gezielt und gefährdet ebenfalls die Ejakulation.",
+              "en": "The prostate is not the cause; a resection does not target the bladder neck and also endangers ejaculation.",
+              "es": "La próstata no es la causa; una resección no actúa de forma dirigida sobre el cuello vesical y también pone en riesgo la eyaculación."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Beckenbodenbiofeedback und gezieltes Miktionstraining",
+              "en": "Pelvic floor biofeedback and targeted voiding training",
+              "es": "Biofeedback del suelo pélvico y reeducación miccional"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "de": "Biofeedback ist die Therapie der dysfunktionellen Miktion; bei relaxiertem Beckenboden fehlt der Angriffspunkt.",
+              "en": "Biofeedback treats dysfunctional voiding; with a relaxed pelvic floor there is nothing for it to act on.",
+              "es": "El biofeedback trata la micción disfuncional; con el suelo pélvico relajado no tiene sobre qué actuar."
+            }
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "de": "Bei jungen Männern mit Entleerungsbeschwerden lokalisiert die Videourodynamik die Obstruktion: Blasenhals, äußerer Sphinkter oder Harnröhre. Die primäre Blasenhalsobstruktion zeigt hohen Druck, wenig Fluss, einen geschlossenen Blasenhals und ein stummes EMG. Therapie: zuerst ein Alphablocker, der die Ejakulation häufig, aber meist reversibel stört; bei Versagen Inzision nach Beratung über eine möglicherweise bleibende Ejakulationsstörung.",
+      "en": "In young men with voiding symptoms video-urodynamics locates the obstruction: bladder neck, external sphincter or urethra. Primary bladder neck obstruction shows high pressure, low flow, a closed bladder neck and a silent EMG. Treatment: first an alpha-blocker, which often but usually reversibly disturbs ejaculation; if it fails, incision after counselling about possibly permanent ejaculatory dysfunction.",
+      "es": "En varones jóvenes con síntomas de vaciado, la videourodinámica localiza la obstrucción: cuello vesical, esfínter externo o uretra. La obstrucción primaria del cuello vesical muestra presión alta, flujo bajo, cuello cerrado y EMG silente. Tratamiento: primero un alfabloqueante, que altera a menudo la eyaculación, aunque por lo general de forma reversible; si fracasa, incisión tras informar de una posible alteración permanente de la eyaculación."
+    },
+    "references": [
+      "udy-eau-male-luts-diagnostic",
+      "udy-pbno-meta-2024",
+      "udy-pbno-review-2025",
+      "udy-eau-male-luts-management",
+      "udy-alpha-blocker-ejd-2012"
+    ]
+  },
+  {
+    "id": "udy-msa-before-turp",
+    "area": "clinic",
+    "level": 3,
+    "acuity": "routine",
+    "duty": "clinic",
+    "subject": "urodynamics",
+    "topic": {
+      "de": "Urodynamik",
+      "en": "Urodynamics",
+      "es": "Urodinámica"
+    },
+    "patient": {
+      "name": "Klaus Reinholz",
+      "age": 63,
+      "sex": "male"
+    },
+    "title": {
+      "de": "Parkinson, Restharn und ein Termin zur Resektion",
+      "en": "Parkinsonism, residual urine and a date for resection",
+      "es": "Parkinsonismo, residuo y una fecha para la resección"
+    },
+    "presenting": {
+      "de": "Herr Reinholz, 63 Jahre, bemerkte vor zwei Jahren erste motorische Symptome; vor 18 Monaten wurde ein Parkinson-Syndrom diagnostiziert, Levodopa hilft nur mäßig. Imperativer Harndrang und Dranginkontinenz bestehen schon seit drei Jahren, eine erektile Dysfunktion seit vier Jahren. Im Stehtest fällt der Blutdruck um 30/15 mmHg ab. Prostatavolumen 40 ml, Restharn 180 ml, Nykturie zweimal pro Nacht. Ein Kollege hat ihn bereits für eine transurethrale Resektion eingeplant.",
+      "en": "Mr Reinholz, 63, noticed his first motor symptoms two years ago; parkinsonism was diagnosed 18 months ago, and levodopa helps only moderately. Urgency and urgency incontinence have been present for three years, erectile dysfunction for four years. On standing his blood pressure falls by 30/15 mmHg. Prostate volume 40 ml, post-void residual 180 ml, nocturia twice a night. A colleague has already booked him for transurethral resection.",
+      "es": "El Sr. Reinholz, de 63 años, notó los primeros síntomas motores hace dos años; el parkinsonismo se diagnosticó hace 18 meses y la levodopa le ayuda solo moderadamente. La urgencia y la incontinencia de urgencia existen desde hace tres años y la disfunción eréctil desde hace cuatro. En bipedestación su presión arterial cae 30/15 mmHg. Volumen prostático 40 ml, residuo posmiccional 180 ml, nicturia dos veces por noche. Un compañero ya lo ha programado para una resección transuretral."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "redflags",
+        "kind": "assessment",
+        "prompt": {
+          "de": "Welche Befunde passen nicht zu einem idiopathischen Parkinson-Syndrom?",
+          "en": "Which findings do not fit idiopathic Parkinson's disease?",
+          "es": "¿Qué hallazgos no encajan con una enfermedad de Parkinson idiopática?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Blasenstörung vor der Motorik, Orthostase, Restharn",
+              "en": "Bladder dysfunction before motor signs, orthostasis, residual",
+              "es": "Trastorno vesical previo a la clínica motora, ortostatismo, residuo"
+            },
+            "score": 10,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Richtig: Diese Kombination gehört zu den Warnzeichen einer Multisystematrophie. Die MDS-Kriterien 2022 nennen Restharn über 100 ml, Dranginkontinenz und neurogene orthostatische Hypotonie als autonome Merkmale.",
+              "en": "Correct: this combination is among the warning signs of multiple system atrophy. The MDS criteria 2022 list a residual above 100 ml, urgency incontinence and neurogenic orthostatic hypotension as autonomic features.",
+              "es": "Correcto: esta combinación forma parte de los signos de alarma de la atrofia multisistémica. Los criterios MDS 2022 incluyen residuo superior a 100 ml, incontinencia de urgencia e hipotensión ortostática neurógena como rasgos autonómicos."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Prostatavolumen von 40 ml und zweimalige Nykturie pro Nacht",
+              "en": "Prostate volume of 40 ml and nocturia twice a night",
+              "es": "Volumen prostático de 40 ml y nicturia dos veces"
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false,
+            "feedback": {
+              "de": "Beides ist im Alter häufig und unterscheidet nicht zwischen den Parkinson-Syndromen.",
+              "en": "Both are common with age and do not distinguish between the parkinsonian syndromes.",
+              "es": "Ambos son frecuentes con la edad y no distinguen entre los síndromes parkinsonianos."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Allein das nur mäßige Ansprechen auf Levodopa",
+              "en": "Only the moderate response to levodopa",
+              "es": "Solo la respuesta moderada a la levodopa"
+            },
+            "score": 3,
+            "minutes": 3,
+            "critical": false,
+            "feedback": {
+              "de": "Ein schwaches Levodopa-Ansprechen passt zur Multisystematrophie, ist aber nur ein Baustein; die urologischen und autonomen Warnzeichen wiegen hier schwerer.",
+              "en": "A poor levodopa response fits multiple system atrophy but is only one piece; the urological and autonomic warning signs weigh more here.",
+              "es": "Una mala respuesta a la levodopa encaja con la atrofia multisistémica, pero es solo una pieza; aquí pesan más los signos de alarma urológicos y autonómicos."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Keine – Blasenstörungen gehören zu jedem Parkinson",
+              "en": "None – bladder problems are part of every Parkinson's disease",
+              "es": "Ninguno: los trastornos vesicales forman parte de cualquier Parkinson"
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false,
+            "feedback": {
+              "de": "Blasenstörungen kommen beim Parkinson vor, typischerweise aber nicht vor der Motorik und nicht mit hohem Restharn.",
+              "en": "Bladder problems do occur in Parkinson's disease, but typically not before the motor signs and not with a high residual.",
+              "es": "En el Parkinson hay trastornos vesicales, pero típicamente no antes de la clínica motora ni con un residuo alto."
+            }
+          }
+        ],
+        "best": "a"
+      },
+      {
+        "id": "vuds",
+        "kind": "decision",
+        "prompt": {
+          "de": "Die Videourodynamik zeigt einen offenen Blasenhals zu Beginn der Füllung, Detrusorüberaktivität, PdetQmax 28 cmH2O bei Qmax 6 ml/s, Restharn 190 ml und ein neurogen verändertes Sphinkter-EMG. Was geschieht mit dem OP-Termin?",
+          "en": "Video-urodynamics shows an open bladder neck at the start of filling, detrusor overactivity, PdetQmax 28 cmH2O at Qmax 6 ml/s, a residual of 190 ml and a neurogenic sphincter EMG. What happens to the surgery date?",
+          "es": "La videourodinámica muestra un cuello vesical abierto al inicio del llenado, hiperactividad del detrusor, PdetQmax 28 cmH2O con Qmax 6 ml/s, residuo de 190 ml y un EMG esfinteriano neurógeno. ¿Qué pasa con la fecha de cirugía?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Absagen; Katheterismus, neurologische Abklärung auf MSA",
+              "en": "Cancel it; catheterisation and neurological work-up for MSA",
+              "es": "Cancelarla; cateterismo y estudio neurológico de AMS"
+            },
+            "score": 10,
+            "minutes": 6,
+            "critical": false,
+            "feedback": {
+              "de": "Richtig: BOOI 16 – keine Obstruktion. Offener Blasenhals und neurogenes Sphinkter-EMG sprechen für eine Multisystematrophie; in einer klassischen Serie waren alle elf Männer mit MSA nach Resektion inkontinent.",
+              "en": "Correct: BOOI 16 – no obstruction. An open bladder neck and a neurogenic sphincter EMG point to multiple system atrophy; in a classic series all eleven men with MSA were incontinent after resection.",
+              "es": "Correcto: BOOI 16, sin obstrucción. El cuello abierto y el EMG esfinteriano neurógeno orientan a atrofia multisistémica; en una serie clásica, los once varones con AMS quedaron incontinentes tras la resección."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Resektion wie geplant, da die Entleerung deutlich schlecht ist",
+              "en": "Resection as planned, because his bladder empties so poorly",
+              "es": "Resección según lo previsto, porque vacía muy mal la vejiga"
+            },
+            "score": 0,
+            "minutes": 12,
+            "critical": true,
+            "feedback": {
+              "de": "Gefährlich: Ohne Obstruktion verbessert die Resektion die Entleerung nicht; bei offenem Blasenhals und geschädigtem Sphinkter droht eine schwere Inkontinenz.",
+              "en": "Dangerous: without obstruction resection does not improve emptying; with an open bladder neck and a damaged sphincter severe incontinence threatens.",
+              "es": "Peligroso: sin obstrucción la resección no mejora el vaciado; con el cuello abierto y el esfínter dañado amenaza una incontinencia grave."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Transurethrale Inzision statt Resektion",
+              "en": "Transurethral incision instead of resection",
+              "es": "Incisión transuretral en lugar de resección"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": false,
+            "feedback": {
+              "de": "Auch die Inzision schwächt den ohnehin offenen Blasenhals und behandelt keine Obstruktion.",
+              "en": "An incision also weakens the already open bladder neck and treats no obstruction.",
+              "es": "También la incisión debilita el cuello vesical ya abierto y no trata ninguna obstrucción."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Alphablocker hochdosiert, Resektion bei Versagen",
+              "en": "High-dose alpha-blocker, resection if it fails",
+              "es": "Alfabloqueante a dosis alta y resección si fracasa"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "de": "Alphablocker können die orthostatische Hypotonie verschlechtern, und eine spätere Resektion bleibt ungeeignet.",
+              "en": "Alpha-blockers may worsen orthostatic hypotension, and a later resection remains unsuitable.",
+              "es": "Los alfabloqueantes pueden empeorar la hipotensión ortostática y una resección posterior sigue siendo inadecuada."
+            }
+          }
+        ],
+        "best": "a"
+      },
+      {
+        "id": "letter",
+        "kind": "handover",
+        "prompt": {
+          "de": "Was schreiben Sie dem behandelnden Neurologen?",
+          "en": "What do you write to his neurologist?",
+          "es": "¿Qué le escribe a su neurólogo?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Befunde stützen den MSA-Verdacht: offener Blasenhals, neurogenes EMG",
+              "en": "The findings support suspected MSA: open bladder neck, neurogenic EMG",
+              "es": "Los hallazgos apoyan la sospecha de AMS: cuello abierto, EMG neurógeno"
+            },
+            "score": 10,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "de": "Richtig: Diese Befunde unterscheiden MSA und idiopathisches Parkinson-Syndrom deutlich (offener Blasenhals 53 % gegenüber 0 %, neurogene Potenziale 93 % gegenüber 5 %).",
+              "en": "Correct: these findings clearly separate MSA from idiopathic Parkinson's disease (open bladder neck 53% versus 0%, neurogenic potentials 93% versus 5%).",
+              "es": "Correcto: estos hallazgos separan claramente la AMS de la enfermedad de Parkinson idiopática (cuello abierto 53 % frente a 0 %, potenciales neurógenos 93 % frente a 5 %)."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Die Urodynamik schließt eine Multisystematrophie sicher aus",
+              "en": "Urodynamics reliably excludes multiple system atrophy",
+              "es": "La urodinámica descarta con seguridad una atrofia multisistémica"
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false,
+            "feedback": {
+              "de": "Im Gegenteil: Die Befunde sprechen für eine MSA; allein beweisen oder ausschließen kann die Urodynamik sie aber nicht.",
+              "en": "On the contrary: the findings point to MSA, although urodynamics alone can neither prove nor exclude it.",
+              "es": "Al contrario: los hallazgos orientan a AMS, aunque la urodinámica por sí sola no puede ni demostrarla ni descartarla."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Typischer Blasenbefund eines idiopathischen Parkinson-Syndroms ohne MSA",
+              "en": "A typical bladder finding of idiopathic Parkinson's disease, not of MSA",
+              "es": "Hallazgo vesical típico de una enfermedad de Parkinson idiopática, sin AMS"
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false,
+            "feedback": {
+              "de": "Beim idiopathischen Parkinson-Syndrom fehlen offener Blasenhals und hoher Restharn meist; die Überaktivität allein ist unspezifisch.",
+              "en": "In idiopathic Parkinson's disease an open bladder neck and a high residual are usually absent; overactivity alone is non-specific.",
+              "es": "En el Parkinson idiopático suelen faltar el cuello abierto y el residuo alto; la hiperactividad aislada es inespecífica."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Restharn durch Prostatavergrößerung, Resektion empfohlen",
+              "en": "Residual due to prostate enlargement, resection advised",
+              "es": "Residuo por crecimiento prostático, se aconseja resección"
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false,
+            "feedback": {
+              "de": "Die Druck-Fluss-Messung zeigt keine Obstruktion; die Prostata erklärt den Restharn nicht.",
+              "en": "The pressure-flow study shows no obstruction; the prostate does not explain the residual.",
+              "es": "El estudio presión-flujo no muestra obstrucción; la próstata no explica el residuo."
+            }
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "de": "Vor einer Prostataoperation bei Parkinson-Syndrom an MSA denken: Blasenstörung vor der Motorik, erektile Dysfunktion, Orthostase, Restharn über 100 ml, offener Blasenhals in Ruhe und neurogenes Sphinkter-EMG. Dann keine Resektion, sondern Katheterismus und neurologische Abklärung.",
+      "en": "Before prostate surgery in parkinsonism, think of MSA: bladder dysfunction before motor signs, erectile dysfunction, orthostasis, a residual above 100 ml, an open bladder neck at rest and a neurogenic sphincter EMG. Then no resection, but catheterisation and a neurological work-up.",
+      "es": "Antes de operar la próstata en un parkinsonismo, pensar en AMS: trastorno vesical previo a la clínica motora, disfunción eréctil, ortostatismo, residuo superior a 100 ml, cuello vesical abierto en reposo y EMG esfinteriano neurógeno. Entonces no resecar, sino cateterismo y estudio neurológico."
+    },
+    "references": [
+      "udy-eau-neuro-urology",
+      "udy-msa-vuds-2001",
+      "udy-msa-turp-1997",
+      "udy-msa-mds-2022"
+    ]
+  },
+  {
+    "id": "udy-female-boo-after-sling",
+    "area": "clinic",
+    "level": 3,
+    "acuity": "routine",
+    "duty": "clinic",
+    "subject": "urodynamics",
+    "topic": {
+      "de": "Urodynamik",
+      "en": "Urodynamics",
+      "es": "Urodinámica"
+    },
+    "patient": {
+      "name": "Sabine Dorfner",
+      "age": 57,
+      "sex": "female"
+    },
+    "title": {
+      "de": "Kontinent nach dem Band – aber die Blase leert sich nicht",
+      "en": "Continent after the sling – but the bladder will not empty",
+      "es": "Continente tras la cinta, pero la vejiga no se vacía"
+    },
+    "presenting": {
+      "de": "Frau Dorfner, 57 Jahre, erhielt vor neun Monaten ein retropubisches Band wegen Belastungsinkontinenz. Seither ist sie kontinent, aber der Strahl ist schwach, sie muss pressen, hat neuen imperativen Harndrang und zwei Harnwegsinfekte hinter sich. Restharn 160–200 ml, freie Uroflowmetrie Qmax 7 ml/s bei 240 ml.",
+      "en": "Mrs Dorfner, 57, had a retropubic sling for stress incontinence nine months ago. Since then she has been continent, but her stream is weak, she has to strain, she has new urgency and has had two urinary tract infections. Post-void residual 160–200 ml, free uroflowmetry Qmax 7 ml/s at 240 ml.",
+      "es": "La Sra. Dorfner, de 57 años, recibió hace nueve meses una cinta retropúbica por incontinencia de esfuerzo. Desde entonces es continente, pero el chorro es débil, tiene que hacer prensa, presenta urgencia nueva y ha tenido dos infecciones urinarias. Residuo posmiccional 160–200 ml, flujometría libre Qmax 7 ml/s con 240 ml."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "workup",
+        "kind": "decision",
+        "prompt": {
+          "de": "Wie sichern Sie die Ursache?",
+          "en": "How do you confirm the cause?",
+          "es": "¿Cómo confirma la causa?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Videourodynamik und Urethrozystoskopie",
+              "en": "Video-urodynamics and urethrocystoscopy",
+              "es": "Videourodinámica y uretrocistoscopia"
+            },
+            "score": 10,
+            "minutes": 15,
+            "critical": false,
+            "feedback": {
+              "de": "Richtig: Bei Verdacht auf anatomische Obstruktion empfiehlt die EAU die Urodynamik, vorzugsweise mit Durchleuchtung, und die Urethrozystoskopie (starke Empfehlungen). So werden Obstruktion, Detrusorschwäche und eine Bandperforation unterschieden.",
+              "en": "Correct: when anatomical obstruction is suspected the EAU recommends urodynamics, preferably with fluoroscopy, and urethrocystoscopy (strong recommendations). This separates obstruction, detrusor weakness and tape perforation.",
+              "es": "Correcto: ante la sospecha de obstrucción anatómica la EAU recomienda la urodinámica, preferiblemente con fluoroscopia, y la uretrocistoscopia (recomendaciones fuertes). Así se distinguen obstrucción, debilidad del detrusor y perforación de la cinta."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Diagnose aus der Uroflowmetrie stellen",
+              "en": "Make the diagnosis from the uroflowmetry",
+              "es": "Hacer el diagnóstico con la flujometría"
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false,
+            "feedback": {
+              "de": "Die EAU rät ausdrücklich, eine Obstruktion bei Frauen nicht allein aus Flussmessungen zu diagnostizieren – ein niedriger Fluss kann auch durch einen schwachen Detrusor entstehen.",
+              "en": "The EAU explicitly advises against diagnosing obstruction in women from flow measurements alone – low flow can also result from a weak detrusor.",
+              "es": "La EAU desaconseja expresamente diagnosticar la obstrucción en la mujer solo con medidas de flujo: un flujo bajo también puede deberse a un detrusor débil."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "MRT des Beckens zur Darstellung des Bandes",
+              "en": "Pelvic MRI to visualise the tape",
+              "es": "RM pélvica para visualizar la cinta"
+            },
+            "score": 0,
+            "minutes": 8,
+            "critical": false,
+            "feedback": {
+              "de": "Die Bildgebung zeigt die Lage des Bandes, aber keine Funktion; sie beantwortet nicht, ob eine Obstruktion vorliegt.",
+              "en": "Imaging shows where the tape lies but not how the bladder functions; it does not answer whether there is obstruction.",
+              "es": "La imagen muestra dónde está la cinta, pero no la función; no responde si existe obstrucción."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Urethradruckprofil zur Bewertung des Bandes",
+              "en": "Urethral pressure profile to assess the tape",
+              "es": "Perfil de presión uretral para valorar la cinta"
+            },
+            "score": 0,
+            "minutes": 6,
+            "critical": false,
+            "feedback": {
+              "de": "Das Urethradruckprofil bildet keine Entleerungsstörung ab und ist für diese Frage nicht aussagekräftig.",
+              "en": "The urethral pressure profile does not capture voiding dysfunction and does not answer this question.",
+              "es": "El perfil de presión uretral no refleja el trastorno del vaciado y no responde a esta pregunta."
+            }
+          }
+        ],
+        "best": "a"
+      },
+      {
+        "id": "calc",
+        "kind": "assessment",
+        "prompt": {
+          "de": "Druck-Fluss: PdetQmax 52 cmH2O bei Qmax 7 ml/s; Engstelle auf Höhe der mittleren Harnröhre, proximal erweitert, EMG ruhig. Wie interpretieren Sie den Befund?",
+          "en": "Pressure-flow: PdetQmax 52 cmH2O at Qmax 7 ml/s; narrowing at the level of the mid-urethra, dilated proximally, EMG quiet. How do you interpret the finding?",
+          "es": "Presión-flujo: PdetQmax 52 cmH2O con Qmax 7 ml/s; estrechamiento a nivel de la uretra media, dilatada en proximal, EMG silente. ¿Cómo interpreta el hallazgo?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "BOOIf 36,6: Obstruktion auf Bandhöhe sehr wahrscheinlich",
+              "en": "BOOIf 36.6: obstruction at the level of the tape is very likely",
+              "es": "BOOIf 36,6: obstrucción a la altura de la cinta muy probable"
+            },
+            "score": 10,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Richtig: BOOIf = PdetQmax − 2,2 × Qmax = 52 − 15,4 = 36,6. Werte über 18 entsprechen im Nomogramm einer Obstruktionswahrscheinlichkeit über 90 %; die Durchleuchtung lokalisiert die Engstelle am Band.",
+              "en": "Correct: BOOIf = PdetQmax − 2.2 × Qmax = 52 − 15.4 = 36.6. Values above 18 correspond to a probability of obstruction above 90% on the nomogram; fluoroscopy locates the narrowing at the tape.",
+              "es": "Correcto: BOOIf = PdetQmax − 2,2 × Qmax = 52 − 15,4 = 36,6. Valores superiores a 18 corresponden en el nomograma a una probabilidad de obstrucción superior al 90 %; la fluoroscopia localiza el estrechamiento en la cinta."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Männer-BOOI 38: equivocal, daher keine Obstruktion anzunehmen",
+              "en": "Male BOOI 38: equivocal, so obstruction should not be assumed here",
+              "es": "BOOI masculino 38: equívoco, así que no debe suponerse obstrucción"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Die Grenzwerte des Männer-BOOI gelten nicht für Frauen, deren Auslasswiderstand physiologisch niedriger ist. Zudem zeigt die Durchleuchtung eine Engstelle.",
+              "en": "The male BOOI cut-offs do not apply to women, whose outlet resistance is physiologically lower. Fluoroscopy also shows a narrowing.",
+              "es": "Los límites del BOOI masculino no se aplican a la mujer, cuya resistencia de salida es fisiológicamente menor. Además, la fluoroscopia muestra un estrechamiento."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Detrusorunteraktivität bei niedrigem Fluss",
+              "en": "Detrusor underactivity with low flow",
+              "es": "Hipoactividad del detrusor con flujo bajo"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Ein PdetQmax von 52 cmH2O ist bei einer Frau kein schwacher Detrusor; die Druck-Fluss-Messung unterscheidet gerade Obstruktion und Unteraktivität.",
+              "en": "A PdetQmax of 52 cmH2O in a woman is not a weak detrusor; the pressure-flow study is exactly what separates obstruction from underactivity.",
+              "es": "Una PdetQmax de 52 cmH2O en una mujer no es un detrusor débil; el estudio presión-flujo es justamente lo que separa obstrucción e hipoactividad."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Dysfunktionelle Miktion mit Sphinkteraktivität",
+              "en": "Dysfunctional voiding with sphincter activity",
+              "es": "Micción disfuncional con actividad esfinteriana"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Dafür müsste das EMG während der Miktion aktiv sein und die Engstelle am äußeren Sphinkter liegen.",
+              "en": "That would require an active EMG during voiding and a narrowing at the external sphincter.",
+              "es": "Para ello el EMG debería estar activo durante la micción y el estrechamiento estaría en el esfínter externo."
+            }
+          }
+        ],
+        "best": "a"
+      },
+      {
+        "id": "treat",
+        "kind": "decision",
+        "prompt": {
+          "de": "Welche Therapie empfehlen Sie?",
+          "en": "Which treatment do you recommend?",
+          "es": "¿Qué tratamiento recomienda?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Bandrevision; Aufklärung über erneute Belastungsinkontinenz",
+              "en": "Sling revision; counselling on recurrent stress incontinence",
+              "es": "Revisión de la cinta; informar de la posible recidiva"
+            },
+            "score": 10,
+            "minutes": 8,
+            "critical": false,
+            "feedback": {
+              "de": "Richtig: Bei Harnverhalt oder relevanter Entleerungsstörung nach Band empfiehlt die EAU die Revision (Lockerung, Inzision, Teil- oder Komplettexzision) und die Aufklärung über ein Rezidiv der Belastungsinkontinenz (starke Empfehlungen).",
+              "en": "Correct: for retention or significant voiding difficulty after a sling the EAU recommends revision (release, incision, partial or complete excision) and counselling about recurrent stress incontinence (strong recommendations).",
+              "es": "Correcto: ante una retención o una dificultad miccional relevante tras la cinta, la EAU recomienda la revisión (liberación, incisión, escisión parcial o completa) e informar de la recidiva de la incontinencia de esfuerzo (recomendaciones fuertes)."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Urethradilatation über das Band hinweg in kurzer Vollnarkose",
+              "en": "Urethral dilatation across the tape under a brief anaesthetic",
+              "es": "Dilatación uretral a través de la cinta con anestesia breve"
+            },
+            "score": 0,
+            "minutes": 8,
+            "critical": true,
+            "feedback": {
+              "de": "Gefährlich: Die Dilatation kann das Netz in die Harnröhre treiben; die EAU rät deshalb nach synthetischem Band von Dilatation und Urethrotomie ab (schwache Empfehlung, theoretisch begründetes Risiko), und die Ursache bleibt bestehen.",
+              "en": "Dangerous: dilatation can drive the mesh into the urethra; the EAU therefore advises against dilatation and urethrotomy after a synthetic sling (weak recommendation, theoretical risk), and the cause remains.",
+              "es": "Peligroso: la dilatación puede provocar la extrusión de la malla hacia la uretra; por eso la EAU desaconseja la dilatación y la uretrotomía tras una cinta sintética (recomendación débil, riesgo teórico), y la causa persiste."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Antimuskarinikum gegen den Drang, ansonsten abwarten",
+              "en": "Antimuscarinic for the urgency, otherwise wait",
+              "es": "Antimuscarínico para la urgencia y, por lo demás, esperar"
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false,
+            "feedback": {
+              "de": "Der Drang ist wahrscheinlich obstruktionsbedingt; ein Antimuskarinikum kann die gestörte Entleerung weiter verschlechtern.",
+              "en": "The urgency is probably caused by the obstruction; an antimuscarinic may further worsen the impaired emptying.",
+              "es": "La urgencia se debe probablemente a la obstrucción; un antimuscarínico puede empeorar aún más el vaciado alterado."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Sakrale Neuromodulation zur Förderung der Entleerung",
+              "en": "Sacral neuromodulation to promote emptying",
+              "es": "Neuromodulación sacra para favorecer el vaciado"
+            },
+            "score": 0,
+            "minutes": 6,
+            "critical": false,
+            "feedback": {
+              "de": "Neuromodulation ist eine Option bei funktioneller, nicht bei anatomischer Obstruktion durch ein Band.",
+              "en": "Neuromodulation is an option for functional obstruction, not for anatomical obstruction caused by a tape.",
+              "es": "La neuromodulación es una opción en la obstrucción funcional, no en la anatómica causada por una cinta."
+            }
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "de": "Neuer Drang, Restharn und Infekte nach Bandeinlage sprechen für eine Obstruktion. Die Diagnose stellen Videourodynamik und Urethrozystoskopie, nicht die Uroflowmetrie allein. Therapie ist die Bandrevision mit Aufklärung über ein mögliches Rezidiv der Belastungsinkontinenz; Dilatation oder Urethrotomie sind nach synthetischem Band zu vermeiden.",
+      "en": "New urgency, residual urine and infections after a sling point to obstruction. Video-urodynamics and urethrocystoscopy make the diagnosis, not uroflowmetry alone. Treatment is sling revision with counselling about possible recurrent stress incontinence; avoid dilatation or urethrotomy after a synthetic sling.",
+      "es": "Urgencia nueva, residuo e infecciones tras una cinta orientan a obstrucción. El diagnóstico lo dan la videourodinámica y la uretrocistoscopia, no la flujometría sola. El tratamiento es la revisión de la cinta informando de la posible recidiva de la incontinencia de esfuerzo; tras una cinta sintética hay que evitar la dilatación y la uretrotomía."
+    },
+    "references": [
+      "udy-eau-female-luts-pocket-2026",
+      "udy-eau-female-luts-diagnosis",
+      "udy-female-boo-nomogram"
+    ]
+  },
+  {
+    "id": "udy-fowler-retention-young-woman",
+    "area": "clinic",
+    "level": 3,
+    "acuity": "urgent",
+    "duty": "clinic",
+    "subject": "urodynamics",
+    "topic": {
+      "de": "Urodynamik",
+      "en": "Urodynamics",
+      "es": "Urodinámica"
+    },
+    "patient": {
+      "name": "Lea Brückner",
+      "age": 26,
+      "sex": "female"
+    },
+    "title": {
+      "de": "1.100 ml ohne Schmerz – und kein Wasserlassen",
+      "en": "1,100 ml without pain – and no voiding",
+      "es": "1100 ml sin dolor y sin poder orinar"
+    },
+    "presenting": {
+      "de": "Frau Brückner, 26 Jahre, konnte nach einer Kniearthroskopie in Allgemeinanästhesie nicht mehr spontan Wasser lassen; der Katheter förderte 1.100 ml, ohne dass sie Schmerzen hatte. Zwei Auslassversuche scheiterten, sie kommt mit Dauerkatheter. Neurologische Untersuchung einschließlich Reithosensensibilität unauffällig, MRT der Lendenwirbelsäule ohne Befund, keine Opioide oder Anticholinergika mehr. Das Herausziehen von Kathetern empfindet sie als sehr schmerzhaft.",
+      "en": "Ms Brückner, 26, has been unable to void spontaneously since a knee arthroscopy under general anaesthesia; the catheter drained 1,100 ml although she had no pain. Two trials without catheter failed and she arrives with an indwelling catheter. Neurological examination including saddle sensation is normal, lumbar spine MRI is unremarkable, and she no longer takes opioids or anticholinergics. She finds catheter removal very painful.",
+      "es": "La Sra. Brückner, de 26 años, no puede orinar espontáneamente desde una artroscopia de rodilla con anestesia general; la sonda drenó 1100 ml sin que tuviera dolor. Dos intentos de retirada fracasaron y acude con sonda permanente. Exploración neurológica, incluida la sensibilidad en silla de montar, normal; RM lumbar sin hallazgos; ya no toma opioides ni anticolinérgicos. La retirada de las sondas le resulta muy dolorosa."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "next",
+        "kind": "decision",
+        "prompt": {
+          "de": "Welche Untersuchung bringt Sie jetzt weiter?",
+          "en": "Which investigation moves you forward now?",
+          "es": "¿Qué estudio le hace avanzar ahora?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Urodynamik mit Urethradruckprofil und Sphinkter-Nadel-EMG",
+              "en": "Urodynamics, pressure profile, sphincter needle EMG",
+              "es": "Urodinámica con perfil uretral y EMG con aguja del esfínter"
+            },
+            "score": 10,
+            "minutes": 15,
+            "critical": false,
+            "feedback": {
+              "de": "Richtig: Kapazität, Sensibilität und Detrusoraktivität klären die Blasenseite, Urethradruckprofil und konzentrisches Nadel-EMG die Sphinkterseite. Typisch für das Fowler-Syndrom sind ein erhöhter Urethraverschlussdruck und ein charakteristisches EMG.",
+              "en": "Correct: capacity, sensation and detrusor activity clarify the bladder side, urethral pressure profile and concentric needle EMG the sphincter side. A raised urethral closure pressure and a characteristic EMG are typical of Fowler's syndrome.",
+              "es": "Correcto: capacidad, sensibilidad y actividad del detrusor aclaran el lado vesical; el perfil uretral y el EMG con aguja concéntrica, el lado esfinteriano. Son típicos del síndrome de Fowler una presión de cierre uretral elevada y un EMG característico."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Psychiatrische Vorstellung bei vermutetem psychogenem Harnverhalt",
+              "en": "Psychiatric referral for presumed psychogenic retention",
+              "es": "Derivación a psiquiatría por sospecha de retención psicógena"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Ohne Ausschluss einer organischen Sphinkterstörung ist diese Zuordnung voreilig – und beim Fowler-Syndrom falsch.",
+              "en": "Without excluding an organic sphincter disorder this attribution is premature – and wrong in Fowler's syndrome.",
+              "es": "Sin descartar un trastorno esfinteriano orgánico, esta atribución es precipitada y, en el síndrome de Fowler, errónea."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Erneute MRT mit Kontrastmittel der gesamten Neuraxis",
+              "en": "Repeat contrast-enhanced MRI of the entire neuraxis",
+              "es": "Nueva RM con contraste de todo el neuroeje"
+            },
+            "score": 0,
+            "minutes": 8,
+            "critical": false,
+            "feedback": {
+              "de": "Bei unauffälligem neurologischem Befund und unauffälligem MRT bringt weitere Bildgebung keine neue Information.",
+              "en": "With a normal neurological examination and a normal MRI, further imaging adds no new information.",
+              "es": "Con exploración neurológica y RM normales, más imagen no aporta información nueva."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Zystoskopie mit Blasenwandbiopsie",
+              "en": "Cystoscopy with bladder wall biopsy",
+              "es": "Cistoscopia con biopsia de la pared vesical"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": false,
+            "feedback": {
+              "de": "Eine Biopsie klärt eine Entleerungsstörung ohne Schleimhautbefund nicht.",
+              "en": "A biopsy does not explain a voiding disorder without mucosal findings.",
+              "es": "Una biopsia no explica un trastorno del vaciado sin hallazgos en la mucosa."
+            }
+          }
+        ],
+        "best": "a"
+      },
+      {
+        "id": "emg",
+        "kind": "assessment",
+        "prompt": {
+          "de": "Kapazität über 900 ml, erster Harndrang bei 650 ml, keine Detrusorkontraktion, Urethraverschlussdruck 125 cmH2O; das Nadel-EMG zeigt komplexe repetitive Entladungen und dezelerierende Serien. Welche Diagnose stellen Sie?",
+          "en": "Capacity above 900 ml, first desire at 650 ml, no detrusor contraction, urethral closure pressure 125 cmH2O; the needle EMG shows complex repetitive discharges and decelerating bursts. What is your diagnosis?",
+          "es": "Capacidad superior a 900 ml, primer deseo a 650 ml, sin contracción del detrusor, presión de cierre uretral 125 cmH2O; el EMG con aguja muestra descargas repetitivas complejas y salvas decelerantes. ¿Cuál es su diagnóstico?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Fowler-Syndrom: fehlende Relaxation des Urethrasphinkters",
+              "en": "Fowler's syndrome: the urethral sphincter fails to relax",
+              "es": "Síndrome de Fowler: el esfínter uretral no se relaja"
+            },
+            "score": 10,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Richtig: Diese EMG-Aktivität, ein erhöhter Urethraverschlussdruck und ein großer, wenig sensibler Blasenspeicher bei einer jungen Frau sind typisch für das Fowler-Syndrom.",
+              "en": "Correct: this EMG activity, a raised urethral closure pressure and a large, poorly sensate bladder in a young woman are typical of Fowler's syndrome.",
+              "es": "Correcto: esta actividad en el EMG, una presión de cierre uretral elevada y una vejiga grande y poco sensible en una mujer joven son típicas del síndrome de Fowler."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Detrusor-Sphinkter-Dyssynergie bei einer Rückenmarksläsion",
+              "en": "Detrusor-sphincter dyssynergia from a spinal cord lesion",
+              "es": "Disinergia detrusor-esfínter por lesión medular"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Eine Dyssynergie setzt eine neurologische Läsion und eine Detrusorkontraktion voraus; beides fehlt.",
+              "en": "Dyssynergia requires a neurological lesion and a detrusor contraction; both are absent.",
+              "es": "La disinergia requiere una lesión neurológica y una contracción del detrusor; faltan ambas."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Cauda-equina-Läsion mit akontraktilem Detrusor",
+              "en": "Cauda equina lesion with an acontractile detrusor",
+              "es": "Lesión de la cola de caballo con un detrusor acontráctil"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Reithosensensibilität, Reflexe und MRT sind unauffällig; das EMG zeigt keine Denervierung, sondern eine pathologische Daueraktivität.",
+              "en": "Saddle sensation, reflexes and MRI are normal; the EMG shows no denervation but abnormal continuous activity.",
+              "es": "La sensibilidad en silla de montar, los reflejos y la RM son normales; el EMG no muestra denervación, sino una actividad continua patológica."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Anatomische Enge der weiblichen Harnröhre",
+              "en": "Anatomical narrowing of the female urethra",
+              "es": "Estrechez anatómica de la uretra femenina"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Nichts spricht für eine anatomische Enge; das Problem ist die fehlende Relaxation des Sphinkters.",
+              "en": "Nothing points to an anatomical narrowing; the problem is the failure of the sphincter to relax.",
+              "es": "Nada sugiere una estrechez anatómica; el problema es que el esfínter no se relaja."
+            }
+          }
+        ],
+        "best": "a"
+      },
+      {
+        "id": "therapy",
+        "kind": "decision",
+        "prompt": {
+          "de": "Welche Behandlung planen Sie?",
+          "en": "Which treatment do you plan?",
+          "es": "¿Qué tratamiento planifica?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Neuromodulation testen; bis dahin Selbstkatheterismus",
+              "en": "Test neuromodulation; self-catheterise until then",
+              "es": "Probar la neuromodulación; hasta entonces, autocateterismo"
+            },
+            "score": 10,
+            "minutes": 8,
+            "critical": false,
+            "feedback": {
+              "de": "Richtig: Die sakrale Neuromodulation stellt in Fallserien bei etwa 70 % der Frauen die Spontanmiktion wieder her; die EAU empfiehlt sie bei funktioneller Obstruktion und therapierefraktärer unteraktiver Blase. Bis dahin ist der intermittierende Katheterismus Standard.",
+              "en": "Correct: in case series sacral neuromodulation restores spontaneous voiding in about 70% of women; the EAU recommends it for functional obstruction and refractory underactive bladder. Until then intermittent catheterisation is the standard.",
+              "es": "Correcto: en series de casos, la neuromodulación sacra restablece la micción espontánea en alrededor del 70 % de las mujeres; la EAU la recomienda en la obstrucción funcional y en la vejiga hipoactiva refractaria. Hasta entonces, el cateterismo intermitente es el estándar."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Wiederholte Urethradilatation in Kurznarkose",
+              "en": "Repeated urethral dilatation under brief anaesthesia",
+              "es": "Dilataciones uretrales repetidas bajo anestesia general breve"
+            },
+            "score": 0,
+            "minutes": 6,
+            "critical": false,
+            "feedback": {
+              "de": "Für die Dilatation gibt es beim Fowler-Syndrom keinen belegten Nutzen; sie behandelt die fehlende Sphinkterrelaxation nicht.",
+              "en": "Dilatation has no proven benefit in Fowler's syndrome; it does not treat the failure of sphincter relaxation.",
+              "es": "La dilatación no tiene un beneficio demostrado en el síndrome de Fowler; no trata la falta de relajación esfinteriana."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Intravesikale Prostaglandin-Instillationen",
+              "en": "Intravesical prostaglandin instillations",
+              "es": "Instilaciones intravesicales de prostaglandinas"
+            },
+            "score": 0,
+            "minutes": 5,
+            "critical": false,
+            "feedback": {
+              "de": "Die EAU sieht intravesikale Prostaglandine bei Harnverhalt der Frau nur im Rahmen kontrollierter Studien vor.",
+              "en": "The EAU offers intravesical prostaglandins for urinary retention in women only within clinical trials.",
+              "es": "La EAU solo contempla las prostaglandinas intravesicales en la retención urinaria de la mujer dentro de ensayos clínicos."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Suprapubischer Katheter als endgültige und bequeme Lösung",
+              "en": "Suprapubic catheter as the definitive solution",
+              "es": "Catéter suprapúbico como solución definitiva y cómoda"
+            },
+            "score": 3,
+            "minutes": 6,
+            "critical": false,
+            "feedback": {
+              "de": "Als Überbrückung möglich, wenn der Selbstkatheterismus zu schmerzhaft ist; als Dauerlösung verschenkt er die Chance auf Spontanmiktion.",
+              "en": "Possible as a bridge if self-catheterisation is too painful; as a permanent solution it gives up the chance of spontaneous voiding.",
+              "es": "Posible como puente si el autocateterismo es demasiado doloroso; como solución definitiva renuncia a la posibilidad de micción espontánea."
+            }
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "de": "Junge Frau mit schmerzlosem Harnverhalt über einen Liter und unauffälligem neurologischem Befund: an das Fowler-Syndrom denken. Wegweisend ist das Sphinkter-Nadel-EMG mit komplexen repetitiven und dezelerierenden Entladungen; die besten Ergebnisse zeigt in Fallserien die sakrale Neuromodulation (etwa 70 % Spontanmiktion), bis dahin Katheterismus.",
+      "en": "Young woman with painless retention over one litre and a normal neurological examination: think of Fowler's syndrome. The key test is sphincter needle EMG with complex repetitive and decelerating discharges; the best results in case series come from sacral neuromodulation (spontaneous voiding in about 70%), with catheterisation until then.",
+      "es": "Mujer joven con retención indolora de más de un litro y exploración neurológica normal: pensar en el síndrome de Fowler. La prueba clave es el EMG con aguja del esfínter con descargas repetitivas complejas y decelerantes; los mejores resultados en series de casos los ofrece la neuromodulación sacra (micción espontánea en alrededor del 70 %) y, hasta entonces, el cateterismo."
+    },
+    "references": [
+      "udy-eau-female-luts-pocket-2026",
+      "udy-fowler-snm-2000",
+      "udy-eau-female-luts-management"
+    ]
+  },
+  {
+    "id": "udy-occult-sui-prolapse-reduction",
+    "area": "clinic",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "clinic",
+    "subject": "urodynamics",
+    "topic": {
+      "de": "Urodynamik",
+      "en": "Urodynamics",
+      "es": "Urodinámica"
+    },
+    "patient": {
+      "name": "Renate Kowalczyk",
+      "age": 64,
+      "sex": "female"
+    },
+    "title": {
+      "de": "Kontinent dank Prolaps?",
+      "en": "Continent thanks to the prolapse?",
+      "es": "¿Continente gracias al prolapso?"
+    },
+    "presenting": {
+      "de": "Frau Kowalczyk, 64 Jahre, hat einen symptomatischen Deszensus (POP-Q Stadium III, vorderes und apikales Kompartiment) mit Fremdkörpergefühl und schwachem Strahl. Urinverlust hat sie nie bemerkt. Die vaginale Deszensusoperation ist geplant, Restharn 90 ml.",
+      "en": "Mrs Kowalczyk, 64, has symptomatic prolapse (POP-Q stage III, anterior and apical compartments) with a bulge sensation and a weak stream. She has never noticed urinary leakage. Vaginal prolapse surgery is planned, post-void residual 90 ml.",
+      "es": "La Sra. Kowalczyk, de 64 años, tiene un prolapso sintomático (POP-Q estadio III, compartimentos anterior y apical) con sensación de bulto y chorro débil. Nunca ha notado escapes de orina. Está programada la cirugía vaginal del prolapso; residuo posmiccional 90 ml."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "test",
+        "kind": "decision",
+        "prompt": {
+          "de": "Was klären Sie vor der Operation zur Kontinenz?",
+          "en": "What do you check about continence before surgery?",
+          "es": "¿Qué comprueba sobre la continencia antes de operar?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Prolaps-Repositionstest mit gefüllter Blase",
+              "en": "Prolapse reduction test with a full bladder",
+              "es": "Prueba de reducción del prolapso con la vejiga llena"
+            },
+            "score": 10,
+            "minutes": 8,
+            "critical": false,
+            "feedback": {
+              "de": "Richtig: Die EAU empfiehlt bei kontinenten Frauen vor Deszensuschirurgie den Repositionstest, um eine okkulte Belastungsinkontinenz zu erkennen (starke Empfehlung).",
+              "en": "Correct: the EAU recommends the reduction test in continent women before prolapse surgery to detect occult stress incontinence (strong recommendation).",
+              "es": "Correcto: la EAU recomienda la prueba de reducción en mujeres continentes antes de la cirugía del prolapso para detectar una incontinencia de esfuerzo oculta (recomendación fuerte)."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Keine Diagnostik nötig, da sie kontinent ist",
+              "en": "No tests needed, because she is continent",
+              "es": "No hace falta ninguna prueba, porque es continente"
+            },
+            "score": 0,
+            "minutes": 2,
+            "critical": false,
+            "feedback": {
+              "de": "Der Prolaps kann die Harnröhre abknicken und eine Belastungsinkontinenz verdecken, die erst nach der Korrektur auftritt.",
+              "en": "The prolapse can kink the urethra and hide stress incontinence that appears only after repair.",
+              "es": "El prolapso puede acodar la uretra y ocultar una incontinencia de esfuerzo que aparece solo tras la corrección."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Urodynamik als Pflichtuntersuchung vor jeder Deszensusoperation",
+              "en": "Urodynamics as a mandatory test before every prolapse operation",
+              "es": "Urodinámica obligatoria antes de cualquier cirugía del prolapso"
+            },
+            "score": 3,
+            "minutes": 15,
+            "critical": false,
+            "feedback": {
+              "de": "Eine Urodynamik kann den Repositionstest einschließen und wird bei Prolaps mit Belastungsinkontinenz erwogen (schwache Empfehlung), ist aber keine Pflicht vor jeder Operation.",
+              "en": "Urodynamics can include the reduction test and is considered in prolapse with stress incontinence (weak recommendation), but it is not mandatory before every operation.",
+              "es": "La urodinámica puede incluir la prueba de reducción y se considera en el prolapso con incontinencia de esfuerzo (recomendación débil), pero no es obligatoria antes de cada operación."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "MRT-Defäkographie zur Planung der Kontinenz",
+              "en": "MR defecography to plan continence care",
+              "es": "Defecografía por RM para planificar la continencia"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": false,
+            "feedback": {
+              "de": "Die MRT ergänzt die vaginale Untersuchung nicht entscheidend und prüft die Kontinenz nicht.",
+              "en": "MRI adds little to vaginal examination and does not test continence.",
+              "es": "La RM apenas aporta a la exploración vaginal y no evalúa la continencia."
+            }
+          }
+        ],
+        "best": "a"
+      },
+      {
+        "id": "result",
+        "kind": "assessment",
+        "prompt": {
+          "de": "Bei reponiertem Prolaps und 300 ml Füllung verliert sie beim Husten Urin. Was bedeutet das?",
+          "en": "With the prolapse reduced and 300 ml in the bladder she leaks on coughing. What does this mean?",
+          "es": "Con el prolapso reducido y 300 ml en la vejiga presenta escape al toser. ¿Qué significa?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Okkulte Belastungsinkontinenz: erhöhtes Risiko nach der Operation",
+              "en": "Occult stress incontinence: increased risk after surgery",
+              "es": "Incontinencia de esfuerzo oculta: mayor riesgo tras la cirugía"
+            },
+            "score": 10,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Richtig: Der Prolaps verdeckt eine Belastungsinkontinenz. In OPUS hatten Frauen mit positivem Repositionstest nach drei Monaten ohne Band zu 71,9 % eine Inkontinenz, mit Band zu 29,6 % – ein erhöhtes Risiko, aber keine Gewissheit.",
+              "en": "Correct: the prolapse masks stress incontinence. In OPUS, women with a positive reduction test had incontinence at three months in 71.9% without and 29.6% with a sling – an increased risk, but not a certainty.",
+              "es": "Correcto: el prolapso enmascara una incontinencia de esfuerzo. En OPUS, las mujeres con prueba de reducción positiva presentaban incontinencia a los tres meses en el 71,9 % sin cinta y en el 29,6 % con cinta: un riesgo aumentado, no una certeza."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Artefakt der Spekulumreposition ohne klinische Bedeutung",
+              "en": "An artefact of speculum reduction with no clinical meaning",
+              "es": "Un artefacto de la reducción con espéculo sin relevancia clínica"
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false,
+            "feedback": {
+              "de": "Der Test ist gerade dafür gedacht, eine verdeckte Inkontinenz sichtbar zu machen; ein positives Ergebnis ist klinisch relevant.",
+              "en": "The test is designed precisely to reveal hidden incontinence; a positive result is clinically relevant.",
+              "es": "La prueba está diseñada justamente para revelar una incontinencia oculta; un resultado positivo es clínicamente relevante."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Beweis, dass sie nach der Operation mit Sicherheit inkontinent wird",
+              "en": "Proof that she will certainly be incontinent after surgery",
+              "es": "Prueba de que será incontinente con seguridad tras la cirugía"
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false,
+            "feedback": {
+              "de": "Der Test zeigt ein erhöhtes Risiko, keine Gewissheit; nicht jede Frau mit positivem Test wird inkontinent.",
+              "en": "The test shows an increased risk, not certainty; not every woman with a positive test becomes incontinent.",
+              "es": "La prueba muestra un riesgo aumentado, no una certeza; no toda mujer con prueba positiva se vuelve incontinente."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Zeichen einer Detrusorüberaktivität",
+              "en": "A sign of detrusor overactivity",
+              "es": "Un signo de hiperactividad del detrusor"
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false,
+            "feedback": {
+              "de": "Urinverlust synchron zum Husten ist Belastungsinkontinenz; eine Überaktivität zeigte sich als Drang mit Leckage ohne Hustenbezug.",
+              "en": "Leakage synchronous with coughing is stress incontinence; overactivity would show as urgency with leakage unrelated to coughing.",
+              "es": "El escape sincrónico con la tos es incontinencia de esfuerzo; la hiperactividad se manifestaría como urgencia con escape sin relación con la tos."
+            }
+          }
+        ],
+        "best": "a"
+      },
+      {
+        "id": "counsel",
+        "kind": "handover",
+        "prompt": {
+          "de": "Sie fragt, ob gleich ein Band eingelegt werden soll. Wie beraten Sie?",
+          "en": "She asks whether a sling should be inserted at the same time. How do you counsel her?",
+          "es": "Pregunta si debe colocarse una cinta en el mismo acto. ¿Cómo la asesora?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Abwägen: weniger Inkontinenz, mehr Komplikationen; zweizeitig möglich",
+              "en": "Weigh it up: less incontinence, more complications; staging is possible",
+              "es": "Sopesar: menos incontinencia, más complicaciones; posible en dos tiempos"
+            },
+            "score": 10,
+            "minutes": 8,
+            "critical": false,
+            "feedback": {
+              "de": "Richtig: In OPUS (alle präoperativ kontinenten Frauen, unabhängig vom Testergebnis) sank die Inkontinenz nach zwölf Monaten von 43,0 % auf 27,3 % (NNT 6,3), aber Blasenperforationen (6,7 % vs. 0 %), Harnwegsinfekte (31,0 % vs. 18,3 %), Blutungen (3,1 % vs. 0 %) und Entleerungsstörungen (3,7 % vs. 0 %) waren häufiger. Die EAU verlangt dafür eine ausführliche Aufklärung.",
+              "en": "Correct: in OPUS (all women continent before surgery, regardless of the test result) incontinence at twelve months fell from 43.0% to 27.3% (NNT 6.3), but bladder perforation (6.7% vs 0%), urinary tract infection (31.0% vs 18.3%), bleeding (3.1% vs 0%) and incomplete emptying (3.7% vs 0%) were more frequent. The EAU requires full counselling for this choice.",
+              "es": "Correcto: en OPUS (todas las mujeres continentes antes de la cirugía, con independencia del resultado de la prueba) la incontinencia a los doce meses bajó del 43,0 % al 27,3 % (NNT 6,3), pero las perforaciones vesicales (6,7 % frente a 0 %), las infecciones urinarias (31,0 % frente a 18,3 %), las hemorragias (3,1 % frente a 0 %) y el vaciado incompleto (3,7 % frente a 0 %) fueron más frecuentes. La EAU exige informar ampliamente para esta decisión."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Das Band ist bei positivem Test zwingend vorgeschrieben",
+              "en": "A sling is mandatory when the test is positive",
+              "es": "La cinta es obligatoria si la prueba es positiva"
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false,
+            "feedback": {
+              "de": "Es gibt keine Pflicht; die EAU fordert eine gemeinsame Entscheidung nach ausführlicher Aufklärung.",
+              "en": "There is no obligation; the EAU calls for a shared decision after full counselling.",
+              "es": "No hay obligación; la EAU pide una decisión compartida tras una información completa."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Ein Band ist bei Deszensuschirurgie grundsätzlich kontraindiziert, weil zu riskant",
+              "en": "A sling is always contraindicated in prolapse surgery because it is too risky",
+              "es": "La cinta está siempre contraindicada en la cirugía del prolapso por ser arriesgada"
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false,
+            "feedback": {
+              "de": "Die kombinierte Operation ist eine anerkannte Option, wenn die Patientin nach Aufklärung zustimmt.",
+              "en": "Combined surgery is an accepted option if the patient agrees after counselling.",
+              "es": "La cirugía combinada es una opción aceptada si la paciente está de acuerdo tras ser informada."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Ein Band später einzulegen ist immer besser",
+              "en": "Inserting a sling later is always better",
+              "es": "Colocar la cinta más tarde siempre es mejor"
+            },
+            "score": 3,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Das zweizeitige Vorgehen ist eine gute Alternative und erspart manchen Frauen eine unnötige Operation, ist aber nicht immer besser: Einige brauchen dann einen zweiten Eingriff.",
+              "en": "A staged approach is a good alternative and spares some women an unnecessary operation, but it is not always better: some will then need a second procedure.",
+              "es": "La cirugía en dos tiempos es una buena alternativa y evita a algunas mujeres una operación innecesaria, pero no siempre es mejor: algunas necesitarán una segunda intervención."
+            }
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "de": "Vor Deszensuschirurgie bei kontinenten Frauen den Prolaps-Repositionstest durchführen. Ist er positiv, wird über ein gleichzeitiges Band gemeinsam entschieden: In OPUS (alle kontinenten Frauen, unabhängig vom Testergebnis) weniger Inkontinenz nach zwölf Monaten (NNT 6,3), aber mehr Blasenperforationen, Infekte, Blutungen und Entleerungsstörungen. Das zweizeitige Vorgehen bleibt eine Alternative.",
+      "en": "Before prolapse surgery in continent women, perform a prolapse reduction test. If it is positive, decide together about a concomitant sling: in OPUS (all continent women, regardless of the test result) less incontinence at twelve months (NNT 6.3), but more bladder perforations, infections, bleeding and emptying problems. A staged approach remains an alternative.",
+      "es": "Antes de la cirugía del prolapso en mujeres continentes, realizar la prueba de reducción del prolapso. Si es positiva, se decide de forma compartida sobre una cinta simultánea: en OPUS (todas las mujeres continentes, con independencia del resultado de la prueba), menos incontinencia a los doce meses (NNT 6,3), pero más perforaciones vesicales, infecciones, hemorragias y trastornos del vaciado. La cirugía en dos tiempos sigue siendo una alternativa."
+    },
+    "references": [
+      "udy-eau-female-luts-pocket-2026",
+      "udy-opus-trial"
+    ]
+  },
+  {
+    "id": "udy-paediatric-dysfunctional-voiding",
+    "area": "clinic",
+    "level": 2,
+    "acuity": "routine",
+    "duty": "clinic",
+    "subject": "urodynamics",
+    "topic": {
+      "de": "Urodynamik",
+      "en": "Urodynamics",
+      "es": "Urodinámica"
+    },
+    "patient": {
+      "name": "Mila Hartung",
+      "age": 7,
+      "sex": "female",
+      "ageBand": "child"
+    },
+    "title": {
+      "de": "Haltemanöver, Infekte und eine Kurve im Zickzack",
+      "en": "Holding manoeuvres, infections and a zigzag curve",
+      "es": "Maniobras de retención, infecciones y una curva en zigzag"
+    },
+    "presenting": {
+      "de": "Mila, 7 Jahre, kommt mit ihrer Mutter: Seit einem Jahr ist die Unterhose tagsüber oft nass, sie zeigt Haltemanöver mit Fersensitz und hatte drei fieberfreie Harnwegsinfekte in sechs Monaten. Stuhlgang nur alle drei bis vier Tage, oft hart. Neurologische Untersuchung und Lendenwirbelsäule unauffällig, kein Fieber.",
+      "en": "Mila, 7, comes with her mother: for a year her underwear has often been wet during the day, she uses holding manoeuvres such as squatting on her heel and has had three afebrile urinary tract infections in six months. She opens her bowels only every three to four days, often with hard stools. Neurological examination and lumbar spine are normal, no fever.",
+      "es": "Mila, de 7 años, acude con su madre: desde hace un año a menudo moja la ropa interior durante el día, hace maniobras de retención sentándose sobre el talón y ha tenido tres infecciones urinarias afebriles en seis meses. Hace deposición solo cada tres o cuatro días, a menudo dura. Exploración neurológica y columna lumbar normales, sin fiebre."
+    },
+    "vitals": null,
+    "steps": [
+      {
+        "id": "workup",
+        "kind": "decision",
+        "prompt": {
+          "de": "Womit beginnen Sie die Abklärung?",
+          "en": "How do you start the work-up?",
+          "es": "¿Cómo empieza el estudio?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Protokolle, wiederholte Uroflowmetrie mit EMG und Restharn",
+              "en": "Diaries, repeated uroflowmetry with EMG and residual",
+              "es": "Diarios, flujometría repetida con EMG y residuo"
+            },
+            "score": 10,
+            "minutes": 10,
+            "critical": false,
+            "feedback": {
+              "de": "Richtig: Nicht invasive Untersuchungen stehen am Anfang. Eine einzelne auffällige Kurve genügt nicht; die ICCS empfiehlt wiederholte Messungen mit Beckenboden-EMG und Restharnsonographie, dazu Miktions- und Stuhlprotokoll.",
+              "en": "Correct: non-invasive tests come first. A single abnormal curve is not enough; the ICCS recommends repeated measurements with pelvic floor EMG and residual ultrasound, together with bladder and bowel diaries.",
+              "es": "Correcto: primero van las pruebas no invasivas. Una sola curva anómala no basta; la ICCS recomienda mediciones repetidas con EMG del suelo pélvico y ecografía del residuo, junto con diarios miccional e intestinal."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Invasive Zystomanometrie mit Druck-Fluss-Messung",
+              "en": "Invasive cystometry with pressure-flow study",
+              "es": "Cistomanometría invasiva con estudio presión-flujo"
+            },
+            "score": 0,
+            "minutes": 15,
+            "critical": false,
+            "feedback": {
+              "de": "Der Trend geht weg von invasiven Untersuchungen; sie sind refraktären Verläufen oder dem Verdacht auf eine neurogene Ursache vorbehalten.",
+              "en": "The trend is away from invasive studies; they are reserved for refractory cases or suspected neurogenic causes.",
+              "es": "La tendencia es evitar los estudios invasivos; se reservan para los casos refractarios o la sospecha de causa neurógena."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "MRT der Wirbelsäule zum Ausschluss eines Tethered Cord",
+              "en": "Spinal MRI to exclude a tethered cord",
+              "es": "RM de columna para descartar una médula anclada"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": false,
+            "feedback": {
+              "de": "Bei unauffälliger Neurologie und Wirbelsäule ist die MRT nicht der erste Schritt.",
+              "en": "With normal neurology and a normal spine, MRI is not the first step.",
+              "es": "Con neurología y columna normales, la RM no es el primer paso."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Sofortige Miktionszystourethrographie wegen der drei Infekte",
+              "en": "Immediate voiding cystourethrography because of the infections",
+              "es": "Cistouretrografía miccional inmediata por las infecciones"
+            },
+            "score": 0,
+            "minutes": 10,
+            "critical": false,
+            "feedback": {
+              "de": "Bei fieberfreien Infekten ist die Miktionszystourethrographie nicht primär angezeigt.",
+              "en": "With afebrile infections, voiding cystourethrography is not primarily indicated.",
+              "es": "Con infecciones afebriles, la cistouretrografía miccional no está indicada de entrada."
+            }
+          }
+        ],
+        "best": "a"
+      },
+      {
+        "id": "curve",
+        "kind": "assessment",
+        "prompt": {
+          "de": "Zwei Uroflowmetrien (160 und 180 ml) zeigen eine unregelmäßig schwankende, aber kontinuierliche Kurve mit EMG-Aktivität während der Miktion; Restharn 35 und 40 ml. Wie deuten Sie das?",
+          "en": "Two uroflowmetries (160 and 180 ml) show an irregular, fluctuating but continuous curve with EMG activity during voiding; residual 35 and 40 ml. How do you interpret this?",
+          "es": "Dos flujometrías (160 y 180 ml) muestran una curva irregular y fluctuante, pero continua, con actividad en el EMG durante la micción; residuo de 35 y 40 ml. ¿Cómo lo interpreta?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Staccato-Kurve: dysfunktionelle Miktion",
+              "en": "Staccato curve: dysfunctional voiding",
+              "es": "Curva en staccato: micción disfuncional"
+            },
+            "score": 10,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Richtig: Eine schwankende, aber kontinuierliche Kurve mit Beckenbodenaktivität entspricht dem Staccato-Muster der dysfunktionellen Miktion; der Restharn ist für das Alter erhöht.",
+              "en": "Correct: a fluctuating but continuous curve with pelvic floor activity is the staccato pattern of dysfunctional voiding; the residual is raised for her age.",
+              "es": "Correcto: una curva fluctuante pero continua con actividad del suelo pélvico es el patrón en staccato de la micción disfuncional; el residuo está elevado para su edad."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Turmförmige Kurve: überaktive Blase des Kindes",
+              "en": "Tower-shaped curve: overactive bladder",
+              "es": "Curva en torre: vejiga hiperactiva"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Die Turmkurve ist kurz, steil und hoch; sie spricht für eine überaktive Blase, nicht für einen kontrahierten Beckenboden.",
+              "en": "A tower curve is short, steep and high; it suggests an overactive bladder, not a contracting pelvic floor.",
+              "es": "La curva en torre es corta, empinada y alta; sugiere vejiga hiperactiva, no un suelo pélvico contraído."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Unterbrochene Kurve: unteraktive Blase",
+              "en": "Interrupted curve: underactive bladder",
+              "es": "Curva interrumpida: vejiga hipoactiva con prensa"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Bei der unterbrochenen Kurve fällt der Fluss zwischen den Spitzen auf null, typisch beim Pressen mit schwachem Detrusor. Hier ist der Fluss kontinuierlich.",
+              "en": "In an interrupted curve flow falls to zero between peaks, typical of straining with a weak detrusor. Here flow is continuous.",
+              "es": "En la curva interrumpida el flujo cae a cero entre los picos, típico de la prensa abdominal con detrusor débil. Aquí el flujo es continuo."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Plateaukurve: anatomische Obstruktion",
+              "en": "Plateau curve: anatomical obstruction",
+              "es": "Curva en meseta: obstrucción anatómica"
+            },
+            "score": 0,
+            "minutes": 4,
+            "critical": false,
+            "feedback": {
+              "de": "Die Plateaukurve ist flach und verlängert und weist auf eine anatomische Obstruktion hin, nicht auf Schwankungen.",
+              "en": "A plateau curve is flat and prolonged and points to anatomical obstruction, not to fluctuations.",
+              "es": "La curva en meseta es plana y prolongada y apunta a una obstrucción anatómica, no a fluctuaciones."
+            }
+          }
+        ],
+        "best": "a"
+      },
+      {
+        "id": "treat",
+        "kind": "decision",
+        "prompt": {
+          "de": "Wie behandeln Sie?",
+          "en": "How do you treat her?",
+          "es": "¿Cómo la trata?"
+        },
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "de": "Urotherapie, Obstipation behandeln, ggf. Biofeedback",
+              "en": "Urotherapy, treat constipation, biofeedback if needed",
+              "es": "Uroterapia, tratar el estreñimiento, biofeedback si hace falta"
+            },
+            "score": 10,
+            "minutes": 6,
+            "critical": false,
+            "feedback": {
+              "de": "Richtig: Aufklärung, regelmäßige Miktionen in entspannter Haltung und eine konsequente Obstipationstherapie sind die Basis; in einer Serie besserte allein die Obstipationstherapie bei 66 % die Blasenentleerung. Biofeedback ist die nächste Stufe.",
+              "en": "Correct: education, regular voiding in a relaxed posture and consistent treatment of constipation are the basis; in one series treating constipation alone improved bladder emptying in 66%. Biofeedback is the next step.",
+              "es": "Correcto: educación, micciones regulares en postura relajada y un tratamiento constante del estreñimiento son la base; en una serie, tratar solo el estreñimiento mejoró el vaciado vesical en el 66 %. El biofeedback es el siguiente escalón."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "de": "Alphablocker als medikamentöse Erstlinientherapie beginnen",
+              "en": "Alpha-blocker as first-line drug treatment",
+              "es": "Alfabloqueante como tratamiento farmacológico de primera línea"
+            },
+            "score": 0,
+            "minutes": 3,
+            "critical": false,
+            "feedback": {
+              "de": "Alphablocker sind bei Kindern off-label und kaum untersucht; sie sind keine erste Wahl.",
+              "en": "Alpha-blockers are off-label in children and barely studied; they are not first choice.",
+              "es": "Los alfabloqueantes se usan fuera de indicación en niños y están poco estudiados; no son primera opción."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "de": "Botulinumtoxin A in den externen Urethrasphinkter",
+              "en": "Botulinum toxin A into the external urethral sphincter",
+              "es": "Toxina botulínica A en el esfínter uretral externo"
+            },
+            "score": 0,
+            "minutes": 8,
+            "critical": false,
+            "feedback": {
+              "de": "Botulinumtoxin gilt bei Kindern mit Blasenfunktionsstörung als experimentell.",
+              "en": "Botulinum toxin is considered experimental for bladder dysfunction in children.",
+              "es": "La toxina botulínica se considera experimental en niños con disfunción vesical."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "de": "Nur eine antibiotische Dauerprophylaxe",
+              "en": "Long-term antibiotic prophylaxis only",
+              "es": "Solo profilaxis antibiótica prolongada"
+            },
+            "score": 3,
+            "minutes": 3,
+            "critical": false,
+            "feedback": {
+              "de": "Eine Prophylaxe kann bei rezidivierenden Infekten vorübergehend erwogen werden, behandelt aber die Ursache nicht.",
+              "en": "Prophylaxis may be considered temporarily for recurrent infections, but it does not treat the cause.",
+              "es": "La profilaxis puede considerarse de forma temporal en infecciones recurrentes, pero no trata la causa."
+            }
+          }
+        ],
+        "best": "a"
+      }
+    ],
+    "takeaway": {
+      "de": "Dysfunktionelle Miktion: gewohnheitsmäßige Beckenbodenkontraktion während der Miktion. Diagnose mit wiederholter Uroflowmetrie (Staccato-Kurve), Beckenboden-EMG und Restharn bei gültigem Miktionsvolumen (mindestens 50 % der altersentsprechenden Blasenkapazität). Behandlung: Urotherapie und Obstipation gemeinsam, dann Biofeedback; invasive Urodynamik nur bei Therapieversagen.",
+      "en": "Dysfunctional voiding: habitual pelvic floor contraction during voiding. Diagnose it with repeated uroflowmetry (staccato curve), pelvic floor EMG and residual at a valid voided volume (at least 50% of expected bladder capacity for age). Treatment: urotherapy and constipation together, then biofeedback; invasive urodynamics only when treatment fails.",
+      "es": "Micción disfuncional: contracción habitual del suelo pélvico durante la micción. Se diagnostica con flujometría repetida (curva en staccato), EMG del suelo pélvico y residuo con un volumen miccional válido (al menos el 50 % de la capacidad vesical esperada para la edad). Tratamiento: uroterapia y estreñimiento a la vez, luego biofeedback; urodinámica invasiva solo si fracasa el tratamiento."
+    },
+    "references": [
+      "udy-iccs-terminology-2016",
+      "udy-iccs-dysfunctional-voiding-2010"
+    ]
   }
 ]

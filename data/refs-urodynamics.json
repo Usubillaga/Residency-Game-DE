@@ -1,0 +1,184 @@
+[
+  {
+    "id": "udy-eau-male-luts-diagnostic",
+    "title": "EAU Management of Non-neurogenic Male LUTS 2026: Diagnostic Evaluation (4.12 Urodynamics)",
+    "url": "https://uroweb.org/guidelines/management-of-non-neurogenic-male-luts/chapter/diagnostic-evaluation",
+    "checked": "2026-10-20",
+    "scope": "Supports the selective indications for pressure-flow studies before invasive treatment (Qmax above 10 ml/s, voided volume below 150 ml, age below 50 or above 80, failed previous invasive treatment), the BOOI and BCI formulas and cut-offs, and the UPSTREAM results."
+  },
+  {
+    "id": "udy-eau-male-luts-management",
+    "title": "EAU Management of Non-neurogenic Male LUTS 2026: Disease Management",
+    "url": "https://uroweb.org/guidelines/management-of-non-neurogenic-male-luts/chapter/disease-management",
+    "checked": "2026-10-24",
+    "scope": "Supports avoiding antimuscarinics when the post-void residual exceeds 150 ml, the urodynamic safety of beta-3 agonists in men with obstruction, and counselling about ejaculatory dysfunction with selective alpha-blockers, which is more frequent in younger men."
+  },
+  {
+    "id": "udy-bladder-indices",
+    "title": "Bladder outlet obstruction index, bladder contractility index and bladder voiding efficiency (BJU International, 1999)",
+    "url": "https://doi.org/10.1046/j.1464-410x.1999.00121.x",
+    "checked": "2026-10-20",
+    "scope": "Original description of the BOOI and BCI used to classify male pressure-flow studies."
+  },
+  {
+    "id": "udy-upstream-trial",
+    "title": "UPSTREAM: noninferiority randomised trial of urodynamics before prostate surgery in 26 hospitals (European Urology, 2020)",
+    "url": "https://www.sciencedirect.com/science/article/abs/pii/S0302283820304310",
+    "checked": "2026-10-20",
+    "scope": "Supports that routine urodynamics did not significantly reduce surgery (38% vs 36%) and was non-inferior for symptoms."
+  },
+  {
+    "id": "udy-du-turp-meta",
+    "title": "Preoperative detrusor underactivity and transurethral surgery for BPH: systematic review and meta-analysis (Journal of Urology, 2018)",
+    "url": "https://doi.org/10.1016/j.juro.2017.07.079",
+    "checked": "2026-10-20",
+    "scope": "Supports smaller symptom and flow improvements after transurethral surgery when detrusor underactivity is present before surgery."
+  },
+  {
+    "id": "udy-mirabegron-boo",
+    "title": "Urodynamics and safety of mirabegron in men with LUTS and bladder outlet obstruction (Journal of Urology, 2013)",
+    "url": "https://doi.org/10.1016/j.juro.2013.05.062",
+    "checked": "2026-10-20",
+    "scope": "Supports that mirabegron did not adversely affect Qmax or PdetQmax versus placebo after 12 weeks in 200 men with LUTS and obstruction."
+  },
+  {
+    "id": "udy-pbno-meta-2024",
+    "title": "Primary bladder neck obstruction in young adult men: systematic review and meta-analysis (Urology Research and Practice, 2024)",
+    "url": "https://doi.org/10.5152/tud.2024.23155",
+    "checked": "2026-10-20",
+    "scope": "Supports short-term benefit of alpha-blockers and stronger long-term improvement after bladder neck incision in men aged 18 to 50."
+  },
+  {
+    "id": "udy-pbno-review-2025",
+    "title": "Primary bladder neck obstruction and dysfunctional voiding in young men: systematic review and meta-analysis (European Urology Focus, 2025)",
+    "url": "https://uroluts.uroweb.org/publication/management-of-primary-bladder-beck-obstruction-and-dysfunctional-voiding-in-young-men-a-systematic-review-and-meta-analysis/",
+    "checked": "2026-10-24",
+    "scope": "Supports video-urodynamics as the diagnostic standard, alpha-blockers first and bladder neck incision after failure, ejaculatory dysfunction in 47–50% with alpha-blockers, and shared decision-making given low-quality evidence."
+  },
+  {
+    "id": "udy-alpha-blocker-ejd-2012",
+    "title": "Ejaculatory disorder with silodosin in the treatment of prostatic hyperplasia (BMC Urology, 2012)",
+    "url": "https://doi.org/10.1186/1471-2490-12-29",
+    "checked": "2026-10-24",
+    "scope": "Supports that ejaculatory function returned in all affected men after the alpha-blocker was stopped."
+  },
+  {
+    "id": "udy-eau-neuro-urology",
+    "title": "EAU Neuro-Urology 2026: The Guideline",
+    "url": "https://uroweb.org/guidelines/neuro-urology/chapter/the-guideline",
+    "checked": "2026-10-20",
+    "scope": "Supports physiological filling rates and same-session repeat measurements, video-urodynamics in neurological patients, upper tract risk from high filling pressures, augmentation for low compliance after failed less invasive treatment, and caution with prostate surgery in neurological disease."
+  },
+  {
+    "id": "udy-msa-vuds-2001",
+    "title": "Video-urodynamic and sphincter motor unit potential analyses in Parkinson's disease and multiple system atrophy (Journal of Neurology, Neurosurgery and Psychiatry, 2001)",
+    "url": "https://jnnp.bmj.com/content/71/5/600",
+    "checked": "2026-10-20",
+    "scope": "Supports an open bladder neck at the start of filling (53% vs 0%), a residual above 100 ml and neurogenic sphincter potentials (93% vs 5%) as features of MSA rather than Parkinson's disease."
+  },
+  {
+    "id": "udy-msa-turp-1997",
+    "title": "How to recognise patients with parkinsonism who should not have urological surgery (British Journal of Urology, 1997)",
+    "url": "https://doi.org/10.1046/j.1464-410X.1997.00249.x",
+    "checked": "2026-10-20",
+    "scope": "Supports that all 11 men with MSA who had TURP were incontinent afterwards and lists the urogenital warning signs of MSA."
+  },
+  {
+    "id": "udy-msa-mds-2022",
+    "title": "Movement Disorder Society criteria for the diagnosis of multiple system atrophy (Movement Disorders, 2022)",
+    "url": "https://doi.org/10.1002/mds.29005",
+    "checked": "2026-10-20",
+    "scope": "Supports unexplained voiding difficulty with a residual above 100 ml, urgency incontinence and neurogenic orthostatic hypotension as autonomic criteria."
+  },
+  {
+    "id": "udy-eau-female-luts-pocket-2026",
+    "title": "EAU Pocket Guidelines: Non-neurogenic Female LUTS 2026",
+    "url": "https://d56bochluxqnz.cloudfront.net/documents/pocket-guidelines/EAU-Pocket-on-Non-Neurogenic-Female-LUTS-2026_2026-03-12-155317_rckt.pdf",
+    "checked": "2026-10-20",
+    "scope": "Supports female BOO work-up with video-urodynamics and urethrocystoscopy, sling revision rather than dilatation or urethrotomy after midurethral tapes (theoretical risk of mesh extrusion), intermittent catheterisation and sacral nerve stimulation for underactive bladder and functional obstruction, alpha-blockers only off-label and no routine parasympathomimetics, and the prolapse reduction test with counselling about combined surgery."
+  },
+  {
+    "id": "udy-eau-female-luts-diagnosis",
+    "title": "EAU Non-neurogenic Female LUTS 2026: Diagnosis",
+    "url": "https://uroweb.org/guidelines/non-neurogenic-female-luts/chapter/diagnosis",
+    "checked": "2026-10-20",
+    "scope": "Supports that there is no universally accepted urodynamic threshold for BOO in women and that pressure-flow studies separate BOO from detrusor underactivity."
+  },
+  {
+    "id": "udy-eau-female-luts-management",
+    "title": "EAU Non-neurogenic Female LUTS 2026: Disease Management",
+    "url": "https://uroweb.org/guidelines/non-neurogenic-female-luts/chapter/disease-management",
+    "checked": "2026-10-20",
+    "scope": "Related management chapter for female voiding dysfunction, underactive bladder and prolapse with LUTS."
+  },
+  {
+    "id": "udy-female-boo-nomogram",
+    "title": "A nomogram for diagnosing bladder outlet obstruction in women (Neurourology and Urodynamics, 2018; journal review)",
+    "url": "https://urologynews.uk.com/reviews/journal-reviews/post/developing-and-validating-a-new-nomogram-for-diagnosing-boo-in-women",
+    "checked": "2026-10-20",
+    "scope": "Supports the female BOO index (PdetQmax − 2.2 × Qmax): below 0 under 10%, above 5 about 50% and above 18 over 90% probability of obstruction."
+  },
+  {
+    "id": "udy-fowler-snm-2000",
+    "title": "Sacral neuromodulation for women with Fowler's syndrome (European Urology, 2000)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/11025383/",
+    "checked": "2026-10-20",
+    "scope": "Supports sacral neuromodulation as the treatment that can restore voiding in women with Fowler's syndrome."
+  },
+  {
+    "id": "udy-opus-trial",
+    "title": "OPUS: a midurethral sling to reduce incontinence after vaginal prolapse repair (New England Journal of Medicine, 2012)",
+    "url": "https://doi.org/10.1056/NEJMoa1111967",
+    "checked": "2026-10-20",
+    "scope": "Supports incontinence at 12 months of 27.3% with versus 43.0% without a prophylactic sling in all continent women (NNT 6.3), a larger 3-month difference after a positive prolapse reduction test (29.6% vs 71.9%) without a significant interaction, and more bladder perforation, infection, bleeding and incomplete emptying."
+  },
+  {
+    "id": "udy-compliance-review",
+    "title": "ICS abstract: bladder compliance – a review of practice",
+    "url": "https://www.ics.org/Abstracts/Publish/47/000571.pdf",
+    "checked": "2026-10-20",
+    "scope": "Supports that there are no agreed normal values or thresholds for compliance and that higher filling rates reduce compliance."
+  },
+  {
+    "id": "udy-ics-teaching-gup",
+    "title": "ICS teaching module: evaluating and reporting a urodynamic test (based on ICS Good Urodynamic Practices 2016)",
+    "url": "https://www.ics.org/Workshops/HandoutFiles/001011.pdf",
+    "checked": "2026-10-20",
+    "scope": "Supports quality control of urodynamic traces: cough pressure transmission, continuous filling and recognising rectal contractions."
+  },
+  {
+    "id": "udy-ics-basic-workshop",
+    "title": "ICS workshop: basic urodynamics (Good Urodynamic Practices)",
+    "url": "https://www.ics.org/Workshops/HandoutFiles/000601.pdf",
+    "checked": "2026-10-20",
+    "scope": "Supports resting pressure ranges by position and flushing a line when one cough peak is less than 70% of the other."
+  },
+  {
+    "id": "udy-artefact-recognition",
+    "title": "Urodynamic quality assessment and artefact recognition (teaching slides)",
+    "url": "https://www.nbt.nhs.uk/sites/default/files/attachments/HH%20Artefact%20recognition.pdf",
+    "checked": "2026-10-20",
+    "scope": "Supports the pattern of rectal contractions, cough tests every minute or 50 ml and immediately before and after voiding, and the 70% transmission rule."
+  },
+  {
+    "id": "udy-troubleshooting-technical",
+    "title": "IUGA: troubleshooting in urodynamics – technical",
+    "url": "https://www.iuga.org/spotlight-v19-1/troubleshooting-in-urodynamics-technical",
+    "checked": "2026-10-20",
+    "scope": "Supports flushing air bubbles, checking connections and repositioning catheters when pressure transmission is poor."
+  },
+  {
+    "id": "udy-iccs-terminology-2016",
+    "title": "ICCS standardisation of terminology of lower urinary tract function in children and adolescents (2016 update)",
+    "url": "https://doi.org/10.1002/nau.22751",
+    "checked": "2026-10-20",
+    "scope": "Supports the definitions of dysfunctional voiding and flow-curve shapes, the 50% expected-capacity rule for valid uroflowmetry and age-specific residual thresholds."
+  },
+  {
+    "id": "udy-iccs-dysfunctional-voiding-2010",
+    "title": "ICCS report: management of dysfunctional voiding in children (Journal of Urology, 2010)",
+    "url": "https://doi.org/10.1016/j.juro.2009.12.059",
+    "checked": "2026-10-20",
+    "scope": "Supports repeated uroflowmetry with EMG, urotherapy and constipation treatment first, biofeedback as a later step, and invasive studies only for refractory cases."
+  }
+]
