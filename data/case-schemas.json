@@ -1732,5 +1732,87 @@
       "symphysis",
       "pubourethral-support"
     ]
+  },
+  "udy-bpo-pressure-flow-indices": {
+    "schema": "prostate-sagittal",
+    "parts": [
+      "bladder-neck",
+      "transition-zone",
+      "prostatic-urethra"
+    ]
+  },
+  "udy-dhic-elderly-man-no-turp": {
+    "schema": "micturition-control",
+    "parts": [
+      "detrusor",
+      "pelvic-nerve",
+      "pontine-micturition-centre"
+    ]
+  },
+  "udy-pbno-young-man-vuds": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "bladder-neck",
+      "prostatic-urethra",
+      "external-sphincter"
+    ]
+  },
+  "udy-msa-before-turp": {
+    "schema": "micturition-control",
+    "parts": [
+      "onuf-nucleus",
+      "external-sphincter",
+      "bladder-neck",
+      "sympathetic-centre"
+    ]
+  },
+  "udy-female-boo-after-sling": {
+    "schema": "female-pelvis",
+    "parts": [
+      "urethra",
+      "pubourethral-support",
+      "bladder-neck"
+    ]
+  },
+  "udy-fowler-retention-young-woman": {
+    "schema": "micturition-control",
+    "parts": [
+      "external-sphincter",
+      "pudendal-nerve",
+      "sacral-parasympathetic-nucleus"
+    ]
+  },
+  "udy-occult-sui-prolapse-reduction": {
+    "schema": "female-pelvis",
+    "parts": [
+      "bladder-neck",
+      "urethra",
+      "pubourethral-support",
+      "vagina"
+    ]
+  },
+  "udy-low-compliance-sci-filling-rate": {
+    "schema": "micturition-control",
+    "parts": [
+      "spinal-lesion",
+      "detrusor",
+      "sacral-parasympathetic-nucleus"
+    ]
+  },
+  "udy-paediatric-dysfunctional-voiding": {
+    "schema": "micturition-control",
+    "parts": [
+      "prefrontal-cortex",
+      "external-sphincter",
+      "pudendal-nerve"
+    ]
+  },
+  "udy-artefacts-rectal-contraction-transmission": {
+    "schema": "female-pelvis",
+    "parts": [
+      "bladder",
+      "rectum",
+      "symphysis"
+    ]
   }
 }

@@ -4219,5 +4219,175 @@
       "en": "A urinary antibiotic has to reach the urine. For each drug, check the eGFR limit in the SmPC, the old antibiogram and the other medication with an eye on potassium.",
       "es": "Un antibiótico urinario tiene que llegar a la orina. Para cada fármaco, revisa el límite de FGe de la ficha técnica, el antibiograma previo y el resto de la medicación pensando en el potasio."
     }
+  },
+  "udy-bpo-pressure-flow-indices": {
+    "indication": {
+      "de": "Frag dich, was die freie Uroflowmetrie bei einem kräftigen Detrusor nicht unterscheiden kann – und ab welchem Qmax die EAU vor einer Operation mehr Information verlangt.",
+      "en": "Ask yourself what free uroflowmetry cannot distinguish when the detrusor is strong – and above which Qmax the EAU asks for more information before surgery.",
+      "es": "Pregúntate qué no puede distinguir la flujometría libre cuando el detrusor es potente y a partir de qué Qmax la EAU pide más información antes de operar."
+    },
+    "classify": {
+      "de": "Rechne beide Indizes: Für die Obstruktion wird der doppelte Fluss vom Druck abgezogen, für die Kontraktilität der fünffache Fluss addiert. Dann die Grenzen 20/40 und 100/150 anlegen.",
+      "en": "Calculate both indices: for obstruction subtract twice the flow from the pressure, for contractility add five times the flow. Then apply the cut-offs 20/40 and 100/150.",
+      "es": "Calcula ambos índices: para la obstrucción resta dos veces el flujo a la presión y para la contractilidad suma cinco veces el flujo. Luego aplica los límites 20/40 y 100/150."
+    },
+    "counsel": {
+      "de": "Denk an die große randomisierte Studie aus 26 englischen Kliniken: Was änderte sich an der Operationsrate, wenn alle Männer vorher eine Urodynamik bekamen?",
+      "en": "Think of the large randomised trial in 26 English hospitals: what happened to the surgery rate when all men had urodynamics first?",
+      "es": "Piensa en el gran ensayo aleatorizado de 26 hospitales ingleses: ¿qué ocurrió con la tasa de cirugía cuando todos los hombres se hicieron antes una urodinámica?"
+    }
+  },
+  "udy-dhic-elderly-man-no-turp": {
+    "pattern": {
+      "de": "Rechne erst BOOI und BCI, dann schau auf die Füllphase: Was bedeutet Überaktivität, wenn gleichzeitig die Entleerungskraft fehlt?",
+      "en": "Calculate BOOI and BCI first, then look at the filling phase: what does overactivity mean when the voiding strength is missing at the same time?",
+      "es": "Calcula primero el BOOI y el BCI y luego mira el llenado: ¿qué significa la hiperactividad cuando a la vez falta fuerza de vaciado?"
+    },
+    "turp": {
+      "de": "Frag dich, was eine Resektion eigentlich behandelt – und ob dieser Mechanismus bei einem BOOI von 14 überhaupt vorliegt.",
+      "en": "Ask yourself what a resection actually treats – and whether that mechanism is present at all with a BOOI of 14.",
+      "es": "Pregúntate qué trata realmente una resección y si ese mecanismo existe con un BOOI de 14."
+    },
+    "plan": {
+      "de": "Zwei Probleme, zwei Hebel: Was entleert die Blase zuverlässig, und welche Drangmedikation hat bei Männern mit Obstruktion die Entleerung in Studien nicht verschlechtert?",
+      "en": "Two problems, two levers: what empties the bladder reliably, and which urgency drug did not worsen voiding in studies of men with obstruction?",
+      "es": "Dos problemas, dos palancas: ¿qué vacía la vejiga de forma fiable y qué fármaco para la urgencia no empeoró el vaciado en estudios con varones obstruidos?"
+    }
+  },
+  "udy-pbno-young-man-vuds": {
+    "workup": {
+      "de": "Prostata klein, Harnröhre frei – du musst wissen, wo genau der Widerstand sitzt. Welche Untersuchung zeigt Druck, Fluss, Sphinkter und Ort zugleich?",
+      "en": "Small prostate, open urethra – you need to know exactly where the resistance lies. Which test shows pressure, flow, sphincter and site at once?",
+      "es": "Próstata pequeña, uretra libre: necesitas saber dónde está exactamente la resistencia. ¿Qué prueba muestra a la vez presión, flujo, esfínter y lugar?"
+    },
+    "localise": {
+      "de": "Geh die drei Kandidaten durch: Blasenhals, äußerer Sphinkter, Harnröhre. Was verrät dir das stumme EMG über den Beckenboden?",
+      "en": "Go through the three candidates: bladder neck, external sphincter, urethra. What does the silent EMG tell you about the pelvic floor?",
+      "es": "Repasa los tres candidatos: cuello vesical, esfínter externo, uretra. ¿Qué te dice el EMG silente sobre el suelo pélvico?"
+    },
+    "treat": {
+      "de": "Wäge Wirksamkeit gegen die Folgen für die Ejakulation ab – er möchte in zwei Jahren Vater werden. Welche Nebenwirkung lässt sich rückgängig machen, welche womöglich nicht?",
+      "en": "Weigh effectiveness against the consequences for ejaculation – he wants to become a father in two years. Which side effect can be reversed, and which perhaps cannot?",
+      "es": "Sopesa la eficacia frente a las consecuencias para la eyaculación: quiere ser padre en dos años. ¿Qué efecto adverso se puede revertir y cuál quizá no?"
+    }
+  },
+  "udy-msa-before-turp": {
+    "redflags": {
+      "de": "Achte auf die zeitliche Reihenfolge und auf das autonome Nervensystem: Was kam zuerst, Blase oder Motorik – und was macht der Blutdruck im Stehen?",
+      "en": "Look at the order of events and at the autonomic nervous system: what came first, bladder or motor signs – and what does the blood pressure do on standing?",
+      "es": "Fíjate en el orden temporal y en el sistema nervioso autónomo: ¿qué apareció primero, la vejiga o la clínica motora, y qué hace la presión al ponerse de pie?"
+    },
+    "vuds": {
+      "de": "Rechne den BOOI und frag dich, was eine Resektion bei offenem Blasenhals und geschädigtem Sphinkter anrichten würde.",
+      "en": "Calculate the BOOI and ask yourself what a resection would do with an open bladder neck and a damaged sphincter.",
+      "es": "Calcula el BOOI y pregúntate qué haría una resección con el cuello vesical abierto y el esfínter dañado."
+    },
+    "letter": {
+      "de": "Welche urodynamischen Befunde trennen die beiden Parkinson-Syndrome am deutlichsten – und welche davon hast du gemessen?",
+      "en": "Which urodynamic findings separate the two parkinsonian syndromes most clearly – and which of them did you record?",
+      "es": "¿Qué hallazgos urodinámicos separan con más claridad los dos síndromes parkinsonianos y cuáles has registrado?"
+    }
+  },
+  "udy-female-boo-after-sling": {
+    "workup": {
+      "de": "Ein niedriger Fluss hat zwei mögliche Ursachen. Welche Untersuchungen trennen Auslass und Detrusor und zeigen dir zugleich Ort der Enge und Zustand des Bandes?",
+      "en": "Low flow has two possible causes. Which tests separate outlet from detrusor and also show you the site of narrowing and the state of the tape?",
+      "es": "Un flujo bajo tiene dos causas posibles. ¿Qué pruebas separan la salida del detrusor y te muestran además el lugar del estrechamiento y el estado de la cinta?"
+    },
+    "calc": {
+      "de": "Für Frauen gibt es eine eigene Formel: Der Fluss wird mit 2,2 multipliziert und vom Detrusordruck abgezogen. Ab welchem Wert spricht das Nomogramm klar für eine Obstruktion?",
+      "en": "Women have their own formula: flow is multiplied by 2.2 and subtracted from the detrusor pressure. From which value does the nomogram clearly indicate obstruction?",
+      "es": "La mujer tiene su propia fórmula: el flujo se multiplica por 2,2 y se resta de la presión del detrusor. ¿A partir de qué valor indica claramente obstrucción el nomograma?"
+    },
+    "treat": {
+      "de": "Was würde ein Instrument in der Harnröhre über einem synthetischen Netz riskieren – und welcher Eingriff behebt die Ursache auf Bandhöhe?",
+      "en": "What would an instrument in the urethra risk over a synthetic mesh – and which procedure removes the cause at the level of the tape?",
+      "es": "¿Qué arriesgaría un instrumento en la uretra sobre una malla sintética y qué intervención elimina la causa a la altura de la cinta?"
+    }
+  },
+  "udy-fowler-retention-young-woman": {
+    "next": {
+      "de": "Die Blase ist groß und gefühlsarm, die Neurologie unauffällig. Welche Struktur hast du noch nicht untersucht – und mit welcher Methode siehst du ihre Aktivität direkt?",
+      "en": "The bladder is large and poorly sensate, the neurology normal. Which structure have you not examined yet – and which method shows its activity directly?",
+      "es": "La vejiga es grande y poco sensible y la neurología normal. ¿Qué estructura no has estudiado aún y con qué método ves directamente su actividad?"
+    },
+    "emg": {
+      "de": "Konzentrier dich auf das EMG-Muster: Es zeigt keine fehlende, sondern eine überschießende, nicht abschaltbare Aktivität des Sphinkters.",
+      "en": "Focus on the EMG pattern: it shows not missing but excessive activity of the sphincter that cannot be switched off.",
+      "es": "Céntrate en el patrón del EMG: no muestra falta de actividad, sino una actividad excesiva del esfínter que no se puede apagar."
+    },
+    "therapy": {
+      "de": "Welche Behandlung moduliert die sakralen Reflexbögen und ist bei funktioneller Obstruktion in Fallserien wirksam? Und was überbrückt die Zeit bis dahin?",
+      "en": "Which treatment modulates the sacral reflex arcs and works in case series of functional obstruction? And what bridges the time until then?",
+      "es": "¿Qué tratamiento modula los arcos reflejos sacros y es eficaz en series de obstrucción funcional? ¿Y qué sirve de puente hasta entonces?"
+    }
+  },
+  "udy-occult-sui-prolapse-reduction": {
+    "test": {
+      "de": "Ein großer Prolaps kann die Harnröhre abknicken. Welcher einfache Test zeigt dir, was nach der Korrektur mit der Kontinenz passiert?",
+      "en": "A large prolapse can kink the urethra. Which simple test shows you what will happen to continence after the repair?",
+      "es": "Un prolapso grande puede acodar la uretra. ¿Qué prueba sencilla te muestra qué pasará con la continencia tras la corrección?"
+    },
+    "result": {
+      "de": "Frag dich, ob ein positiver Test ein Risiko oder eine Gewissheit beschreibt – und was der Hustenbezug über den Mechanismus sagt.",
+      "en": "Ask yourself whether a positive test describes a risk or a certainty – and what the link to coughing says about the mechanism.",
+      "es": "Pregúntate si una prueba positiva describe un riesgo o una certeza y qué dice la relación con la tos sobre el mecanismo."
+    },
+    "counsel": {
+      "de": "Leg beide Seiten der randomisierten Studie nebeneinander: Wie viele Frauen brauchen ein Band, damit eine kontinent bleibt, für welche Frauen gilt diese Zahl – und welche Komplikationen kommen hinzu?",
+      "en": "Put both sides of the randomised trial next to each other: how many women need a sling for one to stay continent, which women does that number apply to – and which complications are added?",
+      "es": "Pon ambos lados del ensayo aleatorizado uno junto al otro: ¿cuántas mujeres necesitan una cinta para que una siga continente, a qué mujeres se aplica esa cifra y qué complicaciones se añaden?"
+    }
+  },
+  "udy-low-compliance-sci-filling-rate": {
+    "compliance": {
+      "de": "Compliance ist Volumenänderung geteilt durch Druckanstieg – vergiss nicht, den Ausgangsdruck abzuziehen.",
+      "en": "Compliance is change in volume divided by pressure rise – do not forget to subtract the starting pressure.",
+      "es": "La distensibilidad es el cambio de volumen dividido por el aumento de presión: no olvides restar la presión inicial."
+    },
+    "rate": {
+      "de": "Schau auf die Pumpe und auf die Waage: Welche Füllrate wäre bei 80 kg physiologisch – und warum ist das für die Compliance wichtig?",
+      "en": "Look at the pump and at the scales: which filling rate would be physiological at 80 kg – and why does that matter for compliance?",
+      "es": "Mira la bomba y la báscula: ¿qué velocidad de llenado sería fisiológica con 80 kg y por qué importa para la distensibilidad?"
+    },
+    "plan": {
+      "de": "Bei welchem Volumen beginnt hier der kritische Druck? Danach richtet sich, wann er katheterisieren muss – und was den Druck senken kann.",
+      "en": "At which volume does the critical pressure begin here? That decides when he must catheterise – and what can lower the pressure.",
+      "es": "¿A qué volumen empieza aquí la presión crítica? De ello depende cuándo debe cateterizarse y qué puede bajar la presión."
+    }
+  },
+  "udy-paediatric-dysfunctional-voiding": {
+    "workup": {
+      "de": "Bei Kindern gilt: erst nicht invasiv. Welche Messungen kannst du wiederholen, ohne einen Katheter zu legen – und was gehört bei der Blase immer mit dazu?",
+      "en": "With children, non-invasive comes first. Which measurements can you repeat without placing a catheter – and what always belongs with the bladder?",
+      "es": "En niños, primero lo no invasivo. ¿Qué mediciones puedes repetir sin poner una sonda y qué va siempre unido a la vejiga?"
+    },
+    "curve": {
+      "de": "Achte darauf, ob der Fluss zwischen den Spitzen auf null fällt oder weiterläuft – und was das EMG gleichzeitig macht.",
+      "en": "Check whether the flow drops to zero between the peaks or keeps going – and what the EMG is doing at the same time.",
+      "es": "Fíjate en si el flujo cae a cero entre los picos o sigue, y en qué hace el EMG al mismo tiempo."
+    },
+    "treat": {
+      "de": "Blase und Darm sind Nachbarn mit gemeinsamen Problemen. Was ist die Basis der Behandlung, bevor du an Geräte oder Medikamente denkst?",
+      "en": "Bladder and bowel are neighbours with shared problems. What is the basis of treatment before you think of devices or drugs?",
+      "es": "Vejiga e intestino son vecinos con problemas compartidos. ¿Cuál es la base del tratamiento antes de pensar en aparatos o fármacos?"
+    }
+  },
+  "udy-artefacts-rectal-contraction-transmission": {
+    "baseline": {
+      "de": "Überleg, worauf beim Nullabgleich abgeglichen wird und welcher Druck im Sitzen in Blase und Rektum herrscht. Was sollte Pdet am Anfang zeigen?",
+      "en": "Think about what you zero against and which pressure exists in the bladder and rectum when seated. What should Pdet show at the start?",
+      "es": "Piensa contra qué se calibra el cero y qué presión hay en la vejiga y el recto en sedestación. ¿Qué debería mostrar la Pdet al inicio?"
+    },
+    "waves": {
+      "de": "Welche Leitung bewegt sich – und welche nicht? Pdet ist nur eine Subtraktion.",
+      "en": "Which line moves – and which does not? Pdet is just a subtraction.",
+      "es": "¿Qué línea se mueve y cuál no? La Pdet es solo una resta."
+    },
+    "transmission": {
+      "de": "Vergleiche die beiden Hustenausschläge als Verhältnis. Welche Leitung überträgt schlecht, und was ist in flüssigkeitsgefüllten Systemen die häufigste Ursache?",
+      "en": "Compare the two cough responses as a ratio. Which line transmits poorly, and what is the most common cause in fluid-filled systems?",
+      "es": "Compara las dos respuestas a la tos como cociente. ¿Qué línea transmite mal y cuál es la causa más frecuente en los sistemas llenos de líquido?"
+    }
   }
 }

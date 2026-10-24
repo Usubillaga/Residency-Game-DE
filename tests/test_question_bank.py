@@ -53,7 +53,7 @@ class QuestionBankTests(unittest.TestCase):
                          dict(kidney=10, ureter=8, bladder=6, prostate=7, penis=7, testis=7, nerves=5))
         self.assertTrue(all('objectives' not in c and len(c['steps']) == 1 for c in anatomy))
         self.assertEqual(sum('source' in c for c in self.cases), 267)
-        self.assertEqual(sum(not c.get('source') and len(c['steps']) > 1 for c in self.cases), 50)
+        self.assertEqual(sum(not c.get('source') and c.get('subject') != 'urodynamics' and len(c['steps']) > 1 for c in self.cases), 50)
 
     def test_male_citrate_threshold_matches_eau_not_a_generic_2_5_cutoff(self):
         case = next(c for c in self.cases if c['id'] == 'bank-uro-lit-00003')
@@ -149,11 +149,12 @@ class QuestionBankTests(unittest.TestCase):
 
     def test_original_imported_story_and_anatomy_counts_remain_unchanged_and_all_duties_playable(self):
         groups = Counter('imported' if 'source' in c else 'anatomy' if c.get('subject') == 'anatomy' else
+                         'urodynamics' if c.get('subject') == 'urodynamics' else
                          'classification' if c.get('classification') else 'story' if len(c['steps']) > 1 else 'single'
                          for c in self.cases)
         # 30 + 20 stories; 136 single questions: 106 supplementary (protocols, side effects, continence, radiotherapy,
-        # guideline topics) and 30 new ones on emergencies, oncology and drugs.
-        self.assertEqual(groups, dict(imported=267, anatomy=50, classification=30, story=50, single=136))
+        # guideline topics) and 30 new ones on emergencies, oncology and drugs; 10 urodynamics cases (20 October 2026).
+        self.assertEqual(groups, dict(imported=267, anatomy=50, classification=30, story=50, single=136, urodynamics=10))
         self.assertEqual(Counter(c['id'].split('-')[1] for c in self.cases if c['id'].startswith(('q-emg-', 'q-onc-', 'q-drug-'))),
                          dict(emg=10, onc=10, drug=10))
         self.assertEqual(sum('source' in c for c in self.cases), 267)
@@ -161,6 +162,31 @@ class QuestionBankTests(unittest.TestCase):
         duties = Counter(manage.case_duty(c) for c in self.cases) if hasattr(manage, 'case_duty') else Counter(c.get('duty') for c in self.cases)
         for duty in ('night', 'board', 'clinic', 'elective', 'dayclinic', 'radiotherapy'):
             self.assertGreaterEqual(duties[duty], 10, duty)
+
+    def test_urodynamics_section_has_ten_cases_with_thirty_contracted_decisions(self):
+        cases = [c for c in self.cases if c.get('subject') == 'urodynamics']
+        self.assertEqual(len(cases), 10)
+        self.assertEqual(sum(len(c['steps']) for c in cases), CONTRACT['urodynamicsQuestions'])
+        self.assertEqual(CONTRACT['urodynamicsQuestions'], 30)
+        hints = manage.read_json(ROOT / 'data/attending-hints.json')
+        references = {r['id'] for r in self.references}
+        uro_refs = {r['id'] for r in manage.read_json(ROOT / 'data/refs-urodynamics.json')}
+        for case in cases:
+            with self.subTest(case=case['id']):
+                self.assertTrue(case['id'].startswith('udy-'))
+                self.assertEqual(case['topic'], dict(de='Urodynamik', en='Urodynamics', es='Urodinámica'))
+                self.assertNotIn('source', case)
+                self.assertNotIn('objectives', case)
+                self.assertEqual(case['duty'], 'clinic')
+                self.assertTrue(2 <= len(case['steps']) <= 3)
+                self.assertTrue(all(len(step['options']) == 4 for step in case['steps']))
+                self.assertEqual(set(hints[case['id']]), {step['id'] for step in case['steps']})
+                self.assertTrue(set(case['references']) <= uro_refs <= references)
+        changed = copy.deepcopy(self.cases)
+        target = next(c for c in changed if c.get('subject') == 'urodynamics')
+        target['subject'] = 'story'
+        with self.assertRaisesRegex(manage.ValidationError, 'expected 30 urodynamics questions, found 27'):
+            manage.validate_question_contract(ROOT, changed)
 
     def test_old_archived_logbook_entry_still_exports_to_analysis(self):
         case = next(c for c in self.all_cases if c['id'] == ARCHIVED)
