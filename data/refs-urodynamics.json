@@ -66,8 +66,8 @@
     "id": "udy-eau-neuro-urology",
     "title": "EAU Neuro-Urology 2026: The Guideline",
     "url": "https://uroweb.org/guidelines/neuro-urology/chapter/the-guideline",
-    "checked": "2026-10-20",
-    "scope": "Supports physiological filling rates and same-session repeat measurements, video-urodynamics in neurological patients, upper tract risk from high filling pressures, augmentation for low compliance after failed less invasive treatment, and caution with prostate surgery in neurological disease."
+    "checked": "2026-10-26",
+    "scope": "Supports physiological filling rates and same-session repeat measurements, video-urodynamics in neurological patients, upper tract risk from high filling pressures, augmentation for low compliance after failed less invasive treatment, and caution with prostate surgery in neurological disease. Also supports blood pressure and heart rate monitoring during urodynamics in patients at risk of autonomic dysreflexia (lesions at or above T6; systolic rise above 20 mmHg), antimuscarinics first line for neurogenic detrusor overactivity, botulinum toxin when they are ineffective, no beta-3 agonists to reduce urodynamic overactivity, intermittent catheterisation four to six times a day with volumes generally not above 400–500 ml, that reflex triggering can provoke dysreflexia and that assisted emptying needs low outlet resistance."
   },
   {
     "id": "udy-msa-vuds-2001",
@@ -94,22 +94,22 @@
     "id": "udy-eau-female-luts-pocket-2026",
     "title": "EAU Pocket Guidelines: Non-neurogenic Female LUTS 2026",
     "url": "https://d56bochluxqnz.cloudfront.net/documents/pocket-guidelines/EAU-Pocket-on-Non-Neurogenic-Female-LUTS-2026_2026-03-12-155317_rckt.pdf",
-    "checked": "2026-10-20",
-    "scope": "Supports female BOO work-up with video-urodynamics and urethrocystoscopy, sling revision rather than dilatation or urethrotomy after midurethral tapes (theoretical risk of mesh extrusion), intermittent catheterisation and sacral nerve stimulation for underactive bladder and functional obstruction, alpha-blockers only off-label and no routine parasympathomimetics, and the prolapse reduction test with counselling about combined surgery."
+    "checked": "2026-10-26",
+    "scope": "Supports female BOO work-up with video-urodynamics and urethrocystoscopy, sling revision rather than dilatation or urethrotomy after midurethral tapes (theoretical risk of mesh extrusion), intermittent catheterisation and sacral nerve stimulation for underactive bladder and functional obstruction, alpha-blockers only off-label and no routine parasympathomimetics, and the prolapse reduction test with counselling about combined surgery. Also supports onabotulinumtoxinA 100 U for refractory OAB or urgency incontinence with counselling about infection and catheterisation, bladder training and drugs for urgency incontinence, treating the most bothersome component of mixed incontinence first with a warning that surgery is less successful than in pure stress incontinence, a shared choice between midurethral sling, colposuspension, autologous sling and less effective bulking agents for stress incontinence, not using urethral pressure profilometry or leak point pressure to grade severity, and warning women who strain to empty about prolapse."
   },
   {
     "id": "udy-eau-female-luts-diagnosis",
     "title": "EAU Non-neurogenic Female LUTS 2026: Diagnosis",
     "url": "https://uroweb.org/guidelines/non-neurogenic-female-luts/chapter/diagnosis",
-    "checked": "2026-10-20",
-    "scope": "Supports that there is no universally accepted urodynamic threshold for BOO in women and that pressure-flow studies separate BOO from detrusor underactivity."
+    "checked": "2026-10-26",
+    "scope": "Supports that there is no universally accepted urodynamic threshold for BOO in women and that pressure-flow studies separate BOO from detrusor underactivity. Also supports urodynamics when findings may change invasive treatment or the diagnosis is uncertain, that a urodynamic diagnosis of detrusor overactivity does not influence treatment outcomes in OAB, and monitoring the post-void residual during treatments that may impair emptying."
   },
   {
     "id": "udy-eau-female-luts-management",
     "title": "EAU Non-neurogenic Female LUTS 2026: Disease Management",
     "url": "https://uroweb.org/guidelines/non-neurogenic-female-luts/chapter/disease-management",
-    "checked": "2026-10-20",
-    "scope": "Related management chapter for female voiding dysfunction, underactive bladder and prolapse with LUTS."
+    "checked": "2026-10-26",
+    "scope": "Related management chapter for female voiding dysfunction, underactive bladder and prolapse with LUTS. States that identifying detrusor overactivity on urodynamics does not appear to influence the outcome of onabotulinumtoxinA in urgency incontinence and recommends bladder training, antimuscarinics and beta-3 agonists for OAB."
   },
   {
     "id": "udy-female-boo-nomogram",
@@ -173,6 +173,55 @@
     "url": "https://doi.org/10.1002/nau.22751",
     "checked": "2026-10-20",
     "scope": "Supports the definitions of dysfunctional voiding and flow-curve shapes, the 50% expected-capacity rule for valid uroflowmetry and age-specific residual thresholds."
+  },
+  {
+    "id": "udy-eau-male-luts-pocket-2026",
+    "title": "EAU Pocket Guidelines: Non-neurogenic Male LUTS 2026",
+    "url": "https://d56bochluxqnz.cloudfront.net/documents/pocket-guidelines/EAU-Pocket-on-Non-Neurogenic-Male-LUTS-2026.pdf",
+    "checked": "2026-10-26",
+    "scope": "Supports a bladder diary for at least three days to assess male LUTS, particularly nocturia (strong), treating the underlying causes of nocturia (strong), and urodynamics before further invasive treatment after an unsuccessful invasive treatment (weak)."
+  },
+  {
+    "id": "udy-ics-gup-2016",
+    "title": "ICS Good Urodynamic Practices and Terms 2016: uroflowmetry, cystometry and pressure-flow study",
+    "url": "https://www.ics.org/folder/standardisation/current-ics-standardisations/d/international-continence-society-good-urodynamic-practices-and-terms-2016-urodynamics-uroflowmetry-cystometry-and-pressure-flow-study/download",
+    "checked": "2026-10-26",
+    "scope": "Supports that an expelled catheter shows as a sudden drop in Pves or Pabd, usually below zero, and should prompt correction or repetition; repeating a test after technical errors or artefacts but not routinely after an adequate test; reporting the provocation and recording site of a leak point pressure; and cough-associated detrusor overactivity as overactivity starting immediately after a cough."
+  },
+  {
+    "id": "udy-ics-bladder-sensation",
+    "title": "ICS terminology discussion: reduced and absent bladder sensation",
+    "url": "https://www.ics.org/committees/standardisation/terminologydiscussions/reducedabsentbladdersensation",
+    "checked": "2026-10-26",
+    "scope": "Supports the categories of bladder sensation during filling cystometry: normal (increasing sensation up to a strong desire to void), reduced and absent."
+  },
+  {
+    "id": "udy-ad-cmaj-2012",
+    "title": "Autonomic dysreflexia (CMAJ, 2012)",
+    "url": "https://www.cmaj.ca/content/184/1/66",
+    "checked": "2026-10-26",
+    "scope": "Supports autonomic dysreflexia after injuries above T6 with a sudden blood pressure rise, reflex bradycardia, headache and sweating, and its acute management: sit upright, loosen clothing, monitor blood pressure, check and empty the bladder first, and a short-acting antihypertensive if systolic pressure stays above 150 mmHg."
+  },
+  {
+    "id": "udy-ad-canscip-2020",
+    "title": "CAN-SCIP: autonomic dysreflexia during cystoscopic and urodynamic procedures (PVA 2020)",
+    "url": "https://kite-uhn.com/can-scip/en/recommendations/autonomic-dysreflexia-and-cystoscopic",
+    "checked": "2026-10-26",
+    "scope": "Supports blood pressure monitoring at least every 2 minutes during urological procedures in people at risk, draining the bladder first, and ending the procedure and sitting the patient up when dysreflexia is not controlled."
+  },
+  {
+    "id": "udy-eau-urethral-strictures-2026",
+    "title": "EAU Guidelines on Urethral Strictures 2026 (full text)",
+    "url": "https://d56bochluxqnz.cloudfront.net/documents/full-guideline/EAU-Guidelines-on-Urethral-Strictures-2026.pdf",
+    "checked": "2026-10-26",
+    "scope": "Supports a reduced maximum flow with a prolonged plateau as characteristic of constrictive obstruction, that the flow pattern is not a reliable screening tool for stricture, uroflowmetry with post-void residual (strong), and retrograde urethrography for location and length, combined with voiding cystourethrography for (nearly) obliterative strictures (strong)."
+  },
+  {
+    "id": "udy-eau-urethral-strictures-pocket-2026",
+    "title": "EAU Pocket Guidelines: Urethral Strictures 2026",
+    "url": "https://d56bochluxqnz.cloudfront.net/documents/pocket-guidelines/EAU-Pocket-on-Urethral-Strictures-2026.pdf",
+    "checked": "2026-10-26",
+    "scope": "Supports urethrotomy or dilatation for a primary, single, short (below 2 cm), non-obliterative bulbar stricture (weak), no more than two urethrotomies or dilatations when urethroplasty is a viable option (strong), no urethrotomy for penile strictures and no permanent urethral stents (strong)."
   },
   {
     "id": "udy-iccs-dysfunctional-voiding-2010",

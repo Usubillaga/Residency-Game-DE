@@ -342,7 +342,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{o
   .option-mark{width:24px;height:24px;font-size:1rem}
 }
 /* Duties: night shift, tumour board, clinic and elective list each have their own accent. */
-.duty-night{--duty:#6f86d6}.duty-board{--duty:#b07cc6}.duty-clinic{--duty:#4fb38f}.duty-elective{--duty:#e0995a}.duty-mixed{--duty:#a9b0c8}.duty-dayclinic{--duty:#e06c8a}.duty-radiotherapy{--duty:#3cc7c1}
+.duty-night{--duty:#6f86d6}.duty-board{--duty:#b07cc6}.duty-clinic{--duty:#4fb38f}.duty-elective{--duty:#e0995a}.duty-mixed{--duty:#a9b0c8}.duty-dayclinic{--duty:#e06c8a}.duty-radiotherapy{--duty:#3cc7c1}.duty-urodynamics{--duty:#e3b341}
 .duty-section{padding-top:8px}
 .duty-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
 .duty-card{display:flex;flex-direction:column;gap:8px;padding:20px 18px;border:3px solid #574e72;border-top:8px solid var(--duty,#a9b0c8);border-radius:21px;background:#232d4a;box-shadow:0 5px 0 #0a1025}
@@ -504,3 +504,32 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{o
 .learning-explanation{background:#222d49;border:1px solid #4e5f7e;border-radius:16px;padding:20px;position:static!important;max-width:none!important}.learning-stage-code{font-size:2rem;font-weight:900;color:#ffcf5a;margin:0}.learning-explanation h3{font-size:.92rem;margin:18px 0 8px!important;color:#9ee3d4}.learning-explanation p{font-size:.88rem;line-height:1.65}.learning-explanation .learning-boundary{font-size:1rem;color:#fff0da}.learning-staff{display:flex;align-items:center;gap:10px;border-top:1px solid #4f5b77;margin-top:20px;padding-top:14px}.learning-staff svg{flex-shrink:0;width:64px;height:64px}.learning-staff p{color:#ffdc82;font-size:.77rem;margin:0}.learning-reference{margin:22px 0;padding:15px 18px;border:1px solid #52607e;border-radius:12px}.learning-reference>section{margin-top:20px}.learning-modal{max-width:1160px!important;width:calc(100vw - 28px)!important}.learning-modal .learning-figure{border-radius:12px;overflow:hidden}.learning-modal .learning-legend{grid-template-columns:repeat(3,minmax(0,1fr))}.learning-modal .enlarged{overflow:auto}.learning-modal .enlarged svg{min-width:900px}
 @media(max-width:980px){.learning-workspace{grid-template-columns:1fr}.learning-head{align-items:flex-start;flex-direction:column;gap:10px}.learning-head>.btn{font-size:.85rem}.learning-explanation{padding:16px}.learning-explanation .learning-stage-code{font-size:1.7rem}.learning-modal .learning-legend{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.learning-head h1{font-size:1.6rem}.learning-image-tools{padding:10px;align-items:flex-start}.learning-image-tools b{font-size:.78rem}.learning-image-tools .btn{padding:7px 9px;font-size:.73rem}.learning-figure figcaption{padding:8px 10px 12px}.learning-legend{gap:6px}.learning-legend button{font-size:.71rem;padding:5px;gap:5px;overflow-wrap:anywhere}.learning-legend span{width:22px;height:22px}.learning-stages button{padding:8px 10px}.learning-title h2{font-size:1.28rem}.learning-modal .enlarged svg{min-width:880px}}
+
+/* Urodynamics lab: six departments fill two rows of three (two columns on phones). */
+.area-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:760px){.area-grid .area-card:last-child{grid-column:auto;min-height:190px}}
+/* Urodynamic tracings (assets/urodynamics.js): a light measuring sheet inside the chart, the debrief and dialogs. */
+.case-tracing{margin:6px 0 22px}
+.udy{margin:0;padding:14px;border:3px solid #2a2442;border-radius:18px;background:#fffbed;color:#302944;box-shadow:0 4px 0 #2a24422b}
+.udy figcaption b{display:block;font-size:.95rem}
+.udy figcaption small{display:block;font-size:.7rem;color:#685a70;margin-top:3px}
+.udy-views{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}
+.udy-view{border:2px solid #9b89a6;background:#fff;color:#302944;border-radius:999px;padding:4px 11px;font-size:.74rem;font-weight:700;cursor:pointer}
+.udy-view.on{background:#302944;color:#fff4d6;border-color:#302944}
+.udy-plot{margin:10px 0 6px;border-radius:12px;background:#f6eedb;outline:none;touch-action:pan-y;cursor:crosshair}
+.udy-plot:focus-visible{box-shadow:0 0 0 3px #ffcf5a}
+.udy-svg{display:block;width:100%;height:auto;font-family:Inter,"Segoe UI",system-ui,sans-serif;user-select:none;-webkit-user-select:none}
+.udy-readout{margin:4px 0 0;padding:8px 10px;border-radius:10px;background:#fff;border:2px solid #d9cbb3;font-size:.8rem;line-height:1.5;font-variant-numeric:tabular-nums;min-height:2.6em}
+.udy-readout em{font-style:normal;color:#8a4b12;font-weight:700}
+.udy-hint{margin:6px 0 0;font-size:.7rem;color:#685a70}
+.udy-findings{margin:10px 0 0;padding-left:1.4em;font-size:.82rem;line-height:1.45}
+.udy-findings li{margin:3px 0}
+.udy-findings li::marker{font-weight:800;color:#b46d12}
+.udy-findings li.tone-good::marker{color:#3f8e72}
+.udy-legend{margin-top:8px;font-size:.74rem;color:#4b4057}
+.udy-legend summary{cursor:pointer;font-weight:700}
+.udy-legend ul{margin:6px 0 0;padding-left:1.1em;columns:2;column-gap:20px}
+@media(max-width:640px){.udy{padding:10px}.udy-legend ul{columns:1}.udy-readout{font-size:.76rem}}
+.udy-plot svg text{pointer-events:none}
+.dialog .case-tracing{margin:14px 0}
+@media(max-width:760px){.chart .case-tracing{margin-inline:-8px}.dialog .case-tracing{margin-inline:-10px}}

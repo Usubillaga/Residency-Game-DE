@@ -31,10 +31,11 @@ AREAS = [
     {"id": "clinic", "icon": "◎", "title": {"en": "Clinic", "de": "Ambulanz", "es": "Consulta"}, "description": {"en": "Plan investigations, explain choices and arrange follow-up.", "de": "Diagnostik planen, Optionen erklären und Nachsorge organisieren.", "es": "Planificar estudios, explicar opciones y organizar el seguimiento."}},
     {"id": "endoscopy", "icon": "◉", "title": {"en": "Endoscopy", "de": "Endoskopie", "es": "Endoscopia"}, "description": {"en": "Prepare procedures, recognise complications and communicate findings.", "de": "Eingriffe vorbereiten, Komplikationen erkennen und Befunde mitteilen.", "es": "Preparar procedimientos, reconocer complicaciones y comunicar hallazgos."}},
     {"id": "theatre", "icon": "✚", "title": {"en": "Operating theatre", "de": "Operationssaal", "es": "Quirófano"}, "description": {"en": "Practise preparation, teamwork and decisions around surgery.", "de": "Vorbereitung, Teamarbeit und Entscheidungen rund um Operationen üben.", "es": "Practicar la preparación, el trabajo en equipo y las decisiones quirúrgicas."}},
+    {"id": "urodynamics", "icon": "〰", "title": {"en": "Urodynamics lab", "de": "Urodynamik-Labor", "es": "Laboratorio de urodinámica"}, "description": {"en": "Read urodynamic tracings, from normal studies to overactivity, obstruction and artefacts.", "de": "Urodynamische Messkurven lesen: vom Normalbefund über Überaktivität und Obstruktion bis zu Artefakten.", "es": "Leer trazados urodinámicos: del estudio normal a la hiperactividad, la obstrucción y los artefactos."}},
 ]
 AREA_IDS = tuple(area["id"] for area in AREAS)
 CASE_FILES = tuple(f"{area}.json" for area in AREA_IDS)
-DUTIES = ("night", "board", "clinic", "elective", "dayclinic", "radiotherapy")
+DUTIES = ("night", "board", "clinic", "elective", "dayclinic", "radiotherapy", "urodynamics")
 # Who answers the phone hint for a case: the attending by default, the radiation oncologist for radiotherapy questions.
 CONSULTANTS = ("attending", "radiotherapist")
 AGE_BANDS = {"newborn", "infant", "child", "teen", "young", "adult", "senior", "elderly", "unknown"}
@@ -171,10 +172,12 @@ def validate_assets(root: Path, *, required: bool = True) -> None:
                 parsed = urlparse(value)
                 require(parsed.scheme in ("https", "http", "data") or bool(parsed.netloc), f"index.html contains an invalid {kind} reference: {value}")
         by_kind[kind] = paths
-    for kind, names in (("stylesheet", ("styles.css",)), ("script", ("i18n.js", "catalog.js", "engine.js", "app.js"))):
+    # The tracing renderer is needed only once the bank has urodynamic tracings to draw.
+    scripts = ("i18n.js", "catalog.js", "engine.js") + (("urodynamics.js",) if (root / "data" / "urodynamic-tracings.json").exists() else ()) + ("app.js",)
+    for kind, names in (("stylesheet", ("styles.css",)), ("script", scripts)):
         for name in names:
             require((root / "assets" / name).resolve() in by_kind[kind], f"index.html must reference assets/{name} exactly once")
-    for kind, expected in (("stylesheet", ("styles.css", "cartoon.css")), ("script", ("i18n.js", "banter.js", "art.js", "catalog.js", "engine.js", "app.js"))):
+    for kind, expected in (("stylesheet", ("styles.css", "cartoon.css")), ("script", ("i18n.js", "banter.js", "art.js", "catalog.js", "engine.js", "urodynamics.js", "app.js"))):
         ordered_paths = [(root / "assets" / name).resolve() for name in expected]
         observed = [asset for asset in by_kind[kind] if asset in ordered_paths]
         require(observed == [asset for asset in ordered_paths if asset in observed], f"index.html {kind} dependency order must be {' → '.join(expected)}")
@@ -817,6 +820,341 @@ def load_visuals(root: Path, cases: list) -> tuple[list, dict, dict]:
     return schemas, links, media
 
 
+TRACING_CHANNELS = {"pves", "pabd", "pdet", "flow", "vol", "vvoid", "emg"}
+TRACING_EVENTS = {"cough", "valsalva", "fs", "fd", "sd", "urgency", "leak", "void", "qmax", "reduction", "provocation", "drain",
+                  "recatheterise", "bloodPressure", "stop"}
+TRACING_KINDS = {"pressure-flow", "video-pressure-flow", "cystometry", "video-cystometry", "uroflow", "uroflow-emg"}
+TRACING_LIMITS = {"pves": (-5, 250), "pabd": (-5, 250), "flow": (0, 60), "vinf": (0, 1500), "vvoid": (0, 1500), "emg": (0, 150)}
+
+
+def load_tracings(root: Path, cases: list) -> dict:
+    """Synthetic urodynamic tracings (data/urodynamic-tracings.json), keyed by case id.
+
+    The curves come from scripts/urodynamic_traces.py. Each reading that a question relies on is
+    recomputed from the curves, so the drawing and the text cannot drift apart unnoticed.
+    """
+    path = Path(root) / "data" / "urodynamic-tracings.json"
+    if not path.exists():
+        return {}
+    data = read_json(path)
+    require(isinstance(data, dict) and data.get("version") == 1 and isinstance(data.get("tracings"), dict), "urodynamic-tracings.json: expected version 1 with tracings")
+    nonempty(data.get("note"), "urodynamic-tracings.json.note")
+    by_id = {case["id"]: case for case in cases}
+    for case_id, tracing in data["tracings"].items():
+        where = f"urodynamic-tracings.json[{case_id!r}]"
+        require(case_id in by_id, f"{where}: unknown case")
+        case = by_id[case_id]
+        require(isinstance(tracing, dict) and tracing.get("kind") in TRACING_KINDS, f"{where}.kind: expected one of {', '.join(sorted(TRACING_KINDS))}")
+        t = tracing.get("t")
+        require(isinstance(t, list) and len(t) >= 10 and all(type(x) in (int, float) for x in t), f"{where}.t: expected sample times")
+        require(all(b > a for a, b in zip(t, t[1:])), f"{where}.t: sample times must increase")
+        stored = [name for name in TRACING_LIMITS if name in tracing]
+        for name in stored:
+            values = tracing[name]
+            low, high = TRACING_LIMITS[name]
+            require(isinstance(values, list) and len(values) == len(t), f"{where}.{name}: expected one value per sample")
+            require(all(type(v) in (int, float) and low <= v <= high for v in values), f"{where}.{name}: values outside {low}..{high}")
+        channels = tracing.get("channels")
+        require(isinstance(channels, list) and channels and set(channels) <= TRACING_CHANNELS and len(set(channels)) == len(channels), f"{where}.channels: unknown or duplicate channel")
+        needs = {"pves": {"pves"}, "pabd": {"pabd"}, "pdet": {"pves", "pabd"}, "flow": {"flow"}, "vol": {"vinf", "vvoid"}, "vvoid": {"vvoid"}, "emg": {"emg"}}
+        for channel in channels:
+            require(needs[channel] <= set(stored), f"{where}.channels: {channel} needs {', '.join(sorted(needs[channel]))}")
+        start, end = t[0], t[-1]
+        events = tracing.get("events", [])
+        require(isinstance(events, list), f"{where}.events: expected a list")
+        for index, event in enumerate(events):
+            require(isinstance(event, dict) and event.get("type") in TRACING_EVENTS, f"{where}.events[{index}].type: unknown marker")
+            require(type(event.get("t")) in (int, float) and start <= event["t"] <= end, f"{where}.events[{index}].t: outside the tracing")
+            require(set(event) <= {"t", "type", "value"}, f"{where}.events[{index}]: unexpected field")
+        views = tracing.get("views")
+        require(isinstance(views, list) and views, f"{where}.views: expected at least one view")
+        view_ids = set()
+        for index, view in enumerate(views):
+            view_where = f"{where}.views[{index}]"
+            nonempty(view.get("id"), f"{view_where}.id")
+            require(view["id"] not in view_ids, f"{view_where}: duplicate view id")
+            view_ids.add(view["id"])
+            localised(view.get("label"), f"{view_where}.label")
+            if "t" in view:
+                window = view["t"]
+                require(isinstance(window, list) and len(window) == 2 and start <= window[0] < window[1] <= end + 1e-6, f"{view_where}.t: expected a window inside the tracing")
+        step_ids = [step["id"] for step in case["steps"]]
+        steps = tracing.get("steps")
+        require(isinstance(steps, dict) and steps, f"{where}.steps: expected step id → view id")
+        for step_id, view_id in steps.items():
+            require(step_id in step_ids, f"{where}.steps: unknown step {step_id!r}")
+            require(view_id in view_ids, f"{where}.steps[{step_id!r}]: unknown view {view_id!r}")
+        for index, note in enumerate(tracing.get("annotations", [])):
+            note_where = f"{where}.annotations[{index}]"
+            require(note.get("step") in steps, f"{note_where}.step: findings belong to a step that shows the tracing")
+            require(note.get("kind") in ("span", "point") and note.get("tone", "key") in ("key", "good", "neutral"), f"{note_where}: expected a span or point with a known tone")
+            localised(note.get("label"), f"{note_where}.label")
+            if "channel" in note or note["kind"] == "point":
+                require(note.get("channel") in channels, f"{note_where}.channel: not drawn in this tracing")
+            times = (note["t0"], note["t1"]) if note["kind"] == "span" else (note["t"],)
+            require(all(type(x) in (int, float) and start <= x <= end for x in times), f"{note_where}: outside the tracing")
+            for language in LANGUAGES:
+                hit = AUTHOR_MENTION.search(note["label"][language])
+                require(hit is None, f"{note_where}.label.{language}: no authors in the game (found {hit[0]!r})" if hit else "")
+        check_tracing_readings(tracing, where)
+    return data["tracings"]
+
+
+READING_RULES = (
+    "capacity", "qmax", "pdetQmax", "pvesQmax", "pabdQmax", "voided", "leaked", "residual", "firstSensation", "firstDesire",
+    "strongDesire", "leakPointPves", "qmax1", "qmax2", "voided1", "voided2", "flowTime", "pdetStart", "pdetEnd", "compliance",
+    "leakPdet", "leakVolume", "volumeAtPdet40", "secondFillRate", "maxPdet", "overactivityFrom", "overactivityMax",
+    "contractionOnsets", "contractionPeaks", "waveSeconds", "overactivityLeak", "coughLeakFrom", "baselinePves", "baselinePabd",
+    "coughPves", "coughPabd", "rectalWaves", "rectalFrom", "rectalRise", "pvesVoidMax", "pdetVoidBelow", "pvesBeforeLossAbove",
+)
+GRID = 0.25  # seconds; the stored samples reproduce the model on this grid within the generator's tolerance
+
+
+def _resample(t: list, values: list) -> list:
+    """Linear interpolation of a stored channel on a regular grid from the first sample."""
+    out, j = [], 0
+    for k in range(int(round((t[-1] - t[0]) / GRID)) + 1):
+        x = t[0] + k * GRID
+        while j + 2 < len(t) and t[j + 1] <= x:
+            j += 1
+        span = t[j + 1] - t[j]
+        f = min(1.0, max(0.0, (x - t[j]) / span))
+        out.append(values[j] + (values[j + 1] - values[j]) * f)
+    return out
+
+
+def _running_median(values: list, half: int = 6) -> list:
+    """Median over ±1.5 s: removes cough spikes but keeps detrusor and rectal waves."""
+    out = []
+    for k in range(len(values)):
+        window = sorted(values[max(0, k - half):k + half + 1])
+        out.append(window[len(window) // 2])
+    return out
+
+
+def _waves(raw: list, smooth: list, rise: float, start: int, stop: int) -> list:
+    """Waves between grid indices start and stop: the smoothed signal more than `rise` above the lowest level of
+    the preceding 40 s for at least 4 s. Onset is where it left that level (within 1 cmH2O); the wave lasts while
+    it stays more than 2 cmH2O above it; top is the highest raw sample."""
+    back, waves, k = int(40 / GRID), [], start
+    while k < stop:
+        level = min(smooth[max(start, k - back):k + 1])
+        if smooth[k] - level <= rise:
+            k += 1
+            continue
+        j = k
+        while j < stop and smooth[j] - level > rise:
+            j += 1
+        if (j - k) * GRID < 4:
+            k = j
+            continue
+        onset = k
+        while onset > start and smooth[onset - 1] - level > 1.0:
+            onset -= 1
+        end = j
+        while end < stop and smooth[end] - level > 2.0:
+            end += 1
+        above = [m for m in range(onset, end) if smooth[m] - level > 2.0]
+        top = max(range(onset, end), key=lambda m: raw[m])
+        waves.append({"onset": onset, "top": top, "end": end, "level": level, "seconds": (above[-1] - above[0]) * GRID})
+        k = end + 1
+    return waves
+
+
+def check_tracing_readings(tracing: dict, where: str) -> None:
+    """The values a question asks the player to read must be what the curves show.
+
+    Every reading is recomputed from the stored curves by its rule below, and a reading without a rule fails,
+    so a value quoted in a case cannot drift away from the drawing unnoticed."""
+    readings = tracing.get("readings")
+    require(isinstance(readings, dict) and readings, f"{where}.readings: expected the values the questions rely on")
+    unknown = sorted(set(readings) - set(READING_RULES))
+    require(not unknown, f"{where}.readings: no rule recomputes {', '.join(unknown)}")
+    events = tracing.get("events", [])
+    t = tracing["t"]
+    has = lambda *names: all(name in tracing for name in names)  # noqa: E731
+
+    def at(time: float) -> int:
+        return min(range(len(t)), key=lambda k: abs(t[k] - time))
+
+    def times(*kinds: str) -> list:
+        return [e["t"] for e in events if e["type"] in kinds]
+
+    def close(key: str, value: float, tolerance: float, unit: str = "") -> None:
+        require(abs(value - readings[key]) <= tolerance, f"{where}.readings.{key}: the curves show {value:.1f}{unit}")
+
+    pdet = [v - a for v, a in zip(tracing["pves"], tracing["pabd"])] if has("pves", "pabd") else []
+    marks = [at(x) for x in times("qmax")]
+    voids, leaks, coughs = times("void"), times("leak"), times("cough")
+    restarts = times("drain", "recatheterise")
+
+    # Uroflow and pressure-flow values.
+    if "qmax" in readings:
+        require(abs(max(tracing["flow"]) - readings["qmax"]) < 0.05, f"{where}.readings.qmax: the flow curve peaks at {max(tracing['flow'])}")
+        if marks:
+            require(any(abs(tracing["flow"][k] - readings["qmax"]) < 0.05 for k in marks), f"{where}: the Qmax marker is not at the maximum flow")
+    for key, values, tolerance in (("pdetQmax", pdet, 0.5), ("pvesQmax", tracing.get("pves"), 1.0), ("pabdQmax", tracing.get("pabd"), 1.0)):
+        if key in readings:
+            require(marks and values, f"{where}.readings.{key}: needs a Qmax marker and pressures")
+            if key == "pdetQmax":
+                require(abs(values[marks[-1]] - readings[key]) < tolerance, f"{where}.readings.pdetQmax: Pdet at the Qmax marker is {values[marks[-1]]:.1f}")
+            else:
+                close(key, values[marks[-1]], tolerance, " cmH2O at the Qmax marker")
+    if "capacity" in readings and "vinf" in tracing:
+        require(abs(max(tracing["vinf"]) - readings["capacity"]) <= 1, f"{where}.readings.capacity: the infusion reaches {max(tracing['vinf'])} ml")
+    if "voided" in readings:
+        after = [k for k in range(len(t)) if not voids or t[k] >= voids[-1]]
+        voided = max(tracing["vvoid"][k] for k in after)
+        require(abs(voided - readings["voided"]) <= 1, f"{where}.readings.voided: the last void collects {voided} ml")
+    # Leakage during filling reaches the flowmeter too; the voided volume starts again at permission to void.
+    leaked = readings.get("leaked", 0)
+    if "leaked" in readings:
+        require(voids, f"{where}.readings.leaked: needs a void after the leakage")
+        before = [tracing["vvoid"][k] for k in range(len(t)) if t[k] < voids[-1]]
+        require(abs(max(before) - leaked) <= 1, f"{where}.readings.leaked: the flowmeter collects {max(before)} ml before voiding")
+    if {"capacity", "voided", "residual"} <= set(readings):
+        require(readings["capacity"] - leaked - readings["voided"] == readings["residual"],
+                f"{where}.readings.residual: capacity minus leakage minus voided volume")
+    # Voids: runs of flow that collect at least 20 ml (leakage collects less), in order.
+    runs, k = [], 0
+    flow = tracing.get("flow", [])
+    while k < len(flow):
+        if flow[k] > 0:
+            j = k
+            while j + 1 < len(flow) and flow[j + 1] > 0:
+                j += 1
+            before = tracing["vvoid"][k - 1] if k else 0
+            volume = max(tracing["vvoid"][k:j + 2]) - before
+            if volume >= 20:
+                runs.append({"qmax": max(flow[k:j + 1]), "volume": volume, "seconds": t[j] - t[k]})
+            k = j + 1
+        else:
+            k += 1
+    for number in (1, 2):
+        for key, field, tolerance in ((f"qmax{number}", "qmax", 0.05), (f"voided{number}", "volume", 1)):
+            if key in readings:
+                require(len(runs) >= number, f"{where}.readings.{key}: the tracing has {len(runs)} voids")
+                close(key, runs[number - 1][field], tolerance)
+    if "flowTime" in readings:
+        require(runs, f"{where}.readings.flowTime: no void")
+        close("flowTime", runs[-1]["seconds"], 1.0, " s")
+    for key, kind in (("firstSensation", "fs"), ("firstDesire", "fd"), ("strongDesire", "sd")):
+        if key in readings:
+            found = [tracing["vinf"][at(x)] for x in times(kind)]
+            require(any(abs(v - readings[key]) <= 1 for v in found), f"{where}.readings.{key}: no {kind} marker at {readings[key]} ml")
+    if "leakPointPves" in readings:
+        found = [tracing["pves"][at(x)] for x in leaks]
+        require(any(abs(v - readings["leakPointPves"]) < 0.5 for v in found), f"{where}.readings.leakPointPves: no leakage marker at that Pves")
+    if not pdet:
+        return
+
+    # Storage: pressures and volumes on a regular grid; waves are found on the smoothed curves.
+    t0 = t[0]
+    grid_pves, grid_pabd = _resample(t, tracing["pves"]), _resample(t, tracing["pabd"])
+    grid_pdet = [v - a for v, a in zip(grid_pves, grid_pabd)]
+    grid_vinf = _resample(t, tracing["vinf"])
+    smooth_pdet, smooth_pabd = _running_median(grid_pdet), _running_median(grid_pabd)
+    g = lambda time: max(0, min(len(grid_pdet) - 1, int(round((time - t0) / GRID))))  # noqa: E731
+    first_end = min(voids + restarts) if voids + restarts else t[-1]
+    start_pdet = sorted(grid_pdet[:g(t0 + 30) + 1])[len(grid_pdet[:g(t0 + 30) + 1]) // 2]
+    if "pdetStart" in readings:
+        close("pdetStart", start_pdet, 0.5, " cmH2O")
+    if "pdetEnd" in readings:
+        require(voids, f"{where}.readings.pdetEnd: needs a void marker")
+        close("pdetEnd", pdet[at(voids[0])], 0.5, " cmH2O")
+    if "compliance" in readings:
+        end_point = leaks[0] if leaks and leaks[0] < first_end else first_end
+        delta_v = tracing["vinf"][at(end_point)] - grid_vinf[0]
+        computed = delta_v / (pdet[at(end_point)] - start_pdet)
+        require(abs(computed - readings["compliance"]) <= 0.04 * computed, f"{where}.readings.compliance: ΔV/ΔPdet is {computed:.2f} ml/cmH2O")
+    if "leakPdet" in readings:
+        found = [pdet[at(x)] for x in leaks]
+        require(any(abs(v - readings["leakPdet"]) <= 1 for v in found), f"{where}.readings.leakPdet: no leakage marker at Pdet {readings['leakPdet']}")
+    if "leakVolume" in readings:
+        require(leaks, f"{where}.readings.leakVolume: no leakage marker")
+        close("leakVolume", tracing["vinf"][at(leaks[0])], 2, " ml")
+    if "maxPdet" in readings:
+        close("maxPdet", max(pdet), 1, " cmH2O")
+    if {"volumeAtPdet40", "secondFillRate"} & set(readings):
+        require(restarts, f"{where}.readings: a second filling needs a drain or recatheterisation marker")
+        begin = g(restarts[-1])
+        if "volumeAtPdet40" in readings:
+            reached = next((k for k in range(begin, len(smooth_pdet)) if smooth_pdet[k] >= 39.5), None)
+            require(reached is not None, f"{where}.readings.volumeAtPdet40: Pdet never reaches 40 cmH2O")
+            close("volumeAtPdet40", grid_vinf[reached], 5, " ml")
+        if "secondFillRate" in readings:
+            after = [k for k in range(len(t)) if t[k] >= restarts[-1]]
+            empty = max(k for k in after if tracing["vinf"][k] == 0)
+            full = min(k for k in after if tracing["vinf"][k] == max(tracing["vinf"][m] for m in after))
+            close("secondFillRate", tracing["vinf"][full] / (t[full] - t[empty]) * 60, 0.5, " ml/min")
+
+    # Detrusor overactivity during the first filling.
+    waves = _waves(grid_pdet, smooth_pdet, 6.0, 0, g(first_end))
+    if "overactivityFrom" in readings:
+        require(waves, f"{where}.readings.overactivityFrom: no detrusor wave")
+        close("overactivityFrom", grid_vinf[waves[0]["onset"]], 8, " ml")
+    if "overactivityMax" in readings:
+        require(waves, f"{where}.readings.overactivityMax: no detrusor wave")
+        close("overactivityMax", max(grid_pdet[w["top"]] for w in waves), 1.5, " cmH2O")
+    for key, values, tolerance in (("contractionOnsets", [grid_vinf[w["onset"]] for w in waves], 8),
+                                   ("contractionPeaks", [grid_pdet[w["top"]] for w in waves], 1.5)):
+        if key in readings:
+            stated = readings[key]
+            require(isinstance(stated, list) and len(stated) == len(values), f"{where}.readings.{key}: the curves show {len(values)} detrusor waves")
+            for index, (value, expected) in enumerate(zip(values, stated)):
+                require(abs(value - expected) <= tolerance, f"{where}.readings.{key}[{index}]: the curves show {value:.1f}")
+    if "waveSeconds" in readings:
+        require(waves, f"{where}.readings.waveSeconds: no detrusor wave")
+        close("waveSeconds", waves[0]["seconds"], 4, " s")
+    if "overactivityLeak" in readings:
+        inside = [x for x in leaks if any(t0 + w["onset"] * GRID <= x <= t0 + w["end"] * GRID for w in waves)]
+        require(inside, f"{where}.readings.overactivityLeak: no leakage marker during a detrusor wave")
+        close("overactivityLeak", tracing["vinf"][at(inside[0])], 6, " ml")
+    if "coughLeakFrom" in readings:
+        with_cough = [x for x in leaks if any(0 <= x - c <= 2 for c in coughs)]
+        require(with_cough, f"{where}.readings.coughLeakFrom: no leakage marker with a cough")
+        close("coughLeakFrom", tracing["vinf"][at(with_cough[0])], 2, " ml")
+
+    # Quality control: resting values, cough transmission and rectal contractions.
+    for key, values in (("baselinePves", grid_pves), ("baselinePabd", grid_pabd)):
+        if key in readings:
+            close(key, sorted(values[:g(t0 + 5) + 1])[len(values[:g(t0 + 5) + 1]) // 2], 1, " cmH2O")
+    for key, name in (("coughPves", "pves"), ("coughPabd", "pabd")):
+        if key in readings:
+            require(coughs, f"{where}.readings.{key}: no cough marker")
+            last = coughs[-1]
+            peak = max(tracing[name][k] for k in range(len(t)) if last - 0.5 <= t[k] <= last + 3)
+            close(key, peak - tracing[name][at(last - 0.75)], 1, " cmH2O rise with the last cough")
+    if {"rectalWaves", "rectalFrom", "rectalRise"} & set(readings):
+        # Pabd alone rises (Pdet falls by about as much); straining and coughs raise both lines.
+        rectal = [w for w in _waves(grid_pabd, smooth_pabd, 5.0, 0, len(grid_pabd))
+                  if smooth_pdet[w["top"]] - smooth_pdet[w["onset"]] < -0.7 * (smooth_pabd[w["top"]] - w["level"])]
+        if "rectalWaves" in readings:
+            require(len(rectal) == readings["rectalWaves"], f"{where}.readings.rectalWaves: the curves show {len(rectal)} rectal contractions")
+        if "rectalFrom" in readings:
+            require(rectal, f"{where}.readings.rectalFrom: no rectal contraction")
+            close("rectalFrom", grid_vinf[rectal[0]["onset"]], 8, " ml")
+        if "rectalRise" in readings:
+            for w in rectal:
+                close("rectalRise", smooth_pabd[w["top"]] - w["level"], 1.5, " cmH2O")
+
+    # Voiding without the detrusor, and an expelled catheter.
+    if {"pvesVoidMax", "pdetVoidBelow"} & set(readings):
+        require(voids and flow, f"{where}.readings: needs a void with flow")
+        last_flow = max(k for k in range(len(t)) if flow[k] > 0)
+        phase = [k for k in range(len(t)) if voids[-1] <= t[k] <= t[last_flow]]
+        if "pvesVoidMax" in readings:
+            close("pvesVoidMax", max(tracing["pves"][k] for k in phase), 1, " cmH2O")
+        if "pdetVoidBelow" in readings:
+            highest = max(pdet[k] for k in phase)
+            require(highest < readings["pdetVoidBelow"], f"{where}.readings.pdetVoidBelow: Pdet reaches {highest:.1f} cmH2O while voiding")
+    if "pvesBeforeLossAbove" in readings:
+        lost = next((k for k in range(len(t)) if tracing["pves"][k] < 0), None)
+        require(lost is not None, f"{where}.readings.pvesBeforeLossAbove: Pves never falls below zero")
+        highest = max(tracing["pves"][k] for k in range(len(t)) if t[lost] - 6 <= t[k] < t[lost])
+        require(highest > readings["pvesBeforeLossAbove"], f"{where}.readings.pvesBeforeLossAbove: Pves reaches only {highest:.1f} before it falls")
+
+
 def load_classifications(root: Path, cases: list, references: list, schemas: list) -> list:
     """Edition-labelled tables are sourced content, validated like the question bank."""
     path = Path(root) / "data/classifications.json"
@@ -915,6 +1253,7 @@ def build(root: Path = ROOT) -> dict:
     history_cases = [case for case in all_cases if case.get("archived")]
     schemas, links, media = load_visuals(root, cases)
     attach_hints(root, cases)
+    tracings = load_tracings(root, cases)
     protocols, radiotherapy = load_regimens(root, cases)
     classifications = load_classifications(root, cases, references, schemas)
     for case in all_cases:
@@ -928,6 +1267,8 @@ def build(root: Path = ROOT) -> dict:
                                                  for item in case["source"]["originalSources"]]
         if case["id"] in media:
             case["media"] = media[case["id"]]
+        if case["id"] in tracings:
+            case["tracing"] = tracings[case["id"]]
     # Historical answers remain reviewable when a supplementary question leaves
     # the active bank. History cases never enter schedules, the library or quizzes.
     archive_path = root / "data" / "archive" / "supplemental-questions.json"
@@ -997,7 +1338,7 @@ def schedule(root: Path, chosen_date: str, seed: str, output: Path, duty: str | 
     chosen = []
     for area in AREA_IDS:
         pool = sorted((case for case in cases if case["area"] == area), key=lambda case: case["id"])
-        require(len(pool) >= 2, f"A balanced 10-case shift needs at least 2 cases in {area}")
+        require(len(pool) >= 2, f"A balanced shift needs at least 2 cases in {area}")
         # Pick two distinct cases while favouring different difficulty levels.
         generator.shuffle(pool)
         first = pool.pop()
@@ -1126,10 +1467,10 @@ def main(argv=None) -> int:
     subcommands.add_parser("build", help="Generate catalog.js and standalone.html")
     serving = subcommands.add_parser("serve", help="Serve the repository on localhost")
     serving.add_argument("--port", type=int, default=8000)
-    shifting = subcommands.add_parser("schedule", help="Create a reproducible, balanced 10-case shift")
+    shifting = subcommands.add_parser("schedule", help="Create a reproducible shift: 10 cases of one duty, or two per department")
     shifting.add_argument("--date", default=date.today().isoformat())
     shifting.add_argument("--seed", default="academy")
-    shifting.add_argument("--duty", choices=DUTIES, help="Draw only this duty's cases (night, board, clinic, elective, dayclinic or radiotherapy)")
+    shifting.add_argument("--duty", choices=DUTIES, help="Draw only this duty's cases (night, board, clinic, elective, dayclinic, radiotherapy or urodynamics)")
     shifting.add_argument("--output", type=Path, default=ROOT / "outputs" / "daily-shift.json")
     packing = subcommands.add_parser("package", help="Build a reproducible ZIP with SHA256 manifest")
     packing.add_argument("--output", type=Path, default=ROOT.parent / "night-shift-academy.zip")
@@ -1143,9 +1484,10 @@ def main(argv=None) -> int:
             schemas, links, media = load_visuals(ROOT, cases)
             hints, (protocols, radiotherapy) = attach_hints(ROOT, cases), load_regimens(ROOT, cases)
             classifications = load_classifications(ROOT, cases, references, schemas)
+            tracings = load_tracings(ROOT, cases)
             steps = sum(len(case["steps"]) for case in cases)
             updated = sum("update" in case for case in cases)
-            print(f"Valid: {len(cases)} cases ({updated} updated), {len(references)} references, {len(schemas)} schemas ({len(links)} linked cases), {sum(map(len, media.values()))} images, attending hints for {hints} of {steps} decisions, {sum(len(e['regimens']) for e in protocols)} protocols, {sum(len(e['regimens']) for e in radiotherapy)} radiotherapy schemes, {len(classifications)} classification guides, 3 languages, 5 areas.")
+            print(f"Valid: {len(cases)} cases ({updated} updated), {len(references)} references, {len(schemas)} schemas ({len(links)} linked cases), {sum(map(len, media.values()))} images, attending hints for {hints} of {steps} decisions, {sum(len(e['regimens']) for e in protocols)} protocols, {sum(len(e['regimens']) for e in radiotherapy)} radiotherapy schemes, {len(classifications)} classification guides, {len(tracings)} urodynamic tracings, 3 languages, {len(AREAS)} areas.")
         elif args.command == "build":
             catalog = build()
             print(f"Built catalog.js and standalone.html with {catalog['questionCount']} questions in {len(catalog['cases'])} cases; {len(catalog['historyCases'])} cases are history-only.")

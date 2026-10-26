@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 LANGS = ('de', 'en', 'es')
 AREAS = ('emergency', 'ward', 'clinic', 'endoscopy', 'theatre')
 # The same duties as scripts/manage.py; a test keeps both lists equal.
-DUTIES = ('night', 'board', 'clinic', 'elective', 'dayclinic', 'radiotherapy')
+DUTIES = ('night', 'board', 'clinic', 'elective', 'dayclinic', 'radiotherapy', 'urodynamics')
 GUIDES = {
     'andrologie': ('Sexual and Reproductive Health', 'sexual-and-reproductive-health'),
     'funktionell': ('Management of Non-neurogenic Male LUTS', 'management-of-non-neurogenic-male-luts'),

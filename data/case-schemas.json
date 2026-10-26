@@ -1814,5 +1814,79 @@
       "rectum",
       "symphysis"
     ]
+  },
+  "udy-normal-study-man": {
+    "schema": "micturition-control",
+    "parts": [
+      "detrusor",
+      "external-sphincter",
+      "pontine-micturition-centre"
+    ]
+  },
+  "udy-normal-study-woman-oab": {
+    "schema": "micturition-control",
+    "parts": [
+      "detrusor",
+      "prefrontal-cortex",
+      "pelvic-nerve"
+    ]
+  },
+  "udy-detrusor-overactivity-incontinence": {
+    "schema": "female-pelvis",
+    "parts": [
+      "bladder",
+      "bladder-neck",
+      "urethra"
+    ]
+  },
+  "udy-urodynamic-stress-incontinence": {
+    "schema": "female-pelvis",
+    "parts": [
+      "urethra",
+      "pubourethral-support",
+      "bladder-neck",
+      "levator-ani"
+    ]
+  },
+  "udy-mixed-incontinence": {
+    "schema": "female-pelvis",
+    "parts": [
+      "bladder",
+      "urethra",
+      "pubourethral-support"
+    ]
+  },
+  "udy-neurogenic-overactivity-dsd": {
+    "schema": "micturition-control",
+    "parts": [
+      "spinal-lesion",
+      "pontine-micturition-centre",
+      "external-sphincter",
+      "detrusor"
+    ]
+  },
+  "udy-acontractile-detrusor-straining": {
+    "schema": "micturition-control",
+    "parts": [
+      "detrusor",
+      "pelvic-nerve",
+      "sacral-parasympathetic-nucleus"
+    ]
+  },
+  "udy-plateau-flow-stricture": {
+    "schema": "male-urethra-penis",
+    "parts": [
+      "bulbar-urethra",
+      "corpus-spongiosum",
+      "penile-urethra"
+    ]
+  },
+  "udy-catheter-loss-repeat": {
+    "schema": "prostate-sagittal",
+    "parts": [
+      "prostatic-urethra",
+      "transition-zone",
+      "bladder-neck"
+    ]
   }
 }

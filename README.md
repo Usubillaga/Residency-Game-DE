@@ -6,9 +6,9 @@
 
 > **Residency-Game-DE – Rollenspiel als Assistenzärztin oder Assistenzarzt der Urologie.** Öffne `standalone.html` im Browser, wähle **DE** und tritt deinen ersten Nachtdienst an.
 
-A cartoon hospital comedy and urology decision game in **English, German and Spanish**, with **661 scored questions in 543 playable cases**: 30 original three-decision stories (90 questions), 20 oncology stories (58 questions), all 267 imported main-bank questions, 106 supplementary clinical questions (protocols, drug side effects, continence, priapism, radiotherapy and guideline topics), **30 new questions on emergencies, oncology and drugs**, **30 TNM/trauma cases**, **50 urological anatomy questions** and **10 urodynamics cases (30 questions)**. Choose an avatar, meet the cast, navigate illustrated departments, collect coffee quips and face the chief's morning-report quiz.
+A cartoon hospital comedy and urology decision game in **English, German and Spanish**, with **688 scored questions in 552 playable cases**: 30 original three-decision stories (90 questions), 20 oncology stories (58 questions), all 267 imported main-bank questions, 106 supplementary clinical questions (protocols, drug side effects, continence, priapism, radiotherapy and guideline topics), **30 new questions on emergencies, oncology and drugs**, **30 TNM/trauma cases**, **50 urological anatomy questions** and **19 urodynamics cases (57 questions)** in the new **urodynamics lab with interactive tracings**. Choose an avatar, meet the cast, navigate illustrated departments, collect coffee quips and face the chief's morning-report quiz.
 
-All 267 imported source questions remain present, with their original snapshots and the existing correction layer. The 30 original stories and 20 oncology stories remain present. It covers **16 source specialties** across five game departments. The supplied classic HTML games remain unchanged in `classic/`.
+All 267 imported source questions remain present, with their original snapshots and the existing correction layer. The 30 original stories and 20 oncology stories remain present. It covers **16 source specialties** across six game departments. The supplied classic HTML games remain unchanged in `classic/`.
 
 ![Introduction preview](docs/preview.jpg)
 
@@ -22,9 +22,17 @@ Every question has a separate **🚩 Mark for improvement / Zur Verbesserung mar
 
 On **Progress**, select **Export marked questions**. The JSON file includes exact question IDs, comments, complete trilingual case snapshots, answer explanations and linked classification/source metadata. It excludes the player profile, logbook and active session. **Attach this JSON in the ChatGPT chat** to request question improvements; nothing is sent automatically.
 
+## Urodynamics lab (26 October 2026)
+
+A sixth department, the **urodynamics lab (*Urodynamik-Labor*, *Laboratorio de urodinámica*)**, has its own room, door, icon and day duty (📈, from 09:00). Its 19 cases show the measurement itself: an **interactive tracing** with the ICS channels Pves, Pabd, Pdet, flow, infused and voided volume and pelvic floor EMG, markers for coughs, sensations, urgency, leakage, permission to void, Qmax and more, and section buttons (whole study, filling, voiding, cough test…). Tapping, dragging or the arrow keys move a cursor that reads every channel at that moment, so PdetQmax, Qmax, compliance, leak point pressure or a damped cough are read off the curve rather than from the text. The decisions that read the curve open on the matching section; the findings of a decision (numbered spans and points with a short explanation) appear only after it has been answered, and the debrief, the logbook review and the chief's quiz show the tracing too.
+
+- **Pathologies to read, including normal results:** a normal study in a man (unobstructed, normal contractility), a normal study in a woman with overactive bladder symptoms but no detrusor overactivity, idiopathic detrusor overactivity incontinence, urodynamic stress incontinence with a leak point pressure, mixed incontinence, neurogenic detrusor overactivity with detrusor–sphincter dyssynergia and autonomic dysreflexia, an acontractile detrusor voiding by straining, a plateau uroflow in urethral stricture and an expelled vesical catheter with a valid repeat study. The ten existing urodynamics cases moved into the lab; their curve-reading decisions now ask for values from the tracing, and one distractor stands for the commonest reading error (Pves instead of Pdet).
+- **Synthetic, checked curves:** `scripts/urodynamic_traces.py` draws the tracings from a small deterministic model that follows ICS conventions (Pdet = Pves − Pabd, coughs reaching both lines, Pdet = Popen + R·Q² during flow, leakage counted by the flowmeter). They are teaching drawings, not patient recordings. Every value a case quotes from its curve is listed under `readings` in `data/urodynamic-tracings.json`, and `manage.py validate` recomputes each one from the curves, from Qmax, PdetQmax and the residual to the onsets and peaks of detrusor waves, compliance, cough transmission, rectal contractions and flow time; a reading without a rule fails. `--check` confirms that the file matches its generator.
+- **Sources:** the nine new cases were checked on 26 October 2026 against EAU 2026 (female LUTS, male LUTS, neuro-urology, urethral strictures), ICS Good Urodynamic Practices 2016, the ICS terminology on bladder sensation and two sources on autonomic dysreflexia; `data/refs-urodynamics.json` now holds 33 references. No clinical sign-off is implied: the lab cases await independent specialist review in every language.
+
 ## Urodynamics section (20 October 2026)
 
-The library's specialty filter now offers **Urodynamics / Urodynamik / Urodinámica**: 10 new cases on the clinic duty (eight in the Clinic and two in the Endoscopy department) with 30 scored decisions in EN/DE/ES, each with an attending hint for every decision, primary sources (`data/refs-urodynamics.json`) and a linked teaching schema with highlighted structures. Topics: pressure-flow indices (BOOI/BCI) before HoLEP, detrusor hyperactivity with impaired contractility in an older man, primary bladder neck obstruction on video-urodynamics, multiple system atrophy before TURP, female obstruction after a midurethral sling, Fowler's syndrome and sacral neuromodulation, occult stress incontinence on prolapse reduction (OPUS), low compliance and the physiological filling rate after spinal cord injury, paediatric dysfunctional voiding, and artefacts (rectal contractions, damped cough transmission). The same ten cases form the new **Urodynamik** section of the Urofragen question bank (`uro-udy-00001` to `uro-udy-00010`).
+The library's specialty filter now offers **Urodynamics / Urodynamik / Urodinámica**: 10 new cases on the clinic duty (eight in the Clinic and two in the Endoscopy department; since 26 October 2026 in the urodynamics lab) with 30 scored decisions in EN/DE/ES, each with an attending hint for every decision, primary sources (`data/refs-urodynamics.json`) and a linked teaching schema with highlighted structures. Topics: pressure-flow indices (BOOI/BCI) before HoLEP, detrusor hyperactivity with impaired contractility in an older man, primary bladder neck obstruction on video-urodynamics, multiple system atrophy before TURP, female obstruction after a midurethral sling, Fowler's syndrome and sacral neuromodulation, occult stress incontinence on prolapse reduction (OPUS), low compliance and the physiological filling rate after spinal cord injury, paediatric dysfunctional voiding, and artefacts (rectal contractions, damped cough transmission). The same ten cases form the new **Urodynamik** section of the Urofragen question bank (`uro-udy-00001` to `uro-udy-00010`).
 
 Facts, numbers and recommendation strengths were checked against the EAU 2026 guidelines, ICS and ICCS documents and the original trials on 20 October 2026; an independent AI review followed, and its findings were re-checked against the primary sources and incorporated on 24 October 2026. Dangerous choices are marked as safety errors, and every correct answer passes the length rule. `data/question-contract.json` now fixes the 30 urodynamics decisions as well. No clinical sign-off is implied: the new cases await independent specialist review in every language.
 
@@ -44,13 +52,13 @@ Open `standalone.html`, choose **English**, meet the cast and start a shift. Sto
 
 ### Deutsch – Schnellstart
 
-Öffne `standalone.html`, wähle **Deutsch** und starte eine Schicht. Die aktive Bank enthält **661 bewertete Fragen in 543 Fällen**: 30 ursprüngliche Geschichten mit 90 Entscheidungen, 20 Onkologie-Geschichten mit 58 Entscheidungen, sämtliche 267 importierten Fragen, 106 klinische Zusatzfragen (Protokolle, Nebenwirkungen, Inkontinenz, Priapismus, Strahlentherapie und Leitlinienthemen), **30 neue Fragen zu Notfällen, Onkologie und Medikamenten**, **30 TNM-/Traumafälle**, **50 urologische Anatomiefragen** und **10 Urodynamik-Fälle mit 30 Entscheidungen** (Fachgebiet *Urodynamik*). Alle 50 Anatomiefragen sind mit einem Eingriff (31) oder klinischen Fall (19) verbunden, etwa PCNL, HoLEP, Prostatektomie oder Hodentorsion. In der Bibliothek kannst du das Fachgebiet *Urologische Anatomie* auswählen. Entscheide selbst; Erklärungen und markierte Zeichnungen erscheinen nach der Antwort. Janas Joker bleibt auf ausdrücklichen Wunsch verfügbar. Cartoonstil, Dialoge, Kaffeepausen und Abschlussquiz bleiben erhalten. Speichere deinen Spielstand als Datei, um später oder auf einem anderen Gerät weiterzuspielen.
+Öffne `standalone.html`, wähle **Deutsch** und starte eine Schicht. Die aktive Bank enthält **688 bewertete Fragen in 552 Fällen**: 30 ursprüngliche Geschichten mit 90 Entscheidungen, 20 Onkologie-Geschichten mit 58 Entscheidungen, sämtliche 267 importierten Fragen, 106 klinische Zusatzfragen (Protokolle, Nebenwirkungen, Inkontinenz, Priapismus, Strahlentherapie und Leitlinienthemen), **30 neue Fragen zu Notfällen, Onkologie und Medikamenten**, **30 TNM-/Traumafälle**, **50 urologische Anatomiefragen** und **19 Urodynamik-Fälle mit 57 Entscheidungen** im neuen **Urodynamik-Labor**: Dort liest du interaktive Messkurven selbst ab – vom Normalbefund über Überaktivität, Belastungs- und Mischinkontinenz, Obstruktion und neurogene Blase bis zu Artefakten. Alle 50 Anatomiefragen sind mit einem Eingriff (31) oder klinischen Fall (19) verbunden, etwa PCNL, HoLEP, Prostatektomie oder Hodentorsion. In der Bibliothek kannst du das Fachgebiet *Urologische Anatomie* auswählen. Entscheide selbst; Erklärungen und markierte Zeichnungen erscheinen nach der Antwort. Janas Joker bleibt auf ausdrücklichen Wunsch verfügbar. Cartoonstil, Dialoge, Kaffeepausen und Abschlussquiz bleiben erhalten. Speichere deinen Spielstand als Datei, um später oder auf einem anderen Gerät weiterzuspielen.
 
 **Neu in diesem Update:** Nach jeder Antwort siehst du, welche Option richtig war und warum. „Alle Antworten erklärt“ begründet jede Option. Janas Joker streicht eine falsche Antwort. Richtige Serien bringen Sprüche und Konfetti. Eine Karriereleiter führt von Famulant:in bis zur Legende des Nachtdienstes, und ein Sticker-Album macht Fortschritt sichtbar. *Revanche* wiederholt deine Fehler, *Fachgebiete* zeigen deine Schwachstellen mit Trainingsknopf, und die *Blitzrunde* bietet fünf schnelle Fragen. Tastatur: A–E oder 1–5 wählt, Enter geht weiter.
 
 ### Español – Inicio rápido
 
-Abre `standalone.html`, elige **Español** e inicia una guardia. Hay **661 preguntas puntuables en 543 casos**: 30 historias originales con 90 decisiones, 20 historias oncológicas con 58 decisiones, las 267 preguntas importadas, 106 preguntas clínicas complementarias (protocolos, efectos adversos, incontinencia, priapismo, radioterapia y temas de guías), **30 preguntas nuevas sobre urgencias, oncología y fármacos**, **30 casos de TNM/trauma**, **50 preguntas de anatomía urológica** y **10 casos de urodinámica con 30 decisiones** (especialidad *Urodinámica*). Las 50 preguntas anatómicas tienen contexto quirúrgico (31) o clínico (19). Filtra por *Anatomía urológica*, decide por ti mismo y consulta después las explicaciones y los dibujos. El comodín de enfermería sigue disponible si lo pides. Se conservan los dibujos, el humor y las pausas de café. Guarda tu partida para continuar más tarde o en otro dispositivo.
+Abre `standalone.html`, elige **Español** e inicia una guardia. Hay **688 preguntas puntuables en 552 casos**: 30 historias originales con 90 decisiones, 20 historias oncológicas con 58 decisiones, las 267 preguntas importadas, 106 preguntas clínicas complementarias (protocolos, efectos adversos, incontinencia, priapismo, radioterapia y temas de guías), **30 preguntas nuevas sobre urgencias, oncología y fármacos**, **30 casos de TNM/trauma**, **50 preguntas de anatomía urológica** y **19 casos de urodinámica con 57 decisiones** en el nuevo **laboratorio de urodinámica**, donde lees tú mismo trazados interactivos: del estudio normal a la hiperactividad, la incontinencia de esfuerzo y mixta, la obstrucción, la vejiga neurógena y los artefactos. Las 50 preguntas anatómicas tienen contexto quirúrgico (31) o clínico (19). Filtra por *Anatomía urológica*, decide por ti mismo y consulta después las explicaciones y los dibujos. El comodín de enfermería sigue disponible si lo pides. Se conservan los dibujos, el humor y las pausas de café. Guarda tu partida para continuar más tarde o en otro dispositivo.
 
 ## Case library
 
@@ -58,12 +66,13 @@ Abre `standalone.html`, elige **Español** e inicia una guardia. Hay **661 pregu
 | --- | ---: | ---: | ---: | ---: |
 | Emergency | 27 | 26 | 53 | 69 |
 | Ward | 21 | 23 | 44 | 56 |
-| Clinic | 170 | 133 | 303 | 361 |
-| Endoscopy | 19 | 22 | 41 | 61 |
+| Clinic | 162 | 133 | 295 | 337 |
+| Endoscopy | 17 | 22 | 39 | 55 |
 | Theatre | 39 | 63 | 102 | 114 |
-| **All departments** | **276** | **267** | **543** | **661** |
+| Urodynamics lab | 19 | 0 | 19 | 57 |
+| **All departments** | **285** | **267** | **552** | **688** |
 
-The active bank contains **661 scored decisions and 2,659 answer options**. One decision step counts as one question; a three-step story counts as three. The chief's quiz repeats bank questions, and atlas taps are separate game mechanics, so neither adds to the total. `data/question-contract.json` enforces the count at validation and build time and rejects exact duplicate question content in each language.
+The active bank contains **688 scored decisions and 2,767 answer options**. One decision step counts as one question; a three-step story counts as three. The chief's quiz repeats bank questions, and atlas taps are separate game mechanics, so neither adds to the total. `data/question-contract.json` enforces the count at validation and build time and rejects exact duplicate question content in each language.
 
 **No question is archived.** The 101 supplementary questions that a previous version archived to keep the bank at exactly 500 (protocols, drug side effects, continence, priapism, radiotherapy and guideline topics) are playable again, with their attending hints, drawings and *Practise questions* links on the protocol page. The archive mechanism remains: a question moved to `data/archive/supplemental-questions.json` keeps its completed logbook entries, XP, bookmarks and explanations reviewable, but no longer enters the library, schedules, rematches or protocol practice. **The correct answer no longer stands out by its length** in any question written for the game; a test enforces this (see [docs/VALIDATION.md](docs/VALIDATION.md)).
 
@@ -81,10 +90,11 @@ A session no longer mixes every department. You choose a **duty**, and the sessi
 | --- | ---: | ---: | --- |
 | 🌙 Night shift (*Nachtdienst*) | 22:00 | 77 | Emergencies only: colic and obstructed or infected kidneys, retention, bleeding and clot retention, trauma, torsion, priapism, Fournier, acute infections, acute ward complications and emergency or consult surgery |
 | 🎗️ Tumour board (*Tumorboard*) | Wed 15:30 | 115 | Oncological staging and treatment decisions, systemic and salvage therapy, metastatic disease, residual tumour |
-| 🩺 Clinic (*Sprechstunde*) | 08:00 | 178 | Outpatient work-up, counselling and follow-up, including cancer follow-up, andrology, functional urology and urodynamics, stone metaphylaxis and elective paediatric urology |
+| 🩺 Clinic (*Sprechstunde*) | 08:00 | 168 | Outpatient work-up, counselling and follow-up, including cancer follow-up, andrology, functional urology, stone metaphylaxis and elective paediatric urology |
 | ✂️ Elective list (*OP-Programm*) | 07:30 | 100 | Planned operations and endoscopy: technique, anatomy, intraoperative findings and perioperative routine |
 | 💉 Oncology day clinic (*Onkologische Tagesklinik*) | 08:30 | 46 | Therapy protocols: doses, caps, renal thresholds, cycles, mandatory support and maintenance, plus drug toxicities of systemic cancer therapy |
 | ☢️ Radiation oncology (*Radioonkologie*) | 08:15 | 27 | Fractionation, ADT with radiotherapy, salvage after prostatectomy, trimodal bladder preservation, seminoma, palliative and stereotactic radiotherapy |
+| 📈 Urodynamics lab (*Urodynamik-Labor*) | 09:00 | 19 | Reading interactive tracings: normal studies, overactivity, stress and mixed incontinence, obstruction and contractility, neurogenic bladder with dysreflexia, uroflow patterns and artefacts |
 
 Each duty has its own briefing from the cast, whiteboard label and daylight or night window; the attending stays awake in the daytime. The tumour board meets in a conference room where the session's cases lie on the table as folders. The library filters by duty, every case card shows its duty, and the progress page reports performance by duty. Practice sessions started from the library, rematch or quick round take the duty of their cases, or a mixed rotation if the cases differ.
 
@@ -105,7 +115,7 @@ Every case's duty is stored as `duty` in `data/*.json`; imported questions take 
 
 ## Schemas, anatomy atlas and own images
 
-- **Teaching schemas:** 22 cartoon schematic drawings made for this game (`data/schemas.json`) with 226 tappable structures, from the urinary tract overview, kidney envelopes, prostate zones and bladder-wall T stages to urinary diversion, micturition control, the retroperitoneal lymph-node landing zones and VUR grades. 242 of the 533 active cases link to one; questions about drugs, laboratory values, counselling or guidelines deliberately have none. After the last decision of a case, the explanation shows the matching schema with the case's key structures glowing (★). Every structure is tappable and shows its name and one key fact. The debrief and the logbook review show it too. The links between cases and schemas are in `data/case-schemas.json`.
+- **Teaching schemas:** 22 cartoon schematic drawings made for this game (`data/schemas.json`) with 226 tappable structures, from the urinary tract overview, kidney envelopes, prostate zones and bladder-wall T stages to urinary diversion, micturition control, the retroperitoneal lymph-node landing zones and VUR grades. 261 of the 552 active cases link to one; questions about drugs, laboratory values, counselling or guidelines deliberately have none. After the last decision of a case, the explanation shows the matching schema with the case's key structures glowing (★). Every structure is tappable and shows its name and one key fact. The debrief and the logbook review show it too. The links between cases and schemas are in `data/case-schemas.json`.
 - **Illustrated TNM/trauma lessons:** all 14 guides have original organ sections, 135 selectable stage/injury findings, numbered labels, boundary explanations and mobile enlargement. cT/pT and cN/pN stay separate. Complete edition-labelled tables and the 30 cases remain accessible. See [the lesson review](docs/ILLUSTRATED_CLASSIFICATIONS.md).
 - **Anatomy atlas:** a new *Atlas* page lists all schemas. *Find the structure* is a five-round tap quiz on a schema. A right tap gives confetti, a wrong one the splash, and 5 of 5 earns the *Anatomy ace* sticker. Quiz results never change case scores.
 - **Own images:** put licensed PNG, JPEG or WebP files in `media/` and list them in `data/case-media.json`, with alt text and caption in EN/DE/ES, `credit` and `license`. The build embeds them and refuses a file without credit or licence, a file outside `media/` or an SVG. See [media/README.md](media/README.md). Do not add identifiable patient images.
@@ -179,10 +189,11 @@ Use **Python 3.10 or newer**. The tools use the standard library, with no packag
 
 | Task | Command | Result |
 | --- | --- | --- |
-| Validate | `python scripts/manage.py validate` | Checks the question contract (661, including 30 urodynamics decisions), languages, answer markers, provenance, references, archived cases and local assets |
+| Validate | `python scripts/manage.py validate` | Checks the question contract (688, including 57 urodynamics decisions), languages, answer markers, provenance, references, archived cases, the readings of every urodynamic tracing and local assets |
 | Build | `python scripts/manage.py build` | Recreates `assets/catalog.js` and `standalone.html` |
 | Serve locally | `python scripts/manage.py serve --port 8000` | Opens a local-only service at `http://127.0.0.1:8000/`; stop with Ctrl+C |
-| Daily shift | `python scripts/manage.py schedule --date 2026-10-05 --seed team-a --duty night` | Creates 10 distinct cases of one duty (`night`, `board`, `clinic`, `elective`, `dayclinic` or `radiotherapy`), rotating through topics, in `outputs/daily-shift.json`; without `--duty`, two per department as before |
+| Daily shift | `python scripts/manage.py schedule --date 2026-10-05 --seed team-a --duty night` | Creates 10 distinct cases of one duty (`night`, `board`, `clinic`, `elective`, `dayclinic`, `radiotherapy` or `urodynamics`), rotating through topics, in `outputs/daily-shift.json`; without `--duty`, two per department (twelve) |
+| Tracings | `python scripts/urodynamic_traces.py` (`--check`) | Redraws `data/urodynamic-tracings.json` from the generator, or checks that the file is up to date |
 | Analyse progress | `python scripts/manage.py analyse session-export.json --output outputs/progress.csv` | Writes one CSV row per decision, preserving repeated attempts |
 | Package | `python scripts/manage.py package --output dist/night-shift-academy.zip` | Rebuilds and creates a ZIP with fixed timestamps and a SHA-256 file manifest |
 | Python checks | `python -m unittest discover -s tests -v` | Runs the automation and import regression suite |
@@ -208,13 +219,16 @@ assets/i18n.js              EN/DE/ES interface text
 assets/banter.js             Translated dialogue and quips
 assets/art.js                Original-style character and department artwork
 assets/engine.js             Game and progress logic
+assets/urodynamics.js        Interactive urodynamic tracings (cursor, sections, findings)
 assets/app.js                Interface, filters and pagination
 assets/catalog.js            Generated case/reference library
 data/emergency.json          53 active emergency cases
 data/ward.json               44 active ward cases
-data/clinic.json             303 active clinic cases
-data/endoscopy.json          41 active endoscopy cases
+data/clinic.json             295 active clinic cases
+data/endoscopy.json          39 active endoscopy cases
 data/theatre.json            102 active theatre cases
+data/urodynamics.json        19 urodynamics lab cases
+data/urodynamic-tracings.json Synthetic tracings and their checked readings (generated)
 data/imported-source.json    Original question snapshot and provenance
 data/import-selection.json   Source-to-case mapping
 data/import-manifest.json    Import counts and hashes
@@ -224,10 +238,11 @@ data/radiotherapy.json       Radiotherapy schemes (protocol page)
 data/attending-hints.json    The attending's hint for every decision
 data/refs-*.json             Reference metadata and related-source links
 data/classifications.json    TNM/trauma guides, source editions and linked cases
-data/question-contract.json  Exact question count (661), anatomy minimum, 30 TNM/trauma and 30 urodynamics questions
+data/question-contract.json  Exact question count (688), anatomy minimum, 30 TNM/trauma and 57 urodynamics questions
 data/archive/               Optional: archived questions kept for old logbook entries (none at present)
 scripts/import_urofragen.py  JSON-only source importer and comparison
 scripts/manage.py            Build, validation, scheduling, analysis and packaging
+scripts/urodynamic_traces.py Deterministic generator of the urodynamic tracings
 tests/                      Regression checks
 .github/workflows/check.yml GitHub checks and ZIP build
 classic/                    Three unchanged supplied games

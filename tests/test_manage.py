@@ -89,8 +89,10 @@ class AutomationTests(unittest.TestCase):
         first = manage.schedule(self.root, "2026-10-05", "a seed", self.root / "outputs" / "one.json")
         second = manage.schedule(self.root, "2026-10-05", "a seed", self.root / "outputs" / "two.json")
         self.assertEqual(first, second)
-        self.assertEqual(len(first["caseIds"]), 10)
-        self.assertEqual(len(set(first["caseIds"])), 10)
+        # A mixed shift takes two cases from every department: twelve since the urodynamics lab opened.
+        self.assertEqual(len(manage.AREA_IDS), 6)
+        self.assertEqual(len(first["caseIds"]), 2 * len(manage.AREA_IDS))
+        self.assertEqual(len(set(first["caseIds"])), 2 * len(manage.AREA_IDS))
         for area in manage.AREA_IDS:
             self.assertEqual(sum(case_id.startswith(area + "-") for case_id in first["caseIds"]), 2)
         self.assertEqual(first["version"], 2)
@@ -127,7 +129,8 @@ class AutomationTests(unittest.TestCase):
             path = self.root / "data" / f"{area}.json"
             cases = manage.read_json(path)
             for index, case in enumerate(cases):
-                case["duty"] = "night" if area in ("emergency", "ward") or index == 0 else "clinic"
+                # The lab's cases keep their own duty; nine night cases remain, fewer than a full shift.
+                case["duty"] = "urodynamics" if area == "urodynamics" else "night" if area in ("emergency", "ward") or index == 0 else "clinic"
             manage.write_json(path, cases)
         first = manage.schedule(self.root, "2026-10-05", "seed", self.root / "outputs" / "night.json", "night")
         second = manage.schedule(self.root, "2026-10-05", "seed", self.root / "outputs" / "again.json", "night")

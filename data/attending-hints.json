@@ -4227,9 +4227,9 @@
       "es": "Pregúntate qué no puede distinguir la flujometría libre cuando el detrusor es potente y a partir de qué Qmax la EAU pide más información antes de operar."
     },
     "classify": {
-      "de": "Rechne beide Indizes: Für die Obstruktion wird der doppelte Fluss vom Druck abgezogen, für die Kontraktilität der fünffache Fluss addiert. Dann die Grenzen 20/40 und 100/150 anlegen.",
-      "en": "Calculate both indices: for obstruction subtract twice the flow from the pressure, for contractility add five times the flow. Then apply the cut-offs 20/40 and 100/150.",
-      "es": "Calcula ambos índices: para la obstrucción resta dos veces el flujo a la presión y para la contractilidad suma cinco veces el flujo. Luego aplica los límites 20/40 y 100/150."
+      "de": "Lies am Qmax-Marker Pdet ab, nicht Pves. Dann beide Indizes: Für die Obstruktion wird der doppelte Fluss vom Druck abgezogen, für die Kontraktilität der fünffache Fluss addiert; zuletzt die Grenzen 20/40 und 100/150 anlegen.",
+      "en": "At the Qmax marker read Pdet, not Pves. Then both indices: for obstruction subtract twice the flow from the pressure, for contractility add five times the flow; finally apply the cut-offs 20/40 and 100/150.",
+      "es": "En la marca de Qmax lee la Pdet, no la Pves. Luego ambos índices: para la obstrucción resta dos veces el flujo a la presión y para la contractilidad suma cinco veces el flujo; por último aplica los límites 20/40 y 100/150."
     },
     "counsel": {
       "de": "Denk an die große randomisierte Studie aus 26 englischen Kliniken: Was änderte sich an der Operationsrate, wenn alle Männer vorher eine Urodynamik bekamen?",
@@ -4388,6 +4388,159 @@
       "de": "Vergleiche die beiden Hustenausschläge als Verhältnis. Welche Leitung überträgt schlecht, und was ist in flüssigkeitsgefüllten Systemen die häufigste Ursache?",
       "en": "Compare the two cough responses as a ratio. Which line transmits poorly, and what is the most common cause in fluid-filled systems?",
       "es": "Compara las dos respuestas a la tos como cociente. ¿Qué línea transmite mal y cuál es la causa más frecuente en los sistemas llenos de líquido?"
+    }
+  },
+  "udy-normal-study-man": {
+    "storage": {
+      "de": "Trenne Detrusor und Bauch: Eine Welle, die nur in Pdet steht, ist Detrusor; eine Spitze, die gleich in Pves und Pabd auftaucht, ist Bauchdruck. Dann Empfindungen und den Pdet-Anstieg über das Volumen prüfen.",
+      "en": "Separate detrusor from abdomen: a wave that shows only in Pdet is detrusor; a spike that appears equally in Pves and Pabd is abdominal pressure. Then check the sensations and the rise in Pdet over the volume.",
+      "es": "Separa detrusor y abdomen: una onda que solo aparece en la Pdet es del detrusor; un pico que aparece igual en Pves y Pabd es presión abdominal. Luego revisa las sensaciones y la subida de la Pdet con el volumen."
+    },
+    "voiding": {
+      "de": "Lies am Qmax-Marker Pdet, nicht Pves, und den Fluss. Dann BOOI (Druck minus doppelter Fluss) und BCI (Druck plus fünffacher Fluss) gegen 20/40 und 100/150 halten.",
+      "en": "At the Qmax marker read Pdet, not Pves, and the flow. Then compare the BOOI (pressure minus twice the flow) and BCI (pressure plus five times the flow) with 20/40 and 100/150.",
+      "es": "En la marca de Qmax lee la Pdet, no la Pves, y el flujo. Después compara el BOOI (presión menos dos veces el flujo) y el BCI (presión más cinco veces el flujo) con 20/40 y 100/150."
+    },
+    "plan": {
+      "de": "Was würde eine Operation hier beheben? Und mit welchem einfachen Instrument klärst du, warum er nachts so oft aufsteht?",
+      "en": "What would surgery fix here? And which simple tool tells you why he gets up so often at night?",
+      "es": "¿Qué corregiría aquí una operación? ¿Y con qué herramienta sencilla averiguas por qué se levanta tantas veces por la noche?"
+    }
+  },
+  "udy-normal-study-woman-oab": {
+    "storage": {
+      "de": "Prüfe jede Spitze: Steht sie gleich in Pves und Pabd, ist es Bauchdruck. Und frag dich, ob eine Messung eine Diagnose widerlegen kann, die über Symptome definiert ist.",
+      "en": "Check every spike: if it appears equally in Pves and Pabd, it is abdominal pressure. And ask yourself whether a measurement can disprove a diagnosis that is defined by symptoms.",
+      "es": "Revisa cada pico: si aparece igual en Pves y Pabd, es presión abdominal. Y pregúntate si una medición puede refutar un diagnóstico que se define por los síntomas."
+    },
+    "voiding": {
+      "de": "Druck und Fluss gehören zusammen: Bei geringem Auslasswiderstand braucht es wenig Druck. Wie effektiv war die Entleerung – Fluss, Volumen, Restharn?",
+      "en": "Pressure and flow belong together: with low outlet resistance little pressure is needed. How effective was emptying – flow, volume, residual?",
+      "es": "Presión y flujo van juntos: con poca resistencia de salida hace falta poca presión. ¿Qué tan eficaz fue el vaciado: flujo, volumen, residuo?"
+    },
+    "plan": {
+      "de": "Was sagt die Leitlinie dazu, ob der urodynamische Nachweis einer Überaktivität das Ergebnis der Toxin-Injektion vorhersagt? Und worüber muss vorher jede Patientin aufgeklärt werden?",
+      "en": "What does the guideline say about whether urodynamic proof of overactivity predicts the result of the toxin injection? And what must every patient be told beforehand?",
+      "es": "¿Qué dice la guía sobre si demostrar la hiperactividad en la urodinámica predice el resultado de la inyección de toxina? ¿Y de qué hay que informar antes a cada paciente?"
+    }
+  },
+  "udy-detrusor-overactivity-incontinence": {
+    "filling": {
+      "de": "Suche die Leckage im Flusskanal und schau, was gleichzeitig in Pdet und Pabd passiert. Kam der Urinverlust mit einem Husten oder mit einer Welle des Detrusors?",
+      "en": "Find the leakage on the flow channel and see what Pdet and Pabd do at the same moment. Did the leakage come with a cough or with a detrusor wave?",
+      "es": "Busca el escape en el canal de flujo y mira qué hacen a la vez la Pdet y la Pabd. ¿El escape llegó con una tos o con una onda del detrusor?"
+    },
+    "voiding": {
+      "de": "Rechne den Restharn: Füllvolumen minus Leckage minus Miktionsvolumen. Was bedeutet eine effektive Entleerung für Medikamente, die die Blasenkontraktion dämpfen?",
+      "en": "Work out the residual: filled volume minus leakage minus voided volume. What does effective emptying mean for drugs that dampen bladder contraction?",
+      "es": "Calcula el residuo: volumen infundido menos escape menos volumen miccional. ¿Qué significa un vaciado eficaz para los fármacos que atenúan la contracción vesical?"
+    },
+    "plan": {
+      "de": "Welche Inkontinenzform hat die Messung gezeigt – und welche behandelt ein Band? Dann die Stufenfolge der Leitlinie für Dranginkontinenz.",
+      "en": "Which type of incontinence did the study show – and which one does a sling treat? Then follow the guideline's sequence for urgency incontinence.",
+      "es": "¿Qué tipo de incontinencia mostró el estudio y cuál trata una cinta? Después sigue el orden de la guía para la incontinencia de urgencia."
+    }
+  },
+  "udy-urodynamic-stress-incontinence": {
+    "leak": {
+      "de": "Schau bei jeder Leckage, was Pdet macht. Treibt der Bauchdruck den Urin heraus oder eine Kontraktion des Detrusors?",
+      "en": "With every leak, look at what Pdet does. Is the urine driven out by abdominal pressure or by a detrusor contraction?",
+      "es": "En cada escape, mira qué hace la Pdet. ¿Expulsa la orina la presión abdominal o una contracción del detrusor?"
+    },
+    "lpp": {
+      "de": "Was sagt die Leitlinie zu Urethradruckprofil und Leak-Point-Druck, wenn es um den Schweregrad geht? Und was gehört nach ICS zu jedem angegebenen Wert dazu?",
+      "en": "What does the guideline say about urethral pressure profilometry and leak point pressure when it comes to severity? And what must accompany every reported value according to the ICS?",
+      "es": "¿Qué dice la guía sobre el perfil de presión uretral y la presión de punto de fuga en cuanto a la gravedad? ¿Y qué debe acompañar, según la ICS, a cada valor informado?"
+    },
+    "plan": {
+      "de": "Prüfe die Miktion auf Restharn und Pressen. Welche operativen Verfahren nennt die Leitlinie – und wer entscheidet am Ende?",
+      "en": "Check the void for residual and straining. Which surgical procedures does the guideline list – and who decides in the end?",
+      "es": "Revisa la micción en busca de residuo y prensa abdominal. ¿Qué técnicas quirúrgicas enumera la guía y quién decide al final?"
+    }
+  },
+  "udy-mixed-incontinence": {
+    "read": {
+      "de": "Geh jede Leckage einzeln durch: Kam sie mit einem Husten, also einer kurzen Spitze in Pves und Pabd, oder mit einer langsamen Welle nur in Pdet?",
+      "en": "Go through each leak separately: did it come with a cough, a brief spike in Pves and Pabd, or with a slow wave in Pdet only?",
+      "es": "Repasa cada escape por separado: ¿llegó con una tos, un pico breve en Pves y Pabd, o con una onda lenta solo en la Pdet?"
+    },
+    "first": {
+      "de": "Welche Komponente stört sie am meisten – und was empfiehlt die Leitlinie allen Frauen mit Mischinkontinenz als erste Therapie?",
+      "en": "Which component bothers her most – and what does the guideline recommend as first therapy for all women with mixed incontinence?",
+      "es": "¿Qué componente le molesta más y qué recomienda la guía como primer tratamiento para todas las mujeres con incontinencia mixta?"
+    },
+    "counsel": {
+      "de": "Was sagt die Leitlinie zur Erfolgsrate einer Operation bei Mischinkontinenz im Vergleich zur reinen Belastungsinkontinenz – und was wird aus dem Drang?",
+      "en": "What does the guideline say about the success of surgery in mixed compared with pure stress incontinence – and what happens to the urgency?",
+      "es": "¿Qué dice la guía sobre el éxito de la cirugía en la incontinencia mixta frente a la de esfuerzo pura, y qué pasa con la urgencia?"
+    }
+  },
+  "udy-neurogenic-overactivity-dsd": {
+    "read": {
+      "de": "Schau, was das EMG während der Kontraktion macht: Bei normaler Miktion verstummt der Beckenboden. Und läuft der Urin gleichmäßig oder in Stößen?",
+      "en": "See what the EMG does during the contraction: in normal voiding the pelvic floor falls silent. And does the urine flow steadily or in spurts?",
+      "es": "Mira qué hace el EMG durante la contracción: en una micción normal el suelo pélvico se silencia. ¿Y la orina sale de forma continua o a borbotones?"
+    },
+    "dysreflexia": {
+      "de": "Läsionshöhe, Blutdruck im Vergleich zur Ruhe, Kopfschmerz, Bradykardie: Was ist der Auslöser, und wie senkt die Körperlage den Blutdruck?",
+      "en": "Level of the lesion, blood pressure compared with rest, headache, bradycardia: what is the trigger, and how does body position lower the blood pressure?",
+      "es": "Nivel de la lesión, presión arterial frente al reposo, cefalea, bradicardia: ¿cuál es el desencadenante y cómo baja la presión la postura del cuerpo?"
+    },
+    "plan": {
+      "de": "Was gefährdet hier die Nieren? Welche Therapie senkt den Blasendruck zuerst, wie wird die Blase sicher entleert, und was folgt, wenn das nicht reicht?",
+      "en": "What puts the kidneys at risk here? Which treatment lowers bladder pressure first, how is the bladder emptied safely, and what comes next if that is not enough?",
+      "es": "¿Qué pone en riesgo los riñones aquí? ¿Qué tratamiento baja primero la presión vesical, cómo se vacía la vejiga con seguridad y qué sigue si no basta?"
+    }
+  },
+  "udy-acontractile-detrusor-straining": {
+    "void": {
+      "de": "Vergleiche Pves und Pabd während jeder Flussportion: Steigen beide gleich, kommt der Druck aus dem Bauch. Was macht Pdet?",
+      "en": "Compare Pves and Pabd during each portion of flow: if both rise equally, the pressure comes from the abdomen. What does Pdet do?",
+      "es": "Compara Pves y Pabd en cada porción de flujo: si suben por igual, la presión viene del abdomen. ¿Qué hace la Pdet?"
+    },
+    "plan": {
+      "de": "Welche Methode entleert eine Blase ohne Kontraktion zuverlässig – und welche Medikamentengruppe empfiehlt die Leitlinie hier ausdrücklich nicht?",
+      "en": "Which method empties a bladder without contraction reliably – and which group of drugs does the guideline explicitly advise against here?",
+      "es": "¿Qué método vacía de forma fiable una vejiga sin contracción y qué grupo de fármacos desaconseja expresamente la guía aquí?"
+    },
+    "later": {
+      "de": "Ab welchem Volumen spürt sie überhaupt etwas – und was passiert mit der Blase, wenn sie erst dann katheterisiert?",
+      "en": "At what volume does she feel anything at all – and what happens to the bladder if she waits until then to catheterise?",
+      "es": "¿A partir de qué volumen nota algo y qué le pasa a la vejiga si espera hasta entonces para sondarse?"
+    }
+  },
+  "udy-plateau-flow-stricture": {
+    "curve": {
+      "de": "Achte darauf, wie schnell der Fluss ansteigt und ob er danach einen Gipfel hat oder fast gleich bleibt. Welche Art von Enge begrenzt den Fluss unabhängig vom Druck?",
+      "en": "Note how fast the flow rises and whether it then has a peak or stays almost level. Which kind of narrowing limits flow regardless of pressure?",
+      "es": "Fíjate en lo rápido que sube el flujo y en si después hace un pico o se mantiene casi igual. ¿Qué tipo de estrechez limita el flujo con independencia de la presión?"
+    },
+    "next": {
+      "de": "Was musst du über die Enge wissen, bevor du eine Behandlung wählst? Welche Bildgebung zeigt das – und was ergänzt sie, wenn die Enge fast verschlossen ist?",
+      "en": "What do you need to know about the narrowing before choosing a treatment? Which imaging shows it – and what is added when the narrowing is almost closed?",
+      "es": "¿Qué necesitas saber del estrechamiento antes de elegir un tratamiento? ¿Qué prueba de imagen lo muestra y qué se añade si está casi cerrado?"
+    },
+    "treat": {
+      "de": "Lage, Länge, Verschlussgrad und Vorbehandlung entscheiden. Wie oft darf man endoskopisch wiederholen, wenn eine offene Rekonstruktion möglich ist?",
+      "en": "Location, length, degree of occlusion and previous treatment decide. How often may endoscopic treatment be repeated when open reconstruction is possible?",
+      "es": "Deciden la localización, la longitud, el grado de oclusión y el tratamiento previo. ¿Cuántas veces se puede repetir el tratamiento endoscópico si la reconstrucción abierta es posible?"
+    }
+  },
+  "udy-catheter-loss-repeat": {
+    "artefact": {
+      "de": "Welche Leitung reagiert noch auf den Husten? Ein Blasendruck unter dem Luftdruck ist biologisch kaum möglich – was ist technisch passiert?",
+      "en": "Which line still responds to the cough? A bladder pressure below atmospheric pressure is hardly possible biologically – what has happened technically?",
+      "es": "¿Qué línea sigue respondiendo a la tos? Una presión vesical por debajo de la atmosférica es casi imposible biológicamente: ¿qué ha pasado técnicamente?"
+    },
+    "next": {
+      "de": "Kann ein Wert, der gar nicht mehr gemessen wurde, eine Operationsentscheidung tragen? Was empfiehlt die ICS bei technischen Fehlern?",
+      "en": "Can a value that was no longer being measured support a surgical decision? What does the ICS recommend after technical errors?",
+      "es": "¿Puede un valor que ya no se estaba midiendo sostener una decisión quirúrgica? ¿Qué recomienda la ICS ante errores técnicos?"
+    },
+    "repeat": {
+      "de": "Lies am Qmax-Marker Pdet ab, nicht Pves, und rechne BOOI und BCI. Was bedeuten die Grenzen 40 und 100 für den Eingriff?",
+      "en": "At the Qmax marker read Pdet, not Pves, and calculate the BOOI and BCI. What do the cut-offs 40 and 100 mean for the procedure?",
+      "es": "En la marca de Qmax lee la Pdet, no la Pves, y calcula el BOOI y el BCI. ¿Qué significan los límites 40 y 100 para la intervención?"
     }
   }
 }

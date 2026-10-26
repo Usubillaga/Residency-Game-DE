@@ -9,11 +9,11 @@ const E = require('../assets/engine.js');
 const assets = path.join(__dirname, '..', 'assets');
 const read = name => fs.readFileSync(path.join(assets, name), 'utf8').replace(/^\uFEFF/, '');
 const clone = value => JSON.parse(JSON.stringify(value));
-const areaIds = ['emergency', 'ward', 'clinic', 'endoscopy', 'theatre'];
+const areaIds = ['emergency', 'ward', 'clinic', 'endoscopy', 'theatre', 'urodynamics'];
 
 function loadAssets() {
   const context = vm.createContext({ window: {} });
-  for (const name of ['catalog.js', 'banter.js', 'art.js', 'i18n.js']) {
+  for (const name of ['catalog.js', 'banter.js', 'art.js', 'i18n.js', 'urodynamics.js']) {
     vm.runInContext(read(name), context, { filename: name });
   }
   return context.window;
@@ -76,7 +76,8 @@ function appHarness(session = null, testCatalog = catalog) {
     openDialog(html) { stats.dialogs.push(html); return { classList: { add() {} } }; }
   });
   const constants = ['ATTENDING_CALLS', 'count', 'consultantOf'].map(name => source.match(new RegExp('const ' + name + '=[^\\n]*;'))[0]).join('\n');
-  vm.runInContext(constants + "\nlet areaFilter = 'all', query = '', savedOnly = false;\n" + source.slice(start, end) + `
+  const tracings = source.slice(source.indexOf('  // Urodynamic tracings (assets/urodynamics.js).'), source.indexOf('  function chart(p)'));
+  vm.runInContext(constants + "\nlet areaFilter = 'all', query = '', savedOnly = false;\n" + tracings + source.slice(start, end) + `
     globalThis.helpers = {
       gameStage, handleScene, coffeeBreak, askNurse, callAttending, attendingWarning, characterComment, startBoss, answerBoss, nextBoss,
       validBoss, bossCorrect, speakerFor, lineWithoutName,
@@ -190,17 +191,92 @@ test('the hero is a named localized SVG image and every case receives a stable o
   assert.ok(new Set(designs).size >= 20, 'The patient cast should not collapse into one repeated portrait');
 });
 
-test('all room scenes expose five localized, keyboard-accessible department doors', () => {
+// The tracing helpers of the urodynamics lab, run with the real renderer from assets/urodynamics.js.
+function tracingHarness(lang = 'de') {
+  const source = read('app.js');
+  const start = source.indexOf('  // Urodynamic tracings (assets/urodynamics.js).'), end = source.indexOf('  function chart(p)', start);
+  assert.ok(start >= 0 && end > start, 'The real tracing helpers must be present');
+  const context = vm.createContext({ window: data, state: { lang } });
+  vm.runInContext(source.slice(start, end) + '\nglobalThis.helpers = { tracingFigure, answeredSteps };', context, { filename: 'app-tracings.js' });
+  return context.helpers;
+}
+
+test('every case of the urodynamics lab has a tracing that renders in every language and layout', () => {
+  const U = data.NSAUrodynamics;
+  const lab = catalog.cases.filter(c => c.area === 'urodynamics');
+  assert.equal(lab.length, 19);
+  for (const c of lab) {
+    const tr = c.tracing;
+    assert.ok(tr, c.id + ' needs a tracing');
+    assert.equal(c.duty, 'urodynamics');
+    const views = tr.views.map(v => v.id);
+    assert.ok(Object.keys(tr.steps).length >= 2, c.id + ' reads the curve in at least two decisions');
+    assert.ok(Object.values(tr.steps).every(view => views.includes(view)));
+    for (const lang of ['en', 'de', 'es']) {
+      for (const e of tr.events) assert.ok(U.TEXT[lang].events[e.type], lang + ' needs a label for marker ' + e.type);
+      for (const view of views) for (const layout of ['wide', 'narrow']) {
+        const html = U.figure(tr, { id: c.id, lang, view, reveal: c.steps.map(s => s.id), layout });
+        assert.doesNotMatch(html, /NaN|undefined|\[object/, c.id + ' ' + lang + ' ' + view + ' ' + layout);
+        assert.ok(html.includes('data-udy="' + c.id + '"') && html.includes('data-view="' + view + '"'));
+      }
+    }
+  }
+});
+
+test('a lab decision shows its section of the tracing and marks its findings only after the answer', () => {
+  for (const lang of ['en', 'de', 'es']) {
+    const h = tracingHarness(lang);
+    for (const c of catalog.cases.filter(c => c.tracing)) {
+      c.steps.forEach((s, index) => {
+        const view = c.tracing.steps[s.id], before = h.tracingFigure(c, s.id, clone(h.answeredSteps(c, index)));
+        if (!view) { assert.equal(before, '', c.id + '/' + s.id + ' is decided before the study exists'); return; }
+        assert.ok(before.includes('data-view="' + view + '"'), c.id + '/' + s.id + ' opens on its own section');
+        const own = c.tracing.annotations.filter(a => a.step === s.id).map(a => escape(a.label[lang]));
+        for (const label of own) assert.ok(!before.includes(label), c.id + '/' + s.id + ': a finding shows before the answer');
+        const after = h.tracingFigure(c, s.id, clone(h.answeredSteps(c, index + 1)));
+        for (const label of own) assert.ok(after.includes(label), c.id + '/' + s.id + ': a finding is missing after the answer');
+      });
+      const debrief = h.tracingFigure(c, null, clone(h.answeredSteps(c, c.steps.length)));
+      for (const a of c.tracing.annotations) assert.ok(debrief.includes(escape(a.label[lang])), c.id + ': the debrief lists every finding');
+    }
+  }
+});
+
+test('the cursor at the Qmax marker reads the pressure and flow the questions are built on', () => {
+  const U = data.NSAUrodynamics;
+  let checked = 0;
+  for (const c of catalog.cases.filter(c => c.tracing && c.tracing.readings.pdetQmax !== undefined)) {
+    const tr = c.tracing, mark = tr.events.filter(e => e.type === 'qmax').at(-1);
+    const text = U.readout(tr, U.nearest(tr, mark.t), 'en').replace(/<[^>]+>/g, '');
+    assert.ok(text.includes('Pdet ' + tr.readings.pdetQmax + ' cmH2O'), c.id + ': ' + text);
+    assert.ok(text.includes('Q ' + tr.readings.qmax.toFixed(1) + ' ml/s'), c.id + ': ' + text);
+    checked++;
+  }
+  assert.equal(checked, 11);
+});
+
+test('the urodynamics lab is a daytime room with its own measuring tower and seated patients', () => {
+  const lab = catalog.cases.filter(c => c.area === 'urodynamics').slice(0, 3);
+  const patients = lab.map(c => ({ id: c.id, name: c.patient.name, age: c.patient.age, sex: c.patient.sex, area: c.area, acuity: c.acuity, available: true }));
+  const room = data.NSAArt.scene('urodynamics', patients, patients[0].id, '09:10', 0, 'de', { duty: 'urodynamics', label: 'URODYNAMIK-LABOR' });
+  assert.match(room, /#a8daf2/, 'Daylight window');
+  assert.match(room, /translate\(1452 196\)/, 'Measuring tower');
+  assert.equal(groupsWith(room, 'data-scene-patient').length, 3);
+  assert.ok(room.includes('URODYNAMIK-LABOR'));
+  assert.match(data.NSAArt.areaIcon('urodynamics'), /#b83250/, 'The lab has its own icon with a pressure trace');
+});
+
+test('all room scenes expose six localized, keyboard-accessible department doors', () => {
   const names = {
-    en: ['Emergency', 'Ward', 'Clinic', 'Endoscopy', 'Theatre'],
-    de: ['Notaufnahme', 'Station', 'Ambulanz', 'Endoskopie', 'OP-Saal'],
-    es: ['Urgencias', 'Planta', 'Consulta', 'Endoscopia', 'Quirófano']
+    en: ['Emergency', 'Ward', 'Clinic', 'Endoscopy', 'Theatre', 'Urodynamics'],
+    de: ['Notaufnahme', 'Station', 'Ambulanz', 'Endoskopie', 'OP-Saal', 'Urodynamik'],
+    es: ['Urgencias', 'Planta', 'Consulta', 'Endoscopia', 'Quirófano', 'Urodinámica']
   };
   for (const lang of Object.keys(names)) {
     for (const area of areaIds) {
       const scene = data.NSAArt.scene(area, [], null, '23:15', 0, lang);
       const doors = groupsWith(scene, 'data-scene-area');
-      assert.equal(doors.length, 5);
+      assert.equal(doors.length, 6);
       assert.deepEqual(doors.map(door => door['data-scene-area']), areaIds);
       assert.equal(doors.filter(door => door['aria-pressed'] === 'true').length, 1);
       doors.forEach((door, index) => {
@@ -294,7 +370,7 @@ test('morning report is locked until the clinical session is finished', () => {
   assert.ok(h.stats.dialogs[0].includes(escape(data.NSABanter.en.bossLocked)));
 });
 
-test('morning report selects five distinct reproducible questions, one from each completed area', () => {
+test('morning report selects five distinct reproducible questions from five different completed areas', () => {
   for (const seed of ['morning-A', 'morning-B', 'morning-C']) {
     const h = appHarness(completedSession(seed));
     const untouched = clone(h.state.session.patients);
@@ -303,7 +379,10 @@ test('morning report selects five distinct reproducible questions, one from each
     assert.equal(boss.items.length, 5);
     assert.ok(h.api.validBoss(boss));
     assert.equal(new Set(boss.items.map(item => item.caseId + ':' + item.stepIndex)).size, 5);
-    assert.deepEqual(clone(boss.items.map(item => catalog.cases.find(c => c.id === item.caseId).area)).sort(), [...areaIds].sort());
+    // A mixed shift covers all six departments; the chief asks five questions, each from a different one.
+    const asked = boss.items.map(item => catalog.cases.find(c => c.id === item.caseId).area);
+    assert.equal(new Set(asked).size, 5);
+    assert.ok(asked.every(area => areaIds.includes(area)));
     for (const item of boss.items) {
       const step = catalog.cases.find(c => c.id === item.caseId).steps[item.stepIndex];
       assert.deepEqual(clone(item.order).sort(), clone(step.options.map(option => option.id)).sort());
@@ -1136,16 +1215,21 @@ test('before answering, goals, correction explanations and highlighted anatomy c
         vitalPanel: () => '', sourceOrigin: () => 'PROVENANCE_SPOILER',
         optionButton: () => '<button>answer choice</button>', debrief: () => 'debrief',
         characterComment: () => '', attendingWarning: () => '', preferredAnswer: () => '',
-        caseVisuals: () => 'HIGHLIGHTED_SCHEMA', optionsExplained: () => 'POST_ANSWER_RATIONALES'
+        caseVisuals: () => 'HIGHLIGHTED_SCHEMA', optionsExplained: () => 'POST_ANSWER_RATIONALES',
+        // A tracing marks the findings of a step only once that step is among the answered ones.
+        tracingFigure: (c, stepId, answered) => answered.includes(stepId) ? 'TRACING_FINDING' : 'TRACING_PLAIN',
+        answeredSteps: (c, count) => c.steps.slice(0, count).map(s => s.id)
       });
       vm.runInContext(section('  const updatedBadge=', '  function vitalPanel(c)') +
         section('  function chart(p)', '  function debrief(p,c)') + '\nglobalThis.chart = chart;', context);
       const before = context.chart(p);
-      for (const spoiler of ['OBJECTIVE_SPOILER', 'CORRECTION_SPOILER', 'PROVENANCE_SPOILER', 'HIGHLIGHTED_SCHEMA', 'POST_ANSWER_RATIONALES'])
+      for (const spoiler of ['OBJECTIVE_SPOILER', 'CORRECTION_SPOILER', 'PROVENANCE_SPOILER', 'HIGHLIGHTED_SCHEMA', 'POST_ANSWER_RATIONALES', 'TRACING_FINDING'])
         assert.ok(!before.includes(spoiler), lang + ': ' + spoiler + ' is hidden before answering');
+      assert.ok(before.includes('TRACING_PLAIN'), 'The tracing itself is shown before answering');
       p.feedback = c.steps[0].best;
       const after = context.chart(p);
       assert.ok(after.includes('POST_ANSWER_RATIONALES'), 'All answer explanations appear after making a choice');
+      assert.ok(after.includes('TRACING_FINDING'), 'The findings of the answered step appear on the tracing');
       assert.equal(after.includes('HIGHLIGHTED_SCHEMA'), !multiStep, 'Case-wide anatomy waits until the final decision');
       assert.equal(after.includes('CORRECTION_SPOILER'), !multiStep, 'Case-wide corrections wait until the final decision');
       assert.ok(!after.includes('OBJECTIVE_SPOILER'), 'Learning goals are never rendered');
