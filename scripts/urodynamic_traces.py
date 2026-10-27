@@ -122,8 +122,9 @@ class Study:
         self.events: list[dict] = []
         self.keep: set[int] = {0, self.n - 1}
         self.pins: list[tuple] = []
-        self.damp: tuple[int, float] | None = None
+        self.damp: tuple[int, float, int] | None = None
         self.lost: list[tuple[int, int]] = []
+        self.busy: list[tuple[float, float]] = []  # waves, voids and straining: no cough test inside (see clear())
         phase = self.rng.uniform(0, 2 * math.pi)
         self.common = [0.8 * math.sin(2 * math.pi * x / 4.2 + phase) + 0.5 * math.sin(2 * math.pi * x / 97 + phase / 2)
                        for x in self.t]
@@ -136,6 +137,20 @@ class Study:
         self.keep.add(k)
         self.events.append({"t": round(k * DT, 2), "type": kind, **extra})
         return k * DT
+
+    def clear(self, x: float, gap: float = 6.0) -> float:
+        """The time nearest to x, in 5 s steps, that is at least gap seconds from every marker and outside every
+        detrusor wave, rectal wave, void and straining episode. A cough on a marker would make the cursor read the
+        cough there, and a cough just before a wave would look like cough-associated overactivity (ICS GUP 2016)."""
+        marks = [e["t"] for e in self.events if e["type"] != "cough"]
+
+        def free(y: float) -> bool:
+            return all(abs(y - m) >= gap for m in marks) and all(not a <= y <= b for a, b in self.busy)
+
+        for shift in (0, 5, -5, 10, -10, 15, -15, 20, -20, 25, -25, 30, -30):
+            if 0 < x + shift < self.t[-1] and free(x + shift):
+                return x + shift
+        raise ValueError(f"no free time for a cough near {x} s")
 
     # --- storage phase -------------------------------------------------------------------
     def fill(self, t0: float, volume: float, rate: float) -> float:
@@ -172,6 +187,7 @@ class Study:
     def valsalva(self, t: float, amp: float, duration: float, *, leak_at: float, leak: float) -> int:
         """Straining with a ramp; leakage (ml) starts once the abdominal rise reaches leak_at. Returns that index."""
         end = t + duration
+        self.busy.append((t - 3, end + 4))
         leak_index = -1
         for k in range(self.i(t), self.i(end + 1.5) + 1):
             x = self.t[k]
@@ -186,6 +202,7 @@ class Study:
         return leak_index
 
     def rectal(self, t: float, amp: float, duration: float) -> None:
+        self.busy.append((t - 3, t + duration + 3))
         for k in range(self.i(t), self.i(t + duration) + 1):
             self.abd_only[k] += amp * hump((self.t[k] - t) / duration, 0.9)
         self.keep.add(self.i(t + duration * 0.45))
@@ -195,6 +212,7 @@ class Study:
         """Phasic detrusor overactivity. peak is the absolute Pdet at the top of the wave; amp a rise above the baseline;
         leak the volume (ml) that escapes during the wave."""
         self.waves.append({"k0": self.i(t), "k1": self.i(t + duration), "t": t, "duration": duration, "peak": peak, "amp": amp})
+        self.busy.append((t - 6, t + duration + 3))
         top = t + duration * PEAK
         self.keep.add(self.i(top))
         if emg:
@@ -240,6 +258,7 @@ class Study:
         r = (pdet_qmax - popen) / qmax ** 2
         end = start + duration
         i_end = self.i(end)
+        self.busy.append((t - 4, end + 4))
         for k in range(self.i(t), self.n):
             x = self.t[k]
             if x < start:
@@ -251,24 +270,35 @@ class Study:
             if level > 0.05:
                 self.absolute[k] = max(self.absolute[k] or 0.0, level)
             self.flow[k] += q[k]
-            if emg == "quiet" and start - 2 <= x <= end + 3:
-                self.emg_factor[k] = 0.18
+            # The striated sphincter relaxes at permission to void, before the detrusor pressure rises (Yalla and
+            # Resnick 1997), stays quiet while urine flows and regains its tone afterwards.
+            if emg == "quiet" and t <= x <= end + 5:
+                if x < t + 1.5:
+                    quiet = 1 - 0.82 * smoothstep((x - t) / 1.5)
+                elif x <= end + 3:
+                    quiet = 0.18
+                else:
+                    quiet = 0.18 + 0.82 * smoothstep((x - end - 3) / 2)
+                self.emg_factor[k] = min(self.emg_factor[k], quiet)
         self.keep.update({peak, self.i(start), i_end})
-        return {"peak": peak, "tpeak": peak * DT, "start": start, "end": end}
+        return {"t": t, "peak": peak, "tpeak": peak * DT, "start": start, "end": end}
 
     def strain(self, t: float, amp: float, duration: float) -> None:
         """Abdominal straining: both lines rise together, so Pdet does not change."""
+        self.busy.append((t - 2, t + duration + 3))
         for k in range(self.i(t - 0.5), self.i(t + duration + 1.5) + 1):
             x = self.t[k]
             self.both[k] += amp * smoothstep((x - t) / 1.2) * (1 - smoothstep((x - t - duration) / 1.2))
         self.keep.update({self.i(t + 1.2), self.i(t + duration)})
 
-    def dampen(self, t: float, tau: float) -> None:
-        """An air bubble in the vesical line: Pves follows changes only through a low-pass filter."""
-        self.damp = (self.i(t), tau)
+    def dampen(self, t: float, tau: float, until: float | None = None) -> None:
+        """An air bubble in the vesical line from t until the line is flushed: Pves follows changes only through a
+        low-pass filter."""
+        self.damp = (self.i(t), tau, self.i(until) if until is not None else self.n)
 
     def lose_catheter(self, t0: float, t1: float) -> None:
-        """The vesical catheter has slipped out: Pves drops suddenly, usually below zero (ICS GUP 2016)."""
+        """The vesical catheter has slipped out until t1: Pves drops suddenly, usually well below zero (ICS GUP 2016;
+        NBT artefact slides), and no longer follows a cough."""
         self.lost.append((self.i(t0), self.i(t1)))
         self.keep.update({self.i(t0), self.i(t1)})
 
@@ -324,12 +354,12 @@ class Study:
             resting = (4.5 + 9 * min(1.0, volume[k] / cap)) * self.emg_factor[k]
             emg.append(max(1.0, resting + self.bursts[k] + rng.gauss(0, 1.0)))
         if self.damp:
-            start, tau = self.damp
-            for k in range(start, self.n):
+            start, tau, stop = self.damp
+            for k in range(start, stop):
                 pves[k] = pves[k - 1] + (DT / tau) * (pves[k] - pves[k - 1])
         for k0, k1 in self.lost:
             for k in range(k0, k1 + 1):
-                pves[k] = -2.5 + rng.gauss(0, 0.2)
+                pves[k] = -10.0 + rng.gauss(0, 0.3)
         vvoid, total = [], 0.0
         void_starts = {self.i(e["t"]) for e in self.events if e["type"] == "void"} | self.void_starts | self.restarts
         for k in range(self.n):
@@ -405,11 +435,21 @@ def simplify(t: list, curves: dict, keep: set) -> list:
 # --- helpers for the cases ----------------------------------------------------------------------
 
 def coughs_every(study: Study, t0: float, t1: float, step: float = 60.0, amp: float = 95.0) -> None:
-    """ICS good practice: a cough test about every minute during filling."""
+    """A cough test about every minute during filling (NBT: every minute or 50 ml), moved off markers and waves.
+    Register markers, waves and voids before calling it."""
     x = t0
     while x <= t1:
-        study.cough(x, amp * study.rng.uniform(0.88, 1.1))
+        study.cough(study.clear(x), amp * study.rng.uniform(0.88, 1.1))
         x += step
+
+
+def bracket_void(study: Study, void: dict, amp: float = 92.0, *, before: float = 8.0, after: float = 7.0) -> None:
+    """Cough tests immediately before permission to void and after the flow ends (NBT); GUP 2016: a cough check of
+    the catheter position is always required after pressure-flow."""
+    if before:
+        study.cough(void["t"] - before, amp)
+    if after:
+        study.cough(void["end"] + after, amp)
 
 
 def at_volume(rate: float, volume: float, t0: float = 20.0) -> float:
@@ -476,8 +516,8 @@ def bpo_indices() -> dict:
     rate, cap = 50, 400
     end = s.fill(20, cap, rate)
     s.cough(8, 92)
-    coughs_every(s, 80, end - 10)
     sensations(s, rate, 160, 250, 380)
+    coughs_every(s, 80, end - 10)
     s.cough(end + 8, 96)
     v = pressure_flow(s, end + 20, qmax=9.0, voided=340, pdet_qmax=82, popen=57, shape="prolonged", opening=9)
     s.cough(v["end"] + 6, 90)
@@ -498,13 +538,14 @@ def dhic() -> dict:
     rate, cap = 50, 420
     end = s.fill(20, cap, rate)
     s.cough(8, 90)
-    coughs_every(s, 80, end - 15, amp=88)
     sensations(s, rate, 140, 200, None)
     t210 = at_volume(rate, 210)
     tops = [s.contraction(t210 + offset, dur, peak=peak) for offset, peak, dur in
             ((3, 19, 18), (48, 24, 20), (96, 28, 22), (146, 30, 24), (196, 27, 22))]
     s.pin(tops[3], "pdet", 30.0)
     v = pressure_flow(s, end + 18, qmax=5.0, voided=160, pdet_qmax=24, popen=18, shape="prolonged", opening=10)
+    coughs_every(s, 80, end - 15, amp=88)  # between the waves, so that none of them looks cough-associated
+    bracket_void(s, v, 88, before=9)
     data = s.finish(compliance(130))
     data.update(kind="pressure-flow", fillingRate=rate, position="sitting",
                 views=[ALL, fill_view(end + 12), void_view(end + 10, v["end"] + 12)],
@@ -525,17 +566,18 @@ def pbno() -> dict:
     rate, cap = 50, 380
     end = s.fill(20, cap, rate)
     s.cough(8, 100)
-    coughs_every(s, 80, end - 10, amp=100)
     sensations(s, rate, 150, 240, 360)
     v = pressure_flow(s, end + 15, qmax=6.0, voided=310, pdet_qmax=96, popen=79, shape="prolonged", opening=11)
+    coughs_every(s, 80, end - 10, amp=100)
     s.cough(v["end"] + 6, 96)
+    bracket_void(s, v, 98, after=0)
     data = s.finish(compliance(110))
     data.update(kind="video-pressure-flow", fillingRate=rate, position="sitting",
                 views=[ALL, fill_view(end + 10), void_view(end + 8, v["end"] + 12)],
                 steps={"localise": "void", "treat": "void"},
                 annotations=[point("localise", v["tpeak"], "pdet", same("PdetQmax 96")),
                              point("localise", v["tpeak"], "flow", same("Qmax 6 · BOOI 84")),
-                             span("localise", v["start"], v["end"], L("Pelvic floor EMG silent while voiding", "Beckenboden-EMG während der Miktion stumm",
+                             span("localise", v["t"], v["end"], L("Pelvic floor EMG silent while voiding", "Beckenboden-EMG während der Miktion stumm",
                                                                       "EMG del suelo pélvico silente durante la micción"), "emg")],
                 readings={"capacity": cap, "qmax": 6.0, "pdetQmax": 96, "voided": 310, "residual": 70})
     return data
@@ -547,13 +589,14 @@ def msa() -> dict:
     rate, cap = 50, 320
     end = s.fill(20, cap, rate)
     s.cough(8, 85)
-    coughs_every(s, 80, end - 20, amp=85)
     sensations(s, rate, 90, 120, None)
     t120 = at_volume(rate, 120)
     s.contraction(t120 + 4, 18, peak=22)
     s.contraction(t120 + 66, 22, peak=37, leak=8)
     s.contraction(t120 + 128, 24, peak=42, leak=12)
     v = pressure_flow(s, end + 12, qmax=6.0, voided=110, pdet_qmax=28, popen=21, shape="prolonged", opening=9)
+    coughs_every(s, 80, end - 20, amp=85)
+    bracket_void(s, v, 85, before=7)
     data = s.finish(compliance(120))
     data.update(kind="video-pressure-flow", fillingRate=rate, position="sitting",
                 views=[ALL, fill_view(end + 8), void_view(end + 6, v["end"] + 12)],
@@ -572,10 +615,11 @@ def female_boo() -> dict:
     rate, cap = 50, 400
     end = s.fill(20, cap, rate)
     s.cough(8, 88)
-    coughs_every(s, 80, end - 10, amp=88)
     sensations(s, rate, 120, 210, 340)
     v = pressure_flow(s, end + 15, qmax=7.0, voided=220, pdet_qmax=52, popen=37, shape="prolonged", opening=8)
+    coughs_every(s, 80, end - 10, amp=88)
     s.cough(v["end"] + 6, 88)
+    bracket_void(s, v, 88, after=0)
     data = s.finish(compliance(100))
     data.update(kind="video-pressure-flow", fillingRate=rate, position="sitting",
                 views=[ALL, fill_view(end + 10), void_view(end + 8, v["end"] + 12)],
@@ -593,10 +637,11 @@ def fowler() -> dict:
     rate, cap = 50, 950
     end = s.fill(20, cap, rate)
     s.cough(8, 90)
-    coughs_every(s, 80, end - 10, step=120, amp=90)
     sensations(s, rate, 410, 650, 900)
     s.event(end + 15, "void")
+    coughs_every(s, 80, end - 10, amp=90)
     s.cough(end + 105, 92)
+    s.cough(end + 7, 90)  # immediately before the attempt to void
     data = s.finish(compliance(160))
     data.update(kind="cystometry", fillingRate=rate, position="sitting",
                 views=[ALL, fill_view(end + 10), window("void", L("Attempt to void", "Miktionsversuch", "Intento miccional"), end + 5, end + 115)],
@@ -613,8 +658,8 @@ def occult_sui() -> dict:
     rate, cap = 50, 300
     end = s.fill(20, cap, rate)
     s.cough(8, 95)
-    coughs_every(s, 80, end - 20, amp=95)
     sensations(s, rate, 130, 200, None)
+    coughs_every(s, 80, end - 20, amp=95)
     for x in (end + 12, end + 24, end + 36):
         s.cough(x, 112)
     s.event(end + 52, "reduction")
@@ -656,10 +701,12 @@ def low_compliance() -> dict:
     fast = lambda v: 5 + 40 * (v / 260) ** 1.25
     slow = lambda v: 5 + 35 * (v / 300) ** 1.35
     data = s.finish([(0.0, fast), (drain, slow)])
-    data.update(kind="cystometry", fillingRate=30, position="supine",
+    data.update(kind="video-cystometry", fillingRate=30, rates=[[0.0, 30], [round(start2, 2), 15]], position="supine",
                 views=[ALL, window("fill1", L("Fill 1 · 30 ml/min", "Füllung 1 · 30 ml/min", "Llenado 1 · 30 ml/min"), 0, drain + 12),
                        window("fill2", L("Fill 2 · 15 ml/min", "Füllung 2 · 15 ml/min", "Llenado 2 · 15 ml/min"), drain + 30, second + 20)],
                 steps={"compliance": "fill1", "rate": "fill1", "plan": "fill2"},
+                # The repeat fill at a slower rate is the answer to "rate": it stays hidden until then.
+                conceal=[{"from": round(drain + 15, 2), "until": "rate"}],
                 annotations=[span("compliance", 30, first, L("ΔV 260 ml / ΔPdet (45 − 5) cmH2O = 6.5 ml/cmH2O",
                                                              "ΔV 260 ml / ΔPdet (45 − 5) cmH2O = 6,5 ml/cmH2O",
                                                              "ΔV 260 ml / ΔPdet (45 − 5) cmH2O = 6,5 ml/cmH2O"), "pdet"),
@@ -683,21 +730,24 @@ def paediatric_flow() -> dict:
     for key in ("pves", "pabd", "vinf"):
         data.pop(key)
     data.update(kind="uroflow-emg", position="sitting", channels=["flow", "vvoid", "emg"],
-                views=[window("void1", L("Flow 1 · 160 ml", "Flow 1 · 160 ml", "Flujo 1 · 160 ml"), 0, first["end"] + 6),
-                       window("void2", L("Flow 2 · 180 ml", "Flow 2 · 180 ml", "Flujo 2 · 180 ml"), 74, second["end"] + 6)],
+                views=[window("void1", L("Flow 1", "Flow 1", "Flujo 1"), 0, first["end"] + 6),
+                       window("void2", L("Flow 2", "Flow 2", "Flujo 2"), 74, second["end"] + 6)],
                 steps={"curve": "void1", "treat": "void1"},
                 annotations=[span("curve", first["start"], first["end"], L("Continuous but jerky flow (staccato) with pelvic floor EMG activity",
                                                                            "Kontinuierlicher, aber ruckartiger Fluss (Staccato) mit Beckenboden-EMG-Aktivität",
-                                                                           "Flujo continuo pero entrecortado (staccato) con actividad del EMG del suelo pélvico"), "flow")],
+                                                                           "Flujo continuo pero irregular, con picos y valles bruscos (staccato), con actividad del EMG del suelo pélvico"), "flow")],
                 readings={"voided1": 160, "voided2": 180, "qmax1": 13.0, "qmax2": 14.0})
     return data
 
 
 def artefacts() -> dict:
-    """Rectal contractions at 180 ml, then a damped vesical line at 260 ml (cough +38 versus +100 cmH2O)."""
-    s = Study("udy-artefacts", 352, pabd_rest=31.0, pdet_rest=3.0)
+    """Rectal contractions at 180 ml, then a damped vesical line at 260 ml (cough +38 versus +100 cmH2O); after the
+    decision, filling stops, the line is flushed and a repeat cough shows equal deflections again."""
+    s = Study("udy-artefacts", 376, pabd_rest=31.0, pdet_rest=3.0)
     rate = 50
-    s.fill(20, 400, rate)
+    t260 = at_volume(rate, 260)
+    stop, flush = t260 + 8, t260 + 16
+    s.fill(20, (stop - 20) * rate / 60, rate)  # filling continues only after a correct cough test
     s.cough(6, 96, mismatch=0.0)
     s.cough(14, 102, mismatch=0.01)
     s.pin(2, "pabd", 31.0)
@@ -706,28 +756,36 @@ def artefacts() -> dict:
     t180 = at_volume(rate, 180)
     for offset in (2, 26, 50):
         s.rectal(t180 + offset, 12, 15)
-    s.dampen(at_volume(rate, 245), 1.15)
-    t260 = at_volume(rate, 260)
+    s.dampen(at_volume(rate, 245), 1.15, until=flush)
     s.cough(t260, 100, mismatch=0.0)
     s.pin(t260 - 0.75, "pabd", 31.0)
     s.pin(t260 - 0.75, "pves", 34.0)
     s.pin(t260 + 0.5, "pabd", 131.0)
     s.pin_peak(t260 - 0.5, t260 + 6, "pves", 72.0, base=t260 - 0.75)
+    s.event(stop, "stop")
+    s.event(flush, "flush")
+    s.cough(flush + 10, 100, mismatch=0.0)  # the repeat check after flushing: equal peaks
+    for x in (t180 - 6, t180 + 70):  # regular cough tests also around the rectal waves, before the damping starts
+        s.cough(s.clear(x), 96)
     data = s.finish(compliance(1500))
     data.update(kind="cystometry", fillingRate=rate, position="sitting",
                 views=[ALL, window("start", L("Start", "Beginn", "Inicio"), 0, 30),
                        window("waves", L("At 180 ml", "Bei 180 ml", "A los 180 ml"), t180 - 12, t180 + 78),
-                       window("cough", L("Cough at 260 ml", "Husten bei 260 ml", "Tos a los 260 ml"), t260 - 14, t260 + 16)],
+                       window("cough", L("Cough at 260 ml", "Husten bei 260 ml", "Tos a los 260 ml"), t260 - 14, flush + 22)],
                 steps={"baseline": "start", "waves": "waves", "transmission": "cough"},
+                conceal=[{"from": round(t260 + 5, 2), "until": "transmission"}],
                 annotations=[point("baseline", 2, "pdet", same("Pves 34 − Pabd 31 = Pdet 3")),
                              span("waves", t180, t180 + 67, L("Pabd waves, Pves unchanged: rectal contractions",
                                                              "Pabd-Wellen, Pves unverändert: Rektumkontraktionen",
                                                              "Ondas de Pabd, Pves sin cambios: contracciones rectales"), "pabd"),
-                             span("transmission", t260 - 1, t260 + 3, L("Cough: Pves +38 versus Pabd +100 = 38 %",
+                             span("transmission", t260 - 1, t260 + 3, L("Cough: Pves +38 versus Pabd +100 = 38%",
                                                                         "Husten: Pves +38 gegenüber Pabd +100 = 38 %",
-                                                                        "Tos: Pves +38 frente a Pabd +100 = 38 %"), "pves")],
+                                                                        "Tos: Pves +38 frente a Pabd +100 = 38 %"), "pves"),
+                             span("transmission", stop - 1, flush + 13, L("Filling stopped, line flushed: the repeat cough shows equal peaks in Pves and Pabd",
+                                                                         "Füllung gestoppt, Leitung gespült: Der Kontrollhusten zeigt gleich hohe Ausschläge in Pves und Pabd",
+                                                                         "Llenado detenido, línea purgada: la tos de control muestra picos iguales en Pves y Pabd"), "pves", "good")],
                 readings={"baselinePves": 34, "baselinePabd": 31, "rectalWaves": 3, "rectalFrom": 180, "rectalRise": 12,
-                          "coughPves": 38, "coughPabd": 100})
+                          "coughAt": 260, "coughPves": 38, "coughPabd": 100})
     return data
 
 
@@ -750,9 +808,9 @@ def normal_male() -> dict:
     data.update(kind="pressure-flow", fillingRate=rate, position="sitting",
                 views=[ALL, fill_view(end + 15), void_view(end + 12, v["end"] + 14)],
                 steps={"storage": "fill", "voiding": "void", "plan": "all"},
-                annotations=[span("storage", 20, end, L("Stable detrusor; Pdet 3 → 7 cmH2O over 470 ml (compliance about 118 ml/cmH2O)",
-                                                        "Stabiler Detrusor; Pdet 3 → 7 cmH2O über 470 ml (Compliance etwa 118 ml/cmH2O)",
-                                                        "Detrusor estable; Pdet 3 → 7 cmH2O en 470 ml (distensibilidad de unos 118 ml/cmH2O)"), "pdet", "good"),
+                annotations=[span("storage", 20, end, L("No detrusor overactivity; Pdet 3 → 7 cmH2O over 470 ml (compliance about 118 ml/cmH2O)",
+                                                        "Keine Detrusorüberaktivität; Pdet 3 → 7 cmH2O über 470 ml (Compliance etwa 118 ml/cmH2O)",
+                                                        "Sin hiperactividad del detrusor; Pdet 3 → 7 cmH2O en 470 ml (distensibilidad de unos 118 ml/cmH2O)"), "pdet", "good"),
                              point("voiding", v["tpeak"], "pdet", same("PdetQmax 40"), "good"),
                              point("voiding", v["tpeak"], "flow", same("Qmax 18 · BOOI 4 · BCI 130"), "good")],
                 readings={"capacity": cap, "qmax": 18.0, "pdetQmax": 40, "pvesQmax": 70, "voided": 450, "residual": 20,
@@ -772,13 +830,14 @@ def normal_female_oab() -> dict:
     s.cough(at_volume(rate, 290), 104)
     s.cough(at_volume(rate, 293), 108)
     v = pressure_flow(s, end + 18, qmax=26.0, voided=310, pdet_qmax=20, popen=12, shape="bell", opening=5)
+    bracket_void(s, v, 92, before=9)
     data = s.finish(compliance(105))
     data.update(kind="pressure-flow", fillingRate=rate, position="sitting",
                 views=[ALL, fill_view(end + 12), void_view(end + 10, v["end"] + 12)],
                 steps={"storage": "fill", "voiding": "void", "plan": "all"},
-                annotations=[span("storage", at_volume(rate, 90), end, L("Early sensations (first desire 140 ml); no detrusor overactivity despite provocation",
-                                                                        "Frühe Empfindungen (erster Harndrang 140 ml); keine Detrusorüberaktivität trotz Provokation",
-                                                                        "Sensaciones precoces (primer deseo a 140 ml); sin hiperactividad pese a la provocación"), "pdet"),
+                annotations=[span("storage", at_volume(rate, 90), end, L("Increased bladder sensation (first desire 140 ml); no detrusor overactivity despite provocation",
+                                                                        "Gesteigerte Blasensensitivität (erster Harndrang 140 ml); keine Detrusorüberaktivität trotz Provokation",
+                                                                        "Sensibilidad vesical aumentada (primer deseo a 140 ml); sin hiperactividad pese a la provocación"), "pdet"),
                              point("voiding", v["tpeak"], "flow", L("Qmax 26 at PdetQmax 20: a normal female void", "Qmax 26 bei PdetQmax 20: normale Miktion einer Frau",
                                                                     "Qmax 26 con PdetQmax 20: micción femenina normal"), "good")],
                 readings={"capacity": cap, "qmax": 26.0, "pdetQmax": 20, "voided": 310, "residual": 10,
@@ -801,6 +860,8 @@ def do_incontinence() -> dict:
     top = s.contraction(t140 + 94, 22, peak=45, leak=15)
     s.pin(top, "pdet", 45.0)
     v = pressure_flow(s, end + 25, qmax=21.0, voided=200, pdet_qmax=24, popen=14, shape="bell", opening=5)
+    s.cough(s.clear(168), 90)  # closes the gap between the coughs at 140 and 220 s
+    bracket_void(s, v, 90)
     data = s.finish(compliance(95))
     data.update(kind="pressure-flow", fillingRate=rate, position="sitting",
                 views=[ALL, fill_view(end + 15), void_view(end + 18, v["end"] + 12)],
@@ -830,6 +891,8 @@ def stress_incontinence() -> dict:
     for vol in (350, 400):
         s.cough(at_volume(rate, vol) + 10, 104, leak=3.0)
     v = pressure_flow(s, end + 22, qmax=28.0, voided=410, pdet_qmax=18, popen=11, shape="bell", opening=4)
+    s.cough(at_volume(rate, 50), 100)  # a cough test at 50 ml too
+    bracket_void(s, v, 100)
     data = s.finish(compliance(150))
     t250 = at_volume(rate, 250)
     data.update(kind="pressure-flow", fillingRate=rate, position="sitting",
@@ -864,6 +927,9 @@ def mixed_incontinence() -> dict:
     s.cough(t250, 110, leak=4.0)
     s.cough(at_volume(rate, 290), 112, leak=4.0)
     v = pressure_flow(s, end + 20, qmax=22.0, voided=270, pdet_qmax=22, popen=13, shape="bell", opening=5)
+    for x in (at_volume(rate, 50), at_volume(rate, 150)):  # regular cough tests before the overactivity
+        s.cough(s.clear(x), 96)
+    bracket_void(s, v, 100)
     data = s.finish(compliance(110))
     data.update(kind="pressure-flow", fillingRate=rate, position="sitting",
                 views=[ALL, fill_view(end + 15), void_view(end + 14, v["end"] + 12)],
@@ -880,31 +946,42 @@ def mixed_incontinence() -> dict:
 
 
 def ndo_dsd() -> dict:
-    """Spinal cord injury at T4: neurogenic overactivity up to 85 cmH2O with rising sphincter EMG (DSD) and a blood pressure rise."""
-    rate, cap = 18, 150
-    s = Study("udy-ndo-dsd", at_volume(rate, cap) + 2, "supine")
-    end = s.fill(20, cap, rate)
-    s.cough(8, 70)
-    coughs_every(s, 90, end - 70, step=120, amp=66)
+    """Spinal cord injury at T4: neurogenic overactivity up to 85 cmH2O with rising sphincter EMG (DSD) and a blood
+    pressure rise. After the decision the tracing shows filling stopped and the bladder drained through the catheter."""
+    rate = 18
+    start2 = at_volume(rate, 140)
+    bp, stop, drain = start2 + 10, start2 + 13, start2 + 22
+    s = Study("udy-ndo-dsd", drain + 14, "supine")
+    s.fill(20, (stop - 20) * rate / 60, rate)
+    cap = round((stop - 20) * rate / 60)
+    s.cough(8, 22)  # abdominal muscles paralysed below T4: weak coughs, still enough to check transmission
     t110 = at_volume(rate, 110)
     s.contraction(t110, 26, peak=48, urgency=False, emg=55)
-    start2 = at_volume(rate, 140)
-    top = s.contraction(start2, 28, peak=85, urgency=False, emg=72)
-    for x in (start2 + 9, start2 + 14, start2 + 19):  # leakage escapes in spurts between sphincter bursts
+    top = s.contraction(start2, 24, peak=85, urgency=False, emg=72)
+    for x in (start2 + 7, start2 + 11, start2 + 15):  # leakage escapes in spurts between sphincter bursts
         s.leak(x, 3.2, 6)
-    s.event(start2 + 9, "leak")
-    s.event(start2 + 12, "bloodPressure", value="178/96")
+    s.event(start2 + 7, "leak")
+    s.event(bp, "bloodPressure", value="178/96")
+    s.event(stop, "stop")
+    s.event(drain, "drain")
+    s.empty(drain)
+    coughs_every(s, 90, t110 + 65, step=120, amp=20)  # at 90, 210, 330 and 450 s, as before
     s.pin(top, "pdet", 85.0)
     data = s.finish(compliance(60))
     data.update(kind="video-cystometry", fillingRate=rate, position="supine",
-                views=[ALL, window("contraction", L("Contraction at 140 ml", "Kontraktion bei 140 ml", "Contracción a los 140 ml"), start2 - 25, end + 2)],
+                views=[ALL, window("contraction", L("At 140 ml", "Bei 140 ml", "A los 140 ml"), start2 - 25, drain + 12)],
                 steps={"read": "all", "dysreflexia": "contraction", "plan": "all"},
-                annotations=[span("read", start2, start2 + 28, L("Detrusor contraction with rising sphincter EMG and interrupted leakage: DSD",
+                # What was done about the dysreflexia is the answer to "dysreflexia": it stays hidden until then.
+                conceal=[{"from": round(bp + 0.5, 2), "until": "dysreflexia"}],
+                annotations=[span("read", start2, start2 + 24, L("Detrusor contraction with rising sphincter EMG and interrupted leakage: DSD",
                                                                  "Detrusorkontraktion mit steigendem Sphinkter-EMG und unterbrochener Leckage: DSD",
                                                                  "Contracción del detrusor con EMG esfinteriano en aumento y escape entrecortado: DDE"), "emg"),
                              point("dysreflexia", top, "pdet", L("Pdet 85 cmH2O with blood pressure 178/96: autonomic dysreflexia",
                                                                  "Pdet 85 cmH2O mit Blutdruck 178/96: autonome Dysreflexie",
-                                                                 "Pdet 85 cmH2O con presión arterial 178/96: disreflexia autonómica"))],
+                                                                 "Pdet 85 cmH2O con presión arterial 178/96: disreflexia autonómica")),
+                             span("dysreflexia", stop - 0.5, drain + 4, L("Filling stopped and the bladder drained through the catheter: the trigger is removed",
+                                                                         "Füllung gestoppt und Blase über den Katheter abgelassen: Der Auslöser ist beseitigt",
+                                                                         "Llenado detenido y vejiga vaciada por la sonda: se elimina el desencadenante"), "vol", "good")],
                 readings={"maxPdet": 85, "contractionOnsets": [110, 140], "contractionPeaks": [48, 85], "capacity": cap})
     return data
 
@@ -915,9 +992,9 @@ def acontractile() -> dict:
     rate, cap = 50, 600
     end = s.fill(20, cap, rate)
     s.cough(8, 90)
-    coughs_every(s, 80, end - 10, step=120, amp=90)
     sensations(s, rate, 300, 450, 580)
     s.event(end + 15, "void")
+    coughs_every(s, 80, end - 10, amp=90)
     strains = [(end + 30, 58, 7), (end + 46, 64, 9), (end + 64, 52, 6), (end + 80, 56, 8), (end + 97, 48, 6), (end + 113, 50, 7)]
     pieces = []
     for start, amp, dur in strains:
@@ -941,6 +1018,7 @@ def acontractile() -> dict:
     s.pin(k_peak * DT, "flow", 8.0)
     s.event(k_peak * DT, "qmax")
     s.cough(end + 145, 88)
+    s.cough(end + 7, 90)  # immediately before permission to void
     data = s.finish(compliance(190))
     data.update(kind="pressure-flow", fillingRate=rate, position="sitting",
                 views=[ALL, fill_view(end + 10), void_view(end + 8, end + 152)],
@@ -951,7 +1029,7 @@ def acontractile() -> dict:
                              point("void", k_peak * DT, "flow", L("Qmax 8 only while straining", "Qmax 8 nur beim Pressen", "Qmax 8 solo al empujar")),
                              point("later", at_volume(rate, 450), "vol", L("First desire only at 450 ml, capacity 600 ml: catheterise by the clock, not by the urge",
                                                                           "Erster Harndrang erst bei 450 ml, Kapazität 600 ml: nach der Uhr katheterisieren, nicht nach dem Drang",
-                                                                          "Primer deseo solo a 450 ml, capacidad 600 ml: sondar según el reloj, no según el deseo"))],
+                                                                          "Primer deseo solo a 450 ml, capacidad 600 ml: cateterizar según el reloj, no según el deseo"))],
                 readings={"capacity": cap, "qmax": 8.0, "pvesVoidMax": 102, "pdetVoidBelow": 10, "voided": 230, "residual": 370,
                           "firstSensation": 300, "firstDesire": 450, "strongDesire": 580})
     return data
@@ -970,7 +1048,7 @@ def plateau_flow() -> dict:
                 views=[window("all", L("Uroflowmetry", "Uroflowmetrie", "Flujometría"), 0, v["end"] + 4)],
                 steps={"curve": "all", "next": "all", "treat": "all"},
                 annotations=[span("curve", v["start"] + 2.5, v["end"] - 2.5, L("Plateau: flow hardly changes for most of the void",
-                                                                               "Plateau: Der Fluss ändert sich fast während der ganzen Miktion kaum",
+                                                                               "Plateau: Der Fluss bleibt über den größten Teil der Miktion nahezu gleich",
                                                                                "Meseta: el flujo apenas cambia durante casi toda la micción"), "flow")],
                 readings={"qmax": 9.0, "voided": 310, "flowTime": round(v["end"] - v["start"])})
     return data
@@ -982,13 +1060,13 @@ def catheter_loss() -> dict:
     rate, cap = 50, 350
     end = s.fill(20, cap, rate)
     s.cough(8, 94)
-    coughs_every(s, 80, end - 10, amp=94)
     sensations(s, rate, 140, 220, 330)
+    coughs_every(s, 80, end - 10, amp=94)
     first = s.void(end + 15, qmax=7.0, voided=280, pdet_qmax=70, popen=50, shape="prolonged", opening=9)
     loss = first["start"] + 5
-    s.lose_catheter(loss, first["end"] + 30)
-    s.cough(first["end"] + 12, 92)
     recath = first["end"] + 40
+    s.lose_catheter(loss, recath)
+    s.cough(first["end"] + 12, 92)
     s.event(recath, "recatheterise")
     s.empty(recath)
     start2 = recath + 30
@@ -997,12 +1075,15 @@ def catheter_loss() -> dict:
     coughs_every(s, start2 + 60, end2 - 10, amp=94)
     second = pressure_flow(s, end2 + 15, qmax=8.0, voided=300, pdet_qmax=74, popen=53, shape="prolonged", opening=9)
     s.cough(second["end"] + 8, 92)
+    for void_start in (end + 7, end2 + 7):  # immediately before each permission to void
+        s.cough(void_start, 94)
     data = s.finish(compliance(100))
     data.update(kind="pressure-flow", fillingRate=rate, position="sitting",
                 views=[ALL, window("void1", L("Void 1", "Miktion 1", "Micción 1"), end + 8, first["end"] + 34),
                        window("void2", L("Repeat void", "Wiederholte Miktion", "Micción repetida"), end2 + 8, second["end"] + 14)],
                 steps={"artefact": "void1", "next": "void1", "repeat": "void2"},
-                annotations=[span("artefact", loss, first["end"] + 30, L("Pves drops suddenly below zero and no longer follows the cough: the vesical catheter is out",
+                conceal=[{"from": round(first["end"] + 34, 2), "until": "next"}],
+                annotations=[span("artefact", loss, first["end"] + 34, L("Pves drops suddenly below zero and no longer follows the cough: the vesical catheter is out",
                                                                          "Pves fällt schlagartig unter null und folgt dem Husten nicht mehr: Blasenkatheter herausgerutscht",
                                                                          "La Pves cae de golpe por debajo de cero y ya no sigue la tos: la sonda vesical se ha salido"), "pves"),
                              point("repeat", second["tpeak"], "pdet", same("PdetQmax 74")),

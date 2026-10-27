@@ -822,9 +822,9 @@ def load_visuals(root: Path, cases: list) -> tuple[list, dict, dict]:
 
 TRACING_CHANNELS = {"pves", "pabd", "pdet", "flow", "vol", "vvoid", "emg"}
 TRACING_EVENTS = {"cough", "valsalva", "fs", "fd", "sd", "urgency", "leak", "void", "qmax", "reduction", "provocation", "drain",
-                  "recatheterise", "bloodPressure", "stop"}
+                  "recatheterise", "bloodPressure", "stop", "flush"}
 TRACING_KINDS = {"pressure-flow", "video-pressure-flow", "cystometry", "video-cystometry", "uroflow", "uroflow-emg"}
-TRACING_LIMITS = {"pves": (-5, 250), "pabd": (-5, 250), "flow": (0, 60), "vinf": (0, 1500), "vvoid": (0, 1500), "emg": (0, 150)}
+TRACING_LIMITS = {"pves": (-20, 250), "pabd": (-20, 250), "flow": (0, 60), "vinf": (0, 1500), "vvoid": (0, 1500), "emg": (0, 150)}
 
 
 def load_tracings(root: Path, cases: list) -> dict:
@@ -884,6 +884,28 @@ def load_tracings(root: Path, cases: list) -> dict:
         for step_id, view_id in steps.items():
             require(step_id in step_ids, f"{where}.steps: unknown step {step_id!r}")
             require(view_id in view_ids, f"{where}.steps[{step_id!r}]: unknown view {view_id!r}")
+        # Parts of a study that answer a question stay hidden until that decision is answered.
+        conceal = tracing.get("conceal", [])
+        require(isinstance(conceal, list), f"{where}.conceal: expected a list")
+        for index, item in enumerate(conceal):
+            item_where = f"{where}.conceal[{index}]"
+            require(isinstance(item, dict) and set(item) == {"from", "until"}, f"{item_where}: expected from and until")
+            require(type(item["from"]) in (int, float) and start < item["from"] < end, f"{item_where}.from: expected a time inside the tracing")
+            require(item["until"] in steps, f"{item_where}.until: expected a step that shows the tracing")
+            # The readout names markers within 1.5 s of the cursor, so nothing hidden may sit right behind the edge.
+            behind = [e["type"] for e in events if item["from"] < e["t"] <= item["from"] + 2]
+            require(not behind, f"{item_where}.from: the {behind[0] if behind else ''} marker lies within 2 s after it")
+        for step_id, view_id in steps.items():
+            position = step_ids.index(step_id)
+            limit = min([c["from"] for c in conceal if step_ids.index(c["until"]) >= position], default=end + 1)
+            view = next(v for v in views if v["id"] == view_id)
+            require((view["t"][0] if "t" in view else start) < limit - 5, f"{where}.steps[{step_id!r}]: view {view_id!r} is still hidden at that step")
+        rates = tracing.get("rates")
+        if rates is not None:
+            require(isinstance(rates, list) and rates and all(isinstance(r, list) and len(r) == 2 and type(r[0]) in (int, float) and type(r[1]) in (int, float) and r[1] > 0 for r in rates),
+                    f"{where}.rates: expected [start time, ml/min] pairs")
+            require(rates[0][0] <= start and all(b[0] > a[0] for a, b in zip(rates, rates[1:])) and rates[0][1] == tracing.get("fillingRate"),
+                    f"{where}.rates: must start with the filling rate at the beginning, in time order")
         for index, note in enumerate(tracing.get("annotations", [])):
             note_where = f"{where}.annotations[{index}]"
             require(note.get("step") in steps, f"{note_where}.step: findings belong to a step that shows the tracing")
@@ -905,7 +927,7 @@ READING_RULES = (
     "strongDesire", "leakPointPves", "qmax1", "qmax2", "voided1", "voided2", "flowTime", "pdetStart", "pdetEnd", "compliance",
     "leakPdet", "leakVolume", "volumeAtPdet40", "secondFillRate", "maxPdet", "overactivityFrom", "overactivityMax",
     "contractionOnsets", "contractionPeaks", "waveSeconds", "overactivityLeak", "coughLeakFrom", "baselinePves", "baselinePabd",
-    "coughPves", "coughPabd", "rectalWaves", "rectalFrom", "rectalRise", "pvesVoidMax", "pdetVoidBelow", "pvesBeforeLossAbove",
+    "coughAt", "coughPves", "coughPabd", "rectalWaves", "rectalFrom", "rectalRise", "pvesVoidMax", "pdetVoidBelow", "pvesBeforeLossAbove",
 )
 GRID = 0.25  # seconds; the stored samples reproduce the model on this grid within the generator's tolerance
 
@@ -1119,12 +1141,16 @@ def check_tracing_readings(tracing: dict, where: str) -> None:
     for key, values in (("baselinePves", grid_pves), ("baselinePabd", grid_pabd)):
         if key in readings:
             close(key, sorted(values[:g(t0 + 5) + 1])[len(values[:g(t0 + 5) + 1]) // 2], 1, " cmH2O")
+    # Cough transmission: the cough at the stated infused volume (coughAt), otherwise the last cough.
+    tested = [x for x in coughs if "coughAt" not in readings or abs(tracing["vinf"][at(x)] - readings["coughAt"]) <= 2]
+    if "coughAt" in readings:
+        require(tested, f"{where}.readings.coughAt: no cough marker at {readings['coughAt']} ml")
     for key, name in (("coughPves", "pves"), ("coughPabd", "pabd")):
         if key in readings:
-            require(coughs, f"{where}.readings.{key}: no cough marker")
-            last = coughs[-1]
-            peak = max(tracing[name][k] for k in range(len(t)) if last - 0.5 <= t[k] <= last + 3)
-            close(key, peak - tracing[name][at(last - 0.75)], 1, " cmH2O rise with the last cough")
+            require(tested, f"{where}.readings.{key}: no cough marker")
+            cough = tested[0] if "coughAt" in readings else tested[-1]
+            peak = max(tracing[name][k] for k in range(len(t)) if cough - 0.5 <= t[k] <= cough + 3)
+            close(key, peak - tracing[name][at(cough - 0.75)], 1, " cmH2O rise with the cough")
     if {"rectalWaves", "rectalFrom", "rectalRise"} & set(readings):
         # Pabd alone rises (Pdet falls by about as much); straining and coughs raise both lines.
         rectal = [w for w in _waves(grid_pabd, smooth_pabd, 5.0, 0, len(grid_pabd))

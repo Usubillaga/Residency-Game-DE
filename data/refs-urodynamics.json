@@ -67,7 +67,7 @@
     "title": "EAU Neuro-Urology 2026: The Guideline",
     "url": "https://uroweb.org/guidelines/neuro-urology/chapter/the-guideline",
     "checked": "2026-10-26",
-    "scope": "Supports physiological filling rates and same-session repeat measurements, video-urodynamics in neurological patients, upper tract risk from high filling pressures, augmentation for low compliance after failed less invasive treatment, and caution with prostate surgery in neurological disease. Also supports blood pressure and heart rate monitoring during urodynamics in patients at risk of autonomic dysreflexia (lesions at or above T6; systolic rise above 20 mmHg), antimuscarinics first line for neurogenic detrusor overactivity, botulinum toxin when they are ineffective, no beta-3 agonists to reduce urodynamic overactivity, intermittent catheterisation four to six times a day with volumes generally not above 400–500 ml, that reflex triggering can provoke dysreflexia and that assisted emptying needs low outlet resistance."
+    "scope": "Supports physiological filling rates and same-session repeat measurements, video-urodynamics in neurological patients, upper tract risk from high filling pressures, augmentation for low compliance after failed less invasive treatment, and caution with prostate surgery in neurological disease. Also supports blood pressure and heart rate monitoring during urodynamics in patients at risk of autonomic dysreflexia (lesions at or above T6; systolic rise above 20 mmHg), antimuscarinics first line for neurogenic detrusor overactivity, botulinum toxin when they are ineffective, no beta-3 agonists to reduce urodynamic overactivity (mirabegron does not improve urodynamic parameters in neurogenic detrusor overactivity), intermittent catheterisation four to six times a day with volumes generally not above 400–500 ml (in aseptic catheterisation, five times a day reduced urinary infections), that reflex triggering can provoke dysreflexia and that assisted emptying needs low outlet resistance."
   },
   {
     "id": "udy-msa-vuds-2001",
@@ -95,7 +95,7 @@
     "title": "EAU Pocket Guidelines: Non-neurogenic Female LUTS 2026",
     "url": "https://d56bochluxqnz.cloudfront.net/documents/pocket-guidelines/EAU-Pocket-on-Non-Neurogenic-Female-LUTS-2026_2026-03-12-155317_rckt.pdf",
     "checked": "2026-10-26",
-    "scope": "Supports female BOO work-up with video-urodynamics and urethrocystoscopy, sling revision rather than dilatation or urethrotomy after midurethral tapes (theoretical risk of mesh extrusion), intermittent catheterisation and sacral nerve stimulation for underactive bladder and functional obstruction, alpha-blockers only off-label and no routine parasympathomimetics, and the prolapse reduction test with counselling about combined surgery. Also supports onabotulinumtoxinA 100 U for refractory OAB or urgency incontinence with counselling about infection and catheterisation, bladder training and drugs for urgency incontinence, treating the most bothersome component of mixed incontinence first with a warning that surgery is less successful than in pure stress incontinence, a shared choice between midurethral sling, colposuspension, autologous sling and less effective bulking agents for stress incontinence, not using urethral pressure profilometry or leak point pressure to grade severity, and warning women who strain to empty about prolapse."
+    "scope": "Supports female BOO work-up with video-urodynamics and urethrocystoscopy, sling revision rather than dilatation or urethrotomy after midurethral tapes (theoretical risk of mesh extrusion), intermittent catheterisation and sacral nerve stimulation for underactive bladder and functional obstruction, alpha-blockers only off-label and no routine parasympathomimetics, and the prolapse reduction test with counselling about combined surgery. Also supports onabotulinumtoxinA 100 U for refractory OAB or urgency incontinence with counselling about infection and catheterisation, bladder training and drugs for urgency incontinence, treating the most bothersome component of mixed incontinence first with a warning that surgery is less successful than in pure stress incontinence, a shared choice between midurethral sling, colposuspension, autologous sling and less effective bulking agents for stress incontinence, not using urethral pressure profilometry or leak point pressure to grade severity, and warning women who strain to empty about prolapse. Further: supervised pelvic floor muscle training for at least three months as first-line therapy for stress or mixed incontinence (strong), caution with long-term anticholinergics in elderly women and assessment of the anticholinergic burden (strong), and no consistent evidence that preoperative detrusor overactivity is associated with failure of midurethral slings (LE 3)."
   },
   {
     "id": "udy-eau-female-luts-diagnosis",
@@ -157,8 +157,8 @@
     "id": "udy-artefact-recognition",
     "title": "Urodynamic quality assessment and artefact recognition (teaching slides)",
     "url": "https://www.nbt.nhs.uk/sites/default/files/attachments/HH%20Artefact%20recognition.pdf",
-    "checked": "2026-10-20",
-    "scope": "Supports the pattern of rectal contractions, cough tests every minute or 50 ml and immediately before and after voiding, and the 70% transmission rule."
+    "checked": "2026-10-26",
+    "scope": "Supports the pattern of rectal contractions (Pabd rises without Pves, so Pdet falls), cough tests every minute or 50 ml and immediately before and after voiding, the 70% transmission rule, flushing the line when a cough response is too small, and that an expelled catheter drops Pves, usually to well below zero, with no response to cough checks."
   },
   {
     "id": "udy-troubleshooting-technical",
@@ -179,14 +179,21 @@
     "title": "EAU Pocket Guidelines: Non-neurogenic Male LUTS 2026",
     "url": "https://d56bochluxqnz.cloudfront.net/documents/pocket-guidelines/EAU-Pocket-on-Non-Neurogenic-Male-LUTS-2026.pdf",
     "checked": "2026-10-26",
-    "scope": "Supports a bladder diary for at least three days to assess male LUTS, particularly nocturia (strong), treating the underlying causes of nocturia (strong), and urodynamics before further invasive treatment after an unsuccessful invasive treatment (weak)."
+    "scope": "Supports a bladder diary for at least three days to assess male LUTS, particularly nocturia (strong), treating the underlying causes of nocturia (strong), urodynamics before further invasive treatment after an unsuccessful invasive treatment (weak), and urodynamics when surgery is considered in men with bothersome, predominantly voiding LUTS and Qmax above 10 ml/s (weak)."
   },
   {
     "id": "udy-ics-gup-2016",
     "title": "ICS Good Urodynamic Practices and Terms 2016: uroflowmetry, cystometry and pressure-flow study",
     "url": "https://www.ics.org/folder/standardisation/current-ics-standardisations/d/international-continence-society-good-urodynamic-practices-and-terms-2016-urodynamics-uroflowmetry-cystometry-and-pressure-flow-study/download",
     "checked": "2026-10-26",
-    "scope": "Supports that an expelled catheter shows as a sudden drop in Pves or Pabd, usually below zero, and should prompt correction or repetition; repeating a test after technical errors or artefacts but not routinely after an adequate test; reporting the provocation and recording site of a leak point pressure; and cough-associated detrusor overactivity as overactivity starting immediately after a cough."
+    "scope": "Supports that an expelled catheter shows as a sudden drop in Pves or Pabd, usually below zero, and should prompt correction or repetition; repeating a test after technical errors or artefacts but not routinely after an adequate test; reporting the provocation and recording site of a leak point pressure; cough-associated detrusor overactivity as overactivity starting immediately after a cough; the leak point pressure as the pressure at the moment leakage becomes visible; the inevitable delay between pressure and flow signals, to be corrected for in pressure-flow analysis; and a cough check of the catheter position after pressure-flow."
+  },
+  {
+    "id": "udy-iuga-ics-terminology-2010",
+    "title": "IUGA/ICS joint report on the terminology for female pelvic floor dysfunction (2010; reprint)",
+    "url": "https://thepogp.co.uk/_userfiles/pages/files/haylen.pdf",
+    "checked": "2026-10-26",
+    "scope": "Supports normal (previously 'stable') detrusor function, increased bladder sensation during filling cystometry, compliance as volume change over detrusor pressure change without defined normal categories, mixed urinary incontinence as a symptom (leakage with urgency and with effort, sneezing or coughing) and urodynamic stress incontinence as leakage with raised abdominal pressure without a detrusor contraction."
   },
   {
     "id": "udy-ics-bladder-sensation",

@@ -1635,9 +1635,9 @@
       "sex": "female"
     },
     "title": {
-      "de": "Kontinent dank Prolaps?",
-      "en": "Continent thanks to the prolapse?",
-      "es": "¿Continente gracias al prolapso?"
+      "de": "Deszensusoperation geplant – und die Kontinenz?",
+      "en": "Prolapse surgery planned – and continence?",
+      "es": "Cirugía del prolapso prevista: ¿y la continencia?"
     },
     "presenting": {
       "de": "Frau Kowalczyk, 64 Jahre, hat einen symptomatischen Deszensus (POP-Q Stadium III, vorderes und apikales Kompartiment) mit Fremdkörpergefühl und schwachem Strahl. Urinverlust hat sie nie bemerkt. Die vaginale Deszensusoperation ist geplant, Restharn 90 ml.",
@@ -2173,9 +2173,9 @@
       "ageBand": "child"
     },
     "title": {
-      "de": "Haltemanöver, Infekte und eine Kurve im Zickzack",
-      "en": "Holding manoeuvres, infections and a zigzag curve",
-      "es": "Maniobras de retención, infecciones y una curva en zigzag"
+      "de": "Haltemanöver, Infekte und zwei Uroflowmetrien",
+      "en": "Holding manoeuvres, infections and two uroflowmetries",
+      "es": "Maniobras de retención, infecciones y dos flujometrías"
     },
     "presenting": {
       "de": "Mila, 7 Jahre, kommt mit ihrer Mutter: Seit einem Jahr ist die Unterhose tagsüber oft nass, sie zeigt Haltemanöver mit Fersensitz und hatte drei fieberfreie Harnwegsinfekte in sechs Monaten. Stuhlgang nur alle drei bis vier Tage, oft hart. Neurologische Untersuchung und Lendenwirbelsäule unauffällig, kein Fieber.",
@@ -2304,8 +2304,8 @@
           {
             "id": "c",
             "text": {
-              "de": "Unterbrochene Kurve: unteraktive Blase",
-              "en": "Interrupted curve: underactive bladder",
+              "de": "Unterbrochene Kurve: unteraktive Blase mit Bauchpresse",
+              "en": "Interrupted curve: underactive bladder with straining",
               "es": "Curva interrumpida: vejiga hipoactiva con prensa"
             },
             "score": 0,
@@ -2711,14 +2711,14 @@
       "sex": "male"
     },
     "title": {
-      "de": "Nykturie, 35 ml Prostata – und eine normale Kurve",
-      "en": "Nocturia, a 35 ml prostate – and a normal tracing",
-      "es": "Nicturia, una próstata de 35 ml y un trazado normal"
+      "de": "Nykturie, 35 ml Prostata – und der Wunsch nach dem Laser",
+      "en": "Nocturia, a 35 ml prostate – and a request for laser surgery",
+      "es": "Nicturia, una próstata de 35 ml y el deseo de una cirugía con láser"
     },
     "presenting": {
-      "de": "Herr Wiesmüller, 58 Jahre, bemerkt einen schwächeren Strahl und Nachträufeln; am meisten stört ihn, dass er nachts drei- bis viermal aufsteht (IPSS 16, Lebensqualitätsindex 4). Drei Monate Tamsulosin brachten kaum Besserung. Prostatavolumen 35 ml, PSA 1,2 ng/ml, Urinstatus unauffällig. Freie Uroflowmetrie: Qmax 13 ml/s bei 260 ml, Restharn 25 ml. Er wünscht eine Laseroperation wie sein Nachbar; wegen des Qmax über 10 ml/s wurde vorher eine Druck-Fluss-Messung durchgeführt.",
-      "en": "Mr Wiesmüller, 58, has noticed a weaker stream and post-void dribbling; what bothers him most is getting up three to four times a night (IPSS 16, quality-of-life score 4). Three months of tamsulosin brought little improvement. Prostate volume 35 ml, PSA 1.2 ng/ml, urinalysis normal. Free uroflowmetry: Qmax 13 ml/s at 260 ml, post-void residual 25 ml. He wants laser surgery like his neighbour; because Qmax is above 10 ml/s, a pressure-flow study was performed first.",
-      "es": "El Sr. Wiesmüller, de 58 años, nota un chorro más débil y goteo posmiccional; lo que más le molesta es levantarse tres o cuatro veces por la noche (IPSS 16, índice de calidad de vida 4). Tres meses de tamsulosina apenas le aliviaron. Volumen prostático 35 ml, PSA 1,2 ng/ml, sedimento normal. Flujometría libre: Qmax 13 ml/s con 260 ml, residuo posmiccional 25 ml. Quiere una operación con láser como su vecino; como el Qmax supera 10 ml/s, antes se realizó un estudio presión-flujo."
+      "de": "Herr Wiesmüller, 58 Jahre, bemerkt einen schwächeren Strahl und Nachträufeln; am meisten stört ihn, dass er nachts drei- bis viermal aufsteht (IPSS 16, Lebensqualitätsindex 4). Drei Monate Tamsulosin brachten kaum Besserung. Prostatavolumen 35 ml, PSA 1,2 ng/ml, Urinstatus unauffällig. Freie Uroflowmetrie: Qmax 13 ml/s bei 260 ml, Restharn 25 ml. Er wünscht eine Laseroperation wie sein Nachbar. Ein Miktionstagebuch liegt nicht vor; wegen des Qmax über 10 ml/s wurde vorher eine Druck-Fluss-Messung durchgeführt.",
+      "en": "Mr Wiesmüller, 58, has noticed a weaker stream and post-void dribbling; what bothers him most is getting up three to four times a night (IPSS 16, quality-of-life score 4). Three months of tamsulosin brought little improvement. Prostate volume 35 ml, PSA 1.2 ng/ml, urinalysis normal. Free uroflowmetry: Qmax 13 ml/s at 260 ml, post-void residual 25 ml. He wants laser surgery like his neighbour. He has not kept a bladder diary; because Qmax is above 10 ml/s, a pressure-flow study was performed first.",
+      "es": "El Sr. Wiesmüller, de 58 años, nota un chorro más débil y goteo posmiccional; lo que más le molesta es levantarse tres o cuatro veces por la noche (IPSS 16, índice de calidad de vida 4). Tres meses de tamsulosina apenas le aliviaron. Volumen prostático 35 ml, PSA 1,2 ng/ml, sedimento normal. Flujometría libre: Qmax 13 ml/s con 260 ml, residuo posmiccional 25 ml. Quiere una operación con láser como su vecino. No ha llevado ningún diario miccional; como el Qmax supera 10 ml/s, antes se realizó un estudio presión-flujo."
     },
     "vitals": null,
     "steps": [
@@ -2734,9 +2734,9 @@
           {
             "id": "a",
             "text": {
-              "de": "Unauffällig: normale Empfindung, stabiler Detrusor, hohe Compliance",
-              "en": "Normal: normal sensation, stable detrusor, high compliance",
-              "es": "Normal: sensibilidad normal, detrusor estable, distensibilidad alta"
+              "de": "Unauffällig: Empfindung, Detrusorfunktion und Compliance normal",
+              "en": "Normal: sensation, detrusor function and compliance",
+              "es": "Estudio normal: sensibilidad, función del detrusor y distensibilidad"
             },
             "score": 10,
             "minutes": 4,
@@ -2894,9 +2894,9 @@
             "minutes": 6,
             "critical": false,
             "feedback": {
-              "de": "Richtig: Die Messung zeigt keine Obstruktion, die eine Operation beheben könnte, und eine normale Speicherfunktion. Sein Hauptproblem ist die Nykturie; die EAU empfiehlt dafür ein Miktionstagebuch über mindestens drei Tage (starke Empfehlung), um etwa eine nächtliche Polyurie zu erkennen und die Ursachen zu behandeln.",
-              "en": "Correct: the study shows no obstruction that surgery could relieve, and normal storage. His main problem is nocturia; for this the EAU recommends a bladder diary for at least three days (strong recommendation) to detect, for example, nocturnal polyuria and to treat the causes.",
-              "es": "Correcto: el estudio no muestra una obstrucción que la cirugía pueda resolver y el almacenamiento es normal. Su problema principal es la nicturia; para ello la EAU recomienda un diario miccional de al menos tres días (recomendación fuerte), que permite detectar, por ejemplo, una poliuria nocturna y tratar las causas."
+              "de": "Richtig: Die Messung zeigt keine Obstruktion, die eine Operation beheben könnte, und eine normale Speicherfunktion. Sein Hauptproblem ist die Nykturie; die EAU empfiehlt dafür ein Miktionstagebuch über mindestens drei Tage (starke Empfehlung), um etwa eine nächtliche Polyurie zu erkennen und die Ursachen zu behandeln. Das Tagebuch gehört bei Nykturie zur Basisdiagnostik und hätte vor der invasiven Messung stehen sollen; die Druck-Fluss-Messung bei Qmax über 10 ml/s sieht die EAU für Männer mit belastenden, überwiegend Entleerungsbeschwerden vor, wenn eine Operation erwogen wird (schwache Empfehlung).",
+              "en": "Correct: the study shows no obstruction that surgery could relieve, and normal storage. His main problem is nocturia; for this the EAU recommends a bladder diary for at least three days (strong recommendation) to detect, for example, nocturnal polyuria and to treat the causes. The diary is part of the basic assessment of nocturia and should have preceded the invasive study; the EAU reserves pressure-flow studies at Qmax above 10 ml/s for men with bothersome, predominantly voiding LUTS when surgery is considered (weak recommendation).",
+              "es": "Correcto: el estudio no muestra una obstrucción que la cirugía pueda resolver y el almacenamiento es normal. Su problema principal es la nicturia; para ello la EAU recomienda un diario miccional de al menos tres días (recomendación fuerte), que permite detectar, por ejemplo, una poliuria nocturna y tratar las causas. El diario forma parte de la evaluación básica de la nicturia y debió preceder al estudio invasivo; la EAU reserva el estudio presión-flujo con Qmax superior a 10 ml/s para varones con STUI molestos de predominio miccional cuando se plantea la cirugía (recomendación débil)."
             }
           },
           {
@@ -2952,16 +2952,17 @@
       }
     ],
     "takeaway": {
-      "de": "Auch ein Normalbefund ist ein Befund: stabile Füllung mit normaler Empfindung und Compliance, nicht obstruierte Miktion mit normaler Kontraktilität (BOOI unter 20, BCI 100–150). Hustenspitzen erscheinen gleich in Pves und Pabd und sind keine Überaktivität. Ohne Obstruktion keine Desobstruktion – steht die Nykturie im Vordergrund, zuerst das Miktionstagebuch.",
-      "en": "A normal study is a finding too: stable filling with normal sensation and compliance, an unobstructed void with normal contractility (BOOI below 20, BCI 100–150). Cough spikes appear equally in Pves and Pabd and are not overactivity. No obstruction, no deobstruction – when nocturia is the main complaint, start with a bladder diary.",
-      "es": "Un estudio normal también es un hallazgo: llenado estable con sensibilidad y distensibilidad normales, micción sin obstrucción con contractilidad normal (BOOI inferior a 20, BCI 100–150). Los picos de tos aparecen igual en Pves y Pabd y no son hiperactividad. Sin obstrucción no hay desobstrucción; si la nicturia es la queja principal, primero el diario miccional."
+      "de": "Auch ein Normalbefund ist ein Befund: Füllung ohne Detrusorüberaktivität mit normaler Empfindung und Compliance, nicht obstruierte Miktion mit normaler Kontraktilität (BOOI unter 20, BCI 100–150). Hustenspitzen erscheinen gleich in Pves und Pabd und sind keine Überaktivität. Ohne Obstruktion keine Desobstruktion – steht die Nykturie im Vordergrund, zuerst das Miktionstagebuch.",
+      "en": "A normal study is a finding too: filling without detrusor overactivity, with normal sensation and compliance, an unobstructed void with normal contractility (BOOI below 20, BCI 100–150). Cough spikes appear equally in Pves and Pabd and are not overactivity. No obstruction, no deobstruction – when nocturia is the main complaint, start with a bladder diary.",
+      "es": "Un estudio normal también es un hallazgo: llenado sin hiperactividad del detrusor, con sensibilidad y distensibilidad normales, micción sin obstrucción con contractilidad normal (BOOI inferior a 20, BCI 100–150). Los picos de tos aparecen igual en Pves y Pabd y no son hiperactividad. Sin obstrucción no hay desobstrucción; si la nicturia es la queja principal, primero el diario miccional."
     },
     "references": [
       "udy-eau-male-luts-diagnostic",
       "udy-eau-male-luts-pocket-2026",
       "udy-bladder-indices",
       "udy-ics-basic-workshop",
-      "udy-ics-gup-2016"
+      "udy-ics-gup-2016",
+      "udy-iuga-ics-terminology-2010"
     ]
   },
   {
@@ -2982,9 +2983,9 @@
       "sex": "female"
     },
     "title": {
-      "de": "Keine Überaktivität in der Kurve – also keine überaktive Blase?",
-      "en": "No overactivity on the tracing – so no overactive bladder?",
-      "es": "Sin hiperactividad en el trazado: ¿entonces sin vejiga hiperactiva?"
+      "de": "Dranginkontinenz vor Botulinumtoxin – was zeigt die Kurve?",
+      "en": "Urgency incontinence before botulinum toxin – what does the tracing show?",
+      "es": "Incontinencia de urgencia antes de la toxina botulínica: ¿qué muestra el trazado?"
     },
     "presenting": {
       "de": "Frau Söllner, 48 Jahre, leidet seit drei Jahren unter imperativem Harndrang, tagsüber zwölf Miktionen, zweimal Nykturie und etwa zweimal pro Woche Dranginkontinenz. Blasentraining, Solifenacin und Mirabegron (jeweils drei Monate) halfen nicht ausreichend. Urinstatus unauffällig, Restharn 15 ml, Miktionstagebuch: größtes Miktionsvolumen 180 ml. Vor der geplanten Botulinumtoxin-Injektion wurde eine Urodynamik durchgeführt.",
@@ -3005,9 +3006,9 @@
           {
             "id": "a",
             "text": {
-              "de": "Frühe Empfindungen ohne Detrusorüberaktivität, auch bei Provokation",
-              "en": "Early sensations without detrusor overactivity, even on provocation",
-              "es": "Sensaciones precoces sin hiperactividad del detrusor, tampoco con provocación"
+              "de": "Gesteigerte Blasensensitivität, keine Überaktivität bei Provokation",
+              "en": "Increased bladder sensation; no overactivity even on provocation",
+              "es": "Sensibilidad vesical aumentada sin hiperactividad, tampoco con provocación"
             },
             "score": 10,
             "minutes": 4,
@@ -3061,9 +3062,9 @@
             "minutes": 4,
             "critical": false,
             "feedback": {
-              "de": "Über 320 ml steigt Pdet nur um etwa 3 cmH2O; das entspricht einer hohen Compliance.",
-              "en": "Over 320 ml Pdet rises by only about 3 cmH2O, which means high compliance.",
-              "es": "En 320 ml la Pdet solo sube unos 3 cmH2O, lo que indica una distensibilidad alta."
+              "de": "Über 320 ml steigt Pdet nur um etwa 3 cmH2O; die Compliance ist nicht vermindert.",
+              "en": "Over 320 ml Pdet rises by only about 3 cmH2O; compliance is not reduced.",
+              "es": "En 320 ml la Pdet solo sube unos 3 cmH2O; la distensibilidad no está disminuida."
             }
           }
         ],
@@ -3159,7 +3160,7 @@
             "text": {
               "de": "Bleibt eine Option; über Infekte und möglichen Selbstkatheterismus aufklären",
               "en": "Still an option; counsel about infection and possible self-catheterisation",
-              "es": "Sigue siendo una opción; informar de infecciones y posible autosondaje"
+              "es": "Sigue siendo una opción; informar de infecciones y posible autocateterismo"
             },
             "score": 10,
             "minutes": 6,
@@ -3167,7 +3168,7 @@
             "feedback": {
               "de": "Richtig: Ob in der Urodynamik eine Detrusorüberaktivität nachweisbar ist, beeinflusst nach der EAU-Leitlinie das Ergebnis der Onabotulinumtoxin-A-Injektion nicht. 100 E werden bei Drangsymptomatik empfohlen, die auf konservative oder medikamentöse Therapie nicht anspricht (starke Empfehlung); vorher über begrenzte Wirkdauer, Harnwegsinfekte und eine möglicherweise längere Katheterpflicht aufklären (starke Empfehlung).",
               "en": "Correct: according to the EAU guideline, whether urodynamics shows detrusor overactivity does not influence the result of onabotulinumtoxinA injections. 100 U is recommended for urgency symptoms refractory to conservative or drug treatment (strong recommendation); counsel beforehand about the limited duration, urinary infection and a possibly prolonged need for catheterisation (strong recommendation).",
-              "es": "Correcto: según la guía de la EAU, que la urodinámica muestre o no hiperactividad del detrusor no influye en el resultado de la onabotulinumtoxina A. Se recomiendan 100 U en los síntomas de urgencia refractarios al tratamiento conservador o farmacológico (recomendación fuerte); antes hay que informar de la duración limitada, las infecciones urinarias y la posible necesidad prolongada de sondaje (recomendación fuerte)."
+              "es": "Correcto: según la guía de la EAU, que la urodinámica muestre o no hiperactividad del detrusor no influye en el resultado de la onabotulinumtoxina A. Se recomiendan 100 U en los síntomas de urgencia refractarios al tratamiento conservador o farmacológico (recomendación fuerte); antes hay que informar de la duración limitada, las infecciones urinarias y la posible necesidad prolongada de cateterismo (recomendación fuerte)."
             }
           },
           {
@@ -3225,14 +3226,15 @@
     "takeaway": {
       "de": "Eine Urodynamik ohne Detrusorüberaktivität widerlegt die überaktive Blase nicht: Die OAB ist eine Symptomdiagnose, die Überaktivität ein Messbefund, und ihr Nachweis sagt das Ansprechen auf Medikamente oder Onabotulinumtoxin A nicht voraus. Hoher Fluss bei niedrigem Druck ist eine normale Entleerung. Vor der Injektion über Infekte und eine mögliche Katheterpflicht aufklären.",
       "en": "Urodynamics without detrusor overactivity does not disprove overactive bladder: OAB is a symptom diagnosis, overactivity a urodynamic finding, and finding it does not predict the response to drugs or onabotulinumtoxinA. High flow at low pressure is normal emptying. Before the injection, counsel about infection and a possible need for catheterisation.",
-      "es": "Una urodinámica sin hiperactividad del detrusor no refuta la vejiga hiperactiva: la VH es un diagnóstico sintomático, la hiperactividad un hallazgo urodinámico, y demostrarla no predice la respuesta a los fármacos ni a la onabotulinumtoxina A. Un flujo alto con presión baja es un vaciado normal. Antes de la inyección, informar de las infecciones y del posible sondaje."
+      "es": "Una urodinámica sin hiperactividad del detrusor no refuta la vejiga hiperactiva: la VH es un diagnóstico sintomático, la hiperactividad un hallazgo urodinámico, y demostrarla no predice la respuesta a los fármacos ni a la onabotulinumtoxina A. Un flujo alto con presión baja es un vaciado normal. Antes de la inyección, informar de las infecciones y del posible cateterismo."
     },
     "references": [
       "udy-eau-female-luts-diagnosis",
       "udy-eau-female-luts-management",
       "udy-eau-female-luts-pocket-2026",
       "udy-bladder-indices",
-      "udy-compliance-review"
+      "udy-compliance-review",
+      "udy-iuga-ics-terminology-2010"
     ]
   },
   {
@@ -3436,9 +3438,9 @@
             "minutes": 6,
             "critical": false,
             "feedback": {
-              "de": "Richtig: Die Messung zeigt eine Detrusorüberaktivitäts-Inkontinenz und keine Belastungsinkontinenz. Ein Band stützt die Harnröhre bei Belastung, gegen den Drang hilft es nicht. Die EAU empfiehlt Blasentraining als erste Therapie und Anticholinergika oder Beta-3-Agonisten, wenn konservative Maßnahmen nicht reichen (jeweils starke Empfehlung).",
-              "en": "Correct: the study shows detrusor overactivity incontinence and no stress incontinence. A sling supports the urethra on exertion; it does nothing for urgency. The EAU recommends bladder training as first-line therapy and antimuscarinics or beta-3 agonists when conservative measures are not enough (each a strong recommendation).",
-              "es": "Correcto: el estudio muestra una incontinencia por hiperactividad del detrusor y ninguna incontinencia de esfuerzo. Una cinta sostiene la uretra con el esfuerzo, pero no ayuda contra la urgencia. La EAU recomienda el entrenamiento vesical como primera línea y antimuscarínicos o agonistas beta-3 si las medidas conservadoras no bastan (recomendaciones fuertes)."
+              "de": "Richtig: Die Messung zeigt eine Detrusorüberaktivitäts-Inkontinenz und keine urodynamische Belastungsinkontinenz. Ein Band stützt die Harnröhre bei Belastung, gegen den Drang hilft es nicht. Die EAU empfiehlt Blasentraining als erste Therapie und Anticholinergika oder Beta-3-Agonisten, wenn konservative Maßnahmen nicht reichen (jeweils starke Empfehlung); für die gelegentliche Belastungskomponente kann angeleitetes Beckenbodentraining hinzukommen. Bei einer 67-Jährigen Anticholinergika nur mit Vorsicht einsetzen und die anticholinerge Gesamtlast prüfen, besonders bei kognitivem Risiko (EAU, starke Empfehlung).",
+              "en": "Correct: the study shows detrusor overactivity incontinence and no urodynamic stress incontinence. A sling supports the urethra on exertion; it does nothing for urgency. The EAU recommends bladder training as first-line therapy and antimuscarinics or beta-3 agonists when conservative measures are not enough (each a strong recommendation); for the occasional stress component, supervised pelvic floor muscle training can be added. In a 67-year-old, use antimuscarinics with caution and assess the anticholinergic burden, especially if there is cognitive risk (EAU, strong recommendation).",
+              "es": "Correcto: el estudio muestra una incontinencia por hiperactividad del detrusor y ninguna incontinencia urodinámica de esfuerzo. Una cinta sostiene la uretra con el esfuerzo, pero no ayuda contra la urgencia. La EAU recomienda el entrenamiento vesical como primera línea y antimuscarínicos o agonistas beta-3 si las medidas conservadoras no bastan (recomendaciones fuertes); para el componente de esfuerzo ocasional puede añadirse entrenamiento supervisado del suelo pélvico. En una mujer de 67 años, usar los antimuscarínicos con precaución y valorar la carga anticolinérgica, sobre todo si hay riesgo cognitivo (EAU, recomendación fuerte)."
             }
           },
           {
@@ -3484,9 +3486,9 @@
             "minutes": 5,
             "critical": false,
             "feedback": {
-              "de": "Hier liegt keine Mischform vor, sondern eine Detrusorüberaktivitäts-Inkontinenz. Auch eine Kolposuspension behandelt den Drang nicht.",
-              "en": "This is not a mixed form but detrusor overactivity incontinence. A colposuspension does not treat urgency either.",
-              "es": "No es una forma mixta, sino una incontinencia por hiperactividad del detrusor. Una colposuspensión tampoco trata la urgencia."
+              "de": "Klinisch liegt allenfalls eine dranggeprägte Mischsymptomatik vor (gelegentliche Leckage beim Husten); urodynamisch zeigt sich nur eine Detrusorüberaktivitäts-Inkontinenz. Auch eine Kolposuspension behandelt den Drang nicht.",
+              "en": "Clinically this is at most urgency-predominant mixed incontinence (occasional leakage on coughing); urodynamically only detrusor overactivity incontinence is shown. A colposuspension does not treat urgency either.",
+              "es": "Clínicamente hay como mucho una incontinencia mixta de predominio de urgencia (escape ocasional al toser); en la urodinámica solo se demuestra incontinencia por hiperactividad del detrusor. Una colposuspensión tampoco trata la urgencia."
             }
           }
         ],
@@ -3502,7 +3504,8 @@
       "udy-eau-female-luts-pocket-2026",
       "udy-eau-female-luts-diagnosis",
       "udy-eau-female-luts-management",
-      "udy-ics-teaching-gup"
+      "udy-ics-teaching-gup",
+      "udy-iuga-ics-terminology-2010"
     ]
   },
   {
@@ -3523,9 +3526,9 @@
       "sex": "female"
     },
     "title": {
-      "de": "Leckage beim Husten – und was der Leak-Point-Druck nicht kann",
-      "en": "Leaking with a cough – and what the leak point pressure cannot do",
-      "es": "Escape con la tos y lo que no puede la presión de punto de fuga"
+      "de": "Leckage beim Husten – und ein Leak-Point-Druck",
+      "en": "Leaking with a cough – and a leak point pressure",
+      "es": "Escape con la tos y una presión de punto de fuga"
     },
     "presenting": {
       "de": "Frau Weidinger, 52 Jahre, verliert seit der zweiten Geburt Urin beim Husten, Niesen und Joggen. Sechs Monate angeleitetes Beckenbodentraining haben geholfen, sie ist aber weiter unzufrieden. Gelegentlich verspürt sie Drang, ohne dabei Urin zu verlieren. Urinstatus unauffällig, Restharn 15 ml, kein relevanter Deszensus. Sie möchte eine operative Lösung; wegen der zusätzlichen Speicherbeschwerden wurde vorher eine Urodynamik durchgeführt.",
@@ -3562,7 +3565,7 @@
           {
             "id": "b",
             "text": {
-              "de": "Husteninduzierte Detrusorüberaktivität: Der Husten löst eine Kontraktion aus",
+              "de": "Hustenassoziierte Detrusorüberaktivität: Der Husten löst eine Kontraktion aus",
               "en": "Cough-associated detrusor overactivity: the cough triggers a contraction",
               "es": "Hiperactividad del detrusor asociada a la tos: la tos desencadena una contracción"
             },
@@ -3570,9 +3573,9 @@
             "minutes": 4,
             "critical": false,
             "feedback": {
-              "de": "Dann begänne unmittelbar nach dem Husten eine Detrusorwelle in Pdet. Hier kehrt Pdet sofort zur Grundlinie zurück; die Leckage fällt mit der Druckspitze selbst zusammen.",
-              "en": "Then a detrusor wave would start in Pdet immediately after the cough. Here Pdet returns to baseline at once; the leakage coincides with the pressure peak itself.",
-              "es": "En ese caso empezaría una onda del detrusor en la Pdet justo después de la tos. Aquí la Pdet vuelve enseguida a la línea basal; el escape coincide con el propio pico de presión."
+              "de": "Dann begänne unmittelbar nach dem Husten eine Detrusorwelle in Pdet. Hier kehrt Pdet sofort zur Grundlinie zurück; die Leckage folgt dem Hustenstoß unmittelbar, ohne Detrusorwelle.",
+              "en": "Then a detrusor wave would start in Pdet immediately after the cough. Here Pdet returns to baseline at once; the leakage follows the cough at once, without a detrusor wave.",
+              "es": "En ese caso empezaría una onda del detrusor en la Pdet justo después de la tos. Aquí la Pdet vuelve enseguida a la línea basal; el escape sigue de inmediato a la tos, sin onda del detrusor."
             }
           },
           {
@@ -3614,9 +3617,9 @@
         "id": "lpp",
         "kind": "assessment",
         "prompt": {
-          "de": "Lesen Sie beim Pressen den Blasendruck zum Zeitpunkt der Leckage ab. Wie verwerten Sie diesen Leak-Point-Druck?",
-          "en": "Read the bladder pressure at the moment of leakage during straining. How do you use this leak point pressure?",
-          "es": "Lea la presión vesical en el momento del escape durante la prensa abdominal. ¿Cómo utiliza esta presión de punto de fuga?"
+          "de": "Lesen Sie beim Pressen den Blasendruck am Leckage-Marker (L) ab. Wie verwerten Sie diesen Leak-Point-Druck?",
+          "en": "Read the bladder pressure at the leak marker (L) during straining. How do you use this leak point pressure?",
+          "es": "Lea la presión vesical en la marca de escape (E) durante la prensa abdominal. ¿Cómo utiliza esta presión de punto de fuga?"
         },
         "options": [
           {
@@ -3708,7 +3711,7 @@
             "feedback": {
               "de": "Richtig: Die Messung bestätigt eine Belastungsinkontinenz ohne Überaktivität; die Miktion ist unauffällig (Qmax 28 ml/s, PdetQmax 18 cmH2O, Restharn 450 − 20 − 410 = 20 ml). Nach ausgeschöpftem Beckenbodentraining empfiehlt die EAU, verschiedene Verfahren anzubieten und gemeinsam zu entscheiden: mitteurethrales Band (retropubisch langfristig besser als transobturatorisch), Kolposuspension, autologe Schlinge oder Bulking mit geringerer Wirksamkeit.",
               "en": "Correct: the study confirms stress incontinence without overactivity; the void is normal (Qmax 28 ml/s, PdetQmax 18 cmH2O, residual 450 − 20 − 410 = 20 ml). After pelvic floor training has been tried, the EAU recommends offering several procedures and deciding together: a midurethral sling (retropubic better than transobturator in the long term), colposuspension, an autologous sling or bulking with lower efficacy.",
-              "es": "Correcto: el estudio confirma una incontinencia de esfuerzo sin hiperactividad; la micción es normal (Qmax 28 ml/s, PdetQmax 18 cmH2O, residuo 450 − 20 − 410 = 20 ml). Tras el entrenamiento del suelo pélvico, la EAU recomienda ofrecer varias técnicas y decidir juntas: cinta mediouretral (retropúbica mejor que transobturadora a largo plazo), colposuspensión, cabestrillo autólogo o agentes de relleno, menos eficaces."
+              "es": "Correcto: el estudio confirma una incontinencia de esfuerzo sin hiperactividad; la micción es normal (Qmax 28 ml/s, PdetQmax 18 cmH2O, residuo 450 − 20 − 410 = 20 ml). Tras el entrenamiento del suelo pélvico, la EAU recomienda ofrecer varias técnicas y decidir de forma compartida: cinta mediouretral (retropúbica mejor que transobturadora a largo plazo), colposuspensión, cabestrillo autólogo o agentes de relleno, menos eficaces."
             }
           },
           {
@@ -3792,9 +3795,9 @@
       "sex": "female"
     },
     "title": {
-      "de": "Zwei Arten, Urin zu verlieren",
-      "en": "Two ways to leak",
-      "es": "Dos maneras de perder orina"
+      "de": "Urinverlust beim Tennis und an der Haustür",
+      "en": "Leaking at tennis and at the front door",
+      "es": "Escapes en el tenis y en la puerta de casa"
     },
     "presenting": {
       "de": "Frau Feldhaus, 56 Jahre, verliert Urin beim Husten und beim Tennis, aber auch, wenn sie den Schlüssel ins Türschloss steckt und es plötzlich pressiert. Miktionstagebuch über drei Tage: neun Miktionen am Tag, täglich zwei bis drei Belastungs- und eine Dranginkontinenz-Episode. Am meisten stört sie der Urinverlust beim Sport. Urinstatus unauffällig, Restharn 25 ml, kein Deszensus. Zur Abklärung der Mischinkontinenz wurde eine Urodynamik durchgeführt.",
@@ -3823,9 +3826,9 @@
             "minutes": 4,
             "critical": false,
             "feedback": {
-              "de": "Richtig: Bei 180 ml steigt Pdet ohne Husten auf 34 cmH2O, sie meldet Drang, und der Flussmesser zeigt eine Leckage – Detrusorüberaktivitäts-Inkontinenz. Ab 250 ml verliert sie mit jedem Husten Urin, während Pdet flach bleibt – Belastungsinkontinenz. Zusammen ergibt das eine urodynamische Mischinkontinenz.",
-              "en": "Correct: at 180 ml Pdet rises to 34 cmH2O without a cough, she reports urgency and the flowmeter shows leakage – detrusor overactivity incontinence. From 250 ml she leaks with every cough while Pdet stays flat – stress incontinence. Together this is urodynamic mixed incontinence.",
-              "es": "Correcto: a 180 ml la Pdet sube a 34 cmH2O sin tos, refiere urgencia y el flujómetro muestra un escape: incontinencia por hiperactividad del detrusor. Desde 250 ml pierde orina con cada tos mientras la Pdet sigue plana: incontinencia de esfuerzo. Juntas forman una incontinencia mixta urodinámica."
+              "de": "Richtig: Bei 180 ml steigt Pdet ohne Husten auf 34 cmH2O, sie meldet Drang, und der Flussmesser zeigt eine Leckage – Detrusorüberaktivitäts-Inkontinenz. Ab 250 ml verliert sie mit jedem Husten Urin, während Pdet flach bleibt – urodynamische Belastungsinkontinenz. Beide Befunde zusammen sind das urodynamische Korrelat ihrer Mischinkontinenz.",
+              "en": "Correct: at 180 ml Pdet rises to 34 cmH2O without a cough, she reports urgency and the flowmeter shows leakage – detrusor overactivity incontinence. From 250 ml she leaks with every cough while Pdet stays flat – urodynamic stress incontinence. Together, both findings are the urodynamic correlate of her mixed incontinence.",
+              "es": "Correcto: a 180 ml la Pdet sube a 34 cmH2O sin tos, refiere urgencia y el flujómetro muestra un escape: incontinencia por hiperactividad del detrusor. Desde 250 ml pierde orina con cada tos mientras la Pdet sigue plana: incontinencia urodinámica de esfuerzo. Juntos, ambos hallazgos son el correlato urodinámico de su incontinencia mixta."
             }
           },
           {
@@ -3847,7 +3850,7 @@
           {
             "id": "c",
             "text": {
-              "de": "Husteninduzierte Überaktivität: Jeder Husten löst eine Detrusorwelle mit Leckage aus",
+              "de": "Hustenassoziierte Überaktivität: Jeder Husten löst eine Detrusorwelle mit Leckage aus",
               "en": "Cough-associated overactivity: every cough triggers a detrusor wave with leakage",
               "es": "Hiperactividad asociada a la tos: cada tos desencadena una onda del detrusor con escape"
             },
@@ -3855,9 +3858,9 @@
             "minutes": 4,
             "critical": false,
             "feedback": {
-              "de": "Nach den Hustenstößen bei 250 und 290 ml bleibt Pdet flach; die Leckage fällt mit der Druckspitze zusammen. Die Welle bei 180 ml entsteht ohne vorausgehenden Husten.",
-              "en": "After the coughs at 250 and 290 ml Pdet stays flat; the leakage coincides with the pressure peak. The wave at 180 ml arises without a preceding cough.",
-              "es": "Tras las toses a 250 y 290 ml la Pdet sigue plana; el escape coincide con el pico de presión. La onda a 180 ml aparece sin una tos previa."
+              "de": "Nach den Hustenstößen bei 250 und 290 ml bleibt Pdet flach; die Leckage folgt dem Hustenstoß unmittelbar. Die Welle bei 180 ml entsteht ohne vorausgehenden Husten.",
+              "en": "After the coughs at 250 and 290 ml Pdet stays flat; the leakage follows the cough at once. The wave at 180 ml arises without a preceding cough.",
+              "es": "Tras las toses a 250 y 290 ml la Pdet sigue plana; el escape sigue de inmediato a la tos. La onda a 180 ml aparece sin una tos previa."
             }
           },
           {
@@ -3931,9 +3934,9 @@
             "minutes": 5,
             "critical": false,
             "feedback": {
-              "de": "Botulinumtoxin ist eine Option bei Drangsymptomen, die auf konservative und medikamentöse Therapie nicht ansprechen – und die Drangkomponente stört sie hier am wenigsten.",
-              "en": "Botulinum toxin is an option for urgency symptoms that do not respond to conservative and drug treatment – and the urgency component bothers her least.",
-              "es": "La toxina botulínica es una opción en los síntomas de urgencia que no responden al tratamiento conservador ni farmacológico, y aquí la urgencia es lo que menos le molesta."
+              "de": "Botulinumtoxin ist eine Option bei Drangsymptomen, die auf konservative oder medikamentöse Therapie nicht ansprechen – und die Drangkomponente stört sie hier am wenigsten.",
+              "en": "Botulinum toxin is an option for urgency symptoms refractory to conservative or drug treatment – and the urgency component bothers her least.",
+              "es": "La toxina botulínica es una opción en los síntomas de urgencia refractarios al tratamiento conservador o farmacológico, y aquí la urgencia es lo que menos le molesta."
             }
           },
           {
@@ -4007,9 +4010,9 @@
             "minutes": 4,
             "critical": false,
             "feedback": {
-              "de": "Das trifft nicht zu: Es gibt keine konsistenten Belege, dass eine präoperative Detrusorüberaktivität mit einem Versagen der Operation bei Mischinkontinenz einhergeht (EAU). Entscheidend ist die Aufklärung über realistische Erwartungen.",
-              "en": "This is not the case: there is no consistent evidence that preoperative detrusor overactivity is associated with failure of surgery for mixed incontinence (EAU). What matters is counselling about realistic expectations.",
-              "es": "No es así: no hay pruebas consistentes de que la hiperactividad preoperatoria del detrusor se asocie al fracaso de la cirugía de la incontinencia mixta (EAU). Lo decisivo es informar de unas expectativas realistas."
+              "de": "Das trifft nicht zu: Es gibt keine konsistenten Belege, dass eine präoperative Detrusorüberaktivität mit einem Versagen des mitteurethralen Bandes einhergeht (EAU). Entscheidend ist die Aufklärung über realistische Erwartungen.",
+              "en": "This is not the case: there is no consistent evidence that preoperative detrusor overactivity is associated with failure of a midurethral sling (EAU). What matters is counselling about realistic expectations.",
+              "es": "No es así: no hay pruebas consistentes de que la hiperactividad preoperatoria del detrusor se asocie al fracaso de la cinta mediouretral (EAU). Lo decisivo es informar de unas expectativas realistas."
             }
           },
           {
@@ -4040,7 +4043,8 @@
     "references": [
       "udy-eau-female-luts-pocket-2026",
       "udy-ics-gup-2016",
-      "udy-ics-teaching-gup"
+      "udy-ics-teaching-gup",
+      "udy-iuga-ics-terminology-2010"
     ]
   },
   {
@@ -4068,7 +4072,7 @@
     "presenting": {
       "de": "Herr Engelhart, 29 Jahre, ist seit einem Motorradunfall vor 18 Monaten unterhalb Th4 komplett querschnittgelähmt. Er entleert die Blase durch Beklopfen des Unterbauchs in ein Kondomurinal und hatte zwei fieberhafte Harnwegsinfekte; sonographisch sind beide Nierenbecken leicht erweitert. Die Handfunktion ist gut. Zur Planung des Blasenmanagements läuft eine Videozystometrie im Liegen mit 18 ml/min (Körpergewicht 72 kg); Blutdruck und Puls werden fortlaufend gemessen.",
       "en": "Mr Engelhart, 29, has had a complete spinal cord injury below T4 since a motorcycle accident 18 months ago. He empties his bladder by tapping his lower abdomen into a condom catheter and has had two febrile urinary tract infections; ultrasound shows mild dilatation of both renal pelves. Hand function is good. To plan his bladder management, a supine video-cystometry is running at 18 ml/min (body weight 72 kg); blood pressure and pulse are monitored continuously.",
-      "es": "El Sr. Engelhart, de 29 años, tiene una lesión medular completa por debajo de T4 desde un accidente de moto hace 18 meses. Vacía la vejiga golpeando el hipogastrio en un colector de pene y ha tenido dos infecciones urinarias febriles; en la ecografía ambas pelvis renales están algo dilatadas. La función de las manos es buena. Para planificar el manejo vesical se está realizando una videocistometría en decúbito a 18 ml/min (peso 72 kg), con control continuo de presión arterial y pulso."
+      "es": "El Sr. Engelhart, de 29 años, tiene una lesión medular completa por debajo de T4 desde un accidente de moto hace 18 meses. Vacía la vejiga mediante percusión suprapúbica hacia un colector urinario externo (tipo preservativo) y ha tenido dos infecciones urinarias febriles; en la ecografía ambas pelvis renales están algo dilatadas. La función de las manos es buena. Para planificar el manejo vesical se está realizando una videocistometría en decúbito supino a 18 ml/min (peso 72 kg), con control continuo de presión arterial y pulso."
     },
     "vitals": {
       "bp": "105/65",
@@ -4174,9 +4178,9 @@
             "minutes": 5,
             "critical": false,
             "feedback": {
-              "de": "Richtig: 178/96 mmHg gegenüber 105/65 in Ruhe, Kopfschmerz, Schwitzen oberhalb der Läsion und Bradykardie bei einer Läsion oberhalb Th6 – eine autonome Dysreflexie (systolischer Anstieg über 20 mmHg). Auslöser ist die gefüllte, kontrahierende Blase: Füllung stoppen und entleeren, Oberkörper aufrichten, enge Kleidung lösen, Blutdruck alle paar Minuten. Bleibt der systolische Wert über 150 mmHg, ein kurz wirksames Antihypertensivum geben.",
-              "en": "Correct: 178/96 mmHg against 105/65 at rest, headache, sweating above the lesion and bradycardia with a lesion above T6 – autonomic dysreflexia (systolic rise of more than 20 mmHg). The trigger is the full, contracting bladder: stop filling and drain it, sit him upright, loosen tight clothing and measure blood pressure every few minutes. If systolic pressure stays above 150 mmHg, give a short-acting antihypertensive.",
-              "es": "Correcto: 178/96 mmHg frente a 105/65 en reposo, cefalea, sudoración por encima de la lesión y bradicardia con una lesión por encima de T6: disreflexia autonómica (subida sistólica de más de 20 mmHg). El desencadenante es la vejiga llena y en contracción: detener el llenado y vaciarla, incorporarlo, aflojar la ropa ajustada y medir la presión cada pocos minutos. Si la sistólica sigue por encima de 150 mmHg, dar un antihipertensivo de acción corta."
+              "de": "Richtig: 178/96 mmHg gegenüber 105/65 in Ruhe, Kopfschmerz, Schwitzen oberhalb der Läsion und Bradykardie bei einer Läsion oberhalb Th6 – eine autonome Dysreflexie (systolischer Anstieg über 20 mmHg). Auslöser ist die gefüllte, kontrahierende Blase: Füllung stoppen und die Blase sofort über den Messkatheter entleeren, den Blutdruck mindestens alle 2 Minuten messen. Sinkt er nicht, die Untersuchung beenden, ihn aufsetzen und enge Kleidung lösen; bleibt der systolische Wert über 150 mmHg, ein kurz wirksames Antihypertensivum geben.",
+              "en": "Correct: 178/96 mmHg against 105/65 at rest, headache, sweating above the lesion and bradycardia with a lesion above T6 – autonomic dysreflexia (systolic rise of more than 20 mmHg). The trigger is the full, contracting bladder: stop filling, drain the bladder at once through the study catheter and measure blood pressure at least every 2 minutes. If it does not fall, end the study, sit him up and loosen tight clothing; if systolic pressure stays above 150 mmHg, give a short-acting antihypertensive.",
+              "es": "Correcto: 178/96 mmHg frente a 105/65 en reposo, cefalea, sudoración por encima de la lesión y bradicardia con una lesión por encima de T6: disreflexia autonómica (subida sistólica de más de 20 mmHg). El desencadenante es la vejiga llena y en contracción: detener el llenado, vaciar enseguida la vejiga por la sonda del estudio y medir la presión al menos cada 2 minutos. Si no baja, terminar el estudio, incorporarlo y aflojar la ropa ajustada; si la sistólica sigue por encima de 150 mmHg, dar un antihipertensivo de acción corta."
             }
           },
           {
@@ -4220,11 +4224,11 @@
             },
             "score": 0,
             "minutes": 4,
-            "critical": false,
+            "critical": true,
             "feedback": {
-              "de": "Die Bradykardie ist eine Reflexantwort auf den Blutdruckanstieg. Behandelt wird der Auslöser – die volle Blase –, nicht die Herzfrequenz, und die Füllung wird beendet.",
-              "en": "The bradycardia is a reflex response to the rise in blood pressure. Treat the trigger – the full bladder – rather than the heart rate, and stop filling.",
-              "es": "La bradicardia es una respuesta refleja a la subida de la presión. Se trata el desencadenante, la vejiga llena, no la frecuencia cardiaca, y se detiene el llenado."
+              "de": "Gefährlich: Die Bradykardie ist eine Reflexantwort auf den Blutdruckanstieg. Wer die Messung fortsetzt, füllt weiter und unterhält den Auslöser – die volle Blase. Behandelt wird der Auslöser, nicht die Herzfrequenz: Füllung beenden, Blase entleeren.",
+              "en": "Dangerous: the bradycardia is a reflex response to the rise in blood pressure. Continuing the study means continuing to fill and keeps the trigger – the full bladder – going. Treat the trigger, not the heart rate: stop filling and drain the bladder.",
+              "es": "Peligroso: la bradicardia es una respuesta refleja a la subida de la presión. Seguir con el estudio significa seguir llenando y mantener el desencadenante, la vejiga llena. Se trata el desencadenante, no la frecuencia cardiaca: detener el llenado y vaciar la vejiga."
             }
           }
         ],
@@ -4244,7 +4248,7 @@
             "text": {
               "de": "Antimuskarinikum und Selbstkatheterismus; bei unzureichender Wirkung Botulinumtoxin",
               "en": "An antimuscarinic and self-catheterisation; botulinum toxin if that is not enough",
-              "es": "Antimuscarínico y autosondaje; toxina botulínica intradetrusor si no basta"
+              "es": "Antimuscarínico y autocateterismo; toxina botulínica intradetrusor si no basta"
             },
             "score": 10,
             "minutes": 6,
@@ -4252,7 +4256,7 @@
             "feedback": {
               "de": "Richtig: Ziel ist ein niedriger Blasendruck. Antimuskarinika sind die Erstlinientherapie der neurogenen Überaktivität, der intermittierende Katheterismus entleert bei guter Handfunktion zuverlässig (nach gründlicher Schulung). Wirken Antimuskarinika nicht ausreichend, empfiehlt die EAU Botulinumtoxin A in den Detrusor (starke Empfehlung).",
               "en": "Correct: the aim is low bladder pressure. Antimuscarinics are first-line treatment for neurogenic overactivity, and intermittent catheterisation empties the bladder reliably when hand function is good (after thorough instruction). If antimuscarinics are not effective enough, the EAU recommends intradetrusor botulinum toxin A (strong recommendation).",
-              "es": "Correcto: el objetivo es una presión vesical baja. Los antimuscarínicos son la primera línea de la hiperactividad neurógena, y el sondaje intermitente vacía la vejiga de forma fiable con buena función manual (tras una formación detallada). Si los antimuscarínicos no bastan, la EAU recomienda toxina botulínica A intradetrusor (recomendación fuerte)."
+              "es": "Correcto: el objetivo es una presión vesical baja. Los antimuscarínicos son la primera línea de la hiperactividad neurógena, y el cateterismo intermitente vacía la vejiga de forma fiable con buena función manual (tras una formación detallada). Si los antimuscarínicos no bastan, la EAU recomienda toxina botulínica A intradetrusor (recomendación fuerte)."
             }
           },
           {
@@ -4260,7 +4264,7 @@
             "text": {
               "de": "Reflexmiktion ins Kondomurinal fortsetzen, denn die Leckage begrenzt ja den Blasendruck",
               "en": "Continue reflex voiding into the condom catheter, as the leakage limits the pressure",
-              "es": "Seguir con la micción refleja al colector, ya que el escape limita la presión"
+              "es": "Seguir con la micción refleja al colector urinario, ya que el escape limita la presión"
             },
             "score": 0,
             "minutes": 5,
@@ -4280,11 +4284,11 @@
             },
             "score": 0,
             "minutes": 4,
-            "critical": false,
+            "critical": true,
             "feedback": {
-              "de": "Die EAU empfiehlt ausdrücklich, Beta-3-Agonisten nicht mit dem Ziel einzusetzen, eine urodynamisch nachgewiesene neurogene Überaktivität zu senken (starke Empfehlung).",
-              "en": "The EAU explicitly recommends against using beta-3 agonists with the aim of reducing urodynamically proven neurogenic detrusor overactivity (strong recommendation).",
-              "es": "La EAU desaconseja expresamente usar agonistas beta-3 con el fin de reducir una hiperactividad neurógena demostrada en la urodinámica (recomendación fuerte)."
+              "de": "Gefährlich: Ein Beta-3-Agonist allein lässt den Hochdruck gegen den dyssynergen Sphinkter bestehen – bei erweiterten Nierenbecken und fieberhaften Infekten. Mirabegron verbessert die urodynamischen Parameter bei neurogener Überaktivität nicht; die EAU empfiehlt ausdrücklich, Beta-3-Agonisten nicht mit dem Ziel einzusetzen, eine urodynamisch nachgewiesene neurogene Überaktivität zu senken (starke Empfehlung).",
+              "en": "Dangerous: a beta-3 agonist alone leaves the high pressure against the dyssynergic sphincter in place – with dilated renal pelves and febrile infections. Mirabegron does not improve urodynamic parameters in neurogenic detrusor overactivity; the EAU explicitly recommends against using beta-3 agonists with the aim of reducing urodynamically proven neurogenic detrusor overactivity (strong recommendation).",
+              "es": "Peligroso: un agonista beta-3 solo mantiene la presión alta contra el esfínter disinérgico, con pelvis renales dilatadas e infecciones febriles. El mirabegrón no mejora los parámetros urodinámicos en la hiperactividad neurógena del detrusor; la EAU desaconseja expresamente usar agonistas beta-3 con el fin de reducir una hiperactividad neurógena demostrada en la urodinámica (recomendación fuerte)."
             }
           },
           {
@@ -4300,7 +4304,7 @@
             "feedback": {
               "de": "Dauerkatheter sollen nach Möglichkeit vermieden werden; bei guter Handfunktion ist der intermittierende Katheterismus der Standard.",
               "en": "Indwelling catheters should be avoided whenever possible; with good hand function intermittent catheterisation is the standard.",
-              "es": "Las sondas permanentes deben evitarse siempre que sea posible; con buena función manual, el sondaje intermitente es el estándar."
+              "es": "Las sondas permanentes deben evitarse siempre que sea posible; con buena función manual, el cateterismo intermitente es el estándar."
             }
           }
         ],
@@ -4308,9 +4312,9 @@
       }
     ],
     "takeaway": {
-      "de": "Bei Querschnitt oberhalb des Sakralmarks zeigt die Urodynamik oft neurogene Überaktivität mit Detrusor-Sphinkter-Dyssynergie: Pdet-Welle ohne Empfindung, steigendes Sphinkter-EMG, stoßweise Leckage. Bei Läsionen ab Th6 laufen Blutdruck und Puls mit; bei autonomer Dysreflexie Füllung stoppen, Blase entleeren, aufsetzen. Ziel ist ein niedriger Blasendruck: Antimuskarinikum und intermittierender Katheterismus, sonst Botulinumtoxin.",
+      "de": "Bei Querschnitt oberhalb des Sakralmarks zeigt die Urodynamik oft neurogene Überaktivität mit Detrusor-Sphinkter-Dyssynergie: Pdet-Welle ohne Empfindung, steigendes Sphinkter-EMG, stoßweise Leckage. Bei Läsionen in Höhe von Th6 oder darüber laufen Blutdruck und Puls mit; bei autonomer Dysreflexie Füllung stoppen, Blase entleeren, aufsetzen. Ziel ist ein niedriger Blasendruck: Antimuskarinikum und intermittierender Katheterismus, sonst Botulinumtoxin.",
       "en": "With a spinal cord injury above the sacral cord, urodynamics often shows neurogenic overactivity with detrusor–sphincter dyssynergia: a Pdet wave without sensation, a rising sphincter EMG, leakage in spurts. With lesions at or above T6, monitor blood pressure and pulse; in autonomic dysreflexia stop filling, drain the bladder and sit the patient up. The aim is low bladder pressure: an antimuscarinic and intermittent catheterisation, otherwise botulinum toxin.",
-      "es": "En la lesión medular por encima de la médula sacra, la urodinámica suele mostrar hiperactividad neurógena con disinergia detrusor-esfínter: onda de Pdet sin sensación, EMG esfinteriano en aumento y escape a borbotones. Con lesiones en T6 o por encima, se vigilan presión arterial y pulso; ante una disreflexia autonómica, detener el llenado, vaciar la vejiga e incorporar al paciente. El objetivo es una presión vesical baja: antimuscarínico y sondaje intermitente; si no basta, toxina botulínica."
+      "es": "En la lesión medular por encima de la médula sacra, la urodinámica suele mostrar hiperactividad neurógena con disinergia detrusor-esfínter: onda de Pdet sin sensación, EMG esfinteriano en aumento y escape a borbotones. Con lesiones en T6 o por encima, se vigilan presión arterial y pulso; ante una disreflexia autonómica, detener el llenado, vaciar la vejiga e incorporar al paciente. El objetivo es una presión vesical baja: antimuscarínico y cateterismo intermitente; si no basta, toxina botulínica."
     },
     "references": [
       "udy-eau-neuro-urology",
@@ -4336,9 +4340,9 @@
       "sex": "female"
     },
     "title": {
-      "de": "Pressen statt Kontraktion",
-      "en": "Straining instead of contracting",
-      "es": "Prensa abdominal en lugar de contracción"
+      "de": "Diabetes, Restharn und drei Harnwegsinfekte",
+      "en": "Diabetes, residual urine and three urinary infections",
+      "es": "Diabetes, residuo y tres infecciones urinarias"
     },
     "presenting": {
       "de": "Frau Martens, 64 Jahre, hat seit 20 Jahren einen Typ-2-Diabetes mit Polyneuropathie. Sie muss zum Wasserlassen kräftig pressen, spürt die volle Blase spät und hatte im letzten Jahr drei Harnwegsinfekte. Sonographischer Restharn zweimal 350–400 ml, kein relevanter Deszensus, Urethrozystoskopie ohne Enge. Handfunktion und Sehvermögen sind gut. Zur Klärung der Entleerungsstörung wurde eine Druck-Fluss-Messung durchgeführt.",
@@ -4437,7 +4441,7 @@
             "text": {
               "de": "Intermittierender Selbstkatheterismus nach gründlicher Schulung",
               "en": "Intermittent self-catheterisation after thorough instruction",
-              "es": "Autosondaje intermitente tras una formación detallada"
+              "es": "Autocateterismo intermitente tras una formación detallada"
             },
             "score": 10,
             "minutes": 6,
@@ -4445,7 +4449,7 @@
             "feedback": {
               "de": "Richtig: Der intermittierende Katheterismus ist der Standard bei Patientinnen, die die Blase nicht entleeren können; Technik und Risiken werden gründlich geschult (jeweils starke Empfehlung). Bei 370 ml Restharn und wiederholten Infekten reicht Pressen nicht aus.",
               "en": "Correct: intermittent catheterisation is the standard for patients who cannot empty their bladder; technique and risks are taught thoroughly (each a strong recommendation). With a residual of 370 ml and recurrent infections, straining is not enough.",
-              "es": "Correcto: el sondaje intermitente es el estándar en pacientes que no pueden vaciar la vejiga; se enseñan a fondo la técnica y los riesgos (recomendaciones fuertes). Con 370 ml de residuo e infecciones de repetición, empujar no basta."
+              "es": "Correcto: el cateterismo intermitente es el estándar en pacientes que no pueden vaciar la vejiga; se enseñan a fondo la técnica y los riesgos (recomendaciones fuertes). Con 370 ml de residuo e infecciones de repetición, empujar no basta."
             }
           },
           {
@@ -4493,7 +4497,7 @@
             "feedback": {
               "de": "Sie spürt die Blase spät, nicht gar nicht, und Hände und Augen sind gut. Der intermittierende Katheterismus ist der Standard.",
               "en": "She senses her bladder late, not never, and her hands and eyes are good. Intermittent catheterisation is the standard.",
-              "es": "Nota la vejiga tarde, no nunca, y tiene buena función manual y buena vista. El sondaje intermitente es el estándar."
+              "es": "Nota la vejiga tarde, no nunca, y tiene buena función manual y buena vista. El cateterismo intermitente es el estándar."
             }
           }
         ],
@@ -4505,7 +4509,7 @@
         "prompt": {
           "de": "Sie fragt, wann sie katheterisieren soll. Lesen Sie Empfindungen und Kapazität in der Füllphase: Was raten Sie?",
           "en": "She asks when she should catheterise. Read the sensations and capacity in the filling phase: what do you advise?",
-          "es": "Pregunta cuándo debe sondarse. Lea las sensaciones y la capacidad en la fase de llenado: ¿qué le aconseja?"
+          "es": "Pregunta cuándo debe cateterizarse. Lea las sensaciones y la capacidad en la fase de llenado: ¿qué le aconseja?"
         },
         "options": [
           {
@@ -4521,7 +4525,7 @@
             "feedback": {
               "de": "Richtig: Das erste Füllungsgefühl kommt bei 300 ml, der erste Harndrang erst bei 450 ml, die Kapazität liegt bei 600 ml – eine verminderte Blasensensitivität. Wer nach dem Drang katheterisiert, überdehnt die Blase. Üblich sind vier bis sechs Katheterisierungen am Tag, und das Volumen sollte in der Regel 400–500 ml nicht überschreiten.",
               "en": "Correct: first sensation comes at 300 ml, first desire only at 450 ml, and capacity is 600 ml – reduced bladder sensation. Catheterising by the urge overstretches the bladder. Four to six catheterisations a day are usual, and the volume should generally not exceed 400–500 ml.",
-              "es": "Correcto: la primera sensación llega a 300 ml, el primer deseo solo a 450 ml y la capacidad es de 600 ml: sensibilidad vesical disminuida. Sondarse según el deseo distiende la vejiga. Lo habitual son cuatro a seis sondajes al día, y el volumen en general no debe superar 400–500 ml."
+              "es": "Correcto: la primera sensación llega a 300 ml, el primer deseo solo a 450 ml y la capacidad es de 600 ml: sensibilidad vesical disminuida. Cateterizarse según el deseo distiende la vejiga. Lo habitual son cuatro a seis cateterismos al día, y el volumen en general no debe superar 400–500 ml."
             }
           },
           {
@@ -4529,7 +4533,7 @@
             "text": {
               "de": "Erst wenn sie Harndrang spürt, damit sie nicht unnötig oft katheterisieren muss",
               "en": "Only when she feels the urge, so she does not catheterise unnecessarily",
-              "es": "Solo cuando note el deseo, para no tener que sondarse sin necesidad alguna"
+              "es": "Solo cuando note el deseo, para no tener que cateterizarse sin necesidad alguna"
             },
             "score": 0,
             "minutes": 4,
@@ -4537,7 +4541,7 @@
             "feedback": {
               "de": "Ihr erster Harndrang kommt erst bei 450 ml; bis sie ihn spürt und katheterisiert, ist die Blase oft schon überdehnt.",
               "en": "Her first desire only comes at 450 ml; by the time she feels it and catheterises, the bladder is often already overstretched.",
-              "es": "Su primer deseo llega solo a 450 ml; cuando lo nota y se sonda, la vejiga a menudo ya está distendida."
+              "es": "Su primer deseo llega solo a 450 ml; cuando lo nota y se cateteriza, la vejiga a menudo ya está distendida."
             }
           },
           {
@@ -4551,9 +4555,9 @@
             "minutes": 4,
             "critical": false,
             "feedback": {
-              "de": "Bei einmal täglichem Katheterisieren würde die Blase regelmäßig über ihre Kapazität gefüllt und überdehnt. Eine Frequenz von etwa fünfmal am Tag senkte in Studien die Infektrate.",
-              "en": "Catheterising once a day would regularly fill the bladder beyond its capacity and overstretch it. A frequency of about five times a day reduced infection rates in studies.",
-              "es": "Sondarse una vez al día llenaría la vejiga con regularidad por encima de su capacidad y la distendería. Una frecuencia de unas cinco veces al día redujo las infecciones en los estudios."
+              "de": "Bei einmal täglichem Katheterisieren würde die Blase regelmäßig über ihre Kapazität gefüllt und überdehnt. Üblich sind vier bis sechs Katheterisierungen am Tag; beim aseptischen Katheterismus senkte eine Frequenz von etwa fünfmal täglich die Infektrate.",
+              "en": "Catheterising once a day would regularly fill the bladder beyond its capacity and overstretch it. Four to six catheterisations a day are usual; with aseptic catheterisation, a frequency of about five times a day reduced infection rates.",
+              "es": "Cateterizarse una vez al día llenaría la vejiga con regularidad por encima de su capacidad y la distendería. Lo habitual son cuatro a seis cateterismos al día; en el cateterismo aséptico, una frecuencia de unas cinco veces al día redujo las infecciones."
             }
           },
           {
@@ -4569,7 +4573,7 @@
             "feedback": {
               "de": "Das ist unnötig häufig und kaum in den Alltag einzubauen; üblich sind vier bis sechs Katheterisierungen am Tag.",
               "en": "That is unnecessarily frequent and hard to fit into daily life; four to six catheterisations a day are usual.",
-              "es": "Es innecesariamente frecuente y difícil de compaginar con la vida diaria; lo habitual son cuatro a seis sondajes al día."
+              "es": "Es innecesariamente frecuente y difícil de compaginar con la vida diaria; lo habitual son cuatro a seis cateterismos al día."
             }
           }
         ],
@@ -4579,7 +4583,7 @@
     "takeaway": {
       "de": "Akontraktiler Detrusor: Nach der Miktionserlaubnis steigt Pdet nicht; Fluss entsteht nur, wenn Pves und Pabd beim Pressen gemeinsam steigen – ein hoher Pves beweist dann keine Obstruktion. Therapie ist der intermittierende Selbstkatheterismus nach der Uhr, nicht nach dem späten Drang, keine Parasympathomimetika, und Aufklärung über das Prolapsrisiko beim Pressen.",
       "en": "Acontractile detrusor: after permission to void Pdet does not rise; flow occurs only when Pves and Pabd rise together with straining – a high Pves then proves no obstruction. Treatment is intermittent self-catheterisation by the clock rather than by the late urge, no parasympathomimetics, and counselling about the prolapse risk of straining.",
-      "es": "Detrusor acontráctil: tras el permiso para orinar la Pdet no sube; solo hay flujo cuando Pves y Pabd suben juntas al empujar, y una Pves alta no demuestra entonces ninguna obstrucción. El tratamiento es el autosondaje intermitente según el reloj y no según el deseo tardío, sin parasimpaticomiméticos, e informando del riesgo de prolapso al empujar."
+      "es": "Detrusor acontráctil: tras el permiso para orinar la Pdet no sube; solo hay flujo cuando Pves y Pabd suben juntas al empujar, y una Pves alta no demuestra entonces ninguna obstrucción. El tratamiento es el autocateterismo intermitente según el reloj y no según el deseo tardío, sin parasimpaticomiméticos, e informando del riesgo de prolapso al empujar."
     },
     "references": [
       "udy-eau-female-luts-pocket-2026",
@@ -4605,9 +4609,9 @@
       "sex": "male"
     },
     "title": {
-      "de": "Ein Harnstrahl wie ein Tafelberg",
-      "en": "A flow like a table mountain",
-      "es": "Un flujo como una meseta"
+      "de": "36 Jahre, schwacher Strahl nach einem Katheter",
+      "en": "36 years old, a weak stream after a catheter",
+      "es": "36 años, chorro débil tras una sonda"
     },
     "presenting": {
       "de": "Herr Imhof, 36 Jahre, bemerkt seit einem Jahr einen zunehmend schwächeren Strahl, eine verlängerte Miktion und Nachträufeln. Vor drei Jahren lag nach einem Unfall eine Woche lang ein transurethraler Katheter. Keine Harnwegsinfekte, Urinstatus unauffällig, Prostata klein, Restharn 40 ml. Sie veranlassen eine Uroflowmetrie.",
@@ -4873,9 +4877,9 @@
       "sex": "male"
     },
     "title": {
-      "de": "Negativer Detrusordruck mitten in der Miktion",
-      "en": "Negative detrusor pressure in mid-void",
-      "es": "Presión del detrusor negativa en plena micción"
+      "de": "Wieder schwacher Strahl nach dem Urethralift",
+      "en": "A weak stream again after a urethral lift",
+      "es": "De nuevo chorro débil tras un lifting uretral prostático"
     },
     "presenting": {
       "de": "Herr Kohlhaas, 71 Jahre, erhielt vor zwei Jahren einen prostatischen Urethralift. Die Beschwerden sind zurück (IPSS 22), der Strahl ist schwach. Prostatavolumen 55 ml, freie Uroflowmetrie Qmax 8 ml/s bei 240 ml, Restharn 60 ml. Vor einem erneuten Eingriff wird eine Druck-Fluss-Messung durchgeführt; die Pflegefachkraft ruft Sie während der ersten Miktion dazu.",
@@ -4996,9 +5000,9 @@
             "minutes": 4,
             "critical": false,
             "feedback": {
-              "de": "Der letzte Wert liegt vor dem maximalen Fluss; PdetQmax wird zum Zeitpunkt von Qmax abgelesen. Eine Schätzung ersetzt keine gültige Messung.",
-              "en": "The last value comes before maximum flow; PdetQmax is read at the moment of Qmax. An estimate does not replace a valid measurement.",
-              "es": "El último valor es anterior al flujo máximo; la PdetQmax se lee en el momento del Qmax. Una estimación no sustituye a una medición válida."
+              "de": "Der letzte Wert liegt vor dem maximalen Fluss; PdetQmax wird zum Zeitpunkt von Qmax abgelesen (in echten Messungen nach Korrektur der Verzögerung bis zum Flowmeter). Eine Schätzung ersetzt keine gültige Messung.",
+              "en": "The last value comes before maximum flow; PdetQmax is read at the moment of Qmax (in real studies after correcting for the flowmeter delay). An estimate does not replace a valid measurement.",
+              "es": "El último valor es anterior al flujo máximo; la PdetQmax se lee en el momento del Qmax (en estudios reales, tras corregir el retraso del flujómetro). Una estimación no sustituye a una medición válida."
             }
           },
           {
@@ -5114,15 +5118,16 @@
       }
     ],
     "takeaway": {
-      "de": "Ein plötzlicher Abfall von Pves oder Pabd unter null mit stark negativem Pdet ist kein Befund, sondern ein herausgerutschter Katheter: Der Husten erscheint nur noch in einer Leitung. Nach ICS wird korrigiert oder wiederholt – neu katheterisieren, erneut füllen, erneut messen. Erst die gültige Wiederholung (hier BOOI 58, BCI 114) trägt die Therapieentscheidung.",
-      "en": "A sudden drop in Pves or Pabd below zero with a strongly negative Pdet is not a finding but an expelled catheter: the cough appears in one line only. According to the ICS the test is corrected or repeated – recatheterise, refill, measure again. Only the valid repeat (here BOOI 58, BCI 114) supports the treatment decision.",
-      "es": "Una caída brusca de la Pves o la Pabd por debajo de cero con una Pdet muy negativa no es un hallazgo, sino una sonda expulsada: la tos aparece solo en una línea. Según la ICS se corrige o se repite: volver a sondar, rellenar y medir de nuevo. Solo la repetición válida (aquí BOOI 58, BCI 114) sostiene la decisión terapéutica."
+      "de": "Ein plötzlicher Abfall von Pves oder Pabd unter null ist kein Befund, sondern ein herausgerutschter Katheter: Der Husten erscheint nur noch in einer Leitung. Fällt Pves aus, wird Pdet stark negativ; fällt Pabd aus, steigt Pdet scheinbar steil an und täuscht eine Detrusorkontraktion vor. Nach ICS wird korrigiert oder wiederholt – neu katheterisieren, erneut füllen, erneut messen. Erst die gültige Wiederholung (hier BOOI 58, BCI 114) trägt die Therapieentscheidung.",
+      "en": "A sudden drop in Pves or Pabd below zero is not a finding but an expelled catheter: the cough appears in one line only. If Pves is lost, Pdet becomes strongly negative; if Pabd is lost, Pdet rises steeply and mimics a detrusor contraction. According to the ICS the test is corrected or repeated – recatheterise, refill, measure again. Only the valid repeat (here BOOI 58, BCI 114) supports the treatment decision.",
+      "es": "Una caída brusca de la Pves o la Pabd por debajo de cero no es un hallazgo, sino una sonda expulsada: la tos aparece solo en una línea. Si falla la Pves, la Pdet se vuelve muy negativa; si falla la Pabd, la Pdet sube bruscamente y simula una contracción del detrusor. Según la ICS se corrige o se repite: volver a sondar, rellenar y medir de nuevo. Solo la repetición válida (aquí BOOI 58, BCI 114) sostiene la decisión terapéutica."
     },
     "references": [
       "udy-ics-gup-2016",
       "udy-eau-male-luts-diagnostic",
       "udy-eau-male-luts-pocket-2026",
-      "udy-bladder-indices"
+      "udy-bladder-indices",
+      "udy-artefact-recognition"
     ]
   }
 ]

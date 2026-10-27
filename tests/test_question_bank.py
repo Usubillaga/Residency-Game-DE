@@ -228,8 +228,9 @@ class QuestionBankTests(unittest.TestCase):
             ('udy-urodynamic-stress-incontinence', 'leakPointPves', 90, 'no leakage marker at that Pves'),
             ('udy-normal-study-woman-oab', 'firstDesire', 160, 'no fd marker at 160 ml'),
             # Values read from the curve shape: cough transmission, detrusor waves, compliance, voiding and flow time.
-            ('udy-artefacts-rectal-contraction-transmission', 'coughPves', 41, 'the curves show 38.0 cmH2O rise with the last cough'),
-            ('udy-detrusor-overactivity-incontinence', 'contractionPeaks', [20, 31, 40], r'contractionPeaks\[2\]: the curves show 45.0'),
+            ('udy-artefacts-rectal-contraction-transmission', 'coughPves', 41, 'the curves show 38.0 cmH2O rise with the cough'),
+            ('udy-artefacts-rectal-contraction-transmission', 'coughAt', 250, 'no cough marker at 250 ml'),
+            ('udy-detrusor-overactivity-incontinence', 'contractionPeaks', [20, 31, 40], r'contractionPeaks\[2\]: the curves show 4[45]\.\d'),
             ('udy-neurogenic-overactivity-dsd', 'contractionOnsets', [110], 'the curves show 2 detrusor waves'),
             ('udy-mixed-incontinence', 'overactivityLeak', 200, 'overactivityLeak: the curves show 185'),
             ('udy-low-compliance-sci-filling-rate', 'compliance', 8.0, r'ΔV/ΔPdet is 6\.5'),
@@ -251,6 +252,19 @@ class QuestionBankTests(unittest.TestCase):
             manage.write_json(root / 'data/urodynamic-tracings.json', data)
             with self.assertRaisesRegex(manage.ValidationError, "unknown view 'missing-view'"):
                 manage.load_tracings(root, self.cases)
+        # A hidden part must never hide the section a decision needs, nor start just before a marker the readout names.
+        for change, message in (
+            (lambda tracing: tracing['conceal'][0].update(until='repeat'), "view 'void2' is still hidden at that step"),
+            (lambda tracing: tracing['conceal'][0].update({'from': 571.0}), 'the recatheterise marker lies within 2 s after it'),
+        ):
+            with self.subTest(message=message), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                shutil.copytree(ROOT / 'data', root / 'data')
+                data = manage.read_json(root / 'data/urodynamic-tracings.json')
+                change(data['tracings']['udy-catheter-loss-repeat'])
+                manage.write_json(root / 'data/urodynamic-tracings.json', data)
+                with self.assertRaisesRegex(manage.ValidationError, message):
+                    manage.load_tracings(root, self.cases)
 
     def test_old_archived_logbook_entry_still_exports_to_analysis(self):
         case = next(c for c in self.all_cases if c['id'] == ARCHIVED)

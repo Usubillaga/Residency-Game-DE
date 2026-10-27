@@ -242,6 +242,44 @@ test('a lab decision shows its section of the tracing and marks its findings onl
   }
 });
 
+test('what a later decision answers stays out of the tracing until that decision has been answered', () => {
+  const U = data.NSAUrodynamics;
+  const lab = catalog.cases.filter(c => c.tracing && (c.tracing.conceal || []).length);
+  assert.equal(lab.map(c => c.id).sort().join(' '), 'udy-artefacts-rectal-contraction-transmission udy-catheter-loss-repeat ' +
+    'udy-low-compliance-sci-filling-rate udy-neurogenic-overactivity-dsd');
+  const endOf = html => +html.match(/data-t1="([^"]+)"/)[1];
+  for (const lang of ['en', 'de', 'es']) {
+    const h = tracingHarness(lang), w = U.TEXT[lang];
+    for (const c of lab) {
+      const tr = c.tracing;
+      c.steps.forEach((s, index) => {
+        if (!tr.steps[s.id]) return;
+        const answered = clone(h.answeredSteps(c, index));
+        const limit = Math.min(...tr.conceal.filter(x => !answered.includes(x.until)).map(x => x.from));
+        const shown = h.tracingFigure(c, s.id, answered);
+        assert.ok(shown.includes('data-view="' + tr.steps[s.id] + '"'), c.id + '/' + s.id + ' still opens on its own section');
+        // Markers that only appear in the hidden part (stop, drain, flush, recatheterisation) stay out of the legend.
+        const later = new Set(tr.events.filter(e => e.t > limit).map(e => e.type));
+        for (const e of tr.events.filter(e => e.t <= limit)) later.delete(e.type);
+        for (const view of tr.views) {
+          const html = U.figure(tr, { id: c.id, lang, view: view.id, reveal: answered, layout: 'wide' });
+          assert.ok(endOf(html) <= limit + 1e-9, c.id + '/' + s.id + ' ' + view.id + ': the tracing runs into the hidden part');
+          for (const v of tr.views.filter(v => v.t && v.t[0] >= limit)) assert.ok(!html.includes('data-udy-view="' + v.id + '"'), c.id + '/' + s.id + ': the hidden section ' + v.id + ' is offered');
+          for (const type of later) assert.ok(!html.includes('<b>' + escape(w.events[type][0]) + '</b>'), c.id + '/' + s.id + ': the ' + type + ' marker is listed');
+        }
+      });
+      const all = U.figure(tr, { id: c.id, lang, view: 'all', reveal: c.steps.map(s => s.id), layout: 'wide' });
+      assert.equal(endOf(all), tr.t.at(-1), c.id + ': after the last decision the whole study is shown');
+      assert.ok(tr.views.every(v => all.includes('data-udy-view="' + v.id + '"')), c.id + ': every section is offered again');
+    }
+  }
+  // The caption follows the rates of the section that is shown.
+  const lc = catalog.cases.find(c => c.id === 'udy-low-compliance-sci-filling-rate').tracing;
+  assert.match(U.caption(lc, U.viewOf(lc, 'all', U.limitOf(lc, ['compliance'])), 'de'), /Füllung 30 ml\/min$/);
+  assert.match(U.caption(lc, U.viewOf(lc, 'all', U.limitOf(lc, ['compliance', 'rate'])), 'de'), /Füllung 30 → 15 ml\/min$/);
+  assert.match(U.caption(lc, U.viewOf(lc, 'fill2', U.limitOf(lc, ['compliance', 'rate'])), 'en'), /filling 15 ml\/min$/);
+});
+
 test('the cursor at the Qmax marker reads the pressure and flow the questions are built on', () => {
   const U = data.NSAUrodynamics;
   let checked = 0;
