@@ -52,8 +52,10 @@
     emg: { label: 'EMG', unit: 'µV', color: '#6d4fb3' }
   };
   const TONE = { key: '#e8a13a', good: '#3f8e72', neutral: '#8a7f95' };
+  // wide: the game's chart on a desktop; medium: a text column of about 650–750 px (Urofragen); narrow: phones.
   const LAYOUT = {
     wide: { w: 960, left: 92, right: 16, top: 34, panel: 62, gap: 9, axis: 26, font: 12.5, small: 10.5, label: 15 },
+    medium: { w: 760, left: 88, right: 12, top: 36, panel: 66, gap: 9, axis: 28, font: 14, small: 12, label: 16 },
     narrow: { w: 560, left: 84, right: 8, top: 38, panel: 74, gap: 9, axis: 30, font: 15, small: 13, label: 17 }
   };
   let sequence = 0;

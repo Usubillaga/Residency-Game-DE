@@ -214,7 +214,7 @@ test('every case of the urodynamics lab has a tracing that renders in every lang
     assert.ok(Object.values(tr.steps).every(view => views.includes(view)));
     for (const lang of ['en', 'de', 'es']) {
       for (const e of tr.events) assert.ok(U.TEXT[lang].events[e.type], lang + ' needs a label for marker ' + e.type);
-      for (const view of views) for (const layout of ['wide', 'narrow']) {
+      for (const view of views) for (const layout of ['wide', 'medium', 'narrow']) {
         const html = U.figure(tr, { id: c.id, lang, view, reveal: c.steps.map(s => s.id), layout });
         assert.doesNotMatch(html, /NaN|undefined|\[object/, c.id + ' ' + lang + ' ' + view + ' ' + layout);
         assert.ok(html.includes('data-udy="' + c.id + '"') && html.includes('data-view="' + view + '"'));

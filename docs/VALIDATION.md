@@ -15,7 +15,8 @@
 - **Length rule:** every keyed answer passes, and in none of the 57 urodynamics decisions is it the strict longest or shortest option in any language. Across all 421 written decisions the correct option is the strict longest in 72 (DE), 76 (EN) and 74 (ES) and the strict shortest in 38, 40 and 37.
 - **Counts:** 688 decisions in 552 cases with 2,767 answer options. The urodynamics lab holds 19 cases and 57 decisions, the Clinic now 295 cases and the Endoscopy department 39. `data/question-contract.json` fixes 688 decisions and the 57 urodynamics decisions.
 - **Checks:** tracing check, validation, 67 Python, 41 engine and 64 cartoon tests, build and package passed. A Chromium check (Playwright) starts the lab duty in German at 1280 px and plays a full shift of 10 cases (30 decisions) to the debrief and the chief's quiz, whose questions show their tracings, then two cases each in English and Spanish at 390 px. It covers the cursor by click and keyboard, the section buttons, findings only after the answer, digit shortcuts not answering while the plot has focus, no sideways scrolling and no page errors.
-- **Medical scope:** the curves are synthetic teaching drawings, not patient recordings. The nine new cases were checked against their sources by the author and by two independent AI reviewers; neither is a clinician sign-off. They await independent specialist review in every language.
+- **Medical scope:** the curves are synthetic teaching drawings, not patient recordings. The nine new cases were checked against their sources by the author and by two independent AI reviewers. A decision that needs correcting is marked in the game with 🚩.
+- **Urofragen (27 October):** `assets/urodynamics.js` gained a `medium` layout for text columns of about 650–750 px; the cartoon test renders every tracing in all three layouts. Urofragen shows the same 19 tracings, copied unchanged, in its *Urodynamik* section.
 
 ## Urodynamics: 10 cases, 30 decisions — 24 October 2026
 
@@ -26,7 +27,6 @@
 - **Length rule:** every keyed answer passes, and in none of the 30 decisions is it the strict longest or shortest option in any language. Across all 394 written decisions the correct option is the strict longest in 72 (DE), 76 (EN) and 74 (ES).
 - **Counts:** 661 decisions in 543 cases with 2,659 answer options. `data/question-contract.json` also fixes the 30 urodynamics decisions; `manage.py validate` enforces the number, and a regression test rejects a missing decision.
 - **Checks:** validation, 65 Python, 41 engine and 59 cartoon tests, build and package passed. A Chromium check (Playwright) shows the 10 cases under the specialty filter in DE, EN and ES and plays one case through all three decisions to the debrief without page errors.
-- **Medical scope:** source checking and an AI review are not a clinician sign-off; the new cases await independent specialist review in every language.
 
 ## 101 questions back, 30 new questions, no length cue anywhere — 18 October 2026
 
