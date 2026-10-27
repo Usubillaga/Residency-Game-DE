@@ -1,6 +1,6 @@
-# Fragenbank: 661 bewertete Fragen
+# Fragenbank: 688 bewertete Fragen
 
-Stand: **24. Oktober 2026**. Die aktive Bank enthält **661 Entscheidungen in 543 Fällen** und **2.659 Antwortoptionen**, vollständig in Deutsch, Englisch und Spanisch. Eine Entscheidung zählt als eine Frage. Wiederholungen im Chefquiz, Atlas-Tipps und Übersetzungen zählen nicht zusätzlich. (Der Dateiname stammt aus der Zeit der festen Bankgröße von 500 Fragen.)
+Stand: **26. Oktober 2026**. Die aktive Bank enthält **688 Entscheidungen in 552 Fällen** und **2.767 Antwortoptionen**, vollständig in Deutsch, Englisch und Spanisch. Eine Entscheidung zählt als eine Frage. Wiederholungen im Chefquiz, Atlas-Tipps und Übersetzungen zählen nicht zusätzlich. (Der Dateiname stammt aus der Zeit der festen Bankgröße von 500 Fragen.)
 
 ## Zusammensetzung
 
@@ -13,12 +13,12 @@ Stand: **24. Oktober 2026**. Die aktive Bank enthält **661 Entscheidungen in 54
 | Neue Fragen: Notfälle 10, Onkologie 10, Medikamente 10 | 30 | 30 |
 | TNM-/Trauma-Fälle | 30 | 30 |
 | Urologische Anatomiefragen | 50 | 50 |
-| Urodynamik-Fälle (je drei Entscheidungen) | 10 | 30 |
-| **Aktive Bank** | **543** | **661** |
+| Urodynamik-Fälle des Urodynamik-Labors (je drei Entscheidungen) | 19 | 57 |
+| **Aktive Bank** | **552** | **688** |
 
 **Keine Frage ist archiviert.** Eine frühere Version hatte 101 Zusatzfragen ins Archiv verschoben, nur um die Bank bei genau 500 Fragen zu halten. Diese Fragen zu Protokollen, Nebenwirkungen, Inkontinenz, Priapismus, Strahlentherapie und Leitlinienthemen sind wieder spielbar, mit ihren Oberarzt-Hinweisen, Zeichnungen und den Links *Fragen üben* auf der Protokollseite (36 Protokolle, 27 Bestrahlungsschemata). Der Archivmechanismus bleibt erhalten: Eine nach `data/archive/supplemental-questions.json` verschobene Frage bleibt für abgeschlossene Logbucheinträge, Lesezeichen und Markierungen prüfbar, gelangt aber nicht mehr in Bibliothek, Dienste oder Revanche.
 
-**Die richtige Antwort verrät sich nicht mehr durch ihre Länge.** In jeder für das Spiel geschriebenen Frage ist die richtige Option höchstens 15 % länger als die längste falsche und mindestens 70 % so lang wie die mittlere; sie ist in etwa jeder fünften Frage die längste (72 von 394, DE); in den 30 Urodynamik-Entscheidungen ist sie in keiner Sprache die längste. Ein Test prüft das bei jedem Build; Einzelheiten in [VALIDATION.md](VALIDATION.md).
+**Die richtige Antwort verrät sich nicht mehr durch ihre Länge.** In jeder für das Spiel geschriebenen Frage ist die richtige Option höchstens 15 % länger als die längste falsche und mindestens 70 % so lang wie die mittlere; sie ist in etwa jeder sechsten Frage die längste (72 von 421, DE); in den 57 Urodynamik-Entscheidungen ist sie in keiner Sprache die längste oder kürzeste. Ein Test prüft das bei jedem Build; Einzelheiten in [VALIDATION.md](VALIDATION.md).
 
 ## TNM und Trauma
 
@@ -30,7 +30,7 @@ Jede Frage hat **„Zur Verbesserung markieren“** mit optionalem Kommentar. Un
 
 ## Urodynamik
 
-Zehn dreisprachige Fälle mit je drei Entscheidungen (30 Fragen) im Fachgebiet *Urodynamik*: Druck-Fluss-Indizes vor HoLEP, DHIC, primäre Blasenhalsobstruktion, Multisystematrophie vor TURP, Obstruktion nach Band, Fowler-Syndrom, okkulte Belastungsinkontinenz (OPUS), Compliance und Füllrate, kindliche dysfunktionelle Miktion sowie Artefakte und Qualitätskontrolle. Jede Entscheidung hat einen Oberarzt-Hinweis, jeder Fall eine verknüpfte Lernzeichnung; die 26 Quellen stehen mit Prüfdatum in `data/refs-urodynamics.json`. Dieselben Fälle bilden den Abschnitt *Urodynamik* in Urofragen. Eine fachärztliche Freigabe ist nicht vergeben.
+Seit dem 26. Oktober 2026 eine eigene Abteilung, das **Urodynamik-Labor**: 19 dreisprachige Fälle mit je drei Entscheidungen (57 Fragen), jeder mit einer interaktiven, synthetischen Messkurve (Pves, Pabd, Pdet, Fluss, Volumen, Beckenboden-EMG, Marker und Ausschnitte), aus der die Werte abgelesen werden; die Befunde einer Entscheidung erscheinen erst nach der Antwort. Neu sind neun Kurvenfälle: Normalbefund beim Mann, Normalbefund bei einer Frau mit OAB-Symptomen, idiopathische Detrusorüberaktivität mit Inkontinenz, urodynamische Belastungsinkontinenz mit Leak-Point-Druck, Mischinkontinenz, neurogene Überaktivität mit Detrusor-Sphinkter-Dyssynergie und autonomer Dysreflexie, akontraktiler Detrusor mit Bauchpresse, Plateau-Flow bei Harnröhrenstriktur und ein herausgerutschter Blasenkatheter mit gültiger Wiederholung. `manage.py validate` rechnet jeden abgefragten Wert aus den Kurven nach; Teile einer Messung, die eine spätere Frage beantworten, bleiben bis zu dieser Entscheidung verborgen. Zwei unabhängige KI-Prüfungen (klinischer Inhalt und Kurven) folgten am 26. Oktober; ihre Befunde wurden an den Primärquellen geprüft und am 27. Oktober eingearbeitet. Die ursprünglichen zehn Fälle (30 Fragen) im Fachgebiet *Urodynamik*: Druck-Fluss-Indizes vor HoLEP, DHIC, primäre Blasenhalsobstruktion, Multisystematrophie vor TURP, Obstruktion nach Band, Fowler-Syndrom, okkulte Belastungsinkontinenz (OPUS), Compliance und Füllrate, kindliche dysfunktionelle Miktion sowie Artefakte und Qualitätskontrolle. Jede Entscheidung hat einen Oberarzt-Hinweis, jeder Fall eine verknüpfte Lernzeichnung; die inzwischen 34 Quellen stehen mit Prüfdatum in `data/refs-urodynamics.json`. Alle 19 Fälle sind auch als Frage im Urofragen-Abschnitt *Urodynamik* enthalten, seit dem 27. Oktober mit denselben Messkurven. Fragen mit Korrekturbedarf werden im Spiel mit 🚩 markiert.
 
 ## Neue Anatomie
 
@@ -90,7 +90,7 @@ Cartoon-Artwork, Figuren, Dialogbibliothek, Konfetti, Spritzer, Kaffeepausen, St
 
 ## Technische Prüfung
 
-Der Vertrag `data/question-contract.json` prüft die genaue Zahl aktiver Entscheidungen (661), mindestens 50 Anatomiefragen, die 30 TNM-/Trauma- und die 30 Urodynamik-Entscheidungen sowie normalisierte identische Fragen samt Antworttexten in jeder Sprache. Eine Frage über die Vertragszahl hinaus und ein duplizierter Fragetext werden in Regressionstests abgelehnt. Anatomiefragen benötigen zusätzlich einen dokumentierten OP- oder Fallbezug (`clinicalContext`); fehlende, ungültige oder unvollständig übersetzte Angaben werden zurückgewiesen.
+Der Vertrag `data/question-contract.json` prüft die genaue Zahl aktiver Entscheidungen (688), mindestens 50 Anatomiefragen, die 30 TNM-/Trauma- und die 57 Urodynamik-Entscheidungen sowie normalisierte identische Fragen samt Antworttexten in jeder Sprache. Eine Frage über die Vertragszahl hinaus und ein duplizierter Fragetext werden in Regressionstests abgelehnt. Anatomiefragen benötigen zusätzlich einen dokumentierten OP- oder Fallbezug (`clinicalContext`); fehlende, ungültige oder unvollständig übersetzte Angaben werden zurückgewiesen.
 
 Die historischen Fälle durchlaufen dieselbe Struktur-, Sprach-, Antwort- und Quellenvalidierung wie aktive Fälle. Zusätzliche Tests prüfen alte Logbücher, manipulierte Punktwerte, Export/Import, Ausschluss archivierter Fragen aus neuen Diensten und die Anzeige vor beziehungsweise nach der Antwort. Die Softwareprüfungen sind in [VALIDATION.md](VALIDATION.md) protokolliert.
 

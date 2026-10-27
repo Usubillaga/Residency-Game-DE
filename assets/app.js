@@ -30,9 +30,10 @@
   // The attending in the background takes three calls per shift; each costs five game minutes, never points.
   const ATTENDING_CALLS=3,CALL_MINUTES=5;
   // Duties decide which cases a session draws: emergencies at night, oncology decisions in the tumour board,
-  // outpatient work in clinic and planned surgery on the elective list. Start times are game minutes after midnight.
-  const DUTIES=['night','board','clinic','elective','dayclinic','radiotherapy'],DUTY_START={night:1320,board:930,clinic:480,elective:450,dayclinic:510,radiotherapy:495,mixed:1320};
-  const DUTY_ICON={night:'🌙',board:'🎗️',clinic:'🩺',elective:'✂️',dayclinic:'💉',radiotherapy:'☢️',mixed:'🔀'};
+  // outpatient work in clinic, planned surgery on the elective list and tracings in the urodynamics lab.
+  // Start times are game minutes after midnight.
+  const DUTIES=['night','board','clinic','elective','dayclinic','radiotherapy','urodynamics'],DUTY_START={night:1320,board:930,clinic:480,elective:450,dayclinic:510,radiotherapy:495,urodynamics:540,mixed:1320};
+  const DUTY_ICON={night:'🌙',board:'🎗️',clinic:'🩺',elective:'✂️',dayclinic:'💉',radiotherapy:'☢️',urodynamics:'📈',mixed:'🔀'};
   // Radiotherapy questions are answered by the radiation oncologist; every other case by the attending.
   const consultantOf=c=>c&&c.consultant==='radiotherapist'?'radiotherapist':'attending';
   const count=v=>Number.isInteger(v)&&v>=0?v:0;
@@ -54,7 +55,7 @@
   const casePortrait=(c,expr,size)=>c.patient.label?A.portrait('chief','stern',size,state.avatar):A.patientPortrait(c.id,expr,size,c.patient);
   const patientLabel=c=>patientName(c)+(c.patient.age===null?'':' · '+c.patient.age);
   const clock=(min,duty=state.session?.duty)=>{const at=(DUTY_START[duty]??DUTY_START.night)+min;return String(Math.floor(at/60)%24).padStart(2,'0')+':'+String(at%60).padStart(2,'0');};
-  const dutyOf=c=>DUTIES.includes(c.duty)?c.duty:({emergency:'night',ward:'night',clinic:'clinic',endoscopy:'elective',theatre:'elective'}[c.area]||'clinic');
+  const dutyOf=c=>DUTIES.includes(c.duty)?c.duty:({emergency:'night',ward:'night',clinic:'clinic',endoscopy:'elective',theatre:'elective',urodynamics:'urodynamics'}[c.area]||'clinic');
   const dutyName=d=>DUTY_ICON[d]+' '+t('duty_'+d);
   // Only duties with cases are offered; saved sessions and filters still accept every known duty.
   const PLAYABLE=DUTIES.filter(d=>C.cases.some(c=>dutyOf(c)===d));
@@ -361,7 +362,7 @@
   }
   function openReviewQuestion(caseId,stepId) {
     const c=getCase(caseId),s=c?.steps.find(s=>s.id===stepId);if(!s)return;
-    openDialog('<h2>'+esc(loc(c.title))+'</h2><p>'+esc(loc(c.presenting))+'</p><h3>'+esc(loc(s.prompt))+'</h3>'+reviewControls(c,s)+optionsExplained(s,s.options.map(o=>o.id),null)+sourceLinks(c)+'<button class="btn" data-action="close-dialog">'+esc(t('close'))+'</button>');
+    openDialog('<h2>'+esc(loc(c.title))+'</h2><p>'+esc(loc(c.presenting))+'</p>'+tracingFigure(c,s.id,answeredSteps(c,c.steps.indexOf(s)+1))+'<h3>'+esc(loc(s.prompt))+'</h3>'+reviewControls(c,s)+optionsExplained(s,s.options.map(o=>o.id),null)+sourceLinks(c)+'<button class="btn" data-action="close-dialog">'+esc(t('close'))+'</button>');
   }
   function selectedLesson(g) {
     const id=learningSelections.get(g.id),v=g.visual;
@@ -589,13 +590,24 @@
     sound(right?'good':'splash');if(right)celebrate(false);else splash(element);
   }
   function sourceLinks(c) { return '<div class="case-refs"><span class="label">'+esc(t(c.source?'sourceRelated':'reviewSources'))+'</span><ul>'+c.references.map(id=>{const r=C.references.find(r=>r.id===id);return r?'<li><a href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">'+esc(r.title)+' ↗</a></li>':'';}).join('')+'</ul></div>'; }
+  // Urodynamic tracings (assets/urodynamics.js). A lab case shows its measurement from the step that reads it;
+  // the findings of a step are marked only once that step has been answered.
+  const U=window.NSAUrodynamics;
+  const tracingLayout=()=>window.matchMedia&&window.matchMedia('(max-width: 640px)').matches?'narrow':'wide';
+  function tracingFigure(c,stepId,answered) {
+    const tr=c&&c.tracing;if(!U||!tr)return '';
+    const view=stepId?tr.steps[stepId]:tr.views[0]&&tr.views[0].id;
+    if(!view)return '';
+    return '<section class="case-tracing">'+U.figure(tr,{id:c.id,lang:state.lang,view,reveal:answered,layout:tracingLayout()})+'</section>';
+  }
+  const answeredSteps=(c,count)=>c.steps.slice(0,count).map(s=>s.id);
   function chart(p) {
     const c=getCase(p.id),a=getArea(c.area);
     let body='';
     if(p.finished) body=debrief(p,c);
     else {
       const s=c.steps[p.index];
-      body='<section class="story"><span class="label">'+esc(t('story'))+'</span><p>'+esc(loc(c.presenting))+'</p></section>'+vitalPanel(c);
+      body='<section class="story"><span class="label">'+esc(t('story'))+'</span><p>'+esc(loc(c.presenting))+'</p></section>'+vitalPanel(c)+tracingFigure(c,s.id,answeredSteps(c,p.index+(p.feedback?1:0)));
       body+='<section class="decision-panel"><div class="step-track" aria-hidden="true">'+c.steps.map((_,i)=>'<span class="'+(i<p.index?'past':i===p.index?'now':'')+'"></span>').join('')+'</div><div class="step-meta"><span>'+esc(t(c.source?'sourceQuestion':s.kind))+'</span><span>'+esc(t('decision'))+' '+(p.index+1)+' / '+c.steps.length+'</span></div><h3 id="decision-prompt">'+esc(loc(s.prompt))+'</h3>'+reviewControls(c,s)+'<div class="options" role="group" aria-labelledby="decision-prompt">'+p.order[p.index].map((id,i)=>optionButton(s,o=>o.id===id,p,i)).join('')+'</div>';
       if(p.feedback){const o=s.options.find(o=>o.id===p.feedback),cls=o.score===10?'good':o.score>0||c.source?'partial':'unsafe';
         const streak=cls==='good'&&state.session.streakAt===p.id+':'+p.index?state.session.streak:0;
@@ -609,7 +621,7 @@
   }
   function debrief(p,c) {
     const max=c.steps.reduce((n,s)=>n+Math.max(...s.options.map(o=>o.score)),0);
-    return '<div class="debrief-score">'+Math.round(p.score/max*100)+'<small> / 100</small></div><p class="muted" style="font-size:.76rem">'+esc(t('elapsed'))+': '+p.elapsed+' '+esc(t('minute'))+' · '+esc(t('safetyConcerns'))+': '+p.criticalErrors+'</p><section class="takeaway" style="margin-top:22px"><span class="label">'+esc(t('takeaway'))+'</span><p>'+esc(loc(c.takeaway))+'</p></section>'+caseVisuals(c)+p.answers.map((ans,i)=>{const s=c.steps[i],o=s.options.find(o=>o.id===ans.optionId);return '<div class="answer-review"><h3>'+esc(loc(s.prompt))+'</h3>'+reviewControls(c,s)+'<p><b>'+esc(t('yourChoice'))+':</b> '+esc(loc(o.text))+'</p><p>'+esc(loc(o.feedback))+'</p>'+preferredAnswer(s,o.id)+'<span class="badge '+(o.score===10?'done':'urgent')+'">'+o.score+' / 10</span>'+optionsExplained(s,p.order[i],o.id)+'</div>';}).join('')+sourceLinks(c)+'<div class="actions"><button class="btn primary" data-action="'+(state.session.finished?'report':'next-patient')+'">'+esc(t(state.session.finished?'report':'nextPatient'))+' →</button></div>';
+    return '<div class="debrief-score">'+Math.round(p.score/max*100)+'<small> / 100</small></div><p class="muted" style="font-size:.76rem">'+esc(t('elapsed'))+': '+p.elapsed+' '+esc(t('minute'))+' · '+esc(t('safetyConcerns'))+': '+p.criticalErrors+'</p><section class="takeaway" style="margin-top:22px"><span class="label">'+esc(t('takeaway'))+'</span><p>'+esc(loc(c.takeaway))+'</p></section>'+tracingFigure(c,null,answeredSteps(c,c.steps.length))+caseVisuals(c)+p.answers.map((ans,i)=>{const s=c.steps[i],o=s.options.find(o=>o.id===ans.optionId);return '<div class="answer-review"><h3>'+esc(loc(s.prompt))+'</h3>'+reviewControls(c,s)+'<p><b>'+esc(t('yourChoice'))+':</b> '+esc(loc(o.text))+'</p><p>'+esc(loc(o.feedback))+'</p>'+preferredAnswer(s,o.id)+'<span class="badge '+(o.score===10?'done':'urgent')+'">'+o.score+' / 10</span>'+optionsExplained(s,p.order[i],o.id)+'</div>';}).join('')+sourceLinks(c)+'<div class="actions"><button class="btn primary" data-action="'+(state.session.finished?'report':'next-patient')+'">'+esc(t(state.session.finished?'report':'nextPatient'))+' →</button></div>';
   }
   function play() {
     const s=state.session;
@@ -718,7 +730,7 @@
   }
   function reviewHistory(id,time) {
     const r=state.history.find(r=>r.caseId===id&&r.completedAt===time),c=getCase(id);if(!r)return;
-    openDialog('<p class="eyebrow">'+esc(t('debrief'))+'</p><h2>'+esc(loc(c.title))+'</h2><div class="debrief-score">'+pct(r)+'<small> / 100</small></div><section class="takeaway"><p>'+esc(loc(c.takeaway))+'</p></section>'+caseVisuals(c)+r.answers.map((ans,i)=>{const step=c.steps[i],option=step.options.find(o=>o.id===ans.optionId);return '<div class="answer-review"><h3>'+esc(loc(step.prompt))+'</h3>'+reviewControls(c,step)+'<p><b>'+esc(t('yourChoice'))+':</b> '+esc(loc(option.text))+'</p><p>'+esc(loc(option.feedback))+'</p>'+preferredAnswer(step,option.id)+optionsExplained(step,step.options.map(o=>o.id),option.id)+'</div>';}).join('')+sourceLinks(c)+'<button class="btn" data-action="close-dialog">'+esc(t('close'))+'</button>');
+    openDialog('<p class="eyebrow">'+esc(t('debrief'))+'</p><h2>'+esc(loc(c.title))+'</h2><div class="debrief-score">'+pct(r)+'<small> / 100</small></div><section class="takeaway"><p>'+esc(loc(c.takeaway))+'</p></section>'+tracingFigure(c,null,answeredSteps(c,c.steps.length))+caseVisuals(c)+r.answers.map((ans,i)=>{const step=c.steps[i],option=step.options.find(o=>o.id===ans.optionId);return '<div class="answer-review"><h3>'+esc(loc(step.prompt))+'</h3>'+reviewControls(c,step)+'<p><b>'+esc(t('yourChoice'))+':</b> '+esc(loc(option.text))+'</p><p>'+esc(loc(option.feedback))+'</p>'+preferredAnswer(step,option.id)+optionsExplained(step,step.options.map(o=>o.id),option.id)+'</div>';}).join('')+sourceLinks(c)+'<button class="btn" data-action="close-dialog">'+esc(t('close'))+'</button>');
   }
   function avatarChoices() {
     return '<fieldset class="avatar-field"><legend>'+esc(t('playerAvatar'))+'</legend><div class="avatar-choices">'+[0,1,2].map(i=>'<button class="avatar-choice '+(state.avatar===i?'selected':'')+'" type="button" data-avatar="'+i+'" aria-pressed="'+(state.avatar===i)+'" aria-label="'+esc(t('playerAvatar'))+' '+(i+1)+'">'+A.avatar(i,92)+'</button>').join('')+'</div></fieldset>';
@@ -889,7 +901,7 @@
       const rng=E.random(s.seed+'-morning');
       const pool=s.patients.flatMap(p=>getCase(p.id).steps.map((_,i)=>({caseId:p.id,stepIndex:i})));
       const shuffled=E.shuffle(pool,rng),onePerArea=[];
-      for(const area of C.areas){const item=shuffled.find(x=>getCase(x.caseId).area===area.id);if(item)onePerArea.push(item);}
+      for(const area of E.shuffle(C.areas,rng)){const item=shuffled.find(x=>getCase(x.caseId).area===area.id);if(item)onePerArea.push(item);}
       const selected=[...onePerArea,...shuffled.filter(x=>!onePerArea.some(y=>y.caseId===x.caseId&&y.stepIndex===x.stepIndex))].slice(0,5);
       s.boss={index:0,answers:[],done:false,items:E.shuffle(selected,rng).map(item=>({...item,order:E.shuffle(getCase(item.caseId).steps[item.stepIndex].options.map(o=>o.id),rng)}))};
       persist();
@@ -902,7 +914,7 @@
       const dlg=openDialog('<div class="boss-finish">'+A.portrait('chief',bossCorrect(boss)>=boss.items.length*.8?'smile':'stern',156,state.avatar)+'<h2>'+esc(t('challengeDone'))+'</h2><div class="debrief-score">'+bossCorrect(boss)+'<small> / '+boss.items.length+'</small></div><button class="btn primary" data-action="close-dialog">'+esc(t('dialogNext'))+' ▶</button></div>');dlg.classList.add('boss-modal');return;
     }
     const item=boss.items[boss.index],c=getCase(item.caseId),step=c.steps[item.stepIndex],answer=boss.answers[boss.index],choice=step.options.find(o=>o.id===answer),best=step.options.find(o=>o.id===step.best);
-    const dlg=openDialog('<div class="boss-header">'+A.portrait('chief',answer?(answer===step.best?'smile':'stern'):'stern',106,state.avatar)+'<div><p class="eyebrow">'+esc(t('round'))+' '+(boss.index+1)+' / '+boss.items.length+'</p><h2>'+esc(comedy().staff.chief.name)+'</h2></div></div><p class="boss-intro">'+esc(boss.index===0&&!answer?comedy().chiefQuizIntro:t('challengeExplanation'))+'</p><div class="boss-case"><small>'+esc(loc(getArea(c.area).title))+' · '+esc(c.patient.label?loc(c.patient.label):c.patient.name)+'</small><p>'+esc(loc(c.presenting))+'</p><h3>'+esc(loc(step.prompt))+'</h3>'+reviewControls(c,step)+'</div><div class="options">'+item.order.map((id,i)=>{const option=step.options.find(o=>o.id===id);return '<button class="option '+(answer===id?'chosen':'')+'" data-boss-option="'+id+'" '+(answer?'disabled':'')+'><span class="option-letter">'+String.fromCharCode(65+i)+'</span><span class="option-text">'+esc(loc(option.text))+'</span></button>';}).join('')+'</div>'+(choice?'<div class="feedback '+(answer===step.best?'good':'partial')+'" role="status"><h3>'+esc(t(answer===step.best?'challengeCorrect':'challengeRetry'))+'</h3><p>'+esc(loc(choice.feedback))+'</p>'+(answer!==step.best?'<p class="preferred"><b>'+esc(t('recommended'))+':</b> '+esc(loc(best.text))+'</p>':'')+'<button class="btn primary" data-action="boss-next">'+esc(t('dialogNext'))+' ▶</button></div>':'')+'<p class="small-note">'+esc(t('clockNote'))+'</p>');
+    const dlg=openDialog('<div class="boss-header">'+A.portrait('chief',answer?(answer===step.best?'smile':'stern'):'stern',106,state.avatar)+'<div><p class="eyebrow">'+esc(t('round'))+' '+(boss.index+1)+' / '+boss.items.length+'</p><h2>'+esc(comedy().staff.chief.name)+'</h2></div></div><p class="boss-intro">'+esc(boss.index===0&&!answer?comedy().chiefQuizIntro:t('challengeExplanation'))+'</p><div class="boss-case"><small>'+esc(loc(getArea(c.area).title))+' · '+esc(c.patient.label?loc(c.patient.label):c.patient.name)+'</small><p>'+esc(loc(c.presenting))+'</p>'+tracingFigure(c,step.id,answeredSteps(c,item.stepIndex+(answer?1:0)))+'<h3>'+esc(loc(step.prompt))+'</h3>'+reviewControls(c,step)+'</div><div class="options">'+item.order.map((id,i)=>{const option=step.options.find(o=>o.id===id);return '<button class="option '+(answer===id?'chosen':'')+'" data-boss-option="'+id+'" '+(answer?'disabled':'')+'><span class="option-letter">'+String.fromCharCode(65+i)+'</span><span class="option-text">'+esc(loc(option.text))+'</span></button>';}).join('')+'</div>'+(choice?'<div class="feedback '+(answer===step.best?'good':'partial')+'" role="status"><h3>'+esc(t(answer===step.best?'challengeCorrect':'challengeRetry'))+'</h3><p>'+esc(loc(choice.feedback))+'</p>'+(answer!==step.best?'<p class="preferred"><b>'+esc(t('recommended'))+':</b> '+esc(loc(best.text))+'</p>':'')+'<button class="btn primary" data-action="boss-next">'+esc(t('dialogNext'))+' ▶</button></div>':'')+'<p class="small-note">'+esc(t('clockNote'))+'</p>');
     dlg.classList.add('boss-modal');
   }
   function answerBoss(id) {
@@ -993,7 +1005,7 @@
     if((e.key==='Enter'||e.key===' ')&&e.target.matches('[data-scene-area],[data-scene-patient],[data-scene-coffee]')){e.preventDefault();handleScene(e.target);}
   });
   document.addEventListener('keydown',e=>{
-    if(e.altKey||e.ctrlKey||e.metaKey||e.repeat||e.target.closest?.('input,textarea,select,summary'))return;
+    if(e.altKey||e.ctrlKey||e.metaKey||e.repeat||e.target.closest?.('input,textarea,select,summary,.udy-plot'))return;
     const key=e.key.toLowerCase(),index=/^[1-6]$/.test(key)?Number(key)-1:/^[a-f]$/.test(key)?key.charCodeAt(0)-97:-1;
     if(index<0)return;
     const dlg=document.querySelector('dialog[open]');
@@ -1011,9 +1023,9 @@
     try{
       const file=e.target.files[0];if(!file||file.size>100000)throw new Error('size');
       const data=JSON.parse(await file.text());
-      const ids=data&&data.caseIds,single=DUTIES.includes(data&&data.duty);
-      if(data.version!==2||!Array.isArray(ids)||!ids.length||ids.length>10||new Set(ids).size!==ids.length||ids.some(id=>!getCase(id))||
-        (single?ids.some(id=>dutyOf(getCase(id))!==data.duty):ids.length!==10||C.areas.some(a=>ids.filter(id=>getCase(id).area===a.id).length!==2)))throw new Error('schema');
+      const ids=data&&data.caseIds,single=DUTIES.includes(data&&data.duty),mixed=2*C.areas.length;
+      if(data.version!==2||!Array.isArray(ids)||!ids.length||ids.length>Math.max(10,mixed)||new Set(ids).size!==ids.length||ids.some(id=>!getCase(id))||
+        (single?ids.length>10||ids.some(id=>dutyOf(getCase(id))!==data.duty):ids.length!==mixed||C.areas.some(a=>ids.filter(id=>getCase(id).area===a.id).length!==2)))throw new Error('schema');
       customSchedule=data;status.textContent=t('imported')+' · '+(typeof data.date==='string'?data.date:'');
     }catch(_){customSchedule=null;status.textContent=t('invalidSchedule');}
   });
@@ -1031,6 +1043,7 @@
     state.session=cleanSession(Object.assign(session,{duty}));persist();document.querySelector('dialog').close();navigate('play');startOpening();
   });
   window.addEventListener('hashchange',()=>{const v=location.hash.slice(1);if(v!==view&&['intro','library','atlas','protocols','classifications','progress','sources','play','report'].includes(v)){view=v;render();}});
+  if(U)U.bind(document,id=>getCase(id)?.tracing,()=>state.lang,tracingLayout);
   syncRewards();
   render();
 })();

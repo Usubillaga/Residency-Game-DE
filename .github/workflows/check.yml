@@ -16,6 +16,8 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
+      - name: Check that the urodynamic tracings match their generator
+        run: python scripts/urodynamic_traces.py --check
       - name: Validate cases, translations, references and assets
         run: python scripts/manage.py validate
       - name: Check deterministic scheduling, validation and archive integrity

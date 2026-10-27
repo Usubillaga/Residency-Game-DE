@@ -54,7 +54,8 @@ window.NSABanter = {
       "ward": "Dr. Brennan: The ward is a team sport. The clipboard, regrettably, thinks it's the captain.",
       "clinic": "Grace: Clinic starts on time in the timetable. The timetable is an optimistic work of fiction.",
       "endoscopy": "Dr. Brennan: Describe what you find clearly. 'An interesting thing' is a conversation starter, not a report.",
-      "theatre": "Grace: Everyone gets a voice at the safety pause. Even the person whose badge is still upside down."
+      "theatre": "Grace: Everyone gets a voice at the safety pause. Even the person whose badge is still upside down.",
+      "urodynamics": "Dr. Brennan: Welcome to the urodynamics lab. Pdet is a subtraction: check both lines before you believe either of them."
     },
     "good": [
       "Grace: Clear plan. I can work with that; the printer may need persuading.",
@@ -224,7 +225,7 @@ window.NSABanter = {
       },
       "allAreas": {
         "title": "Grand tour",
-        "text": "Complete at least one case in each of the five departments."
+        "text": "Complete at least one case in each of the six departments."
       },
       "comeback": {
         "title": "Learning from mistakes",
@@ -335,6 +336,20 @@ window.NSABanter = {
           "speaker": "chief",
           "text": "And remember: a gray is not a feeling. Write the fractionation down every time."
         }
+      ],
+      "urodynamics": [
+        {
+          "speaker": "nurse",
+          "text": "Urodynamics lab! Both lines are flushed, the transducers zeroed to atmosphere at the level of the symphysis, and the flowmeter is waiting."
+        },
+        {
+          "speaker": "attending",
+          "text": "Before anything else: a cough every minute. If Pves and Pabd don't answer alike, flush the line – a tracing is only as good as its tubing."
+        },
+        {
+          "speaker": "chief",
+          "text": "And remember: a tracing without a clinical question is modern art. Read it first, then decide."
+        }
       ]
     },
     "dutyIntro": {
@@ -343,7 +358,8 @@ window.NSABanter = {
       "clinic": "Grace: Clinic. On time according to the schedule. The schedule is very optimistic.",
       "elective": "Dr. Brennan: Elective list. Theatre 2, first incision at eight. Theoretically.",
       "dayclinic": "Grace: Oncology day clinic. Lab values first, pumps second, coffee a distant third.",
-      "radiotherapy": "Dr. Okoro: Radiation oncology. Planning CTs in the morning, follow-ups in the afternoon, and every dose has its fractions."
+      "radiotherapy": "Dr. Okoro: Radiation oncology. Planning CTs in the morning, follow-ups in the afternoon, and every dose has its fractions.",
+      "urodynamics": "Grace: Urodynamics lab. Six channels, one cursor and a cough every minute."
     },
     "dutyBoard": {
       "night": "ON CALL",
@@ -351,7 +367,8 @@ window.NSABanter = {
       "clinic": "CLINIC",
       "elective": "OR LIST · THEATRE 2",
       "dayclinic": "DAY CLINIC · CHAIRS 1–6",
-      "radiotherapy": "RADIOTHERAPY · LINAC 1"
+      "radiotherapy": "RADIOTHERAPY · LINAC 1",
+      "urodynamics": "URODYNAMICS LAB"
     },
     "attendingNight": [
       "Dr. Brennan: (half asleep) Mm-hm. I'm listening. Here's what I'd look at:",
@@ -468,7 +485,8 @@ window.NSABanter = {
       "ward": "Dr. Brenner: Station ist Mannschaftssport. Das Klemmbrett hält sich leider für den Kapitän.",
       "clinic": "Jana: Laut Terminplan beginnt die Ambulanz pünktlich. Der Terminplan ist ein sehr zuversichtlicher Roman.",
       "endoscopy": "Dr. Brenner: Beschreib den Befund genau. „Da war etwas Interessantes“ passt zum Kaffeegespräch, nicht zum Bericht.",
-      "theatre": "Jana: Beim Sicherheitsstopp kommen alle zu Wort. Auch die Person, deren Namensschild noch verkehrt herum hängt."
+      "theatre": "Jana: Beim Sicherheitsstopp kommen alle zu Wort. Auch die Person, deren Namensschild noch verkehrt herum hängt.",
+      "urodynamics": "Dr. Brenner: Willkommen im Urodynamik-Labor. Pdet ist eine Subtraktion – prüf beide Leitungen, bevor du einer davon glaubst."
     },
     "good": [
       "Jana: Klarer Plan. Damit kann ich arbeiten. Den Drucker müssen wir noch überzeugen.",
@@ -638,7 +656,7 @@ window.NSABanter = {
       },
       "allAreas": {
         "title": "Hausrundgang",
-        "text": "Schließe in jedem der fünf Bereiche mindestens einen Fall ab."
+        "text": "Schließe in jedem der sechs Bereiche mindestens einen Fall ab."
       },
       "comeback": {
         "title": "Fehlerkultur",
@@ -749,6 +767,20 @@ window.NSABanter = {
           "speaker": "chief",
           "text": "Und merken Sie sich: Ein Gray ist kein Gefühl. Die Fraktionierung wird jedes Mal aufgeschrieben."
         }
+      ],
+      "urodynamics": [
+        {
+          "speaker": "nurse",
+          "text": "Urodynamik-Labor! Beide Leitungen sind gespült, die Aufnehmer auf Höhe der Symphyse gegen Atmosphäre genullt, und der Flussmesser wartet."
+        },
+        {
+          "speaker": "attending",
+          "text": "Vor allem anderen: jede Minute ein Hustenstoß. Antworten Pves und Pabd nicht gleich, wird gespült – eine Kurve ist nur so gut wie ihre Schläuche."
+        },
+        {
+          "speaker": "chief",
+          "text": "Und denken Sie daran: Eine Messkurve ohne klinische Frage ist moderne Kunst. Erst lesen, dann entscheiden."
+        }
       ]
     },
     "dutyIntro": {
@@ -757,7 +789,8 @@ window.NSABanter = {
       "clinic": "Jana: Sprechstunde. Pünktlich laut Plan. Der Plan ist sehr optimistisch.",
       "elective": "Dr. Brenner: OP-Programm. Saal 2, erster Schnitt um acht. Theoretisch.",
       "dayclinic": "Jana: Onkologische Tagesklinik. Erst die Laborwerte, dann die Pumpen, der Kaffee abgeschlagen auf Platz drei.",
-      "radiotherapy": "Dr. Falkner: Radioonkologie. Vormittags Planungs-CTs, nachmittags Nachsorge, und jede Dosis hat ihre Fraktionen."
+      "radiotherapy": "Dr. Falkner: Radioonkologie. Vormittags Planungs-CTs, nachmittags Nachsorge, und jede Dosis hat ihre Fraktionen.",
+      "urodynamics": "Jana: Urodynamik-Labor. Sechs Kanäle, ein Cursor und jede Minute ein Hustenstoß."
     },
     "dutyBoard": {
       "night": "BEREITSCHAFT",
@@ -765,7 +798,8 @@ window.NSABanter = {
       "clinic": "SPRECHSTUNDE",
       "elective": "OP-PLAN · SAAL 2",
       "dayclinic": "TAGESKLINIK · PLATZ 1–6",
-      "radiotherapy": "RADIOONKOLOGIE · LINAC 1"
+      "radiotherapy": "RADIOONKOLOGIE · LINAC 1",
+      "urodynamics": "URODYNAMIK-LABOR"
     },
     "attendingNight": [
       "Dr. Brenner: (verschlafen) Hm-hm. Ich höre. Darauf würde ich achten:",
@@ -882,7 +916,8 @@ window.NSABanter = {
       "ward": "Dr. Herrera: La planta es un deporte de equipo. La carpeta, por desgracia, se cree la capitana.",
       "clinic": "Lucía: Según la agenda, la consulta empieza puntual. La agenda escribe ficción con mucho optimismo.",
       "endoscopy": "Dr. Herrera: Describe bien lo que encuentres. «Había algo curioso» sirve para el café, no para el informe.",
-      "theatre": "Lucía: En la pausa de seguridad habla todo el equipo. También quien lleva la acreditación del revés."
+      "theatre": "Lucía: En la pausa de seguridad habla todo el equipo. También quien lleva la acreditación del revés.",
+      "urodynamics": "Dr. Herrera: Te doy la bienvenida al laboratorio de urodinámica. La Pdet es una resta: comprueba las dos líneas antes de creerte ninguna."
     },
     "good": [
       "Lucía: Plan claro. Con eso puedo trabajar; a la impresora habrá que convencerla.",
@@ -1052,7 +1087,7 @@ window.NSABanter = {
       },
       "allAreas": {
         "title": "Vuelta al hospital",
-        "text": "Completa al menos un caso en cada una de las cinco áreas."
+        "text": "Completa al menos un caso en cada una de las seis áreas."
       },
       "comeback": {
         "title": "Cultura del error",
@@ -1163,6 +1198,20 @@ window.NSABanter = {
           "speaker": "chief",
           "text": "Y recuerde: un gray no es una sensación. El fraccionamiento se anota siempre."
         }
+      ],
+      "urodynamics": [
+        {
+          "speaker": "nurse",
+          "text": "¡Laboratorio de urodinámica! Las dos líneas están purgadas, los transductores a cero con la atmósfera a la altura de la sínfisis y el flujómetro espera."
+        },
+        {
+          "speaker": "attending",
+          "text": "Antes de nada: una tos cada minuto. Si Pves y Pabd no responden igual, se purga la línea; un trazado es tan bueno como sus tubos."
+        },
+        {
+          "speaker": "chief",
+          "text": "Y recuerde: un trazado sin pregunta clínica es arte moderno. Primero se lee, luego se decide."
+        }
       ]
     },
     "dutyIntro": {
@@ -1171,7 +1220,8 @@ window.NSABanter = {
       "clinic": "Lucía: Consulta. Puntual según la agenda. La agenda es muy optimista.",
       "elective": "Dr. Herrera: Programa quirúrgico. Quirófano 2, primera incisión a las ocho. En teoría.",
       "dayclinic": "Lucía: Hospital de día oncológico. Primero los análisis, luego las bombas y el café, muy por detrás.",
-      "radiotherapy": "Dra. Robledo: Oncología radioterápica. TAC de planificación por la mañana, revisiones por la tarde, y cada dosis tiene sus fracciones."
+      "radiotherapy": "Dra. Robledo: Oncología radioterápica. TAC de planificación por la mañana, revisiones por la tarde, y cada dosis tiene sus fracciones.",
+      "urodynamics": "Lucía: Laboratorio de urodinámica. Seis canales, un cursor y una tos cada minuto."
     },
     "dutyBoard": {
       "night": "GUARDIA",
@@ -1179,7 +1229,8 @@ window.NSABanter = {
       "clinic": "CONSULTA",
       "elective": "QUIRÓFANO 2 · PROGRAMA",
       "dayclinic": "HOSPITAL DE DÍA · 1–6",
-      "radiotherapy": "RADIOTERAPIA · LINAC 1"
+      "radiotherapy": "RADIOTERAPIA · LINAC 1",
+      "urodynamics": "LAB. URODINÁMICA"
     },
     "attendingNight": [
       "Dr. Herrera: (medio dormido) Mm-hm. Te escucho. Yo me fijaría en esto:",

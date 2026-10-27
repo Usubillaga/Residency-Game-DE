@@ -5,7 +5,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const E = require('../assets/engine.js');
-const areaIds = ['emergency', 'ward', 'clinic', 'endoscopy', 'theatre'];
+const areaIds = ['emergency', 'ward', 'clinic', 'endoscopy', 'theatre', 'urodynamics'];
 const catalog = {
   areas: areaIds.map(id => ({ id })),
   cases: areaIds.flatMap(id => JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', id + '.json'), 'utf8').replace(/^\uFEFF/, '')))
@@ -43,12 +43,12 @@ const legacyFirstAnswers = [
   ['ward-ileus', 'assessment', 4], ['ward-vte', 'assessment', 2]
 ];
 
-test('a seeded schedule is repeatable, unique and balanced across all five areas', () => {
+test('a seeded schedule is repeatable, unique and balanced across all six areas', () => {
   const before = JSON.stringify(catalog);
   const ids = E.schedule(catalog, '2026-10-05-class-A');
   assert.deepEqual(ids, E.schedule(catalog, '2026-10-05-class-A'));
-  assert.equal(ids.length, 10);
-  assert.equal(new Set(ids).size, 10);
+  assert.equal(ids.length, 12);
+  assert.equal(new Set(ids).size, 12);
   for (const area of areaIds) {
     assert.equal(ids.filter(id => catalog.cases.find(c => c.id === id).area === area).length, 2);
   }
